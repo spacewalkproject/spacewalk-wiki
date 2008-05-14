@@ -1,0 +1,43 @@
+== Navigation ==
+
+=== Main navigation (top bar and left side bar) ===
+
+These navigation bars are handled by two files:
+
+sitenav-authenticated.xml  (for authenticated sessions)
+sitenav.xml (for sessions that have not logged in)
+
+Each of these files exist of perl and java (and both are independent).  The java versions are in "/eng/java/code/webapp/WEB-INF/nav" and the perl versions are in "/eng/web/html/nav/".
+
+Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pretty self explanatory.  The following tags are valid:
+
+
+||rhn-tab||Defines a tab within the navigation bars.
+||rhn-tab-url || Used when specifying more than one url that corresponds to a tab. (When a user is browsing to that url, the tab will be shaded to indicate it is active).
+||rhn-tab-directory ||Used to specify a directory from which to match urls.
+
+
+=== Sub-navigation ===
+On many pages (System details page, Channel detail page, etc..) there is a tab bar within the page.  These are defined by files within separate files from the sitenav.xml and sitenav-authenticated.xml.  Within the same directories listed above are files called:
+
+action_detail.xml
+channel_detail.xml
+system_detail.xml
+....
+
+These files are exactly like the sitenav navigation files, but contain information only for these sub-navigation bars.
+
+
+=== ACLs ===
+
+=== Java side acls ===
+To control whether a tab is displayed at a certain time or not, you can use the built in ACLs (or make your own).  Within an rhn-tab tag, simply specify acl="name(arg)".  For example within sitenav-authenticated.xml:
+
+{{{
+ <rhn-tab name="Users" url="/rhn/users/ActiveList.do" acl="org_entitlement(sw_mgr_enterprise); user_role(org_admin)" 
+  active-image="tab-users-selected.gif" inactive-image="tab-users.gif">
+}}}
+
+Here this Users tab would not be sown if either org_entitlement(sw_mgr_enterprise) or user_role(org_admin) returns false.  Both of these are defined in com.redhat.rhn.common.security.acl.Access.  The name org_entitlement is translated into aclOrgEntitlement() when calling the acl, so Access.aclOrgEntitlement() is called.
+
+Additional ACL classes exist for the sub-tab xml files.  Within com.redhat.rhn.common.security.acl exists several Handlers such as !ChannelAclHandler, !ErrataAclHandler.  These are used with their corresponding X_detail.xml file.  For example, the !ChannelAclHandler is for use with channel_detail.xml.
