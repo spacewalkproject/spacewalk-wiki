@@ -23,7 +23,7 @@ yum install beacon
 You can also find source RPMs and tarballs at the following URL:
    * fill in
 
-=== Getting source code with git ==
+== Getting source code with git ==
 
 Beacon uses [http://git.or.cz git] for source control.
 
