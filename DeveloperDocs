@@ -2,10 +2,10 @@
 
 This section contains information about developer topics.  You may also be interested in [UserDocs User Documentation] and [DownloadIt downloads].
 
-* Architecture -- a quick overview of the various components in Beacon
-* PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
-* BranchSystem -- how branches are organized in the git repo.
-* RoadMap -- future plans for future releases
-* HowToTest -- how to test your changes
-* CodingConventions -- coding style and conventions used in the project
-* ...
+   * Architecture -- a quick overview of the various components in Beacon
+   * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
+   * BranchSystem -- how branches are organized in the git repo.
+   * RoadMap -- future plans for future releases
+   * HowToTest -- how to test your changes
+   * CodingConventions -- coding style and conventions used in the project
+   * ...
