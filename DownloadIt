@@ -1,0 +1,152 @@
+== Downloads ==
+
+RPM downloads of the project are available through a yum repository
+
+  * add URL here
+
+To use this repository, add a file in yum.repos.d with the following contents:
+
+{{{
+
+FILL IN
+
+}}}
+
+Then just ask yum to install the application.
+
+{{{
+
+yum install beacon
+
+}}}
+
+You can also find source RPMs and tarballs at the following URL:
+   * fill in
+
+=== Getting source code with git ==
+
+Beacon uses [http://git.or.cz git] for source control.
+
+To checkout the latest version from git...
+
+{{{
+
+cd ~/
+git clone git://git.fedorahosted.org/git/gitme.git/
+...
+
+}}}
+
+If you have a firewall that is blocking the git clone operation, you can also clone over http, although it is slower:
+
+{{{
+
+git clone http://git.fedorahosted.org/git/gitme.git/
+
+}}}
+
+More information TBA
+
+== Working with git ==
+
+The main part of the git tree "HEAD" contains the latest of anything.   Releases are branched off.  In general, send in patches to HEAD and developers can apply them to other branches as appropriate.
+
+For starters, you can look at what branches are there by doing:
+
+{{{
+
+git branch -r
+
+}}}
+
+If you want to switch to that branch, originally you need to track it so you can keep up with changes automatically.
+
+{{{
+
+git checkout --track -b my-branchname origin/branchname
+
+}}}
+
+
+If you ever want to use that branch again, BTW, you can just do:
+
+{{{
+
+git-checkout my-branchname
+
+}}}
+
+If you want to update your checkout to the latest git source, from any branch:
+
+{{{
+
+git pull
+
+}}}
+
+Make changes. To see the differences you've made since last commit:
+
+{{{
+
+git diff HEAD
+
+}}}
+
+To revert your changes:
+
+{{{
+
+git checkout -f         # All changes
+git checkout -f foo.py  # A specific file
+
+}}}
+
+If you are adding a larger feature, commit often to describe the changes you are making to files.  For small stuff, a commit at the end of your changes is probably fine.
+
+{{{
+
+git-commit -a
+
+}}}
+
+And once you have the checkout working like you want, submit the patch to the mailing list.
+
+The following commands can help with formatting patches.
+
+{{{
+
+git-format-patch
+git-send-email
+
+}}}
+
+Feel free to use whatever git commands you want, that's just for those who may be unfamiliar with it.
+
+Other interesting git-commands, that you may not need initially:
+
+{{{
+
+git-add                            # add a new file to source control that wasn't there before
+git-reset                          # revert changes, especially with git-reset --hard
+git-log                            # look at changes
+git-branch, git-merge, git-rebase  # if you want to create branches yourself
+git-blame                          # see who changed what/where
+git-rm                             # remove a file from source control
+
+}}}
+
+There is also a [http://www.kernel.org/pub/software/scm/git/docs/tutorial.html git tutorial] at kernel.org that is worth reading.
+
+== Commiter Git Information ==
+
+In general, we want folks to send patches to the list.  If you have commit access to beacon, however, you can use the following URL:
+
+{{{
+
+git clone ssh://git.fedorahosted.org/git/gitme.git/
+
+}}}
+
+== More Info ==
+
+To be added...
