@@ -5,7 +5,9 @@ Project Architecture
 
 === !WebUi ===
 
+The WebUI originally consisted entirely of perl running through apache.  Several years ago a java migration was started and most of the commonly used features of the app have been ported.  Generally the perl pages are only modified to fix bugs or add very small features.  Any new development is now done in java.  
 
+On the java side we use Apache Struts as our web framework and Hibernate and DataSource (own home grown ORM solution) for database interaction.
 
 
 
@@ -20,3 +22,5 @@ The backend provides a set of APIs that the different client utilities (rhn_regi
 === Taskomatic ===
 Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the java apps) and runs as a separate daemon.  It's job is to perform tasks that are scheduled to run asynchronously, such as sending out email notifications for new Errata.  
 
+== Search Server ==
+The Search Server is a standalone daemon that is fairly new to the project.  It is written in Java and utilizes Apache's Lucene search technology.  
