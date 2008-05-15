@@ -3,15 +3,14 @@ Project Architecture
 
 [[Image(arch.png)]]
 
-=== WebUi ===
-==== Java ====
+=== !WebUi ===
 
-==== Perl ====
+
 
 
 
 === Frontend Api ===
-
+The frontend Api is written completely in Java and runs in Tomcat within the webapp.  Because of this, the manager layer is shared between the two.
 
 
 === Backend Api === 
@@ -19,4 +18,4 @@ Project Architecture
 
 
 === Taskomatic ===
-
+Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the java apps) and runs as a separate daemon.  
