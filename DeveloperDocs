@@ -11,5 +11,5 @@ This section contains information about developer topics.  You may also be inter
    * TracingaPage -- Follow code flow from the webUI down to the DB layer
    * UnitTests -- how to run them
    * NavigationSystem -- understand our own home grown navigation system used throughout the app
-   * XMLRPC Handlers -- understand how to deal with XMLRPC handlers
+   * XMLRPCHandlers -- understand how to deal with XMLRPC handlers
    * ...
