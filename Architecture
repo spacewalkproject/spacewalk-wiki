@@ -10,11 +10,11 @@ Project Architecture
 
 
 === Frontend Api ===
-The frontend Api is written completely in Java and runs in Tomcat within the webapp.  Because of this, the manager layer is shared between the two.
+The frontend Api is written completely in Java and runs in Tomcat within the webapp.  Because of this, the manager layer is shared between the two.  This interface is intended to be used by scripts and other programs to provide interoperability with satellite or to simply help automate tasks.  The goal here is to at least allow everything that can be done within the UI to be done in through this api.  Docs are provided on the url /rhn/apidoc/index.jsp .
 
 
-=== Backend Api === 
-
+=== Backend === 
+The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilites.
 
 
 === Taskomatic ===
