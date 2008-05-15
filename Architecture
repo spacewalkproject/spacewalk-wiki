@@ -18,4 +18,5 @@ The backend provides a set of APIs that the different client utilities (rhn_regi
 
 
 === Taskomatic ===
-Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the java apps) and runs as a separate daemon.  
+Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the java apps) and runs as a separate daemon.  It's job is to perform tasks that are scheduled to run asynchronously, such as sending out email notifications for new Errata.  
+
