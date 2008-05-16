@@ -1,2 +1,28 @@
-There have been serveral list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features and is the easiest to use of.
+=== List Tag ===
 
+There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features (including filters, pagination, page size selector, csv support), and is the easiest to use.
+
+
+=== Using the new list tag ===
+
+Like any struts page, it consists of 
+
+a) An action
+b) A jsp
+
+The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
+
+== Action side ==
+
+
+== jsp side ==
+
+
+
+== filters == 
+
+== alpha bar ==
+
+== csv export ==
+
+== page size widget == 
