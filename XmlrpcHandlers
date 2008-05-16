@@ -2,7 +2,8 @@
 Beacon exports a significant chunk of operations through its xmlrpc API... This page is intended to get you up and running with sample client scripts, and implement a sample xmlrpc call in one of the handlers. To find the list of supported API calls goto http://<satetllite host>/rhn/rpc/api.
 
 
-==== Using the API====
+== Using the API ==
+
  Suppose the organization administrator of an organization wants to obtain a list of user in his/her organization, the org admin would typically generate a client script like this in python and run.
 {{{
 #!/usr/bin/env python
@@ -21,7 +22,8 @@ key = client.auth.login(login, password)
 print client.user.list_users(key)
 }}}
 
-==== Parts of the server side making up the call ====
+== Parts of the server side making up the call ==
+
 Lets trace through the example call client.user.list_users(key). There are 2 parts to this call,
 client.user = user is the xmlrpc name space and list_users(key) = the method called in the name space. In the case of a bug in this call you would, 
 
