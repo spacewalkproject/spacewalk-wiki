@@ -57,7 +57,7 @@ You need to put the Oracle clients on your path.
  export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin/
 }}}
 
-You also need to configure the tns names entry for your database:
+You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}:
 {{{
  XE =
     (DESCRIPTION =
