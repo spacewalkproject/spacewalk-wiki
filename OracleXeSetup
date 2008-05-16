@@ -49,6 +49,7 @@ Login to the webui and configure a user:
  * Confirm password: '''beacon'''
  * Give beacon all system privileges (check All)
  * click Create button
+That's it, proceed with client setup.
 
 == setup client ==
 You need to put the Oracle clients on your path.
