@@ -70,6 +70,25 @@ You also need to configure the tns names entry for your database. Place the foll
     )
 }}}
 
+Test your connection with sqlplus:
+{{{
+sqlplus beacon/beacon@xe
+}}}
+
+If '''beacon''' user was properly setup you should see a '''Connected to:''' message:
+
+{{{
+SQL*Plus: Release 10.2.0.1.0 - Production on Sat May 17 10:52:56 2008
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+
+SQL>
+}}}
+
 == setup schema ==
 {{{
  cd $SVNDIR/eng/schema
