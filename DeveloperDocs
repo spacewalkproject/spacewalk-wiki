@@ -3,14 +3,21 @@
 This section contains information about developer topics.  You may also be interested in [UserDocs User Documentation] and [DownloadIt downloads].
 
    * [wiki:Architecture] -- a quick overview of the various components in Beacon
-   * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
-   * BranchSystem -- how branches are organized in the git repo.
-   * RoadMap -- future plans for future releases
-   * HowToTest -- how to test your changes
-   * CodingConventions -- coding style and conventions used in the project
    * TracingaPage -- Follow code flow from the webUI down to the DB layer
-   * UnitTests -- how to run them
+   * DBSchema -- Database schema
+   * PythonDocumentation -- Documentation of python code
+   * JavaDoc -- Documentation of Java code
+
+   * RoadMap -- future plans for future releases
+   * BranchSystem -- how branches are organized in the git repo.
+
+   * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
+   * CodingConventions -- coding style and conventions used in the project
    * NavigationSystem -- understand our own home grown navigation system used throughout the app
    * XmlrpcHandlers -- understand how to deal with XMLRPC handlers
    * ListTag - used for creating lists within the java pages
+
+   * UnitTests -- how to run them
+   * HowToTest -- how to test your changes
+
     ...
