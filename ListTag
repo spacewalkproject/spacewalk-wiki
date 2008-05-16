@@ -20,6 +20,30 @@ The action may be responsible for retrieving/manipulating data and attaching dat
 
 
 == filters == 
+Every List in the new List Tag can have a filter. Here is how you declare what filter you are using...
+{{{
+	<rl:list dataset="pageList"
+                      name="files"
+                     filter="com.redhat.rhn.frontend.action.configuration.sdc.ViewModifyPathsFilter">
+}}}
+
+For each list you want to have a filter, you must implement your own filter class, ViewModifyPathsFilter in this example.  To do that simply implement com.redhat.rhn.frontend.taglibs.list.ListFilter and implement your own proccessMap() method.  Here is an example:
+
+
+{{{
+    public void processMap(Map map, Locale userLocale) {
+        LocalizationService ls = 
+            LocalizationService.getInstance();
+        String label = ls.getMessage("sdc.config.file_list.name",
+                userLocale);
+        map.put(label, "path");
+}
+}}}
+
+Here "sdc.config.file_list.name" is the label for the field that is being filtered upon.  We are inserting the name of the field within the dto that we are filtering on.  So here, the filter would call getPath() on each object in the page list and filter upon that.
+
+Another good exmaple is UserListFilter.java.
+
 
 == alpha bar ==
 To add the alpha bar simply add
