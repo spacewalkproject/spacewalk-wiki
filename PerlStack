@@ -1,5 +1,5 @@
 
-==PXT==
+== PXT ==
 ----------------------
 
   
@@ -29,7 +29,7 @@ clients or other forms of automation will be much easier, as the code
 to handle both the HTML display and the XML response can be shared.
 This simplifies interfaces and increases code reuse.
 
-====Sample .pxt file====
+=== Sample .pxt file ===
 
 	Here's a simple PXT file (foo.pxt):
 
@@ -46,13 +46,12 @@ This simplifies interfaces and increases code reuse.
 	</html>
 
 
-III.  Legal <pxt:XXX/> Directives
+=== Valid PXT Directives ===
 
 1. <pxt:use module="Foo"/> (synonymous with <pxt:use class="Foo"/>)
 
-This basically is registering a perl module that, for the rest of the
-document, will be either watching for tags to replace (like
-<body_tag>), awaiting callbacks, or awaiting XML-RPC/SOAP calls.  For
+The above registers a perl module that will watch for tags to replace (e.g.
+<body_tag>), execute callbacks, or handle XML-RPC/SOAP calls.  For
 our example, let's say that the HTML output after foo.pxt processes
 is:
 
@@ -64,7 +63,7 @@ is:
 	  </body>
 	</html>
 	
-The perl module (known as a "Sniglet" by the RHN Web Team) registered
+The perl module (known as a "Sniglet" by the Satellite Web Team) registered
 the <body_tag> tag in the following subroutine (in ColorSniglet.pm):
 
 	sub register_tags {
@@ -101,14 +100,11 @@ maintainability.  Here is the source for the body_tag subroutine:
 $ret is going to be the replacement value for everything between the 
 <my_tag></my_tag> tags, inclusive.  Note that as a point of style,
 no HTML exists in the perl module.  Use subtags (things within {}'s)
-appropriately so that the separation between presentation and data
+appropriately so that the separation between presentation and logic
 remains clear.
 
 If two Perl modules register the same tag, the first one registered
-"wins" and determines what handles the tag.  It is either a feature or
-a bug that PXT doesn't warn about such clashes; we haven't decided
-yet.  In general, do not rely on this feature.  If you have two of the
-same tags registered, be sure they both reference the same function.
+"wins" and determines what handles the tag. 
 
 2. <pxt:include file="Foo.pxt"/>  or  <pxt:include file="Foo.html"/>
 
@@ -125,20 +121,19 @@ In the url http://www.foo.com/index.pxt?foobar=1 "<pxt:formvar>
 {formvar:foobar}</pxt:formvar>" is automatically replaced with "1" by
 PXT.
 
-4. <pxt:comment> blah blah blah </pxt:comment>
+4. <pxt:comment> yada yada </pxt:comment>
 
-Your basic comment.  Anything begin the start and end tags will be utterly
+Your basic comment.  Anything between the start and end tags will be utterly
 ignored by PXT, including valid PXT tags.  This is different from an
 HTML comment which, while not affecting the rendering of a page, is
 still visible in the source of the page.  pxt:comments are filtered
 out before serving.
 
-
-IV. Tag and Callback Handlers
+=== Tag and Callback Handlers ===
 
 Typical form interaction on the web usually falls into a simple
 pattern: display form, process results, display results.  PXT
-accomodates this model through the use of tags and callbacks.
+accommodates this model through the use of tags and callbacks.
 
 As discussed earlier, tags can create arbitrary HTML output.  This
 obviously includes form elements, such as <INPUT TYPE=TEXT> and so
@@ -180,12 +175,11 @@ message queues.  This is necessary when you wish to display a message
 outside of a block inside of the tag handler that might generate the
 tag).
 
-That's all well and good, but what happens when the user hits the
-submit button?  The next phase is called a trap or callback, which
-corresponds to the "process results" stage.  This is where you would
-do things like: verify username and password; update a database
+The next phase is called a trap or callback, which
+corresponds to the "process results" stage.  This phase would
+handle events such as: verify username and password; update a database
 record; load more database records to display.  In other words, this
-is the place you put your code that handles various input form
+is the place you place your code that handles various input form
 variables and decides what to do with them.  In the above example, you
 would use the USERNAME and PASSWORD form variables to either log a
 user in or present them with an error.
@@ -204,30 +198,26 @@ perform some kind of search, or any number of things.  Once it is
 done, the callback can either simply return, which then tells PXT to
 go ahead and render the page loaded, or it can issue a redirect, so
 that the user is sent to a different page (for instance, the page that
-shows that you have succesfully logged in, or the page that will
+shows that you have successfully logged in, or the page that will
 display search results).  Use of redirection depends largely on the
 ACTION= attribute of the form itself.  Typically, leaving ACTION=
 blank and issuing a redirect to wherever a request should go is what
 seems to work well, but there is no clear best practice in this case.
 
 PXT itself decides whether or not to execute a callback based on a
-simple test.  If there is a formvariable named pxt:trap, and if a .pxt
+simple test.  If there is a form variable named pxt:trap, and if a .pxt
 file has registered a callback whose name is the contents of that form
 variable, then it executes it.  Otherwise it completely ignores it.
-That means IT IS VERY IMPORTANT TO HAVE A FORM'S ACTION HANDLER POINT
-TO A .PXT THAT REGISTERS THE CALLBACK YOU WISH TO USE.  Otherwise, it
+Its very important to have a form's action handler point to a pxt that registers the callback you wish to use. Otherwise, it
 will silently ignore you.  This is typically why I choose to have
 ACTION= point back to the same page.  Also note that having one
 Sniglet point to a callback in another is bad practice, in that it
 creates possibly tangled dependencies.  It should be avoided when
-possible, and documented clearly when it is necessitated.
+possible, and documented clearly when it is necessary. 
 
-TODO:  note how to pull out tag attributes as params in the tag
-handler
+Tag handler can also have a priority. Lower numbers execute 1st and negative #'s are
+legal.  
 
-TODO:  explain tag priorities/order.  basically, you can give a tag
-handler function a priority (lower #'s execute 1st, negative #'s are
-legal).  
   # order of 2 means it happens later than something of order < 2...  if you 
   # don't specify order, it defaults to 0.
   # negative orders are legal.
