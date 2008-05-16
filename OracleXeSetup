@@ -1,24 +1,24 @@
 = Oracle 10g Express Edition Setup =
 == Limitations ==
-* 1GB memory (max)
-* 4GB disk space (max)
-* one database (max)
+ * 1GB memory (max)
+ * 4GB disk space (max)
+ * one database (max)
 
 == install ==
 
 [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Download Oracle XE]
 
-* download oracle-xe-10.2.0-1.0.i386.rpm
-* download oracle-xe-client-10.2.1-1.0.i386.rpm
+ * download oracle-xe-10.2.0-1.0.i386.rpm
+ * download oracle-xe-client-10.2.1-1.0.i386.rpm
 
 === Letting yum resolve deps ===
 nogpgcheck is required because the oracle rpms are not signed.
-* sudo yum install --nogpgcheck oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+ * sudo yum install --nogpgcheck oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
 
 === manually ===
 
-* sudo yum install libaio
-* sudo rpm -Uvh oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+ * sudo yum install libaio
+ * sudo rpm -Uvh oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
 
 
 == setup server ==
@@ -39,17 +39,16 @@ Here are some sane values:
 }}}
 
 Login to the webui and configure a user:
-* browse to http://127.0.0.1:9000/apex
-* login: sys
-* click Administration
-* click Database Users
-* click "Create >" button
-* username: '''beacon'''
-* password: '''beacon'''
-* Confirm password: '''beacon'''
-* Give beacon all system privileges (check All)
-* click Create button
-
+ * browse to http://127.0.0.1:9000/apex
+ * login: sys
+ * click Administration
+ * click Database Users
+ * click "Create >" button
+ * username: '''beacon'''
+ * password: '''beacon'''
+ * Confirm password: '''beacon'''
+ * Give beacon all system privileges (check All)
+ * click Create button
 
 == setup client ==
 You need to put the Oracle clients on your path.
