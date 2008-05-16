@@ -1,0 +1,81 @@
+= Oracle 10g Express Edition Setup =
+== Limitations ==
+* 1GB memory (max)
+* 4GB disk space (max)
+* one database (max)
+
+== install ==
+[http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Download Oracle XE]
+
+* download oracle-xe-10.2.0-1.0.i386.rpm
+* download oracle-xe-client-10.2.1-1.0.i386.rpm
+
+=== Letting yum resolve deps ===
+nogpgcheck is required because the oracle rpms are not signed.
+* sudo yum install --nogpgcheck oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+
+=== manually ===
+
+* sudo yum install libaio
+* sudo rpm -Uvh oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+
+
+== setup server ==
+Configure the Oracle XE database
+
+
+{{{
+ sudo /etc/init.d/oracle-xe configure
+}}}
+
+
+Here are some sane values:
+{{{
+ HTTP port: 9000 (8080 is tomcat)
+ listener port: 1521
+ password:dog8code for SYS/SYSTEM
+ have oracle start at boot: y
+}}}
+
+Login to the webui and configure a user:
+* browse to http://127.0.0.1:9000/apex
+* login: sys
+* click Administration
+* click Database Users
+* click "Create >" button
+* username: '''beacon'''
+* password: '''beacon'''
+* Confirm password: '''beacon'''
+* Give beacon all system privileges (check All)
+* click Create button
+
+
+== setup client ==
+You need to put the Oracle clients on your path.
+{{{
+ export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin/
+}}}
+
+You also need to configure the tns names entry for your database:
+{{{
+ XE =
+    (DESCRIPTION =
+       (ADDRESS_LIST =
+          (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+       )
+       (CONNECT_DATA =
+          (SERVICE_NAME = xe)
+       )
+    )
+}}}
+
+== setup schema ==
+{{{
+ cd $SVNDIR/eng/schema
+ make satellite-clean satellite-release TBS=USERS SQLUSER=beacon/beacon@xe
+}}}
+
+== misc links ==
+[http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide]
+
+[http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian]
