@@ -1,0 +1,16 @@
+
+Beacon exports a significant chunk of operations through its xmlrpc API... This page is intended to get you up and running with sample client scripts, and implement a sample xmlrpc call in one of the handlers. Suppose the organization administrator of an organization wants to obtain a list of user in his/her organization, the org admin would typically generate a client script like this in python and run.
+{{{
+#!/usr/bin/env python
+import xmlrpclib
+SATELLITE_HOST = "<your satellite address>"
+SATELLITE_URL = "http://%s/rpc/api" % SATELLITE_HOST
+login = "admin"
+password = "password"
+
+#connect to the server
+client = xmlrpclib.Server(SATELLITE_URL, verbose=0)
+key = client.auth.login(login, password)
+client.user.list_users(key)
+
+}}}
