@@ -42,7 +42,7 @@ For a very simple list with non-selectable objects all you need is this:
     }
 }}}
 
-result is the actual list of objects we want to display.  We associate this to the request, along with the parent url and bind the list's elaborator to the request.  The elaborator is used to reduce the amount of information that is queried initially.  So for example, on the users list we only need the System Name initially.  You can decide what systems will appear on the page with only that one piece of info.  Then after the list is trimmed down to only what is displayed (The 20 out of 100 for example), we then elaborate the ones that will be displayed.  The elaboration is simply another query that gets run populating extra information.  
+"result" is the actual list of objects we want to display.  We associate this to the request, along with the parent url and bind the list's elaborator to the request.  The elaborator is used to reduce the amount of information that is queried initially.  So for example, on the Systems list we only need the System Name initially.  You can decide what systems will appear on the page with only that one piece of info.  Then after the list is trimmed down to only what is displayed (The 20 out of 100 for example), we then elaborate the ones that will be displayed.  The elaboration is simply another query that gets run populating extra information.  
 
 If you would like to add sets to the mix, it takes a bit more code.  Have a set associated with a list allows the user to perform some action on a selected group of items from the list.  
 
