@@ -25,7 +25,7 @@ The action may be responsible for retrieving/manipulating data and attaching dat
 To add the alpha bar simply add
 
 alphabarcolumn="description" to the rl:list tag.  See here for an example:
-{{ 
+{{{ 
 <rl:listset name="keySet"> 
     
    <rl:list dataset="pageList"
@@ -39,15 +39,15 @@ alphabarcolumn="description" to the rl:list tag.  See here for an example:
         
       </rl:list>
 </rl:listset>
-}}
+}}}
 
 == csv export ==
 To add CSV support to a page add the below tag to the jsp.
-{{
+{{{
 <rl:csv dataset="pageList"
     name="userList" 
     exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
-}}
+}}}
 "pageList" is the name of the 'List'
 
 "userList" should match the name given to the <rl:list> this works with. This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
