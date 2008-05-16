@@ -46,6 +46,47 @@ result is the actual list of objects we want to display.  We associate this to t
 
 If you would like to add sets to the mix, it takes a bit more code.  Have a set associated with a list allows the user to perform some action on a selected group of items from the list.  
 
+
+{{{
+        RhnSet set =  getSetDecl().get(user);
+        if (!requestContext.isSubmitted()) {
+            set.clear();
+            RhnSetManager.store(set);
+        }
+        
+}}}
+This gets the set and if we are just arriving to the page we clear it.  Generally you want to clear a list if we are just arriving to it.  If the user navigates away from a page and then back, generally we expect that they are starting the current operation from scratch.  One exception to this is the System List page, it is never cleared.
+
+
+{{{
+       RhnListSetHelper helper = new RhnListSetHelper(request);
+        if (ListTagHelper.getListAction("groupList", request) != null) {
+            helper.execute(set, "groupList", result);
+        }
+}}}
+We check and see if a list action (select all, unselect all, etc) has been performed and if it has, we execute that command.
+
+
+{{{
+        if (!set.isEmpty()) {
+            helper.syncSelections(set, result);
+            ListTagHelper.setSelectedAmount("result", set.size(), request);            
+        }
+}}}
+If the set is not empty, we sync the set with the objects in the list.  That the jsp knows if they are selected or not and can put a check in the checkbox.  We also set the amount so we can display "# Selected" in the top right.
+
+
+{{{
+    protected RhnSetDecl getSetDecl() {
+        return RhnSetDecl.SYSTEM_GROUPS;
+    }
+}}}
+Here we are just providing an easy generic way to get the name of the set we are using.
+
+
+Here is the complete example:
+
+
 {{{
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
@@ -85,6 +126,10 @@ If you would like to add sets to the mix, it takes a bit more code.  Have a set 
     }
 
 }}}
+
+
+
+
 
 == jsp side ==
 
