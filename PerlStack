@@ -224,18 +224,18 @@ legal.
   $pxt->register_tag('some_tag' => \&some_tag_handler, 2);
 
 
-V. PXT::Request object
+=== PXT::Request object ===
 
-Every tag, callback handler, XMLRPC handler, and SOAP handler recieves
-a PXT::Request object (in RHN code, it's usually the $pxt thingy).  This
+Every tag, callback handler, XMLRPC handler, and SOAP handler receives
+a PXT::Request object (in Satellite code, it's usually the $pxt variable).  This
 $pxt object is the first parameter passed to the handling function.
 
 The $pxt object is the only way a given tag handler, callback handler,
 xmlrpc handler, or any other kind of handler can interact with the web
 server or user.  The $pxt object is where you get information about
-the user who is logged in, any session data, formvariables, cookies,
-pnotes, etc.  It is absolutely verboten to directly speak with the
-Apache->request module in a Sniglet.  All interaction MUST go through
+the user who is logged in, any session data, form variables, cookies,
+pnotes, etc.  It is absolutely discouraged to directly speak with the
+mod_perl Apache->request module in a Sniglet.  All interaction MUST go through
 the $pxt object.
 
 Since the $pxt object is the chief method of interacting with the
@@ -249,19 +249,13 @@ they provided.  Others alter the current state: redirect, for
 instance, pnotes, push_message.  Some are shortcuts:
 prefill_form_values, message_tag_handler.  However, all revolve around
 the same axiom: if you need to know something about the HTTP request,
-the user, or the server, use $pxt.  It is your connection to
+the user, or the server, use the $pxt object.  It is your connection to
 everything that involves HTTP and the web server.
 
-
-VI.  Redirect and Form Handling
-
-TODO:  Explain this more fully.
-
-
-VII. Adding <pxt:XXX/> Directives
+=== Adding pxt Directives ===
 
 When the httpd/mod_perl gets a request for a .pxt file, it's sent to
-the PXT::ApacheHandler->handler function. It sets up all utility data
+the PXT::ApacheHandler->handler function. All utility data
 objects, registers tag handlers and callbacks, does any redirect
 voodoo necessary, and also initiates the actual parsing/replacement of
 the tags.  Adding any <pxt:XXX/> directives will require full
@@ -269,20 +263,17 @@ comprehension of the flow of execution from
 PXT::ApacheHandler->handler down.
 
 
+==  PXT <--> Satellite ==
 
-Section 2:  PXT <--> RHN interaction
-  (or, how to build a database website with PXT...)
------------------------------------------------------
+=== Overview ===
 
-I.  Intro
-
-Creating a website to talk to RHN using PXT involves a number of points of
+Creating a website to talk to Satellite using PXT involves a number of points of
 understanding.  You need to first understand how PXT interact with sniglets,
 and then understand how to leverage the RHN::XXXX and RHN::DB::XXXX classes
 from within your sniglets.  Then add to the list session management, and 
 authentication issues.
 
-TODO:  Clean this piece of introduction up.
+TODO:  make this pretty
 
 Visually:
 
@@ -304,33 +295,23 @@ Specifically, a Sniglet handler doesn't talk to DBI; an RHN:: object
 doesn't talk to DBI; RHN:: doesn't speak HTML.  
 
 
-II.  Sniglets and PXT
+===  Sniglets and PXT ===
 
-Sniglets are what the RHN Web team calls the lovely little perl modules that
-register tag handlers, callback handlers and the like.  Building a web 
-application primarily will involve writing .pxt files containing html and 
+Sniglets are what the Satellite team calls the perl modules that
+register tag handlers and callback handlers. Building a web 
+application primarily will involve writing pxt files containing html and 
 PXT tags, as well as writing the sniglets that handle said PXT tags.
 
-For the RedHat Network, we've created a group of classes that contain the
+For Satellite, we've created a group of classes that contain the
 business logic, as well as the necessary knowledge about the database. 
 The RHN::XXXX modules are the hooks to build websites upon.  Nearly every
-RHN::XXXX module has a corresponding RHN::DB::XXXX module that is very
-chummy with our Oracle database.
+RHN::XXXX module has a corresponding RHN::DB::XXXX module that communicates with the DB.
 
-If you're going to be making a website that ties into RHN, your sniglets will
-be making copious use of the RHN::XXXX modules.  Occaisionally, the RHN::XXXX
-functions will return an RHN::DB::XXXX object that you can use.  More on this
-later.
+If you're going to be making a website that ties into Satellite, your sniglets will
+be making use of the RHN::XXXX modules.  Occasionally, the RHN::XXXX
+functions will return an RHN::DB::XXXX object that you can use.  
 
-
-III.  RHN::DB <--> RHN interaction
-
-TODO:  Talk about "the man behind the curtain" stuff.  Basically, our reasons
-for organizing things this way, as well as the automagic accessor generation,
-and creation/update/commit stuff.
-
-
-V. Sessions in PXT 
+=== PXT Sessions ===
 
 Included as a part of PXT is session handling, and is made available in
 the following manner:
@@ -339,13 +320,12 @@ $session = $pxt->session();
 
 The $session object itself is defined in RHN::Session, not under PXT::*
 The session object in PXT is created at the initialization phase of the
-request. Before we delve into more detail about the methods availble for
-use in a session:
+request. 
 
 A session is a place to store permanent data
 A session is *not* a place to store transient data
 
-"Why," you ask?  Because RHN::Session utilizes a database, and there are
+RHN::Session utilizes a database, and there are
 better places than a db to store transient data. 
 
 Session data for a visitor is stored in key/value fashion, with the 
@@ -363,21 +343,15 @@ In order to access session information during a request:
 	$visits = $session->get('visits'); 
 	print "You have visited $visits pages for this session";
 
-Notice that you do not need to check for the existance of a session,
+Notice that you do not need to check for the existence of a session,
 because every user is given a session at the initialization phase. Also,
 note that a users uid is retrieved directly from the following session
-method (Ie *not* from $session->get): 
+method and not from $session->get: 
 
 	$session = $pxt->session();
   	$userid = $session->uid;
 
-
-V.  Pnotes in PXT
-
-TODO:  explain how they're useful; contrast to sessions
-
-
-VI.  The RHN::User Object in PXT
+=== RHN::User Object in PXT ==
 
 As a convenience you can access RHN::User via an accessor method in PXT. Note
 that unlike sessions, an RHN::User object is not created during initialization
@@ -392,14 +366,8 @@ $pxt->clear_user();
 
 
 
-VII. XML-RPC and PXT 
-
-- Otherwise known as - "The kitchen sink, -- how much stuff can we cram in?"
-
-You may be wondering "Why are you talking about XML-RPC? This is a templating
-solution."  And in many ways you would be right, except, that PXT changes the
-'paradigm' [sorry] on how many XML-RPC servers work.  In the CURRENT MOD_PERL
-WORLD, the httpd.conf controls what directories are "XML-RPC listeners".
+=== XML-RPC and PXT ===
+in mod_perl the httpd.conf controls what directories are "XML-RPC listeners".
 These listeners correspond to an XML-RPC handler (which is nothing more than a
 wrapper around Frontier::RPC2) and a server file.  There can only be one
 server file per directory.  Listeners can branch out and obtain routines from
@@ -412,7 +380,7 @@ PXT works a little differently.  Instead of registering directories or special
 filetypes, PXT uses the exact filenames that you would be talking to via a web
 browser.  
 
-Let me say that again a little differently..
+For example, 
 
 "http://localhost/foo/product_list.pxt" and via a web browser could, say bring
 up a list of products on a nice html page... (maybe some buttons to some links
@@ -428,5 +396,3 @@ The PXT would inherit a few functions from PXT itself... All describing
 methods about the functions that have been registered...
 
 methods.list - returns a list of documentation on the above two functions 
-
-1. PXT - XML-RPC Example -- "message of the day"
