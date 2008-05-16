@@ -3,6 +3,8 @@
 There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features (including filters, pagination, page size selector, csv support), and is the easiest to use.
 
 
+
+
 === Using the new list tag ===
 
 Like any struts page, it consists of 
@@ -12,8 +14,77 @@ b) A jsp
 
 The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
 
+
+It's been a common trend in RHN code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the new List Tag. The New List Tag can readily use any DTO or beanified object/value holders. Infact one of the primary motivations of the new List Tag was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
+
+
 == Action side ==
 
+For a very simple list with non-selectable objects all you need is this:
+
+{{{
+
+    public ActionForward execute(ActionMapping mapping,
+            ActionForm formIn,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+
+        RequestContext requestContext = new RequestContext(request);
+        User user =  requestContext.getLoggedInUser();
+
+        DataResult result = SystemManager.groupList(user, null);        
+        request.setAttribute(ListTagHelper.PARENT_URL, request.getRequestURI());
+        request.setAttribute("pageList", result);
+        TagHelper.bindElaboratorTo("groupList", result.getElaborator(), request);
+
+
+        return mapping.findForward("default");
+    }
+}}}
+
+result is the actual list of objects we want to display.  We associate this to the request, along with the parent url and bind the list's elaborator to the request.  The elaborator is used to reduce the amount of information that is queried initially.  So for example, on the users list we only need the System Name initially.  You can decide what systems will appear on the page with only that one piece of info.  Then after the list is trimmed down to only what is displayed (The 20 out of 100 for example), we then elaborate the ones that will be displayed.  The elaboration is simply another query that gets run populating extra information.  
+
+If you would like to add sets to the mix, it takes a bit more code.  Have a set associated with a list allows the user to perform some action on a selected group of items from the list.  
+
+{{{
+    public ActionForward execute(ActionMapping mapping,
+            ActionForm formIn,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+
+        RequestContext requestContext = new RequestContext(request);
+        User user =  requestContext.getLoggedInUser();
+
+
+        DataResult result = SystemManager.groupList(user, null);        
+        request.setAttribute(ListTagHelper.PARENT_URL, request.getRequestURI());
+        request.setAttribute("pageList", result);
+        ListTagHelper.bindSetDeclTo("groupList", getSetDecl(), request);
+        TagHelper.bindElaboratorTo("groupList", result.getElaborator(), request);
+        
+        RhnSet set =  getSetDecl().get(user);
+        if (!requestContext.isSubmitted()) {
+            set.clear();
+            RhnSetManager.store(set);
+        }
+        
+        RhnListSetHelper helper = new RhnListSetHelper(request);
+        if (ListTagHelper.getListAction("groupList", request) != null) {
+            helper.execute(set, "groupList", result);
+        }
+        if (!set.isEmpty()) {
+            helper.syncSelections(set, result);
+            ListTagHelper.setSelectedAmount("result", set.size(), request);            
+        }
+       
+        return mapping.findForward("default");
+    }
+    
+    protected RhnSetDecl getSetDecl() {
+        return RhnSetDecl.SYSTEM_GROUPS;
+    }
+
+}}}
 
 == jsp side ==
 
