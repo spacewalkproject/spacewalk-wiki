@@ -24,5 +24,25 @@ The action may be responsible for retrieving/manipulating data and attaching dat
 == alpha bar ==
 
 == csv export ==
+To add CSV support to a page add the below tag to the jsp.
+
+<rl:csv dataset="pageList"
+    name="userList" 
+    exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
+
+"pageList" is the name of the 'List'
+
+"userList" should match the name given to the <rl:list> this works with. This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
+
+exportColumns is a comma separated string of attributes you want to export.
+
+
+Note: The CSV is handled by it's own Action, CSVDownloadAction, all data is passed to it in Session context. 
+
 
 == page size widget == 
+To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do page, simply use the PageSizeDecorator:
+{{{
+<rl:decorator name="PageSizeDecorator"/>
+}}}
+Feel free to look in system_listdisplay.jspf for an example of usage. 
