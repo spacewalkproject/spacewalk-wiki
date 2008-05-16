@@ -18,6 +18,7 @@ This section contains information about developer topics.  You may also be inter
     * NavigationSystem -- understand our own home grown navigation system used throughout the app
     * XmlrpcHandlers -- understand how to deal with XMLRPC handlers
     * ListTag - used for creating lists within the java pages   
+    * PerlStack - understand how the pxt layer communicates with the perl modules and mod_perl
 
    * Testing
     * UnitTests -- how to run them
