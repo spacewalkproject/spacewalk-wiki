@@ -1,5 +1,5 @@
 
-== Backend Architecture: ==
+== Python Backend Architecture: ==
 
 If you examine the backend source code comprising all of RHN Satellite you will see it split up into 2 major areas:
 
