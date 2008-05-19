@@ -1,8 +1,6 @@
 This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
 code for the Beacon backend.
 
-The following rules are dully observed by the aforementioned SOB:
-
 1. Line wrapping
 
    One shall not wrap up lines just becase we need to make the text
