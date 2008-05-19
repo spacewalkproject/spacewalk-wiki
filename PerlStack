@@ -123,8 +123,7 @@ not necessarily registered when the pxt:include tag is expanded.
 
 3. {{{<pxt:formvar>{formvar:foobar}</pxt:formvar>}}}
 
-In the url http://www.foo.com/index.pxt?foobar=1 "<pxt:formvar>
-{formvar:foobar}</pxt:formvar>" is automatically replaced with "1" by
+In the url {{{http://www.foo.com/index.pxt?foobar=1}}} {{{"<pxt:formvar>{formvar:foobar}</pxt:formvar>"}}} is automatically replaced with "1" by
 PXT.
 
 4. <pxt:comment> yada yada </pxt:comment>
