@@ -328,9 +328,9 @@ public class Foo {
 Any of the following conditions should be taken as indication that a
 class/method should be refactored:
  
- * Source files with a length greater than 2500 lines.
- * Methods with a length greater than 150 lines.
- * Methods taking more than 12 parameters.
+ * Source files with a length greater than '''2500''' lines.
+ * Methods with a length greater than '''150''' lines.
+ * Methods taking more than '''12''' parameters.
     
 == Exception handling ==
 Avoid catching Throwable or Exception and catch specific exceptions instead.
