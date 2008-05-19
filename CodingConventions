@@ -8,8 +8,7 @@ writing Java code for the RHN projects.  Everything not specifically
 addressed by this document should follow the official [http://java.sun.com/docs/codeconv/ Code Conventions for the Java Programming Language].
 
 Conventions specific to RHN have been primarily drawn from the
-conventions imposed by the various sub-projects of the Apache Jakarta 
-Project, or have been invented to accommodate matters of internal style and 
+conventions imposed by the various sub-projects of the [http://jakarta.apache.org/ Apache Jakarta Project], or have been invented to accommodate matters of internal style and 
 practicality. To help people conform to the document conventions, we have
 integrated checkstyle (http://checkstyle.sourceforge.net/") into our build
 tree.  Make sure you run "ant checkstyle" before checking in code.  Failing
@@ -25,6 +24,7 @@ o  Brackets
 All left brackets should be the end of the line
 and all right brackets should be alone on the line.
 
+{{{
 // Correct
 public class SomeClass {
     public void someMethod() {
@@ -44,8 +44,8 @@ public class SomeClass {
         }
     }
 }
-
-
+}}}
+{{{
 // Incorrect
 public class SomeClass {
     public void someMethod()
@@ -64,7 +64,7 @@ public class SomeClass {
         }
     }
 }
-
+}}}
 Brackets are mandatory even for single line statements!
 
 // Correct
