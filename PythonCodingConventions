@@ -68,11 +68,8 @@ The following rules are dully observed by the aforementioned SOB:
 
 5. Internal functions
 
-   Internal functions in the code (usually denoted by a _ or by a __
-   prefix) are a cool thing when they are not abused. Having an
-   internal function that is two lines long and is called from a
-   single place in the whole code base does nothing but complicate the
-   whole code base and makes it harder to follow.
+   Internal functions in the code (usually denoted by a {{{_}}} or by a {{{__}}} prefix) are a cool thing when they are not abused. Having an
+   internal function that is two lines long and is called from a single place in the whole code base does nothing but complicate the whole code base and makes it harder to follow.
 
 6. The % operator on long lines
 
