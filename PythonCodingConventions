@@ -17,8 +17,8 @@ code for the Beacon backend.
    what they are for. Please try to match the field names most likely
    found in the SQL queries that make use of those variables. So
    please use system_id, not systemId, org_id, not orgId and so forth.
-   Regarding function names, studly caps suck. I personally favor
-   some_other_function instead of someOtherFunction. It is easier to
+   Regarding function names, studly caps '''suck'''. I personally favor
+   {{{some_other_function}}} instead of {{{someOtherFunction}}}. It is easier to
    read/spot/grep/parse whatever. Yeah, it is C style and again, there
    is a reason why C coding style has been around for so long...
 
@@ -27,7 +27,7 @@ code for the Beacon backend.
    Comments should precede a function definition, not show up after a
    function definition. Some have qualified this mode as "stinking C
    style" comments, which are not up to par with the Python way of
-   doing things. I could give a shit less about the Python way of
+   doing things. I could care less about the Python way of
    commenting the code. It has been proven again and again that
    placing a comment and announcing what you are about to do before
    the code that actually does it makes the code easier to parse and
@@ -49,16 +49,16 @@ code for the Beacon backend.
 
 4. Classes and inheritance
 
-   Please don't build up classes and inherit them form where you think
+   Please don't build up classes and inherit from them where you think
    that it may produce more readable code without considering the
    consequences of overloading classes with members that really have
    nothing to do with the base class. A classic example is having
    methods in a server object designed to solve a dependency, or
    extract a package path. Neither of these functions need anything
    from the base server object to function completely. Even though it
-   is easier to be able to call server.solve_dep in some piece of code
-   when we already have the server object, this throughly confuses the
-   meaning of a server object and make updating the base class a whole
+   is easier to be able to call {{{server.solve_dep}}} in some piece of code
+   when we already have the server object, this thoroughly confuses the
+   meaning of a server object and makes updating the base class a whole
    lot harder because of all these hidden dependencies and reliance on
    unspecified behavior of the base class. Think it through, sometimes
    it makes a whole lot more sense to have an extra module that deals
