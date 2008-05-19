@@ -19,7 +19,7 @@ The checkstyle configuration file (java/buildconf/checkstyle.xml) is our
 definitive style guide source.  The conventions here should be putting
 those conventions into english and for things checkstyle can't check.
 
- * Brackets
+== Brackets ==
 
  All left brackets should be the end of the line and all right brackets should be alone on the line.
 
@@ -79,7 +79,7 @@ those conventions into english and for things checkstyle can't check.
      // some code
  }}}
 
- * EOL
+== EOL ==
 
  [Note:  This requirement can probably be removed now, because we can rely on Subversion to do this for us]
 
@@ -88,99 +88,103 @@ those conventions into english and for things checkstyle can't check.
  appropriate for its target platform (i.e. a .bat file should use a DOS
  text file format).  
 
- * Directories
+== Directories ==
 
  Files and Directories should be named such that no case-insensitive duplications occur (i.e.  don't create a directory named "build" in a directory where a file named "BUILD" exists).
 
- * Naming
+== Naming ==
 
  The following conventions are meant to further refine the conventions described by section 9 Sun's code conventions, found at
  [http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html#367]
 
-    * Packages -
+ * Packages 
     All in house packages should be a subpackage of "com.redhat.rhn"
     Example: package com.redhat.rhn.common
 
-    * Classes -
+ * Classes
     Use of '_' in classnames should be avoided but is not strictly 
     prohibited.  An appropriate use of '_' in a class name would be
     to separate multiple back-to-back acronyms (after seriously considering
     whether the chosen classname is appropriate).
     Example:  class SSL_RPCSocket
 
-  * Interfaces -
+ * Interfaces
     Interface names should follow the conventions for class names. They should
     *NOT* be prefixed with an I such as IUser.
     Example:  interface SSL_RPCService
 
-  * Methods -
+ * Methods
     The use of '_' should be avoided in method names.
 
-Variables -
+ * Variables
     The use of '_' should be avoided in variable names.
 
-Constants - 
+ * Constants
     The names of constants should not include a leading '_'.
 
-o  Whitespace
--------------
-    - Tab characters are not allowed in source code.
-    - No space should appear after the right parenthesis for typecasts
+== Whitespace ==
+ * Tab characters are not allowed in source code.
+ * No space should appear after the right parenthesis for typecasts
+    {{{
+    #!java
+    // Correct
+    String myString = (String)list.get(1);
 
-// Correct
-String myString = (String)list.get(1);
+    // Incorrect
+    String myString = (String) list.get(1);
+    }}}
+    
+ * Whitespace should appear between the following tokens and their subsequent open parenthesis: assert, catch, for, if, synchronized, switch, while (in accordance with section 8.2 of Sun's code conventions.   [http://java.sun.com/docs/codeconv/html/CodeConventions.doc7.html#682]
 
-// Incorrect
-String myString = (String) list.get(1);
+    {{{
+    #!java
+    // Correct
+    while (this == that) {
+        ...
+    }
+    
+    // Incorrect
+    while(this == that) {
+         ^
+    }
+    }}}
 
-    - Whitespace should appear between the following tokens and their 
-    subsequent open parenthesis: assert, catch, for, if, synchronized, 
-    switch, while (in accordance with section 8.2 of Sun's code conventions.
-    "http://java.sun.com/docs/codeconv/html/CodeConventions.doc7.html#682"
+ * The preference is to use a single space rather than a tab to separate the type and the identifier for variable declarations.
+   Note: This is '''contrary''' to section 6.1 of Sun's code conventions. [http://java.sun.com/docs/codeconv/html/CodeConventions.doc5.html#2991]
 
-// Correct
-while (this == that) {
-    ...
-}
+    {{{
+    #!java
+    // Correct
+    BigDecimal myNumber
+    int level;
 
-// Incorrect
-while(this == that) {
-     ^
-}
-    - The preference is to use a single space rather than a tab to seperate 
-    the type and the identifier for variable declarations.
-    Note: This is *contrary* to section 6.1 of Sun's code conventions.
-    "http://java.sun.com/docs/codeconv/html/CodeConventions.doc5.html#2991"
+    // Incorrect
+    BigDecimal   myNumber;
+    int          level;
+    }}}
+  
+== Indentations ==
+Indentation should be four spaces - '''not''' tabs.
 
-// Correct
-BigDecimal myNumber
-int level;
-
-// Incorrect
-BigDecimal   myNumber;
-int          level;
-      
-o  Indentations
----------------
-Indentation should be four spaces - not tabs.
-
-For emacs users, the following will produce four space indenets
-rather than tabs:
+For emacs users, the following will produce four space indents rather than tabs:
+{{{
     (setq-default tab-width 4 indent-tabs-mode nil)
+}}}
+
 Vim users can add the following to their .vimrc
+{{{
     set ts=4
     set expandtab
+}}}
       
-o  Line length
---------------
-Avoid lines longer than 95 characters.  This is contrary to section 4.1
-of Sun's code conventions.
-"http://java.sun.com/docs/codeconv/html/CodeConventions.doc3.html#313",
-Many developers strive to keep to the 80 character limit.
+== Line length ==
 
-o  Comments
------------
-Javadoc comments SHOULD exist on all non-private methods and fields.
+Avoid lines longer than 92 characters.  This is contrary to section 4.1
+of Sun's code conventions. [http://java.sun.com/docs/codeconv/html/CodeConventions.doc3.html#313].
+While we allow 92 characters, many developers strive to keep to the 80 character limit.
+
+== Comments ==
+Javadoc comments '''SHOULD''' exist on all non-private methods and fields.
 Comments on methods should indicate any assumptions made about the method's
 parameters. Also, if you are working on existing code and the code is missing
 javadoc comments, then you should add comments or call it to the attention of
@@ -193,24 +197,28 @@ comment indicating what work remains, followed by the developer's account
 name and a date. Elaborate with further comments interspersed in the code as
 necessary.
 
+{{{
+#!java
 /**
  * ...
  * @todo Figure out how best to handle IOException here (kdykeman - 2003/10/08)
  */
+}}}
  
 Please refer to 
-"http://java.sun.com/j2se/javadoc/writingdoccomments/index.html"
+[http://java.sun.com/j2se/javadoc/writingdoccomments/index.html]
 if you are unfamiliar with Javadoc.
 
 Note that while javadocs are encouraged for test classes where
 appropriate, checkstyle does not require javadoc comments for test
 classes.
 
-o  License
-----------
+== License ==
 The following license message should be placed at the top of each
 RHN generated source file:
 
+{{{
+#!java
 /**
  * Copyright (c) 2004-2006 Red Hat, Inc.
  * All Rights Reserved.
@@ -221,20 +229,20 @@ RHN generated source file:
  * accordance with the terms of the license agreement you entered into
  * with Red Hat.
  */
+}}}
 
-o  Versioning
--------------
-All .java files should have a @version Javadoc tag like the one
-below.
-
+== Versioning ==
+All .java files should have a @version Javadoc tag like the one below.
+{{{
 @version $Revision: 1.2 $
+}}}
 
-o  Qualified imports
---------------------
+== Qualified imports ==
 All import statements should contain the full class name of classes to 
 import and should not use the "*" notation (Eclipse can help do this quickly):
 An example:
-
+{{{
+#!java
 // Correct
 import java.net.HttpURLConnection;
 import java.util.Date;
@@ -242,16 +250,17 @@ import java.util.Date;
 // Incorrect
 import java.util.*;
 import java.net.*;
+}}}
 
-o  Logging
-----------
-Do not use System.out or System.err to log.  Instead, use the 
-log4j API, 
-"http://logging.apache.org/log4j/1.2/index.html",
+== Logging ==
+Do not use System.out or System.err to log, instead, use the 
+[http://logging.apache.org/log4j/1.2/index.html log4j] API.
 Check the logging level prior to logging messages with a level more 
 detailed than warn to avoid unnecessary String object creation and 
 concatenations.  For example:
 
+{{{
+#!java
 private static final Logger log = Logger.getLogger(MyClass.class);
 
 public void someMethod() {
@@ -262,62 +271,49 @@ public void someMethod() {
     ...
     log.error("something went wrong");
 }
+}}}
 
 Furthermore, care should be taken to log messages at an appropriate level
 for the information they present (keeping in mind that the default log
 level is INFO).
 
-    trace
+    trace::
     designates finest-grained informational events that highlight the
-    stepwise progress of the application
+    stepwise progress of the application.[[BR]]
     "Entering method foo"
     
-    debug
+    debug::
     designates fine-grained informational events that are most useful
-    for debugging an application.
+    for debugging an application.[[BR]]
     "Item 'bar' removed from cache."
     
-    info
+    info::
     designates informational messages that highlight the progress of
-    the application at coarse-grained level.
-    "The service started successfully"
+    the application at coarse-grained level.[[BR]]
+    ''"The service started successfully"''
     
-    warn
-    designates potentially harmful situations.
-    "Property value not set, using default value"
+    warn::
+    designates potentially harmful situations.[[BR]]
+    ''"Property value not set, using default value"''
     
-    error
+    error::
     designates error events that might still allow the application to
-    continue running.
-    "Failed to contact server, next attempt in 30 seconds."
+    continue running.[[BR]]
+    ''"Failed to contact server, next attempt in 30 seconds."''
 
-    fatal
+    fatal::
     designates very severe error events that will presumably lead the
-    application to abort.
-    "SLL certificate not found on startup."
+    application to abort.[[BR]]
+    ''"SLL certificate not found on startup."''
 
-
-o  Inline Conditionals
----------------------
-Avoid using inline conditionals
-String a = getParameter("a");
-
-// Correct
-String b = null;
-if ((a != null) &amp;&amp; (a.length &gt; 0)) {
-    b = a.substring(1);
-}
-
-// Incorrect
-String b = (a==null || a.length &lt;1) ? null : a.substring(1);
-
-o  Hidden Fields
-----------------
+== Hidden Fields ==
 Parameter names for a method should not shadow fields defined in the same
 class.  Shadowing a field leads to situations that can result in
 inadvertently using the wrong variable.  Below is a contrived example of
 shadowing and the problems that it can introduce:
 
+{{{
+#!java
 public class Foo {
     private String myString = "bar";
 
@@ -326,18 +322,17 @@ public class Foo {
         myString = myString + "baz";  // Oops!
     }
 }
+}}}
 
-o  File and Method lengths
---------------------------
+== File and Method lengths ==
 Any of the following conditions should be taken as indication that a
 class/method should be refactored:
  
-    Source files with a length greater than 2500 lines.
-    Methods with a length greater than 150 lines.
-    Methods taking more than 12 parameters.
+ * Source files with a length greater than 2500 lines.
+ * Methods with a length greater than 150 lines.
+ * Methods taking more than 12 parameters.
     
-o  Exception handling
----------------------
+== Exception handling ==
 Avoid catching Throwable or Exception and catch specific exceptions instead.
 
 If an exception is caught and rethrown as a different exception type, the new
@@ -355,10 +350,12 @@ logged message will not contain the valuable stack trace information, it will
 just contain the results of calling toString() on the exception.
 
 The following is an example of how to properly log a "handled" exception:
-
+{{{
+#!java
 try {
     doSomethingRisky();
 }
 catch (RiskyException re) {
     log.error("risky failed", re);
 }
+}}}
