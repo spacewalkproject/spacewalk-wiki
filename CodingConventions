@@ -19,104 +19,101 @@ The checkstyle configuration file (java/buildconf/checkstyle.xml) is our
 definitive style guide source.  The conventions here should be putting
 those conventions into english and for things checkstyle can't check.
 
-o  Brackets
------------
-All left brackets should be the end of the line
-and all right brackets should be alone on the line.
+ * Brackets
 
-{{{
-// Correct
-public class SomeClass {
-    public void someMethod() {
-        if (...) {
-            try {
-                // do something
-            }
-            catch (IOException ioe) {
-                // handle exception
-            }
-            catch (SecurityException se) {
-                // handle exception
-            }
-        }
-        else if (...) {
-            // do something else.
-        }
-    }
-}
-}}}
-{{{
-// Incorrect
-public class SomeClass {
-    public void someMethod()
-    {
-        if (...)
-        {
-            try {
-                // do something
-            } catch (IOException ioe) {
-                // handle exception
-            } catch (SecurityException se) {
-                // handle exception
-            }
-        } else if (...) {
-            // do something else.
-        }
-    }
-}
-}}}
-Brackets are mandatory even for single line statements!
+ All left brackets should be the end of the line and all right brackets should be alone on the line.
 
-// Correct
-if (expression) {
-    // some code
-}
+ {{{
+ #!java
+ // Correct
+ public class SomeClass {
+     public void someMethod() {
+         if (...) {
+             try {
+                 // do something
+             }
+             catch (IOException ioe) {
+                 // handle exception
+             }
+             catch (SecurityException se) {
+                 // handle exception
+             }
+         }
+         else if (...) {
+             // do something else.
+         }
+     }
+ }
+ }}}
+ {{{
+ #!java
+ // Incorrect
+ public class SomeClass {
+     public void someMethod()
+     {
+         if (...)
+         {
+             try {
+                 // do something
+             } catch (IOException ioe) {
+                 // handle exception
+             } catch (SecurityException se) {
+                 // handle exception
+             }
+         } else if (...) {
+             // do something else.
+         }
+     }
+ }
+ }}}
 
-// Incorrect
-if (expression)
-    // some code
+ Brackets are mandatory even for single line statements!
+ {{{
+ #!java
+ // Correct
+ if (expression) {
+     // some code
+ }
+ // Incorrect
+ if (expression)
+     // some code
+ }}}
 
-o  EOL
-------
+ * EOL
 
-[Note:  This requirement can probably be removed now, because we can rely
-on Subversion to do this for us]
+ [Note:  This requirement can probably be removed now, because we can rely on Subversion to do this for us]
 
-All .java source files should use the Unix text file format 
-(e.g. Unix-style EOLs).  Any platform specific files should have a file format
-appropriate for its target platform (i.e. a .bat file should use a DOS
-text file format).  
+ All .java source files should use the Unix text file format 
+ (e.g. Unix-style EOLs).  Any platform specific files should have a file format
+ appropriate for its target platform (i.e. a .bat file should use a DOS
+ text file format).  
 
+ * Directories
 
-o  Directories
---------------
-Files and Directories should be named such that no case-insensitive
-duplications occur (i.e.  don't create a directory named "build" in a
-directory where a file named "BUILD" exists).
+ Files and Directories should be named such that no case-insensitive duplications occur (i.e.  don't create a directory named "build" in a directory where a file named "BUILD" exists).
 
-o  Naming
----------
-The following conventions are meant to further refine the conventions
-described by section 9 Sun's code conventions, found at
-"http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html#367"
+ * Naming
 
-Packages -
+ The following conventions are meant to further refine the conventions described by section 9 Sun's code conventions, found at
+ [http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html#367]
+
+    * Packages -
     All in house packages should be a subpackage of "com.redhat.rhn"
     Example: package com.redhat.rhn.common
 
-Classes -
+    * Classes -
     Use of '_' in classnames should be avoided but is not strictly 
     prohibited.  An appropriate use of '_' in a class name would be
     to separate multiple back-to-back acronyms (after seriously considering
     whether the chosen classname is appropriate).
     Example:  class SSL_RPCSocket
 
-Interfaces -
+  * Interfaces -
     Interface names should follow the conventions for class names. They should
     *NOT* be prefixed with an I such as IUser.
     Example:  interface SSL_RPCService
 
-Methods -
+  * Methods -
     The use of '_' should be avoided in method names.
 
 Variables -
