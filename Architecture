@@ -7,20 +7,20 @@ Project Architecture
 
 The WebUI originally consisted entirely of perl running through apache.  Several years ago a Java migration was started and most of the commonly used features of the app have been ported.  Generally the perl pages are only modified to fix bugs or add very small features.  Any new development is now done in Java.  
 
-On the Java side we use [http://struts.apache.org/ Apache Struts] as our web framework and Hibernate and DataSource (own home grown ORM solution) for database interaction.
+On the Java side we use [http://struts.apache.org/ Apache Struts] as our web framework and [http://hibernate.org/ Hibernate] and DataSource (own home grown ORM solution) for database interaction.
 
 
 
 === Frontend Api ===
-The frontend Api is written completely in Java and runs in Tomcat within the webapp.  Because of this, the manager layer is shared between the two.  This interface is intended to be used by scripts and other programs to provide interoperability with satellite or to simply help automate tasks.  The goal here is to at least allow everything that can be done within the UI to be done in through this api.  Docs are provided on the url /rhn/apidoc/index.jsp .
+The frontend api is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat] within the webapp.  Because of this, the manager layer is shared between the two.  This interface is intended to be used by scripts and other programs to provide interoperability with satellite or to simply help automate tasks.  The goal here is to at least allow everything that can be done within the UI to be done in through this api.  Docs are provided on the url /rhn/apidoc/index.jsp .
 
 
 === Backend === 
-The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilites.
+The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities.
 
 
 === Taskomatic ===
-Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the Java apps) and runs as a separate daemon.  It's job is to perform tasks that are scheduled to run asynchronously, such as sending out email notifications for new Errata.  
+Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the Java apps) and runs as a separate daemon.  It's job is to perform tasks that are scheduled to run asynchronously, such as sending out email notifications for new errata.  
 
 === Search Server ===
 The Search Server is a standalone daemon that is fairly new to the project.  It is written in Java and utilizes Apache's [http://lucene.apache.org/ Lucene] search technology.  
