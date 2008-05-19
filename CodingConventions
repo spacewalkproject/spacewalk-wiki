@@ -10,7 +10,7 @@ addressed by this document should follow the official [http://java.sun.com/docs/
 Conventions specific to Beacon have been primarily drawn from the
 conventions imposed by the various sub-projects of the [http://jakarta.apache.org/ Apache Jakarta Project], or have been invented to accommodate matters of internal style and 
 practicality. To help people conform to the document conventions, we have
-integrated checkstyle (http://checkstyle.sourceforge.net/") into our build
+integrated [http://checkstyle.sourceforge.net/ checkstyle] into our build
 tree.  Make sure you run "ant checkstyle" before checking in code.  Failing
 checkstyle will cause our integration build system to complain about broken
 builds.
