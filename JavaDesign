@@ -31,7 +31,7 @@ tasks.  For example, displaying a list of data is done through a taglib.
 
 Our web services UI is implemented using a combination of [http://xmlrpc.sourceforge.net/ Redstone XML-RPC] and
 Axis SOAP.  Both of these tools are abstracted out to the point that if the
-web services implementer extends the (((BaseHandler}}} class the APIs will be 
+web services implementer extends the {{{BaseHandler}}} class the APIs will be 
 available through XML-RPC.
 
 = Business logic =
