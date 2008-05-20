@@ -9,8 +9,8 @@ There have been several list tag implementations throughout the history of the p
 
 Like any struts page, it consists of 
 
-a) An action
-b) A jsp
+ a) An action
+ b) A jsp
 
 The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
 
@@ -25,7 +25,7 @@ It's been a common trend in RHN code to use Data Transfer Objects (DTO) to hold 
 For a very simple list with non-selectable objects all you need is this:
 
 {{{
-
+#!java
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
             HttpServletRequest request,
@@ -51,6 +51,7 @@ If you would like to add sets to the mix, it takes a bit more code.  Have a set 
 
 
 {{{
+#!java
         RhnSet set =  getSetDecl().get(user);
         if (!requestContext.isSubmitted()) {
             set.clear();
@@ -62,6 +63,7 @@ This gets the set and if we are just arriving to the page we clear it.  Generall
 
 
 {{{
+#!java
        RhnListSetHelper helper = new RhnListSetHelper(request);
         if (ListTagHelper.getListAction("groupList", request) != null) {
             helper.execute(set, "groupList", result);
@@ -71,6 +73,7 @@ We check and see if a list action (select all, unselect all, etc) has been perfo
 
 
 {{{
+#!java
         if (!set.isEmpty()) {
             helper.syncSelections(set, result);
             ListTagHelper.setSelectedAmount("result", set.size(), request);            
@@ -80,6 +83,7 @@ If the set is not empty, we sync the set with the objects in the list.  That the
 
 
 {{{
+#!java
     protected RhnSetDecl getSetDecl() {
         return RhnSetDecl.SYSTEM_GROUPS;
     }
@@ -91,6 +95,7 @@ Here is the complete example:
 
 
 {{{
+#!java
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
             HttpServletRequest request,
@@ -137,7 +142,7 @@ Here is the complete example:
 == jsp side ==
 Here is an example of a complete jsp showing a very simple list with only one column (name):
 {{{
-
+#!text/html
 <%@ taglib uri="http://rhn.redhat.com/rhn" prefix="rhn" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html" %>
@@ -192,6 +197,7 @@ Here is an example of a complete jsp showing a very simple list with only one co
 == filters == 
 Every List in the new List Tag can have a filter. Here is how you declare what filter you are using...
 {{{
+#!text/html
 	<rl:list dataset="pageList"
                       name="files"
                      filter="com.redhat.rhn.frontend.action.configuration.sdc.ViewModifyPathsFilter">
@@ -201,6 +207,7 @@ For each list you want to have a filter, you must implement your own filter clas
 
 
 {{{
+#!java
     public void processMap(Map map, Locale userLocale) {
         LocalizationService ls = 
             LocalizationService.getInstance();
@@ -220,6 +227,7 @@ To add the alpha bar simply add
 
 alphabarcolumn="description" to the rl:list tag.  See here for an example:
 {{{ 
+#!text/html
 <rl:listset name="keySet"> 
     
    <rl:list dataset="pageList"
@@ -238,6 +246,7 @@ alphabarcolumn="description" to the rl:list tag.  See here for an example:
 == csv export ==
 To add CSV support to a page add the below tag to the jsp.
 {{{
+#!text/html
 <rl:csv dataset="pageList"
     name="userList" 
     exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
@@ -255,6 +264,7 @@ Note: The CSV is handled by it's own Action, CSVDownloadAction, all data is pass
 == page size widget == 
 To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do page, simply use the PageSizeDecorator:
 {{{
+#!text/html
 <rl:decorator name="PageSizeDecorator"/>
 }}}
 Feel free to look in system_listdisplay.jspf for an example of usage. 
