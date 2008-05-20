@@ -32,7 +32,7 @@ tasks.  For example, displaying a list of data is done through a taglib.
 Our web services UI is implemented using a combination of [http://xmlrpc.sourceforge.net/ Redstone XML-RPC] and
 Axis SOAP.  Both of these tools are abstracted out to the point that if the
 web services implementer extends the (((BaseHandler}}} class the APIs will be 
-available through XMLRPC.
+available through XML-RPC.
 
 = Business logic =
 Our business logic tier is implemented as a set of static methods, which
@@ -80,7 +80,7 @@ didn't allow.
 
 = Security =
 Security in the Java code is done completely differently from how it is done
-in the perl code.  Instead of doing security based on formvar name or XMLRPC
+in the perl code.  Instead of doing security based on formvar name or XML-RPC
 parameter name, all of the security checks are done in code.  This is not done
 by adding if checks throughout the Java code.  Rather, those if statements are
 added in very few, very strategic locations, such as loading a System or
@@ -115,7 +115,7 @@ grained security, we have a couple of options.
 1)  Add a writable flag to all of our domain objects, and have the lookup
 method be responsible for setting that flag.  If writable is false, then the
 commit code (1 method) can throw a permission exception.[[BR]][[BR]]
-2)  Extend the sql queries for lookup something up and add a flag that
+2)  Extend the SQL queries for lookup something up and add a flag that
 indicates why you are looking up an object.  For example, if you are looking
 up an object for display purposes, you call lookupByIdReadOnly, which just
 checks for the read-only security level and returns a read-only object.
@@ -130,7 +130,7 @@ happen on the group, but the group's security will be the union of the
 security for the group members.
 
 = Server integration =
-Our codebase runs on Tomcat and integrates with Apache through mod_jk.  While
+Our code base runs on Tomcat and integrates with Apache through mod_jk.  While
 we could have used mod_proxy to integrate with Apache, it removed a lot of
 flexibility that we had with mod_jk,  For example, the ability to have multiple
 Tomcat instances attached to a single Apache box.  The complete explanation
