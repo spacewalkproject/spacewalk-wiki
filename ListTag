@@ -9,7 +9,7 @@ There have been several list tag implementations throughout the history of the p
 
 Like any struts page, it consists of 
 
- a) An action
+ a) An action[[BR]]
  b) A jsp
 
 The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
