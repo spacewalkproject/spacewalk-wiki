@@ -33,7 +33,7 @@ Alternatively, methods can be specified in [http://en.wikipedia.org/wiki/CamelCa
 In the case of a bug in this call you would, 
 
  * look at /eng/java/code/src/com/redhat/rhn/frontend/xmlrpc/handler-manifest.xml to figure out the class handling the "user" name space {{{<template name="user" classname="com.redhat.rhn.frontend.xmlrpc.user.UserHandler" />}}}
- * look "listUsers(String sessionKey)" method in  /eng/java/code/src/com/redhat/rhn/frontend/xmlrpc/user/UserHandler.java and trace the bug from there
+ * look {{{listUsers(String sessionKey)}}} method in /eng/java/code/src/com/redhat/rhn/frontend/xmlrpc/user/UserHandler.java and trace the bug from there
 
 
 
