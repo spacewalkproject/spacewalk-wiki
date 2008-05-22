@@ -9,8 +9,10 @@ The web UI, which until recently consisted entirely of perl running through an [
 
 For a more in depth explanation of the Java side, check out the [JavaDesign Java design doc]. Also, look at [PerlStack perl design doc] for more information on the perl side of the application.
 
-=== Frontend Api ===
-The frontend api is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat] within the webapp.  Because of this, the manager layer is shared between the two.  This interface is intended to be used by scripts and other programs to provide interoperability with satellite or to simply help automate tasks.  The goal here is to at least allow everything that can be done within the UI to be done in through this api.  Docs are provided on the url /rhn/apidoc/index.jsp .
+=== Frontend API ===
+One of the most sought after features of Spacewalk has been its XML-RPC API. Many users want to write automated scripts to perform repetitive tasks, usually tasks that are available via the web UI. While a web UI is useful for performing a few tasks on either one or more servers, sometimes, there is no replacement for a good script.
+
+The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat], in conjunction with web UI, within the web application. Because of this, the [JavaDesign#Businesslogic manager layer] is shared between them. The API documentation can be found on your installation of Spacewalk [http://localhost/rhn/apidoc/index.jsp /rhn/apidoc/index.jsp] or here {{{PUT LINK TO APIDOCS HERE}}}.
 
 
 === Backend === 
