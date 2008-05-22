@@ -1,4 +1,6 @@
 = Coding Conventions =
+In general we try to follow the defined coding conventions, but there are probably cases where we didn't.
+
 [JavaCodingConventions Java coding style]
 
 [PythonCodingConventions Python coding style]
