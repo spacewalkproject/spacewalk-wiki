@@ -20,7 +20,7 @@ The backend provides a set of APIs that the different client utilities (rhn_regi
 
 
 === Taskomatic ===
-Taskomatic is written in Java (being able to take advantage of the same manager layer as the rest of the Java apps) and runs as a separate daemon.  It's job is to perform tasks that are scheduled to run asynchronously, such as sending out email notifications for new errata.  
+Taskomatic is a daemon whose job is to perform long running tasks that are scheduled to run asynchronously, such as clean up the sessions table, or send out email notifications for new errata. Taskomatic is written in Java which allows it to take advantage of the same [JavaDesign#Businesslogic manager layer] as the rest of the Java tier. It runs as a daemon with the help from [http://wrapper.tanukisoftware.org/doc/english/download.jsp tanukiwrapper].
 
 === Search Server ===
 The Search Server is a standalone daemon that is fairly new to the project.  It is written in Java and utilizes Apache's [http://lucene.apache.org/ Lucene] search technology.  
