@@ -1,6 +1,15 @@
-== Beacon ==
+== Spacewalk ==
 
-Beacon is ____ (fill in description)
+Spacewalk is an open source Linux and Solaris systems management solution.  It allows you to:
+
+* Inventory your systems (hardware and software information)
+* Install and update software on your systems
+* Collect and distribute your custom software packages into manageable groups
+* Provision (Kickstart) your systems
+* Manage and deploy configuration files to your systems
+* Monitor your systems
+* Provision virtual guests
+* Start/stop/configure virtual guests
 
 == Content ==
 
@@ -20,9 +29,9 @@ Beacon is ____ (fill in description)
 
 There are several ways to get in touch with beacon developers and users:
 
-    * User list:  beacon-list@redhat.com
-    * Developer list: beacon-devel@redhat.com
-    * IRC, #beacon on irc.freenode.net
+    * User list:  spacewalk-list@redhat.com
+    * Developer list: spacewalk-devel@redhat.com
+    * IRC, #spacewalk on irc.freenode.net
 
 == Need To Edit This Wiki or File a Bug/RFE? ==
 
