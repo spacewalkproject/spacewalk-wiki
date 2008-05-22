@@ -12,7 +12,7 @@ This section contains information about developer topics.  You may also be inter
     * JavaDesign -- design of the Java webui
 
    * Implementation Docs
-    * TracingaPage -- Follow code flow from the webUI down to the DB layer
+    * [TracingaPage Tracing a page] -- Follow code flow from the webUI down to the DB layer
     * DBSchema -- Database schema
     * PythonDocumentation -- Documentation of python code
     * JavaDoc -- Documentation of Java code
