@@ -28,3 +28,8 @@ Satellite currently uses many stored procedures, which again will need to be com
   * Should these be pushed into application code instead when possible?
 1. Fix failing queries.
   * Probably will involve datasource modifications to support multiple versions of queries depending on the database backend.
+
+= Links =
+
+* http://www.pgadmin.org/ Interesting looking tool for managing postgresql. Looks like it may also support some Oracle migration features?
+* http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html Some notes on migrating Oracle PL/SQL to PL/pgSQL.
