@@ -14,20 +14,20 @@ Spacewalk is an open source Linux and Solaris systems management solution.  It a
 == Content ==
 
 [UserDocs User Documentation]
-    * In this section of the Wiki, learn more about how to set up and use Beacon
+    * In this section of the Wiki, learn more about how to set up and use Spacewalk
 
 [DeveloperDocs Developer Documentation]
-    * Learn how to work on and build Beacon, and how Beacon is put together.
+    * Learn how to work on and build Spacewalk, and how Spacewalk is put together.
 
 [DownloadIt Downloads]
     * Find out how to check out the source code and get RPM releases.
 
 [TheRoadmap Roadmap]
-    * What are the plans for the future of Beacon?
+    * What are the plans for the future of Spacewalk?
 
 == Communication ==
 
-There are several ways to get in touch with beacon developers and users:
+There are several ways to get in touch with Spacewalk developers and users:
 
     * User list:  spacewalk-list@redhat.com
     * Developer list: spacewalk-devel@redhat.com
