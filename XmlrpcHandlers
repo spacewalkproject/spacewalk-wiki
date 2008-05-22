@@ -1,4 +1,4 @@
-
+= XML-RPC Handlers =
 Spacewalk exports a significant chunk of operations through its xmlrpc API... This page is intended to get you up and running with sample client scripts, and implement a sample xmlrpc call in one of the handlers. To find the list of supported API calls goto http://<satetllite host>/rhn/rpc/api.
 
 
