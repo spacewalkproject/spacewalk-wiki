@@ -9,7 +9,7 @@ of the Struts Action class.  The business logic layer is implemented using
 the Session bean facade model, although we don't use session beans.  All
 entries into the business logic layer happens through our Manager classes, 
 which are implemented as a set of static methods.  The Persistence layer
-is implemented using Hibernate, a replacement for entity beans, and all 
+is implemented using [http://hibernate.org/ Hibernate], a replacement for entity beans, and all 
 entry points to the Persistence layer extend the {{{HibernateFactory}}} class.
 
 = The UI =
