@@ -7,10 +7,7 @@ Spacewalk consists of several languages and has a classic [http://en.wikipedia.o
 === Web UI ===
 The web UI, which until recently consisted entirely of perl running through an [http://httpd.apache.org/ Apache web server], now is a mixture of perl as well as Java technologies. Several years ago, a Java migration was started and most of the commonly used features of the application have been migrated. In general, the perl pages are only modified to fix bugs or to support the new features in the Java side. Any new web UI development is being done in Java.
 
-
-On the Java side we use [http://struts.apache.org/ Apache Struts] as our web framework and [http://hibernate.org/ Hibernate] and DataSource (own home grown ORM solution) for database interaction.
-
-
+For a more in depth explanation of the Java side, check out the [JavaDesign Java design doc]. Also, look at [PerlStack perl design doc] for more information on the perl side of the application.
 
 === Frontend Api ===
 The frontend api is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat] within the webapp.  Because of this, the manager layer is shared between the two.  This interface is intended to be used by scripts and other programs to provide interoperability with satellite or to simply help automate tasks.  The goal here is to at least allow everything that can be done within the UI to be done in through this api.  Docs are provided on the url /rhn/apidoc/index.jsp .
