@@ -44,10 +44,10 @@ Login to the webui and configure a user:
  * click Administration
  * click Database Users
  * click "Create >" button
- * username: '''beacon'''
- * password: '''beacon'''
- * Confirm password: '''beacon'''
- * Give beacon all system privileges (check All)
+ * username: '''spacewalk'''
+ * password: '''spacewalk'''
+ * Confirm password: '''spacewalk'''
+ * Give spacewalk all system privileges (check All)
  * click Create button
 That's it, proceed with client setup.
 
@@ -72,10 +72,10 @@ You also need to configure the tns names entry for your database. Place the foll
 
 Test your connection with sqlplus:
 {{{
-sqlplus beacon/beacon@xe
+sqlplus spacewalk/spacewalk@xe
 }}}
 
-If '''beacon''' user was properly setup you should see a '''Connected to:''' message:
+If '''spacewalk''' user was properly setup you should see a '''Connected to:''' message:
 
 {{{
 SQL*Plus: Release 10.2.0.1.0 - Production on Sat May 17 10:52:56 2008
@@ -92,7 +92,7 @@ SQL>
 == setup schema ==
 {{{
  cd $SVNDIR/eng/schema
- make satellite-clean satellite-release TBS=USERS SQLUSER=beacon/beacon@xe
+ make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe
 }}}
 
 == misc links ==
