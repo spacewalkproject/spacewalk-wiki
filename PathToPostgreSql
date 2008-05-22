@@ -20,16 +20,16 @@ Satellite currently uses many stored procedures, which again will need to be com
 
 = Plan of Attack =
 
-1. Create Satellite tables in Postgresql.
-  * Port Oracle .sql scripts in a new location in git, not yet included in Satellite builds.
-  * Must be careful not to miss any ongoing changes to schema in the primary Oracle scripts.
-1. Document steps to configure Satellite to run against Postgresql.
-1. Start work on porting stored procedures.
-  * Should these be pushed into application code instead when possible?
-1. Fix failing queries.
-  * Probably will involve datasource modifications to support multiple versions of queries depending on the database backend.
+  1. Create Satellite tables in Postgresql.
+    * Port Oracle .sql scripts in a new location in git, not yet included in Satellite builds.
+    * Must be careful not to miss any ongoing changes to schema in the primary Oracle scripts.
+  1. Document steps to configure Satellite to run against Postgresql.
+  1. Start work on porting stored procedures.
+    * Should these be pushed into application code instead when possible?
+  1. Fix failing queries.
+    * Probably will involve datasource modifications to support multiple versions of queries depending on the database backend.
 
 = Links =
 
-* http://www.pgadmin.org/ Interesting looking tool for managing postgresql. Looks like it may also support some Oracle migration features?
-* http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html Some notes on migrating Oracle PL/SQL to PL/pgSQL.
+  * [http://www.pgadmin.org/ pgAdmin]: Interesting looking tool for managing postgresql. Looks like it may also support some Oracle migration features?
+  * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
