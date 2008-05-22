@@ -1,0 +1,30 @@
+Satellite today is Oracle only and unfortunately this reliance on Oracle runs very deep into the code. 
+
+= Areas to Address =
+
+== Installer ==
+
+Probably one of the smaller and most manageable projects involved, but our installer Perl scripts currently only support Oracle databases. These would require some refactoring to push the Oracle specific setup out into it's own module and thus add support for other database backends. (even if initially, Oracle remains the only option)
+
+== Schema ==
+
+/etc/sysconfig/rhn/universe.satellite.sql (basically all the schema required to create the Satellite database) is ~2M in size. My understanding is that most of this will have to be adjusted for any other databases we wish to support, leading to the unplesant prospect of maintaining multiple copies of the schema creation SQL scripts.
+
+== Queries ==
+
+Reportedly we have some Oracle specific syntax in our many database queries. I suspect this is mostly in the datasource queries and not so much the hibernate queries. Some slight modifications to datasource code should allow us to use the same SQL for queries normally, but fork the query into two versions if necessary. (or we could work on removing the Oracle specific bits altogether)
+
+== Stored Procedure ==
+
+Satellite currently uses many stored procedures, which again will need to be completely ported to the Postgresql syntax. One option we may wish to consider as part of this is to push any of these stored procedures out into application code in the Java layer if it makes sense to do so. If we can reduce the usage of stored procedures to only extremely performance intensive operations (whenever they arise) we'll lighten the workload involved in maintaining multiple database backends.
+
+= Plan of Attack =
+
+1. Create Satellite tables in Postgresql.
+  * Port Oracle .sql scripts in a new location in git, not yet included in Satellite builds.
+  * Must be careful not to miss any ongoing changes to schema in the primary Oracle scripts.
+1. Document steps to configure Satellite to run against Postgresql.
+1. Start work on porting stored procedures.
+  * Should these be pushed into application code instead when possible?
+1. Fix failing queries.
+  * Probably will involve datasource modifications to support multiple versions of queries depending on the database backend.
