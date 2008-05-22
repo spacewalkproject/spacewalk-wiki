@@ -1,11 +1,12 @@
 = Project Architecture =
 
+Spacewalk consists of several languages and has a classic [http://en.wikipedia.org/wiki/Multitier_architecture three-tier architecture]. The presentation tier consists of both a web UI, command line clients, and XML-RPC clients (which can in turn be command line or even full blown web applications). Behind the presentation tier lies the logic tier, which in Spacewalk is spread across the four languages: Java, perl, python, and PL/SQL. While at first one might think "Wow! that's a lot of duplicate code." In reality, there's only a small bit of code that overlaps between the languages, more so between the Java and perl stacks. Finally, the last tier, the data tier, is backed by an [http://www.oracle.com/index.html Oracle] database (at least at the moment, there are [TheRoadmap plans for other databases]).
 
 [[Image(arch.png)]]
 
-=== !WebUi ===
+=== Web UI ===
+The web UI, which until recently consisted entirely of perl running through an [http://httpd.apache.org/ Apache web server], now is a mixture of perl as well as Java technologies. Several years ago, a Java migration was started and most of the commonly used features of the application have been migrated. In general, the perl pages are only modified to fix bugs or to support the new features in the Java side. Any new web UI development is being done in Java.
 
-The WebUI originally consisted entirely of perl running through apache.  Several years ago a Java migration was started and most of the commonly used features of the app have been ported.  Generally the perl pages are only modified to fix bugs or add very small features.  Any new development is now done in Java.  
 
 On the Java side we use [http://struts.apache.org/ Apache Struts] as our web framework and [http://hibernate.org/ Hibernate] and DataSource (own home grown ORM solution) for database interaction.
 
