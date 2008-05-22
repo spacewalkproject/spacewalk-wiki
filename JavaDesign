@@ -68,6 +68,10 @@ its own factory which extends the {{{HibernateFactory}}}.  For example, the User
 object has a {{{UserFactory}}} class which knows how to persist {{{Users}}}, {{{Addresses}}},
 and {{{EmailAddresses}}}.
 
+{{{
+TODO: add note about DataSource
+}}}
+
 = Internationalization/Localization =
 Java is already very strong in i18n/l10n, but we had some requirements that
 Java didn't handle out of the box.  Our resolution for this was to replace
