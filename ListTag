@@ -15,7 +15,7 @@ Like any struts page, it consists of
 The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
 
 
-It's been a common trend in RHN code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the new List Tag. The New List Tag can readily use any DTO or beanified object/value holders. Infact one of the primary motivations of the new List Tag was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
+It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the new List Tag. The New List Tag can readily use any DTO or beanified object/value holders. Infact one of the primary motivations of the new List Tag was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
 
 
 == Action side ==
