@@ -1,5 +1,5 @@
 = XML-RPC Handlers =
-Spacewalk exports a significant chunk of operations through its xmlrpc API... This page is intended to get you up and running with sample client scripts, and implement a sample xmlrpc call in one of the handlers. To find the list of supported API calls goto http://<satetllite host>/rhn/rpc/api.
+Spacewalk exports a significant chunk of operations through its XML-RPC API... This page is intended to get you up and running with sample client scripts, and implement a sample XML-RPC call in one of the handlers. To find the list of supported API calls goto http://<satetllite host>/rhn/rpc/api.
 
 
 == Using the API ==
@@ -25,7 +25,7 @@ print client.user.list_users(key)
 == Parts of the server side making up the call ==
 
 Lets trace through the example call client.user.list_users(key). There are 2 parts to this call,
-client.user = user is the xmlrpc name space and list_users(key) = the method called in the name space. In the case of a bug in this call you would, 
+client.user = user is the XML-RPC name space and list_users(key) = the method called in the name space. In the case of a bug in this call you would, 
 
  * look at /eng/java/code/src/com/redhat/rhn/frontend/xmlrpc/handler-manifest.xml to figure out the class handling the "user" name space {{{<template name="user" classname="com.redhat.rhn.frontend.xmlrpc.user.UserHandler" />}}}
  * look "listUsers(String sessionKey)" method in  /eng/java/code/src/com/redhat/rhn/frontend/xmlrpc/user/UserHandler.java and trace the bug from there
