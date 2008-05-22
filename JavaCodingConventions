@@ -4,10 +4,10 @@
 
 
 This document contains the standard conventions that should be followed when
-writing Java code for the Beacon project.  Everything not specifically
+writing Java code for the Spacewalk project.  Everything not specifically
 addressed by this document should follow the official [http://java.sun.com/docs/codeconv/ Code Conventions for the Java Programming Language].
 
-Conventions specific to Beacon have been primarily drawn from the
+Conventions specific to Spacewalk have been primarily drawn from the
 conventions imposed by the various sub-projects of the [http://jakarta.apache.org/ Apache Jakarta Project], or have been invented to accommodate matters of internal style and 
 practicality. To help people conform to the document conventions, we have
 integrated [http://checkstyle.sourceforge.net/ checkstyle] into our build
@@ -215,7 +215,7 @@ classes.
 
 == License ==
 The following license message should be placed at the top of each
-Beacon generated source file:
+Spacewalk generated source file:
 
 {{{
 #!java
