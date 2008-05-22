@@ -31,5 +31,5 @@ Satellite currently uses many stored procedures, which again will need to be com
 
 = Links =
 
-  * [http://www.pgadmin.org/ pgAdmin]: Interesting looking tool for managing postgresql. Looks like it may also support some Oracle migration features?
+  * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for Postgresql management.
   * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
