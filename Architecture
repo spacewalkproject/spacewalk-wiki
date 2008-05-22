@@ -17,10 +17,13 @@ The frontend API attempts to expose as much of the web UI functionality as possi
 
 === Backend === 
 The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities.
+{{{NEED TO EXPAND THIS SECTION}}}
 
 
 === Taskomatic ===
 Taskomatic is a daemon whose job is to perform long running tasks that are scheduled to run asynchronously, such as clean up the sessions table, or send out email notifications for new errata. Taskomatic is written in Java which allows it to take advantage of the same [JavaDesign#Businesslogic manager layer] as the rest of the Java tier. It runs as a daemon with the help from [http://wrapper.tanukisoftware.org/doc/english/download.jsp tanukiwrapper].
 
-=== Search Server ===
-The Search Server is a standalone daemon that is fairly new to the project.  It is written in Java and utilizes Apache's [http://lucene.apache.org/ Lucene] search technology.  
+=== Search server ===
+One of the most important things of any application which supports large amounts of data is finding that data. Typically, an application will show pages containing lists of items which one must page through to find the item you are looking for. While Spacewalk has the aforementioned page lists, it also has a search feature which allows one to find the system, package or errata quickly as opposed to paging through hundreds of items on a list.
+
+Spacewalk uses a standalone search server that run as a daemon, also with the help of [http://wrapper.tanukisoftware.org/doc/english/download.jsp tanukiwrapper]. The search server is written in Java and utilizes Apache's [http://lucene.apache.org/ Lucene] search engine library. Originally designed to use the database, the search feature works much better with [http://lucene.apache.org/ Lucene] giving it the power of more relevant search results and a richer [http://lucene.apache.org/java/2_3_2/queryparsersyntax.html query language].
