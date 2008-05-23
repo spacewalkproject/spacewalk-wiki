@@ -23,6 +23,7 @@ Satellite currently uses many stored procedures, which again will need to be com
   1. Create Satellite tables in Postgresql.
     * Port Oracle .sql scripts in a new location in git, not yet included in Satellite builds.
     * Must be careful not to miss any ongoing changes to schema in the primary Oracle scripts.
+    * Looks like most of this can be migrated from an existing Oracle db using ora2pg. Resulting output needs only minor edits to function properly.
   1. Document steps to configure Satellite to run against Postgresql.
   1. Start work on porting stored procedures.
     * Should these be pushed into application code instead when possible?
