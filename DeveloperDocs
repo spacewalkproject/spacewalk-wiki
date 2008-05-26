@@ -22,6 +22,7 @@ This section contains information about developer topics.  You may also be inter
     * PerlStack - understand how the pxt layer communicates with the perl modules and mod_perl
     * AclDesign- detailed explanation of ACLs
     * PathToPostgreSql - Don't get excited, this path is very long.
+    * UserPermissions - Discussion around implementing fine grained user permissions.
 
    * Testing
     * UnitTests -- how to run them
