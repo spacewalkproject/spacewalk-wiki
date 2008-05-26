@@ -1,0 +1,27 @@
+Today UI and API access is limited though the use of a half-dozen or so pre-defined broad roles, Channel Administrator, Org Administrator, Configuration Administrator, etc. These roles have proven insufficient for many customers and more fine grained control is a frequently requested feature.
+
+Currently this page is just being used for an implementation discussion, but should eventually evolve to be the developer facing documentation on how to understand and use fine grained permissions within the project.
+
+= Proposed Implementation =
+
+(note this just some initial thoughts (dgoodwin), will be doing some research into other projects and perhaps even frameworks although I suspect we'll have to do this in house given the code base we're working with)
+
+ * Define a new table for specific fine grained rights.
+  * Columns:
+   * id - Unique.
+   * label - Unique and hierarchical. Something perhaps like system.canEditChannels, system.canEditProperties.
+   * resource_key - Resource bundle description key.
+ * Allow these specific rights to be associated with users via two means:
+  * Directly associated with user account.
+  * Associated with a "Role" that is in turn, associated to the user account.
+ * Roles would be collections of fine grained rights and could be managed in the UI.
+  * Several would be provided out of the box after a satellite install, but *could* be customized if required.
+  * Admins can create their own roles manually or by copying an existing role as a template.
+ * Users rights is the total collection of all rights they've been given via both means.
+ * Rights are "can do", not "can't do".
+ * Implement means to check for a right(s) before loading pages, rendering links, rendering submit buttons, or executing API calls.
+
+TODO: How do we define multi-org permissions and access rights?
+
+TODO: How to grant specific permissions on specific objects! (i.e. user has rights to do certain things only in a particular org)
+
