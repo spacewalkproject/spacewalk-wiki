@@ -21,7 +21,14 @@ Currently this page is just being used for an implementation discussion, but sho
  * Rights are "can do", not "can't do".
  * Implement means to check for a right(s) before loading pages, rendering links, rendering submit buttons, or executing API calls.
 
-TODO: How do we define multi-org permissions and access rights?
+= Outstanding Questions =
 
-TODO: How to grant specific permissions on specific objects! (i.e. user has rights to do certain things only in a particular org)
+ 1. How do we define multi-org permissions and access rights?
+ 1. How do we grant specific permissions on specific objects? (i.e. user has rights to do certain things only in a particular org)
+ 
+= Existing Solutions =
+
+Projects we may be able to integrate, or at least use concepts from:
+
+ * [http://static.springframework.org/spring-security/site/ Spring Security]
 
