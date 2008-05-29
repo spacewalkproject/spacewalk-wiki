@@ -1,3 +1,4 @@
+= Java Design =
 The Java version of RHN employs a standard three tier web application model
 {{{
     UI   ----    Business logic    ----    Persistence layer
