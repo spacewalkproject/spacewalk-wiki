@@ -1,5 +1,5 @@
 This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
-code for the Beacon backend.
+code for the Spacewalk backend.
 
 1. Line wrapping
 
