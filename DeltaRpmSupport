@@ -13,35 +13,42 @@
 == Common Commands ==
 
 Needed Packages: presto-utils, deltarpm, yum-presto
-
+{{{
 Create a drpm:
-     {{{makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm}}}
-
+     makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm 
+}}}
+{{{
 Create drpms from a full repo:
-	{{{createdeltarpms  ./repo ./repo/DRPMS}}}
-
+	createdeltarpms  ./repo ./repo/DRPMS 
+}}}
+{{{
 Reconstruct original rpm using on disk installation:
- 	{{{applydeltarpm  delta.drpm  new.rpm}}}
-
+ 	applydeltarpm  delta.drpm  new.rpm 
+}}}
+{{{
 Reconstruct original rpm using an old rpm:
- 	{{{applydeltarpm  -r old.rpm  delta.drpm  new.rpm}}}
-
+ 	applydeltarpm  -r old.rpm  delta.drpm  new.rpm 
+}}}
+{{{
 Create a presto repo:
-	{{{createprestorepo ./repo}}}
+	createprestorepo ./repo 
+}}}
+{{{
 Then to finish the deal:
-        {{{ modifyrepo  ./repodata/prestodelta.xml  ./repodata/ }}}
+         modifyrepo  ./repodata/prestodelta.xml  ./repodata/ 
+}}}
 
 
 == The future == 
-
-1. If eng decides to generate drpms
+{{{
+ 1. If eng decides to generate drpms
     a) modify sync to simply pull them down
 
-2. If they don't (or we decide not to use theirs).
+ 2. If they don't (or we decide not to use theirs).
     a) generate them on demand (Similar to lars's script)
         i. Can take upwards of a minute to generate the larger rpms (longer on slower machines)
     b) generate them upon syncing
-
+}}}
 == Custom Channels/Content ==
 
  1.  Allow users to 'push' drpms for their custom content (then we have to manage it).
