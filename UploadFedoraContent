@@ -8,7 +8,8 @@ In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
  - download the Fedora 9 content from your favorite mirror:
    - {{{mkdir Fedora9}}}
    - {{{cd Fedora9}}}
-   - {{{links --dump http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ | awk '{print $2}'  | grep ^http  | grep rpm$ | xargs -n 1 wget}}}
+   - {{{links --dump http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ | awk '{print $2}' \}}}
+     {{{ | grep ^http  | grep rpm$ | xargs -n 1 wget}}}
 
  - once you have the rpms, use rhnpush to push them to the Spacewalk server.
    - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP *.rpm}}}
