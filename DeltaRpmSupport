@@ -30,7 +30,7 @@ Reconstruct original rpm using an old rpm:
  	applydeltarpm  -r old.rpm  delta.drpm  new.rpm 
 }}}
 {{{
-Create a presto repo:
+Create a presto repo (and the prestodelta.xml file):
 	createprestorepo ./repo 
 }}}
 {{{
