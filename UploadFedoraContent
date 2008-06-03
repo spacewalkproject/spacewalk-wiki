@@ -1,0 +1,14 @@
+In order to use Spacewalk, you need to upload content to it. At the moment there is no nice way to sync a yum repo.
+In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
+
+ - create a channel for Fedora 9.
+   - create_channel.py --channel
+   [need an xmlrpc script to create the channel or use screenshots]
+
+ - download the Fedora 9 content from your favorite mirror:
+   - {{{mkdir Fedora9}}}
+   - {{{cd Fedora9}}}
+   - {{{links --dump http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ | awk '{print $2}'  | grep ^http  | grep rpm$ | xargs -n 1 wget}}}
+
+ - once you have the rpms, use rhnpush to push them to the Spacewalk server.
+   - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP *.rpm}}}
