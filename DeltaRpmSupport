@@ -51,5 +51,5 @@ Then to finish the deal:
  
 == My thoughts ==
 
-* I like the idea of delta rpms 'just being there' (i.e. so the user wouldn't have to do anything to get them there).  
-* Since it does require extra cpu and memory resources to rebuild the rpm on each client, it should be an optional on the satellite to provide/build/publish deltarpms.
+ * I like the idea of delta rpms 'just being there' (i.e. so the user wouldn't have to do anything to get them there, or at least wouldn't have to generate them themselves and upload them to the sat).  
+ * Since it does require extra cpu and memory resources to rebuild the rpm on each client, it should be an optional on the satellite to provide/build/publish deltarpms.
