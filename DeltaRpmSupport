@@ -44,9 +44,9 @@ Then to finish the deal:
 
 == Custom Channels/Content ==
 
-1.  Allow users to 'push' drpms for their custom content (then we have to manage it).
-2.  Automatically build them for content users push
-3.  Allow the user to use the system to selectively build drpms for certain packages
+ 1.  Allow users to 'push' drpms for their custom content (then we have to manage it).
+ 2.  Automatically build them for content users push
+ 3.  Allow the user to use the system to selectively build drpms for certain packages
 
  
 == My thoughts ==
