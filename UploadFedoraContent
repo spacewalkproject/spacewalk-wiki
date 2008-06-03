@@ -1,3 +1,4 @@
+= Upload content to Spacewalk =
 In order to use Spacewalk, you need to upload content to it. At the moment there is no nice way to sync a yum repo.
 In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
 
