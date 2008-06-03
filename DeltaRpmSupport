@@ -34,7 +34,7 @@ Create a presto repo:
 	createprestorepo ./repo 
 }}}
 {{{
-Then to finish the deal:
+Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
          modifyrepo  ./repodata/prestodelta.xml  ./repodata/ 
 }}}
 
