@@ -12,6 +12,8 @@
 
 == Common Commands ==
 
+Needed Packages: presto-utils, deltarpm, yum-presto
+
 Create a drpm:
      {{{makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm}}}
 
@@ -30,4 +32,24 @@ Then to finish the deal:
         {{{ modifyrepo  ./repodata/prestodelta.xml  ./repodata/ }}}
 
 
-== Plans of Attack for Implementation == 
+== The future == 
+
+1. If eng decides to generate drpms
+    a) modify sync to simply pull them down
+
+2. If they don't (or we decide not to use theirs).
+    a) generate them on demand (Similar to lars's script)
+        i. Can take upwards of a minute to generate the larger rpms (longer on slower machines)
+    b) generate them upon syncing
+
+== Custom Channels/Content ==
+
+1.  Allow users to 'push' drpms for their custom content (then we have to manage it).
+2.  Automatically build them for content users push
+3.  Allow the user to use the system to selectively build drpms for certain packages
+
+ 
+== My thoughts ==
+
+* I like the idea of delta rpms 'just being there' (i.e. so the user wouldn't have to do anything to get them there).  
+* Since it does require extra cpu and memory resources to rebuild the rpm on each client, it should be an optional on the satellite to provide/build/publish deltarpms.
