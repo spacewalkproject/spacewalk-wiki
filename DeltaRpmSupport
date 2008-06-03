@@ -1,0 +1,31 @@
+= Delta RPMS =
+
+== FAQ ==
+* What is a delta rpm?
+   * It is a collection of the binary diffs between all the individual files of two different versions of the same package with the rpm header of the new package prepended to the file.
+
+* Can rpm work directly with drpms?
+   * No, the full rpm must be recreated before installing.  Rpm itself has no idea what a drpm actually is and will try (and fail) to install it like a normal rpm.
+
+* Can yum work directly with drpms themselves?
+   * No, yum (with the presto yum plugin or a similiar plugin) can only work with drpms if they are in an appropriate repo.  The plugin itself recomposes the rpm into its original form before having yum install it.  
+
+== Common Commands ==
+
+Create a drpm:
+     {{{makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm}}}
+
+Create drpms from a full repo:
+	{{{createdeltarpms  ./repo ./repo/DRPMS}}}
+
+Reconstruct original rpm using on disk installation:
+ 	{{{applydeltarpm  delta.drpm  new.rpm}}}
+
+Reconstruct original rpm using an old rpm:
+ 	{{{applydeltarpm  -r old.rpm  delta.drpm  new.rpm}}}
+
+Create a presto repo:
+	{{{createprestorepo ./repo}}}
+
+
+== Plans of Attack for Implementation == 
