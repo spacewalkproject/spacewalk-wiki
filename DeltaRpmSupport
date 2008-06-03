@@ -26,6 +26,8 @@ Reconstruct original rpm using an old rpm:
 
 Create a presto repo:
 	{{{createprestorepo ./repo}}}
+Then to finish the deal:
+        {{{ modifyrepo  ./repodata/prestodelta.xml  ./repodata/ }}}
 
 
 == Plans of Attack for Implementation == 
