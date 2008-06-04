@@ -11,6 +11,8 @@ Spacewalk is an open source Linux and Solaris systems management solution.  It a
   * Provision virtual guests
   * Start/stop/configure virtual guests
 
+Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ Red Hat Network Satellite]
+
 == Content ==
 
 [UserDocs User Documentation]
