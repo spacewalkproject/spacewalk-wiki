@@ -1,0 +1,23 @@
+= How to install =
+RPM downloads of the project are available through a yum repository
+
+  * add URL here
+
+To use this repository, add a file in yum.repos.d with the following contents:
+
+{{{
+
+FILL IN
+
+}}}
+
+Then just ask yum to install the application.
+
+{{{
+
+yum install spacewalk
+
+}}}
+
+You can also find source RPMs and tarballs at the following URL:
+   * fill in
