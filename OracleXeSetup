@@ -7,8 +7,9 @@
 == install ==
 
 [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Download Oracle XE]
+You will have to create an account to download the rpms.
 
- * download oracle-xe-10.2.0-1.0.i386.rpm
+ * download oracle-xe-10.2.0-1.0.i386.rpm or oracle-xe-univ-10.2.0.1-1.0.i386.rpm
  * download oracle-xe-client-10.2.1-1.0.i386.rpm
 
 === Letting yum resolve deps ===
