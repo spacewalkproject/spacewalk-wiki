@@ -3,8 +3,7 @@ In order to use Spacewalk, you need to upload content to it. At the moment there
 In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
 
  - create a channel for Fedora 9.
-   - create_channel.py --channel
-   [need an xmlrpc script to create the channel or use screenshots]
+   - {{{./create_channel.py --label=fedora-9-i386 --name "Fedora 9 32-bit" --summary "32-bit Fedora 9 channel"}}}
 
  - download the Fedora 9 content from your favorite mirror:
    - {{{mkdir Fedora9}}}
