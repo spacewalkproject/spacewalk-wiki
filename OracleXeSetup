@@ -93,7 +93,7 @@ SQL>
 
 == setup schema ==
 {{{
- cd $SVNDIR/eng/schema
+ cd $GITDIR/eng/schema
  make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe
 }}}
 
