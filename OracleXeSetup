@@ -15,12 +15,12 @@ You may need an account to download the rpms. Seems like a crap shoot to me.
 
 === Letting yum resolve deps ===
 nogpgcheck is required because the oracle rpms are not signed.
- * sudo yum install --nogpgcheck oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+ * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
 
 === manually ===
 
  * sudo yum install libaio
- * sudo rpm -Uvh oracle-xe-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+ * sudo rpm -Uvh oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
 
 
 == setup server ==
