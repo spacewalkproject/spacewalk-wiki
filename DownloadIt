@@ -11,7 +11,7 @@ To checkout the latest version from git...
 {{{
 
 cd ~/
-git clone git://git.fedorahosted.org/git/gitme.git/
+git clone git://git.fedorahosted.org/git/spacewalk.git/
 ...
 
 }}}
@@ -20,7 +20,7 @@ If you have a firewall that is blocking the git clone operation, you can also cl
 
 {{{
 
-git clone http://git.fedorahosted.org/git/gitme.git/
+git clone http://git.fedorahosted.org/git/spacewalk.git/
 
 }}}
 
@@ -122,7 +122,7 @@ In general, we want folks to send patches to the list.  If you have commit acces
 
 {{{
 
-git clone ssh://git.fedorahosted.org/git/gitme.git/
+git clone ssh://git.fedorahosted.org/git/spacewalk.git/
 
 }}}
 
