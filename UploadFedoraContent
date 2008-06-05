@@ -16,7 +16,7 @@ In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
    - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP \}}}
      {{{  --dir=./download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ }}}
 
-= create_channel.py usage =
+= Usage =
 
 {{{
 ./create_channel.py 
