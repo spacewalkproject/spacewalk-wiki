@@ -4,6 +4,7 @@ In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
 
  - create a channel for Fedora 9.
    - {{{./create_channel.py --label=fedora-9-i386 --name "Fedora 9 32-bit" --summary "32-bit Fedora 9 channel"}}}
+     NOTE: assumes localhost and username/password of spacewalk.
 
  - download the Fedora 9 content from your favorite mirror:
    - {{{mkdir Fedora9}}}
@@ -14,3 +15,21 @@ In this example, I'll describe how to upload Fedora 9 content into Spacewalk.
  - once you have the rpms, use rhnpush to push them to the Spacewalk server.
    - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP \}}}
      {{{  --dir=./download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ }}}
+
+= create_channel.py usage =
+
+{{{
+./create_channel.py 
+Usage: create_channel.py [options] --label <channel label> --name <channel name>
+
+Options:
+  -h, --help           show this help message and exit
+  --user=USER          username
+  --password=PASSWORD  password
+  --host=HOST          FQDN of your server
+  --label=LABEL        channel label
+  --name=NAME          channel name
+  --summary=SUMMARY    channel summary
+  --debug              enable debug output
+None
+}}}
