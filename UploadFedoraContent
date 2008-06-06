@@ -36,7 +36,7 @@ None
 
 = Fetching Content Using reposync =
 
-- Yum-utils has a really useful tool called reposync to synchronize packages to a local directory
+  - Yum-utils has a really useful tool called reposync to synchronize packages to a local directory
   {{{ 
     - yum install yum-utils
     - Install the desired repo (fedora)
@@ -67,7 +67,7 @@ None
         ....
 }}}
 
-- once you have the rpms, use rhnpush to push them to the Spacewalk server.
+  - once you have the rpms, use rhnpush to push them to the Spacewalk server.
    - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
 
       
