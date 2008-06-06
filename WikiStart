@@ -13,7 +13,7 @@ Spacewalk is an open source Linux and Solaris systems management solution.  It a
 
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ Red Hat Network Satellite]
 
-Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS.   We are working on getting it packaged
+Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS, Scientific Linux, etc.   We are working on getting it packaged
 for inclusion in Fedora.
 
 == Content ==
