@@ -33,3 +33,42 @@ Options:
   --debug              enable debug output
 None
 }}}
+
+= Fetching Content Using reposync =
+
+- Yum-utils has a really useful tool called reposync to synchronize packages to a local directory
+  {{{ 
+    - yum install yum-utils
+    - Install the desired repo (fedora)
+    - $ head /etc/yum.repos.d/fedora.repo
+        [fedora]
+         name=Fedora $releasever - $basearch
+         baseurl=http://download.fedora.redhat.com/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
+         mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
+         enabled=1
+         gpgcheck=1
+         gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+
+    - $ reposync --repoid=fedora
+       [fedora: 1     of 7390  ] Downloading Fedora/915resolution-0.5.3-1.fc7.i386.rpm
+         915resolution-0.5.3-1.fc7 100% |=========================|  16 kB    00:00     
+       [fedora: 2     of 7390  ] Downloading Fedora/AGReader-1.2-2.fc6.i386.rpm
+         AGReader-1.2-2.fc6.i386.r 100% |=========================|  47 kB    00:00     
+       [fedora: 3     of 7390  ] Downloading Fedora/AllegroOGG-1.0.3-3.fc6.i386.rpm
+         AllegroOGG-1.0.3-3.fc6.i3 100% |=========================|  16 kB    00:00
+       .....
+
+    - Once the above step is done packages should be in the fedora directory
+      $ ls -l fedora/Fedora/
+        total 18936
+        -rw-rw-r-- 1 root root   15960 2007-05-23 10:18 915resolution-0.5.3-1.fc7.i386.rpm
+        -rw-rw-r-- 1 root root   48528 2007-05-23 10:18 AGReader-1.2-2.fc6.i386.rpm
+        -rw-rw-r-- 1 root root   16687 2007-05-23 10:19 AllegroOGG-1.0.3-3.fc6.i386.rpm
+        ....
+}}}
+
+- once you have the rpms, use rhnpush to push them to the Spacewalk server.
+   - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
+
+      
+
