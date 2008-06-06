@@ -10,6 +10,8 @@ That's the first thing posted here:  See https://fedorahosted.org/spacewalk :)
 
 Red Hat Network (RHN) first started around 2001 as a hosted application.  RHN later spawned a stand alone product called Red Hat Network Satellite.  Spacewalk as a project officially became an open source, community driven product in June 2008 -- it is the upstream for Red Hat Network Satellite.
 
+
+
 == Spacewalk Architecture ==
 
 === Why do you use Oracle?  Any plans for supporting other databases? ===
@@ -31,6 +33,8 @@ Originally there was only a backend api (in Python) which was used by the client
 === Using Spacewalk with RHEL, and Comments on Versions ===
 
 ((Fill in)))
+
+
 
 == The Future == 
 
