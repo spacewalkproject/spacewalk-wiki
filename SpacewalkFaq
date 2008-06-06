@@ -1,11 +1,14 @@
 = Frequently Asked Questions =
 
 == General ==
- * What is Spacewalk?
-  * Spacewalk is a systems management application 
 
- * How long has Spacewalk been around?
-  * The original code base was first started around 2001 as a hosted product.  It was later split into a stand alone product called Red Hat Satellite.  Spacewalk was officially born on June 18, 2008 as an open source, community driven product which is the upstream for Red Hat Satellite.
+=== What is Spacewalk ===
+
+Spacewalk is a systems management application 
+
+=== How long has Spacewalk been around? ===
+
+Red Hat Network first started around 2001 as a hosted application.  RHN later spawned a stand alone product called Red Hat Satellite.  Spacewalk as a project officially became an open source, community driven product in June 2008 -- it is the upstream for Red Hat Satellite.
 
 == Spacewalk Architecture ==
 
