@@ -72,7 +72,7 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
 
 
 
-=== Java Side Of things ===
+=== Java Setup ===
  * sudo yum install tomcat5  java-1.6.0-openjdk-devel java-1.6.0-openjdk ant ant-nodeps jakarta-commons-cli jakarta-commons-codec oro 
  * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-1.3.1-1jpp.noarch.rpm
  * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-javadoc-1.3.1-1jpp.noarch.rpm
@@ -96,7 +96,7 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
 
 Thats it :) ..
 
-=== Perl Side of things === 
+=== Perl Setup === 
  * yum install compat-libstdc++-33
  * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-basic-10.2.0-6.i386.rpm
  * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-config-10.2.0-7.i386.rpm
@@ -114,3 +114,7 @@ svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/en
  * cd $SVNDIR/eng/satellite/fedora/
  * ./setup-symlinks.sh  <- This should setup all your symlinks...
  * service httpd start  <- NOTE its no longer service satellite-httpd start!, because we are utilizing conf.d entry..
+
+==== Distributed Setup ====
+If you want to have one workstation for perl and one work station for java, follow the steps for Perl and java setup on those machines and then change the line below/etc/rhn/satellite-httpd/conf/workers.properties 
+{{{worker.ajp13.host=localhost}}} to {{{worker.ajp13.host=<your machine>}}}
