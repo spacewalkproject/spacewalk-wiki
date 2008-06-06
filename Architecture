@@ -16,8 +16,7 @@ The frontend API attempts to expose as much of the web UI functionality as possi
 
 
 === Backend === 
-The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities.
-{{{NEED TO EXPAND THIS SECTION}}}
+The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities. More information on Python Backend Architecture can be found [PythonDocumentation here].
 
 
 === Taskomatic ===
