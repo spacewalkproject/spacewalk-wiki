@@ -61,32 +61,32 @@ A more elegant method of getting packages for uploading, is using reposync. [htt
  - Now pass in the repoid to reposync:
  {{{
 $ reposync --repoid=fedora
-       [fedora: 1     of 7390  ] Downloading Fedora/915resolution-0.5.3-1.fc7.i386.rpm
-         915resolution-0.5.3-1.fc7 100% |=========================|  16 kB    00:00     
-       [fedora: 2     of 7390  ] Downloading Fedora/AGReader-1.2-2.fc6.i386.rpm
-         AGReader-1.2-2.fc6.i386.r 100% |=========================|  47 kB    00:00     
-       [fedora: 3     of 7390  ] Downloading Fedora/AllegroOGG-1.0.3-3.fc6.i386.rpm
-         AllegroOGG-1.0.3-3.fc6.i3 100% |=========================|  16 kB    00:00
-       .....
+[fedora: 1     of 7390  ] Downloading Fedora/915resolution-0.5.3-1.fc7.i386.rpm
+  915resolution-0.5.3-1.fc7 100% |=========================|  16 kB    00:00     
+[fedora: 2     of 7390  ] Downloading Fedora/AGReader-1.2-2.fc6.i386.rpm
+  AGReader-1.2-2.fc6.i386.r 100% |=========================|  47 kB    00:00     
+[fedora: 3     of 7390  ] Downloading Fedora/AllegroOGG-1.0.3-3.fc6.i386.rpm
+  AllegroOGG-1.0.3-3.fc6.i3 100% |=========================|  16 kB    00:00
+  ...
 }}}
  - Once the above step is done packages should be in the {{{fedora}}} directory:
  {{{
-      $ ls -l fedora/Fedora/
-        total 18936
-        -rw-rw-r-- 1 root root   15960 2007-05-23 10:18 915resolution-0.5.3-1.fc7.i386.rpm
-        -rw-rw-r-- 1 root root   48528 2007-05-23 10:18 AGReader-1.2-2.fc6.i386.rpm
-        -rw-rw-r-- 1 root root   16687 2007-05-23 10:19 AllegroOGG-1.0.3-3.fc6.i386.rpm
-        ....
+$ ls -l fedora/Fedora/
+  total 18936
+  -rw-rw-r-- 1 root root   15960 2007-05-23 10:18 915resolution-0.5.3-1.fc7.i386.rpm
+  -rw-rw-r-- 1 root root   48528 2007-05-23 10:18 AGReader-1.2-2.fc6.i386.rpm
+  -rw-rw-r-- 1 root root   16687 2007-05-23 10:19 AllegroOGG-1.0.3-3.fc6.i386.rpm
+  ...
  }}}
 
-
-
-
 == push the content ==
- - once you have the rpms, use rhnpush to push them to the Spacewalk server.
-   - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP \}}}
-     {{{  --dir=./download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/ }}}
+Finally, time to push the content into the server. Once you have the rpms, use {{{rhnpush}}} to push them to the Spacewalk server.
 
-        - once you have the rpms, use rhnpush to push them to the Spacewalk server.
-   - {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
+For example, to upload the content downloaded using {{{reposync}}} do the following:
+ {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
+
+=== usage ===
+ {{{rhnpush --channel=<channel-label> --server=<hosturl>/APP --dir=<directory> }}}
+
+
 
