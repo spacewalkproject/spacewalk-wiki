@@ -116,7 +116,7 @@ svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/en
  * service httpd start  <- NOTE its no longer service satellite-httpd start!, because we are utilizing conf.d entry..
 
 === How to test this ===
- * http://apachemachine
+ * http://<your web server>
 
 === Distributed Setup ===
 If you want to have one workstation for perl and one work station for java, follow the steps for Perl and java setup on those machines and then change the line below/etc/rhn/satellite-httpd/conf/workers.properties 
