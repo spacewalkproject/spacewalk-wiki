@@ -12,6 +12,8 @@ Red Hat Network (RHN) first started around 2001 as a hosted application.  RHN la
 
 
 
+
+
 == Spacewalk Architecture ==
 
 === Why do you use Oracle?  Any plans for supporting other databases? ===
@@ -33,6 +35,8 @@ Originally there was only a backend api (in Python) which was used by the client
 === Using Spacewalk with RHEL, and Comments on Versions ===
 
 ((Fill in)))
+
+
 
 
 
