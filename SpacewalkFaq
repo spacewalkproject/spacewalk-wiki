@@ -13,6 +13,16 @@ Red Hat Network (RHN) first started around 2001 as a hosted application.  RHN la
 [[BR]]
 [[BR]]
 
+== Installation ==
+
+=== Is a Satellite/Spacewalk certificate required to use Spacewalk? ===
+Traditionally for Red Hat Satellite a Satellite certificate was required to use the product and listed what channel families and entitlements (and how many) the customer had purchased.  Spacewalk still uses a certificate, but it is provided for free and activated upon installation.  You shouldn't ever have to worry about it expiring or about running out of entitlements.  
+
+
+
+[[BR]]
+[[BR]]
+
 == Spacewalk Architecture ==
 
 === Why do you use Oracle?  Any plans for supporting other databases? ===
