@@ -20,25 +20,25 @@ Originally the Spacewalk code base was used as a hosted application and Oracle w
 
 See the instructions here for information about the XE version:  OracleXeSetup
 
-== Perl, Python, and Java OH MY! ==  
+=== Perl, Python, and Java OH MY! ===  
 
 "Why do you use 3 different languages in your product?"   The original WebUI for the Spacewalk code base was purely Perl.  As time went on scalability issues came in to play, which was worrisome because developers who knew (and wanted to develop in) Perl were somewhat hard to come by.  This was to be solved by migrating to Java.  Sadly migrating to Java took longer to accomplish than anticipated and thus is not complete.  All new web development is done in Java and the Perl is only maintained.  We continually migrate pages to Java as new features need to be added to the pages, but it is not a top priority.
 
-== Why are there two XMLRPC Apis (a frontend and a backend)? ==
+=== Why are there two XMLRPC Apis (a frontend and a backend)? ===
 
 Originally there was only a backend api (in Python) which was used by the client to communicate with the server.  Documents were not published for this api and it wasn't intended to be used by anything but the client utilities (rhn_register, etc..).  The frontend api was created so that users could write scripts and programs to interact with the satellite and perform the same actions available within the UI.  This was done in the Java side of things since all of the manager code is already in Java and is well documented.  
 
-== Using Spacewalk with RHEL, and Comments on Versions ==
+=== Using Spacewalk with RHEL, and Comments on Versions ===
 
 ((Fill in)))
 
 == The Future == 
 
-== What About Integrating Technology X? ==
+=== What About Integrating Technology X? ===
 
 We are looking to include "best of breed" open source technology where possible and this is one of our major priorities.  So one of the things we will be doing in the future is integrating support to use [http://cobbler.et.redhat.com Cobbler] for provisioning in Spacewalk/Satellite.  We are also going to be looking at upgrading over components over time as well.  Input is always welcome.  We are also looking to break Spacewalk down into smaller more consumable subprojects to make them usable by other projects and tools.   See also the TheRoadmap.  If there is something you are interested in, the best thing to do would be to bring it up on the lists.
 
-== What kind of community contributions are you interested in? ==
+=== What kind of community contributions are you interested in? ===
 
 Everything!  Ideas, feedback, testing, and patches are all welcome.  If there is something you don't like or would like to see improved, let us know.  See the "Communicate" section on the bottom page for some initial pointers.   We'll admit some things are relatively complex for newcomers feature wise, but over time, we're looking to simplify things as much as possible to make things easy to dive in and get involved with.  If you see an area where the documentation is lacking, please let us know, and we'll help you out.   Also, keep in mind that this is a Wiki, so you can help expand our documentation sections as well!
 
