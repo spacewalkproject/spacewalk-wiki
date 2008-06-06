@@ -4,11 +4,11 @@
 
 === What is Spacewalk ===
 
-Spacewalk is a systems management application 
+Spacewalk is a systems management application designed to provide services such as package management, provisioning, and monitoring to servers.  One of it's primary features is mirroring packages from a central source and providing them to managed nodes.
 
 === How long has Spacewalk been around? ===
 
-Red Hat Network first started around 2001 as a hosted application.  RHN later spawned a stand alone product called Red Hat Satellite.  Spacewalk as a project officially became an open source, community driven product in June 2008 -- it is the upstream for Red Hat Satellite.
+Red Hat Network first started around 2001 as a hosted application.  RHN later spawned a stand alone product called Red Hat Satellite.  Spacewalk as a project officially became an open source, community driven product in June 2008 -- it is the upstream for Red Hat Satellite.   
 
 == Spacewalk Architecture ==
 
@@ -19,6 +19,10 @@ Originally the Spacewalk code base was used as a hosted application and Oracle w
 == Perl, Python, and Java OH MY! ==  
 
 "Why do you use 3 different languages in your product?"   The original WebUI for the Spacewalk code base was purely Perl.  As time went on scalability issues came in to play, which was worrisome because developers who knew (and wanted to develop in) Perl were somewhat hard to come by.  This was to be solved by migrating to Java.  Sadly migrating to Java took longer to accomplish than anticipated and thus is not complete.  All new web development is done in Java and the Perl is only maintained.  We continually migrate pages to Java as new features need to be added to the pages, but it is not a top priority.
+
+== Using Spacewalk with RHEL, and Comments on Versions ==
+
+((Fill in)))
 
 == The Future == 
 
