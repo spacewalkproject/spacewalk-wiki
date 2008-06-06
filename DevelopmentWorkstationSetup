@@ -1,0 +1,42 @@
+=== Java Side Of things ===
+ * sudo yum install tomcat5  java-1.6.0-openjdk-devel java-1.6.0-openjdk ant ant-nodeps jakarta-commons-cli jakarta-commons-codec oro 
+ * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-1.3.1-1jpp.noarch.rpm
+ * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-javadoc-1.3.1-1jpp.noarch.rpm
+ * sudo /usr/sbin/alternatives --config java  -> make sure its using open jdk and NOT gcj
+ * sudo /usr/sbin/alternatives --config javac  -> make sure its using open jdk and NOT gcj
+
+ * Checkout the Satellite/Spacewalk source code: http://wiki.rhndev.redhat.com/wiki/Git_Guide
+ * export SATSOURCE=/YOUR/GIT/CHECKOUT/
+ ** Be sure to add to your ~/.bash_profile. (or equivalent)
+
+ * sudo ln -s $SATSOURCE/java/conf/rhn.xml /usr/share/tomcat5/conf/Catalina/localhost/rhn.xml
+ * sudo ln -s $SATSOURCE/java/buildconf/builder/config/satellite /etc/rhn
+ * For the above 2 symlinks you need to make sure the tomcat user can access those paths.  Make sure if you 'su tomcat' and run 'cat /usr/share/tomcat5/conf/Catalina/localhost/rhn.xml' that it shows the correct content.
+ * cd $SATSOURCE/java/
+ * ant clean all  <- This should complete successfully 
+ * ant create-webapp-dir <- This should complete successfully
+ * rm rhnwebapp/WEB-INF/lib/jasper5* <- Alternatively we can remove this entry from ivy.xml ?? Yet to check that.
+ * sudo ln -s $SATSOURCE/java/rhnwebapp /usr/share/tomcat5/webapps/rhn
+ * service tomcat5 restart
+
+
+Thats it :) ..
+
+===Perl Side of things === 
+ * yum install compat-libstdc++-33
+ * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-basic-10.2.0-6.i386.rpm
+ * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-config-10.2.0-7.i386.rpm
+ * yum install perl-Algorithm-Diff perl-Bit-Vector perl-Cache-Cache perl-Carp-Clan  perl-Class-ErrorHandler perl-Class-Loader perl-Class-Singleton  perl-Convert-ASCII-Armour perl-Convert-ASN1 perl-Convert-PEM perl-Crypt-Blowfish perl-Crypt-CBC perl-Crypt-DES perl-Crypt-DES_EDE3 perl-Crypt-DSA perl-Crypt-Primes perl-Crypt-Random perl-Crypt-RSA perl-Crypt-SSLeay perl-Data-Buffer perl-Date-Calc perl-DateManip perl-DateTime perl-DateTime-Format-Mail perl-DateTime-Format-W3CDTF perl-Devel-Symdump perl-Digest-MD2 perl-Error perl-Frontier-RPC perl-IPC-ShareLite perl-libxml-perl perl-Mail-RFC822-Address perl-MailTools perl-Math-Pari perl-MIME-Lite perl-Parse-Yapp perl-Proc-Daemon perl-RPM2 perl-SOAP-Lite perl-Sort-Versions perl-TermReadKey perl-Test-Manifest perl-Text-Diff perl-Tie-EncryptedHash perl-TimeDate perl-Unix-Syslog perl-XML-Dumper perl-XML-Grove perl-XML-LibXML perl-XML-LibXML-Common perl-XML-LibXSLT perl-XML-NamespaceSupport perl-XML-RSS perl-XML-SAX perl-XML-Simple perl-XML-Twig perl-XML-Writer perl-YAML perl-libapreq2 perl-DBI perl-Apache-DBI  perl-Authen-PAM  perl-Authen-DigestMD5  perl-Authen-Krb5 perl-Digest-SHA perl-Digest-HMAC mod_perl mod_python
+
+ * rpm -Uvh http://dually.rdu.redhat.com/pub/perl-DBD-Oracle-1.19-4.rhel4.i386.rpm
+ * rpm -Uvh http://dually.rdu.redhat.com/pub/perl-Set-Crontab-1.00-12.fc9.noarch.rpm
+ * rpm -Uvh http://dually.rdu.redhat.com/pub/perl-Schedule-Cron-Events-1.8-11.fc9.noarch.rpm
+ * cd /usr/lib/httpd/modules
+ * wget http://www.apache.org/dist/tomcat/tomcat-connectors/jk/binaries/linux/jk-1.2.26/i386/mod_jk-1.2.26-httpd-2.2.6.so
+ * ln -s  mod_jk-1.2.26-httpd-2.2.6.so  mod_jk.so
+ * check out 
+svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/eng
+ * chmod 700 $SVNDIR/eng/satellite/fedora/setup-symlinks.sh
+ * cd $SVNDIR/eng/satellite/fedora/
+ * ./setup-symlinks.sh  <- This should setup all your symlinks...
+ * service httpd start  <- NOTE its no longer service satellite-httpd start!, because we are utilizing conf.d entry..
