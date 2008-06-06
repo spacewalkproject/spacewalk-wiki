@@ -32,7 +32,7 @@ See the instructions here for information about the XE version:  OracleXeSetup
 
 == What About Integrating Technology X? ==
 
-We are looking to include "best of breed" open source technology where possible and this is one of our major priorities.  So one of the things we will be doing in the future is integrating support to use [http://cobbler.et.redhat.com Cobbler] for provisioning in Spacewalk/Satellite.  We are also going to be looking at upgrading over components over time as well.  Input is always welcome.  We are also looking to break Spacewalk down into smaller more consumable subprojects to make them usable by other projects and tools.   See also the TheRoadmap
+We are looking to include "best of breed" open source technology where possible and this is one of our major priorities.  So one of the things we will be doing in the future is integrating support to use [http://cobbler.et.redhat.com Cobbler] for provisioning in Spacewalk/Satellite.  We are also going to be looking at upgrading over components over time as well.  Input is always welcome.  We are also looking to break Spacewalk down into smaller more consumable subprojects to make them usable by other projects and tools.   See also the TheRoadmap.  If there is something you are interested in, the best thing to do would be to bring it up on the lists.
 
 == What kind of community contributions are you interested in? ==
 
