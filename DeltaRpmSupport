@@ -39,21 +39,13 @@ Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
 }}}
 
 
-== The future == 
-{{{
- 1. If eng decides to generate drpms
-    a) modify sync to simply pull them down
+== Server == 
 
- 2. If they don't (or we decide not to use theirs).
-    a) generate them on demand (Similar to lars's script)
-        - Can take upwards of a minute to generate the larger rpms (longer on slower machines)
-    b) generate them upon syncing
-}}}
-== Custom Channels/Content ==
+Generate drpms on the fly as requested and cache them on the server.  This handles RHEL content and custom content.
 
- 1.  Allow users to 'push' drpms for their custom content (then we have to manage it).
- 2.  Automatically build them for content users push
- 3.  Allow the user to use the system to selectively build drpms for certain packages
+Will need to modify backend to generate preesto repo files and delta rpms.
+
+Will need to make sure client works with yum-rhn-plugin (preliminary test seem to show that it will work).  Although the newest yum-presto plugin will not work on RHEL 5.
 
  
 == My thoughts ==
