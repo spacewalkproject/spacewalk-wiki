@@ -4,6 +4,7 @@ This section contains information about developer topics.  You may also be inter
 
 
    * General Docs
+    * [DevelopmentWorkstationSetup|Setting up  the Development environment]
     * [wiki:Architecture] -- a quick overview of the various components in Spacewalk
     * TheRoadmap -- future plans for future releases
     * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
