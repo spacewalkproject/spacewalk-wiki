@@ -1,3 +1,75 @@
+=== Setup Spacewalk on Fedora 9 ===  
+NOTE: Still Under construction try the Java Side fo things and Perl side of things until these instructions become stable..
+ * install oracle express edition [https://fedorahosted.org/gitme/wiki/OracleXeSetup OracleXeSetup]
+ * get Oracle instant client rpms: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html instantclient.rpm]
+[http://www.oracle.com/technology/tech/oci/instantclient/index.html Oracle Instant Client homepage]
+
+ install oracle-instantclient-basic and oracle-instantclient-devel
+
+ * install spacewalk-support-repo rpm (TBD)
+ {{{
+ [spacewalk-support]
+ name=Spacewalk Support $releasever - $basearch
+ failovermethod=priority
+ baseurl=http://transam.devel.redhat.com/yum/fedora/$releasever/$basearch/
+ enabled=1
+ gpgcheck=0
+ gpgkey=
+ }}}
+ * yum install spacewalk-legacy-metadata-workstation spacewalk-java-metadata-workstation
+
+ * checkout source code [GIT command here]
+
+ * create schema in database
+ * build java code
+ ** cd GITDIR/java/
+ ** ant clean all
+ ** ant create-webapp-dir
+ ** NOTE: should work on all one line, problem with ivy, needs fixing.
+
+ * setup perl
+ ** sudo /sbin/service satellite-httpd start
+ *** might have to comment out ssl.conf from httpd.conf
+ *** NOTE: remember to set your ORACLE_HOME: /etc/sysconfig/satellite-httpd, if using Oracle XE set it to : /usr/lib/oracle/xe/
+ *** also add LD_LIBRARY_PATH entry: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/10.2.0.4/client/lib/
+
+ * setup python
+
+ * setup symlinks
+ ** cd GITDIR/satellite/
+ ** export GITDIR=/your/git/checkout
+ ** sudo -E ./setup-symlinks.sh
+
+ * configure
+ ** setup hibernate database connection using jdbc logdriver: 
+ {{{
+ hibernate.connection.username=spacewalk
+ hibernate.connection.password=spacewalk
+ hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe
+ hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
+ }}}
+
+ ** setup hibernate database connection using oracle driver: 
+ {{{
+ hibernate.connection.username=spacewalk
+ hibernate.connection.password=spacewalk
+ hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
+ #hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
+ }}}
+ ** setup perl/python database connection:
+ {{{ web.default_db=spacewalk/spacewalk@xe }}}
+
+
+ * start services
+ ** sudo /sbin/service tomcat5 start
+
+=== COMMON PROBLEMS ===
+ * homedir is not readable by tomcat / apache users
+ * tomcat spews a bunch of errors about not finding digester and other xml errors (not related to webapp) SOLUTION: sudo rpm -e --nodeps tomcat5;  sudo yum -y install tomcat5
+ * Acquisition Attempt Failed!!! SOLUTION: setup database connections
+
+
+
 === Java Side Of things ===
  * sudo yum install tomcat5  java-1.6.0-openjdk-devel java-1.6.0-openjdk ant ant-nodeps jakarta-commons-cli jakarta-commons-codec oro 
  * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-1.3.1-1jpp.noarch.rpm
@@ -22,7 +94,7 @@
 
 Thats it :) ..
 
-===Perl Side of things === 
+=== Perl Side of things === 
  * yum install compat-libstdc++-33
  * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-basic-10.2.0-6.i386.rpm
  * rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/oracle-instantclient/oracle-instantclient-config-10.2.0-7.i386.rpm
