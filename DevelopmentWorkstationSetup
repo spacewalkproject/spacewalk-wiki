@@ -8,7 +8,7 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
 
  install oracle-instantclient-basic and oracle-instantclient-devel
 
- * install spacewalk-support-repo rpm (TBD)
+ * edit /etc/yum.repos.d/spacewalk-support.repo
  {{{
  [spacewalk-support]
  name=Spacewalk Support $releasever - $basearch
