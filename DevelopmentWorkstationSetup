@@ -2,7 +2,7 @@ Below are the instructions on how to setup your workstation to make changes and 
 
 === Setup Spacewalk on Fedora 9 ===  
 NOTE: Still Under construction try the Java Side fo things and Perl side of things until these instructions become stable..
- * install oracle express edition [https://fedorahosted.org/gitme/wiki/OracleXeSetup OracleXeSetup]
+ * install oracle express edition [https://fedorahosted.org/spacewalk/wiki/OracleXeSetup OracleXeSetup]
  * get Oracle instant client rpms: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html instantclient.rpm]
 [http://www.oracle.com/technology/tech/oci/instantclient/index.html Oracle Instant Client homepage]
 
