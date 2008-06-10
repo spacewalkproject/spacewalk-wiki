@@ -8,6 +8,7 @@
  1.  Create a fedora 9 channel
  2.  Push Fedora 9 content   "rhnpush --server=http://SW_FQDN/APP --channel fedora9  -d /mnt/iso/Packages "
  3.  Create kickstart tree  "sh /mnt/svn/eng/scripts/make-ks-tree.sh --channel fedora9 --source /mnt/iso --dsn rhnsat/rhnsat@rhnsat --install-type fedora9 "
+ 4.  If that is ok, run the same command again with "--commit"
  4.  Create a kickstart, selecting the fedora 9 channel and it's kickstart tree
  5.  kickstart using the url  http://SW_FQDN/kickstart/ks/label/KS_LABEL   where KS_LABEL is the kickstart label that you specified.
 
