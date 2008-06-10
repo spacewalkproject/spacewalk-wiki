@@ -31,4 +31,13 @@ In rhnKickstartCommandName_data.sql
 +values (rhn_kscommandname_id_seq.nextval, 'langsupport', 'Y', 13, 'N');
 -values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'Y');
 +values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'N');
+
+
+or to change existing sat:
+
+update rhnKickstartCommandName set REQUIRED = 'N' where  name = 'mouse' OR name = 'langsupport';
+
+
+
 }}}
+
