@@ -39,6 +39,9 @@ Here are some sane values:
  password:dog8code for SYS/SYSTEM
  have oracle start at boot: y
 }}}
+If you messed up these entries tweak the variables in /etc/sysconfig/oracle-xe and /etc/init.d/oracle-xe restart
+
+
 
 Login to the webui and configure a user:
  * browse to http://127.0.0.1:9000/apex
