@@ -71,7 +71,6 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
  * Acquisition Attempt Failed!!! SOLUTION: setup database connections
 
 
-
 === Java Setup ===
  * sudo yum install tomcat5  java-1.6.0-openjdk-devel java-1.6.0-openjdk ant ant-nodeps jakarta-commons-cli jakarta-commons-codec oro 
  * sudo rpm -Uvh http://barn.rhndev.redhat.com/repo/repository/ivy/ivy-1.3.1-1jpp.noarch.rpm
@@ -117,6 +116,17 @@ svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/en
 
 === How to test this ===
  * http://<your web server>
+
+=== Python Setup ===
+ * Make sure rhnlib is installed, sudo yum install rhnlib 
+ * Make sure other dependencies are present PyXML mod_python mod_ssl python-optik python-gzipstream
+ * Create simlinks 
+  * ln -s $SATSOURCE/backend/server /usr/share/rhn/server
+  * ln -s $SATSOURCE/backend/common /usr/share/rhn/common
+  * ln -s $SATSOURCE/backend/satellite_tools /usr/share/rhn/satellite_tools
+  * ln -s $SATSOURCE/backend/upload_server   /usr/share/rhn/upload_server
+  * simlink config files $SATSOURCE/backend/rhn-conf/*.conf to /etc/rhn/default/*.conf
+ * service httpd restart and things should start working
 
 === Distributed Setup ===
 If you want to have one workstation for perl and one work station for java, follow the steps for Perl and java setup on those machines and then change the line below/etc/rhn/satellite-httpd/conf/workers.properties 
