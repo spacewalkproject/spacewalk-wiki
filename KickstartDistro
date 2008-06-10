@@ -1,0 +1,33 @@
+= Steps to kickstarting Fedora =
+
+(Currently this for us developers, but will be changed to be for users before release.)
+
+
+== Using a fedora DVD mount to /mnt/iso ==
+
+1.  Create a fedora 9 channel
+2.  Push Fedora 9 content  rhnpush --server=http://SW_FQDN/APP --channel fedora9  -d /mnt/iso/Packages
+3.  Create kickstart tree  "sh /mnt/svn/eng/scripts/make-ks-tree.sh --channel fedora9 --source /mnt/iso --dsn rhnsat/rhnsat@rhnsat --install-type fedora 
+4.  Create a kickstart, selecting the fedora 9 channel and it's kickstart tree
+5.  kickstart using the url  http://SW_FQDN/kickstart/ks/label/KS_LABEL   where KS_LABEL is the kickstart label that you specified.
+
+
+
+== Things I had to do as a developer: ==
+
+{{{
+insert into rhnKSInstallType (id, label, name)
+        values (rhn_ksinstalltype_id_seq.nextval,
+                'fedora9','Fedora 9'
+        );
+}}}
+Change certain advanced options to be not required (Since F-9 didn't like them)
+
+
+In rhnKickstartCommandName_data.sql
+{{{
+-values (rhn_kscommandname_id_seq.nextval, 'langsupport', 'Y', 13, 'Y');
++values (rhn_kscommandname_id_seq.nextval, 'langsupport', 'Y', 13, 'N');
+-values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'Y');
++values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'N');
+}}}
