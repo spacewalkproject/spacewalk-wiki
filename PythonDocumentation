@@ -61,7 +61,7 @@ This is used for package information uploads and other additional capabilities c
 
 == Installing Backend Code: ==
 
-It can sometimes prove helpful to install the python backend on your local workstation.
+Installing the python backend on your local workstation could be useful if you wanna test the code locally.
 
  * First, make sure you have httpd installed. 
   {{{ $ yum install httpd (or whatever you do) }}}
@@ -76,7 +76,7 @@ It can sometimes prove helpful to install the python backend on your local works
    {{{ for i in /etc/httpd/conf/rhn/*.conf; do sed -i 's/\"/default/' $i; done; }}}
 
  * Edit some of the rhn configuration variables. 
-   {{{ In /etc/rhn/rhn.conf: <pre>default_db = rhnsat/rhnsat@rhnsat (or whatever db you want)}}}
+   {{{ In /etc/rhn/rhn.conf: default_db = rhnsat/rhnsat@rhnsat (or whatever db you want)}}}
 
  * Depending on if the passwords in the db you are using are encrypted are not you may have to change the value for encrypted_passwords: 
    {{{ encrypted_passwords = 1 }}}
