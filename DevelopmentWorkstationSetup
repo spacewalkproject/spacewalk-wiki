@@ -118,17 +118,7 @@ svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/en
  * http://<your web server>
 
 === Python Setup ===
- * Make sure rhnlib is installed, 
-  * sudo yum install rhnlib  (or) 
-  * ln -s  $SATSOURCE/client/rhel/rhnlib/rhn /usr/lib/pythonx.y/site-packages/rhn
- * Other required dependencies to check: PyXML mod_python mod_ssl python-optik python-gzipstream
- * Create simlinks 
-  * ln -s $SATSOURCE/backend/server /usr/share/rhn/server
-  * ln -s $SATSOURCE/backend/common /usr/share/rhn/common
-  * ln -s $SATSOURCE/backend/satellite_tools /usr/share/rhn/satellite_tools
-  * ln -s $SATSOURCE/backend/upload_server   /usr/share/rhn/upload_server
-  * simlink config files $SATSOURCE/backend/rhn-conf/*.conf to /etc/rhn/default/*.conf
- * service httpd restart 
+ * The instructions to install the python code on your local workstation can be  found [PythonDocumentation here]
 
 === Distributed Setup ===
 If you want to have one workstation for perl and one work station for java, follow the steps for Perl and java setup on those machines and then change the line below/etc/rhn/satellite-httpd/conf/workers.properties 
