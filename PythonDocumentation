@@ -59,6 +59,27 @@ This handler is mainly responsible for providing capability for registation, sch
 This is used for package information uploads and other additional capabilities can be added here
 
 
-=== Backend SetUp: ===
+=== Installing Backend Code: ===
 
-TODO
+It can sometimes prove helpful to install the python backend on your local workstation.
+
+ * First, make sure you have httpd installed. 
+  {{{ $ yum install httpd (or whatever you do) }}}
+ 
+ * Go to the directory where you have your backend checkout 
+   {{{ $ cd <git checkout>/eng/backend }}}
+
+ * Install the code using the 'install' makefile target 
+   {{{ $ make install }}}
+
+ * Assuming you are running Apache 2.X, you need to edit some of the configuration files to make them work. Here is a bash command that can simplify it for you: 
+   {{{ for i in /etc/httpd/conf/rhn/*.conf; do sed -i 's/\"/default/' $i; done; }}}
+
+ * Edit some of the rhn configuration variables. 
+   {{{ In /etc/rhn/rhn.conf: <pre>default_db = rhnsat/rhnsat@rhnsat (or whatever db you want)}}}
+
+ * Depending on if the passwords in the db you are using are encrypted are not you may have to change the value for encrypted_passwords: 
+   {{{ encrypted_passwords = 1 }}}
+
+ * Start apache. 
+   {{{ $ service start httpd }}}
