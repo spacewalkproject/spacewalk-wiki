@@ -118,8 +118,10 @@ svn+ssh://svn.rhndev.redhat.com/svn/rhn-svn/trunk/eng/satellite under $SVNDIR/en
  * http://<your web server>
 
 === Python Setup ===
- * Make sure rhnlib is installed, sudo yum install rhnlib 
- * Make sure other dependencies are present PyXML mod_python mod_ssl python-optik python-gzipstream
+ * Make sure rhnlib is installed, 
+  * sudo yum install rhnlib  (or) 
+  * ln -s  $SATSOURCE/client/rhel/rhnlib/rhn /usr/lib/pythonx.y/site-packages/rhn
+ * Other required dependencies to check: PyXML mod_python mod_ssl python-optik python-gzipstream
  * Create simlinks 
   * ln -s $SATSOURCE/backend/server /usr/share/rhn/server
   * ln -s $SATSOURCE/backend/common /usr/share/rhn/common
