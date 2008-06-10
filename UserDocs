@@ -6,6 +6,7 @@ In this section you can find user documenation for Spacewalk.  You may also be i
    * [http://www.redhat.com/docs/manuals/satellite/ | Red Hat Network Satellite docs] -- these are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
    * [OracleXeSetup Oracle XE Setup] -- how to get Oracle XE running if you do not already have Oracle
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora
+   * [KickstartDistro Create kickstart trees ] Use Satellite to kickstart Fedora, CentOS, and RHEL
 
 If you are looking for some documentation and can't find it, or would like to understand something better, please let us know using the mailing list or IRC.  See the "Communicate" section of the project page for links.  Also, since this is a Wiki, feel free to add your own docs and additions.
 
