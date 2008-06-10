@@ -39,7 +39,12 @@ Here are some sane values:
  password:dog8code for SYS/SYSTEM
  have oracle start at boot: y
 }}}
-If you messed up these entries tweak the variables in /etc/sysconfig/oracle-xe and /etc/init.d/oracle-xe restart
+If you messed up these entries -> 
+{{{
+rpm -e oracle-xe-client oracle-xe-univ
+sudo yum install --nogpgcheck oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-xe-client-10.2.1-1.0.i386.rpm
+}}}
+
 
 
 
