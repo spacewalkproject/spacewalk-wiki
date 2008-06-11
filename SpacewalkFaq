@@ -43,12 +43,9 @@ Originally there was only a backend api (in Python) which was used by the client
 
 === Using Spacewalk with RHEL, and Comments on Versions ===
 
-((Fill in)))
+Currently Spacewalk can be used for Fedora, RHEL, or CentOS content.   There is a current limitation (that we are working on addressing) that it can only manage content for one at a time... this is described at UploadFedoraContent.  This should be cleared up shortly as this is something that a lot of users want to do.
 
-
-
-[[BR]]
-[[BR]]
+Spacewalk's server itself can run on any of the above platforms.
 
 == The Future == 
 
