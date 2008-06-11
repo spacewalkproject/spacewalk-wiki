@@ -59,7 +59,7 @@ This handler is mainly responsible for providing capability for registation, sch
 This is used for package information uploads and other additional capabilities can be added here
 
 
-== Installing Backend Code: ==
+== Installing Backend Server Code: ==
 
 Installing the python backend on your local workstation could be useful if you wanna test the code locally.
 
