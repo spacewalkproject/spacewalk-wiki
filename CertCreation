@@ -12,5 +12,11 @@
 
 == Sign Cert ==
 
- 1. foo
+ 1. Add the gen-oss-cert.pl script to your satellite
+ 2. Modify the template.cert or create a new cert to sign
+ 3. Review the usage statement from gen-oss-cert.pl:
+{{{
+Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ]
+}}}
+ 4. Resign/sign the cert
 
