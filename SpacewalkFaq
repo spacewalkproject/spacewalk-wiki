@@ -18,8 +18,6 @@ Red Hat Network (RHN) first started around 2001 as a hosted application.  RHN la
 === Is a Satellite/Spacewalk certificate required to use Spacewalk? ===
 Traditionally for Red Hat Satellite a Satellite certificate was required to use the product and listed what channel families and entitlements (and how many) the customer had purchased.  Spacewalk still uses a certificate, but it is provided for free and activated upon installation.  You shouldn't ever have to worry about it expiring or about running out of entitlements.  
 
-
-
 [[BR]]
 [[BR]]
 
@@ -41,11 +39,11 @@ See the instructions here for information about the XE version:  OracleXeSetup
 
 Originally there was only a backend api (in Python) which was used by the client to communicate with the server.  Documents were not published for this api and it wasn't intended to be used by anything but the client utilities (rhn_register, etc..).  The frontend api was created so that users could write scripts and programs to interact with the satellite and perform the same actions available within the UI.  This was done in the Java side of things since all of the manager code is already in Java and is well documented.  
 
-=== Using Spacewalk with RHEL, and Comments on Versions ===
+=== What OS's are supported? ===
 
 Currently Spacewalk can be used for Fedora, RHEL, or CentOS content.   There is a current limitation (that we are working on addressing) that it can only manage content for one at a time... this is described at UploadFedoraContent.  This should be cleared up shortly as this is something that a lot of users want to do.
 
-Spacewalk's server itself can run on any of the above platforms.
+Spacewalk's server itself can run on any of the above platforms (EL-2 and later, and any currently supported Fedora).
 
 == The Future == 
 
