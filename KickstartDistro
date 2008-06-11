@@ -8,7 +8,7 @@
 
  1. Create a fedora 9/CentOS/RHEL channel (See this page for details.)
  2. Push the content for that particular channel.  (See this page for details.)
- 3. Download kickstart script
+ 3. Download kickstart script.
  {{{mkdir make-ks-tree
     cd make-ks-tree 
     wget https://fedorahosted.org/spacewalk/attachment/wiki/KickstartDistro/make-ks-tree.tar.gz
@@ -26,6 +26,8 @@ For RHEL5.2 Server:
   ./make-ks-tree.sh --channel rhel5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant server --update u2
 
 }}}
+
+ 5.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
 
 
  1.  Create a fedora 9 channel
