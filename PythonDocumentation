@@ -67,7 +67,7 @@ Installing the python backend on your local workstation could be useful if you w
   {{{ $ yum install httpd (or whatever you do) }}}
  
  * Go to the directory where you have your backend checkout 
-   {{{ $ cd <git checkout>/eng/backend }}}
+   {{{ $ cd <git checkout>/backend }}}
 
  * Install the code using the 'install' makefile target 
    {{{ $ sudo make install -f Makefile.backend }}}
