@@ -3,10 +3,34 @@
 (Currently this for us developers, but will be changed to be for users before release.)
 
 
-== Using a fedora DVD mount to /mnt/iso ==
+
+
+
+ 1. Create a fedora 9/CentOS/RHEL channel (See this page for details.)
+ 2. Push the content for that particular channel.  (See this page for details.)
+ 3. Download kickstart script
+ {{{mkdir make-ks-tree
+    cd make-ks-tree 
+    wget https://fedorahosted.org/spacewalk/attachment/wiki/KickstartDistro/make-ks-tree.tar.gz
+    tar -xzf make-ks-tree.tar.gz
+ }}}
+ 4.  Upload the kickstart tree and test to make sure everything is sane:
+{{{
+For Fedora:
+  ./make-ks-tree.sh --channel fedora9 --source /mnt/iso --dsn spacewalk/spacewalk@xe  --install-type fedora9 
+
+For CentOS 5u1 (Since CentOS is a clone of RHEL 5, we use the rhel_5 install-type):
+  ./make-ks-tree.sh --channel centos5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant centos --update u1
+
+For RHEL5.2 Server:
+  ./make-ks-tree.sh --channel rhel5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant server --update u2
+
+}}}
+
 
  1.  Create a fedora 9 channel
  2.  Push Fedora 9 content   "rhnpush --server=http://SW_FQDN/APP --channel fedora9  -d /mnt/iso/Packages "
+
  3.  Create kickstart tree  "sh /mnt/svn/eng/scripts/make-ks-tree.sh --channel fedora9 --source /mnt/iso --dsn rhnsat/rhnsat@rhnsat --install-type fedora9 "
  4.  If that is ok, run the same command again with "--commit"
  4.  Create a kickstart, selecting the fedora 9 channel and it's kickstart tree
