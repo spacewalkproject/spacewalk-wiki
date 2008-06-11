@@ -70,7 +70,7 @@ Installing the python backend on your local workstation could be useful if you w
    {{{ $ cd <git checkout>/eng/backend }}}
 
  * Install the code using the 'install' makefile target 
-   {{{ $ sudo make install }}}
+   {{{ $ sudo make install -f Makefile.backend }}}
 
  * Assuming you are running Apache 2.X, you need to edit some of the configuration files to make them work. Here is a bash command that can simplify it for you: 
    {{{ for i in /etc/httpd/conf/rhn/*.conf; do sed -i 's/\"/default/' $i; done; }}}
