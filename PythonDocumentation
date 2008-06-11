@@ -61,7 +61,7 @@ This is used for package information uploads and other additional capabilities c
 
 == Installing Backend Server Code: ==
 
-Installing the python backend on your local workstation could be useful if you wanna test the code locally.
+Deploying the python backend on your local workstation could be useful if you wanna test/work on the code locally.
 
  * First, make sure you have httpd installed. 
    
@@ -70,6 +70,8 @@ Installing the python backend on your local workstation could be useful if you w
  * Make sure, rhnlib is installed
   
   {{{ $ yum install rhnlib }}}
+
+  {{{ or build it from source : $ cd <git checkout>/client/rhel/rhnlib   $ sudo make install -f Makefile.rhnlib  }}}
  
  * Go to the directory where you have your backend checkout 
    
