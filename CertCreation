@@ -12,7 +12,7 @@
 
 == Sign Cert ==
 
- 1. Add the gen-oss-cert.pl script to your satellite
+ 1. Add the gen-oss-sat-cert.pl script to your satellite
  2. Modify the template.cert or create a new cert to sign
  3. Review the usage statement from gen-oss-cert.pl:
 {{{
