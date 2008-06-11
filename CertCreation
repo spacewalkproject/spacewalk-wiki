@@ -1,0 +1,18 @@
+= Steps to creating Certs =
+
+
+== Generate GPG keys ==
+
+ 1.  gpg keygen stuff
+
+== Install GPG keys into webapp ==
+
+ 1. foo
+
+== Sign Cert ==
+
+ 1. foo
+
+== Activate Cert ==
+
+ 1. foo
