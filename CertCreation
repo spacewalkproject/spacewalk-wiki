@@ -3,11 +3,12 @@
 
 == Generate GPG keys ==
 
- 1.  gpg keygen stuff
+ 1.  gpg --gen-key
 
 == Install GPG keys into webapp ==
 
- 1. foo
+ 1. Open /etc/sysconfig/rhn/default/rhn_web.conf and modify the web.gpg_keyring to your new keyring
+ 2. Or, add your keys to the /etc/webapp-keying.gpg keyring
 
 == Sign Cert ==
 
