@@ -24,7 +24,7 @@ sub   2048g/AFD3819B 2008-06-11
  2. Modify the template.cert or create a new cert to sign
  3. Review the usage statement from gen-oss-cert.pl:
 {{{
-Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ]
+Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ] [ --resign ]
 }}}
  4. Example:
 {{{
