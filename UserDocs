@@ -7,6 +7,7 @@ In this section you can find user documenation for Spacewalk.  You may also be i
    * [OracleXeSetup Oracle XE Setup] -- how to get Oracle XE running if you do not already have Oracle
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora
    * [KickstartDistro Create kickstart trees ] Use Satellite to kickstart Fedora, CentOS, and RHEL
+   * [CertCreation Create Certs ] Create your own certs for Satellite
 
 If you are looking for some documentation and can't find it, or would like to understand something better, please let us know using the mailing list or IRC.  See the "Communicate" section of the project page for links.  Also, since this is a Wiki, feel free to add your own docs and additions.
 
