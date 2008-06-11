@@ -1,4 +1,4 @@
-= Steps to kickstarting Fedora =
+= Steps to kickstarting Fedora/CentOS =
 
 (Currently this for us developers, but will be changed to be for users before release.)
 
@@ -11,6 +11,8 @@
  4.  If that is ok, run the same command again with "--commit"
  4.  Create a kickstart, selecting the fedora 9 channel and it's kickstart tree
  5.  kickstart using the url  http://SW_FQDN/kickstart/ks/label/KS_LABEL   where KS_LABEL is the kickstart label that you specified.
+
+
 
 
 
