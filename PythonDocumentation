@@ -65,6 +65,9 @@ Installing the python backend on your local workstation could be useful if you w
 
  * First, make sure you have httpd installed. 
   {{{ $ yum install httpd (or whatever you do) }}}
+
+ * Make sure, rhnlib is installed
+  {{{ $ yum install rhnlib }}}
  
  * Go to the directory where you have your backend checkout 
    {{{ $ cd <git checkout>/backend }}}
