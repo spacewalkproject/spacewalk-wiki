@@ -50,7 +50,7 @@ sudo yum install --nogpgcheck oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-xe-clien
 
 Login to the webui and configure a user:
  * If you do not have X (so can't use firefox) or using ssh to go to this terminal run the following command->
-{{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}} and then you can browse to http://localhost:9000/apex on you machine and continue. (thank you Jbowes).
+{{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}} and then you can browse to http://localhost:9000/apex on your machine and continue. (thank you Jbowes).
  * browse to http://127.0.0.1:9000/apex
  * login: sys
  * click Administration
