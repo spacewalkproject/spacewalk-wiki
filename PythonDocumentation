@@ -93,4 +93,4 @@ Installing the python backend on your local workstation could be useful if you w
 
  * Start apache. 
   
-  {{{ $ service start httpd }}}
+  {{{ $ service httpd start }}}
