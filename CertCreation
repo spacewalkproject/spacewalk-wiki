@@ -28,7 +28,7 @@ Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> -
 }}}
  4. Example:
 {{{
-perl gen-oss-sat-cert.pl --dsn foo/foo@foo --signer 74E73973
+perl gen-oss-sat-cert.pl --dsn foo/foo@foo --signer 74E73973 --resign template-eval.cert
 }}}
  5. Resign/sign the cert
 
