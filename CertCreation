@@ -4,6 +4,14 @@
 == Generate GPG keys ==
 
  1.  gpg --gen-key
+{{{
+[scooby@scooby ~]$ gpg --list-keys
+/home/scooby/.gnupg/pubring.gpg
+-------------------------------
+pub   1024D/74E73973 2008-06-11
+uid                  Scooby Doo <scooby@redhat.com>
+sub   2048g/AFD3819B 2008-06-11
+}}}
 
 == Install GPG keys into webapp ==
 
@@ -18,5 +26,9 @@
 {{{
 Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ]
 }}}
- 4. Resign/sign the cert
+ 4. Example:
+{{{
+perl gen-oss-sat-cert.pl --dsn foo/foo@foo --signer 74E73973
+}}}
+ 5. Resign/sign the cert
 
