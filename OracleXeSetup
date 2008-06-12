@@ -114,6 +114,30 @@ rlwrap sqlplus spacewalk/spacewalk@xe
 }}} 
 and retain 'curses' like behavior with sql plus (sql call history maintenance, etc)
 
+== increase max process ==
+
+Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 100:
+
+{{{
+
+
+# sqlplus spacewalk/spacewalk@xe
+
+..
+
+SQL> alter system set processes=100 scope=spfile;
+
+System altered.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> quit
+
+
+}}}
+
 == setup schema (optional) ==
 
 If you just want the Spacewalk database schema installed you can do the following:
