@@ -69,9 +69,10 @@ Login to the webui and configure a user:
 That's it, proceed with client setup.
 
 == setup client ==
-You need to put the Oracle clients on your path.
+You need to put the Oracle clients on your path and configure ORACLE_HOME.
 {{{
- export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin/
+ export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
+ export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/
 }}}
 
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}:
