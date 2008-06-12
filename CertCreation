@@ -12,7 +12,7 @@ The Spacewalk Satellite Server provides all services to customers through the se
 gpg --gen-key
     }}}
 
- 2. Then see if your key appears in listed. For example, we generated a gey for Scooby below.
+ 2. Then see if your key appears in listed. For example, we generated a key for Scooby below.
 
     {{{
 [scooby@scooby ~]$ gpg --list-keys
