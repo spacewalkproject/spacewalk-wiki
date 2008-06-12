@@ -24,46 +24,45 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
 
  * create schema in database
  * build java code
- ** cd GITDIR/java/
- ** ant clean all
- ** ant create-webapp-dir
- ** NOTE: should work on all one line, problem with ivy, needs fixing.
+   * cd GITDIR/java/
+   * ant clean all
+   * ant create-webapp-dir
+   * NOTE: should work on all one line, problem with ivy, needs fixing.
 
  * setup perl
- ** sudo /sbin/service satellite-httpd start
- *** might have to comment out ssl.conf from httpd.conf
- *** NOTE: remember to set your ORACLE_HOME: /etc/sysconfig/satellite-httpd, if using Oracle XE set it to : /usr/lib/oracle/xe/
- *** also add LD_LIBRARY_PATH entry: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/10.2.0.4/client/lib/
+   * sudo /sbin/service satellite-httpd start
+     * might have to comment out ssl.conf from httpd.conf
+     * NOTE: remember to set your ORACLE_HOME: /etc/sysconfig/satellite-httpd, if using Oracle XE set it to : /usr/lib/oracle/xe/
+     * also add LD_LIBRARY_PATH entry: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/10.2.0.4/client/lib/
 
  * setup python
 
  * setup symlinks
- ** cd GITDIR/satellite/
- ** export GITDIR=/your/git/checkout
- ** sudo -E ./setup-symlinks.sh
+   * cd GITDIR/satellite/
+   * export GITDIR=/your/git/checkout
+   * sudo -E ./setup-symlinks.sh
 
  * configure
- ** setup hibernate database connection using jdbc logdriver: 
- {{{
- hibernate.connection.username=spacewalk
- hibernate.connection.password=spacewalk
- hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe
- hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
- }}}
-
- ** setup hibernate database connection using oracle driver: 
- {{{
- hibernate.connection.username=spacewalk
- hibernate.connection.password=spacewalk
- hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
- #hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
- }}}
- ** setup perl/python database connection:
- {{{ web.default_db=spacewalk/spacewalk@xe }}}
+   * setup hibernate database connection using jdbc logdriver: 
+    {{{
+    hibernate.connection.username=spacewalk
+    hibernate.connection.password=spacewalk
+    hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe
+    hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
+    }}}
+   * setup hibernate database connection using oracle driver: 
+     {{{
+     hibernate.connection.username=spacewalk
+     hibernate.connection.password=spacewalk
+     hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
+     #hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
+     }}}
+   * setup perl/python database connection:
+     {{{ web.default_db=spacewalk/spacewalk@xe }}}
 
 
  * start services
- ** sudo /sbin/service tomcat5 start
+   * sudo /sbin/service tomcat5 start
 
 === COMMON PROBLEMS ===
  * homedir is not readable by tomcat / apache users
