@@ -49,13 +49,12 @@ Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> -
 perl gen-oss-sat-cert.pl --dsn scooby/snack@shaggy --signer 74E73973 --resign template-eval.cert
 }}}
 
-== Activating the Satellite ==
+== Activating the Satellite locally ==
 
  You should use the options below to accomplish the following tasks in this order:
 
    1. Validate the RHN Entitlement Certificate's sanity (or usefulness).
-   2. Activate the Satellite locally by inserting the Entitlement Certificate into the local database. Use this option if you only have private channels. 
-   3. Activate the Satellite remotely by inserting the Red Hat Entitlement Certificate into the central RHN (remote) database. This is typically accomplished during local activation but may require a second step if you chose the --disconnected option.
+   2. Activate the Satellite locally by inserting the Entitlement Certificate into the local database. 
 
 Here are some examples depicting use of the tool and these options.
 
@@ -67,10 +66,6 @@ To validate an Entitlement Certificate and populate the local database:
 {{{
 rhn-satellite-activate --disconnected --rhn-cert=/path/to/demo.cert
 }}}
-To validate an Entitlement Certificate and populate both the local and the RHN database:
-{{{
-rhn-satellite-activate --rhn-cert=/path/to/demo.cert
-}}}
-Once you run this final command, the Satellite is running and able to serve packages locally and/or synchronize with the central RHN Servers.
+Once you run this final command, the Satellite is running and able to serve packages locally.
 
 
