@@ -34,7 +34,7 @@ gpg --export > mycertkey.gpg
 
 Set the {{{web.gpg_keyring}}} in {{{/etc/sysconfig/rhn/default/rhn_web.conf}}} to your newly exported keyring.
 
-Alternatively, you can add your keys to the {{{/etc/webapp-keying.gpg}}} keyring.
+Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyring.
 
 == Signing the Certificate ==
 
