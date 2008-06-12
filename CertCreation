@@ -51,7 +51,7 @@ perl gen-oss-sat-cert.pl --dsn scooby/snack@shaggy --signer 74E73973 --resign te
 
 == Activating the Satellite locally ==
 
- You should use the options below to accomplish the following tasks in this order:
+You should use the options below to accomplish the following tasks in this order:
 
    1. Validate the RHN Entitlement Certificate's sanity (or usefulness).
    2. Activate the Satellite locally by inserting the Entitlement Certificate into the local database. 
