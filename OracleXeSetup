@@ -114,11 +114,16 @@ rlwrap sqlplus spacewalk/spacewalk@xe
 }}} 
 and retain 'curses' like behavior with sql plus (sql call history maintenance, etc)
 
-== setup schema ==
+== setup schema (optional) ==
+
+If you just want the Spacewalk database schema installed you can do the following:
+
 {{{
  cd $GITDIR/schema
  make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe
 }}}
+
+If you plan on installing Spacewalk and running the entire application you can skip this step.  The spacewalk-setup program will install the schema for you.
 
 == misc links ==
 [http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide]
