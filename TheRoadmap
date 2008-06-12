@@ -1,15 +1,47 @@
-
 == Roadmap ==
 
-This page holds some feature ideas/themes for future releases of Spacewalk.  These may include RFEs currently recieved, ideas on the mailing list, and general directions of where we would like to go.  This can all change at any time, but should give you and idea of where we would like to go and where some of the future excitement is.
+This page holds some feature ideas/themes for future releases of Spacewalk.  These may include RFEs currently received, ideas on the mailing list, and general directions of where we would like to go.  This can all change at any time, but should give you and idea of where we would like to go and where some of the future excitement is.
 
-== Release 1.2.3.4 ==
+== Release 0.1 ==
 
-Fill In
+Provide new client support (via yum-rhn-plugin and associated packages) for
+ * Fedora 9
+ * CentOS 4
+ * CentOS 5
 
-== Release 1.2.3.5 ==
+Oracle 10g Database Support (previously was 9i)
 
-Fill in ...
+Support for installation of Spacewalk on the following OS:
+ * Fedora 9 (i386 & x86_64)
+ * CentOS 4 & 5 (i386 & x86_64)
+
+API additions
+
+Provide for Solaris sun4v client support
+
+== Release 0.2 ==
+
+Start work on getting support needed for Fedora 10 changes, such as proposed:
+ * DeltaRPM
+ * SHA256 support in RPM
+ * Improvements to yum-rhn-plugin and supporting components
+
+Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
+
+Inter Spacewalk Server sync - the ability to pull content from one Spacewalk server to the other via command line tools
+
+Further API additions for supporting Multi-Org feature and other calls
+
+Improvements to the Search capabilities (Index Docs, Errata and System data Lucene based engine)
+
+Test and confirm Solaris client works on AMD64 based Solaris 10
+
+Start on projects for 0.3 release:
+ * Multi-Org Channel (packages & errata) Content Data sharing over multiple Organizations within Spacewalk
+ * Ability to migrate/move registered client systems from one Organization to another Organization within the Spacewalk server
+ * A support user role, who has read-only access to view data stored within Spacewalk
+
+== Release 0.3 ==
 
 == Future Ideas ==
 DeltaRpmSupport
