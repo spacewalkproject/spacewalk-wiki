@@ -2,4 +2,13 @@
 
 just a page to collect brainwaves/ideas/evil thought to integrate in spacewalk. Didn't find a way to put it elsewhere, so until then, just put it in here.
 
-  * func instead of osad? What are the advantages/disadvantages? Is it possible?
+  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
+     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. -- mpd
+  * make more pieces of Sat seperate open source sub-projects that other projects can use.  what is interesting?
+  * upgrade configuration management engine?
+  * upgrade monitoring engine?
+  * easier support for importing content from multiple distributions and managing those distributions in parallel
+  * streamline development process to encourage more contributions, see "architecture of open source collaboration"
+     * [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a Harvard Business School link]
+
+
