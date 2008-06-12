@@ -20,9 +20,18 @@ uid                  Scooby Doo <scooby@redhat.com>
 sub   2048g/AFD3819B 2008-06-11
    }}}
 
+
+ 3. Finally, export the key.
+
+   {{{
+gpg --export > mycertkey.gpg
+   }}}
+
 == Install GPG keys into webapp ==
 
-Set the {{{web.gpg_keyring}}} in {{{/etc/sysconfig/rhn/default/rhn_web.conf}}} to your new keyring. Alternatively, you can add your keys to the {{{/etc/webapp-keying.gpg}}} keyring
+Set the {{{web.gpg_keyring}}} in {{{/etc/sysconfig/rhn/default/rhn_web.conf}}} to your newly exported keyring.
+
+Alternatively, you can add your keys to the {{{/etc/webapp-keying.gpg}}} keyring.
 
 == Signing the Certificate ==
 
