@@ -3,30 +3,36 @@
 
 == Generate GPG keys ==
 
- 1.  gpg --gen-key
-{{{
+ 1. First create a GPG key,
+   
+    {{{
+gpg --gen-key
+    }}}
+
+ 2. Then see if your key appears in listed. For example, we generated a gey for Scooby below.
+
+    {{{
 [scooby@scooby ~]$ gpg --list-keys
 /home/scooby/.gnupg/pubring.gpg
 -------------------------------
 pub   1024D/74E73973 2008-06-11
 uid                  Scooby Doo <scooby@redhat.com>
 sub   2048g/AFD3819B 2008-06-11
-}}}
+   }}}
 
 == Install GPG keys into webapp ==
 
- 1. Open /etc/sysconfig/rhn/default/rhn_web.conf and modify the web.gpg_keyring to your new keyring
- 2. Or, add your keys to the /etc/webapp-keying.gpg keyring
+Set the {{{web.gpg_keyring}}} in {{{/etc/sysconfig/rhn/default/rhn_web.conf}}} to your new keyring. Alternatively, you can add your keys to the {{{/etc/webapp-keying.gpg}}} keyring
 
-== Sign Cert ==
+== Signing the Certificate ==
 
- 1. Add the gen-oss-sat-cert.pl script to your satellite
- 2. Modify the template.cert or create a new cert to sign
- 3. Review the usage statement from gen-oss-cert.pl:
+ 1. Add the {{{gen-oss-sat-cert.pl}}} script to your satellite
+ 2. Modify the {{{template.cert}}} or create a new certifcate to sign
+ 3. Review the usage statement from {{{gen-oss-cert.pl}}}:
 {{{
 Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ] [ --resign ]
 }}}
- 4. Resign/sign the cert, example:
+ 4. Resign/sign the cert, for example:
 {{{
 perl gen-oss-sat-cert.pl --dsn scooby/snack@shaggy --signer 74E73973 --resign template-eval.cert
 }}}
