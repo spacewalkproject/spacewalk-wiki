@@ -45,7 +45,9 @@ Generate drpms on the fly as requested and cache them on the server.  This handl
 
 Will need to modify backend to generate preesto repo files and delta rpms.
 
-Will need to make sure client works with yum-rhn-plugin (preliminary test seem to show that it will work).  Although the newest yum-presto plugin will not work on RHEL 5.
+Will need to make sure client works with yum-rhn-plugin (preliminary test seem to show that it will work).  Although the newest yum-presto plugin will not work on RHEL 5, we think that it will work nicely with the yum-rhn-plugin.
+
+
 
  
 == My thoughts ==
