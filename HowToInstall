@@ -29,7 +29,7 @@ yum install spacewalk
 This will pull down and install the set of RPMs required to get spacewalk to run.  You may get a conflict from '''rhns''' with specspo.  If so, just do a:
 
 {{{
-rpm -e specspo
+rpm -e specspo && yum install spacewalk
 }}}
 
 You can also find source RPMs and tarballs at the following URL:
