@@ -1,23 +1,37 @@
-= How to install =
+= Oracle Pre-Requisites =
+
+In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE.  Instructions on how todo this can be found here:
+
+[OracleXeSetup Oracle XE Setup instructions]
+
+= Installation =
+
 RPM downloads of the project are available through a yum repository
 
-  * add URL here
+  * http://spacewalk.redhat.com/yum
 
 To use this repository, add a file in yum.repos.d with the following contents:
 
 {{{
 
-FILL IN
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/rhel/$releasever/$basearch/
+enabled=1
+gpgcheck=1
+
 
 }}}
 
-Then just ask yum to install the application.
+Then just ask yum to install the application:
 
 {{{
 
 yum install spacewalk
 
 }}}
+
+This will pull down and install the set of RPMs required to get spacewalk to run.
 
 You can also find source RPMs and tarballs at the following URL:
    * fill in
