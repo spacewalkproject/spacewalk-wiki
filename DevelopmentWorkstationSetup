@@ -19,6 +19,7 @@ NOTE: Still Under construction try the Java Side fo things and Perl side of thin
  gpgkey=
  }}}
  * yum install spacewalk-metadata-legacy-workstation spacewalk-metadata-java-workstation
+ * echo "/usr/lib/oracle/10.2.0.4/client/lib" > /etc/ld.so.conf.d/oracle.conf
 
  * checkout source code [GIT command here]
 
