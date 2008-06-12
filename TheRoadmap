@@ -4,7 +4,7 @@ This page holds some feature ideas/themes for future releases of Spacewalk.  The
 
 == Release 0.1 ==
 
-Provide new client support (via yum-rhn-plugin and associated packages) for
+Provide client support (via yum-rhn-plugin and associated packages) for
  * Fedora 9
  * CentOS 4
  * CentOS 5
@@ -28,11 +28,13 @@ Start work on getting support needed for Fedora 10 changes, such as proposed:
 
 Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
 
+Command line Proxy Server installation process (deprecate the current WebUI based process)
+
 Inter Spacewalk Server sync - the ability to pull content from one Spacewalk server to the other via command line tools
 
 Further API additions for supporting Multi-Org feature and other calls
 
-Improvements to the Search capabilities (Index Docs, Errata and System data Lucene based engine)
+Improvements to the Search capabilities (Index Docs, Errata and System date using a Lucene based engine)
 
 Test and confirm Solaris client works on AMD64 based Solaris 10
 
@@ -44,5 +46,21 @@ Start on projects for 0.3 release:
 == Release 0.3 ==
 
 == Future Ideas ==
-DeltaRpmSupport
+These are not in any specific order
 
+ * DeltaRpmSupport
+ * Allow for Spacewalk to use different databases, such as either PostgreSQL or MySQL
+ * Look to re-factor the /var/satellite/ directory structure for large users of spacewalk who have more than 32,000 unique package names
+ * Provide an SELinux policy for running Spacewalk within an Enforcing mode SELinux server.
+ * Integrate further with FreeIPA
+   * look at single sign on for users via kerberos tickets using mod_kerb (assumption) or some other solution
+   * machine identity (beyond the systemid file) and authentication via FreeIPA
+ * IPv6 support (not sure what changes, if any we would need to make)
+ * Version Control system of Activations Keys & Kickstart Profiles
+ * Pulp - what can we get from it, use/integrate with it as an alternative representation of how to get things done within Spacewalk UI
+ * oVirt - Does Spacewalk provide management for it, communicate/represent data or something else?
+ * Conga - Cluster and storage management - similar to oVirt - does Spacewalk look to provide an alternative management for these tools
+ * Allow for integration with and communication/understanding of open source Jaspersoft reporting engine to mine data and reports out of Spacewalks database
+ * Use puppet project as an alternative solution to replace our current Configuration File/Directory management tools - provide a richer usage than the basic capabilities we have today
+ * Use smolt project as an alternative solution to replace our current hardware profile capturing system - provide a more complete hardware inventory system
+ * Use func as an alternative solution to replace our current rhnpush technology (osad communication over jabber protocol servers)
