@@ -38,7 +38,7 @@ Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyrin
 
 == Signing the Certificate ==
 
- 1. Add the {{{gen-oss-sat-cert.pl}}} script to your satellite
+ 1. Add the {{{gen-oss-sat-cert.pl}}} script to your satellite (see below under '''Atatchments''')
  2. Modify the {{{template.cert}}} or create a new certifcate to sign
  3. Review the usage statement from {{{gen-oss-cert.pl}}}:
 {{{
