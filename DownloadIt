@@ -143,3 +143,5 @@ Name: RPM-GPG-KEY-spacewalk
 Fingerprint: B6F4 CBE4 8B8F 45E1 85F8  34B2 9542 3D4E 430A 1C35
 }}}
 
+The public key is here:  <a href="https://fedorahosted.org/spacewalk/attachment/wiki/DownloadIt/RPM-GPG-KEY-spacewalk?format=raw"> RPM-GPG-KEY-spacewalk</a>
+
