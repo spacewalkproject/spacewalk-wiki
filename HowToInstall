@@ -98,3 +98,9 @@ Perhaps a required shared library or dll isn't installed where expected
 }}}
 
 During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
+
+The dependency for the "concurrent" package is not getting processed properly. Until we can get this dependency right in rhn-java-sat:
+
+{{{
+yum install concurrent
+}}}
