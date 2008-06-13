@@ -46,7 +46,7 @@ Usage: ./gen-oss-sat-cert.pl --dsn <dsn> --orgid <org_id> --owner <owner_name> -
 }}}
  4. Resign/sign the cert, for example:
 {{{
-perl gen-oss-sat-cert.pl --dsn scooby/snack@shaggy --signer 74E73973 --resign template-eval.cert
+perl gen-oss-sat-cert.pl --dsn spacewalk/spacewalk@xe --signer 74E73973 --resign template-eval.cert
 }}}
 
 == Activating the Satellite locally ==
