@@ -2,7 +2,7 @@
 
 == Overview ==
 
-The Spacewalk Satellite Server provides all services to customers through the setting of entitlements. The entitlements available through the Satellite are determined by the Entitlement Certificate which contains the precise set of entitlements attributed to your organization. The entitlement certificiate is encryped with a GPG key. For Red Hat supported channels, the certificiate is encryped with Red Hat's security GPG key. It is possible to create your own GPG key and certificate for private non Red Hat channels. This process involves creating a GPG key and sigining a certificate for use with Spacewalk. The GPG signed certificate is used to activate the satellite using rhn-satellite-activate. A certificate template and sigining script is included for your use. 
+The Spacewalk Server provides all services to customers through the setting of entitlements. The entitlements available through Spacewalk are determined by the Entitlement Certificate which contains the precise set of entitlements attributed to your organization. The entitlement certificiate is encryped with a GPG key. For Red Hat supported channels, the certificiate is encryped with Red Hat's security GPG key. It is possible to create your own GPG key and certificate for private non Red Hat channels. This process involves creating a GPG key and signing a certificate for use with Spacewalk. The GPG signed certificate is used to activate the satellite using rhn-satellite-activate. A certificate template and signing script is included for your use. 
 
 == Generate GPG keys ==
 
