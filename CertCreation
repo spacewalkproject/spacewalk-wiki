@@ -62,12 +62,12 @@ gpg --import mysecretkey.gpg
 perl gen-oss-sat-cert.pl --dsn spacewalk/spacewalk@xe --signer 74E73973 --resign template-eval.cert
 }}}
 
-== Activating the Satellite locally ==
+== Activating the Spacewalk locally ==
 
 You should use the options below to accomplish the following tasks in this order:
 
-   1. Validate the RHN Entitlement Certificate's sanity (or usefulness).
-   2. Activate the Satellite locally by inserting the Entitlement Certificate into the local database. 
+   1. Validate the Entitlement Certificate's sanity (or usefulness).
+   2. Activate the Spacewalk locally by inserting the Entitlement Certificate into the local database. 
 
 Here are some examples depicting use of the tool and these options.
 
@@ -79,6 +79,6 @@ To validate an Entitlement Certificate and populate the local database:
 {{{
 rhn-satellite-activate --disconnected --rhn-cert=/path/to/demo.cert
 }}}
-Once you run this final command, the Satellite is running and able to serve packages locally.
+Once you run this final command, the Spacewalk is running and able to serve packages locally.
 
 
