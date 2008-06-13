@@ -137,7 +137,7 @@ rpm --checksig -v <filename>.rpm
 
 The output of this command will show you if the package is signed, and which key was used to sign it.
 
-=== Release Package Signing ===
+Release Package Signing
 {{{
 Name: RPM-GPG-KEY-spacewalk
 Fingerprint: B6F4 CBE4 8B8F 45E1 85F8  34B2 9542 3D4E 430A 1C35
