@@ -68,12 +68,16 @@ You can also find source RPMs and tarballs at the following URL:
 
 Need these 2 environment variables:
 
+{{{
 # export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/
 # export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
-   
+}}}
+
 Need this symlink after setting up Oracle.  We should put this in our oracle-compat RPM:
 
+{{{
 # cd /usr/lib/oracle && ln -s 10.2.0.4/ 10.2.0
+}}}
 
 
 
