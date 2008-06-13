@@ -126,6 +126,19 @@ git clone ssh://git.fedorahosted.org/git/spacewalk.git/
 
 }}}
 
-== More Info ==
+== RPM Package Signing ==
 
-To be added...
+We use a number of GNU Privacy Guard (GPG) keys to sign our software packages. The necessary public keys are included in relevant products and are used automatically to verify software updates. You can also check the packages manually using the keys on this page.
+
+To verify a RPM package for Spacewalk, run the command
+{{{
+rpm --checksig -v <filename>.rpm
+}}}
+
+The output of this command will show you if the package is signed, and which key was used to sign it.
+
+=== Release Package Signing ===
+Name: RPM-GPG-KEY-spacewalk
+Fingerprint: B6F4 CBE4 8B8F 45E1 85F8  34B2 9542 3D4E 430A 1C35
+
+
