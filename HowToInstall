@@ -87,4 +87,12 @@ ALternatively you can do (NOTE: this may not work, didn't seem to in my test - d
 # ldconfig
 }}}
 
+You mean need to disable selinux if you encounter this error:
 
+{{{
+Could not connect to the database.  Your connection information may be incorrect.  Error: install_driver(Oracle) failed: Can't load '/usr/lib/perl5/site_perl/5.8.8/i386-linux-thread-multi/auto/DBD/Oracle/Oracle.so' for module DBD::Oracle: /usr/lib/oracle/10.2.0/client/lib/libnnz10.so: cannot restore segment prot after reloc: Permission denied at /usr/lib/perl5/5.8.8/i386-linux-thread-multi/DynaLoader.pm line 230, <STDIN> line 6.
+ at (eval 784) line 3
+Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
+Perhaps a required shared library or dll isn't installed where expected
+ at /usr/bin/spacewalk-setup line 1504
+}}}
