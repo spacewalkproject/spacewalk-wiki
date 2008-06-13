@@ -49,7 +49,7 @@ rpm -e specspo && yum install spacewalk
 Once the spacewalk rpm is installed you need to configure the application.  Todo this run:
 
 {{{
-spacewalk-setup
+spacewalk-setup --disconnected
 }}}
 
 This will prompt you for questions about your database configuration and spacewalk certificate location.
@@ -96,3 +96,5 @@ Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
 Perhaps a required shared library or dll isn't installed where expected
  at /usr/bin/spacewalk-setup line 1504
 }}}
+
+During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
