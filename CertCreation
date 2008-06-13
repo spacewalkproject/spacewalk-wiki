@@ -27,7 +27,7 @@ sub   2048g/AFD3819B 2008-06-11
  3. Finally, export the key.
 
    {{{
-gpg --export > mycertkey.gpg
+gpg --export -a 74E73973 > mycertkey.gpg
    }}}
 
 == Install GPG keys into webapp ==
