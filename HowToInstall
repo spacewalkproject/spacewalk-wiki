@@ -9,6 +9,7 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 [OracleXeSetup Oracle XE Setup instructions]
 
 = EPEL Repo setup =
+You need to be registered to hosted to get make use of the EPEL repo
 
 Spacewalk requires a Java Virtual Machine with version 1.5.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with spacewalk.  To get packages from EPEL just install this RPM:
 
