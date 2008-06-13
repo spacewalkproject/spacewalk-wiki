@@ -80,7 +80,7 @@ Need this symlink after setting up Oracle.  We should put this in our oracle-com
 # cd /usr/lib/oracle && ln -s 10.2.0.4/ 10.2.0
 }}}
 
-ALternatively you can do (NOTE: this may not work, didn't seem to in my test - dgoodwin)
+ALternatively you can do:
 
 {{{
 # echo "/usr/lib/oracle/10.2.0.4/client/lib" > /etc/ld.so.conf.d/oracle.conf 
