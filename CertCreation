@@ -2,7 +2,7 @@
 
 == Overview ==
 
-The Spacewalk Server provides all services to customers through the setting of entitlements. The entitlements available through Spacewalk are determined by the Entitlement Certificate which contains the precise set of entitlements attributed to your organization. The entitlement certificiate is encryped with a GPG key. For Red Hat supported channels, the certificiate is encryped with Red Hat's security GPG key. It is possible to create your own GPG key and certificate for private non Red Hat channels. This process involves creating a GPG key and signing a certificate for use with Spacewalk. The GPG signed certificate is used to activate the satellite using rhn-satellite-activate. A certificate template and signing script is included for your use. 
+The Spacewalk Server provides all services to customers through the setting of entitlements. The entitlements available through Spacewalk are determined by the Entitlement Certificate which contains the precise set of entitlements attributed to your organization. The entitlement certificiate is encryped with a GPG key. For Red Hat supported channels, the certificiate is encryped with Red Hat's security GPG key. It is possible to create your own GPG key and certificate for private non Red Hat channels. This process involves creating a GPG key and signing a certificate for use with Spacewalk. The GPG signed certificate is used to activate the Spacewalk using rhn-satellite-activate. A certificate template and signing script is included for your use. 
 
 == Generate GPG keys ==
 
@@ -46,7 +46,7 @@ Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyrin
 
 == Signing the Certificate ==
 
- 1. Add the {{{gen-oss-sat-cert.pl}}} script to your satellite (see below under '''Attachments''')
+ 1. Add the {{{gen-oss-sat-cert.pl}}} script to your Spacewalk (see below under '''Attachments''')
  2. Modify the {{{template.cert}}} or create a new certifcate to sign
  3. Review the usage statement from {{{gen-oss-cert.pl}}}:
 {{{
