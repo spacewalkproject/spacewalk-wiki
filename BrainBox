@@ -14,4 +14,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for spacewalk.
   * decompose Spacewalk into an aggregation of OSS projects, composed of seperate subprojects that are usable seperately
   * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
   * enable for usage with Transifex
-
+  * integration with koji :)?
