@@ -3,7 +3,8 @@
 In this section you can find user documenation for Spacewalk.  You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
    * [HowToInstall How to install] -- How to download and install Spacewalk.
-   * [http://www.redhat.com/docs/manuals/satellite/ | Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
+   * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
+   * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
    * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora.
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
