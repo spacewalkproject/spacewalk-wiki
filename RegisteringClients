@@ -2,32 +2,24 @@ Instructions for registering client systems you with to manage with Spacewalk
 
 = Fedora 9 =
 
-  1. Install the Fedora Spacewalk yum repository:
+  1. Install the Fedora Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents:
     {{{
-cd /etc/yum.repos.d/ 
-  1. Install rhnlib: 
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/fedora/$releasever/$basearch/
+enabled=1
+gpgcheck=1
+}}}
+  1. Install client packages:
     {{{
-yum install http://spacewalk.redhat.com/yum/rhel/5Server/i386/rhnlib-2.2.5-1.noarch.rpm
+yum install rhnlib rhn-check rhn-client-tools rhn-setup rhn-setup-gnome
     }}}
   1. Create symlink for Python 2.5 in Fedora.
     {{{
 blah
     }}}
-    * TODO: Get a version of rhnlib properly built for Fedora so we can skip this step.
-  1. Install the rhn-client-tools:
-
-
-
-* Get rhn-client-tools working. Grab the rpms from http://barn.rhndev.redhat.com/redhat/brewroot/packages/rhn-client-tools/
-
-  Preparing...                ########################################### [100%]
-   1:rhn-client-tools       ########################################### [ 25%]
-   2:rhn-setup              ########################################### [ 50%]
-   3:rhn-check              ########################################### [ 75%]
-   4:rhn-setup-gnome        ########################################### [100%]
-   5:rhnsd                  ########################################### [ 67%]
-
-* fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
+    * TODO: Step required for rhnlib until we get a version properly built for Fedora.
+  1. Fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
 
 * If we have a fedora channel with packages hosted on the satellite, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
 
