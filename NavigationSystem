@@ -4,8 +4,8 @@
 
 These navigation bars are handled by two files:
 
-sitenav-authenticated.xml  (for authenticated sessions)
-sitenav.xml (for sessions that have not logged in)
+ * sitenav-authenticated.xml  (for authenticated sessions)
+ * sitenav.xml (for sessions that have not logged in)
 
 Each of these files exist of perl and java (and both are independent).  The java versions are in "/eng/java/code/webapp/WEB-INF/nav" and the perl versions are in "/eng/web/html/nav/".
 
@@ -20,10 +20,10 @@ Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pr
 === Sub-navigation ===
 On many pages (System details page, Channel detail page, etc..) there is a tab bar within the page.  These are defined by files within separate files from the sitenav.xml and sitenav-authenticated.xml.  Within the same directories listed above are files called:
 
-action_detail.xml
-channel_detail.xml
-system_detail.xml
-....
+ * action_detail.xml
+ * channel_detail.xml
+ * system_detail.xml
+ * and others like them
 
 These files are exactly like the sitenav navigation files, but contain information only for these sub-navigation bars.
 
