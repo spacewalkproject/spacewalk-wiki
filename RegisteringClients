@@ -31,6 +31,7 @@ yum install rhn-client-tools rhn-check
 * it should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
 
 * install m2crypto
+{{{
   $  yum install m2crypto
   Loading "security" plugin
   Setting up Install Process
@@ -43,9 +44,9 @@ yum install rhn-client-tools rhn-check
     Installing: m2crypto                     ######################### [1/1]
   Installed: m2crypto.i386 0:0.17-2
   Complete!
-
+}}}
 * Re-enable rhnplugin.conf and run yum
-
+{{{
   $ sudo yum install rhnlib
   Loading "rhnplugin" plugin
   Loading "security" plugin
@@ -74,5 +75,5 @@ yum install rhn-client-tools rhn-check
   Remove       0 Package(s)
   Total download size: 5.6 M
   Is this ok [y/N]:
-
+}}}
 * We should now have rhn-plugin functional on a fedora box.
