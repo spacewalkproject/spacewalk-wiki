@@ -6,11 +6,11 @@ Instructions for registering client systems you with to manage with Spacewalk
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/fedora/$releasever/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/fedora/9/i386/
 enabled=1
 gpgcheck=1
 }}}
-    * NOTE: Developers internal can use this URL instead until site is live: baseurl=http://fjs-0-11.rhndev.redhat.com/yum/fedora/9/i386
+    * NOTE: Developers internal can use this URL instead until site is live: http://fjs-0-11.rhndev.redhat.com/yum/fedora/9/i386
   1. Install client packages:
     {{{
 yum install rhn-client-tools rhn-check 
