@@ -7,7 +7,7 @@ These navigation bars are handled by two files:
  * sitenav-authenticated.xml  (for authenticated sessions)
  * sitenav.xml (for sessions that have not logged in)
 
-Each of these files exist of perl and java (and both are independent).  The java versions are in "/eng/java/code/webapp/WEB-INF/nav" and the perl versions are in "/eng/web/html/nav/".
+Each of these files exist of perl and java (and both are independent).  The java versions are in {{{/eng/java/code/webapp/WEB-INF/nav}}} and the perl versions are in {{{/eng/web/html/nav/}}}.
 
 Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pretty self explanatory.  The following tags are valid:
 
@@ -38,6 +38,6 @@ To control whether a tab is displayed at a certain time or not, you can use the 
   active-image="tab-users-selected.gif" inactive-image="tab-users.gif">
 }}}
 
-Here this Users tab would not be shown if either org_entitlement(sw_mgr_enterprise) or user_role(org_admin) returns false.  Both of these are defined in com.redhat.rhn.common.security.acl.Access.  The name org_entitlement is translated into aclOrgEntitlement() when calling the acl, so Access.aclOrgEntitlement() is called.
+Here this Users tab would not be shown if either {{{org_entitlement(sw_mgr_enterprise)}}} or {{{user_role(org_admin)}}} returns false.  Both of these are defined in {{{com.redhat.rhn.common.security.acl.Access}}}.  The name {{{org_entitlement}}} is translated into {{{aclOrgEntitlement()}}} when calling the acl, so {{{Access.aclOrgEntitlement()}}} is invoked.
 
-Additional ACL classes exist for the sub-tab xml files.  Within com.redhat.rhn.common.security.acl exists several Handlers such as !ChannelAclHandler, !ErrataAclHandler.  These are used with their corresponding X_detail.xml file.  For example, the !ChannelAclHandler is for use with channel_detail.xml.
+Additional ACL classes exist for the sub-tab xml files.  Within {{{com.redhat.rhn.common.security.acl}}} exists several handlers such as !ChannelAclHandler, !ErrataAclHandler.  These are used with their corresponding X_detail.xml file.  For example, the !ChannelAclHandler is for use with channel_detail.xml.
