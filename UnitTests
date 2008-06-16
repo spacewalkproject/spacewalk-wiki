@@ -4,11 +4,11 @@ If you have configured this project in eclipse, you can simply use eclipse to ru
 
 To run a set of Unit tests within ant, simply run:
 {{{
-# ant -Dtestcase=!ClassName test
+# ant -Dtestcase=ClassName test
 }}}
 where !ClassName is the name of the class containing unit tests.  For example:
 {{{
-# ant -Dtestcase=!SystemHandlerTest test
+# ant -Dtestcase=SystemHandlerTest test
 }}}
 would run all tests in !SystemHandlerTest.
 
