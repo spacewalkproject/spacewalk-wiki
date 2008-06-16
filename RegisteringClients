@@ -19,9 +19,9 @@ yum install rhn-client-tools rhn-check
   1. Fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
 
 * If we have a fedora channel with packages hosted on the satellite, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
-
+{{{
   rhnreg_ks --activationkey=<key-with-fedora-custom-channel>
-
+}}}
 * install a redhat-release rpm for rhel-5 or edit /usr/share/rhn/up2date_client/up2dateUtils.py's getRelease() to return '5Server'
 
 * register your box to hosted/sat. Now this should go smoothly and you should see your fedora box subscribed to rhel-5 base channel.
