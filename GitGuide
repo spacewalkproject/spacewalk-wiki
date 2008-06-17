@@ -152,9 +152,34 @@ View diff of changes between two past commits:
 {{{
   git diff baf1a1490e205f821fbcc9c4ec2581728afd1c14..a31f80910768ba2232c796b814be11d064421f19
 }}}
-== Troubleshooting ==
 
-Correcting common mistakes and problems.
+See what remote branches exist:
+{{{
+git branch -r
+}}}
+
+Switching to a remote branch, originally you will need to track it so you can keep up with changes automatically.
+
+{{{
+git checkout --track -b my-branchname origin/branchname
+}}}
+If you ever want to use that branch again, BTW, you can just do:
+
+{{{
+git-checkout my-branchname
+}}}
+Once you make changes, you can see the differences you've made since last commit:
+
+{{{
+git diff HEAD
+}}}
+
+The following commands can help with formatting patches.
+
+{{{
+git-format-patch
+git-send-email
+}}}
 
 == Tips ==
 
@@ -167,78 +192,3 @@ Correcting common mistakes and problems.
  * [http://www.kernel.org/pub/software/scm/git/docs/user-manual.html The Git User's Manual]
  * [http://jbowes.dangerouslyinc.com/2007/02/18/git-bisect-a-practical-example-with-yum/ Jbowes' Instructional Blog Post on git-bisect]
  * [http://jbowes.dangerouslyinc.com/2007/01/26/git-rebase-keeping-your-branches-current/ Jbowes' Instructional Blog Post on git-rebase]
-
-----
-----
-
-== Working with git ==
-
-The main part of the git tree "HEAD" contains the latest of anything.   Releases are branched off.  In general, send in patches to HEAD and developers can apply them to other branches as appropriate.
-
-For starters, you can look at what branches are there by doing:
-
-{{{
-git branch -r
-}}}
-
-If you want to switch to that branch, originally you need to track it so you can keep up with changes automatically.
-
-{{{
-git checkout --track -b my-branchname origin/branchname
-}}}
-
-
-If you ever want to use that branch again, BTW, you can just do:
-
-{{{
-git-checkout my-branchname
-}}}
-
-If you want to update your checkout to the latest git source, from any branch:
-
-{{{
-git pull
-}}}
-
-Make changes. To see the differences you've made since last commit:
-
-{{{
-git diff HEAD
-}}}
-
-To revert your changes:
-
-{{{
-git checkout -f         # All changes
-git checkout -f foo.py  # A specific file
-}}}
-
-If you are adding a larger feature, commit often to describe the changes you are making to files.  For small stuff, a commit at the end of your changes is probably fine.
-
-{{{
-git-commit -a
-}}}
-
-And once you have the checkout working like you want, submit the patch to the mailing list.
-
-The following commands can help with formatting patches.
-
-{{{
-git-format-patch
-git-send-email
-}}}
-
-Feel free to use whatever git commands you want, that's just for those who may be unfamiliar with it.
-
-Other interesting git-commands, that you may not need initially:
-
-{{{
-git-add                            # add a new file to source control that wasn't there before
-git-reset                          # revert changes, especially with git-reset --hard
-git-log                            # look at changes
-git-branch, git-merge, git-rebase  # if you want to create branches yourself
-git-blame                          # see who changed what/where
-git-rm                             # remove a file from source control
-}}}
-
-There is also a [http://www.kernel.org/pub/software/scm/git/docs/tutorial.html git tutorial] at kernel.org that is worth reading.
