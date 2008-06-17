@@ -16,6 +16,7 @@ This section contains information about developer topics.  You may also be inter
    * UnitTests -- how to run them
 
  * Working with the code
+   * [GitGuide Git Guide] -- how to work with Git, the source control of choice for Spacewalk
    * [DevelopmentWorkstationSetup Setting up  the Development environment]
    * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
    * CodingConventions -- coding style and conventions used in the project
