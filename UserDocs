@@ -10,5 +10,6 @@ In this section you can find user documenation for Spacewalk.  Are you a develop
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
    * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
 
-If you are looking for some documentation and can't find it, or would like to understand something better, please let us know using the mailing list or IRC.  See the "Communicate" section of the project page for links.  Also, since this is a Wiki, feel free to add your own docs and additions.
+Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
+Do you know the answer to something and thnk others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
