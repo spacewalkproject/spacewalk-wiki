@@ -2,12 +2,9 @@
 
 So you'd like to send in a patch to Spacewalk?   Great!
 
-First off, read the git instructions on [GitGuide this page].   You'll want to send in a patch via git-format-patch to the mailing list.
-Because the mailing list (currently) uses a somewhat old install of mailman, you should notify the list if you have problems with email bouncing.
-If you do, let us know.
+First, get the code: DownloadIt
+
+Then read the git instructions on the [GitGuide git guide]. You'll want to send in a patch via {{{git-format-patch}}} to the [wiki#Communication mailing list]. Please notify the list if you have a problem with email bouncing, there have been issues
+with the somewhat old installs of mailman causing such problems.
 
 As mentioned on the other page, patches should be applied to HEAD in git, and we'll take care of applying them to other releases as appropriate.
-
-== More Info TBD ==
-
-...
