@@ -1,5 +1,176 @@
 = [http://git.or.cz/ Git] Guide =
 
+== Getting Started ==
+A quick start guide to using git, especially if you're used to using svn or cvs.
+
+=== Install Git ===
+First, you'll want to install git.
+
+Fedora users can just install it:
+{{{
+  yum install git
+}}}
+
+RHEL 5 users can get git from EPEL:
+{{{
+  # add the EPEL repo:
+  # see: http://fedoraproject.org/wiki/EPEL/FAQ#howtouse
+  rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm
+  yum install git
+}}}
+=== Clone the Spacewalk git repository ===
+You'll need to get the code, for more detail check out the DownloadIt page,
+
+{{{
+git clone git://git.fedorahosted.org/git/spacewalk.git/
+}}}
+
+=== Identify Yourself ===
+A good practice is to identify yourself to git. You can do this by modifying {{{~/.gitconfig}}} so that git knows how to identify your commits. 
+
+'''NOTE:''' git can differentiate between the author of a commit and person with commit access pushing it to the repository. Most of the time these are the same, but in the case of accepting patches from the community the author should be modified (via setting the {{{GIT_AUTHOR_NAME}}} and {{{GIT_AUTHOR_EMAIL}}} environment variables) while keeping your commit user as yourself.
+
+A good sample ~/.gitconfig:
+
+{{{
+[user]
+    name = Devan Goodwin
+    email = dgoodwin@redhat.com
+
+[alias]
+    ci = commit -a
+    co = checkout
+    st = status -a
+    praise = blame 
+
+[apply]
+    whitespace = strip
+
+[diff]
+    color = auto
+    rename = copy 
+
+[pager]
+    color = true 
+
+[status]
+    color = auto
+}}}
+
+== Things To Remember ==
+
+ 1. '''ALWAYS''' work in branches.
+ 1. Your git commits are local only until you push them to the remote repository. (or submit a patch if you do not have commit access) 
+ 1. Use rebase to update your branch before you merge it.
+ 1. git commands can be run with {{{git-command}}} or {{{git command}}}
+
+= Everyday Workflow =
+
+Ready to start hacking on the code? Create yourself a branch to work in.
+
+  git checkout -b bug456789
+
+This is actually combining two steps into one, you could also do this the long way with:
+
+  git branch bug456789      # create the branch
+  git checkout bug456789    # work on this branch
+
+List your branches anytime with:
+
+  git branch                # list all your branches
+
+You now have a local branch nobody else can see, they're extremely fast and lightweight, and you can commit as you please. Nothing is pushed to the central repository until you explicitly do so.
+
+Note that the single directory you cloned can be used to work on any branch you like with a simple git checkout command. Switching branches is extremely fast and easy and you can do so at virtually any time. Even if you have changes you don't want to commit (which you often can anyhow as you're working in a private branch), you can use git-stash to stash them away and apply them later, possibly to another branch. (if you found yourself working on the wrong branch)
+
+Now that you've branched you can get to work modifying, adding, and deleting files similar to the way you would use svn.
+
+<pre>
+[gituser@rlx-0-18 manager]$ echo "blahblahblah" > newfile
+[gituser@rlx-0-18 manager]$ git-add newfile
+[gituser@rlx-0-18 manager]$ git-rm Worker.java 
+rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
+[gituser@rlx-0-18 manager]$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       deleted:    Worker.java
+#       new file:   newfile
+#
+# Changed but not updated:
+#   (use "git add <file>..." to update what will be committed)
+#
+#       modified:   SatManager.java
+#
+[gituser@rlx-0-18 manager]$
+</pre>
+
+Now it's time to commit (and you can and should commit often, as often as you like). 
+
+'''IMPORTANT NOTE:''' By default, files you have modified will not be included if you run '''git commit'''. Normally you will probably just want to use the -a option to commit all modified files:
+
+  git commit -a
+
+If you wish to only include '''some''' of the modified files in your commit, you must do something like:
+
+  git add modified-file1.txt
+  git add modified-file3.txt
+  git commit
+
+Repeat for as many commits as you like on your branch until you're satisfied with your bugfix, feature, or whatever.
+
+When you're ready to push your changes out to the public repository, we'll use git rebase to apply any changes that have gone on in the remote repository into our branch as seamlessly as possible. If a conflict occurs this is where it will most likely happen, in which case you resolve it and continue the rebase, or start over.
+
+  git checkout master                 
+  git pull                      # fetch latest remote changes into master (should apply clean)
+  git checkout bug456789        # return to your branch
+  git rebase master             # apply changes from master intelligently into your branch
+  git checkout master           # back to master
+  git merge bug456789           # merge your changes in (use --squash if you'd like just 1 commit with a new message)
+  git push                      # push the changes out to the remote repository
+
+= Other Common Tasks =
+
+Revert a file with uncommitted changes you do not wish to keep:
+
+  git checkout path/to/file/to/revert.txt
+
+Revert all your current uncommitted changes:
+
+  git reset --hard HEAD
+
+Revert changes from a past commit with a new commit:
+
+  git revert a31f80910768ba2232c796b814be11d064421f19
+
+View diff of changes in a past commit:
+
+  git diff a31f80910768ba2232c796b814be11d064421f19
+
+View diff of changes between two past commits:
+
+  git diff baf1a1490e205f821fbcc9c4ec2581728afd1c14..a31f80910768ba2232c796b814be11d064421f19
+
+= Troubleshooting =
+
+Correcting common mistakes and problems.
+
+= Tips =
+
+* Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
+** Install '''gitk''' for a brutally ugly yet still rather useful graphical tool for doing the same thing.
+
+= Other Resources =
+* [http://www.gitcasts.com/ Git tutorials as screen casts]
+* [http://www.kernel.org/pub/software/scm/git/docs/tutorial.html Tutorial Introduction to Git]
+* [http://www.kernel.org/pub/software/scm/git/docs/user-manual.html The Git User's Manual]
+* [http://jbowes.dangerouslyinc.com/2007/02/18/git-bisect-a-practical-example-with-yum/ Jbowes' Instructional Blog Post on git-bisect]
+* [http://jbowes.dangerouslyinc.com/2007/01/26/git-rebase-keeping-your-branches-current/ Jbowes' Instructional Blog Post on git-rebase]
+
+----
+----
+
 == Working with git ==
 
 The main part of the git tree "HEAD" contains the latest of anything.   Releases are branched off.  In general, send in patches to HEAD and developers can apply them to other branches as appropriate.
