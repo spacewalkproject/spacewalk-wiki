@@ -2,7 +2,7 @@
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
 
- * PathToPostgreSql - Don't get excited, this path is very long.
+ * PathToPostgreSql - Don't get too excited, yet.  This path is very long.
  * UserPermissions - Discussion around implementing fine grained user permissions.
  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
