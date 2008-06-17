@@ -1,5 +1,12 @@
 Instructions for registering client systems you with to manage with Spacewalk
 
+= Before Starting =
+  1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
+  1. Create an activation key with the new base channel.
+  1. Register the 
+Fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
+
+
 = Fedora 9 =
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents:
@@ -13,25 +20,19 @@ gpgcheck=1
     * NOTE: Developers internal can use this URL instead until site is live: http://fjs-0-11.rhndev.redhat.com/yum/fedora/9/i386
   1. Install client packages:
     {{{
-yum install rhn-client-tools rhn-check 
+yum install rhn-client-tools rhn-check rhn-setup rhnsd
     }}}
-    * TODO: are rhn-setup and rhn-setup-gnome needed? rhns dependency needs to be sorted out if so.
-  1. Fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
-
-* If we have a fedora channel with packages hosted on Spacewalk, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
+    * TODO: is rhn-setup-gnome needed?
+  1. Install a redhat-release rpm for rhel-5 or edit /usr/share/rhn/up2date_client/up2dateUtils.py's getRelease() to return '5Server'
+  1. If we have a fedora channel with packages hosted on Spacewalk, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
 {{{
   rhnreg_ks --activationkey=<key-with-fedora-custom-channel>
 }}}
-* Install a redhat-release rpm for rhel-5 or edit /usr/share/rhn/up2date_client/up2dateUtils.py's getRelease() to return '5Server'
-
-* Register your box to Spacewalk. Now this should go smoothly and you should see your fedora box subscribed to rhel-5 base channel.
-
-* Install yum-rhn-plugin and run yum
-
-* It should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
-
-* Install m2crypto
-{{{
+  1. Register your box to Spacewalk. Now this should go smoothly and you should see your fedora box subscribed to rhel-5 base channel.
+  1. Install yum-rhn-plugin and run yum
+  1. It should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
+  1. Install m2crypto
+  {{{
   $  yum install m2crypto
   Loading "security" plugin
   Setting up Install Process
@@ -44,8 +45,8 @@ yum install rhn-client-tools rhn-check
     Installing: m2crypto                     ######################### [1/1]
   Installed: m2crypto.i386 0:0.17-2
   Complete!
-}}}
-* Re-enable rhnplugin.conf and run yum
+  }}}
+  1. Re-enable rhnplugin.conf and run yum
 {{{
   $ sudo yum install rhnlib
   Loading "rhnplugin" plugin
@@ -76,4 +77,4 @@ yum install rhn-client-tools rhn-check
   Total download size: 5.6 M
   Is this ok [y/N]:
 }}}
-* We should now have rhn-plugin functional on a fedora box.
+  1. We should now have rhn-plugin functional on a fedora box.
