@@ -74,7 +74,7 @@ Need these 2 environment variables:
 }}}
 
 
-You may need to disable selinux if you encounter this error:
+You may need to adjust selinux (or disable it) if you encounter this error:
 
 {{{
 Could not connect to the database.  Your connection information may be incorrect.  Error: install_driver(Oracle) failed: Can't load '/usr/lib/perl5/site_perl/5.8.8/i386-linux-thread-multi/auto/DBD/Oracle/Oracle.so' for module DBD::Oracle: /usr/lib/oracle/10.2.0/client/lib/libnnz10.so: cannot restore segment prot after reloc: Permission denied at /usr/lib/perl5/5.8.8/i386-linux-thread-multi/DynaLoader.pm line 230, <STDIN> line 6.
@@ -82,6 +82,13 @@ Could not connect to the database.  Your connection information may be incorrect
 Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
 Perhaps a required shared library or dll isn't installed where expected
  at /usr/bin/spacewalk-setup line 1504
+}}}
+
+The following commands can be used to give Oracle proper selinux permissions: (NOTE: CURRENTLY UNTESTED)
+
+{{{
+semanage fcontext -a -t textrel_shlib_t '/usr/lib/oracle/10.2.0/client/lib/*'
+restorecon -R /usr/lib/oracle/10.2.0/client/lib
 }}}
 
 During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
