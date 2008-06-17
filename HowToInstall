@@ -29,6 +29,7 @@ To use this repository, add a file in yum.repos.d with the following contents:
 [spacewalk]
 name=Spacewalk
 baseurl=http://spacewalk.redhat.com/yum/rhel/$releasever/$basearch/
+gpgkey=http://www.redhat.com/spacewalk/yum/rhel/$releasever/$basearch/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
