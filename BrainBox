@@ -2,16 +2,18 @@
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for spacewalk.
 
-  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
-     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
-  * make more pieces of Sat seperate open source sub-projects that other projects can use.  what is interesting?
-  * upgrade configuration management engine?
-  * upgrade monitoring engine?
-  * easier support for importing content from multiple distributions and managing those distributions in parallel 
+ * PathToPostgreSql - Don't get excited, this path is very long.
+ * UserPermissions - Discussion around implementing fine grained user permissions.
+ * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
+    * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
+ * make more pieces of Sat seperate open source sub-projects that other projects can use.  what is interesting?
+ * upgrade configuration management engine?
+ * upgrade monitoring engine?
+ * easier support for importing content from multiple distributions and managing those distributions in parallel 
    * Handle package with the same EVRA within the same org
-  * streamline development process to encourage more contributions, see "architecture of open source collaboration"
-     * [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a Harvard Business School link]
-  * decompose Spacewalk into an aggregation of OSS projects, composed of seperate subprojects that are usable seperately
-  * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
-  * enable for usage with Transifex
-  * integration with koji :)?
+ * streamline development process to encourage more contributions, see "architecture of open source collaboration"
+   * [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a Harvard Business School link]
+ * decompose Spacewalk into an aggregation of OSS projects, composed of seperate subprojects that are usable seperately
+ * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
+ * enable for usage with Transifex
+ * integration with koji :)?
