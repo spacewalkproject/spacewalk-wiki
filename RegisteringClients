@@ -19,44 +19,10 @@ gpgcheck=1
 
   1. Install client packages:
     {{{
-yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto
+yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
   1. Register your Fedora system to Spacewalk using the activation key you created earlier.
 {{{
   rhnreg_ks --user satadmin --pass password --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> --nohardware
 }}}
     * --nohardware is only required temporarily.
-  1. Install yum-rhn-plugin and run yum
-  1. It should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
-  1. Re-enable rhnplugin.conf and run yum
-{{{
-  $ sudo yum install rhnlib
-  Loading "rhnplugin" plugin
-  Loading "security" plugin
-  rhel-i386-server-5        100% |=========================| 1.4 kB    00:00
-  Setting up Install Process
-  Parsing package install arguments
-  Resolving Dependencies
-  --> Running transaction check
-  ---> Package rhnlib.noarch 0:2.2.5-1.el5 set to be updated
-  --> Processing Dependency: python(abi) = 2.4 for package: rhnlib
-  --> Running transaction check
-  ---> Package compat-python24.i386 0:2.4.5-1.lvn7 set to be updated
-  --> Finished Dependency Resolution
-  Dependencies Resolved
-  =============================================================================
-   Package                 Arch       Version          Repository        Size
-  =============================================================================
-  Updating:
-   rhnlib                  noarch     2.2.5-1.el5      rhel-i386-server-5   63 k
-  Installing for dependencies:
-   compat-python24         i386       2.4.5-1.lvn7     livna             5.6 M
-  Transaction Summary
-  =============================================================================
-  Install      1 Package(s)
-  Update       1 Package(s)
-  Remove       0 Package(s)
-  Total download size: 5.6 M
-  Is this ok [y/N]:
-}}}
-  1. We should now have rhn-plugin functional on a fedora box.
