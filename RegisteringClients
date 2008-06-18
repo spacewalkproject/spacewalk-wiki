@@ -23,11 +23,11 @@ gpgcheck=1
 yum install rhn-client-tools rhn-check rhn-setup rhnsd
     }}}
     * TODO: is rhn-setup-gnome needed?
-  1. Install a redhat-release rpm for rhel-5 or edit /usr/share/rhn/up2date_client/up2dateUtils.py's getRelease() to return '5Server'
   1. If we have a fedora channel with packages hosted on Spacewalk, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
 {{{
   rhnreg_ks --user satadmin --pass password --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> --nohardware
 }}}
+    * --nohardware is only required temporarily.
   1. Register your box to Spacewalk. Now this should go smoothly and you should see your fedora box subscribed to rhel-5 base channel.
   1. Install yum-rhn-plugin and run yum
   1. It should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
