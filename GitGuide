@@ -181,6 +181,15 @@ git-format-patch
 git-send-email
 }}}
 
+Finished with your branch? Want to get rid of it? Then
+{{{
+git branch -d mybranch
+}}}
+If you get a warning about unmerged changes, you can force the removal with
+{{{
+git branch -D mybranch
+}}}
+
 == Tips ==
 
  * Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
