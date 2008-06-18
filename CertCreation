@@ -40,7 +40,7 @@ gpg --export-secret-keys -a 74E73973 > mysecretkey.gpg
 
 == Install GPG keys into webapp ==
 
-Set the {{{web.gpg_keyring}}} in {{{/etc/sysconfig/rhn/default/rhn_web.conf}}} to your newly exported keyring.
+Set the {{{web.gpg_keyring}}} in {{{/etc/rhn/default/rhn_web.conf}}} to your newly exported keyring.
 
 Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyring.
 
