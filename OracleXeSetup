@@ -10,6 +10,7 @@ If you do not have an Oracle Database, you can [http://www.oracle.com/technology
 You may need an account to download the rpms. Seems like a crap shoot to me. So download
 
  * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
+ * oracle-xe-client-10.2.0.1-1.0.i386.rpm
 
 You will also need a client. For this you should [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html download Oracle Instant Client]. Download all three (3) of the
 following. For now, stick with the 10.2.0.4 version.
@@ -81,9 +82,14 @@ That's it, proceed with client setup.
 You need to put the Oracle clients on your path and configure ORACLE_HOME.
 {{{
  export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
- export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/
+ export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
 }}}
-
+ * One way of doing this is below, remember to logout and back in after setting the link
+   so your env is updated.
+{{{
+  cd /etc/profile.d
+  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin/oracle_env.sh
+}}}
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}:
 {{{
 XE =
