@@ -3,8 +3,7 @@ Instructions for registering client systems you with to manage with Spacewalk
 = Before Starting =
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
   1. Create an activation key with the new base channel.
-  1. Register the 
-Fake the base channel to be a non-fedora one. We need to include fedora-release as a valid product in the db. This is get the registration working for RHEL-5 and get yum-plugin installed.
+
 
 
 = Fedora 9 =
@@ -20,32 +19,15 @@ gpgcheck=1
 
   1. Install client packages:
     {{{
-yum install rhn-client-tools rhn-check rhn-setup rhnsd
+yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto
     }}}
-    * TODO: is rhn-setup-gnome needed?
-  1. If we have a fedora channel with packages hosted on Spacewalk, We don't have to do this. We just register with an activation key and associate the custom fedora channel to this client.
+  1. Register your Fedora system to Spacewalk using the activation key you created earlier.
 {{{
   rhnreg_ks --user satadmin --pass password --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> --nohardware
 }}}
     * --nohardware is only required temporarily.
-  1. Register your box to Spacewalk. Now this should go smoothly and you should see your fedora box subscribed to rhel-5 base channel.
   1. Install yum-rhn-plugin and run yum
   1. It should error while loading the plugin. disable the plugin /etc/yum/pluginconf.d/rhnplugin.conf
-  1. Install m2crypto
-  {{{
-  $  yum install m2crypto
-  Loading "security" plugin
-  Setting up Install Process
-  Parsing package install arguments
-  Resolving Dependencies
-  --> Running transaction check
-  ---> Package m2crypto.i386 0:0.17-2 set to be updated
-  --> Finished Dependency Resolution
-  Running Transaction
-    Installing: m2crypto                     ######################### [1/1]
-  Installed: m2crypto.i386 0:0.17-2
-  Complete!
-  }}}
   1. Re-enable rhnplugin.conf and run yum
 {{{
   $ sudo yum install rhnlib
