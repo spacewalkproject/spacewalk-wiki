@@ -88,7 +88,7 @@ You need to put the Oracle clients on your path and configure ORACLE_HOME.
    so your env is updated.
 {{{
   cd /etc/profile.d
-  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/client/bin/oracle_env.sh
+  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh
 }}}
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}:
 {{{
