@@ -120,7 +120,11 @@ If you wish to only include '''some''' of the modified files in your commit, you
 }}}
 Repeat for as many commits as you like on your branch until you're satisfied with your bugfix, feature, or whatever.
 
-When you're ready to push your changes out to the public repository, we'll use git rebase to apply any changes that have gone on in the remote repository into our branch as seamlessly as possible. If a conflict occurs this is where it will most likely happen, in which case you resolve it and continue the rebase, or start over.
+=== Pushing Changes ===
+
+NOTE: These instructions apply to those with commit access.
+
+When you're ready to push your changes out to the public repository (or submit a patch), we'll use git rebase to apply any changes that have gone on in the remote repository since we branched as seamlessly as possible. If a conflict occurs this is where it will most likely happen, in which case you resolve it and continue the rebase, or start over.
 {{{
   git checkout master                 
   git pull                      # fetch latest remote changes into master (should apply clean)
@@ -130,6 +134,39 @@ When you're ready to push your changes out to the public repository, we'll use g
   git merge bug456789           # merge your changes in (use --squash if you'd like just 1 commit with a new message)
   git push                      # push the changes out to the remote repository
 }}}
+
+=== Submitting Patches ===
+
+For those without commit access, or those who just prefer to submit a patch for review, the steps are as follows:
+{{{
+  git checkout master                 
+  git pull                      # fetch latest remote changes into master (should apply clean)
+  git checkout bug456789        # return to your branch
+  git rebase master             # apply changes from master intelligently into your branch
+  git-format-patch master       # generate a patch against master
+}}}
+
+This will generate a number of patch files, one for each commit in your branch, which you can then submit to the spacewalk-devel mailing list where they can be reviewed and accepted.
+
+
+=== Applying Patches ===
+
+Applying patches is as simple as:
+{{{
+  git checkout master              # switch to master so we can update it to the latest
+  git pull
+  git checkout -b applying-patch   # create a branch to work in
+  git am 0001-incoming.patch       # apply the patch in the branch
+  (repeat for all .patch files)
+  git rebase master                # rebase against changes that went on in master since
+                                   # the patch was submitted
+  git checkout master       
+  git merge applying-patch
+  git push
+}}}
+
+Note that if you examine the git log, the both the git identity of the patch author and the patch committer are tracked.
+
 == Other Common Tasks ==
 
 Revert a file with uncommitted changes you do not wish to keep:
