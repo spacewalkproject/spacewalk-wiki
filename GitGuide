@@ -232,7 +232,7 @@ git branch -D mybranch
 
 == Other Resources ==
  * [http://www.gitcasts.com/ Git tutorials as screen casts]
- * [http://www.kernel.org/pub/software/scm/git/docs/tutorial.html Tutorial Introduction to Git]
+ * [http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html Tutorial Introduction to Git]
  * [http://www.kernel.org/pub/software/scm/git/docs/user-manual.html The Git User's Manual]
  * [http://jbowes.dangerouslyinc.com/2007/02/18/git-bisect-a-practical-example-with-yum/ Jbowes' Instructional Blog Post on git-bisect]
  * [http://jbowes.dangerouslyinc.com/2007/01/26/git-rebase-keeping-your-branches-current/ Jbowes' Instructional Blog Post on git-rebase]
