@@ -22,7 +22,7 @@ tar -xzf make-ks-tree.tar.gz
  5.  Upload the kickstart tree and test to make sure everything is sane:
 {{{
 For Fedora:
-  ./make-ks-tree.sh --channel fedora_9 --source /mnt/iso --dsn spacewalk/spacewalk@xe  --install-type fedora_9 
+  ./make-ks-tree.sh --channel fedora9 --source /mnt/iso --dsn spacewalk/spacewalk@xe  --install-type fedora_9 
 
 For CentOS 5u1 (Since CentOS is a clone of RHEL 5, we use the rhel_5 install-type):
   ./make-ks-tree.sh --channel centos5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant centos --update u1
