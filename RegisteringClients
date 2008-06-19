@@ -16,7 +16,6 @@ baseurl=http://spacewalk.redhat.com/yum/fedora/9/i386/
 enabled=1
 gpgcheck=1
 }}}
-
   1. Install client packages:
     {{{
 yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
