@@ -158,8 +158,6 @@ Applying patches is as simple as:
   git checkout -b applying-patch   # create a branch to work in
   git am 0001-incoming.patch       # apply the patch in the branch
   (repeat for all .patch files)
-  git rebase master                # rebase against changes that went on in master since
-                                   # the patch was submitted
   git checkout master       
   git merge applying-patch
   git push
