@@ -88,8 +88,8 @@ Perhaps a required shared library or dll isn't installed where expected
 The following commands can be used to give Oracle proper selinux permissions: (NOTE: CURRENTLY UNTESTED)
 
 {{{
-semanage fcontext -a -t textrel_shlib_t '/usr/lib/oracle/10.2.0.4/client/lib/*'
-restorecon -R /usr/lib/oracle/10.2.0.4/client/lib
+semanage fcontext -a -t textrel_shlib_t '/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/*'
+restorecon -R /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
 }}}
 
 During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
