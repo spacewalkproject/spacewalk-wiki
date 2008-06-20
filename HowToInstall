@@ -57,7 +57,50 @@ This will prompt you for questions about your database configuration and spacewa
 An example session is as follows:
 
 {{{
-TBD
+[root@fjs-0-11 tmp]# spacewalk-setup --disconnected
+* Loading answer file: /usr/share/spacewalk/setup/defaults.conf.
+* Setting up environment and users.
+** GPG: Initializing GPG and importing RHN key.
+* Setting up database.
+** Database: Setting up database connection.
+DB User? spacewalk
+DB Password? 
+DB SID? xe
+DB hostname? localhost
+DB port [1521]? 
+DB protocol [TCP]? 
+** Database: Testing database connection.
+** Database: Populating database.
+sh: dbhome: command not found
+*** Progress: ###################################################################
+You must enter an email address.
+Admin Email Address? tito@example.com
+* Performing initial configuration.
+* Activating Satellite.
+** Loading Satellite Certificate.
+** Verifying certificate locally.
+** Activating Satellite.
+* Enabling Monitoring.
+* Creating SSL certificates.
+CA certificate password? 
+Re-enter CA certificate password? 
+Organization? Tito Puente Solutions
+Organization Unit [fjs-0-11.example.com]? 
+Email Address [tito@example.com]? 
+City? Raleigh
+State? NC
+Country code (Examples: "US", "JP", "IN", or type "?" to see a list)? US
+** SSL: Generating CA certificate.
+** SSL: Deploying CA certificate.
+** SSL: Generating server certificate.
+** SSL: Storing SSL certificates.
+Use of uninitialized value in chown at /usr/bin/rhn-generate-pem.pl line 57.
+Use of uninitialized value in chown at /usr/bin/rhn-generate-pem.pl line 57.
+* Deploying configuration files.
+* Update configuration in database.
+* Restarting services.
+Installation complete.
+Visit https://fjs-0-11.example.com to create the satellite administrator account.
 }}}
 
 After spacewalk-configure is complete your application is ready to go!
