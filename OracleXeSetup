@@ -188,3 +188,5 @@ If you plan on installing Spacewalk and running the entire application you can s
 [http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide]
 
 [http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian]
+
+Continue installing Spacewalk: HowToInstall
