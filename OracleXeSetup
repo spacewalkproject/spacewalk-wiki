@@ -141,7 +141,7 @@ Oracle XE is initially configured to grant 40 connections to its database.  Spac
 
 ..
 
-SQL> alter system set processes=100 scope=spfile;
+SQL> alter system set processes=400 scope=spfile;
 
 System altered.
 
@@ -164,7 +164,7 @@ Alternatively you can do
 
 ..
 
-SQL> alter system set parallel_max_servers = 100 scope=spfile;
+SQL> alter system set parallel_max_servers = 400 scope=spfile;
 
 System altered.
 
