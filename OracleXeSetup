@@ -135,8 +135,6 @@ and retain 'curses' like behavior with sql plus (sql call history maintenance, e
 Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 100:
 
 {{{
-
-
 # sqlplus spacewalk/spacewalk@xe
 
 ..
@@ -150,16 +148,12 @@ SQL> commit;
 Commit complete.
 
 SQL> quit
-
-
 }}}
 
 Alternatively you can do
 
 
 {{{
-
-
 # sqlplus spacewalk/spacewalk@xe
 
 ..
@@ -173,8 +167,6 @@ SQL> commit;
 Commit complete.
 
 SQL> quit
-
-
 }}}
 
 == setup schema (optional) ==
