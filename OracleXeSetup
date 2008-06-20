@@ -124,13 +124,13 @@ Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
 SQL>
 }}}
 
-Note: you might want to install 'rlwrap' to make your sqlplus more usable.
+ '''NOTE:''' you might want to install 'rlwrap' to make your sqlplus more usable. {{{rlwrap}}} will retain
+ a [http://en.wikipedia.org/wiki/Curses_(programming_library) 'curses'] like behavior with sqlplus such as maintaining sql call history, etc.
  {{{yum install rlwrap}}}
-you can then do 
-{{{
-rlwrap sqlplus spacewalk/spacewalk@xe
-}}} 
-and retain 'curses' like behavior with sql plus (sql call history maintenance, etc)
+ you can then do 
+ {{{
+ rlwrap sqlplus spacewalk/spacewalk@xe
+ }}} 
 
 == increase max process ==
 
