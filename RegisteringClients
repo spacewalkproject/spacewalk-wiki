@@ -23,6 +23,5 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
   1. Register your Fedora system to Spacewalk using the activation key you created earlier.
 {{{
-  rhnreg_ks --user satadmin --pass password --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> --nohardware
+  rhnreg_ks --user satadmin --pass password --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
-    * --nohardware is only required temporarily.
