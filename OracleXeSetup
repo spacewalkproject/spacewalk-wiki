@@ -171,6 +171,8 @@ SQL> quit
 
 == setup schema (optional) ==
 
+'''NOTE:''' this is '''NOT''' required if you plan on installing Spacewalk. Only needed for dev setup.
+
 If you just want the Spacewalk database schema installed you can do the following:
 
 {{{
