@@ -23,7 +23,7 @@ RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum
 
-To use this repository, add a file in yum.repos.d with the following contents:
+To use this repository, add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the following contents:
 
 {{{
 [spacewalk]
