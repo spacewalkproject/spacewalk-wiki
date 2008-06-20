@@ -25,6 +25,13 @@ You'll need to get the code, for more detail check out the DownloadIt page,
 git clone git://git.fedorahosted.org/git/spacewalk.git/
 }}}
 
+If you are going to want to push changes into the repo (and have access todo so) use ssh in your clone command:
+
+{{{
+git clone ssh://git.fedorahosted.org/git/spacewalk.git/
+}}}
+
+
 === Identify Yourself ===
 A good practice is to identify yourself to git. You can do this by modifying {{{~/.gitconfig}}} so that git knows how to identify your commits. 
 
