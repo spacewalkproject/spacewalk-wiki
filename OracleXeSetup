@@ -67,7 +67,7 @@ Login to the webui and configure a user:
  * username: '''spacewalk'''
  * password: '''spacewalk'''
  * Confirm password: '''spacewalk'''
- * Give spacewalk all system privileges (check All)
+ * Give spacewalk all system privileges (check All and add DBA role) 
  * click Create button
 That's it, proceed with client setup.
 
