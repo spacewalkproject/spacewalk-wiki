@@ -21,6 +21,9 @@ Provide for Solaris sun4v client support
 
 == Release 0.2 ==
 
+
+PostgreSQL DB support - availability << start to get this done
+
 Start work on getting support needed for Fedora 10 changes, such as proposed:
  * DeltaRPM
  * SHA256 support in RPM
