@@ -46,7 +46,7 @@ This will pull down and install the set of RPMs required to get spacewalk to run
 rpm -e specspo && yum install spacewalk
 }}}
 
-Once the spacewalk rpm is installed you need to configure the application.  Todo this run:
+Once the spacewalk rpm is installed you need to configure the application.  To do this, run:
 
 {{{
 spacewalk-setup --disconnected
