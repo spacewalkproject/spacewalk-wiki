@@ -51,12 +51,12 @@ If you messed up these entries ->
  * sudo rpm -Uvh oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm
 
 
-
-
-
 Login to the webui and configure a user:
- * If you do not have X (so can't use firefox) or using ssh to go to this terminal run the following command->
-{{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}} and then you can browse to http://localhost:9000/apex on your machine and continue. (thank you Jbowes).
+
+  '''NOTE:''' If you do not have X, so you can't use firefox or you are using ssh to go to this terminal, try running the following command:
+  {{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}}. This should allow you to browse to localhost, proceed with   
+  the rest of the instructions.
+
  * browse to http://127.0.0.1:9000/apex
  * login: sys
  * click Administration
