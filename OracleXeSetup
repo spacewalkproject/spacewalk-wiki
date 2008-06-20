@@ -107,6 +107,7 @@ Test your connection with sqlplus:
 sqlplus spacewalk/spacewalk@xe
 }}}
 
+
 If '''spacewalk''' user was properly setup you should see a '''Connected to:''' message:
 
 {{{
@@ -141,6 +142,29 @@ Oracle XE is initially configured to grant 40 connections to its database.  Spac
 ..
 
 SQL> alter system set processes=100 scope=spfile;
+
+System altered.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> quit
+
+
+}}}
+
+Alternatively you can do
+
+
+{{{
+
+
+# sqlplus spacewalk/spacewalk@xe
+
+..
+
+SQL> alter system set parallel_max_servers = 100 scope=spfile;
 
 System altered.
 
