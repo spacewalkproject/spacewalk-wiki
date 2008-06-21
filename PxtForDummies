@@ -75,7 +75,7 @@ is:
 }}}
 
 The perl module (known as a "Sniglet" by the RHN Web Team) registered
-the <body_tag> tag in the following subroutine (in ColorSniglet.pm):
+the <body_tag> tag in the following subroutine (in !ColorSniglet.pm):
 
 {{{
 #!perl
