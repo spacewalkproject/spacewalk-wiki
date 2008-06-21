@@ -67,5 +67,5 @@ These are not in any specific order
  * Use puppet project as an alternative solution to replace our current Configuration File/Directory management tools - provide a richer usage than the basic capabilities we have today
  * Use smolt project as an alternative solution to replace our current hardware profile capturing system - provide a more complete hardware inventory system
  * Use func as an alternative solution to replace our current rhnpush technology (osad communication over jabber protocol servers)
- * Clean up the Spacewalk Yum Repo and get everything possible into Fedora.  SpacewalkRepoCleanup
+ * Clean up the Spacewalk Yum Repo and get everything possible into Fedora.  RepoCleanup
 
