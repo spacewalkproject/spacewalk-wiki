@@ -1,1 +1,50 @@
 Cleaning up Repository and getting the free items into the Fedora Space
+
+== RPMS missing SRPMS ==
+The following binary RPMS are found in http://spacewalk.redhat.com/yum/rhel/5Server/i386/ and not in the SRPM tree http://www.redhat.com/spacewalk/source/
+This needs to be fixed :)
+
+
+ * oracle-lib-compat-10.2-3.el5.i386.rpm
+ * osad-5.2.0-1.noarch.rpm
+ * osa-dispatcher-5.2.0-1.noarch.rpm
+ * PyXML-0.8.4-4.i386.rpm
+ * rhncfg-5.2.0-0.noarch.rpm
+ * rhncfg-actions-5.2.0-0.noarch.rpm
+ * rhncfg-client-5.2.0-0.noarch.rpm
+ * rhncfg-management-5.2.0-0.noarch.rpm
+ * rhn-custom-info-5.2.0-1.noarch.rpm
+ * rhn-kickstart-5.2.0-5.noarch.rpm
+ * rhn-kickstart-common-5.2.0-5.noarch.rpm
+ * rhn-kickstart-virtualization-5.2.0-5.noarch.rpm
+ * rhnlib-2.2.5-1.noarch.rpm
+ * rhn-oracle-jdbc-1.0-14.el5.noarch.rpm
+ * rhn-oracle-jdbc-tomcat5-1.0-14.el5.noarch.rpm
+ * rhnpush-5.2.0-5.noarch.rpm
+ * rhns-0.1-4.el5.noarch.rpm
+ * rhns-app-0.1-4.el5.noarch.rpm
+ * rhns-applet-0.1-4.el5.noarch.rpm
+ * rhns-config-files-0.1-4.el5.noarch.rpm
+ * rhns-config-files-common-0.1-4.el5.noarch.rpm
+ * rhns-config-files-tool-0.1-4.el5.noarch.rpm
+ * rhns-package-push-server-0.1-4.el5.noarch.rpm
+ * rhns-proxy-broker-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-common-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-docs-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-html-5.2.0-5.el5.noarch.rpm
+ * rhns-proxy-management-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-package-manager-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-redirect-5.2.0-4.el5.noarch.rpm
+ * rhns-proxy-tools-5.2.0-4.el5.noarch.rpm
+ * rhns-satellite-tools-0.1-4.el5.noarch.rpm
+ * rhns-server-0.1-4.el5.noarch.rpm
+ * rhn-ssl-cert-check-1.4-10.6.noarch.rpm
+ * rhns-sql-0.1-4.el5.noarch.rpm
+ * rhns-upload-server-0.1-4.el5.noarch.rpm
+ * rhns-xml-export-libs-0.1-4.el5.noarch.rpm
+ * rhns-xmlrpc-0.1-4.el5.noarch.rpm
+ * rhns-xp-0.1-4.el5.noarch.rpm
+ * rhn-virtualization-common-5.2.0-5.noarch.rpm
+ * rhn-virtualization-guest-5.2.0-5.noarch.rpm
+ * rhn-virtualization-host-5.2.0-5.noarch.rpm
+ * spacewalk-setup-0.01-3.noarch.rpm
