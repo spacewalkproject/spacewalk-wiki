@@ -71,7 +71,7 @@ done
 }}}
 
 
-= RPMS in Spacewalk Repo already found in Fedora Proper =
+= SRPMS in Spacewalk Repo already found in Fedora Proper =
 
  * asm-1.5.3-1jpp.ep1.1.el5.2.src.rpm
  * bea-stax-1.2.0-0.rc1.2jpp.ep1.1.el5.src.rpm
