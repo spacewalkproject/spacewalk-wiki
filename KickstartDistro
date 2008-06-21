@@ -34,7 +34,7 @@ For RHEL5.2 Server:
 
  6.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
 
-****** Please note:  Until the next SpaceWalk release you will need to run the following to get Fedora 9 kickstarts to work *******
+****** Please note:  If the above fails, you most likely need to run the following to get Fedora 9 kickstarts to work  (this should be fixed in the next release) 
 {{{
 
 # sqlplus spacewalk/spacewalk@xe
