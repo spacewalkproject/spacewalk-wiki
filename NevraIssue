@@ -1,9 +1,9 @@
-==The Problem==
+== The Problem ==
 
 Currently in spacewalk only one package on the satellite can be pushed to a single org.  So for example rootfiles-8.1-1.1.1.noarch is shipped with RHEL 5, CentOS 5, and Fedora 9.  All 3 have different GPG signatures and thus different md5sums.   We need a way to differentiate content from different sources that is basically the same.
 
 
-==The Solution==
+== The Solution ==
 
 We obviously need some field to differentiate between content from different vendors, so here are some ideas:
 
