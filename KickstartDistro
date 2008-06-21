@@ -33,6 +33,20 @@ For RHEL5.2 Server:
 }}}
 
  6.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
+
+****** Please note:  Until the next SpaceWalk release you will need to run the following to get Fedora 9 kickstarts to work *******
+# sqlplus spacewalk/spacewalk@xe
+
+sqlplus> insert into rhnKSInstallType (id, label, name)
+        values (rhn_ksinstalltype_id_seq.nextval,
+                'fedora_9','Fedora 9'
+        );
+sqlplus>  update rhnKickstartCommandName set REQUIRED = 'N' where  name = 'mouse' OR name = 'langsupport';
+sqlplus> commit;
+
+******
+
+
  7.  Create a kickstart file within the Spacewalk UI.
 {{{     
      a) log in with your appropriate user.
@@ -40,6 +54,7 @@ For RHEL5.2 Server:
      c) Click on Kickstart on the left hand side
      d) Click "Create new kickstart profile" in the upper right corner
      e) Follow prompts, selecting your appropriate base channel and kickstart distribution and filling out the information as desired.  
+     f) Under Advanced Options, you will need to uncheck "mouse" and "langsupport" options.  
 }}}
  8.
     a) If the kickstart and channel were created in Org 1 (the initial org), you can kickstart using the url  http://SPACEWALK.DOMAIN.COM/kickstart/ks/label/KS_LABEL   where KS_LABEL is the kickstart label that you specified and SPACEWALK.DOMAIN.COM is the fqdn of your Spacewalk server.  So when booting from a cd (or pxe booting) you can just add "ks=http://SPACEWALK.DOMAIN.COM/kickstart/ks/label/KS_LABEL" as a kernel option and it should start kickstarting.
