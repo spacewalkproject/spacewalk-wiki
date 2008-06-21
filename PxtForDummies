@@ -12,7 +12,7 @@ library in JSP.
  
 PXT is the brain-child of Chip Turner, one of the
 members of the Red Hat Network web team.  Other members of the team
-included Robin Norwood, Greg DeKoenigsberg, and myself.
+included Robin Norwood, Greg !DeKoenigsberg, and myself.
 
 The RHN web team uses PXT for three main reasons:
 
@@ -56,8 +56,7 @@ Here's a simple PXT file (foo.pxt):
 
 === III.  Legal <pxt-XXX/> Directives ===
 
-==== 1. {{{<pxt-use module="Foo"/>}}} (synonymous with {{{<pxt-use
-class="Foo"/>}}}) ====
+==== 1. {{{<pxt-use module="Foo"/>}}} (synonymous with {{{<pxt-use class="Foo"/>}}}) ====
 
 This basically is registering a perl module that, for the rest of the
 document, will be either watching for tags to replace (like
@@ -127,8 +126,7 @@ a bug that PXT doesn't warn about such clashes; we haven't decided
 yet.  In general, do not rely on this feature.  If you have two of the
 same tags registered, be sure they both reference the same function.
 
-==== 2. {{{<pxt-include file="Foo.pxt"/>}}}  or  {{{<pxt-include
-file="Foo.html"/>}}} ====
+==== 2. {{{<pxt-include file="Foo.pxt"/>}}}  or  {{{<pxt-include file="Foo.html"/>}}} ====
 
 {{{<pxt-include/>}}} reads the contents of a file and dumps it into the
 current document.  Any {{{<pxt-XXXX/>}}} tags within the included document
@@ -143,7 +141,7 @@ In the url {{{http://www.foo.com/index.pxt?foobar=1}}} {{{"<pxt-formvar>
 {formvar:foobar}</pxt-formvar>"}}} is automatically replaced with "1" by
 PXT.
 
-==== 4. {{{<pxt-comment> blah blah blah </pxt-comment>}}}====
+==== 4. {{{<pxt-comment> blah blah blah </pxt-comment>}}} ====
 
 Your basic comment.  Anything begin the start and end tags will be utterly
 ignored by PXT, including valid PXT tags.  This is different from an
@@ -156,7 +154,7 @@ out before serving.
 
 Typical form interaction on the web usually falls into a simple
 pattern: display form, process results, display results.  PXT
-accomodates this model through the use of tags and callbacks.
+accommodates this model through the use of tags and callbacks.
 
 As discussed earlier, tags can create arbitrary HTML output.  This
 obviously includes form elements, such as <INPUT TYPE=TEXT> and so
@@ -228,14 +226,14 @@ perform some kind of search, or any number of things.  Once it is
 done, the callback can either simply return, which then tells PXT to
 go ahead and render the page loaded, or it can issue a redirect, so
 that the user is sent to a different page (for instance, the page that
-shows that you have succesfully logged in, or the page that will
+shows that you have successfully logged in, or the page that will
 display search results).  Use of redirection depends largely on the
 ACTION= attribute of the form itself.  Typically, leaving ACTION=
 blank and issuing a redirect to wherever a request should go is what
 seems to work well, but there is no clear best practice in this case.
 
 PXT itself decides whether or not to execute a callback based on a
-simple test.  If there is a formvariable named pxt-trap, and if a .pxt
+simple test.  If there is a form variable named pxt-trap, and if a .pxt
 file has registered a callback whose name is the contents of that form
 variable, then it executes it.  Otherwise it completely ignores it.
 That means IT IS VERY IMPORTANT TO HAVE A FORM'S ACTION HANDLER POINT
@@ -265,9 +263,9 @@ a {{{PXT::Request}}} object (in RHN code, it's usually the $pxt thingy).  This
 $pxt object is the first parameter passed to the handling function.
 
 The $pxt object is the only way a given tag handler, callback handler,
-xmlrpc handler, or any other kind of handler can interact with the web
+XML-RPC handler, or any other kind of handler can interact with the web
 server or user.  The $pxt object is where you get information about
-the user who is logged in, any session data, formvariables, cookies,
+the user who is logged in, any session data, form variables, cookies,
 pnotes, etc.  It is absolutely verboten to directly speak with the
 Apache->request module in a Sniglet.  All interaction MUST go through
 the $pxt object.
