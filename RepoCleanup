@@ -48,3 +48,24 @@ This needs to be fixed :)
  * rhn-virtualization-guest-5.2.0-5.noarch.rpm
  * rhn-virtualization-host-5.2.0-5.noarch.rpm
  * spacewalk-setup-0.01-3.noarch.rpm
+
+=== Hack Script to find this ===
+{{{
+#!/bin/bash
+
+
+# Quick hack to figure out if binary rpms have matching source rpms
+
+# This assumes you have a directory of the binary rpms called rpms and a directory
+#   of the source rpms called srpms.  Also assumes that you run from a level up.
+#  Like ./rpms and ./srpms and then repo-diff.sh script is in .
+#  YMMV
+
+for rpm in `ls -1 rpms/*rpm`
+do
+   echo -n `basename $rpm`
+   echo -n " | "
+   srpm=`rpm -qpi $rpm  | grep "Source RPM" | awk '{print $NF}'`
+   ls -1 srpms/$srpm &> /dev/null && echo "Good" || echo "Source RPM not found"
+done
+}}}
