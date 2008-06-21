@@ -1,6 +1,6 @@
 Cleaning up Repository and getting the free items into the Fedora Space
 
-== RPMS missing SRPMS ==
+= RPMS missing SRPMS =
 The following binary RPMS are found in http://spacewalk.redhat.com/yum/rhel/5Server/i386/ and not in the SRPM tree http://www.redhat.com/spacewalk/source/
 This needs to be fixed :)
 
@@ -49,7 +49,7 @@ This needs to be fixed :)
  * rhn-virtualization-host-5.2.0-5.noarch.rpm
  * spacewalk-setup-0.01-3.noarch.rpm
 
-=== Hack Script to find this ===
+== Hack Script to find this ==
 {{{
 #!/bin/bash
 
@@ -69,3 +69,79 @@ do
    ls -1 srpms/$srpm &> /dev/null && echo "Good" || echo "Source RPM not found"
 done
 }}}
+
+
+= RPMS in Spacewalk Repo already found in Fedora Proper =
+
+ * asm-1.5.3-1jpp.ep1.1.el5.2.noarch.rpm
+ * bea-stax-1.2.0-0.rc1.2jpp.ep1.1.el5.noarch.rpm
+ * bouncycastle-1.37-1jpp.1.el5.noarch.rpm
+ * concurrent-1.3.4-6jpp.ep1.2.el5.1.noarch.rpm
+ * dom4j-1.6.1-2jpp.ep1.5.el5.2.noarch.rpm
+ * icu4j-3.4.5-2jpp.ep1.2.el5.noarch.rpm
+ * isorelax-0.1-0.20041111.2jpp.ep1.2.el5.4.noarch.rpm
+ * jabberd-2.0s10-3.42.el5.i386.rpm
+ * jakarta-commons-cli-1.0-6jpp.ep1.1.el5.1.noarch.rpm
+ * jakarta-taglibs-standard-1.1.1-4jpp_1rh.noarch.rpm
+ * jaxen-1.1-1jpp.ep1.4.el5.2.noarch.rpm
+ * jcommon-0.9.7-1jpp.ep1.1.el5.noarch.rpm
+ * jython-2.2-0.a0.2jpp_1rh.noarch.rpm
+ * libapreq2-2.09-6.el5.i386.rpm
+ * mod_perl-2.0.3-3.el5s2.i386.rpm
+ * msv-1.2-0.20050722.5jpp.ep1.1.el5.2.noarch.rpm
+ * oro-2.0.8-1jpp_2rh.noarch.rpm
+ * perl-Algorithm-Diff-1.1901-11.el5.noarch.rpm
+ * perl-Apache-DBI-0.94-12.el5.noarch.rpm
+ * perl-Authen-PAM-0.14-14.el5.i386.rpm
+ * perl-BerkeleyDB-0.33-1.el5.i386.rpm
+ * perl-Cache-Cache-1.03-7.el5.noarch.rpm
+ * perl-Class-Factory-Util-1.6-6.el5.noarch.rpm
+ * perl-Class-Loader-2.02-11.el5.noarch.rpm
+ * perl-Class-MethodMaker-1.12-12.el5.noarch.rpm
+ * perl-Class-Singleton-1.03-6.el5.noarch.rpm
+ * perl-Config-IniFiles-2.38-6.el5.noarch.rpm
+ * perl-Convert-ASCII-Armour-1.4-11.el5.noarch.rpm
+ * perl-Convert-PEM-0.06-7.el5.noarch.rpm
+ * perl-Crypt-Blowfish-2.09-4.8.el5.i386.rpm
+ * perl-Crypt-CBC-2.12-6.el5.noarch.rpm
+ * perl-Crypt-DES-2.03-13.el5.i386.rpm
+ * perl-Crypt-DES_EDE3-0.01-6.el5.noarch.rpm
+ * perl-Crypt-DSA-0.12-10.el5.noarch.rpm
+ * perl-Crypt-Primes-0.49-11.el5.noarch.rpm
+ * perl-Crypt-Random-1.11-11.el5.noarch.rpm
+ * perl-Crypt-RSA-1.50-7.el5.noarch.rpm
+ * perl-Data-Buffer-0.04-8.el5.noarch.rpm
+ * perl-DateTime-0.27-10.el5.i386.rpm
+ * perl-DBI-1.54-2.el5s2.i386.rpm
+ * perl-Devel-Symdump-2.03-21.el5.noarch.rpm
+ * perl-Digest-MD2-2.03-10.el5.i386.rpm
+ * perl-Error-0.15-7.el5.noarch.rpm
+ * perl-FreezeThaw-0.43-14.el5.noarch.rpm
+ * perl-Frontier-RPC-0.07-7.el5.noarch.rpm
+ * perl-IO-Capture-0.03-8.el5.noarch.rpm
+ * perl-IO-stringy-2.109-11.el5.noarch.rpm
+ * perl-IPC-ShareLite-0.13-1.el5.i386.rpm
+ * perl-Mail-RFC822-Address-0.3-10.el5.noarch.rpm
+ * perl-MailTools-1.66-6.el5.noarch.rpm
+ * perl-Math-Pari-2.010603-7.el5.i386.rpm
+ * perl-MIME-Lite-3.01-6.el5.noarch.rpm
+ * perl-Net-SNMP-4.0.3-10.el5.noarch.rpm
+ * perl-Params-Validate-0.74-10.el5.i386.rpm
+ * perl-Proc-Daemon-0.03-6.el5.noarch.rpm
+ * perl-RPM2-0.68-34.el5.i386.rpm
+ * perl-RPM-Specfile-1.17-6.el5.noarch.rpm
+ * perl-SOAP-Lite-0.60a-11.el5.noarch.rpm
+ * perl-Sort-Versions-1.4-11.el5.noarch.rpm
+ * perl-TermReadKey-2.30-11.el5.i386.rpm
+ * perl-Text-Diff-0.35-11.el5.noarch.rpm
+ * perl-Tie-EncryptedHash-1.21-4.4.el5.noarch.rpm
+ * perl-Unix-Syslog-0.100-10.el5.i386.rpm
+ * perl-XML-RSS-1.05-6.el5.noarch.rpm
+ * perl-XML-Writer-0.4-12.el5.noarch.rpm
+ * PyXML-0.8.4-4.i386.rpm
+ * relaxngDatatype-1.0-2jpp.ep1.2.el5.2.noarch.rpm
+ * tanukiwrapper-3.2.1-2jpp.ep1.1.el5.i386.rpm
+ * ws-jaxme-0.5.1-2jpp.ep1.1.el5.1.noarch.rpm
+ * xom-1.0-2jpp.ep1.3.el5.1.noarch.rpm
+ * xpp2-2.1.10-4jpp.ep1.2.el5.1.noarch.rpm
+ * xpp3-1.1.3.4.O-2jpp.ep1.1.el5.1.noarch.rpm
