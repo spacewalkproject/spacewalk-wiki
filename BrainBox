@@ -2,11 +2,11 @@
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
 
- * PathToPostgreSql - Don't get too excited, yet.  This path is very long.
+ * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
  * UserPermissions - Discussion around implementing fine grained user permissions.
  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
- * upgrade configuration management engine?
+ * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
  * upgrade monitoring engine?
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
    * Handle package with the same EVRA within the same org
@@ -14,4 +14,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * decompose Spacewalk into an aggregation of OSS projects, composed of seperate subprojects that can be used by other projects
  * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
  * enable usage of Transifex
- * integration with koji :)?
+ * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
+ * finish migrating perl pages to Java, and remove the perl stack entirely.
