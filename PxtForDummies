@@ -41,22 +41,23 @@ The RHN web team uses PXT for three main reasons:
 Here's a simple PXT file (foo.pxt):
 {{{
 #!text/html
-	<pxt:use module="ColorSniglet" />	
-	<html>
-	  <my_tag>
+    <pxt-use module="ColorSniglet" />   
+    <html>
+      <my_tag>
             <body bgcolor={bgcolor}>
-	      Hello world.<br>
-	      The background color is {bgcolor}.
-	      The posted color is 
-                <pxt:formvar>{formvar:posted_color}</pxt:formvar>.
+          Hello world.<br>
+          The background color is {bgcolor}.
+          The posted color is 
+                <pxt-formvar>{formvar:posted_color}</pxt-formvar>.
             </body>
-	  </my_tag>
-	</html>
+      </my_tag>
+    </html>
 }}}
 
-=== III.  Legal <pxt:XXX/> Directives ===
+=== III.  Legal <pxt-XXX/> Directives ===
 
-==== 1. {{{<pxt-use module="Foo"/>}}} (synonymous with {{{<pxt-use class="Foo"/>}}}) ====
+==== 1. {{{<pxt-use module="Foo"/>}}} (synonymous with {{{<pxt-use
+class="Foo"/>}}}) ====
 
 This basically is registering a perl module that, for the rest of the
 document, will be either watching for tags to replace (like
@@ -65,13 +66,13 @@ our example, let's say that the HTML output after foo.pxt processes
 is:
 {{{
 #!text/html
-	<html>
-	  <body bgcolor=red>
-	    Hello world.
-	    The background color is red.
-	    The posted color is blue.
-	  </body>
-	</html>
+    <html>
+      <body bgcolor=red>
+        Hello world.
+        The background color is red.
+        The posted color is blue.
+      </body>
+    </html>
 }}}
 
 The perl module (known as a "Sniglet" by the RHN Web Team) registered
@@ -79,12 +80,12 @@ the <body_tag> tag in the following subroutine (in ColorSniglet.pm):
 
 {{{
 #!perl
-	sub register_tags {
-	  my $class = shift;
-	  my $pxt = shift;
+    sub register_tags {
+      my $class = shift;
+      my $pxt = shift;
 
-	  $pxt->register_tag("my_tag" => \&my_tag);
-	}
+      $pxt->register_tag("my_tag" => \&my_tag);
+    }
 }}}
 
 The \&my_tag is a reference to a function.  The function name does
@@ -93,25 +94,25 @@ maintainability.  Here is the source for the body_tag subroutine:
 
 {{{
 #!perl
-	sub my_tag {
-	  my $pxt = shift;
-	  my %params = @_;
-	  
-	  # equivalent to $pxt->block, this returns everything between
-	  # <my_tag> and </my_tag>, in this case:
-	  #
-	  #	Hello world.<br>
-	  #	The background color is {bgcolor}.
-	  #	The posted color is {formvar:posted_color}.
-	  #	  
-	  my $ret = $params{__block__};
+    sub my_tag {
+      my $pxt = shift;
+      my %params = @_;
+      
+      # equivalent to $pxt->block, this returns everything between
+      # <my_tag> and </my_tag>, in this case:
+      #
+      # Hello world.<br>
+      # The background color is {bgcolor}.
+      # The posted color is {formvar:posted_color}.
+      #   
+      my $ret = $params{__block__};
 
           # subtag substitution is most easily done through a simple s///
           # reg-exp expression.  
-	  my $ret =~ s/\{bgcolor}\}/red/gism;
+      my $ret =~ s/\{bgcolor}\}/red/gism;
 
-	  return $ret;
-	}
+      return $ret;
+    }
 }}}
 
 {{{$ret}}} is going to be the replacement value for everything between the 
@@ -126,27 +127,28 @@ a bug that PXT doesn't warn about such clashes; we haven't decided
 yet.  In general, do not rely on this feature.  If you have two of the
 same tags registered, be sure they both reference the same function.
 
-==== 2. {{{<pxt:include file="Foo.pxt"/>}}}  or  {{{<pxt:include file="Foo.html"/>}}} ====
+==== 2. {{{<pxt-include file="Foo.pxt"/>}}}  or  {{{<pxt-include
+file="Foo.html"/>}}} ====
 
-{{{<pxt:include/>}}} reads the contents of a file and dumps it into the
-current document.  Any {{{<pxt:XXXX/>}}} tags within the included document
+{{{<pxt-include/>}}} reads the contents of a file and dumps it into the
+current document.  Any {{{<pxt-XXXX/>}}} tags within the included document
 will be parsed, regardless of its extension.  Note that all files are 
 relative to the document root of the current virtual host.  Also note 
 that parsing is re-entrant and recursive, meaning tags registered are 
-not necessarily registered when the {{{pxt:include}}} tag is expanded.
+not necessarily registered when the {{{pxt-include}}} tag is expanded.
 
-==== 3. {{{<pxt:formvar>{formvar:foobar}</pxt:formvar>}}} ====
+==== 3. {{{<pxt-formvar>{formvar:foobar}</pxt-formvar>}}} ====
 
-In the url {{{http://www.foo.com/index.pxt?foobar=1}}} {{{"<pxt:formvar>
-{formvar:foobar}</pxt:formvar>"}}} is automatically replaced with "1" by
+In the url {{{http://www.foo.com/index.pxt?foobar=1}}} {{{"<pxt-formvar>
+{formvar:foobar}</pxt-formvar>"}}} is automatically replaced with "1" by
 PXT.
 
-==== 4. {{{<pxt:comment> blah blah blah </pxt:comment>}}}====
+==== 4. {{{<pxt-comment> blah blah blah </pxt-comment>}}}====
 
 Your basic comment.  Anything begin the start and end tags will be utterly
 ignored by PXT, including valid PXT tags.  This is different from an
 HTML comment which, while not affecting the rendering of a page, is
-still visible in the source of the page.  pxt:comments are filtered
+still visible in the source of the page.  pxt-comments are filtered
 out before serving.
 
 
@@ -177,7 +179,7 @@ would become:
 
 {{{
 #!text/html
-  <pxt:use class="Sniglets::Users">
+  <pxt-use class="Sniglets::Users">
   <rhn:login_form METHOD="POST">
     {login:error_message}
     Username: <INPUT TYPE="TEXT" NAME="USERNAME" VALUE="{formvar:USERNAME}"><BR>
@@ -233,7 +235,7 @@ blank and issuing a redirect to wherever a request should go is what
 seems to work well, but there is no clear best practice in this case.
 
 PXT itself decides whether or not to execute a callback based on a
-simple test.  If there is a formvariable named pxt:trap, and if a .pxt
+simple test.  If there is a formvariable named pxt-trap, and if a .pxt
 file has registered a callback whose name is the contents of that form
 variable, then it executes it.  Otherwise it completely ignores it.
 That means IT IS VERY IMPORTANT TO HAVE A FORM'S ACTION HANDLER POINT
@@ -290,13 +292,13 @@ everything that involves HTTP and the web server.
 TODO:  Explain this more fully.
 
 
-=== VII. Adding {{{<pxt:XXX/>}}} Directives ===
+=== VII. Adding {{{<pxt-XXX/>}}} Directives ===
 
 When the httpd/mod_perl gets a request for a .pxt file, it's sent to
 the {{{PXT::ApacheHandler->handler}}} function. It sets up all utility data
 objects, registers tag handlers and callbacks, does any redirect
 voodoo necessary, and also initiates the actual parsing/replacement of
-the tags.  Adding any {{{<pxt:XXX/>}}} directives will require full
+the tags.  Adding any {{{<pxt-XXX/>}}} directives will require full
 comprehension of the flow of execution from
 {{{PXT::ApacheHandler->handler}}} down.
 
@@ -390,19 +392,19 @@ a request:
 
 {{{
 #!perl
-	# some request
-	$session = $pxt->session();
-	$session->set('visits',1);
+    # some request
+    $session = $pxt->session();
+    $session->set('visits',1);
 }}}
 
 In order to access session information during a request:
 
 {{{
 #!perl
-	# another seperate request
-	$session = $pxt->session();
-	$visits = $session->get('visits'); 
-	print "You have visited $visits pages for this session";
+    # another seperate request
+    $session = $pxt->session();
+    $visits = $session->get('visits'); 
+    print "You have visited $visits pages for this session";
 }}}
 
 Notice that you do not need to check for the existence of a session,
@@ -412,8 +414,8 @@ method (i.e. *not* from $session->get):
 
 {{{
 #!perl
-	$session = $pxt->session();
-  	$userid = $session->uid;
+    $session = $pxt->session();
+    $userid = $session->uid;
 }}}
 
 === V.  Pnotes in PXT ===
@@ -430,7 +432,7 @@ nor at any other time. A user of PXT retrieves the user object as follows:
 {{{
 #!perl
 
-$user = $pxt->user();			#object returned from RHN::User
+$user = $pxt->user();           #object returned from RHN::User
 print "no such user exists" if(!$user);
 }}}
 
@@ -464,11 +466,13 @@ browser.
 
 Let me say that again a little differently..
 
-{{{http://localhost/foo/product_list.pxt}}} and via a web browser could, say bring
+{{{http://localhost/foo/product_list.pxt}}} and via a web browser could, say
+bring
 up a list of products on a nice html page... (maybe some buttons to some links
 to start messing with the data)...
 
-{{{http://localhost/foo/product_list.pxt}}} called by an XML-RPC client would have
+{{{http://localhost/foo/product_list.pxt}}} called by an XML-RPC client would
+have
 the following methods available to them.
 
 {{{
@@ -489,7 +493,7 @@ methods.list - returns a list of documentation on the above two functions
 #!text/html
 <!-- Begin xmltest.pxt -->
 
-<pxt:use class="Sniglets::XMLTest.pm"/>
+<pxt-use class="Sniglets::XMLTest.pm"/>
 <display_motd>
 <p> Now here this! -> {motd} !!!
 </display_motd>
