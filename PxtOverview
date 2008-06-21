@@ -28,49 +28,49 @@ values but HTML (presumptively written by an HTML designer):
 
 {{{
 #!text/html
-<pxt:include App="RHN::User::EditTags" />
+<pxt-include App="RHN::User::EditTags" />
 
-<pxt:errors>
-<pxt:rhn:user:loginform action="/network/main.html">
+<pxt-errors>
+<pxt-rhn:user:loginform action="/network/main.html">
 
-<input type=text name="username" value=[[pxt:username]]>
-<input type=password name="password" value=[[pxt:password]]>
-[[pxt:hidden]]
+<input type=text name="username" value=[[pxt-username]]>
+<input type=password name="password" value=[[pxt-password]]>
+[[pxt-hidden]]
 
-</pxt:rhn:user:editform>
+</pxt-rhn:user:editform>
 }}}
 
 The above would be rendered in such a way as to become a normal form
 for the browser, but with the appropriate values in place that a user
-would expect (for instance, {{{<pxt:errors>}}} would be where any errors
+would expect (for instance, {{{<pxt-errors>}}} would be where any errors
 would be placed, such as "Invalid username or password"; likewise,
-{{{[[pxt:username]]}}} would be where a user's login would be placed if it
-was known, perhaps from a failed login).  The {{{<pxt:rhn:user:loginform>}}}
+{{{[[pxt-username]]}}} would be where a user's login would be placed if it
+was known, perhaps from a failed login).  The {{{<pxt-rhn:user:loginform>}}}
 would render everything between itself and its matching close tag as
 if it were a normal {{{<FORM>}}} tag.
 
-The general convention is that a tag {{{<pxt:foo>}}} corresponds to a
-specific subroutine in code somewhere, and a label {{{[[pxt:bar]]}}} is a
+The general convention is that a tag {{{<pxt-foo>}}} corresponds to a
+specific subroutine in code somewhere, and a label {{{[[pxt-bar]]}}} is a
 substitution handled by an enclosing tag (in this case,
-{{{[[pxt:username]]}}} is expanded by the {{{pxt:rhn:user:loginform}}} tag).
+{{{[[pxt-username]]}}} is expanded by the {{{pxt-rhn:user:loginform}}} tag).
 
-The first line of the example, {{{<pxt:include>}}}, indicated which sets of
+The first line of the example, {{{<pxt-include>}}}, indicated which sets of
 tags will be used in this html document.  More can be used by
-indicating other {{{pxt:include}}} tags.
+indicating other {{{pxt-include}}} tags.
 
 Another example; suppose an html document needed to display a list of
 packages.
 
 {{{
 #!text/html
-<pxt:include "RHN::Packages" />
+<pxt-include "RHN::Packages" />
 
 <TABLE BORDER=1>
 <TR><TH>Package Name</TH><TH>Size</TH><TH>Download!</TH></TR>
 
-<pxt:rhn:packages:view_all pagesize=20>
+<pxt-rhn:packages:view_all pagesize=20>
 <TR><TD>[[name]]</TD><TD>[[size]]</TD><TD>[[download_link]]</TD></TR>
-</pxt:rhn:packages:view_all>
+</pxt-rhn:packages:view_all>
 
 </TABLE>
 }}}
@@ -78,14 +78,15 @@ packages.
 In this case, it is easy to change the way a list of packages is
 displayed (even so far as changing which fields are displayed) without
 involving any code change, assuming the tag handler for
-{{{pxt:rhn:packages:view_all}}} is written to allow such (and in my
+{{{pxt-rhn:packages:view_all}}} is written to allow such (and in my
 experience with this system, it typically is _easier_ to write tag
 handlers to handle that kind of thing than it is to write tag handlers
 that are specific and not as flexible).
 
-Now, from the perl side.  The module referenced in {{{pxt:include}}} is
+Now, from the perl side.  The module referenced in {{{pxt-include}}} is
 loaded into memory via translation of :: into / and appending a .pm to
-the module name (ie, {{{RHN::Packages}}} becomes {{{RHN/Packages.pm}}}, much like
+the module name (ie, {{{RHN::Packages}}} becomes {{{RHN/Packages.pm}}}, much
+like
 the standard 'use' operation).
 
 Once a module is loaded, the code then calls {{{$package->register_tags}}}.
@@ -136,7 +137,8 @@ sub first_tag {
   $ret .= "I even have a formvar for test: " . $pxt->param("test") . "<br>"
     if $pxt->param("test");
 
-  $pxt->session->set("first_tag_data" => "something to remember in the session");
+  $pxt->session->set("first_tag_data" => "something to remember in the
+session");
 
   return $ret;
 }
