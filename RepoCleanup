@@ -145,3 +145,27 @@ done
  * xom-1.0-2jpp.ep1.3.el5.1.noarch.rpm
  * xpp2-2.1.10-4jpp.ep1.2.el5.1.noarch.rpm
  * xpp3-1.1.3.4.O-2jpp.ep1.1.el5.1.noarch.rpm
+
+
+ == The hack script to generate the above list == 
+{{{
+#!/bin/bash
+
+# This is a hack to do to figure out what packages in the spacewalk repo
+#  are available in Fedora Proper.  Setup needs to be like this:
+#  ./$0 needs to be in the dir with all the srpms.
+#  Remember you can only look up srpms in fedora-pkgdb (I think)
+#
+
+echo "Downloading meta-data from pkgdg"
+wget -q -O /tmp/pkgdb https://admin.fedoraproject.org/pkgdb/acls/bugzilla?tg_format=plain
+grep ^"Fedora|" /tmp/pkgdb | awk -F"|" '{print $2}' > /tmp/foo
+mv -f /tmp/foo /tmp/pkgdb
+
+for rpm in `ls -1 *rpm`
+do
+   rrr=`rpm -qp --qf  "%{NAME}\n" $rpm`
+   echo -n " * $rpm |"
+   grep $rrr /tmp/pkgdb &> /dev/null  &&  echo " In Fedora" || echo " NIF"
+done
+}}}
