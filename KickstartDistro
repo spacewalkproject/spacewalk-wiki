@@ -35,15 +35,19 @@ For RHEL5.2 Server:
  6.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
 
 ****** Please note:  Until the next SpaceWalk release you will need to run the following to get Fedora 9 kickstarts to work *******
+{{{
+
 # sqlplus spacewalk/spacewalk@xe
 
 sqlplus> insert into rhnKSInstallType (id, label, name)
         values (rhn_ksinstalltype_id_seq.nextval,
                 'fedora_9','Fedora 9'
         );
+
 sqlplus>  update rhnKickstartCommandName set REQUIRED = 'N' where  name = 'mouse' OR name = 'langsupport';
 sqlplus> commit;
 
+}}}
 ******
 
 
