@@ -22,3 +22,10 @@ To setup the sources follow the instructions in [GitGuide Git Guide].
 you development environment should be ready to go.
 
 
+= Uninstallation =
+In case you decide to undo your development environment changes and go back to running your spacewalk  (note this operation right now is a bit dodgy).
+ * {{{sudo ant uninstall-devel}}}
+
+
+
+
