@@ -13,9 +13,6 @@ Current APIs that are in development or have been planned to add.  Feel free to 
 ||  Kickstart ||  ||  ||  ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
 ||  Kickstart  (non customer request) ||  ||  ||  ||  ||
-||  kickstart.setBaseChannel(kslabel, chan_label, tree_label) || 4 || skarmark || Merged with kickstart.setKickstartTree ||  ||
-||  kickstart.listBaseChannels(kslabel) || 2 || skarmark || kickstart.listKickstartableChannels present ||  ||
-||  kickstart.listAvailableKickstartTrees(kslabel) || 2 || skarmark || kickstart.listKickstartableTrees present ||  ||
 ||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  ||  ||
 ||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  ||
