@@ -2,6 +2,30 @@
 The first phase will be to get the easy packages into Fedora/EPEL via a quick review.  The easiest method is probably to start with the Perl Modules.  I (stahnma) will try to contact the Perl SIG so they can hopefully get them reviewed rather quickly.  There are certainly some of the perl packages that will need to have the RPM spec file completely changed.  
 
 We can update the list of packages here and provide bugzilla numbers.
+ * perl-Business-CreditCard-0.28-6.el5.src.rpm
+ * perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm
+ * perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm
+ * perl-Crypt-OpenPGP-1.03-14.el5.src.rpm
+ * perl-Crypt-Rijndael-1.05-2.el5.src.rpm
+ * perl-Crypt-RIPEMD160-0.04-13.el5.src.rpm
+ * perl-DateTime-Locale-0.09-6.el5.src.rpm
+ * perl-DateTime-TimeZone-0.59-5.el5.src.rpm
+ * perl-DBD-Oracle-1.19-8.el5.src.rpm
+ * perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm
+ * perl-GD2-2.17-10.el5.src.rpm
+ * perl-Math-FFT-0.26-12.el5.src.rpm
+ * perl-NOCpulse-CLAC-1.9.4-10.el5.src.rpm
+ * perl-NOCpulse-Debug-1.23.4-6.el5.src.rpm
+ * perl-NOCpulse-Gritch-1.16.1-5.el5.src.rpm
+ * perl-NOCpulse-Object-1.26.4-7.el5.src.rpm
+ * perl-NOCpulse-OracleDB-1.28.2-12.el5.src.rpm
+ * perl-NOCpulse-Probe-1.183.1-21.el5.src.rpm
+ * perl-NOCpulse-SetID-1.5.2-5.el5.src.rpm
+ * perl-NOCpulse-Utils-1.14.2-8.el5.src.rpm
+ * perl-Satcon-1.3-9.el5.src.rpm
+ * perl-Schedule-Cron-Events-1.8-11.el5.src.rpm
+ * perl-Set-Crontab-1.00-12.el5.src.rpm
+
 
 
 == Questions ==
