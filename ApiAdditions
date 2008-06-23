@@ -15,7 +15,7 @@ If you have an idea for a new api, add it to the Planned API table below.  If yo
 === Planned/development apis ===
 
 
-||  Task ||  Estimate (hours) || Resource || Assigned || Notes ||
+||  Task ||  Estimate (hours) || Developer || Status || Notes ||
 ||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
 ||  system.provision(sid, kslabel, date) || 4 || skarmark ||  ||  ||
@@ -80,7 +80,7 @@ If you have an idea for a new api, add it to the Planned API table below.  If yo
 
 Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 
-||  Task ||  Estimate (hours) || Resource || Assigned || Notes ||
+||  Task ||  Estimate (hours) || Developer || Status || Notes ||
 ||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
 ||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
