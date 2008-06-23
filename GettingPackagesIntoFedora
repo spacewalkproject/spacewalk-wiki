@@ -24,7 +24,7 @@ We can update the list of packages here and provide bugzilla numbers.
  * perl-NOCpulse-Utils-1.14.2-8.el5.src.rpm
  * perl-Satcon-1.3-9.el5.src.rpm
  * perl-Schedule-Cron-Events-1.8-11.el5.src.rpm
-||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  
+||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  Submitted by Stahnma || 
 
 
 
