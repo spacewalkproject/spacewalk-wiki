@@ -6,4 +6,6 @@ We can update the list of packages here and provide bugzilla numbers.
 
 == Questions ==
  * Some packages, I am not sure if the perl ones are in this list, are not in installating into proper locations.  Just an FYI, nothing should be in /home/*, /usr/local/*, /opt/* or /srv/*.  There is some clean up to do here.  Would moving these items break items?
+ * Also, some versions of packages may vary between the spacewalk repo and what is currently in Fedora.  Can we begin testing with the version in Fedora?
+
 
