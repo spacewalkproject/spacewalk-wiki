@@ -7,12 +7,6 @@ https://bugzilla.redhat.com/show_bug.cgi?id=452450
 We can update the list of packages here and provide bugzilla numbers.
  * perl-Business-CreditCard-0.28-6.el5.src.rpm
  * perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm
- * perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm
- * perl-Crypt-OpenPGP-1.03-14.el5.src.rpm
- * perl-Crypt-Rijndael-1.05-2.el5.src.rpm
- * perl-Crypt-RIPEMD160-0.04-13.el5.src.rpm
- * perl-DateTime-Locale-0.09-6.el5.src.rpm
- * perl-DateTime-TimeZone-0.59-5.el5.src.rpm
  * perl-DBD-Oracle-1.19-8.el5.src.rpm
  * perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm
  * perl-GD2-2.17-10.el5.src.rpm
@@ -28,7 +22,12 @@ We can update the list of packages here and provide bugzilla numbers.
  * perl-Satcon-1.3-9.el5.src.rpm
  * perl-Schedule-Cron-Events-1.8-11.el5.src.rpm
 ||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  Submitted by Stahnma || 
-
+||perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm||GPL/Artistic||In Prep||Nigel Jones||
+||perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones||
+||perl-Crypt-Rijndael-1.06-1.el5.src.rpm||LGPLv2||In Prep||Nigel Jones||
+||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones||
+||perl-DateTime-Locale-0.09-6.el5.src.rpm||||In Prep||Nigel Jones||
+||perl-DateTime-TimeZone-0.59-5.el5.src.rpm||||In Prep||Nigel Jones||
 
 
 == Questions ==
