@@ -1,6 +1,9 @@
 = Phase 1 = 
 The first phase will be to get the easy packages into Fedora/EPEL via a quick review.  The easiest method is probably to start with the Perl Modules.  I (stahnma) will try to contact the Perl SIG so they can hopefully get them reviewed rather quickly.  There are certainly some of the perl packages that will need to have the RPM spec file completely changed.  
 
+We created a tracking bug that all review bugs should block.   When filing review bugs for Spacewalk stuff just block 'F-Spacewalk'
+https://bugzilla.redhat.com/show_bug.cgi?id=452450
+
 We can update the list of packages here and provide bugzilla numbers.
  * perl-Business-CreditCard-0.28-6.el5.src.rpm
  * perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm
