@@ -1,44 +1,21 @@
+Current APIs that are in development or have been planned to add.  Feel free to add what you would like to see.  To see what APIs are available from the Satellite/Spacewalk server you have installed, simply browse  Help (or About RHN/Spacewalk)->Api   link on the left.
 
 
-|| Task || Estimate (hours) || Resource || Status || Notes ||
-||  ----
+||  Task ||  Estimate (hours) || Resource || Assigned || Notes ||
+||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
-||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
-||  system.whoRegistered(sid) || 1 || jsherrill || Done ||  ||
-||  system.listSystemsWithPackage(id) || 3 || jsherrill || Done ||  ||
-||  system.listSystemsWithPackage(name, version, release, epoch) || 3 || jsherrill || Done ||  ||
 ||  system.provision(sid, kslabel, date) || 4 || skarmark ||  ||  ||
 ||  system.provision(sid, kslabel) || 1 || skarmark ||  ||  ||
-||  system.listVirtHosts() || 2 || jsherrill || Done ||  ||
-||  system.listVirtGuests(sid) || 2 || jsherrill || Done ||  ||
-||  system.setGuestMemory(sid, memory) || 2 || jsherrill || Done ||  ||
-||  system.setGuestCpus(sid, cpus) || 2 || jsherrill || Done ||  ||
-||  system.scheduleGuestAction(sid, state) || 4 || jsherrill || Done ||  ||
 ||  system.diffToChannel(sid, chan_label) || 3 ||  ||  ||  ||
-||  system.deleteSnapshot(sid, snapId) || 5 || jsherril || Done ||  ||
-||  system.deleteSnapshots(sid) || 5 || jsherril || Done ||  ||
-||  system.listSnapshots(sid) || 5 || jsherril || Done ||  ||
-||  system.listSnapshotPackages(snapid) || 5 || jsherril || Done ||  ||
-||  system.listSnapshotConfigFiles(snapid) || 5 || jsherril || Done ||  ||
 ||  system.searchDevices(search-string) || 4 || jmatthews ||  ||  ||
 ||  system.searchNetwork(search-string) || 4 || jmatthews ||  ||  ||
-||  system.getOsadStatus(sid) (system.getDetails()) || 2 || jsherril || Done ||  ||
-||  ----
-||  System Group ||  ||  ||  ||  ||
-||  systemgroup.listActiveSystemsInGroup(group) || 3 || jsherril || Done ||  ||
-||  systemgroup.listInActiveSystemsInGroup(group) || 3 || jsherril || Done ||  ||
-||  ----
+||  ----   ||  ||  ||  ||  ||
 ||  Kickstart ||  ||  ||  ||  ||
-||  kickstart.list || 2 || jsherrill || Done ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
-||  kickstart.listscripts() || 2 || jsherrill || Done ||  ||
-||  kickstart.addscript() || 3 || jsherrill || Done ||  ||
-||  kickstart.deletescript() || 3 || jsherrill || Done ||  ||
-||  kickstart.download() || 3 || jsherrill || Done ||  ||
 ||  Kickstart  (non customer request) ||  ||  ||  ||  ||
-||  kickstart.setBaseChannel(kslabel, chan_label, tree_label) || 4 || skarmark || Merged with kickstart.setKickstartTree Done ||  ||
-||  kickstart.setKickstartTree(kslabel, tree_label) || 3 || skarmark || Done ||  ||
-||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 3 || skarmark || Done ||  ||
+||  kickstart.setBaseChannel(kslabel, chan_label, tree_label) || 4 || skarmark || Merged with kickstart.setKickstartTree ||  ||
+||  kickstart.listBaseChannels(kslabel) || 2 || skarmark || kickstart.listKickstartableChannels present ||  ||
+||  kickstart.listAvailableKickstartTrees(kslabel) || 2 || skarmark || kickstart.listKickstartableTrees present ||  ||
 ||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  ||  ||
 ||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  ||
@@ -46,8 +23,6 @@
 ||  kickstart.enableConfigMgmt(kslabel, boolean) || 2 ||  ||  ||  ||
 ||  kickstart.enableRemoteCmds(kslabel, boolean) || 2 ||  ||  ||  ||
 ||  kickstart.setLocale( locale, boolean useUtc) || 3 ||  ||  ||  ||
-||  kickstart.getPartioningScheme() || 2 || jortel || Done ||  ||
-||  kickstart.setPartitioningScheme() || 3 || jortel || Done ||  ||
 ||  kickstart.getSoftwareList() || 2 || jortel ||  ||  ||
 ||  kickstart.setSoftwareList() || 3 || jortel ||  ||  ||
 ||  kickstart.appendToSoftwareList() || 2 ||  ||  ||  ||
@@ -61,20 +36,73 @@
 ||  kickstart.createFilePreservationList(label, list) || 3 ||  ||  ||  ||
 ||  kickstart.deleteFilePreservationList(lable) || 3 ||  ||  ||  ||
 ||  kickstart.listAllGpgAndSSLKeys() || 2 ||  ||  ||  ||
-||  ----
+||  ----   ||  ||  ||  ||  ||
 ||  Channel.software ||  ||  ||  ||  ||
 ||  channel.software.getPackage(id) || 8 || jsherrill ||  ||  ||
 ||  channel.software.getPackageLink(id) || 5 || jsherrill ||  ||  ||
 ||  channel.software.mergeErrata(fromChannel, toChannel) || 3 ||  ||  ||  ||
 ||  channel.software.mergeErrata(fromChannel, toChannel, date) || 6 ||  ||  ||  ||
 ||  channel.software.uploadPackage(package) || 12 ||  ||  ||  ||
-||  ----
+||  ----   ||  ||  ||  ||  ||
 ||  Errata ||  ||  ||  ||  ||
 ||  errata.findByCVE(num) || 3 ||  ||  ||  ||
 ||  errata.findByRHNumber(num) || 3 ||  ||  ||  ||
-||  ----
+||  ----   ||  ||  ||  ||  ||
 ||  schedule ||  ||  ||  ||  ||
 ||  schedule.listAllActions(sessionKey) || 3 ||  ||  ||  ||
+||  schedule.cancelAction(aid) || 3 ||  ||  ||  ||
+||  schedule.listActionsForSystem(sid) || 3 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Support/readonly ||  ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Monitoring ||  ||  ||  ||  ||
+||  monitoring.listProbes(sid) || 3 ||  ||  ||  ||
+||  monitoring.getLatestProbeResults(sid) || 3 ||  ||  ||  ||
+||  monitoring.getAllResults(sid, probe_id) || 3 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Other ||  ||  ||  ||  ||
+||  system.listErrata(severity/type) || 4 ||  ||  ||  ||
+||  channel.listErrata(severity/type) || 4 ||  ||  ||  ||
+
+
+
+Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
+
+||  Task ||  Estimate (hours) || Resource || Assigned || Notes ||
+||  ----   ||  ||  ||  ||  ||
+||  System ||  ||  ||  ||  ||
+||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
+||  system.whoRegistered(sid) || 1 || jsherrill || Done ||  ||
+||  system.listSystemsWithPackage(id) || 3 || jsherrill || Done ||  ||
+||  system.listSystemsWithPackage(name, version, release, epoch) || 3 || jsherrill || Done ||  ||
+||  system.listVirtHosts() || 2 || jsherrill || Done ||  ||
+||  system.listVirtGuests(sid) || 2 || jsherrill || Done ||  ||
+||  system.setGuestMemory(sid, memory) || 2 || jsherrill || Done ||  ||
+||  system.setGuestCpus(sid, cpus) || 2 || jsherrill || Done ||  ||
+||  system.scheduleGuestAction(sid, state) || 4 || jsherrill || Done ||  ||
+||  system.deleteSnapshot(sid, snapId) || 5 || jsherril || Done ||  ||
+||  system.deleteSnapshots(sid) || 5 || jsherrill || Done ||  ||
+||  system.listSnapshots(sid) || 5 || jsherrill || Done ||  ||
+||  system.listSnapshotPackages(snapid) || 5 || jsherrill || Done ||  ||
+||  system.listSnapshotConfigFiles(snapid) || 5 || jsherrill || Done ||  ||
+||  system.getOsadStatus(sid) (system.getDetails()) || 2 || jsherrill || Done ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  SystemGroup ||  ||  ||  ||  ||
+||  systemgroup.listActiveSystemsInGroup(group) || 3 || jsherrill || Done ||  ||
+||  systemgroup.listInActiveSystemsInGroup(group) || 3 || jsherrill || Done ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Kickstart ||  ||  ||  ||  ||
+||  kickstart.list || 2 || jsherrill || Done ||  ||
+||  kickstart.listscripts() || 2 || jsherrill || Done ||  ||
+||  kickstart.addscript() || 3 || jsherrill || Done ||  ||
+||  kickstart.deletescript() || 3 || jsherrill || Done ||  ||
+||  kickstart.download() || 3 || jsherrill || Done ||  ||
+||  kickstart.setKickstartTree(kslabel, tree_label) || 3 || skarmark || Done ||  ||
+||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 3 || skarmark || Done ||  ||
+||  kickstart.getPartioningScheme() || 2 || jortel || Done ||  ||
+||  kickstart.setPartitioningScheme() || 3 || jortel || Done ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Schedule ||  ||  ||  ||  ||
 ||  schedule.listCompletedActions(sessionKey) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listInProgressActions(sessionKey) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listFailedActions(sessionKey) || 2 || bbuckingham || Done ||  ||
@@ -82,16 +110,3 @@
 ||  schedule.listCompletedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listInProgressSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listFailedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
-||  schedule.cancelAction(aid) || 3 ||  ||  ||  ||
-||  schedule.listActionsForSystem(sid) || 3 ||  ||  ||  ||
-||  ----
-||  Support/readonly ||  ||  ||  ||  ||
-||  ----
-||  Monitoring ||  ||  ||  ||
-||  monitoring.listProbes(sid) || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || 3 ||  ||  ||  ||
-||  ----
-||  Other ||  ||  ||  ||  ||
-||  system.listErrata(severity/type) || 4 ||  ||  ||  ||
-||  channel.listErrata(severity/type) || 4 ||  ||  ||  ||
