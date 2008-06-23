@@ -1,5 +1,7 @@
 Cleaning up Repository and getting the free items into the Fedora Space
 
+A new page now has information on GettingPackagesIntoFedora
+
 = RPMS missing SRPMS =
 The following binary RPMS are found in http://spacewalk.redhat.com/yum/rhel/5Server/i386/ and not in the SRPM tree http://www.redhat.com/spacewalk/source/
 This needs to be fixed :)
