@@ -1,4 +1,18 @@
-Current APIs that are in development or have been planned to add.  Feel free to add what you would like to see.  To see what APIs are available from the Satellite/Spacewalk server you have installed, simply browse  Help (or About RHN/Spacewalk)->Api   link on the left.
+
+== API Development ==
+
+To see what APIs are available from the Satellite/Spacewalk server you have installed, simply browse  Help (or About RHN/Spacewalk)->Api   link on the left.
+
+If you have an idea for a new api, add it to the Planned API table below.  If you aren't sure exactly what an api call should be named, simply add it to the scratchpad below and a developer will add it to the Planned Apis table.
+
+=== Scratchpad ===
+
+ * idea1 
+ * idea2
+ * idea3
+
+
+=== Planned/development apis ===
 
 
 ||  Task ||  Estimate (hours) || Resource || Assigned || Notes ||
@@ -62,6 +76,7 @@ Current APIs that are in development or have been planned to add.  Feel free to 
 ||  channel.listErrata(severity/type) || 4 ||  ||  ||  ||
 
 
+=== New Spacewalk 0.1 Apis ===
 
 Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 
