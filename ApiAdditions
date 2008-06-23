@@ -24,6 +24,8 @@ If you have an idea for a new api, add it to the Planned API table below.  If yo
 ||  system.searchDevices(search-string) || 4 || jmatthews ||  ||  ||
 ||  system.searchNetwork(search-string) || 4 || jmatthews ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||
+||  packages.getDetails(*,downloadURL)   ||  ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||
 ||  Kickstart ||  ||  ||  ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
 ||  Kickstart  (non customer request) ||  ||  ||  ||  ||
@@ -83,6 +85,7 @@ Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 ||  Task ||  Estimate (hours) || Developer || Status || Notes ||
 ||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
+
 ||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
 ||  system.whoRegistered(sid) || 1 || jsherrill || Done ||  ||
 ||  system.listSystemsWithPackage(id) || 3 || jsherrill || Done ||  ||
