@@ -15,7 +15,7 @@ Support for installation of Spacewalk on the following OS:
  * Fedora 9 (i386 & x86_64)
  * CentOS 4 & 5 (i386 & x86_64)
 
-API additions
+[ApiAdditions API additions]
 
 Provide for Solaris sun4v client support
 
