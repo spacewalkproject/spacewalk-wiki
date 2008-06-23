@@ -30,7 +30,9 @@ We can update the list of packages here and provide bugzilla numbers.
 ||perl-DateTime-TimeZone-0.7701-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452456||Nigel Jones||
 
 
-== Questions ==
+== Questions / Concerns ==
+ * Does the Oracle dependency have to be removed before we can be included in Fedora?
+ * Given the number of Perl packages required for Spacewalk, it may be worth considering completing removal of the Perl stack before attempting inclusion in Fedora. Could save some significant time for package reviewers and maintainers. 
  * Some packages, I am not sure if the perl ones are in this list, are not in installating into proper locations.  Just an FYI, nothing should be in /home/*, /usr/local/*, /opt/* or /srv/*.  There is some clean up to do here.  Would moving these items break items?
  * Also, some versions of packages may vary between the spacewalk repo and what is currently in Fedora.  Can we begin testing with the version in Fedora?
  * What is the furthest back for compatibility we need to worry about? Is Enterprise Linux 4 the earliest?
