@@ -32,10 +32,24 @@ We can update the list of packages here and provide bugzilla numbers.
 
 == Questions / Concerns ==
  * Does the Oracle dependency have to be removed before we can be included in Fedora?
- * Given the number of Perl packages required for Spacewalk, it may be worth considering completing removal of the Perl stack before attempting inclusion in Fedora. Could save some significant time for package reviewers and maintainers. 
+
+   [msuchy] In perl we should break dependency and stop on perl-DBI. As connection string can be anything and should be set up in some config file. This part (which is basicaly Monitoring) should not be dependent on Oracle (but Oracle probe in Plugins).
+
+ * Given the number of Perl packages required for Spacewalk, it may be worth considering completing removal of the Perl stack before attempting inclusion in Fedora. Could save some significant time for package reviewers and maintainers.
+
+   [msuchy] Packages from above are Monitoring component, which is all in perl. Web part in perl is in packages rhn-sniglets.
+
  * Some packages, I am not sure if the perl ones are in this list, are not in installating into proper locations.  Just an FYI, nothing should be in /home/*, /usr/local/*, /opt/* or /srv/*.  There is some clean up to do here.  Would moving these items break items?
+
+   [msuchy] I already moved /home (but to /opt/home (sic))
+
  * Also, some versions of packages may vary between the spacewalk repo and what is currently in Fedora.  Can we begin testing with the version in Fedora?
+
+   [msuchy] definitely 
+
  * What is the furthest back for compatibility we need to worry about? Is Enterprise Linux 4 the earliest?
+
+  [msuchy] yes, do not worry about RHEL3.
 
 
 
