@@ -134,7 +134,7 @@ SQL>
 
 == increase max process ==
 
-Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 100:
+Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 400:
 
 {{{
 # sqlplus spacewalk/spacewalk@xe
@@ -150,7 +150,12 @@ SQL> commit;
 Commit complete.
 
 SQL> quit
+
+# /sbin/service oracle-xe restart
+
 }}}
+
+
 
 Alternatively you can do
 
@@ -169,6 +174,8 @@ SQL> commit;
 Commit complete.
 
 SQL> quit
+
+# /sbin/service oracle-xe restart
 }}}
 
 == setup schema (optional) ==
