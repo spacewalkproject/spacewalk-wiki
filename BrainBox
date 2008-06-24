@@ -16,3 +16,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * enable usage of Transifex
  * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
  * finish migrating perl pages to Java, and remove the perl stack entirely.
+ * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
