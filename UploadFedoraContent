@@ -93,5 +93,5 @@ For example, to upload the content downloaded using {{{reposync}}} do the follow
 === usage ===
  {{{rhnpush --channel=<channel-label> --server=<hosturl>/APP --dir=<directory> }}}
 
-
+Note: Make sure {{{/var/satellite}}} exists and has owner:group {{{apache}}} before pushing.
 
