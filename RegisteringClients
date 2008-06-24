@@ -13,7 +13,7 @@ Instructions for registering client systems you with to manage with Spacewalk
 [spacewalk]
 name=Spacewalk
 baseurl=http://spacewalk.redhat.com/yum/fedora/9/i386/
-gpgkey=http://www.redhat.com/spacewalk/yum/rhel/5Server/i386/RPM-GPG-KEY-spacewalk
+gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
