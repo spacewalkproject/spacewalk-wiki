@@ -6,7 +6,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=452450
 
 We can update the list of packages here and provide bugzilla numbers.
 || perl-Business-CreditCard-0.28-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || || 
- * perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm
+|| perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452616 || stahnma || || 
  * perl-DBD-Oracle-1.19-8.el5.src.rpm
  * perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm
 || perl-GD2-2.17-10.el5.src.rpm || Already in Fedora, under different name (perl-GD) || 
