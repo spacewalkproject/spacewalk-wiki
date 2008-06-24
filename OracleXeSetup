@@ -12,21 +12,23 @@ You may need an account to download the rpms. Seems like a crap shoot to me. So 
  * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
  * oracle-xe-client-10.2.0.1-1.0.i386.rpm
 
-You will also need a client. For this you should [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html download Oracle Instant Client]. Download all three (3) of the
+You will also need a client. For this you should [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html download Oracle Instant Client]. Download all four (4) of the
 following. For now, stick with the 10.2.0.4 version.
 
  * oracle-instantclient-basic-10.2.0.4-1.i386.rpm
  * oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm
  * oracle-instantclient-devel-10.2.0.4-1.i386.rpm
+ * oracle-instantclient-sqlplus*.rpm 
+
 
 === Letting yum resolve deps ===
 nogpgcheck is required because the oracle rpms are not signed.
- * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm
+ * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oralce-instantclient-sqlplus*.rpm
 
 === manually ===
 
  * sudo yum install libaio
- * sudo rpm -Uvh oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm
+ * sudo rpm -Uvh oracle-xe-univ-10.2.0-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm oracle-instantclient-sqlplus*.rpm
 
 
 == setup server ==
