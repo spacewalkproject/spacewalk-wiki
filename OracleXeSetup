@@ -87,11 +87,15 @@ You need to put the Oracle clients on your path and configure ORACLE_HOME.
  export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
  export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
 }}}
- * One way of doing this is below, remember to logout and back in after setting the link
+ * The best way of doing this is below, remember to logout and back in after setting the link
    so your env is updated.
 {{{
   cd /etc/profile.d
   ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh
+}}}
+An alternative to logging out and still obtaining the correct environment is:
+{{{
+. /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh
 }}}
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}:
 {{{
