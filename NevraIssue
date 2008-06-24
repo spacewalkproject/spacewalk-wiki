@@ -8,3 +8,10 @@ Currently in spacewalk only one package on the satellite can be pushed to a sing
 We obviously need some field to differentiate between content from different vendors, so here are some ideas:
 
   * Have the user specify a vendor when pushing content (This could be automated when we have automated tools for grabbing/pushing content).  We could also (optionally) tie a channel to a vendor as well.  This is handy in that it would make it fairly easy to keep CentOS content from getting into RHEL 5 channels (if support for channel restriction was added), and to see all "Fedora" content, "CentOS" content etc...
+
+
+Things that will need to be changed:
+ * Satellite-sync
+ * Rhnpush
+ * Schema (disallow two packages with same NVREA but different vendors to be in same channel).
+ * Frontend (any query that looks up packages by nvrea will need to be examined)
