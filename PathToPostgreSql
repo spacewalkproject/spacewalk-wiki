@@ -1,42 +1,65 @@
-Satellite today is Oracle only and unfortunately this reliance on Oracle runs very deep into the code. 
+= Introduction =
 
-= Areas to Address =
+In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin gathering feedback and attempting to organize the effort to break Spacewalk's dependency on Oracle and add support for PostgreSQL.
 
-== Installer ==
+While quite universally agreed that Oracle dependence must go and PostgreSQL is first on the list, there has been some debate on the spacewalk-devel mailing list on how to proceed with this. The main issue of contention is stored procedures and what should be done with them:
 
-Probably one of the smaller and most manageable projects involved, but our installer Perl scripts currently only support Oracle databases. These would require some refactoring to push the Oracle specific setup out into it's own module and thus add support for other database backends. (even if initially, Oracle remains the only option)
+  1. Port them directly to PostgreSQL's PL/pgSQL. 
+  1. Remove them one by one, migrating the code into the application layer.
 
-== Schema ==
+Keep in mind that the situation is complicated by the fact that the stored procedures are currently accessed from all three languages that currently make up Spacewalk today. (Java, Python, Perl) 
 
-/etc/sysconfig/rhn/universe.satellite.sql (basically all the schema required to create the Satellite database) is ~2M in size. My understanding is that most of this will have to be adjusted for any other databases we wish to support, leading to the unplesant prospect of maintaining multiple copies of the schema creation SQL scripts.
+The pros and cons of each approach will be discussed in the coming proposals. Please see [https://www.redhat.com/archives/spacewalk-devel/2008-June/thread.html#00015 this thread] for more information.
 
-== Queries ==
+= Proposals = 
 
-Reportedly we have some Oracle specific syntax in our many database queries. I suspect this is mostly in the datasource queries and not so much the hibernate queries. Some slight modifications to datasource code should allow us to use the same SQL for queries normally, but fork the query into two versions if necessary. (or we could work on removing the Oracle specific bits altogether)
+Key issue of contention here is stored procedures, and thus these proposals will focus on this issue. See the list of Tasks for aspects of this migration that will likely be required regardless which approach we choose.
 
-== Stored Procedure ==
+== Proposal 1: Straightforward Port to PostgreSQL ==
 
-Satellite currently uses many stored procedures, which again will need to be completely ported to the Postgresql syntax. One option we may wish to consider as part of this is to push any of these stored procedures out into application code in the Java layer if it makes sense to do so. If we can reduce the usage of stored procedures to only extremely performance intensive operations (whenever they arise) we'll lighten the workload involved in maintaining multiple database backends.
+Port the Oracle PL/SQL directly to PostgreSQL's PL/pgSQL.
 
-= Plan of Attack =
+Pros:
 
-  1. Create Satellite tables in Postgresql.
-    * Port Oracle .sql scripts in a new location in git, not yet included in Satellite builds.
-    * Must be careful not to miss any ongoing changes to schema in the primary Oracle scripts.
-    * Looks like most of this can be migrated from an existing Oracle db using ora2pg. Resulting output needs only minor edits to function properly.
-  1. Document steps to configure Satellite to run against Postgresql.
-  1. Start work on porting stored procedures.
-    * Should these be pushed into application code instead when possible?
-  1. Fix failing queries.
-    * Probably will involve datasource modifications to support multiple versions of queries depending on the database backend.
+  * Likely to get us up and running on PostgreSQL faster. Oracle's PL/SQL and PostgreSQL's PL/pgSQL are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
+  * Potential performance gains.
+  * Able to continue using database specific features.
 
-= Links =
+Cons:
 
-  * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for Postgresql management.
-  * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
-  * [http://freshmeat.net/projects/ora2pg/ ora2pg]: Migration tool.
+  * Now locked into two database's instead of just one. If we wish to support MySQL or SQLite in the future, we are in the same predicament we are today.
+  * Maintenance cost involved with having all our stored procedure code duplicated for two database engines.
+  * Significant debate on whether business logic should be done in the database in the first place.
 
-= Some Stats =
+== Proposal 2: Push Stored Procedures to Application Code ==
+
+Remove the stored procedures one by one, replacing them with application code making heavy use of an ORM toolkit. Will have to expose these via some kind of RPC mechanism (cturner has floated the idea of [http://developers.facebook.com/thrift/ Thrift], a project released by Facebook, but other suggestions are welcome) so the respective languages can access them. If caught in a performance problem, can still use a stored procedure behind the scenes to do the lifting. 
+
+Pros:
+
+  * Much better prepared to support other database's in the future.
+  * Increased ability to properly unit test.
+  * Still able to fall back to a stored procedure call behind the scenes if necessary for a performance problem. (will need to plan for this accordingly)
+
+Cons:
+
+  * Any ORM library will have quirks, bugs, and require extra attention on occasion. For those used to working directly with SQL and all the features of whatever database engine they're working with, this can be even more frustrating.
+  * Performance loss in some situations. How many, how severe, and what options are available to work around these remains to be seen.
+  * Likely to take longer than a straightforward port.
+
+= Tasks =
+
+Please hold off on jumping into any of these just yet, or check in on spacewalk-devel before doing so. We hope to have our bearings for how the new spacewalk community would like to proceed shortly!
+
+  1. Generate a PostgreSQL compatible schema.
+    * [http://freshmeat.net/projects/ora2pg/ ora2pg] looks like a tool we can use to do this for us. Initial tests generated SQL that required only a few minor touchups. 
+  1. Modify spacewalk-setup to support configuration of multiple database backends.
+    * Should be done in a manner not reliant on "if oracle else if postgresql" type constructs, but rather plan ahead to actually support multiple backends should the need arise.
+  1. Prepare our homegrown "Datasource" code to support *optionally* multiple versions of a query, specific to the underlying database.
+
+Additional tasks will be added as we establish which direction we intend to take.
+
+= Stored Procedures Analysis =
 
 Most expensive stored procedures to port from Oracle to Post Gres
 
@@ -179,3 +202,15 @@ Most expensive stored procedures to port from Oracle to Post Gres
 || RHN_ENTITLEMENTS || set_customer_monitoring ||5 ||
 || RHN_ENTITLEMENTS || set_customer_enterprise ||5 ||
 || RHN_ENTITLEMENTS || unset_customer_provisioning ||5 ||
+
+
+= Logistics =
+
+  1. Development may need to take place in a branch to prevent de-stabilizing master too much. Will cross this bridge when we come to it.
+
+
+= Links =
+
+  * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for Postgresql management.
+  * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
+  * [http://freshmeat.net/projects/ora2pg/ ora2pg]: Migration tool.
