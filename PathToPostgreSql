@@ -61,7 +61,9 @@ Additional tasks will be added as we establish which direction we intend to take
 
 = Stored Procedures Analysis =
 
-Most expensive stored procedures to port from Oracle to Post Gres
+Total number of stored procedures to convert 36 functions + 17 procedures + 137 procedures in packages
+
+Most expensive stored procedures to port from Oracle to PostGres
 
 || Package Name || Procedure Name || Number of lines||
 || RPM || rpmstrcmp ||132 ||
