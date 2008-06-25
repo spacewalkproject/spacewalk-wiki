@@ -22,7 +22,7 @@ Things that will need to be changed:
    * Scientific Linux
    * Custom (For any custom package pushed by the spacewalk admins)
    * Undefined (for anything where the provider isn't known)
-  * rhnPackage.prid will be a foreign key referencing rhnPackageProvider.id
+  * rhnPackage.prid will be a foreign key referencing rhnPackageProvider.id (This is non-nullable)
   * Trigger will need to be added to keep ensure uniqueness among package NVREA for a channel tree (A base channel and all its child channels).  Basically this is saying that you can't have the same package from different vendors within the same channel tree.  This simplifies a ton of things, since we shouldn't have to change dep solving logic (for rhel 4 and earlier) or have to worry about offering the same package from two different vendors at the same time.
   * Unique constraint saying that a package NVREAP is unique and you can't have two of the same.
   * upon upgrade, all null org packages will have a Provider of Red Hat, all non-null org packages will have a Provider of "undefined".  The packages can be deleted and repushed with the correct provider if it is not correct.  
