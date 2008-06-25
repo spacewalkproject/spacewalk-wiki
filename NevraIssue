@@ -48,3 +48,4 @@ Notes:
 Questions
  * Should we offer a way to change a package's provider?
  * Is it a big deal to not offer multiple package with the same NVREA but different providers within a channel tree (base channel and child channel)?  This solves many problems and edge cases, because if the same package was available from different providers to a system, things would go badly very quickly.
+ * Should we offer a way to add package providers easily? (immediate term or longer term)?
