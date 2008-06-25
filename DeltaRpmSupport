@@ -39,13 +39,16 @@ Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
 }}}
 
 
-== Server == 
+== To be done.... == 
 
-Generate drpms on the fly as requested and cache them on the server.  This handles RHEL content and custom content.
+ * Backend
+  * Generate drpms on the fly (This shouldn't be too hard, as libraries are exist to do this).  Will need to store them in a cache (/var/satellite or a more temporary place?)  and have a way to clear them (possibly just have a user delete a certain directory)
+  * Generate the presto repo data.  This might be a little tricky, as we will need to be able to generate a delta rpm from every version of a package (that is in a channel) to every other version of the same package.  But generally we'll generate a presto repo file that has every combination available to the client, and then generate whichever one we need on demand
+  Provide a config option to disable/enable presto rpm support on the server side (disabling the repo data generation should be good enough).
 
-Will need to modify backend to generate preesto repo files and delta rpms.
+ * Client side
+  * This most likely "just works".  Once we have the backend stuff to test, we can actually do some testing.  
 
-Will need to make sure client works with yum-rhn-plugin (preliminary test seem to show that it will work).  Although the newest yum-presto plugin will not work on RHEL 5, we think that it will work nicely with the yum-rhn-plugin.
 
 
 
