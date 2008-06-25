@@ -54,9 +54,17 @@ We can update the list of packages here and provide bugzilla numbers.
 
 = Phase 2 =
 
-We need to break dependancy on Oracle. All java packages should stop on some jdbc. All perl code on perl-DBI. Do not know what to do with python. Does have python some abstract layer? Can we somehow remove dependancy on cx_Oracle?
+We need to break dependancy on Oracle. 
 
-This packages need to be edited and then eventualy imperted to Fedora:
+All java packages should stop on jdbc (which will provide rhn-oracle-jdbc and rhn-pg-jdbc).
+
+All perl code on perl-DBI. Package rhn-base which contain oracle connection string should be edited to depend only on perl-DBI. Only what should be DB specific is connect string in /etc/rhn/rhn.conf.
+
+Package rhns (python backend) should require package rhns-sql which should be virtual package provided by rhns-sql-oracle (with current content of rhns-sql) or rhns-sql-pg (which we will need to write). 
+
+This way all packages (but three) can be included in Fedora.
+
+This packages need to be edited and then eventualy imported to Fedora:
 
  * c3p0-0.9.0-2jpp.ep1.1.el5.src.rpm
  * cglib-2.1.3-2jpp.ep1.3.el5.1.src.rpm
