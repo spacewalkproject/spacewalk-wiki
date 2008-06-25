@@ -7,7 +7,7 @@ Currently in spacewalk only one package on the satellite can be pushed to a sing
 
 We obviously need some field to differentiate between content from different providers, so here are some ideas:
 
-  * Have the user specify a provider when pushing content (This could be automated when we have automated tools for grabbing/pushing content).  We could also (optionally) tie a channel to a provider as well.  This is handy in that it would make it fairly easy to keep CentOS content from getting into RHEL 5 channels (if support for channel restriction was added), and to see all "Fedora" content, "CentOS" content etc...
+  * Have the user specify a provider when pushing content (This could be automated when we have automated tools for grabbing/pushing content).  We could also (optionally, and in the future) tie a channel to a provider as well.  This is handy in that it would make it fairly easy to keep CentOS content from getting into RHEL 5 channels (if support for channel restriction was added), and to see all "Fedora" content, "CentOS" content etc...
 
 
 Things that will need to be changed:
@@ -20,21 +20,21 @@ Things that will need to be changed:
    * OpenSuse
    * Novell
    * Scientific Linux
-   * Custom
-   * Undefined
+   * Custom (For any custom package pushed by the spacewalk admins)
+   * Undefined (for anything where the provider isn't known)
   * rhnPackage.prid will be a foreign key referencing rhnPackageProvider.id
   * Trigger will need to be added to keep ensure uniqueness among package NVREA for a channel tree (A base channel and all its child channels).  Basically this is saying that you can't have the same package from different vendors within the same channel tree.  This simplifies a ton of things, since we shouldn't have to change dep solving logic (for rhel 4 and earlier) or have to worry about offering the same package from two different vendors at the same time.
   * Unique constraint saying that a package NVREAP is unique and you can't have two of the same.
   * upon upgrade, all null org packages will have a Provider of Red Hat, all non-null org packages will have a Provider of "undefined".  The packages can be deleted and repushed with the correct provider if it is not correct.  
  * rhnpush 
-  * an option will need to be added (--provider) and will need to push this to the db
+  * an option will need to be added and required (--provider) and will need to push this to the db
   * Will need to be modified to push package to a new files system location (see below)
   * add support such that if a package has to be repushed on the file system, its path in the DB will be updated
  * Satellite-sync 
   * add support to pull provider info from hosted 
   * add support to push package to new file system location (see below)
   * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
- * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/Provider/file.rpm
+ * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/PROVIDER/file.rpm
   * Any existing package will not be moved, the db will be referenced by their old location
   * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
  * exporter tool
@@ -47,4 +47,4 @@ Notes:
 
 Questions
  * Should we offer a way to change a package's provider?
- * Is it a big deal to not offer multiple package with the same NVREA but different providers within a channel tree (base channel and child channel)?
+ * Is it a big deal to not offer multiple package with the same NVREA but different providers within a channel tree (base channel and child channel)?  This solves many problems and edge cases, because if the same package was available from different providers to a system, things would go badly very quickly.
