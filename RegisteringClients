@@ -1,4 +1,4 @@
-Instructions for registering client systems you with to manage with Spacewalk
+Instructions for registering client systems you wish to manage with Spacewalk
 
 = Before Starting =
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
