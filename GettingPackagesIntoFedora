@@ -6,7 +6,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=452450
 
 We can update the list of packages here and provide bugzilla numbers.
 || perl-Business-CreditCard-0.28-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || This package might actually not be needed for Spacewalk at all. --adelton || 
-|| perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452616 || stahnma || || 
+|| perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452616 || stahnma || This package might actually not be needed for Spacewalk at all. --adelton || 
 || perl-DBD-Oracle-1.19-8.el5.src.rpm || Not compatible with Fedora licensing, as it requires oracle-instantclient-devel || null || || 
  * perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm
 || perl-GD2-2.17-10.el5.src.rpm || || Already in Fedora, under different name (perl-GD) || ||
@@ -24,7 +24,7 @@ We can update the list of packages here and provide bugzilla numbers.
 ||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  Stahnma || Denied: Invalid license for Fedora. Probably not used anymore || 
 ||perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm||GPL/Artistic||In Prep||Nigel Jones||
 ||perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones||
-||perl-Crypt-Rijndael-1.06-1.el5.src.rpm||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones||
+||perl-Crypt-Rijndael-1.06-1.el5.src.rpm||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones|| This package might actually not be needed for Spacewalk at all. --adelton||
 ||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones||
 ||perl-DateTime-Locale-0.4001-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452455||Nigel Jones|| Already in Fedora, just under a slightly different name || 
 ||perl-DateTime-TimeZone-0.7701-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452456||Nigel Jones|| Already in Fedora, just under a slightly different name ||
