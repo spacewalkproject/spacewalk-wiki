@@ -5,7 +5,7 @@ We created a tracking bug that all review bugs should block.   When filing revie
 https://bugzilla.redhat.com/show_bug.cgi?id=452450
 
 We can update the list of packages here and provide bugzilla numbers.
-|| perl-Business-CreditCard-0.28-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || This package might actually not be needed for Spacewalk at all. --adelton || 
+|| perl-Business-CreditCard-0.28-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || This package might actually not be needed for Spacewalk at all. --adelton (now in Fedora, in testing for all repos) || 
 || perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || https://bugzilla.redhat.com/show_bug.cgi?id=452616 || stahnma || This package might actually not be needed for Spacewalk at all. --adelton || 
 || perl-DBD-Oracle-1.19-8.el5.src.rpm || Not compatible with Fedora licensing, as it requires oracle-instantclient-devel || null || || 
  * perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm
