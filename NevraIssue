@@ -36,9 +36,10 @@ Things that will need to be changed:
   * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
  * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/Provider/file.rpm
   * Any existing package will not be moved, the db will be referenced by their old location
-  * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated
-
- *
+  * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
+ * exporter tool
+  * This will need to export the provider info as well (just like hosted's exporter)
+ * Will schedule a meeting with hosted people (morazi) to speak about what changes hosted will need.
  
 Notes:
  * If a system has package foo-0.1.i386 from provider A, and their channel has foo-0.2.i386 from provider B, it will be upgraded.  The client code will not change.
@@ -46,3 +47,4 @@ Notes:
 
 Questions
  * Should we offer a way to change a package's provider?
+ * Is it a big deal to not offer multiple package with the same NVREA but different providers within a channel tree (base channel and child channel)?
