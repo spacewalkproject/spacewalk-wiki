@@ -20,6 +20,7 @@ Things that will need to be changed:
    * OpenSuse
    * Novell
    * Scientific Linux
+   * Oracle
    * Custom (For any custom package pushed by the spacewalk admins)
    * Undefined (for anything where the provider isn't known)
   * rhnPackage.prid will be a foreign key referencing rhnPackageProvider.id (This is non-nullable)
