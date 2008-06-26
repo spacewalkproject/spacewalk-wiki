@@ -20,6 +20,7 @@ Key issue of contention here is stored procedures, and thus these proposals will
 Port the Oracle PL/SQL directly to PostgreSQL's PL/pgSQL.
 
  - Is there any plans to migrate off Oracle completely? - RahulSundaram
+   - Not that I'm aware of. Oracle will likely remain an option for Satellite installations for some time. That said we may be able to reach a point where the Oracle specific code is abstracted enough that we could package it separately and remove it from Spacewalk and just maintain it internally at Red Hat. - DevanGoodwin
 
 Pros:
 
