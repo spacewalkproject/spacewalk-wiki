@@ -79,7 +79,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
  || np-config-2.110.3-6.el5.src.rpm || || || ||
- || NPusers-1.17.11-6.el5.src.rpm || || || ||
+ || NPusers-1.17.11-6.el5.src.rpm || || in prep || msuchy ||
  || oscache-2.2-2jpp.ep1.1.el5.src.rpm || || || ||
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || || || ||
