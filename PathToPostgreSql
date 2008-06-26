@@ -19,6 +19,8 @@ Key issue of contention here is stored procedures, and thus these proposals will
 
 Port the Oracle PL/SQL directly to PostgreSQL's PL/pgSQL.
 
+ - Is there any plans to migrate off Oracle completely? - RahulSundaram
+
 Pros:
 
   * Likely to get us up and running on PostgreSQL faster. Oracle's PL/SQL and PostgreSQL's PL/pgSQL are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
