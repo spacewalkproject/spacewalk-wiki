@@ -51,8 +51,9 @@ There are several ways to get in touch with Spacewalk developers and users:
 
     * User list:  spacewalk-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-list (signup)]
     * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)]
-    * IRC: #spacewalk on irc.freenode.net
-    * File a bug here [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk (Bugzilla)]
+    * IRC: #spacewalk on [http://freenode.net/ (irc.freenode.net)]
+    * Enter a Bug here [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk (Bugzilla)]
+    * Search for Bugs here [https://bugzilla.redhat.com/query.cgi?format=simple&product=Spacewalk (Bugzilla)]
     * Read the latest minutes from our Community led meetings [CommunityMeetingMinutes minutes]
     
 == Need To Edit This Wiki or File a Bug/RFE? ==
