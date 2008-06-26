@@ -86,6 +86,8 @@ Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 ||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
 
+
+
 ||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
 ||  system.whoRegistered(sid) || 1 || jsherrill || Done ||  ||
 ||  system.listSystemsWithPackage(id) || 3 || jsherrill || Done ||  ||
@@ -125,3 +127,19 @@ Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 ||  schedule.listCompletedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listInProgressSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
 ||  schedule.listFailedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
+||  ----   ||  ||  ||  ||  ||
+||  Org ||  ||  ||  ||  ||
+||  org.create || || dgoodwin || Done || ||
+||  org.delete || || dgoodwin || Done || ||
+||  org.listOrgs || || partha || Done || ||
+||  org.listUsers || || partha || Done || ||
+||  org.getDetails(orgName) || || partha || Done || ||
+||  org.getDetails(orgId) || || partha || Done || ||
+||  org.updateName || || partha || Done || ||
+||  org.listChannelFamilyEntitlements || || dgoodwin || Done || ||
+||  org.listChannelFamilyEntitlementsForOrg || || dgoodwin || Done || ||
+||  org.setChannelFamilyEntitlements || || dgoodwin || Done || ||
+||  org.listSystemEntitlements || || partha || Done || ||
+||  org.listSystemEntitlementsForOrg || || partha || Done || ||
+||  org.setSystemEntitlements || || dgoodwin || Done || ||
+
