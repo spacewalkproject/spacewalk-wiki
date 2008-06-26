@@ -5,7 +5,6 @@ Spacewalk has some limitations on accepting and processing multibyte character i
 The following caveats apply:
 
  * Logins must be in ASCII
- * Display issues may occur for 
  * Multibyte passwords will be accepted for webui logins
  * Multibyte passwords will cause errors with rhn_register and rhn_regks.  Workaround: use activation keys when registering a system.
  * The Java webui pages (pages ending in .do) will accept multibyte input properly and will store it in the database correctly.
