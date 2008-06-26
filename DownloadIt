@@ -24,6 +24,14 @@ In general, we want folks to send [PatchProcess patches to the list].  If you ha
 git clone ssh://git.fedorahosted.org/git/spacewalk.git/
 }}}
 
+if your FAS username is different than your effective username on your system, you can use the following URL:
+
+{{{
+git clone ssh://USERNAME@git.fedorahosted.org/git/spacewalk.git/
+}}}
+
+Replacing USERNAME with your FAS username.
+
 == Install from Yum Repo ==
 You can also download the binaries from the [HowToInstall#Installation yum repo].
 
