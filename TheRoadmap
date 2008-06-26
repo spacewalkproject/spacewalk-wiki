@@ -2,7 +2,14 @@
 
 This page holds some feature ideas/themes for future releases of Spacewalk.  These may include RFEs currently received, ideas on the mailing list, and general directions of where we would like to go.  This can all change at any time, but should give you an idea of where we would like to go and where some of the future excitement is.
 
-== Release 0.1 ==
+== Release 0.1 == 
+
+Initial open sourcing of Spacewalk project.
+
+ * RHEL5 i386 server support
+ * RHEL2/3/4/5 client support.
+
+== Release 0.2 ==
 
 Provide client support (via yum-rhn-plugin and associated packages) for
  * Fedora 9
@@ -19,7 +26,7 @@ Support for installation of Spacewalk on the following OS:
 
 Provide for Solaris sun4v client support
 
-== Release 0.2 ==
+== Release 0.3 ==
 
 
 PostgreSQL DB support - availability << start to get this done
@@ -46,7 +53,7 @@ Start on projects for 0.3 release:
  * Ability to migrate/move registered client systems from one Organization to another Organization within the Spacewalk server
  * A support user role, who has read-only access to view data stored within Spacewalk
 
-== Release 0.3 ==
+== Release 0.4 ==
 
 == Future Ideas ==
 These are not in any specific order
