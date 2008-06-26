@@ -13,3 +13,7 @@ In this section you can find user documenation for Spacewalk.  Are you a develop
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
 Do you know the answer to something and thnk others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
+
+== Misc Information ==
+
+  * [MultibyteSpacewalk Multibyte (UTF8) input limitations with Spacewalk]
