@@ -71,10 +71,9 @@ Things that will need to be changed:
 
 Notes:
  * If a system has package foo-0.1.i386 from provider A, and their channel has foo-0.2.i386 from provider B, it will be upgraded.  The client code will not change.
+ * Apparently up2date handles multiple packages with the same NVREA within the same channel tree fine.  That surprised us both.  (So now we really only have to restrict a single NVREA to a channel.  
 
 
 Questions
  * Should we offer a way to change a package's provider?
- * Is it a big deal to not offer multiple package with the same NVREA but different providers within a channel tree (base channel and child channel)?  This solves many problems and edge cases, because if the same package was available from different providers to a system, things would go badly very quickly.
  * Should we offer a way to add package providers easily? (immediate term or longer term)?
- * Why not just use the MD5 checksum in that unique constraint? If I'm pushing the same rpms (bit for bit) to two different channels, they should be considered as one, and shared. But if I push one rpm to one channel and different rpm to different channel, Spacewalk should just do what I told it ... and maintain two different rpms. No matter what provider provided those rpms.
