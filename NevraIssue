@@ -8,7 +8,7 @@ So with all these issues we really have two problems:
 
 1. Distinguishing between two packages such that distribution to a client is possible.
 
-2. Easily manage packages from different sources.  (Which i think is VERY important). 
+2. Easily manage packages from different sources and be able to differentiate between where packages originated.  (Which i think is VERY important). 
 
 Originally we were trying to lump the issues together under one problem with one solution.
 
@@ -38,12 +38,10 @@ Things that will need to be changed:
 
 
 2. Solution to issue #2
-  Whenever importing a package, store its GPG key id within the db in the rhnPackage table.  The user can then associate GPG keys to providers. 
+  Whenever importing a package, store its GPG key id within the db in the rhnPackage table.  The user can then associate GPG keys to providers.  The idea here is that we are tracking package sources based on something relevant to the package (and something the user doesn't have to input).  
   
 
 Things that will need to be changed:
-
-
 
  * DB
   * rhnPackage table will have new field rhnPackage.gpgId referencing rhnPackageGpgId
