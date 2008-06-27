@@ -206,7 +206,7 @@ Every List in the new List Tag can have a filter. Here is how you declare what f
                      filter="com.redhat.rhn.frontend.action.configuration.sdc.ViewModifyPathsFilter">
 }}}
 
-For each list you want to have a filter, you must implement your own filter class, ViewModifyPathsFilter in this example.  To do that simply implement com.redhat.rhn.frontend.taglibs.list.ListFilter and implement your own proccessMap() method.  Here is an example:
+For each list you want to have a filter, you must implement your own filter class, ViewModifyPathsFilter in this example.  To do that simply implement com.redhat.rhn.frontend.taglibs.list.BaseListFilter and implement your own proccessMap() method.  Here is an example:
 
 
 {{{
