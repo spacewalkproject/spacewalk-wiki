@@ -12,7 +12,7 @@ We can update the list of packages here and provide bugzilla numbers.
 || perl-GD2-2.17-10.el5.src.rpm || || Already in Fedora, under different name (perl-GD) || ||
 || perl-Math-FFT-0.26-12.el5.src.rpm || GPL/Artistic || https://bugzilla.redhat.com/show_bug.cgi?id=452832 || msuchy ||
  * perl-NOCpulse-CLAC-1.9.4-10.el5.src.rpm
- * perl-NOCpulse-Debug-1.23.4-6.el5.src.rpm
+|| perl-NOCpulse-Debug-1.23.4-6.el5.src.rpm || || in prep || msuchy ||
  * perl-NOCpulse-Gritch-1.16.1-5.el5.src.rpm
  * perl-NOCpulse-Object-1.26.4-7.el5.src.rpm
  * perl-NOCpulse-OracleDB-1.28.2-12.el5.src.rpm
@@ -78,8 +78,8 @@ This packages need to be edited and then eventualy imported to Fedora:
  || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
- || np-config-2.110.3-6.el5.src.rpm || || in prep || msuchy ||
- || NPusers-1.17.11-6.el5.src.rpm || || in prep || msuchy ||
+ || np-config-2.110.3-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453111 || msuchy ||
+ || NPusers-1.17.11-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453109 || msuchy ||
  || oscache-2.2-2jpp.ep1.1.el5.src.rpm || || || ||
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || || || ||
