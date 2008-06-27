@@ -48,7 +48,7 @@ Things that will need to be changed:
  * DB
   * rhnPackage table will have new field rhnPackage.gpgId referencing rhnPackageGpgId
   * Table will be added rhnPackageGpgId which will have id, gpgId, modified, created
-  * Table will be added rhnPackageProvider with an id, label, modified time, created time.  And will be pre-populated with equivalent labels/names:
+  * Table will be added rhnPackageProvider with an id, name, modified time, created time.  And will be pre-populated with equivalent labels/names:
    * Red Hat Inc.
    * Fedora
    * CentOS
@@ -65,12 +65,11 @@ Things that will need to be changed:
  * exporter (optional)
   * export the gpg information such that it can be imported without having to be pulled from the rpm
  * webUi
-  * Add provider/gpg information to certain lists
+  * Add provider/gpg information to certain package lists
   * Provide a way to link providers to gpg keys (optional)
 
 
 Notes:
- * If a system has package foo-0.1.i386 from provider A, and their channel has foo-0.2.i386 from provider B, it will be upgraded.  The client code will not change.
  * Apparently up2date handles multiple packages with the same NVREA within the same channel tree fine.  That surprised us both.  (So now we really only have to restrict a single NVREA to a channel.  
 
 
