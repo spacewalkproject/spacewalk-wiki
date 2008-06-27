@@ -1,18 +1,53 @@
-== The Problem ==
+== The Problems ==
 
 Currently in spacewalk only one package on the spacewalk server can be pushed to a single org.  So for example rootfiles-8.1-1.1.1.noarch is shipped with RHEL 5, CentOS 5, and Fedora 9.  All 3 have different GPG signatures and thus different md5sums.   We need a way to differentiate content from different sources that is basically the same.
+
+Also, CentOS rebuilds and resigns their packages across arches.  So even within CentOS there may be two foo-1.0.i386 packages with the same GPG key but with different md5sums.
+
+So with all these issues we really have two problems:
+
+1. Distinguishing between two packages such that distribution to a client is possible.
+
+2. Easily manage packages from different sources.  (Which i think is VERY important). 
+
+Originally we were trying to lump the issues together under one problem with one solution.
+
+
 
 
 == Possible Solutions ==
 
-We obviously need some field to differentiate between content from different providers, so here are some ideas:
 
-  * Have the user specify a provider when pushing content (This could be automated when we have automated tools for grabbing/pushing content).  We could also (optionally, and in the future) tie a channel to a provider as well.  This is handy in that it would make it fairly easy to keep CentOS content from getting into RHEL 5 channels (if support for channel restriction was added), and to see all "Fedora" content, "CentOS" content etc...
+1. Solution to issue #1.
+ Use the md5sum of a package as a differentiation.  If to packages have different md5sums, they are considered two different packages.
 
+Things that will need to be changed:  
+ * DB
+  * Unique constraint on md5sum,org for the rhnPackage table.
+  * Enforce NVREA uniqueness within a channel
+ * rhnpush 
+  * Will need to be modified to push package to a new files system location (see below)
+  * add support such that if a package has to be repushed on the file system, its path in the DB will be updated
+ * Satellite-sync 
+  * add support to push package to new file system location (see below)
+  * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
+ * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/MD5SUM/file.rpm
+  * Any existing package will not be moved, the db will be referenced by their old location
+  * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
+  * We could script a way for upgrade such that we move packages to the new file location and update the db, but that seems more hackish to me than just leaving existing packages where they are.  We can discuss this more...
+
+
+2. Solution to issue #2
+  Whenever importing a package, store its GPG key id within the db in the rhnPackage table.  The user can then associate GPG keys to providers. 
+  
 
 Things that will need to be changed:
 
+
+
  * DB
+  * rhnPackage table will have new field rhnPackage.gpgId referencing rhnPackageGpgId
+  * Table will be added rhnPackageGpgId which will have id, gpgId, modified, created
   * Table will be added rhnPackageProvider with an id, label, modified time, created time.  And will be pre-populated with equivalent labels/names:
    * Red Hat Inc.
    * Fedora
@@ -21,27 +56,19 @@ Things that will need to be changed:
    * Novell
    * Scientific Linux
    * Oracle
-   * Custom (For any custom package pushed by the spacewalk admins)
-   * Undefined (for anything where the provider isn't known)
-  * rhnPackage.prid will be a foreign key referencing rhnPackageProvider.id (This is non-nullable)
-  * Trigger will need to be added to keep ensure uniqueness among package NVREA for a channel tree (A base channel and all its child channels).  Basically this is saying that you can't have the same package from different vendors within the same channel tree.  This simplifies a ton of things, since we shouldn't have to change dep solving logic (for rhel 4 and earlier) or have to worry about offering the same package from two different vendors at the same time.
-  * Unique constraint saying that a package NVREAP is unique and you can't have two of the same.
-  * upon upgrade, all null org packages will have a Provider of Red Hat, all non-null org packages will have a Provider of "undefined".  The packages can be deleted and repushed with the correct provider if it is not correct.  
+  * Table will be added rhnPackageGpgProvider, linking rhnPackageProvider and rhnPackageGpgId with columns gpgId.id, provider.id...
+
  * rhnpush 
-  * an option will need to be added and required (--provider) and will need to push this to the db
-  * Will need to be modified to push package to a new files system location (see below)
-  * add support such that if a package has to be repushed on the file system, its path in the DB will be updated
- * Satellite-sync 
-  * add support to pull provider info from hosted 
-  * add support to push package to new file system location (see below)
-  * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
- * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/PROVIDER/file.rpm
-  * Any existing package will not be moved, the db will be referenced by their old location
-  * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
- * exporter tool
-  * This will need to export the provider info as well (just like hosted's exporter)
- * Will schedule a meeting with hosted people (morazi) to speak about what changes hosted will need.
- 
+  * will need to grab the gpg id from the rpm and push it to the DB
+ * satellite-sync
+  * will need to grab the gpg id from the rpm and push it to the DB
+ * exporter (optional)
+  * export the gpg information such that it can be imported without having to be pulled from the rpm
+ * webUi
+  * Add provider/gpg information to certain lists
+  * Provide a way to link providers to gpg keys (optional)
+
+
 Notes:
  * If a system has package foo-0.1.i386 from provider A, and their channel has foo-0.2.i386 from provider B, it will be upgraded.  The client code will not change.
 
