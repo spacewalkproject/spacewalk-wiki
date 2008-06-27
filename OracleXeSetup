@@ -173,6 +173,17 @@ If you just want the Spacewalk database schema installed you can do the followin
 
 If you plan on installing Spacewalk and running the entire application you can skip this step.  The spacewalk-setup program will install the schema for you.
 
+== Known Issues ==
+
+Users are experiencing an Internal Server Error (500) when viewing the following page:
+
+Systems -> Pick a System -> Software -> Packages -> Install New Package
+
+https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=**********
+
+This is noted in BZ: https://bugzilla.redhat.com/show_bug.cgi?id=453176
+
+
 == misc links ==
 [http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide]
 
