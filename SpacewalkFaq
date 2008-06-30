@@ -33,7 +33,7 @@ See the instructions here for information about the XE version:  OracleXeSetup
 
 === Perl, Python, and Java OH MY! ===  
 
-"Why do you use 3 different languages in your product?"   The original WebUI for the Spacewalk code base was purely Perl.  As time went on scalability issues came in to play, which was worrisome because developers who knew (and wanted to develop in) Perl were somewhat hard to come by.  This was to be solved by migrating to Java.  Sadly migrating to Java took longer to accomplish than anticipated and thus is not complete.  All new web development is done in Java and the Perl is only maintained.  We continually migrate pages to Java as new features need to be added to the pages, but it is not a top priority.
+"Why do you use 3 different languages in your product?"   The original WebUI for the Spacewalk code base was purely Perl.  As time went on scalability issues came in to play, which was worrisome because developers who knew (and wanted to develop in) Perl were somewhat hard to come by.  This was to be solved by migrating to Java.  Sadly migrating to Java took longer to accomplish than anticipated and thus is not complete.  All new development is done in either Java or Python, we are only maintaining the Perl at this point in hopes of migrating it all to Java.  We continually migrate pages to Java as new features need to be added to the pages, but it is not a top priority.
 
 === Why are there two XML-RPC Apis (a frontend and a backend)? ===
 
