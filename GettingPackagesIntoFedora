@@ -73,8 +73,8 @@ This packages need to be edited and then eventualy imported to Fedora:
  || freemarker-2.3.6-2jpp_1rh.src.rpm || || || ||
  || hibernate3-3.2.4-1.SP1_CP01.0jpp.ep1.1.el5.1.src.rpm || || || ||
  || jabberpy-0.5-0.13.el5.src.rpm || || || ||
- || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || ||
- || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || ||
+ || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || mmccune ||
+ || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || mmccune ||
  || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
@@ -98,7 +98,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || SatConfig-cluster-1.54.2-5.el5.src.rpm || || || ||
  || servletapi4-4.0.4-3jpp_5rh.src.rpm || || || ||
  || sitemesh-2.1-1jpp_1rh.src.rpm || || || ||
- || spacewalk-0.1-7.src.rpm || || || ||
+ || spacewalk-0.1-7.src.rpm || || || mmccune ||
  || spacewalk-setup-0.01-3.el5.src.rpm || || || ||
  || velocity-dvsl-0.45-5jpp_1rh.src.rpm || || || ||
  || velocity-tools-1.2-1jpp_1rh.src.rpm || || || ||
