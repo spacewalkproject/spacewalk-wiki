@@ -26,7 +26,7 @@ Things that will need to be changed:
   * Unique constraint on md5sum,org for the rhnPackage table.
   * Enforce NVREA uniqueness within a channel
  * rhnpush 
-  * Will need to be modified to push package to a new files system location (see below)
+  * Will need to be modified to push package to a new file system location (see below)
   * add support such that if a package has to be repushed on the file system, its path in the DB will be updated
  * Satellite-sync 
   * add support to push package to new file system location (see below)
