@@ -19,7 +19,7 @@ Originally we were trying to lump the issues together under one problem with one
 
 
 1. Solution to issue #1.
- Use the md5sum of a package as a differentiation.  If to packages have different md5sums, they are considered two different packages.
+ Use the md5sum of a package as a differentiation.  If two packages have different md5sums, they are considered to be different packages.
 
 Things that will need to be changed:  
  * DB
