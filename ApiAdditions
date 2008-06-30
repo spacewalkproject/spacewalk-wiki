@@ -49,6 +49,11 @@ If you have an idea for a new api, add it to the Planned API table below.  If yo
 ||  kickstart.createFilePreservationList(label, list) || 3 ||  ||  ||  ||
 ||  kickstart.deleteFilePreservationList(lable) || 3 ||  ||  ||  ||
 ||  kickstart.listAllGpgAndSSLKeys() || 2 ||  ||  ||  ||
+||  kickstart.listAllIpRanges() || 2 || jsherrill  ||  ||  List all ip ranges for all kickstarts ||
+||  kickstart.listIpRanges(int ksLabel) || 2 || jsherrill  ||  || list ip ranges for a kickstart ||  
+||  kickstart.addIpRange(int ksLabel) || 2 || jsherrill  ||  ||  ||  
+||  kickstart.findKickstartForIp() || 3 || jsherrill     ||  ||  ||  
+||  kickstart.removeIpRange(ksLabel, ip) || 3 || jsherrill || || ||  
 ||  ----   ||  ||  ||  ||  ||
 ||  Channel.software ||  ||  ||  ||  ||
 ||  channel.software.getPackage(id) || 8 || jsherrill ||  ||  ||
@@ -85,6 +90,7 @@ Currently available in Spacewalk 0.1 (that wasn't available in Satellite 5.1):
 ||  Task ||  Estimate (hours) || Developer || Status || Notes ||
 ||  ----   ||  ||  ||  ||  ||
 ||  System ||  ||  ||  ||  ||
+
 
 
 
