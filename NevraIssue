@@ -1,19 +1,25 @@
+= NEVRA Issue =
 == The Problems ==
 
-Currently in spacewalk only one package on the spacewalk server can be pushed to a single org.  So for example rootfiles-8.1-1.1.1.noarch is shipped with RHEL 5, CentOS 5, and Fedora 9.  All 3 have different GPG signatures and thus different md5sums.   We need a way to differentiate content from different sources that is basically the same.
+At current, Spacewalk does not allow packages with the same NEVRA to be pushed
+to the same org. For example, rootfiles-8.1-1.1.1.noarch is shipped with RHEL 5,
+CentOS 5, and Fedora 9. All 3 packages have different GPG signatures and thus
+different md5sums.
 
-Also, CentOS rebuilds and resigns their packages across arches.  So even within CentOS there may be two foo-1.0.i386 packages with the same GPG key but with different md5sums.
+Also, CentOS rebuilds and resigns their packages across arches.  So even within
+CentOS there may be two foo-1.0.i386 packages with the same GPG key but with
+different md5sums.
 
-So with all these issues we really have two problems:
+In summary, we have the following:
 
-1. Distinguishing between two packages such that distribution to a client is possible.
+1. Distinguish between two packages such that distribution to a client is
+possible.
 
-2. Easily manage packages from different sources and be able to differentiate between where packages originated.  (Which i think is VERY important). 
+2. Easily manage packages from different sources and be able to differentiate
+between where packages originated.  (Which i think is VERY important). 
 
-Originally we were trying to lump the issues together under one problem with one solution.
-
-
-
+Originally we were trying to lump the issues together under one problem with one
+solution.
 
 == Possible Solutions ==
 
