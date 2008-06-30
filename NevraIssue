@@ -73,3 +73,7 @@ Notes:
 
 Questions
  * Should we offer a way to add package providers easily? (immediate term or longer term)?
+
+Bugzilla
+ * There is a bugzilla open on this:  https://bugzilla.redhat.com/show_bug.cgi?id=453455
+
