@@ -33,14 +33,14 @@ Templates can not be removed until we finish all of the pxt migration.
 ==== Misc ====
  * /cve_not_found.pxt
  * /legal/terms.pxt
- * /newlogin/index.pxt - '''REMOVE'''
+ * /newlogin/index.pxt - '''DONE'''
  * /file_not_found.pxt
  * /konq.pxt
  * /errata_hidden/rh_template.pxt
 
 ==== Satellite tools ====
- * /internal/satellite/config/restart_in_progress.pxt - '''REMOVE'''
- * /internal/satellite/config/restart_required.pxt - '''REMOVE'''
+ * /internal/satellite/config/restart_in_progress.pxt - '''DONE'''
+ * /internal/satellite/config/restart_required.pxt - '''DONE'''
  * /internal/satellite/task_engine/index.pxt
 
 ==== Help files ====
@@ -313,11 +313,11 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 ==== User account editing ====
 These pages have already been migrated.
 
- * /network/account/edit_address.pxt - '''REMOVE'''
- * /network/account/change-email.pxt - '''REMOVE'''
- * /network/account/details.pxt - '''REMOVE'''
- * /network/account/verification-sent.pxt - '''REMOVE'''
- * /network/account/addresses.pxt - '''REMOVE'''
+ * /network/account/edit_address.pxt - '''DONE'''
+ * /network/account/change-email.pxt - '''DONE'''
+ * /network/account/details.pxt - '''DONE'''
+ * /network/account/verification-sent.pxt - '''DONE'''
+ * /network/account/addresses.pxt - '''DONE'''
 ==== Stored Profiles ====
 Are these even useful?
  * /network/profiles/delete.pxt
