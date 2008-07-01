@@ -4,13 +4,13 @@
 
 Md5Sum Changes
 || Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for md5sum || jsherrill || 2 || || ||
+|| DB Schema for md5sum || 2 || jsherrill || || ||
 || rhnPush  || || || || (correct file system location) ||
 || sat-sync  || || || || (correct file system location) ||
 
 Gpg/Provider 
 || Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for gpg/provider linkage || jsherrill || 2 || || ||
+|| DB Schema for gpg/provider linkage || 2 || jsherrill || || ||
 || rhnpush || || || || read gpg id||
 || satellite-sync || || || || read gpg id, import gpg info if available ||
 || exporter || || || || export gpg information ||
