@@ -2,9 +2,8 @@
 
 The following is a list of the remaining pxt pages located in the {{{web/html}}} directory.
 
-
-
 ==== Errata RSS feed ====
+It would be useful to have a generic RSS feed servlet to offer other types of information as RSS. I'd expect the url to be something like {{{http://myspacewalkserver.com/rhn/feeds.do?format=rss&type=errata}}}. This gives us the ability to add other types and formats.
  * /rpc/recent-errata.pxt
 
 ==== Email confirmation pages ====
@@ -12,7 +11,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /confirm_email.pxt
 
 ==== Custom error files ====
-
+Not sure if it's possible to redirect errors to the tomcat side, then we could simply remove these error pages as well.
  * /errors/404.pxt
  * /errors/413.pxt
  * /errors/cookies.pxt
@@ -24,6 +23,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /errata_not_found.pxt
 
 ==== Common look and feel templates ====
+Templates can not be removed until we finish all of the pxt migration.
  * /templates/c.pxt
  * /templates/header.pxt
  * /templates/profile.pxt
@@ -57,6 +57,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /help/forgot_password.pxt
 
 ==== GPG and SSL key editor ====
+These have already been migrated.
  * /network/keys/edit.pxt - '''REMOVE'''
  * /network/keys/key_list.pxt - '''REMOVE'''
  * /network/keys/delete.pxt - '''REMOVE'''
@@ -183,7 +184,8 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/systems/groups/system_list.pxt
  * /network/systems/groups/apply_errata_confirm.pxt
 
-==== System Detail pages ====
+==== System Detail (SDC) pages ====
+We should re-evaluate our system details pages and SSM. It would seem that the SDC is nothing more than a system set of 1, with some exceptions.
  * /network/systems/details/history/pending.pxt
  * /network/systems/details/history/event.pxt
  * /network/systems/details/history/cancel_events_confirm.pxt
@@ -309,12 +311,15 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/account/activation_keys/systems.pxt
 
 ==== User account editing ====
+These pages have already been migrated.
+
  * /network/account/edit_address.pxt - '''REMOVE'''
  * /network/account/change-email.pxt - '''REMOVE'''
  * /network/account/details.pxt - '''REMOVE'''
  * /network/account/verification-sent.pxt - '''REMOVE'''
  * /network/account/addresses.pxt - '''REMOVE'''
 ==== Stored Profiles ====
+Are these even useful?
  * /network/profiles/delete.pxt
  * /network/profiles/package-list.pxt
  * /network/profiles/details.pxt
