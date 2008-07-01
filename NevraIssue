@@ -14,7 +14,7 @@ Gpg/Provider
 || rhnpush || || || || read gpg id||
 || satellite-sync || || || || read gpg id, import gpg info if available ||
 || exporter || || || || export gpg information ||
-|| webUi || || || || ||
+|| webUi || 16 || || || ||
 
 
 
