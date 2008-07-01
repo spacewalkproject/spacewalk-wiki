@@ -24,7 +24,6 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /errata_not_found.pxt
 
 ==== Common look and feel templates ====
-
  * /templates/c.pxt
  * /templates/header.pxt
  * /templates/profile.pxt
@@ -40,27 +39,27 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /errata_hidden/rh_template.pxt
 
 ==== Satellite tools ====
- * /internal/satellite/config/restart_in_progress.pxt
- * /internal/satellite/config/restart_required.pxt
+ * /internal/satellite/config/restart_in_progress.pxt - REMOVE
+ * /internal/satellite/config/restart_required.pxt - REMOVE
  * /internal/satellite/task_engine/index.pxt
 
 ==== Help files ====
 
  * /help/about.pxt
- * /help/faq.pxt
- * /help/rhlmigrationfaq/index.pxt
- * /help/contact.pxt
+ * /help/faq.pxt - remove
+ * /help/rhlmigrationfaq/index.pxt - remove
+ * /help/contact.pxt - remove
  * /help/index.pxt
- * /help/browser-info.pxt
- * /help/ssl_cert.pxt
- * /help/release-notes/unix/index.pxt
- * /help/latest-up2date.pxt
+ * /help/browser-info.pxt - seems useless
+ * /help/ssl_cert.pxt - needs updating
+ * /help/release-notes/unix/index.pxt - remove
+ * /help/latest-up2date.pxt - remove
  * /help/forgot_password.pxt
 
 ==== GPG and SSL key editor ====
- * /network/keys/edit.pxt
- * /network/keys/key_list.pxt
- * /network/keys/delete.pxt
+ * /network/keys/edit.pxt - remove
+ * /network/keys/key_list.pxt - remove
+ * /network/keys/delete.pxt - remove
 
 ==== monitoring scout ====
  * /network/monitoring/scout/index.pxt
