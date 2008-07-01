@@ -46,7 +46,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
 ==== Help files ====
 
  * /help/about.pxt
- * /help/faq.pxt - remove
+ * /help/faq.pxt - '''REMOVE'''
  * /help/rhlmigrationfaq/index.pxt - '''REMOVE'''
  * /help/contact.pxt - '''REMOVE'''
  * /help/index.pxt
