@@ -1,4 +1,4 @@
-== Inter Satellite Sync Spec ==
+== Inter Spacewalk Sync Spec ==
 
 The Aim here is to sync content between spacewalks, where slave communicated with the xmlrpc and db layers of the master spacewalks to export content and import it back to the slave. We don't anticipate activating this slave against the master. The slaves will be either disconnected or activated against hosted. 
 
