@@ -26,6 +26,8 @@ Support for installation of Spacewalk on the following OS:
 
 [ApiAdditions API additions]
 
+[NevraIssue fully support multiple distributions within a single org]
+
 Provide for Solaris sun4v client support
  
 == Release - 0.3 ==
