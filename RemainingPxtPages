@@ -33,33 +33,33 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
 ==== Misc ====
  * /cve_not_found.pxt
  * /legal/terms.pxt
- * /newlogin/index.pxt - remove
+ * /newlogin/index.pxt - '''REMOVE'''
  * /file_not_found.pxt
  * /konq.pxt
  * /errata_hidden/rh_template.pxt
 
 ==== Satellite tools ====
- * /internal/satellite/config/restart_in_progress.pxt - REMOVE
- * /internal/satellite/config/restart_required.pxt - REMOVE
+ * /internal/satellite/config/restart_in_progress.pxt - '''REMOVE'''
+ * /internal/satellite/config/restart_required.pxt - '''REMOVE'''
  * /internal/satellite/task_engine/index.pxt
 
 ==== Help files ====
 
  * /help/about.pxt
  * /help/faq.pxt - remove
- * /help/rhlmigrationfaq/index.pxt - remove
- * /help/contact.pxt - remove
+ * /help/rhlmigrationfaq/index.pxt - '''REMOVE'''
+ * /help/contact.pxt - '''REMOVE'''
  * /help/index.pxt
  * /help/browser-info.pxt - seems useless
  * /help/ssl_cert.pxt - needs updating
- * /help/release-notes/unix/index.pxt - remove
- * /help/latest-up2date.pxt - remove
+ * /help/release-notes/unix/index.pxt - '''REMOVE'''
+ * /help/latest-up2date.pxt - '''REMOVE'''
  * /help/forgot_password.pxt
 
 ==== GPG and SSL key editor ====
- * /network/keys/edit.pxt - remove
- * /network/keys/key_list.pxt - remove
- * /network/keys/delete.pxt - remove
+ * /network/keys/edit.pxt - '''REMOVE'''
+ * /network/keys/key_list.pxt - '''REMOVE'''
+ * /network/keys/delete.pxt - '''REMOVE'''
 
 ==== monitoring scout ====
  * /network/monitoring/scout/index.pxt
@@ -309,12 +309,11 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/account/activation_keys/systems.pxt
 
 ==== User account editing ====
- * /network/account/edit_address.pxt - remove
- * /network/account/change-email.pxt - remove
+ * /network/account/edit_address.pxt - '''REMOVE'''
+ * /network/account/change-email.pxt - '''REMOVE'''
  * /network/account/details.pxt - remove
- * /network/account/verification-sent.pxt - remove
- * /network/account/addresses.pxt - remove
-
+ * /network/account/verification-sent.pxt - '''REMOVE'''
+ * /network/account/addresses.pxt - '''REMOVE'''
 ==== Stored Profiles ====
  * /network/profiles/delete.pxt
  * /network/profiles/package-list.pxt
