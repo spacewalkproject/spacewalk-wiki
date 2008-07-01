@@ -11,6 +11,8 @@ Initial open sourcing of Spacewalk project.
 
 == Release - 0.2 ==
 
+Get packages into Fedora see RepoCleanup and GettingPackagesIntoFedora
+
 Provide client support (via yum-rhn-plugin and associated packages) for
  * Fedora 9
  * CentOS 4
@@ -40,7 +42,7 @@ Start work on Cobbler/Koan provisioning integration and replacement of current p
 
 Command line Proxy Server installation process (deprecate the current WebUI based process)
 
-Inter Spacewalk Server sync - the ability to pull content from one Spacewalk server to the other via command line tools
+[wiki:InterSpacewalkServerSync Inter Spacewalk Server sync] - the ability to pull content from one Spacewalk server to the other via command line tools
 
 Further API additions for supporting Multi-Org feature and other calls
 
@@ -74,5 +76,4 @@ These are not in any specific order
  * Use puppet project as an alternative solution to replace our current Configuration File/Directory management tools - provide a richer usage than the basic capabilities we have today
  * Use smolt project as an alternative solution to replace our current hardware profile capturing system - provide a more complete hardware inventory system
  * Use func as an alternative solution to replace our current rhnpush technology (osad communication over jabber protocol servers)
- * Clean up the Spacewalk Yum Repo and get everything possible into Fedora.  RepoCleanup
 
