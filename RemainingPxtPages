@@ -3,9 +3,16 @@
 The following is a list of the remaining pxt pages located in the {{{web/html}}} directory.
 
  * /errata_hidden/rh_template.pxt
+
+==== Errata RSS feed ====
  * /rpc/recent-errata.pxt
+
+==== Email confirmation pages ====
  * /confirm_email_success.pxt
  * /confirm_email.pxt
+
+==== Custom error files ====
+
  * /errors/404.pxt
  * /errors/413.pxt
  * /errors/cookies.pxt
@@ -14,20 +21,30 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /errors/download-mismatch.pxt
  * /errors/500.pxt
  * /errors/cert-expired.pxt
+ * /errata_not_found.pxt
+
+==== Common look and feel templates ====
+
  * /templates/c.pxt
  * /templates/header.pxt
  * /templates/profile.pxt
  * /templates/equals_sign.pxt
  * /templates/footer.pxt
+
+==== Misc ====
  * /cve_not_found.pxt
  * /legal/terms.pxt
  * /newlogin/index.pxt
  * /file_not_found.pxt
  * /konq.pxt
+
+==== Satellite tools ====
  * /internal/satellite/config/restart_in_progress.pxt
  * /internal/satellite/config/restart_required.pxt
  * /internal/satellite/task_engine/index.pxt
- * /errata_not_found.pxt
+
+==== Help files ====
+
  * /help/about.pxt
  * /help/faq.pxt
  * /help/rhlmigrationfaq/index.pxt
@@ -38,6 +55,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /help/release-notes/unix/index.pxt
  * /help/latest-up2date.pxt
  * /help/forgot_password.pxt
+
  * /network/keys/edit.pxt
  * /network/keys/key_list.pxt
  * /network/keys/delete.pxt
@@ -199,6 +217,9 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/systems/details/reboot_confirm.pxt
  * /network/systems/details/group_list.pxt
  * /network/systems/details/channels.pxt
+
+==== System Set Manager (SSM) ====
+
  * /network/systems/ssm/patchsets/install_conf.pxt
  * /network/systems/ssm/patchsets/index.pxt
  * /network/systems/ssm/patchsets/install_channel.pxt
@@ -260,6 +281,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/systems/ssm/patches/remove_system_list.pxt
  * /network/systems/ssm/patches/install.pxt
  * /network/systems/ssm/work_with_group.pxt
+
  * /network/account/activation_keys/groups.pxt
  * /network/account/activation_keys/packages.pxt
  * /network/account/activation_keys/namespaces.pxt
