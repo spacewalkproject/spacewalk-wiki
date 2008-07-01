@@ -1,4 +1,23 @@
 = NEVRA Issue =
+
+== Tasks ==
+
+Md5Sum Changes
+|| Task || Estimate hours || Assignee || Status || Notes ||
+|| DB Schema for md5sum || jsherrill || 2 || || ||
+|| rhnPush (correct file system location)   || || || || ||
+|| sat-sync (correct file system location)  || || || || ||
+
+Gpg/Provider 
+|| Task || Estimate hours || Assignee || Status || Notes ||
+|| DB Schema for gpg/provider linkage || jsherrill || 2 || || ||
+|| rhnpush || || || || read gpg id||
+|| satellite-sync || || || || read gpg id, import gpg info if available ||
+|| exporter || || || || export gpg information ||
+|| webUi || || || || ||
+
+
+
 == The Problems ==
 
 At current, Spacewalk does not allow packages with the same NEVRA to be pushed
