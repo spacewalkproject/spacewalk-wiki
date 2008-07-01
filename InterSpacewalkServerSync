@@ -1,0 +1,138 @@
+== Inter Satellite Sync Spec ==
+
+The Aim here is to sync content between spacewalks, where slave communicated with the xmlrpc and db layers of the master spacewalks to export content and import it back to the slave. We don't anticipate activating this slave against the master. The slaves will be either disconnected or activated against hosted. 
+
+=== Basic Sync support === 
+* Add a SAT-DUMP handler so slave spacewalk can communicate with master. This is equivalent to what we have on hosted. The package we use for channel dumps stuff from hosted is rhns-satexport. This has all the exporter code we need to integrate with satellite. We just need to steal this package from hosted as we do for channel dumps. I have this step done already. 
+
+  Slave spacewalk will not be registred as client to parent. They will be still registred directly to hosted. 
+
+* Need to add in changes to make sure satellite-sync with sat_parent set by passes the activation check step and directly talks to the db/filesystem of the master. That means we bypass authentication mechanism (only for this call), which normaly allow only connection only for registered machines. And we allow only connection from machines which are set in /etc/rhn/rhn.conf and later we can put this values to DB and make nice WebUI for editing.
+
+* Once we have this, add a config variable to /etc/rhn/rhn.conf (slaves)  
+   server.satellite.iss_parent = master-satellite.redhat.com
+
+  --mmccune: Why not use existing configuration, server.satellite.rhn_parent?  Adding another
+    config variable that takes precedence over the other can be confusing and require lots of 
+    branching in the code.
+   --prad: Don't think this is a good option.. as the slave could still be active against hosted. So the rhn_parent should be satellite-rhn.redhat.com
+           This is just telling satellite sync that you have you have a master to talk to and get content.
+   --mmccune: If they just run 'satellite-sync' without arguments will it pull from hosted or the parent satellite?
+   --prad: yep see my comment below 'If no --parent-sat flag or server.sat_parent not set or if server.satellite.disable_iss=1 then we default sync from hosted.'
+
+* Another config variable to disable inter-satellite-sync 
+   server.satellite.disable_iss=0
+  This is set on master to completely disable iss?
+
+* This can be overridden by a command line flag to satellite sync
+    satellite-sync --iss_parent=master-satellite.redhat.com -c
+
+* If no --iss_parent flag or server.iss_parent not set or if server.satellite.disable_iss=1 then we default sync from hosted.
+
+* restriction as to which slaves can talk to master needs to be documented so user could use apache rules or iptables to implement the restrictions.
+
+  --msuchy: I suggested to have in master option:
+    server.satellite.allowed_iss_slaves=slave1-satellite.redhat.com,slave2-satellite.redhat.com
+
+==== Estimates ====
+
+There will be some change needed for satellite-sync, importer and backend modules to add this capability. Following are some rough estimates on what might change.
+
+* Adding exporter to spacewalk code (Estimate: 40 hours)
+
+* Satellite-sync modifications: (Estimate: 40 hours)
+ * importer (10 hours)
+ * sync_handler and sat_tools (10 hours)
+ * adding new flags to satellite-sync 
+  * --satellite and config + logic to by pass authentication/activation (16 hours)
+ * Documentation ( 4 hours )
+
+
+'''''Total Dev estimate: 80 hours'''''
+
+Developer Testing: (''Estimate: 16 hours'')
+
+=== Adding org Flag ===
+
+Aim is for Spacewalk Importer to be able to import content with respect to org_id. This probably targets two set of audience here. One is disconnected MultiOrg case, where for now the main source of content for them is either get content from channel dumps or export from connected sat and import it back. They usually host custom channels on disconnect sats. If they wish to export custom channel from connected sats they could do so with this. The other case is Connected MultiOrg satellite customers, for them these new flags could works as a means of moving content between multiple orgs. As there is no API or a upgrade script that does that now, it could be useful for them to move content between orgs.
+
+We need An orgid mapping option to satellite-sync say --to-org
+    This basically enables the user to import content in one org to another either on same or different satellites.  
+    $ satellite-sync --to-org=10 --channel=test-multi-org
+    Other additional content data
+    $  satellite-sync --to-org=10  --type=activationkeys --parent-sat=master-satellite.redhat.com 
+
+* If this option is not give then we default to org-1. 
+
+* We need to make sure the exported content from satellites include the org information.
+
+* This option is valid for disconnected case as well if -m flag is specified. Need to make sure we fix rhn-satellite-exporter to export the org information.
+
+  --mmccune: What if they want to export from an org *other* than org1 in the parent satellite?  
+    Do we need a --from-org= flag as well?
+  --prad: The initial spec I had had --from-org. But looking into it a bit more, it might complicate the caching as we have to generate the cache on a per 
+          org basis rather than per content type(as it works now). But definitely doable.. jus a little more work.
+
+==== Estimates ====
+There will be lot of changes needed for satellite-sync, importer and backend modules to add this capability. We need to take into account all the content the importer tries to import that has reference to orgid such as channels, packages, errata, kickstart-trees/files, arches. Following are some rough estimates on what  might change.
+
+*New Flags and changes to satsync.py (''Estimate: 4 hours'')
+ * --to-org  ''Estimate: 2 hours''
+ * other minor logic changes ''Estimate: 2 hours''
+
+*ImportLib: (''Estimate: 32 hours'')
+ * channelImport,ChannelFamilyImport (''Estimate: 8 hours'')
+ * packageImport + channelPackageSubscription (''Estimate: 8 hours'')
+ * ErrataImport, archImport   (''Estimate: 8 hours'')
+ * kickstartImport(kickstart-trees/files)  (''Estimate: 8 hours'')
+
+* backend associated with importLib (''Estimate: 8 hours'')
+ * backend utils calls     (''Estimate: 4 hours'')
+ * backendLib,importLib,backendOracle    (''Estimate: 4 hours'')
+
+* satellite-tools (''Estimate: 10 hours'')
+ * satsync           (''Estimate: 4 hours'')
+ * sync_handler      (''Estimate: 6 hours'')
+
+
+'''''Total Dev estimate: 54 hours'''''
+
+Developer Testing: (''Estimate: 8 hours'')
+
+==== Use Cases: ====
+1. Export channel from master to slave satellite.
+   $ satellite-sync --parent-sat=master-satellite.redhat.com -c <channel-name> --to-org=2
+
+2. Export additional content such as activation keys, kickstart/user profiles
+
+* Add a flag say --type=activation-key,kickstart-profiles,user-profiles
+
+* This will export all the additional content from 
+   $ satellite-sync --parent-sat=master-satellite.redhat.com --type=<content-type> --to-org=2
+
+3. Default case where satellite-sync should work as usual
+
+=== Additional Content Sync: ===
+
+We need to be able to sync down content other than channel content such as kickstart profiles, user profiles and activation keys.
+
+==== Activation keys: ==== 
+
+* Using Current xmlWire setup:
+
+* Add export activation key to dump/auth_dump handlers on sat-export.
+
+* Add in activation key containers to the sync_handlers.
+
+* The exporter on the master spacewalk exports the activation keys from the db into an xml stream and passes it to satelite-sync.
+
+* Satellite-sync gets this and imports it to its db based on --to-org info or defaults to org-1
+
+* Caching as usual implemented
+
+* With this we should be able to sync ativation keys from master sat as 
+  satellite-sync --parent-sat=<sat> --type=activationkeys --to-org=2
+
+'''''Total Dev estimate: 80 hours'''''
+
+Note: Flags/variables are so named in this document just to give an idea. They might change without notice at implementation time based on our mood.
