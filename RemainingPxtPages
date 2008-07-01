@@ -309,11 +309,11 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/account/activation_keys/systems.pxt
 
 ==== User account editing ====
- * /network/account/edit_address.pxt
- * /network/account/change-email.pxt
- * /network/account/details.pxt
- * /network/account/verification-sent.pxt
- * /network/account/addresses.pxt
+ * /network/account/edit_address.pxt - remove
+ * /network/account/change-email.pxt - remove
+ * /network/account/details.pxt - remove
+ * /network/account/verification-sent.pxt - remove
+ * /network/account/addresses.pxt - remove
 
 ==== Stored Profiles ====
  * /network/profiles/delete.pxt
