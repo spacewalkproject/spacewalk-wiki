@@ -1,5 +1,11 @@
 == Inter Spacewalk Sync Spec ==
 
+=== Goal === 
+
+To be able to synchronize content of spacewalk to another directly without need to dump it to disk.
+
+For now, when user have two spacewalk and want to synchronize them, they have to export data to disk, copy it to second spacewalk and synchronize spacewalk from dump on disk. This procedure is painfully slow, because we export and copy whole content, instead of just diff between two spacewalk. 
+
 The Aim here is to sync content between spacewalks, where slave communicated with the xmlrpc and db layers of the master spacewalks to export content and import it back to the slave. We don't anticipate activating this slave against the master. The slaves will be either disconnected or activated against hosted. 
 
 === Basic Sync support === 
