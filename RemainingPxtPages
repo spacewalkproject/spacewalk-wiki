@@ -2,7 +2,7 @@
 
 The following is a list of the remaining pxt pages located in the {{{web/html}}} directory.
 
- * /errata_hidden/rh_template.pxt
+
 
 ==== Errata RSS feed ====
  * /rpc/recent-errata.pxt
@@ -37,6 +37,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /newlogin/index.pxt
  * /file_not_found.pxt
  * /konq.pxt
+ * /errata_hidden/rh_template.pxt
 
 ==== Satellite tools ====
  * /internal/satellite/config/restart_in_progress.pxt
@@ -56,11 +57,16 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /help/latest-up2date.pxt
  * /help/forgot_password.pxt
 
+==== GPG and SSL key editor ====
  * /network/keys/edit.pxt
  * /network/keys/key_list.pxt
  * /network/keys/delete.pxt
+
+==== monitoring scout ====
  * /network/monitoring/scout/index.pxt
  * /network/monitoring/scout/details.pxt
+
+==== Software Channel Management ====
  * /network/software/cannot_download.pxt
  * /network/software/channels/license.pxt
  * /network/software/channels/packages.pxt
@@ -105,6 +111,8 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/software/channels/manage/patches/patch_list.pxt
  * /network/software/channels/manage/patches/index.pxt
  * /network/software/channels/manage/patches/add.pxt
+
+==== Packages ====
  * /network/software/packages/system_list_for_patchset.pxt
  * /network/software/packages/file_list.pxt
  * /network/software/packages/patch_packages.pxt
@@ -127,10 +135,14 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/software/packages/system_list_for_patch.pxt
  * /network/software/all_channels.pxt
  * /network/software/retired_channels.pxt
+
+==== Monitoring Notification Methods ====
  * /network/users/details/contact_methods/edit.pxt
  * /network/users/details/contact_methods/index.pxt
  * /network/users/details/contact_methods/create.pxt
  * /network/users/details/contact_methods/delete_confirm.pxt
+
+==== Errata management ====
  * /network/errata/manage/edit.pxt
  * /network/errata/manage/select_channels.pxt
  * /network/errata/manage/confirm_mail.pxt
@@ -145,15 +157,21 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/errata/manage/packages/add.pxt
  * /network/errata/manage/clone/confirm.pxt
  * /network/errata/manage/clone/index.pxt
+
+==== Kickstart ====
  * /network/systems/provisioning/sessions/cancel_session.pxt
  * /network/systems/provisioning/sessions/details.pxt
  * /network/systems/provisioning/sessions/history.pxt
  * /network/systems/provisioning/preservation/edit.pxt
  * /network/systems/provisioning/preservation/delete.pxt
  * /network/systems/provisioning/preservation/preservation_list.pxt
+
+==== Custom info ====
  * /network/systems/custominfo/edit.pxt
  * /network/systems/custominfo/index.pxt
  * /network/systems/custominfo/delete.pxt
+
+==== System Group management ====
  * /network/systems/groups/admin_list.pxt
  * /network/systems/groups/edit_properties.pxt
  * /network/systems/groups/errata_list.pxt
@@ -165,6 +183,8 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/systems/groups/systems_affected_by_errata.pxt
  * /network/systems/groups/system_list.pxt
  * /network/systems/groups/apply_errata_confirm.pxt
+
+==== System Detail pages ====
  * /network/systems/details/history/pending.pxt
  * /network/systems/details/history/event.pxt
  * /network/systems/details/history/cancel_events_confirm.pxt
@@ -282,16 +302,21 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
  * /network/systems/ssm/patches/install.pxt
  * /network/systems/ssm/work_with_group.pxt
 
+==== Activation keys ====
  * /network/account/activation_keys/groups.pxt
  * /network/account/activation_keys/packages.pxt
  * /network/account/activation_keys/namespaces.pxt
  * /network/account/activation_keys/child_channels.pxt
  * /network/account/activation_keys/systems.pxt
+
+==== User account editing ====
  * /network/account/edit_address.pxt
  * /network/account/change-email.pxt
  * /network/account/details.pxt
  * /network/account/verification-sent.pxt
  * /network/account/addresses.pxt
+
+==== Stored Profiles ====
  * /network/profiles/delete.pxt
  * /network/profiles/package-list.pxt
  * /network/profiles/details.pxt
