@@ -5,8 +5,8 @@
 Md5Sum Changes
 || Task || Estimate hours || Assignee || Status || Notes ||
 || DB Schema for md5sum || jsherrill || 2 || || ||
-|| rhnPush (correct file system location)   || || || || ||
-|| sat-sync (correct file system location)  || || || || ||
+|| rhnPush  || || || || (correct file system location) ||
+|| sat-sync  || || || || (correct file system location) ||
 
 Gpg/Provider 
 || Task || Estimate hours || Assignee || Status || Notes ||
@@ -56,7 +56,7 @@ Things that will need to be changed:
  * Satellite-sync 
   * add support to push package to new file system location (see below)
   * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
- * New file system location: (/var/satellite/)/redhat/ORG/N/V-R-E/A/MD5SUM/file.rpm (or maybe /var/satellite/rpms/ORG/N[0 .. 1]/N/V-R-E-A/MD5SUM-file.rpm to avoid hitting limits on number of entries in directory and avoid directories with only a single file)
+ * New file system location: (/var/satellite/)/redhat/ORG/N(01)/N/V-R-E/MD5SUM/file.rpm  to avoid hitting limits on number of entries in directory and avoid directories with only a single file)
   * Any existing package will not be moved, the db will be referenced by their old location
   * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
   * We could script a way for upgrade such that we move packages to the new file location and update the db, but that seems more hackish to me than just leaving existing packages where they are.  We can discuss this more...
