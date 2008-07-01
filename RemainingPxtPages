@@ -311,7 +311,7 @@ The following is a list of the remaining pxt pages located in the {{{web/html}}}
 ==== User account editing ====
  * /network/account/edit_address.pxt - '''REMOVE'''
  * /network/account/change-email.pxt - '''REMOVE'''
- * /network/account/details.pxt - remove
+ * /network/account/details.pxt - '''REMOVE'''
  * /network/account/verification-sent.pxt - '''REMOVE'''
  * /network/account/addresses.pxt - '''REMOVE'''
 ==== Stored Profiles ====
