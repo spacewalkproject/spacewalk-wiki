@@ -23,6 +23,7 @@ If you have an idea for a new api, add it to the Planned API table below.  If yo
 ||  system.diffToChannel(sid, chan_label) || 3 ||  ||  ||  ||
 ||  system.searchDevices(search-string) || 4 || jmatthews ||  ||  ||
 ||  system.searchNetwork(search-string) || 4 || jmatthews ||  ||  ||
+||  system.createCustomValueKey() || 3 || || || ||
 ||  ----   ||  ||  ||  ||  ||
 ||  packages.getDetails(*,downloadURL)   ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||
