@@ -102,3 +102,18 @@ Questions
 Bugzilla
  * There is a bugzilla open on this:  https://bugzilla.redhat.com/show_bug.cgi?id=453455
 
+== GPG ids ==
+{{{
+25dbef78a7048f8d  Scientific
+5326810137017186  Red Hat
+219180cddb42a60e  Red Hat
+b44269d04f2a6fd2  Fedora
+a8a447dce8562897  CentOs
+2802e89216ff0e46  CentOs
+a53d0bab443e1821  CentOs
+7049e44d025e513b  CentOs
+66ced3de1e5e0159  Oracle
+2e2bcdbcb38a8516  Oracle
+a84edae89c800aca  OpenSuse
+}}}
+
