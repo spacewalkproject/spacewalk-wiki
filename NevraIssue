@@ -4,16 +4,16 @@
 
 Md5Sum Changes
 || Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for md5sum || 2 || jsherrill || || ||
-|| rhnPush  || 2 || prad || || (correct file system location) ||
-|| sat-sync  || 4 || prad || || (correct file system location) ||
+|| DB Schema for md5sum || 2 || jsherrill || done || ||
+|| rhnPush  || 2 || prad || done || (correct file system location) ||
+|| sat-sync  || 4 || prad || done || (correct file system location) ||
 
 Gpg/Provider 
 || Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for gpg/provider linkage || 2 || jsherrill || || ||
-|| rhnpush(server) || 4 || prad || || read gpg id||
-|| satellite-sync || 16 || prad || || read gpg id, import gpg info if available ||
-|| exporter || 4 || prad || || export gpg information ||
+|| DB Schema for gpg/provider linkage || 2 || jsherrill || in progress|| ||
+|| rhnpush(server) || 4 || prad || in progress || read gpg id||
+|| satellite-sync || 16 || prad ||in progress || read gpg id, import gpg info if available ||
+|| exporter || 4 || prad || in progress|| export gpg information ||
 || webUi || 16 ||jsherrill || || ||
 
 
