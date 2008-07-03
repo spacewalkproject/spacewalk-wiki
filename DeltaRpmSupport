@@ -1,5 +1,16 @@
 = Delta RPMS =
 
+
+== Tasks ==
+
+|| Task || Estimated Hours || Assignee || Status || Notes ||
+|| Delta RPM Generation || 20 ||   || ||  ||
+|| Modifying repomd generation to be performed as asynchronously, not on demand || 20 ||  || || ||
+|| Presto MD generation || 15 ||   || ||  ||
+|| 
+
+
+
 == FAQ ==
 * What is a delta rpm?
    * It is a collection of the binary diffs between all the individual files of two different versions of the same package with the rpm header of the new package prepended to the file.
@@ -42,9 +53,9 @@ Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
 == To be done.... == 
 
  * Backend
-  * Generate drpms on the fly (This shouldn't be too hard, as libraries are exist to do this).  Will need to store them in a cache (/var/satellite or a more temporary place?)  and have a way to clear them (possibly just have a user delete a certain directory)
-  * Generate the presto repo data.  This might be a little tricky, as we will need to be able to generate a delta rpm from every version of a package (that is in a channel) to every other version of the same package.  But generally we'll generate a presto repo file that has every combination available to the client, and then generate whichever one we need on demand
-  Provide a config option to disable/enable presto rpm support on the server side (disabling the repo data generation should be good enough).
+  * Generate drpms on the fly (This shouldn't be too hard, as libraries are exist to do this).  Will need to store them in a cache (/var/cache/rhn/drpms/N(0..2)/NAME/md5sum-md5sum.drpm) and have a way to clear them (possibly a script, or add it to the daemon below).  Currently there is no python api, so we will simply have to use the command line utilities from within python.
+  * Generate the presto repo data.  This might be a little tricky, as we will need to be able to generate a delta rpm from every version of a package (that is in a channel) to every other version of the same package.  But generally we'll generate a presto repo file that has every combination available to the client, and then generate whichever one we need on demand.  After talking with prad, it was determined that we don't want to generate the presto information on demand, as it would take too long (which is the case with our repomd now).  Instead we want to have a daemon process periodically checking to see if the repomd needs to be updated and update it then.  We will simply generate the presto metadata at that time as well.
+  * Provide a config option to disable/enable presto rpm support on the server side (disabling the repo data generation should be good enough).
 
  * Client side
   * This most likely "just works".  Once we have the backend stuff to test, we can actually do some testing.  
@@ -57,3 +68,5 @@ Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
 
  * I like the idea of delta rpms 'just being there' (i.e. so the user wouldn't have to do anything to get them there, or at least wouldn't have to generate them themselves and upload them to the sat).  
  * Since it does require extra cpu and memory resources to rebuild the rpm on each client, it should be an optional on the satellite to provide/build/publish deltarpms.
+
+
