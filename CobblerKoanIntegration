@@ -2,7 +2,7 @@
 
 Why should we integrate cobbler into Satellite:
 
-===Now:===
+=== Now ===
 
  * Keeping our virt stuff updated: 
   * xen installs using virtinst library (same as virt manager), remove legacy Xen-specific code
