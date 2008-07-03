@@ -14,7 +14,7 @@ Gpg/Provider
 || rhnpush(server) || 4 || prad || in progress || read gpg id||
 || satellite-sync || 16 || prad ||in progress || read gpg id, import gpg info if available ||
 || exporter || 4 || prad || in progress|| export gpg information ||
-|| webUi || 16 ||jsherrill || || ||
+|| webUi || 16 ||jsherrill ||in progress || ||
 
 
 
