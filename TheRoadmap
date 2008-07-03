@@ -40,7 +40,7 @@ Start work on getting support needed for Fedora 10 changes, such as proposed:
  * SHA256 support in RPM
  * Improvements to yum-rhn-plugin and supporting components
 
-Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
+[CobblerKoanIntegration Cobbler/Koan Integration]: Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
 
 Command line Proxy Server installation process (deprecate the current WebUI based process)
 
