@@ -6,7 +6,7 @@
 || Task || Estimated Hours || Assignee || Status || Notes ||
 || Delta RPM Generation || 20 ||   || ||  ||
 || Modifying repomd generation to be performed as asynchronously, not on demand || 20 ||  || || ||
-|| Presto MD generation || 15 ||   || ||  ||
+|| Presto MD generation || 25 ||   || ||  ||
 || Client side testing/development  || 5 || || || ||
 
 
