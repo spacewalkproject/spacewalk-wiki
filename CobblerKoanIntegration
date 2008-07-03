@@ -1,0 +1,114 @@
+== Goal ==
+
+Why should we integrate cobbler into Satellite:
+
+===Now:===
+
+ * Keeping our virt stuff updated: 
+  * xen installs using virtinst library (same as virt manager), remove legacy Xen-specific code
+  * qemu/KVM
+  * vmware installs (evolving)
+  * lvm backed guests
+  * multiple disks for VMs
+  * multiple NICs for VMs
+ * Other OS support: 
+  * First class:
+   * Fedora
+   * CentOS 
+  * Second class (no repo support, kickstart templating and PXE still works)
+   * Debian / Ubuntu
+   * SuSE
+ * Additional rollout options
+  * auto-managed PXE tree with auto-generated/auto-updated menus: Ability to reinstall hardware via PXE (do not need "good" OS)
+ * LiveCD/DeadCD support for bare metal rollout where customer has no PXE
+ * DHCP and DNS management
+ * Templating of our files (especially kickstarts) -- less kickstarts to manage
+ * able to do bare-metal deployments on multiple subnets
+ * replication between Cobbler servers (multi-datacenter) (evolving)
+ * integrated image replication/cloning (future?) for Windows/other environs
+ * power management (future?)
+ * for more see: https://fedorahosted.org/cobbler
+
+== Command Line ==
+
+We want to allow users to continue to use Cobbler's CLI from the server side.
+In other words, edits from WebUI should not mean CLI usage is disallowed, i.e. CLI has more "knobs" exposed.
+Satellite can be "read-modify-write" into Cobbler DB using Cobbler API calls.
+
+== Content == 
+
+ * Make cobbler know how to represent a repository that it is not mirroring
+ * yum-rhn-plugin - (??? what does this mean -- mpd )
+
+== Integration ==
+=== Client ===
+ * calling out to koan from rhnlib
+ * kickstart progress monitoring?
+  * cobbler has some monitoring via a post-install trigger.  Can we leverage that? -- mpd
+=== Server ===
+ * cobbler server running on Satellite
+  * installer should configure /var/lib/cobbler/settings, /etc/cobbler/modules.conf (?)
+=== Things we need from cobbler ===
+ * virt provision time system overrides
+  * Basically Satellite sets virt-ram on a system-by-system basis, where as Cobbler prefered profile-by-profile.  Easy enough to add.
+ * Ability to block for virt installs 
+  * post-install trigger for success/registration may be enough?
+ * xmlrpc api vs python lib direct 
+  * Cobbler is written in it's own API (api.py), remote.py offers 90% functionality, might need some extensions
+
+== Phase I (prototype/investigation) ==
+
+Investigation phase:
+
+ * get rhn client talking to koan to initiate virt installs and re-installs
+ * setup action types and ability for Satellite to schedule reinstalls and virt installs.
+ * write API so we can schedule cobbler style installs
+ * get cobbler running on a Satellite
+ * use xmlrpc to utilize above setup to test doing a cobbler KS from Satellite
+
+
+== Phase II (real integration) ==
+
+ * Integrate Satellite's Kickstart UI with cobbler:  Keep our existing database tables but keep our Kickstart Profiles in sync with cobbler.  CRUD operations will trickle down to cobbler
+  * I think we can likely construct a Satellite "wizard.ks" template for using Cobbler to generate the existing Satellite profiles into Cobbler form, but we want to explore that further...  Cobbler uses Cheetah for templating which essentially allows for anything Pythonic to be included.
+ * Offer GUI with 'advanced' option to show a textbox with existing rendering of Satellite's Kickstart profile that can be edited then stored down into cobbler.
+ * replace client side kickstart and virtualization code with full integration with cobbler vs the rhn-kickstart and rhn-kickstart-vitualization packages.
+
+== Phase III (replacement of Satellite's kickstart persistence) ==
+
+Phase III is where we build on the work from the previous phases to fully integrate and replace Satellite's kickstart/virt code with cobbler/koan.  This Phase will be evaluated as necessary or not depending on the success of the previous Phases.
+
+ * Remove Satellite's rhnKickstart* database representation of the kickstart profile.  Move to storing it all in cobbler
+ * Build advanced GUI to expose all of what Cobbler can do within our GUI (livecd, pxe, etc..).
+  * Note: I think we get the live CD and PXE menus for free in phase II. (mpd)
+
+=== Potentially most interesting things to thing about for Phase III ===
+
+(from mdehaan)
+
+ * Getting Satellite to manage DHCP and BIND entries for new systems (optional)
+ * Fedora and CentOS support (including ability to rsync the trees in cobbler)
+ * KVM
+ * LVM backed virtual guests
+ * Expose the "netboot-enabled flag" and look into integrating power management
+
+== Non-Cobbler But Slightly Related Interesting Things ==
+
+ * put Virt-viewer applet in Satellite virt UI (something we wanted to do in VF at one point)
+
+== Random technical notes ==
+
+ * when looking at cobbler, you are most interested in the devel branch ATM
+ * Cobbler's command line is written against the Cobbler api, see "api.py"
+ * Cobbler's WUI is written against it's XMLRPC API, as is koan, see ""remote.py" -- for examples "remote.py", "services.py"
+ * probably best to use the XMLRPC API to allow for maximum cross-language support
+ * multiple authentication options to webui, simplest is creating a key in a digest file, also does kerberos/LDAP.
+ * for example of misc. cobbler triggers, templating examples, kickstart snippets, and other customization, see the Cobbler Wiki
+
+== Notes from June 26 ==
+
+ * Baremetal deployment: whole lot of rhel, very fast.  DNS/DHCP
+ * Do we care about other virt types: xen-full virt support.  PXE support: rhel cant do it.  KVM, rhel can't do it.  LVM backed virt storage.
+ * Are we going to provide a way to configure and turn on baremetal DHCP support in the GUI?
+ * Build ISO stuff
+ * Trees 
