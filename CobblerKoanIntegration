@@ -60,6 +60,7 @@ Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
   * perhaps we can make rhnreg_ks be smart enough to be this? 
  * xmlrpc api vs python lib direct 
   * Cobbler is written in it's own API (api.py), remote.py offers 90% functionality, might need some extensions
+ * need to verify koan --replace-self is happy on RHEL3 (it's supposed to be), and also make it work on RHEL2.1
 
 == Phase I (prototype/investigation) ==
 
@@ -112,10 +113,11 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Notes from June 26 ==
 
- * Most important/interesting features to add first are:
+ * Consensus:  Most important/interesting features to add first are:
 
     * Baremetal deployment: whole lot of rhel, very fast.  DNS/DHCP
     * Do we care about other virt types: xen-full virt support.  PXE support: rhel cant do it (yet).  KVM, rhel can't do it.  LVM backed virt storage.
     * Are we going to provide a way to configure and turn on baremetal DHCP and/or DNS support in the GUI?
        * or does the installer just ask this question while generating /etc/cobbler/settings  and /etc/cobbler/modules.conf ?
     * Build ISO stuff
+
