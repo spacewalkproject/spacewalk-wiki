@@ -37,7 +37,7 @@ Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
 
 == Content == 
 
- * Make cobbler know how to represent a repository that it is not mirroring
+ * Make cobbler know how to represent a repository that it is not mirroring (DONE -- mpd)
  * yum-rhn-plugin - (??? what does this mean -- mpd )
 
 == Integration ==
@@ -47,15 +47,17 @@ Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
   * cobbler has some monitoring via a post-install trigger.  Can we leverage that? -- mpd
 === Server ===
  * cobbler server running on Spacewalk
-  * installer should configure /etc/cobbler/settings, /etc/cobbler/modules.conf (?)
+  * installer should configure /etc/cobbler/settings, /etc/cobbler/modules.conf
  * synchronization of Spacewalk Kickstart Profiles into Cobbler Profiles
  * synchronization of Cobbler profiles into Spacewalk Kickstart Profiles
 
 === Things we need from cobbler ===
  * virt provision time system overrides
   * Basically Spacewalk sets virt-ram on a system-by-system basis, where as Cobbler prefered profile-by-profile.  Easy enough to add.
+  * DONE -- mpd
  * Ability to block for virt installs 
   * post-install trigger for success/registration may be enough?
+  * perhaps we can make rhnreg_ks be smart enough to be this? 
  * xmlrpc api vs python lib direct 
   * Cobbler is written in it's own API (api.py), remote.py offers 90% functionality, might need some extensions
 
@@ -101,7 +103,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Random technical notes ==
 
- * when looking at cobbler, you are most interested in the devel branch ATM
+ * when looking at cobbler, you are most interested in the devel branch ATM (no longer really applies, I'd code against master -- mpd)
  * Cobbler's command line is written against the Cobbler api, see "api.py"
  * Cobbler's WUI is written against it's XMLRPC API, as is koan, see ""remote.py" -- for examples "remote.py", "services.py"
  * probably best to use the XMLRPC API to allow for maximum cross-language support
@@ -110,7 +112,10 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Notes from June 26 ==
 
- * Baremetal deployment: whole lot of rhel, very fast.  DNS/DHCP
- * Do we care about other virt types: xen-full virt support.  PXE support: rhel cant do it.  KVM, rhel can't do it.  LVM backed virt storage.
- * Are we going to provide a way to configure and turn on baremetal DHCP support in the GUI?
- * Build ISO stuff
+ * Most important/interesting features to add first are:
+
+    * Baremetal deployment: whole lot of rhel, very fast.  DNS/DHCP
+    * Do we care about other virt types: xen-full virt support.  PXE support: rhel cant do it (yet).  KVM, rhel can't do it.  LVM backed virt storage.
+    * Are we going to provide a way to configure and turn on baremetal DHCP and/or DNS support in the GUI?
+       * or does the installer just ask this question while generating /etc/cobbler/settings  and /etc/cobbler/modules.conf ?
+    * Build ISO stuff
