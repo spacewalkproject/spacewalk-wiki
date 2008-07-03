@@ -47,7 +47,7 @@ Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
   * cobbler has some monitoring via a post-install trigger.  Can we leverage that? -- mpd
 === Server ===
  * cobbler server running on Spacewalk
-  * installer should configure /var/lib/cobbler/settings, /etc/cobbler/modules.conf (?)
+  * installer should configure /etc/cobbler/settings, /etc/cobbler/modules.conf (?)
  * synchronization of Spacewalk Kickstart Profiles into Cobbler Profiles
  * synchronization of Cobbler profiles into Spacewalk Kickstart Profiles
 
