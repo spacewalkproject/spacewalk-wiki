@@ -1,6 +1,6 @@
 == Goal ==
 
-Why should we integrate cobbler into Satellite:
+Why should we integrate cobbler into Spacewalk:
 
 === Now ===
 
@@ -33,7 +33,7 @@ Why should we integrate cobbler into Satellite:
 
 We want to allow users to continue to use Cobbler's CLI from the server side.
 In other words, edits from WebUI should not mean CLI usage is disallowed, i.e. CLI has more "knobs" exposed.
-Satellite can be "read-modify-write" into Cobbler DB using Cobbler API calls.
+Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
 
 == Content == 
 
@@ -46,11 +46,14 @@ Satellite can be "read-modify-write" into Cobbler DB using Cobbler API calls.
  * kickstart progress monitoring?
   * cobbler has some monitoring via a post-install trigger.  Can we leverage that? -- mpd
 === Server ===
- * cobbler server running on Satellite
+ * cobbler server running on Spacewalk
   * installer should configure /var/lib/cobbler/settings, /etc/cobbler/modules.conf (?)
+ * synchronization of Spacewalk Kickstart Profiles into Cobbler Profiles
+ * synchronization of Cobbler profiles into Spacewalk Kickstart Profiles
+
 === Things we need from cobbler ===
  * virt provision time system overrides
-  * Basically Satellite sets virt-ram on a system-by-system basis, where as Cobbler prefered profile-by-profile.  Easy enough to add.
+  * Basically Spacewalk sets virt-ram on a system-by-system basis, where as Cobbler prefered profile-by-profile.  Easy enough to add.
  * Ability to block for virt installs 
   * post-install trigger for success/registration may be enough?
  * xmlrpc api vs python lib direct 
@@ -61,24 +64,24 @@ Satellite can be "read-modify-write" into Cobbler DB using Cobbler API calls.
 Investigation phase:
 
  * get rhn client talking to koan to initiate virt installs and re-installs
- * setup action types and ability for Satellite to schedule reinstalls and virt installs.
+ * setup action types and ability for Spacewalk to schedule reinstalls and virt installs.
  * write API so we can schedule cobbler style installs
- * get cobbler running on a Satellite
- * use xmlrpc to utilize above setup to test doing a cobbler KS from Satellite
+ * get cobbler running on a Spacewalk
+ * use xmlrpc to utilize above setup to test doing a cobbler KS from Spacewalk
 
 
 == Phase II (real integration) ==
 
- * Integrate Satellite's Kickstart UI with cobbler:  Keep our existing database tables but keep our Kickstart Profiles in sync with cobbler.  CRUD operations will trickle down to cobbler
-  * I think we can likely construct a Satellite "wizard.ks" template for using Cobbler to generate the existing Satellite profiles into Cobbler form, but we want to explore that further...  Cobbler uses Cheetah for templating which essentially allows for anything Pythonic to be included.
- * Offer GUI with 'advanced' option to show a textbox with existing rendering of Satellite's Kickstart profile that can be edited then stored down into cobbler.
+ * Integrate Spacewalk's Kickstart UI with cobbler:  Keep our existing database tables but keep our Kickstart Profiles in sync with cobbler.  CRUD operations will trickle down to cobbler
+  * I think we can likely construct a Spacewalk "wizard.ks" template for using Cobbler to generate the existing Spacewalk profiles into Cobbler form, but we want to explore that further...  Cobbler uses Cheetah for templating which essentially allows for anything Pythonic to be included.
+ * Offer GUI with 'advanced' option to show a textbox with existing rendering of Spacewalk's Kickstart profile that can be edited then stored down into cobbler.
  * replace client side kickstart and virtualization code with full integration with cobbler vs the rhn-kickstart and rhn-kickstart-vitualization packages.
 
-== Phase III (replacement of Satellite's kickstart persistence) ==
+== Phase III (replacement of Spacewalk's kickstart persistence) ==
 
-Phase III is where we build on the work from the previous phases to fully integrate and replace Satellite's kickstart/virt code with cobbler/koan.  This Phase will be evaluated as necessary or not depending on the success of the previous Phases.
+Phase III is where we build on the work from the previous phases to fully integrate and replace Spacewalk's kickstart/virt code with cobbler/koan.  This Phase will be evaluated as necessary or not depending on the success of the previous Phases.
 
- * Remove Satellite's rhnKickstart* database representation of the kickstart profile.  Move to storing it all in cobbler
+ * Remove Spacewalk's rhnKickstart* database representation of the kickstart profile.  Move to storing it all in cobbler
  * Build advanced GUI to expose all of what Cobbler can do within our GUI (livecd, pxe, etc..).
   * Note: I think we get the live CD and PXE menus for free in phase II. (mpd)
 
@@ -86,7 +89,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 (from mdehaan)
 
- * Getting Satellite to manage DHCP and BIND entries for new systems (optional)
+ * Getting Spacewalk to manage DHCP and BIND entries for new systems (optional)
  * Fedora and CentOS support (including ability to rsync the trees in cobbler)
  * KVM
  * LVM backed virtual guests
@@ -94,7 +97,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Non-Cobbler But Slightly Related Interesting Things ==
 
- * put Virt-viewer applet in Satellite virt UI (something we wanted to do in VF at one point)
+ * put Virt-viewer applet in Spacewalk virt UI (something we wanted to do in VF at one point)
 
 == Random technical notes ==
 
