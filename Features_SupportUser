@@ -1,0 +1,107 @@
+= Background =
+
+Support for users with read-only access has been a common request of Satellite customers.
+
+While most are agreed our ideal implementation to solve this problem would be (a) giving users access to multiple orgs and then (b) implementing a "read-only" role which restricted the existing UI, this approach was ruled out due to what could be extremely large development and QA impact.
+
+ * Multi-Org Access
+  * Probably the most manageable of the two pieces but still involves some significant changes to underlying data model. 
+  * Many queries will need to be updated if we introduce the concept of a user logged in and working with an org other then his "home" org as per today.
+  * Roles may need to be reworked to support associations with a particular org.
+ * Read-Only UI
+  * Entails a complete re-examination of virtually all actions and menu's in the existing satellite UI to now expose pages if the user has the correct role, but still hide the submit buttons and prevent actual changes.
+  * Large amount of effort to systematically find and consider *all* acl's.
+  * Code update is part of the battle, still a huge impact on development and QA to make sure every change they made took effect properly.
+  * API would also need some attention.
+  * Customers would likely still want fine grained control over what things their read-only users can see, which is a level of fine grained permissions we're not yet prepared for.
+  * Completing Java migration is a likely requirement for implementing this, otherwise we'll need to do so in two languages...
+
+However, after several customer discussions we found that this requirement more often than not boils down to a desire for a support user who can log in and perform some simple searches on systems, users, and organizations. As such we decided to pursue this path by implementing a new tab in the satellite UI exposing a simple search interface to users who have the appropriate role.
+
+= Requirements =
+
+ 1. Begin implementation of a fine grained rights/roles system.
+  1. Just enough to prepare for limiting what support users can do.
+  1. Initial release will *not* allow for customization.
+  1. UI to configure and fine tune will be implemented in future releases.
+  1. Framework will hopefully eventually be expanded throughout existing satellite UI.
+ 1. Define a new "Support Role" using the new rights/roles system.
+ 1. Users with the Support role will have a new "Support" tab visible when they login.
+ 1. Support tab will link to a simple search interface.
+ 1. Support users can search across multiple organizations.
+  1. By default when created or given the support role, users will see all orgs their home org trusts. (See Multi-Org II Trust Relationships)
+  1. New UI screen will be created to allow selecting a subset of the trusted orgs. (or none, i.e. user cannot even search their home org)
+ 1. Support role can be given out by org admins.
+ 1. Organization trusts must be configured by satellite admins.
+ 1. Existing functionality available to user with no rules should be audited to ensure we're comfortable with it being available to a user with the Support role.
+  1. Currently a user without roles can really just register systems, view channels, errata, and scheduled actions in their home org.
+ 1. Search interface only allow searching for '''systems''' based on various criteria at this time. (see customer requests below)
+  1. Other searches to be implemented in the future.
+  1. Search results will return a list which links into existing SDC pages (as much as possible)
+ 1. API groundwork should be done to allow for easy (and hopefully community based) expansion.
+  1. Create new support user handler.
+
+== Customer Search Requests ==
+
+While unable to get most of these in for a first release, we'll focus mainly on systems and bring as many of these other objects in as possible in coming releases.
+
+ 1. Allow searching for:
+  1. Systems
+   1. Search By:
+    1. hostname
+    1. system id
+    1. custom info field
+    1. running kernel (or package installed)
+   1. View:
+    1. running kernel
+    1. last check in
+    1. last booted
+    1. available updates and errata
+    1. applied errata
+    1. subscribed channels
+    1. full hardware profile
+    1. scheduled action status
+    1. action history
+    1. system owner / contact info
+  1. Errata
+   1. Search By:
+    1. CVE ID
+    1. RHBA/RHSA/RHEA ID
+    1. Package Name
+    1. Issue Date
+    1. Severity (Bug | Enhancement | Security (Critical, Moderate, Important)
+   1. View:
+    1. Normal errata details
+    1. Systems still affected
+    1. Systems with errata applied. (including date)
+  1. Software Channels
+   1. Search By:
+    1. Browsing was requested, not sure if this affects our plans.
+   1. View:
+    1. List of packages.
+    1. List of subscribed systems.
+    1. Errata issued (with issued/cloned date)
+  1. Organizations
+   1. Search By:
+    1. Org ID
+    1. Org name
+    1. Browsing requested.
+   1. View
+    1. System/software entitlement usage.
+  1. Entitlements
+   1. Search By:
+    1. Browsing requested.
+   1. View
+    1. Allocation to organizations.
+  1. User
+   1. Search By:
+    1. email address
+    1. real name
+    1. user id
+    1. login name
+   1. View:
+    1. user details
+  1. Activation Keys (look up for user?)
+
+
+= Specification =
