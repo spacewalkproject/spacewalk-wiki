@@ -63,6 +63,7 @@ Start on projects for 0.3 release:
 These are not in any specific order
 
  * DeltaRpmSupport
+ * [wiki:Features/SupportUser Support User]
  * Allow for Spacewalk to use different databases, such as either PostgreSQL or MySQL
  * Look to re-factor the /var/satellite/ directory structure for large users of spacewalk who have more than 32,000 unique package names
  * Provide an SELinux policy for running Spacewalk within an Enforcing mode SELinux server.
