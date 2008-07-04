@@ -65,11 +65,10 @@ Additional tasks will be added as we establish which direction we intend to take
 
 = Stored Procedures Analysis =
 
-From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/tools, /eng/schema/views, /eng/schema/tables, /eng/schema/synonyms and mapping that with {{{select distinct name, type  from all_source where owner='SPACEWALK'}}} the following list was obtained. Basically this is the MUST implement list in PostgresList
+From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/tools, /eng/schema/views, /eng/schema/tables, /eng/schema/synonyms and mapping that with {{{select distinct name, type  from all_source where owner='SPACEWALK'}}} the following list was obtained. Basically this is the list of procedures that will likely need to be ported for !PostgreSQL or replaced. (NOTE: keep an eye out still for procedures called by dead code, these can still be carefully deleted)
 
 
-||Stored Prcs to implement||
-||CHECK_EMAIL_UNIQUENESS||
+||Stored Procedures to Port/Replace||
 ||CREATE_NEW_USER||
 ||CREATE_PXT_SESSION||
 ||ID_JOIN||
