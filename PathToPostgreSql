@@ -11,57 +11,47 @@ Keep in mind that the situation is complicated by the fact that the stored proce
 
 The pros and cons of each approach will be discussed in the coming proposals. Please see [https://www.redhat.com/archives/spacewalk-devel/2008-June/thread.html#00015 this thread] for more information.
 
-= Proposals = 
-
-Key issue of contention here is stored procedures, and thus these proposals will focus on this issue. See the list of Tasks for aspects of this migration that will likely be required regardless which approach we choose.
-
-== Proposal 1: Straightforward Port to PostgreSQL ==
-
-Port the Oracle PL/SQL directly to PostgreSQL's PL/pgSQL.
-
- - Is there any plans to migrate off Oracle completely? - RahulSundaram
-   - Not that I'm aware of. Oracle will likely remain an option for Satellite installations for some time. That said we may be able to reach a point where the Oracle specific code is abstracted enough that we could package it separately and remove it from Spacewalk and just maintain it internally at Red Hat. - DevanGoodwin
-   - Correct.  We will continue to provide external DB support (at the very least) for Oracle for our enterprise Satellite customers.  - ToddSanders  
-
-Pros:
-
-  * Likely to get us up and running on PostgreSQL faster. Oracle's PL/SQL and PostgreSQL's PL/pgSQL are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
-  * Potential performance gains.
-  * Able to continue using database specific features.
-
-Cons:
-
-  * Now locked into two database's instead of just one. If we wish to support MySQL or SQLite in the future, we are in the same predicament we are today.
-  * Maintenance cost involved with having all our stored procedure code duplicated for two database engines.
-  * Significant debate on whether business logic should be done in the database in the first place.
-
-== Proposal 2: Push Stored Procedures to Application Code ==
-
-Remove the stored procedures one by one, replacing them with application code making heavy use of an ORM toolkit. Will have to expose these via some kind of RPC mechanism (cturner has floated the idea of [http://developers.facebook.com/thrift/ Thrift], a project released by Facebook, but other suggestions are welcome) so the respective languages can access them. If caught in a performance problem, can still use a stored procedure behind the scenes to do the lifting. 
-
-Pros:
-
-  * Much better prepared to support other database's in the future.
-  * Increased ability to properly unit test.
-  * Still able to fall back to a stored procedure call behind the scenes if necessary for a performance problem. (will need to plan for this accordingly)
-
-Cons:
-
-  * Any ORM library will have quirks, bugs, and require extra attention on occasion. For those used to working directly with SQL and all the features of whatever database engine they're working with, this can be even more frustrating.
-  * Performance loss in some situations. How many, how severe, and what options are available to work around these remains to be seen.
-  * Likely to take longer than a straightforward port.
-
-= Tasks =
-
-Please hold off on jumping into any of these just yet, or check in on spacewalk-devel before doing so. We hope to have our bearings for how the new spacewalk community would like to proceed shortly!
+ * ''Is there any plans to migrate off Oracle completely?'' - RahulSundaram
+  * ''Not that I'm aware of. Oracle will likely remain an option for Satellite installations for some time. That said we may be able to reach a point where the Oracle specific code is abstracted enough that we could package it separately and remove it from Spacewalk and just maintain it internally at Red Hat.'' - DevanGoodwin
+  * ''Correct.  We will continue to provide external DB support (at the very least) for Oracle for our enterprise Satellite customers.''  - ToddSanders  
 
 
-|| '''Task''' || '''Notes''' || '''Volunteer''' || '''Progress''' ||
-|| Generate PostgreSQL compatible schema. || [http://freshmeat.net/projects/ora2pg/ ora2pg] looks like a tool we can use to do this for us. Initial tests generated SQL that required only a few minor touchups. || ParthaAji || ||
-|| Modify spacewalk-setup to support configuration of multiple database backends. || Should be done in a manner not reliant on if/else blocks, but rather plan ahead to actually support multiple backends should the need arise. || || ||
-|| Prepare our homegrown "Datasource" code to support *optionally* multiple versions of a query || || || ||
+= Proposal = 
 
-Additional tasks will be added as we establish which direction we intend to take.
+ 1. Modify spacewalk-setup to support installation to multiple database backends. Idea here is to get something installable as quickly as possible, even if it's massively broken.
+ 1. Generate the PostgreSQL compatible schema with [http://freshmeat.net/projects/ora2pg/ ora2pg]. Will require a few minor touchups, then commit and push.
+ 1. Use wiki to organize porting of stored procedures. Generate table,  and allow volunteers to claim procedures they will port for postgresql. See below section for details on the options available when porting stored procedures.
+ 1. Sort through query problems. When queries are found that do not work on PostgreSQL, preference would be to modify them to be compliant with both. If this is not possible we need to accommodate the possibility of multiple query versions in some situations. 
+
+== Porting Stored Procedures ==
+
+Following debate at the outset of this project the majority would seem to prefer having little to no dependence on database specific stored procedures for several reasons: 
+
+ * No maintenance of multiple versions of the same stored procedure code for each database backend.
+ * Easier to support other databases down the road.
+ * Easier to properly unit test.
+ * Much easier to write/read/maintain application code than stored procedure code.
+ * Significant debate on whether business logic should be performed in the database in the first place.
+
+This does however come with some disadvantages:
+
+ * Porting to application code takes longer than porting straight from PL/QL to PL/pgSQL, which are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
+  * Potential performance loss in some situations.
+  * Unable to use database specific features.
+
+To reach a middle ground we considered implementing an RPC service which we could place either stored procedures, or equivalent application code behind (depending on the preference of the volunteer doing the porting). This would expose the functionality to the multiple languages that compose Spacewalk today, and provide a nice layer of abstraction for continuing removal of stored procedures down the road, as well as a place we could fall back to a procedure should we run into a significant performance problem. Initial technology proposed by cturner for this RPC layer was Facebook's [http://developers.facebook.com/thrift/ Thrift]. (see section on why Thrift is being considered)
+
+However porting to application code comes with some substantial complications. ParthaAji first raised the issue of transactions. If the RPC layer were implemented in Java, this problem would probably not be an issue for other Java code as we can re-use the same underlying database connection and maintain the transaction across multiple calls. In the Perl stack however, transactions span multiple Perl layers, business logic, SQL queries, all with intermingled stored procedure calls. We cannot maintain the transaction if calling into an RPC service in another language. The only solution then is to port the entire operation out and into a more coarse grained RPC call, and suddenly this becomes a substantially more complicated and time consuming effort.
+
+It should be noted that this is not the case for all the procedures, just some of the more complicated ones. Simpler procedures should be easily ported to application code behind the RPC layer.
+
+So when porting stored procedures, the following options will be available, in order of preference:
+
+ 1. Port the procedure from PL/SQL to Java code backed by Hibernate, and expose it via a Thrift RPC call and update all code that calls the procedure directly.
+ 1. Port the procedure from PL/SQL to PL/pgSQL, but expose via a Thrift RPC call and update all code that calls the procedure directly.
+ 1. Port the procedure from PL/SQL to PL/pgSQL, and leave code in the various languages calling it directly.
+  * Least desired but may be required for more complex and long winded Perl operations.
+
 
 = Stored Procedures Analysis =
 
