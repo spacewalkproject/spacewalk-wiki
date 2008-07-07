@@ -37,8 +37,8 @@ Following debate at the outset of this project the majority would seem to prefer
 This does however come with some disadvantages:
 
  * Porting to application code takes longer than porting straight from PL/QL to PL/pgSQL, which are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
-  * Potential performance loss in some situations.
-  * Unable to use database specific features.
+ * Potential performance loss in some situations.
+ * Unable to use database specific features.
 
 To reach a middle ground we considered implementing an RPC service which we could place either stored procedures, or equivalent application code behind (depending on the preference of the volunteer doing the porting). This would expose the functionality to the multiple languages that compose Spacewalk today, and provide a nice layer of abstraction for continuing removal of stored procedures down the road, as well as a place we could fall back to a procedure should we run into a significant performance problem. Initial technology proposed by cturner for this RPC layer was Facebook's [http://developers.facebook.com/thrift/ Thrift]. (see section on why Thrift is being considered)
 
@@ -55,7 +55,7 @@ So when porting stored procedures, the following options will be available, in o
 
 == Why Thrift? ==
 
-[http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been submitted for approval as an Apache project and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
+[http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been accepted into the Apache incubator and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
 
 It appears to be a relatively lightweight solution to the problem (as opposed to some of the other alternatives), and extremely fast. Doing some tinkering to see just how fast I wrote a simple do nothing service in Java, and then used a Python client that opened and closed 10,000 consecutive connections. (and ran this twice simultaneously to see how the server dealt) The result from both processes was approximately the same: '''2.80s user 2.39s system 54% cpu 9.499 total'''
 
