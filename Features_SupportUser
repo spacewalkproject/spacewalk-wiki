@@ -31,9 +31,10 @@ However, after several customer discussions we found that this requirement more 
  1. Support users can search across multiple organizations.
   1. By default when created or given the support role, users will see all orgs their home org trusts. (See Multi-Org II Trust Relationships)
   1. New UI screen will be created to allow selecting a subset of the trusted orgs. (or none, i.e. user cannot even search their home org)
+  1. Removal of an org trust must result in removal of the org from any configured subsets. (cascading)
  1. Support role can be given out by org admins.
  1. Organization trusts must be configured by satellite admins.
- 1. Existing functionality available to user with no rules should be audited to ensure we're comfortable with it being available to a user with the Support role.
+ 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
   1. Currently a user without roles can really just register systems, view channels, errata, and scheduled actions in their home org.
  1. Search interface only allow searching for '''systems''' based on various criteria at this time. (see customer requests below)
   1. Other searches to be implemented in the future.
