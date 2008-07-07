@@ -19,7 +19,8 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
 = Proposal = 
 
  1. Modify spacewalk-setup to support installation to multiple database backends. Idea here is to get something installable as quickly as possible, even if it's massively broken.
- 1. Generate the PostgreSQL compatible schema with [http://freshmeat.net/projects/ora2pg/ ora2pg]. Will require a few minor touchups, then commit and push.
+ 1. Generate the PostgreSQL compatible schema with [http://freshmeat.net/projects/ora2pg/ ora2pg]. Will require a few minor touchups, then commit to git and get packaged up for those involved in this effort.
+ 1. Setup RPC interface in Java for migrating stored procedures to application code and exposing to the various languages we use.
  1. Use wiki to organize porting of stored procedures. Generate table,  and allow volunteers to claim procedures they will port for postgresql. See below section for details on the options available when porting stored procedures.
  1. Sort through query problems. When queries are found that do not work on PostgreSQL, preference would be to modify them to be compliant with both. If this is not possible we need to accommodate the possibility of multiple query versions in some situations. 
 
@@ -52,6 +53,22 @@ So when porting stored procedures, the following options will be available, in o
  1. Port the procedure from PL/SQL to PL/pgSQL, and leave code in the various languages calling it directly.
   * Least desired but may be required for more complex and long winded Perl operations.
 
+== Why Thrift? ==
+
+[http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been submitted for approval as an Apache project and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
+
+It appears to be a relatively lightweight solution to the problem (as opposed to some of the other alternatives), and extremely fast. Doing some tinkering to see just how fast I wrote a simple do nothing service in Java, and then used a Python client that opened and closed 10,000 consecutive connections. (and ran this twice simultaneously to see how the server dealt) The result from both processes was approximately the same: '''2.80s user 2.39s system 54% cpu 9.499 total'''
+
+It is however poorly documented so initial exploration is a bit hit or miss. In the "postgresql" branch on the git repository you can see some prototype code for this. Some points of interest:
+
+|| spacewalk/thrift/spacewalk.thrift || Service definition used to auto-generate the service code in the various languages. ||
+|| java/code/src/com/redhat/rhn/frontend/thrift/SpacewalkService.java || Auto-generated Java service code. ||
+|| java/code/src/com/redhat/rhn/frontend/thrift/SpacewalkServiceHandler.java || Our actual implementation of the service. || 
+|| spacewalk/java/code/src/com/redhat/rhn/webapp/RhnServletListener.java || Code which starts the RPC service when the webapp comes up. ||
+
+Thrift seems like a relatively good fit for what we wish to accomplish. It appears to have a strong open source future and considering it's use at Facebook, should provide ample performance for what we wish to do.
+
+Concerns or alternative suggestions?
 
 = Stored Procedures Analysis =
 
@@ -434,11 +451,9 @@ Most expensive stored procedures to port from Oracle to PostgreSQL
 ||xxrh_oai_wrapper.sync_contact||
 ||xxrh_oai_wrapper.sync_customer||
 
+= Potential Problems =
 
-
-= Logistics =
-
-  1. Development may need to take place in a branch to prevent de-stabilizing master too much. Will cross this bridge when we come to it.
+Thought of something that might pose a problem? Please add it here:
 
 
 = Links =
