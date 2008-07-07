@@ -2,6 +2,11 @@
 
 If you have configured this project in eclipse, you can simply use eclipse to run unit tests.  Alternatively you can use ant.
 
+In order to run the unit tests, the following must first be done:
+
+  1. Ensure that the junit packages are installed. (e.g yum install junit ant-junit)
+  1. Ensure that /etc/rhn/rhn.conf and /etc/rhn/default/*.conf are accessible by the user running the unit tests.
+
 To run a set of Unit tests within ant, simply run:
 {{{
 # ant -Dtestcase=ClassName test
