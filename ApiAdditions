@@ -1,9 +1,9 @@
 
 == API Development ==
 
-To see what APIs are available from the Satellite/Spacewalk server you have installed, simply browse  Help (or About RHN/Spacewalk)->Api   link on the left.
+To view the APIs currently available for Spacewalk, simply navigate to https://myspacewalkserver.com/rhn/apidoc/index.jsp, where ''myspacewalk.com'' is your installed Spacewalk server.
 
-If you have an idea for a new api, add it to the Planned API table below.  If you aren't sure exactly what an api call should be named, simply add it to the scratchpad below and a developer will add it to the Planned Apis table.
+If you have an idea for a new API, add it to the Planned API table below.  If you aren't sure exactly what an API call should be named, simply add it to the scratchpad below and a developer will add it to the Planned APIs table.
 
 === Scratchpad ===
 
