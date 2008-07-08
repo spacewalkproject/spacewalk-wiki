@@ -37,6 +37,7 @@ Replacing USERNAME with your FAS username.
 == Install from Yum Repo ==
 You can also download the binaries from the [HowToInstall#Installation yum repo].
 
+
 === RPM Package Signing ===
 
 We use a number of GNU Privacy Guard (GPG) keys to sign our software packages. The necessary public keys are included in relevant products and are used automatically to verify software updates. You can also check the packages manually using the keys on this page.
@@ -55,4 +56,8 @@ Fingerprint: B6F4 CBE4 8B8F 45E1 85F8  34B2 9542 3D4E 430A 1C35
 }}}
 
 The public key is here:  [https://fedorahosted.org/spacewalk/attachment/wiki/DownloadIt/RPM-GPG-KEY-spacewalk?format=raw RPM-GPG-KEY-spacewalk]
+
+== Source RPMs ==
+Are available [http://www.redhat.com/spacewalk/source/  here]
+
 
