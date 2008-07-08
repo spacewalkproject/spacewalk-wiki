@@ -76,6 +76,8 @@ These stored procedures can not be extracted out into our RPC layer because they
  1.  Ported to PG/SQL
  1.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
 
+We need to identify in the list below the set of stored procedures that are called directly within the schema itself.
+
 == Why Thrift? ==
 
 [http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been accepted into the Apache incubator and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
