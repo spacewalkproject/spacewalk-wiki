@@ -1,5 +1,10 @@
+== API Introduction == 
+
+Spacewalk provides an Application Programming Interface (API) to enable creation of tools and programs to automate common tasks typically performed through the Spacewalk Web User Interface.  The tools/programs may be implemented in any programming language that provides an XMLRPC client interface; however, Python and Perl are two most commonly used.
 
 == API Development ==
+
+We are in the process of defining and developing additional APIs.
 
 To view the APIs currently available for Spacewalk, simply navigate to https://myspacewalkserver.com/rhn/apidoc/index.jsp, where ''myspacewalk.com'' is your installed Spacewalk server.
 
