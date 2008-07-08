@@ -1,6 +1,7 @@
 = Introduction =
 
 In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin gathering feedback and attempting to organize the effort to break Spacewalk's dependency on Oracle and add support for PostgreSQL.
+  * ''Runon'' - JesusRodriguez
 
 While quite universally agreed that Oracle dependence must go and PostgreSQL is first on the list, there has been some debate on the spacewalk-devel mailing list on how to proceed with this. The main issue of contention is stored procedures and what should be done with them:
 
