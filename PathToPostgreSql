@@ -57,7 +57,8 @@ So when porting stored procedures, the following options will be available, in o
 
 There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
 
-{{{create or replace view rhnUserChannel as
+{{{
+create or replace view rhnUserChannel as
 select	cfp.user_id		user_id,
 	cfp.org_id		org_id,
 	cfm.channel_id		channel_id,
@@ -67,7 +68,8 @@ from	rhnChannelFamilyMembers	cfm,
 where	cfp.channel_family_id = cfm.channel_family_id
 	and rhn_channel.user_role_check(cfm.channel_id,
 		cfp.user_id, 'manage') = 1
-  ...}}}
+  ...
+}}}
 
 These stored procedures can not be extracted out into our RPC layer because they need to be called from within the schema itself.  The above need to be either:
 
