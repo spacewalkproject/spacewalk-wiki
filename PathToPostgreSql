@@ -95,7 +95,8 @@ Thrift seems like a relatively good fit for what we wish to accomplish. It appea
 
 Concerns or alternative suggestions?
  * ''Will this api layer only contain the stored procs/code equivalent?'' - JesusRodriguez
- * ''It would be great if we could move the entire Java Manager layer into this box, leaving the actions to call api.'' - JesusRodriguez
+    * ''It would be great if we could move the entire Java Manager layer into this box, leaving the actions to call api.'' - JesusRodriguez
+ * ''I'd like to see a diagram of how the flow would work within the current application context. i.e. user hits web page that needs stored proc access or client sends XML-RPC request to python backend.'' - JesusRodriguez
 
 = Stored Procedures Analysis =
 
