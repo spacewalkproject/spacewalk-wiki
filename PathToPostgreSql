@@ -53,6 +53,27 @@ So when porting stored procedures, the following options will be available, in o
  1. Port the procedure from PL/SQL to PL/pgSQL, and leave code in the various languages calling it directly.
   * Least desired but may be required for more complex and long winded Perl operations.
 
+== Required Stored Procedures ==
+
+There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
+
+{{{create or replace view rhnUserChannel as
+select	cfp.user_id		user_id,
+	cfp.org_id		org_id,
+	cfm.channel_id		channel_id,
+	'manage'		role
+from	rhnChannelFamilyMembers	cfm,
+	rhnUserChannelFamilyPerms cfp
+where	cfp.channel_family_id = cfm.channel_family_id
+	and rhn_channel.user_role_check(cfm.channel_id,
+		cfp.user_id, 'manage') = 1
+  ...}}}
+
+These stored procedures can not be extracted out into our RPC layer because they need to be called from within the schema itself.  The above need to be either:
+
+1.  Ported to PG/SQL
+2.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
+
 == Why Thrift? ==
 
 [http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been accepted into the Apache incubator and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
