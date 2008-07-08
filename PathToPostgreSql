@@ -1,7 +1,6 @@
 = Introduction =
 
-In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin gathering feedback and attempting to organize the effort to break Spacewalk's dependency on Oracle and add support for PostgreSQL.
-  * ''Runon'' - JesusRodriguez
+In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin organizing the effort to add support for !PostgreSQL.
 
 While quite universally agreed that Oracle dependence must go and PostgreSQL is first on the list, there has been some debate on the spacewalk-devel mailing list on how to proceed with this. The main issue of contention is stored procedures and what should be done with them:
 
@@ -97,6 +96,7 @@ Thrift seems like a relatively good fit for what we wish to accomplish. It appea
 Concerns or alternative suggestions?
  * ''Will this api layer only contain the stored procs/code equivalent?'' - JesusRodriguez
     * ''It would be great if we could move the entire Java Manager layer into this box, leaving the actions to call api.'' - JesusRodriguez
+    * ''I don't see why it couldn't, not something I'd thought of but the RPC layer could easily come into use if we're adding any new code to Perl/Python, or even some kind of more service oriented code.'' - DevanGoodwin
  * ''I'd like to see a diagram of how the flow would work within the current application context. i.e. user hits web page that needs stored proc access or client sends XML-RPC request to python backend.'' - JesusRodriguez
 
 = Stored Procedures Analysis =
