@@ -74,7 +74,7 @@ where	cfp.channel_family_id = cfm.channel_family_id
 These stored procedures can not be extracted out into our RPC layer because they need to be called from within the schema itself.  The above need to be either:
 
 1.  Ported to PG/SQL
-2.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
+1.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
 
 == Why Thrift? ==
 
