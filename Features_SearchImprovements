@@ -1,0 +1,196 @@
+= Overview =
+System and Errata search will be integrated with the lucene based external search service, plus new search functionality for satellite documents and users will be added.
+
+ '''are we searching users too? [[User:Jesusr|jesusr]] 09:44, 6 May 2008 (EDT)'''
+
+= Requirements =
+
+1. Errata
+ 1. Errata search will have feature parity with RHN Satellite 5.1 errata search
+ 1. Errata search will also have the ability to search using these additional types: CVE, Date Range,  Topic, Description, Solution
+2. System
+ 1. System search will have feature parity with RHN Satellite 5.1 system search
+ 1. System search will also have the ability to search using the additional criteria of: Number of CPUs
+ 1. In addition, System search will allow matches to be restricted to a particular system group. 
+3. Docs
+ 1. Search will be able to index the help documentation to allow the user to search the following docs:
+  1. Reference Guide
+  1. Satellite Guide
+  1. Proxy Guide
+  1. Client Configuration
+  1. Channel Management
+  1. Proxy Release Notes
+  1. Satellite Release Notes
+  1. API
+4. Users
+ 1. Search will be able to index the Users and allow searching on:
+  1. email address
+  1. real name
+  1. uid
+  1. username
+
+
+= Specifications =
+== Systems ==
+ * Filter Matches On
+  * Invert match results
+  * Search within system set manager
+  * Search within a specific system group
+  * Filter based on org
+
+==== Searchable Data ====
+1. Activity
+ * Days Since Last Check-in
+ * Days Since First Registered
+2. Details
+ * Name/Description <- Default criteria for system search
+ * ID
+ * Custom Info
+ * Snapshot Tag
+3. Packages
+ * Installed Packages
+ * Needed Packages
+4. DMI Info
+ * System
+ * BIOS
+ * Asset Tag
+5. Location
+ * Address
+ * Building
+ * Room
+ * Rack
+6. Hardware Devices
+ * Description
+ * Driver
+ * Device ID
+ * Vendor ID
+7. Network Info
+ * Hostname
+ * IP Address
+ * netmask
+ * broadcast address
+ * mac address
+ * network module (driver)
+8. Hardware
+ * CPU Model
+ * CPU MHz Less Than
+ * CPU Mhz Greater Than
+ * Number of CPUs '''****''' - was not part of Satellite 5.1
+ * RAM Less Than
+ * RAM Greater Than
+
+==== Approach ====
+* Changes to Search Service
+ * Flesh out model at: com.redhat.satellite.search.db.models.Server
+ * Update db query file to populate a Server model: src/config/com/redhat/satellite/search/db/server.xml 
+ * Flesh out !DocumentBuilder at: com.redhat.satellite.search.index.builder.!ServerDocumentBuilder
+ * Flesh out Indexing task at: com.redhat.satellite.search.scheduler.tasks.!IndexSystemsTask[[BR]]Update com.redhat.satellite.search.scheduler.!ScheduleManager to run !IndexSystemsTask
+* Changes to WebUI
+ * Need to update systems/Search  
+  * Update jsp to account for searching for matches within particular "system groups"[[BR]]/WEB-INF/pages/systems/systemsearch.jsp
+  * Update to use external Search Service instead of !SystemManager.systemSearch(): [[BR]]com.redhat.rhn.frontend.action.systems.!SystemSearchSetupAction
+ * Update <searchbar> to use new !SearchService
+
+== Errata ==
+==== Filter Matches On ====
+ * Severity and/or Type
+==== Searchable Data ====
+ * Advisory (RHBA/RHSA/RHEA ID)  <Implemented>
+ * Synopsis <Implemented>
+ * Package Name <Implemented>
+ * CVE 
+ * Issue Date Range
+ * Topic/Description/Solution
+
+==== Approach ====
+ * Changes to Search Service
+  * Add CVE info to com.redhat.satellite.search.db.models.Errata
+  * Add support for CVE to com.redhat.satellite.search.scheduler.tasks.!IndexErrataTask
+  * Add fetching CVE data from DB to errata.xml under src/config/com/redhat/satellite/search/db
+ * Changes to WebUI
+  * Edit com.redhat.rhn.frontend.action.errata.!ErrataSearchAction, add support for searching: CVE, topic, description, solution
+  * Update /WEB-INF/pages/errata/erratasearch.jsp for: CVE, topic, description, solution
+  * To handle "Date Range" search, should this use !ErrataManager and not bother with calling to Search Service?[[BR]]Looks like Errata Manager will need to be modified to support a look up of Errata by date range.
+  * Add restriction of matches based on optional criteria of Severity/Type to !ErrataSearchAction & erratasearch.jsp
+  * Add Errata search link to !YourRHN Tasks section, "Search for:  Packages | Systems | Errata"
+  * Ensure <searchbar> is using new Errata Search Service
+
+
+== User ==
+==== Filter Matches On ====
+ * Organization
+ * Role
+ * Position
+ * Date Range:
+  * User Created
+  * Last sign in
+
+==== Searchable Data ====
+ * Email address
+ * Real name (first and last)
+ * User ID
+ * Username (login)
+ 
+==== Approach ====
+ * Search Service
+  * Create a User model
+  * Create a User indexing task
+ * WebUI
+  * Add a new page,  "Advanced Search" under Users
+  * Add "user" search functionality to <searchbar>
+  * Add "user" search link to !YourRHN Tasks section
+
+== Docs ==
+==== Filter Matches On ====
+ * Guides/Manuals
+ * API
+==== Searchable Data ====
+ * Reference Guide
+ * Satellite Guide
+ * Proxy Guide
+ * Client Configuration
+ * Channel Management
+ * Proxy Release Notes
+ * Satellite Release Notes
+ * API
+
+==== Problem Summary ====
+ * Need a means of indexing these documents.  
+  Current search service implementation indexes data from a database.  These documents exist as files on the satellite which are served through tomcat.
+
+==== Resolution ====
+Add spider capability for search service to crawl a specific URL and index all content.
+
+Propose to use "nutch" as our spider.  This is the "spider" associated with Lucene.  
+Nutch will crawl our help docs, generate a list of content/links, and index the data.  
+Our Search Service will handle the rest of the work by reusing the lucene indexes generated by nutch. 
+
+Will need to crawl:
+ * Guides/Manuals[[BR]]Start URL: !https://<spacewalk-address>/help/index.pxt[[BR]]Restrict URL to descendants of:  !https://<spacewalk-address>/help
+ * API Docs[[BR]]Start URL: !https://<spacewalk-address>/rhn/apidoc/index.jsp[[BR]]Restrict URL to descendants of: !https://<spacewalk-address>/rhn/apidoc
+
+==== Approach ====
+ * Changes to Search Service
+  * Leverage nutch to create "indexes" representing the "Guide/Manual/API Docs".
+   * Create a "generate/fetch/update" task using Nutch library.  Task will reside in com.redhat.satellite.search.scheduler.tasks 
+   * Documents will be updated infrequently
+    * Avoid wasting cycles, re-fetching/indexing docs when we know they haven't changed.
+    * We want to support an ability to upgrade the docs on the server, then have that trigger a mechanism to kick off a refresh of the associated search index.
+   * If fetch/index of docs takes a considerable amount of time, support the ability to alert a user that the docs index is being formed and not yet ready.  
+
+
+ * Localization Issues
+  * Nutch will use an Analyzer per language to Tokenize for indexing.  !SearchService needs to pay attention to this and use the same Analyzer when forming queries for search.
+   * Background:  Each language has certain ignore words (a, an, the, etc), Analyzers written per language understand this and will drop those words from being indexed.  We need to ensure the same rules are followed for searching, as were followed for indexing. 
+ * Fields planned for docs search,
+  * Search on Content and/or Title with the result returning a <url> to access the page
+   * content/title does not need to be STORED, but should be TOKENIZED[[BR]]As a lucene Field this means: Field.Store.NO, Field.Index.TOKENIZED
+   * url  needs to be STORED, but should not be TOKENIZED[[BR]]As a lucene Field this means: Field.Store.YES, Field.Index.UN_TOKENIZED 
+ * Query/Search will be handled by existing Search Service implementation
+  * Add a means for selecting the Analyzer and !QueryParser based on index name.
+   * New methods in !IndexManager: getQueryParser(), getAnalyzer(), 
+   * Process returned search results based on index name
+  * Changes to WebUI
+   * Integrate with upper right hand corner search bar
+   * Add Doc Search to YourRHN, "Search for:  Packages | Systems | Errata | Users | Docs"
+   * Add Doc Search to Help page 
