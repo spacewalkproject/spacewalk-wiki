@@ -65,5 +65,22 @@ Due to rapidly expanding complexity we've made intentional efforts to limit the 
 
 == API Support ==
 
+ The following API calls will be supported: 
+
+{{{
+#!rst
+API Support
+=============
+
+=====  =====  
+Call   Description
+=====  =====  
+org.create Create a new organization and administrator.
+=====  =====  
+
+
+}}}
+
+
 == Future Features? ==
 
