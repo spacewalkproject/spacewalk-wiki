@@ -10,7 +10,11 @@ The Spacewalk administrator will be the user role authorized to create and remov
 
 For an overview of which organizations have trusts set up and how many they have set up, the current 'Organizations' overview page (/rhn/admin/multiorg/Organizations.do) will be expanded to include a column to indicate trusts. See mockup below.
 
-[[Image(org-list-trust.png)]]
+[[Image(orgs-list.png)]]
+
+=== Viewing Trusts for One Organization ===
+
+To view and modify the trusts associated with a particular organization, you click on the entry in the 'trusts' column for that org and it will take you to a new 'Trusts' tab in that organization's details screen:
 
 
 
