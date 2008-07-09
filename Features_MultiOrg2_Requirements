@@ -34,7 +34,16 @@ The following logic should occur to support this new trusted relationship concep
 
 
 == Software Channels ==
-
+The channel sharing capability shall apply only to custom/cloned channels. The reason being, official Red Hat channels are already shared across organizations. The Satellite Administrator enables content sharing by allowing a trusted relationship to occur between specific orgs. The Organization Administrator selects which channels to share within the trusted relationship. The following requirements will be supported: 
+ * The channel sharing capability shall utilize the trust relationships configured by the satellite administrator and only those organizations in a trusted relationship will be able to share channels amongst each other. Refer to  Trust Relationship for more details. 
+ * The channel sharing capability shall apply only to custom/cloned channels. The reason being, official Red Hat channels are already shared across organizations. 
+ * An organization or channel administrator shall have the ability to share channels with organizations within it's trust. 
+ * If the channel being shared has a parent channel and that parent is a custom channel, the parent must also be shared
+ * If the channel being shared has a parent channel and that parent is a base channel, the shared channel will only be in the channel list of organizations that have a compatible base channel. 
+ * For any channel that has been shared, all errata and packages associated with that channel shall also be shared enabling them to appear in the trusted organizations UI pages as well as available via search and API.
+ * Custom channels will still be created private and only become public if explicitly shared. 
+ * Shared custom/cloned channels are read only in all organizations except the one they were originally created in.
+ * 
 == System Migration ==
 
 == API Support ==
