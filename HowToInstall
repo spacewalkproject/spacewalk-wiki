@@ -109,6 +109,12 @@ Installation complete.
 Visit https://fjs-0-11.example.com to create the satellite administrator account.
 }}}
 
+If you are on x86_64 and tomcat5 fails to restart you need todo a:
+
+{{{
+ cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib && rm ojdbc14.jar && ln -s /usr/lib/oracle/10.2.0/client64/lib/ojdbc14.jar ojdbc14.jar;
+}}}
+
 After spacewalk-configure is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
@@ -150,8 +156,3 @@ The dependency for the "concurrent" package is not getting processed properly. U
 yum install concurrent
 }}}
 
-rhn-oracle-jdbc is not properly symlinking ojdbc14.jar.  You need todo:
-
-{{{
- cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib && rm ojdbc14.jar && ln -s /usr/lib/oracle/10.2.0/client64/lib/ojdbc14.jar ojdbc14.jar;
-}}}
