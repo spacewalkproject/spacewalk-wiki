@@ -63,14 +63,12 @@ Due to rapidly expanding complexity we've made intentional efforts to limit the 
  * Migration should occur immediately (no moderation queue).
  * An event should appear in the system history indicating that this system was migrated from another org
 
-== API Support ==
-
- The following API calls will be supported: 
-
 {{{
 #!rst
 API Support
 ===========
+
+The following API calls will be supported: 
 
 ======================================= ==========================================================================
 Call                                    Description
