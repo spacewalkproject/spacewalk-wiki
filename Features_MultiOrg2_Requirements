@@ -2,33 +2,35 @@
 
 == Trusted Relationships ==
 
-The concept of Trusted Relationships will be added to the Multiorg feature to allow System Administrators the ability to share resources (system migration, channels) between different Organizations. The satellite admin defines a trust relationship that applies for both system migration and content sharing while the Org admin define the granularity of which orgs share the specific channel. The following logic should occur to support this new trusted relationship concept:
+The concept of Trusted Relationships will be added to the Multiorg feature to allow System Administrators the ability to share resources (system migration, channels) between different Organizations. The satellite admin defines a trust relationship that applies for both system migration and content sharing while the Org admin define the granularity of which orgs share the specific channel. 
 
-* The satellite shall support defining trust relationships between organizations. Once a "trust" has been established, organizations within that trust shall be able to perform operations such as sharing channels and migrating systems with other organizations within that trust
-* The satellite administrator shall have the ability to configure the trust relationship between Organizations
-* The trust relationship is bi-directional
-* Trust relationships may be provisioned by either the UI or API
-* Trust relationships can be set up with a single organization, multiple organizations or ALL organizations
-* Trust relationships will default to none initially
-* The All trusted relationship includes all future orgs, not the current "snapshot" of organizations at the time of creation
-* Trust relationships are lower precedence than channel sharing properties, so if a channel is protected in an ALL org trusting org, the other orgs still can't see it.
-* No sharing of kickstarts, systems, etc. will be supported in the first phase
-* Each individual relationship is unique and mutually exclusive from other org's trust relationship. For example, if Org2 trust Org 3 and Org1 trust Org2, then Org1 will not trust Org3 unless a trust relationship is defined between Org1/Org3 or Org1 trusts all Orgs
-* Example Scenario:
-** Pre-requisite: Org 1, Org 2, Org 3, .... OrgN exist. 
-** Satellite administrator provisions the following trusts relationships: 
-*** Trust 1: Org 1 + Org 2 + Org 3 
-*** Trust 2: Org 4 + Org 5 
-*** Trust 3: Org 3 + Org 4 
-*** Trust 4: Org 7 has a trust all 
-** In this scenario, 
-*** Org 1 may share channels or migrate systems to Org 2 & Org 3 
-*** Org 2 may share channels or migrate systems to Org 1 & Org 3 
-*** Org 3 may share shannels or migrate systems to Org 1 & Org 2 
-*** Org 4 may share channels or migrate systems to Org 5
-*** Org 5 may share channels or migrate systems to Org 4 
-*** Org 6 - Org 10 do not have permission to share channels or migrate systems with any organization
-*** Org 1 - Org 5 do not have permission to share channels or migrate systems with Org 6 - Org 10 
+The following logic should occur to support this new trusted relationship concept:
+
+ * The satellite shall support defining trust relationships between organizations. Once a "trust" has been established, organizations within that trust shall be able to perform operations such as sharing channels and migrating systems with other organizations within that trust
+ * The satellite administrator shall have the ability to configure the trust relationship between Organizations
+ * The trust relationship is bi-directional
+ * Trust relationships may be provisioned by either the UI or API
+ * Trust relationships can be set up with a single organization, multiple organizations or ALL organizations
+ * Trust relationships will default to none initially
+ * The All trusted relationship includes all future orgs, not the current "snapshot" of organizations at the time of creation
+ * Trust relationships are lower precedence than channel sharing properties, so if a channel is protected in an ALL org trusting org, the other orgs still can't see it.
+ * No sharing of kickstarts, systems, etc. will be supported in the first phase
+ * Each individual relationship is unique and mutually exclusive from other org's trust relationship. For example, if Org2 trust Org 3 and Org1 trust Org2, then Org1 will not trust Org3 unless a trust relationship is defined between Org1/Org3 or Org1 trusts all Orgs
+ * Example Scenario:
+ ** Pre-requisite: Org 1, Org 2, Org 3, .... OrgN exist. 
+ ** Satellite administrator provisions the following trusts relationships: 
+ *** Trust 1: Org 1 + Org 2 + Org 3 
+ *** Trust 2: Org 4 + Org 5 
+ *** Trust 3: Org 3 + Org 4 
+ *** Trust 4: Org 7 has a trust all 
+ ** In this scenario, 
+ *** Org 1 may share channels or migrate systems to Org 2 & Org 3 
+ *** Org 2 may share channels or migrate systems to Org 1 & Org 3 
+ *** Org 3 may share shannels or migrate systems to Org 1 & Org 2 
+ *** Org 4 may share channels or migrate systems to Org 5
+ *** Org 5 may share channels or migrate systems to Org 4 
+ *** Org 6 - Org 10 do not have permission to share channels or migrate systems with any organization
+ *** Org 1 - Org 5 do not have permission to share channels or migrate systems with Org 6 - Org 10 
 
 
 == Software Channels ==
