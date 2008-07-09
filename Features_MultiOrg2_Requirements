@@ -43,7 +43,11 @@ The channel sharing capability shall apply only to custom/cloned channels. The r
  * For any channel that has been shared, all errata and packages associated with that channel shall also be shared enabling them to appear in the trusted organizations UI pages as well as available via search and API.
  * Custom channels will still be created private and only become public if explicitly shared. 
  * Shared custom/cloned channels are read only in all organizations except the one they were originally created in.
- * 
+ * The UI shall clearly display what organization shared a channel and the administrator that shared it. 
+ * Organization and channel administrators shall have the ability to revert a public channel to private status at any time. 
+ * If a channel is unshared, that channel will continue to be listed within organizations that have at least one system subscribed to it. In this case, the channel will no longer be available for updates to systems in that organization and it will appear disabled (e.g. grayed out) in the UI. The intent is to inform the organization and channel administrator that an action needs to be taken. Once there are no more systems subscribed to that channel within the organization, the channel will no longer appear in the organization's channel list.
+ * Channel status will also be affected to organizations that are removed from the sharing organization's trusted relationship. 
+ * If the channel being unshared is a parent to another channel that is being shared (i.e. child channel), the child channel must also be private
 == System Migration ==
 
 == API Support ==
