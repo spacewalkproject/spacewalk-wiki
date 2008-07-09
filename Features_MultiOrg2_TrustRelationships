@@ -28,3 +28,9 @@ The sources for these mockups are in the SVG files in the Attachments list below
 
 [[Image(org-trust-tab-confirm.png)]]
 
+== Organization Administrator View ==
+
+The org admin at least needs some visibility into which organizations are trusted by his org and which trust his org.
+
+[[Image(org-mytrusts.png)]]
+
