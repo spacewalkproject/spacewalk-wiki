@@ -4,14 +4,18 @@
 == Tasks ==
 
 || Task || Estimated Hours || Assignee || Status || Notes ||
-|| Delta RPM Generation || 20 ||   || ||  ||
-|| Modifying repomd generation to be performed as asynchronously, not on demand || 20 ||  || || ||
+|| Delta RPM Generation || 25 ||   || ||  ||
+|| Modifying repomd generation to be performed as asynchronously, not on demand || 25 ||  || || ||
 || Presto MD generation (including config option to disable) || 25 ||   || ||  ||
 || Client side testing/development  || 5 || || || ||
 
 
+== Requirements ==
+1.  If a system has the presto yum plugin installed and is configured to get updates from the spacewalk server, any package update request should be fulfilled with a delta rpm.
+2.  There should be a way to disable delta rpms from being offered from the server.  
 
-== To be done.... == 
+
+== Specification == 
 
  * Backend
   * Generate drpms on the fly (This shouldn't be too hard, as libraries are exist to do this).  Will need to store them in a cache (/var/cache/rhn/drpms/N(0..2)/NAME/md5sum-md5sum.drpm) and have a way to clear them (possibly a script, or add it to the daemon below).  Currently there is no python api, so we will simply have to use the command line utilities from within python.
