@@ -1,0 +1,16 @@
+(For more details on the Multiple Organization Support Phase 2 feature, see [wiki:/Features/MultiOrg2])
+
+= User Interface Mockups =
+
+== Spacewalk Administrator View ==
+
+The Spacewalk administrator will be the user role authorized to create and remove trusts between organizations. Trusts are bi-directional, so if the spacewalk admin sets up a trust between org a and org b, org a can see org b's shared content AND org b can see org a's shared content.
+
+=== Viewing Trusts Across Organizations ===
+
+For an overview of which organizations have trusts set up and how many they have set up, the current 'Organizations' overview page (/rhn/admin/multiorg/Organizations.do) will be expanded to include a column to indicate trusts. See mockup below.
+
+[[Image(org-list-trust.png)]]
+
+
+
