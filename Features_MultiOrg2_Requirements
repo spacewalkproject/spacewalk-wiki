@@ -70,13 +70,14 @@ Due to rapidly expanding complexity we've made intentional efforts to limit the 
 {{{
 #!rst
 API Support
-=============
 
-=====  =====  
-Call   Description
-=====  =====  
-org.create Create a new organization and administrator.
-=====  =====  
+===========
+
+==========      =============================================
+Call             Description
+==========      =============================================  
+org.create       Create a new organization and administrator.
+==========      =============================================  
 
 
 }}}
