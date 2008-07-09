@@ -17,20 +17,20 @@ The following logic should occur to support this new trusted relationship concep
  * No sharing of kickstarts, systems, etc. will be supported in the first phase
  * Each individual relationship is unique and mutually exclusive from other org's trust relationship. For example, if Org2 trust Org 3 and Org1 trust Org2, then Org1 will not trust Org3 unless a trust relationship is defined between Org1/Org3 or Org1 trusts all Orgs
  * Example Scenario:
- ** Pre-requisite: Org 1, Org 2, Org 3, .... OrgN exist. 
- ** Satellite administrator provisions the following trusts relationships: 
- *** Trust 1: Org 1 + Org 2 + Org 3 
- *** Trust 2: Org 4 + Org 5 
- *** Trust 3: Org 3 + Org 4 
- *** Trust 4: Org 7 has a trust all 
- ** In this scenario, 
- *** Org 1 may share channels or migrate systems to Org 2 & Org 3 
- *** Org 2 may share channels or migrate systems to Org 1 & Org 3 
- *** Org 3 may share shannels or migrate systems to Org 1 & Org 2 
- *** Org 4 may share channels or migrate systems to Org 5
- *** Org 5 may share channels or migrate systems to Org 4 
- *** Org 6 - Org 10 do not have permission to share channels or migrate systems with any organization
- *** Org 1 - Org 5 do not have permission to share channels or migrate systems with Org 6 - Org 10 
+  * Pre-requisite: Org 1, Org 2, Org 3, .... OrgN exist. 
+  * Satellite administrator provisions the following trusts relationships: 
+   * Trust 1: Org 1 + Org 2 + Org 3 
+   * Trust 2: Org 4 + Org 5 
+   * Trust 3: Org 3 + Org 4 
+   * Trust 4: Org 7 has a trust all 
+  * In this scenario, 
+   * Org 1 may share channels or migrate systems to Org 2 & Org 3 
+   * Org 2 may share channels or migrate systems to Org 1 & Org 3 
+   * Org 3 may share shannels or migrate systems to Org 1 & Org 2 
+   * Org 4 may share channels or migrate systems to Org 5
+   * Org 5 may share channels or migrate systems to Org 4 
+   * Org 6 - Org 10 do not have permission to share channels or migrate systems with any organization
+   * Org 1 - Org 5 do not have permission to share channels or migrate systems with Org 6 - Org 10 
 
 
 == Software Channels ==
