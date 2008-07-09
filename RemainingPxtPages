@@ -140,11 +140,11 @@ These have already been migrated.
  * /network/users/details/contact_methods/create.pxt
  * /network/users/details/contact_methods/delete_confirm.pxt
 
-==== Errata management ====
+==== Errata management ====  These don't seem to be even used anymore except by each other????? 
  * /network/errata/manage/edit.pxt
  * /network/errata/manage/select_channels.pxt
  * /network/errata/manage/confirm_mail.pxt
- * /network/errata/manage/errata_channel_intersection.pxt
+ * /network/errata/manage/errata_channel_intersection.pxt  Except this one which is referred to by a jsp
  * /network/errata/manage/confirm_publish.pxt
  * /network/errata/manage/update_channel_packages.pxt
  * /network/errata/manage/delete_confirm.pxt
