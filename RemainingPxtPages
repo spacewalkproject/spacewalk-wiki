@@ -32,11 +32,11 @@ Templates can not be removed until we finish all of the pxt migration.
 
 ==== Misc ====
  * /cve_not_found.pxt
- * /legal/terms.pxt
+ * /legal/terms.pxt  - '''REMOVE'''
  * /newlogin/index.pxt - '''DONE'''
- * /file_not_found.pxt
- * /konq.pxt
- * /errata_hidden/rh_template.pxt
+ * /file_not_found.pxt  '''REMOVE'''
+ * /konq.pxt  '''REMOVE''' ?
+ * /errata_hidden/rh_template.pxt '''REMOVE'''
 
 ==== Satellite tools ====
  * /internal/satellite/config/restart_in_progress.pxt - '''DONE'''
@@ -90,8 +90,8 @@ These have already been migrated.
  * /network/software/channels/manage/delete_confirm.pxt
  * /network/software/channels/manage/managers.pxt
  * /network/software/channels/manage/packages/add_confirm.pxt
- * /network/software/channels/manage/packages/remove_confirm.pxt
- * /network/software/channels/manage/packages/package_list.pxt
+ * /network/software/channels/manage/packages/remove_confirm.pxt  '''DONE'''
+ * /network/software/channels/manage/packages/package_list.pxt    '''DONE'''
  * /network/software/channels/manage/packages/index.pxt
  * /network/software/channels/manage/packages/add.pxt
  * /network/software/channels/manage/packages/compare/sync_confirm.pxt
