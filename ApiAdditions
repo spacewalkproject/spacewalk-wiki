@@ -1,6 +1,6 @@
 == API Introduction == 
 
-Spacewalk provides an Application Programming Interface (API) to enable creation of tools and programs to automate common tasks typically performed through the Spacewalk Web User Interface.  The tools/programs may be implemented in any programming language that provides an XMLRPC client interface; however, Python and Perl are two most commonly used languages.
+Spacewalk provides an Application Programming Interface (API) to enable creation of tools and programs to automate common tasks typically performed through the Spacewalk Web User Interface.  The tools/programs may be implemented in any programming language that provides an XMLRPC client interface; however, Python and Perl are the two most commonly used languages.
 
 == API Development ==
 
@@ -38,7 +38,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
-||  Kickstart  (non customer request) ||  ||  ||  ||  ||
 ||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  ||  ||
 ||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  ||
@@ -78,7 +77,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  schedule.cancelAction(aid) || 3 ||  ||  ||  ||
 ||  schedule.listActionsForSystem(sid) || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: supportuser''' ||  ||  ||  ||  ||
+||  '''Namespace: supportuser''' ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
 ||  ----   ||  ||  ||  ||  ||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||
 ||  system.listErrata(severity/type) || 4 ||  ||  ||  ||
