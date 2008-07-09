@@ -32,7 +32,7 @@ System and Errata search will be integrated with the lucene based external searc
 
 = Specifications =
 == Systems ==
- * Filter Matches On
+==== Filter Matches On ====
   * Invert match results
   * Search within system set manager
   * Search within a specific system group
