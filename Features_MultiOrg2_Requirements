@@ -48,7 +48,20 @@ The channel sharing capability shall apply only to custom/cloned channels. The r
  * If a channel is unshared, that channel will continue to be listed within organizations that have at least one system subscribed to it. In this case, the channel will no longer be available for updates to systems in that organization and it will appear disabled (e.g. grayed out) in the UI. The intent is to inform the organization and channel administrator that an action needs to be taken. Once there are no more systems subscribed to that channel within the organization, the channel will no longer appear in the organization's channel list.
  * Channel status will also be affected to organizations that are removed from the sharing organization's trusted relationship. 
  * If the channel being unshared is a parent to another channel that is being shared (i.e. child channel), the child channel must also be private
+
 == System Migration ==
+Due to rapidly expanding complexity we've made intentional efforts to limit the scope of system migration while planning for future expansions. Requirements currently for system migration:
+ * Migration can be performed by users with the org admin role
+ * Systems may be migrated to any other org that is trusted
+ * Migration will be performed via an API call
+ * Migration will remove remove all associations with objects in the old org, migrate the system and it's history over to the new org
+ * Migration will return entitlements to old org
+ * Migration will remove channels, system groups, virtual guest associations (guests remain in old org as unaffiliated virtual systems), monitoring probes, configuration channels from old org
+ * Migration API call will accept an activation key in the destination org and must be provided manually by the destination org admin
+ * Entitlements on activation keys will be applied if there are available entitlements in the destination org. 
+ * If a entitlement cannot be applied, the system will be unentitled
+ * Migration should occur immediately (no moderation queue).
+ * An event should appear in the system history indicating that this system was migrated from another org
 
 == API Support ==
 
