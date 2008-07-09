@@ -59,9 +59,22 @@ If you would like to add sets to the mix, it takes a bit more code.  Have a set 
             set.clear();
             RhnSetManager.store(set);
         }
-        
 }}}
+
 This gets the set and if we are just arriving to the page we clear it.  Generally you want to clear a list if we are just arriving to it.  If the user navigates away from a page and then back, generally we expect that they are starting the current operation from scratch.  One exception to this is the System List page, it is never cleared.
+
+
+If you are using the alpha bar (see below) then you will need to use this: 
+{{{
+        String alphaBarPressed = request.getParameter(
+                AlphaBarHelper.makeAlphaKey(TagHelper.generateUniqueName(listName)));
+        if (!requestContext.isSubmitted() && alphaBarPressed == null) {
+            set.clear();
+            RhnSetManager.store(set);
+        }
+}}}
+This is because the alpha bar does not submit the page.  So if you have something selected you don't want to clear the set when they click on the alpha bar.
+        
 
 
 {{{
