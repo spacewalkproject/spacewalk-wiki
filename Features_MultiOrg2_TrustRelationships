@@ -22,5 +22,9 @@ To view and modify the trusts associated with a particular organization, you cli
 
 Sometimes you may choose to remove a trust without realizing that the organization you're removing the trust from has systems that depend on that trust relationship being there for content. This screen will list out any organizations whose trust the current organization relies on for system content:
 
+== Mockup Sources ==
+
+The sources for these mockups are in the SVG files in the Attachments list below. Note they were created in Inkscape.
+
 [[Image(org-trust-tab-confirm.png)]]
 
