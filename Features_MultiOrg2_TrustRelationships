@@ -16,5 +16,11 @@ For an overview of which organizations have trusts set up and how many they have
 
 To view and modify the trusts associated with a particular organization, you click on the entry in the 'trusts' column for that org and it will take you to a new 'Trusts' tab in that organization's details screen:
 
+[[Image(org-trust-tab.png)]]
 
+=== Confirming Trust Removal ===
+
+Sometimes you may choose to remove a trust without realizing that the organization you're removing the trust from has systems that depend on that trust relationship being there for content. This screen will list out any organizations whose trust the current organization relies on for system content:
+
+[[Image(org-trust-tab-confirm.png)]]
 
