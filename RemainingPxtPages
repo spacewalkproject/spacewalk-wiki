@@ -49,7 +49,7 @@ Templates can not be removed until we finish all of the pxt migration.
  * /help/faq.pxt - '''REMOVE'''
  * /help/rhlmigrationfaq/index.pxt - '''REMOVE'''
  * /help/contact.pxt - '''REMOVE'''
- * /help/index.pxt  '''REMOVED'''
+ * /help/index.pxt  '''DONE'''
  * /help/browser-info.pxt - seems useless
  * /help/ssl_cert.pxt - needs updating
  * /help/release-notes/unix/index.pxt - '''REMOVE'''
