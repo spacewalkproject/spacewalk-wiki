@@ -46,6 +46,12 @@ This will pull down and install the set of RPMs required to get spacewalk to run
 rpm -e specspo && yum install spacewalk
 }}}
 
+If you are on x86_64 you will need to run the following command:
+
+{{{
+ldconfig /usr/lib/oracle/10.2.0.4/client64/lib/
+}}}
+
 Once the spacewalk rpm is installed you need to configure the application.  To do this, run:
 
 {{{
