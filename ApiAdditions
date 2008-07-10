@@ -40,7 +40,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.diff || 5 ||  ||  ||  ||
 ||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  ||  ||
-||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  ||
+||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  |Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)|
 ||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 3 ||  ||  ||  ||
 ||  kickstart.enableConfigMgmt(kslabel, boolean) || 2 ||  ||  ||  ||
 ||  kickstart.enableRemoteCmds(kslabel, boolean) || 2 ||  ||  ||  ||
