@@ -27,14 +27,14 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||
 ||  channel.software.getPackage(id) || 8 || jsherrill ||  ||  ||
-||  channel.software.getPackageLink(id) || 5 || jsherrill ||  ||  ||
+||  channel.software.getPackageLink(id) || 5 || jsherrill ||  || What's a package link? ||
 ||  channel.software.mergeErrata(fromChannel, toChannel) || 3 ||  ||  ||  ||
 ||  channel.software.mergeErrata(fromChannel, toChannel, date) || 6 ||  ||  ||  ||
-||  channel.software.uploadPackage(package) || 12 ||  ||  ||  ||
+||  channel.software.uploadPackage(package) || 12 ||  ||  || How does this differ from rhnpush? ||
 ||  ----   ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||
 ||  errata.findByCVE(num) || 3 ||  ||  ||  ||
-||  errata.findByRHNumber(num) || 3 ||  ||  ||  ||
+||  errata.findByRHNumber(num) || 3 ||  ||  || What's the RHNumber? ||
 ||  ----   ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
