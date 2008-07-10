@@ -63,37 +63,8 @@ Due to rapidly expanding complexity we've made intentional efforts to limit the 
  * Migration should occur immediately (no moderation queue).
  * An event should appear in the system history indicating that this system was migrated from another org
 
-{{{
-#!rst
-API Support
-===========
-
-The following API calls will be supported: 
-
-======================================= ==========================================================================
-Call                                    Description
-======================================= ==========================================================================
-org.create                              Create a new organization and administrator.
-org.delete                              Delete the given organization. Org ID 1 must not be able to be deleted. 
-org.listOrgs                            List all organizations
-org.listUsers                           List all users in an organization
-org.getDetails                          Returns details pertaining to an org including ID information. 
-org.updateName                          Updates the org name. 
-org.listChannelFamilyEntitlements       Lists each orgs allocation for the given channel family.  
-org.listChannelFamilyEntitlementsForOrg List an orgs allocation for each available channel family on the satellite 
-org.setChannelFamilyEntitlements        Set orgs allocation to the given value
-org.listSystemEntitlements(sessionKey   Lists each orgs allocation for the given system entitlement name
-org.listSystemEntitlementsForOrg        Lists an orgs allocation for each system entitlement.
-org.setSystemEntitlements               Same as setChannelFamilyEntitlements, just for system entitlements
-system.migrateToOrg                     Migrate the given system to a new organization
-org.listChannelFamilyMembers            Returns list of members
-org.getChannelFamilyofChannel           Provides the channel family of the given channel 
-org.getChannelsFromChannelFamily        provides the channels of the given channel family 
-======================================= ==========================================================================
-
-
-}}}
-
+== API Support ==
+Api supported calls are referenced at [[wiki:/ApiAdditions]]
 
 == Future Features? ==
 
