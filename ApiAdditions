@@ -50,8 +50,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.appendToSoftwareList() || 2 ||  ||  ||  ||
 ||  kickstart.setActivationKeys() || 4 ||  ||  || param? ||
 ||  kickstart.getActivationKeys() || 2 ||  ||  ||  ||
-||  kickstart.listAssociatedFilePreservationLists(kslabel) || 3 ||  ||  ||  ||
-||  kickstart.setAssociatedFilePreservationLists(fllabels) || 4 ||  ||  ||  ||
+||  kickstart.listAssociatedFilePreservationLists(kslabel) || 3 ||  ||  || can we shorten this? ||
+||  kickstart.setAssociatedFilePreservationLists(fllabels) || 4 ||  ||  || can we shorten this? ||
 ||  kickstart.listAssociatedGPGAndSSLKeys() || 3 ||  ||  ||  ||
 ||  kickstart.setAssociatedGPGAndSSLKeys(descriptions) || 4 ||  ||  ||  ||
 ||  kickstart.listAllFilePreservationLists() || 2 ||  ||  ||  ||
