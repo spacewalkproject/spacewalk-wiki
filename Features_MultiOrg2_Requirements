@@ -2,13 +2,16 @@
 
 == Trusted Relationships ==
 
-The concept of Trusted Relationships will be added to the Multiorg feature to allow System Administrators the ability to share resources (system migration, channels) between different Organizations. The satellite admin defines a trust relationship that applies for both system migration and content sharing while the Org admin define the granularity of which orgs share the specific channel. 
+The concept of 'Trusted Relationships' will be added to the Multiorg feature to allow System Administrators the ability to share resources (system migration, channels) between different Organizations. The satellite admin defines a trust relationship that applies for either orboth system migration and content sharing while the Org admin define the granularity of which orgs share the specific channel. 
 
 The following logic should occur to support this new trusted relationship concept:
 
  * The satellite shall support defining trust relationships between organizations. Once a "trust" has been established, organizations within that trust shall be able to perform operations such as sharing channels and migrating systems with other organizations within that trust
  * The satellite administrator shall have the ability to configure the trust relationship between Organizations
- * The trust relationship is bi-directional
+   * The Satellite administrator will have the option to configure the trust relationship as relating to channel sharing only, system migration only, or both channel sharing and system migration.
+ * The trust relationship is bi-directional.
+   * If system migration is enabled in the trust relationship, org a can migrate systems to org b, and org b can migrate systems to org a.
+   * If content sharing is enabled in the trust relationship, org a can access shared channels from org b, and org b can access shared channels from org a.
  * Trust relationships may be provisioned by either the UI or API
  * Trust relationships can be set up with a single organization, multiple organizations or ALL organizations
  * Trust relationships will default to none initially
