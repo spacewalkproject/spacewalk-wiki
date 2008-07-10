@@ -32,5 +32,7 @@ The sources for these mockups are in the SVG files in the Attachments list below
 
 The org admin at least needs some visibility into which organizations are trusted by his org and which trust his org.
 
+This screen may not allow the switching off systems/channels, and if it does, for channels it'll need a confirm screen similar to the one above ("Confirming Trust Removal"). Still working these details out in the requirements.
+
 [[Image(org-mytrusts.png)]]
 
