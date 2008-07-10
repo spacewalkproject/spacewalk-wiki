@@ -22,10 +22,6 @@ To view and modify the trusts associated with a particular organization, you cli
 
 Sometimes you may choose to remove a trust without realizing that the organization you're removing the trust from has systems that depend on that trust relationship being there for content. This screen will list out any organizations whose trust the current organization relies on for system content:
 
-== Mockup Sources ==
-
-The sources for these mockups are in the SVG files in the Attachments list below. Note they were created in Inkscape.
-
 [[Image(org-trust-tab-confirm.png)]]
 
 == Organization Administrator View ==
@@ -35,4 +31,8 @@ The org admin at least needs some visibility into which organizations are truste
 This screen may not allow the switching off systems/channels, and if it does, for channels it'll need a confirm screen similar to the one above ("Confirming Trust Removal"). Still working these details out in the requirements.
 
 [[Image(org-mytrusts.png)]]
+
+== Mockup Sources ==
+
+The sources for these mockups are in the SVG files in the Attachments list below. Note they were created in Inkscape.
 
