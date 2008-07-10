@@ -39,16 +39,16 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||
 ||  kickstart.diff || 5 ||  ||  ||  ||
 ||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
-||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  ||  ||
-||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  ||  |Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)|
+||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
+||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  || Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)  ||
 ||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 3 ||  ||  ||  ||
-||  kickstart.enableConfigMgmt(kslabel, boolean) || 2 ||  ||  ||  ||
-||  kickstart.enableRemoteCmds(kslabel, boolean) || 2 ||  ||  ||  ||
+||  kickstart.enableConfigMgmt(kslabel, boolean) || 2 ||  ||  || do not pass in a boolean, simply add a disableConfigMgmt(kslabel) ||
+||  kickstart.enableRemoteCmds(kslabel, boolean) || 2 ||  ||  || do not pass in a boolean, simply add a disableRemoteCmds(kslabel) ||
 ||  kickstart.setLocale( locale, boolean useUtc) || 3 ||  ||  ||  ||
 ||  kickstart.getSoftwareList() || 2 || jortel ||  ||  ||
-||  kickstart.setSoftwareList() || 3 || jortel ||  ||  ||
+||  kickstart.setSoftwareList() || 3 || jortel ||  || What's the parameter? ||
 ||  kickstart.appendToSoftwareList() || 2 ||  ||  ||  ||
-||  kickstart.setActivationKeys() || 4 ||  ||  ||  ||
+||  kickstart.setActivationKeys() || 4 ||  ||  || param? ||
 ||  kickstart.getActivationKeys() || 2 ||  ||  ||  ||
 ||  kickstart.listAssociatedFilePreservationLists(kslabel) || 3 ||  ||  ||  ||
 ||  kickstart.setAssociatedFilePreservationLists(fllabels) || 4 ||  ||  ||  ||
@@ -57,10 +57,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.listAllFilePreservationLists() || 2 ||  ||  ||  ||
 ||  kickstart.createFilePreservationList(label, list) || 3 ||  ||  ||  ||
 ||  kickstart.deleteFilePreservationList(lable) || 3 ||  ||  ||  ||
-||  kickstart.listAllGpgAndSSLKeys() || 2 ||  ||  ||  ||
+||  kickstart.listAllGpgAndSSLKeys() || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
 ||  kickstart.listAllIpRanges() || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
 ||  kickstart.listIpRanges(int ksLabel) || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
-||  kickstart.addIpRange(int ksLabel) || 4 || jsherrill  || done ||  ||  
+||  kickstart.addIpRange(int ksLabel) || 4 || jsherrill  || done || ksLabel is an int? ||  
 ||  kickstart.findKickstartForIp() || 3 || jsherrill     || done ||  ||  
 ||  kickstart.removeIpRange(ksLabel, ip) || 3 || jsherrill ||done || ||  
 ||  ----   ||  ||  ||  ||  ||
