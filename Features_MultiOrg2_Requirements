@@ -23,15 +23,15 @@ The following logic should occur to support this new trusted relationship concep
   * Pre-requisite: Org 1, Org 2, Org 3, .... OrgN exist. 
   * Satellite administrator provisions the following trusts relationships: 
    * Trust 1: Org 1 + Org 2 + Org 3 
-   * Trust 2: Org 4 + Org 5 
+   * Trust 2: Org 4 + Org 5, system migrate only, no channel sharing.
    * Trust 3: Org 3 + Org 4 
    * Trust 4: Org 7 has a trust all 
   * In this scenario, 
    * Org 1 may share channels or migrate systems to Org 2 & Org 3 
    * Org 2 may share channels or migrate systems to Org 1 & Org 3 
-   * Org 3 may share shannels or migrate systems to Org 1 & Org 2 
-   * Org 4 may share channels or migrate systems to Org 5
-   * Org 5 may share channels or migrate systems to Org 4 
+   * Org 3 may share shannels or migrate systems to Org 1 & Org 2 & Org 4.
+   * Org 4 may migrate systems to Org 5. Org 4 may not share channels with org 5. Org 4 may share channels and migrate systems with org 3.
+   * Org 5 may migrate systems to Org 4. Org 5 may not share channels with org 4.
    * Org 6 - Org 10 do not have permission to share channels or migrate systems with any organization
    * Org 1 - Org 5 do not have permission to share channels or migrate systems with Org 6 - Org 10 
 
