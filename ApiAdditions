@@ -84,8 +84,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.provision(sid, kslabel, date) || 4 || skarmark ||  ||  ||
 ||  system.provision(sid, kslabel) || 1 || skarmark ||  ||  ||
 ||  system.diffToChannel(sid, chan_label) || 3 ||  ||  ||  ||
-||  system.searchDevices(search-string) || 4 || jmatthews ||  ||  ||
-||  system.searchNetwork(search-string) || 4 || jmatthews ||  ||  ||
+||  system.searchDevices(search-string) || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
+||  system.searchNetwork(search-string) || 4 || jmatthews ||  || ditto ||
 ||  system.createCustomValueKey() || 3 || || || ||
 
 
