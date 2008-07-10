@@ -39,6 +39,7 @@ However, after several customer discussions we found that this requirement more 
  1. Create support user API handler offering the same functionality as is available in the UI.
   * Lay the groundwork for community involvement in expanding future support user searches.
   * Must ensure support users cannot utilize existing API calls.
+    * when defining apis, let's try to reuse existing calls. i.e. I don't see the need for supportuser.assignSupportUserRole(user) as we already have a user.addRole method.
 
 == Customer Search Requests ==
 
