@@ -32,8 +32,27 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
  || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
  || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
  || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
+ || Indexes || 776 ||  select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK'; || 
  ||  Procedures and Functions || 38 || See below ||
  || Packages Functions || 90 || See below ||
+
+== Porting Tables ==
+* Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSql, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
+
+=== Manual Process === (Under construction)
+|| Components|| Sample File  in Oracle || Same sample file  in Postgres || Issues to deal with || References ||
+|| Table, Constraint, Triggers, Indexes || || || || ||
+|| Views || || || || ||
+|| Stored Procedure || || || || ||
+|| Packages || || || || ||
+
+
+=== Script Automated Conversion === (Under construction)
+ * In this approach we decide to keep our schema basically in Oracle and use some sort of tool like Ora2Pg to basically convert oracle to postgres. 
+
+=== DDL written in a Programming Language === (Under construction)
+* In this approach we decide to write the complete schema in either SQLAlchemy or Hibernate or Rails Action records to automate the schema generation in other DB formats..
+
 
 == Porting Stored Procedures ==
 
