@@ -28,7 +28,9 @@ Sometimes you may choose to remove a trust without realizing that the organizati
 
 The org admin at least needs some visibility into which organizations are trusted by his org and which trust his org.
 
-This screen may not allow the switching off systems/channels, and if it does, for channels it'll need a confirm screen similar to the one above ("Confirming Trust Removal"). Still working these details out in the requirements.
+This screen '''will not''' allow the switching off systems/channels.
+
+Instead, '''the Spacewalk administrator will be able to switch off system migration and/or channel sharing bits between channels''''. This simplifies the feature because we don't have to worry about the stars and moon aligning properly for either to work between two org admins (bidirectional constraint). '''Need a new mockup for spacewalk admin only screen, and for channels we need a confirm screen similar to the one above ("Confirming Trust Removal")'''. Still working these details out in the requirements.
 
 [[Image(org-mytrusts.png)]]
 
