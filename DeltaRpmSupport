@@ -1,12 +1,12 @@
 = Delta RPMS =
 
 
-== Tasks ==
+== Tasks (in order)==
 
 || Task || Estimated Hours || Assignee || Status || Notes ||
-|| Delta RPM Generation || 25 ||   || ||  ||
 || Modifying repomd generation to be performed as asynchronously, not on demand || 25 ||  || || ||
 || Presto MD generation (including config option to disable) || 25 ||   || ||  ||
+|| Delta RPM Generation || 25 ||   || ||  ||
 || Client side testing/development  || 5 || || || ||
 
 
@@ -18,16 +18,21 @@
 
 == Specification == 
 
- * Backend
-  * Generate drpms on the fly (This shouldn't be too hard, as libraries are exist to do this).  Will need to store them in a cache (/var/cache/rhn/drpms/N(0..2)/NAME/md5sum-md5sum.drpm) and have a way to clear them (possibly a script, or add it to the daemon below).  Currently there is no python api, so we will simply have to use the command line utilities from within python.
-  * Generate the presto repo data.  This might be a little tricky, as we will need to be able to generate a delta rpm from every version of a package (that is in a channel) to every other version of the same package.  But generally we'll generate a presto repo file that has every combination available to the client, and then generate whichever one we need on demand.  After talking with prad, it was determined that we don't want to generate the presto information on demand, as it would take too long (which is the case with our repomd now).  Instead we want to have a process periodically checking to see if the repomd needs to be updated and update it then.  We will simply generate the presto metadata at that time as well.
+ * Backend 
+  * Currently the yum repo data is taking too long to generate.  It isn't created until a client requests it and amount of time to create it is greater than the yum timeout.  We need to move this to a background daemon such that clients can still get updates (albeit old) until the process is complete, at which point they will have access to the new repomd file.
+  * Generate the presto repo data.  This will be done in the same process as the aforementioned yum repo metadata.  Note, this step requires the drpm md5sum.
+  * Generate the drpms.  We cannot generate these on the fly because the presto repodata requires the md5sum of the drpm.  This will need to be done in the background daemon process as well before the presto repomd is generated.  These will be saved in /var/cache/rhn/drpms/N(0..2)/NAME/md5sum-md5sum.drpm.
   * Provide a config option to disable/enable presto rpm support on the server side (disabling the repo data generation should be good enough).
+  * This background daemon called (spacewalk-repomd) will be started with spacewalk and will check every (5 minutes?) to see if repodata needs to be regenerated.  If it does, it will do the following:
+   1. Generate yum repomd
+   2. Generate drpms
+   3. Generate presto repomd
+   4. Clear old orphan drpms
+
+
 
  * Client side
   * This most likely "just works".  Once we have the backend stuff to test, we can actually do some testing.  
-
-
-
 
 
 == FAQ ==
