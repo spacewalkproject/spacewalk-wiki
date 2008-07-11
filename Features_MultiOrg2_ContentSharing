@@ -1,6 +1,8 @@
-= UI Mockups =
+= Multiorg Phase II: Content Sharing =
 
-== The Sharer ==
+== UI Mockups ==
+
+=== The Sharer ===
 
  * under custom channel details: radio button: private (default), public, public only to these trusted orgs: [ ] 
    * turns out there is already per-user in-org subscriber ACLs here, so I reimagined the main custom channel details page and added the org sharing controls to a new access control section. We'll also add a new tab to check on and off org's access to the channel. 
@@ -9,24 +11,24 @@
    * my channels i'm sharing 
    * my private channels
 
-=== Re-arranged custom channel details tab with additional organization sharing controls ===
+==== Re-arranged custom channel details tab with additional organization sharing controls ====
 
 [[Image(channel-details-sharing.png)]]
 
-=== Per-organization access control for custom channel (trusted orgs only) ===
+==== Per-organization access control for custom channel (trusted orgs only) ====
 
 [[Image(channel-details-orgs.png)]]
 
-== The Consumer  ==
+=== The Consumer  ===
 
  * new channel filter 
    * shared channels from other orgs
 
-=== New channel lists filters to make it easier to sort shared channels out from other channels ===
+==== New channel lists filters to make it easier to sort shared channels out from other channels ====
 
 [[Image(channels-list-new-filters.png)]]
 
-=== Reorganized channel details page includes contact/support information ===
+==== Reorganized channel details page includes contact/support information ====
 
 [[Image(channel-details-consumer.png)]]
 
