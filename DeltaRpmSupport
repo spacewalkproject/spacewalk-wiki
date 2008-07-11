@@ -7,6 +7,7 @@
 || Modifying repomd generation to be performed as asynchronously, not on demand || 25 ||  || || ||
 || Presto MD generation (including config option to disable) || 25 ||   || ||  ||
 || Delta RPM Generation || 25 ||   || ||  ||
+|| Clearing old drpms || 5 || || || ||
 || Client side testing/development  || 5 || || || ||
 
 
