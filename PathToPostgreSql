@@ -39,7 +39,7 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
 == Porting Tables ==
 * Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSql, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
 
-=== Manual Process === (Under construction)
+=== Manual Process (Under construction)  === 
 || Components|| Sample File  in Oracle || Same sample file  in Postgres || Issues to deal with || References ||
 || Table, Constraint, Triggers, Indexes || || || || ||
 || Views || || || || ||
@@ -47,10 +47,10 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
 || Packages || || || || ||
 
 
-=== Script Automated Conversion === (Under construction)
+=== Script Automated Conversion  (Under construction)  ===
  * In this approach we decide to keep our schema basically in Oracle and use some sort of tool like Ora2Pg to basically convert oracle to postgres. 
 
-=== DDL written in a Programming Language === (Under construction)
+=== DDL written in a Programming Language  (Under construction)  ===
 * In this approach we decide to write the complete schema in either SQLAlchemy or Hibernate or Rails Action records to automate the schema generation in other DB formats..
 
 
