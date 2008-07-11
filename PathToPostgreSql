@@ -28,10 +28,10 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
  * Quantitatively speaking we need to port the following components to Postgres.
 
  || Component || Number || Queried Method ||
- || Tables  || 405 || {{ select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK';}} ||
- || VIews  || 60 || {{ select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK';}} ||
- || Constraints  || 2675 || {{  select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK';}} ||
- || Triggers  || 209 || {{ select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK';}} ||
+ || Tables  || 405 || select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK'; ||
+ || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
+ || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
+ || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
  ||  Procedures and Functions || 38 || See below ||
  || Packages Functions || 90 || See below ||
 
