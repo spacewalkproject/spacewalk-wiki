@@ -1,0 +1,22 @@
+= UI Mockups =
+
+== The Sharer ==
+
+ *under custom channel details: radio button: private (default), public, public only to these trusted orgs: [ ] 
+  *turns out there is already per-user in-org subscriber ACLs here, so I reimagined the main custom channel details page and added the org sharing controls to a new access control section. We'll also add a new tab to check on and off org's access to the channel. 
+ *list of orgs to check on/off for access to custom channel (new 'organization' tab in the custom channel details screens) 
+ *new channel filters: 
+  *my channels i'm sharing 
+  *my private channels
+
+=== Re-arranged custom channel details tab with additional organization sharing controls ===
+=== Per-organization access control for custom channel (trusted orgs only) ===
+
+== The Consumer  ==
+
+*new channel filter 
+**shared channels from other orgs
+
+=== New channel lists filters to make it easier to sort shared channels out from other channels ===
+
+question: difference between standard IT build channel and apps channels?
