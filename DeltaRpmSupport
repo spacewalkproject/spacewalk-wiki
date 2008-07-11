@@ -13,6 +13,7 @@
 == Requirements ==
  1.  If a system has the presto yum plugin installed and is configured to get updates from the spacewalk server, any package update request should be  fulfilled with a delta rpm.
  2.  There shall be a way to disable delta rpms from being offered from the server.  
+ 3.  The system shall automatically clear old delta rpms.
 
 
 == Specification == 
