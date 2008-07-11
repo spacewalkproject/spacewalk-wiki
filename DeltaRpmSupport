@@ -1,7 +1,7 @@
 = Delta RPMS =
 
 
-== Tasks (in order)==
+== Tasks (in order) ==
 
 || Task || Estimated Hours || Assignee || Status || Notes ||
 || Modifying repomd generation to be performed as asynchronously, not on demand || 25 ||  || || ||
