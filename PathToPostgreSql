@@ -24,6 +24,17 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
  1. Use wiki to organize porting of stored procedures. Generate table,  and allow volunteers to claim procedures they will port for postgresql. See below section for details on the options available when porting stored procedures.
  1. Sort through query problems. When queries are found that do not work on PostgreSQL, preference would be to modify them to be compliant with both. If this is not possible we need to accommodate the possibility of multiple query versions in some situations. 
 
+== Stats ==
+ * Quantitatively speaking we need to port the following components to Postgres.
+
+ || Component || Number || Queried Method ||
+ || Tables  || 405 || { select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK';} ||
+ || VIews  || 60 || { select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK';} ||
+ || Constraints  || 2675 || {  select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK';} ||
+ || Triggers  || 209 || {  select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK';} ||
+ ||  Procedures and Functions || 38 || See below ||
+ || Packages Functions || 90 || See below ||
+
 == Porting Stored Procedures ==
 
 Following debate at the outset of this project the majority would seem to prefer having little to no dependence on database specific stored procedures for several reasons: 
