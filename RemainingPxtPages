@@ -75,10 +75,10 @@ These have already been migrated.
  * /network/software/channels/errata.pxt
  * /network/software/channels/patchsets.pxt
  * /network/software/channels/download_packages.pxt
- * /network/software/channels/subscribe_confirm.pxt
+ * /network/software/channels/subscribe_confirm.pxt  
  * /network/software/channels/display_license.pxt
  * /network/software/channels/managers.pxt
- * /network/software/channels/subscribed_systems.pxt
+ * /network/software/channels/subscribed_systems.pxt  '''DONE'''
  * /network/software/channels/gpg_info.pxt
  * /network/software/channels/manage/edit.pxt
  * /network/software/channels/manage/patchsets/add_confirm.pxt
@@ -93,7 +93,7 @@ These have already been migrated.
  * /network/software/channels/manage/packages/remove_confirm.pxt  '''DONE'''
  * /network/software/channels/manage/packages/package_list.pxt    '''DONE'''
  * /network/software/channels/manage/packages/index.pxt           '''DONE'''
- * /network/software/channels/manage/packages/add.pxt    '''DONE'''
+ * /network/software/channels/manage/packages/add.pxt             '''DONE'''
  * /network/software/channels/manage/packages/compare/sync_confirm.pxt
  * /network/software/channels/manage/packages/compare/index.pxt
  * /network/software/channels/manage/packages/compare/sync_preview.pxt
