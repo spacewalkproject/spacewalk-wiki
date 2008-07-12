@@ -48,7 +48,7 @@ Command line Proxy Server installation process (deprecate the current WebUI base
 
 Further API additions for supporting Multi-Org feature and other calls
 
-Improvements to the Search capabilities (Index Docs, Errata and System date using a Lucene based engine)
+[wiki:Features/SearchImprovements Improvements to the Search capabilities] (Index Docs, Errata and System date using a Lucene based engine)
 
 Test and confirm Solaris client works on AMD64 based Solaris 10
 
