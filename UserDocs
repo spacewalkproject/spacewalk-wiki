@@ -9,6 +9,7 @@ In this section you can find user documenation for Spacewalk.  Are you a develop
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora.
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
    * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
+   * [Perl API Guide] -- Perl Coder's Guide to the Spacewalk/RHN Satellite API
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
