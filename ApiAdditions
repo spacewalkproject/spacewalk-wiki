@@ -20,133 +20,133 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 === Planned APIs ===
 
 
-||  '''Task''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: channel''' ||  ||  ||  ||  ||
-||  channel.listErrata(severity/type) || 4 ||  ||  ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: channel.software''' ||  ||  ||  ||  ||
-||  channel.software.getPackage(id) || 8 || jsherrill ||  ||  ||
-||  channel.software.getPackageLink(id) || 5 || jsherrill ||  || What's a package link? ||
-||  channel.software.mergeErrata(fromChannel, toChannel) || 3 ||  ||  ||  ||
-||  channel.software.mergeErrata(fromChannel, toChannel, date) || 6 ||  ||  ||  ||
-||  channel.software.uploadPackage(package) || 12 ||  ||  || How does this differ from rhnpush? ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: errata''' ||  ||  ||  ||  ||
-||  errata.findByCVE(num) || 3 ||  ||  ||  ||
-||  errata.findByRHNumber(num) || 3 ||  ||  || What's the RHNumber? ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: kickstart''' ||  ||  ||  ||  ||
-||  kickstart.diff || 5 ||  ||  || params? ||
-||  kickstart.getAdvancedOptions(kslabel) || 2 || skarmark ||  ||  ||
-||  kickstart.setAdvancedOptions(kslabel) || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
-||  kickstart.setSELinuxEnabled(kslabel, boolean) || 2 || skarmark ||  || Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)  ||
-||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 3 ||  ||  ||  ||
-||  kickstart.enableConfigMgmt(kslabel, boolean) || 2 ||  ||  || do not pass in a boolean, simply add a disableConfigMgmt(kslabel) ||
-||  kickstart.enableRemoteCmds(kslabel, boolean) || 2 ||  ||  || do not pass in a boolean, simply add a disableRemoteCmds(kslabel) ||
-||  kickstart.setLocale( locale, boolean useUtc) || 3 ||  ||  ||  ||
-||  kickstart.getSoftwareList() || 2 || jortel ||  ||  ||
-||  kickstart.setSoftwareList() || 3 || jortel ||  || What's the parameter? ||
-||  kickstart.appendToSoftwareList() || 2 ||  ||  ||  ||
-||  kickstart.setActivationKeys() || 4 ||  ||  || param? ||
-||  kickstart.getActivationKeys() || 2 ||  ||  ||  ||
-||  kickstart.listAssociatedFilePreservationLists(kslabel) || 3 ||  ||  || can we shorten this? ||
-||  kickstart.setAssociatedFilePreservationLists(fllabels) || 4 ||  ||  || can we shorten this? ||
-||  kickstart.listAssociatedGPGAndSSLKeys() || 3 ||  ||  ||  ||
-||  kickstart.setAssociatedGPGAndSSLKeys(descriptions) || 4 ||  ||  ||  ||
-||  kickstart.listAllFilePreservationLists() || 2 ||  ||  ||  ||
-||  kickstart.createFilePreservationList(label, list) || 3 ||  ||  ||  ||
-||  kickstart.deleteFilePreservationList(lable) || 3 ||  ||  ||  ||
-||  kickstart.listAllGpgAndSSLKeys() || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
-||  kickstart.listAllIpRanges() || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
-||  kickstart.listIpRanges(int ksLabel) || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
-||  kickstart.addIpRange(int ksLabel) || 4 || jsherrill  || done || ksLabel is an int? ||  
-||  kickstart.findKickstartForIp() || 3 || jsherrill     || done ||  ||  
-||  kickstart.removeIpRange(ksLabel, ip) || 3 || jsherrill ||done || ||  
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: monitoring''' ||  ||  ||  ||  ||
-||  monitoring.listProbes(sid) || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || 3 ||  ||  ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: packages''' ||  ||  ||  ||  ||
-||  packages.getDetails(*,downloadURL)   ||  ||  ||  ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: schedule''' ||  ||  ||  ||  ||
-||  schedule.listAllActions(sessionKey) || 3 ||  ||  ||  ||
-||  schedule.cancelAction(aid) || 3 ||  ||  ||  ||
-||  schedule.listActionsForSystem(sid) || 3 ||  ||  ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: supportuser''' ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: system''' ||  ||  ||  ||  ||
-||  system.listErrata(severity/type) || 4 ||  ||  ||  ||
-||  system.provision(sid, kslabel, date) || 4 || skarmark ||  ||  ||
-||  system.provision(sid, kslabel) || 1 || skarmark ||  ||  ||
-||  system.diffToChannel(sid, chan_label) || 3 ||  ||  ||  ||
-||  system.searchDevices(search-string) || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
-||  system.searchNetwork(search-string) || 4 || jmatthews ||  || ditto ||
-||  system.createCustomValueKey() || 3 || || || ||
+||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
+||  channel.listErrata(severity/type) || 0.3 || 4 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
+||  channel.software.getPackage(id) || 0.3 || 8 || jsherrill ||  ||  ||
+||  channel.software.getPackageLink(id) || 0.3 || 5 || jsherrill ||  || What's a package link? ||
+||  channel.software.mergeErrata(fromChannel, toChannel) || 0.3 || 3 ||  ||  ||  ||
+||  channel.software.mergeErrata(fromChannel, toChannel, date) || 0.3 || 6 ||  ||  ||  ||
+||  channel.software.uploadPackage(package) || 0.4 || 12 ||  ||  || How does this differ from rhnpush? ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
+||  errata.findByCVE(num) || 0.3 || 3 ||  ||  ||  ||
+||  errata.findByRHNumber(num) || 0.3 || 3 ||  ||  || What's the RHNumber? ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
+||  kickstart.diff || 0.3 || 5 ||  ||  || params? ||
+||  kickstart.getAdvancedOptions(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.setAdvancedOptions(kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
+||  kickstart.setSELinuxEnabled(kslabel, boolean) || 0.2 || 2 || skarmark ||  || Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)  ||
+||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.enableConfigMgmt(kslabel, boolean) || 0.3 || 2 ||  ||  || do not pass in a boolean, simply add a disableConfigMgmt(kslabel) ||
+||  kickstart.enableRemoteCmds(kslabel, boolean) || 0.3 || 2 ||  ||  || do not pass in a boolean, simply add a disableRemoteCmds(kslabel) ||
+||  kickstart.setLocale( locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.getSoftwareList() || 0.2 || 2 || jortel ||  ||  ||
+||  kickstart.setSoftwareList() || 0.2 || 3 || jortel ||  || What's the parameter? ||
+||  kickstart.appendToSoftwareList() || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.setActivationKeys() || 0.3 || 4 ||  ||  || param? ||
+||  kickstart.getActivationKeys() || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.listAssociatedFilePreservationLists(kslabel) || 0.3 || 3 ||  ||  || can we shorten this? ||
+||  kickstart.setAssociatedFilePreservationLists(fllabels) || 0.3 || 4 ||  ||  || can we shorten this? ||
+||  kickstart.listAssociatedGPGAndSSLKeys() || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.setAssociatedGPGAndSSLKeys(descriptions) || 0.3 || 4 ||  ||  ||  ||
+||  kickstart.listAllFilePreservationLists() || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.createFilePreservationList(label, list) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.deleteFilePreservationList(lable) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.listAllGpgAndSSLKeys() ||0.3  || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
+||  kickstart.listAllIpRanges() || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
+||  kickstart.listIpRanges(int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
+||  kickstart.addIpRange(int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? ||  
+||  kickstart.findKickstartForIp() || 0.2 || 3 || jsherrill     || done ||  ||  
+||  kickstart.removeIpRange(ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
+||  monitoring.listProbes(sid) || 0.4 || 3 ||  ||  ||  ||
+||  monitoring.getLatestProbeResults(sid) || 0.4 || 3 ||  ||  ||  ||
+||  monitoring.getAllResults(sid, probe_id) || 0.4 || 3 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
+||  packages.getDetails(*,downloadURL)   || 0.4 ||  ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
+||  schedule.listAllActions(sessionKey) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.cancelAction(aid) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.listActionsForSystem(sid) || 0.3 || 3 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: supportuser''' || 0.4 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
+||  system.listErrata(severity/type) || 0.3 || 4 ||  ||  ||  ||
+||  system.provision(sid, kslabel, date) || 0.3 || 4 || skarmark ||  ||  ||
+||  system.provision(sid, kslabel) || 0.3 || 1 || skarmark ||  ||  ||
+||  system.diffToChannel(sid, chan_label) || 0.3 || 3 ||  ||  ||  ||
+||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
+||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
+||  system.createCustomValueKey() || 0.3 || 3 || || || ||
 
 
 === New Spacewalk 0.1 APIs ===
 
 Below are APIs that have been included in Spacewalk 0.1, but that were not available for the Satellite 5.1 product; however, they will be incorporated in to a future Satellite release.
 
-||  '''Task''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: kickstart''' ||  ||  ||  ||  ||
-||  kickstart.list || 2 || jsherrill || Done ||  ||
-||  kickstart.listscripts() || 2 || jsherrill || Done ||  ||
-||  kickstart.addscript() || 3 || jsherrill || Done ||  ||
-||  kickstart.deletescript() || 3 || jsherrill || Done ||  ||
-||  kickstart.download() || 3 || jsherrill || Done ||  ||
-||  kickstart.setKickstartTree(kslabel, tree_label) || 3 || skarmark || Done ||  ||
-||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 3 || skarmark || Done ||  ||
-||  kickstart.getPartioningScheme() || 2 || jortel || Done ||  ||
-||  kickstart.setPartitioningScheme() || 3 || jortel || Done ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: org''' ||  ||  ||  ||  ||
-||  org.create || || dgoodwin || Done || ||
-||  org.delete || || dgoodwin || Done || ||
-||  org.listOrgs || || partha || Done || ||
-||  org.listUsers || || partha || Done || ||
-||  org.getDetails(orgName) || || partha || Done || ||
-||  org.getDetails(orgId) || || partha || Done || ||
-||  org.updateName || || partha || Done || ||
-||  org.listChannelFamilyEntitlements || || dgoodwin || Done || ||
-||  org.listChannelFamilyEntitlementsForOrg || || dgoodwin || Done || ||
-||  org.setChannelFamilyEntitlements || || dgoodwin || Done || ||
-||  org.listSystemEntitlements || || partha || Done || ||
-||  org.listSystemEntitlementsForOrg || || partha || Done || ||
-||  org.setSystemEntitlements || || dgoodwin || Done || ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: schedule''' ||  ||  ||  ||  ||
-||  schedule.listCompletedActions(sessionKey) || 2 || bbuckingham || Done ||  ||
-||  schedule.listInProgressActions(sessionKey) || 2 || bbuckingham || Done ||  ||
-||  schedule.listFailedActions(sessionKey) || 2 || bbuckingham || Done ||  ||
-||  schedule.listArchivedActions(sessionKey) || 2 || bbuckingham || Done ||  ||
-||  schedule.listCompletedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
-||  schedule.listInProgressSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
-||  schedule.listFailedSystems(sessionKey, aid) || 2 || bbuckingham || Done ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: system''' ||  ||  ||  ||  ||
-||  system.listInactiveSystems(date) || 2 || jsherrill || Done ||  ||
-||  system.whoRegistered(sid) || 1 || jsherrill || Done ||  ||
-||  system.listSystemsWithPackage(id) || 3 || jsherrill || Done ||  ||
-||  system.listSystemsWithPackage(name, version, release, epoch) || 3 || jsherrill || Done ||  ||
-||  system.listVirtHosts() || 2 || jsherrill || Done ||  ||
-||  system.listVirtGuests(sid) || 2 || jsherrill || Done ||  ||
-||  system.setGuestMemory(sid, memory) || 2 || jsherrill || Done ||  ||
-||  system.setGuestCpus(sid, cpus) || 2 || jsherrill || Done ||  ||
-||  system.scheduleGuestAction(sid, state) || 4 || jsherrill || Done ||  ||
-||  system.deleteSnapshot(sid, snapId) || 5 || jsherril || Done ||  ||
-||  system.deleteSnapshots(sid) || 5 || jsherrill || Done ||  ||
-||  system.listSnapshots(sid) || 5 || jsherrill || Done ||  ||
-||  system.listSnapshotPackages(snapid) || 5 || jsherrill || Done ||  ||
-||  system.listSnapshotConfigFiles(snapid) || 5 || jsherrill || Done ||  ||
-||  system.getOsadStatus(sid) (system.getDetails()) || 2 || jsherrill || Done ||  ||
-||  ----   ||  ||  ||  ||  ||
-||  '''Namespace: systemgroup''' ||  ||  ||  ||  ||
-||  systemgroup.listActiveSystemsInGroup(group) || 3 || jsherrill || Done ||  ||
-||  systemgroup.listInActiveSystemsInGroup(group) || 3 || jsherrill || Done ||  ||
+||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
+||  kickstart.list || 0.1 || 2 || jsherrill || Done ||  ||
+||  kickstart.listscripts() || 0.1 || 2 || jsherrill || Done ||  ||
+||  kickstart.addscript() || 0.1 || 3 || jsherrill || Done ||  ||
+||  kickstart.deletescript() || 0.1 || 3 || jsherrill || Done ||  ||
+||  kickstart.download() || 0.1 || 3 || jsherrill || Done ||  ||
+||  kickstart.setKickstartTree(kslabel, tree_label) || 0.1 || 3 || skarmark || Done ||  ||
+||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 0.1 || 3 || skarmark || Done ||  ||
+||  kickstart.getPartioningScheme() || 0.1 || 2 || jortel || Done ||  ||
+||  kickstart.setPartitioningScheme() || 0.1 || 3 || jortel || Done ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
+||  org.create || 0.1 || || dgoodwin || Done || ||
+||  org.delete || 0.1 || || dgoodwin || Done || ||
+||  org.listOrgs || 0.1 || || partha || Done || ||
+||  org.listUsers || 0.1 || || partha || Done || ||
+||  org.getDetails(orgName) || 0.1 || || partha || Done || ||
+||  org.getDetails(orgId) || 0.1 || || partha || Done || ||
+||  org.updateName || 0.1 || || partha || Done || ||
+||  org.listChannelFamilyEntitlements || 0.1 || || dgoodwin || Done || ||
+||  org.listChannelFamilyEntitlementsForOrg || 0.1 || || dgoodwin || Done || ||
+||  org.setChannelFamilyEntitlements || 0.1 || || dgoodwin || Done || ||
+||  org.listSystemEntitlements || 0.1 || || partha || Done || ||
+||  org.listSystemEntitlementsForOrg || 0.1 || || partha || Done || ||
+||  org.setSystemEntitlements || 0.1 || || dgoodwin || Done || ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
+||  schedule.listCompletedActions(sessionKey) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listInProgressActions(sessionKey) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listFailedActions(sessionKey) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listArchivedActions(sessionKey) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listCompletedSystems(sessionKey, aid) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listInProgressSystems(sessionKey, aid) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  schedule.listFailedSystems(sessionKey, aid) || 0.1 || 2 || bbuckingham || Done ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
+||  system.listInactiveSystems(date) || 0.1 || 2 || jsherrill || Done ||  ||
+||  system.whoRegistered(sid) || 0.1 || 1 || jsherrill || Done ||  ||
+||  system.listSystemsWithPackage(id) || 0.1 || 3 || jsherrill || Done ||  ||
+||  system.listSystemsWithPackage(name, version, release, epoch) || 0.1 || 3 || jsherrill || Done ||  ||
+||  system.listVirtHosts() || 0.1 || 2 || jsherrill || Done ||  ||
+||  system.listVirtGuests(sid) || 0.1 || 2 || jsherrill || Done ||  ||
+||  system.setGuestMemory(sid, memory) || 0.1 || 2 || jsherrill || Done ||  ||
+||  system.setGuestCpus(sid, cpus) || 0.1 || 2 || jsherrill || Done ||  ||
+||  system.scheduleGuestAction(sid, state) || 0.1 || 4 || jsherrill || Done ||  ||
+||  system.deleteSnapshot(sid, snapId) || 0.1 || 5 || jsherril || Done ||  ||
+||  system.deleteSnapshots(sid) || 0.1 || 5 || jsherrill || Done ||  ||
+||  system.listSnapshots(sid) || 0.1 || 5 || jsherrill || Done ||  ||
+||  system.listSnapshotPackages(snapid) || 0.1 || 5 || jsherrill || Done ||  ||
+||  system.listSnapshotConfigFiles(snapid) || 0.1 || 5 || jsherrill || Done ||  ||
+||  system.getOsadStatus(sid) (system.getDetails()) || 0.1 || 2 || jsherrill || Done ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: systemgroup''' ||  ||  ||  ||  ||  ||
+||  systemgroup.listActiveSystemsInGroup(group) || 0.1 || 3 || jsherrill || Done ||  ||
+||  systemgroup.listInActiveSystemsInGroup(group) || 0.1 || 3 || jsherrill || Done ||  ||
