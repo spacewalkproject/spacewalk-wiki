@@ -26,7 +26,7 @@ Support for installation of Spacewalk on the following OS:
 
 [ApiAdditions API additions]
 
-[NevraIssue fully support multiple distributions within a single org]
+[NevraIssue Fully support multiple distributions within a single org]
 
 [wiki:SolarisClientSupport Provide for Solaris sun4v client support]
  
@@ -50,7 +50,9 @@ Further API additions for supporting Multi-Org feature and other calls
 
 [wiki:Features/SearchImprovements Improvements to the Search capabilities] (Index Docs, Errata and System date using a Lucene based engine)
 
-Test and confirm Solaris client works on AMD64 based Solaris 10
+[wiki:SolarisAdditions Solaris Additions]
+ * Test and confirm Solaris client works on AMD64 based Solaris 10
+ * Feature addition for correct package count in systemList
 
 Start on projects for 0.3 release:
  * Multi-Org Channel (packages & errata) Content Data sharing over multiple Organizations within Spacewalk
