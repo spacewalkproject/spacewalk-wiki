@@ -1,0 +1,12 @@
+'''Things to do''':
+    * Test and confirm Solaris client works on AMD64 based Solaris 10
+
+    * Related to Bug 159546 below: This is also a feature request to change the 'Errata' and 'Packages' columns to a single 'Updates' column.
+          o For linux systems, the format can be: packages/errata
+          o For a solaris system: Packages/Patches/Patch Sets 
+
+'''Customer Bugs/Request related to this''':
+
+    * Bug 214485: up2date --hardware fails on sol10 64bit (no entry for rhn cpu arch 'i86pc') - https://bugzilla.redhat.com/show_bug.cgi?id=214485 
+
+    * Bug 159546: Packages count for Solaris systems in systemList incorrect - https://bugzilla.redhat.com/show_bug.cgi?id=159546 
