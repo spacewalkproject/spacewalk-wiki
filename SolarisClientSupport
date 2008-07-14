@@ -27,4 +27,4 @@
 
     * Bug 214485: up2date --hardware fails on sol10 64bit (no entry for rhn cpu arch 'i86pc') - https://bugzilla.redhat.com/show_bug.cgi?id=214485 
 
-    * Bug 159546: Packages count for Solaris systems in "SystemList" incorrect - https://bugzilla.redhat.com/show_bug.cgi?id=159546 
+    * Bug 159546: Packages count for Solaris systems in systemList incorrect - https://bugzilla.redhat.com/show_bug.cgi?id=159546 
