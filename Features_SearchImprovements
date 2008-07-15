@@ -1,7 +1,6 @@
 = Overview =
-System and Errata search will be integrated with the lucene based external search service, plus new search functionality for satellite documents and users will be added.
+System and Errata search will be integrated with the lucene based external search service, plus new search functionality for satellite documents will be added.
 
- '''are we searching users too? [[User:Jesusr|jesusr]] 09:44, 6 May 2008 (EDT)'''
 
 = Requirements =
 
@@ -22,16 +21,10 @@ System and Errata search will be integrated with the lucene based external searc
   1. Proxy Release Notes
   1. Satellite Release Notes
   1. API
-4. Users
- 1. Search will be able to index the Users and allow searching on:
-  1. email address
-  1. real name
-  1. uid
-  1. username
-
 
 = Specifications =
 == Systems ==
+
 ==== Filter Matches On ====
   * Invert match results
   * Search within system set manager
@@ -80,12 +73,12 @@ System and Errata search will be integrated with the lucene based external searc
  * RAM Greater Than
 
 ==== Approach ====
-* Changes to Search Service
- * Flesh out model at: com.redhat.satellite.search.db.models.Server
+* Changes to Search Service [ estimate: 8 days ]
+ * Flesh out model at: com.redhat.satellite.search.db.models.Server 
  * Update db query file to populate a Server model: src/config/com/redhat/satellite/search/db/server.xml 
  * Flesh out !DocumentBuilder at: com.redhat.satellite.search.index.builder.!ServerDocumentBuilder
  * Flesh out Indexing task at: com.redhat.satellite.search.scheduler.tasks.!IndexSystemsTask[[BR]]Update com.redhat.satellite.search.scheduler.!ScheduleManager to run !IndexSystemsTask
-* Changes to WebUI
+* Changes to WebUI [ estimate: 2 days]
  * Need to update systems/Search  
   * Update jsp to account for searching for matches within particular "system groups"[[BR]]/WEB-INF/pages/systems/systemsearch.jsp
   * Update to use external Search Service instead of !SystemManager.systemSearch(): [[BR]]com.redhat.rhn.frontend.action.systems.!SystemSearchSetupAction
@@ -103,11 +96,11 @@ System and Errata search will be integrated with the lucene based external searc
  * Topic/Description/Solution
 
 ==== Approach ====
- * Changes to Search Service
+ * Changes to Search Service [estimate: 3 days ]
   * Add CVE info to com.redhat.satellite.search.db.models.Errata
   * Add support for CVE to com.redhat.satellite.search.scheduler.tasks.!IndexErrataTask
   * Add fetching CVE data from DB to errata.xml under src/config/com/redhat/satellite/search/db
- * Changes to WebUI
+ * Changes to WebUI [estimate: 2 days]
   * Edit com.redhat.rhn.frontend.action.errata.!ErrataSearchAction, add support for searching: CVE, topic, description, solution
   * Update /WEB-INF/pages/errata/erratasearch.jsp for: CVE, topic, description, solution
   * To handle "Date Range" search, should this use !ErrataManager and not bother with calling to Search Service?[[BR]]Looks like Errata Manager will need to be modified to support a look up of Errata by date range.
@@ -115,30 +108,6 @@ System and Errata search will be integrated with the lucene based external searc
   * Add Errata search link to !YourRHN Tasks section, "Search for:  Packages | Systems | Errata"
   * Ensure <searchbar> is using new Errata Search Service
 
-
-== User ==
-==== Filter Matches On ====
- * Organization
- * Role
- * Position
- * Date Range:
-  * User Created
-  * Last sign in
-
-==== Searchable Data ====
- * Email address
- * Real name (first and last)
- * User ID
- * Username (login)
- 
-==== Approach ====
- * Search Service
-  * Create a User model
-  * Create a User indexing task
- * WebUI
-  * Add a new page,  "Advanced Search" under Users
-  * Add "user" search functionality to <searchbar>
-  * Add "user" search link to !YourRHN Tasks section
 
 == Docs ==
 ==== Filter Matches On ====
@@ -170,7 +139,7 @@ Will need to crawl:
  * API Docs[[BR]]Start URL: !https://<spacewalk-address>/rhn/apidoc/index.jsp[[BR]]Restrict URL to descendants of: !https://<spacewalk-address>/rhn/apidoc
 
 ==== Approach ====
- * Changes to Search Service
+ * Changes to Search Service [estimate: 15 days]
   * Leverage nutch to create "indexes" representing the "Guide/Manual/API Docs".
    * Create a "generate/fetch/update" task using Nutch library.  Task will reside in com.redhat.satellite.search.scheduler.tasks 
    * Documents will be updated infrequently
