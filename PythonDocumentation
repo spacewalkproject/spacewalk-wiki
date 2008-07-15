@@ -16,7 +16,7 @@ This is the server side code that exposes an XMLRPC interface which the clients 
 
 
 {{{
-                         SATELLITE SERVER BACKEND ARCHITECTURE 
+                         SPACEWALK SERVER BACKEND ARCHITECTURE 
                         ======================================
                                                 _____________
     _________        ________________          | FILESYSTEM |----------|
