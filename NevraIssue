@@ -11,9 +11,8 @@ Md5Sum Changes
 Gpg/Provider 
 || Task || Estimate hours || Assignee || Status || Notes ||
 || DB Schema for gpg/provider linkage || 2 || jsherrill || done || ||
-|| rhnpush(server) || 4 || prad || in progress || read gpg id||
-|| satellite-sync || 16 || prad ||in progress || read gpg id, import gpg info if available ||
-|| exporter || 4 || prad || in progress|| export gpg information ||
+|| rhnpush(server) || 4 || prad || done || read gpg id||
+|| satellite-sync || 16 || prad ||done || read gpg id, import gpg info if available ||
 || webUi || 24 ||jsherrill ||in progress || includes re-writing some perl pages ||
 
 
