@@ -33,7 +33,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.uploadPackage(package) || 0.4 || 12 ||  ||  || How does this differ from rhnpush? ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
-||  errata.findByCVE(num) || 0.3 || 3 ||  ||  ||  ||
+||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  ||  ||
 ||  errata.findByRHNumber(num) || 0.3 || 3 ||  ||  || What's the RHNumber? ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
