@@ -25,3 +25,20 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 {{{
   rhnreg_ks --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
+
+= CentOS 5 =
+
+  1. Install required packages before the red hat network packages: 
+    {{{
+yum -q -y install usermode-gtk pyOpenSSL 1>/dev/null 2>&1
+    }}}
+  2. Download and Install client packages:
+    {{{
+wget 'link-to website'
+rpm -Uvh *.rpm
+    }}}
+  3. Register your CentOS system to Spacewalk using the activation key you created earlier.
+{{{
+  rhnreg_ks --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
+}}}
+
