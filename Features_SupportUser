@@ -45,15 +45,16 @@ However, after several customer discussions we found that this requirement more 
 = Specification =
 
  1. Add "Support User" role and "Support" top level UI tab. ('''estimate: 1 day''')
- 1. Add search interface:
+ 1. Add search interface: (3 days)
   1. '''Mockups needed''' but initially envisioning two dropdowns and a textbox. Dropdown 1 lists objects to search for, in this case "Systems". Dropdown 2 lists criteria supported for that object type (and thus must be updated on changes to Dropdown 1) such as hostname, ID, etc.
- 1. Add small framework for adding new "search for" types and associated "search by" criteria.
- 1. Add system search query.
+ 1. Add small framework for adding new "search for" types and associated "search by" criteria. ('''estimate: 3 days''')
+ 1. Add system search query. (1 day)
   1. Must search across all trusted organizations. Will be dependent on [wiki:Features/MultiOrg2 Multi-Org Phase 2].
- 1. Display search results using existing system list JSP code. (system_listdisplay.jspf)
- 1. Link search results to existing SDC pages.
- 1. Modify SDC pages to remove all action buttons and links for users who do not have appropriate permissions.
- 1. Modify struts actions to reject for users who do not have appropriate permissions.
+ 1. Display search results using existing system list JSP code. (system_listdisplay.jspf) ('''estimate: 1 day''')
+  * Link search results to existing SDC pages.
+ 1. Modify SDC pages to remove all action buttons and links for users who do not have appropriate permissions. ('''estimate: 15 days''')
+  * Must also modify struts actions to reject for users who do not have appropriate permissions.
+  * Will depend on upcoming fine grained permissions specification, could be a lot of work here isolating each action that can be performed and adding an appropriate permission to the system.
  1. Audit functionality available to a user with just the support role. ('''estimate: 2 days''')
  1. Implement new API handler for support user searches. ('''estimate: 5 days''')
   * Ensure existing API calls cannot be used by users with just the support role.
