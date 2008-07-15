@@ -73,9 +73,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  packages.getDetails(*,downloadURL)   || 0.4 ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
-||  schedule.listAllActions(sessionKey) || 0.3 || 3 ||  ||  ||  ||
-||  schedule.cancelAction(aid) || 0.3 || 3 ||  ||  ||  ||
-||  schedule.listActionsForSystem(sid) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.listAllActions(string sessionKey) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.cancelAction(string sessionKey, int actionId) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.listActionsForSystem(string sessionKey, int systemId) || 0.3 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: supportuser''' || 0.4 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
 ||  ----   ||  ||  ||  ||  ||  ||
