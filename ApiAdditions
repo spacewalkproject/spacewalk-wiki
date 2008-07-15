@@ -23,13 +23,13 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
-||  channel.listErrata(severity/type) || 0.3 || 4 ||  ||  ||  ||
+||  channel.listErrata(string sessionKey, string advisoryType) || 0.3 || 4 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
-||  channel.software.getPackage(id) || 0.3 || 8 || jsherrill ||  ||  ||
-||  channel.software.getPackageLink(id) || 0.3 || 5 || jsherrill ||  || What's a package link? ||
-||  channel.software.mergeErrata(fromChannel, toChannel) || 0.3 || 3 ||  ||  ||  ||
-||  channel.software.mergeErrata(fromChannel, toChannel, date) || 0.3 || 6 ||  ||  ||  ||
+||  channel.software.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill ||  ||  ||
+||  channel.software.getPackageLink(string sessionKey, int packageId) || 0.3 || 5 || jsherrill ||  || What's a package link? ||
+||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 ||  ||  ||  ||
+||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 date) || 0.3 || 6 ||  ||  ||  ||
 ||  channel.software.uploadPackage(package) || 0.4 || 12 ||  ||  || How does this differ from rhnpush? ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
