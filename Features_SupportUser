@@ -54,6 +54,9 @@ However, after several customer discussions we found that this requirement more 
  1. Link search results to existing SDC pages.
  1. Modify SDC pages to remove all action buttons and links for users who do not have appropriate permissions.
  1. Modify struts actions to reject for users who do not have appropriate permissions.
+ 1. Audit functionality available to a user with just the support role. ('''estimate: 2 days''')
+ 1. Implement new API handler for support user searches. ('''estimate: 5 days''')
+  * Ensure existing API calls cannot be used by users with just the support role.
    
 
 = Notes =
