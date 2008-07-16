@@ -98,6 +98,9 @@ Things that will need to be changed:
  * webUi
   * Add provider/gpg information to certain package lists
   * Provide a way to link providers to gpg keys (optional)
+ * Migration script
+  * migrate existing package paths on the filer and db 
+  * update/include gpg key id info in the db for existing packages.
 
 
 Notes:
