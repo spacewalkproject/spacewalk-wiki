@@ -62,7 +62,9 @@ gpg --import mysecretkey.gpg
 perl gen-oss-sat-cert.pl --dsn spacewalk/spacewalk@xe --signer 74E73973 --resign template-eval.cert
 }}}
 
-== Activating the Spacewalk locally ==
+== Activating the Spacewalk locally (optional) ==
+If you came to this page from the HowToInstall page, activation will occur during {{{spacewalk-setup}}}, so you
+can safely ignore this section. Otherwise, continue reading.
 
 You should use the options below to accomplish the following tasks in this order:
 
