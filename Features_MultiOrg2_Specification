@@ -18,9 +18,15 @@ unique index on rhnTrustedOrgRing(org_id, trust_org_id)
  * org_id: number, not null and fk to web_customer(id)
  * trust_org_id: number, not null and fk to web_customer(id)
  * trust_type: number, not null and fk to rhnTrustType(id)
+ * created: date(sysdate), not null
+ * modified: date(sysdate), not null
 
 unique index on rhnOrgTrust(org_id, trust_org_id)
 
 === rhnTrustType ===
 
-
+ * id: number, not null, primary key
+ * label: varchar2(32), not null
+ * name: varchar2(64), not null
+ * created: date(sysdate), not null
+ * modified: date(sysdate), not null
