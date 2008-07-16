@@ -19,17 +19,18 @@ RHEL 5 users can get git from EPEL:
   yum install git
 }}}
 === Clone the Spacewalk git repository ===
-You'll need to get the code, for more detail check out the DownloadIt page,
-
+For anonymous access to the Spacewalk source code, feel free to clone the repository:
 {{{
 git clone git://git.fedorahosted.org/git/spacewalk.git/
 }}}
 
-If you are going to want to push changes into the repo (and have access todo so) use ssh in your clone command:
+Spacewalk [ContibutorList committers] can clone the repository using the ssh url, which is required if you want to push changes into the repo (and of course you need permission to do so).
 
 {{{
 git clone ssh://git.fedorahosted.org/git/spacewalk.git/
 }}}
+
+For more details check out the DownloadIt page.
 
 
 === Identify Yourself ===
