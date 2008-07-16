@@ -20,7 +20,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{sudo ant install-devel}}} 
  * {{{sudo service rhn-satellite start}}}
 
-you development environment should be ready to go.
+Your development environment should now be ready to go.
 
 
 = Uninstallation =
