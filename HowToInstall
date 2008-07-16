@@ -10,7 +10,7 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 
 = EPEL Repo setup =
 
-Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with spacewalk.  To get packages from EPEL just install this RPM:
+Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
 {{{
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm
@@ -40,7 +40,7 @@ Then just ask yum to install the application:
 yum install spacewalk
 }}}
 
-This will pull down and install the set of RPMs required to get spacewalk to run.  You may get a conflict from '''rhns''' with specspo.  If so, just do a:
+This will pull down and install the set of RPMs required to get Spacewalk to run.  You may get a conflict from '''rhns''' with specspo.  If so, just do a:
 
 {{{
 rpm -e specspo && yum install spacewalk
@@ -52,13 +52,13 @@ If you are on x86_64 you will need to run the following command:
 ldconfig /usr/lib/oracle/10.2.0.4/client64/lib/
 }}}
 
-Once the spacewalk rpm is installed you need to configure the application.  To do this, run:
+Once the Spacewalk rpm is installed you need to configure the application.  To do this, run:
 
 {{{
 spacewalk-setup --disconnected
 }}}
 
-This will prompt you for questions about your database configuration and spacewalk certificate location.
+This will prompt you for questions about your database configuration and Spacewalk certificate location.
 
 An example session is as follows:
 
