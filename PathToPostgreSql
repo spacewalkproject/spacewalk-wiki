@@ -1,3 +1,5 @@
+See the [wiki:PathToPostgreSql/Tasks Tasks] page for ongoing progress of this effort.
+
 = Introduction =
 
 In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin organizing the effort to add support for !PostgreSQL.
@@ -163,6 +165,7 @@ From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/too
 ||rhnhistoryview_pkglist||
 ||create_first_org||
 ||create_new_org||
+
 ||delete_channel||
 ||delete_errata||
 ||delete_server||
