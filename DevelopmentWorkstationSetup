@@ -37,7 +37,7 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
         at org.apache.catalina.core.StandardContext.start(StandardContext.java:4024)
 ...
 }}}
-This typically means the tomcat user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, fix the permissions of the directory.
+This typically means the tomcat user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.
 
 
 
