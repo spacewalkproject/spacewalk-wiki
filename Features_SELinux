@@ -1,0 +1,29 @@
+= SELinux Requirements =
+
+== Overview ==
+
+Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Linux distro that will allow Red Hat Satellite to take advantage of more secure access control. SELinux adopts a mandatory access control mechanism that is embedded in the kernel and checks for allowed operations after standard Linux discretionary access controls are checked. SELinux access control is based on security contexts associated with the various resources such as files, processes, and ports. For example, a specific Satellite process would need both write permission and write access before writing to a file. The type enforcement rules are contained within a security policy that can be installed on a Linux server. 
+
+== Business Justification ==
+
+ * By the very nature of SELinux, creating a custom policy for Red Hat Satellite will increase the security of Spacewalk server. 
+ * Attract new users. GSS estimates that roughly 20% of the current Satellite customer install base would like to have a SELinux supported Spacwalk and would also bring Spacewalk more customers especially in the government sector.
+ * We ship it, we support it. Reinforces Red Hat's position on using and supporting its own products. 
+
+== Deployment ==
+
+ * Satellite SELinux policy module will support the Targeted SELinux policy and require the selinux-policy-targeted rpm as a prerequisite to Satellite installation
+ * Satellite SELinux policy module will be deployed in RPM format and named rhn-satellite-selinux 
+ * Satellite SELinux policy module will be supported on RHEL 5 systems (support rhel4/fedora?) 
+ * Satellite installation will support all SELinux states: Enforcing, Permissive and Disabled modes 
+
+== Security Goal ==
+This section will describe at a high level what security precautions will be implemented for Red Hat Satellite. Some considerations are:
+
+ * Service Confinement - make sure all Satellite services have the minimum amount of access required to function properly 
+ * System Protection - protect the system from Satellite services to remove any possible exploitations 
+ * Configuration files - protect config files from domains that do not need access 
+ * Domain types - each Satellite process will need one or more domain types
+ * Entrypoints - need to have at least one entrypoint executable file type for each of the domains 
+ * Application resources - need to have one more more types for the resources controlled by Satellite. Examples are temp files, config files, sockets, log files, web files, pid files, etc) 
+ * Network access - what network interfaces will Satellite services be allowed access? Which ports can Satellite use? DNS name resolution, etc. 
