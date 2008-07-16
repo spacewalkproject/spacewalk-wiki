@@ -20,12 +20,24 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{sudo ant install-devel}}} 
  * {{{sudo service rhn-satellite start}}}
 
-Your development environment should now be ready to go.
+Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
 
 
 = Uninstallation =
 In case you decide to undo your development environment changes and go back to running your spacewalk  (note this operation right now is a bit dodgy).
  * {{{sudo ant uninstall-devel}}}
+
+= Troubleshooting =
+* catalina.out has the following error:
+{{{
+SEVERE: Error starting static Resources
+java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn does not exist or is not a readable directory
+        at org.apache.naming.resources.FileDirContext.setDocBase(FileDirContext.java:141)
+        at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:3855)
+        at org.apache.catalina.core.StandardContext.start(StandardContext.java:4024)
+...
+}}}
+This typically means the tomcat user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, fix the permissions of the directory.
 
 
 
