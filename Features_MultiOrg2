@@ -7,4 +7,4 @@ What is in Spacewalk right now is a first cut of this feature. There are a numbe
 
  * [wiki:/Features/MultiOrg2/Requirements] - Requirements to be implemented
  * [wiki:/Features/MultiOrg2/TrustRelationships] - trust relationships between organizations will enable content sharing and system migration - if you don't have a trust relationship with a given org, you can't see any of the content it shares with you nor can you migrate systems to it or can systems from it be migrated to your organization.
- * [wiki:/Features/MultiOrg2/ContentSharing] - content sharing between organizations
+ * [wiki:/Features/MultiOrg2/ContentSharing Content Sharing] between organizations
