@@ -51,7 +51,7 @@ rpm -e specspo && yum install spacewalk
   ldconfig /usr/lib/oracle/10.2.0.4/client64/lib/
 }}}
 
-Once the Spacewalk rpm is installed you need to configure the application. The setup will ask you about your database configuration and Spacewalk certificate location. If you don't have a certificate, see CertCreation. Once you have a certificate you can run:
+Once the Spacewalk rpm is installed you need to configure the application, you can run:
 
 {{{
 spacewalk-setup --disconnected
