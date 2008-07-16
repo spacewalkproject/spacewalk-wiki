@@ -24,7 +24,11 @@ Your development environment should now be ready to go. Having problems? Check o
 
 
 = Uninstallation =
-In case you decide to undo your development environment changes and go back to running your spacewalk  (note this operation right now is a bit dodgy).
+
+In case you decide to undo your development environment changes and go back to running your Spacewalk.
+
+'''NOTE:''' this operation right now is a bit dodgy
+
  * {{{sudo ant uninstall-devel}}}
 
 = Troubleshooting =
