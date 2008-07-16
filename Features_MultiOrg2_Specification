@@ -36,8 +36,8 @@ This table will contain the various resources an organization can share. For thi
 
 The following static data will be populated:
 
- * channel_content
- * system_migration
+ * channel_sharing (Channel Sharing)
+ * system_migration (System Migration)
 
 === rhnChannel ===
 This table will require an additional column to handle if the Org Admin will allow orgs from its Trusted Ring to have access to Channel Content, 
