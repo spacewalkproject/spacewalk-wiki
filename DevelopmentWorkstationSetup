@@ -28,7 +28,7 @@ In case you decide to undo your development environment changes and go back to r
  * {{{sudo ant uninstall-devel}}}
 
 = Troubleshooting =
-* catalina.out has the following error:
+ * catalina.out has the following error:
 {{{
 SEVERE: Error starting static Resources
 java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn does not exist or is not a readable directory
@@ -37,8 +37,12 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
         at org.apache.catalina.core.StandardContext.start(StandardContext.java:4024)
 ...
 }}}
-This typically means the {{{tomcat}}} user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.
-
+   This typically means the {{{tomcat}}} user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.
+ * browse webapp and it looks plain like a webapp from 1995, usually caused by the css files not being loaded. 
+{{{
+[Wed Jul 16 14:56:20 2008] [error] [client 192.168.1.106] Symbolic link not allowed or link target not accessible: /var/www/html, referer: https://bugatti.usersys.redhat.com/rhn/systems/Overview.do
+}}}
+  The most likely culprit is actually a permissions problem for the apache user, give {{{apache}}} user access to the directory.
 
 
 
