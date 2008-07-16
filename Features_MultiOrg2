@@ -2,7 +2,7 @@
 
 The multiple organization support feature in Spacewalk allows you to partition your Spacewalk server into different organizations that each have their own set of entitlements, systems, and content that other organizations on the Spacewalk server cannot access.
 
-What is in Spacewalk right now is a first cut of this feature. There are a number of improvements that should be made to the feature to make it more usable. The following pages will track the requirements, specifications and details for the next phase of MultiOrg
+What is in Spacewalk right now is a first cut of this feature. There are a number of improvements that should be made to the feature to make it more usable. The following pages will track the requirements, specifications and details for the next phase of Multiple Organizations:
 
 
  * [wiki:/Features/MultiOrg2/Requirements Requirements] to be implemented
