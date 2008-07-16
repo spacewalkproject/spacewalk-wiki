@@ -114,7 +114,7 @@ If you are on x86_64 and tomcat5 fails to restart you need todo a:
  cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib && rm ojdbc14.jar && ln -s /usr/lib/oracle/10.2.0/client64/lib/ojdbc14.jar ojdbc14.jar;
 }}}
 
-After spacewalk-configure is complete your application is ready to go!
+After {{{spacewalk-setup}}} is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
 You can also find source RPMs and tarballs at the following URL:
