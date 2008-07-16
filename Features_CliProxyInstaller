@@ -1,0 +1,7 @@
+= Command Line Proxy Installer =
+
+Since we can not commit to hosted, then future changes in hosted code of Proxy installer will be harder and harder. Therefore we should aim to have standalone installer.
+
+Code currently grow in /proxy/installer/ and goal is to have CLI installer, with this process:
+yum install spacewalk-proxy
+configure-proxy.sh
