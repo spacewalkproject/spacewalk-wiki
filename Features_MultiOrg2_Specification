@@ -30,3 +30,8 @@ unique index on rhnOrgTrust(org_id, trust_org_id)
  * name: varchar2(64), not null
  * created: date(sysdate), not null
  * modified: date(sysdate), not null
+
+=== rhnChannel ===
+This table will require an additional column to handle if the Org Admin will allow orgs from its Trusted Ring to have access to Channel Content, 
+
+ * public: char(1) default('N'), check public in ('Y', 'N')
