@@ -72,7 +72,7 @@ Login to the webui and configure a user:
  * Confirm password: '''spacewalk'''
  * Give spacewalk all system privileges (check All and add DBA role) 
  * click Create button
-That's it, proceed with client setup.
+That's it, proceed with [OracleXeSetup#setupclient client setup].
 
  * If you weren't able to connect to http://127.0.0.1:9000/apex, check /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log for errors.    
  * This is an example error when oracle isn't able to resolve your hostname, [http://virag.sharma.googlepages.com/oraclexemadeeasy#_Getting_ORA-600_error more info]
