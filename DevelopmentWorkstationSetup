@@ -7,7 +7,7 @@ The below instructions are how to set up the Spacewalk Development Enviroment in
 In order to setup the  Spacewalk development environment, you first need to have a running version of Spacewalk installed following the instructions in [HowToInstall Spacewalk Installation Instructions].
 
 = Git Prerequisite =
-To setup the sources follow the instructions in [GitGuide Git Guide].
+To setup the sources follow the instructions in [GitGuide#InstallGit Install Git] and [GitGuide#ClonetheSpacewalkgitrepository clone the Spacewalk repository].
 
 
 = Installation =
