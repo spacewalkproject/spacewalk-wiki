@@ -1,0 +1,6 @@
+== Introduction ==
+
+The multiple organization support feature in Spacewalk allows you to partition your Spacewalk server into different organizations that each have their own set of entitlements, systems, and content that other organizations on the Spacewalk server cannot access. This document describes the high level design overview for this feature. 
+
+== DB Schema ==
+
