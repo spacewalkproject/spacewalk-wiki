@@ -1,7 +1,8 @@
 = Intro = 
 
-The below instructions are how to set up the Spacewalk Development Enviroment into a Red Hat Enterprise Linux 5 server.  Future versions will include instructions and support for Fedora and other Linux variants.
+The below instructions are how to set up the Spacewalk Development Enviroment into a Red Hat Enterprise Linux 5 server.  [wiki:"DevelopmentWorkstationSetupFedora9" Future versions ] will include instructions and support for Fedora and other Linux variants.
 
+Work in progress: [wiki:"DevelopmentWorkstationSetupFedora9" Development env setup for Fedora 9 ]
 = Spacewalk Runtime Environment Prerequisite =
 
 In order to setup the  Spacewalk development environment, you first need to have a running version of Spacewalk installed following the instructions in [HowToInstall Spacewalk Installation Instructions].
