@@ -75,7 +75,7 @@ ACL: Org Admin
 === Channel Organization? ===
 Currently the mockups show a Channel organization page that allows a Org Admin to give access to specific Organizations in addition to the Org Trust Page. Questions:
  * Is this overkill? Why have a global org trust page per org and then have an additional trust ring per channel? 
- * If we do support both a global Trust Ring per Org and a trust ring per channel, how will this work together? Precedence? Documentation? 
+ * If we do support both a global Trust Ring per Org and a trust ring per channel, how will this work together? Precedence? Documentation? A usability test might give more insight if this is potentially confusing. 
 Location: /rhn/channels/manage/ChannelTrust.do?cid=101 (New?)
 ACL: Org Admin
 
