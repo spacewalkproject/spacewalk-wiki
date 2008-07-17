@@ -89,4 +89,98 @@ Questions:
  * Is this overkill? Why have a global org trust page per org and then have an additional trust ring per channel? 
  * If we do support both a global Trust Ring per Org and a trust ring per channel, how will this work together? Precedence? Documentation? A usability test might give more insight if this is potentially confusing. 
 
+== System Migration ==
 
+=== Implementation Notes ===
+
+ * Register a system under Org-1. 
+ * Create Org-3 with user scoobert
+ * Update rhnServer as:
+{{{
+update rhnServer set org_id =: new_org where id = 1000010000 
+     and org_id = (select org_id from web_contact where login = 'admin');
+}}}
+
+ * If both the origination and destination Org each have only 1 Org Admin defined, update the existing row in the rhnUserServerPerms associated with the system to reflect the id of the Org Admin of the destination Org:
+{{{
+ update rhnUserServerPerms 
+     set user_id =: new_user_id where user_id = 1
+     and server_id = 1000010000;   
+}}}
+ * However, if either the origination or destination Org or both have more than 1 Org Admin defined, remove all rows associated with the server from the rhnUserServerPerms. (Rule: this assumes that a system may not exist in more than 1 org.)
+{{{
+delete from rhnUserServerPerms where server_id = 1000010000;
+}}}
+ * And insert a row for each of the Org Admins defined in the destination Org (i.e. Org-3) associating it to the system being migrated 
+{{{
+insert into rhnuserserverperms(user_id, server_id)
+     select ugm.user_id, 1000010000
+        FROM rhnUserGroupMembers ugm
+        WHERE ugm.user_group_id = (SELECT id
+           FROM rhnUserGroup
+           WHERE org_id =: new_org
+           AND group_type = (SELECT id FROM
+              rhnUserGroupType WHERE label = 'org_admin'));
+}}}
+ * The server registered under Org-1 should disappear and show up under Org-3 
+ * As Org-3 user, schedule an action and let client pick it up
+ * The client should now be able to see actions from new Org
+ * Observations from above test .. 
+{{{
+ - server shows up in SystemList page in new org
+ - channel associations still remain intact
+ - Hardware profile migrated
+ - Server History remains intact
+ - cleint still checks back in with new org
+ - Entitlements need to be reallocated
+}}}
+=== rhn-server-migrate ===
+rhn-server-migrate is a new command line script that will migrate a system. Details are below: 
+ * script to migrate a given server from one org to another 
+ * Usage: 
+{{{
+rhn-server-migrate [options] 
+options:
+ -v, --verbose         Increase verbosity
+ -uUSERNAME, --username=USERNAME
+                       Satellite Admin username
+ -pPASSWORD, --password=PASSWORD
+                       Satellite Admin password
+ --satellite=SATELLITE
+                       Satellite server to run migrate on
+ --list-systems=LIST_SYSTEMS
+                        Available Systems by org. Usage:
+                       --list-systems=<org_id>
+ --serverId=SERVERID   Server to migrate
+ --org-id=ORG_ID       Destination Org ID
+ --csv=CSV             CSV File to process
+ -h, --help            show this help message and exit
+}}}
+{{{
+* List available systems for a given org
+   $ rhn-server-migrate --satellite=rlx-2-22.rhndev.redhat.com  --list-systems=1
+     Red Hat Network username: admin
+     Red Hat Network password:
+   Available Systems for Org-ID: 1 
+   ------------------------------------
+    Server-ID      Server-Name         
+   ------------------------------------
+    1000010002   rlx-2-24.rhndev.redhat.com 
+    1000010003   rlx-2-24.rhndev.redhat.com 
+   --------------------------------------------
+}}}
+{{{
+* Check the migration without commit, thsi rollsback after success
+    $ rhn-server-migrate --satellite=rlx-2-22.rhndev.redhat.com --serverId=1000010002 --org-id=1
+     Red Hat Network username: admin
+     Red Hat Network password:
+     Migration : OK
+}}}
+{{{
+* Batch migrate using CSV (TODO)
+   * The csv format: serverId,to_org
+  $ rhn-server-migrate --satellite=rlx-2-22.rhndev.redhat.com --csv=servers.csv
+   Red Hat Network username: admin
+   Red Hat Network password:
+   Migration : OK
+}}}
