@@ -48,7 +48,7 @@ This table will require an additional column to handle if the Org Admin will all
 
 == New & Existing Pages ==
 
-The design of the following new pages can be found on the [TrustRelationships User Interface] mockups and the [wiki:/Features/MultiOrg2/ContentSharing Content Sharing] mockups. High Level descriptions of the widgets can be found on the mockup pages. 
+The design of the following new pages can be found on the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/TrustRelationships User Interface] mockups and the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/ContentSharing Content Sharing] mockups. High Level descriptions of the widgets can be found on the mockup pages. 
 
 === Organizations ===
 Location: /rhn/admin/multiorg/Organizations.do (Existing)
