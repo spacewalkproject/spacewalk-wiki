@@ -30,7 +30,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.getPackageLink(string sessionKey, int packageId) || 0.3 || 5 || jsherrill ||  || What's a package link? ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 ||  ||  ||  ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 date) || 0.3 || 6 ||  ||  ||  ||
-||  channel.software.uploadPackage(package) || 0.4 || 12 ||  ||  || How does this differ from rhnpush? ||
+||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || How does this differ from rhnpush? ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  ||  ||
@@ -50,13 +50,13 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.appendToSoftwareList() || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.setActivationKeys() || 0.3 || 4 ||  ||  || param? ||
 ||  kickstart.getActivationKeys() || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.listAssociatedFilePreservationLists(kslabel) || 0.3 || 3 ||  ||  || can we shorten this? ||
-||  kickstart.setAssociatedFilePreservationLists(fllabels) || 0.3 || 4 ||  ||  || can we shorten this? ||
+||  kickstart.listAssociatedFilePreservationLists(kslabel) || 0.4 || 3 ||  ||  || can we shorten this? ||
+||  kickstart.setAssociatedFilePreservationLists(fllabels) || 0.4 || 4 ||  ||  || can we shorten this? ||
 ||  kickstart.listAssociatedGPGAndSSLKeys() || 0.3 || 3 ||  ||  ||  ||
 ||  kickstart.setAssociatedGPGAndSSLKeys(descriptions) || 0.3 || 4 ||  ||  ||  ||
-||  kickstart.listAllFilePreservationLists() || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.createFilePreservationList(label, list) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.deleteFilePreservationList(lable) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.listAllFilePreservationLists() || 0.4 || 2 ||  ||  ||  ||
+||  kickstart.createFilePreservationList(label, list) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.deleteFilePreservationList(lable) || 0.4 || 3 ||  ||  ||  ||
 ||  kickstart.listAllGpgAndSSLKeys() ||0.3  || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
 ||  kickstart.listAllIpRanges() || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
 ||  kickstart.listIpRanges(int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
@@ -65,19 +65,19 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.removeIpRange(ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
-||  monitoring.listProbes(sid) || 0.4 || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || 0.4 || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || 0.4 || 3 ||  ||  ||  ||
+||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
+||  monitoring.getLatestProbeResults(sid) || 0.5 || 3 ||  ||  ||  ||
+||  monitoring.getAllResults(sid, probe_id) || 0.5 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
-||  packages.getDetails(*,downloadURL)   || 0.4 ||  ||  ||  ||  ||
+||  packages.getDetails(*,downloadURL)   || 0.5 ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
-||  schedule.listAllActions(string sessionKey) || 0.3 || 3 ||  ||  ||  ||
-||  schedule.cancelAction(string sessionKey, int actionId) || 0.3 || 3 ||  ||  ||  ||
-||  schedule.listActionsForSystem(string sessionKey, int systemId) || 0.3 || 3 ||  ||  ||  ||
+||  schedule.listAllActions(string sessionKey) || 0.4 || 3 ||  ||  ||  ||
+||  schedule.cancelAction(string sessionKey, int actionId) || 0.4 || 3 ||  ||  ||  ||
+||  schedule.listActionsForSystem(string sessionKey, int systemId) || 0.4 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  '''Namespace: supportuser''' || 0.4 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
+||  '''Namespace: supportuser''' || 0.6 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
 ||  system.listErrata(severity/type) || 0.3 || 4 ||  ||  ||  ||
