@@ -34,7 +34,8 @@ yum -q -y install usermode-gtk pyOpenSSL 1>/dev/null 2>&1
     }}}
   2. Download and Install client packages:
     {{{
-wget 'link-to website-with-rpms'
+get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/
+wget -r http://www-personal.umich.edu/~lrsmith/Spacewalk/rpms/
 rpm -Uvh *.rpm
     }}}
   3. Register your CentOS system to Spacewalk using the activation key you created earlier.
