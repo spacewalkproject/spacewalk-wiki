@@ -46,4 +46,34 @@ This table will require an additional column to handle if the Org Admin will all
 
  * public: char(1) default('N'), check public in ('Y', 'N')
 
-== New Pages ==
+== New & Existing Pages ==
+
+The design of the following new pages can be found on the [wiki:/Features/MultiOrg2/TrustRelationships User Interface] mockups and the [wiki:/Features/MultiOrg2/ContentSharing Content Sharing] mockups. High Level descriptions of the widgets can be found on the mockup pages. 
+
+=== Organizations ===
+Location: /rhn/admin/multiorg/Organizations.do (Existing)
+ACL: Spacewalk Admin
+
+=== Trust Ring ===
+Location: /rhn/admin/multiorg/TrustRing.do?tid=X (New)
+ACL: Spacewalk Admin
+
+=== Trust Ring Remove Confirm ===
+Location: /rhn/admin/multiorg/TrustRingDelete.do?tid=X (New)
+ACL: Spacewalk Admin
+
+=== Organization Trust ===
+Location: /rhn/trust/Trusts.do
+ACL: Org Admin
+
+=== Channel Details ===
+Location: /network/software/channels/manage/edit.pxt?cid=101 (Existing)
+ACL: Org Admin
+
+=== Channel Organization? ===
+Currently the mockups show a Channel organization page that allows a Org Admin to give access to specific Organizations in addition to the Org Trust Page. Questions:
+ * Is this overkill? Why have a global org trust page per org and then have an additional trust ring per channel? 
+ * If we do support both a global Trust Ring per Org and a trust ring per channel, how will this work together? Precedence? Documentation? 
+Location: /rhn/channels/manage/ChannelTrust.do?cid=101 (New?)
+ACL: Org Admin
+
