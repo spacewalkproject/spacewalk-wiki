@@ -65,6 +65,8 @@ ACL: Spacewalk Admin
 === Organization Trust ===
 Location: /rhn/trust/Trusts.do
 ACL: Org Admin
+Questions: 
+ * Currently the mockup shows selections for both channel content and System migrations. Does the channel content checkbox conflict with the Channel Details page that allows a Org Admin to select public/private access for that specific channel? 
 
 === Channel Details ===
 Location: /network/software/channels/manage/edit.pxt?cid=101 (Existing)
