@@ -32,9 +32,8 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     {{{
 yum -q -y install usermode-gtk pyOpenSSL 1>/dev/null 2>&1
     }}}
-  2. Download and Install client packages:
+  2. Download and Install client packages (get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/ or another supplier):
     {{{
-get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/
 wget -r http://www-personal.umich.edu/~lrsmith/Spacewalk/rpms/
 rpm -Uvh *.rpm
     }}}
