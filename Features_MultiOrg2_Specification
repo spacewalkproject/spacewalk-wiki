@@ -184,3 +184,23 @@ options:
    Red Hat Network password:
    Migration : OK
 }}}
+
+== API Calls ==
+A full list of API calls can be found on the [https://fedorahosted.org/spacewalk/wiki/ApiAdditions API] wiki. 
+
+=== Implementation Notes ===
+
+ * The abbreviation "org" will be used in place of "organization" for all method and argument names.
+ * orgId will be used as the standard means of identifying an org in API call arguments. Org name, which is unique, was considered but ruled out due to the fact that it's intended as a display name and not a label. 
+ * Channel family entitlements will be referred to by channelFamilyName. This is returned from the existing satellite.listEntitlements call. 
+ * Any set*Entitlements functions should reject org 1. This org behaves as the default container and it's allocation originates from the satellite certificate. Unused entitlements in this org are available to be given to other orgs, and removing entitlements from an org automatically assigns them back to org 1. 
+ * Most existing API calls will be ok as-is. The user logged into the API session is used for credentials and any operation they perform *should* be specific to their own org. Thus most existing API calls should not need to be overloaded to accept an orgId.
+ * NULL entitlement counts returned from the database (representing unlimited) will have to be represented as -1 values in API calls as null is not supported in standard xmlrpc. 
+ * Calls which list entitlements will not include entries that have none allocated. Eg. When listing allocation for an entitlement, only orgs which have been given the entitlement will be present in the list.
+ * Private channel families will not appear in the list entitlement calls or be accepted by the set entitlement calls. This matches the UI functionality as private channel families are really only relevant to the org they're created for. 
+ * A -1 entitlement count signifies an unlimited allocation of an entitlement. (i.e. custom channel families, etc) This is represented as NULL in the database, but this xmlrpc has no null values so we must resort to using -1. This situation is rare if even possible, NULL max member counts seems to only occur for private channel families, which are not supported in list/set entitlement calls. (see previous point) 
+
+=== Structs ===
+
+ * Org: org_id, org_name, active_users (int), systems (int), system_groups (int), activation_keys (int), kickstart_profiles (int), configuration_channels (int). This data matches the details screen for an org in the UI.  
+ * User: login, login_uc, name, email, org_admin (boolean). (Slightly different than the User struct used elsewhere in the API, may be able to just add to existing serializer) 
