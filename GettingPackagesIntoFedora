@@ -46,6 +46,7 @@ We can update the list of packages here and provide bugzilla numbers.
 
 = Phase 2 =
 I am moving phase 2 to be client side tools (stuff that normally would be in the Tools Channels).  
+||name|| License || bugzilla || submitter || notes || 
 ||jabberpy|| || || ||
 ||osad|| || || ||
 ||rhncfg|| || || ||
