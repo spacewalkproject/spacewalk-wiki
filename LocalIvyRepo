@@ -8,7 +8,7 @@ ivy repo or tmp jars.  So what do you do?  Create a local ivy repo for it.
  vi ivy.xml
 }}}
 
-put your jar in the above diretcory (name-version.jar) then update ivy.xml.
+put your jar in the above directory (name-version.jar) then update ivy.xml.
 It will look at your local ivy repo first.
 
 Enjoy.
