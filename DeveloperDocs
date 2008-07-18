@@ -25,6 +25,7 @@ This section contains information about developer topics.  You may also be inter
    * [TracingaPage Tracing a page] -- Follow code flow from the webUI down to the DB layer
    * AddingPagesOverview -- Adding a page to the Java stack
    * BranchSystem -- how branches are organized in the git repo.
+   * LocalIvyRepo -- how to create a local ivy repository
 
  * [BrainBox Brainstorming]
  * [ContibutorList Contributor List]
