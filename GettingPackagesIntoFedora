@@ -46,22 +46,15 @@ We can update the list of packages here and provide bugzilla numbers.
 
 = Phase 2 =
 I am moving phase 2 to be client side tools (stuff that normally would be in the Tools Channels).  
-||name|| License || bugzilla || submitter || notes || 
-||jabberpy|| || || ||
-||osad|| || || ||
-||rhncfg|| || || ||
-||rhncfg-actions|| || || ||
-||rhncfg-client|| || || ||
-||rhncfg-management|| || || ||
-||rhn-custom-info|| || || ||
-||rhn-kickstart|| || || ||
-||rhn-kickstart-common|| || || ||
-||rhn-kickstart-virtualization|| || || ||
-||rhns-applet|| || || ||
-||rhns-certs-tools|| || || ||
-||rhn-virtualization-common|| || || ||
-||rhn-virtualization-guest|| || || ||
-||rhn-virtualization-host|| || || ||
+||Name|| License || Bugzilla || Submitter || Notes || 
+||jabberpy-0.5-0.13.el5.src.rpm|| || || ||
+||osad-5.2.0-1.src.rpm|| || || ||
+||rhncfg-5.2.0-0.src.rpm|| || || ||
+||rhn-custom-info-5.2.0-1.src.rpm|| || || ||
+||rhn-kickstart-5.2.0-5.src.rpm|| || || ||
+||rhns-0.1-4.el5.src.rpm|| || || ||
+||rhns-certs-tools-5.2.0-2.el5.src.rpm|| || || ||
+||rhn-virtualization-5.2.0-5.src.rpm|| || || ||
 
 = Phase 3 =
 
