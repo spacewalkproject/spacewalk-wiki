@@ -64,7 +64,7 @@ Things that will need to be changed:
  * Satellite-sync 
   * add support to push package to new file system location (see below)
   * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
- * New file system location: (/var/satellite/)/redhat/ORG/N(0..2)/N/V-R-E/MD5SUM/file.rpm  to avoid hitting limits on number of entries in directory and avoid directories with only a single file.  (i.e. foomatic-1.1.i386 would be in /var/satellite/redhat/ORG/1/foo/1.1/234A4FE343/foomatic-1.1.i386.rpm). The older path was /var/satellite/redhat/ORG/1/N/V-R-E/file.rpm.
+ * New file system location: (/var/satellite/)/redhat/ORG/N(0..2)/N/V-R-E/A/MD5SUM/file.rpm  to avoid hitting limits on number of entries in directory and avoid directories with only a single file.  (i.e. foomatic-1.1.i386 would be in /var/satellite/redhat/ORG/1/foo/1.1/234A4FE343/foomatic-1.1.i386.rpm). The older path was /var/satellite/redhat/ORG/1/N/V-R-E/file.rpm.
   * Any existing package will not be moved, the db will be referenced by their old location
   * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
   * We could script a way for upgrade such that we move packages to the new file location and update the db, but that seems more hackish to me than just leaving existing packages where they are.  We can discuss this more...
