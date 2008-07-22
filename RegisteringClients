@@ -40,11 +40,17 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     {{{
 yum -q -y install usermode-gtk pyOpenSSL 1>/dev/null 2>&1
     }}}
-  2. Download and Install client packages (get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/ or another supplier):
+  2. Download and Install client packages (get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/ or another supplier such as http://stahnma.fedorapeople.org/spacewalk-tools):
     {{{
 wget -r http://www-personal.umich.edu/~lrsmith/Spacewalk/rpms/
 rpm -Uvh *.rpm
-    }}}
+    }}} 
+    or 
+{{{
+rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
+yum install rhn-setup
+}}}
+
   3. Register your CentOS system to Spacewalk using the activation key you created earlier.
 {{{
   rhnreg_ks --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-centos-custom-channel> 
