@@ -56,6 +56,9 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || || ||
 ||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || ||  ||
 
+ * Was rhnmd removed  in EL 5?  If not, we're missing that too.  
+
+
 = Phase 3 =
 
 We need to break dependancy on Oracle. 
