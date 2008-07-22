@@ -60,7 +60,8 @@ RPMS found in Satellite RHN Tools Channels where source/binary rpms are not avai
  * All of the auto-* packages 
  * rhn-applet-actions
  * rhnmd 
-
+ * rhns-config-libs
+  
  
 
 
