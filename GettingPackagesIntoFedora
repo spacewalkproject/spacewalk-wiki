@@ -48,13 +48,13 @@ We can update the list of packages here and provide bugzilla numbers.
 I am moving phase 2 to be client side tools (stuff that normally would be in the Tools Channels).  
 ||Name|| License || Bugzilla || Submitter || Notes || 
 ||jabberpy-0.5-0.13.el5.src.rpm|| LGPL (According to the SRPM)  || || ||
-||osad-5.2.0-1.src.rpm|| GPLv2 || || || According the source in  client/tools/osad || 
-||rhncfg-5.2.0-0.src.rpm|| GPLv2 (According source in client/tools/rhncfg)|| || || Missing SRPM in repo ||
-||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| || || Missing SRPM in repo ||
-||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || || Missing SRPM in repo ||
+||osad-5.2.0-1.src.rpm|| GPLv2 || || || Missing the SRPM in Repo || 
+||rhncfg-5.2.0-0.src.rpm|| GPLv2 (According source in client/tools/rhncfg)|| || ||  ||
+||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| || || ||
+||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || || ||
 ||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) || || ||
 ||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || || ||
-||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || || Missing SRPM in repo ||
+||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || ||  ||
 
 = Phase 3 =
 
