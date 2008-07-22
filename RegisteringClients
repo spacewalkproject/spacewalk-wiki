@@ -27,6 +27,14 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 }}}
 
 = CentOS 5 =
+{{{
+#!html
+<table border=1  style="border-collapse: collapse;background-color: #6D7B8D;">
+<td class="ambox-text" style=""><b><i style="color: red">Reminder:</i> If your spacewalk server is not running on official RHEL</b><br />
+<small>You will need to install the rhel-instnum package on Centos, Scientific, etc if it is hosting your spacewalk server</small></td>
+</table>
+}}}
+  if you're Spacewalk server is running on Centos (or probably any EL other than RHEL) you will need the rhel-instnum package installed on the server. 
 
   1. Install required packages before the red hat network packages: 
     {{{
