@@ -148,7 +148,7 @@ For more details on the breakdown, refer to the sections below.
 
 === 3. Systems -> Activation Keys: ===
 
- (bz ) Users do not have the ability to specify the architecture of packages to associate with an Activiation Key.  When packages are associated with an Activation Key via the UI, only the package name is supported/used (e.g. libjpeg).  Since package names do not reflect the architecture, the user cannot control the specific package that will be installed on the client.  If the user attempts to associate an architecture in the package name (e.g. libjpeg.i386), the package is added to the list; however, it is ignored when the activation key is used because a package by that name does not exist.
+ (bz 456472) Users do not have the ability to specify the architecture of packages to associate with an Activiation Key.  When packages are associated with an Activation Key via the UI, only the package name is supported/used (e.g. libjpeg).  Since package names do not reflect the architecture, the user cannot control the specific package that will be installed on the client.  If the user attempts to associate an architecture in the package name (e.g. libjpeg.i386), the package is added to the list; however, it is ignored when the activation key is used because a package by that name does not exist.
 
  '''__Proposed Modifications:__'''
  * Schema
