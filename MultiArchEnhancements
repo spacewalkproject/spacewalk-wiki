@@ -1,11 +1,10 @@
-This page is a 'work in progress'. In the coming days, will be adding details on enhancements to the Spacewalk to better handle various scenarios that involve multiple architecture (ie. x86_64, i386...).... 
-
+This page is a 'work in progress' and will continue to go through modifications as solutions are finalized.
 
 == Problem Statement: ==
 
-Although Spacewalk supports x86_64 clients, it does not properly handle scenarios involving i386 packages for those clients.  This includes scenarios such as installing, removing, and verifying packages from the server to the client.
+Although Spacewalk supports clients (eg. x86_64) that utilize and support packages of multiple architectures (eg. x86_64, i386...), there are several scenarios that it does properly handle for those clients.  This document is intended to high-light those scenarios and document proposed solutions.
 
-Below are scenarios where issues have been identified.  Bugzillas will be opened for Spacewalk for each issue and will be referenced below.  Although attempting to be complete, there is a possibility that there are other issues not yet identified.  If you are aware of an issue that has not been listed, please create a detailed Bugzilla for Spacewalk.
+Below are scenarios where issues have been identified.  For each scenario listed, a Spacewalk Bugzilla has been generated and included for reference.  Although attempting to be complete, there is a possibility that there are other issues not yet identified.  If you are aware of an issue that has not been listed, please create a detailed Bugzilla for Spacewalk.
 
 
 == References: ==
@@ -74,7 +73,8 @@ For more details on the breakdown, refer to the sections below.
 
 ==== Verifying packages (systems->system->software->packages->verify) ====
 
- a. (bz tbd) - this bug has been added to the July backlog; therefore, will plan address it there.
+ a. (bz 456539) - Scheduling a package verification from Spacewalk on a client that has files that belong to 2 packages with same NEVR but different
+architectures, the scheduled verification action never completes and each attempt generates an Internal Server Error.  (This issue is currently being worked on; therefore, details on resolution will be omitted from the wiki.)
  b. If user selects the package, it shows the details for the x86_64, even if the pkg installed in i386.  Note: Solving the "Listing packages" issue will also solve this one.  The reason being, both are using the same query from PackageManager for generating the package list.
 
  Note: If user schedules a verify of an package, where only the i386 version of the package is installed, the verify succeeds.
@@ -116,7 +116,7 @@ For more details on the breakdown, refer to the sections below.
 
 ==== Verifying packages (systems->ssm->packages->verify) ====
 
- a. (bz ) The SSM allows the user to select a package to verify; however, it does not allow them to select the architecture of the package being verified.  
+ a. (bz 456543) The SSM allows the user to select a package to verify; however, it does not allow them to select the architecture of the package being verified.  
 
  Observation:
  * If x86_64 client has only i386 package (e.g. for libjpeg) installed, the verify succeeds.
@@ -172,7 +172,7 @@ For more details on the breakdown, refer to the sections below.
 
 ==== systems->stored profiles->packages,   system->software->profile ====
 
-a. (bz ) Package profiles do not include the package architecture information.  As a result, if an i386 package is removed from an x86_64 client and the users performs a profile comparison, they will see that the package is missing; however, performing a sync from the profile to reinstall it on the client results in the x86_64 package being installed.  (Note: package arch information is not received from the server during rhn_check)
+a. (bz 456532) Package profiles do not include the package architecture information.  As a result, if an i386 package is removed from an x86_64 client and the users performs a profile comparison, they will see that the package is missing; however, performing a sync from the profile to reinstall it on the client results in the x86_64 package being installed.  (Note: package arch information is not received from the server during rhn_check)
 
 '''__Proposed Modifications:__'''
 
