@@ -41,8 +41,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.getAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
 ||  kickstart.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||  ||  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
-||  kickstart.enableSELinux(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
-||  kickstart.disableSELinux(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || skarmark ||  || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
 ||  kickstart.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
