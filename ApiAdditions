@@ -38,8 +38,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
 ||  kickstart.diff(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 ||  ||  ||  ||
-||  kickstart.getAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
-||  kickstart.setAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
+||  array[string] kickstart.getAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.setAdvancedOptions(string sessionKey, string kslabel, array[string] options) || 0.2 || 4 || skarmark ||  || Set advanced options on the profile.  For example: option[0]="lang en_US", option[1]="lansupport --default en_US en_US".  The user must specify valid options; otherwise, it is possible that the kickstart could fail. ||
 ||  kickstart.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||partha||  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
 ||  kickstart.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||  || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
 ||  kickstart.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
