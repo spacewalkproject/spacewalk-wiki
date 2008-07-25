@@ -30,20 +30,23 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.getPackageLink(string sessionKey, int packageId) || 0.3 || 5 || jsherrill ||  || What's a package link? ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 ||  ||  ||  ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 date) || 0.3 || 6 ||  ||  ||  ||
-||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || How does this differ from rhnpush? ||
+||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
-||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  ||  ||
-||  errata.findByRHNumber(num) || 0.3 || 3 ||  ||  || What's the RHNumber? ||
+||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
+||  errata.findByAdvisory(string sessionKey, string advisory) || 0.3 || 3 ||  ||  || Retrieve errata based on Advisory (e.g. RHSA-2008:0209) ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
 ||  kickstart.diff || 0.3 || 5 ||  ||  || params? ||
 ||  kickstart.getAdvancedOptions(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
-||  kickstart.setSELinuxEnabled(kslabel, boolean) || 0.2 || 2 || skarmark ||  || Please rename to enableSELinux(kslabel) then add kickstart.disableSELinux(kslabel)  ||
+||  kickstart.enableSELinux(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.disableSELinux(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
 ||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.enableConfigMgmt(kslabel, boolean) || 0.3 || 2 ||  ||  || do not pass in a boolean, simply add a disableConfigMgmt(kslabel) ||
-||  kickstart.enableRemoteCmds(kslabel, boolean) || 0.3 || 2 ||  ||  || do not pass in a boolean, simply add a disableRemoteCmds(kslabel) ||
+||  kickstart.enableConfigMgmt(kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.disableConfigMgmt(kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.enableRemoteCmds(kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.disableRemoteCmds(kslabel) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.setLocale( locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
 ||  kickstart.getSoftwareList() || 0.2 || 2 || jortel ||  ||  ||
 ||  kickstart.setSoftwareList() || 0.2 || 3 || jortel ||  || What's the parameter? ||
