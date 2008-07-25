@@ -51,8 +51,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.getSoftwareList() || 0.2 || 2 || jortel ||  ||  ||
 ||  kickstart.setSoftwareList() || 0.2 || 3 || jortel ||  || What's the parameter? ||
 ||  kickstart.appendToSoftwareList() || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.setActivationKeys() || 0.3 || 4 ||  ||  || param? ||
-||  kickstart.getActivationKeys() || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.setActivationKeys() || 0.3 || 4 || partha ||  || param? ||
+||  kickstart.getActivationKeys() || 0.3 || 2 || partha  ||  ||  ||
 ||  kickstart.listAssociatedFilePreservationLists(kslabel) || 0.4 || 3 ||  ||  || can we shorten this? ||
 ||  kickstart.setAssociatedFilePreservationLists(fllabels) || 0.4 || 4 ||  ||  || can we shorten this? ||
 ||  kickstart.listAssociatedGPGAndSSLKeys() || 0.3 || 3 ||  ||  ||  ||
