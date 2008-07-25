@@ -37,35 +37,35 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  errata.findByAdvisory(string sessionKey, string advisory) || 0.3 || 3 ||  ||  || Retrieve errata based on Advisory (e.g. RHSA-2008:0209) ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
-||  kickstart.diff || 0.3 || 5 ||  ||  || params? ||
-||  kickstart.getAdvancedOptions(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
-||  kickstart.setAdvancedOptions(kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
-||  kickstart.enableSELinux(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
-||  kickstart.disableSELinux(kslabel) || 0.2 || 2 || skarmark ||  ||  ||
-||  kickstart.setNetworkConnection(boolean dhcp, str interface) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.enableConfigMgmt(kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.disableConfigMgmt(kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.enableRemoteCmds(kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.disableRemoteCmds(kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.setLocale( locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.getSoftwareList() || 0.2 || 2 || jortel ||  ||  ||
-||  kickstart.setSoftwareList() || 0.2 || 3 || jortel ||  || What's the parameter? ||
-||  kickstart.appendToSoftwareList() || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.setActivationKeys() || 0.3 || 4 || partha ||  || param? ||
-||  kickstart.getActivationKeys() || 0.3 || 2 || partha  ||  ||  ||
-||  kickstart.listAssociatedFilePreservationLists(kslabel) || 0.4 || 3 ||  ||  || can we shorten this? ||
-||  kickstart.setAssociatedFilePreservationLists(fllabels) || 0.4 || 4 ||  ||  || can we shorten this? ||
-||  kickstart.listAssociatedGPGAndSSLKeys() || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.setAssociatedGPGAndSSLKeys(descriptions) || 0.3 || 4 ||  ||  ||  ||
-||  kickstart.listAllFilePreservationLists() || 0.4 || 2 ||  ||  ||  ||
-||  kickstart.createFilePreservationList(label, list) || 0.4 || 3 ||  ||  ||  ||
-||  kickstart.deleteFilePreservationList(lable) || 0.4 || 3 ||  ||  ||  ||
-||  kickstart.listAllGpgAndSSLKeys() ||0.3  || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
-||  kickstart.listAllIpRanges() || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
-||  kickstart.listIpRanges(int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
-||  kickstart.addIpRange(int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? ||  
-||  kickstart.findKickstartForIp() || 0.2 || 3 || jsherrill     || done ||  ||  
-||  kickstart.removeIpRange(ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
+||  kickstart.diff(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 ||  ||  ||  ||
+||  kickstart.getAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.setAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 4 || skarmark ||  || Set it to what? Doesn't this need more than kslabel? ||
+||  kickstart.enableSELinux(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.disableSELinux(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
+||  kickstart.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.disableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.getSoftwareList(string sessionKey) || 0.2 || 2 || jortel ||  ||  ||
+||  kickstart.setSoftwareList(string sessionKey) || 0.2 || 3 || jortel ||  || What's the parameter? ||
+||  kickstart.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.setActivationKeys(string sessionKey) || 0.3 || 4 || partha ||  || param? ||
+||  kickstart.getActivationKeys(string sessionKey) || 0.3 || 2 || partha  ||  ||  ||
+||  kickstart.listAssociatedFilePreservationLists(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  || can we shorten this? ||
+||  kickstart.setAssociatedFilePreservationLists(string sessionKey, fllabels) || 0.4 || 4 ||  ||  || can we shorten this? ||
+||  kickstart.listAssociatedGPGAndSSLKeys(string sessionKey) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.setAssociatedGPGAndSSLKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  ||  ||
+||  kickstart.listAllFilePreservationLists(string sessionKey) || 0.4 || 2 ||  ||  ||  ||
+||  kickstart.createFilePreservationList(string sessionKey, label, list) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.deleteFilePreservationList(string sessionKey, label) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.listAllGpgAndSSLKeys(string sessionKey) ||0.3  || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
+||  kickstart.listAllIpRanges(string sessionKey) || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
+||  kickstart.listIpRanges(istring sessionKey, nt ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
+||  kickstart.addIpRange(string sessionKey, int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? ||  
+||  kickstart.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
+||  kickstart.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
 ||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
