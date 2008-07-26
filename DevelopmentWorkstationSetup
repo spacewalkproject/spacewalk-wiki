@@ -12,14 +12,14 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
 
 
 = Installation =
- * {{{sudo service rhn-satellite stop}}}
+ * {{{sudo /sbin/service rhn-satellite stop}}}
  * {{{sudo yum install ant-nodeps junit ant-junit java-1.6.0-openjdk-devel}}}
  * {{{sudo rpm -Uvh http://mirrors.dotsrc.org/jpackage/1.7/generic/free/RPMS/ivy-1.3.1-1jpp.noarch.rpm}}}
  * {{{cd $GITDIR/spacewalk/java}}}
  * {{{ant all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel}}} 
- * {{{sudo service rhn-satellite start}}}
+ * {{{sudo /sbin/service rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
 
