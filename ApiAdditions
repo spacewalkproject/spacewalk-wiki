@@ -54,16 +54,16 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.setActivationKeys(string sessionKey) || 0.3 || 4 || partha ||  || param? ||
 ||  kickstart.getActivationKeys(string sessionKey) || 0.3 || 2 || partha  ||  ||  ||
-||  kickstart.listAssociatedFilePreservationLists(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  || can we shorten this? ||
-||  kickstart.setAssociatedFilePreservationLists(string sessionKey, fllabels) || 0.4 || 4 ||  ||  || can we shorten this? ||
-||  kickstart.listAssociatedGPGAndSSLKeys(string sessionKey) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.setAssociatedGPGAndSSLKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  ||  ||
-||  kickstart.listAllFilePreservationLists(string sessionKey) || 0.4 || 2 ||  ||  ||  ||
-||  kickstart.createFilePreservationList(string sessionKey, label, list) || 0.4 || 3 ||  ||  ||  ||
-||  kickstart.deleteFilePreservationList(string sessionKey, label) || 0.4 || 3 ||  ||  ||  ||
-||  kickstart.listAllGpgAndSSLKeys(string sessionKey) ||0.3  || 2 ||  ||  || rename to listAllGPGAndSSLKeys to be consistent with others above ||
+||  kickstart.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 ||  ||  ||  ||
+||  kickstart.listAssociatedKeys(string sessionKey) || 0.3 || 3 ||  ||  || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
+||  kickstart.associateKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  || Associate GPG and SSL keys with the kickstart profile. ||
+||  kickstart.listAllFilePreservations(string sessionKey) || 0.4 || 2 ||  ||  ||  ||
+||  kickstart.createFilePreservation(string sessionKey, string kslabel, list) || 0.4 || 3 ||  ||  || Create a file preservation list for the kickstart profile. ||
+||  kickstart.deleteFilePreservation(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.listAllKeys(string sessionKey) ||0.3  || 2 ||  ||  || List all GPG and SSL keys for all kickstarts ||
 ||  kickstart.listAllIpRanges(string sessionKey) || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
-||  kickstart.listIpRanges(istring sessionKey, nt ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
+||  kickstart.listIpRanges(istring sessionKey, int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
 ||  kickstart.addIpRange(string sessionKey, int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? ||  
 ||  kickstart.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
 ||  kickstart.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
