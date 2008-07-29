@@ -201,18 +201,33 @@ See what remote branches exist:
 git branch -r
 }}}
 
+Create a new remote branch (based on an existing local branch):
+{{{
+git-push git+ssh://git.fedorahosted.org/git/spacewalk.git/ localbranch:refs/heads/newremotebranch
+}}}
+
 Switching to a remote branch, originally you will need to track it so you can keep up with changes automatically.
 
 {{{
 git checkout --track -b my-branchname origin/branchname
 }}}
-If you ever want to use that branch again, BTW, you can just do:
 
+Push latest changes from your local branch back to the remote branch:
+{{{
+git-push origin localbranch:remotebranch
+}}}
+
+If you ever want to use that branch again, BTW, you can just do:
 {{{
 git-checkout my-branchname
 }}}
-Once you make changes, you can see the differences you've made since last commit:
 
+Deleting a remote branch entirely: (WARNING: be careful with this one)
+{{{
+git push origin :remotebranchtodelete
+}}}
+
+Once you make changes, you can see the differences you've made since last commit:
 {{{
 git diff HEAD
 }}}
@@ -239,6 +254,7 @@ git branch -D mybranch
  * Install '''gitk''' for a brutally ugly yet still rather useful graphical tool for doing the same thing.
 
 == Other Resources ==
+ * [http://wiki.sourcemage.org/Git_Guide Another awesome Git Guide]
  * [http://www.gitcasts.com/ Git tutorials as screen casts]
  * [http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html Tutorial Introduction to Git]
  * [http://www.kernel.org/pub/software/scm/git/docs/user-manual.html The Git User's Manual]
