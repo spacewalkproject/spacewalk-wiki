@@ -8,10 +8,10 @@ We can update the list of packages here and provide bugzilla numbers.
 || perl-Business-CreditCard-0.28-6.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || Now In Fedora || 
 || perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=452457 || Nigel Jones || This package might actually not be needed for Spacewalk at all. --adelton || 
 || perl-DBD-Oracle-1.19-8.el5.src.rpm || || Not compatible with Fedora licensing, as it requires oracle-instantclient-devel || null || || 
-|| perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=455443 || msuchy ||
+|| perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=455443 || msuchy || Accepted - In Rawhide ||
 || perl-Frontier-RPC-0.07-7.el5.noarch.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=226258 || stahnma || Already In Fedora ||
 || perl-GD2-2.17-10.el5.src.rpm || || Already in Fedora, under different name (perl-GD) || ||
-|| perl-Math-FFT-0.26-12.el5.src.rpm || GPL/Artistic || https://bugzilla.redhat.com/show_bug.cgi?id=452832 || msuchy ||
+|| perl-Math-FFT-0.26-12.el5.src.rpm || GPL/Artistic || https://bugzilla.redhat.com/show_bug.cgi?id=452832 || msuchy || Accepted - In Rawhide ||
 || perl-Satcon-1.3-9.el5.src.rpm || || in prep || msuchy ||
 || perl-Schedule-Cron-Events-1.8-11.el5.src.rpm || || in prep || msuchy ||
 ||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  Stahnma || Denied: Invalid license for Fedora. Probably not used anymore. --msuchy: perl-Schedule-Cron-Events require this module || 
