@@ -1,0 +1,3 @@
+=== Channle-to-update script ===
+
+Ever needed to create a channel to a specific update level?  Now you can with the channel-to-update script.  The data files and script itself is located in the git repo under /scripts/channel-to-update/  but the tarball is hosted here.
