@@ -8,7 +8,7 @@ Recreate CA cert:
  2.  cd /root
  3.  rhn-ssl-tool --gen-ca
  4.  rhn-ssl-tool --gen-server
- 5.  cp ./ssl-build/RHN-ORG-TRUSTED-SSL-CERT ./rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm  /var/www/html/pub
+ 5.  cp ./ssl-build/RHN-ORG-TRUSTED-SSL-CERT ./ssl-build/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm  /var/www/html/pub
  6.  rpm -e rhn-org-httpd-ssl-key-pair-HOSTNAME
  7.  rpm -ivh ./ssl-build/HOSTNAME/rhn-org-httpd-ssl-key-pair-HOSTNAME-1.0-1.noarch.rpm
  8.  rhn-ssl-dbstore -vvv --ca-cert /root/ssl-build/RHN-ORG-TRUSTED-SSL-CERT
