@@ -1,14 +1,23 @@
-= Intro =
+= Spacewalk Installation Instructions =
 
-The below instructions are how to install Spacewalk into a Red Hat Enterprise Linux 5 server.  Future versions will include instructions and support for Fedora and other Linux variants.
+ * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5]
+ * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#CentOS5 CentOS 5]
 
-= Oracle Pre-Requisites =
+= CentOS 5 =
+
+Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
+
+ 1. The initial setup using spacewalk-setup --disconnected fails because it is looking for /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release. A symlink to the /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 fixes this.
+
+= Red Hat Enterprise Linux 5 =
+
+== Oracle Pre-Requisites ==
 
 In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE.  Instructions on how todo this can be found here:
 
 [OracleXeSetup Oracle XE Setup instructions]
 
-= EPEL Repo setup =
+== EPEL Repo setup ==
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
@@ -17,7 +26,7 @@ rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noar
 }}}
 
 
-= Installation =
+== Installation ==
 
 RPM downloads of the project are available through a yum repository
 
@@ -120,7 +129,7 @@ After {{{spacewalk-setup}}} is complete your application is ready to go!
 You can also find source RPMs and tarballs at the following URL:
    * http://spacewalk.redhat.com/source
 
-= Current set of TODO/potholes =
+== Current set of TODO/potholes ==
 
  * Need these 2 environment variables:
 
