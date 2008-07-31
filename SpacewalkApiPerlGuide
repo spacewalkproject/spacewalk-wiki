@@ -1,4 +1,4 @@
-= The Perl Coders’ Guide to the RedHat Satellite 5.1 API =
+= The Perl Coders’ Guide to the !RedHat Satellite/Spacewalk API =
  
 == Intended Audience ==
 The document is intended for system administrators and/or Perl coders who wish to make use of the RedHat RHN Satellite v5.1 Server API.
