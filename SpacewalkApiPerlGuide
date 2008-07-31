@@ -3,7 +3,7 @@
 == Intended Audience ==
 The document is intended for system administrators and/or Perl coders who wish to make use of the RedHat RHN Satellite v5.1 Server API.
 There may well be better ways to code the examples below and it should be noted that they have not been thoroughly examined for security issues.
-API Introduction
+= API Introduction =
 
 Every Perl script that uses the Frontier::RPC module to access the Satellite API must include some variation on the following code:
 
