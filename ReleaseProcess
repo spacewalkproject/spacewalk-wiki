@@ -1,1 +1,11 @@
-TBD
+The releases are defined on the [https://fedorahosted.org/spacewalk/roadmap Road Map] document.  Below we will describe once we are nearing the end of a 
+
+== Release Cycles ==
+
+Each Spacewalk release will be roughly '''TBD''' weeks in duration
+
+== Mechanics ==
+
+We will build our non Fedora RPMs using a internal Red Hat instance of Koji.  
+
+Notes on setup: [KojiSetup Koji Setup]
