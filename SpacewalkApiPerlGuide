@@ -1,7 +1,7 @@
 = The Perl Coders’ Guide to the !RedHat Satellite/Spacewalk API =
  
 == Intended Audience ==
-The document is intended for system administrators and/or Perl coders who wish to make use of the RedHat RHN Satellite v5.1 Server API.
+The document is intended for system administrators and/or Perl coders who wish to make use of the !RedHat RHN Satellite v5.1 Server API.
 There may well be better ways to code the examples below and it should be noted that they have not been thoroughly examined for security issues.
 = API Introduction =
 
@@ -362,7 +362,7 @@ Conversely, some API calls require you to provide a date in ISO8601 format.  Try
 
  
 == Sources ==
-RedHat Satellite mailing list (https://www.redhat.com/mailman/listinfo/rhn-satellite-users)
+!RedHat Satellite mailing list (https://www.redhat.com/mailman/listinfo/rhn-satellite-users)
 
 Satellite 108 site (https://rhn-satellite.108.redhat.com/wiki/index.php/Main_Page)
 
