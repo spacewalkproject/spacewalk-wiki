@@ -59,8 +59,8 @@ Here are some sane values:
 Login to the webui and configure a user:
 
   '''NOTE:''' Oracle XE web interface is accessible at http://127.0.0.1:9000/apex by default. If you want access it from the outside add this line to your listener configuration:
-    (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=8080))(Presentation=HTTP)(Session=RAW))
-  and do not froget restart listener. Example of modified /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora:
+    (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=9000))(Presentation=HTTP)(Session=RAW))
+  and do not forget restart listener. Example of modified /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora:
 {{{
 # listener.ora Network Configuration File:
 
