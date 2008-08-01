@@ -43,10 +43,10 @@ solution.
 
 == Requirements ==
 
-1.  Customer should be able to push RHEL 5, Fedora 9, and CentOs 5 to separate channels and have their packages all stored on the satellite within the same org.
-2.  It should be fairly simple to know where a package originated from
-3.  Customer should be able to kickstart all 3 distro's from within the same org.
-4.  Customer should be able to upload more than 32,000 packages with different packages names to a single org.
+ 1.  Customer should be able to push RHEL 5, Fedora 9, and CentOs 5 to separate channels and have their packages all stored on the satellite within the same org.
+ 2.  It should be fairly simple to know where a package originated from
+ 3.  Customer should be able to kickstart all 3 distro's from within the same org.
+ 4.  Customer should be able to upload more than 32,000 packages with different packages names to a single org.
 
 
 == Specification ==
