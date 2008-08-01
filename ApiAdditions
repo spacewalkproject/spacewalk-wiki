@@ -42,12 +42,12 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.setAdvancedOptions(string sessionKey, string kslabel, array[struct[string optionName, boolean enabled, string value]) || 0.2 || 4 || skarmark ||  || Set advanced options on the profile.  The optionNames supported are based on those available in the UI and includes: autostep, interactive, install, upgrade, text, network, cdrom, harddrive, nfs, url, lang, langsupport keyboard, mouse, device, deviceprobe, zerombr, clearpart, bootloader, timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx, key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi, iscsiname, logging, monitor, multipath, poweroff, halt, service, shutdown, user, vnc and zfcp. The following options do not have a value; therefore, if one is provided it will be ignored: interactive, install, upgrade, text, cdrom, reboot, skipx, autopart, cmdline, graphical, poweroff, halt and shutdown. ||
 ||  kickstart.getCustomOptions(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.setCustomOptions(string sessionKey, string kslabel, string options) || 0.3 || 4 ||  ||  || Set the "custom" advanced options on the profile.  The user may provide any options desired; therefore, it should be noted that providing an invalid option can cause kickstarts to fail.  Also, the option text is limited to 2048 characters. ||
-||  kickstart.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||partha||  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
-||  kickstart.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||  || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
-||  kickstart.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.disableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
+||  kickstart.profile.system.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||partha||done  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
+||  kickstart.profile.system.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||done || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
+||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
+||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
+||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
+||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
 ||  kickstart.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
 ||  kickstart.getSoftwareList(string sessionKey) || 0.2 || 2 || jortel ||  ||  ||
 ||  kickstart.setSoftwareList(string sessionKey) || 0.2 || 3 || jortel ||  || What's the parameter? ||
