@@ -86,8 +86,7 @@ We need An orgid mapping option to satellite-sync say --to-org
 
   --cperry: so idea here is that we are *not* editing the Exporter tool to allow dumps of packages from Orgs other than Org 1?
 
-  --cperry: With code changes planned for "Basic Sync support" - this will only allow to sync content/channels known about in Org 1 
-between Spacewalk servers, or will the SAT-DUMP code expose *all* channels for all ORGs, allowing the satellite-sync process to pick and choose which channels from Spacewalk server they want. We then let satellite-sync with --to-org to choose where to put the channel's content/packages on sync. 
+  --cperry: With code changes planned for "Basic Sync support" - this will only allow to sync content/channels known about in Org 1 between Spacewalk servers, or will the SAT-DUMP code expose *all* channels for all ORGs, allowing the satellite-sync process to pick and choose which channels from Spacewalk server they want. We then let satellite-sync with --to-org to choose where to put the channel's content/packages on sync. 
 
 
 ==== Estimates ====
@@ -125,6 +124,7 @@ Developer Testing: (''Estimate: 8 hours'')
 * Add a flag say --type=activation-key,kickstart-profiles,user-profiles
 
 * This will export all the additional content from 
+
    $ satellite-sync --parent-sat=master-satellite.redhat.com --type=<content-type> --to-org=2
 
 3. Default case where satellite-sync should work as usual
