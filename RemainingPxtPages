@@ -122,14 +122,14 @@ These have already been migrated.
  * /network/software/packages/install_confirm.pxt
  * /network/software/packages/newer_versions.pxt
  * /network/software/packages/target_system_list.pxt
- * /network/software/packages/details.pxt
+ * /network/software/packages/details.pxt  '''DONE'''
  * /network/software/packages/change_log.pxt
  * /network/software/packages/target_system_list_for_patchset.pxt
  * /network/software/packages/target_system_list_for_patch.pxt
  * /network/software/packages/system_list.pxt
  * /network/software/packages/dependencies.pxt
- * /network/software/packages/manage/index.pxt ***DONE***
- * /network/software/packages/manage/delete_confirm.pxt ***DONE***
+ * /network/software/packages/manage/index.pxt '''DONE'''
+ * /network/software/packages/manage/delete_confirm.pxt '''DONE'''
  * /network/software/packages/system_list_for_patch.pxt
  * /network/software/all_channels.pxt
  * /network/software/retired_channels.pxt
