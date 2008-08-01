@@ -14,7 +14,7 @@ Gpg/Provider
 || rhnpush(server) || 4 || prad || done || read gpg id||
 || satellite-sync || 16 || prad ||done || read gpg id, import gpg info if available ||
 || webUi || 24 ||jsherrill ||in progress || includes re-writing some perl pages ||
-|| migration-script|| 8 ||prad ||in progress || script to migrate existing pkg paths ||
+|| migration-script|| 8 ||prad ||done || script to migrate existing pkg paths ||
 
 
 == The Problems ==
@@ -97,6 +97,7 @@ Things that will need to be changed:
  * Migration script
   * migrate existing package paths on the filer and db 
   * update/include gpg key id info in the db for existing packages.
+  * fixes the pkg permissions to be readable for tomcat
 
 
 Notes:
