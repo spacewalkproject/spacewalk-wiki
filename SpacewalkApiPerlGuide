@@ -77,7 +77,7 @@ So your minimal API script is now:
 }}}
 
 
-This allows you to have your scripts readable by other people (so they can see what’s going on) but keep your user information readable only by those that should be able to see it.
+This allows you to have your scripts readable by other people (so they can see what’s going on) but keep your username/password secret.
 
 = API Insights =
 == Troubleshooting ==
