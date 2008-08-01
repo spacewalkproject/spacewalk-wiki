@@ -46,6 +46,7 @@ solution.
 1.  Customer should be able to push RHEL 5, Fedora 9, and CentOs 5 to separate channels and have their packages all stored on the satellite within the same org.
 2.  It should be fairly simple to know where a package originated from
 3.  Customer should be able to kickstart all 3 distro's from within the same org.
+4.  Customer should be able to upload more than 32,000 packages with different packages names to a single org.
 
 
 == Specification ==
@@ -57,7 +58,6 @@ solution.
 Things that will need to be changed:  
  * DB
   * Unique constraint on md5sum,org for the rhnPackage table.
-  * Enforce NVREA uniqueness within a channel
  * rhnpush 
   * Will need to be modified to push package to a new file system location (see below)
   * add support such that if a package has to be repushed on the file system, its path in the DB will be updated
@@ -65,9 +65,7 @@ Things that will need to be changed:
   * add support to push package to new file system location (see below)
   * add support such that if a package has to be redownloaded/replaced on the file system, its path in the DB will be updated (in case /var/satellite was blown away).
  * New file system location: (/var/satellite/)/redhat/ORG/MD5(0..2)/N/V-R-E/A/MD5SUM/file.rpm  to avoid hitting limits on number of entries in directory and avoid directories with only a single file.  (i.e. foomatic-1.1.i386 would be in /var/satellite/redhat/ORG/1/a3f/foomatic/1.1/i386/a3f198e89834a34/foomatic-1.1.i386.rpm). The older path was /var/satellite/redhat/ORG/1/N/V-R-E/arch/file.rpm.
-  * Any existing package will not be moved, the db will be referenced by their old location
-  * If a package has to be redownloaded/placed on the file system, it will be put in the new location and it's path within the DB will be updated (see rhnpush, satellite-sync above)
-  * We could script a way for upgrade such that we move packages to the new file location and update the db, but that seems more hackish to me than just leaving existing packages where they are.  We can discuss this more...
+  * An upgrade script will be provided to move packages to their new location and update the db
 
 
 2. Solution to issue #2
@@ -93,8 +91,6 @@ Things that will need to be changed:
   * will need to grab the gpg id from the rpm and push it to the DB
  * satellite-sync
   * will need to grab the gpg id from the rpm and push it to the DB
- * exporter (optional)
-  * export the gpg information such that it can be imported without having to be pulled from the rpm
  * webUi
   * Add provider/gpg information to certain package lists
   * Provide a way to link providers to gpg keys (optional)
@@ -104,7 +100,7 @@ Things that will need to be changed:
 
 
 Notes:
- * Apparently up2date handles multiple packages with the same NVREA within the same channel tree fine.  That surprised us both.  (So now we really only have to restrict a single NVREA to a channel.  
+ * Apparently up2date handles multiple packages with the same NVREA within the same channel tree fine.  That surprised us both.  
 
 
 Questions
