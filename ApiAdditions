@@ -44,10 +44,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.setCustomOptions(string sessionKey, string kslabel, string options) || 0.3 || 4 ||  ||  || Set the "custom" advanced options on the profile.  The user may provide any options desired; therefore, it should be noted that providing an invalid option can cause kickstarts to fail.  Also, the option text is limited to 2048 characters. ||
 ||  kickstart.profile.system.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.3 || 3 ||partha||done  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
 ||  kickstart.profile.system.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||done || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
-||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
-||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
-||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
-||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||done  ||  ||  ||
+||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.3 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.3 || 2 ||partha  ||done ||  ||
 ||  kickstart.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
 ||  kickstart.getSoftwareList(string sessionKey) || 0.2 || 2 || jortel ||  ||  ||
 ||  kickstart.setSoftwareList(string sessionKey) || 0.2 || 3 || jortel ||  || What's the parameter? ||
