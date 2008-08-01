@@ -69,11 +69,12 @@ These have already been migrated.
 ==== Software Channel Management ====
  * /network/software/cannot_download.pxt
  * /network/software/channels/details.pxt '''Done'''
+ * /network/software/channels/packages.pxt '''Done'''
  * /network/software/channels/license.pxt
  * /network/software/channels/target_systems.pxt
  * /network/software/channels/patches.pxt
  * /network/software/channels/subscribers.pxt
- * /network/software/channels/errata.pxt
+ * /network/software/channels/errata.pxt '''Done'''
  * /network/software/channels/patchsets.pxt
  * /network/software/channels/download_packages.pxt
  * /network/software/channels/subscribe_confirm.pxt  
