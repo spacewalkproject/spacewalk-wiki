@@ -40,6 +40,11 @@ The Aim here is to sync content between spacewalks, where slave communicated wit
   --msuchy: I suggested to have in master option:
     server.satellite.allowed_iss_slaves=slave1-satellite.redhat.com,slave2-satellite.redhat.com
 
+  --cperry: this server side restriction should allow hostname and IP addresses
+
+  --cperry: We should also allow for SW#1 to sync content from SW#2 and allow SW#2 to sync content from SW#1 if desired, so it is more a mesh where parent/slaves can sync content either way, depending on each systems master and slave configuration options. 
+
+
 ==== Estimates ====
 
 There will be some change needed for satellite-sync, importer and backend modules to add this capability. Following are some rough estimates on what might change.
@@ -77,7 +82,13 @@ We need An orgid mapping option to satellite-sync say --to-org
   --mmccune: What if they want to export from an org *other* than org1 in the parent satellite?  
     Do we need a --from-org= flag as well?
   --prad: The initial spec I had had --from-org. But looking into it a bit more, it might complicate the caching as we have to generate the cache on a per 
-          org basis rather than per content type(as it works now). But definitely doable.. jus a little more work.
+          org basis rather than per content type(as it works now). But definitely doable.. just a little more work. 
+
+  --cperry: so idea here is that we are *not* editing the Exporter tool to allow dumps of packages from Orgs other than Org 1?
+
+  --cperry: With code changes planned for "Basic Sync support" - this will only allow to sync content/channels known about in Org 1 
+between Spacewalk servers, or will the SAT-DUMP code expose *all* channels for all ORGs, allowing the satellite-sync process to pick and choose which channels from Spacewalk server they want. We then let satellite-sync with --to-org to choose where to put the channel's content/packages on sync. 
+
 
 ==== Estimates ====
 There will be lot of changes needed for satellite-sync, importer and backend modules to add this capability. We need to take into account all the content the importer tries to import that has reference to orgid such as channels, packages, errata, kickstart-trees/files, arches. Following are some rough estimates on what  might change.
