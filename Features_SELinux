@@ -20,8 +20,8 @@ Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Li
  * Proxy SELinux policy module will support the Targeted SELinux policy and require the selinux-policy-targeted rpm as a prerequisite to Proxy installation
  * Spacewalk SELinux policy module will be deployed in RPM format and named rhn-spacewalk-selinux 
  * Proxy SELinux policy module will be deployed in RPM format and named rhn-proxy-selinux 
- * Spacewalk SELinux policy module will be supported on Enterprise Linux 5 systems and Fedora 10 (or which release makes most sense at time of feature development work starting/ending)
- * Proxy SELinux policy module will be supported on Enterprise Linux 5 systems and Fedora 10 (or which release makes most sense at time of feature development work starting/ending)
+ * Spacewalk SELinux policy module will be supported on Enterprise Linux 4 & 5 systems and Fedora 10 (or which release makes most sense at time of feature development work starting/ending)
+ * Proxy SELinux policy module will be supported on Enterprise Linux 4 & 5 systems and Fedora 10 (or which release makes most sense at time of feature development work starting/ending)
  * Spacewalk and Proxy installation will support all SELinux states: Enforcing, Permissive and Disabled modes 
 
 == Security Goal ==
