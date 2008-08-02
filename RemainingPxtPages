@@ -320,6 +320,8 @@ These pages have already been migrated.
  * /network/account/addresses.pxt - '''DONE'''
 ==== Stored Profiles ====
 Are these even useful?
+   my company uses this stuff a lot, so I think so.  --stahnma
+
  * /network/profiles/delete.pxt
  * /network/profiles/package-list.pxt
  * /network/profiles/details.pxt
