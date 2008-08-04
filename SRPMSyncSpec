@@ -8,7 +8,7 @@ The idea here is to be able to sync down the source RPM content via satellite-sy
 
 * Support for spacewalk sync to be able to sync down the source rpm data.
 
-* Support for exporter to be able to extract the SRPC data from the spacewalk database
+* Support for exporter to be able to extract the SRPM data from the spacewalk database
 
 
 == Specifications : ==
