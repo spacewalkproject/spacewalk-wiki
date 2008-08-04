@@ -2,7 +2,7 @@
 
 == Goal: ==
 
-The idea here is to be able to sync down the source RPM content via satellite-sync. This includes to be able to export the content through the exporter as well.
+The idea here is to be able to sync down the source RPM content via satellite-sync. This includes to be able to export the content through the exporter as well. We already some functionality in place, so we might as well leverage that and be able to hanlde the source rpm data on our spacewalk servers. 
 
 == Requirements: ==
 
