@@ -21,7 +21,7 @@ The idea here is to be able to sync down the source RPM content via satellite-sy
 
 * Include the srpm processing in the step list to be able to control the stepping of the data.
 
-     {{{ $ satellite-sync -c thrl-i386-as-4 --step=srpm }}}
+     {{{ $ satellite-sync -c rhel-i386-as-4 --step=srpm }}}
 
 * We already have a call in the step sequence to fetch the ource package metadata
     {{{
