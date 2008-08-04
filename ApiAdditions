@@ -36,12 +36,16 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.findByAdvisory(string sessionKey, string advisory) || 0.3 || 3 ||  ||  || Retrieve errata based on Advisory (e.g. RHSA-2008:0209) ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
 ||  kickstart.diff(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 ||  ||  ||  ||
 ||  kickstart.getAdvancedOptions(string sessionKey, string kslabel) || 0.2 || 2 || skarmark ||  ||  ||
 ||  kickstart.setAdvancedOptions(string sessionKey, string kslabel, array[struct[string optionName, boolean enabled, string value]) || 0.2 || 4 || skarmark ||  || Set advanced options on the profile.  The optionNames supported are based on those available in the UI and includes: autostep, interactive, install, upgrade, text, network, cdrom, harddrive, nfs, url, lang, langsupport keyboard, mouse, device, deviceprobe, zerombr, clearpart, bootloader, timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx, key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi, iscsiname, logging, monitor, multipath, poweroff, halt, service, shutdown, user, vnc and zfcp. The following options do not have a value; therefore, if one is provided it will be ignored: interactive, install, upgrade, text, cdrom, reboot, skipx, autopart, cmdline, graphical, poweroff, halt and shutdown. ||
 ||  kickstart.getCustomOptions(string sessionKey, string kslabel) || 0.3 || 2 ||  ||  ||  ||
 ||  kickstart.setCustomOptions(string sessionKey, string kslabel, string options) || 0.3 || 4 ||  ||  || Set the "custom" advanced options on the profile.  The user may provide any options desired; therefore, it should be noted that providing an invalid option can cause kickstarts to fail.  Also, the option text is limited to 2048 characters. ||
+||  kickstart.listIpRanges(istring sessionKey, int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
+||  kickstart.addIpRange(string sessionKey, int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? || 
+||  kickstart.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||   
+||  '''Namespace: kickstart.profile.system''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.system.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.2 || 3 ||partha||done  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
 ||  kickstart.profile.system.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||done || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
 ||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
@@ -49,24 +53,35 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
 ||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
 ||  kickstart.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
-||  kickstart.getSoftwareList(string sessionKey) || 0.2 || 2 || jortel ||  ||  ||
-||  kickstart.setSoftwareList(string sessionKey) || 0.2 || 3 || jortel ||  || What's the parameter? ||
-||  kickstart.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.setActivationKeys(string sessionKey) || 0.3 || 4 || partha ||  || param? ||
-||  kickstart.getActivationKeys(string sessionKey) || 0.3 || 2 || partha  ||  ||  ||
 ||  kickstart.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
 ||  kickstart.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 ||  ||  ||  ||
 ||  kickstart.listAssociatedKeys(string sessionKey) || 0.3 || 3 ||  ||  || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
 ||  kickstart.associateKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  || Associate GPG and SSL keys with the kickstart profile. ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.profile.software''' ||  ||  ||  ||  ||  ||
+||  kickstart.getSoftwareList(string sessionKey) || 0.2 || 2 || jortel ||  ||  ||
+||  kickstart.setSoftwareList(string sessionKey) || 0.2 || 3 || jortel ||  || What's the parameter? ||
+||  kickstart.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.profile.keys''' ||  ||  ||  ||  ||  ||
+||  kickstart.setActivationKeys(string sessionKey) || 0.3 || 4 || partha ||  || param? ||
+||  kickstart.getActivationKeys(string sessionKey) || 0.3 || 2 || partha  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.profile.scripts''' ||  ||  ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.baremetal''' ||  ||  ||  ||  ||  ||
+||  kickstart.listAllIpRanges(string sessionKey) || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
+||  kickstart.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.keys''' ||  ||  ||  ||  ||  ||
+||  kickstart.listAllKeys(string sessionKey) ||0.3  || 2 ||  ||  || List all GPG and SSL keys for all kickstarts ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.distributions''' ||  ||  ||  ||  ||  ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: kickstart.filepreservation''' ||  ||  ||  ||  ||  ||
 ||  kickstart.listAllFilePreservations(string sessionKey) || 0.4 || 2 ||  ||  ||  ||
 ||  kickstart.createFilePreservation(string sessionKey, string kslabel, list) || 0.4 || 3 ||  ||  || Create a file preservation list for the kickstart profile. ||
 ||  kickstart.deleteFilePreservation(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
-||  kickstart.listAllKeys(string sessionKey) ||0.3  || 2 ||  ||  || List all GPG and SSL keys for all kickstarts ||
-||  kickstart.listAllIpRanges(string sessionKey) || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
-||  kickstart.listIpRanges(istring sessionKey, int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
-||  kickstart.addIpRange(string sessionKey, int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? ||  
-||  kickstart.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
-||  kickstart.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||  
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
 ||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
@@ -76,6 +91,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
 ||  packages.getDetails(*,downloadURL)   || 0.5 ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
+
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
 ||  schedule.listAllActions(string sessionKey) || 0.4 || 3 ||  ||  ||  ||
 ||  schedule.cancelAction(string sessionKey, int actionId) || 0.4 || 3 ||  ||  ||  ||
