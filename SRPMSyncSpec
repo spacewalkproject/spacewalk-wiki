@@ -6,36 +6,36 @@ The idea here is to be able to sync down the source RPM content via satellite-sy
 
 == Requirements: ==
 
-* Support for spacewalk sync to be able to sync down the source rpm data.
+ * Support for spacewalk sync to be able to sync down the source rpm data.
 
-* Support for exporter to be able to extract the SRPM data from the spacewalk database
+ * Support for exporter to be able to extract the SRPM data from the spacewalk database
 
 
 == Specifications : ==
 
 === Changes to Satellite Sync: ===
 
-* We need to add the necessary flags to turn on the srpm support on satellite-syncs, possibly  --no-srpm.
+ * We need to add the necessary flags to turn on the srpm support on satellite-syncs, possibly  --no-srpm.
 
      {{{ $ satellite-sync -c rhel-i386-as-4 --no-srpms }}}
 
-* Include the srpm processing in the step list to be able to control the stepping of the data.
+ * Include the srpm processing in the step list to be able to control the stepping of the data.
 
      {{{ $ satellite-sync -c rhel-i386-as-4 --step=srpm }}}
 
-* We already have a call in the step sequence to fetch the source package metadata
+ * We already have a call in the step sequence to fetch the source package metadata
     {{{
      def _step_download_source_packages(self):
         return self.syncer.download_source_package_metadata()
     }}}
-* As said above we will need a _step_srpm() call doing something like this:
+ * As said above we will need a _step_srpm() call doing something like this:
     {{{
      def _step_srpms(self):
         return self.syncer.download_srpms()
     }}}
 and syncer.download_srpms will be fetching the src.rpm rpms from the server on to the cache.
 
-* Need to also include a _diff_source_packages call so that we don't have to re fetch the source rpm metadata each time and compare the existing data on sat with what we'll be fetching. similar to _diff_packages, but for source rpms.
+ * Need to also include a _diff_source_packages call so that we don't have to re fetch the source rpm metadata each time and compare the existing data on sat with what we'll be fetching. similar to _diff_packages, but for source rpms.
     {{{
     def _diff_source_packages():
         """
@@ -44,11 +44,11 @@ and syncer.download_srpms will be fetching the src.rpm rpms from the server on t
         return
     }}}
 
-* We already have _compute_not_cahced_source_packages and _compute _uniq_source_packages calls that would be useful for the diff call above.
+ * We already have _compute_not_cahced_source_packages and _compute _uniq_source_packages calls that would be useful for the diff call above.
 
-* SourcePackageContainer objects (SIngleton) to create the necessary collection objects to be fed to the importer are already present for Source packages in sync_handler.SourcePackageCollection.
+ * SourcePackageContainer objects (SIngleton) to create the necessary collection objects to be fed to the importer are already present for Source packages in sync_handler.SourcePackageCollection.
 
-* Dumper classes for Source rpms need to be added to create objects necessary for caching and dumping the file on to the file system.
+ * Dumper classes for Source rpms need to be added to create objects necessary for caching and dumping the file on to the file system.
 {{{
     class SourceRPMDUmper(Dumper):
         _loader_class = xmlSource.SourceRPMContainer
@@ -58,9 +58,9 @@ and syncer.download_srpms will be fetching the src.rpm rpms from the server on t
 }}}
 or similar.
 
-* Add a srpm container to xmlSource and xmlDiskSource to support above calls
+ * Add a srpm container to xmlSource and xmlDiskSource to support above calls
 
-* Also need to add a container class  for srpms to diskImportLib.
+ * Also need to add a container class  for srpms to diskImportLib.
 {{{
     class SourcePackageContainer(xmlSource.SourcePackageContainer):
         def endContainerCallback(self):
@@ -76,7 +76,7 @@ or similar.
         return a list of src pkg dumps for requested src pkg ids.
        """
 }}}
-* Exporter changes are already in place to be able to be able to fetch the source rpms as ChannelSOurcePackagesDumper and SourcePackagesDumper
+ * Exporter changes are already in place to be able to be able to fetch the source rpms as ChannelSOurcePackagesDumper and SourcePackagesDumper
 
 === Database Support ===
 
@@ -87,16 +87,17 @@ We already have the necessary tables to support SRPMS:
 === rhn-satellite-Exporter Changes ===
 
  * We need to add the necessary flags to turn on the srpm support on rhn-satellite-exporter possibly  --no-srpm.
-   {{{ $ rhn-satellite-exporter -c rhel-i386-as-4 --no-srpms 
-   }}}
+{{{ 
+    $ rhn-satellite-exporter -c rhel-i386-as-4 --no-srpms 
+}}}
 
-* Include the srpm processing in the step list to be able to control the steppin
+ * Include the srpm processing in the step list to be able to control the steppin
 g of the data.
 {{{
      $ rhn-satellite-exporter -c rhel-i386-as-4 --step=srpm
 }}}
-* We already have support to dump the source packages via the XML_dumper classes in dumper.py. So not much changes required here. Although some supporting calls might be needed.
+ * We already have support to dump the source packages via the XML_dumper classes in dumper.py. So not much changes required here. Although some supporting calls might be needed.
 
-* Changes to iss_ui.py will be necessary to support the srpm flags and step sequence functionality.
+ * Changes to iss_ui.py will be necessary to support the srpm flags and step sequence functionality.
 
 = Test Plans =
