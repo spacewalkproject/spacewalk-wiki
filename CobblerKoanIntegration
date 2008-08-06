@@ -33,10 +33,13 @@ Why should we integrate cobbler into Spacewalk:
 
 1. Installation of Spacewalk will include an installation of Cobbler
 
-1. Cobbler will be able to be invoked from the command line on the Spacewalk server
+2. Cobbler will be able to be invoked from the command line on the Spacewalk server
 
-1. Clients with koan installed will be able to be invoked against the Spacewalk server:
+3. Clients with koan installed will be able to be invoked against the Spacewalk server:
    
+  koan --virt --profile=f9-xen-i386 --nogfx --server=spacewalk.example.com --virt-name=test-f9
+
+4. Cobbler and koan will be supported by Red Hat 
 
 
 == Command Line ==
