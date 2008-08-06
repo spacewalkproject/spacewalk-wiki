@@ -41,6 +41,8 @@ Why should we integrate cobbler into Spacewalk:
 
 5. Spacewalk will synchronize each Kickstart Profile with a Cobbler profile
 
+5.1. Changes to Cobbler profiles from the cobbler CLI will be synchronized to the Spacewalk Kickstart Profile
+
 6. Cobbler will fetch Kickstart files from Spacewalk
 
 7. Systems using Cobbler and Koan for provisioning will consume a Provisioning entitlement upon re-registration to the Spacewalk server.
@@ -60,6 +62,7 @@ Why should we integrate cobbler into Spacewalk:
 14.  Spacewalk's virtualization provisioning feature will be expanded to include more options to include LVM backed guest options, qeumu and KVM options, multiple NICs per VM and multiple disks for VMs.
 
 15.  Spacewalk will be able to provision CentOS and Fedora virtual and non virtual machines.
+
 
 
 == Specification ==
