@@ -37,9 +37,21 @@ Why should we integrate cobbler into Spacewalk:
 
 3. Clients with koan installed will be able to be invoked against the Spacewalk server:
    
-  koan --virt --profile=f9-xen-i386 --nogfx --server=spacewalk.example.com --virt-name=test-f9
+  {{{koan --virt --profile=f9-xen-i386 --nogfx --server=spacewalk.example.com --virt-name=test-f9}}}
 
-4. Cobbler and koan will be supported by Red Hat 
+4. Cobbler and koan will be supported by Red Hat once this feature is available within a Satellite release.
+
+5. Spacewalk will synchronize each Kickstart Profile with a Cobbler profile
+
+6. Cobbler will fetch Kickstart files from Spacewalk
+
+7. Systems using Cobbler and Koan for provisioning will consume a Provisioning entitlement upon re-registration to the Spacewalk server.
+
+8. A Spacewalk server will be able to function as a PXE server if so configured
+
+9. Cobbler will be able to use the Kickstart Profiles contained within Spacewalk to provide to Anaconda
+
+10.  Cobbler will be able to use the content contained within Spacewalk channels
 
 
 == Command Line ==
