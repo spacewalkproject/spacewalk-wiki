@@ -48,7 +48,7 @@ We can update the list of packages here and provide bugzilla numbers.
 I am moving phase 2 to be client side tools (stuff that normally would be in the Tools Channels).  
 ||Name|| License || Bugzilla || Submitter || Notes || 
 ||jabberpy-0.5-0.13.el5.src.rpm|| LGPL (According to the SRPM)  || || ||
-||osad-5.2.0-1.src.rpm|| GPLv2 || || || Missing the SRPM in Repo || 
+||osad-5.2.0-1.src.rpm|| GPLv2 || || || || 
 ||rhncfg-5.2.0-0.src.rpm|| GPLv2 (According source in client/tools/rhncfg)|| || ||  ||
 ||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| || || ||
 ||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || || ||
