@@ -49,6 +49,8 @@ Why should we integrate cobbler into Spacewalk:
 
 8. A Spacewalk server will be able to function as a PXE server if so configured
 
+8.1. A Spacewalk server will be able to function as a DHCP/DNS server if so configured
+
 9. Cobbler will be able to use the Kickstart Profiles contained within Spacewalk to provide to Anaconda
 
 10. Cobbler will be able to use the content contained within Spacewalk channels
@@ -82,6 +84,7 @@ Spacewalk can be "read-modify-write" into Cobbler DB using Cobbler API calls.
  * calling out to koan from rhnlib
  * kickstart progress monitoring?
   * cobbler has some monitoring via a post-install trigger.  Can we leverage that? -- mpd
+
 === Server ===
  * cobbler server running on Spacewalk
   * installer should configure /etc/cobbler/settings, /etc/cobbler/modules.conf
@@ -138,9 +141,9 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Estimates ==
 
-||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Task1 || 0.3 || 5 || mmccune ||  ||  ||
+||  Installer: Modify spacewalk rpm to depend on cobbler || 0.3 || 1 || mmccune ||  ||  ||
 ||  Task2 || 0.3 || 5 || mmccune ||  ||  ||
 ||  Task2 || 0.4 || 5 || paji ||  ||  ||
 
