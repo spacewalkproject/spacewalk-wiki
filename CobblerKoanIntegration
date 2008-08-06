@@ -29,6 +29,16 @@ Why should we integrate cobbler into Spacewalk:
  * power management (future?)
  * for more see: https://fedorahosted.org/cobbler
 
+== Requirements ==
+
+1. Installation of Spacewalk will include an installation of Cobbler
+
+1. Cobbler will be able to be invoked from the command line on the Spacewalk server
+
+1. Clients with koan installed will be able to be invoked against the Spacewalk server:
+   
+
+
 == Command Line ==
 
 We want to allow users to continue to use Cobbler's CLI from the server side.
