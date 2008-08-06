@@ -60,8 +60,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.associateKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  || Associate GPG and SSL keys with the kickstart profile. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.software''' ||  ||  ||  ||  ||  ||
-||  kickstart.profile.software.getSoftwareList(string sessionKey) || 0.3 || 2 || jortel ||  ||  ||
-||  kickstart.profile.software.setSoftwareList(string sessionKey) || 0.3 || 3 || jortel ||  || What's the parameter? ||
 ||  kickstart.profile.software.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.keys''' ||  ||  ||  ||  ||  ||
