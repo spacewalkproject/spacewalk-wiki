@@ -31,41 +31,58 @@ Why should we integrate cobbler into Spacewalk:
 
 1. Installation of Spacewalk will include an installation of Cobbler
 
+1.1  The spacewalk-setup program will configure Cobbler to work with Spacewalk
+
 2. Cobbler will be able to be invoked from the command line on the Spacewalk server
 
 3. Clients with koan installed will be able to be invoked against the Spacewalk server:
    
   {{{koan --virt --profile=f9-xen-i386 --nogfx --server=spacewalk.example.com --virt-name=test-f9}}}
 
-4. Cobbler and koan will be supported by Red Hat once this feature is available within a Satellite release.
+4. Cobbler and koan CLI and server (but not Cobbler WUI) will be supported by Red Hat once this feature is available within a Satellite release.  --TBD
 
-5. Spacewalk will synchronize each Kickstart Profile with a Cobbler profile
+5. Spacewalk will synchronize creation/updates/deletes to each Kickstart Profile with a Cobbler profile
 
-5.1. Changes to Cobbler profiles from the cobbler CLI will be synchronized to the Spacewalk Kickstart Profile
+5.1. Changes to Cobbler profiles from the cobbler CLI will be synchronized to the Spacewalk Kickstart Profiles
 
 6. Cobbler will fetch Kickstart files from Spacewalk
 
-7. Systems using Cobbler and Koan for provisioning will consume a Provisioning entitlement upon re-registration to the Spacewalk server.
+ -- upgrade path? 
 
-8. A Spacewalk server will be able to function as a PXE server if so configured
+7. Systems using Cobbler and Koan for provisioning will consume a Provisioning entitlement upon registration to the Spacewalk server.
 
-8.1. A Spacewalk server will be able to function as a DHCP/DNS server if so configured
+8. A Spacewalk server will be supported and able to function as a PXE server for use with Provisioning if so configured. 
 
-9. Cobbler will be able to use the Kickstart Profiles contained within Spacewalk to provide to Anaconda
+8.1. A Spacewalk server will be be supported able to function as a DHCP/DNS server for use with Provisioning if so configured. 
 
-10. Cobbler will be able to use the content contained within Spacewalk channels
+8.2 The spacewalk-setup 
+ 
+ -- do we need a webui for this?
+ -- 
 
-11. Spacewalk will have the ability to create LiveCDs from an existing Kickstart Profile and Channel Content.
+9. Cobbler will be able to use the Kickstart Profiles contained within Spacewalk to provide to Anaconda.
 
-12. Spacewalk will offer a new advanced Kickstart GUI page that will allow a user to hand-edit the kickstart file and send it down to Cobbler for synchronization
+--STRIKE-- 10. Cobbler will be able to use the content contained within Spacewalk channels. --STRIKE--
+
+--STRIKE -- 11. Spacewalk will have the ability to create DeadCDs from an existing Kickstart Profile and Channel Content. 
+
+12. Spacewalk will offer a new advanced Kickstart GUI page that will allow a user to hand-edit the kickstart file and send it down to Cobbler for synchronization.
 
 13. Spacewalk's virtualization provisioning feature will utilize Cobbler and Koan to create new virtual guests.
 
-14.  Spacewalk's virtualization provisioning feature will be expanded to include more options to include LVM backed guest options, qeumu and KVM options, multiple NICs per VM and multiple disks for VMs.
+14. Spacewalk's virtualization provisioning feature will be expanded to include more options to include LVM backed guest options, qeumu and KVM options, multiple NICs per VM and multiple disks for VMs.
 
-15.  Spacewalk will be able to provision CentOS and Fedora virtual and non virtual machines.
+15. Spacewalk will be able to provision CentOS and Fedora virtual and non virtual machines.
 
+== RHN Satellite Specific Requirements  ==
 
+1. Cobbler will be shipped in the rhn-satellite channel -- TBD
+
+2. Koan will be shipped in the rhn-tools channels -- TBD
+
+3. Satellite upgrades --> sync all existing ks profiles to cobbler
+
+4. Satellite will only support provisioning and virtualization management features that are supported in Red Hat Enterprise Linux.
 
 == Specification ==
 
