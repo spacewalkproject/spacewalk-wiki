@@ -8,3 +8,9 @@ What is in Spacewalk right now is a first cut of this feature. There are a numbe
  * [wiki:Features/MultiOrg2/Specification Specification] - High Level design
  * [wiki:Features/MultiOrg2/TrustRelationships Trust relationships] between organizations will enable content sharing and system migration - if you don't have a trust relationship with a given org, you can't see any of the content it shares with you nor can you migrate systems to it or can systems from it be migrated to your organization.
  * [wiki:Features/MultiOrg2/ContentSharing Content Sharing] between organizations
+
+== Web UI Overview ==
+
+Here's a sitemap of the Web UI showing new/modified pages for this feature:
+
+[[Image(multiorg-sitemap.png)]]
