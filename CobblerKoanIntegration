@@ -121,7 +121,17 @@ Phase III is where we build on the work from the previous phases to fully integr
  * LVM backed virtual guests
  * Expose the "netboot-enabled flag" and look into integrating power management
 
-=== Non-Cobbler But Slightly Related Interesting Things ===
+
+== Estimates ==
+
+||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  Task1 || 0.3 || 5 || mmccune ||  ||  ||
+||  Task2 || 0.3 || 5 || mmccune ||  ||  ||
+||  Task2 || 0.4 || 5 || paji ||  ||  ||
+
+
+== Non-Cobbler But Slightly Related Interesting Things ==
 
  * put Virt-viewer applet in Spacewalk virt UI (something we wanted to do in VF at one point)
 
