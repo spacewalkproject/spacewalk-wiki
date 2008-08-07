@@ -62,17 +62,13 @@ Why should we integrate cobbler into Spacewalk:
 
 9. Cobbler will be able to use the Kickstart Profiles contained within Spacewalk to provide to Anaconda.
 
---STRIKE-- 10. Cobbler will be able to use the content contained within Spacewalk channels. --STRIKE--
+10. Spacewalk will offer a new advanced Kickstart GUI page that will allow a user to hand-edit the kickstart file and send it down to Cobbler for synchronization.
 
---STRIKE -- 11. Spacewalk will have the ability to create DeadCDs from an existing Kickstart Profile and Channel Content. 
+11. Spacewalk's virtualization provisioning feature will utilize Cobbler and Koan to create new virtual guests.
 
-12. Spacewalk will offer a new advanced Kickstart GUI page that will allow a user to hand-edit the kickstart file and send it down to Cobbler for synchronization.
+12. Spacewalk's virtualization provisioning feature will be expanded to include more options to include LVM backed guest options, qeumu and KVM options, multiple NICs per VM and multiple disks for VMs.
 
-13. Spacewalk's virtualization provisioning feature will utilize Cobbler and Koan to create new virtual guests.
-
-14. Spacewalk's virtualization provisioning feature will be expanded to include more options to include LVM backed guest options, qeumu and KVM options, multiple NICs per VM and multiple disks for VMs.
-
-15. Spacewalk will be able to provision CentOS and Fedora virtual and non virtual machines.
+13. Spacewalk will be able to provision CentOS and Fedora virtual and non virtual machines.
 
 == RHN Satellite Specific Requirements  ==
 
