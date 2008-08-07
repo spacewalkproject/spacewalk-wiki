@@ -107,7 +107,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
 ||  system.createCustomValueKey() || 0.3 || 3 || || || ||
-
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
+||  configchannel.channelExists(string channel label) || 0.3 || unknown || || || added by coec - simple method that returns 1 if the channel exists or 0 if it does not ||
 
 === New Spacewalk 0.1 APIs ===
 
