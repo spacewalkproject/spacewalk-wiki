@@ -93,7 +93,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
- || np-config-2.110.3-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453111 || msuchy ||
+ || np-config-2.110.3-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453111 - merging with NPuser into nocpulse-common || msuchy ||
  || NPusers-1.17.11-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453109 || msuchy ||
  || nutch || Apache v2.0 || || jmatthews ||
  || oscache-2.2-2jpp.ep1.1.el5.src.rpm || || || ||
@@ -114,6 +114,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || rhn-java-sat-0.1-3.el5.src.rpm || || || ||
  || rhn-oracle-jdbc-1.0-13.el5.src.rpm || || || ||
  || rhns-0.1-3.src.rpm || || || ||
+
  || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || || ||
  || rhn-satellite-config-5.2.0-1.el5.src.rpm || || || ||
  || rhn-satellite-schema-5.1.0-27.src.rpm || || || ||
