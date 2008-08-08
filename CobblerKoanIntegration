@@ -164,6 +164,26 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Synchronization: Kickstart Profile creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji ||  ||  ||
 ||  Synchronization: Kickstart Profile edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji ||  ||  ||
 ||  Synchronization: Kickstart Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
+||  Synchronization: Kickstart Distribution creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji ||  ||  ||
+||  Synchronization: Kickstart Distribution edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji ||  ||  ||
+||  Synchronization: Kickstart Distribution delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
+||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji ||  ||  ||
+||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune ||  ||  ||
+||  Kickstarts: Document how to use Spacewalk content for kickstarting without need for tinyurl. || 0.4 || 1 || mmccune ||  ||  ||
+||  Kickstarts: Port remaining Perl Kickstart Sniglet handlers || 0.4 || 3 || mmccune ||  ||  ||
+||  Cobbler: All Cobbler Profiles created by Spacewalk KS Wizard will be setup to fetch their kickstart.cfg files from Spacewalk  . || 0.4 || 5 || paji ||  ||  ||
+||  Cobbler: Manually setup Cobbler as PXE server on spacewalk . || 0.4 || 3 || paji ||  ||  ||
+||  Cobbler: Manually setup Cobbler as DHCP server on spacewalk . || 0.4 || 3 || paji ||  ||  ||
+||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as PXE server || 0.4 || 3 || paji ||  ||  ||
+||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as DHCP server || 0.4 || 3 || paji ||  ||  ||
+||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || mmccune ||  ||  ||
+||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || mmccune ||  ||  ||
+||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || mmccune ||  ||  ||
+||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune ||  ||  ||
+||  Entitlements: One-time Activation Keys created for a Kickstart Session will automatically have a Provisioning Entitlement added to them || 0.4 || 2 || mmccune ||  ||  ||
+||  Virtualization: Database modifications to offer more virtualization options for a Kickstart Profile (disk, cpu, lvm, etc..) || 0.4 || 2 || mmccune ||  ||  ||
+||  Virtualization: GUI to support new virtualization options for Kickstart Profiles || 0.4 || 2 || mmccune ||  ||  ||
+||  Virtualization: Provisioning displaying expanded options list for guest creation and allowing overrides || 0.4 || 2 || mmccune ||  ||  ||
 
 == Non-Cobbler But Slightly Related Interesting Things ==
 
