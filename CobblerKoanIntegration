@@ -202,6 +202,8 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Virtualization: GUI to support new virtualization options for Kickstart Profiles || 0.4 || 3 || mmccune ||  ||  ||
 ||  Virtualization: Provisioning displaying expanded options list for guest creation and allowing overrides || 0.4 || 3 || mmccune ||  ||  ||
 
+'''Total Days: ~105'''
+
 == Non-Cobbler But Slightly Related Interesting Things ==
 
  * put Virt-viewer applet in Spacewalk virt UI (something we wanted to do in VF at one point)
