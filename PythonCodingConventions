@@ -26,27 +26,25 @@ code for the Spacewalk backend.
 
 3. Comments
 
-   Comments should precede a function definition, not show up after a
-   function definition. Some have qualified this mode as "stinking C
-   style" comments, which are not up to par with the Python way of
-   doing things. I could care less about the Python way of
-   commenting the code. It has been proven again and again that
-   placing a comment and announcing what you are about to do before
-   the code that actually does it makes the code easier to parse and
-   lets a reviewer understand whether he/she should spend time looking
-   into a particular block of code or not.
+   Comments should be written as [http://www.python.org/dev/peps/pep-0257/ docstring]. This way programmers documentation can be created automatically.
 
    So please use something like this:
    {{{
    #!python
-   # Authenticate the server certificate
    def auth(system_cert):
+       """ Authenticate the server certificate """
    }}}
    Instead of:
    {{{
    #!python
-   def auth(system_cert)
+   def auth(system_cert):
        # Authenticate the server cert
+   }}}
+   Or instead of:
+   {{{
+   #!python
+   # Authenticate the server cert
+   def auth(system_cert):
    }}}
 
 4. Classes and inheritance
