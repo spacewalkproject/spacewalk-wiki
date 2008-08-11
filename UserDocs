@@ -2,7 +2,8 @@
 
 In this section you can find user documenation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
-   * [HowToInstall How to install] -- How to download and install Spacewalk.
+   * [HowToInstall How to install] -- How to download and install Spacewalk Server.
+   * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
    * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
    * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
    * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
