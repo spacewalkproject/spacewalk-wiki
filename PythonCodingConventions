@@ -1,6 +1,8 @@
 This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
 code for the Spacewalk backend.
 
+[http://www.python.org/dev/peps/pep-0008/ Commont Python Coding Style]
+
 1. Line wrapping
 
    One shall not wrap up lines just becase we need to make the text
@@ -103,6 +105,7 @@ code for the Spacewalk backend.
        print _("Foo %s: %s" % ("bar", 1))
    }}}
    There is a BIG difference.
+
 
 8. Consistency (Grandfather clause)
 
