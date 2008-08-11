@@ -136,9 +136,9 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  org.getDetails(orgName) || 0.1 || || partha || Done || ||
 ||  org.getDetails(orgId) || 0.1 || || partha || Done || ||
 ||  org.updateName || 0.1 || || partha || Done || ||
-||  org.listChannelFamilyEntitlements || 0.1 || || dgoodwin || Done || ||
-||  org.listChannelFamilyEntitlementsForOrg || 0.1 || || dgoodwin || Done || ||
-||  org.setChannelFamilyEntitlements || 0.1 || || dgoodwin || Done || ||
+||  org.listSoftwareEntitlements || 0.1 || || dgoodwin || Done || ||
+||  org.listSoftwareEntitlementsForOrg || 0.1 || || dgoodwin || Done || ||
+||  org.setSoftwareEntitlements || 0.1 || || dgoodwin || Done || ||
 ||  org.listSystemEntitlements || 0.1 || || partha || Done || ||
 ||  org.listSystemEntitlementsForOrg || 0.1 || || partha || Done || ||
 ||  org.setSystemEntitlements || 0.1 || || dgoodwin || Done || ||
