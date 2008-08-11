@@ -202,6 +202,7 @@ A full list of API calls can be found on the [https://fedorahosted.org/spacewalk
  * Calls which list entitlements will not include entries that have none allocated. Eg. When listing allocation for an entitlement, only orgs which have been given the entitlement will be present in the list.
  * Private channel families will not appear in the list entitlement calls or be accepted by the set entitlement calls. This matches the UI functionality as private channel families are really only relevant to the org they're created for. 
  * A -1 entitlement count signifies an unlimited allocation of an entitlement. (i.e. custom channel families, etc) This is represented as NULL in the database, but this xmlrpc has no null values so we must resort to using -1. This situation is rare if even possible, NULL max member counts seems to only occur for private channel families, which are not supported in list/set entitlement calls. (see previous point) 
+ * implement a config option/flag to disable if a customer needs at some point in the future 
 
 === Structs ===
 
