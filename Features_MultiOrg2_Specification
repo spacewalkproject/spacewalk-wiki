@@ -99,7 +99,7 @@ Location: /rhn/trust/Trusts.do
 
 ACL: Org Admin
 
-=== Trusted Organizations Removal===
+=== Trusted Organizations Removal ===
 Location: /rhn/trust/RemoveTrusts.do
 
 ACL: Org Admin
