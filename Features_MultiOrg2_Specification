@@ -75,30 +75,34 @@ This table will require an additional column to handle if the Org Admin will all
 
 == New & Existing Pages ==
 
-The design of the following new pages can be found on the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/TrustRelationships User Interface] mockups and the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/ContentSharing Content Sharing] mockups. High Level descriptions of the widgets can be found on the mockup pages. 
+The design of the following new pages can be found on the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/TrustRelationships User Interface] mockups and the [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/ContentSharing Content Sharing] mockups. High Level descriptions of the widgets can be found on the mockup pages. A diagram representing the new and existing pages can be found at [https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2].
 
 === Organizations ===
 Location: /rhn/admin/multiorg/Organizations.do (Existing)
 
 ACL: Spacewalk Admin
 
-=== Trust Ring ===
-Location: /rhn/admin/multiorg/TrustRing.do?tid=X (New)
+=== Trust Orgs ===
+Location: /rhn/admin/multiorg/TrustOrgs.do?oid=X (New)
 
 ACL: Spacewalk Admin
 
 === Trust Ring Remove Confirm ===
-Location: /rhn/admin/multiorg/TrustRingDelete.do?tid=X (New)
+Location: /rhn/admin/multiorg/TrustOrgDelete.do?oid=X (New)
 
 ACL: Spacewalk Admin
 
-=== Organization Trust ===
+=== Trusted Organizations ===
+The set of orgs available are determined by the set defined by the spacewalk admin. This page allows enable/disable for channel content and 
+system migrations.
 Location: /rhn/trust/Trusts.do
 
 ACL: Org Admin
 
-Questions: 
- * Currently the mockup shows selections for both channel content and System migrations. Does the channel content checkbox conflict with the Channel Details page that allows a Org Admin to select public/private access for that specific channel? 
+=== Trusted Organizations Removal===
+Location: /rhn/trust/RemoveTrusts.do
+
+ACL: Org Admin
 
 === Channel Details ===
 Location: /network/software/channels/manage/edit.pxt?cid=101 (Existing)
@@ -106,15 +110,11 @@ Location: /network/software/channels/manage/edit.pxt?cid=101 (Existing)
 ACL: Org Admin
 
 === Channel Organization? ===
-Currently the mockups show a Channel organization page that allows a Org Admin to give access to specific Organizations in addition to the Org Trust Page. 
+Channel organization page that allows a Org Admin to give access to specific Organizations in addition to the Org Trust Page. 
 
 Location: /rhn/channels/manage/ChannelTrust.do?cid=101 (New?)
 
 ACL: Org Admin
-
-Questions:
- * Is this overkill? Why have a global org trust page per org and then have an additional trust ring per channel? 
- * If we do support both a global Trust Ring per Org and a trust ring per channel, how will this work together? Precedence? Documentation? A usability test might give more insight if this is potentially confusing. 
 
 == System Migration ==
 
