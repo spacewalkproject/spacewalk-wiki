@@ -109,7 +109,7 @@ Location: /network/software/channels/manage/edit.pxt?cid=101 (Existing)
 
 ACL: Org Admin
 
-=== Channel Organization? ===
+=== Channel Organization ===
 Channel organization page that allows a Org Admin to give access to specific Organizations in addition to the Org Trust Page. 
 
 Location: /rhn/channels/manage/ChannelTrust.do?cid=101 (New?)
