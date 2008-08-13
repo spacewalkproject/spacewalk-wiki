@@ -253,6 +253,66 @@ git branch -D mybranch
  * Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
  * Install '''gitk''' for a brutally ugly yet still rather useful graphical tool for doing the same thing.
 
+== Example workflow of test-srpm ==
+Here is an example workflow where we are working on a spec file and testing with {{{make test-srpm}}}.
+For readability we will name different SHA1 number as SHA1-A, SHA1-B, ...
+
+When we begin, the tree has SHA1-A
+
+ {{{$ git commit -a -m 'edit spec to comply with fedora guidelines'}}}
+
+After the commit it now has SHA1-B
+
+ {{{$ gitk --all}}}
+
+Review the changes, then do some testing. You find error,for example, rpmlint complains. Edit the spec.
+
+ {{{$ git commit -a -m 'shut up rpmlint'}}}
+
+The tree now has SHA1-C
+
+ {{{$ make test-srpm}}}
+
+We still find errors, re-edit the spec file.
+
+ {{{$ git commit -a -m 'I hate you rpmlint'}}}
+
+The tree now has SHA1-D
+
+ {{{$ make test-srpm}}}
+
+Again, still more errors, edit the spec file.
+
+ {{{$ git commit -a -m 'say again something rpmlint and I kill you'}}}
+
+The tree now has SHA1-E
+
+ {{{$ make test-srpm}}}
+
+Finally, {{{rpmlint}}} is silent. We will reject all our previous commits,
+but they are still in git you may in following steps do in {{{gitk 'Update'}}} to see what happened
+do not do 'Reload' as you will not see dead part of tree.
+ {{{$ git reset --hard SHA1-A}}}
+
+
+We now pick up all the previous changes and apply it to our working copy without commits.
+
+ {{{
+ $ git cherry-pick -n SHA1-B
+ $ git cherry-pick -n SHA1-C
+ $ git cherry-pick -n SHA1-D
+ $ git cherry-pick -n SHA1-E
+ }}}
+
+Now we have one commit including all of the changes:
+
+ {{{$ git commit -a -m 'edit spec to comply with fedora guidelines'}}}
+
+Confirm this is what we wanted and we are ready to merge and push
+
+ {{{$ make test-srpm}}}
+
+
 == Other Resources ==
  * [http://wiki.sourcemage.org/Git_Guide Another awesome Git Guide]
  * [http://www.gitcasts.com/ Git tutorials as screen casts]
