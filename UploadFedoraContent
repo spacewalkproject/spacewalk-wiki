@@ -95,3 +95,5 @@ For example, to upload the content downloaded using {{{reposync}}} do the follow
 
 Note: Make sure {{{/var/satellite}}} exists and has owner:group {{{apache}}} before pushing.
 
+Note: I found that the above failed on Fedora 9 Everything.  My work around was
+ {{{find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk}}}
