@@ -51,6 +51,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.findByAdvisory(string sessionKey, string advisory) || 0.3 || 3 ||  ||  || Retrieve errata based on Advisory (e.g. RHSA-2008:0209) ||
+||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]string advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || tbd ||  ||  || Set errata details.  All arguments are optional and will only be modified if included. ||
+||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata. ||
+||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || Remove a set of packages from an errata. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.diff(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 ||  ||  ||  ||
