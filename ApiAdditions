@@ -48,6 +48,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 date) || 0.3 || 6 ||  ||  ||  ||
 ||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
 ||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
+||  configchannel.channelExists(sessionKey, string channelLabel) || 0.3 || tbd || || || added by coec - simple method that returns 1 if the channel exists or 0 if it does not ||
+||  configchannel.scheduleFileComparisons(string sessionKey, string channelLabel, string path, array[int serverId]) || 0.3 || tbd || || || * Schedule a file comparison on the list of systems provided.[[BR]]* Returns the id of the scheduled action (int actionId). ||
+||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.findByCVE(string sessionKey, string cveName) || 0.3 || 3 ||  ||  || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.findByAdvisory(string sessionKey, string advisory) || 0.3 || 3 ||  ||  || Retrieve errata based on Advisory (e.g. RHSA-2008:0209) ||
@@ -141,9 +145,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
 ||  system.createCustomValueKey() || 0.3 || 3 || || || ||
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || || || * Schedule a package list refresh for a system.[[BR]]* Returns 1 on success, exception thrown otherwise. ||
-||  ----   ||  ||  ||  ||  ||  ||
-||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
-||  configchannel.channelExists(string channel label) || 0.3 || unknown || || || added by coec - simple method that returns 1 if the channel exists or 0 if it does not ||
 
 === New Spacewalk 0.1 APIs ===
 
