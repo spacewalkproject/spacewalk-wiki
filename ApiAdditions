@@ -22,9 +22,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
-||  channel.listErrata(string sessionKey, string advisoryType) || 0.3 || 4 || bbuckingham ||  ||  ||
-||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.access''' ||  ||  ||  ||  ||  ||
 || channel.access.enableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 || channel.access.disableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
@@ -40,12 +37,13 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  (Multi Org Phase2 support) '''TODO: need info on what will be configured on this page w/in the web-ui'''   ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
+|| channel.listErrata(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham ||  ||  ||
 || channel.software.getContactDetails(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Retrieve the contact/support information for a given channel.[[BR]]* Returns struct[ string name, string email, string phoneNumber, string supportPolicy ]||
 || channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 ||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill ||  ||  ||
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham ||  ||  ||
-||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 date) || 0.3 || 6 || bbuckingham ||  ||  ||
+||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.3 || 6 || bbuckingham ||  ||  ||
 ||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
