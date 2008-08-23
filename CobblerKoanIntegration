@@ -156,10 +156,10 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Installer: Modify spacewalk rpm to depend on cobbler || 0.3 || 1 || mmccune ||  ||  ||
-||  Installer: Modify installer to configure Cobbler || 0.3 || 2 || mmccune ||  ||  ||
+||  Installer: Modify spacewalk rpm to depend on cobbler || 0.3 || 1 || paji ||  ||  ||
+||  Installer: Modify installer to configure Cobbler || 0.3 || 2 || paji ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Koan: Verify and test koan clients calling cobbler on spacewalk server || 0.4 || 2 || paji ||  ||  ||
+||  Koan: Verify and test koan clients calling cobbler on spacewalk server || 0.4 || 2 || mmccune ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization: Develop method for Spacewalk server calling Cobbler (xmlrpc) || 0.4 || 3 || paji ||  ||  ||
 ||  Synchronization: Develop method for Cobbler calling Spacewalk (xmlrpc) || 0.4 || 3 || paji ||  ||  ||
