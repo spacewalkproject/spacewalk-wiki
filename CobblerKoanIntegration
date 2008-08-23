@@ -217,6 +217,12 @@ Phase III is where we build on the work from the previous phases to fully integr
  * multiple authentication options to webui, simplest is creating a key in a digest file, also does kerberos/LDAP.
  * for example of misc. cobbler triggers, templating examples, kickstart snippets, and other customization, see the Cobbler Wiki
 
+== Installation Issues =
+
+ * Cobbler uses /etc/httpd/conf.d/cobbler.conf and we are using /etc/httpd/conf configs that need to be linked together
+ * This means requests to http://host.example.com/cobbler/ will 404
+
+
 == Notes from June 26 ==
 
  * Consensus:  Most important/interesting features to add first are:
