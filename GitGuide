@@ -248,6 +248,14 @@ If you get a warning about unmerged changes, you can force the removal with
 git branch -D mybranch
 }}}
 
+Working in master when you didn't intend to or got yourself into a mess? Working in branches is always a good idea to offer flexibility should you get into a situation where you get a large master conflict, commit something you don't actually want going to remote master, etc. If you mistakenly do this or get into such a situation you can create a local branch off master at it's current state, and reset master to origin's state. You'll be left with a local branch containing all your work, and a pure master copy you can cherry pick to, merge, whatever.
+
+{{{
+git branch mynewlocalbranch
+git checkout master
+git reset origin/master
+}}}
+
 == Tips ==
 
  * Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
