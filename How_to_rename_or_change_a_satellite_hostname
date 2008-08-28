@@ -63,7 +63,7 @@ Reboot at this stage for the hostname change to take effect at the OS level and 
  9. Monitoring is very specific to the IP address and hostname being used. 
    * If the IP address changed then you need to update the two entry's in the database to show this:
 {{{
-# sqlplus rhnsat/rhnsat@rhnsat
+# sqlplus spacewalk/spacewalk@xe
 SQL> update rhn_sat_node set ip = 'xxx.xxx.xxx.xxx' where ip = 'yyy.yyy.yyy.yyy';
 SQL> update rhn_sat_cluster set vip = 'xxx.xxx.xxx.xxx' where vip = 'yyy.yyy.yyy.yyy';
 SQL> commit;
