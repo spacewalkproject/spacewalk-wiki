@@ -94,7 +94,7 @@ Login -> Monitoring -> Scout Config Push -> Select all -> Click button "Push Sco
 }}}
      * Login to the database and display current (old) key information, make a note of the recid value in the output:
 {{{
-# sqlplus rhnsat/rhnsat@rhnsat
+# sqlplus spacewalk/spacewalk@xe
 SQL> select RECID, PUBLIC_KEY from rhn_sat_cluster;
 }}}
      * Replace the old key with the new:
@@ -106,7 +106,7 @@ SQL> quit
      * The new ssh key will have to be deployed into the /opt/nocpulse/.ssh/authorized_keys file on any Monitoring client systems that have the rhnmd monitoring client daemon deployed for remote connections. A restart of the rhnmd is then also recommended. 
  10. Update the entry for hostname within the macro config system:
 {{{
-# sqlplus rhnsat/rhnsat@rhnsat
+# sqlplus spacewalk/spacewalk@xe
 SQL> select name, definition from rhn_config_macro where name = 'RHN_SAT_HOSTNAME';
 SQL> update rhn_config_macro set definition = 'my-new-satellite-hostname.example.org' where name = 'RHN_SAT_HOSTNAME';
 SQL> commit;
