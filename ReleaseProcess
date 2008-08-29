@@ -1,11 +1,55 @@
-The releases are defined on the [https://fedorahosted.org/spacewalk/roadmap Road Map] document.  Below we will describe once we are nearing the end of a cycle.
-
 == Release Cycles ==
 
-Each Spacewalk release will be roughly '''TBD''' weeks in duration
+Each Spacewalk release will be roughly two (2) months in duration. See [https://hosted.fedoraproject.org/spacewalk/roadmap Roadmap] for upcoming releases.
 
 == Mechanics ==
-
 We will build our non Fedora RPMs using an internal Red Hat instance of Koji.  
 
 Notes on setup: [KojiSetup Koji Setup]
+
+== Get your packages tagged, get your packages built ==
+To have a particular package in a Spacewalk release, we should know from which
+commit we plan to take the code. To to that, I suggest you do
+{{{
+	make test-srpm
+}}}
+and try to create test .src.rpm package.
+
+Note that this .src.rpm will be created from your local HEAD (on
+whatever branch your are), it will have that commit's SHA1 in name
+and if will also appear in the .tar.gz within that .src.rpm. It's
+done that way on purpose, so that .src.rpm from your local HEAD is
+not confused with "official" package releases.
+
+When you get .src.rpm, try to rpmbuild it on your Fedora and RHEL. Fix
+any problems that appear, do more commits, revert commits, etc.
+
+When you are happy with the .src.rpm, you should run either
+{{{
+	make tag-release
+}}}
+or
+{{{
+	make tag-minor-release
+}}}
+
+and tag your HEAD with name-version-release, and push that commit and
+tag to the upstream repository. Run
+{{{
+	make help
+}}}
+to see how. After you have your tag in the upstream repository, you
+can do
+{{{
+	make srpm
+}}}
+which will create .src.rpm, this time named with the version-release
+of the latest tag for that package. You should build this .src.rpm
+in koji and in brew. Note that for brew, the commands will be
+{{{
+	make srpm DIST='.el4.sw'
+	brew build --nowait spacewalk-4E-0.2-candidate /path/to/that/package-version-release.el4.sw.src.rpm
+	make srpm DIST='.el5.sw'
+	brew build --nowait spacewalk-5E-0.2-candidate /path/to/that/package-version-release.el5.sw.src.rpm
+}}}
+so that the {{{%{dist}}}} tag is populated correctly.
