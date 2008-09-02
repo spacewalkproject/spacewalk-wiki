@@ -13,6 +13,8 @@
 
 ==== Re-arranged custom channel details tab with additional organization sharing controls ====
 
+ * '''NOTE:''' new support fields will not appear on Red-Hat-provided channels (Satellite only)
+
 [[Image(channel-details-sharing.png)]]
 
 ==== Per-organization access control for custom channel (trusted orgs only) ====
