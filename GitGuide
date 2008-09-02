@@ -143,6 +143,13 @@ When you're ready to push your changes out to the public repository (or submit a
   git push                      # push the changes out to the remote repository
 }}}
 
+If you'd prefer to condense this into one command try this bash function:
+{{{
+function sync-git {
+    git checkout master && git pull && git checkout $1 && git rebase master && git checkout master && git merge $1  && echo You are ready to make: git push
+}
+}}}
+
 === Submitting Patches ===
 
 For those without commit access, or those who just prefer to submit a patch for review, the steps are as follows:
@@ -221,6 +228,7 @@ If you ever want to use that branch again, BTW, you can just do:
 {{{
 git-checkout my-branchname
 }}}
+
 
 Deleting a remote branch entirely: (WARNING: be careful with this one)
 {{{
