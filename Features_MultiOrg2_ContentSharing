@@ -15,6 +15,19 @@
 
 [[Image(channel-details-sharing.png)]]
 
+ * '''All Channels''': All channels, all arches, all sources, regardless of how many systems subscribed, regardless of whether or not it has been retired, regardless if it comes from another org or is local to your org
+   * Columns: channel name, #packages, #systems subscribed, source/provider
+ * '''Popular Channels''': Will have a drop-down at the top of the pages, 'View Channels with at least [ __ ] Systems subscribed' and the dropdown should be 1 | 5 | 10 | 25 | 50 | 100 | 500 | 1000
+   * Columns: channel name, #packages, #systems subscribed, source/provider
+ * '''Red Hat channels''': All arches of all non-retired Red Hat provided channels
+   * Columns: channel name, #packages, #systems subscribed
+ * '''My Channels''': All custom channels that are local to this organization
+   * Columns: channel name, #packages, #systems subscribed
+ * '''Shared channels''' (Rename to '''External Channels'''?): All channels that have been provided by an external org
+   * Columns: channel name, #packages, #systems subscribed, source/provider
+ * '''Retired Channels''': channels that have been retired
+   * Columns: channel name, #packages, #systems subscribed, source/provider
+
 ==== Per-organization access control for custom channel (trusted orgs only) ====
 
 [[Image(channel-details-orgs.png)]]
