@@ -19,7 +19,7 @@
    * Columns: channel name, #packages, #systems subscribed, source/provider
  * '''Popular Channels''': Will have a drop-down at the top of the pages, 'View Channels with at least [ __ ] Systems subscribed' and the dropdown should be 1 | 5 | 10 | 25 | 50 | 100 | 500 | 1000
    * Columns: channel name, #packages, #systems subscribed, source/provider
- * '''Red Hat channels''': All arches of all non-retired Red Hat provided channels
+ * '''Red Hat channels''': All arches of all non-retired Red Hat provided channels (will only exist in Satellite; doesn't make sense in Spacewalk)
    * Columns: channel name, #packages, #systems subscribed
  * '''My Channels''': All custom channels that are local to this organization
    * Columns: channel name, #packages, #systems subscribed
