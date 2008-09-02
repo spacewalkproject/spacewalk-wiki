@@ -33,7 +33,7 @@
    * Columns: channel name, #packages, #systems subscribed, source/provider
  * '''Red Hat channels''': All arches of all non-retired Red Hat provided channels (will only exist in Satellite; doesn't make sense in Spacewalk)
    * Columns: channel name, #packages, #systems subscribed
- * '''My Channels''': All custom channels that are local to this organization
+ * '''My Channels''': All custom channels that are local to this organization (would be nice to have tabs across the top: Private | Protected | Shared)
    * Columns: channel name, #packages, #systems subscribed
  * '''Shared channels''' (Rename to '''External Channels'''?): All channels that have been provided by an external org
    * Columns: channel name, #packages, #systems subscribed, source/provider
