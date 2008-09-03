@@ -35,10 +35,13 @@ Instead, '''the Spacewalk administrator will be able to switch off system migrat
 [[Image(org-mytrusts.png)]]
 
 === External Organization Details: Details ===
+[[Image(org-extorg-details.png)]]
 
 === External Organization Details: Provided Channels ===
+[[Image(org-extorg-channelsprovided.png)]]
 
 === External Organization Details: Consumed Channels ===
+[[Image(org-extorg-channelsconsumed.png)]]
 
 == Mockup Sources ==
 
