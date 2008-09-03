@@ -40,7 +40,7 @@
  * '''Retired Channels''': channels that have been retired
    * Columns: channel name, #packages, #systems subscribed, source/provider
 
-[[Image(channels-list-new-filters.png)]]
+[[Image(channels-list-new-filters.2.png)]]
 
 ==== Reorganized channel details page includes contact/support information ====
 
