@@ -53,3 +53,22 @@ in koji and in brew. Note that for brew, the commands will be
 	brew build --nowait spacewalk-5E-0.2-candidate /path/to/that/package-version-release.el5.sw.src.rpm
 }}}
 so that the {{{%{dist}}}} tag is populated correctly.
+
+== Branching a release ==
+When we're nearing the end of a release cycle, we need to branch the release.
+
+Make sure your {{{master}}} is clean and updated:
+{{{
+   git checkout master
+   git pull (make sure things are clean)
+}}}
+
+Now create a local branch, where x.y is the release number, i.e. 0.2:
+{{{
+   git checkout -b release-x.y
+}}}
+
+Then, push your branch to the remote server, where x.y is the release number:
+{{{
+   git push origin release-x.y:refs/heads/RELEASE-x.y
+}}}
