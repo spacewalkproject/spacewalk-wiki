@@ -1,5 +1,7 @@
 = Spacewalk Proxy Installation Instructions =
 
+'''These insttructions are for Spacewalk Proxy 0.2 onwards'''
+
 == Installation ==
 
 RPM downloads of the project are available through a yum repository
@@ -23,16 +25,8 @@ Then just ask yum to install the application:
 yum install spacewalk-proxy-installer
 }}}
 
-This will pull down and install the set of RPMs required to get Spacewalk to run.  Then you need to configure the proxy. Run
+This will pull down and install the set of RPMs required to get Spacewalk Proxy to run.  Then you need to configure the proxy. Run
 
 {{{
 configure-proxy.sh
 }}}
-
-And finaly activate proxy:
-
-{{{
-rhn-proxy-activate --server=your.spacewalk.server.com --version=5.2 --ca-cert /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
-}}}
-
-This final step will be hopefully one day part of configure-proxy.sh script.
