@@ -16,6 +16,26 @@ Here's a sitemap of the Web UI showing new/modified pages for this feature:
 
 [[Image(multiorg-sitemap.png)]]
 
+== Directory of Web UI Mockups ==
+
+ * '''Mockup A1''': attachment:wiki:Features/MultiOrg2/SystemMigration:overview-widget-migrated.png
+ * '''Mockup B1''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-mytrusts.png
+ * '''Mockup B2''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-extorg-details.png
+ * '''Mockup B3''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-extorg-channelsconsumed.png
+ * '''Mockup B4''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-extorg-channelsprovided.png
+ * ''There is no mockup B5.''
+ * '''Mockup B6''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-consumer.png
+ * '''Mockup C1''': attachment:wiki:Features/MultiOrg2/SystemMigration:systems-list-migrated.png
+ * '''Mockup D1''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-sharing.png
+ * '''Mockup D2''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-orgs_privateconfirm.png
+ * '''Mockup D3''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-orgs_protectedconfirm.png
+ * '''Mockup D4''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-orgs.png
+ * '''Mockup D5''': attachment:wiki:Features/MultiOrg2/ContentSharing:channel-details-orgs_removalconfirm.png
+ * '''Mockup E1''': attachment:wiki:Features/MultiOrg2/ContentSharing:channels-list-new-filters.2.png
+ * '''Mockup F1''': attachment:wiki:Features/MultiOrg2/TrustRelationships:orgs-list.png
+ * '''Mockup F2''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-trust-tab.png
+ * '''Mockup F3''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-trust-tab-confirm.png
+
 == Channel Sharing Model ==
 
 [[Image(channel-sharing_multiorg2.png)]] 
