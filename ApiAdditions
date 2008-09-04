@@ -144,7 +144,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.diffToChannel(sid, chan_label) || 0.3 || 3 ||  ||  ||  ||
 ||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
-||  system.createCustomValueKey() || 0.3 || 3 || || || ||
+||  system.createCustomValueKey() || 0.3 || 3 || coec || In progress || || createCustomValueKey(sessionKey, string keyLabel, string keyDescription)
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || || || * Schedule a package list refresh for a system.[[BR]]* Returns 1 on success, exception thrown otherwise. ||
 
 === New Spacewalk 0.1 APIs ===
