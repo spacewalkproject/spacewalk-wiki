@@ -34,3 +34,7 @@ This section will describe at a high level what security precautions will be imp
  * Entrypoints - need to have at least one entrypoint executable file type for each of the domains 
  * Application resources - need to have one more more types for the resources controlled by Proxy and Spacewalk. Examples are temp files, config files, sockets, log files, web files, pid files, etc) 
  * Network access - what network interfaces will Proxy and Spacewalk services be allowed access? Which ports can Spacewalk and Proxy use? DNS name resolution, etc. 
+
+== The investigation and development work ==
+
+[wiki:Features/SELinuxNotes]
