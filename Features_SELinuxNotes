@@ -1,0 +1,34 @@
+
+I've started investigating SELinux status of Spacewalk, using Spacewalk 0.2 20080903 snapshot.
+
+After installing Oracle XE according to the OracleXeSetup instructions, I've run
+
+{{{
+# /etc/init.d/oracle-xe configure
+}}}
+
+It configures the database (the XE instance) and while there are no denials in audit.log, the initrc_t in this ps axuwZ output does not sound correct:
+
+{{{
+root:system_r:initrc_t          oracle    2073  0.0  0.7  21980  6036 ?        Ss   14:00   0:00 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
+
+root:system_r:initrc_t          oracle    2212  0.0  1.2 298556 10088 ?        Ss   14:02   0:00 xe_pmon_XE
+root:system_r:initrc_t          oracle    2214  0.0  1.0 297944  8744 ?        Ss   14:02   0:00 xe_psp0_XE
+root:system_r:initrc_t          oracle    2216  0.0  2.0 297940 16936 ?        Ss   14:02   0:00 xe_mman_XE
+root:system_r:initrc_t          oracle    2218  0.0  1.4 300012 12256 ?        Ss   14:02   0:00 xe_dbw0_XE
+root:system_r:initrc_t          oracle    2220  0.0  3.4 313492 28124 ?        Ss   14:02   0:00 xe_lgwr_XE
+root:system_r:initrc_t          oracle    2222  0.0  1.7 297948 14020 ?        Ss   14:02   0:00 xe_ckpt_XE
+root:system_r:initrc_t          oracle    2224  0.0  3.4 297972 28476 ?        Ss   14:02   0:00 xe_smon_XE
+root:system_r:initrc_t          oracle    2226  0.0  1.7 297944 14128 ?        Ss   14:02   0:00 xe_reco_XE
+root:system_r:initrc_t          oracle    2228  0.0  2.4 299540 20456 ?        Ss   14:02   0:00 xe_cjq0_XE
+root:system_r:initrc_t          oracle    2230  0.2  5.1 299660 41980 ?        Ss   14:02   0:00 xe_mmon_XE
+root:system_r:initrc_t          oracle    2232  0.0  1.2 297944  9852 ?        Ss   14:02   0:00 xe_mmnl_XE
+root:system_r:initrc_t          oracle    2234  0.0  1.1 298604  9656 ?        Ss   14:02   0:00 xe_d000_XE
+root:system_r:initrc_t          oracle    2236  1.3  8.0 304304 65948 ?        Ss   14:02   0:02 xe_s000_XE
+root:system_r:initrc_t          oracle    2238  0.1  6.1 303260 50600 ?        Ss   14:02   0:00 xe_s001_XE
+root:system_r:initrc_t          oracle    2240  0.0  1.0 298552  8536 ?        Ss   14:02   0:00 xe_s002_XE
+root:system_r:initrc_t          oracle    2242  0.0  1.0 298552  8540 ?        Ss   14:02   0:00 xe_s003_XE
+root:system_r:initrc_t          oracle    2246  0.0  1.2 297940  9932 ?        Ss   14:02   0:00 xe_qmnc_XE
+root:system_r:initrc_t          oracle    2275  0.0  1.3 297936 10920 ?        Ss   14:02   0:00 xe_q000_XE
+root:system_r:initrc_t          oracle    2277  0.0  1.1 297940  9188 ?        Ss   14:02   0:00 xe_q001_XE
+}}}
