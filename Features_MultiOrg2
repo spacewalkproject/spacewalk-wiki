@@ -11,13 +11,10 @@ What is in Spacewalk right now is a first cut of this feature. There are a numbe
  * [wiki:Features/MultiOrg2/SystemMigration System Migration] between organizations will be implemented as a script that will be run by the root user on the server itself. However, the webui will help you identify which systems have been migrated to your organization.
 
 == Web UI Overview ==
-
 Here's a sitemap of the Web UI showing new/modified pages for this feature:
-
 [[Image(multiorg-sitemap.png)]]
 
 == Directory of Web UI Mockups ==
-
  * '''Mockup A1''': attachment:wiki:Features/MultiOrg2/SystemMigration:overview-widget-migrated.png
  * '''Mockup B1''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-mytrusts.png
  * '''Mockup B2''': attachment:wiki:Features/MultiOrg2/TrustRelationships:org-extorg-details.png
