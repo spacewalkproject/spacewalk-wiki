@@ -23,8 +23,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: activationkey''' ||  ||  ||  ||  ||  ||
-||  activationkey.enableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 3  ||  ||  ||  ||
-||  activationkey.disableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 ||  ||  ||  ||
+||  activationkey.enableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 3  || coec || In progress || Mostly done but problems testing due to problems on page 'Systems - Activation Keys - Config Channels' ||
+||  activationkey.disableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || In progress || Mostly done but problems testing due to problems on page 'Systems - Activation Keys - Config Channels' ||
 ||  '''Namespace: channel.access''' ||  ||  ||  ||  ||  ||
 || channel.access.enableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 || channel.access.disableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
