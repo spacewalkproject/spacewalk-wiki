@@ -17,6 +17,12 @@
 
 [[Image(channel-details-sharing.png)]]
 
+===== Confirmation to go from public to protected =====
+[[Image(channel-details-orgs_protectedconfirm.png)]]
+
+===== Confirmation to go from public or protected to private =====
+[[Image(channel-details-orgs_privateconfirm.png)]]
+
 ==== Per-organization access control for custom channel (trusted orgs only) ====
 
 [[Image(channel-details-orgs.png)]]
