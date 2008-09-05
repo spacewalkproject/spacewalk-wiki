@@ -21,9 +21,9 @@ For example, to create a channel for Fedora 9:
 
 {{{
 ./create_channel.py 
-Usage: create_channel.py [options] --label <channel label> --name <channel name>
+usage: create_channel.py [options] --label <channel label> --name <channel name>
 
-Options:
+options:
   -h, --help           show this help message and exit
   --user=USER          username
   --password=PASSWORD  password
@@ -31,6 +31,7 @@ Options:
   --label=LABEL        channel label
   --name=NAME          channel name
   --summary=SUMMARY    channel summary
+  --channel-arch=ARCH  channel architecture
   --debug              enable debug output
 None
 }}}
