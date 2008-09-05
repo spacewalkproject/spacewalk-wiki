@@ -26,6 +26,7 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
  1. Use wiki to organize porting of stored procedures. Generate table,  and allow volunteers to claim procedures they will port for postgresql. See below section for details on the options available when porting stored procedures.
  1. Sort through query problems. When queries are found that do not work on PostgreSQL, preference would be to modify them to be compliant with both. If this is not possible we need to accommodate the possibility of multiple query versions in some situations. 
 
+
 == Stats ==
  * Quantitatively speaking we need to port the following components to Postgres.
 
@@ -84,6 +85,58 @@ So when porting stored procedures, the following options will be available, in o
  1. Port the procedure from PL/SQL to PL/pgSQL, but expose via a Thrift RPC call and update all code that calls the procedure directly.
  1. Port the procedure from PL/SQL to PL/pgSQL, and leave code in the various languages calling it directly.
   * Least desired but may be required for more complex and long winded Perl operations.
+
+== Hurdles ==
+ * Custom Data Types -  Spacewalk uses a custom data type EVR_T for rhnPackageEvr table. This EVR_T data type is mainly used for ordering. Look at [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/class/evr_t.sql;hb=HEAD evr_t.sql] for the definition of this data type. While Postgres has the facility to create custom data type, it does not have a  'ORDER MEMBER FUNCTION' to dictate natural ordering for the custom data type. Here are some example queries that make use of the order member function in [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml;hb=HEAD Package_queries.xml]...
+{{{
+<mode name="system_latest_all_available_packages">
+........
+   SELECT  p.name_id name_id,
+                 p.id,
+                 p.evr_id,
+                 max(pe.evr) evr,
+      from ....
+.....
+</mode>
+
+
+<mode name="system_all_available_packages">
+........
+   SELECT  pn.name AS NAME,....
+      from ....
+      where ....
+...     AND PE2.evr &gt;= full_list.evr)
+.....
+</mode>
+}}}
+or [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml;hb=HEAD System_queries.xml]...
+{{{....
+<mode name="system_installed_packages">
+.....
+SELECT ....
+  FROM  ...
+ WHERE ....
+ORDER BY PN.name, PE.evr
+....
+</mode>
+}}}
+
+ To make things a little worse, this EVR_T is used in DB table view definitions that rely on this magical ordering making it difficult to port in application code, for example [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/views/rhnChannelNewestPackageView.sql;hb=HEAD rhnChannelNewestPackageView.sql]
+{{{....
+create or replace view
+rhnChannelNewestPackageView
+as
+......
+where 
+.....
+and pe.evr = (select	max(sq_pe.evr)
+......
+}}} .. 
+Postgresql has a way to create  [http://www.postgresql.org/docs/8.3/interactive/sql-createaggregate.html User defined Aggregate Functions] which has to be explored more and might work well for max, min,and order by have to be worked out... In this case custom methods like evr_max() and evr_min() will have to be created for both oracle and postgres and all the application quesries and view queries have to be replaced with this..
+
+* No Synonyms in Postgres - Basically postgres standard release does not have synonyms. Synonyms are heavily used in the monitoring code.. Some solution has to be worked out..
+
+* No packages or package body in postgres - 80% of our oracle stored procedures are in Package and Package Body. Postgres however does not have the concept of package bodies.. So sql queries with calls like rhn_config_channel.get_user_file_access will have issues.. A fix for this issue might be to define [http://www.postgresql.org/docs/8.3/interactive/ddl-schemas.html Schema]  for each Package name space and define package functions and procedures in the schema .. For example in the case of rhn_config_channel.get_user_file_access, we will have  rhn_config_channel schema and get_user_file_access as a stored procedure in it.. Only issue here is that we will lose ability to store member variables in package body.. But the instances I checked there havent been many packages that have instance variables.
 
 == Required Stored Procedures ==
 
@@ -515,7 +568,7 @@ Most expensive stored procedures to port from Oracle to PostgreSQL
 
 = Potential Problems =
 
-Thought of something that might pose a problem? Please add it here:
+
 
 
 = Links =
