@@ -40,7 +40,7 @@ The pros and cons of each approach will be discussed in the coming proposals. Pl
  || Packages Functions || 90 || See below ||
 
 == Porting Tables ==
-* Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSql, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
+* Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSQL, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
 
 === Manual Process (Under construction)  === 
 || Components|| Sample File  in Oracle || Same sample file  in Postgres || Issues to deal with || References ||
@@ -109,30 +109,31 @@ So when porting stored procedures, the following options will be available, in o
 .....
 </mode>
 }}}
-or [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml;hb=HEAD System_queries.xml]...
-{{{....
+or [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml;hb=HEAD System_queries.xml]
+
+{{{
 <mode name="system_installed_packages">
-.....
-SELECT ....
-  FROM  ...
- WHERE ....
+...
+SELECT ...
+  FROM ...
+ WHERE ...
 ORDER BY PN.name, PE.evr
-....
+...
 </mode>
 }}}
 
- To make things a little worse, this EVR_T is used in DB table view definitions that rely on this magical ordering making it difficult to port in application code, for example [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/views/rhnChannelNewestPackageView.sql;hb=HEAD rhnChannelNewestPackageView.sql]
-{{{....
+To make things a little worse, this EVR_T is used in DB table view definitions that rely on this magical ordering making it difficult to port in application code, for example [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/views/rhnChannelNewestPackageView.sql;hb=HEAD rhnChannelNewestPackageView.sql]
+{{{
 create or replace view
 rhnChannelNewestPackageView
 as
-......
+...
 where 
-.....
+...
 and pe.evr = (select	max(sq_pe.evr)
-......
-}}} .. 
-Postgresql has a way to create  [http://www.postgresql.org/docs/8.3/interactive/sql-createaggregate.html User defined Aggregate Functions] which has to be explored more and might work well for max, min,and order by have to be worked out... In this case custom methods like evr_max() and evr_min() will have to be created for both oracle and postgres and all the application quesries and view queries have to be replaced with this..
+...
+}}}
+PostgreSQL has a way to create  [http://www.postgresql.org/docs/8.3/interactive/sql-createaggregate.html User defined Aggregate Functions] which has to be explored more and might work well for max, min,and order by have to be worked out... In this case custom methods like evr_max() and evr_min() will have to be created for both oracle and postgres and all the application quesries and view queries have to be replaced with this..
 
 * No Synonyms in Postgres - Basically postgres standard release does not have synonyms. Synonyms are heavily used in the monitoring code.. Some solution has to be worked out..
 
@@ -240,6 +241,7 @@ From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/too
 ||rhn_server.delete_from_servergroup||
 ||rhn_channel.channel_priority||
 ||rhn_entitlements.remove_server_entitlement||
+
 ||rhn_user.find_mailable_address||
 ||rhn_config.delete_revision||
 ||rhn_entitlements.set_family_count||
@@ -573,6 +575,6 @@ Most expensive stored procedures to port from Oracle to PostgreSQL
 
 = Links =
 
-  * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for Postgresql management.
+  * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for PostgreSQL management.
   * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
   * [http://freshmeat.net/projects/ora2pg/ ora2pg]: Migration tool.
