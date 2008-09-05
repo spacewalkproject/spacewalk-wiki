@@ -28,7 +28,7 @@ nogpgcheck is required because the oracle rpms are not signed.
 
 === manually ===
 
- * sudo yum install libaio
+ * sudo yum install libaio.i386
  * sudo rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm oracle-instantclient-sqlplus*.rpm
 
 
