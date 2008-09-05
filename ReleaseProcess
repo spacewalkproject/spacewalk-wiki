@@ -72,3 +72,5 @@ Then, push your branch to the remote server, where x.y is the release number:
 {{{
    git push origin release-x.y:refs/heads/RELEASE-x.y
 }}}
+
+Please note that all changes made to a branch must also be made to master. (git cherry-pick very useful for this)
