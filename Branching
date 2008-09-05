@@ -41,8 +41,10 @@ Development for the 0.2 release is proceeding. Code is being checked into HEAD, 
 
 So, we create the branch. There may be point releases, so we name the branch appropriately.
 {{{
-PUT GIT BRANCH CREATION HERE
-...
+git checkout master
+git pull (make sure things are clean)
+git checkout -b release-0.2
+git push origin release-0.2:refs/heads/RELEASE-0.2
 git checkout --track -b my-branchname origin/RELEASE-0.2
 }}}
 
