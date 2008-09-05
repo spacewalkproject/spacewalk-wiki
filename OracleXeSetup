@@ -206,7 +206,7 @@ SQL> quit
 If you just want the Spacewalk database schema installed you can do the following: 
  
 {{{ 
- cd $GITDIR/schema 
+ cd $GITDIR/schema/spacewalk 
  make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe 
 }}} 
  
