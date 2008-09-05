@@ -61,3 +61,4 @@ git commit
 git push
 }}}
 
+All code committed to release branches must also be included in master. (git cherry-pick and git merge very useful for this)
