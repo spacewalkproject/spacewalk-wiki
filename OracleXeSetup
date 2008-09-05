@@ -110,4 +110,138 @@ SQL> EXEC DBMS_XDB.SETHTTPPORT(9000);
  * Confirm password: '''spacewalk'''
  * Give spacewalk all system privileges (check All and add DBA role) 
  * click Create button
-That's it, proceed with [OracleXeSe
+
+That's it, proceed with [OracleXeSetup#setupclient client setup]. 
+ * If you weren't able to connect to http://127.0.0.1:9000/apex, check /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log for errors.     
+ * This is an example error when oracle isn't able to resolve your hostname, [http://virag.sharma.googlepages.com/oraclexemadeeasy#_Getting_ORA-600_error more info] 
+{{{ 
+  Errors in file /usr/lib/oracle/xe/app/oracle/admin/XE/udump/xe_ora_4382.trc: 
+  ORA-00600: internal error code, arguments: [keltnfy-ldmInit], [46], [1], [], [], [], [], [] 
+  USER: terminating instance due to error 600 
+}}} 
+ 
+== setup client == 
+You need to put the Oracle clients on your path and configure ORACLE_HOME. 
+{{{ 
+ export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/ 
+ export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server 
+}}} 
+ * The best way of doing this is below, remember to logout and back in after setting the link 
+   so your env is updated. 
+{{{ 
+  cd /etc/profile.d 
+  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
+}}} 
+An alternative to logging out and still obtaining the correct environment is: 
+{{{ 
+. /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
+}}} 
+You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}: 
+{{{ 
+XE = 
+    (DESCRIPTION = 
+       (ADDRESS_LIST = 
+          (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) 
+       ) 
+       (CONNECT_DATA = 
+          (SERVICE_NAME = xe) 
+       ) 
+    ) 
+}}} 
+ 
+Test your connection with sqlplus: 
+{{{ 
+sqlplus spacewalk/spacewalk@xe 
+}}} 
+ 
+ 
+If '''spacewalk''' user was properly setup you should see a '''Connected to:''' message: 
+ 
+{{{ 
+SQL*Plus: Release 10.2.0.1.0 - Production on Sat May 17 10:52:56 2008 
+ 
+Copyright (c) 1982, 2005, Oracle.  All rights reserved. 
+ 
+ 
+Connected to: 
+Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production 
+ 
+SQL> 
+}}} 
+ 
+ '''NOTE:''' you might want to install 'rlwrap' to make your sqlplus more usable. {{{rlwrap}}} will retain 
+ a [http://en.wikipedia.org/wiki/Curses_(programming_library) 'curses'] like behavior with sqlplus such as maintaining sql call history, etc. 
+ {{{yum install rlwrap}}} 
+ you can then do  
+ {{{ 
+ rlwrap sqlplus spacewalk/spacewalk@xe 
+ }}}  
+ 
+== increase max process == 
+ 
+Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 400: 
+ 
+{{{ 
+# sqlplus spacewalk/spacewalk@xe 
+ 
+.. 
+ 
+SQL> alter system set processes = 400 scope=spfile; 
+ 
+System altered. 
+ 
+SQL> commit; 
+ 
+Commit complete. 
+ 
+SQL> quit 
+ 
+# /sbin/service oracle-xe restart 
+}}} 
+ 
+== setup schema (optional) == 
+ 
+'''NOTE:''' this is '''NOT''' required if you plan on installing Spacewalk. Only needed for dev setup. 
+ 
+If you just want the Spacewalk database schema installed you can do the following: 
+ 
+{{{ 
+ cd $GITDIR/schema 
+ make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe 
+}}} 
+ 
+If you plan on installing Spacewalk and running the entire application you can skip this step.  The spacewalk-setup program will install the schema for you. 
+ 
+== Known Issues == 
+ 
+Users are experiencing an Internal Server Error (500) when viewing the following page: 
+ 
+Systems -> Pick a System -> Software -> Packages -> Install New Package 
+ 
+https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=********** 
+ 
+This is an Oracle XE bug. Details are noted in BZ: https://bugzilla.redhat.com/show_bug.cgi?id=453176. 
+If you are experiencing this use workaround: 
+{{{ 
+# sqlplus spacewalk/spacewalk@xe 
+ 
+SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
+ 
+System altered. 
+ 
+SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
+ 
+System altered. 
+ 
+SQL> quit 
+ 
+# /sbin/service oracle-xe restart 
+}}} 
+ 
+ 
+== misc links == 
+[http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide] 
+ 
+[http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian] 
+ 
+Continue installing Spacewalk: HowToInstall#Installation 
