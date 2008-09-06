@@ -62,3 +62,18 @@ On the upper right hand corner of the body of the webpage you should see '''Crea
 Fill in the blanks accordingly and click '''Create New'''
 
 [[Image(channel4.png)]]
+
+----
+
+== Download Content ==
+
+There are many ways to download content rsync, wget, reposync, etc. Below we'll show two of these mechanisms: wget and reposync.
+
+=== using wget ===
+
+One way of getting content is to simply use wget to suck down the packages from a given yum repo. While not the most elegant method, it works, using easily available tools. Let's get the Fedora 9 content and put them into a Fedora9 directory.
+
+ - {{{mkdir Fedora9}}}
+ - {{{cd Fedora9}}}
+ - {{{wget -r -l1 --no-parent \}}}
+   {{{   http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/}}}
