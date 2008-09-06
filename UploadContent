@@ -1,0 +1,64 @@
+= Uploading rpm packages into Spacewalk =
+----
+
+In order to use Spacewalk, you'll need to upload rpm packages into it. At the moment there is no nice way to sync a yum repo with Spacewalk.  The following steps are covered in order to get your Spacewalk Server serving content.
+
+        - Create a channel to hold the rpm packages
+        - Download the rpm packages from a yum repo
+        - Upload the rpm packages into your Spacewalk Server
+
+
+'''Important Notice:'''
+
+Currently due to the way Spacewalk handles rpm packages you can only manage one distribution in an organization at a time.  Plans to allow multiple distributions assigned to a single organization is in the works and will be available soon.  Mixed environments are something we want to fully support.
+
+For example, right now, you can have one organization for Red Hat Enterprise Linux content, one organization for CentOS content, and one organization for Fedora content.  Servers cannot be in multiple organizations.  The technical reason for this is that Fedora 9, CentOS 5, and RHEL 5 all contain packages with the same EVRA (Epoch, Version, Release, Arch), and Satellite (Spacewalk) cannot currently differentiate between packages from different sources with the same EVRA.
+
+We hope to have this fixed soon so co-management of Fedora, CentOS, and RHEL is possible.  You can however have multiple versions of the same distribution (F-8, F-9, etc) within the same organization.
+
+
+----
+
+
+== Creating a new channel ==
+
+In order to upload rpm packages into Spacewalk, you'll need to create a channel that will contain the packages.  There are two ways to create a new channel.  You can use the attached command line tool which uses the available XML-RPC API.
+
+For example, to create a channel for Fedora 9:
+{{{
+./create_channel.py --label=fedora-9-i386 --name "Fedora 9 32-bit" --summary "32-bit Fedora 9 channel"
+
+
+./create_channel.py
+Usage: create_channel.py [options] --label <channel label> --name <channel name>
+
+Options:
+  -h, --help           show this help message and exit
+  --user=USER          username
+  --password=PASSWORD  password
+  --host=HOST          FQDN of your server
+  --label=LABEL        channel label
+  --name=NAME          channel name
+  --summary=SUMMARY    channel summary
+  --debug              enable debug output
+None
+}}}
+
+
+The second way to create a new channel is to use your Spacewalk website.
+
+At the top of your Spacewalk page within the navigation tabs you will see '''channels'''.
+
+[[Image(spacewalk1.png)]]
+
+On the left hand navigation menu you will see '''Manage Channels'''.
+
+[[Image(spacewalk2.png)]]
+
+On the upper right hand corner of the body of the webpage you should see '''Create New Channel'''.
+
+[[Image(spacewalk3.png)]]
+
+Fill in the blanks accordingly and click '''Create New'''
+
+[[Image(spacewalk4.png)]]
