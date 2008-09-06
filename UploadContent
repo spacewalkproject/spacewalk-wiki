@@ -79,3 +79,6 @@ One way of getting content is to simply use wget to suck down the packages from 
 # wget -r -l1 --no-parent \
         http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/
 }}}
+
+- Im still working on this page. Deevee 09/05/2008
+
