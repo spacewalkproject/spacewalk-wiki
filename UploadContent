@@ -3,9 +3,9 @@
 
 In order to use Spacewalk, you'll need to upload rpm packages into it. At the moment there is no nice way to sync a yum repo with Spacewalk.  The following steps are covered in order to get your Spacewalk Server serving content.
 
-        - Create a channel to hold the rpm packages
-        - Download the rpm packages from a yum repo
-        - Upload the rpm packages into your Spacewalk Server
+        - [UploadContent#Creatinganewchannel Creating a new channel] to hold the rpm packages
+        - [UploadContent#Downloadtherpmpackages Download the rpm packages] from a yum repo
+        - [UploadContent#Uploadtherpmpackages Upload the rpm packages] into your Spacewalk Server
 
 
 '''Important Notice:'''
@@ -65,7 +65,7 @@ Fill in the blanks accordingly and click '''Create New'''
 
 ----
 
-== Download Content ==
+== Download the rpm packages ==
 
 There are many ways to download content (rpms) [http://samba.anu.edu.au/rsync/ rsync], [http://www.gnu.org/software/wget/ wget], [http://wiki.linux.duke.edu/YumUtils reposync], etc. Below we'll show two of these mechanisms: wget and reposync.
 
@@ -131,7 +131,7 @@ $ ls -l fedora/Fedora/
 
 ----
 
-== Push the content (rpms) up to your Spacewalk Server ==
+== Upload the rpm packages ==
 
 
 Finally, it's time to push the content into the server. Once you have the rpms, use [http://www.redhat.com/docs/manuals/RHNetwork/ref-guide/chan-mgmt/4.1.0/s1-custom-pkgs-upload-sat.html rhnpush] to push them to the Spacewalk server.
@@ -153,7 +153,3 @@ Note: I found that the above failed on Fedora 9 Everything.  My work around was:
 {{{
 find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk
 }}}
-
-
-- Im still working on this page. Deevee 09/05/2008
-
