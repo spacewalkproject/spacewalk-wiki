@@ -67,11 +67,11 @@ Fill in the blanks accordingly and click '''Create New'''
 
 == Download Content ==
 
-There are many ways to download content rsync, wget, reposync, etc. Below we'll show two of these mechanisms: wget and reposync.
+There are many ways to download content (rpms) [http://samba.anu.edu.au/rsync/ rsync], [http://www.gnu.org/software/wget/ wget], [http://wiki.linux.duke.edu/YumUtils reposync], etc. Below we'll show two of these mechanisms: wget and reposync.
 
-=== using wget ===
+* '''using wget'''
 
-One way of getting content is to simply use wget to suck down the packages from a given yum repo. While not the most elegant method, it works, using easily available tools. Let's get the Fedora 9 content and put them into a Fedora9 directory.
+One way of getting content is to use [http://www.gnu.org/software/wget/ wget] to fetch the packages from a given yum repo. While not the most elegant method, it works, using easily available tools. Let's get the Fedora 9 content and put them into a Fedora9 directory.
 
 {{{
 # mkdir Fedora9
@@ -79,6 +79,81 @@ One way of getting content is to simply use wget to suck down the packages from 
 # wget -r -l1 --no-parent \
         http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/
 }}}
+
+The same principal but for CentOS 5
+
+{{{
+# mkdir CentOS5
+# cd CentOS5
+# wget -r -l1 --no-parent \
+        http://mirror.linux.duke.edu/pub/centos/5/os/x86_64/CentOS/
+}}}
+
+* '''using reposync'''
+
+A more elegant method of getting packages for uploading, is using [http://wiki.linux.duke.edu/YumUtils reposync]. [http://wiki.linux.duke.edu/YumUtils YumUtils] has a really useful tool called [http://wiki.linux.duke.edu/YumUtils/RepoSync reposync] to synchronize packages to a local directory.
+
+ - First, install yum-utils if it isn't already: 
+{{{
+yum install yum-utils
+}}}
+ - Install the desired repo in this case, fedora.
+{{{
+$ head /etc/yum.repos.d/fedora.repo
+[fedora]
+name=Fedora $releasever - $basearch
+baseurl=http://download.fedora.redhat.com/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
+mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
+}}}
+ - Now pass in the repoid to reposync:
+{{{
+$ reposync --repoid=fedora
+[fedora: 1     of 7390  ] Downloading Fedora/915resolution-0.5.3-1.fc7.i386.rpm
+  915resolution-0.5.3-1.fc7 100% |=========================|  16 kB    00:00
+[fedora: 2     of 7390  ] Downloading Fedora/AGReader-1.2-2.fc6.i386.rpm
+  AGReader-1.2-2.fc6.i386.r 100% |=========================|  47 kB    00:00
+[fedora: 3     of 7390  ] Downloading Fedora/AllegroOGG-1.0.3-3.fc6.i386.rpm
+  AllegroOGG-1.0.3-3.fc6.i3 100% |=========================|  16 kB    00:00
+  ...
+}}}
+ - Once the above step is done packages should be in the '''fedora''' directory:
+{{{
+$ ls -l fedora/Fedora/
+  total 18936
+  -rw-rw-r-- 1 root root   15960 2007-05-23 10:18 915resolution-0.5.3-1.fc7.i386.rpm
+  -rw-rw-r-- 1 root root   48528 2007-05-23 10:18 AGReader-1.2-2.fc6.i386.rpm
+  -rw-rw-r-- 1 root root   16687 2007-05-23 10:19 AllegroOGG-1.0.3-3.fc6.i386.rpm
+  ...
+}}}
+
+----
+
+== Push the content (rpms) up to your Spacewalk Server ==
+
+
+Finally, it's time to push the content into the server. Once you have the rpms, use [http://www.redhat.com/docs/manuals/RHNetwork/ref-guide/chan-mgmt/4.1.0/s1-custom-pkgs-upload-sat.html rhnpush] to push them to the Spacewalk server.
+
+For example, to upload the content downloaded using '''reposync''' do the following:
+{{{
+rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora
+}}}
+
+'''usage''' see also [http://www.redhat.com/docs/manuals/RHNetwork/ref-guide/chan-mgmt/4.1.0/s1-custom-pkgs-upload-sat.html rhnpush]
+{{{
+rhnpush --channel=<channel-label> --server=<hosturl>/APP --dir=<directory>
+}}}
+
+Note: Make sure ''/var/satellite'' exists and has owner:group ''apache'' before pushing.
+
+Note: I found that the above failed on Fedora 9 Everything.  My work around was:
+
+{{{
+find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk
+}}}
+
 
 - Im still working on this page. Deevee 09/05/2008
 
