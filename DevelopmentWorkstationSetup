@@ -3,15 +3,23 @@
 The below instructions are how to set up the Spacewalk Development Enviroment into a Red Hat Enterprise Linux 5 server.  [wiki:"DevelopmentWorkstationSetupFedora9" Future versions ] will include instructions and support for Fedora and other Linux variants.
 
 Work in progress: [wiki:"DevelopmentWorkstationSetupFedora9" Development env setup for Fedora 9 ]
-= Spacewalk Runtime Environment Prerequisite =
+
+
+= Prerequisites =
+
+
+=== Spacewalk Runtime Environment ===
 
 In order to setup the  Spacewalk development environment, you first need to have a running version of Spacewalk installed following the instructions in [HowToInstall Spacewalk Installation Instructions].
 
-= Git Prerequisite =
+=== Git  ===
 To setup the sources follow the instructions in [GitGuide#InstallGit Install Git] and [GitGuide#ClonetheSpacewalkgitrepository clone the Spacewalk repository].
 
 
-= Installation of web portion=
+= Web Application =
+
+
+=== Installation ===
  * {{{sudo /sbin/service rhn-satellite stop}}}
  * {{{sudo yum install ant-nodeps junit ant-junit java-1.6.0-openjdk-devel}}}
  * {{{sudo rpm -Uvh http://mirrors.dotsrc.org/jpackage/1.7/generic/free/RPMS/ivy-1.3.1-1jpp.noarch.rpm}}}
@@ -24,7 +32,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
 
 
-= Uninstallation of web portion=
+=== Uninstallation ===
 
 In case you decide to undo your development environment changes and go back to running your Spacewalk.
 
