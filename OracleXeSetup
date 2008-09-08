@@ -199,18 +199,10 @@ SQL> quit
 # /sbin/service oracle-xe restart 
 }}} 
  
-== setup schema (optional) == 
+== setup development schema (optional) == 
  
-'''NOTE:''' this is '''NOT''' required if you plan on installing Spacewalk. Only needed for dev setup. 
- 
-If you just want the Spacewalk database schema installed you can do the following: 
- 
-{{{ 
- cd $GITDIR/schema/spacewalk 
- make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe 
-}}} 
- 
-If you plan on installing Spacewalk and running the entire application you can skip this step.  The spacewalk-setup program will install the schema for you. 
+This is only for use if running a development environment or development version of spacewalk.  See [https://fedorahosted.org/spacewalk/wiki/DevelopmentWorkstationSetup Dev Station setup] for this info.
+
  
 == Known Issues == 
  
