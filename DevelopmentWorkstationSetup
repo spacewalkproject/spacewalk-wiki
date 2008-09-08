@@ -35,9 +35,11 @@ In case you decide to undo your development environment changes and go back to r
 
 = Deploying development schema =
 
+This will completely drop all data from the database and recreate all tables, stored procs, etc.  Any systems, channels, or packages will no longer exist within the DB after this operation.  It is not reversible.  When it is finished, you should have a database deployed with a schema that is inline with your git checkout.
+
 {{{ 
  /etc/init.d/rhn-satellite stop
- /etc/init.d/oracle-xe start
+ /etc/init.d/oracle-xe restart
  cd $GITDIR/schema/spacewalk 
  make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe 
  rhn-satellite-activate --disconnected
