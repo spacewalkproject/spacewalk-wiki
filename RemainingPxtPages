@@ -142,7 +142,8 @@ These have already been migrated.
  * /network/users/details/contact_methods/create.pxt
  * /network/users/details/contact_methods/delete_confirm.pxt
 
-==== Errata management ====  These don't seem to be even used anymore except by each other????? 
+==== Errata management ====
+These don't seem to be even used anymore except by each other????? 
  * /network/errata/manage/edit.pxt
  * /network/errata/manage/select_channels.pxt
  * /network/errata/manage/confirm_mail.pxt
@@ -265,6 +266,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/misc/hw_prof_update_conf.pxt
  * /network/systems/ssm/misc/reboot_confirm.pxt
  * /network/systems/ssm/misc/remove_value.pxt
+
  * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
  * /network/systems/ssm/index.pxt
  * /network/systems/ssm/groups/alter_membership_conf.pxt
