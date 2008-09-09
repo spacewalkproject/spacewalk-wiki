@@ -368,4 +368,4 @@ Satellite 108 site (https://rhn-satellite.108.redhat.com/wiki/index.php/Main_Pag
 
 Frontier::RPC site (http://search.cpan.org/~kmacleod/Frontier-RPC-0.07b4/lib/Frontier/Client.pm)
 
-Documentation on the Satellite Server: (https://satellite.company.com/rhn/apidoc/index.jsp)
+Documentation on the Satellite Server: (https://satellite.example.com/rhn/apidoc/index.jsp)
