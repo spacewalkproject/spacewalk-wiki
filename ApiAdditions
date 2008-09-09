@@ -100,7 +100,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.baremetal.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.keys''' ||  ||  ||  ||  ||  ||
-||  kickstart.keys.listAllKeys(string sessionKey) ||0.3  || 2 || coec || In progress || List all GPG and SSL keys for all kickstarts ||
+||  kickstart.keys.listAllKeys(string sessionKey) ||0.3  || 2 || || || List all GPG and SSL keys for all kickstarts ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.distributions''' ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
