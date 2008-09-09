@@ -19,7 +19,7 @@ The current version is x.y.0. It was built from the RELEASE-x.y branch.
            /   (Changes for release x.y.1 and beyond go here)
           /
          /
--'''master'''---/---(All changes go here)-------------------
+-master---/---(All changes go here)-------------------
              Releases x.y+1 (or x+1.0) will be built from this code
              eventually.
 }}}
@@ -33,7 +33,7 @@ If you have a fix that is destined for release x.y.1 or later, it goes into the 
      ---RELEASE-x.y---/--------------------------------------
     /   (Changes for x.y.1 *and* x.y.z and beyond go here)
    /
-H-/---------(Yes, all changes still go here too)-------------
+m-/---------(Yes, all changes still go here too)-------------
 }}}
 
 An example:
