@@ -98,3 +98,7 @@ Note: Make sure {{{/var/satellite}}} exists and has owner:group {{{apache}}} bef
 
 Note: I found that the above failed on Fedora 9 Everything.  My work around was
  {{{find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk}}}
+
+
+== Channel-to-update == 
+If you are using centOs or RHEL content, and wish to create channels according to an update level.  You may be interested in this script [https://fedorahosted.org/spacewalk/wiki/channel-to-update here].
