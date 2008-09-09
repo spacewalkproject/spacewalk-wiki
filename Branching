@@ -12,11 +12,11 @@ The way we work right now, you will check everything into '''master'''. If there
 
 So:
 
-The current version is x.y.0. It was built from the RELEASE-x.y branch.
+The current version is x.y. It was built from the RELEASE-x.y branch.
 
 {{{
             ---RELEASE-x.y-----------------------------------
-           /   (Changes for release x.y.1 and beyond go here)
+           /   (Changes for release x.y and beyond go here)
           /
          /
 -master---/---(All changes go here)-------------------
@@ -24,21 +24,9 @@ The current version is x.y.0. It was built from the RELEASE-x.y branch.
              eventually.
 }}}
 
-If you have a fix that is destined for release x.y.1 or later, it goes into the RELEASE-x.y branch. Other changes go into '''master'''. If it turns out we need to check in changes that are to go into release x.y.z (where z > 1) but *not* into x.y.1, then you must have a branch created:
-
-{{{
-                         ---RELEASE-x.y.1--------------------
-                        /  (Canges for x.y.1 go here)
-                       /
-     ---RELEASE-x.y---/--------------------------------------
-    /   (Changes for x.y.1 *and* x.y.z and beyond go here)
-   /
-m-/---------(Yes, all changes still go here too)-------------
-}}}
-
 An example:
 
-Development for the 0.2 release is proceeding. Code is being checked into '''master''', and there are no active branches. The version files in '''master''' contain 0.2 {release}.{rhel_ver}. Eventually 0.2 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.3. 
+Development for the 0.2 release is proceeding. Code is being checked into '''master''', and there are no active branches. The {{{Version:}}} in the spec files in '''master''' contain {{{0.2.x 1%{?dist}.}}} Eventually 0.2 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.3. 
 
 So, we create the branch. There may be point releases, so we name the branch appropriately.
 {{{
@@ -51,7 +39,7 @@ git checkout --track -b my-branchname origin/RELEASE-0.2
 
 RELEASE-0.2 branch will then be used to build any 0.2 point releases (including .0).
 
-So far so good. One problem: The version files in the branch and in '''master''' are identical! If we build RPMs from both the branch and '''master''', we will end up with version conflicts, and be very sad. Now we can go back to '''master''' and fix the version file there. 
+So far so good. One problem: The {{{Version:}}} in the spec files in the branch and in '''master''' are identical! If we build RPMs from both the branch and '''master''', we will end up with version conflicts, and be very sad. Now we can go back to '''master''' and fix the {{{Version:}}} in the spec files there. 
 
 {{{
 git checkout master
