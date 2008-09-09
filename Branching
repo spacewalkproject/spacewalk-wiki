@@ -1,13 +1,14 @@
 = Branching =
 Our basic branching philosophy is: 
- 1. everything goes into HEAD
- 2. when stabilizing code for a release, cut a branch
+ 1. the main development and bugfixes go into '''master'''
+ 2. when stabilizing code for a release, cut a branch from '''master'''
  3. branch as late as possible
- 4. when committing code for a release, the code goes in the release branch(es) (if any) and HEAD.
+ 4. when committing code for a release, the code goes in the release branch(es) (if any) and '''master'''.
+ 5. experimental stuff and big changes might have their own branches
 
 See [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=documentation/branches.txt; branches.txt] for the most up to date branches.
 
-The way we work right now, you will check everything into HEAD. If there is a branch for the target release(s), you should check the code into the branch(es) as well. If you have code that needs to go in a release between the latest branch and HEAD, then you need to have someone create a branch. 
+The way we work right now, you will check everything into '''master'''. If there is a branch for the target release(s), you should check the code into the branch(es) as well. If you have code that needs to go in a release between the latest branch and '''master''', then you need to have someone create a branch. 
 
 So:
 
@@ -18,12 +19,12 @@ The current version is x.y.0. It was built from the RELEASE-x.y branch.
            /   (Changes for release x.y.1 and beyond go here)
           /
          /
--HEAD---/---(All changes go here)-------------------
+-'''master'''---/---(All changes go here)-------------------
              Releases x.y+1 (or x+1.0) will be built from this code
              eventually.
 }}}
 
-If you have a fix that is destined for release x.y.1 or later, it goes into the RELEASE-x.y branch. Other changes go into HEAD. If it turns out we need to check in changes that are to go into release x.y.z (where z > 1) but *not* into x.y.1, then you must have a branch created:
+If you have a fix that is destined for release x.y.1 or later, it goes into the RELEASE-x.y branch. Other changes go into '''master'''. If it turns out we need to check in changes that are to go into release x.y.z (where z > 1) but *not* into x.y.1, then you must have a branch created:
 
 {{{
                          ---RELEASE-x.y.1--------------------
@@ -37,7 +38,7 @@ H-/---------(Yes, all changes still go here too)-------------
 
 An example:
 
-Development for the 0.2 release is proceeding. Code is being checked into HEAD, and there are no active branches. The version files in HEAD contain 0.2 {release}.{rhel_ver}. Eventually 0.2 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.3. 
+Development for the 0.2 release is proceeding. Code is being checked into '''master''', and there are no active branches. The version files in '''master''' contain 0.2 {release}.{rhel_ver}. Eventually 0.2 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.3. 
 
 So, we create the branch. There may be point releases, so we name the branch appropriately.
 {{{
@@ -50,7 +51,7 @@ git checkout --track -b my-branchname origin/RELEASE-0.2
 
 RELEASE-0.2 branch will then be used to build any 0.2 point releases (including .0).
 
-So far so good. One problem: The version files in the branch and in HEAD are identical! If we build RPMs from both the branch and HEAD, we will end up with version conflicts, and be very sad. Now we can go back to HEAD and fix the version file there. 
+So far so good. One problem: The version files in the branch and in '''master''' are identical! If we build RPMs from both the branch and '''master''', we will end up with version conflicts, and be very sad. Now we can go back to '''master''' and fix the version file there. 
 
 {{{
 git checkout master
