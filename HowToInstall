@@ -171,3 +171,8 @@ line 6.
  Perhaps a required shared library or dll isn't installed where expected
   at /usr/bin/spacewalk-setup line 1492
 }}}
+{{{
+[root@test12-64 ~]# locate libclntsh.so.10.1
+/usr/lib/oracle/10.2.0.4/client64/lib/libclntsh.so.10.1
+/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/libclntsh.so.10.1
+}}}
