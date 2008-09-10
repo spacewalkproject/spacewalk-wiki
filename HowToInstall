@@ -158,3 +158,16 @@ restorecon -R /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
 
  * During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
 
+ * can't find {{{libclntsh.so.10.1}}} on x86_64 installation, need to modify {{{LD_LIBRARY_PATH}}}:
+{{{
+Could not connect to the database.  Your connection information may be
+incorrect.  Error: install_driver(Oracle) failed: Can't load
+'/usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/auto/DBD/Oracle/Oracle.so'
+for module DBD::Oracle: libclntsh.so.10.1: wrong ELF class: ELFCLASS32 at
+/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/DynaLoader.pm line 230, <STDIN>
+line 6.
+ at (eval 784) line 3
+ Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
+ Perhaps a required shared library or dll isn't installed where expected
+  at /usr/bin/spacewalk-setup line 1492
+}}}
