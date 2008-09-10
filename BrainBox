@@ -4,6 +4,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
 
  * NevraIssue Handle package with the same EVRA within the same org
  * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
+ * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client
  * UserPermissions - Discussion around implementing fine grained user permissions.
  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
