@@ -86,7 +86,7 @@ We already have the necessary tables to support SRPMS:
 
 === rhn-satellite-Exporter Changes ===
 
- * We need to add the necessary flags to turn on the srpm support on rhn-satellite-exporter possibly  --no-srpm.
+ * We need to add the necessary flags to turn off the srpm support on rhn-satellite-exporter possibly  --no-srpm.
 {{{ 
     $ rhn-satellite-exporter -c rhel-i386-as-4 --no-srpms 
 }}}
@@ -96,6 +96,9 @@ g of the data.
 {{{
      $ rhn-satellite-exporter -c rhel-i386-as-4 --step=srpm
 }}}
+
+ * By default exporter should export the srpm content, with and without date ranges
+
  * We already have support to dump the source packages via the XML_dumper classes in dumper.py. So not much changes required here. Although some supporting calls might be needed.
 
  * Changes to iss_ui.py will be necessary to support the srpm flags and step sequence functionality.
