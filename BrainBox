@@ -22,3 +22,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * add support for deb packages/Debian
  * add support for external repositories so that Spacewalk doesn't have to have a local copy of all RPMs, just retrieves the headers in the same way yum does and can direct subscribed clients to download directly from the 3rd party repo.
  * add support for Jumpstarting Solaris
+ * IPv6
