@@ -86,7 +86,7 @@ We already have the necessary tables to support SRPMS:
 
 === rhn-satellite-Exporter Changes ===
 
- * We need to add the necessary flags to turn off the srpm support on rhn-satellite-exporter possibly  --no-srpm.
+ * We need to add the necessary flags to turn off the srpm data fetch on rhn-satellite-exporter possibly  --no-srpm.
 {{{ 
     $ rhn-satellite-exporter -c rhel-i386-as-4 --no-srpms 
 }}}
