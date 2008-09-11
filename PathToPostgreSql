@@ -578,3 +578,4 @@ Most expensive stored procedures to port from Oracle to PostgreSQL
   * [http://www.pgadmin.org/ pgAdmin]: Looks like an exceptional GUI tool for PostgreSQL management.
   * http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html: Some notes on migrating Oracle PL/SQL to PL/pgSQL.
   * [http://freshmeat.net/projects/ora2pg/ ora2pg]: Migration tool.
+  * http://www.pgcon.org/2008/schedule/attachments/41_oraport.pdf: Porting Oracle Applications to PostgreSQL
