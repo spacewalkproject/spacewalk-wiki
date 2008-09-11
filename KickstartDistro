@@ -1,9 +1,4 @@
 = Steps to kickstarting Fedora/CentOS =
-
-(Currently this for us developers, but will be changed to be for users before release.)
-
-
-
   
 
  1. Create a fedora 9/CentOS/RHEL channel [UploadFedoraContent (See this page for details.)]
