@@ -82,7 +82,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
 ||  kickstart.profile.system.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 ||  ||  ||  ||
 ||  kickstart.profile.system.listAssociatedKeys(string sessionKey) || 0.3 || 3 ||  ||  || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
-||  kickstart.profile.system.associateKeys(string sessionKey, descriptions) || 0.3 || 4 ||  ||  || Associate GPG and SSL keys with the kickstart profile. ||
+||  kickstart.profile.system.associateKeys(string sessionKey, array[string description]) || 0.3 || 4 ||  ||  || Associate GPG and SSL keys with the kickstart profile. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.software''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.software.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
@@ -100,7 +100,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.baremetal.findKickstartForIp(string sessionKey) || 0.2 || 3 || jsherrill     || done ||  ||  
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.keys''' ||  ||  ||  ||  ||  ||
-||  kickstart.keys.listAllKeys(string sessionKey) ||0.3  || 2 || || || List all GPG and SSL keys for all kickstarts ||
+||  kickstart.keys.listAllKeys(string sessionKey) ||0.3  || 2 || jdob || || * List all GPG and SSL keys for all kickstarts.[[BR]]* Returns array[struct[string description, string type]] ||
+||  kickstart.keys.create(string sessionKey, string description, string type, content) ||0.3  || 4 || jdob || || * Create a GPG or SSL key. This key may then be associated with a kickstart profile (via kickstart.profile.system.associateKeys()). [[BR]]* Returns 1 on success, exception thrown otherwise. ||
+||  kickstart.keys.delete(string sessionKey, string description) ||0.3  || 4 || jdob || || * Remove a GPG or SSL key. [[BR]]* Returns 1 on success, exception thrown otherwise. ||
+||  kickstart.keys.getDetails(string sessionKey, string description) ||0.3 || 4 || jdob || || * Obtain details on a GPG or SSL key. [[BR]]* Returns struct[string description, string type, content] ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.distributions''' ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
