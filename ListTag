@@ -49,7 +49,7 @@ public class SystemGroupListSetupAction extends RhnAction {
 "result" is the actual list of objects we want to display.  We associate this to the request, along with the parent url and bind the list's elaborator to the request.  The elaborator is used to reduce the amount of information that is queried initially.  So for example, on the Systems list we only need the System Name initially.  You can decide what systems will appear on the page with only that one piece of info.  Then after the list is trimmed down to only what is displayed (The 20 out of 100 for example), we then elaborate the ones that will be displayed.  The elaboration is simply another query that gets run populating extra information.  
 
 === Sets ===
-If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSets and RhnSets. SessionSets have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of items in database we use RhnSet. You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
+If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of items in database we use RhnSet. You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
 
 ==== Rhn Set ====
 
