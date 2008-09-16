@@ -46,14 +46,11 @@ gpgcheck=1
 Then just ask yum to install the application:
 
 {{{
-yum install spacewalk
-}}}
-
-This will pull down and install the set of RPMs required to get Spacewalk to run.  You may get a conflict from '''rhns''' with specspo.  If so, just do a:
-
-{{{
 rpm -e specspo && yum install spacewalk
 }}}
+
+This will pull down and install the set of RPMs required to get Spacewalk to run and avoids the conflict with {{{specspo}}}.
+
 
 '''NOTE:''' x86_64 users will need to add a file {{{/etc/ld.so.conf.d}}} (e.g. {{{/etc/ld.so.conf.d/spacewalk.conf}}}) with the following contents:
 {{{
