@@ -48,6 +48,7 @@ gpgcheck=1
 Then just ask yum to install the application:
 
 {{{
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-former
 rpm -e specspo && yum install spacewalk
 }}}
 
