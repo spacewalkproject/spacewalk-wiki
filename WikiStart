@@ -1,5 +1,7 @@
 = Spacewalk =
 
+[[Image(spacewalk_big.png)]]
+
 [http://redhat.com/spacewalk/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
 
   * Inventory your systems (hardware and software information)
