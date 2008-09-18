@@ -58,6 +58,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  errata.findByCve(string sessionKey, string cveName) || 0.3 || 3 || bbuckingham || done || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]string advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || tbd ||  ||  || * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise. ||
 ||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
+
 ||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Remove a set of packages from an errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
@@ -77,7 +78,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
 ||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
 ||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
-||  kickstart.profile.system.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 ||  ||  ||  ||
+||  kickstart.profile.system.setLocale(string sessionKey, locale, boolean useUtc) || 0.3 || 3 || bbuckingham ||  ||  ||
 ||  kickstart.profile.system.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
 ||  kickstart.profile.system.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 ||  ||  ||  ||
 ||  kickstart.profile.system.listAssociatedKeys(string sessionKey) || 0.3 || 3 ||  ||  || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
@@ -89,8 +90,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.software.setSoftwareList(string sessionKey) || 0.3 || 3 || jortel ||  || What's the parameter? ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.keys''' ||  ||  ||  ||  ||  ||
-||  kickstart.profile.keys.setActivationKeys(string sessionKey) || 0.3 || 4 || partha ||  || param? ||
-||  kickstart.profile.keys.getActivationKeys(string sessionKey) || 0.3 || 2 || partha  ||  ||  ||
+||  kickstart.profile.keys.setActivationKeys(string sessionKey) || 0.3 || 4 || bbuckingham ||  || param? ||
+||  kickstart.profile.keys.getActivationKeys(string sessionKey) || 0.3 || 2 || bbuckingham  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.scripts''' ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
@@ -147,6 +148,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.diffToChannel(sid, chan_label) || 0.3 || 3 ||  ||  ||  ||
 ||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
+
 ||  system.createCustomValueKey() || 0.3 || 3 || coec || done  || createCustomValueKey(sessionKey, string keyLabel, string keyDescription) ||
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || || || * Schedule a package list refresh for a system.[[BR]]* Returns 1 on success, exception thrown otherwise. ||
 
