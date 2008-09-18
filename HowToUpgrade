@@ -15,7 +15,7 @@ Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
 
 
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn/ and /etc/rhn/
-  *  For instructions on how to create a back up of your existing spacewalk database consult either Oracle documentation or contact your DBA
+  *  For instructions on how to create a backup of your existing spacewalk database consult either Oracle documentation or contact your DBA
 
 
 = Package upgrade =
