@@ -63,8 +63,11 @@ existing packages into new locations, use update-packages script (spacewalk-back
 =  Update configuration  =
 
 
+If you're upgrading Spacewalk 0.1 to version 0.2, add following line into /etc/rhn/rhn.conf and /etc/rhn/default/rhn_web.conf:
+
+
 {{{
-/etc/rhn/rhn.conf
+web.product_name = Spacewalk
 }}}
 
 
