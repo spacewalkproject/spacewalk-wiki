@@ -11,7 +11,7 @@ Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
 
 = Package upgrade =
 
-Setup your spacewalk yum repo to point to the version of spacewalk you wish to upgrade to:
+Setup your spacewalk yum repo to point to spacewalk 0.2 repo:
 
 {{{
 [spacewalk]
@@ -43,7 +43,7 @@ Make sure your spacewalk server is down:
 # service rhn-satellite status
 }}}
 
-Make sure your oracle-xe server is running:
+Make sure your oracle server is running. For oracle-xe that would be:
 
 {{{
 # service oracle-xe status
@@ -65,13 +65,13 @@ Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change com
 existing packages into new locations, use update-packages script (spacewalk-backend-satellite-tools) with a valid database connection string.
 
 {{{
-# update-packages --db=spacewalk/spacewalk@xe
+# /usr/bin/update-packages --db=spacewalk/spacewalk@xe
 }}}
 
 =  Update configuration  =
 
 
-If you're upgrading Spacewalk 0.1 to version 0.2, add following line into /etc/rhn/rhn.conf and /etc/rhn/default/rhn_web.conf:
+If you're upgrading Spacewalk 0.1 to version 0.2, add the following line into /etc/rhn/rhn.conf and /etc/rhn/default/rhn_web.conf:
 
 
 {{{
