@@ -4,7 +4,8 @@ Spacewalk upgrade involves several basic steps:
   1.  Package upgrade
   2.  Schema upgrade
   3.  Upgrading package paths (in case you're upgrading from spacewalk 0.1)
-  4.  Restart Spacewalk
+  4.  Update spacewalk configuration (in case you're upgrading from spacewalk 0.1)
+  5.  Restart Spacewalk
 
 ----
 
@@ -58,6 +59,14 @@ existing packages into new locations, use update-packages script (spacewalk-back
 {{{
 # update-packages --db=spacewalk/spacewalk@xe
 }}}
+
+=  Update Spacewalk configuration  =
+
+
+{{{
+/etc/rhn/rhn.conf
+}}}
+
 
 =  Restart spacewalk  =
 
