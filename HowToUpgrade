@@ -35,12 +35,6 @@ Perform package upgrade using yum:
 
 =  Schema upgrade  =
 
-Install spacewalk-schema-upgrade package:
-
-{{{
-yum install spacewalk-schema-upgrade
-}}}
-
 Make sure your spacewalk server is down:
 
 {{{
