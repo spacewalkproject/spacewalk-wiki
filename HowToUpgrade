@@ -60,7 +60,7 @@ existing packages into new locations, use update-packages script (spacewalk-back
 # update-packages --db=spacewalk/spacewalk@xe
 }}}
 
-=  Update Spacewalk configuration  =
+=  Update configuration  =
 
 
 {{{
