@@ -11,7 +11,7 @@ Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
 
 = Package upgrade =
 
-Setup your spacewalk yum repo to point to spacewalk 0.2 repo:
+Setup your yum configuration to point to spacewalk 0.2 repo:
 
 {{{
 [spacewalk]
