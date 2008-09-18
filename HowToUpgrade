@@ -56,6 +56,9 @@ Run spacewalk-schema-upgrade script to upgrade database schema:
 }}}
 
 
+Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
+
+
 =  Package paths upgrade =
 
 Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change coming with multiple distribution support). To migrate
