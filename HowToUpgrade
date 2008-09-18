@@ -1,0 +1,65 @@
+= Spacewalk Upgrade Instructions =
+
+Spacewalk upgrade involves several basic steps:
+  1.  Package upgrade
+  2.  Schema upgrade
+  3.  Upgrading package paths (in case you're upgrading from spacewalk 0.1)
+
+----
+
+= Package upgrade =
+
+Setup your spacewalk yum repo to point to the version of spacewalk you wish to upgrade to:
+
+{{{
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/0.2/rhel/5Server/$basearch/
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=1
+}}}
+
+Stop your spacewalk server. To accomplish this, execute following command as root:
+
+{{{
+# service rhn-satellite stop
+}}}
+
+Perform package upgrade using yum:
+
+{{{
+# yum upgrade spacewalk
+}}}
+
+
+=  Schema upgrade  =
+
+Install spacewalk-schema-upgrade package:
+
+{{{
+yum install spacewalk-schema-upgrade
+}}}
+
+Make sure your spacewalk server is down:
+
+{{{
+# service rhn-satellite status
+}}}
+
+Make sure your oracle-xe server is running:
+
+{{{
+# service oracle-xe status
+}}}
+
+...
+
+=  Package paths upgrade =
+
+Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change coming with multiple distribution support). To migrate
+existing packages into new locations, use update-packages script (spacewalk-backend-satellite-tools package).
+
+{{{
+# update-packages --db=spacewalk/spacewalk@xe
+}}}
