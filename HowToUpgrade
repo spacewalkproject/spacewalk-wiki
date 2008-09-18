@@ -49,12 +49,17 @@ Make sure your oracle-xe server is running:
 # service oracle-xe status
 }}}
 
-...
+Run spacewalk-schema-upgrade script to upgrade database schema:
+
+{{{
+# /usr/bin/spacewalk-schema-upgrade
+}}}
+
 
 =  Package paths upgrade =
 
 Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change coming with multiple distribution support). To migrate
-existing packages into new locations, use update-packages script (spacewalk-backend-satellite-tools package).
+existing packages into new locations, use update-packages script (spacewalk-backend-satellite-tools) with a valid database connection string.
 
 {{{
 # update-packages --db=spacewalk/spacewalk@xe
