@@ -1,7 +1,7 @@
 = Spacewalk Upgrade Instructions =
 
 Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
-  1.  Back up your configuration files and spacewalk database instance
+  1.  Configuration files and spacewalk database backup
   2.  Package upgrade
   3.  Schema upgrade
   4.  Upgrading package paths
