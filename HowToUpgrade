@@ -4,6 +4,7 @@ Spacewalk upgrade involves several basic steps:
   1.  Package upgrade
   2.  Schema upgrade
   3.  Upgrading package paths (in case you're upgrading from spacewalk 0.1)
+  4.  Restart Spacewalk
 
 ----
 
@@ -56,4 +57,12 @@ existing packages into new locations, use update-packages script (spacewalk-back
 
 {{{
 # update-packages --db=spacewalk/spacewalk@xe
+}}}
+
+=  Restart spacewalk  =
+
+If all of the above steps completed successfully, you can start your upgraded spacewalk:
+
+{{{
+# service rhn-satellite start
 }}}
