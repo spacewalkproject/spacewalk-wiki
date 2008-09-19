@@ -44,7 +44,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham || done ||  ||
 || channel.software.getContactDetails(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Retrieve the contact/support information for a given channel.[[BR]]* Returns struct[ string name, string email, string phoneNumber, string supportPolicy ]||
 || channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
-||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill ||  ||  ||
+||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill || Done ||  ||
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.3 || 6 || bbuckingham ||  ||  ||
@@ -58,6 +58,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  errata.findByCve(string sessionKey, string cveName) || 0.3 || 3 || bbuckingham || done || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]string advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || tbd ||  ||  || * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise. ||
 ||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
+
 
 
 ||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Remove a set of packages from an errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
