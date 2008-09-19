@@ -13,7 +13,7 @@ To use this repository, add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.2/rhel/5Server/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
