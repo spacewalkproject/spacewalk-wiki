@@ -2,91 +2,48 @@ See the [wiki:PathToPostgreSql/Tasks Tasks] page for ongoing progress of this ef
 
 = Introduction =
 
-In light of the feedback we've received after open sourcing and a surprising number of volunteers in the community coming forward, we're pleased to begin organizing the effort to add support for !PostgreSQL.
+Below is a collection of information related to the effort to remove Spacewalk's dependency on Oracle, support PostgreSQL, and ultimately be database agnostic. If you are interested in participating in this effort please feel free to review the projects and tasks below to find something that suits your abilities. If you find something you can assign the task to yourself. Help should be available if you require it on IRC and the mailing list.
 
-While quite universally agreed that Oracle dependence must go and PostgreSQL is first on the list, there has been some debate on the spacewalk-devel mailing list on how to proceed with this. The main issue of contention is stored procedures and what should be done with them:
+All estimates are given in days.
 
-  1. Port them directly to PostgreSQL's PL/pgSQL. 
-  1. Remove them one by one, migrating the code into the application layer.
+== Architecture We're Striving For ==
 
-Keep in mind that the situation is complicated by the fact that the stored procedures are currently accessed from all three languages that currently make up Spacewalk today. (Java, Python, Perl) 
+ * All database communication done via standardized SQL that will run against the major databases. 
+ * Leverage Java Hibernate mappings whenever possible.
+ * Migrate all stored procedures to Java application code. (unless absolutely necessary to keep for performance reasons)
+ * If stored procedure was used in the Perl stack, migrate the affected pages to Java/JSP.
+ * Implement an RPC API for the Python backend to call in place of the stored procedure. (NOTE: unclear if this will be required)
 
-The pros and cons of each approach will be discussed in the coming proposals. Please see [https://www.redhat.com/archives/spacewalk-devel/2008-June/thread.html#00015 this thread] for more information.
+== Development Information ==
 
- * ''Is there any plans to migrate off Oracle completely?'' - RahulSundaram
-  * ''Not that I'm aware of. Oracle will likely remain an option for Satellite installations for some time. That said we may be able to reach a point where the Oracle specific code is abstracted enough that we could package it separately and remove it from Spacewalk and just maintain it internally at Red Hat.'' - DevanGoodwin
-  * ''Correct.  We will continue to provide external DB support (at the very least) for Oracle for our enterprise Satellite customers.''  - ToddSanders  
+Most development of PostgreSQL specific code is underway in the '''postgresql''' branch in git. For information on how to checkout and work with this branch, see the GitGuide.
 
+= Support Intallation of PostgreSQL Schema = 
 
-= Proposal = 
+== Discussion ==
 
- 1. Modify spacewalk-setup to support installation to multiple database backends. Idea here is to get something installable as quickly as possible, even if it's massively broken.
- 1. Generate the PostgreSQL compatible schema with [http://freshmeat.net/projects/ora2pg/ ora2pg]. Will require a few minor touchups, then commit to git and get packaged up for those involved in this effort.
- 1. Setup RPC interface in Java for migrating stored procedures to application code and exposing to the various languages we use.
- 1. Use wiki to organize porting of stored procedures. Generate table,  and allow volunteers to claim procedures they will port for postgresql. See below section for details on the options available when porting stored procedures.
- 1. Sort through query problems. When queries are found that do not work on PostgreSQL, preference would be to modify them to be compliant with both. If this is not possible we need to accommodate the possibility of multiple query versions in some situations. 
+Requires modifications to spacewalk-setup code to isolate any Oracle specific code and fork the execution path based on the selected database backend.
 
+Current plan is to have PostgreSQL schema generated from Oracle schema using a simple type template system.
 
-== Stats ==
- * Quantitatively speaking we need to port the following components to Postgres.
+== Tasks ==
 
- || Component || Number || Queried Method ||
- || Tables  || 405 || select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK'; ||
- || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
- || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
- || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
- || Indexes || 776 ||  select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK'; || 
- ||  Procedures and Functions || 38 || See below ||
- || Packages Functions || 90 || See below ||
+|| Task || Estimate || Assigned To || Status ||
+|| Modify spacewalk-setup to support multiple databases || 8 || dgoodwin || ~70% ||
+|| Generate PostgreSQL schema from templates || - || paji || done ||
 
-== Porting Tables ==
-* Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSQL, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
+= Port Stored Procedures to Java Application Code =
 
-=== Manual Process (Under construction)  === 
-|| Components|| Sample File  in Oracle || Same sample file  in Postgres || Issues to deal with || References ||
-|| Table, Constraint, Triggers, Indexes || || || || ||
-|| Views || || || || ||
-|| Stored Procedure || || || || ||
-|| Packages || || || || ||
+After examining the advantages/disadvantages of migrating stored procedures straight to Java application code (that will theoretically run on multiple databases) it was decided the alternative (porting PL/SQL to PL/pgSQL and maintaining both versions) would be minimally less expensive (if we require strict unit testing of the new code). Considering that we would ultimately like to be database agnostic, the effort to reach the end goal could double and thus we chose to accept the overhead and proceed to obtain the architecture we want.
 
+= Migrate Perl Pages Which Use Stored Procedures =
 
-=== Script Automated Conversion  (Under construction)  ===
- * In this approach we decide to keep our schema basically in Oracle and use some sort of tool like Ora2Pg to basically convert oracle to postgres. 
+= Replace Stored Procedure Usage In the Backend =
 
-=== DDL written in a Programming Language  (Under construction)  ===
-* In this approach we decide to write the complete schema in either SQLAlchemy or Hibernate or Rails Action records to automate the schema generation in other DB formats..
+= SQL Standardization =
 
+= Potential Hazards =
 
-== Porting Stored Procedures ==
-
-Following debate at the outset of this project the majority would seem to prefer having little to no dependence on database specific stored procedures for several reasons: 
-
- * No maintenance of multiple versions of the same stored procedure code for each database backend.
- * Easier to support other databases down the road.
- * Easier to properly unit test.
- * Much easier to write/read/maintain application code than stored procedure code.
- * Significant debate on whether business logic should be performed in the database in the first place.
-
-This does however come with some disadvantages:
-
- * Porting to application code takes longer than porting straight from PL/QL to PL/pgSQL, which are reportedly quite similar. (see notes [http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html here])
- * Potential performance loss in some situations.
- * Unable to use database specific features.
-
-To reach a middle ground we considered implementing an RPC service which we could place either stored procedures, or equivalent application code behind (depending on the preference of the volunteer doing the porting). This would expose the functionality to the multiple languages that compose Spacewalk today, and provide a nice layer of abstraction for continuing removal of stored procedures down the road, as well as a place we could fall back to a procedure should we run into a significant performance problem. Initial technology proposed by cturner for this RPC layer was Facebook's [http://developers.facebook.com/thrift/ Thrift]. (see section on why Thrift is being considered)
-
-However porting to application code comes with some substantial complications. ParthaAji first raised the issue of transactions. If the RPC layer were implemented in Java, this problem would probably not be an issue for other Java code as we can re-use the same underlying database connection and maintain the transaction across multiple calls. In the Perl stack however, transactions span multiple Perl layers, business logic, SQL queries, all with intermingled stored procedure calls. We cannot maintain the transaction if calling into an RPC service in another language. The only solution then is to port the entire operation out and into a more coarse grained RPC call, and suddenly this becomes a substantially more complicated and time consuming effort.
-
-It should be noted that this is not the case for all the procedures, just some of the more complicated ones. Simpler procedures should be easily ported to application code behind the RPC layer.
-
-So when porting stored procedures, the following options will be available, in order of preference:
-
- 1. Port the procedure from PL/SQL to Java code backed by Hibernate, and expose it via a Thrift RPC call and update all code that calls the procedure directly.
- 1. Port the procedure from PL/SQL to PL/pgSQL, but expose via a Thrift RPC call and update all code that calls the procedure directly.
- 1. Port the procedure from PL/SQL to PL/pgSQL, and leave code in the various languages calling it directly.
-  * Least desired but may be required for more complex and long winded Perl operations.
-
-== Hurdles ==
  * Custom Data Types -  Spacewalk uses a custom data type EVR_T for rhnPackageEvr table. This EVR_T data type is mainly used for ordering. Look at [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/class/evr_t.sql;hb=HEAD evr_t.sql] for the definition of this data type. While Postgres has the facility to create custom data type, it does not have a  'ORDER MEMBER FUNCTION' to dictate natural ordering for the custom data type. Here are some example queries that make use of the order member function in [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml;hb=HEAD Package_queries.xml]...
 {{{
 <mode name="system_latest_all_available_packages">
@@ -139,9 +96,8 @@ PostgreSQL has a way to create  [http://www.postgresql.org/docs/8.3/interactive/
 
 * No packages or package body in postgres - 80% of our oracle stored procedures are in Package and Package Body. Postgres however does not have the concept of package bodies.. So sql queries with calls like rhn_config_channel.get_user_file_access will have issues.. A fix for this issue might be to define [http://www.postgresql.org/docs/8.3/interactive/ddl-schemas.html Schema]  for each Package name space and define package functions and procedures in the schema .. For example in the case of rhn_config_channel.get_user_file_access, we will have  rhn_config_channel schema and get_user_file_access as a stored procedure in it.. Only issue here is that we will lose ability to store member variables in package body.. But the instances I checked there havent been many packages that have instance variables.
 
-== Required Stored Procedures ==
 
-There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
+ * There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
 
 {{{
 create or replace view rhnUserChannel as
@@ -163,6 +119,43 @@ These stored procedures can not be extracted out into our RPC layer because they
  1.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
 
 We need to identify in the list below the set of stored procedures that are called directly within the schema itself.
+
+
+
+
+
+
+== Stats ==
+ * Quantitatively speaking we need to port the following components to Postgres.
+
+ || Component || Number || Queried Method ||
+ || Tables  || 405 || select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK'; ||
+ || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
+ || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
+ || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
+ || Indexes || 776 ||  select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK'; || 
+ ||  Procedures and Functions || 38 || See below ||
+ || Packages Functions || 90 || See below ||
+
+== Porting Tables ==
+* Given the above Stats different approaches may be considered including manually rewriting all the queries to PostgreSQL, some sort of script automation, writing it in SQLAlchemy, Hibernate SchemaGen, or Rails action records using which one can auto generate a schema in postgres/mysql/other dbs.
+
+=== Manual Process (Under construction)  === 
+|| Components|| Sample File  in Oracle || Same sample file  in Postgres || Issues to deal with || References ||
+|| Table, Constraint, Triggers, Indexes || || || || ||
+|| Views || || || || ||
+|| Stored Procedure || || || || ||
+|| Packages || || || || ||
+
+
+=== Script Automated Conversion  (Under construction)  ===
+ * In this approach we decide to keep our schema basically in Oracle and use some sort of tool like Ora2Pg to basically convert oracle to postgres. 
+
+=== DDL written in a Programming Language  (Under construction)  ===
+* In this approach we decide to write the complete schema in either SQLAlchemy or Hibernate or Rails Action records to automate the schema generation in other DB formats..
+
+== Required Stored Procedures ==
+
 
 == Why Thrift? ==
 
