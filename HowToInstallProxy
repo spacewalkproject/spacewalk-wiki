@@ -64,8 +64,30 @@ Importing GPG key 0x430A1C35 "Spacewalk <spacewalk-devel@redhat.com>" from http:
 Is this ok [y/N]: y
 }}}
 
-Then you need to configure the proxy. Run
+Then you need to configure the proxy. Run:
 
 {{{
 configure-proxy.sh
 }}}
+
+Example run:
+
+{{{
+Proxy version to activate [0.2]: 
+RHN Parent [spacewalk.example.com]: 
+Traceback email []: admin@example.com
+Use SSL [0]: 1
+CA Chain [/usr/share/rhn/RHNS-CORP-CA-CERT]: 
+HTTP Proxy []: 
+Regardless of whether you enabled SSL for the connection to the Spacewalk Parent
+Server, you will be prompted to generate an SSL certificate.
+This SSL certificate will allow client systems to connect to this Spacewalk Proxy
+securely. Refer to the Spacewalk Proxy Installation Guide for more information.
+Organization: Example Company
+Organization Unit [proxy1.example.com]:
+Common Name: proxy1.example.com
+City: New York
+State: New York
+Country code: US
+Email [admin@example.com]:
+}}}   
