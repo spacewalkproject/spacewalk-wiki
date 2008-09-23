@@ -39,7 +39,66 @@ After examining the advantages/disadvantages of migrating stored procedures stra
 See also:
  * [wiki:PathToPostgreSql/StoredProcedureAnalysis StoredProcedureAnalysis]
 
+Estimates below are based on the following:
+ * <= 25 lines = small procedure = ~2 days
+ * <= 75 lines = medium procedure = ~5 days
+ * > 75 lines = large procedure = ~10 days
+
 || '''Procedure''' || '''Lines''' || '''Estimate''' || '''Owner''' || '''Status''' ||
+|| is_user_org_admin || 28 || 5 || || ||
+|| lookup_channel_arch || 15 || 2 || || ||
+|| name_join || 23 || 2 || || ||
+|| rhn_install_org_satellites || 25 || 2 || || ||
+|| rhnhistoryview_pkglist || 42 || 5 || || ||
+|| lookup_package_nevra || 36 || 5 || || ||
+|| rhn_synch_probe_state || 27 || 5 || || ||
+|| new_user_postop || 29 || 5 || || ||
+|| delete_errata || 12 || 2 || || ||
+|| lookup_transaction_package || 51 || 5 || || ||
+|| lookup_feature_type || 16 || 2 || || ||
+|| lookup_config_info || 29 || 5 || || ||
+|| lookup_cf_state || 13 || 2 || || ||
+|| queue_server || 28 || 5 || || ||
+|| lookup_server_arch || 15 || 2 || || ||
+|| delete_server || 181 || 10 || || ||
+|| lookup_sg_type || 16 || 2 || || ||
+|| lookup_snapshot_invalid_reason || 16 || 2 || || ||
+|| rhn_install_satellite || 14 || 2 || || ||
+|| lookup_virt_sub_level || 16 || 2 || || ||
+|| lookup_client_capability || 20 || 2 || || ||
+|| lookup_package_provider || 12 || 2 || || ||
+|| create_first_org || 113 || 10 || || ||
+|| lookup_cve || 20 || 2 || || ||
+|| delete_server_bulk || 199 || 10 || || ||
+|| queue_errata || 9 || 2 || || ||
+|| label_join || 23 || 2 || || ||
+|| truncatecachequeue || 4 || 2 || || ||
+|| lookup_package_name || 23 || 2 || || ||
+|| rhn_clean_current_state || 8 || 2 || || ||
+|| lookup_package_key_type || 12 || 2 || || ||
+|| lookup_tag_name || 19 || 2 || || ||
+|| lookup_source_name || 19 || 2 || || ||
+|| create_new_user || 73 || 5 || || ||
+|| lookup_arch_type || 13 || 2 || || ||
+|| id_join || 23 || 2 || || ||
+|| create_new_org || 98 || 10 || || ||
+|| rhn_prepare_install || 39 || 5 || || ||
+|| create_pxt_session || 16 || 2 || || ||
+|| lookup_first_matching_cf || 35 || 5 || || ||
+|| channel_name_join || 23 || 2 || || ||
+|| lookup_evr || 21 || 2 || || ||
+|| lookup_package_arch || 18 || 2 || || ||
+|| rhnhistoryview_erratalist || 40 || 5 || || ||
+|| delete_channel || 16 || 2 || || ||
+|| lookup_config_filename || 20 || 2 || || ||
+|| lookup_package_delta || 19 || 2 || || ||
+|| pxt_session_cleanup || 25 || 2 || || ||
+|| does_user_have_role || 26 || 5 || || ||
+|| lookup_package_capability || 30 || 5 || || ||
+|| lookup_tag || 20 || 2 || || ||
+|| lookup_erratafile_type || 16 || 2 || || ||
+|| set_ks_session_history_message || 35 || 5 || || ||
+|| is_user_applicant || 28 || 5 || || ||
 || rhn_server.system_service_level || 16 || 2 || || ||
 || rhn_server.can_change_base_channel || 15 || 2 || || ||
 || rhn_server.set_custom_value || 26 || 5 || || ||
@@ -166,7 +225,7 @@ See also:
 || rhn_date_manip.get_reporting_period_end || 18 || 2 || || ||
 
 
-TOTAL: 436 days
+TOTAL: 624 days
 
 
 = Migrate Perl Pages Which Use Stored Procedures =
