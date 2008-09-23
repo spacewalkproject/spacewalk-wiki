@@ -1,0 +1,55 @@
+= XML-RPC Custom Serializer =
+Redstone XML-RPC has the ability to add custom serializer classes to convert our model objects to XML-RPC structs.
+Here are the steps to adding a new custom serializer. We used to convert objects into !HashMaps then allow Redstone to serialize the maps, but this required a two stage conversion which is costly.
+
+ * implement [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html XmlRpcCustomSerializer]
+ * [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html#getSupportedClass() getSupportedClass] should return the class you can serialize.
+ * the serialize method should make use of other serializers by calling [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html#serialize(java.lang.Object,%20java.io.Writer,%20redstone.xmlrpc.XmlRpcSerializer) XmlRpcSerializer.serialize]
+
+== Quick steps ==
+ * implement [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html XmlRpcCustomSerializer]
+ * return the class you support from [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html#getSupportedClass() getSupportedClass]
+ * implement serialize method to append XML-RPC formatted text to the !StringBuffer
+ * add an entry to {{{SerializerRegistry.java}}}
+ * DONE
+
+== Example ==
+{{{
+#!java
+ public class ServerGroupSerializer implements XmlRpcCustomSerializer {
+ 
+     /** {@inheritDoc} */
+     public Class getSupportedClass() {
+         return ServerGroup.class;
+     }
+}}}
+
+The [http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html#getSupportedClass() getSupportedClass] should return the top most class that this serializer can serialize. For instance,
+to serialize a {{{List}}}, {{{LinkedList}}}, etc. you'd return {{{Collection.class}}}.
+{{{
+#!java
+     /**
+      * Converts a ServerGroup to a XML-RPC &lt;struct&gt; containing the top-
+      * level fields of the ServerGroup. It serializes the Org as just an ID
+      * instead of traversing the entire object graph.
+      * @param value ServerGroup object.
+      * @param output Buffer to serialize the object to.
+      * @throws XmlRpcException thrown if a problem occurs with serializing
+      * the value.
+      */
+     public void serialize(Object value, StringBuffer output)
+         throws XmlRpcException {
+         SimpleSerializer sl = new SimpleSerializer();
+         ServerGroup sg = (ServerGroup) value;
+         sl.add("id", sg.getId());
+         sl.add("name", sg.getName());
+         sl.add("description", sg.getDescription());
+         sl.add("maxMembers", sg.getMaxMembers());
+         sl.add("currentMembers", sg.getCurrentMembers());
+         sl.add("orgid", sg.getOrg().getId());
+         sl.writeTo(output);
+     }
+}}}
+
+[http://xmlrpc.sourceforge.net/javadoc/redstone/xmlrpc/XmlRpcCustomSerializer.html#serialize(java.lang.Object,%20java.io.Writer,%20redstone.xmlrpc.XmlRpcSerializer) XmlRpcSerializer.serialize] is used to serialize common java.lang objects. The main thing to consider is how 
+far down the object graph to go.
