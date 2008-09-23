@@ -1,20 +1,16 @@
-See the [wiki:PathToPostgreSql/Tasks Tasks] page for ongoing progress of this effort.
-
 = Introduction =
 
 Below is a collection of information related to the effort to remove Spacewalk's dependency on Oracle, support PostgreSQL, and ultimately be database agnostic. If you are interested in participating in this effort please feel free to review the projects and tasks below to find something that suits your abilities. If you find something you can assign the task to yourself. Help should be available if you require it on IRC and the mailing list.
 
 All estimates are given in days.
 
-== Architecture We're Striving For ==
+The architecture we hope to achieve:
 
  * All database communication done via standardized SQL that will run against the major databases. 
  * Leverage Java Hibernate mappings whenever possible.
  * Migrate all stored procedures to Java application code. (unless absolutely necessary to keep for performance reasons)
  * If stored procedure was used in the Perl stack, migrate the affected pages to Java/JSP.
  * Implement an RPC API for the Python backend to call in place of the stored procedure. (NOTE: unclear if this will be required)
-
-== Development Information ==
 
 Most development of PostgreSQL specific code is underway in the '''postgresql''' branch in git. For information on how to checkout and work with this branch, see the GitGuide.
 
