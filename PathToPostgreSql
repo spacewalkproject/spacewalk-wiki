@@ -39,6 +39,136 @@ After examining the advantages/disadvantages of migrating stored procedures stra
 See also:
  * [wiki:PathToPostgreSql/StoredProcedureAnalysis StoredProcedureAnalysis]
 
+|| '''Procedure''' || '''Lines''' || '''Estimate''' || '''Owner''' || '''Status''' ||
+|| rhn_server.system_service_level || 16 || 2 || || ||
+|| rhn_server.can_change_base_channel || 15 || 2 || || ||
+|| rhn_server.set_custom_value || 26 || 5 || || ||
+|| rhn_server.bulk_set_custom_value || 19 || 2 || || ||
+|| rhn_server.bulk_snapshot_tag || 31 || 5 || || ||
+|| rhn_server.tag_delete || 24 || 2 || || ||
+|| rhn_server.tag_snapshot || 10 || 2 || || ||
+|| rhn_server.bulk_snapshot || 12 || 2 || || ||
+|| rhn_server.snapshot_server || 89 || 10 || || ||
+|| rhn_server.remove_action || 62 || 5 || || ||
+|| rhn_server.check_user_access || 27 || 5 || || ||
+|| rhn_server.can_server_consume_virt_slot || 25 || 2 || || ||
+|| rhn_server.insert_into_servergroup || 69 || 5 || || ||
+|| rhn_server.insert_into_servergroup_maybe || 25 || 2 || || ||
+|| rhn_server.insert_set_into_servergroup || 26 || 5 || || ||
+|| rhn_server.delete_from_servergroup || 66 || 5 || || ||
+|| rhn_server.delete_set_from_servergroup || 23 || 2 || || ||
+|| rhn_server.clear_servergroup || 11 || 2 || || ||
+|| rhn_server.get_ip_address || 22 || 2 || || ||
+|| rhn_org.find_server_group_by_type || 9 || 2 || || ||
+|| rhn_org.delete_user || 120 || 10 || || ||
+|| rhn_exception.lookup_exception || 13 || 2 || || ||
+|| rhn_exception.raise_exception_val || 13 || 2 || || ||
+|| rhn_package.channel_occupancy_string || 16 || 2 || || ||
+|| rhn_bel.lookup_email_state || 11 || 2 || || ||
+|| rhn_quota.recompute_org_quota_used || 24 || 2 || || ||
+|| rhn_quota.get_org_for_config_content || 14 || 2 || || ||
+|| rhn_quota.update_org_quota || 8 || 2 || || ||
+|| rhn_user.check_role || 18 || 2 || || ||
+|| rhn_user.check_role_implied || 18 || 2 || || ||
+|| rhn_user.get_org_id || 9 || 2 || || ||
+|| rhn_user.find_mailable_address || 69 || 5 || || ||
+|| rhn_user.add_servergroup_perm || 21 || 2 || || ||
+|| rhn_user.remove_servergroup_perm || 18 || 2 || || ||
+|| rhn_user.add_to_usergroup || 18 || 2 || || ||
+|| rhn_user.add_users_to_usergroups || 13 || 2 || || ||
+|| rhn_user.remove_users_from_servergroups || 14 || 2 || || ||
+|| rhn_entitlements.remove_org_entitlements || 35 || 5 || || ||
+|| rhn_entitlements.entitlement_grants_service || 26 || 5 || || ||
+|| rhn_entitlements.lookup_entitlement_group || 19 || 2 || || ||
+|| rhn_entitlements.create_entitlement_group || 19 || 2 || || ||
+|| rhn_entitlements.can_entitle_server || 55 || 5 || || ||
+|| rhn_entitlements.can_switch_base || 23 || 2 || || ||
+|| rhn_entitlements.find_compatible_sg || 29 || 5 || || ||
+|| rhn_entitlements.entitle_server || 45 || 5 || || ||
+|| rhn_entitlements.remove_server_entitlement || 73 || 5 || || ||
+|| rhn_entitlements.unentitle_server || 41 || 5 || || ||
+|| rhn_entitlements.repoll_virt_guest_entitlements || 109 || 10 || || ||
+|| rhn_entitlements.get_server_entitlement || 26 || 5 || || ||
+|| rhn_entitlements.modify_org_service || 127 || 10 || || ||
+|| rhn_entitlements.set_customer_enterprise || 5 || 2 || || ||
+|| rhn_entitlements.set_customer_provisioning || 5 || 2 || || ||
+|| rhn_entitlements.set_customer_monitoring || 5 || 2 || || ||
+|| rhn_entitlements.set_customer_nonlinux || 5 || 2 || || ||
+|| rhn_entitlements.unset_customer_enterprise || 5 || 2 || || ||
+|| rhn_entitlements.unset_customer_provisioning || 5 || 2 || || ||
+|| rhn_entitlements.unset_customer_monitoring || 5 || 2 || || ||
+|| rhn_entitlements.unset_customer_nonlinux || 5 || 2 || || ||
+|| rhn_entitlements.prune_group || 81 || 10 || || ||
+|| rhn_entitlements.assign_system_entitlement || 85 || 10 || || ||
+|| rhn_entitlements.assign_channel_entitlement || 62 || 5 || || ||
+|| rhn_entitlements.activate_system_entitlement || 41 || 5 || || ||
+|| rhn_entitlements.activate_channel_entitlement || 40 || 5 || || ||
+|| rhn_entitlements.set_group_count || 58 || 5 || || ||
+|| rhn_entitlements.prune_family || 56 || 5 || || ||
+|| rhn_entitlements.set_family_count || 63 || 5 || || ||
+|| rhn_entitlements.entitle_last_modified_servers || 36 || 5 || || ||
+|| rhn_entitlements.subscribe_newest_servers || 37 || 5 || || ||
+|| rhn_config.prune_org_configs || 6 || 2 || || ||
+|| rhn_config.insert_revision || 30 || 5 || || ||
+|| rhn_config.delete_revision || 70 || 5 || || ||
+|| rhn_config.get_latest_revision || 13 || 2 || || ||
+|| rhn_config.insert_file || 20 || 2 || || ||
+|| rhn_config.delete_file || 19 || 2 || || ||
+|| rhn_config.delete_channel || 13 || 2 || || ||
+|| rhn_config_channel.action_diff_revision_status || 45 || 5 || || ||
+|| rhn_config_channel.get_user_chan_access || 47 || 5 || || ||
+|| rhn_config_channel.get_user_file_access || 15 || 2 || || ||
+|| rhn_cache.update_perms_for_server || 10 || 2 || || ||
+|| rhn_cache.update_perms_for_server_group || 24 || 2 || || ||
+|| rhn_channel.get_license_path || 14 || 2 || || ||
+|| rhn_channel.license_consent || 15 || 2 || || ||
+|| rhn_channel.subscribe_server || 98 || 10 || || ||
+|| rhn_channel.can_server_consume_virt_channl || 25 || 2 || || ||
+|| rhn_channel.bulk_subscribe_server || 7 || 2 || || ||
+|| rhn_channel.bulk_server_base_change || 11 || 2 || || ||
+|| rhn_channel.bulk_server_basechange_from || 42 || 5 || || ||
+|| rhn_channel.bulk_guess_server_base || 19 || 2 || || ||
+|| rhn_channel.guess_server_base || 16 || 2 || || ||
+|| rhn_channel.normalize_server_arch || 15 || 2 || || ||
+|| rhn_channel.base_channel_for_release_arch || 20 || 2 || || ||
+|| rhn_channel.base_channel_rel_archid || 40 || 5 || || ||
+|| rhn_channel.bulk_guess_server_base_from || 25 || 2 || || ||
+|| rhn_channel.clear_subscriptions || 16 || 2 || || ||
+|| rhn_channel.unsubscribe_server || 83 || 10 || || ||
+|| rhn_channel.bulk_unsubscribe_server || 7 || 2 || || ||
+|| rhn_channel.family_for_channel || 13 || 2 || || ||
+|| rhn_channel.available_family_subscriptions || 33 || 5 || || ||
+|| rhn_channel.channel_family_current_members || 22 || 2 || || ||
+|| rhn_channel.update_family_counts || 10 || 2 || || ||
+|| rhn_channel.available_chan_subscriptions || 11 || 2 || || ||
+|| rhn_channel.entitle_customer || 27 || 5 || || ||
+|| rhn_channel.set_family_maxmembers || 25 || 2 || || ||
+|| rhn_channel.unsubscribe_server_from_family || 11 || 2 || || ||
+|| rhn_channel.get_org_id || 9 || 2 || || ||
+|| rhn_channel.get_cfam_org_access || 12 || 2 || || ||
+|| rhn_channel.get_org_access || 17 || 2 || || ||
+|| rhn_channel.user_role_check_debug || 35 || 5 || || ||
+|| rhn_channel.user_role_check || 6 || 2 || || ||
+|| rhn_channel.loose_user_role_check || 8 || 2 || || ||
+|| rhn_channel.direct_user_role_check || 17 || 2 || || ||
+|| rhn_channel.org_channel_setting || 17 || 2 || || ||
+|| rhn_channel.channel_priority || 77 || 10 || || ||
+|| rhn_channel.delete_server_channels || 34 || 5 || || ||
+|| rhn_channel.refresh_newest_package || 17 || 2 || || ||
+|| rhn_channel.update_channel || 27 || 5 || || ||
+|| rhn_channel.update_channels_by_errata || 12 || 2 || || ||
+|| rpm.isdigit || 10 || 2 || || ||
+|| rpm.isalpha || 11 || 2 || || ||
+|| rpm.isalphanum || 12 || 2 || || ||
+|| rpm.rpmstrcmp || 109 || 10 || || ||
+|| rpm.vercmp || 28 || 5 || || ||
+|| rpm.vercmpresetcounter || 9 || 2 || || ||
+|| rhn_date_manip.get_reporting_period_end || 18 || 2 || || ||
+
+
+TOTAL: 436 days
+
+
 = Migrate Perl Pages Which Use Stored Procedures =
 
 = Replace Stored Procedure Usage In the Backend =
@@ -65,6 +195,7 @@ Concerns or alternative suggestions?
     * ''It would be great if we could move the entire Java Manager layer into this box, leaving the actions to call api.'' - JesusRodriguez
     * ''I don't see why it couldn't, not something I'd thought of but the RPC layer could easily come into use if we're adding any new code to Perl/Python, or even some kind of more service oriented code.'' - DevanGoodwin
  * ''I'd like to see a diagram of how the flow would work within the current application context. i.e. user hits web page that needs stored proc access or client sends XML-RPC request to python backend.'' - JesusRodriguez
+
 
 
 
