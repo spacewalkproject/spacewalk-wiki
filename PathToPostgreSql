@@ -337,7 +337,7 @@ These stored procedures can not be extracted out into our RPC layer because they
  1.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
 
 || '''Task''' || '''Estimate''' || '''Owner''' || '''Status''' ||
-|| Deal with EVR_T and other custom data types || || || ||
+|| Replace EVR_T Class || 15 || || ||
 || Remove synonyms || || || ||
 || Remove use of stored procedures within schema || || || ||
 
