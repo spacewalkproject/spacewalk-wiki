@@ -20,13 +20,9 @@ Most development of PostgreSQL specific code is underway in the '''postgresql'''
 
 = Support Intallation of PostgreSQL Schema = 
 
-== Discussion ==
-
 Requires modifications to spacewalk-setup code to isolate any Oracle specific code and fork the execution path based on the selected database backend.
 
 Current plan is to have PostgreSQL schema generated from Oracle schema using a simple type template system.
-
-== Tasks ==
 
 || Task || Estimate || Assigned To || Status ||
 || Modify spacewalk-setup to support multiple databases || 8 || dgoodwin || ~70% ||
@@ -38,6 +34,8 @@ After examining the advantages/disadvantages of migrating stored procedures stra
 
 See also:
  * [wiki:PathToPostgreSql/StoredProcedureAnalysis StoredProcedureAnalysis]
+
+'''TODO''': Add documentation for process involved with performing an actual migration of a stored proc. Link to a solid commit that demonstrates the whole process would also be nice.
 
 Estimates below are based on the following:
  * <= 25 lines = small procedure = ~2 days
@@ -117,15 +115,21 @@ Estimates below are based on the following:
 || rhn_server.delete_from_servergroup || 66 || 5 || || ||
 || rhn_server.delete_set_from_servergroup || 23 || 2 || || ||
 || rhn_server.clear_servergroup || 11 || 2 || || ||
+|| rhn_server.delete_from_org_servergroups || 14 || 2 || || ||
 || rhn_server.get_ip_address || 22 || 2 || || ||
 || rhn_org.find_server_group_by_type || 9 || 2 || || ||
+|| rhn_org.delete_org || 45 || 5 || || ||
 || rhn_org.delete_user || 120 || 10 || || ||
 || rhn_exception.lookup_exception || 13 || 2 || || ||
+|| rhn_exception.raise_exception || 11 || 2 || || ||
 || rhn_exception.raise_exception_val || 13 || 2 || || ||
+|| rhn_package.canonical_name || 12 || 2 || || ||
 || rhn_package.channel_occupancy_string || 16 || 2 || || ||
+|| rhn_bel.is_org_paid || 10 || 2 || || ||
 || rhn_bel.lookup_email_state || 11 || 2 || || ||
 || rhn_quota.recompute_org_quota_used || 24 || 2 || || ||
 || rhn_quota.get_org_for_config_content || 14 || 2 || || ||
+|| rhn_quota.set_org_quota_total || 20 || 2 || || ||
 || rhn_quota.update_org_quota || 8 || 2 || || ||
 || rhn_user.check_role || 18 || 2 || || ||
 || rhn_user.check_role_implied || 18 || 2 || || ||
@@ -135,6 +139,7 @@ Estimates below are based on the following:
 || rhn_user.remove_servergroup_perm || 18 || 2 || || ||
 || rhn_user.add_to_usergroup || 18 || 2 || || ||
 || rhn_user.add_users_to_usergroups || 13 || 2 || || ||
+|| rhn_user.remove_from_usergroup || 23 || 2 || || ||
 || rhn_user.remove_users_from_servergroups || 14 || 2 || || ||
 || rhn_entitlements.remove_org_entitlements || 35 || 5 || || ||
 || rhn_entitlements.entitlement_grants_service || 26 || 5 || || ||
@@ -166,6 +171,7 @@ Estimates below are based on the following:
 || rhn_entitlements.prune_family || 56 || 5 || || ||
 || rhn_entitlements.set_family_count || 63 || 5 || || ||
 || rhn_entitlements.entitle_last_modified_servers || 36 || 5 || || ||
+|| rhn_entitlements.prune_everything || 50 || 5 || || ||
 || rhn_entitlements.subscribe_newest_servers || 37 || 5 || || ||
 || rhn_config.prune_org_configs || 6 || 2 || || ||
 || rhn_config.insert_revision || 30 || 5 || || ||
@@ -173,11 +179,14 @@ Estimates below are based on the following:
 || rhn_config.get_latest_revision || 13 || 2 || || ||
 || rhn_config.insert_file || 20 || 2 || || ||
 || rhn_config.delete_file || 19 || 2 || || ||
+|| rhn_config.insert_channel || 25 || 2 || || ||
 || rhn_config.delete_channel || 13 || 2 || || ||
 || rhn_config_channel.action_diff_revision_status || 45 || 5 || || ||
 || rhn_config_channel.get_user_chan_access || 47 || 5 || || ||
+|| rhn_config_channel.get_user_revision_access || 16 || 2 || || ||
 || rhn_config_channel.get_user_file_access || 15 || 2 || || ||
 || rhn_cache.update_perms_for_server || 10 || 2 || || ||
+|| rhn_cache.update_perms_for_user || 23 || 2 || || ||
 || rhn_cache.update_perms_for_server_group || 24 || 2 || || ||
 || rhn_channel.get_license_path || 14 || 2 || || ||
 || rhn_channel.license_consent || 15 || 2 || || ||
@@ -215,51 +224,38 @@ Estimates below are based on the following:
 || rhn_channel.delete_server_channels || 34 || 5 || || ||
 || rhn_channel.refresh_newest_package || 17 || 2 || || ||
 || rhn_channel.update_channel || 27 || 5 || || ||
+|| rhn_channel.update_channels_by_package || 11 || 2 || || ||
 || rhn_channel.update_channels_by_errata || 12 || 2 || || ||
 || rpm.isdigit || 10 || 2 || || ||
 || rpm.isalpha || 11 || 2 || || ||
 || rpm.isalphanum || 12 || 2 || || ||
 || rpm.rpmstrcmp || 109 || 10 || || ||
 || rpm.vercmp || 28 || 5 || || ||
+|| rpm.vercmpcounter || 5 || 2 || || ||
 || rpm.vercmpresetcounter || 9 || 2 || || ||
+|| rhn_date_manip.get_reporting_period_start || 17 || 2 || || ||
 || rhn_date_manip.get_reporting_period_end || 18 || 2 || || ||
 
-
-TOTAL: 624 days
+'''Total Estimate''': 658 days
 
 
 = Migrate Perl Pages Which Use Stored Procedures =
 
+Over 200 perl pages remain. The effort in eliminating them all would be too much additional overhead so the current plan is to identify which perl pages actually use stored procedures, and if the number is managable, port only these to application code.
+
+TODO: Add similar table here listing perl pages that require porting.
+
 = Replace Stored Procedure Usage In the Backend =
 
-== Discussion ==
+Appears to be about 7 stored procedures used in the Python backend. (look for usage of rhnSQL.Function) 
 
-Unclear the RPC layer will be required, or if we could leverage existing XMLRPC API.
+If required, we may wish to port the procedures to application code, but expose them over an RPC API to the Python backend. See the [wiki:PathToPostgreSql/ThriftApiProposal ThriftApiProposal].
 
-[http://developers.facebook.com/thrift/ Thrift] is a library released by the Facebook team under their own open source license. (appears to be suitable for inclusion in Fedora but not yet verified) Thrift has been accepted into the Apache incubator and the proposal can be found [http://wiki.apache.org/incubator/ThriftProposal here]. 
-
-It appears to be a relatively lightweight solution to the problem (as opposed to some of the other alternatives), and extremely fast. Doing some tinkering to see just how fast I wrote a simple do nothing service in Java, and then used a Python client that opened and closed 10,000 consecutive connections. (and ran this twice simultaneously to see how the server dealt) The result from both processes was approximately the same: '''2.80s user 2.39s system 54% cpu 9.499 total'''
-
-It is however poorly documented so initial exploration is a bit hit or miss. In the "postgresql" branch on the git repository you can see some prototype code for this. Some points of interest:
-
-|| spacewalk/thrift/spacewalk.thrift || Service definition used to auto-generate the service code in the various languages. ||
-|| java/code/src/com/redhat/rhn/frontend/thrift/SpacewalkService.java || Auto-generated Java service code. ||
-|| java/code/src/com/redhat/rhn/frontend/thrift/SpacewalkServiceHandler.java || Our actual implementation of the service. || 
-|| spacewalk/java/code/src/com/redhat/rhn/webapp/RhnServletListener.java || Code which starts the RPC service when the webapp comes up. ||
-
-Thrift seems like a relatively good fit for what we wish to accomplish. It appears to have a strong open source future and considering it's use at Facebook, should provide ample performance for what we wish to do.
-
-Concerns or alternative suggestions?
- * ''Will this api layer only contain the stored procs/code equivalent?'' - JesusRodriguez
-    * ''It would be great if we could move the entire Java Manager layer into this box, leaving the actions to call api.'' - JesusRodriguez
-    * ''I don't see why it couldn't, not something I'd thought of but the RPC layer could easily come into use if we're adding any new code to Perl/Python, or even some kind of more service oriented code.'' - DevanGoodwin
- * ''I'd like to see a diagram of how the flow would work within the current application context. i.e. user hits web page that needs stored proc access or client sends XML-RPC request to python backend.'' - JesusRodriguez
-
-
-
-
+However given the small number of procedures involved, other solutions may present themselves when the time comes.
 
 = SQL Standardization =
+
+Examine the SQL in Hibernate and Datasource queries for anything that may be Oracle specific and remove it.
 
 = Potential Hazards =
 
