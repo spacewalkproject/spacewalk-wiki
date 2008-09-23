@@ -24,7 +24,7 @@ Requires modifications to spacewalk-setup code to isolate any Oracle specific co
 
 Current plan is to have PostgreSQL schema generated from Oracle schema using a simple type template system.
 
-|| Task || Estimate || Assigned To || Status ||
+|| '''Task''' || '''Estimate''' || '''Owner''' || '''Status''' ||
 || Modify spacewalk-setup to support multiple databases || 8 || dgoodwin || ~70% ||
 || Generate PostgreSQL schema from templates || - || paji || done ||
 
@@ -259,8 +259,10 @@ Examine the SQL in Hibernate and Datasource queries for anything that may be Ora
 
 = Potential Hazards =
 
- * Custom Data Types -  Spacewalk uses a custom data type EVR_T for rhnPackageEvr table. This EVR_T data type is mainly used for ordering. Look at [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/class/evr_t.sql;hb=HEAD evr_t.sql] for the definition of this data type. While Postgres has the facility to create custom data type, it does not have a  'ORDER MEMBER FUNCTION' to dictate natural ordering for the custom data type. Here are some example queries that make use of the order member function in [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml;hb=HEAD Package_queries.xml]...
-{{{
+=== Custom Data Types ===
+
+Spacewalk uses a custom data type EVR_T for rhnPackageEvr table. This EVR_T data type is mainly used for ordering. Look at [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=schema/spacewalk/rhnsat/class/evr_t.sql;hb=HEAD evr_t.sql] for the definition of this data type. While Postgres has the facility to create custom data type, it does not have a  'ORDER MEMBER FUNCTION' to dictate natural ordering for the custom data type. Here are some example queries that make use of the order member function in [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml;hb=HEAD Package_queries.xml]...
+ {{{
 <mode name="system_latest_all_available_packages">
 ........
    SELECT  p.name_id name_id,
@@ -270,7 +272,6 @@ Examine the SQL in Hibernate and Datasource queries for anything that may be Ora
       from ....
 .....
 </mode>
-
 
 <mode name="system_all_available_packages">
 ........
@@ -282,7 +283,6 @@ Examine the SQL in Hibernate and Datasource queries for anything that may be Ora
 </mode>
 }}}
 or [http://git.fedorahosted.org/git/spacewalk.git?p=spacewalk.git;a=blob_plain;f=java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml;hb=HEAD System_queries.xml]
-
 {{{
 <mode name="system_installed_packages">
 ...
@@ -307,12 +307,19 @@ and pe.evr = (select	max(sq_pe.evr)
 }}}
 PostgreSQL has a way to create  [http://www.postgresql.org/docs/8.3/interactive/sql-createaggregate.html User defined Aggregate Functions] which has to be explored more and might work well for max, min,and order by have to be worked out... In this case custom methods like evr_max() and evr_min() will have to be created for both oracle and postgres and all the application quesries and view queries have to be replaced with this..
 
-* No Synonyms in Postgres - Basically postgres standard release does not have synonyms. Synonyms are heavily used in the monitoring code.. Some solution has to be worked out..
+=== Remove Synonyms ===
 
-* No packages or package body in postgres - 80% of our oracle stored procedures are in Package and Package Body. Postgres however does not have the concept of package bodies.. So sql queries with calls like rhn_config_channel.get_user_file_access will have issues.. A fix for this issue might be to define [http://www.postgresql.org/docs/8.3/interactive/ddl-schemas.html Schema]  for each Package name space and define package functions and procedures in the schema .. For example in the case of rhn_config_channel.get_user_file_access, we will have  rhn_config_channel schema and get_user_file_access as a stored procedure in it.. Only issue here is that we will lose ability to store member variables in package body.. But the instances I checked there havent been many packages that have instance variables.
+PostgreSQL does not have synonyms which are heavily used in the monitoring code.
 
+=== No Packages In PostgreSQL ===
 
- * There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
+NOTE: This does not appear to be an issue if we are replacing all stored procedures. Will omit this hudle from the tasks section for the time being.
+
+80% of our Oracle stored procedures are in Package and Package Body. Postgres however does not have the concept of package bodies.. So sql queries with calls like rhn_config_channel.get_user_file_access will have issues.. A fix for this issue might be to define [http://www.postgresql.org/docs/8.3/interactive/ddl-schemas.html Schema]  for each Package name space and define package functions and procedures in the schema .. For example in the case of rhn_config_channel.get_user_file_access, we will have  rhn_config_channel schema and get_user_file_access as a stored procedure in it.. Only issue here is that we will lose ability to store member variables in package body.. But the instances I checked there havent been many packages that have instance variables.
+
+=== Stored Procedures Referenced Within Schema Itself ===
+
+There is a certain set of stored procedures within the schema that are referenced from '''within''' the database code directly. An example of this would be this usage of a stored procedure call within a view:
 
 {{{
 create or replace view rhnUserChannel as
@@ -333,27 +340,10 @@ These stored procedures can not be extracted out into our RPC layer because they
  1.  Ported to PG/SQL
  1.  Inlined into the schema where the procedure is being called from (less desirable, and probably often quite nasty).
 
-
-
-
-== Stats ==
- * Quantitatively speaking we need to port the following components to Postgres.
-
- || Component || Number || Queried Method ||
- || Tables  || 405 || select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK'; ||
- || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
- || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
- || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
- || Indexes || 776 ||  select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK'; || 
- ||  Procedures and Functions || 38 || See below ||
- || Packages Functions || 90 || See below ||
-
-
-
-
-
-
-
+|| '''Task''' || '''Estimate''' || '''Owner''' || '''Status''' ||
+|| Deal with EVR_T and other custom data types || || || ||
+|| Remove synonyms || || || ||
+|| Remove use of stored procedures within schema || || || ||
 
 
 = Links =
