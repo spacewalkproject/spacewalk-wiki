@@ -27,6 +27,7 @@ This section contains information about developer topics.  You may also be inter
    * AddingPagesOverview -- Adding a page to the Java stack
    * [wiki:Branching] -- how branches are organized in the git repo.
    * LocalIvyRepo -- how to create a local ivy repository
+   * CustomSerializer -- how to create a custom serializer
 
  * Releasing the code
    * [ReleaseProcess] Process for building RPMs
