@@ -68,7 +68,7 @@ Estimates below are based on the following:
 || label_join || 23 || 2 || || ||
 || truncatecachequeue || 4 || 2 || || ||
 || lookup_package_name || 23 || 2 || || ||
-|| rhn_clean_current_state || 8 || 2 || || ||
+|| rhn_clean_current_state || 8 || 2 || dgoodwin || DONE ||
 || lookup_package_key_type || 12 || 2 || || ||
 || lookup_tag_name || 19 || 2 || || ||
 || lookup_source_name || 19 || 2 || || ||
