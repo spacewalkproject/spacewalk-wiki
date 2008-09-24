@@ -35,6 +35,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: channel.organizations''' ||  ||  ||  ||  ||  ||
 || channel.organizations.list(string sessionKey, int orgId, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be an Org Admin.||
 || channel.organizations.enableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
+
+
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -146,15 +149,15 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: supportuser''' || 0.6 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
-||  system.listErrata(severity/type) || 0.3 || 4 ||  ||  ||  ||
+||  system.listErrata(severity/type) || 0.3 || 4 || bbuckingham ||  ||  ||
 ||  system.provision(sid, kslabel, date) || 0.3 || 4 || skarmark ||  ||  ||
 ||  system.provision(sid, kslabel) || 0.3 || 1 || skarmark ||  ||  ||
-||  system.diffToChannel(sid, chan_label) || 0.3 || 3 ||  ||  ||  ||
+||  system.diffToChannel(sid, chan_label) || 0.3 || 3 || bbuckingham ||  ||  ||
 ||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
 
 ||  system.createCustomValueKey() || 0.3 || 3 || coec || done  || createCustomValueKey(sessionKey, string keyLabel, string keyDescription) ||
-||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || || || * Schedule a package list refresh for a system.[[BR]]* Returns 1 on success, exception thrown otherwise. ||
+||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || bbuckingham || || * Schedule a package list refresh for a system.[[BR]]* Returns 1 on success, exception thrown otherwise. ||
 
 === New Spacewalk 0.1 APIs ===
 
