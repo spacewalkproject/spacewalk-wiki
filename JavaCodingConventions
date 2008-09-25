@@ -132,6 +132,8 @@ those conventions into english and for things checkstyle can't check.
 
 
 
+
+
     // Incorrect
     String myString = (String) list.get(1);
     }}}
@@ -236,6 +238,8 @@ Spacewalk generated source file:
  * in this software or its documentation. 
  */
 }}}
+
+Note: The way the license file was written, checkstyle expects a space after the * separating the second and third paragraphs as well as a space after the period at the end of the last line.
 
 == Versioning ==
 All .java files should have a @version Javadoc tag like the one below.
