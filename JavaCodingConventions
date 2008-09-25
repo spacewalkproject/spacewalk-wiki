@@ -130,6 +130,7 @@ those conventions into english and for things checkstyle can't check.
     // Correct
     String myString = (String)list.get(1);
 
+
     // Incorrect
     String myString = (String) list.get(1);
     }}}
@@ -220,7 +221,7 @@ Spacewalk generated source file:
 {{{
 #!java
 /**
- * Copyright (c) 2004-2006 Red Hat, Inc.
+ * Copyright (c) 2008 Red Hat, Inc.
  * All Rights Reserved.
  *
  * This software is the confidential and proprietary information of
