@@ -39,7 +39,7 @@ Estimates below are based on the following:
  * > 75 lines = large procedure = ~10 days
 
 || '''Procedure''' || '''Lines''' || '''Estimate''' || '''Owner''' || '''Status''' ||
-|| is_user_org_admin || 28 || 5 || || ||
+|| is_user_org_admin || 28 || 5 || dgoodwin || done ||
 || lookup_channel_arch || 15 || 2 || || ||
 || name_join || 23 || 2 || || ||
 || rhn_install_org_satellites || 25 || 2 || || ||
@@ -68,7 +68,7 @@ Estimates below are based on the following:
 || label_join || 23 || 2 || || ||
 || truncatecachequeue || 4 || 2 || || ||
 || lookup_package_name || 23 || 2 || || ||
-|| rhn_clean_current_state || 8 || 2 || dgoodwin || DONE ||
+|| rhn_clean_current_state || 8 || 2 || dgoodwin || done ||
 || lookup_package_key_type || 12 || 2 || || ||
 || lookup_tag_name || 19 || 2 || || ||
 || lookup_source_name || 19 || 2 || || ||
@@ -148,6 +148,7 @@ Estimates below are based on the following:
 || rhn_entitlements.remove_server_entitlement || 73 || 5 || || ||
 || rhn_entitlements.unentitle_server || 41 || 5 || || ||
 || rhn_entitlements.repoll_virt_guest_entitlements || 109 || 10 || || ||
+
 || rhn_entitlements.get_server_entitlement || 26 || 5 || || ||
 || rhn_entitlements.modify_org_service || 127 || 10 || || ||
 || rhn_entitlements.set_customer_enterprise || 5 || 2 || || ||
