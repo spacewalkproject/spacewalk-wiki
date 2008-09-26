@@ -49,10 +49,14 @@ This will completely drop all data from the database and recreate all tables, st
  /etc/init.d/rhn-satellite stop
  /etc/init.d/oracle-xe restart
  cd $GITDIR/schema/spacewalk 
- make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe 
+ make satellite-clean satellite-release TBS=USERS SQLUSER=spacewalk/spacewalk@xe     
  rhn-satellite-activate --disconnected
  /etc/init.d/rhn-satellite start
 }}} 
+
+{{{
+  If pointing to an old Satellite's DB, use TBS=DATA_TBS  or you will be sorry!
+}}}
 
 
 = Troubleshooting =
