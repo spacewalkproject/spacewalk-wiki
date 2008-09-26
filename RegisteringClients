@@ -23,7 +23,7 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
   1. Register your Fedora system to Spacewalk using the activation key you created earlier.
 {{{
-rhnreg_ks --serverUrl=http://YourSpacewalkURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
+rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
 = CentOS 5 =
@@ -53,6 +53,6 @@ yum install rhn-setup
 
   3. Register your CentOS system to Spacewalk using the activation key you created earlier.
 {{{
-rhnreg_ks --serverUrl=http://YourSpacewalkURL/XMLRPC --activationkey=<key-with-centos-custom-channel> 
+rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel> 
 }}}
 
