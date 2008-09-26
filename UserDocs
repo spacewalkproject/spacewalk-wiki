@@ -1,6 +1,6 @@
 == User Documentation ==
 
-In this section you can find user documenation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
+In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
    * [HowToInstall How to install] -- How to download and install Spacewalk Server.
    * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
@@ -14,7 +14,14 @@ In this section you can find user documenation for Spacewalk.  Are you a develop
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
-Do you know the answer to something and thnk others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
+Do you know the answer to something and think others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
+
+== Administrative Documentation ==
+
+In this section is linked various documents about parts of Spacewalk to give an overview of how various components work and to troubleshoot, debug and configure them. 
+
+   * [HowToRhnpush osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
+
 
 == Misc Information ==
 
