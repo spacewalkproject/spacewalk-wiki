@@ -99,8 +99,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart.profile.software''' ||  ||  ||  ||  ||  ||
 
 ||  kickstart.profile.software.appendToSoftwareList(string sessionKey) || 0.3 || 2 ||  ||  ||  ||
-||  kickstart.profile.software.getSoftwareList(string sessionKey) || 0.3 || 2 || jortel ||  ||  ||
-||  kickstart.profile.software.setSoftwareList(string sessionKey) || 0.3 || 3 || jortel ||  || What's the parameter? ||
+||  kickstart.profile.software.getSoftwareList(string sessionKey) || 0.3 || 2 || jortel || done ||  ||
+||  kickstart.profile.software.setSoftwareList(string sessionKey) || 0.3 || 3 || jortel || done ||   ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.keys''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.keys.addActivationKey(string sessionKey, string kslabel, string key) || 0.3 || 3 || bbuckingham || done ||  ||
