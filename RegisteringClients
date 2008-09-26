@@ -2,9 +2,9 @@ Instructions for registering client systems you wish to manage with Spacewalk
 
 = Before Starting =
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
-  1. Create an activation key with the new base channel.
+  2. Create an activation key with the new base channel.
 
-
+NOTE - rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the --force flag with rhnreg_ks, otherwise there is no need to use --force with registration. 
 
 = Fedora 9 =
 
@@ -23,7 +23,7 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
   1. Register your Fedora system to Spacewalk using the activation key you created earlier.
 {{{
-  rhnreg_ks --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
+rhnreg_ks --serverUrl=http://YourSpacewalkURL/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
 = CentOS 5 =
@@ -53,6 +53,6 @@ yum install rhn-setup
 
   3. Register your CentOS system to Spacewalk using the activation key you created earlier.
 {{{
-  rhnreg_ks --force --serverUrl=http://YOURSATELLITEURL/XMLRPC --activationkey=<key-with-centos-custom-channel> 
+rhnreg_ks --serverUrl=http://YourSpacewalkURL/XMLRPC --activationkey=<key-with-centos-custom-channel> 
 }}}
 
