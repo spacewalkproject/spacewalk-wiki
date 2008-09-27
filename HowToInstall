@@ -28,6 +28,8 @@ rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noar
 
 == Installation ==
 
+'''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
+
 RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum
