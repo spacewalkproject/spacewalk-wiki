@@ -161,14 +161,14 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Koan: Verify and test koan clients calling cobbler on spacewalk server || 0.4 || 2 || mmccune || '''ACTIVE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Synchronization: Develop method for Spacewalk server calling Cobbler (xmlrpc) || 0.4 || 3 || mmccune || '''ACTIVE''' ||  ||
+||  Synchronization: Develop method for Spacewalk server calling Cobbler (xmlrpc) || 0.4 || 3 || mmccune || '''DONE''' ||  ||
 ||  Synchronization: Develop method for Cobbler calling Spacewalk (xmlrpc) || 0.4 || 3 || mmccune ||'''ACTIVE'''  ||  ||
-||  Synchronization: Kickstart Profile creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji ||  ||  ||
-||  Synchronization: Kickstart Profile edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji ||  ||  ||
-||  Synchronization: Kickstart Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
-||  Synchronization: Kickstart Distribution creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji ||  ||  ||
-||  Synchronization: Kickstart Distribution edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji ||  ||  ||
-||  Synchronization: Kickstart Distribution delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
+||  Synchronization: Kickstart Profile creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji || '''DONE'''  ||  ||
+||  Synchronization: Kickstart Profile edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
+||  Synchronization: Kickstart Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji || '''DONE''' ||  ||
+||  Synchronization: Kickstart Distribution creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
+||  Synchronization: Kickstart Distribution edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
+||  Synchronization: Kickstart Distribution delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji || '''DONE''' ||  ||
 ||  Synchronization: Cobbler Profile creation creates Spacewalk Kickstart profile || 0.4 || 5 || paji ||  ||  ||
 ||  Synchronization: Cobbler Profile edit edits Spacewalk Kickstart Profile  || 0.4 || 2 || paji ||  ||  ||
 ||  Synchronization: Cobbler Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
