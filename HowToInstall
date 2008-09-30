@@ -22,7 +22,9 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
 {{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm for i386
+or
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-2.noarch.rpm for x86_64
 }}}
 
 
