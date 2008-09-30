@@ -11,8 +11,10 @@ mount Fedora-9-i386-DVD.iso /mnt/iso -o loop
  {{{ 
 mkdir make-ks-tree
 cd make-ks-tree 
-wget https://fedorahosted.org/spacewalk/attachment/wiki/KickstartDistro/make-ks-tree.tar.gz?format=raw
+wget wget -Omake-ks-tree.tar.gz https://fedorahosted.org/spacewalk/attachment/wiki/KickstartDistro/make-ks-tree.tar.gz?format=raw
 tar -xzf make-ks-tree.tar.gz
+mkdir /var/satellite/rhn && mkdir /var/satellite/rhn/kickstart
+chown -R apache:root /var/satellite/rhn 
  }}}
  5.  Upload the kickstart tree and test to make sure everything is sane:
 {{{
