@@ -321,8 +321,7 @@ public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
-
-		ListSessionSetHelper helper = new ListSessionSetHelper(this);
+	        ListSessionSetHelper helper = new ListSessionSetHelper(this);
 		return helper.execute(mapping, formIn, request, response);
 	}
 
@@ -346,8 +345,8 @@ public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
     }
 
     public ActionForward  handleDispatch(ActionMapping mapping, 
-								ActionForm formIn, HttpServletRequest request,
-								HttpServletResponse response) {
+				ActionForm formIn, HttpServletRequest request,
+				HttpServletResponse response) {
         ....
          int size = copySelectedToChannel(server.getSandboxOverride(),
                     request,
