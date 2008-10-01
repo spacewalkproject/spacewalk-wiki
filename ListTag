@@ -1,3 +1,4 @@
+http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/action/token/configuration/ListRemoveChannelsAction.java
 === List Tag ===
 
 There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features (including filters, pagination, page size selector, csv support), and is the easiest to use.
@@ -310,7 +311,70 @@ public class ViewModifyPathsAction extends RhnAction {
 }}}
 
 
+== Using ListSubmitable ==
+The above approach with SessionSets can be further abstracted /simplified using the new ListSubmitable & ListSessionSetHelper class. All you need to do is have your Action implement ListSubmitable. Here is an example of how easily the above code can be rendered using the new ListSubmitable..
 
+
+{{{
+#!java
+public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
+    public ActionForward execute(ActionMapping mapping,
+            ActionForm formIn,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+
+		ListSessionSetHelper helper = new ListSessionSetHelper(this);
+		return helper.execute(mapping, formIn, request, response);
+	}
+
+    public String getListName()  { 
+		return LIST_NAME;
+	}
+	
+    public String getDataSetName() {
+		return DATA_SET;
+	}
+    
+    public  String getDecl(RequestContext context) {
+        return getClass().getName() + context.getRequest().getParameter("sid");
+    }
+
+    public List getResult(RequestContext context, ActionMapping mapping) {
+		Server server  = context.lookupAndBindServer();
+		User user = context.getLoggedInUser();
+		return cm.listManagedPathsFor(server, user, 
+                                         getType(mapping.getParameter()));	
+    }
+
+    public ActionForward  handleDispatch(ActionMapping mapping, 
+								ActionForm formIn, HttpServletRequest request,
+								HttpServletResponse response) {
+        ....
+         int size = copySelectedToChannel(server.getSandboxOverride(),
+                    request,
+                    user);
+        ....
+    }
+
+      private int copySelectedToChannel(ConfigChannel channel, HttpServletRequest request,
+                                        User user) {
+        RequestContext context = new RequestContext(request);
+        ConfigurationManager cm = ConfigurationManager.getInstance();
+        Set <String> set =  SessionSetHelper.lookupAndBind(request, 
+                                                        getDecl(context));
+        for (String key : set) {
+            Long fileId = Long.valueOf(key);
+            ConfigFile cf = cm.lookupConfigFile(user, fileId);
+            ConfigRevision cr = cf.getLatestConfigRevision();
+            cm.copyConfigFile(cr, channel, user);
+        }
+        int size = set.size();
+        return size;
+    }  
+}
+}}}
+
+Notice that No session set cleanup logic is necessary . This is becasue the ListSessionSetHelper handles that cleanup job for you :)..
 
 == jsp side ==
 Here is an example of a complete jsp showing a very simple list with only one column (name):
@@ -441,3 +505,4 @@ To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do 
 <rl:decorator name="PageSizeDecorator"/>
 }}}
 Feel free to look in system_listdisplay.jspf for an example of usage. 
+
