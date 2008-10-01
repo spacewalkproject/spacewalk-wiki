@@ -188,10 +188,10 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as PXE server || 0.4 || 3 || paji ||  ||  ||
 ||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as DHCP server || 0.4 || 3 || paji ||  ||  ||
-||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || mmccune ||  ||  ||
-||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || mmccune ||  ||  ||
+||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || paji || ACTIVE ||  ||
+||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || ACTIVE ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || mmccune ||  ||  ||
+||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || ACTIVE ||  ||
 ||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune ||  ||  ||
 ||  API: Modify kickstart.importFile to use new database storage mechanism || 0.4 || 3 || mmccune ||  ||  ||
 ||  Kickstart File Render: Kickstart rendering to support new 'advanced' mode || 0.4 || 3 || mmccune ||  ||  ||
