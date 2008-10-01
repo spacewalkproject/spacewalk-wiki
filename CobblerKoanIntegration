@@ -169,12 +169,12 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Synchronization: Kickstart Distribution creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  Synchronization: Kickstart Distribution edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  Synchronization: Kickstart Distribution delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji || '''DONE''' ||  ||
-||  Synchronization: Cobbler Profile creation creates Spacewalk Kickstart profile || 0.4 || 5 || paji ||  ||  ||
-||  Synchronization: Cobbler Profile edit edits Spacewalk Kickstart Profile  || 0.4 || 2 || paji ||  ||  ||
-||  Synchronization: Cobbler Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji ||  ||  ||
-||  Synchronization: Cobbler Distribution creation creates Spacewalk Kickstart Profile || 0.4 || 2 || paji ||  ||  ||
-||  Synchronization: Cobbler Distribution edits Spacewalk Kickstart Profile  || 0.4 || 2 || paji ||  ||  ||
-||  Synchronization: Cobbler Distribution delete Spacewalk Kickstart Profile || 0.4 || 1 || paji ||  ||  ||
+||  Synchronization: Cobbler Profile creation creates Spacewalk Kickstart profile || 0.4 || 5 || dparker || ACTIVE ||  ||
+||  Synchronization: Cobbler Profile edit edits Spacewalk Kickstart Profile  || 0.4 || 2 || dparker || ACTIVE ||  ||
+||  Synchronization: Cobbler Profile delete in Spacewalk deletes cobbler profile || 0.4 || 1 || dparker || ACTIVE ||  ||
+||  Synchronization: Cobbler Distribution creation creates Spacewalk Kickstart Profile || 0.4 || 2 || dparker ||  ||  ||
+||  Synchronization: Cobbler Distribution edits Spacewalk Kickstart Profile  || 0.4 || 2 || dparker ||  ||  ||
+||  Synchronization: Cobbler Distribution delete Spacewalk Kickstart Profile || 0.4 || 1 || dparker ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
