@@ -22,9 +22,11 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
 {{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm for i386
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-2.noarch.rpm
+}}}
 or
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-2.noarch.rpm for x86_64
+{{{
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-2.noarch.rpm
 }}}
 
 
@@ -62,7 +64,9 @@ This will pull down and install the set of RPMs required to get Spacewalk to run
 '''NOTE:''' x86_64 users will need to add a file {{{/etc/ld.so.conf.d}}} (e.g. {{{/etc/ld.so.conf.d/spacewalk.conf}}}) with the following contents:
 {{{
   /usr/lib/oracle/10.2.0.4/client64/lib/
+  /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/
 }}}
+Run {{{ldconfig -v}}} to enable these changes on your system
 
 Once the Spacewalk rpm is installed you need to configure the application, you can run:
 
@@ -162,7 +166,7 @@ restorecon -R /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
 
  * During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
 
- * can't find {{{libclntsh.so.10.1}}} on x86_64 installation, need to modify {{{LD_LIBRARY_PATH}}}:
+ * can't find {{{libclntsh.so.10.1}}} on x86_64 installation, need to modify {{{LD_LIBRARY_PATH}}} to point to all versions of the {{{libclntsh.so.10.1}}} file
 {{{
 Could not connect to the database.  Your connection information may be
 incorrect.  Error: install_driver(Oracle) failed: Can't load
@@ -180,3 +184,4 @@ line 6.
 /usr/lib/oracle/10.2.0.4/client64/lib/libclntsh.so.10.1
 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/libclntsh.so.10.1
 }}}
+edit the file in {{{/etc/ld.so.conf.d}}} created earlier and run {{{ldconfig -v}}} to enable the changes.
