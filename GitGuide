@@ -212,6 +212,14 @@ If you ever want to use that branch again, you can just do:
 git-checkout my-branchname
 }}}
 
+As with any long lived branch it's important to sync it with master periodically to prevent a merge disaster when you rejoin. In the case of long lived branches, use git merge instead of git rebase.
+{{{
+git checkout master
+git pull
+git checkout myremotetrackingbranch
+git merge master
+}}}
+
 Deleting a remote branch entirely: (WARNING: be careful with this one)
 {{{
 git push origin :remotebranchtodelete
