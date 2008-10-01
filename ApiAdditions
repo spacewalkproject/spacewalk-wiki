@@ -49,6 +49,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -61,7 +62,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill || Done ||  ||
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
-||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.3 || 6 || bbuckingham ||  ||  ||
+||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, string startDate, string endDate) || 0.3 || 6 || bbuckingham || done ||  ||
 ||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
