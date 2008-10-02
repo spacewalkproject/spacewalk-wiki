@@ -267,6 +267,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/misc/reboot_confirm.pxt
  * /network/systems/ssm/misc/remove_value.pxt
 
+
  * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
  * /network/systems/ssm/index.pxt
  * /network/systems/ssm/groups/alter_membership_conf.pxt
@@ -308,7 +309,6 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 ==== Activation keys ====
  * /network/account/activation_keys/groups.pxt
  * /network/account/activation_keys/packages.pxt
- * /network/account/activation_keys/namespaces.pxt
  * /network/account/activation_keys/child_channels.pxt
  * /network/account/activation_keys/systems.pxt
 
