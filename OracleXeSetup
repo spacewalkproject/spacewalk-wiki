@@ -3,6 +3,7 @@
  * 1GB memory (max)
  * 4GB disk space (max)
  * one database (max)
+ * Oracle does not like SELinux.  Therefore SELinux should, unfortunately, be disabled.
 
 == Installation ==
 If you do not have an Oracle Database, you can [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html download Oracle XE].
