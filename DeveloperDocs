@@ -30,7 +30,7 @@ This section contains information about developer topics.  You may also be inter
    * CustomSerializer -- how to create a custom serializer
 
  * Releasing the code
-   * [ReleaseProcess] Process for building RPMs
+   * ReleaseProcess Process for building RPMs
 
  * [BrainBox Brainstorming]
  * [ContibutorList Contributor List]
