@@ -201,6 +201,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Virtualization: Database modifications to offer more virtualization options for a Kickstart Profile (disk, cpu, lvm, etc..) || 0.4 || 2 || mmccune ||  ||  ||
 ||  Virtualization: GUI to support new virtualization options for Kickstart Profiles || 0.4 || 3 || mmccune ||  ||  ||
 ||  Virtualization: Provisioning displaying expanded options list for guest creation and allowing overrides || 0.4 || 3 || mmccune ||  ||  ||
+||  General: Genericify the xmlrpc layer code to proper cobbler profile  and distro objects in to a separate jar and provide it as a patch to the cobbler upstream.  || 0.4+ || 3 +|| paji/mmccune/dparker ||  ||  ||
 
 '''Total Days: ~105'''
 
