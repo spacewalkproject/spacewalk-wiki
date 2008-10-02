@@ -51,6 +51,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -168,7 +169,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.listErrataByType(string sessionKey, int sid, string advisoryType) || 0.3 || 3 || bbuckingham || done || Returns a list of all errata of the specified type that are relevant to the system. ||
 ||  system.provision(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
 ||  system.provision(sid, kslabel) || 0.3 || 1 || skarmark || done ||  ||
-||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham ||  || Compare the system to an existing package profile. ||
+||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham || done || Compare the system to an existing package profile. ||
 ||  system.searchDevices(search-string) || 0.3 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.3 || 4 || jmatthews ||  || ditto ||
 
