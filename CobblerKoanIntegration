@@ -234,7 +234,11 @@ Phase III is where we build on the work from the previous phases to fully integr
        * or does the installer just ask this question while generating /etc/cobbler/settings  and /etc/cobbler/modules.conf ?
     * Build ISO stuff
 
-== Misc ==
+== Development ==
 
   * BZ Bug for tracking: https://bugzilla.redhat.com/show_bug.cgi?id=461162
+  * We are doing our work in a public branch in the git repo in the origin/spacewalk-cobbler branch:
+    
+    git checkout --track -b spacewalk-cobbler origin/spacewalk-cobbler
+
 
