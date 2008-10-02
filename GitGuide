@@ -237,7 +237,7 @@ Revert all your current uncommitted changes:
 {{{
   git reset --hard HEAD
 }}}
-Revert changes from a past commit with a new commit:
+Revert changes from a past commit (generates a new commit):
 {{{
   git revert a31f80910768ba2232c796b814be11d064421f19
 }}}
@@ -246,9 +246,20 @@ View diff of changes in a past commit:
 {{{
   git diff a31f80910768ba2232c796b814be11d064421f19
 }}}
+
 View diff of changes between two past commits:
 {{{
   git diff baf1a1490e205f821fbcc9c4ec2581728afd1c14..a31f80910768ba2232c796b814be11d064421f19
+}}}
+
+View a part revision of a specific file (feel free to pipe the output somewhere if you like). Make sure to use the full path to the file as it would be from the root of your git repository:
+{{{
+git show SHA1:java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml
+}}}
+
+Replace file with a past version. Note that after doing this you still need to commit the change:
+{{{
+git checkout SHA1 -- path/to/file
 }}}
 
 Once you make changes, you can see the differences you've made since last commit:
