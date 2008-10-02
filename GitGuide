@@ -193,16 +193,11 @@ git-push origin localbranch:refs/heads/newremotebranch
 }}}
 
 Checkout a local copy of a remote branch, originally you will need to track it so you can keep up with changes automatically. (consider this like your local "master" branch, except push/pull works against the remote branch instead of the remote master)
-
 {{{
-git checkout --track -b my-branchname origin/branchname
+git checkout --track -b localbranch origin/remotebranch
 }}}
 
-Note that when you have multiple remote branches being tracked, git pull fetches refs for all of them. You may see confusing things on the command line where it appears git is merging in changes into other branches besides the one you are working on. Please note that this is only information relating to the *remote* branch, not your local copy. git is simply noticing that things have changed on the remote side.
-
-However if you attempt a "git push" with no arguments, git will attempt to push *all* tracked remote branches. This is only really an issue if you have been working in one of your branches that tracks a remote branch, made commits that you did not push, then switch to another remote branch and worked there. In this case you may see something on the command line where the other branches (not current one) are rejected. I believe this is quite harmless, the branch you are pushing from should still push successfully, whereas the other will fail gracefully and you can deal with it as you please. However if you wish to avoid the whole issue then:
-
-Push latest changes from your local branch back to the remote branch: (note this avoids the push problem described above)
+Push latest changes from your local branch back to the remote branch: 
 {{{
 git-push origin localbranch:remotebranch
 }}}
@@ -225,6 +220,9 @@ Deleting a remote branch entirely: (WARNING: be careful with this one)
 git push origin :remotebranchtodelete
 }}}
 
+ * It is a very good idea to treat your tracking branches as you do master. I.e. *do not* work directly in them, but rather create local branches off them to do your work and only use the tracking branch for pulling down changes and then merging in your work and immediately pushing it out.
+ * Running "git push" without specifying the branches as per the above syntax will cause git to attempt to push your local commits from all tracked remote branches back to their respective remote counterparts. This is definitely counterintuitive. However if you only use tracking branches for pushing/pulling changes and instead work in local branches, this will not be an issue for you.
+ * You will see git pull fetching information about other remote branches, please note this is not applying those commits in your local tracking branch, it's just updating internal info and noticing that something has changed in the remote repo. Only the current branch will have it's changes applied.
 
 
 == Other Common Tasks ==
