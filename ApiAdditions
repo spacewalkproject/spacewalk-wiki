@@ -176,8 +176,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
 ||  system.listErrata(string sessionKey, int sid) || 0.3 || 3 || bbuckingham || done || Returns a list of all errata relevant to the system. ||
 ||  system.listErrataByType(string sessionKey, int sid, string advisoryType) || 0.3 || 3 || bbuckingham || done || Returns a list of all errata of the specified type that are relevant to the system. ||
-||  system.provision(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
-||  system.provision(sid, kslabel) || 0.3 || 1 || skarmark || done ||  ||
+||  system.provisionSystem(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
+||  system.provisionSystem(sid, kslabel) || 0.3 || 1 || skarmark || done ||  ||
 ||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham || done || Compare the system to an existing package profile. ||
 ||  system.searchDevices(search-string) || 0.4 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
 ||  system.searchNetwork(search-string) || 0.4 || 4 || jmatthews ||  || ditto ||
