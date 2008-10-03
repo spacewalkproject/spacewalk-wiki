@@ -123,3 +123,5 @@ Starting httpd:                                            [  OK  ]
 Starting Jabber services                                   [  OK  ]
 Done.
 }}}
+
+You should now be able to navigate to the hostname of your proxy in a web browser and see the Spacewalk Proxy page (if you see an error here there's likely something wrong with your install). If all seems well you can now try [Registering Clients]
