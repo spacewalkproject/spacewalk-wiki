@@ -33,14 +33,11 @@ Templates can not be removed until we finish all of the pxt migration.
 ==== Misc ====
  * /cve_not_found.pxt
  * /legal/terms.pxt  - '''REMOVE'''
- * /newlogin/index.pxt - '''DONE'''
  * /file_not_found.pxt  '''REMOVE'''
  * /konq.pxt  '''REMOVE''' ?
  * /errata_hidden/rh_template.pxt '''REMOVE'''
 
 ==== Satellite tools ====
- * /internal/satellite/config/restart_in_progress.pxt - '''DONE'''
- * /internal/satellite/config/restart_required.pxt - '''DONE'''
  * /internal/satellite/task_engine/index.pxt
 
 ==== Help files ====
@@ -49,7 +46,6 @@ Templates can not be removed until we finish all of the pxt migration.
  * /help/faq.pxt - '''REMOVE'''
  * /help/rhlmigrationfaq/index.pxt - '''REMOVE'''
  * /help/contact.pxt - '''REMOVE'''
- * /help/index.pxt  '''DONE'''
  * /help/browser-info.pxt - seems useless
  * /help/ssl_cert.pxt - needs updating
  * /help/release-notes/unix/index.pxt - '''REMOVE'''
@@ -68,19 +64,15 @@ These have already been migrated.
 
 ==== Software Channel Management ====
  * /network/software/cannot_download.pxt
- * /network/software/channels/details.pxt '''Done'''
- * /network/software/channels/packages.pxt '''Done'''
  * /network/software/channels/license.pxt
  * /network/software/channels/target_systems.pxt
  * /network/software/channels/patches.pxt
  * /network/software/channels/subscribers.pxt
- * /network/software/channels/errata.pxt '''Done'''
  * /network/software/channels/patchsets.pxt
  * /network/software/channels/download_packages.pxt
  * /network/software/channels/subscribe_confirm.pxt  
  * /network/software/channels/display_license.pxt
  * /network/software/channels/managers.pxt
- * /network/software/channels/subscribed_systems.pxt  '''DONE'''
  * /network/software/channels/gpg_info.pxt
  * /network/software/channels/manage/edit.pxt
  * /network/software/channels/manage/patchsets/add_confirm.pxt
@@ -91,11 +83,6 @@ These have already been migrated.
  * /network/software/channels/manage/clone.pxt
  * /network/software/channels/manage/delete_confirm.pxt
  * /network/software/channels/manage/managers.pxt
- * /network/software/channels/manage/packages/add_confirm.pxt     '''DONE'''
- * /network/software/channels/manage/packages/remove_confirm.pxt  '''DONE'''
- * /network/software/channels/manage/packages/package_list.pxt    '''DONE'''
- * /network/software/channels/manage/packages/index.pxt           '''DONE'''
- * /network/software/channels/manage/packages/add.pxt             '''DONE'''
  * /network/software/channels/manage/packages/compare/sync_confirm.pxt
  * /network/software/channels/manage/packages/compare/index.pxt
  * /network/software/channels/manage/packages/compare/sync_preview.pxt
@@ -124,14 +111,11 @@ These have already been migrated.
  * /network/software/packages/install_confirm.pxt
  * /network/software/packages/newer_versions.pxt
  * /network/software/packages/target_system_list.pxt
- * /network/software/packages/details.pxt  '''DONE'''
  * /network/software/packages/change_log.pxt
  * /network/software/packages/target_system_list_for_patchset.pxt
  * /network/software/packages/target_system_list_for_patch.pxt
  * /network/software/packages/system_list.pxt
  * /network/software/packages/dependencies.pxt
- * /network/software/packages/manage/index.pxt '''DONE'''
- * /network/software/packages/manage/delete_confirm.pxt '''DONE'''
  * /network/software/packages/system_list_for_patch.pxt
  * /network/software/all_channels.pxt
  * /network/software/retired_channels.pxt
@@ -268,6 +252,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/misc/remove_value.pxt
 
 
+
  * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
  * /network/systems/ssm/index.pxt
  * /network/systems/ssm/groups/alter_membership_conf.pxt
@@ -312,14 +297,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/account/activation_keys/child_channels.pxt
  * /network/account/activation_keys/systems.pxt
 
-==== User account editing ====
-These pages have already been migrated.
 
- * /network/account/edit_address.pxt - '''DONE'''
- * /network/account/change-email.pxt - '''DONE'''
- * /network/account/details.pxt - '''DONE'''
- * /network/account/verification-sent.pxt - '''DONE'''
- * /network/account/addresses.pxt - '''DONE'''
 ==== Stored Profiles ====
 Are these even useful?
    my company uses this stuff a lot, so I think so.  --stahnma
@@ -328,3 +306,4 @@ Are these even useful?
  * /network/profiles/package-list.pxt
  * /network/profiles/details.pxt
  * /network/profiles/list.pxt
+
