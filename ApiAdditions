@@ -60,6 +60,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -93,7 +94,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
 ||  kickstart.deleteProfile(string sessionKey, string kslabel) || 0.3 || 2 || jsherrill ||  ||  ||
-||  kickstart.profile.compareActivationKeys(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
+||  kickstart.profile.compareActivationKeys(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  || done ||  ||
 ||  kickstart.profile.comparePackages(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
 ||  kickstart.profile.compareAdvancedOptions(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
 ||  kickstart.profile.getAdvancedOptions(string sessionKey, string kslabel) || 0.3 || 2 || skarmark ||  ||  ||
