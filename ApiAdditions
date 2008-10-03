@@ -59,6 +59,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -92,9 +93,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
 ||  kickstart.deleteProfile(string sessionKey, string kslabel) || 0.3 || 2 || jsherrill ||  ||  ||
-||  kickstart.profile.diffActivationKeys(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
-||  kickstart.profile.diffPackages(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
-||  kickstart.profile.diffAdvancedOptions(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
+||  kickstart.profile.compareActivationKeys(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
+||  kickstart.profile.comparePackages(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
+||  kickstart.profile.compareAdvancedOptions(string sessionKey, string kslabel1, string kslabel2) || 0.3 || 5 || jdob  ||  ||  ||
 ||  kickstart.profile.getAdvancedOptions(string sessionKey, string kslabel) || 0.3 || 2 || skarmark ||  ||  ||
 ||  kickstart.profile.setAdvancedOptions(string sessionKey, string kslabel, array[struct[string optionName, boolean enabled, string value]) || 0.3 || 4 || skarmark ||  || Set advanced options on the profile.  The optionNames supported are based on those available in the UI and includes: autostep, interactive, install, upgrade, text, network, cdrom, harddrive, nfs, url, lang, langsupport keyboard, mouse, device, deviceprobe, zerombr, clearpart, bootloader, timezone, auth, rootpw, selinux, reboot, firewall, xconfig, skipx, key, ignoredisk, autopart, cmdline, firstboot, graphical, iscsi, iscsiname, logging, monitor, multipath, poweroff, halt, service, shutdown, user, vnc and zfcp. The following options do not have a value; therefore, if one is provided it will be ignored: interactive, install, upgrade, text, cdrom, reboot, skipx, autopart, cmdline, graphical, poweroff, halt and shutdown. ||
 ||  kickstart.profile.getCustomOptions(string sessionKey, string kslabel) || 0.3 || 2 || coec || Submitted for approval ||  ||
