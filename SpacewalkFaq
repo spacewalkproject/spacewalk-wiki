@@ -41,7 +41,7 @@ Originally there was only a backend api (in Python) which was used by the client
 
 === What OSes are supported? ===
 
-Currently Spacewalk can be used for Fedora, RHEL, or CentOS content.   There is a current limitation (that we are working on addressing) that it can only manage content for one at a time... this is described at UploadFedoraContent.  This should be cleared up shortly as this is something that a lot of users want to do.
+Currently Spacewalk can be used for Fedora, RHEL, or CentOS content.   As of Spacewalk 0.2, all of these can be managed in the same organization. However, for 0.1, you would have to create separate organizations for each content provider.
 
 Spacewalk's server itself is currently only tested to run on RHEL 5. (i386)
 
