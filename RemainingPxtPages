@@ -292,10 +292,8 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/work_with_group.pxt
 
 ==== Activation keys ====
- * /network/account/activation_keys/groups.pxt
  * /network/account/activation_keys/packages.pxt
  * /network/account/activation_keys/child_channels.pxt
- * /network/account/activation_keys/systems.pxt
 
 
 ==== Stored Profiles ====
