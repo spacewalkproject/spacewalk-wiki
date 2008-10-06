@@ -8,9 +8,15 @@ Useful log files:
  * /var/log/rhn/rhn_proxy_broker.log - Proxy Broker Server
  * /var/log/rhn/rhn_proxy_redirect.log - SSL Redirect Server
 
+Config files:
+ * /etc/httpd/conf.d/*.conf
+ * /etc/rhn/rhn.conf
+ * /etc/squid/squid.conf
+ * /etc/sysconfig/rhn/up2date
+
 You can raise the debug level in /etc/rhn/rhn.conf to increase logging to the Proxy Broker and SSL Redirect logs - set to a value between 0 (default) and 9 (loads of debugging info).
 
 === Common Errors ===
 
-When starting up Squid: "Aborted $SQUID $SQUID_OPTS >>/var/log/squid/squid.out     FATAL: Could not determine fully qualified hostname"
+When starting up Squid: "Aborted $SQUID $SQUID_OPTS >>/var/log/squid/squid.out     FATAL: Could not determine fully qualified hostname"[[BR]]
 Set visible_hostname in /etc/squid/squid.conf - see [http://kbase.redhat.com/faq/FAQ_48_9716.shtm]
