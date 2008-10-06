@@ -2,6 +2,14 @@
 
 '''These instructions are for Spacewalk Proxy 0.2 onwards'''
 
+== Prerequisites ==
+
+  * Disable SELinux (work is ongoing to allow SELinux to remain enforcing see [wiki:Features/SELinux])
+  * Around 6GB storage per distribution under /var/spool/squid (or whereever you want your Squid cache to be)
+  * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring) and 5269
+  * Inbound open ports 80, 443 and 5222
+  * An upstream Spacewalk or RHN Satellite server (you can either connect directly or through another Spacewalk Proxy)
+
 == Installation ==
 
 RPM downloads of the project are available through a yum repository
