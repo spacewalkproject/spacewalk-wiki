@@ -178,11 +178,11 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune ||  ||  ||
+||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune || ACTIVE ||  ||
 ||  Kickstarts: Document how to use Spacewalk content for kickstarting without need for tinyurl. || 0.4 || 1 || mmccune ||  ||  ||
 ||  Kickstarts: Port remaining Perl Kickstart Sniglet handlers || 0.4 || 4 || mmccune ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Cobbler: All Cobbler Profiles created by Spacewalk KS GUI/API will be setup to fetch their kickstart.cfg files from Spacewalk  . || 0.4 || 3 || paji ||  ||  ||
+||  Cobbler: All Cobbler Profiles created by Spacewalk KS GUI/API will be setup to fetch their kickstart.cfg files from Spacewalk  . || 0.4 || 3 || mmccune || '''DONE''' ||  ||
 ||  Cobbler: Manually setup Cobbler as PXE server on spacewalk . || 0.4 || 3 || TBD ||  ||  ||
 ||  Cobbler: Manually setup Cobbler as DHCP server on spacewalk . || 0.4 || 3 || TBD ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
@@ -191,7 +191,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || paji || ACTIVE ||  ||
 ||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || ACTIVE ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || ACTIVE ||  ||
+||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || '''DONE''' ||  ||
 ||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune ||  ||  ||
 ||  API: Modify kickstart.importFile to use new database storage mechanism || 0.4 || 3 || mmccune ||  ||  ||
 ||  Kickstart File Render: Kickstart rendering to support new 'advanced' mode || 0.4 || 3 || mmccune ||  ||  ||
