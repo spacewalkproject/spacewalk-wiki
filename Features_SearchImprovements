@@ -193,7 +193,7 @@ Will need to crawl:
 ||  '''Functionality''' || '''Target Release''' || '''Status''' || '''Notes''' ||
 ||  -----  ||  ||  ||  || ||
 || invert match results || 0.3 || || ||
-|| search within system set manager || 0.3 || ||
+|| search within system set manager || 0.3 || || ||
 || search within a specif system group || 0.3 || || New functionality ||
 || filter based on org || 0.3 ||  || New functionality ||
 ||  --- Searchable Data --- ||  ||  ||  || 
