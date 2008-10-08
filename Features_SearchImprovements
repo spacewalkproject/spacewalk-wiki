@@ -209,7 +209,7 @@ Will need to crawl:
 || DMI Info: System || 0.3 || || ||
 || DMI Info: BIOS || 0.3 || VERIFIED || ||
 || DMI Info: Asset Tag || 0.3 || || ||
-|| Location: Address || 0.3 || || ||
+|| Location: Address || 0.3 || VERIFIED || ||
 || Location: Building || 0.3 || || ||
 || Location: Room || 0.3 || || ||
 || Location: Rack || 0.3 || || ||
@@ -217,8 +217,8 @@ Will need to crawl:
 || Hardware Devices: Driver || 0.3 || || ||
 || Hardware Devices: Device ID || 0.3 || || ||
 || Hardware Devices: Vendor ID || 0.3 || || || 
-|| Netork Info: Hostname || 0.3 || || ||
-|| Network Info: IP Address || 0.3 || || ||
+|| Netork Info: Hostname || 0.3 || VERIFIED || ||
+|| Network Info: IP Address || 0.3 || BROKEN || ||
 || Network Info: Netmask || 0.3 || || ||
 || Network Info: Broadcast Address || 0.3 || || ||
 || Network Info: MAC Address || 0.3 || || ||
