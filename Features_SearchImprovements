@@ -168,6 +168,7 @@ Will need to crawl:
 
 = Development Status =
 == System Search ==
+=== Tasks ===
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  -----   ||  ||  ||  ||  ||  ||
 ||  --XMLRPC Search Server specific tasks-- ||   ||  ||  ||  ||  ||
@@ -187,3 +188,46 @@ Will need to crawl:
 || Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews ||  ||  ||
 || Handle "invert matches" option || 0.3 || .5 || jmatthews ||  ||  ||
 || Handle system search by packages || 0.3 || .5 || jmatthews || || ||
+
+=== Functionality Check - full run through webui to xmlrpc server ===
+||  '''Functionality''' || '''Target Release''' || '''Status''' || '''Notes''' ||
+||  -----  ||  ||  ||  || ||
+|| invert match results || 0.3 || || ||
+|| search within system set manager || 0.3 || ||
+|| search within a specif system group || 0.3 || || New functionality ||
+|| filter based on org || 0.3 ||  || New functionality ||
+||  --- Searchable Data --- ||  ||  ||  || 
+|| Activity: Days Since Last Check-in ||  ||  ||  ||   
+|| Activity: Days Since First Registered ||  ||  ||  ||
+|| Details: Name || 0.3 || VERIFIED || ||
+|| Details: Description || 0.3 || VERIFIED || ||
+|| Details: ID || 0.3 || VERIFIED || ||
+|| Details: Custom Info || 0.3 || VERIFIED || ||
+|| Details: Snapshot Tag || 0.3 || VERIFIED || ||
+|| Packages: Installed Packages || 0.3 || || ||
+|| Packages: Needed Packages || 0.3 || || ||
+|| DMI Info: System || 0.3 || || ||
+|| DMI Info: BIOS || 0.3 || VERIFIED || ||
+|| DMI Info: Asset Tag || 0.3 || || ||
+|| Location: Address || 0.3 || || ||
+|| Location: Building || 0.3 || || ||
+|| Location: Room || 0.3 || || ||
+|| Location: Rack || 0.3 || || ||
+|| Hardware Devices: Description || 0.3 || VERIFIED || ||
+|| Hardware Devices: Driver || 0.3 || || ||
+|| Hardware Devices: Device ID || 0.3 || || ||
+|| Hardware Devices: Vendor ID || 0.3 || || || 
+|| Netork Info: Hostname || 0.3 || || ||
+|| Network Info: IP Address || 0.3 || || ||
+|| Network Info: Netmask || 0.3 || || ||
+|| Network Info: Broadcast Address || 0.3 || || ||
+|| Network Info: MAC Address || 0.3 || || ||
+|| Network Info: Network Module (driver) || 0.3 || || ||
+|| Hardware: CPU Model || 0.3 || || ||
+|| Hardware: CPU MHz less than || 0.3 || VERIFIED || ||
+|| Hardware: CPU MHz greater than || 0.3 || VERIFIED || ||
+|| Hardware: Number of CPUs || 0.3 || || New functionality ||
+|| Hardware: RAM Less than || 0.3 || VERIFIED || ||
+|| Hardware: RAM Greater than || 0.3 || VERIFIED || ||
+
+
