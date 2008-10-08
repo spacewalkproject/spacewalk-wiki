@@ -163,3 +163,27 @@ Will need to crawl:
    * Integrate with upper right hand corner search bar
    * Add Doc Search to YourRHN, "Search for:  Packages | Systems | Errata | Users | Docs"
    * Add Doc Search to Help page 
+
+
+
+= Development Status =
+== System Search ==
+||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  -----   ||  ||  ||  ||  ||  ||
+||  --XMLRPC Search Server specific tasks-- ||   ||  ||  ||  ||  ||
+|| Create a generic index class || 0.3 || 3 || jmatthews || DONE || || 
+|| Index/Search: hwdevice || 0.3 || 1 || jmatthews || DONE ||  ||
+|| -Addressing bug in hwdevice indexing || 0.3 || .5 || jmatthews || DONE || ||
+|| Index/Search: systems  || 0.3 || 2 || jmatthews || DONE ||  ||
+|| Index/Search: snapshot tags  || 0.3 || .5 || jmatthews || DONE ||  ||  ||
+|| Index/Search: custom info  || 0.3 || .5 || jmatthews || DONE ||  ||
+|| Handle modified objects from DB to updated lucene index || 0.3 || 1 || jmatthews || DONE ||  ||
+|| Add a reconcile task that deletes items from the lucene index which have been removed from the DB || 0.3 || 1 || jmatthews ||  ||  ||
+|| Add "matching fields" return data which will parse a Lucene Explanation and determine which field contributed the most to the score || 0.4 || 3 || jmatthews ||  || This would be a nice enhancement to aid the webui, but too much work for 0.3
+|| ---- ||  ||  ||  ||  ||  ||
+|| --WebUI specific tasks-- ||  ||  ||  ||  ||  ||
+|| WebUI passing system search calls to XMLRPC search server || 0.3 || .5 || jmatthews || DONE ||  ||
+|| Update systemsearch.jsp to newer JSP list-tag || 0.3 || 1 || jmatthews ||  ||  ||
+|| Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews ||  ||  ||
+|| Handle "invert matches" option || 0.3 || .5 || jmatthews ||  ||  ||
+|| Handle system search by packages || 0.3 || .5 || jmatthews || || ||
