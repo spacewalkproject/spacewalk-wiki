@@ -224,10 +224,10 @@ Will need to crawl:
 || Network Info: MAC Address || 0.3 || || ||
 || Network Info: Network Module (driver) || 0.3 || || ||
 || Hardware: CPU Model || 0.3 || || ||
-|| Hardware: CPU MHz less than || 0.3 || VERIFIED || ||
-|| Hardware: CPU MHz greater than || 0.3 || VERIFIED || ||
+|| Hardware: CPU MHz less than || 0.3 || BROKEN || All range queries are broken from webui side, need to look at how query is formed. ||
+|| Hardware: CPU MHz greater than || 0.3 || BROKEN || ||
 || Hardware: Number of CPUs || 0.3 || || New functionality ||
-|| Hardware: RAM Less than || 0.3 || VERIFIED || ||
-|| Hardware: RAM Greater than || 0.3 || VERIFIED || ||
+|| Hardware: RAM Less than || 0.3 || BROKEN || ||
+|| Hardware: RAM Greater than || 0.3 || BROKEN || ||
 
 
