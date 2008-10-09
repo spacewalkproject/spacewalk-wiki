@@ -178,7 +178,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune || ACTIVE ||  ||
+||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune || '''DONE''' || Note:  Didn't remove it entirely. Just made the viewable URLs in the kickstart file usable and shortened the standard non tiny URLs from /kickstart -> /ks ||
 ||  Kickstarts: Document how to use Spacewalk content for kickstarting without need for tinyurl. || 0.4 || 1 || mmccune ||  ||  ||
 ||  Kickstarts: Port remaining Perl Kickstart Sniglet handlers || 0.4 || 4 || mmccune ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
