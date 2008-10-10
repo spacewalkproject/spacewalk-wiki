@@ -205,14 +205,9 @@ This is only for use if running a development environment or development version
  
 == Known Issues == 
  
-Users are experiencing an Internal Server Error (500) when viewing the following page: 
+Users are experiencing an Internal Server Error (500) when viewing Systems -> Pick a System -> Software -> Packages -> Install New Package (URL: https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=**********) or when running rhnreg_ks to register a client.
  
-Systems -> Pick a System -> Software -> Packages -> Install New Package 
- 
-https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=********** 
- 
-This is an Oracle XE bug. Details are noted in BZ: https://bugzilla.redhat.com/show_bug.cgi?id=453176. 
-If you are experiencing this use workaround: 
+This is an Oracle XE bug. Details are noted in BZ: https://bugzilla.redhat.com/show_bug.cgi?id=453176. If you are experiencing this use workaround: 
 {{{ 
 # sqlplus spacewalk/spacewalk@xe 
  
