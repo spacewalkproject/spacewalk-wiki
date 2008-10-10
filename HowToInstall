@@ -137,51 +137,7 @@ After {{{spacewalk-setup}}} is complete your application is ready to go!
 You can also find source RPMs and tarballs at the following URL:
    * http://spacewalk.redhat.com/source
 
-== Current set of TODO/potholes ==
-
- * Need these 2 environment variables:
-
-{{{
-# export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/
-# export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
-}}}
-
-
- * You may need to adjust selinux (or disable it) if you encounter this error:
-
-{{{
-Could not connect to the database.  Your connection information may be incorrect.  Error: install_driver(Oracle) failed: Can't load '/usr/lib/perl5/site_perl/5.8.8/i386-linux-thread-multi/auto/DBD/Oracle/Oracle.so' for module DBD::Oracle: /usr/lib/oracle/10.2.0/client/lib/libnnz10.so: cannot restore segment prot after reloc: Permission denied at /usr/lib/perl5/5.8.8/i386-linux-thread-multi/DynaLoader.pm line 230, <STDIN> line 6.
- at (eval 784) line 3
-Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
-Perhaps a required shared library or dll isn't installed where expected
- at /usr/bin/spacewalk-setup line 1504
-}}}
-
- * The following commands can be used to give Oracle proper selinux permissions: (NOTE: CURRENTLY UNTESTED)
-
-{{{
-semanage fcontext -a -t textrel_shlib_t '/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/*'
-restorecon -R /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
-}}}
+= Known Issues =
 
  * During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
-
- * can't find {{{libclntsh.so.10.1}}} on x86_64 installation, need to modify {{{LD_LIBRARY_PATH}}} to point to all versions of the {{{libclntsh.so.10.1}}} file
-{{{
-Could not connect to the database.  Your connection information may be
-incorrect.  Error: install_driver(Oracle) failed: Can't load
-'/usr/lib64/perl5/site_perl/5.8.8/x86_64-linux-thread-multi/auto/DBD/Oracle/Oracle.so'
-for module DBD::Oracle: libclntsh.so.10.1: wrong ELF class: ELFCLASS32 at
-/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/DynaLoader.pm line 230, <STDIN>
-line 6.
- at (eval 784) line 3
- Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
- Perhaps a required shared library or dll isn't installed where expected
-  at /usr/bin/spacewalk-setup line 1492
-}}}
-{{{
-[root@test12-64 ~]# locate libclntsh.so.10.1
-/usr/lib/oracle/10.2.0.4/client64/lib/libclntsh.so.10.1
-/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/libclntsh.so.10.1
-}}}
-edit the file in {{{/etc/ld.so.conf.d}}} created earlier and run {{{ldconfig -v}}} to enable the changes.
+ * For issues with Oracle XE, see [OracleXeSetup#KnownIssues Oracle XE Setup Known Issues]
