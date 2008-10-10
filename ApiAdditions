@@ -66,6 +66,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 
+
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
@@ -200,15 +201,14 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
 ||  kickstart.list || 0.1 || 2 || jsherrill || Done ||  ||
-||  kickstart.listscripts() || 0.1 || 2 || jsherrill || Done ||  ||
-||  kickstart.addscript() || 0.1 || 3 || jsherrill || Done ||  ||
-||  kickstart.deletescript() || 0.1 || 3 || jsherrill || Done ||  ||
-||  kickstart.download() || 0.1 || 3 || jsherrill || Done ||  ||
-||  kickstart.setKickstartTree(kslabel, tree_label) || 0.1 || 3 || skarmark || Done ||  ||
-||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 0.1 || 3 || skarmark || Done ||  ||
-||  kickstart.getPartioningScheme() || 0.1 || 2 || jortel || Done ||  ||
-
-||  kickstart.setPartitioningScheme() || 0.1 || 3 || jortel || Done ||  ||
+||  kickstart.listScripts() || 0.1 || 2 || jsherrill || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.addScript() || 0.1 || 3 || jsherrill || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.removeScript() || 0.1 || 3 || jsherrill || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.downloadKickstart() || 0.1 || 3 || jsherrill || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.setKickstartTree(kslabel, tree_label) || 0.1 || 3 || skarmark || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.setChildChannels(kslabel, array(chan_lablel)) || 0.1 || 3 || skarmark || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.getPartioningScheme() || 0.1 || 2 || jortel || Done || moved to kickstart.profile in 0.3 ||
+||  kickstart.setPartitioningScheme() || 0.1 || 3 || jortel || Done || moved to kickstart.profile in 0.3 ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
 ||  org.create || 0.1 || || dgoodwin || Done || ||
