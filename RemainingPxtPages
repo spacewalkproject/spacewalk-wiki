@@ -197,7 +197,6 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/notes/edit.pxt
  * /network/systems/details/notes/delete_note_conf.pxt
  * /network/systems/details/notes/notes_list.pxt
- * /network/systems/details/target_group_list.pxt
  * /network/systems/details/custominfo/edit.pxt
  * /network/systems/details/custominfo/remove_value_conf.pxt
  * /network/systems/details/custominfo/new_value.pxt
@@ -212,7 +211,6 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/proxy/configure.pxt
  * /network/systems/details/proxy/install.pxt
  * /network/systems/details/connection.pxt
- * /network/systems/details/admin_group_list.pxt
  * /network/systems/details/delete_confirm.pxt
  * /network/systems/details/proxy.pxt
  * /network/systems/details/deactivate_satellite_confirm.pxt
@@ -221,7 +219,6 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/kickstart/session_status.pxt
  * /network/systems/details/kickstart/options.pxt
  * /network/systems/details/reboot_confirm.pxt
- * /network/systems/details/group_list.pxt
  * /network/systems/details/channels.pxt
 
 ==== System Set Manager (SSM) ====
