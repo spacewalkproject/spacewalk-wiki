@@ -184,7 +184,8 @@ Will need to crawl:
 || ---- ||  ||  ||  ||  ||  ||
 || --WebUI specific tasks-- ||  ||  ||  ||  ||  ||
 || WebUI passing system search calls to XMLRPC search server || 0.3 || .5 || jmatthews || DONE ||  ||
-|| Update systemsearch.jsp to newer JSP list-tag || 0.3 || 1 || jmatthews ||  ||  ||
+|| Update systemsearch.jsp to newer JSP list-tag || 0.3 || 1 || jmatthews || DONE ||  ||
+|| Merge SystemSearchAction and SystemSearchSetupAction to single class, model after PackageSearchAction || 0.3 || .5 || jmatthews || || ||
 || Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews ||  ||  ||
 || Handle "invert matches" option || 0.3 || .5 || jmatthews ||  ||  ||
 || Handle system search by packages || 0.3 || .5 || jmatthews || || ||
@@ -197,8 +198,8 @@ Will need to crawl:
 || search within a specif system group || 0.3 || || New functionality ||
 || filter based on org || 0.3 ||  || New functionality ||
 ||  --- Searchable Data --- ||  ||  ||  || 
-|| Activity: Days Since Last Check-in ||  ||  ||  ||   
-|| Activity: Days Since First Registered ||  ||  ||  ||
+|| Activity: Days Since Last Check-in || 0.3 || VERIFIED ||  ||   
+|| Activity: Days Since First Registered || 0.3 || VERIFIED  ||  ||
 || Details: Name || 0.3 || VERIFIED || ||
 || Details: Description || 0.3 || VERIFIED || ||
 || Details: ID || 0.3 || VERIFIED || ||
@@ -217,7 +218,7 @@ Will need to crawl:
 || Hardware Devices: Driver || 0.3 || || ||
 || Hardware Devices: Device ID || 0.3 || || ||
 || Hardware Devices: Vendor ID || 0.3 || || || 
-|| Netork Info: Hostname || 0.3 || VERIFIED || ||
+|| Netork Info: Hostname || 0.3 || BROKEN || ||
 || Network Info: IP Address || 0.3 || BROKEN || ||
 || Network Info: Netmask || 0.3 || || ||
 || Network Info: Broadcast Address || 0.3 || || ||
