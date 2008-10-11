@@ -180,7 +180,7 @@ Will need to crawl:
 || Index/Search: custom info  || 0.3 || .5 || jmatthews || DONE ||  ||
 || Handle modified objects from DB to updated lucene index || 0.3 || 1 || jmatthews || DONE ||  ||
 || Add a reconcile task that deletes items from the lucene index which have been removed from the DB || 0.3 || 1 || jmatthews ||  ||  ||
-|| Add "matching fields" return data which will parse a Lucene Explanation and determine which field contributed the most to the score || 0.3 || 4 || jmatthews || DONE || Added a simple version which parses the query and returns the first term, would be nice to look into using the Explanation in 0.4 or later, to get a more accurate feel for what caused the match.  
+|| Add "matching fields" return data which will parse a Lucene Explanation and determine which field contributed the most to the score || 0.3 || .5 || jmatthews || DONE || Added a simple version which parses the query and returns the first term, would be nice to look into using the Explanation in 0.4 or later, to get a more accurate feel for what caused the match.  
 || ---- ||  ||  ||  ||  ||  ||
 || --WebUI specific tasks-- ||  ||  ||  ||  ||  ||
 || WebUI passing system search calls to XMLRPC search server || 0.3 || .5 || jmatthews || DONE ||  ||
