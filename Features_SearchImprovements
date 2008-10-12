@@ -239,5 +239,6 @@ Will need to crawl:
 || Not handling pagination correctly || || Empty list of results beyond first page ||
 || Need to add location info (building, address, rack, room) to SystemSearchResult dto || || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || || ||
+|| Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
 
 
