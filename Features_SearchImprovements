@@ -206,9 +206,9 @@ Will need to crawl:
 || Details: Snapshot Tag || 0.3 || VERIFIED || ||
 || Packages: Installed Packages || 0.3 || || ||
 || Packages: Needed Packages || 0.3 || || ||
-|| DMI Info: System || 0.3 || || ||
-|| DMI Info: BIOS || 0.3 || VERIFIED || ||
-|| DMI Info: Asset Tag || 0.3 || || ||
+|| DMI Info: System || 0.3 || WORKING ||needs to be added to DTO on webui for better display ||
+|| DMI Info: BIOS || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
+|| DMI Info: Asset Tag || 0.3 ||WORKING || needs to be added to DTO on webui for better display ||
 || Location: Address || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
 || Location: Building || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
 || Location: Room || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
