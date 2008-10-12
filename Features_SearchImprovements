@@ -211,8 +211,8 @@ Will need to crawl:
 || DMI Info: Asset Tag || 0.3 || || ||
 || Location: Address || 0.3 || VERIFIED || ||
 || Location: Building || 0.3 || || ||
-|| Location: Room || 0.3 || || ||
-|| Location: Rack || 0.3 || || ||
+|| Location: Room || 0.3 || VERIFIED || needs to be added to DTO on webui for better display || 
+|| Location: Rack || 0.3 || VERIFIED || needs to be added to DTO on webui for better display ||
 || Hardware Devices: Description || 0.3 || VERIFIED || ||
 || Hardware Devices: Driver || 0.3 || || ||
 || Hardware Devices: Device ID || 0.3 || || ||
@@ -236,5 +236,5 @@ Will need to crawl:
 || Searches which result in no matches causes a problem with ElaborationDecorator in the new list tag ||  || ||
 || Hwdevice indexing is indexing 2x to 3x more data than we have || DONE || ||
 || Indexing for all data will become corrupted if task is stopped before it fully completes || DONE || We weren't indexing data in order, so updating of last id indexed was not usable||
-
+|| Need to add "mainRack" to SystemSearchResult dto || || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 
