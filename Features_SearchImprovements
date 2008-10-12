@@ -226,7 +226,7 @@ Will need to crawl:
 || Hardware: CPU Model || 0.3 || || ||
 || Hardware: CPU MHz less than || 0.3 || VERIFIED || Updated how range queries are sent from webui. ||
 || Hardware: CPU MHz greater than || 0.3 || VERIFIED || ||
-|| Hardware: Number of CPUs || 0.3 || || New functionality ||
+|| Hardware: Number of CPUs || 0.3 || VERIFIED || New functionality ||
 || Hardware: RAM Less than || 0.3 || VERIFIED || ||
 || Hardware: RAM Greater than || 0.3 || VERIFIED || ||
 
