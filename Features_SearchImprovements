@@ -174,7 +174,6 @@ Will need to crawl:
 ||  --XMLRPC Search Server specific tasks-- ||   ||  ||  ||  ||  ||
 || Create a generic index class || 0.3 || 3 || jmatthews || DONE || || 
 || Index/Search: hwdevice || 0.3 || 1 || jmatthews || DONE ||  ||
-|| -Addressing bug in hwdevice indexing || 0.3 || .5 || jmatthews || DONE || ||
 || Index/Search: systems  || 0.3 || 2 || jmatthews || DONE ||  ||
 || Index/Search: snapshot tags  || 0.3 || .5 || jmatthews || DONE ||  ||  ||
 || Index/Search: custom info  || 0.3 || .5 || jmatthews || DONE ||  ||
@@ -230,5 +229,12 @@ Will need to crawl:
 || Hardware: Number of CPUs || 0.3 || || New functionality ||
 || Hardware: RAM Less than || 0.3 || VERIFIED || ||
 || Hardware: RAM Greater than || 0.3 || VERIFIED || ||
+
+=== Issues to Fix ===
+||  '''Issue''' || '''Status''' || '''Notes''' ||
+||  -----  ||  ||  ||  ||
+|| Searches which result in no matches causes a problem with ElaborationDecorator in the new list tag ||  || ||
+|| Hwdevice indexing is indexing 2x to 3x more data than we have || DONE || ||
+|| Indexing for all data will become corrupted if task is stopped before it fully completes || DONE || We weren't indexing data in order, so updating of last id indexed was not usable||
 
 
