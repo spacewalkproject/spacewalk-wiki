@@ -213,10 +213,10 @@ Will need to crawl:
 || Location: Building || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
 || Location: Room || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
 || Location: Rack || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| Hardware Devices: Description || 0.3 || VERIFIED || ||
-|| Hardware Devices: Driver || 0.3 || || ||
-|| Hardware Devices: Device ID || 0.3 || || ||
-|| Hardware Devices: Vendor ID || 0.3 || || || 
+|| Hardware Devices: Description || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
+|| Hardware Devices: Driver || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
+|| Hardware Devices: Device ID || 0.3 || WORKING|| needs to be added to DTO on webui for better display ||
+|| Hardware Devices: Vendor ID || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
 || Netork Info: Hostname || 0.3 || BROKEN || ||
 || Network Info: IP Address || 0.3 || BROKEN || ||
 || Network Info: Netmask || 0.3 || || ||
@@ -236,6 +236,7 @@ Will need to crawl:
 || Searches which result in no matches causes a problem with ElaborationDecorator in the new list tag ||  || ||
 || Hwdevice indexing is indexing 2x to 3x more data than we have || DONE || ||
 || Indexing for all data will become corrupted if task is stopped before it fully completes || DONE || We weren't indexing data in order, so updating of last id indexed was not usable||
+|| Not handling pagination correctly || || Empty list of results beyond first page ||
 || Need to add location info (building, address, rack, room) to SystemSearchResult dto || || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || || ||
 
