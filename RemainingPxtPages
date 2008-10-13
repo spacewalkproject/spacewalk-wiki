@@ -162,11 +162,9 @@ These don't seem to be even used anymore except by each other?????
  * /network/systems/groups/errata_list.pxt
  * /network/systems/groups/create.pxt
  * /network/systems/groups/delete_confirm.pxt
- * /network/systems/groups/target_system_list.pxt
  * /network/systems/groups/details.pxt
  * /network/systems/groups/probe_list.pxt
  * /network/systems/groups/systems_affected_by_errata.pxt
- * /network/systems/groups/system_list.pxt
  * /network/systems/groups/apply_errata_confirm.pxt
 
 ==== System Detail (SDC) pages ====
