@@ -103,7 +103,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || perl-NOCpulse-Object-1.26.4-7.el5.src.rpm || || || ||
  || perl-NOCpulse-OracleDB-1.28.2-12.el5.src.rpm || || || ||
  || perl-NOCpulse-Probe-1.183.1-21.el5.src.rpm || || || ||
- || perl-NOCpulse-SetID-1.5.2-5.el5.src.rpm || || in prep || msuchy ||
+ || perl-NOCpulse-SetID-1.5.2-5.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=466906 || msuchy ||
  || perl-NOCpulse-Utils-1.14.2-8.el5.src.rpm || || in prep || msuchy ||
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || || || ||
