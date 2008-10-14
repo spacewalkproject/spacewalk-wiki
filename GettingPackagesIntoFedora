@@ -51,7 +51,7 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||osad-5.2.0-1.src.rpm|| GPLv2 || || prad || in prep || 
 ||rhncfg-5.2.0-0.src.rpm|| GPLv2 (According source in client/tools/rhncfg)|| || prad || in prep ||
 ||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| ||  || ||
-||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || mmccune || in prep || ||
+||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || mmccune || in prep ||
 ||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) ||  ||prad || in prep ||
 ||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || prad|| in prep ||
 ||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || prad || in prep ||
