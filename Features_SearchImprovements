@@ -233,10 +233,10 @@ Will need to crawl:
 === Issues to Fix ===
 ||  '''Issue''' || '''Status''' || '''Notes''' ||
 ||  -----  ||  ||  ||  ||
-|| Searches which result in no matches causes a problem with ElaborationDecorator in the new list tag ||  || ||
+|| Searches which result in no matches causes a problem with ElaborationDecorator in the new list tag || DONE  || Quickfix to ElaborationDecorator ||
 || Hwdevice indexing is indexing 2x to 3x more data than we have || DONE || ||
 || Indexing for all data will become corrupted if task is stopped before it fully completes || DONE || We weren't indexing data in order, so updating of last id indexed was not usable||
-|| Not handling pagination correctly || || Empty list of results beyond first page ||
+|| Not handling pagination correctly || DONE || Using ListSubmitable fixed this... ||
 || Need to add location info (building, address, rack, room) to SystemSearchResult dto || || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || || ||
 || Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
