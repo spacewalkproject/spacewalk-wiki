@@ -18,7 +18,7 @@ We can update the list of packages here and provide bugzilla numbers.
 ||perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm||GPL/Artistic|| https://bugzilla.redhat.com/show_bug.cgi?id=466879 ||msuchy||
 ||perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones|| Legal looking into License
 ||perl-Crypt-Rijndael-1.06-1.el5.src.rpm||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones|| This package might actually not be needed for Spacewalk at all. --adelton (CVS Branched)||
-||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones||
+||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones|| Dependency on perl-Crypt-RIPEMD160 ||
 ||perl-DateTime-Locale-0.4001-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452455||Nigel Jones|| Already in Fedora, just under a slightly different name || 
 ||perl-DateTime-TimeZone-0.7701-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452456||Nigel Jones|| Already in Fedora, just under a slightly different name ||
 
