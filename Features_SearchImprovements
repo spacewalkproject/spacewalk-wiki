@@ -206,24 +206,24 @@ Will need to crawl:
 || Details: Snapshot Tag || 0.3 || VERIFIED || ||
 || Packages: Installed Packages || 0.3 || || ||
 || Packages: Needed Packages || 0.3 || || ||
-|| DMI Info: System || 0.3 || WORKING ||needs to be added to DTO on webui for better display ||
-|| DMI Info: BIOS || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| DMI Info: Asset Tag || 0.3 ||WORKING || needs to be added to DTO on webui for better display ||
-|| Location: Address || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| Location: Building || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| Location: Room || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
-|| Location: Rack || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
+|| DMI Info: System || 0.3 || WORKING ||  ||
+|| DMI Info: BIOS || 0.3 || WORKING ||  ||
+|| DMI Info: Asset Tag || 0.3 ||WORKING ||  ||
+|| Location: Address || 0.3 || VERIFIED ||  ||
+|| Location: Building || 0.3 || VERIFIED ||  ||
+|| Location: Room || 0.3 || VERIFIED ||  || 
+|| Location: Rack || 0.3 || VERIFIED ||  ||
 || Hardware Devices: Description || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
 || Hardware Devices: Driver || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
 || Hardware Devices: Device ID || 0.3 || WORKING|| needs to be added to DTO on webui for better display ||
 || Hardware Devices: Vendor ID || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
-|| Netork Info: Hostname || 0.3 || BROKEN || ||
-|| Network Info: IP Address || 0.3 || BROKEN || ||
-|| Network Info: Netmask || 0.3 || || ||
-|| Network Info: Broadcast Address || 0.3 || || ||
-|| Network Info: MAC Address || 0.3 || || ||
-|| Network Info: Network Module (driver) || 0.3 || || ||
-|| Hardware: CPU Model || 0.3 || || ||
+|| Netork Info: Hostname || 0.3 || VERIFIED || ||
+|| Network Info: IP Address || 0.3 || VERIFIED || ||
+|| Network Info: Netmask || 0.4 || || New functionality, Most likely punt to 0.4 ||
+|| Network Info: Broadcast Address || 0.4 || || New functionality, Most likely punt to 0.4 ||
+|| Network Info: MAC Address || 0.4 || || New functionality, Most likely punt to 0.4 ||
+|| Network Info: Network Module (driver) || 0.4 || || New functionality, Most likely punt to 0.4 ||
+|| Hardware: CPU Model || 0.3 || VERIFIED || ||
 || Hardware: CPU MHz less than || 0.3 || VERIFIED || Updated how range queries are sent from webui. ||
 || Hardware: CPU MHz greater than || 0.3 || VERIFIED || ||
 || Hardware: Number of CPUs || 0.3 || VERIFIED || New functionality ||
@@ -237,8 +237,8 @@ Will need to crawl:
 || Hwdevice indexing is indexing 2x to 3x more data than we have || DONE || ||
 || Indexing for all data will become corrupted if task is stopped before it fully completes || DONE || We weren't indexing data in order, so updating of last id indexed was not usable||
 || Not handling pagination correctly || DONE || Using ListSubmitable fixed this... ||
-|| Need to add location info (building, address, rack, room) to SystemSearchResult dto || || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
-|| Need to add DMI info (asset, bios, system) to SystemSearchResult dto || || ||
+|| Need to add location info (building, address, rack, room) to SystemSearchResult dto || DONE || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
+|| Need to add DMI info (asset, bios, system) to SystemSearchResult dto || DONE || ||
 || Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
 
 
