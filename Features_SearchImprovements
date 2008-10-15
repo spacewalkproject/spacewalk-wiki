@@ -207,7 +207,7 @@ Will need to crawl:
 || Packages: Installed Packages || 0.3 || || ||
 || Packages: Needed Packages || 0.3 || || ||
 || DMI Info: System || 0.3 || VERIFIED ||  ||
-|| DMI Info: BIOS || 0.3 || WORKING || Needs DTO added ||
+|| DMI Info: BIOS || 0.3 || VERIFIED ||  ||
 || DMI Info: Asset Tag || 0.3 ||VERIFIED ||  ||
 || Location: Address || 0.3 || VERIFIED ||  ||
 || Location: Building || 0.3 || VERIFIED ||  ||
