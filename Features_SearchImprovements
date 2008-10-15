@@ -206,9 +206,9 @@ Will need to crawl:
 || Details: Snapshot Tag || 0.3 || VERIFIED || ||
 || Packages: Installed Packages || 0.3 || || ||
 || Packages: Needed Packages || 0.3 || || ||
-|| DMI Info: System || 0.3 || WORKING ||  ||
-|| DMI Info: BIOS || 0.3 || WORKING ||  ||
-|| DMI Info: Asset Tag || 0.3 ||WORKING ||  ||
+|| DMI Info: System || 0.3 || VERIFIED ||  ||
+|| DMI Info: BIOS || 0.3 || WORKING || Needs DTO added ||
+|| DMI Info: Asset Tag || 0.3 ||VERIFIED ||  ||
 || Location: Address || 0.3 || VERIFIED ||  ||
 || Location: Building || 0.3 || VERIFIED ||  ||
 || Location: Room || 0.3 || VERIFIED ||  || 
@@ -240,5 +240,5 @@ Will need to crawl:
 || Need to add location info (building, address, rack, room) to SystemSearchResult dto || DONE || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || DONE || ||
 || Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
-
+|| Handle 'special chars' in searchQuery, ":" "(" ")" "-" || || ||
 
