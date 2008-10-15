@@ -193,7 +193,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || 99% || waiting for OK from UI Review  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || '''DONE''' ||  ||
-||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune ||  ||  ||
+||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune || '''DONE''' ||  ||
 ||  API: Modify kickstart.importFile to use new database storage mechanism || 0.4 || 3 || mmccune ||  ||  ||
 ||  Kickstart File Render: Kickstart rendering to support new 'advanced' mode || 0.4 || 3 || mmccune ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
