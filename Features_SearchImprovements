@@ -241,4 +241,5 @@ Will need to crawl:
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || DONE || ||
 || Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
 || Handle 'special chars' in searchQuery, ":" "(" ")" "-" || || ||
-|| Range Queries have issues, looks like they aren't handling Number to String conversions correctly || || ||
+|| Range Queries have issues, looks like they aren't handling Number to String conversions correctly || DONE || Using Lucene's NumberTools so lexicographically sorting is possible ||
+|| Sort columns with new list-tag isn't working, i.e. click column but results are not sorted. || || ||
