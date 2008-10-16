@@ -204,8 +204,8 @@ Will need to crawl:
 || Details: ID || 0.3 || VERIFIED || ||
 || Details: Custom Info || 0.3 || VERIFIED || ||
 || Details: Snapshot Tag || 0.3 || VERIFIED || ||
-|| Packages: Installed Packages || 0.3 || || ||
-|| Packages: Needed Packages || 0.3 || || ||
+|| Packages: Installed Packages || 0.3 || VERIFIED || Would like to see if we can speed this up ||
+|| Packages: Needed Packages || 0.3 || VERIFIED || Would like to see if we can speed this up ||
 || DMI Info: System || 0.3 || VERIFIED ||  ||
 || DMI Info: BIOS || 0.3 || VERIFIED ||  ||
 || DMI Info: Asset Tag || 0.3 ||VERIFIED ||  ||
