@@ -79,5 +79,5 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
 
 = Building spacewalk-java RPM =
 
-* See here for info on rebuilding the spacewalk-java RPM: [BuildingJavaRpm]
+* See here for info on rebuilding the spacewalk-java RPM: BuildingJavaRpm
 
