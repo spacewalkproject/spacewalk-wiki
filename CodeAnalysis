@@ -28,8 +28,14 @@ All package names are assumed to be prefixed with {{{com.redhat.rhn.}}}
      * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/util/manifestfactory manifestfactory] - ok
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/validator validator] - ui validation utils; do we need a {{{ui}}} package? move to {{{util}}} package?
  * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/domain domain]
- * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend frontend]
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend frontend] - one of the largest packages in the codebase
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/action action] - has all of the struts actions in support of the jsp view.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/configuration/tags configuration.tags] - this should be move to the [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/taglibs taglibs] package with the other taglibs.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/context context] - contains a support class for the Locale and other infrastructure.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/dto dto] - [http://java.sun.com/blueprints/patterns/TransferObject.html Data Transfer Objects] used for the UI.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend/events events] - event and action classes used by the [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/messaging Messaging] infrastructure.
  * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/manager manager]
- * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/task task] - contains the taskomatic tasks. Need to move {{{task}}} package into the [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/taskomatic taskomatic]/task package
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/task task] - contains the taskomatic tasks. Need to move {{{task}}} package into the [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/taskomatic taskomatic]/task package;
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/taskomatic taskomatic] move the current classes to a {{{core}}} subpackage; add a {{{task}}} subpackage as well.
  * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/testing testing] - do we move these into  [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common common]
- * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/webapp webapp] - contains a single ServletListener.
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/webapp webapp] - contains a single !ServletListener.
