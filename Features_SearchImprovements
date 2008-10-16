@@ -185,9 +185,9 @@ Will need to crawl:
 || WebUI passing system search calls to XMLRPC search server || 0.3 || .5 || jmatthews || DONE ||  ||
 || Update systemsearch.jsp to newer JSP list-tag || 0.3 || 1 || jmatthews || DONE ||  ||
 || Merge SystemSearchAction and SystemSearchSetupAction to single class, model after PackageSearchAction || 0.3 || .5 || jmatthews || || ||
-|| Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews ||  ||  ||
-|| Handle "invert matches" option || 0.3 || .5 || jmatthews ||  ||  ||
-|| Handle system search by packages || 0.3 || .5 || jmatthews || || ||
+|| Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews || DONE ||  ||
+|| Handle "invert matches" option || 0.3 || .5 || jmatthews || DONE ||  ||
+|| Handle system search by packages || 0.3 || .5 || jmatthews || DONE || ||
 
 === Functionality Check - full run through webui to xmlrpc server ===
 ||  '''Functionality''' || '''Target Release''' || '''Status''' || '''Notes''' ||
