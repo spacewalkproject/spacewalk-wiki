@@ -1,0 +1,14 @@
+= Code Analsys =
+A page that captures what code is what, and what it does.
+
+All package names are assumed to be prefixed with {{{com.redhat.rhn.}}}
+
+ * client
+   * {{{InvalidUserNameException}}} - used by !UnitTestHandler; move to {{{frontend.xmlrpc.test}}} package.
+ * common
+   * client - looks ok
+   * conf - configuration code looks ok
+   * daemon - move to {{{taskomatic.core}}} package. NOTE: {{{taskomatic.core}}} would be a new package.
+   * db
+     * datasource - pretty stable, seems to do most of what we want already.
+   * download 
