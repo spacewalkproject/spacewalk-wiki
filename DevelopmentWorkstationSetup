@@ -26,6 +26,8 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{cd $GITDIR/spacewalk/java}}}
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
+ * {{{cd $GITDIR/spacewalk/search-server}}}
+ * {{{ant all, or ant clean all }}}
  * {{{sudo ant install-devel (this step may only be necessary once after the initial install)}}} 
  * {{{sudo /sbin/service rhn-satellite start}}}
 
