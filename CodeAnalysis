@@ -15,5 +15,21 @@ All package names are assumed to be prefixed with {{{com.redhat.rhn.}}}
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/download download] - move to [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/util common.util] package
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/errors errors] - looks ok
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/filediff filediff] - looks ok
-   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/finder finder] - ok
-   * 
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/finder finder] - ok; might be worth packaging separately.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/hibernate hibernate] - ok
+     * usertypes - '''REMOVE'''
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/localization localization] - ok; i18n framework
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/messaging messaging] - ok
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/security security] - ok
+     * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/security/acl acl] - ok, best javadoc in the codebase :)
+       * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/security/acl/action action] - probably should move the files in here up one level.
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/translation translation] - move to [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/util common.util] package
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/util util] - ok
+     * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/util/manifestfactory manifestfactory] - ok
+   * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/validator validator] - ui validation utils; do we need a {{{ui}}} package? move to {{{util}}} package?
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/domain domain]
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/frontend frontend]
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/manager manager]
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/task task] - contains the taskomatic tasks. Need to move {{{task}}} package into the [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/taskomatic taskomatic]/task package
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/testing testing] - do we move these into  [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common common]
+ * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/webapp webapp] - contains a single ServletListener.
