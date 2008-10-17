@@ -239,7 +239,7 @@ Will need to crawl:
 || Not handling pagination correctly || DONE || Using ListSubmitable fixed this... ||
 || Need to add location info (building, address, rack, room) to SystemSearchResult dto || DONE || Result is returned correctly from search server, needs to be added to DTO on webui side for better display ||
 || Need to add DMI info (asset, bios, system) to SystemSearchResult dto || DONE || ||
-|| Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
+|| Display hwdevice info on webui from a system search result || DONE || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
 || Handle 'special chars' in searchQuery, ":" "(" ")" "-" || || ||
 || Range Queries have issues, looks like they aren't handling Number to String conversions correctly || DONE || Using Lucene's NumberTools so lexicographically sorting is possible ||
 || Sort columns with new list-tag isn't working, i.e. click column but results are not sorted. || DONE || sort only works on data fields which do _not_ require elaboration ||
