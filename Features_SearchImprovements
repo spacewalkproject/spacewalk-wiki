@@ -184,7 +184,7 @@ Will need to crawl:
 || --WebUI specific tasks-- ||  ||  ||  ||  ||  ||
 || WebUI passing system search calls to XMLRPC search server || 0.3 || .5 || jmatthews || DONE ||  ||
 || Update systemsearch.jsp to newer JSP list-tag || 0.3 || 1 || jmatthews || DONE ||  ||
-|| Merge SystemSearchAction and SystemSearchSetupAction to single class, model after PackageSearchAction || 0.3 || .5 || jmatthews || || ||
+|| Merge SystemSearchAction and SystemSearchSetupAction to single class, model after PackageSearchAction || 0.3 || .5 || jmatthews/jsherrill|| DONE || ||
 || Handle System Set Manager "whereToSearch" option || 0.3 || .5 || jmatthews || DONE ||  ||
 || Handle "invert matches" option || 0.3 || .5 || jmatthews || DONE ||  ||
 || Handle system search by packages || 0.3 || .5 || jmatthews || DONE || ||
@@ -213,10 +213,10 @@ Will need to crawl:
 || Location: Building || 0.3 || VERIFIED ||  ||
 || Location: Room || 0.3 || VERIFIED ||  || 
 || Location: Rack || 0.3 || VERIFIED ||  ||
-|| Hardware Devices: Description || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| Hardware Devices: Driver || 0.3 || WORKING || needs to be added to DTO on webui for better display ||
-|| Hardware Devices: Device ID || 0.3 || WORKING|| needs to be added to DTO on webui for better display ||
-|| Hardware Devices: Vendor ID || 0.3 || WORKING || needs to be added to DTO on webui for better display || 
+|| Hardware Devices: Description || 0.3 || VERIFIED ||  ||
+|| Hardware Devices: Driver || 0.3 || VERIFIED ||  ||
+|| Hardware Devices: Device ID || 0.3 || VERIFIED || ||
+|| Hardware Devices: Vendor ID || 0.3 || VERIFIED ||  || 
 || Netork Info: Hostname || 0.3 || VERIFIED || ||
 || Network Info: IP Address || 0.3 || VERIFIED || ||
 || Network Info: Netmask || 0.4 || Punt || New functionality, Most likely punt to 0.4 ||
