@@ -242,5 +242,5 @@ Will need to crawl:
 || Display hwdevice info on webui from a system search result || || Displaying match from hwdevices is different since each system has a Set of hwdevices.  ||
 || Handle 'special chars' in searchQuery, ":" "(" ")" "-" || || ||
 || Range Queries have issues, looks like they aren't handling Number to String conversions correctly || DONE || Using Lucene's NumberTools so lexicographically sorting is possible ||
-|| Sort columns with new list-tag isn't working, i.e. click column but results are not sorted. || || ||
+|| Sort columns with new list-tag isn't working, i.e. click column but results are not sorted. || DONE || sort only works on data fields which do _not_ require elaboration ||
 || Tighten up the matching threshold to reduce poor matches || DONE || Added a configuration option "system_score_threshold" set to 0.30  ||
