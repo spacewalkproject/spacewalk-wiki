@@ -185,9 +185,9 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as PXE server || 0.4 || 3 || paji ||  ||  ||
 ||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as DHCP server || 0.4 || 3 || paji ||  ||  ||
-||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || paji || 99% || waiting for OK from UI Review  ||
-||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || 99% || waiting for OK from UI Review  ||
-||  GUI: Modify kickstart schedule and status pages to work with file based KS || 0.4 || 5 || paji || ACTIVE || ||
+||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || paji || '''DONE''' ||  ||
+||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || '''DONE''' || ||
+||  GUI: Modify kickstart schedule and status pages to work with file based KS || 0.4 || 5 || paji || '''DONE''' || ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || '''DONE''' ||  ||
 ||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune || '''DONE''' ||  ||
