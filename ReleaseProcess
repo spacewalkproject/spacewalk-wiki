@@ -48,9 +48,9 @@ of the latest tag for that package. You should build this .src.rpm
 in koji and in brew. Note that for brew, the commands will be
 {{{
 	make srpm DIST='.el4.sw'
-	brew build --nowait spacewalk-4E-0.2-candidate /path/to/that/package-version-release.el4.sw.src.rpm
+	brew build --nowait spacewalk-4E-0.3-candidate /path/to/that/package-version-release.el4.sw.src.rpm
 	make srpm DIST='.el5.sw'
-	brew build --nowait spacewalk-5E-0.2-candidate /path/to/that/package-version-release.el5.sw.src.rpm
+	brew build --nowait spacewalk-5E-0.3-candidate /path/to/that/package-version-release.el5.sw.src.rpm
 }}}
 so that the {{{%{dist}}}} tag is populated correctly.
 
