@@ -191,7 +191,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Database: Modify rhnKSData and associated tables to be able to store an actual file || 0.4 || 3 || paji || '''DONE''' ||  ||
 ||  Backend: Verify modification to rhnKSData and associated tables will not effect backend code || 0.4 || 3 || mmccune || '''DONE''' ||  ||
 ||  API: Modify kickstart.importFile to use new database storage mechanism || 0.4 || 3 || mmccune ||  ||  ||
-||  Kickstart File Render: Kickstart rendering to support new 'advanced' mode || 0.4 || 3 || mmccune ||  ||  ||
+||  Kickstart File Render: Kickstart rendering to support new 'advanced' mode || 0.4 || 3 || paji || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Entitlements: One-time Activation Keys created for a Kickstart Session will automatically have a Provisioning Entitlement added to them || 0.4 || 1 || bbuckingham || '''DONE''' || * See KickstartScheduleCommand.createKickstartActivationKey().  We need to auto-add the Provisioning entitlement to this activation key we create for the kickstart.[[BR]]* Updated so that kickstart profiles' one-time AK will always be provided provisioning entitlement.  Commit: e49be340662997ec9e376b5258bb71ab7dd13a15||
 ||  ----   ||  ||  ||  ||  ||  ||
