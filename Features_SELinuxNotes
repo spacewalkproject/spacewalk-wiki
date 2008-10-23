@@ -1,6 +1,8 @@
 
 I've started investigating SELinux status of Spacewalk, using Spacewalk 0.2 20080903 snapshot.
 
+== Oracle (XE) ==
+
 After installing Oracle XE according to the OracleXeSetup instructions, I've run
 
 {{{
