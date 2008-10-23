@@ -110,3 +110,9 @@ The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might ne
 I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
 
 And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
+
+When creating new user via XE's WebUI (maybe when just loggin in to the WebUI), I get
+
+{{{
+type=AVC msg=audit(1224772448.253:195): avc:  denied  { connectto } for  pid=11068 comm="tnslsnr" path="/var/tmp/.oracle/s#11095.1" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:system_r:oracle_db_t:s0 tclass=unix_stream_socket
+}}}
