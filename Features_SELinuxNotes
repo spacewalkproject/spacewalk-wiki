@@ -100,3 +100,13 @@ type=AVC msg=audit(1224770160.820:74): avc:  denied  { write } for  pid=5459 com
 type=AVC msg=audit(1224770232.292:75): avc:  denied  { write } for  pid=5459 comm="oracle" path="/usr/lib/oracle/xe/oradata/XE/system.dbf" dev=dm-0 ino=196093 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
 type=AVC msg=audit(1224770274.385:76): avc:  denied  { append } for  pid=5459 comm="oracle" name="alert_XE.log" dev=dm-0 ino=196088 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
 }}}
+
+The first three are about creating /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log which we probably want to create and restorecon in oracle-xe-selinux ourselves. That would also cover the css.log (in /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log/vmware135/client/css.log).
+
+The orapwd errors I'm not sure about yet. Maybe we should run it as oracle_db_t?
+
+The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might need to create its parent as well, probably.
+
+I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
+
+And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
