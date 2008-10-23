@@ -29,6 +29,10 @@ or
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-2.noarch.rpm
 }}}
 
+Please make sure you have only one java version installed. 
+Otherwise you get error messeges like :
+ * " bad major version at off set=6" or 
+ * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
 == Installation ==
 
