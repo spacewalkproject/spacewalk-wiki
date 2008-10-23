@@ -84,20 +84,20 @@ public class ViewModifyPathsAction extends RhnAction {
 }}}
 
 === Cons ===
-* Ordering of clearing sets /  submitting sets, get the results at the right place etc are important..
-* Boiler plate code copy pasted in each action when interface with hooks points may have been easily used..
-* Hard to change if the list logic is wrong.. Change has to be done in every Action..
+ * Ordering of clearing sets /  submitting sets, get the results at the right place etc are important..
+ * Boiler plate code copy pasted in each action when interface with hooks points may have been easily used..
+ * Hard to change if the list logic is wrong.. Change has to be done in every Action..
 
 
 == Better Way ==
 
 I looked at what exactly differed between each list 5 things ->
-* List getResult(RequestContext context);
-* String getListName();
-* String getDataSetName();
-* String getParentUrl(RequestContext context);
-* String getDecl(RequestContext context);  -> Needs to be unique for every set ...
-* ActionForward handleDispatch(ActionMapping mapping, ActionForm formIn, HttpServletRequest request, HttpServletResponse response);
+ * List getResult(RequestContext context); 
+ * String getListName();
+ * String getDataSetName();
+ * String getParentUrl(RequestContext context);
+ * String getDecl(RequestContext context);  -> Needs to be unique for every set ...
+ * ActionForward handleDispatch(ActionMapping mapping, ActionForm formIn, HttpServletRequest request, HttpServletResponse response);
 
 I added these methods to a simple "ListSubmitable" interface
 
