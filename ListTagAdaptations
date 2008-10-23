@@ -1,5 +1,5 @@
 
-=== Old Way ===
+== Old Way ==
 All pages using the new List Tag has an action the looks similar to this ... We encode the complete logic needed to handle the list stuff in the RhnAction.. Something like
 
 {{{
@@ -84,7 +84,7 @@ public class ViewModifyPathsAction extends RhnAction {
 }}}
 
 
-=== Approach 1 ===
+== Approach 1 ==
 {{{
 #!java
 Using ListSessionSetHelper or ListRhnSetHelper and ListSubmitable interfaces
@@ -142,7 +142,7 @@ public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
 }
 }}}
 
-=== Approach 2 ===
+== Approach 2 ==
 {{{
 #!java
 public class ViewModifyPathsAction extends RhnAction {
