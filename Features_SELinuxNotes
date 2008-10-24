@@ -127,3 +127,28 @@ type=AVC msg=audit(1224772448.253:195): avc:  denied  { connectto } for  pid=110
 === oracle-xe-selinux-10.2-3 ===
 
 All the above except the xeseed.dfb thing are addressed by oracle-xe-selinux-10.2-3.
+
+A new set of AVCs appears:
+
+{{{
+type=AVC msg=audit(1224853083.903:133): avc:  denied  { search } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853083.904:134): avc:  denied  { write } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853083.904:134): avc:  denied  { add_name } for  pid=5637 comm="sqlplus" name="CloneRmanRestore.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853083.904:134): avc:  denied  { create } for  pid=5637 comm="sqlplus" name="CloneRmanRestore.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
+
+type=AVC msg=audit(1224853087.903:135): avc:  denied  { write } for  pid=5672 comm="oracle" name="xeseed.dfb" dev=dm-0 ino=806421 scontext=root:system_r:oracle_db_t:s0 tcontext=system_u:object_r:lib_t:s0 tclass=file
+
+type=AVC msg=audit(1224853390.684:151): avc:  denied  { write } for  pid=5637 comm="sqlplus" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/log/CloneRmanRestore.log" dev=dm-0 ino=806422 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
+type=AVC msg=audit(1224853390.687:152): avc:  denied  { search } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853390.716:153): avc:  denied  { write } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853390.716:153): avc:  denied  { add_name } for  pid=5637 comm="sqlplus" name="cloneDBCreation.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853390.716:153): avc:  denied  { create } for  pid=5637 comm="sqlplus" name="cloneDBCreation.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
+
+type=AVC msg=audit(1224853479.229:154): avc:  denied  { name_bind } for  pid=5624 comm="tnslsnr" src=8080 scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=system_u:object_r:http_cache_port_t:s0 tclass=tcp_socket
+
+type=AVC msg=audit(1224853492.889:155): avc:  denied  { search } for  pid=5761 comm="oracle" name="scripts" dev=dm-0 ino=774176 scontext=root:system_r:oracle_db_t:s0 tcontext=user_u:object_r:oracle_sqlplus_log_t:s0 tclass=dir
+type=AVC msg=audit(1224853492.890:156): avc:  denied  { getattr } for  pid=5761 comm="oracle" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/init.ora" dev=dm-0 ino=774300 scontext=root:system_r:oracle_db_t:s0 tcontext=user_u:object_r:oracle_sqlplus_log_t:s0 tclass=file
+
+type=AVC msg=audit(1224853513.055:163): avc:  denied  { read } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
+type=AVC msg=audit(1224853513.089:164): avc:  denied  { ioctl } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
+}}}
