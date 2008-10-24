@@ -114,6 +114,7 @@ type=AVC msg=audit(1224770274.385:76): avc:  denied  { append } for  pid=5459 co
  * The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might need to create its parent as well, probably.
 
  * I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
+  * The file seems to be /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/seeddb/xeseed.dfb
 
  * And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
 
