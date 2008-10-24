@@ -75,7 +75,7 @@ Note that you have to do
 
 before installing the oracle-xe-univ package to create the oracle user as system user (with uid < 500).
 
-==== oracle-xe-selinux-10.2-2.el5.sw issues ====
+=== oracle-xe-selinux-10.2-2.el5.sw issues ===
 
 Also, the oracle-xe-selinux should be installed after /etc/init.d/oracle-xe configure is run. Otherwise, the following AVCs are logged:
 
@@ -123,3 +123,7 @@ type=AVC msg=audit(1224770274.385:76): avc:  denied  { append } for  pid=5459 co
 {{{
 type=AVC msg=audit(1224772448.253:195): avc:  denied  { connectto } for  pid=11068 comm="tnslsnr" path="/var/tmp/.oracle/s#11095.1" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:system_r:oracle_db_t:s0 tclass=unix_stream_socket
 }}}
+
+=== oracle-xe-selinux-10.2-3 ===
+
+All the above except the xeseed.dfb thing are addressed by oracle-xe-selinux-10.2-3.
