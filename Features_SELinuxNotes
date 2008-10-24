@@ -35,6 +35,8 @@ root:system_r:initrc_t          oracle    2275  0.0  1.3 297936 10920 ?        S
 root:system_r:initrc_t          oracle    2277  0.0  1.1 297940  9188 ?        Ss   14:02   0:00 xe_q001_XE
 }}}
 
+=== oracle-xe-selinux-10.2-2.el5.sw ===
+
 With oracle-xe-selinux-10.2-2.el5.sw installed, the ps output looks like this:
 
 {{{
@@ -73,6 +75,8 @@ Note that you have to do
 
 before installing the oracle-xe-univ package to create the oracle user as system user (with uid < 500).
 
+==== oracle-xe-selinux-10.2-2.el5.sw issues ====
+
 Also, the oracle-xe-selinux should be installed after /etc/init.d/oracle-xe configure is run. Otherwise, the following AVCs are logged:
 
 {{{
@@ -103,17 +107,17 @@ type=AVC msg=audit(1224770232.292:75): avc:  denied  { write } for  pid=5459 com
 type=AVC msg=audit(1224770274.385:76): avc:  denied  { append } for  pid=5459 comm="oracle" name="alert_XE.log" dev=dm-0 ino=196088 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
 }}}
 
-The first three are about creating /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log which we probably want to create and restorecon in oracle-xe-selinux ourselves. That would also cover the css.log (in /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log/vmware135/client/css.log).
+ * The first three are about creating /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log which we probably want to create and restorecon in oracle-xe-selinux ourselves. That would also cover the css.log (in /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log/vmware135/client/css.log).
 
-The orapwd errors I'm not sure about yet. Maybe we should run it as oracle_db_t?
+ * The orapwd errors I'm not sure about yet. Maybe we should run it as oracle_db_t?
 
-The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might need to create its parent as well, probably.
+ * The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might need to create its parent as well, probably.
 
-I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
+ * I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
 
-And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
+ * And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
 
-When creating new user via XE's WebUI (maybe when just loggin in to the WebUI), I get
+ * When creating new user via XE's WebUI (maybe when just loggin in to the WebUI), I get
 
 {{{
 type=AVC msg=audit(1224772448.253:195): avc:  denied  { connectto } for  pid=11068 comm="tnslsnr" path="/var/tmp/.oracle/s#11095.1" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:system_r:oracle_db_t:s0 tclass=unix_stream_socket
