@@ -5,9 +5,11 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
 
 === Installation ===
 
+'''Fedora 9'''
 
 {{{
 yum install Django
+yum install python-cheetah
 }}}
 
 
