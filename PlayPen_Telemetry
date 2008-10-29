@@ -1,4 +1,4 @@
 
 == Telemetry ==
 
-Telemetry is the code name for a simple template-based reporting engine for Spacewalk.  Telemetry uses the xmlrpc scripting API to fetch data from Spacewalk servers.  It is written completely in Python, leveraging [http://www.cheetahtemplate.org/ Cheetah] for templating, cron for scheduling, and Django for the webui.
+Telemetry is the code name for a simple template-based reporting engine for Spacewalk.  Telemetry uses the xmlrpc scripting API to fetch data from Spacewalk servers.  It is written completely in Python, leveraging [http://www.cheetahtemplate.org/ Cheetah] for templating, cron for scheduling, and [http://www.djangoproject.com/ Django] for the webui.
