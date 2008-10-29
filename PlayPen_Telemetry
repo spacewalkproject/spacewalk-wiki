@@ -38,6 +38,38 @@ Telemetry contains a few sample canned reports.  The reports are installed in ''
  * /config    -> contains the report configuration files.
  * /templates -> contains the output format templates.
 
+The report configuration files will '''need''' to be updated with the proper url for your Spacewalk server(s).
+
+
+{{{
+cd /usr/share/telemetry/config
+vi systemDetails.conf
+}}}
+
+{{{
+Name: System Details Report
+Description: This report provides a list of systems and supporting details (entitlements, channel subscriptions, & system groups.
+
+Report_Script: systemDetailsReport.py
+
+Satellites:
+- http://rlx-1-16.rhndev.redhat.com/rpc/api
+
+APIVersions:
+- 5.1.0 Java
+- 5.1.1 Java
+
+Aggregate: no
+
+Templates:
+    txt: SystemDetails.txt
+
+Report_Dir: /home/tsanders/telemetry/reports/
+Report_Name: SystemDetails
+
+}}}
+
+
 
 === Web UI ===
 
