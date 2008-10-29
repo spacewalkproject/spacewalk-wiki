@@ -29,6 +29,12 @@ tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
 rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-1.noarch.rpm
 }}}
 
+
+
 === Web UI ===
 
 '''Starting'''
+
+{{{
+
+}}}
