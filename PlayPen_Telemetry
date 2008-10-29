@@ -30,6 +30,14 @@ rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-1.noarch.rpm
 }}}
 
 
+=== Sample Reports ===
+
+Telemetry contains a few sample canned reports.  The reports are installed in ''/usr/share/telemetry''.
+
+ * /scripts   -> contains the xmlrpc client reports scripts (these are executable on the cmd-line or via the Telemetry webui.
+ * /config    -> contains the report configuration files.
+ * /templates -> contains the output format templates.
+
 
 === Web UI ===
 
