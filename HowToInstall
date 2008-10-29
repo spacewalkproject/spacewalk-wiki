@@ -42,18 +42,28 @@ RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum
 
-To use this repository, add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
+To use this repository either install spacewalk-repo RPM
+
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.3/rhel/5Server/i386/spacewalk-repo-0.3-1.el5.sw.noarch.rpm
+}}}
+or
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.3/rhel/5Server/x86_64/spacewalk-repo-0.3-1.el5.sw.noarch.rpm
+}}}
+
+or manually add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
 
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.2/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.3/rhel/5Server/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
 
-'''NOTE:''' If you are looking for version 0.1, replace 0.2 with 0.1 in the {{{baseurl}}}.
+'''NOTE:''' If you are looking for versions 0.1 or 0.2 replace 0.3 with appropriate version in the {{{baseurl}}}.
 
 Then just ask yum to install the application:
 
