@@ -36,5 +36,5 @@ rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-1.noarch.rpm
 '''Starting'''
 
 {{{
-
+./telemetry runserver <port>
 }}}
