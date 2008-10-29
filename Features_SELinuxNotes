@@ -152,3 +152,7 @@ type=AVC msg=audit(1224853492.890:156): avc:  denied  { getattr } for  pid=5761 
 type=AVC msg=audit(1224853513.055:163): avc:  denied  { read } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
 type=AVC msg=audit(1224853513.089:164): avc:  denied  { ioctl } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
 }}}
+
+=== oracle-xe-selinux-10.2-4 ===
+
+With oracle-xe-selinux-10.2-4, the /etc/init.d/oracle-xe configure, /etc/init.d/oracle-xe start, and stop, plus creating new user via http://...:9000/apex passed without any AVC denial.
