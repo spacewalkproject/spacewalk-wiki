@@ -7,11 +7,19 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
 
 '''Fedora 9'''
 
- * Django
- * Cheetah
+ * Django (webui)
+ * Cheetah (report templating)
 
 {{{
 yum install Django python-cheetah
+}}}
+
+ * python-crontab
+
+{{{
+cd /tmp
+wget http://pypi.python.org/packages/any/p/python-crontab/python-crontab-0.7.linux-i686.tar.gz#md5=10ce70d894d6d2b1bffd1a8a339e1ed4
+tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
 }}}
 
 
