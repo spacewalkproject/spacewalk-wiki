@@ -105,10 +105,10 @@ Report_Name: SystemDetails
  Templates::
      The report templates that can be used with this report.  The templates need to be in the ''/usr/share/telemetry/templates'' directory. Currently, the supported types are: txt, csv, & html.
 
- Report_Dir:
+ Report_Dir::
      The directory where the generated reports should be saved.
 
- Report_Name:
+ Report_Name::
      The name that will be given to the generated reports.  The format will be: Report_Name + datetimestamp + output type (.txt, .csv, .html).
 
 
