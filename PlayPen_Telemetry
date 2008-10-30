@@ -71,8 +71,10 @@ Report_Name: SystemDetails
 
 '''Config Data Dictionary'''
 
-<table>
-</table>
+ Name::
+     The name of the Report.
+
+ 
 
 
 
