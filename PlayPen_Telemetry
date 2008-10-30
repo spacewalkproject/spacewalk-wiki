@@ -120,22 +120,12 @@ Report_Name: SystemDetails
  Criteria::
      (''Optional'') User supplied criteria for the generated report. 
 
-{{{ 
-
-     name::
-         The name of the criterion.
-     label::
-         The label of the criterion (used for the webui form field input.)
-     type::
-         The type of the criterion (csv, txt, bool).
-     cols::
-         The number of columns or horizontal size of the text field or text area for webui input.
-     rows::
-         The number of rows or vertical size of the text field or text area for webui input.
-     required::
-         Boolean value to specify whether the criterion is optional.
-
-}}}
+ * name: The name of the criterion.
+ * label The label of the criterion (used for the webui form field input.)
+ * type  The type of the criterion (csv, txt, bool).
+ * cols  The number of columns or horizontal size of the text field or text area for webui input.
+ * rows  The number of rows or vertical size of the text field or text area for webui input.
+ * required Boolean value to specify whether the criterion is optional.
 
 === Web UI ===
 
