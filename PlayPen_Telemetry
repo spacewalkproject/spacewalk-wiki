@@ -79,8 +79,13 @@ Report_Name: SystemDetails
      A brief description of the Report.
 
  Report_Script::
+     The .py xmlrpc client script file used to gather report data.  Script needs to be in the ''/usr/share/telemetry/scripts'' directory.
 
-     The .py xmlrpc client script file used to gather report data.  Script needs to be in the ''/usr/share/telemetry/scripts'' directory
+ Satellites::
+     The url of the xmlrpc API interface on your Spacewalk server(s).  Multiple servers can be added on separate lines.
+
+ APIVersions::
+     The supported versions of the Spacewalk xmlrpc API specification.
 
  
 
