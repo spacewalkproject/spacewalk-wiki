@@ -12,6 +12,7 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
  5. Must be able to easily add/modify reports (including report formatting).
  6. Must be able to run reports against multiple satellites, and aggregate data if desired.
  7. Must be able to notify users upon report completion (email).
+ 8. Must be able to accept report criteria input from user.
 
 === Architecture Diagram ===
 
