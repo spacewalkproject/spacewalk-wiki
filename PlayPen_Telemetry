@@ -15,7 +15,7 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
  8. Must be able to accept report criteria input from user.
 
 === Architecture Diagram ===
-https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/telemetry-diagram.jpg
+[[Image(telemetry-diagram.jpg)]]
 
 === Installation ===
 
