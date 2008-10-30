@@ -118,7 +118,9 @@ Report_Name: SystemDetails
      The name that will be given to the generated reports.  The format will be: Report_Name + datetimestamp + output type (.txt, .csv, .html).
  
  Criteria::
-     (''Optional'') User supplied criteria for the generated report.  
+     (''Optional'') User supplied criteria for the generated report. 
+
+{{{ 
 
      name::
          The name of the criterion.
@@ -138,7 +140,7 @@ Report_Name: SystemDetails
      required::
          Boolean value to specify whether the criterion is optional.
 
-
+}}}
 
 === Web UI ===
 
