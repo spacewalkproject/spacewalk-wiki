@@ -25,9 +25,10 @@ Telemetry is designed to run on any client-system.  It can be run on the Spacewa
 
  * Django (webui)
  * Cheetah (report templating)
+ * PyYAML (report config)
 
 {{{
-yum install Django python-cheetah
+yum install Django python-cheetah PyYAML
 }}}
 
  * python-crontab
