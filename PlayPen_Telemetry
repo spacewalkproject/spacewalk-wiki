@@ -53,7 +53,7 @@ Description: This report provides a list of systems and supporting details (enti
 Report_Script: systemDetailsReport.py
 
 Satellites:
-- http://rlx-1-16.rhndev.redhat.com/rpc/api -> ''Change this to point to the api url for your Spacewalk server(s).''
+- http://rlx-1-16.rhndev.redhat.com/rpc/api  # Change this to point to the api url for your Spacewalk server(s). #
 
 APIVersions:
 - 5.1.0 Java
