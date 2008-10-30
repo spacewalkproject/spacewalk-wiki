@@ -82,6 +82,8 @@ Report_Name: SystemDetails
 }}}
 
 
+
+
 === Config Data Dictionary ===
 
  Name::
@@ -110,6 +112,8 @@ Report_Name: SystemDetails
 
  Report_Name::
      The name that will be given to the generated reports.  The format will be: Report_Name + datetimestamp + output type (.txt, .csv, .html).
+
+
 
 
 === Web UI ===
