@@ -69,7 +69,8 @@ Report_Name: SystemDetails
 
 }}}
 
-'''Config Data Dictionary'''
+
+=== Config Data Dictionary ===
 
  Name::
      The name of the Report.
