@@ -3,6 +3,10 @@
 
 Telemetry is the code name for a simple template-based reporting engine for Spacewalk.  Telemetry uses the xmlrpc scripting [http://www.redhat.com/spacewalk/documentation/api/0.2/ API] to fetch data from Spacewalk servers.  It is written completely in Python, leveraging [http://www.cheetahtemplate.org/ Cheetah] for templating, cron for scheduling, and [http://www.djangoproject.com/ Django] for the webui.
 
+=== Requirements ===
+
+<placeholder for the requirements list>
+
 === Installation ===
 
 Telemetry is designed to run on any client-system.  It can be run on the Spacewalk server, but not necessarily.
