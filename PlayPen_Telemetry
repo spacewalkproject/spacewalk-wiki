@@ -5,6 +5,8 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
 
 === Installation ===
 
+Telemetry is designed to run on any client-system.  It can be run on the Spacewalk server, but not necessarily.
+
 '''Fedora 9'''
 
  * Django (webui)
