@@ -105,6 +105,8 @@ Report_Name: SystemDetails
 
 === Web UI ===
 
+The webui is currently leveraging the simple development webserver that ships with Django.   Todo: Investigate deployment on Apache/mod_python.
+
 '''Starting'''
 
 {{{
