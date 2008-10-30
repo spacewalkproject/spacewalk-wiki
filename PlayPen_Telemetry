@@ -74,6 +74,13 @@ Report_Name: SystemDetails
  Name::
      The name of the Report.
 
+ Description::
+     A brief description of the Report.
+
+ Report_Script::
+
+     The .py xmlrpc client script file used to gather report data.  Script needs to be in the ''/usr/share/telemetry/scripts'' directory
+
  
 
 
