@@ -139,8 +139,7 @@ The webui is currently leveraging the simple development webserver that ships wi
 
 '''Browsing'''
 
-Browse to the following URL: http://127.0.0.1/reports for the Report List.
-
+Browse to the following URL: http://127.0.0.1:<port> or http://localhost:<port>
 
 === Screen Shots ===
 
