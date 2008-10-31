@@ -257,7 +257,11 @@ Define a variable to keep track of the Spacewalk servers processed.
 
 {{{
 for client in clients:
+}}}
 
+Iterate over Spacewalk servers.
+
+{{{
     # get the session key
     try:
         key = client.auth.login(username, password)
@@ -265,22 +269,29 @@ for client in clients:
         print "Error in systemDetailsReport:"
         print fault.faultCode
         print fault.faultString
+}}}
 
+Attempt to login with provided credentials and obtain the session key. 
+
+{{{
     if not (report.parameters['Aggregate']):
-        errata = []
+        systems = []
+}}}
+Handle the aggregation parameter as specified in the configuration file.  Essentially this means, create a single report or multiple reports.
 
-        systems = processData(client,key,errata)
+{{{
+        systems = processData(client,key,systems)
         satellites = [report.parameters['Satellites'][_count]]
-        vars = {'errata': errata, 'satellites': satellites}
+        vars = {'systems': systems, 'satellites': satellites}
         report.templatify(vars, type)
 
     else:
-        systems = processData(client,key,errata)
+        systems = processData(client,key,systems)
 
     _count = _count + 1
 
 if (report.parameters['Aggregate']):
-    vars = {'errata': errata, 'satellites': report.parameters['Satellites']}
+    vars = {'systems': systems, 'satellites': report.parameters['Satellites']}
     report.templatify(vars, type)
 }}}
 
