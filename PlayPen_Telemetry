@@ -269,7 +269,7 @@ Iterate over Spacewalk servers.
     try:
         key = client.auth.login(username, password)
     except xmlrpclib.Fault, fault:
-        print "Error in systemDetailsReport:"
+        print "Error in systemsByPackageReport:"
         print fault.faultCode
         print fault.faultString
 }}}
