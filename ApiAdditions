@@ -23,6 +23,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: activationkey''' ||  ||  ||  ||  ||  ||
+||  activationkey.addPackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]]) || 0.4 || 3  || bbuckingham || done  || * Add a set of packages to an activation key.[[BR]]* May optionally include an arch. [[BR]]* This api will deprecate the existing addPackageNames ||
+||  activationkey.removePackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]]) || 0.4 || 3  || bbuckingham || done  || * Remove a set of packages from an activation key.[[BR]]* This api will deprecate the existing removePackageNames ||
 ||  activationkey.enableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 3  || coec || done  ||  ||
 ||  activationkey.disableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
 ||  activationkey.checkConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
@@ -35,6 +37,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: channel.organizations''' ||  ||  ||  ||  ||  ||
 || channel.organizations.list(string sessionKey, int orgId, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be an Org Admin.||
 || channel.organizations.enableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
+
 
 
 
