@@ -241,7 +241,7 @@ report = Report(config)
 clients = report.connect()
 }}}
 
-Create a report instance, passing the report configuration file, then call the connect method to create ServerProxy objects for each Spacewalk server defined in the config.
+Create a report instance, passing the report configuration file, then call the connect method to create !ServerProxy objects for each Spacewalk server defined in the config.
 
 {{{
 systems = []
