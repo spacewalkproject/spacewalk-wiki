@@ -166,7 +166,17 @@ Browse to the following URL: http://127.0.0.1:<port> or http://localhost:<port>
 
 === Step-by-Step Report Creation Walkthrough ===
 
-<placeholder>
+The plan here is to walkthrough (step-by-step) the creation of a telemetry report.  We will take a simple use case:
+
+Joe is a system administrator and would like to generate a report that lists all of the systems in his organization that have firefox installed, and report back the specific NVREA.
+
+==== Step 1 - Writing the Report Script ====
+
+First, we need to examine the Spacewalk [http://www.redhat.com/spacewalk/documentation/api/0.2/ API] and determine which methods will be used to gather the necessary information.
+
+In our case, we will use the following:
+
+
 
 === Tasks ===
 
