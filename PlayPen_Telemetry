@@ -55,7 +55,7 @@ Telemetry contains a few sample canned reports.  The reports are installed in ''
  * /config    -> contains the report configuration files.
  * /templates -> contains the output format templates.
 
-The report configuration files will '''need''' to be updated with the proper url for your Spacewalk server(s).
+The report configuration files will '''need''' to be updated with the proper url for your Spacewalk server(s), and report directory.
 
 
 {{{
