@@ -170,13 +170,13 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Synchronization: Kickstart Distribution creation in Spacewalk creates cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  Synchronization: Kickstart Distribution edit in Spacewalk edits cobbler profile || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  Synchronization: Kickstart Distribution delete in Spacewalk deletes cobbler profile || 0.4 || 1 || paji || '''DONE''' ||  ||
-||  Synchronization: Satellite sync creates cobbler distros when trees are synced || 0.4 || 3 || paji ||  ||  ||
+||  Synchronization: Satellite sync creates cobbler distros when trees are synced || 0.4 || 3 || paji || ACTIVE ||  ||
 ||  Synchronization: Create a cli utility that allows users to sync CLI originated CRUD of profiles and distributions to spacewalk on demand || 0.4 || 15 || dparker || ACTIVE || This is a pretty big change from the initial approach, which was to use cobbler triggers.  The problem with that approach is that one gets into an issue of circularity: if spacewalk is pushing changes to cobbler, one does not want cobbler trying to sync changes back to spacewalk.  And vis-versa.  This turns out to be pretty ugly on a number of levels. This new approach provides the CLI user with a CLI program that synchronizes state between cobbler and spacewalk on demand.  It avoids the considerable overhead that would be incurred if this were done from within spacewalk/java due to extensive shelling and text parsing.  This instead uses the cobbler api in its native namespace and XMLRPC calls to spacewalk.  The downside is the complexity of differential analysis involved.  ||
 || Synchronization: Need api call that returns kickstart tree install type (e.g. fedora_9, etc) for a given ks tree || 0.4 || 1 || mccune || ACTIVE || Required so that cobbler updates to a ks tree definition can "carry" the install type into the editTree call ||
-|| Synchronization: Need api that returns distro install type list || 0.4 || 1 || mccune || ACTIVE || ||
+|| Synchronization: Need api that returns distro install type list || 0.4 || 1 || mccune || '''DONE''' || ||
 || Synchronization: Need api that returns a list of profile(s) associated with a given kickstart tree || 0.4 || 1 || mccune || ACTIVE || ||
-|| Synchronization: deleteTree() api call needs option to force profile deletion || 0.4 || 1 || mccune || ACTIVE || ||
-|| Synchronization: renameDistro() api call doesn't work - appears to attempt copy/delete (and fails) || 0.4 || 1 || mccune || ACTIVE || ||
+|| Synchronization: deleteTree() api call needs option to force profile deletion || 0.4 || 1 || mccune || '''DONE''' || ||
+|| Synchronization: renameDistro() api call doesn't work - appears to attempt copy/delete (and fails) || 0.4 || 1 || mccune || '''DONE''' || ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
