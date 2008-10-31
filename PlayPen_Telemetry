@@ -220,7 +220,27 @@ if len(sys.argv) != 6:
     sys.exit(1)
 }}}
 
-Ensure that *all* 5 required parameters have been supplied to our report script.
+Ensure that *all* 5 required arguments have been supplied to our report script.
+
+{{{
+# Arguments
+config = sys.argv[1]
+type = sys.argv[2]
+username = sys.argv[3]
+password = sys.argv[4]
+}}}
+
+Define local variables to hold script arguments.
+
+{{{
+# Create Report Instance
+report = Report(config)
+
+# Get ServerProxies
+clients = report.connect()
+}}}
+
+Create a report instance, passing the report configuration file, then call the connect method to create ServerProxy objects for each Spacewalk server defined in the config.
 
 
 === Tasks ===
