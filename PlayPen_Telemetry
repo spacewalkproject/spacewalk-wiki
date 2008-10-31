@@ -255,6 +255,35 @@ _count = 0
 
 Define a variable to keep track of the Spacewalk servers processed.
 
+{{{
+for client in clients:
+
+    # get the session key
+    try:
+        key = client.auth.login(username, password)
+    except xmlrpclib.Fault, fault:
+        print "Error in systemDetailsReport:"
+        print fault.faultCode
+        print fault.faultString
+
+    if not (report.parameters['Aggregate']):
+        errata = []
+
+        systems = processData(client,key,errata)
+        satellites = [report.parameters['Satellites'][_count]]
+        vars = {'errata': errata, 'satellites': satellites}
+        report.templatify(vars, type)
+
+    else:
+        systems = processData(client,key,errata)
+
+    _count = _count + 1
+
+if (report.parameters['Aggregate']):
+    vars = {'errata': errata, 'satellites': report.parameters['Satellites']}
+    report.templatify(vars, type)
+}}}
+
 === Tasks ===
 
 1. Webui
