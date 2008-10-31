@@ -228,6 +228,7 @@ config = sys.argv[1]
 type = sys.argv[2]
 username = sys.argv[3]
 password = sys.argv[4]
+packages = sys.argv[5].split(",")
 }}}
 
 Define local variables to hold script arguments.
