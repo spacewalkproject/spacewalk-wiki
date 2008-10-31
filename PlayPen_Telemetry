@@ -176,6 +176,20 @@ First, we need to examine the Spacewalk [http://www.redhat.com/spacewalk/documen
 
 In our case, we will use the following:
 
+ * system.listUserSystems(string sessionKey)
+ * system.listPackages(string sessionKey, int serverId)
+
+
+The psuedo-code is as follows:
+
+ 1. Prompt the user for a csv list of package names (required criteria)
+ 2. Get all the systems available to the logged-in user.
+ 3. For each system, get the list of installed packages.
+ 4. Compare
+ 5. Report Results (to include name, version, release, epoch, and arch)
+
+
+
 
 
 === Tasks ===
