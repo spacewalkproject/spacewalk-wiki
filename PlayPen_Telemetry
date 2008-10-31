@@ -295,6 +295,47 @@ if (report.parameters['Aggregate']):
     report.templatify(vars, type)
 }}}
 
+{{{
+def processData(client, key, errata):
+
+    try:
+
+        for erratum in errataList:
+
+            print erratum
+
+            e = client.errata.getDetails(key, erratum)
+
+            if e:
+
+                ee = Erratum()
+                ee.advisoryName = erratum
+                ee.type = e['type']
+                ee.description = e['description']
+                ee.synopsis = e['synopsis']
+                ee.systems = []
+
+                errata.append(ee)
+
+                slist = client.errata.listAffectedSystems(key, erratum)
+
+                for s in slist:
+
+                    system = System()
+                    system.id = s['id']
+                    system.name = s['name']
+
+                    ee.systems.append(system)
+
+    except xmlrpclib.Fault, fault:
+        print "Error in systemDetailsReport.processData():"
+        print fault.faultCode
+        print fault.faultString
+
+    return errata
+
+}}}
+
 === Tasks ===
 
 1. Webui
