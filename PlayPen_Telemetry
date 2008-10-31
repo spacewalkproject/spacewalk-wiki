@@ -188,6 +188,15 @@ The psuedo-code is as follows:
  4. Compare
  5. Report Results (to include name, version, release, epoch, and arch)
 
+We are now ready to open our favorite editor and start coding:
+
+SystemsbyPackageReport.py
+
+{{
+
+
+}}
+
 
 
 
