@@ -170,4 +170,21 @@ Browse to the following URL: http://127.0.0.1:<port> or http://localhost:<port>
 
 === Tasks ===
 
-<placeholder>
+1. Webui
+
+ * style/css
+ * navigation/flow
+ * notification integration (email)
+ * improved scheduling options (one-time-only, daily, weekly, etc)
+ * crud functions for report config and templates
+
+2. Infrastructure
+
+ * integration with apache/mod-python
+ * store reports on web server
+ * single rpm installation with dependendencies
+
+3. Other
+
+ * Handle reporting across orgs (multiple users)
+
