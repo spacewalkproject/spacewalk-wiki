@@ -194,13 +194,33 @@ We are now ready to open our favorite editor and start coding:
 
 
 {{{
+#!/usr/bin/env python
 
-
-
-
-
+import sys
+import xmlrpclib
+from telemetry import Report
 }}}
 
+telemetry.Report is a helper class that handles the xmlrpc connections, template rendering, etc.
+
+{{{
+class System():
+    pass
+
+class Package():
+    pass
+}}}
+
+Define data structures to hold our result sets.  In this case we will create and array of System objects, which will contain an array of Package objects.
+
+{{{
+# Main Processing
+if len(sys.argv) != 6:
+    print "Usage %s <config> <type> <username> <password> <packagelist>" % (sys.argv[0])
+    sys.exit(1)
+}}}
+
+Ensure that *all* 5 required parameters have been supplied to our report script.
 
 
 === Tasks ===
