@@ -243,6 +243,17 @@ clients = report.connect()
 
 Create a report instance, passing the report configuration file, then call the connect method to create ServerProxy objects for each Spacewalk server defined in the config.
 
+{{{
+systems = []
+}}}
+
+Define an empty array to hold the system objects that have matching packages installed.
+
+{{{
+_count = 0
+}}}
+
+Define a variable to keep track of the Spacewalk servers processed.
 
 === Tasks ===
 
