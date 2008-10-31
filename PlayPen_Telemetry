@@ -135,7 +135,7 @@ The webui is currently leveraging the simple development webserver that ships wi
 '''Starting'''
 
 {{{
-./telemetry runserver <port>
+telemetry runserver <port>
 }}}
 
 '''Browsing'''
