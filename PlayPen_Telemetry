@@ -335,7 +335,7 @@ def processData(client, key, systems):
         print fault.faultCode
         print fault.faultString
 
-    return errata
+    return systems
 
 }}}
 
