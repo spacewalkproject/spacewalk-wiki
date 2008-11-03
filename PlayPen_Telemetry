@@ -366,6 +366,34 @@ You'll recall from the script we just completed that we are passing to data elem
  * satellites -> data structure consisting of spacewalk servers used to generate this report.
 
 
+==== !SystemsByPackage.txt ====
+
+{{{
+#from datetime import datetime
+Systems By Package Report
+Report Date: $datetime.now().strftime("%Y-%m-%d:%H:%M:%S")
+
+Satellites:
+#for satellite in $satellites
+             $satellite
+#end for
+
+#for system in $systems
+System ID:   $system.id
+System Name: $system.name
+******************************************************************************************
+******************************************************************************************
+Packages:
+#for package in $system.packages
+             $package.name   $package.version   $package.release   $package.epoch
+#end for
+
+
+#end for
+
+}}}
+
+
 === Tasks ===
 
 1. Webui
