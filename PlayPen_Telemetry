@@ -339,6 +339,23 @@ def processData(client, key, systems):
 
 }}}
 
+
+{{{
+def comparePkgs(system_packages, packageList)
+
+    common_packages = []
+
+    for pkg in packageList:
+
+        for package in system_packages:
+
+            if pkg == package['name']:
+
+                common_packages.append(package)
+
+    return common_packages
+}}}
+
 === Tasks ===
 
 1. Webui
