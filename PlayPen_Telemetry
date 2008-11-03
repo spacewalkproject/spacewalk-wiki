@@ -356,6 +356,16 @@ def comparePkgs(system_packages, packageList)
     return common_packages
 }}}
 
+==== Step 2 - Writing the Template ====
+
+In this case, we are going to create a .txt template for the report output.
+
+You'll recall from the script we just completed that we are passing to data elements to our template rendering method:
+
+ * systems -> data structure consisting of an array of System objects; which in turn contain and array of matching Package objects.
+ * satellites -> data structure consisting of spacewalk servers used to generate this report.
+
+
 === Tasks ===
 
 1. Webui
