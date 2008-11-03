@@ -284,10 +284,17 @@ Handle the aggregation parameter as specified in the configuration file.  Essent
 
 {{{
         systems = processData(client,key,systems)
+}}}
+Call the processData method -> which returns the data structure that will be passed to the template engine.
+
+{{{
         satellites = [report.parameters['Satellites'][_count]]
         vars = {'systems': systems, 'satellites': satellites}
         report.templatify(vars, type)
+}}}
+Pass the datastructure to the template rendering method of the helper class.
 
+{{{
     else:
         systems = processData(client,key,systems)
 
@@ -297,41 +304,34 @@ if (report.parameters['Aggregate']):
     vars = {'systems': systems, 'satellites': report.parameters['Satellites']}
     report.templatify(vars, type)
 }}}
+Next, define the processData method.
 
 {{{
-def processData(client, key, errata):
+def processData(client, key, systems):
 
     try:
 
-        for erratum in errataList:
+        user_systems = client.system.listUserSystems(key)
 
-            print erratum
+        for system in user_systems:
 
-            e = client.errata.getDetails(key, erratum)
+            print system
 
-            if e:
+            sys_packages = client.system.listPackages(key, system['id'])
 
-                ee = Erratum()
-                ee.advisoryName = erratum
-                ee.type = e['type']
-                ee.description = e['description']
-                ee.synopsis = e['synopsis']
-                ee.systems = []
+                #returns a array of packages installed on the system that are in common with the user provided list
+                common_pkgs = comparePkgs(sys_packages, packages)
 
-                errata.append(ee)
-
-                slist = client.errata.listAffectedSystems(key, erratum)
-
-                for s in slist:
-
-                    system = System()
-                    system.id = s['id']
-                    system.name = s['name']
-
-                    ee.systems.append(system)
+                if len(common_packages) > 0:
+                
+                    sys = System()
+                    sys.id = system['id']
+                    sys.name = system['name']
+                    sys.packages = common_pkgs
+                    systems.append(sys)
 
     except xmlrpclib.Fault, fault:
-        print "Error in systemDetailsReport.processData():"
+        print "Error in systemByPackageReport.processData():"
         print fault.faultCode
         print fault.faultString
 
