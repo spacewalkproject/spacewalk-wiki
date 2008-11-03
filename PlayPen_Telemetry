@@ -339,7 +339,7 @@ def processData(client, key, systems):
 
 }}}
 
-
+The comparePkgs() method will compare the installed packages of a given system against the user supplied package list, and return the package details for any matches.
 {{{
 def comparePkgs(system_packages, packageList)
 
