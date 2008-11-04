@@ -1,12 +1,10 @@
 = Spacewalk Upgrade Instructions =
 
-Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
+Spacewalk upgrade from version 0.2 to 0.3 involves several basic steps:
   1.  Configuration files and spacewalk database backup
   2.  Package upgrade
   3.  Schema upgrade
-  4.  Upgrading package paths
-  5.  Update spacewalk configuration
-  6.  Restart Spacewalk
+  4.  Restart Spacewalk
 
 ----
 
@@ -20,12 +18,12 @@ Spacewalk upgrade from version 0.1 to 0.2 involves several basic steps:
 
 = Package upgrade =
 
-Setup your yum configuration to point to spacewalk 0.2 repo:
+Setup your yum configuration to point to spacewalk 0.3 repo:
 
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.2/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.3/rhel/5Server/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
@@ -40,7 +38,7 @@ Stop your spacewalk server. To accomplish this, execute following command as roo
 Perform package upgrade using yum:
 
 {{{
-# yum upgrade spacewalk
+# yum upgrade
 }}}
 
 
@@ -68,6 +66,22 @@ Run spacewalk-schema-upgrade script to upgrade database schema:
 Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
 
 
+=  Restart spacewalk  =
+
+If all of the above steps completed successfully, you can start your upgraded spacewalk. With Spacewalk 0.3 rhn-satellite init script
+was decommissioned and all spacewalk services are being started individually. If you need to restart your spacewalk using one command,
+use /sbin/rhn-satellite script.
+
+{{{
+# /sbin/rhn-satellite start
+}}}
+
+
+----
+
+What's bellow are additional steps that were required for Spacewalk 0.1 to Spacewalk 0.2 upgrades. These steps are no longer required for
+Spacewalk 0.2 to Spacewalk 0.3 upgrades and can be safely ignored.
+
 =  Package paths upgrade =
 
 Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change coming with multiple distribution support). To migrate
@@ -77,6 +91,7 @@ existing packages into new locations, use update-packages script (spacewalk-back
 # /usr/bin/update-packages --db=spacewalk/spacewalk@xe
 }}}
 
+
 =  Update configuration  =
 
 
@@ -85,13 +100,4 @@ If you're upgrading Spacewalk 0.1 to version 0.2, add the following line into /e
 
 {{{
 web.product_name = Spacewalk
-}}}
-
-
-=  Restart spacewalk  =
-
-If all of the above steps completed successfully, you can start your upgraded spacewalk:
-
-{{{
-# service rhn-satellite start
 }}}
