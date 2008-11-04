@@ -4,7 +4,8 @@ Spacewalk upgrade from version 0.2 to 0.3 involves several basic steps:
   1.  Configuration files and spacewalk database backup
   2.  Package upgrade
   3.  Schema upgrade
-  4.  Restart Spacewalk
+  4.  Activate spacewalk services
+  5.  Restart Spacewalk
 
 ----
 
@@ -64,6 +65,23 @@ Run spacewalk-schema-upgrade script to upgrade database schema:
 
 
 Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
+
+
+=  Activate Spacewalk services  =
+
+With release of 0.3 spacewalk services (rhn-search, satellite-httpd, taskomatic, ...) are no longer started from /etc/init.d/rhn-satellite,
+every service has its own init.d script with chkconfig entries.
+
+When doing a new Spacewalk 0.3 installation, all the services are being activated by spacewalk-setup. When upgrading existing Spacewalk 0.2
+installation, you have to activate all these services manually:
+
+{{{
+# for service in jabberd rhn-database osa-dispatcher taskomatic tomcat5 satellite-httpd Monitoring MonitoringScout rhn-search; do
+    if [ -e "/etc/init.d/$service" ]; then
+        /sbin/chkconfig --level 345 $service on
+    fi
+done
+}}}
 
 
 =  Restart spacewalk  =
