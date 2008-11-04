@@ -418,6 +418,7 @@ Criteria:
   label: packages
   type: csv
   cols: 75
+
   rows: 10
   required: yes
 
@@ -450,5 +451,5 @@ Report_Name: SystemsByPackage
 
 3. Other
 
- * Handle reporting across orgs (multiple users)
+ * Handle reporting across orgs (multiple users) -> Need a mapping file for user/password to servers.
 
