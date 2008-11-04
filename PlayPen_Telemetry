@@ -400,6 +400,9 @@ Packages:
 
 ==== Step 3 - Writing the Configuration File ====
 
+==== systemsByPackage.conf ====
+[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackage.conf]
+
 {{{
 Name: Systems By Package Report
 Description: This report shows systems with packages installed that match the user supplied csv, along with the specific NVRE.
@@ -420,6 +423,7 @@ Criteria:
   cols: 75
   rows: 10
   required: yes
+
 
 Aggregate: yes
 
