@@ -76,7 +76,7 @@ When doing a new Spacewalk 0.3 installation, all the services are being activate
 installation, you have to activate all these services manually:
 
 {{{
-# for service in jabberd rhn-database osa-dispatcher taskomatic tomcat5 satellite-httpd Monitoring MonitoringScout rhn-search; do
+# for service in jabberd osa-dispatcher taskomatic tomcat5 satellite-httpd Monitoring MonitoringScout rhn-search; do
     if [ -e "/etc/init.d/$service" ]; then
         /sbin/chkconfig --level 345 $service on
     fi
