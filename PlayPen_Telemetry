@@ -370,6 +370,8 @@ You'll recall from the script we just completed that we are passing to data elem
 
 ==== !SystemsByPackage.txt ====
 
+[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/SystemsByPackage.txt]
+
 {{{
 #from datetime import datetime
 Systems By Package Report
