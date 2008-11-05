@@ -1,3 +1,4 @@
+
 === List Tag ===
 
 There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features (including filters, pagination, page size selector, csv support), and is the easiest to use.
@@ -26,27 +27,27 @@ For a very simple list with non-selectable objects all you need is this:
 
 {{{
 #!java
-public class SystemGroupListSetupAction extends RhnAction {
+public class SystemGroupListSetupAction extends RhnAction implements Listable{
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
-
+        
         RequestContext requestContext = new RequestContext(request);
         User user =  requestContext.getLoggedInUser();
-
-        DataResult result = SystemManager.groupList(user, null);        
-        request.setAttribute(ListTagHelper.PARENT_URL, request.getRequestURI());
-        request.setAttribute("pageList", result);
-        TagHelper.bindElaboratorTo("groupList", result.getElaborator(), request);
-
-
+        ListHelper helper = new ListHelper(request);
+        helper.execute();
         return mapping.findForward("default");
+    }
+    
+    public  List getResults(RequestContext context) {
+        User user =  context.getLoggedInUser();
+        return SystemManager.groupList(user, null);
     }
 }
 }}}
 
-"result" is the actual list of objects we want to display.  We associate this to the request, along with the parent url and bind the list's elaborator to the request.  The elaborator is used to reduce the amount of information that is queried initially.  So for example, on the Systems list we only need the System Name initially.  You can decide what systems will appear on the page with only that one piece of info.  Then after the list is trimmed down to only what is displayed (The 20 out of 100 for example), we then elaborate the ones that will be displayed.  The elaboration is simply another query that gets run populating extra information.  
+List returned but the "getResults" method is the actual list of objects we want to display. 
 
 === Sets ===
 If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of items in database we use RhnSet. You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
@@ -503,4 +504,5 @@ To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do 
 <rl:decorator name="PageSizeDecorator"/>
 }}}
 Feel free to look in system_listdisplay.jspf for an example of usage. 
+
 
