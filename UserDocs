@@ -11,7 +11,7 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora.
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
    * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
-   * [OSADSetup How to installing OSAD ] -- How to use OSAD to force scheduled actions to run immediately on Spacewalk clients
+   * [wiki:OSADSetup How to install OSAD] -- How to use OSAD to force scheduled actions to run immediately on Spacewalk clients
    * ApiDocs -- Learn how to use our XMLRPC api to control your Spacewalk server.
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
