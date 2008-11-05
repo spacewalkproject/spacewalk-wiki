@@ -32,9 +32,6 @@ public class SystemGroupListSetupAction extends RhnAction implements Listable{
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
-        
-        RequestContext requestContext = new RequestContext(request);
-        User user =  requestContext.getLoggedInUser();
         ListHelper helper = new ListHelper(request);
         helper.execute();
         return mapping.findForward("default");
@@ -50,317 +47,114 @@ public class SystemGroupListSetupAction extends RhnAction implements Listable{
 List returned but the "getResults" method is the actual list of objects we want to display. 
 
 === Sets ===
-If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of items in database we use RhnSet. You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
+If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of systems in a database we use RhnSet (becasue we want it to be persistent). You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
 
 ==== Rhn Set ====
-
-Have a set associated with a list allows the user to perform some action on a selected group of items from the list.  
-
 {{{
 #!java
-        RhnSet set =  getSetDecl().get(user);
-        if (!requestContext.isSubmitted()) {
-            set.clear();
-            RhnSetManager.store(set);
-        }
-}}}
-
-This gets the set and if we are just arriving to the page we clear it.  Generally you want to clear a list if we are just arriving to it.  If the user navigates away from a page and then back, generally we expect that they are starting the current operation from scratch.  One exception to this is the System List page, it is never cleared.
-
-
-If you are using the alpha bar (see below) then you will need to use this: 
-{{{
-        String alphaBarPressed = request.getParameter(
-                AlphaBarHelper.makeAlphaKey(TagHelper.generateUniqueName(listName)));
-        if (!requestContext.isSubmitted() && alphaBarPressed == null) {
-            set.clear();
-            RhnSetManager.store(set);
-        }
-}}}
-This is because the alpha bar does not submit the page.  So if you have something selected you don't want to clear the set when they click on the alpha bar.
-        
-
-
-{{{
-#!java
-       RhnListSetHelper helper = new RhnListSetHelper(request);
-        if (ListTagHelper.getListAction("groupList", request) != null) {
-            helper.execute(set, "groupList", result);
-        }
-}}}
-We check and see if a list action (select all, unselect all, etc) has been performed and if it has, we execute that command.
-
-
-{{{
-#!java
-        if (!set.isEmpty()) {
-            helper.syncSelections(set, result);
-            ListTagHelper.setSelectedAmount("result", set.size(), request);            
-        }
-}}}
-If the set is not empty, we sync the set with the objects in the list.  That the jsp knows if they are selected or not and can put a check in the checkbox.  We also set the amount so we can display "# Selected" in the top right.
-
-
-{{{
-#!java
-    protected RhnSetDecl getSetDecl() {
-        return RhnSetDecl.SYSTEM_GROUPS;
-    }
-}}}
-Here we are just providing an easy generic way to get the name of the set we are using.
-
-
-Here is the complete example:
-
-
-{{{
-#!java
-public class SystemGroupListSetupAction extends RhnAction {
+public class SystemGroupListAction extends RhnAction implements Listable {
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
 
-        RequestContext requestContext = new RequestContext(request);
-        User user =  requestContext.getLoggedInUser();
-
-
-        DataResult result = SystemManager.groupList(user, null);        
-        request.setAttribute(ListTagHelper.PARENT_URL, request.getRequestURI());
-        request.setAttribute("pageList", result);
-        ListTagHelper.bindSetDeclTo("groupList", getSetDecl(), request);
-        TagHelper.bindElaboratorTo("groupList", result.getElaborator(), request);
+        ListRhnSetHelper helper = new ListRhnSetHelper(request,RhnSetDecl.SYSTEM_GROUPS)
+        helper.execute();
+        if(helper.isDispatched()) {
+            //handle the dispatch action (like removing groups etc)
+            return  mapping.findForward("success");
+        } 
         
-        RhnSet set =  getSetDecl().get(user);
-        if (!requestContext.isSubmitted()) {
-            set.clear();
-            RhnSetManager.store(set);
-        }
-        
-        RhnListSetHelper helper = new RhnListSetHelper(request);
-        if (ListTagHelper.getListAction("groupList", request) != null) {
-            helper.execute(set, "groupList", result);
-        }
-        if (!set.isEmpty()) {
-            helper.syncSelections(set, result);
-            ListTagHelper.setSelectedAmount("result", set.size(), request);            
-        }
-       
         return mapping.findForward("default");
     }
     
-    protected RhnSetDecl getSetDecl() {
-        return RhnSetDecl.SYSTEM_GROUPS;
+    protected List getResults(RequestContext context) {
+        User user =  requestContext.getLoggedInUser();
+        return SystemManager.groupList(user, null);
     }
 }
 }}}
 
+Basically the ListRhnSetHelper does all the ground work to setup the  set object. All we need to provide is the set declaration...
+
 ==== Session Set ====
 Session Sets uses the traditional java.util.Set to keep track of the check boxes.. Basically you need a unique declaration name to bind the set to the session..
 
-Have a set associated with a list allows the user to perform some action on a selected group of items from the list.  
-
 {{{
 #!java
-        Set <String> set = SessionSetHelper.lookupAndBind(request, getDeclLabel());
-        if (!requestContext.isSubmitted()) {
-            set.clear();
-        }
-}}}
-
-This gets the set and if we are just arriving to the page we clear it.  Generally you want to clear a list if we are just arriving to it.  If the user navigates away from a page and then back, generally we expect that they are starting the current operation from scratch.  One exception to this is the System List page, it is never cleared.
-
-
-If you are using the alpha bar (see below) then you will need to use this: 
-{{{
-        String alphaBarPressed = request.getParameter(
-                AlphaBarHelper.makeAlphaKey(TagHelper.generateUniqueName(listName)));
-        if (!requestContext.isSubmitted() && alphaBarPressed == null) {
-            set.clear();
-        }
-}}}
-This is because the alpha bar does not submit the page.  So if you have something selected you don't want to clear the set when they click on the alpha bar.
+public class SystemGroupListAction extends RhnAction implements Listable {
+    public ActionForward execute(ActionMapping mapping,
+            ActionForm formIn,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+        ListSessionSetHelper helper = new ListSessionSetHelper(request);
+        helper.execute();
+        if(helper.isDispatched()) {
+            //handle the dispatch action (like removing groups etc)
+            RhnSet set = helper.getSet();
+            for (RhnSetElement elem: set) {
+                //do remove or waht ever operation
+            }
+            helper.destroy() ; //destroys the set..
+            return  mapping.findForward("success");
+        } 
         
-
-
-{{{
-#!java
-       SessionSetHelper helper = new SessionSetHelper(request);
-        if (ListTagHelper.getListAction("groupList", request) != null) {
-            helper.execute(set, "groupList", result);
-        }
-}}}
-We check and see if a list action (select all, unselect all, etc) has been performed and if it has, we execute that command.
-
-
-{{{
-#!java
-        if (!set.isEmpty()) {
-            helper.syncSelections(set, result);
-            ListTagHelper.setSelectedAmount("result", set.size(), request);            
-        }
-}}}
-If the set is not empty, we sync the set with the objects in the list.  That the jsp knows if they are selected or not and can put a check in the checkbox.  We also set the amount so we can display "# Selected" in the top right. 
-
-{{{
-#!java
-    protected String getDecl() {
-        return getClass().getName();
+        return mapping.findForward("default");
     }
+    
+    protected List getResults(RequestContext context) {
+        User user =  requestContext.getLoggedInUser();
+        return SystemManager.groupList(user, null);
+    }
+}
 }}}
-Here we are just providing an easy generic way to get the name of the set we are using. This name can eb anything you want.. The more unique the better.. Basically  we want a constant thats unique across a request...
 
-{{{
-SessionSetHelper.obliterate(request, getDecl());
-}}}
-
-Don't forget to obliterate the set from the Session after you are done processing set...
-
-
-Here is the complete example:
-
-
+Basic difference s/ListRhnSetHelper/ListSessionSetHelper.. Here is a slightly more compilcated example
 {{{
 #!java
-public class ViewModifyPathsAction extends RhnAction {
+public class ViewModifyPathsAction extends RhnAction implements Listable {
     public ActionForward execute(ActionMapping mapping,
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
         RequestContext context = new RequestContext(request);
         User user = context.getLoggedInUser();
-        Set set = SessionSetHelper.lookupAndBind(request, getDecl());
-
-        //if its not submitted
-        // ==> this is the first visit to this page
-        // clear the 'dirty set'
-        if (!context.isSubmitted()) {
-            set.clear();
+        request.setAttribute("type", getType(mapping.getParameter());
+        Map params = new HashMap();
+        params.put(RequestContext.SID, context.getRequiredParam(RequestContext.SID));
+        ListSessionSetHelper helper = new ListSessionSetHelper(request, params);
+        helper.execute();
+        if (helper.isDispatched()) {
+            ActionForward forward =  handleDispatchAction(mapping, context);
+            helper.destroy();
         }
-        ...
-        SessionSetHelper helper = new SessionSetHelper(request);
-        
-        if (request.getParameter(DISPATCH) != null) {
-            // if its one of the Dispatch actions handle it..            
-            helper.updateSet(set, LIST_NAME);
-            if (!set.isEmpty()) {
-                return handleDispatchAction(mapping, context);
-            }
-            else {
-                RhnHelper.handleEmptySelection(request);
-            }
-        }        
-        
-
-        Server server = context.lookupAndBindServer();
-        ConfigurationManager cm = ConfigurationManager.getInstance();
-        List dataSet = cm.listManagedPathsFor(server, user, 
-                                             getType(mapping.getParameter()));
-        // if its a list action update the set and the selections
-        if (ListTagHelper.getListAction(LIST_NAME, request) != null) {
-            helper.execute(set, 
-                            LIST_NAME,
-                            dataSet);
-        }        
-
-        // if I have a previous set selections populate data using it       
-        if (!set.isEmpty()) {
-            helper.syncSelections(set, dataSet);
-            ListTagHelper.setSelectedAmount(LIST_NAME, set.size(), request);            
-        }
-        request.setAttribute(ListTagHelper.PARENT_URL, 
-                            request.getRequestURI() + "?sid=" + server.getId());
-        request.setAttribute(DATA_SET, dataSet);
-
-        ListTagHelper.bindSetDeclTo(LIST_NAME, getDecl(), request);
         return mapping.findForward(RhnHelper.DEFAULT_FORWARD);
-
-    }
-    
-    protected String getDecl() {
-        return getClass().getName();
     }
 
-    private ActionForward  handleDispatchAction(ActionMapping mapping, 
+    public List getResult(RequestContext context) {
+        ConfigChannelType type =  (ConfigChannelType) 
+                        context.getRequest().getAttribute("type");
+        Server server = context.lookupAndBidServer();
+        User user = context.getLoggedInUser();
+        return cm.listManagedPathsFor(server, user, type);
+    }
+
+    private ActionForward  handleDispatchAction(ListSessionSetHelper helper,
+                                                ActionMapping mapping, 
                                                 RequestContext context) {
         ....
-         int size = copySelectedToChannel(server.getSandboxOverride(),
+         int size = copySelectedToChannel(helper, server.getSandboxOverride(),
                     context.getRequest(),
                     user);
         ....
     }
 
-      private int copySelectedToChannel(ConfigChannel channel, HttpServletRequest request,
+      private int copySelectedToChannel(ListSessionSetHelper helper,
+                                        ConfigChannel channel,
+                                         HttpServletRequest request,
                                         User user) {
         ConfigurationManager cm = ConfigurationManager.getInstance();
-        Set <String> set =  SessionSetHelper.lookupAndBind(request, 
-                                                        getDecl());
-        for (String key : set) {
-            Long fileId = Long.valueOf(key);
-            ConfigFile cf = cm.lookupConfigFile(user, fileId);
-            ConfigRevision cr = cf.getLatestConfigRevision();
-            cm.copyConfigFile(cr, channel, user);
-        }
-        int size = set.size();
-        set.clear();
-        SessionSetHelper.obliterate(request, getDecl());
-        return size;
-    }  
-
-}
-}}}
-
-
-== Using ListSubmitable ==
-The above approach with SessionSets can be further abstracted /simplified using the new ListSubmitable & ListSessionSetHelper class. All you need to do is have your Action implement ListSubmitable. Here is an example of how easily the above code can be rendered using the new ListSubmitable..
-
-
-{{{
-#!java
-public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
-    public ActionForward execute(ActionMapping mapping,
-            ActionForm formIn,
-            HttpServletRequest request,
-            HttpServletResponse response) {
-	        ListSessionSetHelper helper = new ListSessionSetHelper(this);
-		return helper.execute(mapping, formIn, request, response);
-	}
-
-    public String getListName()  { 
-		return LIST_NAME;
-	}
-	
-    public String getDataSetName() {
-		return DATA_SET;
-	}
-    
-    public  String getDecl(RequestContext context) {
-        return getClass().getName() + context.getRequest().getParameter("sid");
-    }
-
-    public List getResult(RequestContext context, ActionMapping mapping) {
-		Server server  = context.lookupAndBindServer();
-		User user = context.getLoggedInUser();
-		return cm.listManagedPathsFor(server, user, 
-                                         getType(mapping.getParameter()));	
-    }
-
-    public ActionForward  handleDispatch(ActionMapping mapping, 
-				ActionForm formIn, HttpServletRequest request,
-				HttpServletResponse response) {
-        ....
-         int size = copySelectedToChannel(server.getSandboxOverride(),
-                    request,
-                    user);
-        ....
-    }
-
-      private int copySelectedToChannel(ConfigChannel channel, HttpServletRequest request,
-                                        User user) {
-        RequestContext context = new RequestContext(request);
-        ConfigurationManager cm = ConfigurationManager.getInstance();
-        Set <String> set =  SessionSetHelper.lookupAndBind(request, 
-                                                        getDecl(context));
+        Set <String> set = helper.getSet();
         for (String key : set) {
             Long fileId = Long.valueOf(key);
             ConfigFile cf = cm.lookupConfigFile(user, fileId);
@@ -370,10 +164,12 @@ public class ViewModifyPathsAction extends RhnAction implements ListSubmitable {
         int size = set.size();
         return size;
     }  
+
 }
 }}}
 
-Notice that No session set cleanup logic is necessary . This is becasue the ListSessionSetHelper handles that cleanup job for you :)..
+
+
 
 == jsp side ==
 Here is an example of a complete jsp showing a very simple list with only one column (name):
@@ -406,9 +202,7 @@ Here is an example of a complete jsp showing a very simple list with only one co
 
 <rl:listset name="groupSet" legend="system-group">
 
-<rl:list dataset="pageList"
-		name="groupList"
-		emptykey="assignedgroups.jsp.nogroups">
+<rl:list emptykey="assignedgroups.jsp.nogroups">
         
 		<rl:decorator name="ElaborationDecorator"/>
 
@@ -431,32 +225,14 @@ Here is an example of a complete jsp showing a very simple list with only one co
 
 
 == filters == 
-Every List in the new List Tag can have a filter. Here is how you declare what filter you are using...
-{{{
+Every List in the new List Tag can have a filter.. Basically you add the filterattr attribute to the rl:column..
+{{{ 
 #!text/html
-	<rl:list dataset="pageList"
-                      name="files"
-                     filter="com.redhat.rhn.frontend.action.configuration.sdc.ViewModifyPathsFilter">
+<rl:list .......>
+...
+<rl:column .... filterattr="name" .../>
+</rl:list>
 }}}
-
-For each list you want to have a filter, you must implement your own filter class, ViewModifyPathsFilter in this example.  To do that simply implement com.redhat.rhn.frontend.taglibs.list.BaseListFilter and implement your own proccessMap() method.  Here is an example:
-
-
-{{{
-#!java
-    public void processMap(Map map, Locale userLocale) {
-        LocalizationService ls = 
-            LocalizationService.getInstance();
-        String label = ls.getMessage("sdc.config.file_list.name",
-                userLocale);
-        map.put(label, "path");
-}
-}}}
-
-Here "sdc.config.file_list.name" is the label for the field that is being filtered upon.  We are inserting the name of the field within the dto that we are filtering on.  So here, the filter would call getPath() on each object in the page list and filter upon that.
-
-Another good exmaple is UserListFilter.java.
-
 
 == alpha bar ==
 To add the alpha bar simply add
@@ -466,9 +242,7 @@ alphabarcolumn="description" to the rl:list tag.  See here for an example:
 #!text/html
 <rl:listset name="keySet"> 
     
-   <rl:list dataset="pageList"
-         width="100%"
-         name="keysList"
+   <rl:list width="100%"
          styleclass="list"
          emptykey="activelist.jsp.noUsers"
          alphabarcolumn="description">
@@ -483,13 +257,13 @@ alphabarcolumn="description" to the rl:list tag.  See here for an example:
 To add CSV support to a page add the below tag to the jsp.
 {{{
 #!text/html
-<rl:csv dataset="pageList"
-    name="userList" 
+<rl:csv dataset="dataset"
+    name="list" 
     exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
 }}}
-"pageList" is the name of the 'List'
+"dataset" is the name of the dataset which is holding your list
 
-"userList" should match the name given to the <rl:list> this works with. This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
+"list" should match the name given to the <rl:list> this works with (by default its the word list) . This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
 
 exportColumns is a comma separated string of attributes you want to export.
 
