@@ -1,4 +1,4 @@
-= OSAD Installation Instructions =
+= osad Installation Instructions =
 
  * [https://fedorahosted.org/spacewalk/wiki/OSADSetup#ServerSetup Server Setup (osa-dispatcher and jabberd)]
  * [https://fedorahosted.org/spacewalk/wiki/OSADSetup#ClientSetup Client Setup (osad)]
