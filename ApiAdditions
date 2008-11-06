@@ -35,17 +35,17 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || channel.access.disableOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Disable organization sharing for the channel.  This makes the channel private; therefore, it will not be accessible by trusted organizations.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.organizations''' ||  ||  ||  ||  ||  ||
-|| channel.organizations.list(string sessionKey, int orgId, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be an Org Admin.||
-|| channel.organizations.enableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
-|| channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
+|| channel.organizations.list(string sessionKey, int orgId, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be an Org Admin.||
+|| channel.organizations.enableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
+|| channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
 ||  (Multi Org Phase2 support) '''TODO: need info on what will be configured on this page w/in the web-ui'''   ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 || channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham || done ||  ||
-|| channel.software.getContactDetails(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Retrieve the contact/support information for a given channel.[[BR]]* Returns struct[ string name, string email, string phoneNumber, string supportPolicy ]||
-|| channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.software.getContactDetails(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Retrieve the contact/support information for a given channel.[[BR]]* Returns struct[ string name, string email, string phoneNumber, string supportPolicy ]||
+|| channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 ||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill || Done ||  ||
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
@@ -60,9 +60,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  errata.findByCve(string sessionKey, string cveName) || 0.3 || 3 || bbuckingham || done || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
 ||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]string advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || tbd ||  ||  || * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise. ||
 ||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
-
-
-
 ||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd ||  ||  || * Remove a set of packages from an errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
@@ -140,6 +137,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || org.trusts.disableSoftwareSharing(string sessionKey, int orgId, int trustedOrgId) || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* Disable software sharing for an org (trustedOrgId) within an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 || org.trusts.enableSystemMigration(string sessionKey, int orgId, int trustedOrgId) || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* Enable system migrations for an org (trustedOrgId) within an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin. ||
 || org.trusts.disableSystemMigration(string sessionKey, int orgId, int trustedOrgId) || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* Disable system migrations for an org (trustedOrgId) within an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
+
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
 ||  packages.getDetails(*,downloadURL)   || 0.5 ||  ||  ||  ||  ||
