@@ -29,55 +29,14 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  activationkey.disableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
 ||  activationkey.checkConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
 ||  '''Namespace: channel.access''' ||  ||  ||  ||  ||  ||
-|| channel.access.enableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
-|| channel.access.disableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
-|| channel.access.enableOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable organization sharing for the channel.  This makes the channel public; therefore, it is accessible to the trusted organizations.[[BR]]* Returns 1 on success, exception thrown otherwise.||
-|| channel.access.disableOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable organization sharing for the channel.  This makes the channel private; therefore, it will not be accessible by trusted organizations.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.access.enableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.access.disableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.access.enableOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Enable organization sharing for the channel.  This makes the channel public; therefore, it is accessible to the trusted organizations.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.access.disableOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support)[[BR]]* Disable organization sharing for the channel.  This makes the channel private; therefore, it will not be accessible by trusted organizations.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.organizations''' ||  ||  ||  ||  ||  ||
 || channel.organizations.list(string sessionKey, int orgId, string channelLabel) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be an Org Admin.||
 || channel.organizations.enableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 || channel.organizations.disableTrust(string sessionKey, int orgId, string channelLabel, int trustOrgId) || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
