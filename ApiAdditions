@@ -128,7 +128,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  monitoring.getAllResults(sid, probe_id) || 0.5 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
-||  org.listOrgs(string sessionKey)   || 0.4 || 4 ||  ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
+||  org.listOrgs(string sessionKey)   || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org.trusts''' ||  ||  ||  ||  ||  ||
 || org.trusts.listTrusts(string sessionKey, int orgId) || 0.4 || 4 || jortel  ||  ||(Multi Org Phase2 support)[[BR]]* Lists the orgs that the organization (orgId) may define as trusted and info on whether or not each org (trustOrgId) is in the oganization's trust ring (i.e. org enabled/checked).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Spacewalk Admin.||
