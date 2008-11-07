@@ -419,6 +419,7 @@ Criteria:
   type: csv
   cols: 75
 
+
   rows: 10
   required: yes
 
@@ -453,3 +454,9 @@ Report_Name: SystemsByPackage
 
  * Handle reporting across orgs (multiple users) -> Need a mapping file for user/password to servers.
 
+
+=== Design ===
+
+==== Web UI Mockups ====
+
+telemetry_overview_mockup_0.1.png
