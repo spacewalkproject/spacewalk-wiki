@@ -420,6 +420,7 @@ Criteria:
   cols: 75
 
 
+
   rows: 10
   required: yes
 
@@ -459,4 +460,4 @@ Report_Name: SystemsByPackage
 
 ==== Web UI Mockups ====
 
-telemetry_overview_mockup_0.1.png
+telemetry-overview-0.1.png
