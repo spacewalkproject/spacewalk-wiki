@@ -423,6 +423,7 @@ Criteria:
 
 
 
+
   rows: 10
   required: yes
 
@@ -463,3 +464,24 @@ Report_Name: SystemsByPackage
 ==== Web UI Mockups ====
 
 [[Image(telemetry-overview-0.1.png,500px)]]
+(source SVG image in list of attachments at the bottom of the page)
+
+This mockup is just a brainstorm to try to work out a general structure/layout, it can completely change. It's more meant to be a discussion starter. Here is what I starting thinking so far by sketching out the mockup:
+
+ * Overview: just little preview widgets to give you a feel for what data lay in the other screens, with links to jump to the full data sets... (now that I'm looking at it, each report could have csv / txt / html / pdf icons next to it to let you download them in one click directly from the overview page)
+ * Run a report: a wizard that walks you through running a report; it'll let you choose which report type you'd like to run, enter in your username/pass for the report, and schedule the report or let you run it directly.
+ * Create a new report: This is probably the part of the ui that reaches most far and would likely be lower priority / out-of-scope at first. But, I think if possible:
+   * it would be nice to have a wizard that asks you all the questions that you get asked in the individual report config files and generates a config file for you.
+   * It could have an upload form for the api script. One idea here too could be a text field for the api script, to write it in the page, and it could be pre-filled with some stub code and have some kind of basic API cheatsheet along the bottom with a link to the full API guide.
+   * there could be a templates section at the end that shows the various templates associated with the report and lets you at least view them if not modify them.
+ * Report library: a directory showing all the various types of reports, ideally categorized (not sure how best to handle the categorization), with maybe a calendar for each report that will let you see which days of which months that report was generated and will let you click to see them, as crude as it is i was thinking something like this (but prettier!): http://intranet.corp.redhat.com/ic/intranet/RHEL5MeetingMinutes.html
+   * maybe by default the calendar for this current month is shown and you click a link to zoom in on all the monthly calendars for that report type.
+ * Report schedule: a schedule-based view of reports, to show you which reports run on which basis (hourly / daily / weekly / monthly) and to let you modify the schedules for those reports or stop them from running
+ * Report templates: similar to the report-library view, but per report it'll list out what templates are available (html/ pdf/ csv/ etc) and let you add another template type
+
+In addition to this, reports will probably need two views:
+
+ * Report Details view: report type's name, what satellites the report runs on, (a lot of the .conf file details), a listing of the templates available for the report, and a full calendar for that report (the report schedule page would link specifically to that full calendar section)
+ * Specific report run details: the results from a particular run of that report, with date/timestamp, user who ran the report, and the report output
+
+This hopefully can be refined and simplified a lot more. Next we need to draw up a flow diagram for the UI and then based on feedback from the above and that do some better screen mockups. 
