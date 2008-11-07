@@ -10,6 +10,11 @@ Spacewalk upgrade from version 0.2 to 0.3 involves several basic steps:
 ----
 
 
+= Assumptions =
+
+  * For RHEL or CentOS, you will need the Base and EPEL repositories enabled for dependencies
+
+
 =  Database and configuration backup  =
 
 
