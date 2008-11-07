@@ -89,8 +89,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
 ||  kickstart.profile.system.getLocale(string sessionKey, string kslabel) || 0.3 || 3 || bbuckingham || done || * Retrieve the locale information for the kickstart profile.[[BR]] * Returns struct[string locale, int useUtc] ||
 ||  kickstart.profile.system.setLocale(string sessionKey, string kslabel, string locale, boolean useUtc) || 0.3 || 3 || bbuckingham || done ||  ||
-||  kickstart.profile.system.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham ||  ||  ||
-||  kickstart.profile.system.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham ||  ||  ||
+||  kickstart.profile.system.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
+||  kickstart.profile.system.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 ||  ||  ||  ||
 ||  kickstart.profile.system.listAssociatedKeys(string sessionKey, string kslabel) || 0.3 || 3 || jdob || done || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
 ||  kickstart.profile.system.associateKeys(string sessionKey, string kslabel, array[string description]) || 0.3 || 4 || jdob || done || Associate GPG and SSL keys with the kickstart profile. ||
 ||  ----   ||  ||  ||  ||  ||  ||
@@ -116,9 +116,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart.distributions''' ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.filepreservation''' ||  ||  ||  ||  ||  ||
-||  kickstart.filepreservation.listAllFilePreservations(string sessionKey) || 0.4 || 2 || bbuckingham ||  ||  ||
-||  kickstart.filepreservation.createFilePreservation(string sessionKey, string kslabel, list) || 0.4 || 3 || bbuckingham ||  || Create a file preservation list for the kickstart profile. ||
-||  kickstart.filepreservation.deleteFilePreservation(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham ||  ||  ||
+||  kickstart.filepreservation.listAllFilePreservations(string sessionKey) || 0.4 || 2 ||  ||  ||  ||
+||  kickstart.filepreservation.createFilePreservation(string sessionKey, string kslabel, list) || 0.4 || 3 ||  ||  || Create a file preservation list for the kickstart profile. ||
+||  kickstart.filepreservation.deleteFilePreservation(string sessionKey, string kslabel) || 0.4 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
 ||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
@@ -188,6 +188,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  org.create || 0.1 || || dgoodwin || Done || ||
 ||  org.delete || 0.1 || || dgoodwin || Done || ||
 ||  org.listOrgs || 0.1 || || partha || Done || ||
+
 ||  org.listUsers || 0.1 || || partha || Done || ||
 ||  org.getDetails(orgName) || 0.1 || || partha || Done || ||
 ||  org.getDetails(orgId) || 0.1 || || partha || Done || ||
