@@ -44,7 +44,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 || channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham || done ||  ||
-|| channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 || bbuckingham ||  ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
+|| channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 ||  byte[] package.getPackage(string sessionKey, int packageId) || 0.3 || 8 || jsherrill || Done ||  ||
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
