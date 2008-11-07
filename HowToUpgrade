@@ -53,7 +53,7 @@ Perform package upgrade using yum:
 Make sure your spacewalk server is down:
 
 {{{
-# service rhn-satellite status
+# rhn-satellite status
 }}}
 
 Make sure your oracle server is running. For oracle-xe that would be:
