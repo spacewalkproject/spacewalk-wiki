@@ -422,6 +422,7 @@ Criteria:
 
 
 
+
   rows: 10
   required: yes
 
@@ -461,4 +462,4 @@ Report_Name: SystemsByPackage
 
 ==== Web UI Mockups ====
 
-[[telemetry-overview-0.1.png]]
+[[Image(telemetry-overview-0.1.png,500px)]]
