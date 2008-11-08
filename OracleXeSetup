@@ -127,10 +127,16 @@ SQL>
  {{{ 
  rlwrap sqlplus spacewalk/spacewalk@xe 
  }}}  
+
+== additional Oracle configuration ==
  
-== increase max process == 
- 
-Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increase this setting to 400: 
+Oracle XE is initially configured to grant 40 connections to its database.  Spacewalk needs more than this default configuration.  We recommend increasing this setting to 400. 
+
+Oracle XE has a bug that causes an Internal Server Error (500) in Spacewalk when viewing Systems -> Pick a System -> Software -> Packages -> Install New Package
+(URL: https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=**********) or when running
+{{{rhnreg_ks}}} to register a client.
+
+In order to avoid these two problems we need to increase the max processes in Oracle and to 
  
 {{{ 
 # sqlplus spacewalk/spacewalk@xe 
@@ -138,6 +144,14 @@ Oracle XE is initially configured to grant 40 connections to its database.  Spac
 .. 
  
 SQL> alter system set processes = 400 scope=spfile; 
+ 
+System altered. 
+
+SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
+ 
+System altered. 
+ 
+SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
  
 System altered. 
  
@@ -156,33 +170,6 @@ This is only for use if running a development environment or development version
 
  
 = Known Issues =
-
- * Users are experiencing an Internal Server Error (500) when viewing Systems -> Pick a System -> Software -> Packages -> Install New Package (URL: https://spacewalk.example.com/rhn/systems/details/packages/InstallPackages.do?sid=**********) or when running rhnreg_ks to register a client.
- 
-This is an Oracle XE bug. Details are noted in BZ: https://bugzilla.redhat.com/show_bug.cgi?id=453176. If you are experiencing this use workaround: 
-{{{ 
-# sqlplus spacewalk/spacewalk@xe 
- 
-SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
- 
-System altered. 
- 
-SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
- 
-System altered. 
- 
-SQL> quit 
- 
-# /sbin/service oracle-xe restart 
-}}}
-
- * Need these 2 environment variables:
-
-{{{
-# export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/
-# export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/
-}}}
-
 
  * You may need to adjust selinux (or disable it) if you encounter this error:
 
