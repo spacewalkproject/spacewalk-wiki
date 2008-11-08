@@ -424,6 +424,7 @@ Criteria:
 
 
 
+
   rows: 10
   required: yes
 
@@ -474,7 +475,8 @@ This mockup is just a brainstorm to try to work out a general structure/layout, 
    * it would be nice to have a wizard that asks you all the questions that you get asked in the individual report config files and generates a config file for you.
    * It could have an upload form for the api script. One idea here too could be a text field for the api script, to write it in the page, and it could be pre-filled with some stub code and have some kind of basic API cheatsheet along the bottom with a link to the full API guide.
    * there could be a templates section at the end that shows the various templates associated with the report and lets you at least view them if not modify them.
- * Report library: a directory showing all the various types of reports, ideally categorized (not sure how best to handle the categorization), with maybe a calendar for each report that will let you see which days of which months that report was generated and will let you click to see them, as crude as it is i was thinking something like this (but prettier!): http://intranet.corp.redhat.com/ic/intranet/RHEL5MeetingMinutes.html
+ * Report library: a directory showing all the various types of reports, ideally categorized (not sure how best to handle the categorization), with maybe a calendar for each report that will let you see which days of which months that report was generated and will let you click to see them, as crude as it is i was thinking something like this (but prettier!): 
+http://nicubunulj.livejournal.com/calendar
    * maybe by default the calendar for this current month is shown and you click a link to zoom in on all the monthly calendars for that report type.
  * Report schedule: a schedule-based view of reports, to show you which reports run on which basis (hourly / daily / weekly / monthly) and to let you modify the schedules for those reports or stop them from running
  * Report templates: similar to the report-library view, but per report it'll list out what templates are available (html/ pdf/ csv/ etc) and let you add another template type
