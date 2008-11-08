@@ -1,6 +1,25 @@
-  '''NOTE:''' Oracle XE web interface is accessible at http://127.0.0.1:9000/apex by default. If you want access it from the outside add this line to your listener configuration:
+The Oracle XE web interface is accessible on localhost (127.0.0.1) by default. If you want to access it from outside the box, there
+are a number of ways to address this.
+
+== The Oracle way  ==
+The 'correct' oracle way would be to execute the following with sysdba privileges:
+{{{
+SQL> EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);
+}}}
+
+If you messed up the APEX port in configure, you can use the following command to 'fix' it:
+{{{
+SQL> EXEC DBMS_XDB.SETHTTPPORT(9000); 
+}}}
+
+== Change listener configuration ==
+{{{
     (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=0.0.0.0)(PORT=9000))(Presentation=HTTP)(Session=RAW))
-  and do not forget restart listener. Example of modified /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora:
+}}}
+
+Do not forget to restart the listener.
+Example of a modified {{{/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora}}}:
+
 {{{
 # listener.ora Network Configuration File:
 
@@ -25,16 +44,8 @@ LISTENER =
 DEFAULT_SERVICE_LISTENER = (XE)
 }}}
 
-  '''NOTE:''' You can also forward http://127.0.0.1:9000/apex via ssh tunnel:
-  {{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}}. This should allow you to browse to localhost, proceed with   
-  the rest of the instructions.
+== ssh forwarding trick ==
+You can also forward http://127.0.0.1:9000/apex via ssh tunnel:
+  {{{ssh -L 9000:localhost:9000 -l root -N <oracle machine name>}}}. This should allow you to browse to {{{localhost}}}.
 
-  '''NOTE:''' The 'correct' oracle way would be to execute the following with sysdba privileges:
-{{{
-SQL> EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);
-}}}
 
-  '''NOTE:''' If you messed up the APEX port in configure, you can use the following command to 'fix' it:
-{{{
-SQL> EXEC DBMS_XDB.SETHTTPPORT(9000); 
-}}}
