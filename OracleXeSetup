@@ -57,7 +57,7 @@ Here are some sane values:
  * OracleXeSetup#Installation
 
 
-Login to the webui and configure a user (see OracleXeWebAccessPrep):
+Login to the webui and configure a user (if you don't have access to localhost see OracleXeWebAccessPrep):
 
  * browse to http://127.0.0.1:9000/apex
  * login: sys
@@ -80,21 +80,13 @@ That's it, proceed with [OracleXeSetup#setupclient client setup].
 }}} 
  
 == setup client == 
-You need to put the Oracle clients on your path and configure ORACLE_HOME. 
-{{{ 
- export PATH=$PATH:/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/ 
- export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server 
-}}} 
- * The best way of doing this is below, remember to logout and back in after setting the link 
-   so your env is updated. 
+You need to put the Oracle clients on your path and configure ORACLE_HOME. The best way of doing this is below, so your env is updated. 
 {{{ 
   cd /etc/profile.d 
   ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
+  . /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
 }}} 
-An alternative to logging out and still obtaining the correct environment is: 
-{{{ 
-. /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
-}}} 
+
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}: 
 {{{ 
 XE = 
