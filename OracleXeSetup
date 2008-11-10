@@ -82,8 +82,7 @@ That's it, proceed with [OracleXeSetup#setupclient client setup].
 == setup client == 
 You need to put the Oracle clients on your path and configure ORACLE_HOME. The best way of doing this is below, so your env is updated. 
 {{{ 
-  cd /etc/profile.d 
-  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
+  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh /etc/profile.d/oracle_env.sh
   . /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
 }}} 
 
