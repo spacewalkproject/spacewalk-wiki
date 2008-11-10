@@ -116,9 +116,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart.distributions''' ||  ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.filepreservation''' ||  ||  ||  ||  ||  ||
-||  kickstart.filepreservation.listAllFilePreservations(string sessionKey) || 0.4 || 2 || bbuckingham ||  ||  ||
-||  kickstart.filepreservation.createFilePreservation(string sessionKey, string kslabel, list) || 0.4 || 3 || bbuckingham ||  || Create a file preservation list for the kickstart profile. ||
-||  kickstart.filepreservation.deleteFilePreservation(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham ||  ||  ||
+||  kickstart.filepreservation.listAllFilePreservations(string sessionKey) || 0.4 || 2 || bbuckingham || done || List all file preservation lists. ||
+||  kickstart.filepreservation.create(string sessionKey, string name, array[string fileName]) || 0.4 || 3 || bbuckingham || done || Create a file preservation list. ||
+||  kickstart.filepreservation.delete(string sessionKey, string name) || 0.4 || 3 || bbuckingham || done || Delete a file preservation list. ||
+||  kickstart.filepreservation.getDetails(string sessionKey, string name) || 0.4 || 3 || bbuckingham || done || Retrieve details on a file preservation list. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
 ||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
