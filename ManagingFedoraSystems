@@ -7,13 +7,41 @@ We'll create a channel holding all the Fedora rpms you may want to deploy to cli
     * Livna sub-channel
     * My custom packages sub-channel
 
-The [UploadFedoraContent] page describes how to create a channel, reposync your required repositories and then upload the content to spacewalk.  At the end of this process you'll end up with a copy of the entire Fedora repository on your disk and another copy living inside of spacewalk (actually in /var).  This consumes quite a bit of space.  Furthermore rhnpush'ing an entire Fedora repository to a spacewalk server can take several days.  Some have managed it in a single day, others find it takes 2-3 days on more modest hardware.
+The [UploadFedoraContent] page describes how to create a channel, reposync your required repositories and then upload the content to spacewalk.  At the end of this process you'll end up with a copy of the entire Fedora repository on your disk and another copy living inside of spacewalk (actually in /var/satellite).  This consumes quite a bit of space.  Furthermore rhnpush'ing an entire Fedora repository to a spacewalk server can take several days.  Some have managed it in a single day, others find it takes 2-3 days on more modest hardware.
 
 You'll periodically want to resync the Fedora repository and upload the updated packages to spacewalk.  This is a repeat of the 2-3 day rhnpush process.  You then have to push the updated packages to your clients.  This pushing practice is described below.
 
 == Kickstarting Fedora clients ==
 
 == Registering Fedora clients ==
+For this we want an activation key.  Create a spacewalk activation key and associate it with your "Fedora 9 x86_64" channel.  It's important that the key is associated with a specific channel and not just the default.  You then have to install packages on the client and register with your server.  The process is described in [RegisteringClients].  However, if you've been kickstarting your clients you may want this to happen as part of the kickstart process.  With Fedora 9 and Spacewalk 0.2 this requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
+{{{
+# Grab some packages in order to register the spacewalk system
+cd /tmp
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-check-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-client-tools-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-setup-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-setup-gnome-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-actions-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-client-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-management-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnpush-0.2.4-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnsd-4.6.1-1.el5.i386.rpm
+wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el5_2.6.noarch.rpm
+
+# Install the packages
+rpm -Uvh *.rpm
+
+# Now register the system
+rhnreg_ks --serverUrl=http://your.spacewalk.server/XMLRPC --activationkey=1-dcddcdcdcdcdcdcdcdcdcd 
+
+# be clean (and safe(ish))
+rm -f rhn*.rpm
+rm -f yum-rhn*.rpm
+}}}
+
 
 == Pushing packages to Fedora clients ==
 
