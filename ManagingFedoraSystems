@@ -15,22 +15,22 @@ You'll periodically want to resync the Fedora repository and upload the updated 
 Kickstart is possibly the easiest way to provision your clients.  It allows you to define the packages to install, authentication configuration etc... in a central spot.  Then each of your clients will be deployed with the same configuration.  It's a lot more manageable than creating a system imaging and rolling that out over multiple clients.  Spacewalk will allow you to define a kickstart profile.  You'll then have to follow [KickstartDistro] to upload Fedora content.  A kickstart will only install content from the kickstart tree.  It will not install content that is available in the "Fedora 9 x86_64" channel.  We find that kickstart is useful for provisioning your systems with the base and X Windows packages and with our authentication mechanism.  We deploy other packages using Spacewalk.  This allows us to update the packages on the system more easily.
 
 == Registering Fedora clients ==
-For this we want an activation key.  Create a spacewalk activation key and associate it with your "Fedora 9 x86_64" channel.  It's important that the key is associated with a specific channel and not just the default.  You then have to install packages on the client and register with your server.  The process is described in [RegisteringClients].  However, if you've been kickstarting your clients you may want this to happen as part of the kickstart process.  With Fedora 9 and Spacewalk 0.2 this requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
+For this we want an activation key.  Create a spacewalk activation key and associate it with your "Fedora 9 x86_64" channel.  It's important that the key is associated with a specific channel and not just the default.  You then have to install packages on the client and register with your server.  The process is described in [RegisteringClients].  However, if you've been kickstarting your clients you may want this to happen as part of the kickstart process.  With Fedora 9 and Spacewalk 0.3 this requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
 {{{
 # Grab some packages in order to register the spacewalk system
 cd /tmp
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-check-0.4.17-10.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-client-tools-0.4.17-10.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-setup-0.4.17-10.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhn-setup-gnome-0.4.17-10.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-0.2.2-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-actions-0.2.2-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-client-0.2.2-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhncfg-management-0.2.2-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnpush-0.2.4-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/rhnsd-4.6.1-1.el5.i386.rpm
-wget http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el5_2.6.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-check-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-client-tools-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-setup-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-setup-gnome-0.4.17-10.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-actions-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-client-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-management-0.2.2-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnpush-0.2.4-1.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnsd-4.6.1-1.el5.i386.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el5_2.6.noarch.rpm
 
 # Install the packages
 rpm -Uvh *.rpm
