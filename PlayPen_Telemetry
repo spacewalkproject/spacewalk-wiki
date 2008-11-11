@@ -45,13 +45,13 @@ tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
 }}}
 
 
- *Telemetry
+ * Telemetry
 
 {{{
 rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm
 }}}
 
-or (I have added the dependent rpms to the .spec file)
+ * or (I have added the dependent rpms to the .spec file)
 
 {{{
 yum install http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm  --nogpgcheck
