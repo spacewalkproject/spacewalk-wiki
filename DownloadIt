@@ -60,4 +60,10 @@ The public key is here:  [https://fedorahosted.org/spacewalk/attachment/wiki/Dow
 == Source RPMs ==
 Are available [http://www.redhat.com/spacewalk/source/  here]
 
-
+== Nightly builds ==
+We have no automated build system yet. So this repos contains only packages which developer decided to build during day.
+ http://miroslav.suchy.cz/spacewalk/nightly-candidate/
+This repo contains all packages.
+ 
+ http://miroslav.suchy.cz/spacewalk/nightly/
+This repo contains all packages which developer explicitly taged into upcoming release.
