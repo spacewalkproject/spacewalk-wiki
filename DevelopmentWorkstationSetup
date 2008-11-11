@@ -20,7 +20,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
 
 
 === Installation ===
- * {{{sudo /sbin/service rhn-satellite stop}}}
+ * {{{sudo /sbin/rhn-satellite stop}}}
  * {{{sudo yum install ant-nodeps junit ant-junit java-1.6.0-openjdk-devel}}}
  * {{{sudo rpm -Uvh http://mirrors.dotsrc.org/jpackage/1.7/generic/free/RPMS/ivy-1.3.1-1jpp.noarch.rpm}}}
  * {{{cd $GITDIR/spacewalk/java}}}
@@ -30,7 +30,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{cd $GITDIR/spacewalk/search-server}}}
  * {{{make test-srpm; rpmbuild --rebuild spacewalk-search-*.git.*.src.rpm; rpm -Uvh /usr/src/redhat/RPMS/noarch/spacewalk-search-0.4.1-1.git.*.noarch.rpm  }}}
  * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
- * {{{sudo /sbin/service rhn-satellite start}}}
+ * {{{sudo /sbin/rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
 
