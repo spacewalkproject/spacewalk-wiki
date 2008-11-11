@@ -29,9 +29,11 @@ Telemetry is designed to run on any client-system.  It can be run on the Spacewa
  * Django (webui)
  * Cheetah (report templating)
  * PyYAML (report config)
+ * httpd 
+ * mod_python
 
 {{{
-yum install Django python-cheetah PyYAML
+yum install Django python-cheetah PyYAML httpd mod_python
 }}}
 
  * python-crontab
@@ -46,8 +48,16 @@ tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
  *Telemetry
 
 {{{
-rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-1.noarch.rpm
+rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm
 }}}
+
+or (I have added the dependent rpms to the .spec file)
+
+{{{
+yum install http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm  --nogpgcheck
+}}}
+
+
 
 
 === Sample Reports ===
@@ -67,25 +77,24 @@ vi systemDetails.conf
 }}}
 
 {{{
-Name: System Details Report
-Description: This report provides a list of systems and supporting details (entitlements, channel subscriptions, & system groups.
+name: System Details Report
+description: This report provides a list of systems and supporting details (entitlements, channel subscriptions, & system groups.
 
-Report_Script: systemDetailsReport.py
+script: systemDetailsReport.py
 
-Satellites:
+satellites:
 - http://rlx-1-16.rhndev.redhat.com/rpc/api  # Change this to point to the api url for your Spacewalk server(s). #
 
-APIVersions:
+api_versions:
 - 5.1.0 Java
 - 5.1.1 Java
 
-Aggregate: no
+aggregate: no
 
-Templates:
+templates:
     txt: SystemDetails.txt
 
-Report_Dir: /home/tsanders/telemetry/reports/
-Report_Name: SystemDetails
+prefix: SystemDetails
 
 }}}
 
@@ -94,34 +103,31 @@ Report_Name: SystemDetails
 
 === Config Data Dictionary ===
 
- Name::
+ name::
      The name of the Report.
 
- Description::
+ description::
      A brief description of the Report.
 
- Report_Script::
+ script::
      The .py xmlrpc client script file used to gather report data.  Script needs to be in the ''/usr/share/telemetry/scripts'' directory.
 
- Satellites::
+ satellites::
      The url of the xmlrpc API interface on your Spacewalk server(s).  Multiple servers can be added on separate lines.
 
- APIVersions::
+ api_versions::
      The supported versions of the Spacewalk xmlrpc API specification.
 
- Aggregate::
+ aggregate::
      A simple boolean value used when specifying multiple Spacewalk servers to indicate whether or not to aggregate the data into a single report.
 
- Templates::
+ templates::
      The report templates that can be used with this report.  The templates need to be in the ''/usr/share/telemetry/templates'' directory. Currently, the supported types are: txt, csv, & html.
 
- Report_Dir::
-     The directory where the generated reports should be saved.
-
- Report_Name::
+ prefix::
      The name that will be given to the generated reports.  The format will be: Report_Name + datetimestamp + output type (.txt, .csv, .html).
  
- Criteria::
+ criteria::
      (''Optional'') User supplied criteria for the generated report. 
 
  * name: The name of the criterion.
@@ -133,17 +139,18 @@ Report_Name: SystemDetails
 
 === Web UI ===
 
-The webui is currently leveraging the simple development webserver that ships with Django.   Todo: Investigate deployment on Apache/mod_python.
+The webui is leverages apache + mod_python.
 
 '''Starting'''
 
 {{{
-telemetry runserver <port>
+telemetry --setup
+/sbin/service httpd restart
 }}}
 
 '''Browsing'''
 
-Browse to the following URL: http://127.0.0.1:<port> or http://localhost:<port>
+Browse to the following URL: http://127.0.0.1/telemetry/ or http://localhost/telemetry
 
 === Screen Shots ===
 
@@ -401,41 +408,33 @@ Packages:
 [https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackage.conf]
 
 {{{
-Name: Systems By Package Report
-Description: This report shows systems with packages installed that match the user supplied csv, along with the specific NVRE.
-Report_Script: systemsByPackageReport.py
+name: Systems By Package Report
+description: This report shows systems with packages installed that match the user supplied csv, along with the specific NVRE.
+script: systemsByPackageReport.py
 
-Satellites:
+satellites:
 - http://rlx-1-16.rhndev.redhat.com/rpc/api
 - http://rlx-1-16.rhndev.redhat.com/rpc/api
 
-APIVersions:
+api_versions:
 - 5.1.0 Java
 - 5.1.1 Java
 
-Criteria:
+criteria:
 - name: Packages
   label: packages
   type: csv
   cols: 75
-
-
-
-
-
-
-
   rows: 10
   required: yes
 
 
-Aggregate: yes
+aggregate: yes
 
-Templates:
+templates:
     txt: SystemsByPackage.txt
 
-Report_Dir: /home/tsanders/telemetry/reports/
-Report_Name: SystemsByPackage
+prefix: SystemsByPackage
 }}}
 
 
