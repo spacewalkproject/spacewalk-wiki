@@ -26,4 +26,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * note that Oracle libraries use gethostbyaddr and friends, so may not be usable under IPv6
  * make db-control usable with Oracle XE
  * Provide a tree structure with a depth greater than 1 for the Software Channel Subscriptions
- * Provide an embedded editor for the pre/post Kickstart scripts that does syntax highlighting
+ * Provide an embedded editor for the pre/post Kickstart scripts that does syntax highlighting (something like http://www.cdolivet.net/editarea/)
