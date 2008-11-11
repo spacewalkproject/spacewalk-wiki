@@ -89,8 +89,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
 ||  kickstart.profile.system.getLocale(string sessionKey, string kslabel) || 0.3 || 3 || bbuckingham || done || * Retrieve the locale information for the kickstart profile.[[BR]] * Returns struct[string locale, int useUtc] ||
 ||  kickstart.profile.system.setLocale(string sessionKey, string kslabel, string locale, boolean useUtc) || 0.3 || 3 || bbuckingham || done ||  ||
-||  kickstart.profile.system.listAssociatedFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham ||  ||  ||
-||  kickstart.profile.system.associateFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham ||  ||  ||
+||  kickstart.profile.system.listFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham || done || List the file preservation lists associated with the profile. ||
+||  kickstart.profile.system.addFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham || done || Add a list of file preservation lists to the profile. ||
+||  kickstart.profile.system.removeFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham || done || Remove a list of file preservation lists from the profile. ||
 ||  kickstart.profile.system.listAssociatedKeys(string sessionKey, string kslabel) || 0.3 || 3 || jdob || done || Retrieve the GPG and SSL keys associated with the kickstart profile. ||
 ||  kickstart.profile.system.associateKeys(string sessionKey, string kslabel, array[string description]) || 0.3 || 4 || jdob || done || Associate GPG and SSL keys with the kickstart profile. ||
 ||  ----   ||  ||  ||  ||  ||  ||
