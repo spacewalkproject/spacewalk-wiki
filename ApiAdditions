@@ -92,8 +92,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.listFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham || done || List the file preservation lists associated with the profile. ||
 ||  kickstart.profile.system.addFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham || done || Add a list of file preservation lists to the profile. ||
 ||  kickstart.profile.system.removeFilePreservations(string sessionKey, fllabels) || 0.4 || 4 || bbuckingham || done || Remove a list of file preservation lists from the profile. ||
-||  kickstart.profile.system.listKeys(string sessionKey, string kslabel) || 0.3 || 3 || jdob || done ||* Retrieve the GPG and SSL keys associated with the kickstart profile.[[BR]]'''* Renamed to listKeys in 0.4 - bbuckingham''' ||
-||  kickstart.profile.system.addKeys(string sessionKey, string kslabel, array[string description]) || 0.3 || 4 || jdob || done ||* Add GPG and SSL keys to the kickstart profile.[[BR]]'''* Renamed to addKeys in 0.4 - bbuckingham''' ||
+||  kickstart.profile.system.listKeys(string sessionKey, string kslabel) || 0.3 || 3 || jdob || done ||* Retrieve the GPG and SSL keys associated with the kickstart profile.[[BR]]'''* Renamed from listAssociatedKeys to listKeys in 0.4 - bbuckingham''' ||
+||  kickstart.profile.system.addKeys(string sessionKey, string kslabel, array[string description]) || 0.3 || 4 || jdob || done ||* Add GPG and SSL keys to the kickstart profile.[[BR]]'''* Renamed from associateKeys to addKeys in 0.4 - bbuckingham''' ||
 ||  kickstart.profile.system.removeKeys(string sessionKey, string kslabel, array[string description]) || 0.4 || 4 || bbuckingham || done || Remove GPG and SSL keys from the kickstart profile.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.software''' ||  ||  ||  ||  ||  ||
