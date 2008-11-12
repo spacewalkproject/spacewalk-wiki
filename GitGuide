@@ -92,7 +92,7 @@ A good sample ~/.gitconfig:
 
  1. '''ALWAYS''' work in branches.
  1. Your git commits are local only until you push them to the remote repository. (or submit a patch if you do not have commit access) 
- 1. Use rebase to update your branch before you merge it.
+ 1. Use rebase to update your local branch before you merge it.
  1. git commands can be run with {{{git-command}}} or {{{git command}}}
 
 == Everyday Workflow ==
@@ -222,6 +222,7 @@ git checkout --track -b localbranch origin/remotebranch
 
 Push latest changes from your local branch back to the remote branch: 
 {{{
+
 git-push origin localbranch:remotebranch
 }}}
 
@@ -238,10 +239,7 @@ git checkout myremotetrackingbranch
 git merge master
 }}}
 
-Deleting a remote branch entirely: (WARNING: be careful with this one)
-{{{
-git push origin :remotebranchtodelete
-}}}
+Deleting a remote branch entirely: For all intents and purposes lets leave remote branches for the time being. Deleting them can be a little dangerous if you were to happen to do it on a RELEASE branch, and send us digging into scm backups to recover it. Check with someone if you have a temporary remote branch that you really want deleted. Otherwise we'll probably clean them up from time to time.
 
  * It is a very good idea to treat your tracking branches as you do master. I.e. *do not* work directly in them, but rather create local branches off them to do your work and only use the tracking branch for pulling down changes and then merging in your work and immediately pushing it out.
  * Running "git push" without specifying the branches as per the above syntax will cause git to attempt to push your local commits from all tracked remote branches back to their respective remote counterparts. This is definitely counterintuitive. However if you only use tracking branches for pushing/pulling changes and instead work in local branches, this will not be an issue for you.
