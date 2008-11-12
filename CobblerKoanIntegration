@@ -160,7 +160,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Installer: Modify installer to configure Cobbler || 0.3 || 2 || paji || '''DONE'''  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Koan: Verify and test koan clients calling cobbler on spacewalk server || 0.4 || 2 || mmccune || '''DONE''' ||  ||
-||  Koan: Modify rhn-kickstart to call koan when kickstarting machine || 0.4 || 4 || mmccune || '''ACTIVE''' ||  ||
+||  Koan: Modify rhn-kickstart to call koan when kickstarting machine || 0.4 || 4 || mmccune || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization: Develop method for Spacewalk server calling Cobbler (xmlrpc) || 0.4 || 3 || mmccune || '''DONE''' ||  ||
 ||  Synchronization: Develop method for Cobbler calling Spacewalk (xmlrpc) || 0.4 || 3 || mmccune ||'''DONE'''  ||  ||
