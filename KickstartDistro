@@ -31,23 +31,6 @@ For RHEL5.2 Server:
 
  6.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
 
-****** Please note:  If the above fails, you most likely need to run the following to get Fedora 9 kickstarts to work  (this should be fixed in the next release) 
-{{{
-
-# sqlplus spacewalk/spacewalk@xe
-
-sqlplus> insert into rhnKSInstallType (id, label, name)
-        values (rhn_ksinstalltype_id_seq.nextval,
-                'fedora_9','Fedora 9'
-        );
-
-sqlplus>  update rhnKickstartCommandName set REQUIRED = 'N' where  name = 'mouse' OR name = 'langsupport';
-sqlplus> commit;
-
-}}}
-******
-
-
  7.  Create a kickstart file within the Spacewalk UI.
 {{{     
      a) log in with your appropriate user.
@@ -63,37 +46,14 @@ sqlplus> commit;
 
 
 
+== Accessing the kickstart tree directly ==
 
+If you look at a kickstart generated from the satellite, it uses --url http://HOSTNAME/ty/FkpH3KcN.  This is used by spacewalk to track a particular kickstart session.  These tiny urls are time based and expire after several hours.  If you want to access the kickstart tree directly, simply use this url:
 
+http://<spacewalk-hostname>/kickstart/dist/<ks-tree-label>
 
+so for example, if my spacewalk server is "spacewalk.example.com" and my kickstart tree label (that I specified in the instructions above) is "fedora-9-i386", I would use:  http://spacewalk.example.com/kickstart/dist/fedora-9-i386  to access the full kickstart tree.
 
+Please note:  the kickstart trees are not browsable from the web UI.  If you just put that url in your web browser you'll get a 404 since it isn't browsable.  However, if you add a file that is in the tree, you should be able to download it.  Example:  http://spacewalk.example.com/kickstart/dist/fedora-9-i386/GPL would allow you to download the GPL file that is in the kickstart tree. 
 
-
-
-== Things I had to do as a developer: ==
-
-{{{
-insert into rhnKSInstallType (id, label, name)
-        values (rhn_ksinstalltype_id_seq.nextval,
-                'fedora_9','Fedora 9'
-        );
-}}}
-Change certain advanced options to be not required (Since F-9 didn't like them)
-
-
-In rhnKickstartCommandName_data.sql
-{{{
--values (rhn_kscommandname_id_seq.nextval, 'langsupport', 'Y', 13, 'Y');
-+values (rhn_kscommandname_id_seq.nextval, 'langsupport', 'Y', 13, 'N');
--values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'Y');
-+values (rhn_kscommandname_id_seq.nextval, 'mouse', 'Y', 15, 'N');
-
-
-or to change existing sat:
-
-update rhnKickstartCommandName set REQUIRED = 'N' where  name = 'mouse' OR name = 'langsupport';
-
-
-
-}}}
 
