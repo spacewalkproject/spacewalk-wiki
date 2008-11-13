@@ -58,10 +58,11 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.findByCve(string sessionKey, string cveName) || 0.3 || 3 || bbuckingham || done || Retrieve errata based on CVE (e.g. CVE-2008-1233)  ||
-||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]string advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || tbd || bbuckingham ||  || * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise. ||
-||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd || bbuckingham ||  || * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
+||  errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]int advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[int id, string summary]], [[BR]]array[string keyword]) || 0.4 || 3 || bbuckingham || done || * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise. ||
+||  errata.addPackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || 2 || bbuckingham || done || * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns the number of packages added on success, exception thrown otherwise.  ||
 
-||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || tbd || bbuckingham ||  || * Remove a set of packages from an errata.[[BR]] * Returns 1 on success, exception thrown otherwise.  ||
+
+||  errata.removePackages(string sessionKey, string advisoryName, array[int packageId]) || 0.4 || 2 || bbuckingham || done || * Remove a set of packages from an errata.[[BR]] * Returns the number of packages removed on success, exception thrown otherwise.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
 ||  kickstart.listAllIpRanges(string sessionKey) || 0.2 || 3 || jsherrill  || done ||  List all ip ranges for all kickstarts ||
