@@ -27,8 +27,8 @@ Using nightly builds from: http://hudson.zones.apache.org/hudson/job/Nutch-trunk
 || ant.jar || ant ||  || 1.7.0 || || under jetty-ext ||  ||
 || lucene-core-2.3.0.jar  || lucene ||  || 2.3.0 ||  ||  || DONE ||
 || lucene-misc-2.3.0.jar || lucene ||  || 2.3.0 ||  ||  || DONE ||
-|| xerces-2_6_2-apis.jar || xerces-j2 ||  || 2.7.1 ||  ||  ||  ||
-|| xerces-2_6_2.jar ||  ||  ||  ||  ||  ||  ||
+|| xerces-2_6_2-apis.jar || UNSURE ||  ||  ||  || This might be included with xerces-j2, not sure ||  ||
+|| xerces-2_6_2.jar || xerces-j2 ||  || 2.7.1 ||  ||  ||  ||
 || hadoop-0.18.1-core.jar ||  ||  ||  ||  ||  ||  ||
 || jets3t-0.6.0.jar ||  ||  ||  ||  ||  ||  ||
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  ||  ||
