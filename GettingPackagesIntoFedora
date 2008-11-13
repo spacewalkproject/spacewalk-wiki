@@ -129,3 +129,4 @@ This packages need to be edited and then eventualy imported to Fedora:
  || velocity-tools-1.2-1jpp_1rh.src.rpm || || || ||
 
 There is also a set of jars currently in search-server which are not rpms which will probably need to be packaged up to be accepted into Fedora.
+See GettingPackagesIntoFedora/Nutch
