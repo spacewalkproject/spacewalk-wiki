@@ -33,7 +33,7 @@ Looking at: nutch-2008-11-12_04-01-21
 || hadoop-0.18.1-core.jar ||  ||  ||  ||  ||  ||  ||
 || jets3t-0.6.0.jar ||  ||  ||  ||  || https://jets3t.dev.java.net/ || NEEDS_RPM ||
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  ||  ||
-|| taglibs-i18n.jar ||  ||  ||  ||  ||  ||  ||
+|| taglibs-i18n.jar || unsure, might be related to jakarta-taglibs-i18n ||  || not in fedora ||  ||  || NEEDS_RPM ||
 || icu4j-3_6.jar  || icu4j ||  || 3.6.1 ||  ||  || DONE ||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || DONE ||
 
@@ -55,8 +55,8 @@ Looking at: hadoop-0.18.2
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  ||  ||
 || oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  ||  || DONE ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  ||  ||
-|| slf4j-api-1.4.3.jar ||  ||  ||  ||  || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM ||
-|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM ||
+|| slf4j-api-1.4.3.jar ||  ||  ||  ||  || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM ||
+|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM ||
 ||xmlenc-0.52.jar  ||  ||  ||  ||  || http://xmlenc.sourceforge.net/ || NEEDS_RPM ||
 
 
