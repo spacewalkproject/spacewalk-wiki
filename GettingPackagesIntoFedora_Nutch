@@ -21,20 +21,20 @@ Using nightly builds from: http://hudson.zones.apache.org/hudson/job/Nutch-trunk
 || jasper-compiler.jar || tomcat5-jasper ||  || 5.5.27 || || under jetty-ext || ||
 || jasper-runtime.jar  || tomcat5-jasper ||  || 5.5.27 || || under jetty-ext || ||
 || jsp-api.jar || tomcat5-jsp-2.0-api ||  || 5.5.27 || || under jetty-ext ||  ||
+|| servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  ||  ||
 || ant.jar || ant ||  || 1.7.0 || || under jetty-ext ||  ||
 || lucene-core-2.3.0.jar  || lucene ||  || 2.3.0 ||  ||  || DONE ||
-|| servlet-api.jar ||  ||  ||  ||  ||  ||  ||
-|| xerces-2_6_2-apis.jar ||  ||  ||  ||  ||  ||  ||
-|| commons-httpclient-3.0.1.jar ||  ||  ||  ||  ||  ||  ||
+|| lucene-misc-2.3.0.jar || lucene ||  || 2.3.0 ||  ||  || DONE ||
+|| xerces-2_6_2-apis.jar || xerces-j2 ||  || 2.7.1 ||  ||  ||  ||
+|| xerces-2_6_2.jar ||  ||  ||  ||  ||  ||  ||
+|| commons-httpclient-3.0.1.jar || jakarta-commons-httpclient ||  || 3.1.0 ||  ||  ||  ||
 || hadoop-0.18.1-core.jar ||  ||  ||  ||  ||  ||  ||
 || jets3t-0.6.0.jar ||  ||  ||  ||  ||  ||  ||
-|| junit-3.8.1.jar  ||  ||  ||  ||  ||  ||  ||
-|| lucene-misc-2.3.0.jar ||  ||  ||  ||  ||  ||  ||
+|| junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  ||  ||
 || taglibs-i18n.jar ||  ||  ||  ||  ||  ||  ||
-|| xerces-2_6_2.jar ||  ||  ||  ||  ||  ||  ||
-|| commons-lang-2.1.jar ||  ||  ||  ||  ||  ||  ||
-|| icu4j-3_6.jar  ||  ||  ||  ||  ||  ||  ||
-|| jetty-5.1.4.jar ||  ||  ||  ||  ||  ||  ||
+|| commons-lang-2.1.jar || jakarta-commons-lang ||  || 2.3 ||  ||  ||  ||
+|| icu4j-3_6.jar  || icu4j ||  || 3.6.1 ||  ||  || DONE ||
+|| jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  ||  ||
 
 
 
