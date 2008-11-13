@@ -51,7 +51,7 @@ Looking at: hadoop-0.18.2
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  ||  ||
 || jets3t-0.6.0.jar ||  ||  ||  ||  ||  ||  ||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || DONE ||
-|| kfs-0.1.3.jar ||  ||  ||  ||  ||  ||  ||
+|| kfs-0.1.3.jar ||  ||  ||  ||  || http://kosmosfs.wiki.sourceforge.net/ || BUILD FAILED, I think it needs log4cpp ||
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  ||  ||
 || oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  ||  || DONE ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  ||  ||
