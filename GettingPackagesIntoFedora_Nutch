@@ -6,14 +6,14 @@ Using nightly builds from: http://hudson.zones.apache.org/hudson/job/Nutch-trunk
  The reason for using a nightly build and not the release "0.9" is that I ran into problems when trying to index "/help/index.pxt".  Nutch was crashing, I looked on the mailing list and saw other people had similar problems which were resolved when they upgraded to the nightly builds.
 
 == Nutch Dependencies ==
-|| JAR File || RPM Name || Spacewalk Version || Fedora-9 Version || Packager/Owner || Comments || Status
+|| JAR File || RPM Name || Spacewalk Version || Fedora-9/10 Version || Packager/Owner || Comments || Status
 || commons-cli-2.0-SNAPSHOT.jar || jakarta-commons-cli ||  || 1.0 || jmrodi || Might need a version upgrade? ||  ||
 || commons-logging-1.0.4.jar || jakarta-commons-logging ||  || 1.0.4 ||  ||  || DONE ||
 || commons-logging-api-1.0.4.jar || jakarta-commons-logging ||  || 1.0.4 ||  ||  || DONE ||
-|| log4j-1.2.15.jar ||  ||  ||  ||  ||  ||  ||
-|| pmd-3.6.jar ||  ||  ||  ||  ||  ||  ||
-|| jaxen-1.1-beta-7.jar ||  ||  ||  ||  || under pmd-ext  ||  ||
-|| jakarta-oro-2.0.8.jar ||  ||  ||  ||  || under pmd-ext ||  ||
+|| log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  ||  ||
+|| pmd-3.6.jar || pmd ||  || 3.6 ||  ||  || DONE ||
+|| jaxen-1.1-beta-7.jar || jaxen ||  || 1.1 ||  || under pmd-ext  || DONE ||
+|| jakarta-oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  || under pmd-ext || DONE ||
 || tika-0.1-incubating.jar ||  ||  ||  ||  ||  ||  ||
 || commons-codec-1.3.jar ||  ||  ||  ||  ||  ||  ||
 || jakarta-oro-2.0.7.jar ||  ||  ||  ||  ||  ||  ||
@@ -50,7 +50,7 @@ Using nightly builds from: http://hudson.zones.apache.org/hudson/job/Nutch-trunk
 || jetty-5.1.4.jar ||  ||  ||  ||  ||  ||  ||
 || junit-3.8.1.jar ||  ||  ||  ||  ||  ||  ||
 || kfs-0.1.3.jar ||  ||  ||  ||  ||  ||  ||
-|| log4j-1.2.15.jar ||  ||  ||  ||  ||  ||  ||
+|| log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  ||  ||
 || oro-2.0.8.jar ||  ||  ||  ||  ||  ||  ||
 || servlet-api.jar ||  ||  ||  ||  ||  ||  ||
 || slf4j-api-1.4.3.jar ||  ||  ||  ||  ||  ||  ||
