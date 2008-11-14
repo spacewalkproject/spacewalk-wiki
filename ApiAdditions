@@ -34,6 +34,14 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || channel.access.setOrgSharing(string sessionKey, string channelLabel, string access) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Set the org sharing access for the channel. Access may be set to public, private or protected. [[BR]]* Returns 1 on success, exception thrown otherwise.||
 || channel.access.getOrgSharing(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Retrieve the current org sharing access for the channel.[[BR]]* Returns a string (public, private or protected).||
 ||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
+|| channel.listAllChannels(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+|| channel.listRedHatChannels(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+|| channel.listPopularChannels(string sessionKey, int popularityCount) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+|| channel.listMyChannels(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+|| channel.listSharedChannels(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+|| channel.listRetiredChannels(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)||
+||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.org''' ||  ||  ||  ||  ||  ||
 || channel.org.list(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Sat/Org/Channel Admin.||
 
