@@ -151,6 +151,11 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || org.trusts.enableSystemMigration(string sessionKey, int orgId, int trustedOrgId) || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* Enable system migrations for an org (trustedOrgId) within an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin. ||
 || org.trusts.disableSystemMigration(string sessionKey, int orgId, int trustedOrgId) || 0.4 || 4 || jortel ||  ||(Multi Org Phase2 support)[[BR]]* Disable system migrations for an org (trustedOrgId) within an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Org Admin.||
 
+|| org.trusts.listOrgs(string sessionKey) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* List all organizations trusted by the user's organization.[[BR]]* Results similar to multiorg/Organizations from web interface.[[BR]]* User must be either Satellite or Org Admin.||
+|| org.trusts.getDetails(string sessionKey, int trustedOrgId) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Results similar to multiorg/OrgTrustDetails from web interface.[[BR]]* Retrieve details on the trusted organization provided.[[BR]]* User must be either Satellite or Org Admin.||
+|| org.trusts.listChannelsProvided(string sessionKey, int trustedOrgId) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* List all software channels provided by the trusted organization.[[BR]]* Results similar to multiorg/channels/Provided from web interface.[[BR]]* User must be either Satellite or Org Admin.||
+|| org.trusts.listChannelsConsumed(string sessionKey, int trustedOrgId) || 0.4 || 2 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* List all software channels consumed by the trusted organization.[[BR]]* Results similar to multiorg/channels/Consumed from web interface.[[BR]]* User must be either Satellite or Org Admin.||
+
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
 ||  packages.getDetails(*,downloadURL)   || 0.5 ||  ||  ||  ||  ||
