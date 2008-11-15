@@ -19,7 +19,7 @@ Then using a Fedora boot CD in the client (advanced users can check out PXE boot
 == Registering Fedora clients ==
 For this we want an activation key.  Create a spacewalk activation key and associate it with your "Fedora 9 x86_64" channel.  It's important that the key is associated with a specific channel and not just the default.  You then have to install packages on the client and register with your server.  The process is described in [RegisteringClients].  However, if you've been kickstarting your clients you may want this to happen as part of the kickstart process.
 
-As a precondition to this process you must ensure that your Fedora kickstart installs the pyOpenSSL package.  With Fedora 9 and Spacewalk 0.3 automatically registering clients requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
+As a precondition to this process you must ensure that your Fedora kickstart installs the m2crpto package.  This must be within your kickstart tree.  With Fedora 9 and Spacewalk 0.3 automatically registering clients requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
 
 {{{
 # Grab some packages in order to register the spacewalk system
