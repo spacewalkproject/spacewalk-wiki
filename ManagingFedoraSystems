@@ -32,7 +32,8 @@ wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-0.2.2-1.fc9.noarch
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-actions-0.2.2-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-client-0.2.2-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-management-0.2.2-1.fc9.noarch.rpm
-wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
+# You'd expect to install rhnlib, however this is installed by the spacewalk server.
+#wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnpush-0.2.4-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnsd-4.6.1-1.el5.i386.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el5_2.6.noarch.rpm
@@ -40,8 +41,9 @@ wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el
 # Install the packages
 rpm --nodeps -Uvh *.rpm
 
-# Now register the system
-rhnreg_ks --serverUrl=http://your.spacewalk.server/XMLRPC --activationkey=1-dcddcdcdcdcdcdcdcdcdcd 
+# Now register the system, except it's unnecessary.  You're spacewalk server has already registered your
+# system for you.
+#rhnreg_ks --serverUrl=http://your.spacewalk.server/XMLRPC --activationkey=1-dcddcdcdcdcdcdcdcdcdcd 
 
 # be clean (and safe(ish))
 rm -f rhn*.rpm
