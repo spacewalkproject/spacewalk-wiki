@@ -29,21 +29,71 @@ The lab consists of at least two nodes and exactly two network segments. One seg
      1. RHT style networking setup
        a. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
        a. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
-         i. ifcfg-eth0: [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=dhcp [[BR]] TYPE=Ethernet
-         i. ifcfg-eth1: [[BR]]DEVICE=eth1 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=none [[BR]] IPADDR=10.1.0.1 [[BR]] NETMASK=255.255.255.0 [[BR]] TYPE=Ethernet
+         i. ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
+         i. ifcfg-eth1
+{{{
+DEVICE=eth1
+ONBOOT=yes
+BOOTPROTO=none
+IPADDR=10.1.0.1
+NETMASK=255.255.255.0
+TYPE=Ethernet
+}}}
          i. Reboot your spacewalk machine – it should come up with two network interfaces active: eth0 and eth1. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0 (check this with route -n)
        a. On your kickstart target machines, networking should be configured as follows:
-         i. On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ifcfg-eth0 should end up (after kickstarting) configured as:
-           * DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
+         i. On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ should end up (after kickstarting) configured as:
+           * ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
          i. On a VM host machine, configure as follows:
            * Add the following lines to the end of /etc/sysctl.conf to ensure that no netfilter logic acts on the bridge interface. (alternatively you could configure netfilter (iptables) for your installation):
-            * net.bridge.bridge-nf-call-ip6tables = 0[[BR]] net.bridge.bridge-nf-call-iptables = 0[[BR]] net.bridge.bridge-nf-call-arptables = 0[[BR]] net.bridge.bridge-nf-filter-pppoe-tagged = 0[[BR]] net.bridge.bridge-nf-filter-vlan-tagged = 0
+{{{
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+net.bridge.bridge-nf-filter-pppoe-tagged = 0
+net.bridge.bridge-nf-filter-vlan-tagged = 0
+}}}
            * Configure network interfaces in /etc/sysconfig/network-scripts as follows: 
-            * ifcfg-eth0 [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=none[[BR]] TYPE=Ethernet[[BR]] BRIDGE=swbr0
-            * ifcfg-swbr0 [[BR]]DEVICE=swbr0 [[BR]] TYPE=Bridge[[BR]] BOOTPROTO=static[[BR]] ONBOOT=yes[[BR]] DELAY=0[[BR]] IPADDR=10.1.0.10[[BR]] NETMASK=255.255.255.0[[BR]] DNS1=10.1.0.1
+            * ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=none
+TYPE=Ethernet
+BRIDGE=swbr0
+}}}
+            * ifcfg-swbr0:
+{{{
+DEVICE=swbr0
+TYPE=Bridge
+BOOTPROTO=static
+ONBOOT=yes
+DELAY=0
+IPADDR=10.1.0.10
+NETMASK=255.255.255.0
+DNS1=10.1.0.1
+}}}
        a. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth1. You should see only routes to the 10.1.0.x network.
-       a. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts/ifcfg-eth0 to:
-         i. DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet [[BR]]Alternatively, you can configure your spacewalk machine as a router, and just add [[BR]]GATEWAY=10.1.0.1 [[BR]][[Image(spacewalk-ddwrt.png)]]
+       a. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts to:
+         i. ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
+Alternatively, you can configure your spacewalk machine as a router, and just add [[BR]]GATEWAY=10.1.0.1 [[BR]][[Image(spacewalk-ddwrt.png)]]
    A. '''802.1q VLAN trunking method''':  This method utilizes a programmable network switch and native linux networking capabilities to reduce spacewalk hardware requirements and improve flexibility and ease of use. The example provided is based on DD-WRT ( [http://www.dd-wrt.com/ http://www.dd-wrt.com] ) v24-sp1 firmware on a Linksys WRT54GL v1.1 router. This provides a mechanism by which remote developers can set up VLAN trunking with relative low cost and low complexity. Configuration varies only very slightly with other switch hardware. In the corp environment existing packet switching infrastructure should be substituted where appropriate.  Note that VLAN trunking is a particularly useful method of configuration for large VM hosts in any corp environment that has multiple networks – should spacewalk care to take on the provisioning of VM hosts of this type, this configuration can act as a starting point of a model for that design work.
      1. Hardware setup
        a. Required equipment
@@ -79,19 +129,93 @@ The lab consists of at least two nodes and exactly two network segments. One seg
      1. RHT style networking:
        a. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
        a. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
-         i. ifcfg-eth0: [[BR]]DEVICE=eth0 [[BR]] ONBOOT=no[[BR]] BOOTPROTO=none[[BR]] TYPE=Ethernet
-         i. ifcfg-eth0.2: [[BR]]DEVICE=eth1.2 [[BR]] VLAN=yes[[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
-         i. ifcfg-eth0.3: [[BR]]DEVICE=eth1.3 [[BR]] VLAN=yes[[BR]] ONBOOT=yes[[BR]] BOOTPROTO=none[[BR]] IPADDR=10.1.0.1[[BR]] NETMASK=255.255.255.0[[BR]] TYPE=Ethernet
+         i. ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=no
+BOOTPROTO=none
+TYPE=Ethernet
+}}}
+         i. ifcfg-eth0.2:
+{{{
+DEVICE=eth1.2
+VLAN=yes
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
+         i. ifcfg-eth0.3:
+{{{
+DEVICE=eth1.3
+VLAN=yes
+ONBOOT=yes
+BOOTPROTO=none
+IPADDR=10.1.0.1
+NETMASK=255.255.255.0
+TYPE=Ethernet
+}}}
          i. Reboot your spacewalk machine – it should come up with two network interfaces active: eth0.2 and eth0.3. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0.2 (check this with route -n)
        a. A bare metal kickstart target requires the following in /etc/sysconfig/network-scripts
-         i. ifcfg-eth0 [[BR]]DEVICE=eth0 [[BR]] ONBOOT=no[[BR]] TYPE=Ethernet[[BR]] BOOTPROTO=none
-         i. ifcfg-eth0.3 [[BR]]VLAN=yes [[BR]] DEVICE=eth0.3[[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
+         i. ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=no
+TYPE=Ethernet
+BOOTPROTO=none
+}}}
+         i. ifcfg-eth0.3:
+{{{
+VLAN=yes
+DEVICE=eth0.3
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
        a. On a target VM host machine(s), edit files in /etc/sysconfig/network-scripts as follows:
-         i. ifcfg-eth0 [[BR]]DEVICE=eth0 [[BR]] ONBOOT=no[[BR]] BOOTPROTO=none[[BR]] TYPE=Ethernet
-         i. ifcfg-eth0.2 [[BR]]DEVICE=eth0.2 [[BR]] VLAN=yes[[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
-         i. ifcfg-eth0.3 [[BR]]VLAN=yes [[BR]] DEVICE=eth0.3[[BR]] BOOTPROTO=none[[BR]] ONBOOT=yes[[BR]] TYPE=Ethernet[[BR]] BRIDGE=swbr0
-         i. ifcfg-swbr0 [[BR]]DEVICE=swbr0 [[BR]] TYPE=Bridge[[BR]] BOOTPROTO=static[[BR]] ONBOOT=yes[[BR]] DELAY=0[[BR]] IPADDR=10.1.0.10[[BR]] NETMASK=255.255.255.0[[BR]] DNS1=10.1.0.1
-       a. On your VM host machine(s), add the following lines to the end of /etc/sysctl.conf:net.bridge.bridge-nf-call-ip6tables = 0[[BR]] net.bridge.bridge-nf-call-iptables = 0[[BR]] net.bridge.bridge-nf-call-arptables = 0[[BR]] net.bridge.bridge-nf-filter-pppoe-tagged = 0[[BR]] net.bridge.bridge-nf-filter-vlan-tagged = 0 [[BR]]These lines ensure that no netfilter logic acts on the bridge interface. Alternatively you could configure netfilter (iptables) for your installation.
+         i. ifcfg-eth0:
+{{{
+DEVICE=eth0
+ONBOOT=no
+BOOTPROTO=none
+TYPE=Ethernet
+}}}
+         i. ifcfg-eth0.2:
+{{{
+DEVICE=eth0.2
+VLAN=yes
+ONBOOT=yes
+BOOTPROTO=dhcp
+TYPE=Ethernet
+}}}
+         i. ifcfg-eth0.3:
+{{{
+VLAN=yes
+DEVICE=eth0.3
+BOOTPROTO=none
+ONBOOT=yes
+TYPE=Ethernet
+BRIDGE=swbr0
+}}}
+         i. ifcfg-swbr0:
+{{{
+DEVICE=swbr0
+TYPE=Bridge
+BOOTPROTO=static
+ONBOOT=yes
+DELAY=0
+IPADDR=10.1.0.10
+NETMASK=255.255.255.0
+DNS1=10.1.0.1
+}}}
+       a. On your VM host machine(s), add the following lines to the end of /etc/sysctl.conf:
+{{{
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+net.bridge.bridge-nf-filter-pppoe-tagged = 0
+net.bridge.bridge-nf-filter-vlan-tagged = 0
+}}}
+These lines ensure that no netfilter logic acts on the bridge interface. Alternatively you could configure netfilter (iptables) for your installation.
        a. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth0.3. You should see only routes to the 10.1.0.x network.
        a. NOTE: Each of your target nodes are configured to be internet connected as well should the need arise. To activate internet access on a target node, execute “ifup eth0.2”. Be sure to issue “ifdown eth0.2” when you're done to isolate the machine once again from the rest of your infrastructure.
        a. NOTE: There is an alternate convention in linux for naming 802.1q ports – the pattern is vlanX and has some arguable advantages to the ethX.Y convention. Libvirt however appears to be incompatible with the vlanX convention, which is why the ethX.Y convention is used here.
@@ -105,7 +229,29 @@ The lab consists of at least two nodes and exactly two network segments. One seg
      1. If your target is to be a VM host, install packages appropriate to the technology you're going to provision with.[[BR]] 
  I. '''Software Configuration'''
    A. Spacewalk node
-     1. DHCP server: note that this configuration is prelude to what will be spacewalk's ability to manipulate dhcp configuration directly. This stuff is for R&D purposes only. Edit /etc/dhcpd.conf such that it looks like this:ddns-update-style ad-hoc;[[BR]] shared-network cloud{[[BR]] subnet 10.1.0.0 netmask 255.255.255.0 {[[BR]] # My kickstart network[[BR]] option subnet-mask 255.255.255.0;[[BR]] option broadcast-address 10.1.0.255;[[BR]] option routers 10.1.0.1;[[BR]] option domain-name-servers 10.1.0.1,10.1.0.2;[[BR]] option domain-name "mykickstart.redhat.com";[[BR]] range 10.1.0.100 10.1.0.254;[[BR]]next-server 10.1.0.1;[[BR]] filename "pxelinux.0";[[BR]] group {[[BR]] host target1.mykickstart.redhat.com{[[BR]] <nowiki>hardware ethernet <mac addr of target eth0>;</nowiki>[[BR]] fixed-address 10.1.0.10;[[BR]] }[[BR]] }[[BR]] }[[BR]] }
+     1. DHCP server: note that this configuration is prelude to what will be spacewalk's ability to manipulate dhcp configuration directly. This stuff is for R&D purposes only. Edit /etc/dhcpd.conf such that it looks like this:
+{{{
+ddns-update-style ad-hoc;
+shared-network cloud{
+	subnet 10.1.0.0 netmask 255.255.255.0 {
+		# My kickstart network
+		option subnet-mask 255.255.255.0;
+		option broadcast-address 10.1.0.255;
+		option routers 10.1.0.1;
+		option domain-name-servers 10.1.0.1,10.1.0.2;
+		option domain-name "mykickstart.redhat.com";
+		range 10.1.0.100 10.1.0.254;
+		next-server 10.1.0.1;
+		filename "pxelinux.0";
+		group {
+			host target1.mykickstart.redhat.com{
+				hardware ethernet <mac addr of target eth0>;
+				fixed-address 10.1.0.10;
+			}
+		}
+	}
+}
+}}}
        a. Note that the above configuration provides an example of two different ways of allocating addresses to nodes.
          i. by using the “range” directive and providing a range of addresses within the subnet, dhcp will react to machines with unknown MAC addresses by issuing a lease on an IP address in that range to the machine in question.
          i. by defining a “host” entity with a “hardware ethernet” and “fixed-address” pair, dhcp will react to a machine presenting the MAC in question by issuing the specified fixed IP address assignment.
