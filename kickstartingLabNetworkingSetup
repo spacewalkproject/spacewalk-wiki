@@ -118,7 +118,7 @@ The lab consists of at least two nodes and exactly two network segments. One seg
          i. first hard drive
          i. cdrom
          i. pxe
-       a. <nowiki>To prepare a node for bare metal kickstart, execute “dd if=/dev/zero of=/dev/<hard disk device e.g. hda> bs=512 count=1”. </nowiki>'''WARNING: This command destroys your system's boot sector and partition map – it wipes out the drive for all intents and purposes. Obviously: don't issue this command on any machine, physical or otherwise, unless you can afford to loose its contents forever!!! '''
+       a. To prepare a node for bare metal kickstart, execute “dd if=/dev/zero of=/dev/<hard disk device e.g. hda> bs=512 count=1”.  '''WARNING: This command destroys your system's boot sector and partition map – it wipes out the drive for all intents and purposes. Obviously: don't issue this command on any machine, physical or otherwise, unless you can afford to loose its contents forever!!! '''
      1. VM Hosts
        a. Create one or more virtual machines using whatever technology is appropriate, and then prepare the machines as described in III.B.i. if applicable
    A. Testing
