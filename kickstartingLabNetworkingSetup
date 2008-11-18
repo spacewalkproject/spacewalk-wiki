@@ -8,7 +8,7 @@ The lab consists of at least two nodes and exactly two network segments. One seg
 
 
  I. '''Networking''': There are a number of ways to accomplish the sort of network isolation required for this lab to work. Two of them are described here, a third gets brief mention: it's possible to do all of this inside of a single machine. That machine, however, would have to be sufficiently powerful to competently run both spacewalk and one or more virtual machines. As such machines are not the norm for spacewalk developers, this is left as an exercise to the reader. Two methods described here are: Spacewalk machine with two NICs (dual homed), and single NIC machines utilizing 802.1q VLAN trunking.[[BR]] 
-   A. '''Dual-homed spacewalk machine method'''[[Image(dual-homed-spacewalk.png)]]
+   A. '''Dual-homed spacewalk machine method'''[[Image(spacewalk-multihome.png)]]
      1. Hardware setup
        a. Required equipment
          i. A spacewalk machine with two network interface cards (NICs).
@@ -41,7 +41,7 @@ The lab consists of at least two nodes and exactly two network segments. One seg
          i. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth1. You should see only routes to the 10.1.0.x network.
          i. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts/ifcfg-eth0 to:
            * DEVICE=eth0[[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet[[BR]]Alternatively, you can configure your spacewalk machine as a router, and just addGATEWAY=10.1.0.1
-   A. '''802.1q VLAN trunking method''': [[Image(vlan-trunked-spacewalk.png)]] This method utilizes a programmable network switch and native linux networking capabilities to reduce spacewalk hardware requirements and improve flexibility and ease of use. The example provided is based on DD-WRT ( [http://www.dd-wrt.com/ http://www.dd-wrt.com] ) v24-sp1 firmware on a Linksys WRT54GL v1.1 router. This provides a mechanism by which remote developers can set up VLAN trunking with relative low cost and low complexity. Configuration varies only very slightly with other switch hardware. In the corp environment existing packet switching infrastructure should be substituted where appropriate.  Note that VLAN trunking is a particularly useful method of configuration for large VM hosts in any corp environment that has multiple networks – should spacewalk care to take on the provisioning of VM hosts of this type, this configuration can act as a starting point of a model for that design work.
+   A. '''802.1q VLAN trunking method''': [[Image(spacewalk-ddwrt.png)]] This method utilizes a programmable network switch and native linux networking capabilities to reduce spacewalk hardware requirements and improve flexibility and ease of use. The example provided is based on DD-WRT ( [http://www.dd-wrt.com/ http://www.dd-wrt.com] ) v24-sp1 firmware on a Linksys WRT54GL v1.1 router. This provides a mechanism by which remote developers can set up VLAN trunking with relative low cost and low complexity. Configuration varies only very slightly with other switch hardware. In the corp environment existing packet switching infrastructure should be substituted where appropriate.  Note that VLAN trunking is a particularly useful method of configuration for large VM hosts in any corp environment that has multiple networks – should spacewalk care to take on the provisioning of VM hosts of this type, this configuration can act as a starting point of a model for that design work.
      1. Hardware setup
        a. Required equipment
          i. A spacewalk machine with one network interface card (NIC).
@@ -64,7 +64,7 @@ The lab consists of at least two nodes and exactly two network segments. One seg
          i. On the Wireless->Basic Settings page:
            * If you don't intend to use the wireless capabilities of the device, set “Wireless Network Mode” to “disabled” to prevent unwanted snooping.
            * If you do intend on using the wireless capabilities of the device, you should at the very least re-name the router from the default by changing the “Wireless Network Name” field. Other methods of securing the router are available on the various other tabs subtending the “Wireless” tab.
-         i. On the Setup->VLANs page [[Image(dd-wrt-vlans-spacewalk.png)]]
+         i. On the Setup->VLANs page [[Image(snapshot16.png)]]
            * VLAN 0 acts as a uplink to the rest of your infrastructure.
            * VLAN 2 moves tagged traffic and is bridged to VLAN 0.
            * VLAN 3 moves tagged traffic and is isolated
