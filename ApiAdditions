@@ -139,6 +139,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
 ||  org.listOrgs(string sessionKey)   || 0.4 || 4 || jortel || done ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
+||  org.migrateSystems(string sessionKey, array[int serverId], int toOrgId)   || 0.4 || 24 || bbuckingham || ||(Multi Org Phase2 support)[[BR]]* Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org.trust''' ^NEW^ ||  ||  ||  ||  ||  ||
 || org.trusts.listTrusts(string sessionKey, int orgId) || 0.4 || 4 || jortel  || done ||(Multi Org Phase2 support)[[BR]]* Lists the orgs that the organization (orgId) may define as trusted and info on whether or not each org (trustOrgId) is in the oganization's trust ring (i.e. org enabled/checked).[[BR]]* Returns array[ struct[ int orgId, string orgName, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Spacewalk Admin.||
