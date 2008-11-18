@@ -27,23 +27,23 @@ The lab consists of at least two nodes and exactly two network segments. One seg
            * a regular ethernet cable connected to a dedicated ethernet switch
          i. If you chose to use a dedicated switch, plug one or more target machines into the dedicated switch using regular ethernet cables.
      1. RHT style networking setup
-         i. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
-         i. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
-           * ifcfg-eth0: [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=dhcp [[BR]] TYPE=Ethernet
-           * ifcfg-eth1: [[BR]]DEVICE=eth1 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=none [[BR]] IPADDR=10.1.0.1 [[BR]] NETMASK=255.255.255.0 [[BR]] TYPE=Ethernet
-           * Reboot your spacewalk machine – it should come up with two network interfaces active: eth0 and eth1. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0 (check this with route -n)
-         i. On your kickstart target machines, networking should be configured as follows:
-           * On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ifcfg-eth0 should end up (after kickstarting) configured as:
-             * DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
-           * On a VM host machine, configure as follows:
-             * Add the following lines to the end of /etc/sysctl.conf to ensure that no netfilter logic acts on the bridge interface. (alternatively you could configure netfilter (iptables) for your installation):
-              * net.bridge.bridge-nf-call-ip6tables = 0[[BR]] net.bridge.bridge-nf-call-iptables = 0[[BR]] net.bridge.bridge-nf-call-arptables = 0[[BR]] net.bridge.bridge-nf-filter-pppoe-tagged = 0[[BR]] net.bridge.bridge-nf-filter-vlan-tagged = 0
-             * Configure network interfaces in /etc/sysconfig/network-scripts as follows: 
-              * ifcfg-eth0 [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=none[[BR]] TYPE=Ethernet[[BR]] BRIDGE=swbr0
-              * ifcfg-swbr0 [[BR]]DEVICE=swbr0 [[BR]] TYPE=Bridge[[BR]] BOOTPROTO=static[[BR]] ONBOOT=yes[[BR]] DELAY=0[[BR]] IPADDR=10.1.0.10[[BR]] NETMASK=255.255.255.0[[BR]] DNS1=10.1.0.1
-         i. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth1. You should see only routes to the 10.1.0.x network.
-         i. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts/ifcfg-eth0 to:
-           * DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet [[BR]]Alternatively, you can configure your spacewalk machine as a router, and just add [[BR]]GATEWAY=10.1.0.1 [[BR]][[Image(spacewalk-ddwrt.png)]]
+       a. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
+       a. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
+         i. ifcfg-eth0: [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=dhcp [[BR]] TYPE=Ethernet
+         i. ifcfg-eth1: [[BR]]DEVICE=eth1 [[BR]] ONBOOT=yes [[BR]] BOOTPROTO=none [[BR]] IPADDR=10.1.0.1 [[BR]] NETMASK=255.255.255.0 [[BR]] TYPE=Ethernet
+         i. Reboot your spacewalk machine – it should come up with two network interfaces active: eth0 and eth1. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0 (check this with route -n)
+       a. On your kickstart target machines, networking should be configured as follows:
+         i. On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ifcfg-eth0 should end up (after kickstarting) configured as:
+           * DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet
+         i. On a VM host machine, configure as follows:
+           * Add the following lines to the end of /etc/sysctl.conf to ensure that no netfilter logic acts on the bridge interface. (alternatively you could configure netfilter (iptables) for your installation):
+            * net.bridge.bridge-nf-call-ip6tables = 0[[BR]] net.bridge.bridge-nf-call-iptables = 0[[BR]] net.bridge.bridge-nf-call-arptables = 0[[BR]] net.bridge.bridge-nf-filter-pppoe-tagged = 0[[BR]] net.bridge.bridge-nf-filter-vlan-tagged = 0
+           * Configure network interfaces in /etc/sysconfig/network-scripts as follows: 
+            * ifcfg-eth0 [[BR]]DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=none[[BR]] TYPE=Ethernet[[BR]] BRIDGE=swbr0
+            * ifcfg-swbr0 [[BR]]DEVICE=swbr0 [[BR]] TYPE=Bridge[[BR]] BOOTPROTO=static[[BR]] ONBOOT=yes[[BR]] DELAY=0[[BR]] IPADDR=10.1.0.10[[BR]] NETMASK=255.255.255.0[[BR]] DNS1=10.1.0.1
+       a. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth1. You should see only routes to the 10.1.0.x network.
+       a. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts/ifcfg-eth0 to:
+         i. DEVICE=eth0 [[BR]] ONBOOT=yes[[BR]] BOOTPROTO=dhcp[[BR]] TYPE=Ethernet [[BR]]Alternatively, you can configure your spacewalk machine as a router, and just add [[BR]]GATEWAY=10.1.0.1 [[BR]][[Image(spacewalk-ddwrt.png)]]
    A. '''802.1q VLAN trunking method''':  This method utilizes a programmable network switch and native linux networking capabilities to reduce spacewalk hardware requirements and improve flexibility and ease of use. The example provided is based on DD-WRT ( [http://www.dd-wrt.com/ http://www.dd-wrt.com] ) v24-sp1 firmware on a Linksys WRT54GL v1.1 router. This provides a mechanism by which remote developers can set up VLAN trunking with relative low cost and low complexity. Configuration varies only very slightly with other switch hardware. In the corp environment existing packet switching infrastructure should be substituted where appropriate.  Note that VLAN trunking is a particularly useful method of configuration for large VM hosts in any corp environment that has multiple networks – should spacewalk care to take on the provisioning of VM hosts of this type, this configuration can act as a starting point of a model for that design work.
      1. Hardware setup
        a. Required equipment
