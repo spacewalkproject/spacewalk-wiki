@@ -101,10 +101,10 @@ TYPE=Ethernet
 GATEWAY=10.1.0.1
 }}}
 [[Image(spacewalk-ddwrt.png)]]
-= 802.1q VLAN trunking method =
+== 802.1q VLAN trunking method ==
 This method utilizes a programmable network switch and native linux networking capabilities to reduce spacewalk hardware requirements and improve flexibility and ease of use. The example provided is based on DD-WRT ( [http://www.dd-wrt.com/ http://www.dd-wrt.com] ) v24-sp1 firmware on a Linksys WRT54GL v1.1 router. This provides a mechanism by which remote developers can set up VLAN trunking with relative low cost and low complexity. Configuration varies only very slightly with other switch hardware. In the corp environment existing packet switching infrastructure should be substituted where appropriate.  Note that VLAN trunking is a particularly useful method of configuration for large VM hosts in any corp environment that has multiple networks – should spacewalk care to take on the provisioning of VM hosts of this type, this configuration can act as a starting point of a model for that design work.
-== Hardware setup ==
-=== Required equipment ===
+=== Hardware setup ===
+==== Required equipment ====
          1. A spacewalk machine with one network interface card (NIC).
          1. One or more kickstart target machines
          1. A free switch port somewhere in your existing infrastructure
@@ -131,10 +131,10 @@ This method utilizes a programmable network switch and native linux networking c
            * VLAN 3 moves tagged traffic and is isolated
            * Ports 1-4 are bound to VLANs 2 and 3, and manifest as a two-network 802.1q trunk to the node connected to it
            * NOTE: VLAN tag Ids 0 and 1 are problematic in the world of programmable switches. While the DD-WRT can deal with these, they're set as they are here in acknowledgment of that fact.
-=== Physical connections ===
+==== Physical connections ====
        1. Connect the WAN port to something that connects with the rest of your infrastructure such that a dhcp request on that segment will result in an IP address and gateway address that will route to the internet.
        1. Connect your spacewalk machine and one or more kickstart target machines to any of ports 1-4. 
-=== RHT style networking ===
+==== RHT style networking ====
        1. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
        1. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
          * ifcfg-eth0:
