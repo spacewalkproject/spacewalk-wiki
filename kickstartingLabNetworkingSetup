@@ -142,7 +142,7 @@ TYPE=Ethernet
 }}}
          i. ifcfg-eth0.2:
 {{{
-DEVICE=eth1.2
+DEVICE=eth0.2
 VLAN=yes
 ONBOOT=yes
 BOOTPROTO=dhcp
@@ -150,7 +150,7 @@ TYPE=Ethernet
 }}}
          i. ifcfg-eth0.3:
 {{{
-DEVICE=eth1.3
+DEVICE=eth0.3
 VLAN=yes
 ONBOOT=yes
 BOOTPROTO=none
