@@ -22,6 +22,11 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: package.provider''' ||  ||  ||  ||  ||  ||
+|| package.provider.list(string sessionKey)  || 0.4 || 3  || jsherrill ||   || * List the package providers available
+|| package.provider.listKeys(string sessionKey, String provider)  || 0.4 || 3  || jsherrill ||   || * List the keys for a particular provider
+|| package.provider.addKey(string sessionKey, string providerName, String key)  || 0.4 || 3  || jsherrill ||   || *Add a new package provider and/or key
+|| package.provider.deleteProvider(string sessionKey, String providerName)  || 0.4 || 3  || jsherrill ||   || *Delete a new package provider
 ||  '''Namespace: activationkey''' ||  ||  ||  ||  ||  ||
 ||  activationkey.addPackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]]) || 0.4 || 3  || bbuckingham || done  || * Add a set of packages to an activation key.[[BR]]* May optionally include an arch. [[BR]]* This api will deprecate the existing addPackageNames ||
 ||  activationkey.removePackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]]) || 0.4 || 3  || bbuckingham || done  || * Remove a set of packages from an activation key.[[BR]]* This api will deprecate the existing removePackageNames ||
