@@ -6,37 +6,40 @@ This document describes steps required to put together a lab suitable for kickst
 
 The lab consists of at least two nodes and exactly two network segments. One segment is internet connected for development purposes, the other is isolated to provide a pristine environment for development and testing. One node is a spacewalk with access to both network segments. One or more other nodes reside on the isolated segment as kickstart targets.
 
+[[PageOutline]]
 
- I. '''Networking''': There are a number of ways to accomplish the sort of network isolation required for this lab to work. Two of them are described here, a third gets brief mention: it's possible to do all of this inside of a single machine. That machine, however, would have to be sufficiently powerful to competently run both spacewalk and one or more virtual machines. As such machines are not the norm for spacewalk developers, this is left as an exercise to the reader. Two methods described here are: Spacewalk machine with two NICs (dual homed), and single NIC machines utilizing 802.1q VLAN trunking.[[BR]] 
+= Networking = 
+
+ There are a number of ways to accomplish the sort of network isolation required for this lab to work. Two of them are described here, a third gets brief mention: it's possible to do all of this inside of a single machine. That machine, however, would have to be sufficiently powerful to competently run both spacewalk and one or more virtual machines. As such machines are not the norm for spacewalk developers, this is left as an exercise to the reader. Two methods described here are: Spacewalk machine with two NICs (dual homed), and single NIC machines utilizing 802.1q VLAN trunking.[[BR]] 
 
 [[Image(spacewalk-multihome.png)]]
 
-   A. '''Dual-homed spacewalk machine method'''
-     1. Hardware setup
-       a. Required equipment
-         i. A spacewalk machine with two network interface cards (NICs).
-         i. One or more kickstart target machines
-         i. A free switch port somewhere in your existing infrastructure
-         i. Either:
+ == Dual-homed spacewalk machine method == 
+ === Hardware setup === 
+ ==== Required equipment ==== 
+         1. A spacewalk machine with two network interface cards (NICs).
+         1. One or more kickstart target machines
+         1. A free switch port somewhere in your existing infrastructure
+         1. Either:
            * A crossover ethernet cable or
            * A dedicated ethernet switch device – two or more ports plus regular ethernet cabling sufficient to connect each machine to the dedicated switch, plus one cable to connect the spacewalk machine to your existing infrastructure.
-       a. Connections
-         i. Plug one of the two spacewalk machine's ethernets (recommended: eth0 or equivalent) into your existing infrastructure such that a dhcp request on that port will result in an IP address and gateway address that will route to the internet.
-         i. Plug the other of the spacewalk machine's ethernets into one of the following:
+==== Connections ====
+         1. Plug one of the two spacewalk machine's ethernets (recommended: eth0 or equivalent) into your existing infrastructure such that a dhcp request on that port will result in an IP address and gateway address that will route to the internet.
+         1. Plug the other of the spacewalk machine's ethernets into one of the following:
            * an ethernet cable wired as a crossover cable, with the other end plugged into a single kickstart target machine
            * a regular ethernet cable connected to a dedicated ethernet switch
-         i. If you chose to use a dedicated switch, plug one or more target machines into the dedicated switch using regular ethernet cables.
-     1. RHT style networking setup
-       a. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
-       a. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
-         i. ifcfg-eth0:
+         1. If you chose to use a dedicated switch, plug one or more target machines into the dedicated switch using regular ethernet cables.
+=== RHT style networking setup ===
+       1. On all machines, ensure that NetworkManager is disabled and shut down (if applicable to the distribution). You explicitly do '''not''' want any user-friendly daemons acting on your network interfaces. It is also a good idea to shut down any other unneeded services.
+       2. On your spacewalk machine, edit files in /etc/sysconfig/network-scripts as follows:
+         * ifcfg-eth0:
 {{{
 DEVICE=eth0
 ONBOOT=yes
 BOOTPROTO=dhcp
 TYPE=Ethernet
 }}}
-         i. ifcfg-eth1
+         * ifcfg-eth1
 {{{
 DEVICE=eth1
 ONBOOT=yes
@@ -45,9 +48,9 @@ IPADDR=10.1.0.1
 NETMASK=255.255.255.0
 TYPE=Ethernet
 }}}
-         i. Reboot your spacewalk machine – it should come up with two network interfaces active: eth0 and eth1. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0 (check this with route -n)
-       a. On your kickstart target machines, networking should be configured as follows:
-         i. On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ should end up (after kickstarting) configured as:
+         * Reboot your spacewalk machine – it should come up with two network interfaces active: eth0 and eth1. If dhcp in your infrastructure is functioning properly, there will be a default route through eth0 (check this with route -n)
+       3. On your kickstart target machines, networking should be configured as follows:
+         * On a bare-metal kickstart target, /etc/sysconfig/network-scripts/ should end up (after kickstarting) configured as:
            * ifcfg-eth0:
 {{{
 DEVICE=eth0
@@ -55,7 +58,7 @@ ONBOOT=yes
 BOOTPROTO=dhcp
 TYPE=Ethernet
 }}}
-         i. On a VM host machine, configure as follows:
+         * On a VM host machine, configure as follows:
            * Add the following lines to the end of /etc/sysctl.conf to ensure that no netfilter logic acts on the bridge interface. (alternatively you could configure netfilter (iptables) for your installation):
 {{{
 net.bridge.bridge-nf-call-ip6tables = 0
@@ -84,16 +87,16 @@ IPADDR=10.1.0.10
 NETMASK=255.255.255.0
 DNS1=10.1.0.1
 }}}
-       a. Reboot your kickstart target node(s). When they come up you should see one active network interface – eth1. You should see only routes to the 10.1.0.x network.
-       a. NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts to:
-         i. ifcfg-eth0:
+           * Reboot your kickstart target node(s). When they come up you should see one active network interface – swbr0. You should see only routes to the 10.1.0.x network.
+           * NOTE: If for some reason you find that you need to connect a kickstart target machine to the internet connected portion of your infrastructure, you'll need to change ethernet connections so that the machine in question is connected to your main infrastructure, and change /etc/sysconfig/network-scripts to:
+             * ifcfg-eth0:
 {{{
 DEVICE=eth0
 ONBOOT=yes
 BOOTPROTO=dhcp
 TYPE=Ethernet
 }}}
-            Alternatively, you can configure your spacewalk machine as a router, and just add
+               Alternatively, you can configure your spacewalk machine as a router, and just add this to ifcfg-swbr0:
 {{{
 GATEWAY=10.1.0.1
 }}}
