@@ -224,7 +224,7 @@ net.bridge.bridge-nf-filter-pppoe-tagged = 0
 net.bridge.bridge-nf-filter-vlan-tagged = 0
 }}}
 These lines ensure that no netfilter logic acts on the bridge interface. Alternatively you could configure netfilter (iptables) for your installation.
-       * Reboot your kickstart target node(s). When they come up you should see one active network interface – eth0.3. You should see only routes to the 10.1.0.x network.
+       * Reboot your kickstart target node(s). When they come up you should see one active network interface – swbr0. You should see only routes to the 10.1.0.x network.
        * NOTE: Each of your target nodes are configured to be internet connected as well should the need arise. To activate internet access on a target node, execute “ifup eth0.2”. Be sure to issue “ifdown eth0.2” when you're done to isolate the machine once again from the rest of your infrastructure.
        * NOTE: There is an alternate convention in linux for naming 802.1q ports – the pattern is vlanX and has some arguable advantages to the ethX.Y convention. Libvirt however appears to be incompatible with the vlanX convention, which is why the ethX.Y convention is used here.
 = Software Installation =
