@@ -178,7 +178,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 || Synchronization: deleteTree() api call needs option to force profile deletion || 0.4 || 1 || mccune || '''DONE''' || ||
 || Synchronization: renameDistro() api call doesn't work - appears to attempt copy/delete (and fails) || 0.4 || 1 || mmccune || '''DONE''' || ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji || ACTIVE ||  ||
+||  Upgrades: All pre-existing Kickstart Profiles/Distributions will be populated into Cobbler upon upgrade from Satellite 5.1.0 or earlier. || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Kickstarts: Remove tinyurl usage from Spacewalk   . || 0.4 || 3 || mmccune || '''DONE''' || Note:  Didn't remove it entirely. Just made the viewable URLs in the kickstart file usable and shortened the standard non tiny URLs from /kickstart -> /ks ||
 ||  Kickstarts: Document how to use Spacewalk content for kickstarting without need for tinyurl. || 0.4 || 1 || mmccune ||  ||  ||
