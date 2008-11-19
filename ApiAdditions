@@ -177,7 +177,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.custominfo.deleteKey(string sessionKey, string keyLabel) || 0.3 || 3 || bbuckingham || done  ||  ||
 ||  system.custominfo.listAllKeys(string sessionKey) || 0.3 || 3 || bbuckingham || done  ||  ||
 ||  '''Namespace: satellite''' ||  ||  ||  ||  ||  ||
-||  satellite.getCertificateExpirationDate(string sessionKey) || 0.4 || 3 || jsherrill ||   ||  ||
+||  satellite.getCertificateExpirationDate(string sessionKey) || 0.4 || 3 || jsherrill || done  ||  ||
 
 === New Spacewalk 0.1 APIs ===
 
