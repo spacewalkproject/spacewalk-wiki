@@ -188,8 +188,8 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Cobbler: Manually setup Cobbler as PXE server on spacewalk . || 0.4 || 3 || dparker || '''DONE''' ||  ||
 ||  Cobbler: Manually setup Cobbler as DHCP server on spacewalk . || 0.4 || 3 || dparker || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as PXE server || 0.4 || 3 || paji ||  ||  ||
-||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as DHCP server || 0.4 || 3 || paji ||  ||  ||
+||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as PXE server || 0.4 || 3 || paji || '''CANCELLED''' || Level of effort and benefit of offering these GUI screens was determined to be not worth the development cost ||
+||  GUI: Build GUI in Spacewalk Tools to configure Spacewalk as DHCP server || 0.4 || 3 || paji || '''CANCELLED''' || Level of effort and benefit of offering these GUI screens was determined to be not worth the development cost ||
 ||  GUI: Modify Kickstart Profile creation to have option for 'advanced' mode where user pastes in their own kickstart.cfg file || 0.4 || 5 || paji || '''DONE''' ||  ||
 ||  GUI: Build input form for manual paste of kickstart.cfg || 0.4 || 5 || paji || '''DONE''' || ||
 ||  GUI: Modify kickstart schedule and status pages to work with file based KS || 0.4 || 5 || paji || '''DONE''' || ||
