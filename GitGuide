@@ -120,6 +120,7 @@ Now that you've branched you can get to work modifying, adding, and deleting fil
 [gituser@git manager]$ echo "blahblahblah" > newfile
 [gituser@git manager]$ git-add newfile
 
+
 [gituser@git manager]$ git-rm Worker.java 
 rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
 [gituser@git manager]$ git status
@@ -319,6 +320,7 @@ git log --pretty=oneline origin/master..master
 == Tips ==
 
  * Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
+
  * Install '''gitk''' for a brutally ugly yet still rather useful graphical tool for doing the same thing.
 
 == Example workflow of test-srpm ==
@@ -382,7 +384,7 @@ Confirm this is what we wanted and we are ready to merge and push
 
 
 == Other Resources ==
- * [http://book.git-scm.com/|Git Community Book]
+ * [http://book.git-scm.com/ Git Community Book]
  * [http://wiki.sourcemage.org/Git_Guide Another awesome Git Guide]
  * [http://www.gitcasts.com/ Git tutorials as screen casts]
  * [http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html Tutorial Introduction to Git]
