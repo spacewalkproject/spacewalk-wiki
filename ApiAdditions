@@ -53,9 +53,6 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || channel.org.enableAccess(string sessionKey, string channelLabel, int trustOrgId) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Sat/Org/Channel Admin.||
 || channel.org.disableAccess(string sessionKey, string channelLabel, int trustOrgId) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Sat/Org/Channel Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  '''Namespace: channel.subscribers''' ||  ||  ||  ||  ||  ||
-||  (Multi Org Phase2 support) '''TODO: need info on what will be configured on this page w/in the web-ui'''   ||  ||  ||  ||  ||  ||
-||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 || channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham || done ||  ||
 || channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
@@ -145,7 +142,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
 ||  org.listOrgs(string sessionKey)   || 0.4 || 4 || jortel || done ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
-||  org.migrateSystems(string sessionKey, array[int serverId], int toOrgId)   || 0.4 || 24 || bbuckingham || ||(Multi Org Phase2 support)[[BR]]* Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust.||
+||  org.migrateSystems(string sessionKey, array[int serverId], int toOrgId)   || 0.4 || 24 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org.trusts''' ^NEW^ ||  ||  ||  ||  ||  ||
 || org.trusts.listTrusts(string sessionKey, int orgId) || 0.4 || 4 || jortel  || done ||(Multi Org Phase2 support)[[BR]]* Lists the orgs that the organization (orgId) may define as trusted and info on whether or not each org (trustOrgId) is in the oganization's trust ring (i.e. org enabled/checked).[[BR]]* Returns array[ struct[ int orgId, string orgName, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Spacewalk Admin.||
