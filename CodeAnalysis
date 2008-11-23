@@ -17,7 +17,7 @@ All package names are assumed to be prefixed with {{{com.redhat.rhn.}}}
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/filediff filediff] - looks ok
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/finder finder] - ok; might be worth packaging separately.
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/hibernate hibernate] - ok
-     * usertypes - '''REMOVE'''
+     * ~~usertypes - '''REMOVE'''~~
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/localization localization] - ok; i18n framework
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/messaging messaging] - ok
    * [https://hosted.fedoraproject.org/spacewalk/browser/java/code/src/com/redhat/rhn/common/security security] - ok
