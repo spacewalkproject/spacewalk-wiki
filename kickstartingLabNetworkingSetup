@@ -277,6 +277,11 @@ shared-network cloud{
          a. cdrom
          a. pxe
        1. To prepare a node for bare metal kickstart, execute “dd if=/dev/zero of=/dev/<hard disk device e.g. hda> bs=512 count=1”.  '''WARNING: This command destroys your system's boot sector and partition map – it wipes out the drive for all intents and purposes. Obviously: don't issue this command on any machine, physical or otherwise, unless you can afford to loose its contents forever!!! '''
+
+{{{
+NOTE:  a safer approach is to just set the machine to PXE boot the first time in the cycle, and use Cobbler with the pxe_just_once flag enabled so that once the machine installs it will get a PXE config file that says "boot locally" and then we use that to control what falls through to the local disk.  This way the "blitz MBR" hack is never needed.
+}}}
+
 === VM Hosts ===
        * Create one or more virtual machines using whatever technology is appropriate, and then prepare the machines as you would a bare metal target
 = Testing =
