@@ -237,8 +237,8 @@ Every List in the new List Tag can have a filter.. Basically you add the filtera
 == alpha bar ==
 To add the alpha bar simply add
 
-alphabarcolumn="description" to the rl:list tag.  See here for an example:
-{{{ 
+alphabarcolumn="<field-name>" to the rl:list tag, where <field-name> is the name of the field in the table's entity object that should be associated with the alpha bar. For example, to have the alpha bar correspond to the description field: 
+
 #!text/html
 <rl:listset name="keySet"> 
     
