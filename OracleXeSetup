@@ -154,10 +154,6 @@ SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile;
  
 System altered. 
  
-SQL> commit; 
- 
-Commit complete. 
- 
 SQL> quit 
  
 # /sbin/service oracle-xe restart 
