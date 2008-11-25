@@ -2,6 +2,7 @@
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
 
+ * HelpSystem to make help a bit easier to work with.
  * NevraIssue Handle package with the same EVRA within the same org
  * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
