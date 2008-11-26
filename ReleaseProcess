@@ -5,7 +5,38 @@ Each Spacewalk release will be roughly two (2) months in duration. See [https://
 == Mechanics ==
 We will build our non Fedora RPMs using an internal Red Hat instance of Koji.  
 
-Notes on setup: [KojiSetup Koji Setup]
+The Koji server lives at [http://koji.rhndev.redhat.com/koji spacewalk koji]
+to build you need a user cert,  you need to ask Dennis for it
+a spacewalk koji config file in ~/.koji/spacewalk-config
+{{{
+[koji]
+
+;configuration for koji cli tool
+
+;url of XMLRPC server
+server = http://koji.rhndev.redhat.com/kojihub
+
+;url of web interface
+weburl = http://koji.rhndev.redhat.com/koji
+
+;url of package download site
+pkgurl = http://koji.rhndev.redhat.com/mnt/koji/packages
+
+;path to the koji top directory
+;topdir = /mnt/koji
+
+;configuration for SSL athentication
+
+;client certificate
+cert = ~/.spacewalk.cert
+
+;certificate of the CA that issued the client certificate
+ca = ~/.spacewalk-ca.cert
+
+;certificate of the CA that issued the HTTP server certificate
+serverca = ~/.spacewalk-ca.cert
+}}}
+the ~/.spacewalk-ca.cert file can be found <placeholder>
 
 == Get your packages tagged, get your packages built ==
 To have a particular package in a Spacewalk release, we should know from which
@@ -45,12 +76,10 @@ can do
 }}}
 which will create .src.rpm, this time named with the version-release
 of the latest tag for that package. You should build this .src.rpm
-in koji and in brew. Note that for brew, the commands will be
+in koji. Note that for koji, the command is
 {{{
-	make srpm DIST='.el4.sw'
-	brew build --nowait spacewalk-4E-0.3-candidate /path/to/that/package-version-release.el4.sw.src.rpm
-	make srpm DIST='.el5.sw'
-	brew build --nowait spacewalk-5E-0.3-candidate /path/to/that/package-version-release.el5.sw.src.rpm
+	make srpm DIST='.el5'
+        koji -c ~/.koji/spacewalk-config build --nowait dist-5E-sw-0.4-candidate /path/to/that/package-version-release.el5.src.rpm
 }}}
 so that the {{{%{dist}}}} tag is populated correctly.
 
