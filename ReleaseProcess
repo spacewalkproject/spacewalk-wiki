@@ -36,7 +36,7 @@ ca = ~/.spacewalk-ca.cert
 ;certificate of the CA that issued the HTTP server certificate
 serverca = ~/.spacewalk-ca.cert
 }}}
-the ~/.spacewalk-ca.cert file can be found <placeholder>
+the ~/.spacewalk-ca.cert file can be found linked at the bottom of this page
 
 == Get your packages tagged, get your packages built ==
 To have a particular package in a Spacewalk release, we should know from which
