@@ -22,8 +22,31 @@ For this we want an activation key.  Create a spacewalk activation key and assoc
 As a precondition to this process you must ensure that your Fedora kickstart installs the m2crpto package.  This must be within your kickstart tree.  With Fedora 9 and Spacewalk 0.3 automatically registering clients requires creating a Post Script for your kickstart containing the following; do note that you must replace your spacewalk server URL and activation key below.
 
 {{{
-# Grab some packages in order to register the spacewalk system
+# Set a proxy (if required)
+export http_proxy=http://proxy.brighton.ac.uk:80
+
 cd /tmp
+
+# Install keys
+# Fedora newkey
+# Livna
+# Rpm fusion
+# You should host these keys on your own web server.
+wget http://rpm.livna.org/RPM-LIVNA-GPG-KEY
+wget http://foss.it.brighton.ac.uk/~balor/RPM-GPG-KEY-fedora-x86_64
+wget http://foss.it.brighton.ac.uk/~balor/RPM-GPG-KEY-rpmfusion-free-fedora
+wget http://foss.it.brighton.ac.uk/~balor/RPM-GPG-KEY-rpmfusion-nonfree-fedora
+wget http://foss.it.brighton.ac.uk/~balor/RPM-GPG-KEY-fedora-8-and-9
+wget http://foss.it.brighton.ac.uk/~balor/RPM-GPG-KEY-fedora-8-and-9-x86_64
+
+rpm --import RPM-LIVNA-GPG-KEY
+rpm --import RPM-GPG-KEY-fedora-x86_64
+rpm --import RPM-GPG-KEY-rpmfusion-free-fedora
+rpm --import RPM-GPG-KEY-rpmfusion-nonfree-fedora
+rpm --import RPM-GPG-KEY-fedora-8-and-9
+rpm --import RPM-GPG-KEY-fedora-8-and-9-x86_64
+
+# Install packages necessary for registration
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-check-0.4.17-10.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-client-tools-0.4.17-10.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhn-setup-0.4.17-10.fc9.noarch.rpm
@@ -32,22 +55,40 @@ wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-0.2.2-1.fc9.noarch
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-actions-0.2.2-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-client-0.2.2-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhncfg-management-0.2.2-1.fc9.noarch.rpm
-# You'd expect to install rhnlib, however this is installed by the spacewalk server.
-#wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
+wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnlib-2.2.5-3.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnpush-0.2.4-1.fc9.noarch.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/rhnsd-4.6.1-1.el5.i386.rpm
 wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el5_2.6.noarch.rpm
 
-# Install the packages
-rpm --nodeps -Uvh *.rpm
+# This is _very_ necessary
+wget http://mirrors.vexs.net/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/m2crypto-0.18.2-4.x86_64.rpm
 
-# Now register the system, except it's unnecessary.  You're spacewalk server has already registered your
-# system for you.
-#rhnreg_ks --serverUrl=http://your.spacewalk.server/XMLRPC --activationkey=1-dcddcdcdcdcdcdcdcdcdcd 
+wget http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/libxml2-python-2.6.32-1.fc9.x86_64.rpm
+wget http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/pyOpenSSL-0.6-4.fc9.x86_64.rpm
 
-# be clean (and safe(ish))
-rm -f rhn*.rpm
-rm -f yum-rhn*.rpm
+# Don't check the signature of RPMs as the spacewalk key may change to the Fedora one soon(ish)
+# Don't check deps as there's a missing Python dep in rhnlib (it's not missing, the rpm file just thinks it is)
+rpm --install -v --hash --nosignature --nodeps *.rpm
+
+# install our ORG Spacewalk key from a http source.  Not a good idea when concerned with security, but it works.
+wget http://some.internal.sercer/RHN-ORG-TRUSTED-SSL-CERT
+mkdir /usr/share/rhn/
+cp RHN-ORG-TRUSTED-SSL-CERT /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
+perl -npe 's/RHNS-CA-CERT/RHN-ORG-TRUSTED-SSL-CERT/g' -i /etc/sysconfig/rhn/*
+
+# Make up2date look at our server (my servers name is computersciencegames.net)
+perl -npe 's/xmlrpc.rhn.redhat.com/computersciencegames.net/' -i /etc/sysconfig/rhn/up2date
+mkdir -p /etc/sysconfig/rhn/allowed-actions/configfiles
+touch /etc/sysconfig/rhn/allowed-actions/configfiles/all
+
+# Clean up
+rm m2*.rpm
+rm rhn*.rpm
+rm yum*.rpm
+
+# Do the actual registration (put your actual activation key in place of the dummy one)
+rhnreg_ks --serverUrl=http://computersciencegames.net/XMLRPC --activationkey=1-dcdcdcdcdcdcdcdcdcdcdcdcdcd
+
 }}}
 
 == Pushing packages to Fedora clients ==
