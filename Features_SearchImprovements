@@ -249,7 +249,7 @@ Will need to crawl:
 || Explore how to hook into when a new system is register/modified/deleted and cause SearchServer to reindex on that event || || This won't be for 0.3, it's more something to consider ||
 
 == Documentation Search ==
-Docs in regard to spacewalk/satellite can exist either has a reference to a www.redhat.com/docs/manuals/satellite link or they can be locally residing jsp files.  
+Docs in regard to spacewalk/satellite can exist either as a reference to a www.redhat.com/docs/manuals/satellite link or they can be locally residing jsp files.  
 Our goal is to create a lucene index representing this info and allow it to be searchable through our search-server.
 
 === Approach ===
