@@ -1,0 +1,5 @@
+If you want to see the SQL output that Tomcat or Taskomatic generates for any given page or unit of work you can utilize a special logging JDBC driver that will dump all your SQL to the catalina.out log as well as the params used in each call.
+
+1.  Test
+1.  Test2
+1.  Three
