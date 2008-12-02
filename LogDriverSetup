@@ -4,8 +4,10 @@ If you want to see the SQL output that Tomcat or Taskomatic generates for any gi
 
 1.  Verify logdriver RPM installed.  install if not:
 
-{{{# rpm -q logdriver 
+{{{
+# rpm -q logdriver 
    logdriver-0.1-2}}}
+}}}
 
 2.  Test2
 
