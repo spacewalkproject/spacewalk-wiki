@@ -54,3 +54,13 @@ log4j.logger.net.rkbloom.logdriver.LogCallableStatement=DEBUG
 tail -f /var/log/tomcat5/catalina.out
 }}}
 
+
+6.  You should start to see:
+
+{{{
+2008-12-01 14:36:53,432 [TP-Processor3] DEBUG net.rkbloom.logdriver.LogPreparedStatement - executing PreparedStatement: 'select pxt_id_seq.nextval from dual' with bind parameters: {}
+2008-12-01 14:36:53,516 [TP-Processor3] DEBUG net.rkbloom.logdriver.LogPreparedStatement - executing PreparedStatement: 'select roleimpl0_.id as id172_, roleimpl0_.name as name172_, roleimpl0_.label as label172_, roleimpl0_.created as created172_, roleimpl0_.modified as modified172_ from RHNUSERGROUPTYPE roleimpl0_ where roleimpl0_.label=?' with bind parameters: {1=org_admin}
+2008-12-01 14:36:53,528 [TP-Processor3] DEBUG net.rkbloom.logdriver.LogPreparedStatement - executing PreparedStatement: 'select roleimpl0_.id as id172_, roleimpl0_.name as name172_, roleimpl0_.label as label172_, roleimpl0_.created as created172_, roleimpl0_.modified as modified172_ from RHNUSERGROUPTYPE roleimpl0_ where roleimpl0_.label=?' with bind parameters: {1=satellite_admin}
+2008-12-01 14:36:53,530 [TP-Processor3] DEBUG net.rkbloom.logdriver.LogPreparedStatement - executing PreparedStatement: 'select roleimpl0_.id as id172_, roleimpl0_.name as name172_, roleimpl0_.label as label172_, roleimpl0_.created as created172_, roleimpl0_.modified as modified172_ from RHNUSERGROUPTYPE roleimpl0_ where roleimpl0_.label=?' with bind parameters: {1=org_applicant}
+2008-12-01 14:36:53,531 [TP-Processor3] DEBUG net.rkbloom.logdriver.LogPreparedStatement - executing PreparedStatement: 'select roleimpl0_.id as id172_, roleimpl0_.name as name172_, roleimpl0_.label as label172_, roleimpl0_.created as created172_, roleimpl0_.modified as modified172_ from RHNUSERGROUPTYPE roleimpl0_ where roleimpl0_.label=?' with bind parameters: {1=channel_admin}
+}}}
