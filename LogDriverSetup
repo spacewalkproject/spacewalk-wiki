@@ -15,8 +15,9 @@ logdriver-0.1-2
 
 Replace: 
 
-{{{#!java
-hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe}}}
+{{{
+hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
+}}}
 
 With:
 
