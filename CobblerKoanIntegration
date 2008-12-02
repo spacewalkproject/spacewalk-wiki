@@ -244,4 +244,15 @@ Phase III is where we build on the work from the previous phases to fully integr
     
     git checkout --track -b spacewalk-cobbler origin/spacewalk-cobbler
 
+== Integration Testing Tasks ==
+
+||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || ACTIVE ||  ||
+||  Synchronization: For each system being provisioned have spacewalk create cobbler system profile || 0.4 || 2 || mmccune || ACTIVE ||  ||
+||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || ACTIVE  ||  ||
+||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || ACTIVE ||  ||
+||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji ||  || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
+
+
 
