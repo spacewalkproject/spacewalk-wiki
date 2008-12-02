@@ -246,6 +246,8 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 == Integration Testing Tasks ==
 
+Our first pass of integration testing brought forward some critical issues with the Cobbler-Spacewalk integration.  below is the list of outstanding issues:
+
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || ACTIVE ||  ||
@@ -254,5 +256,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 ||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || ACTIVE ||  ||
 ||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji ||  || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
 
+
+We hope to have the above finished by December 5th if possible and then undergo another round of integration testing.
 
 
