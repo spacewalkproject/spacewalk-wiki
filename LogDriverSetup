@@ -41,3 +41,16 @@ log4j.logger.net.rkbloom.logdriver.LogPreparedStatement=DEBUG
 log4j.logger.net.rkbloom.logdriver.LogStatement=DEBUG
 log4j.logger.net.rkbloom.logdriver.LogCallableStatement=DEBUG
 }}}
+
+4.  restart tomcat:
+
+{{{
+/sbin/service tomcat5 restart
+}}}
+
+5.  watch log file:
+
+{{{
+tail -f /var/log/tomcat5/catalina.out
+}}}
+
