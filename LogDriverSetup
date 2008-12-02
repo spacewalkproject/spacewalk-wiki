@@ -21,11 +21,23 @@ hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
 
 With:
 
-{{{hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe}}}
+{{{
+hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe
+}}}
 
 And add:
 
-{{{hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver}}}
+{{{
+hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
+}}}
 
 
-3.  
+3.  edit: /var/lib/tomcat5/webapps/rhn/WEB-INF/classes/log4j.properties
+
+Uncomment or add:
+
+{{{
+log4j.logger.net.rkbloom.logdriver.LogPreparedStatement=DEBUG
+log4j.logger.net.rkbloom.logdriver.LogStatement=DEBUG
+log4j.logger.net.rkbloom.logdriver.LogCallableStatement=DEBUG
+}}}
