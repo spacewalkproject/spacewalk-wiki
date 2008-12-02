@@ -338,17 +338,21 @@ We will use "nutch" to generate the lucene index.  This index will be packaged i
 </configuration>
 
 }}}
- * It looks like the nightly builds have a problem with "search.jsp".  Below is the error message I was receiving
+  * It looks like the nightly builds have a problem with "search.jsp".  Below is the error message I was receiving
 {{{
 ERROR [jsp] - Servlet.service() for servlet jsp threw exception
 org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language + "/include/header.html" is quoted with " which must be escaped when used within the value
 }}}
- * This is the workaround,  edit $TOMCAT_HOME/webapps/nutch/search.jsp and escape the quotes. Line 172 for my nightly build.
+  * This is the workaround,  edit $TOMCAT_HOME/webapps/nutch/search.jsp and escape the quotes. Line 172 for my nightly build.
 {{{
  <jsp:include page="<%= language + \"/include/header.html\"%>"/>
 }}}
-  * This issue appears to have been around since September 2008, I've seen 2 posts relating to it, but as of 11/21 it still hasn't been fixed in the nightly build. 
- * Restart tomcat once more
- * Now go to the nutch webapp, example: http://127.0.0.1:8080/nutch 
- * You can search through the data to see what will be available to our search app.
+   * This issue appears to have been around since September 2008, I've seen 2 posts relating to it, but as of 11/21 it still hasn't been fixed in the nightly build. 
+   * Restart tomcat once more
+   * Now go to the nutch webapp, example: http://127.0.0.1:8080/nutch 
+   * You can search through the data to see what will be available to our search app.
 
+ * Integrating output from nutch into our search-server.  Copy the generated indexes into the search-server.
+  * "mkdir /usr/share/rhn/search/indexes/docs"
+  * "cp /tmp/nutch-nightly/crawl.data/index/* /usr/share/rhn/search/indexes/docs"
+  * to test, go to : http://localhost/rhn/help/Search.do  (assuming localhost is running a devel version of spacewalk)
