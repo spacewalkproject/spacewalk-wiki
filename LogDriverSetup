@@ -6,10 +6,28 @@ If you want to see the SQL output that Tomcat or Taskomatic generates for any gi
 
 {{{
 # rpm -q logdriver 
-   logdriver-0.1-2
+logdriver-0.1-2
+## Otherwise install
+# yum install logdriver
 }}}
 
-2.  Test2
+2.  Edit /etc/rhn/rhn.conf:
+
+Replace: 
+
+{{{hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe}}}
+
+With:
+
+{{{hibernate.connection.url=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin:@localhost:1521:xe}}}
+
+And add:
+
+{{{hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver}}}
+
+
+
+
 
 
 3.  Three
