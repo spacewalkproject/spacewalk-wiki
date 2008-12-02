@@ -6,7 +6,7 @@ If you want to see the SQL output that Tomcat or Taskomatic generates for any gi
 
 {{{
 # rpm -q logdriver 
-   logdriver-0.1-2}}}
+   logdriver-0.1-2
 }}}
 
 2.  Test2
