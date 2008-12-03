@@ -121,6 +121,7 @@ Now that you've branched you can get to work modifying, adding, and deleting fil
 [gituser@git manager]$ git-add newfile
 
 
+
 [gituser@git manager]$ git-rm Worker.java 
 rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
 [gituser@git manager]$ git status
@@ -265,7 +266,7 @@ Revert changes from a past commit (generates a new commit):
 
 View diff of changes in a past commit:
 {{{
-  git diff a31f80910768ba2232c796b814be11d064421f19
+  git show a31f80910768ba2232c796b814be11d064421f19
 }}}
 
 View diff of changes between two past commits:
