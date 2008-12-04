@@ -6,7 +6,7 @@ https://bugzilla.redhat.com/show_bug.cgi?id=452450
 
 We can update the list of packages here and provide bugzilla numbers.
 || perl-Business-CreditCard-0.28-6.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=452601 || stahnma || Now In Fedora || 
-|| perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=452457 || Nigel Jones || This package might actually not be needed for Spacewalk at all. --adelton || 
+|| ~~perl-Crypt-CAST5_PP-1.02-6.el5.src.rpm~~ || || https://bugzilla.redhat.com/show_bug.cgi?id=452457 || Nigel Jones || This package might actually not be needed for Spacewalk at all. --adelton || 
 || perl-DBD-Oracle-1.19-8.el5.src.rpm || || Not compatible with Fedora licensing, as it requires oracle-instantclient-devel || null || || 
 || perl-Filesys-Statvfs-Df-0.72-9.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=455443 || msuchy || Now In Fedora ||
 || perl-Frontier-RPC-0.07-7.el5.noarch.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=226258 || stahnma || Already In Fedora ||
@@ -15,8 +15,8 @@ We can update the list of packages here and provide bugzilla numbers.
 || perl-Schedule-Cron-Events-1.8-11.el5.src.rpm ||  GPL/Artistic || https://bugzilla.redhat.com/show_bug.cgi?id=461736 || msuchy || Now in Fedora ||
 ||perl-Set-Crontab-1.00-12.el5.src.rpm|| Artistic License || https://bugzilla.redhat.com/show_bug.cgi?id=452449 ||  msuchy || Now in Fedora || 
 ||perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm||GPL/Artistic|| https://bugzilla.redhat.com/show_bug.cgi?id=452458 ||Nigel Jones || Now in Fedora ||
-||perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones|| Legal looking into License
-||perl-Crypt-Rijndael-1.06-1.el5.src.rpm||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones|| This package might actually not be needed for Spacewalk at all. --adelton (CVS Branched)||
+||~~perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm~~||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones|| Legal looking into License -- we get rid of this package
+||~~perl-Crypt-Rijndael-1.06-1.el5.src.rpm~~ ||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones|| This package might actually not be needed for Spacewalk at all. --adelton (CVS Branched)||
 ||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones|| Dependency on perl-Crypt-RIPEMD160 ||
 ||perl-DateTime-Locale-0.4001-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452455||Nigel Jones|| Already in Fedora, just under a slightly different name || 
 ||perl-DateTime-TimeZone-0.7701-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452456||Nigel Jones|| Already in Fedora, just under a slightly different name ||
@@ -92,8 +92,8 @@ This packages need to be edited and then eventualy imported to Fedora:
  || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
- || np-config-2.110.3-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453111 - merging with NPuser into nocpulse-common || msuchy ||
- || NPusers-1.17.11-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453109 || msuchy ||
+ || ~~np-config-2.110.3-6.el5.src.rpm~~ || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453111 - merging with NPuser into nocpulse-common || msuchy ||
+ || ~~NPusers-1.17.11-6.el5.src.rpm~~ nocpulse-common || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453109 || msuchy || Now in Fedora ||
  || nutch || Apache v2.0 || || jmatthews ||
  || oscache-2.2-2jpp.ep1.1.el5.src.rpm || || || ||
  || perl-Satcon-1.3-9.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=466777 || msuchy || Now in Fedora ||
