@@ -359,7 +359,7 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
  * Adding "Summary Content" for matches
   * "cp /tmp/nutch-nightly/crawl.data/segments /usr/share/rhn/search/indexes/docs"
   * "mkdir /usr/share/rhn/search/nutch"
-  *  nutch must be told where to find it's plugin director
+  *  nutch must be told where to find it's plugin directory
    * Edit /tmp/nutch-nightly/conf/nutch-site.xml, add in the below change
 {{{
 <property>
@@ -372,5 +372,6 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
 }}}
   * "cp /tmp/nutch-nightly/conf /usr/share/rhn/search/nutch"
   * "cp /tmp/nutch-nightly/plugins /usr/share/rhn/search/nutch"
+  * At this point if you do a search, the surrounding text from the match should be displayed in the webui.
   
   
