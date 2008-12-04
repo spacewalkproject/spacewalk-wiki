@@ -69,9 +69,9 @@ Aim is for Spacewalk Importer to be able to import content with respect to org_i
 
 We need An orgid mapping option to satellite-sync say --to-org
     This basically enables the user to import content in one org to another either on same or different satellites.  
-    $ satellite-sync --to-org=10 --channel=test-multi-org
+    $ satellite-sync --orgid=10 --channel=test-multi-org
     Other additional content data
-    $  satellite-sync --to-org=10  --type=activationkeys --parent-sat=master-satellite.redhat.com 
+    $  satellite-sync --orgid=10  --type=activationkeys --parent-sat=master-satellite.redhat.com 
 
 * If this option is not give then we default to org-1. 
 
@@ -93,7 +93,7 @@ We need An orgid mapping option to satellite-sync say --to-org
 There will be lot of changes needed for satellite-sync, importer and backend modules to add this capability. We need to take into account all the content the importer tries to import that has reference to orgid such as channels, packages, errata, kickstart-trees/files, arches. Following are some rough estimates on what  might change.
 
 *New Flags and changes to satsync.py (''Estimate: 4 hours'')
- * --to-org  ''Estimate: 2 hours''
+ * --orgid  ''Estimate: 2 hours''
  * other minor logic changes ''Estimate: 2 hours''
 
 *ImportLib: (''Estimate: 32 hours'')
@@ -124,6 +124,7 @@ Developer Testing: (''Estimate: 8 hours'')
 * Add a flag say --type=activation-key,kickstart-profiles,user-profiles
 
 * This will export all the additional content from 
+
 
    $ satellite-sync --parent-sat=master-satellite.redhat.com --type=<content-type> --to-org=2
 
