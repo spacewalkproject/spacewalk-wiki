@@ -356,3 +356,9 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
   * "mkdir /usr/share/rhn/search/indexes/docs"
   * "cp /tmp/nutch-nightly/crawl.data/index/* /usr/share/rhn/search/indexes/docs"
   * to test, go to : http://localhost/rhn/help/Search.do  (assuming localhost is running a devel version of spacewalk)
+ * Adding "Summary Content" for matches
+  * "cp /tmp/nutch-nightly/crawl.data/segments /usr/share/rhn/search/indexes/docs"
+  * "mkdir /usr/share/rhn/search/nutch"
+  * "cp /tmp/nutch-nightly/conf /usr/share/rhn/search/nutch"
+  * "cp /tmp/nutch-nightly/plugins /usr/share/rhn/search/nutch"
+  
