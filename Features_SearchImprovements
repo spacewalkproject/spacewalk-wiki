@@ -359,6 +359,18 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
  * Adding "Summary Content" for matches
   * "cp /tmp/nutch-nightly/crawl.data/segments /usr/share/rhn/search/indexes/docs"
   * "mkdir /usr/share/rhn/search/nutch"
+  *  nutch must be told where to find it's plugin director
+   * Edit /tmp/nutch-nightly/conf/nutch-site.xml, add in the below change
+{{{
+<property>
+  <name>plugin.folders</name>
+   <value>/usr/share/rhn/search/nutch/plugins</value>
+   <description>Directories where nutch plugins are located.  Each
+   element may be a relative or absolute path.  If absolute, it is used
+   as is.  If relative, it is searched for on the classpath.</description>
+ </property>
+}}}
   * "cp /tmp/nutch-nightly/conf /usr/share/rhn/search/nutch"
   * "cp /tmp/nutch-nightly/plugins /usr/share/rhn/search/nutch"
+  
   
