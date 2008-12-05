@@ -122,6 +122,7 @@ Now that you've branched you can get to work modifying, adding, and deleting fil
 
 
 
+
 [gituser@git manager]$ git-rm Worker.java 
 rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
 [gituser@git manager]$ git status
@@ -153,6 +154,24 @@ If you wish to only include '''some''' of the modified files in your commit, you
   git commit
 }}}
 Repeat for as many commits as you like on your branch until you're satisfied with your bugfix, feature, or whatever.
+
+=== Commit Messages ===
+
+We have a convention for our commits.  The simple rule is:
+
+If you are working on a bugzilla or a feature (that should have a bugzilla associated with it) you should prepend your commit message with the bugzilla # followed by your message describing the commit.
+
+{{{
+  BUGZILLA# - comment goes here
+}}}
+
+For example: 
+
+{{{
+  461162 - just add all the networks to the system profile in cobbler
+}}}
+
+If you are not working on a bugzilla in relation to the change just type your message as normal.
 
 === Pushing Changes ===
 
