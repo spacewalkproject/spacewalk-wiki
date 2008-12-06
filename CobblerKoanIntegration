@@ -266,6 +266,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Cobbler:  move password from templates to settings file and check against that instead || 0.4 || 1 || mpd ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization:  spacewalk must synchronize (new and existing) cobbler system records || 0.4 || 4 || mmccune ||  ||  ||
+||  Synchronization:  spacewalk must create system records in cobbler when a system is granted provisioning. || 0.4 || 2 || mmccune ||  ||  ||
 ||  Synchronization:  spacewalk preserve all cobbler variables and not overwrite items in cobbler objects || 0.4 || 2 || mmccune ||  ||  ||
 ||  Synchronization:  Whitepaper for QA || 0.4 || 1 || jsherrill ||  || (Justin/MPD) to discuss synchronization workflow/limitations from user expectation perspective and document in whitepaper for use by Q/A  and development.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
