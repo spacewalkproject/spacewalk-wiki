@@ -258,14 +258,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji ||  || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Cobbler Install: Satellite does not package it's own defaults file for the installer || 0.4 || 0.5 || paji ||  ||  ||
-||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji ||  || * remove the message about Ctrl+C as it will break the installer
-* DHCP answer file choice should be "N"
-* DHCP answer file choice should be "N"
-* interactive DHCP options should be "no/isc/dnsmasq" (default no)
-* interactive DNS options should be "no/BIND/dnsmasq" (default no)
-* mcc says remove extra blank spaces
-* XMLRPC should always be set on, do not ask for spacewalk as it will 
-break things, just remove this question ||
+||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji ||  || * remove the message about Ctrl+C as it will break the installer * DHCP answer file choice should be "N" * DHCP answer file choice should be "N" * interactive DHCP options should be "no/isc/dnsmasq" (default no) * interactive DNS options should be "no/BIND/dnsmasq" (default no) * mcc says remove extra blank spaces * XMLRPC should always be set on, do not ask for spacewalk as it will break things, just remove this question ||
 
 
 
