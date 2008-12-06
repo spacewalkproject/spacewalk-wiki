@@ -280,7 +280,7 @@ Our first pass of integration testing brought forward some critical issues with 
 || Templating: We need to create a snippet that contains spacewalk "media_url" logic, clarify and document any special media URLs || 0.4 || 1 || mmccune ||  ||  ||
 || Packaging: Saving kickstarts in /etc/rhn is not as LSB friendly as it could be as these aren't config files.    Use /var/lib/rhn/kickstarts or similar for user data.  || 0.4 || 0 || dparker || '''DONE'''  ||  ||
 || Templating: Spacewalk should install snippet for file preservation feature in /var/lib/cobbler/snippets, called spacewalk_file_preservation || 0.4 || 0.5 || dparker ||  ||  ||
-|| Templating: Need page for storing/viewing cobbler system variables and allow them to be edited and stored in a cobbler system  || 0.4 || 3 || mmccune ||  || This will take some time and is one of the larger time sinks ||
+|| Templating: Need page for storing/viewing cobbler system variables and allow them to be edited and stored in a cobbler system including the Netboot enabled flag. || 0.4 || 3 || mmccune ||  || This will take some time and is one of the larger time sinks ||
 ||  ----   ||  ||  ||  ||  ||  ||
 || Virt: Remove vmware || 0.4 || 0.5 || dparker ||  ||  ||
 || Virt: For Satellite we need to only show xenpv || 0.4 || 2 || mmccune ||  || Not required for 0.4, more for Satellite ||
