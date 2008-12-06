@@ -248,6 +248,7 @@ Phase III is where we build on the work from the previous phases to fully integr
 
 Our first pass of integration testing brought forward some critical issues with the Cobbler-Spacewalk integration.  below is the list of outstanding issues:
 
+
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || ACTIVE ||  ||
@@ -255,8 +256,17 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || ACTIVE  ||  ||
 ||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || ACTIVE ||  ||
 ||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji ||  || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  Cobbler Install: Satellite does not package it's own defaults file for the installer || 0.4 || 0.5 || paji ||  ||  ||
+||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji ||  || * remove the message about Ctrl+C as it will break the installer
+* DHCP answer file choice should be "N"
+* DHCP answer file choice should be "N"
+* interactive DHCP options should be "no/isc/dnsmasq" (default no)
+* interactive DNS options should be "no/BIND/dnsmasq" (default no)
+* mcc says remove extra blank spaces
+* XMLRPC should always be set on, do not ask for spacewalk as it will 
+break things, just remove this question ||
 
 
-We hope to have the above finished by December 5th if possible and then undergo another round of integration testing.
 
 
