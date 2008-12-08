@@ -171,9 +171,16 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.provisionSystem(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
 ||  system.provisionSystem(sid, kslabel) || 0.3 || 1 || skarmark || done ||  ||
 ||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham || done || Compare the system to an existing package profile. ||
-||  system.searchDevices(search-string) || 0.4 || 4 || jmatthews ||  || put under search.system.devices or system.search.devices ||
-||  system.searchNetwork(search-string) || 0.4 || 4 || jmatthews ||  || ditto ||
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || bbuckingham || done || * Schedule a package list refresh for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise. ||
+||  ----   ||  ||  ||  ||  ||  ||
+||  '''Namespace: system.search''' ||  ||  ||  ||  ||  ||
+||  system.search.nameAndDescription(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by name and description  ||
+||  system.search.ip(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by ip ||
+||  system.search.hostname(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by hostname ||
+||  system.search.deviceVendorId(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for a system by vendor id of a hardware device ||
+||  system.search.deviceId(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for a system by hardware device id ||
+||  system.search.deviceDriver(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for a system by hardware device driver ||
+||  system.search.deviceDescription(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for a system by hardware device description ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system.custominfo''' ||  ||  ||  ||  ||  ||
 ||  system.custominfo.createKey(string sessionKey, string keyLabel, string keyDescription) || 0.3 || 3 || coec || done  || This API was originally implemented as system.createCustomValueKey; however, it was renamed and moved the custominfo namespace as additional APIs were added that namespace. ||
