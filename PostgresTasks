@@ -2,6 +2,9 @@
 
 == Project Tasks ==
 
+Project tasks are work items that need to be tracked.  They are different then issues in that items listed here
+simply need to be completed and are not necessarily risks to the project.
+
 ||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
 ||Dead Query Script||Write a script to: find queries defined but not referenced in perl code; find queries defined but not referenced in java code; find queries defined in both (perl migrated to java).|| ||dgoodwin|| ||
 ||Perl Data Source||Estimate to update perl ''data source'' to use java data source XML files|| || shughes || Syntax only, __not__ feature parity||
