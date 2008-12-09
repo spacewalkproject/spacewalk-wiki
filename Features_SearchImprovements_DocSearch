@@ -127,4 +127,12 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
   * "cp /tmp/nutch-nightly/plugins /usr/share/rhn/search/nutch"
   * At this point if you do a search, the surrounding text from the match should be displayed in the webui.
   
-  
+=== Issues/Tasks ===
+||  '''Issue''' || '''Status''' || '''Notes''' ||
+||  -----  ||  ||  || 
+||  add content from a surrounding match to webui || done || requires extra "segments" directory to be included with indexes ||
+||  indexes from www.redhat.com/manuals/satellite need the URLs to be restricted more, i.e. the crawl is picking up entries we don't care about.  ||  ||  ||  
+||  Need to crawl/index in multiple languages.  First non-english language selected will be Japanese.  ||  ||  ||  
+||  Webui needs to recognize language and pass it through to search server request.  ||  ||  ||  
+||  Need to setup a nutch configuration that will parse JSP docs ||  ||  ||  
+||  -----  ||  ||  ||  
