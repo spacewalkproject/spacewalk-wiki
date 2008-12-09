@@ -259,13 +259,11 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/channels/alter_subscriptions_conf.pxt
  * /network/systems/ssm/packages/verify_system_list.pxt
  * /network/systems/ssm/packages/verify_conf.pxt
- * /network/systems/ssm/packages/upgrade_conf.pxt
  * /network/systems/ssm/packages/index.pxt
  * /network/systems/ssm/packages/installed_systems.pxt
  * /network/systems/ssm/packages/schedule_remote_command.pxt
  * /network/systems/ssm/packages/verify.pxt
  * /network/systems/ssm/packages/remove_system_list.pxt
- * /network/systems/ssm/packages/upgrade.pxt
  * /network/systems/ssm/packages/upload_answer_file.pxt
  * /network/systems/ssm/errata/systems_affected.pxt
  * /network/systems/ssm/errata/apply_errata_conf.pxt
