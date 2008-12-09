@@ -4,7 +4,7 @@
 
 This project is focused on modifying Spacewalk to support both Oracle and PostgreSQL databases.
 
-== Project Resources ==
+The minimum supported version of Oracle is Oracle 10g.
 
 === Communication ===
 
