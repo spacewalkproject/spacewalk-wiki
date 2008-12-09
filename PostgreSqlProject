@@ -23,22 +23,30 @@ This project is focused on modifying Spacewalk to support both Oracle and Postgr
 
 10k queries must be studied and perhaps modified.
 
+''' DDL '''
+
 Data Definition Language (DDL) will require separate versions for Oracle and Postgres, e.g.
-CREATE TABLE, CREATE FUNCTION, CREATE INDEX.  These statements are centralized and change rarely so it is easy to maintain two versions.
+CREATE TABLE, CREATE FUNCTION, CREATE INDEX.  These statements are centralized and change rarely so it is easy to maintain two versions.  
+
+Tables can be converted using ora2pg, then tuned to use the proper native Postgres data types, e.g. INTEGER, BOOLEAN.
+
+Functions will need to be categorized as easy and hard and then worked on by people with the appropriate skill level.
+
+''' Non-DDL '''
 
 Non-DDL queries must be managed differently.  Non-DDL queries will fall into four categories:
-        1. work unchanged
-        2. can be rewritten to work on both, e.g. ANSI joins, CURRENT_TIMESTAMP
+        1. work unchanged on both Oracle and Postgres
+        2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP
         3. (same) but requires db changes, e.g. add compatibility functions like decode()
         4. need to create a Postgres-specific version of the query
 
 This analysis is going to require major effort so it is best to handle it in stages:
 
-        1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages.
-        2.  Change the comment question mark to one of the four values listed above.
-        3.  Create GIT branch
-        4.  Rewrite # 2 to # 1.
-        5.  Add db changes so # 3 can be converted to # 1
+        1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages
+        2.  Change the comment question mark to one of the four values listed above
+        3.  Create a GIT branch
+        4.  Rewrite # 2 queries to # 1
+        5.  Add db changes and change # 3 queries to # 1
         6.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
 
 === Tracking ===
