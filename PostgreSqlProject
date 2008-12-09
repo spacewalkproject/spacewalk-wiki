@@ -21,7 +21,21 @@ This project is focused on modifying Spacewalk to support both Oracle and Postgr
 
 === Approach ===
 
-( Bruce Momjian )
+10k queries to be studied and perhaps modified.
+
+Data Definition Language (DDL) will require separate versions for Oracle and Postgres, e.g.
+CREATE TABLE, CREATE FUNCTION, CREATE INDEX.  These statements are centralized and change rarely so it is easy to maintain two versions.
+
+Non-DDL queries will fall into four categories:
+        o  works unchanged
+        o  can be rewritten to work on both, e.g. ANSI joins, CURRENT_TIMESTAMP
+        o  (same) but requires db changes, e.g. add compatibility functions like decode()
+        o  need to add Postgres-specific version the query
+
+
+Mark queries via comments?  '-- PGPORT'
+
+
 
 === Tracking ===
 
