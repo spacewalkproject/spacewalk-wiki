@@ -1,1 +1,23 @@
 = PostgreSQL Project =
+
+== Overview ==
+
+This project is focused on modifying Spacewalk to support both Oracle and PostgreSQL databases.
+
+== Project Resources ==
+
+=== Communication ===
+
+ * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)]
+ * IRC: #spacewalk-devel on [http://freenode.net/ (irc.freenode.net)]
+
+=== Contacts ===
+
+ * Todd Sanders mailto:tsanders@redhat.com
+ * Jeff Ortel mailto:jortel@redhat.com
+ * Bruce Momjian mailto:bruce@momjian.us
+ * Jim Mlodgenski
+ * Devin Goodwin mailto:dgoodwin@redhat.com
+
+=== References ===
+[PathToPostgreSql early research]
