@@ -37,9 +37,9 @@ This analysis is going to require major effort so it is best to handle it in sta
         1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages.
         2.  Change the comment question mark to one of the four values listed above.
         3.  Create GIT branch
-        4.  Rewrite #2 to #1.
-        5.  Add db changes so #3 can be converted to #1
-        6.  Develop and implement a system to allow for Postgres-specific versions of #4 queries
+        4.  Rewrite # 2 to # 1.
+        5.  Add db changes so # 3 can be converted to # 1
+        6.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
 
 === Tracking ===
 
