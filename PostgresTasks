@@ -7,3 +7,4 @@
 ||Dead files||Determine which query files do '' not '' need to be converted|| ||  || Does Hibernate affect this?  ||
 ||Add comments||Determine how to add SQL comments to every query|| ||  || ||
 ||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
+||Database Versions||What are the minimum supported versions of Oracle and Postgres?|| ||  || ||
