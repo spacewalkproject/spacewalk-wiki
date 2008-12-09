@@ -7,5 +7,10 @@
 ||Dead files||Determine which query files do '' not '' need to be converted|| ||  || Does Hibernate affect this?  ||
 ||Add comments||Determine how to add SQL comments to every query|| ||  || ||
 ||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
-||Database Versions||What are the minimum supported versions of Oracle and Postgres?|| ||  || ||
+||Database Versions||What are the minimum supported versions of Oracle and Postgres?|| ||  || ![1] This will depend on targeted versions of RHEL||
 ||Custom Data Type||Add EVR_T data type with aggregate|| ||  || ||
+
+=== Notes ===
+ ![1]:: 
+ RHEL-4 includes postgres 7.4 and RHEL-5 includes postgres 8.1.  The latest postgres is 8.3.8.
+ 7.4 has the following limitations (Exceptions, Save Points) appear to be applicable to spacewalk.
