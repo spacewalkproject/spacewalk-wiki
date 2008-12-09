@@ -8,3 +8,4 @@
 ||Add comments||Determine how to add SQL comments to every query|| ||  || ||
 ||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
 ||Database Versions||What are the minimum supported versions of Oracle and Postgres?|| ||  || ||
+||Custom Data Type||Add EVR_T data type with aggregate|| ||  || ||
