@@ -43,7 +43,7 @@ Non-DDL queries must be managed differently.  Non-DDL queries will fall into fou
 This analysis is going to require major effort so it is best to handle it in stages:
 
         1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages
-        2.  Change the comment question mark to one of the four values listed above
+        2.  Change all comment question marks to one of the four values listed above
         3.  Create a GIT branch
         4.  Rewrite # 2 queries to # 1
         5.  Add db changes and change # 3 queries to # 1
