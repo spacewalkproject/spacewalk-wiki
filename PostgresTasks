@@ -6,3 +6,4 @@
 ||Query Script||Enhance script to list files containing SQL; provides file and query counts|| || zeus || ||
 ||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
 ||Dead files||Determine which query files do '' not '' need to be converted|| ||  || ||
+||Add comments||Determine how to add SQL comments to every query|| ||  || ||
