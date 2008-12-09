@@ -52,7 +52,7 @@ This analysis is going to require major effort so it is best to handle it in sta
 
 ''' Testing '''
 
-Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres queries that are causing errors or are slow.
+Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres queries that are causing errors or are slow.  More sophisticated testing will also be required.
 
 === Tracking ===
 
