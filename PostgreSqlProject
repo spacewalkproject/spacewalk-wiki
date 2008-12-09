@@ -35,7 +35,7 @@ Functions will need to be categorized as easy and hard and then worked on by peo
 ''' Non-DDL '''
 
 Non-DDL queries must be managed differently.  Non-DDL queries will fall into four categories:
-        1. work unchanged on both Oracle and Postgres
+        1. work unchanged in both Oracle and Postgres
         2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP
         3. (same) but requires db changes, e.g. add compatibility functions like decode()
         4. need to create a Postgres-specific version of the query
