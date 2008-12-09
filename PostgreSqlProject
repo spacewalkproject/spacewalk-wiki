@@ -62,9 +62,9 @@ Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres 
 
 === Resources ===
 
-Orafce http://pgfoundry.org/projects/orafce/
+Orafce: Oracle support functions http://pgfoundry.org/projects/orafce/
 
-Ora2pg http://freshmeat.net/projects/ora2pg/
+Ora2pg: Convert Oracle DDL to Postgres http://freshmeat.net/projects/ora2pg/
 
 === Porting Documentation ===
 
