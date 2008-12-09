@@ -22,8 +22,6 @@ The minimum supported version of Oracle is Oracle 10g.
 
 === Approach ===
 
-3k queries must be studied and perhaps modified.
-
 ''' DDL '''
 
 Data Definition Language (DDL) will require separate versions for Oracle and Postgres, e.g.
@@ -34,6 +32,8 @@ Tables can be converted using ora2pg, then tuned to use the proper native Postgr
 Functions will need to be categorized as easy and hard and then worked on by people with the appropriate skill level.
 
 ''' Non-DDL '''
+
+3k queries must be studied and perhaps modified.
 
 Non-DDL queries must be managed differently.  Non-DDL queries will fall into four categories:
         1. work unchanged in both Oracle and Postgres
