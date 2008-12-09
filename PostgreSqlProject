@@ -23,9 +23,10 @@ This project is focused on modifying Spacewalk to support both Oracle and Postgr
 
 ( Bruce Momjian )
 
-=== Task List ===
+=== Tracking ===
 
-[PostgresTasks Task List]
+[PostgresIssues Project Issues]
+[PostgresTasks Project Tasks]
 
 === References ===
 [PathToPostgreSql early research]
