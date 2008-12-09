@@ -41,5 +41,7 @@ Porting Oracle Applications to PostgreSQL http://developer.postgresql.org/~peter
 
 EnterpriseDB Oracle Compatibility Developer's Guide http://www.enterprisedb.com/downloads/docs/EnterpriseDB_OraCompat_8.3_v2.7.pdf
 
+Migrating Oracle PL/SQL to PL/pgSQL http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html
+
 === References ===
 [PathToPostgreSql early research]
