@@ -283,12 +283,3 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/account/activation_keys/child_channels.pxt
 
 
-==== Stored Profiles ====
-Are these even useful?
-   my company uses this stuff a lot, so I think so.  --stahnma
-
- * /network/profiles/delete.pxt
- * /network/profiles/package-list.pxt
- * /network/profiles/details.pxt
- * /network/profiles/list.pxt
-
