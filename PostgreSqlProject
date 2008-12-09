@@ -22,7 +22,7 @@ The minimum supported version of Oracle is Oracle 10g.
 
 === Approach ===
 
-10k queries must be studied and perhaps modified.
+3k queries must be studied and perhaps modified.
 
 ''' DDL '''
 
