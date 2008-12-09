@@ -20,7 +20,7 @@ simply need to be completed and are not necessarily risks to the project.
 ||Sample Dataset||Create a sample database dataset that can be loaded in both oracle and postgres to be used by developers|| || jortel||||
 ||Monitoring||Are we converting the monitoring module?|| ||  || ||
 ||Remove dead perl queries|| Remove the dead perl queries from git || || dgoodwin ||
-||Orafce|| Orafce requires Postgres 8.2, port Orafce to Postgres 8.1 || ||  ||
+||Orafce|| Orafce requires Postgres 8.2, port Orafce to Postgres 8.1, packaging issues? || ||  ||
 
 === Notes ===
  ![1]:: 
