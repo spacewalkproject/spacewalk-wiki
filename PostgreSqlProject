@@ -49,6 +49,10 @@ This analysis is going to require major effort so it is best to handle it in sta
         5.  Add db changes and change # 3 queries to # 1
         6.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
 
+''' Testing '''
+
+Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres queries that are causing errors or are slow.
+
 === Tracking ===
 
 [PostgresIssues Project Issues]
