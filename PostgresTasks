@@ -4,6 +4,6 @@
 ||Dead Query Script||Write a script to: find queries defined but not referenced in perl code; find queries defined but not referenced in java code; find queries defined in both (perl migrated to java).|| ||dgoodwin|| ||
 ||Perl Data Source||Estimate to update perl ''data source'' to use java data source XML files|| || shughes || Syntax only, __not__ feature parity||
 ||Query Script||Enhance script to list files containing SQL; provides file and query counts|| || zeus || ||
-||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
 ||Dead files||Determine which query files do '' not '' need to be converted|| ||  || Does Hibernate affect this?  ||
 ||Add comments||Determine how to add SQL comments to every query|| ||  || ||
+||Postgres Schema||Create test version of Postgres schema, for testing of queries|| ||  || ||
