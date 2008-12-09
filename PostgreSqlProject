@@ -29,5 +29,17 @@ This project is focused on modifying Spacewalk to support both Oracle and Postgr
 
 [PostgresTasks Project Tasks]
 
+=== Resources ===
+
+Orafce http://pgfoundry.org/projects/orafce/
+
+Ora2pg http://freshmeat.net/projects/ora2pg/
+
+=== Porting Documentation ===
+
+Porting Oracle Applications to PostgreSQL http://developer.postgresql.org/~petere/oraport.pdf
+
+EnterpriseDB Oracle Compatibility Developer's Guide http://www.enterprisedb.com/downloads/docs/EnterpriseDB_OraCompat_8.3_v2.7.pdf
+
 === References ===
 [PathToPostgreSql early research]
