@@ -252,7 +252,7 @@ Our first pass of integration testing brought forward some critical issues with 
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || ACTIVE ||  ||
+||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || '''DONE''' ||  ||
 ||  Synchronization: For each system being provisioned have spacewalk create cobbler system profile || 0.4 || 2 || mmccune || '''DONE''' ||  ||
 ||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || ACTIVE  ||  ||
 ||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || '''DONE''' ||  ||
@@ -274,7 +274,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Create Distro GUI:  Location of kernel and initrd needs to be documented as the filesystem path that contains the kernel+initrd, update GUI || 0.4 || 1 || jsherill ||  || Required ||
 ||  Create Distro GUI: Fix double slash in kernel/initrd path || 0.4 || 0.5 || jsherill ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-|| Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill ||  ||  ||
+|| Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || ACTIVE ||  ||
 || Templating: ship a sample spacewalk template and install it into /var/lib/cobbler/kickstarts || 0.4 || 1 || dparker ||  ||  ||
 || Templating:  We need to create a snippet that includes spacewalk registration code || 0.4 || 1 || dparker ||  ||  ||
 || Templating: We need to create a snippet that contains spacewalk "media_url" logic, clarify and document any special media URLs || 0.4 || 1 || mmccune ||  ||  ||
