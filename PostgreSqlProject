@@ -53,7 +53,7 @@ This analysis is going to require major effort so it is best to handle it in sta
 
 ''' Data Migration '''
 
-Allow data to be moved from Oracle to Postgres during a Spacewalk upgrade.
+Allow data to be moved from Oracle to Postgres using ora2pg during a Spacewalk upgrade.
 
 ''' Testing '''
 
