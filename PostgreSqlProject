@@ -74,9 +74,9 @@ This is s ''straw man'' for the project plan and needs more work.  After the tea
  * Data Migration Plan
     ''add detail here''
     * Oracle -> Postgres
-    ''add detail here''
+      ''add detail here''
     * Postgres -> Oracle ?
-     ''add detail here''
+       ''add detail here''
  * Schema Upgrade Plan
     ''How do we do this for multiple databases''
 
