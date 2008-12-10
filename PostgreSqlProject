@@ -20,6 +20,111 @@ The minimum supported version of Oracle is Oracle 10g.
  * Jim Mlodgenski mailto:jim@enterprisedb.com
  * George Williams mailto:george.williams@enterprisedb.com
 
+=== Project Plan ===
+
+This is s ''straw man'' for the project plan and needs more work.
+
+==== Planning - phase 1 ====
+
+ * Knowledge Transfer
+   * Overview (done 12/09/08)
+      ''add detail here''
+   * Datamodel Review
+      ''add detail here''
+ * Analysis
+    ''add detail here''
+    * Queries
+       ''add detail here''
+    * Procedures
+       ''add detail here''
+    * Schema
+       ''add detail here''
+ * Identify Risks
+    ''add detail here''
+ * Infrastructure
+    ''add detail here''
+   * Communication
+      ''add detail here''
+   * Source Control
+      ''add detail here''
+   * Packaging Plan
+      ''add detail here''
+   * Development Environment
+      ''add detail here''
+      * Sample (populated) Database (ora, pg)
+         ''add detail here''
+ * Technical (migration) Approach
+    ''add detail here''
+ * Assemble Team
+    ''add detail here''
+ * Test Plan
+    ''add detail here''
+    * Functional
+       ''add detail here''
+       * Query / Stored Procedure Level
+          ''add detail here''
+       * System Level
+          ''add detail here''
+    * Performance
+       ''add detail here''
+    * Test Environment
+       ''add detail here''
+    * Identify gaps in RH automated testing.
+       ''add detail here''
+ * Data Migration Plan
+    ''add detail here''
+    * Oracle -> Postgres
+    ''add detail here''
+    * Postgres -> Oracle ?
+     ''add detail here''
+ * Schema Upgrade Plan
+    ''How do we do this for multiple databases''
+
+==== Implementation - phase 2 ====
+
+ * Setup git and development branch
+    ''add detail here''
+ * Create PG Schema & Sample Database
+    ''add detail here''
+ * Leverage available compatibility packages (orafce, ...)
+    ''add detail here''
+    * Back porting 
+    ''add detail here''
+    * Packaging ...
+    ''add detail here''
+ * Package development packages
+    ''add detail here''
+    * spacewalk-schema.rpm
+    * spacewalk-setup.rpm
+     ....
+ * Modify spacewalk infrastructure to handle both databases
+    ''add detail here''
+    * drivers
+    * installer
+    * db wrappers 
+       * java
+       * python
+       * perl
+ * Refine/Tune PG schema
+    ''add detail here''
+ * Tagging Queries
+    ''add detail here'
+ * Isolate Development Branch from Master
+    ''add detail here''
+ * Update Queries to work in both Databases
+    ''add detail here''
+ * Create PG functions for Ora store procedures
+    ''add detail here''
+
+==== Testing - phase 3 ====
+
+ * Functional Regression Test (RH automated testing)
+    ''add detail here''
+ * Query / Stored Procedure benchmarks
+    ''add detail here''
+ * Client ''driven'' performance Testing
+    ''add detail here''
+
 === Approach ===
 
 ''' DDL '''
