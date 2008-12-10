@@ -60,6 +60,8 @@ Install Postgres as part of the Spacewalk install, and convert Oracle data to Po
 
 Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres queries that are causing errors or are slow.  Single queries and performance unit tests should be of similar speed on Oracle and Postgres.  The standard regression tests should pass.
 
+Existing Java JUnit tests, API tests, and QA built web UI tests should give us substantial coverage to determine if things are working. Additional manual testing for client communication will probably be required.
+
 === Tracking ===
 
 [PostgresIssues Project Issues]
