@@ -44,11 +44,12 @@ Non-DDL queries must be managed differently.  Non-DDL queries will fall into fou
 This analysis is going to require major effort so it is best to handle it in stages:
 
         1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages
-        2.  Change all comment question marks to one of the four values listed above
-        3.  Create a GIT branch
-        4.  Rewrite # 2 queries to # 1
-        5.  Add db changes and change # 3 queries to # 1
-        6.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
+        2.  Make wholesale changes to minimize incompatibility, like sysdate
+        3.  Change all comment question marks to one of the four values listed above
+        4.  Create a GIT branch
+        5.  Rewrite # 2 queries to # 1
+        6.  Add db changes and change # 3 queries to # 1
+        7.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
 
 
 ''' Installation '''
