@@ -1,0 +1,42 @@
+=== Approach ===
+
+''' DDL '''
+
+Data Definition Language (DDL) will require separate versions for Oracle and Postgres, e.g.
+CREATE TABLE, CREATE FUNCTION, CREATE INDEX.  These statements are centralized and change rarely so it is easy to maintain two versions.  
+
+Tables can be converted using ora2pg, then tuned to use the proper native Postgres data types, e.g. INTEGER, BOOLEAN.
+
+Functions will need to be categorized as easy and hard and then worked on by people with the appropriate skill level.
+
+''' Non-DDL '''
+
+3k queries must be studied and perhaps modified.
+
+Non-DDL queries must be managed differently.  Non-DDL queries will fall into four categories:
+        1. work unchanged in both Oracle and Postgres
+        2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP
+        3. (same) but requires db changes, e.g. add compatibility functions like decode() from Orafce 
+        4. need to create a Postgres-specific version of the query
+
+This analysis is going to require major effort so it is best to handle it in stages:
+
+        1.  Mark all queries via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages
+        2.  Make wholesale changes to minimize incompatibility, like sysdate
+        3.  Change all comment question marks to one of the four values listed above
+        4.  Create a GIT branch
+        5.  Rewrite # 2 queries to # 1
+        6.  Add db changes and change # 3 queries to # 1
+        7.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
+
+
+''' Installation '''
+
+Install Postgres as part of the Spacewalk install, and convert Oracle data to Postgres using ora2pg; moving from Postgres to Oracle is problematic.
+
+
+''' Testing '''
+
+Use 'log_min_error_statement' and 'log_min_duration_statement' to find Postgres queries that are causing errors or are slow.  Single queries and performance unit tests should be of similar speed on Oracle and Postgres.  The standard regression tests should pass.
+
+Existing Java JUnit tests, API tests, and QA built web UI tests should give us substantial coverage to determine if things are working. Additional manual testing for client communication will probably be required.
