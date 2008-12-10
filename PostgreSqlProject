@@ -51,13 +51,9 @@ This analysis is going to require major effort so it is best to handle it in sta
         6.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
 
 
-''' Data Migration '''
-
-Allow data to be moved from Oracle to Postgres using ora2pg during a Spacewalk upgrade; moving from Postgres to Oracle is problematic.
-
 ''' Installation '''
 
-Install Postgres as part of the Spacewalk install, and convert Oracle data to Postgres.
+Install Postgres as part of the Spacewalk install, and convert Oracle data to Postgres using ora2pg; moving from Postgres to Oracle is problematic.
 
 
 ''' Testing '''
