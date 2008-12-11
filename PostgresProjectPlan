@@ -1,66 +1,118 @@
 [wiki:PostgreSqlProject Main Project Page]
 
-=== Project Plan ===
+= Project Plan =
 
 This is s ''straw man'' for the project plan and needs more work.
+ 
+ == Planning - phase 1 ==
 
-==== Planning - phase 1 ====
+ ''<add detail here>''
 
- * Knowledge Transfer
-   * Overview (done 12/09/08)
-      ''add detail here''
-   * Datamodel Review
-      ''add detail here''
- * Analysis
-    ''add detail here''
-    * Queries
-       ''add detail here''
-    * Procedures
-       ''add detail here''
-    * Schema
-       ''add detail here''
- * Identify Risks
-    ''add detail here''
- * Infrastructure
-    ''add detail here''
-   * Communication
-      ''add detail here''
-   * Source Control
-      ''add detail here''
-   * Packaging Plan
-      ''add detail here''
-   * Development Environment
-      ''add detail here''
-      * Sample (populated) Database (ora, pg)
-         ''add detail here''
- * Technical (migration) Approach
-    ''add detail here''
+  === Knowledge Transfer ===
 
-    [wiki:PostgresTechnicalApproach Technical Approach]
- * Assemble Team
-    ''add detail here''
- * Test Plan
-    ''add detail here''
-    * Functional
-       ''add detail here''
-       * Query / Stored Procedure Level
-          ''add detail here''
-       * System Level
-          ''add detail here''
-    * Performance
-       ''add detail here''
-    * Test Environment
-       ''add detail here''
-    * Identify gaps in RH automated testing.
-       ''add detail here''
- * Data Migration Plan
-    ''add detail here''
-    * Oracle -> Postgres
-      ''add detail here''
-    * Postgres -> Oracle ?
-       ''add detail here''
- * Schema Upgrade Plan
-    ''How do we do this for multiple databases''
+ ''<add detail here>''
+
+   ==== Overview (done 12/09/08) ====
+
+ ''<add detail here>''
+
+   ==== Datamodel Review ====
+
+ ''<add detail here>''
+
+   === Analysis ===
+
+ ''<add detail here>''
+
+    ==== Queries ====
+
+ ''<add detail here>''
+
+    ==== Stored Procedures ====
+
+ ''<add detail here>''
+
+    ==== Schema ====
+
+ ''<add detail here>''
+
+  === Identify Risks ===
+
+ ''<add detail here>''
+
+  === Infrastructure ===
+
+ ''<add detail here>''
+
+   ==== Communication ====
+
+  ''<add detail here>''
+
+   ==== Source Control ====
+
+  ''<add detail here>''
+
+  === Packaging Plan ===
+
+ ''<add detail here>''
+
+  === Sample (populated) Database (ora, pg) ===
+       
+ ''<add detail here>''
+
+   === Technical (migration) Approach ====
+
+ ''<add detail here>''
+
+ [wiki:PostgresTechnicalApproach Technical Approach]
+
+  === Assemble Team ===
+
+ ''<add detail here>''
+
+  === Test Plan ===
+
+ ''<add detail here>''
+
+   ==== Functional ====
+
+ ''<add detail here>''
+
+   ==== Query / Stored Procedure ( Level )
+
+ ''<add detail here>''
+
+   ==== System ( Level ) ====
+
+ ''<add detail here>''
+
+   ==== Performance ====
+
+ ''<add detail here>''
+
+   ==== Test Environment ====
+
+ ''<add detail here>''
+
+   ==== Identify Gaps In Automated Testing ====
+
+ ''<add detail here>''
+
+  === Data Migration Plan ===
+
+ ''<add detail here>''
+
+   ==== Oracle -> Postgres ====
+
+ ''<add detail here>''
+
+   ==== Postgres -> Oracle ====
+
+ ''<add detail here>''
+
+  === Schema Upgrade Plan ===
+ 
+ ''How do we do this for multiple databases''
 
 ==== Implementation - phase 2 ====
 
