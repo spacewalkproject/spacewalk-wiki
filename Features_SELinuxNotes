@@ -32,6 +32,15 @@ before installing the oracle-xe-univ package to create the oracle user as system
 
 Both the oracle-xe configure and creating the database user via the web interface can be done under Enforcing.
 
+=== Non-standard settings ===
+
+The SELinux policy modules do a couple of assumptions.
+
+ * the Oracle XE's web interface is expected to be on port 9000
+   * if you've configured another port, you need to do semanage port -a -t oracle_port_t -p tcp $your_port
+ * the mount point is expected to be /var/satellite
+   * if you've configured different path, you need to do semanage fcontext -a -t spacewalk_data_t '$your_path(/.*)?'
+
 == What does not work ==
 
 Features not specifically listed above were not tested. They might work just fine if they are only database + /var/satellite + some /var/cache/rhn type of operations because those are already covered by the existing SELinux rule in the spacewalk-selinux policy module.
