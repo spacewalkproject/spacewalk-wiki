@@ -34,7 +34,9 @@ This is s ''straw man'' for the project plan and needs more work.
       * Sample (populated) Database (ora, pg)
          ''add detail here''
  * Technical (migration) Approach
-    ''add detail here - we can link to Approach section below''
+    ''add detail here''
+
+    [wiki:PostgresTechnicalApproach Technical Approach]
  * Assemble Team
     ''add detail here''
  * Test Plan
