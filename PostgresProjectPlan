@@ -60,7 +60,7 @@ This is s ''straw man'' for the project plan and needs more work.
        
  ''<add detail here>''
 
-   === Technical (migration) Approach ====
+  === Technical (migration) Approach ===
 
  ''<add detail here>''
 
@@ -78,7 +78,7 @@ This is s ''straw man'' for the project plan and needs more work.
 
  ''<add detail here>''
 
-   ==== Query / Stored Procedure ( Level )
+   ==== Query / Stored Procedure ( Level ) ====
 
  ''<add detail here>''
 
@@ -104,11 +104,11 @@ This is s ''straw man'' for the project plan and needs more work.
 
    ==== Oracle -> Postgres ====
 
- ''<add detail here>''
+  ''<add detail here>''
 
    ==== Postgres -> Oracle ====
 
- ''<add detail here>''
+  ''<add detail here>''
 
   === Schema Upgrade Plan ===
  
