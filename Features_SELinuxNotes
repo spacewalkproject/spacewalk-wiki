@@ -5,22 +5,22 @@ The changes and new packages were committed to git master.
 
 == What works ==
 
-Currently (Wed Dec 10 22:55:41 CET 2008), with spacewalk-selinux-0.4.1-5.el5 and other current packages built from master, it is possible to
+Currently (Wed Dec 10 22:55:41 CET 2008), with '''spacewalk-selinux-0.4.1-5.el5''' and other current packages built from master, it is possible to
 
  * install Spacewalk
- * configure Spacewalk (spacewalk-setup)
+ * configure Spacewalk ({{{spacewalk-setup}}})
  * run Spacewalk:
    * use its WebUI
    * restart it via WebUI
-   * run rhnpush and satellite-sync
+   * run {{{rhnpush}}} and {{{satellite-sync}}}
    * register clients to the Spacewalk server
-   * use yum and rhn_check on the client, including kickstarting them
+   * use {{{yum}}} and {{{rhn_check}}} on the client, including kickstarting them
 
 You are welcome to change Permissive to Enforcing and give Spacewalk with SELinux a try.
 
 === Oracle XE ===
 
-With the oracle-xe-selinux-10.2-5.el5, it is possible to run Oracle XE with SELinux targeted in enforcing.
+With the '''oracle-xe-selinux-10.2-5.el5''', it is possible to run Oracle XE with SELinux targeted in Enforcing.
 However, it is necessary to run
 
 {{{
@@ -28,22 +28,28 @@ However, it is necessary to run
 # /usr/sbin/useradd -r -M -g dba -d /usr/lib/oracle/xe -s /bin/bash oracle
 }}}
 
-before installing the oracle-xe-univ package to create the oracle user as system user (with uid < 500).
+'''before''' installing the {{{oracle-xe-univ}}} package to create the oracle user as system user (with uid < 500).
 
-Both the oracle-xe configure and creating the database user via the web interface can be done under Enforcing.
+Both the {{{/etc/init.d/oracle-xe configure}}} and creating the database user via the web interface can be done under Enforcing.
 
 === Non-standard settings ===
 
 The SELinux policy modules do a couple of assumptions.
 
  * the Oracle XE's web interface is expected to be on port 9000
-   * if you've configured another port, you need to do semanage port -a -t oracle_port_t -p tcp $your_port
- * the mount point is expected to be /var/satellite
-   * if you've configured different path, you need to do semanage fcontext -a -t spacewalk_data_t '$your_path(/.*)?'
+   * if you've configured another port, you need to do
+{{{
+semanage port -a -t oracle_port_t -p tcp $your_port
+}}}
+ * the mount point is expected to be {{{/var/satellite}}}
+   * if you've configured different path, you need to do
+{{{
+semanage fcontext -a -t spacewalk_data_t '$your_path(/.*)?'
+}}}
 
 == What does not work ==
 
-Features not specifically listed above were not tested. They might work just fine if they are only database + /var/satellite + some /var/cache/rhn type of operations because those are already covered by the existing SELinux rule in the spacewalk-selinux policy module.
+Features not specifically listed above were not tested. They might work just fine if they are only database + {{{/var/satellite}}} + some {{{/var/cache/rhn}}} type of operations because those are already covered by the existing SELinux rule in the {{{spacewalk-selinux}}} policy module.
 
 Most notably, monitoring will not work because it did not work in Spacewalk 0.3, so there was no baseline to develop against, and any feature added during the 0.4 cycle was also not addressed.
 
@@ -51,7 +57,7 @@ In addition, Spacewalk Proxy did not get any SELinux work yet.
 
 == What types are used ==
 
-The ps axuwZ output might look like this on your Spacewalk server:
+The {{{ps axuwZ}}} output might look like this on your Spacewalk server:
 
 {{{
 root:system_r:oracle_tnslsnr_t  oracle    7998  0.0  0.5  22048  3032 ?        Ss   16:00   0:01 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
@@ -69,6 +75,7 @@ root:system_r:oracle_db_t       oracle    8023  0.0  4.3 228508 23060 ?        S
 root:system_r:oracle_db_t       oracle    8025  0.0  1.4 229168  7880 ?        Ss   16:00   0:00 xe_d000_XE
 root:system_r:oracle_db_t       oracle    8027  0.0  1.4 229112  7812 ?        Ss   16:00   0:00 xe_s000_XE
 root:system_r:oracle_db_t       oracle    8039  0.0  2.4 228504 13164 ?        Ss   16:00   0:00 xe_qmnc_XE
+
 root:system_r:oracle_db_t       oracle    8047  0.0  1.5 228504  8540 ?        Ss   16:00   0:00 xe_q000_XE
 root:system_r:initrc_t          root      8083  0.0  0.0  12216   436 ?        Sl   16:00   0:00 /usr/bin/taskomaticd /etc/rhn/default/rhn_taskomatic_daemon.con
 root:system_r:java_t            root      8085  0.1 10.6 331324 56972 ?        Sl   16:00   0:40 /usr/bin/java -Dibm.dst.compatibility=true -Xms32m -Xmx192m -Dj
@@ -99,4 +106,4 @@ root:system_r:oracle_db_t       oracle   11673 24.1  6.4 230220 34440 ?        S
 root:system_r:oracle_db_t       oracle   11675  0.0  5.8 233280 31208 ?        Ss   21:30   0:01 oracleXE (LOCAL=NO)
 }}}
 
-So most notably, we use RHEL's httpd_t for Apache and java_t for tomcat, taskomatic, and search server.
+So most notably, we use RHEL's '''httpd_t''' for Apache and '''java_t''' for tomcat, taskomatic, and search server.
