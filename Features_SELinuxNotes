@@ -1,72 +1,27 @@
 
-I've started investigating SELinux status of Spacewalk, using Spacewalk 0.2 20080903 snapshot.
+The work on adding SELinux support to Spacewalk was done on Spacewalk 0.3. The OS targeted was RHEL 5, and the only targeted policy was targeted.
 
-== Oracle (XE) ==
+The changes and new packages were committed to git master.
 
-After installing Oracle XE according to the OracleXeSetup instructions, I've run
+== What works ==
 
-{{{
-# /etc/init.d/oracle-xe configure
-}}}
+Currently (Wed Dec 10 22:55:41 CET 2008), with spacewalk-selinux-0.4.1-5.el5 and other current packages built from master, it is possible to
 
-It configures the database (the XE instance) and while there are no denials in audit.log, the initrc_t in this ps axuwZ output does not sound correct:
+ * install Spacewalk
+ * configure Spacewalk (spacewalk-setup)
+ * run Spacewalk:
+   * use its WebUI
+   * restart it via WebUI
+   * run rhnpush and satellite-sync
+   * register clients to the Spacewalk server
+   * use yum and rhn_check on the client, including kickstarting them
 
-{{{
-root:system_r:initrc_t          oracle    2073  0.0  0.7  21980  6036 ?        Ss   14:00   0:00 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
+You are welcome to change Permissive to Enforcing and give Spacewalk with SELinux a try.
 
-root:system_r:initrc_t          oracle    2212  0.0  1.2 298556 10088 ?        Ss   14:02   0:00 xe_pmon_XE
-root:system_r:initrc_t          oracle    2214  0.0  1.0 297944  8744 ?        Ss   14:02   0:00 xe_psp0_XE
-root:system_r:initrc_t          oracle    2216  0.0  2.0 297940 16936 ?        Ss   14:02   0:00 xe_mman_XE
-root:system_r:initrc_t          oracle    2218  0.0  1.4 300012 12256 ?        Ss   14:02   0:00 xe_dbw0_XE
-root:system_r:initrc_t          oracle    2220  0.0  3.4 313492 28124 ?        Ss   14:02   0:00 xe_lgwr_XE
-root:system_r:initrc_t          oracle    2222  0.0  1.7 297948 14020 ?        Ss   14:02   0:00 xe_ckpt_XE
-root:system_r:initrc_t          oracle    2224  0.0  3.4 297972 28476 ?        Ss   14:02   0:00 xe_smon_XE
-root:system_r:initrc_t          oracle    2226  0.0  1.7 297944 14128 ?        Ss   14:02   0:00 xe_reco_XE
-root:system_r:initrc_t          oracle    2228  0.0  2.4 299540 20456 ?        Ss   14:02   0:00 xe_cjq0_XE
-root:system_r:initrc_t          oracle    2230  0.2  5.1 299660 41980 ?        Ss   14:02   0:00 xe_mmon_XE
-root:system_r:initrc_t          oracle    2232  0.0  1.2 297944  9852 ?        Ss   14:02   0:00 xe_mmnl_XE
-root:system_r:initrc_t          oracle    2234  0.0  1.1 298604  9656 ?        Ss   14:02   0:00 xe_d000_XE
-root:system_r:initrc_t          oracle    2236  1.3  8.0 304304 65948 ?        Ss   14:02   0:02 xe_s000_XE
-root:system_r:initrc_t          oracle    2238  0.1  6.1 303260 50600 ?        Ss   14:02   0:00 xe_s001_XE
-root:system_r:initrc_t          oracle    2240  0.0  1.0 298552  8536 ?        Ss   14:02   0:00 xe_s002_XE
-root:system_r:initrc_t          oracle    2242  0.0  1.0 298552  8540 ?        Ss   14:02   0:00 xe_s003_XE
-root:system_r:initrc_t          oracle    2246  0.0  1.2 297940  9932 ?        Ss   14:02   0:00 xe_qmnc_XE
-root:system_r:initrc_t          oracle    2275  0.0  1.3 297936 10920 ?        Ss   14:02   0:00 xe_q000_XE
-root:system_r:initrc_t          oracle    2277  0.0  1.1 297940  9188 ?        Ss   14:02   0:00 xe_q001_XE
-}}}
+=== Oracle XE ===
 
-=== oracle-xe-selinux-10.2-2.el5.sw ===
-
-With oracle-xe-selinux-10.2-2.el5.sw installed, the ps output looks like this:
-
-{{{
-root:system_r:oracle_tnslsnr_t  oracle    5411  0.0  1.1  21964  6028 ?        Ss   15:55   0:00 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr LISTENER -inherit
-root:system_r:oracle_db_t       oracle    5529  0.0  1.8 228904 10064 ?        Ss   16:03   0:00 xe_pmon_XE
-root:system_r:oracle_db_t       oracle    5531  0.0  1.6 228296  8732 ?        Ss   16:03   0:00 xe_psp0_XE
-root:system_r:oracle_db_t       oracle    5533  0.1  4.3 228292 23520 ?        Ss   16:03   0:00 xe_mman_XE
-root:system_r:oracle_db_t       oracle    5535  0.0  2.2 230360 11916 ?        Ss   16:03   0:00 xe_dbw0_XE
-root:system_r:oracle_db_t       oracle    5537  0.1  5.2 243848 28100 ?        Ss   16:03   0:00 xe_lgwr_XE
-root:system_r:oracle_db_t       oracle    5539  0.0  2.6 228300 13976 ?        Ss   16:03   0:00 xe_ckpt_XE
-root:system_r:oracle_db_t       oracle    5541  0.3  5.3 228324 28484 ?        Ss   16:03   0:00 xe_smon_XE
-root:system_r:oracle_db_t       oracle    5543  0.0  1.6 228296  8728 ?        Ss   16:03   0:00 xe_reco_XE
-root:system_r:oracle_db_t       oracle    5545  0.3  4.2 229896 22848 ?        Ss   16:03   0:00 xe_cjq0_XE
-root:system_r:oracle_db_t       oracle    5547  1.2  7.7 231044 41644 ?        Ss   16:03   0:00 xe_mmon_XE
-root:system_r:oracle_db_t       oracle    5549  0.0  1.8 228296  9740 ?        Ss   16:03   0:00 xe_mmnl_XE
-root:system_r:oracle_db_t       oracle    5551  0.0  1.6 228956  8848 ?        Ss   16:03   0:00 xe_d000_XE
-root:system_r:oracle_db_t       oracle    5553  0.0  1.5 228904  8536 ?        Ss   16:03   0:00 xe_s000_XE
-root:system_r:oracle_db_t       oracle    5555  0.0  1.5 228900  8520 ?        Ss   16:03   0:00 xe_s001_XE
-root:system_r:oracle_db_t       oracle    5557  0.0  1.5 228900  8524 ?        Ss   16:03   0:00 xe_s002_XE
-root:system_r:oracle_db_t       oracle    5559  0.0  1.5 228900  8524 ?        Ss   16:03   0:00 xe_s003_XE
-root:system_r:oracle_db_t       oracle    5564  0.0  2.5 228292 13436 ?        Ss   16:03   0:00 xe_qmnc_XE
-root:system_r:oracle_db_t       oracle    5570  0.3  4.8 228844 25884 ?        Ss   16:03   0:00 xe_j000_XE
-root:system_r:oracle_db_t       oracle    5572  0.3  4.6 228856 24776 ?        Ss   16:03   0:00 xe_j001_XE
-root:system_r:oracle_db_t       oracle    5593  0.0  1.7 228292  9152 ?        Ss   16:03   0:00 xe_q000_XE
-root:system_r:oracle_db_t       oracle    5595  0.1  2.7 228308 14836 ?        Ss   16:03   0:00 xe_q001_XE
-root:system_r:oracle_db_t       oracle    5597  0.0  1.7 228292  9188 ?        Ss   16:03   0:00 xe_q002_XE
-root:system_r:unconfined_t:SystemLow-SystemHigh root 5599 0.0  0.1 3908 660 pts/2 R+ 16:03   0:00 grep oracle
-}}}
-
-Note that you have to do
+With the oracle-xe-selinux-10.2-5.el5, it is possible to run Oracle XE with SELinux targeted in enforcing.
+However, it is necessary to run
 
 {{{
 # /usr/sbin/groupadd -r dba
@@ -75,84 +30,64 @@ Note that you have to do
 
 before installing the oracle-xe-univ package to create the oracle user as system user (with uid < 500).
 
-=== oracle-xe-selinux-10.2-2.el5.sw issues ===
+Both the oracle-xe configure and creating the database user via the web interface can be done under Enforcing.
 
-Also, the oracle-xe-selinux should be installed after /etc/init.d/oracle-xe configure is run. Otherwise, the following AVCs are logged:
+== What does not work ==
 
-{{{
-type=AVC msg=audit(1224770154.598:57): avc:  denied  { write } for  pid=5411 comm="tnslsnr" name="server" dev=dm-0 ino=68540 scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.598:57): avc:  denied  { add_name } for  pid=5411 comm="tnslsnr" name="log" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.598:57): avc:  denied  { create } for  pid=5411 comm="tnslsnr" name="log" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.600:58): avc:  denied  { create } for  pid=5411 comm="tnslsnr" name="css.log" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-type=AVC msg=audit(1224770154.600:59): avc:  denied  { setattr } for  pid=5411 comm="tnslsnr" name="css.log" dev=dm-0 ino=196068 scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-type=AVC msg=audit(1224770154.601:60): avc:  denied  { append } for  pid=5411 comm="tnslsnr" name="css.log" dev=dm-0 ino=196068 scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-type=AVC msg=audit(1224770154.944:67): avc:  denied  { search } for  pid=5425 comm="orapwd" name="dbs" dev=dm-0 ino=194016 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.944:67): avc:  denied  { write } for  pid=5425 comm="orapwd" name="dbs" dev=dm-0 ino=194016 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.944:67): avc:  denied  { add_name } for  pid=5425 comm="orapwd" name="orapwXE" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224770154.944:67): avc:  denied  { create } for  pid=5425 comm="orapwd" name="orapwXE" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-type=AVC msg=audit(1224770154.945:68): avc:  denied  { getattr } for  pid=5425 comm="orapwd" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/dbs/orapwXE" dev=dm-0 ino=196084 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-type=AVC msg=audit(1224770154.945:69): avc:  denied  { write } for  pid=5425 comm="orapwd" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/dbs/orapwXE" dev=dm-0 ino=196084 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-type=AVC msg=audit(1224770154.945:70): avc:  denied  { setattr } for  pid=5425 comm="orapwd" name="orapwXE" dev=dm-0 ino=196084 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
+Features not specifically listed above were not tested. They might work just fine if they are only database + /var/satellite + some /var/cache/rhn type of operations because those are already covered by the existing SELinux rule in the spacewalk-selinux policy module.
 
-type=AVC msg=audit(1224770156.975:71): avc:  denied  { write } for  pid=5426 comm="oracle" name="adump" dev=dm-0 ino=196071 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=dir
-type=AVC msg=audit(1224770156.975:71): avc:  denied  { add_name } for  pid=5426 comm="oracle" name="ora_5426.aud" scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=dir
-type=AVC msg=audit(1224770156.975:71): avc:  denied  { create } for  pid=5426 comm="oracle" name="ora_5426.aud" scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-type=AVC msg=audit(1224770156.975:72): avc:  denied  { append } for  pid=5426 comm="oracle" path="/usr/lib/oracle/xe/app/oracle/admin/XE/adump/ora_5426.aud" dev=dm-0 ino=196087 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
+Most notably, monitoring will not work because it did not work in Spacewalk 0.3, so there was no baseline to develop against, and any feature added during the 0.4 cycle was also not addressed.
 
-type=AVC msg=audit(1224770158.088:73): avc:  denied  { write } for  pid=5426 comm="oracle" path="/usr/lib/oracle/xe/app/oracle/admin/XE/udump/xe_ora_5426.trc" dev=dm-0 ino=196090 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
+In addition, Spacewalk Proxy did not get any SELinux work yet.
 
-type=AVC msg=audit(1224770160.820:74): avc:  denied  { write } for  pid=5459 comm="oracle" name="xeseed.dfb" dev=dm-0 ino=132138 scontext=root:system_r:oracle_db_t:s0 tcontext=system_u:object_r:lib_t:s0 tclass=file
+== What types are used ==
 
-type=AVC msg=audit(1224770232.292:75): avc:  denied  { write } for  pid=5459 comm="oracle" path="/usr/lib/oracle/xe/oradata/XE/system.dbf" dev=dm-0 ino=196093 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-type=AVC msg=audit(1224770274.385:76): avc:  denied  { append } for  pid=5459 comm="oracle" name="alert_XE.log" dev=dm-0 ino=196088 scontext=root:system_r:oracle_db_t:s0 tcontext=root:object_r:lib_t:s0 tclass=file
-}}}
-
- * The first three are about creating /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log which we probably want to create and restorecon in oracle-xe-selinux ourselves. That would also cover the css.log (in /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/log/vmware135/client/css.log).
-
- * The orapwd errors I'm not sure about yet. Maybe we should run it as oracle_db_t?
-
- * The adump directory is /usr/lib/oracle/xe/app/oracle/admin/XE/adump, we might need to create its parent as well, probably.
-
- * I don't know where that xeseed.dfb is being written to (will have to strace Oracle, probably).
-  * The file seems to be /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/seeddb/xeseed.dfb
-
- * And the system.dbf and alert_XE.log are again caused by them being created late, with wrong context.
-
- * When creating new user via XE's WebUI (maybe when just loggin in to the WebUI), I get
+The ps axuwZ output might look like this on your Spacewalk server:
 
 {{{
-type=AVC msg=audit(1224772448.253:195): avc:  denied  { connectto } for  pid=11068 comm="tnslsnr" path="/var/tmp/.oracle/s#11095.1" scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=root:system_r:oracle_db_t:s0 tclass=unix_stream_socket
+root:system_r:oracle_tnslsnr_t  oracle    7998  0.0  0.5  22048  3032 ?        Ss   16:00   0:01 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
+root:system_r:oracle_db_t       oracle    8003  0.0  2.0 229116 10868 ?        Ss   16:00   0:02 xe_pmon_XE
+root:system_r:oracle_db_t       oracle    8005  0.0  1.5 228508  8296 ?        Ss   16:00   0:00 xe_psp0_XE
+root:system_r:oracle_db_t       oracle    8007  0.0  1.8 228504 10084 ?        Ss   16:00   0:00 xe_mman_XE
+root:system_r:oracle_db_t       oracle    8009  0.1  4.5 239792 24108 ?        Ss   16:00   0:31 xe_dbw0_XE
+root:system_r:oracle_db_t       oracle    8011  0.1  4.6 244060 24988 ?        Ss   16:00   0:32 xe_lgwr_XE
+root:system_r:oracle_db_t       oracle    8013  0.0  2.9 229024 15588 ?        Ss   16:00   0:04 xe_ckpt_XE
+root:system_r:oracle_db_t       oracle    8015  0.0  6.4 229056 34456 ?        Ss   16:00   0:07 xe_smon_XE
+root:system_r:oracle_db_t       oracle    8017  0.0  3.8 229016 20720 ?        Ss   16:00   0:00 xe_reco_XE
+root:system_r:oracle_db_t       oracle    8019  0.0  6.3 230112 33840 ?        Ss   16:00   0:07 xe_cjq0_XE
+root:system_r:oracle_db_t       oracle    8021  0.0  8.6 231292 46412 ?        Ss   16:00   0:10 xe_mmon_XE
+root:system_r:oracle_db_t       oracle    8023  0.0  4.3 228508 23060 ?        Ss   16:00   0:04 xe_mmnl_XE
+root:system_r:oracle_db_t       oracle    8025  0.0  1.4 229168  7880 ?        Ss   16:00   0:00 xe_d000_XE
+root:system_r:oracle_db_t       oracle    8027  0.0  1.4 229112  7812 ?        Ss   16:00   0:00 xe_s000_XE
+root:system_r:oracle_db_t       oracle    8039  0.0  2.4 228504 13164 ?        Ss   16:00   0:00 xe_qmnc_XE
+root:system_r:oracle_db_t       oracle    8047  0.0  1.5 228504  8540 ?        Ss   16:00   0:00 xe_q000_XE
+root:system_r:initrc_t          root      8083  0.0  0.0  12216   436 ?        Sl   16:00   0:00 /usr/bin/taskomaticd /etc/rhn/default/rhn_taskomatic_daemon.con
+root:system_r:java_t            root      8085  0.1 10.6 331324 56972 ?        Sl   16:00   0:40 /usr/bin/java -Dibm.dst.compatibility=true -Xms32m -Xmx192m -Dj
+root:system_r:java_t            tomcat    8643  0.3 13.8 411764 74120 ?        Sl   16:01   1:31 /usr/lib/jvm/java/bin/java -ea -Xms256m -Xmx256m -Djava.awt.hea
+root:system_r:oracle_db_t       oracle    8672  0.0  5.3 229184 28788 ?        Ss   16:01   0:01 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle    8674  0.0  6.0 230236 32580 ?        Ss   16:01   0:02 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle    8676  0.0  5.2 229184 27888 ?        Ss   16:01   0:01 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle    8678  0.0  6.2 229224 33512 ?        Ss   16:01   0:02 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle    8680  0.0  5.8 230252 31376 ?        Ss   16:01   0:01 oracleXE (LOCAL=NO)
+root:system_r:initrc_t          root      8708  0.0  0.0  12216   432 ?        Sl   16:01   0:01 /usr/bin/rhnsearchd /etc/rhn/search/rhn_search_daemon.conf wrap
+root:system_r:java_t            root      8711  0.4  2.8 668408 15252 ?        Sl   16:01   1:50 /usr/bin/java -Djava.library.path=/usr/lib:/usr/lib64 -classpat
+root:system_r:httpd_t           root     11574  0.0  0.8  34792  4608 ?        Ss   21:19   0:00 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_sys_script_t root    11576  0.0  0.2   5408  1216 ?        S    21:19   0:00 /usr/bin/perl /etc/rhn/satellite-httpd/conf/satidmap.pl
+root:system_r:httpd_t           apache   11577  0.1  3.3 159572 18160 ?        S    21:19   0:10 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11578  0.1  2.3 157892 12768 ?        S    21:19   0:09 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11579  0.1  2.1 145784 11484 ?        S    21:19   0:07 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11580  3.3  1.9 167856 10684 ?        S    21:19   3:23 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11581  0.1  2.4 159036 12864 ?        S    21:19   0:09 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11582  0.1  2.1 145176 11524 ?        S    21:19   0:09 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11583  0.1  2.8 145864 15488 ?        S    21:19   0:10 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:httpd_t           apache   11584  0.1  1.9 145740 10404 ?        S    21:19   0:08 /usr/sbin/httpd -f /etc/rhn/satellite-httpd/conf/httpd.conf
+root:system_r:oracle_db_t       oracle   11595  0.0  9.0 230264 48496 ?        Ss   21:20   0:05 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11597  0.0  5.7 233296 30748 ?        Ss   21:20   0:01 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11601  0.0  5.7 233312 30628 ?        Ss   21:21   0:01 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11603  2.2  5.2 230220 28012 ?        Ss   21:21   2:14 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11671  0.0  4.5 230224 24596 ?        Ss   21:30   0:00 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11673 24.1  6.4 230220 34440 ?        Ss   21:30  22:05 oracleXE (LOCAL=NO)
+root:system_r:oracle_db_t       oracle   11675  0.0  5.8 233280 31208 ?        Ss   21:30   0:01 oracleXE (LOCAL=NO)
 }}}
 
-=== oracle-xe-selinux-10.2-3 ===
-
-All the above except the xeseed.dfb thing are addressed by oracle-xe-selinux-10.2-3.
-
-A new set of AVCs appears:
-
-{{{
-type=AVC msg=audit(1224853083.903:133): avc:  denied  { search } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853083.904:134): avc:  denied  { write } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853083.904:134): avc:  denied  { add_name } for  pid=5637 comm="sqlplus" name="CloneRmanRestore.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853083.904:134): avc:  denied  { create } for  pid=5637 comm="sqlplus" name="CloneRmanRestore.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-
-type=AVC msg=audit(1224853087.903:135): avc:  denied  { write } for  pid=5672 comm="oracle" name="xeseed.dfb" dev=dm-0 ino=806421 scontext=root:system_r:oracle_db_t:s0 tcontext=system_u:object_r:lib_t:s0 tclass=file
-
-type=AVC msg=audit(1224853390.684:151): avc:  denied  { write } for  pid=5637 comm="sqlplus" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/log/CloneRmanRestore.log" dev=dm-0 ino=806422 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-type=AVC msg=audit(1224853390.687:152): avc:  denied  { search } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853390.716:153): avc:  denied  { write } for  pid=5637 comm="sqlplus" name="log" dev=dm-0 ino=806412 scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853390.716:153): avc:  denied  { add_name } for  pid=5637 comm="sqlplus" name="cloneDBCreation.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=user_u:object_r:oracle_db_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853390.716:153): avc:  denied  { create } for  pid=5637 comm="sqlplus" name="cloneDBCreation.log" scontext=root:system_r:oracle_sqlplus_t:s0 tcontext=root:object_r:oracle_db_log_t:s0 tclass=file
-
-type=AVC msg=audit(1224853479.229:154): avc:  denied  { name_bind } for  pid=5624 comm="tnslsnr" src=8080 scontext=root:system_r:oracle_tnslsnr_t:s0 tcontext=system_u:object_r:http_cache_port_t:s0 tclass=tcp_socket
-
-type=AVC msg=audit(1224853492.889:155): avc:  denied  { search } for  pid=5761 comm="oracle" name="scripts" dev=dm-0 ino=774176 scontext=root:system_r:oracle_db_t:s0 tcontext=user_u:object_r:oracle_sqlplus_log_t:s0 tclass=dir
-type=AVC msg=audit(1224853492.890:156): avc:  denied  { getattr } for  pid=5761 comm="oracle" path="/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/init.ora" dev=dm-0 ino=774300 scontext=root:system_r:oracle_db_t:s0 tcontext=user_u:object_r:oracle_sqlplus_log_t:s0 tclass=file
-
-type=AVC msg=audit(1224853513.055:163): avc:  denied  { read } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
-type=AVC msg=audit(1224853513.089:164): avc:  denied  { ioctl } for  pid=5813 comm="oracle" path="pipe:[21518]" dev=pipefs ino=21518 scontext=root:system_r:oracle_db_t:s0 tcontext=root:system_r:initrc_t:s0 tclass=fifo_file
-}}}
-
-=== oracle-xe-selinux-10.2-4 ===
-
-With oracle-xe-selinux-10.2-4, the /etc/init.d/oracle-xe configure, /etc/init.d/oracle-xe start, and stop, plus creating new user via http://...:9000/apex passed without any AVC denial.
+So most notably, we use RHEL's httpd_t for Apache and java_t for tomcat, taskomatic, and search server.
