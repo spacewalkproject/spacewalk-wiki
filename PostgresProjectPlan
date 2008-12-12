@@ -4,195 +4,196 @@
 
 This is s ''straw man'' for the project plan and needs more work.
  
- == Planning - phase 1 ==
+== Planning - phase 1 ==
 
  ''<add detail here>''
 
-  === Knowledge Transfer ===
+ '''Knowledge Transfer'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Overview (done 12/09/08) ====
+   '''Overview''' (done 12/09/08)
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Datamodel Review ====
+ '''Datamodel Review'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   === Analysis ===
+     '''Analysis'''
 
- ''<add detail here>''
+       ''<add detail here>''
 
-    ==== Queries ====
+     '''Queries'''
 
- ''<add detail here>''
+       ''<add detail here>''
 
-    ==== Stored Procedures ====
+     '''Stored Procedures'''
 
- ''<add detail here>''
+       ''<add detail here>''
 
-    ==== Schema ====
+     '''Schema'''
 
- ''<add detail here>''
+       ''<add detail here>''
 
-  === Identify Risks ===
+ '''Identify Risks'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Infrastructure ===
+ '''Infrastructure'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Communication ====
+ '''Communication'''
 
-  ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Source Control ====
+ '''Source Control'''
 
-  ''<add detail here>''
+   ''<add detail here>''
 
-  === Packaging Plan ===
+ '''Packaging Plan'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Sample (populated) Database (ora, pg) ===
+ '''Sample (populated) Database''' (oracle & postgres)
        
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Technical (migration) Approach ===
+ '''Technical (migration) Approach'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
- [wiki:PostgresTechnicalApproach Technical Approach]
+   [wiki:PostgresTechnicalApproach Technical Approach]
 
-  === Assemble Team ===
+ '''Assemble Team'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Test Plan ===
+ '''Test Plan'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Functional ====
+   '''Functional Test Plan'''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Query / Stored Procedure ( Level ) ====
+   '''Query / Stored Procedure''' ''( Level )''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== System ( Level ) ====
+   '''System''' ''( Level )''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Performance ====
+   '''Performance'''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Test Environment ====
+ '''Test Environment'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Identify Gaps In Automated Testing ====
+ '''Identify Gaps In Automated Testing'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Data Migration Plan ===
+ '''Data Migration Plan'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-   ==== Oracle -> Postgres ====
+   '''Oracle -> Postgres'''
 
-  ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Postgres -> Oracle ====
+   '''Postgres -> Oracle'''
 
-  ''<add detail here>''
+     ''<add detail here>''
 
-  === Schema Upgrade Plan ===
+ '''Schema Upgrade Plan'''
  
- ''How do we do this for multiple databases''
+   ''How do we do this for multiple databases?''
 
- == Implementation - phase 2 ==
+== Implementation ( phase 2 ) ==
 
-  === Git Setup ===
+ '''Git Setup'''
+ 
+   Cleanup or drop and recreate the postgres branch.
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Create PG Schema & Sample Database ===
+ '''Create PG Schema & Sample Database'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Leverage Compatibility Packages ===
+ '''Compatibility Libraries'''
 
- ''<add detail here>''
-  * Orafce
-  * other?
+   ''<add detail here>''
+      * orafce
+      * other?
 
-   ==== Back porting ====
+   '''Back porting'''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Packaging ====
+   '''Packaging'''
 
- ''<add detail here>''
+     ''<add detail here>''
 
-   ==== Development Packages ====
+ '''Development Packages'''
 
- ''<add detail here>''
+   ''<add detail here>''
+     * spacewalk-schema.rpm
+     * spacewalk-setup.rpm
+     * ...
 
- * spacewalk-schema.rpm
- * spacewalk-setup.rpm
- * ...
+ '''Spacewalk Database Infrastructure'''
 
- === Multi-Database Infrastructure ===
+   Modify Spacewalk infrastructure to support multiple databases.
+   * Drivers
+   * Installer
+   * DB Wrappers 
+     * Java Stack
+     * Python Stack
+     * Perl Stack
 
- Modify Spacewalk infrastructure to support multiple databases.
+   ''<add detail here>''
 
- ''<add detail here>''
+ '''Refine/Tune Postgres Schema'''
 
- * Drivers
- * Installer
- * DB Wrappers 
-   * Java Stack
-   * Python Stack
-   * Perl Stack
+   ''<add detail here>''
 
- === Refine/Tune Postgres Schema ===
+ '''Tag Queries'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
- === Tagging Queries ===
+ '''Isolate Development Branch from Master'''
 
- ''<add detail here>''
+  Stop pulling from master.
 
- === Isolate Development Branch from Master ===
+  ''<add detail here>''
 
- ''<add detail here>''
+ '''Migrate Queries'''
 
- === Migrate Queries ===
+   ''<add detail here>''
 
- ''<add detail here>''
+ '''Migrate Stored Procedures'''
 
- === Migrate Stored Procedures ===
+   Create postgres function of Oracle stored procedures.
 
- Create postgres function of Oracle stored procedures.
+   ''<add detail here>''
 
- ''<add detail here>''
+== Testing - phase 3 ==
 
+ '''Functional Regression Test''' ''(Automated Testing)''
 
- == Testing - phase 3 ==
+   ''<add detail here>''
 
-  === Functional Regression Test (Automated Testing) ===
+ '''Query/Stored Procedure Performance Testing'''
 
- ''<add detail here>''
+   ''<add detail here>''
 
-  === Query / Stored Procedure Benchmarks ===
+ '''Client ''driven'' Performance Testing'''
 
- ''<add detail here>''
-
-   === Client ''driven'' Performance Testing ===
-
- ''<add detail here>''
+   ''<add detail here>''
 
