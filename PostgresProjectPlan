@@ -16,6 +16,14 @@ This is s ''straw man'' for the project plan and needs more work.
 
 ''<add detail here>''
 
+=== Sample (populated) Database''' (oracle & postgres) ===
+       
+''<add detail here>''
+
+==== Schema ====
+
+''<add detail here>''
+
 ==== Datamodel Review ====
 
 ''<add detail here>''
@@ -29,10 +37,6 @@ This is s ''straw man'' for the project plan and needs more work.
 ''<add detail here>''
 
 ==== Stored Procedures ====
-
-''<add detail here>''
-
-==== Schema ====
 
 ''<add detail here>''
 
@@ -54,10 +58,6 @@ This is s ''straw man'' for the project plan and needs more work.
 
 === Packaging Plan ===
 
-''<add detail here>''
-
-=== Sample (populated) Database''' (oracle & postgres) ===
-       
 ''<add detail here>''
 
 === Technical (migration) Approach ===
