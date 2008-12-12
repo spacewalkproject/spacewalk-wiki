@@ -114,47 +114,85 @@ This is s ''straw man'' for the project plan and needs more work.
  
  ''How do we do this for multiple databases''
 
-==== Implementation - phase 2 ====
+ == Implementation - phase 2 ==
 
- * Setup git and development branch
-    ''add detail here''
- * Create PG Schema & Sample Database
-    ''add detail here''
- * Leverage available compatibility packages (orafce, ...)
-    ''add detail here''
-    * Back porting 
-    ''add detail here''
-    * Packaging ...
-    ''add detail here''
- * Package development packages
-    ''add detail here''
-    * spacewalk-schema.rpm
-    * spacewalk-setup.rpm
-     ....
- * Modify spacewalk infrastructure to handle both databases
-    ''add detail here''
-    * drivers
-    * installer
-    * db wrappers 
-       * java
-       * python
-       * perl
- * Refine/Tune PG schema
-    ''add detail here''
- * Tagging Queries
-    ''add detail here'
- * Isolate Development Branch from Master
-    ''add detail here''
- * Update Queries to work in both Databases
-    ''add detail here''
- * Create PG functions for Ora store procedures
-    ''add detail here''
+  === Git Setup ===
 
-==== Testing - phase 3 ====
+ ''<add detail here>''
 
- * Functional Regression Test (RH automated testing)
-    ''add detail here''
- * Query / Stored Procedure benchmarks
-    ''add detail here''
- * Client ''driven'' performance Testing
-    ''add detail here''
+  === Create PG Schema & Sample Database ===
+
+ ''<add detail here>''
+
+  === Leverage Compatibility Packages ===
+
+ ''<add detail here>''
+  * Orafce
+  * other?
+
+   ==== Back porting ====
+
+ ''<add detail here>''
+
+   ==== Packaging ====
+
+ ''<add detail here>''
+
+   ==== Development Packages ====
+
+ ''<add detail here>''
+
+ * spacewalk-schema.rpm
+ * spacewalk-setup.rpm
+ * ...
+
+ === Multi-Database Infrastructure ===
+
+ Modify Spacewalk infrastructure to support multiple databases.
+
+ ''<add detail here>''
+
+ * Drivers
+ * Installer
+ * DB Wrappers 
+   * Java Stack
+   * Python Stack
+   * Perl Stack
+
+ === Refine/Tune Postgres Schema ===
+
+ ''<add detail here>''
+
+ === Tagging Queries ===
+
+ ''<add detail here>''
+
+ === Isolate Development Branch from Master ===
+
+ ''<add detail here>''
+
+ === Migrate Queries ===
+
+ ''<add detail here>''
+
+ === Migrate Stored Procedures ===
+
+ Create postgres function of Oracle stored procedures.
+
+ ''<add detail here>''
+
+
+ == Testing - phase 3 ==
+
+  === Functional Regression Test (Automated Testing) ===
+
+ ''<add detail here>''
+
+  === Query / Stored Procedure Benchmarks ===
+
+ ''<add detail here>''
+
+   === Client ''driven'' Performance Testing ===
+
+ ''<add detail here>''
+
