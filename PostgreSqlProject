@@ -32,6 +32,8 @@ The minimum supported version of Oracle is Oracle 10g.
 
 [PostgresTasks Project Tasks]
 
+[PostgresMeetingNotes Meeting Notes]
+
 === Resources ===
 
 Orafce: Oracle support functions http://pgfoundry.org/projects/orafce/
