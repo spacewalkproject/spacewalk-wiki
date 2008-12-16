@@ -10,6 +10,7 @@ The minimum supported version of Oracle is Oracle 10g.
 
  * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)]
  * IRC: #spacewalk-devel on [http://freenode.net/ (irc.freenode.net)]
+ * GIT: git branch --track pgsql origin/pgsql && git checkout pgsql
 
 === Contacts ===
 
