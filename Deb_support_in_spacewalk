@@ -8,5 +8,10 @@ RHN Satellite Engineer.
 
 On this page I would describe progress of my work.
 
+'''December 2008'''
+I have 2 virtual servers with CentOS. On 1 of them spacewalk is installed, second
+will be for testing. Now I am going to install debian on third virtual server
+and then I will start work on creating deb packages.
+
 
 
