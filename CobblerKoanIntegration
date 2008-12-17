@@ -256,27 +256,27 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Synchronization: For each system being provisioned have spacewalk create cobbler system profile || 0.4 || 2 || mmccune || '''DONE''' ||  ||
 ||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || ACTIVE  ||  ||
 ||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || '''DONE''' ||  ||
-||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji || ACTIVE || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
+||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji || '''DONE''' || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Cobbler Install: Satellite does not package it's own defaults file for the installer || 0.4 || 0.5 || paji ||  ||  ||
-||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji ||  || * remove the message about Ctrl+C as it will break the installer * DHCP answer file choice should be "N" * DHCP answer file choice should be "N" * interactive DHCP options should be "no/isc/dnsmasq" (default no) * interactive DNS options should be "no/BIND/dnsmasq" (default no) * mcc says remove extra blank spaces * XMLRPC should always be set on, do not ask for spacewalk as it will break things, just remove this question * Disable TFTP by default ||
-||  Spacewalk Setup: Get rid of satellite-httpd and move to httpd/conf.d || 0.4 || 3 || dparker ||  ||  ||
+||  Cobbler Install: Satellite does not package it's own defaults file for the installer || 0.4 || 0.5 || paji || '''DONE''' ||  ||
+||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji || '''DONE''' || * remove the message about Ctrl+C as it will break the installer * DHCP answer file choice should be "N" * DHCP answer file choice should be "N" * interactive DHCP options should be "no/isc/dnsmasq" (default no) * interactive DNS options should be "no/BIND/dnsmasq" (default no) * mcc says remove extra blank spaces * XMLRPC should always be set on, do not ask for spacewalk as it will break things, just remove this question * Disable TFTP by default ||
+||  Spacewalk Setup: Get rid of satellite-httpd and move to httpd/conf.d || 0.4 || 3 || dparker || ACTIVE ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Cobbler:  make a "--check-less-stuff" option for spacewalk to use from it's installer, don't mention reposync package for instance || 0.4 || 1 || mpd ||  ||  ||
-||  Cobbler:  move password from templates to settings file and check against that instead || 0.4 || 1 || mpd ||  ||  ||
+||  Cobbler:  make a "--check-less-stuff" option for spacewalk to use from it's installer, don't mention reposync package for instance || 0.4 || 1 || mpd || '''DONE''' ||  ||
+||  Cobbler:  move password from templates to settings file and check against that instead || 0.4 || 1 || mpd || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization:  spacewalk must synchronize (new and existing) cobbler system records || 0.4 || 4 || mmccune ||  ||  ||
 ||  Synchronization:  spacewalk must create system records in cobbler when a system is granted provisioning. || 0.4 || 2 || mmccune ||  ||  ||
 ||  Synchronization:  spacewalk preserve all cobbler variables and not overwrite items in cobbler objects || 0.4 || 2 || mmccune ||  ||  ||
 ||  Synchronization:  Whitepaper for QA || 0.4 || 1 || jsherrill ||  || (Justin/MPD) to discuss synchronization workflow/limitations from user expectation perspective and document in whitepaper for use by Q/A  and development.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-||  Create Distro GUI: Surface fields for ksmeta and kernel options || 0.4 || 5 || jsherill ||  || IMO: Not critical for 0.4 but definitely a nice to have  ||
+||  Create Distro GUI: Surface fields for ksmeta and kernel options || 0.4 || 5 || jsherill || '''DONE''' || IMO: Not critical for 0.4 but definitely a nice to have  ||
 ||  Create Distro GUI:  Location of kernel and initrd needs to be documented as the filesystem path that contains the kernel+initrd, update GUI || 0.4 || 1 || jsherill ||  || Required ||
 ||  Create Distro GUI: Fix double slash in kernel/initrd path || 0.4 || 0.5 || jsherill ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
-|| Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || ACTIVE ||  ||
+|| Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || '''DONE''' ||  ||
 || Templating: ship a sample spacewalk template and install it into /var/lib/cobbler/kickstarts || 0.4 || 1 || dparker ||  ||  ||
-|| Templating:  We need to create a snippet that includes spacewalk registration code || 0.4 || 1 || dparker ||  ||  ||
+|| Templating:  We need to create a snippet that includes spacewalk registration code || 0.4 || 1 || dparker || '''DONE''' ||  ||
 || Templating: We need to create a snippet that contains spacewalk "media_url" logic, clarify and document any special media URLs || 0.4 || 1 || mmccune ||  ||  ||
 || Packaging: Saving kickstarts in /etc/rhn is not as LSB friendly as it could be as these aren't config files.    Use /var/lib/rhn/kickstarts or similar for user data.  || 0.4 || 0 || dparker || '''DONE'''  ||  ||
 || Templating: Spacewalk should install snippet for file preservation feature in /var/lib/cobbler/snippets, called spacewalk_file_preservation || 0.4 || 0.5 || dparker ||  ||  ||
@@ -284,7 +284,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  ----   ||  ||  ||  ||  ||  ||
 || Virt: Remove vmware || 0.4 || 0.5 || dparker || '''DONE''' ||  ||
 || Virt: For Satellite we need to only show xenpv || 0.4 || 2 || mmccune ||  || Not required for 0.4, more for Satellite ||
-|| Virt: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill ||  ||  ||
+|| Virt: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || '''DONE''' ||  ||
 || Virt: Fix virt choices || 0.4 || 0.5 || dparker || '''DONE''' || The valid virt choices are xenpv, xenfv, qemu, auto.... auto is not recommended and we should default to qemu (qemu will use /dev/kvm if avail) for spacewalk, prob xenpv for Sat ||
 || Virt: Satellite really should delete storage when guests are deleted || 0.5 || 5 || jsherill ||  || Not for 0.4 ||
 || Virt: needs to support saving all of these options also in the profile and inheriting the values || 0.4 || 2 || mmccune || '''ACTIVE''' || ||
@@ -297,11 +297,4 @@ Our first pass of integration testing brought forward some critical issues with 
 || Docs: cobbler setup Q&A || 0.4 || 1 || jha ||  ||  ||
 || Docs: BIOS options || 0.4 || 1 || jha ||  ||  ||
 || Docs: list of new features || 0.4 || 1 || jha ||  ||  ||
-
-
-
-
-
-
-
 
