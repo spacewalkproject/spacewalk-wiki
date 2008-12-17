@@ -22,7 +22,7 @@ simply need to be completed and are not necessarily risks to the project.
 ||Remove dead perl queries|| Remove the dead perl queries from git || || dgoodwin || ||
 ||Orafce|| Orafce requires Postgres 8.2; port Orafce to Postgres 8.1 and perhaps 7.4; packaging issues? || || bmomjian || ||
 || Setup schema review meeting || Have developers review schema beforehand, meet to discuss core tables and answer questions with as many developers as possible. || || jortel || ||
-
+|| db-control || what about the RHN db-control stuff.  It's probably oracle based || || || ||
 === Queries ===
 ||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
 ||Sysdate|| Convert sysdate to appropriate current_date and current_timestamp || || || ||
