@@ -16,19 +16,19 @@ This is s ''straw man'' for the project plan and needs more work.
 
 ''<add detail here>''
 
-=== Sample (populated) Database''' (oracle & postgres) ===
-       
-''<add detail here>''
-
-==== Schema ====
-
-''<add detail here>''
-
 ==== Datamodel Review ====
 
 ''<add detail here>''
 
 === Analysis ===
+
+''<add detail here>''
+
+==== Sample (populated) Database''' (oracle & postgres) ====
+       
+''<add detail here>''
+
+==== Schema ====
 
 ''<add detail here>''
 
@@ -156,6 +156,7 @@ Modify Spacewalk infrastructure to support multiple databases.
    * Java Stack
    * Python Stack
    * Perl Stack
+ * db-control scripts
 
 ''<add detail here>''
 
