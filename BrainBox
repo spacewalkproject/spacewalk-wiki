@@ -30,4 +30,3 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Provide an embedded editor for the pre/post Kickstart scripts that does syntax highlighting (something like http://www.cdolivet.net/editarea/)
  * Provide a way to add arbitrary metadata to any given repository. Like modifyrepo does in createrepo.
  * [wiki:MySQL_support MySQL as database backend] 
- * Test
