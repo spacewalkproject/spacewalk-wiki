@@ -29,6 +29,12 @@ The minimum supported version of Oracle is Oracle 10g.
 
 === Tracking ===
 
+'''What's happening this week ...'''^12/14/08^
+ * GIT branch setup (dgoodwin)
+ * Test Plan (draft) - ''review on 12/19/08'' (gwilliams)
+ * Postgres schema (draft) and sample data (jortel)
+ * General postgres solutions research (bmomjian)
+
 [PostgresIssues Project Issues]
 
 [PostgresTasks Project Tasks]
