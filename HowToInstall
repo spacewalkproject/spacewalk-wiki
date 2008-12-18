@@ -65,6 +65,18 @@ gpgcheck=1
 
 '''NOTE:''' If you are looking for versions 0.1 or 0.2 replace 0.3 with appropriate version in the {{{baseurl}}}.
 
+If you want to use the nightly builds, use the following config:
+
+{{{
+[spacewalk]
+name=Spacewalk
+# baseurl=http://spacewalk.redhat.com/yum/0.3/rhel/5Server/$basearch/
+baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/i386/os/
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=0
+}}}
+
 Then just ask yum to install the application:
 
 {{{
