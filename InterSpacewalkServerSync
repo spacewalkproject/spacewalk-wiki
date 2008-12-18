@@ -31,7 +31,7 @@ The Aim here is to sync content between spacewalks, where slave communicated wit
   This is set on master to completely disable iss?
 
 * This can be overridden by a command line flag to satellite sync
-    satellite-sync --iss_parent=master-satellite.redhat.com -c
+    satellite-sync --iss-parent=master-satellite.redhat.com -c
 
 * If no --iss_parent flag or server.iss_parent not set or if server.satellite.disable_iss=1 then we default sync from hosted.
 
@@ -67,7 +67,7 @@ Developer Testing: (''Estimate: 16 hours'')
 
 Aim is for Spacewalk Importer to be able to import content with respect to org_id. This probably targets two set of audience here. One is disconnected MultiOrg case, where for now the main source of content for them is either get content from channel dumps or export from connected sat and import it back. They usually host custom channels on disconnect sats. If they wish to export custom channel from connected sats they could do so with this. The other case is Connected MultiOrg satellite customers, for them these new flags could works as a means of moving content between multiple orgs. As there is no API or a upgrade script that does that now, it could be useful for them to move content between orgs.
 
-We need An orgid mapping option to satellite-sync say --to-org
+We need An orgid mapping option to satellite-sync say --orgid
     This basically enables the user to import content in one org to another either on same or different satellites.  
     $ satellite-sync --orgid=10 --channel=test-multi-org
     Other additional content data
@@ -119,18 +119,10 @@ Developer Testing: (''Estimate: 8 hours'')
 1. Export channel from master to slave satellite.
    $ satellite-sync --parent-sat=master-satellite.redhat.com -c <channel-name> --to-org=2
 
-2. Export additional content such as activation keys, kickstart/user profiles
 
-* Add a flag say --type=activation-key,kickstart-profiles,user-profiles
+2. Default case where satellite-sync should work as usual
 
-* This will export all the additional content from 
-
-
-   $ satellite-sync --parent-sat=master-satellite.redhat.com --type=<content-type> --to-org=2
-
-3. Default case where satellite-sync should work as usual
-
-=== Additional Content Sync: ===
+=== Additional Content Sync(Future Feature): ===
 
 We need to be able to sync down content other than channel content such as kickstart profiles, user profiles and activation keys.
 
@@ -149,7 +141,7 @@ We need to be able to sync down content other than channel content such as kicks
 * Caching as usual implemented
 
 * With this we should be able to sync ativation keys from master sat as 
-  satellite-sync --parent-sat=<sat> --type=activationkeys --to-org=2
+  satellite-sync --parent-sat=<sat> --type=activationkeys --orgid=2
 
 '''''Total Dev estimate: 80 hours'''''
 
