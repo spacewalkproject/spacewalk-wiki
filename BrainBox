@@ -31,3 +31,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Provide a way to add arbitrary metadata to any given repository. Like modifyrepo does in createrepo.
  * [wiki:MySQL_support MySQL as database backend] 
  * allow system.scheduleScriptRun to work with scripts that have been saved in the database. This way scripts can be re-used and later maybe even attached to triggers like configchannel actions.
+ * [wiki:Container_support Containers in Spacewalk]
