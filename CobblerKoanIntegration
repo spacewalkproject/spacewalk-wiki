@@ -254,7 +254,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Synchronization: Write Taskomatic task to pull cobbler CLI changes into Spacewalk || 0.4 || 4 || jsherril || '''DONE''' ||  ||
 ||  Synchronization: For each system being provisioned have spacewalk create cobbler system profile || 0.4 || 2 || mmccune || '''DONE''' ||  ||
-||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || ACTIVE  ||  ||
+||  Kickstart Files: Modify Spacewalk to write kickstart config files to disk so we can properly use Cobbler's cheetah templating system|| 0.4 || 2 || mmccune || '''DONE'''  ||  ||
 ||  Client: kernel override options not being passed to koan || 0.4 || 2 || dparker || '''DONE''' ||  ||
 ||  GUI: System Provisioning Schedule page needs to show "cobbler only" profiles || 0.4 || 2 || paji || '''DONE''' || This will allow users to provision systems using Cobbler profiles that are NOT synced to Spacewalk.  Allows for greater flexibility. ||
 ||  ----   ||  ||  ||  ||  ||  ||
