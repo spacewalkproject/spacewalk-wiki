@@ -260,7 +260,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Cobbler Install: Satellite does not package it's own defaults file for the installer || 0.4 || 0.5 || paji || '''DONE''' ||  ||
 ||  Cobbler Install: Cleanup defaults || 0.4 || 1 || paji || '''DONE''' || * remove the message about Ctrl+C as it will break the installer * DHCP answer file choice should be "N" * DHCP answer file choice should be "N" * interactive DHCP options should be "no/isc/dnsmasq" (default no) * interactive DNS options should be "no/BIND/dnsmasq" (default no) * mcc says remove extra blank spaces * XMLRPC should always be set on, do not ask for spacewalk as it will break things, just remove this question * Disable TFTP by default ||
-||  Spacewalk Setup: Get rid of satellite-httpd and move to httpd/conf.d || 0.4 || 3 || dparker || ACTIVE ||  ||
+||  Spacewalk Setup: Get rid of satellite-httpd and move to httpd/conf.d || 0.4 || 3 || dparker || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Cobbler:  make a "--check-less-stuff" option for spacewalk to use from it's installer, don't mention reposync package for instance || 0.4 || 1 || mpd || '''DONE''' ||  ||
 ||  Cobbler:  move password from templates to settings file and check against that instead || 0.4 || 1 || mpd || '''DONE''' ||  ||
@@ -279,7 +279,7 @@ Our first pass of integration testing brought forward some critical issues with 
 || Templating:  We need to create a snippet that includes spacewalk registration code || 0.4 || 1 || dparker || '''DONE''' ||  ||
 || Templating: We need to create a snippet that contains spacewalk "media_url" logic, clarify and document any special media URLs || 0.4 || 1 || mmccune ||  ||  ||
 || Packaging: Saving kickstarts in /etc/rhn is not as LSB friendly as it could be as these aren't config files.    Use /var/lib/rhn/kickstarts or similar for user data.  || 0.4 || 0 || dparker || '''DONE'''  ||  ||
-|| Templating: Spacewalk should install snippet for file preservation feature in /var/lib/cobbler/snippets, called spacewalk_file_preservation || 0.4 || 0.5 || dparker ||  ||  ||
+|| Templating: Spacewalk should install snippet for file preservation feature in /var/lib/cobbler/snippets, called spacewalk_file_preservation || 0.4 || 0.5 || dparker || '''DONE'''  ||  ||
 || Templating: Need page for storing/viewing cobbler system variables and allow them to be edited and stored in a cobbler system including the Netboot enabled flag. || 0.4 || 3 || mmccune ||  || This will take some time and is one of the larger time sinks ||
 ||  ----   ||  ||  ||  ||  ||  ||
 || Virt: Remove vmware || 0.4 || 0.5 || dparker || '''DONE''' ||  ||
