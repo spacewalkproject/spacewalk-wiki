@@ -1,9 +1,14 @@
 = Nutch packaging for Fedora = 
 == Overview ==
-The goal of this page is to organize the work needed to get Nutch packaged and into Fedora.  
+The goal of this page is to organize the work needed to get Nutch packaged and into Fedora. 
 == Version ==
 Using nightly builds from: http://hudson.zones.apache.org/hudson/job/Nutch-trunk/
  The reason for using a nightly build and not the release "0.9" is that I ran into problems when trying to index "/help/index.pxt".  Nutch was crashing, I looked on the mailing list and saw other people had similar problems which were resolved when they upgraded to the nightly builds.
+
+== Estimate ==
+ * We are estimating 2 weeks to get nutch and all 3rd party packages into RPMs we can use to begin the submission process into Fedora.
+ * Bug 477196 -  Repackage nutch so it's built from source  https://bugzilla.redhat.com/show_bug.cgi?id=477196
+
 
 == Nutch Dependencies ==
 Looking at: nutch-2008-11-12_04-01-21
