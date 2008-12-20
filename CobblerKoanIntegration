@@ -275,7 +275,7 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Create Distro GUI: Fix double slash in kernel/initrd path || 0.4 || 0.5 || jsherill ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 || Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || '''DONE''' ||  ||
-|| Templating: ship a sample spacewalk template and install it into /var/lib/cobbler/kickstarts || 0.4 || 1 || dparker ||  ||  ||
+|| Templating: ship a sample spacewalk template and install it into /var/lib/cobbler/kickstarts || 0.4 || 1 || dparker || '''DONE'''  ||  ||
 || Templating:  We need to create a snippet that includes spacewalk registration code || 0.4 || 1 || dparker || '''DONE''' ||  ||
 || Templating: We need to create a snippet that contains spacewalk "media_url" logic, clarify and document any special media URLs || 0.4 || 1 || mmccune ||  ||  ||
 || Packaging: Saving kickstarts in /etc/rhn is not as LSB friendly as it could be as these aren't config files.    Use /var/lib/rhn/kickstarts or similar for user data.  || 0.4 || 0 || dparker || '''DONE'''  ||  ||
