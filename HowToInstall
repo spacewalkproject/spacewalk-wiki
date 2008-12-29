@@ -163,6 +163,9 @@ After {{{spacewalk-setup}}} is complete your application is ready to go!
 You can also find source RPMs and tarballs at the following URL:
    * http://spacewalk.redhat.com/source
 
+== Starting Spacewalk ==
+If you are installing spacewalk 0.3 and later you should be using /sbin/rhn-satellite to stop/start/restart the spacewalk server as the init.d script has been removed.
+
 = Known Issues =
 
  * During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
