@@ -271,8 +271,8 @@ Our first pass of integration testing brought forward some critical issues with 
 ||  Synchronization:  Whitepaper for QA || 0.4 || 1 || jsherrill ||  || (Justin/MPD) to discuss synchronization workflow/limitations from user expectation perspective and document in whitepaper for use by Q/A  and development.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  Create Distro GUI: Surface fields for ksmeta and kernel options || 0.4 || 5 || jsherill || '''DONE''' || IMO: Not critical for 0.4 but definitely a nice to have  ||
-||  Create Distro GUI:  Location of kernel and initrd needs to be documented as the filesystem path that contains the kernel+initrd, update GUI || 0.4 || 1 || jsherill ||  || Required ||
-||  Create Distro GUI: Fix double slash in kernel/initrd path || 0.4 || 0.5 || jsherill ||  ||  ||
+||  Create Distro GUI:  Location of kernel and initrd needs to be documented as the filesystem path that contains the kernel+initrd, update GUI || 0.4 || 1 || jsherill || '''DONE''' || Required ||
+||  Create Distro GUI: Fix double slash in kernel/initrd path || 0.4 || 0.5 || jsherill || '''DONE''' ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 || Templating: In kickstart profile GUI: Add cobbler ksmeta fields || 0.4 || 5 || jsherill || '''DONE''' ||  ||
 || Templating: ship a sample spacewalk template and install it into /var/lib/cobbler/kickstarts || 0.4 || 1 || dparker || '''DONE'''  ||  ||
