@@ -11,7 +11,7 @@ simply need to be completed and are not necessarily risks to the project.
 ||Query Script||Enhance script to list files containing SQL; provides file and query counts|| done || zeus || [attachment:file_query_count script]||
 ||Query File List||Publish ''final'' list of files containing queries that need to be tagged.  This item will be created by merging script task(s) output|| || || ||
 ||Add comments||Add SQL comments to every query|| || bmomjian || ||
-||Postgres Schema||Create test version of Postgres schema, for testing of queries|| || jortel || Using advanced server ||
+||Postgres Schema||Create test version of Postgres schema, for testing of queries|| || jortel || Too many problems with Migration Studio, used ora2pg 4.11 generated [[attachment:spacewalk-0.4-080106.pgsql.gz ddl]] '''DDL only'''.  Working around EVR_T problem with dumping data. ||
 ||Database Versions||What is the minimum supported version of  Postgres?|| ||  || ![1] This will depend on targeted versions of RHEL||
 ||Custom Data Type||Add EVR_T data type with aggregate|| ||  || ||
 ||Prepare git branch||Either clean up the existing postgres branch, or create a new branch and ''cherry pick'' Devin's changes|| done ||dgoodwin|| Would be good to have this by COB 12/19 ||
