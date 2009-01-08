@@ -6,7 +6,7 @@ The objective is to describe the Test plan of Space Walk - during the migration 
 
 === The areas identified to Test ===
 
-1.  Functional Testing
+1.  Functional Testing[[BR]]
 2.  Query/Stored Procedure Unit Tests
 3.  System Testing
 4.  Performance Test - queries,
