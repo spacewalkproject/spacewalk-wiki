@@ -165,7 +165,7 @@ This is only for use if running a development environment or development version
  
 = Known Issues =
 
- * You may need to adjust selinux (or disable it) if you encounter this error:
+ * If you run with SELinux enabled, you should also install oracle-xe-selinux and oracle-instantclient-selinux packages, or you might experience errors like:
 
 {{{
 Could not connect to the database.  Your connection information may be incorrect.  Error: install_driver(Oracle) failed:
@@ -176,13 +176,6 @@ Can't load '/usr/lib/perl5/site_perl/5.8.8/i386-linux-thread-multi/auto/DBD/Orac
 Compilation failed in require at (eval 784) line 3, <STDIN> line 6.
 Perhaps a required shared library or dll isn't installed where expected
  at /usr/bin/spacewalk-setup line 1504
-}}}
-
- * The following commands can be used to give Oracle proper selinux permissions: (NOTE: CURRENTLY UNTESTED)
-
-{{{
-semanage fcontext -a -t textrel_shlib_t '/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/*'
-restorecon -R /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
 }}}
  
  
