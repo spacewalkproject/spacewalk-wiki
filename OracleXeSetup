@@ -70,6 +70,11 @@ Login to the webui and configure a user (if you don't have access to localhost s
  * Give spacewalk all system privileges (check All and add DBA role) 
  * click Create button
 
+Setup server environment for oracle user:
+{{{
+  echo ".  /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh" >> ~oracle/.bash_profile
+}}} 
+
 That's it, proceed with [OracleXeSetup#setupclient client setup]. 
  * If you weren't able to connect to http://127.0.0.1:9000/apex, check /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log for errors.     
  * This is an example error when oracle isn't able to resolve your hostname, [http://virag.sharma.googlepages.com/oraclexemadeeasy#_Getting_ORA-600_error more info] 
@@ -80,12 +85,6 @@ That's it, proceed with [OracleXeSetup#setupclient client setup].
 }}} 
  
 == setup client == 
-You need to put the Oracle clients on your path and configure ORACLE_HOME. The best way of doing this is below, so your env is updated. 
-{{{ 
-  ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh /etc/profile.d/oracle_env.sh
-  . /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh 
-}}} 
-
 You also need to configure the tns names entry for your database. Place the following into {{{/etc/tnsnames.ora}}}: 
 {{{ 
 XE = 
