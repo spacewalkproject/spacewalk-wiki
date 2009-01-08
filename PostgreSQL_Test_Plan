@@ -1,0 +1,5 @@
+=== Objective ===
+
+The objective is to describe the Test plan of Space Walk - during the migration of the Database from the Oracle to Postgres as well as testing the application to perform against both databases for predefined performance benchmarks and all functionality.
+
+ 
