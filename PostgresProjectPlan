@@ -68,7 +68,12 @@ This is s ''straw man'' for the project plan and needs more work.
 
 === Assemble Team ===
 
-''<add detail here>''
+  * Bruce Momjian mailto:bruce@momjian.us
+  * George Williams mailto:george.williams@enterprisedb.com
+  * Gurjeet Singh mailto:gurjeet.singh@enterprisedb.com
+  * Vikram Rai mailto:vikram.singh@enterprisedb.com
+  * Tushar Ahuja mailto:tushar.ahuja@enterprisedb.com
+
 
 === Test Plan ===
 
