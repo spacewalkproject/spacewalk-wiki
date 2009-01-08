@@ -1,5 +1,19 @@
+=PostgreSQL Test Plan =
+
 === Objective ===
 
 The objective is to describe the Test plan of Space Walk - during the migration of the Database from the Oracle to Postgres as well as testing the application to perform against both databases for predefined performance benchmarks and all functionality.
+
+=== The areas identified to Test ===
+
+1.  Functional Testing
+2.  Query/Stored Procedure Unit Tests
+3.  System Testing
+4.  Performance Test - queries,
+5.  Data Migration - Oracle -> Postgres, Postgres -> Oracle
+6.  API Testing.
+7.  Upgrade Testing
+8.  Scale/Concurrency Testing (eg: large numbers of web requests at once)
+
 
  
