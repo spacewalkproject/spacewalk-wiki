@@ -156,7 +156,30 @@ System altered.
 SQL> quit 
  
 # /sbin/service oracle-xe restart 
-}}} 
+}}}
+
+If you encounder 500s with messages like
+{{{
+DATABASE CONNECTION TO 'xe' LOST
+}}}
+
+and /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log having messages like
+{{{
+ORA-07445: exception encountered: core dump [08F93BDE] [SIGSEGV] [Address not mapped to object] [0x34979C] [] []
+}}}
+
+you might try to workaround it with
+{{{ 
+# sqlplus spacewalk/spacewalk@xe 
+
+SQL>  alter system set query_rewrite_enabled=TRUE ;
+
+System altered.
+
+SQL> quit
+}}}
+
+as suggested in http://stephensorablog.blogspot.com/2006/05/solution-to-dreaded-ora-07445-error.html
  
 == setup development schema (optional) == 
  
