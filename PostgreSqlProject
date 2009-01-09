@@ -36,8 +36,12 @@ The minimum supported version of Oracle is Oracle 10g.
 === Tracking ===
 
 '''What's happening this week ...'''^01/05/09^
- * Test Plan (draft) - ''review on ???'' (gwilliams)
- * Postgres schema (draft) and sample data (jortel)
+ * Test Plan - (gwilliams) 
+    * Draft Reviewed on 8-6-09
+    * Posted on [wiki:"PostgreSQL Test Plan" wiki]
+ * Generate ''initial'' postgres schema - (jortel)
+    * DDL
+    * Sample Data
  * General postgres solutions research (bmomjian)
 
 [PostgresIssues Project Issues]
