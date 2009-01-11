@@ -16,5 +16,10 @@ I have 2 virtual servers with CentOS. On 1 of them spacewalk is installed, secon
 will be for testing. Now I am going to install debian on third virtual server
 and then I will start work on creating deb packages.
 
+'''January 2009'''[[BR]]
+
+Now I have virtual Debian server. I started to experiment with debian packages.
+I created deb package for rhnlib.
+
 
 
