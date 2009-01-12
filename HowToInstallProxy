@@ -16,12 +16,12 @@ RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum
 
-To use this repository, add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
+To use this repository, add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents (replace VERSION with the release you are installing, e.g. "0.3"):
 
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.2/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/VERSION/rhel/5Server/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
