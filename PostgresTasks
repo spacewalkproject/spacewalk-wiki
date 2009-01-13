@@ -23,6 +23,8 @@ simply need to be completed and are not necessarily risks to the project.
 ||G14||Orafce|| Orafce requires Postgres 8.2; port Orafce to Postgres 8.1 and perhaps 7.4; packaging issues? || || bmomjian || ||
 ||G15|| Setup schema review meeting || Have developers review schema beforehand, meet to discuss core tables and answer questions with as many developers as possible. || || jortel || ||
 ||G16|| db-control || what about the RHN db-control stuff.  It's probably oracle based || || || ||
+||G17|| Prioritized Modules || Provide a prioritized list of modules (feature sets).  || || jortel || ||
+
 === Queries ===
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
 ||Q1||Sysdate|| Convert sysdate to appropriate current_date and current_timestamp || || || ||
