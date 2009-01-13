@@ -185,13 +185,26 @@ When you're ready to push your changes out to the public repository (or submit a
   git rebase master             # apply changes from master intelligently into your branch
   git checkout master           # back to master
   git merge bug456789           # merge your changes in (use --squash if you'd like just 1 commit with a new message)
+  gitk --all                    # review the status of the repository
   git push                      # push the changes out to the remote repository
 }}}
+
+If you had some changes in your master before you did that
+{{{
+  git pull
+}}}
+
+and new commits were fetched from the remote repo, git automatically creates a merge for you. To fix that, do
+{{{
+  git rebase origin/master
+}}}
+
+and your changes in master will be applied on top of origin/master, the merge commit will not be seen and you'll get a nice linear sequence of commits.
 
 If you'd prefer to condense this into one command try this bash function:
 {{{
 function sync-git {
-    git checkout master && git pull && git checkout $1 && git rebase master && git checkout master && git merge $1  && echo You are ready to make: git push
+    git checkout master && git pull && git rebase origin/master master && git checkout $1 && git rebase master && git checkout master && git merge $1  && echo You are ready to make: git push
 }
 }}}
 
