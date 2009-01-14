@@ -1,11 +1,11 @@
 
-The work on adding SELinux support to Spacewalk was done on Spacewalk 0.3. The OS targeted was RHEL 5, and the only targeted policy was targeted.
+The work on adding SELinux support to Spacewalk was done on Spacewalk 0.3 relase and on Spacewalk 0.4 nightly builds. The OS targeted was RHEL 5, and the only targeted policy was targeted.
 
 The changes and new packages were committed to git master.
 
 == What works ==
 
-Currently (Wed Dec 10 22:55:41 CET 2008), with '''spacewalk-selinux-0.4.1-5.el5''' and other current packages built from master, it is possible to
+Currently (Wed Jan 14 15:27:49 CET 2009), with '''spacewalk-selinux-0.4.1-7.el5''' and other current packages built from master, it is possible to
 
  * install Spacewalk
  * configure Spacewalk ({{{spacewalk-setup}}})
@@ -15,6 +15,8 @@ Currently (Wed Dec 10 22:55:41 CET 2008), with '''spacewalk-selinux-0.4.1-5.el5'
    * run {{{rhnpush}}} and {{{satellite-sync}}}
    * register clients to the Spacewalk server
    * use {{{yum}}} and {{{rhn_check}}} on the client, including kickstarting them
+   * use jabberd and osa-dispatcher on the server, and osad on the client, and instant push works
+     * note that client tools like osad are not confined
 
 You are welcome to change Permissive to Enforcing and give Spacewalk with SELinux a try.
 
