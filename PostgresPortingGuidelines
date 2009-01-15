@@ -194,15 +194,14 @@ occurances in schema: 16; find ./ -type f | grep -v .html | xargs grep -iwE 'cha
 
 = Porting Exceptions =
 
-.) Port the RHN_Exception package using RAISE EXCEPTION.
+ * Port the RHN_Exception package using RAISE EXCEPTION.
 
-.) Postgres version 7.4's PL/PGSQL does not have EXCEPTION support.
+ * Postgres version 7.4's PL/PGSQL does not have EXCEPTION support.
 
-TODO:
-=====
+= TODO =
 
-.) What would channel_name_join() return if the first IF condition succeeds?
+ * What would channel_name_join() return if the first IF condition succeeds?
 '' or NULL?
 
-.) One time anonymous block usage in new_user_postop.sql; handle it.
+ * One time anonymous block usage in new_user_postop.sql; handle it.
 
