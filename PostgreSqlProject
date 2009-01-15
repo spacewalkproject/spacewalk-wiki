@@ -70,5 +70,9 @@ EnterpriseDB Oracle Compatibility Developer's Guide http://www.enterprisedb.com/
 
 Migrating Oracle PL/SQL to PL/pgSQL http://www.pgadmin.org/docs/1.4/pg/plpgsql-porting.html
 
+=== Porting Guidelines ===
+
+[PortingGuidelines Porting guidelines] Here are the initial guidelines on how to move ahead with this porting effort. This will be posted, discussed and finalized on the developer mailing list too, so please follow it up there.
+
 === References ===
 [PathToPostgreSql early research]
