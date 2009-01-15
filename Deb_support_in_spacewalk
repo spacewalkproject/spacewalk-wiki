@@ -6,9 +6,24 @@ Brno University of Technology. In my master thesis I am going to work on support
 deb systems/packages in spacewalk. My technical consultant is Miroslav Suchy,
 RHN Satellite Engineer.
 
+== Debian repo with spacewalk packages ==
+
+You can test my packages, which are stored in this repo:
+
+http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/
+
+configuration for sources.list:
+
+deb http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main[[BR]]
+
+deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main
+
+'''ATTENTION: Packages are highly experimental.'''
+
+
+== History ==
+
 On this page I would describe progress of my work.
-
-
 
 '''December 2008'''[[BR]]
 
@@ -19,7 +34,7 @@ and then I will start work on creating deb packages.
 '''January 2009'''[[BR]]
 
 Now I have virtual Debian server. I started to experiment with debian packages.
-I created deb package for rhnlib.
+I created deb package for rhnlib. Debian repo for getting packages was established.
 
 
 
