@@ -20,7 +20,13 @@ deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main
 
 '''ATTENTION: Packages are highly experimental.''' [[BR]]
 
-Pulbic key is in attachment on the bottom of site.
+Pulbic key is in attachment on the bottom of site.[[BR]]
+Or use this:
+
+{{{
+gpg --recv-keys 121A13C3
+apt-key add ~/.gnupg/pubring.gpg
+}}}
 
 
 == History ==
