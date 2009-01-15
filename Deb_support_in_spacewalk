@@ -18,7 +18,9 @@ deb http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main[[BR]]
 
 deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main
 
-'''ATTENTION: Packages are highly experimental.'''
+'''ATTENTION: Packages are highly experimental.''' [[BR]]
+
+Pulbic key is in attachment on the bottom of site.
 
 
 == History ==
