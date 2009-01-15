@@ -24,7 +24,7 @@ Pulbic key is in attachment on the bottom of site.[[BR]]
 Or use this:
 
 {{{
-gpg --recv-keys 121A13C3
+gpg --keyserver keys.gnupg.net --recv-keys 121A13C3
 apt-key add ~/.gnupg/pubring.gpg
 }}}
 
