@@ -1,21 +1,6 @@
 = Spacewalk and SELinux =
 
-SELinux is different layer of access control, besides the owner / group / other. For a process to access file, directory, socket, etc., an explicit '''allow''' has to be specified in the SELinux policy. If there is no allow rule in the system, access is denied and logged (if SELinux is run in Enforcing mode) or the (so called) AVC denial is logged but the operation succeeds (in Permissive). If you see SELinux error and need to continue working with your Spacewalk server, switch from Enforcing to Permissive:
-
-{{{
-# getenforce 
-Enforcing
-# setenforce 0
-# getenforce 
-Permissive
-#
-}}}
-
-Your Spacewalk server will no longer block any operations (and thus will be less secure but at least it will work). Please report the problem via mailing-list or bugzilla, and when rpms with fix are released, you can install them and turn Enforcing back with
-
-{{{
-# setenforce 1
-}}}
+SELinux is different layer of access control, besides the owner / group / other. For a process to access file, directory, socket, etc., an explicit '''allow''' has to be specified in the SELinux policy. If there is no allow rule in the system, access is denied and logged (if SELinux is run in Enforcing mode) or the (so called) AVC denial is logged but the operation succeeds (in Permissive).
 
 Red Hat Enterprise Linux 5 comes with '''selinux-policy-targeted''' package which defines the rules for the core system and many application in the system, especially daemons. They don't however cover Spacewalk as Spacewalk is not part of EL 5, and even for applications that are covered by the generic policy, Spacewalk might need to allow access to additional resources. We add these via additional SELinux policy modules, distributed as additional rpm packages with Spacewalk.
 
@@ -70,6 +55,23 @@ will tell you if some of the files, directories, etc. under /some/patch need the
 without that {{{-n}}} will do the relabeling.
 
 Both rpms in the core EL and additional SELinux rpms try to get the labels right behind the scenes. Therefore, ideally you should never need to explicitly {{{restorecon}}} anything, unless asked to do so by the documentation when you decide to have different layout on the disk or in similar situation. But if you get denial from SELinux, it is a good idea to check with {{{-n}}} whether labels on disk look sane.
+
+If you see SELinux error and need to continue working with your Spacewalk server, switch from Enforcing to Permissive:
+
+{{{
+# getenforce 
+Enforcing
+# setenforce 0
+# getenforce 
+Permissive
+#
+}}}
+
+Your Spacewalk server will no longer block any operations (and thus will be less secure but at least it will work). Please report the problem via mailing-list or bugzilla, and when rpms with fix are released, you can install them and turn Enforcing back with
+
+{{{
+# setenforce 1
+}}}
 
 == Spacewalk SELinux modules ==
 
