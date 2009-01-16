@@ -45,11 +45,11 @@ RPM downloads of the project are available through a yum repository
 To use this repository either install spacewalk-repo RPM
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.3/rhel/5Server/i386/spacewalk-repo-0.3-1.el5.sw.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/i386/spacewalk-repo-0.4-1.el5.noarch.rpm
 }}}
 or
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.3/rhel/5Server/x86_64/spacewalk-repo-0.3-1.el5.sw.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/x86_64/spacewalk-repo-0.4-1.el5.noarch.rpm
 }}}
 
 or manually add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
@@ -57,20 +57,20 @@ or manually add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.3/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.4/rhel/5Server/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
 
-'''NOTE:''' If you are looking for versions 0.1 or 0.2 replace 0.3 with appropriate version in the {{{baseurl}}}.
+'''NOTE:''' If you are looking for versions 0.2 or 0.3 replace 0.4 with appropriate version in the {{{baseurl}}}.
 
 If you want to use the nightly builds, use the following config:
 
 {{{
 [spacewalk]
 name=Spacewalk
-# baseurl=http://spacewalk.redhat.com/yum/0.3/rhel/5Server/$basearch/
+# baseurl=http://spacewalk.redhat.com/yum/0.4/rhel/5Server/$basearch/
 baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/i386/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
@@ -114,6 +114,7 @@ An example session is as follows:
 DB User? spacewalk
 DB Password? 
 DB SID? xe
+
 DB hostname? localhost
 DB port [1521]? 
 DB protocol [TCP]? 
