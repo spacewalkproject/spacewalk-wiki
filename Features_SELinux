@@ -133,28 +133,6 @@ Also, the policy module expects Oracle XE's web interface to be on port 9000. If
 
 If you've installed Spacewalk 0.4 correctly, you can use {{{ps axuwZ}}} (note the {{{Z}}}) to list processes with their SELinux types. The running processes should have the following types:
 
-=== Oracle XE ===
-
-==== Listener: oracle_tnslsnr_t ====
-{{{
-root:system_r:oracle_tnslsnr_t  oracle   16158  0.0  0.6  21896  5668 ?        Ss   Jan14   0:12 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
-}}}
-
-==== Database processes: oracle_db_t ====
-
-{{{
-root:system_r:oracle_db_t       oracle   16163  0.0  1.6 335464 15452 ?        Ss   Jan14   0:09 xe_pmon_XE
-root:system_r:oracle_db_t       oracle   16165  0.0  1.0 334848  9400 ?        Ss   Jan14   0:00 xe_psp0_XE
-root:system_r:oracle_db_t       oracle   16167  0.0  1.8 334852 17680 ?        Ss   Jan14   0:00 xe_mman_XE
-root:system_r:oracle_db_t       oracle   16169  0.0  6.4 336920 60296 ?        Ss   Jan14   0:06 xe_dbw0_XE
-root:system_r:oracle_db_t       oracle   16171  0.0  3.1 350404 29736 ?        Ss   Jan14   0:05 xe_lgwr_XE
-root:system_r:oracle_db_t       oracle   16173  0.0  2.0 335372 18800 ?        Ss   Jan14   0:27 xe_ckpt_XE
-root:system_r:oracle_db_t       oracle   16175  0.0  7.3 335380 68572 ?        Ss   Jan14   0:10 xe_smon_XE
-root:system_r:oracle_db_t       oracle   16177  0.0  1.8 334848 17292 ?        Ss   Jan14   0:00 xe_reco_XE
-root:system_r:oracle_db_t       oracle   16179  0.0  4.1 336452 39208 ?        Ss   Jan14   0:28 xe_cjq0_XE
-root:system_r:oracle_db_t       oracle   16181  0.0  6.6 337600 62296 ?        Ss   Jan14   0:13 xe_mmon_XE
-}}}
-
 === Apache: httpd_t ===
 
 {{{
@@ -167,7 +145,7 @@ root:system_r:httpd_t           apache   27781  0.0  1.1  38156 10848 ?        S
 
 Note that both the parent process owned by {{{root}}} and the processes owned by {{{apache}}} have the same SELinux type.
 
-==== Apache CGI script (well, rewrite map): httpd_sys_script_t root ====
+==== Apache CGI script (well, rewrite map): httpd_sys_script_t ====
 
 {{{
 root:system_r:httpd_sys_script_t root    27777  0.0  0.3   5408  3456 ?        S    Jan15   0:00 /usr/bin/perl /etc/rhn/satellite-httpd/conf/satidmap.pl
@@ -217,6 +195,27 @@ root:system_r:jabberd_t         jabberd  23163  0.0  0.2   7576  2520 ?        S
 root:system_r:osa_dispatcher_t  root     23181  0.3  1.4 103008 13696 ?        S    Jan14  10:44 python /usr/sbin/osa-dispatcher --pid-file /var/run/osa-dispatc
 }}}
 
+=== Oracle XE ===
+
+==== Listener: oracle_tnslsnr_t ====
+{{{
+root:system_r:oracle_tnslsnr_t  oracle   16158  0.0  0.6  21896  5668 ?        Ss   Jan14   0:12 /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/tnslsnr
+}}}
+
+==== Database processes: oracle_db_t ====
+
+{{{
+root:system_r:oracle_db_t       oracle   16163  0.0  1.6 335464 15452 ?        Ss   Jan14   0:09 xe_pmon_XE
+root:system_r:oracle_db_t       oracle   16165  0.0  1.0 334848  9400 ?        Ss   Jan14   0:00 xe_psp0_XE
+root:system_r:oracle_db_t       oracle   16167  0.0  1.8 334852 17680 ?        Ss   Jan14   0:00 xe_mman_XE
+root:system_r:oracle_db_t       oracle   16169  0.0  6.4 336920 60296 ?        Ss   Jan14   0:06 xe_dbw0_XE
+root:system_r:oracle_db_t       oracle   16171  0.0  3.1 350404 29736 ?        Ss   Jan14   0:05 xe_lgwr_XE
+root:system_r:oracle_db_t       oracle   16173  0.0  2.0 335372 18800 ?        Ss   Jan14   0:27 xe_ckpt_XE
+root:system_r:oracle_db_t       oracle   16175  0.0  7.3 335380 68572 ?        Ss   Jan14   0:10 xe_smon_XE
+root:system_r:oracle_db_t       oracle   16177  0.0  1.8 334848 17292 ?        Ss   Jan14   0:00 xe_reco_XE
+root:system_r:oracle_db_t       oracle   16179  0.0  4.1 336452 39208 ?        Ss   Jan14   0:28 xe_cjq0_XE
+root:system_r:oracle_db_t       oracle   16181  0.0  6.6 337600 62296 ?        Ss   Jan14   0:13 xe_mmon_XE
+}}}
 
 == Parts that are missing in Spacewalk 0.4 ==
 
