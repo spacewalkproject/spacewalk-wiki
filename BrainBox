@@ -33,7 +33,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * allow system.scheduleScriptRun to work with scripts that have been saved in the database. This way scripts can be re-used and later maybe even attached to triggers like configchannel actions.
  * [wiki:Container_support Containers in Spacewalk]
  * Replace the current "Custom Build Content Management System" with one that is Open Source (GPL'd) like [http://www.alfresco.com Alfresco].  This could replace the legacy PERL/RPC scheme with a more current Javascript/REST scheme.  Alfresco is willing to contribute to this development as there is a need for an Alfresco "Network" and we don't want to reinvent the wheel.  If you would like to contact me: lee.faus at alfresco dot com.
- * Automatic change logging of Kickstart profiles - Starting with kickstart pre/post revisioning.
+ * Automatic change logging of Kickstart profiles - Starting with kickstart pre/post revisioning.  https://fedorahosted.org/spacewalk/wiki/KickstartScriptRevisioning details coec's current thinking on the matter.
  * Expand macros to have conditional logic and loops in config files using custom system info or other values stored in satellite/spacewalk.  {| if rhn.system.custom_info(foo) == 'bar' display 'foo' otherwise display 'not found' |}.  
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
  * download packages using torrent protocol
