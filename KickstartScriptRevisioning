@@ -1,7 +1,7 @@
 [[PageOutline]]
 
 = Adding revisioning to kickstart pre/post scripts =
-== Rational ===
+== Rational ==
 Allow Spacewalk/RHN Satellite admins to view previous kickstart pre/post script contents.  Ideally this would give similar functionality to that provided by the managed config files.
 == Requirements ==
  * Not block out other potential features (i.e. re-ordering of pre/post scripts)
