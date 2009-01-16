@@ -45,7 +45,7 @@ Add columns
 ===== Add table rhnKickstartScriptType =====
  * ID (PK)
  * TYPE
-== Proposed table layout for comment ===
+== Proposed table layout for comment ==
 
 
 [[Image(kss_revisioning.jpg)]] 
