@@ -1,24 +1,24 @@
 = Oracle 10g Express Edition Setup =
 == Limitations ==
- * 1GB memory (max)
- * 4GB disk space (max)
+ * will use maximum of 1GB RAM
+ * 4GB user data (max)
+ * may be installed on a multiple CPU server, but may only be executed on one processor in any server
  * one database (max)
  * Oracle does not like SELinux.  Therefore SELinux should, unfortunately, be disabled.
 
-== Installation ==
-If you do not have an Oracle Database, you can [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html download Oracle XE].
+The full license agreement is available via the download page linked below.
 
-You may need an account to download the rpms. Seems like a crap shoot to me. Download "Oracle Database 10g Express Edition ('''Universal''')", i.e. Multi-byte Unicode/UTF-8 database not "Western European" Single-byte LATIN1 database.
+== Installation ==
+You can download [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Oracle 10g Express Edition (XE) here]. You will need an Oracle OTN account to download the RPMs and you will need to accept the license agreements. Download "Oracle Database 10g Express Edition ('''Universal''')", i.e. Multi-byte Unicode/UTF-8 database not "Western European" Single-byte LATIN1 database.
 
  * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
 
-You will also need a client. For this you should download the Oracle Instant Client: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html i386 client] or [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxx86_64soft.html x86_64]. Do '''NOT''' use oracle-xe-client. Download all four (4) of the
-following. For now, stick with the 10.2.0.4 version.
+You will also need a client. For this you should download the Oracle Instant Client: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html i386] or [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxx86_64soft.html x86_64]. Do '''NOT''' use oracle-xe-client. Download all four (4) of the following (where ARCH is either i386 or x86_64). For now, stick with the 10.2.0.4 version.
 
- * oracle-instantclient-basic-10.2.0.4-1.i386.rpm
- * oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm
- * oracle-instantclient-devel-10.2.0.4-1.i386.rpm
- * oracle-instantclient-sqlplus*.rpm 
+ * oracle-instantclient-basic-10.2.0.4-1.ARCH.rpm
+ * oracle-instantclient-jdbc-10.2.0.4-1.ARCH.rpm
+ * oracle-instantclient-devel-10.2.0.4-1.ARCH.rpm
+ * oracle-instantclient-sqlplus-10.2.0.4-1.ARCH.rpm 
 
 
 === Letting yum resolve deps ===
@@ -28,7 +28,7 @@ nogpgcheck is required because the oracle rpms are not signed.
 === manually ===
 
  * sudo yum install libaio.i386
- * sudo rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.i386.rpm oracle-instantclient-devel-10.2.0.4-1.i386.rpm oracle-instantclient-jdbc-10.2.0.4-1.i386.rpm oracle-instantclient-sqlplus*.rpm
+ * sudo rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-devel-10.2.0.4-1.*.rpm oracle-instantclient-jdbc-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
 
 '''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!!!
  * sudo yum install glibc.i686
@@ -98,6 +98,7 @@ XE =
     ) 
 }}} 
  
+
 Test your connection with sqlplus: 
 {{{ 
 sqlplus spacewalk/spacewalk@xe 
