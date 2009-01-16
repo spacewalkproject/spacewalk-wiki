@@ -4,7 +4,6 @@
  * 4GB user data (max)
  * may be installed on a multiple CPU server, but may only be executed on one processor in any server
  * one database (max)
- * Oracle does not like SELinux.  Therefore SELinux should, unfortunately, be disabled.
 
 The full license agreement is available via the download page linked below.
 
@@ -20,6 +19,7 @@ You will also need a client. For this you should download the Oracle Instant Cli
  * oracle-instantclient-devel-10.2.0.4-1.ARCH.rpm
  * oracle-instantclient-sqlplus-10.2.0.4-1.ARCH.rpm 
 
+If you want to run with SELinux enabled, you need to install oracle-xe-selinux and oracle-instantclient-selinux from the Spacewalk repo.
 
 === Letting yum resolve deps ===
 nogpgcheck is required because the oracle rpms are not signed.
