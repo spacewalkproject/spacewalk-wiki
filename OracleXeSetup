@@ -7,7 +7,7 @@
 
 The full license agreement is available via the download page linked below.
 
-== Installation ==
+== Download ==
 You can download [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Oracle 10g Express Edition (XE) here]. You will need an Oracle OTN account to download the RPMs and you will need to accept the license agreements. Download "Oracle Database 10g Express Edition ('''Universal''')", i.e. Multi-byte Unicode/UTF-8 database not "Western European" Single-byte LATIN1 database.
 
  * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
@@ -19,19 +19,35 @@ You will also need a client. For this you should download the Oracle Instant Cli
  * oracle-instantclient-devel-10.2.0.4-1.ARCH.rpm
  * oracle-instantclient-sqlplus-10.2.0.4-1.ARCH.rpm 
 
-If you want to run with SELinux enabled, you need to install oracle-xe-selinux and oracle-instantclient-selinux from the Spacewalk repo.
+=== SELinux ===
 
-=== Letting yum resolve deps ===
-nogpgcheck is required because the oracle rpms are not signed.
+If you want to disable SELinux you should do it now. If you'd prefer to have SELinux enabled, complete the step below to prepare for the oracle-xe policy module which will be installed later. See [https://fedorahosted.org/spacewalk/wiki/Features/SELinux Features/SELinux] for more details and limitations of SELinux support.
+
+{{{
+# /usr/sbin/groupadd -r dba
+# /usr/sbin/useradd -r -M -g dba -d /usr/lib/oracle/xe -s /bin/bash oracle
+}}}
+
+=== Install: Letting Yum Resolve Dependencies ===
+
  * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-jdbc*.rpm oracle-instantclient-devel*.rpm oracle-instantclient-sqlplus*.rpm
 
-=== manually ===
+nogpgcheck is required because the Oracle RPMs are not signed.
+
+=== Install: Manually ===
 
  * sudo yum install libaio.i386
  * sudo rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-devel-10.2.0.4-1.*.rpm oracle-instantclient-jdbc-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
 
-'''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!!!
+'''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
+
  * sudo yum install glibc.i686
+
+=== Install: SELinux Policy ===
+
+If you are running with SELinux enforcing then install the following packages from the Spacewalk repo. If you're not running with SELinux enforcing then skip this step:.
+
+ * sudo yum install oracle-xe-selinux oracle-instantclient-selinux
 
 == Server Setup ==
 Configure the Oracle XE database
@@ -43,7 +59,7 @@ Configure the Oracle XE database
 }}}
 
 
-Here are some sane values:
+Here are some sane values (note: if SELinux is enforcing you need to choose port 9000 here):
 {{{
  HTTP port: 9000 (8080 is tomcat)
  listener port: 1521
@@ -79,6 +95,7 @@ That's it, proceed with [OracleXeSetup#setupclient client setup].
  * If you weren't able to connect to http://127.0.0.1:9000/apex, check /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log for errors.     
  * This is an example error when oracle isn't able to resolve your hostname, [http://virag.sharma.googlepages.com/oraclexemadeeasy#_Getting_ORA-600_error more info] 
 {{{ 
+
   Errors in file /usr/lib/oracle/xe/app/oracle/admin/XE/udump/xe_ora_4382.trc: 
   ORA-00600: internal error code, arguments: [keltnfy-ldmInit], [46], [1], [], [], [], [], [] 
   USER: terminating instance due to error 600 
