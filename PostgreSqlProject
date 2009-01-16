@@ -6,6 +6,8 @@ This project is focused on modifying Spacewalk to support both Oracle and Postgr
 
 The minimum supported version of Oracle is Oracle 10g.
 
+Targeted version of PostgreSQL is 8.1+
+
 === Communication ===
 
  * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)]
@@ -41,14 +43,17 @@ The minimum supported version of Oracle is Oracle 10g.
 
 === Tracking ===
 
-'''What's happening this week ...'''^01/05/09^
- * Test Plan - (gwilliams) 
-    * Draft Reviewed on 8-6-09
-    * Posted on [wiki:"PostgreSQL Test Plan" wiki]
- * Generate ''initial'' postgres schema - (jortel)
-    * DDL
-    * Sample Data
- * General postgres solutions research (bmomjian)
+'''What's happening this week ...'''^01/12/09^
+
+ ''Analysis / Planning ''
+
+ * Test Plan - (gwilliams)
+    * Flush out ambiguous items.
+    * Post tasks for action items.
+ * Project Plan - (gwilliams)
+    * Add details.
+    * Post tasks for action items.
+ * Porting guidelines - (Gurjeet Singh)
 
 [PostgresIssues Project Issues]
 
