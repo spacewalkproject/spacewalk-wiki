@@ -37,4 +37,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Expand macros to have conditional logic and loops in config files using custom system info or other values stored in satellite/spacewalk.  {| if rhn.system.custom_info(foo) == 'bar' display 'foo' otherwise display 'not found' |}.  
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
  * download packages using torrent protocol
+ * enable package/package group selection via a GUI which shows available package/package groups for that distribution
  
