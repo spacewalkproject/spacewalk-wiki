@@ -129,7 +129,7 @@ Also, the policy module expects Oracle XE's web interface to be on port 9000. If
 # semanage port -a -t oracle_port_t -p tcp <your_port_number>
 }}}
 
-== What a working Spacewalk 0.4 system looks like ===
+== What a working Spacewalk 0.4 system looks like ==
 
 If you've installed Spacewalk 0.4 correctly, you can use {{{ps axuwZ}}} (note the {{{Z}}}) to list processes with their SELinux types. The running processes should have the following types:
 
@@ -167,7 +167,7 @@ root:system_r:httpd_t           apache   27781  0.0  1.1  38156 10848 ?        S
 
 Note that both the parent process owned by {{{root}}} and the processes owned by {{{apache}}} have the same SELinux type.
 
-==== Apache CGI script (well, rewrite map): httpd_sys_script_t root ===
+==== Apache CGI script (well, rewrite map): httpd_sys_script_t root ====
 
 {{{
 root:system_r:httpd_sys_script_t root    27777  0.0  0.3   5408  3456 ?        S    Jan15   0:00 /usr/bin/perl /etc/rhn/satellite-httpd/conf/satidmap.pl
