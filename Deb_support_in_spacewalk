@@ -33,6 +33,20 @@ apt-key add ~/.gnupg/pubring.gpg
 
  * wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
  * rpm2cpio rhn-client-tools-0.4.17-10.fc9.src.rpm | cpio -idmv --no-absolute-filenames
+ * mv rhn-client-tools-0.4.17.tar.gz mv rhn-client-tools-0.4.17.orig.tar.gz
+ * tar xfz rhn-client-tools-0.4.17.orig.tar.gz
+ * cd rhn-client-tools-0.4.17
+ * export DEBFULLNAME='name'
+ * export DEBEMAIL='e-mail'
+ * dh_make -c gpl
+ * rm debian/*.ex debian/*.EX
+ * edit files in debian/, in file: dirs will be only 1 line: usr/lib
+ * in control file add
+   * add into Build-Depends: python-all-dev, python-support (>= 0.8), gettext, intltool
+   * add into Depends: ${python:Depends}, gnupg, hal, rhnlib (>= 2.1), python-dbus, rhpl
+   * add Provides: ${python:Provides}
+   * edit Homepage and Description
+ * edit file rules (this is makefile)  
 
 
 
