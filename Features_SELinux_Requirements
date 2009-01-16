@@ -1,5 +1,7 @@
 = SELinux Requirements =
 
+Note that this document was made obsolete by new version [wiki:Features/SELinux/Requirements2].
+
 == Overview ==
 
 Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Linux distro that will allow Spacewalk and Proxy to take advantage of more secure access control. SELinux adopts a mandatory access control mechanism that is embedded in the kernel and checks for allowed operations after standard Linux discretionary access controls are checked. SELinux access control is based on security contexts associated with the various resources such as files, processes, and ports. For example, a specific Spacewalk or Proxy process would need both write permission and write access before writing to a file. The type enforcement rules are contained within a security policy that can be installed on a Linux server. 
