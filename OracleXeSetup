@@ -59,7 +59,7 @@ Configure the Oracle XE database
 }}}
 
 
-Here are some sane values (note: if SELinux is enforcing you need to choose port 9000 here):
+Here are some sane values (note: if SELinux is enforcing you need to choose port 9000 as the App Express HTTP port here):
 {{{
  HTTP port for Oracle Application Express: 9000 (8080 is tomcat)
  Database listener port: 1521
