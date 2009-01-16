@@ -31,8 +31,8 @@ apt-key add ~/.gnupg/pubring.gpg
 
 == Example of creating package ==
 
-wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
-rpm2cpio rhn-client-tools-0.4.17-10.fc9.src.rpm | cpio -idmv --no-absolute-filenames
+ * wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
+ * rpm2cpio rhn-client-tools-0.4.17-10.fc9.src.rpm | cpio -idmv --no-absolute-filenames
 
 
 
