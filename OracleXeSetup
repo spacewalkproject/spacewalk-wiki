@@ -61,10 +61,10 @@ Configure the Oracle XE database
 
 Here are some sane values (note: if SELinux is enforcing you need to choose port 9000 here):
 {{{
- HTTP port: 9000 (8080 is tomcat)
- listener port: 1521
- password:<password> for SYS/SYSTEM
- have oracle start at boot: y
+ HTTP port for Oracle Application Express: 9000 (8080 is tomcat)
+ Database listener port: 1521
+ Password for SYS/SYSTEM: <password>
+ Start at boot: y
 }}}
 
 '''NOTE:''' if you messed up these entries, you '''WILL''' have to uninstall and reinstall.
