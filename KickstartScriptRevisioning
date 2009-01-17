@@ -24,7 +24,7 @@ Allow Spacewalk/RHN Satellite admins to view previous kickstart pre/post script 
  * POST
  * PRE
  * NOCHROOT_POST
-===== rhnKickstartScript =====
+==== rhnKickstartScript ====
 Add columns
  * LATEST_REVISION
  * KS_SCRIPT_REVISION_ID (ID from rhnKickstartScriptRevision)
@@ -33,16 +33,16 @@ Add columns
  * CHROOT
  * INTERPRETER
  * DATA
-==== New tables ====
-===== rhnKickstartScriptContent =====
+=== New tables ===
+==== rhnKickstartScriptContent ====
  * ID (PK)
  * SCRIPT_TYPE_ID (ID from rhnKickstartScriptType)
  * INTERPRETER
  * DATA
-===== rhnKickstartScriptRevision =====
+==== rhnKickstartScriptRevision ====
  * ID (PK)
  * REVISION
-===== Add table rhnKickstartScriptType =====
+==== Add table rhnKickstartScriptType ====
  * ID (PK)
  * TYPE
 == Proposed table layout for comment ==
