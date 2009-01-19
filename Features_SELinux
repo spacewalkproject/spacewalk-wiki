@@ -54,6 +54,12 @@ will tell you if some of the files, directories, etc. under /some/patch need the
 
 without that {{{-n}}} will do the relabeling.
 
+To see what file context (SELinux type) is currently labeled to a file or directory, use {{{ls -Z}}}:
+
+{{{
+# ls -Z /var/log/rhn
+}}}
+
 Both rpms in the core EL and additional SELinux rpms try to get the labels right behind the scenes. Therefore, ideally you should never need to explicitly {{{restorecon}}} anything, unless asked to do so by the documentation when you decide to have different layout on the disk or in similar situation. But if you get denial from SELinux, it is a good idea to check with {{{-n}}} whether labels on disk look sane.
 
 If you see SELinux error and need to continue working with your Spacewalk server, switch from Enforcing to Permissive:
