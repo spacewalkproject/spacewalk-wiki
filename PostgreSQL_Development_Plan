@@ -16,7 +16,7 @@ The identified iterations are as follows:
 
 To create the project plan and mile stones for the project.
 
-==== Identified Tasks ===
+=== Identified Tasks ===
 
   1. Kick off  meeting
   2.  Identify the objectives.
@@ -25,6 +25,7 @@ To create the project plan and mile stones for the project.
 
 === Time Line ===
 
+December 2008/January 2009
 
 === Planning/Analysis ===
 
@@ -39,6 +40,10 @@ To create the detailed project plan, technical approaches for development and te
  3. Test plan.
  4. Verification of the recommended Technical Approach.
  5. Sign off on the project Plan and approaches.
+
+=== Time Line ===
+
+January 2009
 
 === Iteration 1 ===
 
@@ -59,6 +64,10 @@ To share and train the Team with knowledge transfer setup of environments and cr
  9. Creation of the sample database for Pg.
  10. Further refinement of the Project and Test plan.
  11. Verification of sign offs.
+
+=== Time Line ===
+
+February 2009
 
 === Iteration 2 ===
 
@@ -92,6 +101,10 @@ To develop and test the identified modules.
  6. Create Oracle to Postgres -- migration scripts.
  7. Review and sign-off of the above tasks
 
+=== Time Line ===
+
+March 2009
+
 === Iteration 3 ===
 
 === Objective ===
@@ -123,6 +136,10 @@ To develop and test the identified modules.
  5. Identify/Establish Pg Benchmarks for developed modules
  6. Create Postgres to Oracle -- migration scripts.
  7. Review and sign-off of the above tasks
+
+=== Time Line ===
+
+April 2009
 
 === Iteration 4 ===
 
@@ -156,6 +173,9 @@ To develop and test the identified modules.
  6. Create Upgrade Scripts between various Spacewalk versions.
  7. Review and sign-off of the above tasks
 
+=== Time Line ===
+
+May 2009
 
 === Iteration 5 ===
 
@@ -185,7 +205,14 @@ To develop and test the identified modules.
  6. Identify performance issues and other outstanding items.
  7. Review and sign-off of the above tasks
 
+=== Time Line ===
+
+June 2009
+
 === Final Iteration ===
 
+=== Time Line ===
+
+July 2009
 
 
