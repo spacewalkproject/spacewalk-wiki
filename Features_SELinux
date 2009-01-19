@@ -22,7 +22,7 @@ you'll see any denials that happened on your system. If you report an issue, ple
 
 in an extra terminal to see what is going on (or that everything is calm).
 
-Allows in SElinux are defined for types -- each process has a type and each file, directory, etc. has a type, and there has to be an allow for the process (source) to access the resource (target). In the audit.log, the type of the source is shown as the third part of the scontext value, and type of the targed is shown in tcontext. If you see SELinux problem like
+Allows in SElinux are defined for types -- each process has a type and each file, directory, etc. has a type, and there has to be an allow for the process (source) to access the resource (target). In the audit.log, the type of the source is shown as the third part of the scontext value, and type of the target is shown in tcontext. If you see SELinux problem like
 
 {{{
 type=AVC msg=audit(1231949469.659:664):
