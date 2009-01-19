@@ -22,15 +22,16 @@ Targeted version of PostgreSQL is 8.1+
 
 === Contacts ===
 
- * Todd Sanders mailto:tsanders@redhat.com
- * Jeff Ortel mailto:jortel@redhat.com
- * Devin Goodwin mailto:dgoodwin@redhat.com
- * Bruce Momjian mailto:bruce@momjian.us
- * Jim Mlodgenski mailto:jim@enterprisedb.com
- * George Williams mailto:george.williams@enterprisedb.com
- * Gurjeet Singh mailto:gurjeet.singh@enterprisedb.com
- * Vikram Rai mailto:vikram.singh@enterprisedb.com
- * Tushar Ahuja mailto:tushar.ahuja@enterprisedb.com
+||'''Name'''||'''Email'''||'''IRC nick'''||
+||Todd Sanders||mailto:tsanders@redhat.com||tsanders||
+||Jeff Ortel||mailto:jortel@redhat.com||jortel||
+||Devin Goodwin||mailto:dgoodwin@redhat.com||dgoodwin||
+||Bruce Momjian||mailto:bruce@momjian.us||bmomjian||
+||Jim Mlodgenski||mailto:jim@enterprisedb.com|| ||
+||George Williams||mailto:george.williams@enterprisedb.com|| ||
+||Gurjeet Singh||mailto:gurjeet.singh@enterprisedb.com|| ||
+||Vikram Rai||mailto:vikram.singh@enterprisedb.com|| ||
+||Tushar Ahuja||mailto:tushar.ahuja@enterprisedb.com|| ||
 
 
 === Planning ===
