@@ -1,0 +1,17 @@
+=PostgreSQL Tasks/Track=
+
+== Project Tasks ==
+
+Project tasks are work items that need to be tracked.  They are different then issues in that items listed here
+simply need to be completed and are not necessarily risks to the project.
+
+=== Kick off ===
+
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
+||K1||Initial Project Meeting||Meeting of the proposed team members to create objectives, plan for the initial project plan.|| done ||All Team Members||  ||
+||K2||Identify the Objectives of the Project||Create a detail project Objective to be achieved for the project including including Timeline and resources.||  ||All Team Members||  ||
+||K3|| Tools and Processes||Identify the tools and processes to be used through the project -- these tools include -- dev, test, track, plan, communication||  ||All Team Members||  ||
+||K4|| Team||Identify the various roles in the project and assign potential members for the same||  ||All Team Members||  ||
+
+
+
