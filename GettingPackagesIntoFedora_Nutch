@@ -63,7 +63,7 @@ Looking at: hadoop-0.19.0
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  || IN_FEDORA ||
 || slf4j-api-1.4.3.jar ||  ||  ||  ||  || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM ||
 || slf4j-log4j12-1.4.3.jar ||  ||  ||  || || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM ||
-||xmlenc-0.52.jar  ||  ||  ||  ||  || http://xmlenc.sourceforge.net/ || NEEDS_RPM ||
+||xmlenc-0.52.jar  ||  ||  ||  ||  || http://xmlenc.sourceforge.net/ || NEEDS_RPM, in progress - fabiand ||
 
 
 
