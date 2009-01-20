@@ -39,13 +39,6 @@ Add columns
  * SCRIPT_TYPE_ID (ID from rhnKickstartScriptType)
  * INTERPRETER
  * DATA
-==== rhnKickstartScriptRevision ====
- * ID (PK)
- * REVISION
-==== Add table rhnKickstartScriptType ====
- * ID (PK)
- * TYPE
 == Proposed table layout for comment ==
-
 
 [[Image(kss_revisioning.jpg)]] 
