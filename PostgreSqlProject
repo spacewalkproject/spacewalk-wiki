@@ -44,17 +44,15 @@ Targeted version of PostgreSQL is 8.1+
 
 === Tracking ===
 
-'''What's happening this week ...'''^01/12/09^
+'''What's happening this week ...'''^01/19/09^
 
  ''Analysis / Planning ''
 
- * Test Plan - (gwilliams)
-    * Flush out ambiguous items.
-    * Post tasks for action items.
- * Project Plan - (gwilliams)
-    * Add details.
-    * Post tasks for action items.
- * Porting guidelines - (Gurjeet Singh)
+ * Refine Test Plan - (gwilliams)
+ * Refine Project Plan - (gwilliams)
+ * Refine Porting guidelines - (Gurjeet Singh)
+ * Spacewalk Review - (jortel)
+ * India Team: Spacewalk (development) Setup - (jortel)
 
 [PostgresIssues Project Issues]
 
