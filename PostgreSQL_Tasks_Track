@@ -115,6 +115,19 @@ simply need to be completed and are not necessarily risks to the project.
 ||T6||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||  ||
 ||I3||Identify Performance Bottlenecks and other outstanding items||Identify and establish Performance/functional outliners and any other outstanding items||  ||Todd S/Jeff O||  ||
 ||I4||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||  ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||I5|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+
+
+=== Final Iteration ===
+
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
+||I1||Scope Freeze||Identify and freeze the set items identified for completion.||  ||Jeff O||  ||
+||T1||Testing: User Acceptance Tests||Complete the UAT -- which is part of the continuos iteration - this one should be the final pass||  ||Jeff O||  ||
+||T2||Testing: Pg Performance Benchmarks with fixes||Execute and Establish the Pg Performance Benchmarks for the application.||  ||Tushar/Vikram/Jeff O||  ||
+||D1||Develop Guidelines for Database compatibility||Develop a set of guidelines for the general Database compatibility for future enhancements to the product.||  ||Jeff O||  ||
+||I2||Review & Project Sign-off||Review the above as well as sign-off for the project Completion||  ||Jeff O||  ||
+
+
+
 
 
