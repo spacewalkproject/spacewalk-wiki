@@ -56,12 +56,14 @@ UPDATE tbl SET col = (SELECT col from tbl2);
 UPDATE tbl SET ( col1, col2 ) = (SELECT col1, col2 from tbl2);
 }}}
 
-This can be done in Postgres by using a FROM clause that contains a subquery
+This can be done in Postgres by using a FROM clause that contains a subquery:
 {{{
 UPDATE accounts
 SET     contact_last_name = x.last_name,
         set contact_first_name = x.first_name
-FROM (SELECT last_name, first_name FROM salesmen WHERE salesmen.id = accounts.sales_id) x
+FROM (SELECT last_name, first_name 
+      FROM salesmen 
+      WHERE salesmen.id = accounts.sales_id) x
 }}}
 
 14. TODO : Mention port from sysdate to CURRENT_TIMESTAMP, and research their differences (formatting etc.).
