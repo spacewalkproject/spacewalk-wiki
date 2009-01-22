@@ -8,26 +8,44 @@
 
 == Quick Start Guide ==
 
- * Steps required to create a Kickstart Distro and a Kickstart Profile in GUI
- * How to use those profiles to kickstart a system
+ * Steps required to create a Distro and a Profile in the Spacewalk GUI
+ * Steps required to do the same using Cobbler (CLI)
+ * How to use those profiles to kickstart a system in the GUI
+ * How this works with bare-metal deployment
+ * How to do virtual deployments in the GUI
+ * How to do virtual deployments with koan (CLI)
 
-== Cobbler Variables and how they can help ==
+== Cobbler Templating Variables, Kernel Options, and how they can help ==
 
- * How to add variables to Kickstart Distributions, Profiles and Systems
+ * How to add variables to Kickstart Distributions, Profiles and Systems in the Spacewalk GUI
+ * How to do the same in Cobbler
  * How to use these variables in a kickstart file
 
 == Upload your own Kickstart File ==
 
  * Discussion of new 'upload' mode of creating a kickstart profile
+ * How this differs from the 'wizard' mode, and cobbler implications
+ * Moving from 'wizard' mode to the full templating mode
  * Details where these files are stored on the file system
 
 == How Integration Works ==
 
- * What happens when you create a Kickstart Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
- * What happens when you create a Kickstart Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+ * What happens when you create a Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+ * What happens when you create a Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
  * When and why we create cobbler system records. 
+ * What happens when the user creates cobbler objects and when they show up in Spacewalk, and where these operations are limited
  * taskomatic's job in syncing changes from spacewalk to cobbler
  * taskomatic's job in syncing changes from cobbler to cobbler
 
+== Cobbler Tips And Tricks ==
+
+ * Cobbler editing of fields in Spacewalk through the cobbler command line
+ * PXE features in more depth
+   * PXE boot loop prevention and all about BIOS order
+ * Virt features in more depth
+ * cobbler power management (integration in a future release?)
+ * cobbler dhcp/dns management
+ * cobbler replicate and it's use in Spacewalk context
+ * other cobbler features you might find interesting
 
 
