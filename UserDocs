@@ -10,7 +10,7 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
    * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
    * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora.
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
-   * [SpacewalkCobblerGuide] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
+   * [Spacewalk Cobbler Guide] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
    * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
    * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
    * ApiDocs -- Learn how to use our XMLRPC api to control your Spacewalk server.
