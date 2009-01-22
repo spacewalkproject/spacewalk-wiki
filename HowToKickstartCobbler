@@ -1,18 +1,33 @@
 == Introducing Spacewalk and Cobbler ==
 
--- Intro to changes
+* Intro to changes we did in 0.4
 
 == Installation ==
 
--- Brief list of changes that we did in 0.4 and introduction of cobbler as a dep for spacewalk
+* Brief list of changes that we did in 0.4 and introduction of cobbler as a dep for spacewalk
 
 == Quick Start Guide ==
 
--- Steps required to create a Kickstart Distro and a Kickstart Profile in GUI
+* Steps required to create a Kickstart Distro and a Kickstart Profile in GUI
+* How to use those profiles to kickstart a system
+
+== Cobbler Variables and how they can help ==
+
+* How to add variables to Kickstart Distributions, Profiles and Systems
+* How to use these variables in a kickstart file
+
+== Upload your own Kickstart File ==
+
+* Discussion of new 'upload' mode of creating a kickstart profile
+* Details where these files are stored on the file system
 
 == How Integration Works ==
 
--- What happens when you create a Kickstart Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
--- What happens when you create a Kickstart Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+* What happens when you create a Kickstart Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+* What happens when you create a Kickstart Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+* When and why we create cobbler system records. 
+* taskomatic's job in syncing changes from spacewalk to cobbler
+* taskomatic's job in syncing changes from cobbler to cobbler
+
 
 
