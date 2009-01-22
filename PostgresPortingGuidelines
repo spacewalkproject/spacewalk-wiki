@@ -1,7 +1,9 @@
 == Open questions relevant to porting efforts ==
 1. Which versions of Oracle are to be supported by Spacewalk?
+  Ans: The minimum supported version of Oracle is Oracle 10g. 
 
 2. Which versions of Postgres are to be supported by Spacewalk?
+  Ans: Targeted version of PostgreSQL is 8.1+ 
 
 = Generic (query) porting issues =
 
