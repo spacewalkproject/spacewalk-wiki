@@ -17,20 +17,6 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 
 [OracleXeSetup Oracle XE Setup instructions]
 
-== Cobbler 1.4 Pre-Requisites ==
-
-You need cobbler-1.4 which is only available in the Fedora EPEL Testing repository.  Please run:
-
-{{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/i386/cobbler-1.4.0-2.el5.noarch.rpm
-}}}
-or
-{{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/x86_64/cobbler-1.4.0-2.el5.noarch.rpm
-}}}
-
-depending on what arch you are using.  This step will go away soon when epel-testing becomes stable (supposed to happen Jan 16).
-
 == EPEL Repo setup ==
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
