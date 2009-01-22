@@ -1,0 +1,18 @@
+== Introducing Spacewalk and Cobbler ==
+
+-- Intro to changes
+
+== Installation ==
+
+-- Brief list of changes that we did in 0.4 and introduction of cobbler as a dep for spacewalk
+
+== Quick Start Guide ==
+
+-- Steps required to create a Kickstart Distro and a Kickstart Profile in GUI
+
+== How Integration Works ==
+
+-- What happens when you create a Kickstart Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+-- What happens when you create a Kickstart Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+
+
