@@ -30,9 +30,11 @@ If you want to disable SELinux you should do it now. If you'd prefer to have SEL
 
 === Install: Letting Yum Resolve Dependencies ===
 
+ * sudo yum install bc
  * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-jdbc*.rpm oracle-instantclient-devel*.rpm oracle-instantclient-sqlplus*.rpm
 
-nogpgcheck is required because the Oracle RPMs are not signed.
+  * bc is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
+  * nogpgcheck is required because the Oracle RPMs are not signed.
 
 === Install: Manually ===
 
