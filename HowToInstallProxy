@@ -2,6 +2,8 @@
 
 '''These instructions are for Spacewalk Proxy 0.2 onwards'''
 
+If you're looking for instructions for the RHN Proxy product see http://www.redhat.com/docs/manuals/satellite/
+
 == Prerequisites ==
 
   * Disable SELinux (work is ongoing to allow SELinux to remain enforcing see [wiki:Features/SELinux])
