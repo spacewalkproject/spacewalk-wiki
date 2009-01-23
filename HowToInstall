@@ -7,8 +7,7 @@
 
 Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
 
- 1. The initial setup using spacewalk-setup --disconnected fails because it is looking for /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release. A symlink to the /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5 fixes this.
- 1. You will also need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch.
+ 1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch.
 {{{
 rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm
 }}}
