@@ -1,5 +1,5 @@
 == What is Taskomatic? ==
-Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of RHN which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://www.opensymphony.com/quartz/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library. Planning and spec docs can be viewed [http://svn.rhndev.redhat.com/viewcvs/trunk/docs/planning/specs/rhn410/165365-java-migration/taskomatic/ here].
+Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://www.opensymphony.com/quartz/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library. Planning and spec docs can be viewed [http://svn.rhndev.redhat.com/viewcvs/trunk/docs/planning/specs/rhn410/165365-java-migration/taskomatic/ here].
 
 == How is Taskomatic configured? ==
 Taskomatic is controlled by two configuration files: /etc/rhn/default/rhn_taskomatic.conf and /etc/rhn/default/rhn_taskomatic_daemon.conf. 
