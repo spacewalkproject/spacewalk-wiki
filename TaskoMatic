@@ -1,6 +1,8 @@
 == Tasks ==
 Tasks fall into three groups: hosted only, satellite only, and both. 
 
+{{{
+#!html
 <table cols="3" border="1" cellpadding="2" cellspacing="2">
   <tr>
     <th>Task Name</th>
@@ -108,3 +110,4 @@ Tasks fall into three groups: hosted only, satellite only, and both.
     <td>Used to keep monitoring data in sync within the database.</td>
   </tr>
 </table>
+}}}
