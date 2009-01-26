@@ -1,3 +1,21 @@
+== What is Taskomatic? ==
+Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of RHN which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://www.opensymphony.com/quartz/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library. Planning and spec docs can be viewed [http://svn.rhndev.redhat.com/viewcvs/trunk/docs/planning/specs/rhn410/165365-java-migration/taskomatic/ here].
+
+== How is Taskomatic configured? ==
+Taskomatic is controlled by two configuration files: /etc/rhn/default/rhn_taskomatic.conf and /etc/rhn/default/rhn_taskomatic_daemon.conf. 
+
+''rhn_taskomatic_daemon.conf'' configures the runtime environment for the Taskomatic daemon itself. This includes information such as JVM option settings, classpath entries, and the Tanuki Service Wrapper's log file location and default logging level. You should not need to edit the majority of the entries in this file. Listed below are entries which might be helpful during Taskomatic troubleshooting sessions:
+
+ wrapper.java.initmemory=<starting_heap_size>
+ wrapper.java.maxmemory=<maximum_heap_size> (These are useful in the case of OutOfMemoryExceptions)
+ wrapper.logfile=<logfile_location>
+ wrapper.logfile.loglevel=<log_level> (Can be one of: NONE, FATAL, ERROR, STATUS, INFO, DEBUG. See [http://wrapper.tanukisoftware.org/doc/english/prop-logfile-loglevel.html here] for more information)
+
+''rhn_taskomatic.conf'' contains entries which declare the tasks available to be scheduled and schedules them. The config entries taskomatic.default_tasks and taskomatic.tasks are concatenated together to build the canonical list of available Taskomatic tasks. Tasks common to both Satellite and Hosted are listed in taskomatic.default_tasks. Tasks which are specific to either Satellite or Hosted are listed in taskomatic.tasks in  /etc/rhn/default/rhn_web.conf.
+
+Tasks are scheduled using the taskomatic.<fully_qualified_task_class_name>.schedule entries. The value of each entry should be a valid Quartz schedule string. See [http://quartz.sourceforge.net/javadoc/org/quartz/CronTrigger.html here] for more detailed information.
+
+
 == Tasks ==
 Tasks fall into three groups: hosted only, satellite only, and both. 
 
@@ -79,22 +97,20 @@ Tasks fall into three groups: hosted only, satellite only, and both.
   <tr>
     <td>com.redhat.rhn.tasks.SatelliteCertificateCheck</td>
     <td>TBD</td>
-    <td>TBD</td>
+    <td>Once a day at 11:00 PM</td>
     <td>Checks to see if the Satellite Certificate is expired and if so starts sending email with warning.</td>
   </tr>
   <tr>
     <td>com.redhat.rhn.tasks.SandboxCleanup</td>
     <td>sandbox_cleanup</td>
     <td>4:05AM Daily</td>
-    <td>X</td>
-    <td>X</td>
+    <td>Deletes stale Configuration Management system sandboxes.</td>
   </tr>
   <tr>
     <td>com.redhat.rhn.tasks.SessionCleanup</td>
     <td>session_cleanup</td>
     <td>Every 15 mins</td>
-    <td>Deletes stale Configuration Management system sandboxes.</td>
-    <td>X</td>
+    <td>Deletes expired GUI Http sessions from the pxtsessions database table.</td>
   </tr>
   <tr>
     <td>com.redhat.rhn.tasks.SummaryPopulation</td>
