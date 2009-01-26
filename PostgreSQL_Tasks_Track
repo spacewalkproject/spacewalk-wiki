@@ -19,7 +19,7 @@ simply need to be completed and are not necessarily risks to the project.
 ||P1||Project Plan||Create the detailed project plan along with Tasks, Timelines and resources.|| in progress ||George W||  ||
 ||P2||Development Technical Approach||Create the technical approach over all architecture for executing the project.|| progress ||Bruce M/Gurjeet||  ||
 ||P3|| Test Technical Approach||Create the technical approach for Testing the application which includes -- functional, regression, performance, migrations and upgrades|| in progress ||George W/Vikram||  ||
-||P4|| Oracle Sample Database||Creation of the sample database in Oracle for all related activities - including testing for migration, upgrades, functional and performance tests|| in progress || Jeff O||  ||
+||P4|| Oracle Sample Database||Creation of the sample database in Oracle for all related activities - including testing for migration, upgrades, functional and performance tests|| in progress || Jeff O|| Small DB delivered 1/7. [https://fedorahosted.org/spacewalk/attachment/wiki/Postgreddl.sql.gz DDL], Sample data available. ||
 ||P5|| Reviews of Project plan and technical approach documents||Review the plan and the approaches with the whole team and get approvals|| in progress || Jeff O||  ||
 ||P6|| Sign-Off||Sign-off on the above iteration|| in progress || Todd S/Jeff O||  ||
 ||P7|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
