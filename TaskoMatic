@@ -15,6 +15,18 @@ Taskomatic is controlled by two configuration files: /etc/rhn/default/rhn_taskom
 
 Tasks are scheduled using the taskomatic.<fully_qualified_task_class_name>.schedule entries. The value of each entry should be a valid Quartz schedule string. See [http://quartz.sourceforge.net/javadoc/org/quartz/CronTrigger.html here] for more detailed information.
 
+== Reconfiguring Taskomatic ==
+
+Changes to the '''frequency''' of the taskomatic tasks is not recommended but changing the time of day when the daily tasks take place can be done.
+
+In order to change when you want a task to run you can add the '''overridden''' value in:
+
+{{{
+/etc/rhn/rhn.conf
+}}}
+
+Changes to /etc/rhn/default/* are not recommended because upgrades will erase any customizations you may have.  To change the time a task runs add a value such as:  ''taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *'' to /etc/rhn/rhn.conf and restart taskomatic.  
+
 
 == Tasks ==
 Tasks fall into three groups: hosted only, satellite only, and both. 
