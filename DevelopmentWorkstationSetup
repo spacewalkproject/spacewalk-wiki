@@ -30,7 +30,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{cd $GITDIR/spacewalk/search-server}}}
  * {{{../rel-eng/bin/build.py --test --rpm && /tmp/spacewalk-build/noarch/spacewalk-search-*.git.*.noarch.rpm }}}
  * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
- * {{{sudo /sbin/rhn-satellite start}}}
+ * {{{sudo /usr/sbin/rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
 
