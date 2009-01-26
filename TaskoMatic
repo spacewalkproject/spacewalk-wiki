@@ -1,0 +1,110 @@
+== Tasks ==
+Tasks fall into three groups: hosted only, satellite only, and both. 
+
+<table cols="3" border="1" cellpadding="2" cellspacing="2">
+  <tr>
+    <th>Task Name</th>
+    <th>DB Name</th>
+    <th>Interval</th>
+    <th>Purpose</th>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.DailySummary</td>
+    <td>daily_summary</td>
+    <td>5:00AM Daily</td>
+    <td>Sends out email on a daily basis with a summary of out-of-date systems</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.CleanCurrentAlerts</td>
+    <td>clean_current_alerts</td>
+    <td>4:35AM Daily</td>
+    <td>Cleans up Monitoring notification messages from the database.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.ErrataMailer</td>
+    <td>errata_engine</td>
+    <td>Every 30 mins</td>
+    <td>Sends email to org admins for each errata alert, eg: "RHN Errata Alert: RHBA-2008:0959-3.."</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.ErrataQueue</td>
+    <td>errata_queue</td>
+    <td>Processes errata that are synced from satellite-sync and sets them up to be ready for the ErrataMailer to send the email notifications.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.ErrataCacheTask</td>
+    <td>errata_cache</td>
+    <td>Every 10 mins</td>
+    <td>Calculates the 'errata cache' information which is used in the GUI to display what systems need what errata.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.KickstartCleanup</td>
+    <td>kickstart_session_check</td>
+    <td>Every 10 mins</td>
+    <td>Cleans up old kickstart sessions that have gone stale.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.NoChannelCheck</td>
+    <td>server_channel_check</td>
+    <td>3:05 AM Daily</td>
+    <td>Sends out email about any system that does not have a base channel defined.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.PackageCleanup</td>
+    <td>package_cleanup</td>
+    <td>Every 10 mins</td>
+    <td>Physically deletes rpms from /var/satellite that are 'marked' for deletion in the GUI.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.PushedUsers</td>
+    <td>pushed_users</td>
+    <td>Middle of every minute</td>
+    <td>Hosted Only: Needs to get removed.  Not ran or used in Satellite</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.RepollCustomerEntitlement</td>
+    <td>repoll_customer_entitlement</td>
+    <td>Top of every minute</td>
+    <td>Hosted Only: Needs to get removed.  Not ran or used in Satellite</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.task.ChannelRepodata</td>
+    <td>channel_repodata</td>
+    <td>Top of every minute</td>
+    <td>Prototype to be used to regenerate channel metadata.  Not avail yet.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.SatelliteCertificateCheck</td>
+    <td>TBD</td>
+    <td>TBD</td>
+    <td>Checks to see if the Satellite Certificate is expired and if so starts sending email with warning.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.SandboxCleanup</td>
+    <td>sandbox_cleanup</td>
+    <td>4:05AM Daily</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.SessionCleanup</td>
+    <td>session_cleanup</td>
+    <td>Every 15 mins</td>
+    <td>Deletes stale Configuration Management system sandboxes.</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.SummaryPopulation</td>
+    <td>summary_populator</td>
+    <td>Every 5 mins</td>
+    <td>Works in tandem with "DailySummary" to determine what orgs should get the daily summary email.</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.tasks.SynchProbeState</td>
+    <td>synch_probe_state</td>
+    <td>Top of every minute</td>
+    <td>Used to keep monitoring data in sync within the database.</td>
+  </tr>
+</table>
