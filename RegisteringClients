@@ -58,7 +58,7 @@ rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<k
 
 = CentOS 4 =
 
-'''NOTE:''' Registering a CentOS 4 server into Spacewalk is exactly the same as it would be for CentOS 5, but rhnreg_ks, rhn_check and other related scripts are located in the package '''up2date''', and not in '''rhn-setup'''.
+Registering a CentOS 4 server to Spacewalk is exactly the same as it would be for CentOS 5, but rhnreg_ks, rhn_check and other related scripts are located in the package '''up2date''', and not in '''rhn-setup'''.
 
 1. Enable '''spacewalk-tools''' repo for Yum and install '''up2date''' package:
 
