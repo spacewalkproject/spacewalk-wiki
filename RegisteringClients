@@ -56,3 +56,19 @@ yum install rhn-setup
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel> 
 }}}
 
+= CentOS 4 =
+
+'''NOTE:''' Registering a CentOS 4 server into Spacewalk is exactly the same as it would be for CentOS 5, but rhnreg_ks, rhn_check and other related scripts are located in the package '''up2date''', and not in '''rhn-setup'''.
+
+1. Enable '''spacewalk-tools''' repo for Yum and install '''up2date''' package:
+
+{{{
+rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
+yum install up2date
+}}}
+
+2. Register your CentOS system to Spacewalk using the activation key you created earlier:
+
+{{{
+rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel>
+}}}
