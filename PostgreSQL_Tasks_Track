@@ -15,117 +15,112 @@ simply need to be completed and are not necessarily risks to the project.
 
 === Planning/Analysis ===
 
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||P1||Project Plan||Create the detailed project plan along with Tasks, Timelines and resources.|| in progress ||George W||  ||
-||P2||Development Technical Approach||Create the technical approach over all architecture for executing the project.|| progress ||Bruce M/Gurjeet||  ||
-||P3|| Test Technical Approach||Create the technical approach for Testing the application which includes -- functional, regression, performance, migrations and upgrades|| in progress ||George W/Vikram||  ||
-||P4|| Oracle Sample Database||Creation of the sample database in Oracle for all related activities - including testing for migration, upgrades, functional and performance tests|| in progress || Jeff O|| Small DB delivered 1/7. [https://fedorahosted.org/spacewalk/attachment/wiki/Postgreddl.sql.gz DDL], Sample data available. ||
-||P5|| Reviews of Project plan and technical approach documents||Review the plan and the approaches with the whole team and get approvals|| in progress || Jeff O||  ||
-||P6|| Sign-Off||Sign-off on the above iteration|| in progress || Todd S/Jeff O||  ||
-||P7|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||P1||Project Plan||Create the detailed project plan along with Tasks, Timelines and resources.|| in progress ||George W||  || ||
+||P2||Development Technical Approach||Create the technical approach over all architecture for executing the project.|| progress ||Bruce M/Gurjeet||  || ||
+||P3|| Test Technical Approach||Create the technical approach for Testing the application which includes -- functional, regression, performance, migrations and upgrades|| in progress ||George W/Vikram||  || ||
+||P4|| Oracle Sample Database||Creation of the sample database in Oracle for all related activities - including testing for migration, upgrades, functional and performance tests|| in progress || Jeff O|| || Small DB delivered 1/7. [https://fedorahosted.org/spacewalk/attachment/wiki/Postgreddl.sql.gz DDL], Sample data available. ||
+||P5|| Reviews of Project plan and technical approach documents||Review the plan and the approaches with the whole team and get approvals|| in progress || Jeff O|| || ||
+||P6|| Sign-Off||Sign-off on the above iteration|| in progress || Todd S/Jeff O|| || ||
+||P7|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
 === Iteration 1 ===
-
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Application Knowledge Transfer||A total overview of the complete application -- 1 day for total over view of the application.  Half day on functional walk through and half day schema review.||  ||Jeff O|| Shooting for week of 1/26.  ||
-||I2||Development Environment||Recommend the development environment.|| done ||Jeff O|| EDB team Installed on CENTOS 5.  All issues resolved 1/21. ||
-||I3|| Test Environment||Recommend the required environment for the Test Lab||  ||Jeff O||  ||
-||I4||Setup The Development Environment||Setup the development environments|| done || || see I2. ||
-||I5|| Setup The Test Lab||Setup the Test Environment||  || Tushar/Vikram||  ||
-||I6||Identify Modules||Identify modules and prioritize them|| in progress || Todd S/Jeff O||  modules identified||
-||I7|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Application Knowledge Transfer||A total overview of the complete application -- 1 day for total over view of the application.  Half day on functional walk through and half day schema review.||  ||Jeff O|| || Shooting for week of 1/26.  ||
+||I2||Development Environment||Recommend the development environment.|| done ||Jeff O|| || EDB team Installed on CENTOS 5.  All issues resolved 1/21. ||
+||I3|| Test Environment||Recommend the required environment for the Test Lab||  ||Jeff O||  || ||
+||I4||Setup The Development Environment||Setup the development environments|| done || || || see I2. ||
+||I5|| Setup The Test Lab||Setup the Test Environment||  || Tushar/Vikram||  || ||
+||I6||Identify Modules||Identify modules and prioritize them|| in progress || Todd S/Jeff O||  || modules identified||
+||I7|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  || ||
 
 === Iteration 2 ===
-
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||  ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O||  ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||  ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram||  ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||  ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram||  ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram||  ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram||  ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram||  ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O||  ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram||  ||
-||D5||Development: Oracle to Postgres Migration||Generate the Oracle to Postgres Migration script.||  ||Gurjeet/Vikram||  ||
-||T6||Testing: Oracle to Postgres Migration||Test the Oracle to Postgres Migration.||  ||Tushar/Vikram||  ||
-||T7||Testing: Establish Oracle Performance Benchmarks||Execute and Establish the Oracle Benchmarks for the application.||  ||Tushar/Vikram/Jeff O||  ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||  ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
+||D5||Development: Oracle to Postgres Migration||Generate the Oracle to Postgres Migration script.||  ||Gurjeet/Vikram|| || ||
+||T6||Testing: Oracle to Postgres Migration||Test the Oracle to Postgres Migration.||  ||Tushar/Vikram|| || ||
+||T7||Testing: Establish Oracle Performance Benchmarks||Execute and Establish the Oracle Benchmarks for the application.||  ||Tushar/Vikram/Jeff O|| || ||
+||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
+||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
 
 === Iteration 3 ===
-
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||  ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O||  ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||  ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram||  ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||  ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram||  ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram||  ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram||  ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram||  ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O||  ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram||  ||
-||D5||Development: Postgres to Oracle Migration||Generate the Postgres to Oracle Migration script.||  ||Gurjeet/Vikram||  ||
-||T6||Testing: Postgres to Oracle Migration||Test the Postgres to Oracle Migration.||  ||Tushar/Vikram||  ||
-||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||  ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||  ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
+||D5||Development: Postgres to Oracle Migration||Generate the Postgres to Oracle Migration script.||  ||Gurjeet/Vikram|| | ||
+||T6||Testing: Postgres to Oracle Migration||Test the Postgres to Oracle Migration.||  ||Tushar/Vikram|| || ||
+||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
+||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
+||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
 
 === Iteration 4 ===
-
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||  ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O||  ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||  ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram||  ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||  ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram||  ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram||  ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram||  ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram||  ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O||  ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram||  ||
-||D5 ??||Development: Upgrade Scripts between versions of Spacewalk||Generate the Pg upgrade script for the application.||  ||Gurjeet/Vikram||  ||
-||T6 ??||Testing: Upgrade Scripts between versions of Sapcewalk||Test the upgrade scripts migration.||  ||Tushar/Vikram||  ||
-||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||  ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||  ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
+||D5 ??||Development: Upgrade Scripts between versions of Spacewalk||Generate the Pg upgrade script for the application.||  ||Gurjeet/Vikram|| || ||
+||T6 ??||Testing: Upgrade Scripts between versions of Sapcewalk||Test the upgrade scripts migration.||  ||Tushar/Vikram|| || ||
+||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
+||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
+||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
 
 === Iteration 5 ===
 
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||  ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O||  ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||  ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram||  ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||  ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram||  ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram||  ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram||  ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram||  ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O||  ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram||  ||
-||T6||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||  ||
-||I3||Identify Performance Bottlenecks and other outstanding items||Identify and establish Performance/functional outliners and any other outstanding items||  ||Todd S/Jeff O||  ||
-||I4||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||  ||
-||I5|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
+||T6||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
+||I3||Identify Performance Bottlenecks and other outstanding items||Identify and establish Performance/functional outliners and any other outstanding items||  ||Todd S/Jeff O|| || ||
+||I4||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
+||I5|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
 
 === Final Iteration ===
-
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
-||I1||Scope Freeze||Identify and freeze the set items identified for completion.||  ||Jeff O||  ||
-||T1||Testing: User Acceptance Tests||Complete the UAT -- which is part of the continuos iteration - this one should be the final pass||  ||Jeff O||  ||
-||T2||Testing: Pg Performance Benchmarks with fixes||Execute and Establish the Pg Performance Benchmarks for the application.||  ||Tushar/Vikram/Jeff O||  ||
-||D1||Develop Guidelines for Database compatibility||Develop a set of guidelines for the general Database compatibility for future enhancements to the product.||  ||Jeff O||  ||
-||I2||Review & Project Sign-off||Review the above as well as sign-off for the project Completion||  ||Jeff O||  ||
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+||I1||Scope Freeze||Identify and freeze the set items identified for completion.||  ||Jeff O|| || ||
+||T1||Testing: User Acceptance Tests||Complete the UAT -- which is part of the continuos iteration - this one should be the final pass||  ||Jeff O|| || ||
+||T2||Testing: Pg Performance Benchmarks with fixes||Execute and Establish the Pg Performance Benchmarks for the application.||  ||Tushar/Vikram/Jeff O|| || ||
+||D1||Develop Guidelines for Database compatibility||Develop a set of guidelines for the general Database compatibility for future enhancements to the product.||  ||Jeff O|| || ||
+||I2||Review & Project Sign-off||Review the above as well as sign-off for the project Completion||  ||Jeff O|| || ||
 
 
 
