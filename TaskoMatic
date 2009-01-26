@@ -49,6 +49,7 @@ Tasks fall into three groups: hosted only, satellite only, and both.
   <tr>
     <td>com.redhat.rhn.tasks.ErrataQueue</td>
     <td>errata_queue</td>
+    <td>Top of every minute</td>
     <td>Processes errata that are synced from satellite-sync and sets them up to be ready for the ErrataMailer to send the email notifications.</td>
   </tr>
   <tr>
