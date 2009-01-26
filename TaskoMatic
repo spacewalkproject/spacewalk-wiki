@@ -25,7 +25,12 @@ In order to change when you want a task to run you can add the '''overridden''' 
 /etc/rhn/rhn.conf
 }}}
 
-Changes to /etc/rhn/default/* are not recommended because upgrades will erase any customizations you may have.  To change the time a task runs add a value such as:  ''taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *'' to /etc/rhn/rhn.conf and restart taskomatic.  
+Changes to /etc/rhn/default/* are not recommended because upgrades will erase any customizations you may have.  To change the time a task runs add a value such as:  
+
+{{{''taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *''
+}}} 
+
+to /etc/rhn/rhn.conf and restart taskomatic.  
 
 
 == Tasks ==
@@ -66,6 +71,7 @@ Tasks fall into three groups: hosted only, satellite only, and both.
   </tr>
   <tr>
     <td>com.redhat.rhn.tasks.ErrataCacheTask</td>
+
     <td>errata_cache</td>
     <td>Every 10 mins</td>
     <td>Calculates the 'errata cache' information which is used in the GUI to display what systems need what errata.</td>
