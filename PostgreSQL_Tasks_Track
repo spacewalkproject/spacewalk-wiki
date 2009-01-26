@@ -28,7 +28,7 @@ simply need to be completed and are not necessarily risks to the project.
 
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
 ||I1||Application Knowledge Transfer||A total overview of the complete application -- 1 day for total over view of the application.||  ||Jeff O||  ||
-||I2||Development Environment||Recommend the development environment.|| progress ||Jeff O||  ||
+||I2||Development Environment||Recommend the development environment.|| done ||Jeff O|| EDB team Installed on CENTOS 5.  All issues resolved 1/21. ||
 ||I3|| Test Environment||Recommend the required environment for the Test Lab||  ||Jeff O||  ||
 ||I4||Setup The Development Environment||Setup the development environments||  ||||  ||
 ||I5|| Setup The Test Lab||Setup the Test Environment||  || Tushar/Vikram||  ||
