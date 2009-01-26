@@ -27,7 +27,8 @@ In order to change when you want a task to run you can add the '''overridden''' 
 
 Changes to /etc/rhn/default/* are not recommended because upgrades will erase any customizations you may have.  To change the time a task runs add a value such as:  
 
-{{{''taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *''
+{{{
+taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *
 }}} 
 
 to /etc/rhn/rhn.conf and restart taskomatic.  
