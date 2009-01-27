@@ -4,12 +4,16 @@ Organized by headers for specific problems, please be sure to update that sectio
 
 = spacewalk-schema =
 
+Authors: dgoodwin
+
  * Included a hacky auto-generated schema from ora2pg. This is NOT what we will use in final product, only used for getting spacewalk-setup up and running.
  * See schema/spacewalk/postgresql/postgresql.universe.satellite.sql
  * This is a flat file just included directly in the schema.spec.
  * Section will be updated when more final changes to the schema package are made.
 
 = spacewalk-setup =
+
+Authors: dgoodwin
 
  * Refactored to isolate Oracle specific methods.
    * No clean object oriented way to do this with Perl so renamed methods to include "oracle" in the name if they are Oracle specific, grouped them together as much as possible (may extract to a module someday), and added primary entry point. (look for oracle_setup_db method)
@@ -25,6 +29,9 @@ Organized by headers for specific problems, please be sure to update that sectio
    * Hit problem with rhnSQL in Python.
 
 = rhnSQL Python Driver =
+
+Authors: dgoodwin
+
   * While Python DBAPI defines a common API for database access, the drivers sometimes go there own way, Oracle driver does and in our case we *are* using some of these customizations.
   * rhnSQL authors saw fit to introduce our own database "driver" abstraction on top of DBAPI, originally to support two versions of Oracle drivers. I honestly can't tell if this has helped or hurt us, it may have helped quite a bit due to previous point.
   * Despite this driver abstraction, the implementation and class structure remained ridiculously Oracle specific and required another heavy refactor.
