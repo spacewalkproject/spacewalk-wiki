@@ -1,4 +1,4 @@
-Notes on all work being done in the pgsql branch for purposes of review by other developers. Highlight anything noteworthy here so others can review it at a high level and point out any problems they might think of that we've missed.
+Notes on all work being done in the pgsql branch for purposes of review by other developers.  This is __not__ a design specification that defines what/how the work will be done but rather an accounting of what has been done and why.  Highlight anything noteworthy here so others can review it at a high level and point out any problems they might think of that we've missed.
 
 Organized by headers for specific problems, please be sure to update that section if the implemented solution evolves to something different.
 
