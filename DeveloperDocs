@@ -23,6 +23,7 @@ This section contains information about developer topics.  You may also be inter
    * [GitGuide Git Guide] -- how to work with Git, the source control of choice for Spacewalk
    * [http://miroslav.suchy.cz/spacewalk/gitstat/ GitStat] -- boring statistics extracted from our git repo.
    * [DevelopmentWorkstationSetup Setting up  the Development environment]
+   * EclipseSetup - How to get eclipse running to edit/compile/junit the spacewalk-java code.
    * PatchProcess -- how to go about creating a new patch and submitting it to the mailing list
    * CodingConventions -- coding style and conventions used in the project
    * [TracingaPage Tracing a page] -- Follow code flow from the webUI down to the DB layer
