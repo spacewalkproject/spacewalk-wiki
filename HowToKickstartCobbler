@@ -28,12 +28,26 @@ With Cobbler integration, Spacewalk gains some exciting new features:
 
 == Quick Start Guide ==
 
- * Steps required to create a Distro and a Profile in the Spacewalk GUI
- * Steps required to do the same using Cobbler (CLI)
- * How to use those profiles to kickstart a system in the GUI
- * How this works with bare-metal deployment
- * How to do virtual deployments in the GUI
- * How to do virtual deployments with koan (CLI)
+Here's a quick guide to get you going with the new goodies:
+
+ 1. Create a Distro
+     a. In Spacewalk
+	1. Create a channel (if you have on set up already, go to the next step)
+		a. Select Channels|Manage Software Channels and select "+ create new channel"
+		a. Fill in the required fields as described.
+		a. Populate the channel with packages using rhnpush
+			* e.g. rhnpush --server localhost -u admin -p spacewalk  --channel kstest001 /mnt/Packages/*.rpm
+	1. Select Systems|Kickstart|Distributions and select "+ create new distribution"
+	1. On the "Create Kickstart Distribution" page, fill in the items as described
+     a. In Cobbler
+ 1. Create a Kickstart Profile
+     a. In Spacewalk
+     a. In Cobbler
+ 1. Use Spacewalk to kickstart a system with your profiles
+ 1. Kickstart a bare-metal machine
+ 1. Kickstart a virtual machine
+	a. In Spacewalk
+	a. With koan
 
 == Cobbler Templating Variables, Kernel Options, and how they can help ==
 
