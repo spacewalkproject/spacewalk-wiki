@@ -40,21 +40,23 @@ Here's a quick guide to get you going with the new goodies:
 		a. mount -oloop /var/iso-images/Fedora-9-i386-DVD.iso /var/distro-trees/Fedora-9
 			* You may find it useful to include an entry in /etc/fstab to ensure this mount persists across reboots
      a. In Spacewalk
-	1. Create a channel (if you have on set up already, go to the next step)
+	1. Create a channel for the distribution you wish to kickstart (if you have one set up already, go to the next step)
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9" with a label "fedora-9"
 		a. Populate the channel with packages using rhnpush
 			* e.g. rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9 /var/distro-trees/Fedora-9/Packages/*.rpm
-			* Note that this step takes "a while" - don't be alarmed - just take a long lunch. We're working on the speed issue for the next release.
-		a. Having made the base channel, you must now create a child channel that contains some kickstart helper tools
-			1. Select Channels|Manage Software Channels and select "+ create new channel"
-			1. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
-			1. Populate the child channel with kickstart helper packages
+			* Note that this step takes "a while" - don't be alarmed - just take a *long* lunch. We're working on the speed issue for the next release.
+	1. Having made the base channel, you must now create a child channel that contains some kickstart helper tools
+		a. Select Channels|Manage Software Channels and select "+ create new channel"
+		a. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
+		a. Populate the child channel with kickstart helper packages
 		a. You're now ready to create a kickstart distro
 	1. Select Systems|Kickstart|Distributions and select "+ create new distribution"
 	1. On the "Create Kickstart Distribution" page, fill in the items as described
 		a. Distribution label in this case might be Fedora-9
 		a. Tree path should be /var/distro-trees/Fedora-9
+		a. Base channel should be "Fedora 9 with Tools"
+		a. Installer generation should be Fedora 9 in this case.
 		a. Once you've pressed the "Create Kickstart Distribution" button you'll see a table that includes your new entry.
 		a. If you run "cobbler distro list" at your spacewalk system's command line, you'll now see these entries in addition to any others you may have already defined:
 			* Fedora-9:1:Spacewalk-Public-Cert
