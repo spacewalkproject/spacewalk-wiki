@@ -3,6 +3,8 @@
 Ever needed to create a channel to a specific update level?  Now you can with the channel-to-update script.  The data files and script itself is located in the git repo under /scripts/channel-to-update/  but the tarball is hosted here.
 
 Current Files:
+ [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.5.1.tar.bz2  Version 1.5.1] - 01/27/2008 - RHEL 5.3 support
+
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.5.tar.bz2  Version 1.5] - 11/21/2008 - Added Extras and Supplemental support
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.4.tar.bz2  Version 1.4] - 09/17/2008 - Improved performance of script.
