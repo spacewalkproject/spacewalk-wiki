@@ -46,6 +46,7 @@ There was a problem validating the satellite certificate: 1
 (dgoodwin@elaine)[~/src/spacewalk] % 
    }}}
    * Process dies at this point pending completion of the rhnSQL Python driver.
+   * Technically your oracle based spacewalk install is still functional.
 
 
  
