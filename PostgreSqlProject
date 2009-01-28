@@ -62,6 +62,8 @@ Targeted version of PostgreSQL is 8.1+
 
 [PostgresWorklog Worklog] - What problems are being encountered in the "pgsql" branch and how they're being solved.
 
+[PostgresDevelopmentNotes Development Notes] - Notes on how to actually work with the as of yet unreleased PostgreSQL code in the pgsql git branch.
+
 === Resources ===
 
 Orafce: Oracle support functions http://pgfoundry.org/projects/orafce/
