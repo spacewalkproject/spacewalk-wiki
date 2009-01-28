@@ -31,17 +31,54 @@ With Cobbler integration, Spacewalk gains some exciting new features:
 Here's a quick guide to get you going with the new goodies:
 
  1. Create a Distro
+     a. Some prep work
+	1. You're going to need some distribution isos and some loop mounts of them to get the ball rolling here, so...
+		a. make a directory /var/iso-images
+		a. download a copy of Fedora-9-i386-DVD.iso to that directory
+		a. make a directory /var/distro-trees
+			* within that directory make a directory Fedora-9
+		a. mount -oloop /var/iso-images/Fedora-9-i386-DVD.iso /var/distro-trees/Fedora-9
+			* You may find it useful to include an entry in /etc/fstab to ensure this mount persists across reboots
      a. In Spacewalk
 	1. Create a channel (if you have on set up already, go to the next step)
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
-		a. Fill in the required fields as described.
+		a. Fill in the required fields as described - call it "Fedora 9" with a label "fedora-9"
 		a. Populate the channel with packages using rhnpush
-			* e.g. rhnpush --server localhost -u admin -p spacewalk  --channel kstest001 /mnt/Packages/*.rpm
+			* e.g. rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9 /var/distro-trees/Fedora-9/Packages/*.rpm
+			* Note that this step takes "a while" - don't be alarmed - just take a long lunch. We're working on the speed issue for the next release.
+		a. Having made the base channel, you must now create a child channel that contains some kickstart helper tools
+			1. Select Channels|Manage Software Channels and select "+ create new channel"
+			1. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
+			1. Populate the child channel with kickstart helper packages
+		a. You're now ready to create a kickstart distro
 	1. Select Systems|Kickstart|Distributions and select "+ create new distribution"
 	1. On the "Create Kickstart Distribution" page, fill in the items as described
+		a. Distribution label in this case might be Fedora-9
+		a. Tree path should be /var/distro-trees/Fedora-9
+		a. Once you've pressed the "Create Kickstart Distribution" button you'll see a table that includes your new entry.
+		a. If you run "cobbler distro list" at your spacewalk system's command line, you'll now see these entries in addition to any others you may have already defined:
+			* Fedora-9:1:Spacewalk-Public-Cert
+			* Fedora-9:xen:1:Spacewalk-Public-Cert
      a. In Cobbler
- 1. Create a Kickstart Profile
+	1. You create distributions in cobbler in the same way you would if cobbler were stand-alone. Note however that if you create distributions this way, they'll not be managed by spacewalk.   Using the iso and mount point we set up above:
+		a. cobbler distro add --name "Fedora-9-Cobbler" --kernel /var/distro-trees/Fedora-9/images/pxeboot/vmlinuz  --initrd /var/distro-trees/Fedora-9/images/pxeboot/initrd.img
+		a. cobbler distro list now yields:
+			* Fedora-9-Cobbler
+			* Fedora-9:1:Spacewalk-Public-Cert
+			* Fedora-9:xen:1:Spacewalk-Public-Cert
+		a. And you'll note that the new distribution does *not* appear in Spacewalk's list of kickstartable distributions.
+ 1. Having created your kickstartable distribution, you can now create a new kickstart profile:
      a. In Spacewalk
+	1. select Systems|Kickstart|Profiles and then select "+ create new kickstart profile"
+	1. Give your new profile a label - in this case "Fedora-9-No-Tools"
+	1. Select the base channel you created earlier
+	1. Select the kickstartable tree you created earlier
+	1. Select the virtualization type you intend the target machine to utilize.
+	1. Click "Next", and on the next screen just accept the "Default Download Location" and click "Next"
+	1. Give you new machine type a default root password, and then click "Finish"
+	1. On the next screen you'll see a large message at the top to this effect:
+		* This kickstart profile uses a base channel that is missing packages. In order for all kickstart functionality to work correctly, the following packages should be present in this kickstart's base channel: pyOpenSSL, rhnlib, libxml2-python, spacewalk-koan*.
+	1. That's what that "No-Tools" business was about up top there.  We need to do a bit more.
      a. In Cobbler
  1. Use Spacewalk to kickstart a system with your profiles
  1. Kickstart a bare-metal machine
