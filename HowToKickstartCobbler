@@ -49,7 +49,12 @@ Here's a quick guide to get you going with the new goodies:
 	1. Having made the base channel, you must now create a child channel that contains some kickstart helper tools
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
-		a. Populate the child channel with kickstart helper packages
+		a. Download the following packages from http://spacewalk.redhat.com/yum/0.4:
+			* pyOpenSSL
+			* rhnlib
+			* libxml2-python
+			* spacewalk-koan*
+		a. Populate your new child channel with these rpms using  "rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9-with-tools /path/to/the/helper/rpms/*.rpm"
 		a. You're now ready to create a kickstart distro
 	1. Select Systems|Kickstart|Distributions and select "+ create new distribution"
 	1. On the "Create Kickstart Distribution" page, fill in the items as described
@@ -78,9 +83,8 @@ Here's a quick guide to get you going with the new goodies:
 	1. Select the virtualization type you intend the target machine to utilize.
 	1. Click "Next", and on the next screen just accept the "Default Download Location" and click "Next"
 	1. Give you new machine type a default root password, and then click "Finish"
-	1. On the next screen you'll see a large message at the top to this effect:
-		* This kickstart profile uses a base channel that is missing packages. In order for all kickstart functionality to work correctly, the following packages should be present in this kickstart's base channel: pyOpenSSL, rhnlib, libxml2-python, spacewalk-koan*.
-	1. That's what that "No-Tools" business was about up top there.  We need to do a bit more.
+	1. If you run cobbler profile list you'll now see these entries in addition to those you've already defined:
+		*
      a. In Cobbler
  1. Use Spacewalk to kickstart a system with your profiles
  1. Kickstart a bare-metal machine
