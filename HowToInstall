@@ -78,11 +78,16 @@ If you want to use the nightly builds, use the following config:
 {{{
 [spacewalk]
 name=Spacewalk
-# baseurl=http://spacewalk.redhat.com/yum/0.4/rhel/5Server/$basearch/
 baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/i386/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
+}}}
+
+Note that Fedora 10 repo is at:
+
+{{{ 
+http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
 }}}
 
 Then just ask yum to install the application:
