@@ -17,8 +17,8 @@ Functions will need to be categorized as easy and hard and then worked on by peo
 
 Queries and views (Non-DDL) must be managed differently.  Queries and views will fall into four categories:
         1. work unchanged in both Oracle and Postgres
-        2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP
-        3. (same) but requires db changes, e.g. add compatibility functions like decode() from Orafce 
+        2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP, CASE instead of decode(), COALESCE instead of NVL()
+        3. (same) but requires db changes, e.g. add compatibility functions from Orafce
         4. need to create a Postgres-specific version of the query
 
 This analysis is going to require major effort so it is best to handle it in stages:
