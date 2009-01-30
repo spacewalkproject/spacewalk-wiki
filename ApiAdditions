@@ -259,7 +259,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 == QA Notes ==
 
 === New API Calls Introduced === 
-||  '''API name''' || '''Simple Tests Written''' || '''Comprehensive Tests Written''' || '''Notes''' ||  '''Developer''' ||
+||  '''API name''' || '''Simple Testcase''' || '''Comprehensive Testcase''' || '''Notes''' ||  '''Assigned To''' ||
 ||   ||   ||   ||   ||   ||
 || activationkey.addPackages ||  ||  ||  ||  ||
 || activationkey.checkConfigDeployment ||  ||  ||  ||  ||
