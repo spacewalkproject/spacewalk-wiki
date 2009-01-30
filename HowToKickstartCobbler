@@ -31,7 +31,7 @@ With Cobbler integration, Spacewalk gains some exciting new features:
 Here's a quick guide to get you going with the new goodies:
 
  1. Create a Distro
-     a. Some prep work
+    a. Some prep work
 	1. You're going to need some distribution isos and some loop mounts of them to get the ball rolling here, so...
 		a. make a directory /var/iso-images
 		a. download a copy of Fedora-9-i386-DVD.iso to that directory
@@ -39,8 +39,7 @@ Here's a quick guide to get you going with the new goodies:
 			* within that directory make a directory Fedora-9
 		a. mount -oloop /var/iso-images/Fedora-9-i386-DVD.iso /var/distro-trees/Fedora-9
 			* You may find it useful to include an entry in /etc/fstab to ensure this mount persists across reboots
-     a. In Spacewalk
-	1. Create a channel for the distribution you wish to kickstart (if you have one set up already, go to the next step)
+        1. Create a channel for the distribution you wish to kickstart (if you have one set up already, go to the next step)
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9" with a label "fedora-9"
 		a. Populate the channel with packages using rhnpush
@@ -56,7 +55,7 @@ Here's a quick guide to get you going with the new goodies:
 			* spacewalk-koan*
 		a. Populate your new child channel with these rpms using  "rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9-with-tools /path/to/the/helper/rpms/*.rpm"
 		a. You're now ready to create a kickstart distro
-	1. Select Systems|Kickstart|Distributions and select "+ create new distribution"
+    a. Select Systems|Kickstart|Distributions and select "+ create new distribution"
 	1. On the "Create Kickstart Distribution" page, fill in the items as described
 		a. Distribution label in this case might be Fedora-9
 		a. Tree path should be /var/distro-trees/Fedora-9
@@ -66,31 +65,33 @@ Here's a quick guide to get you going with the new goodies:
 		a. If you run "cobbler distro list" at your spacewalk system's command line, you'll now see these entries in addition to any others you may have already defined:
 			* Fedora-9:1:Spacewalk-Public-Cert
 			* Fedora-9:xen:1:Spacewalk-Public-Cert
-     a. In Cobbler
-	1. You create distributions in cobbler in the same way you would if cobbler were stand-alone. Note however that if you create distributions this way, they'll not be managed by spacewalk.   Using the iso and mount point we set up above:
-		a. cobbler distro add --name "Fedora-9-Cobbler" --kernel /var/distro-trees/Fedora-9/images/pxeboot/vmlinuz  --initrd /var/distro-trees/Fedora-9/images/pxeboot/initrd.img
-		a. cobbler distro list now yields:
-			* Fedora-9-Cobbler
-			* Fedora-9:1:Spacewalk-Public-Cert
-			* Fedora-9:xen:1:Spacewalk-Public-Cert
-		a. And you'll note that the new distribution does *not* appear in Spacewalk's list of kickstartable distributions.
  1. Having created your kickstartable distribution, you can now create a new kickstart profile:
-     a. In Spacewalk
-	1. select Systems|Kickstart|Profiles and then select "+ create new kickstart profile"
-	1. Give your new profile a label - in this case "Fedora-9-No-Tools"
-	1. Select the base channel you created earlier
-	1. Select the kickstartable tree you created earlier
-	1. Select the virtualization type you intend the target machine to utilize.
-	1. Click "Next", and on the next screen just accept the "Default Download Location" and click "Next"
-	1. Give you new machine type a default root password, and then click "Finish"
-	1. If you run cobbler profile list you'll now see these entries in addition to those you've already defined:
-		*
-     a. In Cobbler
+    a. select Systems|Kickstart|Profiles and then select "+ create new kickstart profile"
+    a. Give your new profile a label - in this case "Fedora-9-No-Tools"
+    a. Select the base channel you created earlier
+    a. Select the kickstartable tree you created earlier
+    a. Select the virtualization type you intend the target machine to utilize.
+    a. Click "Next", and on the next screen just accept the "Default Download Location" and click "Next"
+    a. Give you new machine type a default root password, and then click "Finish"
+    a. If you run cobbler profile list you'll now see this entry in addition to those you've already defined:
+            * Fedora-9:1:Spacewalk-Public-Cert
  1. Use Spacewalk to kickstart a system with your profiles
- 1. Kickstart a bare-metal machine
- 1. Kickstart a virtual machine
-	a. In Spacewalk
-	a. With koan
+     a. Kickstarting  "bare-metal" machines
+        You can kickstart "bare metal" machines (actual physical machines or 'blank' virtual machines) with spacewalk provided you've set up a few things:
+            1. On your network
+                a. Setup a dhcp server with entries - dynamic or static - that set next-server to point to your spacewalk machine
+                a. (optional but probably desired) set up DNS (bind) with an entry that points to your spacewalk machine (both forward and reverse resolution)
+                    * If you choose to omit this step, ensure that you've set Spacewalk's hostname to the spacewalk machine's IP address:
+                        1. Select Admin/Spacewalk Configuration
+                        1. Set Spacewalk Hostname to the spacewalk machine's IP address
+                        1. Press "Update"
+                        1. Restart Spacewalk
+            1. On the spacewalk server
+                * edit /etc/xinetd.d/tftp and change the value of "disabled" to "no"
+            3. A fairly well documented example of how to set up a small kickstart lab with Spacewalk is [https://fedorahosted.org/spacewalk/wiki/kickstartingLabNetworkingSetup here]
+     a. Kickstart a virtual machine
+	   1. In Spacewalk
+	   1. With koan
 
 == Cobbler Templating Variables, Kernel Options, and how they can help ==
 
