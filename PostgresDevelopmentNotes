@@ -11,7 +11,7 @@ Currently we have no yum repo setup with customized pgsql packages, due to the w
  * Use deploy script to copy files from git tree out into installed locations on the system:
    {{{
    cd ~/src/spacewalk/
-   SW_USER_HOST=root@yourspacewalkhost scripts/pgsql-deploy.sh
+   SWHOST=root@yourspacewalkhost scripts/pgsql-deploy.sh
    }}}
    * Please note this is somewhat dangerous and should never be run on a Spacewalk system you need functioning reliably.
    * Should you decide to go back to stock Spacewalk code, use the commands printed to the console at the end of the deploy script to remove the packages we're affecting and re-install them fresh.
