@@ -123,6 +123,7 @@ Now that you've branched you can get to work modifying, adding, and deleting fil
 
 
 
+
 [gituser@git manager]$ git-rm Worker.java 
 rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
 [gituser@git manager]$ git status
@@ -184,7 +185,7 @@ When you're ready to push your changes out to the public repository (or submit a
   git checkout bug456789        # return to your branch
   git rebase master             # apply changes from master intelligently into your branch
   git checkout master           # back to master
-  git merge bug456789           # merge your changes in (use --squash if you'd like just 1 commit with a new message)
+  git merge bug456789           # merge your changes in (use --squash if you'd like just 1 commit with a new message, remember to git commit -a after the merge if you do)
   gitk --all                    # review the status of the repository
   git push                      # push the changes out to the remote repository
 }}}
