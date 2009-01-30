@@ -261,180 +261,179 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 === New API Calls Introduced === 
 ||  '''API name''' || '''Simple Testcase''' || '''Comprehensive Testcase''' || '''Notes''' ||  '''Assigned To''' ||
 ||   ||   ||   ||   ||   ||
-|| activationkey.addPackages ||  ||  ||  ||  ||
-|| activationkey.checkConfigDeployment ||  ||  ||  ||  ||
-|| activationkey.disableConfigDeployment ||  ||  ||  ||  ||
-|| activationkey.enableConfigDeployment ||  ||  ||  ||  ||
-|| activationkey.removePackages ||  ||  ||  ||  ||
-|| auth.checkAuthToken ||  ||  ||  ||  ||
-|| channel.listAllChannels ||  ||  ||  ||  ||
-|| channel.listMyChannels ||  ||  ||  ||  ||
-|| channel.listPopularChannels ||  ||  ||  ||  ||
-|| channel.listRedHatChannels ||  ||  ||  ||  ||
-|| channel.listRetiredChannels ||  ||  ||  ||  ||
-|| channel.listSharedChannels ||  ||  ||  ||  ||
-|| channel.access.disableUserRestrictions ||  ||  ||  ||  ||
-|| channel.access.enableUserRestrictions ||  ||  ||  ||  ||
-|| channel.access.getOrgSharing ||  ||  ||  ||  ||
-|| channel.access.setOrgSharing ||  ||  ||  ||  ||
-|| channel.org.disableAccess ||  ||  ||  ||  ||
-|| channel.org.enableAccess ||  ||  ||  ||  ||
-|| channel.org.list ||  ||  ||  ||  ||
-|| channel.software.listErrataByType ||  ||  ||  ||  ||
-|| channel.software.mergeErrata ||  ||  ||  ||  ||
-|| channel.software.mergeErrata ||  ||  ||  ||  ||
-|| channel.software.setContactDetails ||  ||  ||  ||  ||
-|| configchannel.channelExists ||  ||  ||  ||  ||
-|| configchannel.scheduleFileComparisons ||  ||  ||  ||  ||
-|| errata.addPackages ||  ||  ||  ||  ||
-|| errata.findByCve ||  ||  ||  ||  ||
-|| errata.removePackages ||  ||  ||  ||  ||
-|| errata.setDetails ||  ||  ||  ||  ||
-|| kickstart.addScript ||  ||  ||  ||  ||
-|| kickstart.deleteProfile ||  ||  ||  ||  ||
-|| kickstart.downloadKickstart ||  ||  ||  ||  ||
-|| kickstart.findKickstartForIp ||  ||  ||  ||  ||
-|| kickstart.getPartitioningScheme ||  ||  ||  ||  ||
-|| kickstart.importRawFile ||  ||  ||  ||  ||
-|| kickstart.listAllIpRanges ||  ||  ||  ||  ||
-|| kickstart.listKickstarts ||  ||  ||  ||  ||
-|| kickstart.listScripts ||  ||  ||  ||  ||
-|| kickstart.removeScript ||  ||  ||  ||  ||
-|| kickstart.renameProfile ||  ||  ||  ||  ||
-|| kickstart.setChildChannels ||  ||  ||  ||  ||
-|| kickstart.setKickstartTree ||  ||  ||  ||  ||
-|| kickstart.setPartitioningScheme ||  ||  ||  ||  ||
-|| kickstart.filepreservation.create ||  ||  ||  ||  ||
-|| kickstart.filepreservation.delete ||  ||  ||  ||  ||
-|| kickstart.filepreservation.getDetails ||  ||  ||  ||  ||
-|| kickstart.filepreservation.listAllFilePreservations ||  ||  ||  ||  ||
-|| kickstart.keys.create ||  ||  ||  ||  ||
-|| kickstart.keys.delete ||  ||  ||  ||  ||
-|| kickstart.keys.getDetails ||  ||  ||  ||  ||
-|| kickstart.keys.listAllKeys ||  ||  ||  ||  ||
-|| kickstart.profile.addIpRange ||  ||  ||  ||  ||
-|| kickstart.profile.addScript ||  ||  ||  ||  ||
-|| kickstart.profile.compareActivationKeys ||  ||  ||  ||  ||
-|| kickstart.profile.compareAdvancedOptions ||  ||  ||  ||  ||
-|| kickstart.profile.comparePackages ||  ||  ||  ||  ||
-|| kickstart.profile.downloadKickstart ||  ||  ||  ||  ||
-|| kickstart.profile.getAdvancedOptions ||  ||  ||  ||  ||
-|| kickstart.profile.getCustomOptions ||  ||  ||  ||  ||
-|| kickstart.profile.getPartitioningScheme ||  ||  ||  ||  ||
-|| kickstart.profile.listIpRanges ||  ||  ||  ||  ||
-|| kickstart.profile.listScripts ||  ||  ||  ||  ||
-|| kickstart.profile.removeIpRange ||  ||  ||  ||  ||
-|| kickstart.profile.removeScript ||  ||  ||  ||  ||
-|| kickstart.profile.setAdvancedOptions ||  ||  ||  ||  ||
-|| kickstart.profile.setChildChannels ||  ||  ||  ||  ||
-|| kickstart.profile.setCustomOptions ||  ||  ||  ||  ||
-|| kickstart.profile.setKickstartTree ||  ||  ||  ||  ||
-|| kickstart.profile.setPartitioningScheme ||  ||  ||  ||  ||
-|| kickstart.profile.keys.addActivationKey ||  ||  ||  ||  ||
-|| kickstart.profile.keys.getActivationKeys ||  ||  ||  ||  ||
-|| kickstart.profile.keys.removeActivationKey ||  ||  ||  ||  ||
-|| kickstart.profile.software.appendToSoftwareList ||  ||  ||  ||  ||
-|| kickstart.profile.software.getSoftwareList ||  ||  ||  ||  ||
-|| kickstart.profile.software.setSoftwareList ||  ||  ||  ||  ||
-|| kickstart.profile.system.addFilePreservations ||  ||  ||  ||  ||
-|| kickstart.profile.system.addKeys ||  ||  ||  ||  ||
-|| kickstart.profile.system.disableConfigManagement ||  ||  ||  ||  ||
-|| kickstart.profile.system.disableRemoteCommands ||  ||  ||  ||  ||
-|| kickstart.profile.system.enableConfigManagement ||  ||  ||  ||  ||
-|| kickstart.profile.system.enableRemoteCommands ||  ||  ||  ||  ||
-|| kickstart.profile.system.getLocale ||  ||  ||  ||  ||
-|| kickstart.profile.system.listFilePreservations ||  ||  ||  ||  ||
-|| kickstart.profile.system.listKeys ||  ||  ||  ||  ||
-|| kickstart.profile.system.removeFilePreservations ||  ||  ||  ||  ||
-|| kickstart.profile.system.removeKeys ||  ||  ||  ||  ||
-|| kickstart.profile.system.setLocale ||  ||  ||  ||  ||
-|| kickstart.profile.system.setNetworkConnection ||  ||  ||  ||  ||
-|| kickstart.profile.system.setSELinux ||  ||  ||  ||  ||
-|| kickstart.tree.create ||  ||  ||  ||  ||
-|| kickstart.tree.delete ||  ||  ||  ||  ||
-|| kickstart.tree.deleteTreeAndProfiles ||  ||  ||  ||  ||
-|| kickstart.tree.list ||  ||  ||  ||  ||
-|| kickstart.tree.listInstallTypes ||  ||  ||  ||  ||
-|| kickstart.tree.rename ||  ||  ||  ||  ||
-|| kickstart.tree.update ||  ||  ||  ||  ||
-|| org.addTrust ||  ||  ||  ||  ||
-|| org.create ||  ||  ||  ||  ||
-|| org.delete ||  ||  ||  ||  ||
-|| org.getDetails ||  ||  ||  ||  ||
-|| org.getDetails ||  ||  ||  ||  ||
-|| org.listOrgs ||  ||  ||  ||  ||
-|| org.listSoftwareEntitlements ||  ||  ||  ||  ||
-|| org.listSoftwareEntitlements ||  ||  ||  ||  ||
-|| org.listSoftwareEntitlementsForOrg ||  ||  ||  ||  ||
-|| org.listSystemEntitlements ||  ||  ||  ||  ||
-|| org.listSystemEntitlements ||  ||  ||  ||  ||
-|| org.listSystemEntitlementsForOrg ||  ||  ||  ||  ||
-|| org.listTrusts ||  ||  ||  ||  ||
-|| org.listUsers ||  ||  ||  ||  ||
-|| org.migrateSystems ||  ||  ||  ||  ||
-|| org.removeTrust ||  ||  ||  ||  ||
-|| org.setSoftwareEntitlements ||  ||  ||  ||  ||
-|| org.setSystemEntitlements ||  ||  ||  ||  ||
-|| org.updateName ||  ||  ||  ||  ||
-|| org.trusts.addTrust ||  ||  ||  ||  ||
-|| org.trusts.getDetails ||  ||  ||  ||  ||
-|| org.trusts.listChannelsConsumed ||  ||  ||  ||  ||
-|| org.trusts.listChannelsProvided ||  ||  ||  ||  ||
-|| org.trusts.listOrgs ||  ||  ||  ||  ||
-|| org.trusts.listSystemsAffected ||  ||  ||  ||  ||
-|| org.trusts.listTrusts ||  ||  ||  ||  ||
-|| org.trusts.removeTrust ||  ||  ||  ||  ||
-|| packages.getPackage ||  ||  ||  ||  ||
-|| packages.getPackageUrl ||  ||  ||  ||  ||
-|| packages.provider.associateKey ||  ||  ||  ||  ||
-|| packages.provider.list ||  ||  ||  ||  ||
-|| packages.provider.listKeys ||  ||  ||  ||  ||
-|| proxy.isProxy ||  ||  ||  ||  ||
-|| satellite.getCertificateExpirationDate ||  ||  ||  ||  ||
-|| schedule.cancelActions ||  ||  ||  ||  ||
-|| schedule.listAllActions ||  ||  ||  ||  ||
-|| schedule.listArchivedActions ||  ||  ||  ||  ||
-|| schedule.listCompletedActions ||  ||  ||  ||  ||
-|| schedule.listCompletedSystems ||  ||  ||  ||  ||
-|| schedule.listFailedActions ||  ||  ||  ||  ||
-|| schedule.listFailedSystems ||  ||  ||  ||  ||
-|| schedule.listInProgressActions ||  ||  ||  ||  ||
-|| schedule.listInProgressSystems ||  ||  ||  ||  ||
-|| system.comparePackageProfile ||  ||  ||  ||  ||
-|| system.deleteSnapshot ||  ||  ||  ||  ||
-|| system.deleteSnapshots ||  ||  ||  ||  ||
-|| system.getName ||  ||  ||  ||  ||
-|| system.getRelevantErrataByType ||  ||  ||  ||  ||
-|| system.listInactiveSystems ||  ||  ||  ||  ||
-|| system.listInactiveSystems ||  ||  ||  ||  ||
-|| system.listNotes ||  ||  ||  ||  ||
-|| system.listSnapshotConfigFiles ||  ||  ||  ||  ||
-|| system.listSnapshotPackages ||  ||  ||  ||  ||
-|| system.listSnapshots ||  ||  ||  ||  ||
-|| system.listSystemsWithPackage ||  ||  ||  ||  ||
-|| system.listSystemsWithPackage ||  ||  ||  ||  ||
-|| system.listVirtualGuests ||  ||  ||  ||  ||
-|| system.listVirtualHosts ||  ||  ||  ||  ||
-|| system.provisionSystem ||  ||  ||  ||  ||
-|| system.provisionSystem ||  ||  ||  ||  ||
-|| system.scheduleGuestAction ||  ||  ||  ||  ||
-|| system.scheduleGuestAction ||  ||  ||  ||  ||
-|| system.schedulePackageRefresh ||  ||  ||  ||  ||
-|| system.schedulePackageRemove ||  ||  ||  ||  ||
-|| system.setGuestCpus ||  ||  ||  ||  ||
-|| system.setGuestMemory ||  ||  ||  ||  ||
-|| system.whoRegistered ||  ||  ||  ||  ||
-|| system.custominfo.createKey ||  ||  ||  ||  ||
-|| system.custominfo.deleteKey ||  ||  ||  ||  ||
-|| system.custominfo.listAllKeys ||  ||  ||  ||  ||
-|| system.search.deviceDescription ||  ||  ||  ||  ||
-|| system.search.deviceDriver ||  ||  ||  ||  ||
-|| system.search.deviceId ||  ||  ||  ||  ||
-|| system.search.deviceVendorId ||  ||  ||  ||  ||
-|| system.search.hostname ||  ||  ||  ||  ||
-|| system.search.ip ||  ||  ||  ||  ||
-|| system.search.nameAndDescription ||  ||  ||  ||  ||
-|| systemgroup.listActiveSystemsInGroup ||  ||  ||  ||  ||
-|| systemgroup.listInactiveSystemsInGroup ||  ||  ||  ||  ||
-|| systemgroup.listInactiveSystemsInGroup ||  ||  ||  ||  ||
-
+||  activationkey.addPackages  || Tested ||    ||    ||    || 
+||  activationkey.checkConfigDeployment  || Tested ||    ||    ||    || 
+||  activationkey.disableConfigDeployment  || Tested ||    ||    ||    || 
+||  activationkey.enableConfigDeployment  || Tested ||    ||    ||    || 
+||  activationkey.removePackages  || Tested ||    ||    ||    || 
+||  auth.checkAuthToken  || Missing ||    ||    ||    || 
+||  channel.listAllChannels  || Tested ||    ||    ||    || 
+||  channel.listMyChannels  || Tested ||    ||    ||    || 
+||  channel.listPopularChannels  || Tested ||    ||    ||    || 
+||  channel.listRedHatChannels  || Tested ||    ||    ||    || 
+||  channel.listRetiredChannels  || Tested ||    ||    ||    || 
+||  channel.listSharedChannels  || Tested ||    ||    ||    || 
+||  channel.access.disableUserRestrictions  || Tested ||    ||    ||    || 
+||  channel.access.enableUserRestrictions  || Tested ||    ||    ||    || 
+||  channel.access.getOrgSharing  || Tested ||    ||    ||    || 
+||  channel.access.setOrgSharing  || Tested ||    ||    ||    || 
+||  channel.org.disableAccess  || Missing ||    ||    ||    || 
+||  channel.org.enableAccess  || Tested ||    ||    ||    || 
+||  channel.org.list  || Missing ||    ||    ||    || 
+||  channel.software.listErrataByType  || Tested ||    ||    ||    || 
+||  channel.software.mergeErrata  || Tested ||    ||    ||    || 
+||  channel.software.mergeErrata  || Tested ||    ||    ||    || 
+||  channel.software.setContactDetails  || Tested ||    ||    ||    || 
+||  configchannel.channelExists  || Tested ||    ||    ||    || 
+||  configchannel.scheduleFileComparisons  || Tested ||    ||    ||    || 
+||  errata.addPackages  || Missing ||    ||    ||    || 
+||  errata.findByCve  || Missing ||    ||    ||    || 
+||  errata.removePackages  || Missing ||    ||    ||    || 
+||  errata.setDetails  || Tested ||    ||    ||    || 
+||  kickstart.addScript  || Missing ||    ||    ||    || 
+||  kickstart.deleteProfile  || Missing ||    ||    ||    || 
+||  kickstart.downloadKickstart  || Missing ||    ||    ||    || 
+||  kickstart.findKickstartForIp  || Missing ||    ||    ||    || 
+||  kickstart.getPartitioningScheme  || Missing ||    ||    ||    || 
+||  kickstart.importRawFile  || Missing ||    ||    ||    || 
+||  kickstart.listAllIpRanges  || Missing ||    ||    ||    || 
+||  kickstart.listKickstarts  || Missing ||    ||    ||    || 
+||  kickstart.listScripts  || Missing ||    ||    ||    || 
+||  kickstart.removeScript  || Missing ||    ||    ||    || 
+||  kickstart.renameProfile  || Missing ||    ||    ||    || 
+||  kickstart.setChildChannels  || Missing ||    ||    ||    || 
+||  kickstart.setKickstartTree  || Missing ||    ||    ||    || 
+||  kickstart.setPartitioningScheme  || Missing ||    ||    ||    || 
+||  kickstart.filepreservation.create  || Tested ||    ||    ||    || 
+||  kickstart.filepreservation.delete  || Tested ||    ||    ||    || 
+||  kickstart.filepreservation.getDetails  || Tested ||    ||    ||    || 
+||  kickstart.filepreservation.listAllFilePreservations  || Tested ||    ||    ||    || 
+||  kickstart.keys.create  || Tested ||    ||    ||    || 
+||  kickstart.keys.delete  || Tested ||    ||    ||    || 
+||  kickstart.keys.getDetails  || Tested ||    ||    ||    || 
+||  kickstart.keys.listAllKeys  || Tested ||    ||    ||    || 
+||  kickstart.profile.addIpRange  || Missing ||    ||    ||    || 
+||  kickstart.profile.addScript  || Missing ||    ||    ||    || 
+||  kickstart.profile.compareActivationKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.compareAdvancedOptions  || Missing ||    ||    ||    || 
+||  kickstart.profile.comparePackages  || Missing ||    ||    ||    || 
+||  kickstart.profile.downloadKickstart  || Missing ||    ||    ||    || 
+||  kickstart.profile.getAdvancedOptions  || Missing ||    ||    ||    || 
+||  kickstart.profile.getCustomOptions  || Missing ||    ||    ||    || 
+||  kickstart.profile.getPartitioningScheme  || Missing ||    ||    ||    || 
+||  kickstart.profile.listIpRanges  || Missing ||    ||    ||    || 
+||  kickstart.profile.listScripts  || Missing ||    ||    ||    || 
+||  kickstart.profile.removeIpRange  || Missing ||    ||    ||    || 
+||  kickstart.profile.removeScript  || Missing ||    ||    ||    || 
+||  kickstart.profile.setAdvancedOptions  || Missing ||    ||    ||    || 
+||  kickstart.profile.setChildChannels  || Missing ||    ||    ||    || 
+||  kickstart.profile.setCustomOptions  || Missing ||    ||    ||    || 
+||  kickstart.profile.setKickstartTree  || Missing ||    ||    ||    || 
+||  kickstart.profile.setPartitioningScheme  || Missing ||    ||    ||    || 
+||  kickstart.profile.keys.addActivationKey  || Missing ||    ||    ||    || 
+||  kickstart.profile.keys.getActivationKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.keys.removeActivationKey  || Missing ||    ||    ||    || 
+||  kickstart.profile.software.appendToSoftwareList  || Missing ||    ||    ||    || 
+||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||    || 
+||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.addFilePreservations  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.addKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.disableConfigManagement  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.disableRemoteCommands  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.enableConfigManagement  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.enableRemoteCommands  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.getLocale  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.listFilePreservations  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.listKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.removeFilePreservations  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.removeKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.setLocale  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.setNetworkConnection  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.setSELinux  || Missing ||    ||    ||    || 
+||  kickstart.tree.create  || Missing ||    ||    ||    || 
+||  kickstart.tree.delete  || Missing ||    ||    ||    || 
+||  kickstart.tree.deleteTreeAndProfiles  || Missing ||    ||    ||    || 
+||  kickstart.tree.list  || Missing ||    ||    ||    || 
+||  kickstart.tree.listInstallTypes  || Missing ||    ||    ||    || 
+||  kickstart.tree.rename  || Missing ||    ||    ||    || 
+||  kickstart.tree.update  || Missing ||    ||    ||    || 
+||  org.addTrust  || Missing ||    ||    ||    || 
+||  org.create  || Tested ||    ||    ||    || 
+||  org.delete  || Tested ||    ||    ||    || 
+||  org.getDetails  || Tested ||    ||    ||    || 
+||  org.getDetails  || Tested ||    ||    ||    || 
+||  org.listOrgs  || Tested ||    ||    ||    || 
+||  org.listSoftwareEntitlements  || Tested ||    ||    ||    || 
+||  org.listSoftwareEntitlements  || Tested ||    ||    ||    || 
+||  org.listSoftwareEntitlementsForOrg  || Tested ||    ||    ||    || 
+||  org.listSystemEntitlements  || Tested ||    ||    ||    || 
+||  org.listSystemEntitlements  || Tested ||    ||    ||    || 
+||  org.listSystemEntitlementsForOrg  || Tested ||    ||    ||    || 
+||  org.listTrusts  || Missing ||    ||    ||    || 
+||  org.listUsers  || Tested ||    ||    ||    || 
+||  org.migrateSystems  || Missing ||    ||    ||    || 
+||  org.removeTrust  || Missing ||    ||    ||    || 
+||  org.setSoftwareEntitlements  || Tested ||    ||    ||    || 
+||  org.setSystemEntitlements  || Tested ||    ||    ||    || 
+||  org.updateName  || Tested ||    ||    ||    || 
+||  org.trusts.addTrust  || Tested ||    ||    ||    || 
+||  org.trusts.getDetails  || Tested ||    ||    ||    || 
+||  org.trusts.listChannelsConsumed  || Tested ||    ||    ||    || 
+||  org.trusts.listChannelsProvided  || Tested ||    ||    ||    || 
+||  org.trusts.listOrgs  || Tested ||    ||    ||    || 
+||  org.trusts.listSystemsAffected  || Missing ||    ||    ||    || 
+||  org.trusts.listTrusts  || Tested ||    ||    ||    || 
+||  org.trusts.removeTrust  || Tested ||    ||    ||    || 
+||  packages.getPackage  || Tested ||    ||    ||    || 
+||  packages.getPackageUrl  || Missing ||    ||    ||    || 
+||  packages.provider.associateKey  || Tested ||    ||    ||    || 
+||  packages.provider.list  || Tested ||    ||    ||    || 
+||  packages.provider.listKeys  || Tested ||    ||    ||    || 
+||  proxy.isProxy  || Missing ||    ||    ||    || 
+||  satellite.getCertificateExpirationDate  || Tested ||    ||    ||    || 
+||  schedule.cancelActions  || Tested ||    ||    ||    || 
+||  schedule.listAllActions  || Tested ||    ||    ||    || 
+||  schedule.listArchivedActions  || Tested ||    ||    ||    || 
+||  schedule.listCompletedActions  || Tested ||    ||    ||    || 
+||  schedule.listCompletedSystems  || Tested ||    ||    ||    || 
+||  schedule.listFailedActions  || Tested ||    ||    ||    || 
+||  schedule.listFailedSystems  || Tested ||    ||    ||    || 
+||  schedule.listInProgressActions  || Tested ||    ||    ||    || 
+||  schedule.listInProgressSystems  || Tested ||    ||    ||    || 
+||  system.comparePackageProfile  || Tested ||    ||    ||    || 
+||  system.deleteSnapshot  || Tested ||    ||    ||    || 
+||  system.deleteSnapshots  || Tested ||    ||    ||    || 
+||  system.getName  || Tested ||    ||    ||    || 
+||  system.getRelevantErrataByType  || Tested ||    ||    ||    || 
+||  system.listInactiveSystems  || Tested ||    ||    ||    || 
+||  system.listInactiveSystems  || Tested ||    ||    ||    || 
+||  system.listNotes  || Tested ||    ||    ||    || 
+||  system.listSnapshotConfigFiles  || Missing ||    ||    ||    || 
+||  system.listSnapshotPackages  || Missing ||    ||    ||    || 
+||  system.listSnapshots  || Tested ||    ||    ||    || 
+||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
+||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
+||  system.listVirtualGuests  || Tested ||    ||    ||    || 
+||  system.listVirtualHosts  || Tested ||    ||    ||    || 
+||  system.provisionSystem  || Missing ||    ||    ||    || 
+||  system.provisionSystem  || Missing ||    ||    ||    || 
+||  system.scheduleGuestAction  || Tested ||    ||    ||    || 
+||  system.scheduleGuestAction  || Tested ||    ||    ||    || 
+||  system.schedulePackageRefresh  || Tested ||    ||    ||    || 
+||  system.schedulePackageRemove  || Tested ||    ||    ||    || 
+||  system.setGuestCpus  || Tested ||    ||    ||    || 
+||  system.setGuestMemory  || Missing ||    ||    ||    || 
+||  system.whoRegistered  || Tested ||    ||    ||    || 
+||  system.custominfo.createKey  || Tested ||    ||    ||    || 
+||  system.custominfo.deleteKey  || Tested ||    ||    ||    || 
+||  system.custominfo.listAllKeys  || Tested ||    ||    ||    || 
+||  system.search.deviceDescription  || Tested ||    ||    ||    || 
+||  system.search.deviceDriver  || Tested ||    ||    ||    || 
+||  system.search.deviceId  || Missing ||    ||    ||    || 
+||  system.search.deviceVendorId  || Missing ||    ||    ||    || 
+||  system.search.hostname  || Tested ||    ||    ||    || 
+||  system.search.ip  || Tested ||    ||    ||    || 
+||  system.search.nameAndDescription  || Tested ||    ||    ||    || 
+||  systemgroup.listActiveSystemsInGroup  || Tested ||    ||    ||    || 
+||  systemgroup.listInactiveSystemsInGroup  || Tested ||    ||    ||    || 
+||  systemgroup.listInactiveSystemsInGroup  || Tested ||    ||    ||    || 
