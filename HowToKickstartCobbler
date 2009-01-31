@@ -86,16 +86,22 @@ Here's a quick guide to get you going with the new goodies:
                 * edit /etc/xinetd.d/tftp and change the value of "disabled" to "no"
             a. A fairly well documented example of how to set up a small kickstart lab with Spacewalk can be found [https://fedorahosted.org/spacewalk/wiki/kickstartingLabNetworkingSetup here]
         1. Bare metal machines can be kickstarted in one of two ways:
+            a. * Note that this is an area where we've yet to add proper functionality to Spacewalk; at this point it's necessary for you to interact with the cobbler command line, and you'll see no indication of the existence of the system in question in the Spacewalk UI. We will most definitely remedy this in a future release.
             a. Semi-automatically (with a small amount of console interaction at the beginning of the process)
                 1. Plug a machine into one of the network segments that the spacewalk's dhcp server is configured to respond on.
                 1. Power on the machine and ensure via BIOS configuration that the machine will PXE boot over the network
                 1. Boot the machine.  The PXE bootstrap process will take you to a menu that will include the kickstart profile you've just defined (along with any others).
                 1. Select the profile you want to build the box to and press enter.
                 1. The box will kickstart itself without any further interaction on your part.
-            b. Fully automatically (with some prep work involving console or inventory access)
-     a. Kickstart a virtual machine
-	   1. In Spacewalk
+            a. Fully automatically (with some prep work).
+                1. Get a command line on your spacewalk server
+                1. Run this cobbler command: '''cobbler system add --name <short unique name> --hostname <fqdn> --mac <mac addr of netboot interface> --ip <IP addr the resulting box should have> --profile <a profile from 'cobbler profile list'>'''
+                1. Power on the machine, ensure that bios is set so that the meachine will PXE boot over the network
+                1. Boot the machine.  The PXE kickstart process will complete without any interaction on your part.
+            a. '''We need your input! '''  As we've gone down the path of incorporating cobbler's superior provisioning capabilities into Spacewalk, it's become clear that there are some areas where it's just not obvious what our priorities should be as we advance baremetal provisioning.   In all cases, this basically comes down to use cases and questions about workflow.  We've started a [wiki:bareMetalBrainstorming provisioning brainstorming page here] - please take some time to read and reflect and add your thoughts - it's a prety big topic and we'd like to ensure our development focus gets the biggest bang for the buck up front.
+        a. Kickstarting machines that already have an OS on them
 	   1. With koan
+	   1. In Spacewalk
 
 == Cobbler Templating Variables, Kernel Options, and how they can help ==
 
