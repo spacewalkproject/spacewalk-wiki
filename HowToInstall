@@ -102,7 +102,7 @@ yum install spacewalk
 This will pull down and install the set of RPMs required to get Spacewalk to run and avoids the conflict with {{{specspo}}}.
 
 
-'''NOTE:''' x86_64 users will need to add a file {{{/etc/ld.so.conf.d}}} (e.g. {{{/etc/ld.so.conf.d/spacewalk.conf}}}) with the following contents:
+'''NOTE:''' x86_64 users will need to add a file {{{/etc/ld.so.conf.d}}} (e.g. {{{/etc/ld.so.conf.d/spacewalk.conf}}}) with the following contents (check for {{{/etc/ld.so.conf.d/oracle-xe.conf}}} first!!):
 {{{
   /usr/lib/oracle/10.2.0.4/client64/lib/
   /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/
