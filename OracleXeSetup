@@ -116,7 +116,15 @@ XE =
        ) 
     ) 
 }}} 
- 
+
+
+'''NOTE:''' x86_64 users will need to add the following line to the file {{{/etc/ld.so.conf.d/oracle-xe.conf}}}
+{{{
+  /usr/lib/oracle/10.2.0.4/client64/lib/
+}}}
+Run {{{ldconfig -v}}} to enable these changes on your system
+
+
 
 Test your connection with sqlplus: 
 {{{ 
