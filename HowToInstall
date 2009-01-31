@@ -170,7 +170,9 @@ Visit https://fjs-0-11.example.com to create the satellite administrator account
 If you are on x86_64 and tomcat5 fails to restart you need todo a:
 
 {{{
- cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib && rm ojdbc14.jar && ln -s /usr/lib/oracle/10.2.0/client64/lib/ojdbc14.jar ojdbc14.jar;
+cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib &&\
+   rm ojdbc14.jar && \
+   ln -s /usr/lib/oracle/10.2.0/client64/lib/ojdbc14.jar ojdbc14.jar;
 }}}
 
 After {{{spacewalk-setup}}} is complete your application is ready to go!
