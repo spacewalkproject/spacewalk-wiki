@@ -36,3 +36,20 @@ simply need to be completed and are not necessarily risks to the project.
  RHEL-4 includes postgres 7.4 and RHEL-5 includes postgres 8.1.  The latest postgres is 8.3.8.
  7.4 has the following limitations (Exceptions, Save Points) appear to be applicable to spacewalk.
 
+=== Functional Breakdown ===
+
+This is just a scratch pad to develop the project plan :)
+
+==== Iteration {{{#1}}} ====
+
+|| Function || Tables || Viewes || Packages || ''Stored'' Procedures || Notes ||
+|| Users || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Authentication || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Orgs || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Servers || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Registration || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Orgs || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| RHN Sync || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Channels || <tables> || <views> || <packages> || <procedures> || Notes ||
+|| Packages || <tables> || <views> || <packages> || <procedures> || Notes ||
+
