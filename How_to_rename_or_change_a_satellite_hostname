@@ -11,7 +11,7 @@ There are various aspects of RHN Satellite that use the hostname of the Satellit
  1. Ensure you have a recent backup of Satellite
  2. Recommendation is to stop Satellite services while making the change, though not strictly needed. 
 {{{
-# /sbin/service rhn-satellite stop
+# /usr/sbin/service rhn-satellite stop
 # /sbin/service rhn-database start
 }}}
  3. Edit the /etc/hosts file for new hostname
@@ -114,7 +114,7 @@ SQL> quit
 }}}
  11. restart all Satellite services (look for any errors)
 {{{
-# /sbin/service rhn-satellite restart
+# /usr/sbin/service rhn-satellite restart
 }}}
 
  12. Go to 'Satellite Tools' -> 'String Manager' in the UI and ensure that all strings are updated to reflect the new hostname.
