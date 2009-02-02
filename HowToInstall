@@ -178,7 +178,7 @@ You can also find source RPMs and tarballs at the following URL:
    * http://spacewalk.redhat.com/source
 
 == Starting Spacewalk ==
-If you are installing spacewalk 0.3 and later you should be using /sbin/rhn-satellite to stop/start/restart the spacewalk server as the init.d script has been removed.
+If you are installing spacewalk 0.3 and later you should be using /usr/sbin/rhn-satellite to stop/start/restart the spacewalk server as the init.d script has been removed.
 
 = Known Issues =
 
