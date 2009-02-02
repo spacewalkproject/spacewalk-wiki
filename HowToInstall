@@ -7,11 +7,7 @@
 
 Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
 
- 1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch.
-{{{
-rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm
-}}}
- 1.  You also need Redhat's RPM GPG key:
+ 1.  You will need Redhat's RPM GPG key:
 {{{
 # wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
