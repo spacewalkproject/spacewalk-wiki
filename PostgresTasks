@@ -42,14 +42,14 @@ This is just a scratch pad to develop the project plan :)
 
 ==== Iteration {{{#1}}} ====
 
-|| Function || Tables || Viewes || Packages || ''Stored'' Procedures || Notes ||
-|| Users || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Authentication || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Orgs || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Servers || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Registration || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Orgs || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| RHN Sync || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Channels || <tables> || <views> || <packages> || <procedures> || Notes ||
-|| Packages || <tables> || <views> || <packages> || <procedures> || Notes ||
-
+|| '''Function''' || '''Tables''' || '''Viewes''' || '''Packages''' || ''Stored'' '''Procedures''' || '''Java Queries''' || '''Perl Queries''' || '''Python Queries'''|| '''Notes''' || 
+|| Users || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Authentication || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Orgs || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Servers || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Registration || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Orgs || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| RHN Sync || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Channels || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Packages || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
+|| Errata || <tables> || <views> || <packages> || <procedures> || <java> || <perl> ||  <python> || Notes ||
