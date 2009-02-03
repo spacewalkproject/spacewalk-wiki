@@ -42,7 +42,7 @@ apt-key add ~/.gnupg/pubring.gpg
  * rm debian/*.ex debian/*.EX
  * edit files in debian/, in file: dirs will be only 1 line: usr/lib
  * in control file add
-   * add into Build-Depends: python-all-dev, python-support (>= 0.8), gettext, intltool
+   * add into Build-Depends: python-all-dev, python-support (>= 0.8), gettext, intltool, pychecker
    * add into Depends: ${python:Depends}, gnupg, hal, rhnlib (>= 2.1), python-dbus, rhpl
    * add Provides: ${python:Provides}
    * edit Homepage and Description
