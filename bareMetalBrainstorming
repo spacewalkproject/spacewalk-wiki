@@ -8,9 +8,9 @@ An example: Imagine you've got a production deployment of two hundred machines d
 
 Given that architecture, you've got a two main workflows: initial setup, and maintenance.
 
-Initial setup includes a bunch of truly one-time stuff like network wiring and configuration, rack installation, power distribution, etc.  And then comes time to add computers to all this.  These must be provsioned and physically installed - not necessarily in that order.  And once you're infrastructure is all built out and running, you get into maintenance.
+Initial setup includes a bunch of truly one-time stuff like network wiring and configuration, rack installation, power distribution, etc.  And then comes time to add computers to all this.  These must be provisioned and physically installed - not necessarily in that order.  And once you're infrastructure is all built out and running, you get into maintenance.
 
-Maintenance, which is by far the longer running part of the lifecycle of the system, consists of really two main "forks" - software upgrades, and hardware failure repair.  Of these twe, we feel that Spacewalk has a pretty decent handle on software upgrades - it's kind of what RHN was born to do.  Of the latter however - dealing with hardware failures - we run into a conundrum, and whichever is the optimum solution for dealing with hardware failures  very likely plays into whatever the best approach might be for initial deployment as well.
+Maintenance, which is by far the longer running part of the lifecycle of the system, consists of really two main "forks" - software upgrades, and hardware failure repair.  Of these two, we feel that Spacewalk has a pretty decent handle on software upgrades - it's kind of what RHN was born to do.  Of the latter however - dealing with hardware failures - we run into a conundrum, and whichever is the optimum solution for dealing with hardware failures  very likely plays into whatever the best approach might be for initial deployment as well.
 
 == The Conundrum - Prelude ==
 
@@ -18,13 +18,13 @@ The conundrum lies in workflow complexity and infrastructure requirements.  Here
 
 === The "start with a working system" approach ===
 
-This is the approach that koan and spacewalk have to date taken.  In order for a machine to be provisioned, it must first be populated with a very basic "disposable" installation of an operating system capable of initiating a kickstart.  Presumably in this case it makes sense to have either:
+This is the approach that spacewalk has to taken date.  In order for a machine to be provisioned, it must first be populated with a very basic "disposable" installation of an operating system capable of initiating a kickstart.  Presumably in this case it makes sense to have either:
 
     * a collection of machines stashed away that are built out with a "kickstart base" that's compatible with the provisioning infrastructure it's intended to interact with
 or
-    * a collection of machines of a sort or in a state that they can be quicky provisioned with the most current "kickstart base"
+    * a collection of machines of a sort or in a state that they can be quickly provisioned with the most current "kickstart base"
 
-... preperatory work for dealing with machine failures.
+... preparatory work for dealing with machine failures.
 
 Given one of the two above, then, the procedure to replace a machine becomes:
 
@@ -35,11 +35,13 @@ Given one of the two above, then, the procedure to replace a machine becomes:
 
 === The "start with truly bare metal" approach ===
 
-This approach presumes that something (e.g. cobbler) or someone (e.g. operations staff) is coordinating dhcp configuration for the entire infrastructure in such a way that it is aware of and matched with kickstart profiles defined in spacewalk/cobbler.  The approach to dealing with hardware failure in this case is quite a bit diffferent from the koan/spacewalk approach - all that's really needed (provided that a mechanism for keeping the dhcp <-> kickstart profile tie is in place) is a collection of machines on which there is no operating system, and of which we know only the MAC address of the interface that will attempt a PXE bootstrap when the machine is powered on.
+This approach presumes that something (e.g. cobbler) or someone (e.g. operations staff) is coordinating dhcp configuration for the entire infrastructure in such a way that it is aware of and matched with kickstart profiles defined in spacewalk/cobbler.  The approach to dealing with hardware failure in this case is quite a bit different from the koan/spacewalk approach - all that's really needed (provided that a mechanism for keeping the dhcp <-> kickstart profile tie is in place) is a collection of machines on which there is no operating system, and of which we know only the MAC address of the interface that will attempt a PXE bootstrap when the machine is powered on.
 
 In the event of a hardware failure, then, the procedure to replace a machine becomes:
 
     1. Record the MAC address of the interface that will attempt a PXE bootstrap when the machine is powered on in spacewalk - replacing the MAC address value of the machine that just failed.
+        * This would require either direct (or indirect - through Spacewalk) manipulation of an existing Cobbler system record to update the MAC address field
+        * An alternative approach might be to edit an existing system record from a "pool" of bare metal machines such that the appropriate profile and ip address etc. are specified.
     1. Prepare the machine:
         * If the machine is known to have not bootable code on the "first" hard disk, ensure that system BIOS is set to bootstrap in this order:
             a. Hard Disk
@@ -60,7 +62,7 @@ These approaches each have their own advantages and disadvantages.
 
 * The "true bare metal" approach requires a level of integration with the networking infrastructure that's traditionally been squarely in the network administrator's domain, and front end infrastructure configuration requirementsare are complex.
 
-* The "kickstartable base" approach adds overhead to the process in terms maintenance of the collection of "kickstartable base" machines (or the mechanism and procedure used to build them on demand) as it must be ensured that they're compatible with what the provisioning framework expects to interact with (which, itself, changes through time), and there's arguably additional room for human error as the number of non-trivial interatictive steps during the process is not small (relatively speaking).
+* The "kickstartable base" approach adds overhead to the process in terms maintenance of the collection of "kickstartable base" machines (or the mechanism and procedure used to build them on demand) as it must be ensured that they're compatible with what the provisioning framework expects to interact with (which, itself, changes through time), and there's arguably additional room for human error as the number of non-trivial interactive steps during the process is not small (relatively speaking).
 
 = So.... = 
 
