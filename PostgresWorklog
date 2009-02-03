@@ -37,3 +37,24 @@ Authors: dgoodwin
   * Despite this driver abstraction, the implementation and class structure remained ridiculously Oracle specific and required another heavy refactor.
   * Did *ALL* this in master thinking that the PostgreSQL driver is completely unused and just sits there. Now contemplating moving this into the pgsql branch however and leaving the Oracle refactor in master.
   * Currently when I last left off, PostgreSQL rhnsql driver is mostly complete but still lacks ability to call procedures, as well as a LOT of testing.
+
+= ORDER BY ... NULLS {FIRST|LAST} =
+  * (open) This is a syntax that is provided by Oracle, but available in Postgres only since version 8.3. So we need a way to port such queries to Postgres version 8.1 and 8.2.
+    By default, Postgres treats NULLs as larger than any other data; so following behaviour is noticed:
+{{{
+postgres=# select * from t order by a;
+   a    
+--------
+      1
+      2
+ <null>
+(3 rows)
+
+postgres=# select * from t order by a DESC;
+   a    
+--------
+ <null>
+      2
+      1
+(3 rows)
+}}}
