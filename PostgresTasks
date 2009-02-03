@@ -59,3 +59,4 @@ The goal of the first iteration is to have a "bare bones" system that is sane an
 || Registration || <tables> || <views> || <packages> || <java> || <perl> ||  <python> || Notes ||
 || Activation || <tables> || <views> || <packages> || N/A || N/A || satCerts.py, rhn_satellite_activate.py, sync_handlers.py || Notes ||
 || RHN Sync Import/Export || <tables> || <views> || <packages> || N/A || N/A || satsync.py,sync_handlers.py,satComputePkgHeaders.py, exporter/exportLib.py, disk_dumper/dumper.py, ./disk_dumper/iss.py, importLib/channelImport.py, importLib/blacklistImport.py, importLib/backend.py, importLib/errataCache.py, importLib/backendOracle.py, importLib/packageUpload.py, rhn_ssl_dbstore.py  || Notes ||
+|| rhnPush || <tables> || <views> || <packages> || <java> || <perl> || rhnPackageUpload.py, handlers/app/packages.py, handlers/app/channel.py,handlers/app/comps.py,upload_server/handlers/package_push/package_push.py  || Notes ||
