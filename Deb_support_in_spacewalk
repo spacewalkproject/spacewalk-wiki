@@ -40,13 +40,18 @@ apt-key add ~/.gnupg/pubring.gpg
  * export DEBEMAIL='e-mail'
  * dh_make -c gpl
  * rm debian/*.ex debian/*.EX
- * edit files in debian/, in file: dirs will be only 1 line: usr/lib
+ * edit files in debian/, in file: dirs will contain lines: usr/lib, usr/sbin, usr/share, usr/share/rhn
  * in control file add
    * add into Build-Depends: python-all-dev, python-support (>= 0.8), gettext, intltool, pychecker
    * add into Depends: ${python:Depends}, gnupg, hal, rhnlib (>= 2.1), python-dbus, rhpl
    * add Provides: ${python:Provides}
    * edit Homepage and Description
- * edit file rules (this is makefile)  
+ * edit file rules (this is makefile)
+   * for example main install command
+{{{
+$(MAKE) -f Makefile.rhn-client-tools install  DESTDIR=$(CURDIR)/debian/rhn-client-tools PREFIX=$(CURDIR)/debian/rhn-client-tools
+}}}
+
 
 
 
