@@ -17,7 +17,7 @@ This script will alter the '''existing''' schema with your changes.
   spacewalk/schema/spacewalk/rhnsat
 }}}
 
-In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The tables subdir contains all the definitions for the tables, their indexes and constraits.  Packages and Procs dirs contain our stored procedures and functions.  If you are creating a new table that depends on other tables being created before it please view and edit spacewalk/schema/spacewalk/rhnsat/tables/Makefile.deps
+In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The '''tables''' subdir contains all the definitions for the tables, their indexes and constraits.  '''packages''' and '''procs''' dirs contain our stored procedures and functions.  If you are creating a new table that depends on other tables being created before it please view and edit spacewalk/schema/spacewalk/rhnsat/tables/Makefile.deps
 
 3.  Please run your upgrade script against our unit test database.  Ask a spacewalk teammate the hostname if you are not aware of it.
 
