@@ -40,7 +40,7 @@ apt-key add ~/.gnupg/pubring.gpg
  * export DEBEMAIL='e-mail'
  * dh_make -c gpl
  * rm debian/*.ex debian/*.EX
- * edit files in debian/, in file: dirs will contain lines: usr/lib, usr/sbin, usr/share, usr/share/rhn
+ * edit files in debian/, in file: dirs will contain lines: usr/sbin, usr/share, usr/share/rhn
  * in control file add
    * add into Build-Depends: python-all-dev, python-support (>= 0.8), gettext, intltool, pychecker
    * add into Depends: ${python:Depends}, gnupg, hal, rhnlib (>= 2.1), python-dbus, rhpl
