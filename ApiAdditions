@@ -266,7 +266,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  activationkey.disableConfigDeployment  || Tested ||    ||    ||    || 
 ||  activationkey.enableConfigDeployment  || Tested ||    ||    ||    || 
 ||  activationkey.removePackages  || Tested ||    ||    ||    || 
-||  auth.checkAuthToken  || Missing ||    ||    ||    || 
+||  auth.checkAuthToken  || Missing ||    ||    ||ssalevan|| 
 ||  channel.listAllChannels  || Tested ||    ||    ||    || 
 ||  channel.listMyChannels  || Tested ||    ||    ||    || 
 ||  channel.listPopularChannels  || Tested ||    ||    ||    || 
@@ -277,7 +277,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.access.enableUserRestrictions  || Tested ||    ||    ||    || 
 ||  channel.access.getOrgSharing  || Tested ||    ||    ||    || 
 ||  channel.access.setOrgSharing  || Tested ||    ||    ||    || 
-||  channel.org.disableAccess  || Missing ||    ||    ||    || 
+||  channel.org.disableAccess  || Missing ||    ||    ||ssalevan|| 
 ||  channel.org.enableAccess  || Tested ||    ||    ||    || 
 ||  channel.org.list  || Missing ||    ||    ||    || 
 ||  channel.software.listErrataByType  || Tested ||    ||    ||    || 
