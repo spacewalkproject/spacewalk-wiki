@@ -1,3 +1,5 @@
+== How to modify Spacewalk's DB schema ==
+
 If you are working with the Spacewalk code and need to make a change to the DB schema please remember todo the following:
 
 
@@ -15,6 +17,11 @@ This script will alter the '''existing''' schema with your changes.
   spacewalk/schema/spacewalk/rhnsat
 }}}
 
-In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The tables subdir contains all the definitions for the tables, their indexes and constraits.  Packages and Procs dirs contain our stored procedures and functions.
+In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The tables subdir contains all the definitions for the tables, their indexes and constraits.  Packages and Procs dirs contain our stored procedures and functions.  If you are creating a new table that depends on other tables being created before it please view and edit spacewalk/schema/spacewalk/rhnsat/tables/Makefile.deps
+
+3.  Please run your upgrade script against our unit test database.  Ask a spacewalk teammate the hostname if you are not aware of it.
+
+4.  Notify the developers on spacewalk-devel that a schema change is necessary and can be found in the ugprade directory for the current release.
+
 
 
