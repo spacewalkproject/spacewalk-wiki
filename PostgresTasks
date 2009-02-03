@@ -40,9 +40,13 @@ simply need to be completed and are not necessarily risks to the project.
 
 This is just a scratch pad to develop the project plan :)
 
-This assumes that __all__ of the stored procedures (not within a package) are common and need to be converted.
+This assumes:
+ * The entire schema exits.
+ * That __all__ of the stored procedures (not within a package) are common and need to be converted.
 
 ==== Iteration {{{#1}}} ====
+
+The goal of the first iteration is to have a "bare bones" system that is sane and can be tested.
 
 || '''Function''' || '''Tables''' || '''Viewes''' || '''Packages''' || '''Java Queries'''|| '''Perl Queries''' || '''Python Queries'''|| '''Notes''' ||
 || Infrastructure || PXTSESSIONS,  || <views> || <packages> || <java> || <perl> ||  <python> || Notes ||
