@@ -4,21 +4,21 @@ This page exists to throw some ideas around as to different approaches to the pr
 
 And mostly, it comes down to workflow in the context of "what really happens in the real world".
 
-An example: Imagine you've got a production deployment of two hundred machines divided amongst five network tiers - and within each of the tiers say there are maybe two or three different machine types.  (And frankly - part of the problem is - is that even a realistic picture of a production environment - we've not done a customer survey to answer the question, so it's just a guess at what we imagine would be a pretty complex deployment.)
+An example: Imagine you've got a production deployment of two hundred machines divided amongst five tiers, each on separate network segments - and within each of the tiers say there are maybe two or three different machine types.  (And frankly - part of the problem is - is that even a realistic picture of a production environment - we've not done a customer survey to answer the question, so it's just a guess at what we imagine would be a pretty complex deployment.)
 
 Given that architecture, you've got a two main workflows: initial setup, and maintenance.
 
 Initial setup includes a bunch of truly one-time stuff like network wiring and configuration, rack installation, power distribution, etc.  And then comes time to add computers to all this.  These must be provisioned and physically installed - not necessarily in that order.  And once you're infrastructure is all built out and running, you get into maintenance.
 
-Maintenance, which is by far the longer running part of the lifecycle of the system, consists of really two main "forks" - software upgrades, and hardware failure repair.  Of these two, we feel that Spacewalk has a pretty decent handle on software upgrades - it's kind of what RHN was born to do.  Of the latter however - dealing with hardware failures - we run into a conundrum, and whichever is the optimum solution for dealing with hardware failures  very likely plays into whatever the best approach might be for initial deployment as well.
+Maintenance, which is by far the longer running part of the lifecycle of the system, consists of really two main "forks" - software upgrades, and hardware failure mitigation.  Of these two, we feel that Spacewalk has a pretty decent handle on software upgrades - it's kind of what RHN was born to do.  Of the latter however - dealing with hardware failures - we run into a conundrum, and whichever scheme is the optimum solution for dealing with hardware failures  very likely plays into whatever the best approach might be for the initial deployment of an infrastructure as well.
 
 == The Conundrum - Prelude ==
 
-The conundrum lies in workflow complexity and infrastructure requirements.  Here are two fairly concrete examples:
+The conundrum lies in workflow complexity and infrastructure requirements.  Here are two scenarios:
 
 === The "start with a working system" approach ===
 
-This is the approach that spacewalk has to taken date.  In order for a machine to be provisioned, it must first be populated with a very basic "disposable" installation of an operating system capable of initiating a kickstart.  Presumably in this case it makes sense to have either:
+This is the approach that spacewalk has taken to date.  In order for a machine to be provisioned, it must first be populated with a very basic "disposable" installation of an operating system capable of initiating a kickstart.  Presumably in this case it makes sense to have either:
 
     * a collection of machines stashed away that are built out with a "kickstart base" that's compatible with the provisioning infrastructure it's intended to interact with
 or
@@ -28,14 +28,14 @@ or
 
 Given one of the two above, then, the procedure to replace a machine becomes:
 
-    1. Prep the new machine (in the case of the second option above)
+    1. Prep (kickstart) the new machine with a fresh "kickstartable OS" (in the case of the second option above)
     1. Connect the machine to an appropriate spot in the network
     1. Interact with the machine to initiate the kickstart process (e.g. koan or via Spacewalk) such that the correct kickstart profile is selected for building
     1. When the kickstart is complete, rack the machine (if it's not already in place).
 
 === The "start with truly bare metal" approach ===
 
-This approach presumes that something (e.g. cobbler) or someone (e.g. operations staff) is coordinating dhcp configuration for the entire infrastructure in such a way that it is aware of and matched with kickstart profiles defined in spacewalk/cobbler.  The approach to dealing with hardware failure in this case is quite a bit different from the koan/spacewalk approach - all that's really needed (provided that a mechanism for keeping the dhcp <-> kickstart profile tie is in place) is a collection of machines on which there is no operating system, and of which we know only the MAC address of the interface that will attempt a PXE bootstrap when the machine is powered on.
+This approach presumes that something (e.g. cobbler - or Spacewalk as a front to it) or someone (e.g. operations staff) is coordinating dhcp configuration for the infrastructure in such a way that it is aware of and matched with kickstart profiles defined in spacewalk/cobbler.  The approach to dealing with hardware failure in this case is quite a bit different from the koan/spacewalk approach: all that's really needed (provided that a mechanism for keeping the dhcp <-> kickstart profile tie is in place) is a collection of machines on which there is no operating system, and of which we know only the MAC address of the interface that will attempt a PXE bootstrap when the machine is powered on.
 
 In the event of a hardware failure, then, the procedure to replace a machine becomes:
 
