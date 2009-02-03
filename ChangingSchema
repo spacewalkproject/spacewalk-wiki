@@ -1,0 +1,20 @@
+If you are working with the Spacewalk code and need to make a change to the DB schema please remember todo the following:
+
+
+1.  Craft yourself an upgrade script that will take the state of the current spacewalk release's schema to the next.  Examples of this can be found in:
+
+{{{
+  spacewalk/schema/spacewalk/upgrade
+}}}
+
+This script will alter the '''existing''' schema with your changes.
+
+2.  Modify the original schema so fresh installs also contain your changes.  The DDL files that are ran during an initial install are found in:
+
+{{{
+  spacewalk/schema/spacewalk/rhnsat
+}}}
+
+In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The tables subdir contains all the definitions for the tables, their indexes and constraits.  Packages and Procs dirs contain our stored procedures and functions.
+
+
