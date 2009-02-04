@@ -336,8 +336,8 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.software.appendToSoftwareList  || Missing ||    ||    ||    || 
 ||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||    || 
 ||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.addFilePreservations  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.addKeys  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.addFilePreservations  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.addKeys  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableConfigManagement  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableRemoteCommands  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.enableConfigManagement  || Missing ||    ||    ||skarmark|| 
