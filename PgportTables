@@ -1,3 +1,7 @@
+[wiki:PostgresTasks Tasks Page]
+
+=== Tables To Migrate ===
+
 ||'''Table'''||'''Assigned'''||'''Notes'''||
 ||000-rhnPackageChangeLog.sql|| || ||
 ||demo_log.sql|| || ||
