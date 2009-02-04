@@ -286,10 +286,10 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.software.setContactDetails  || Tested ||    ||    ||    || 
 ||  configchannel.channelExists  || Tested ||    ||    ||    || 
 ||  configchannel.scheduleFileComparisons  || Tested ||    ||    ||    || 
-||  errata.addPackages  || Missing ||    ||    ||    || 
-||  errata.findByCve  || Missing ||    ||    ||    || 
-||  errata.removePackages  || Missing ||    ||    ||    || 
-||  errata.setDetails  || Tested ||    ||    ||    || 
+||  errata.addPackages  || Missing ||    ||    ||skarmark|| 
+||  errata.findByCve  || Missing ||    ||    ||skarmark|| 
+||  errata.removePackages  || Missing ||    ||    ||skarmark|| 
+||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.addScript  || Missing ||    ||    ||    || 
 ||  kickstart.deleteProfile  || Missing ||    ||    ||    || 
 ||  kickstart.downloadKickstart  || Missing ||    ||    ||    || 
@@ -338,18 +338,18 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||    || 
 ||  kickstart.profile.system.addFilePreservations  || Missing ||    ||    ||    || 
 ||  kickstart.profile.system.addKeys  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.disableConfigManagement  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.disableRemoteCommands  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.enableConfigManagement  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.enableRemoteCommands  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.getLocale  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.listFilePreservations  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.listKeys  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.removeFilePreservations  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.removeKeys  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.setLocale  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.setNetworkConnection  || Missing ||    ||    ||    || 
-||  kickstart.profile.system.setSELinux  || Missing ||    ||    ||    || 
+||  kickstart.profile.system.disableConfigManagement  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.disableRemoteCommands  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.enableConfigManagement  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.enableRemoteCommands  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.getLocale  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.listFilePreservations  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.listKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.removeFilePreservations  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.removeKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.setLocale  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.setNetworkConnection  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.setSELinux  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.tree.create  || Missing ||    ||    ||    || 
 ||  kickstart.tree.delete  || Missing ||    ||    ||    || 
 ||  kickstart.tree.deleteTreeAndProfiles  || Missing ||    ||    ||    || 
