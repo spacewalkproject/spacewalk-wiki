@@ -445,12 +445,12 @@
 ||state_change.sql|| || ||
 ||time_series.sql|| || ||
 ||valid_countries.sql|| || ||
-||web_contact_indexes.sql|| || ||
-||web_contact.sql|| || ||
+||web_contact_indexes.sql|| dgoodwin || ||
+||web_contact.sql|| dgoodwin || ||
 ||web_customer_notification.sql|| || ||
-||web_customer.sql|| || ||
+||web_customer.sql|| dgoodwin || done ||
 ||web_user_contact_permission.sql|| || ||
-||web_user_personal_info.sql|| || ||
-||web_user_prefix.sql|| || ||
+||web_user_personal_info.sql|| dgoodwin || ||
+||web_user_prefix.sql|| dgoodwin || ||
 ||web_user_site_info.sql|| || ||
 ||web_user_site_type.sql|| || ||
