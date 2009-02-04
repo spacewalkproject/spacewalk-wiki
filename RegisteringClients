@@ -12,7 +12,7 @@ NOTE - rhnreg_ks is used for registration of clients to Spacewalk. If you need t
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.2/fedora/9/i386/
+baseurl=http://spacewalk.redhat.com/yum/0.4/fedora/9/i386/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
