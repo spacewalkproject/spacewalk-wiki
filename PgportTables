@@ -5,7 +5,7 @@
 === Tables To Migrate ===
 
 ||'''Table'''||'''Assigned'''||'''Notes'''||
-||demo_log.sql|| || ||
+||~~demo_log.sql~~ || || ||
 ||PXTSessions.sql|| || ||
 ||rhnActionConfigChannel.sql|| Gurjeet || done ||
 ||rhnActionConfigDateFile.sql|| Gurjeet || done ||
