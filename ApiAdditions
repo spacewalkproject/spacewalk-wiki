@@ -357,7 +357,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.tree.listInstallTypes  || Missing ||    ||    ||    || 
 ||  kickstart.tree.rename  || Missing ||    ||    ||    || 
 ||  kickstart.tree.update  || Missing ||    ||    ||    || 
-||  org.addTrust  || Missing ||    ||    ||    || 
+||  org.addTrust  || Missing ||    ||    ||ssalevan|| 
 ||  org.create  || Tested ||    ||    ||    || 
 ||  org.delete  || Tested ||    ||    ||    || 
 ||  org.getDetails  || Tested ||    ||    ||    || 
@@ -389,7 +389,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  packages.provider.associateKey  || Tested ||    ||    ||    || 
 ||  packages.provider.list  || Tested ||    ||    ||    || 
 ||  packages.provider.listKeys  || Tested ||    ||    ||    || 
-||  proxy.isProxy  || Missing ||    ||    ||    || 
+||  proxy.isProxy  || Missing ||    ||    ||ssalevan|| 
 ||  satellite.getCertificateExpirationDate  || Tested ||    ||    ||    || 
 ||  schedule.cancelActions  || Tested ||    ||    ||    || 
 ||  schedule.listAllActions  || Tested ||    ||    ||    || 
