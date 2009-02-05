@@ -55,8 +55,7 @@ Further API additions for supporting Multi-Org feature and other calls
 
 [wiki:SolarisAdditions Solaris Additions]
  * Test and confirm Solaris client works on AMD64 based Solaris 10
- * Feature addition for correct package count in systemList
-
+ 
 Start on projects for 0.3 release:
  * Multi-Org Channel (packages & errata) Content Data sharing over multiple Organizations within Spacewalk
  * Ability to migrate/move registered client systems from one Organization to another Organization within the Spacewalk server
