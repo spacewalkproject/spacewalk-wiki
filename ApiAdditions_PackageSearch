@@ -58,7 +58,7 @@ XmlRpcClient client = new XmlRpcClient(Config.get().getSearchServerUrl(), true);
 List args = new ArrayList();
 args.add(sessionId);
 args.add("package");
-String exampleQuery = "(name:("vim") description:("editor") arch:("i386") summary:("editor"))"
+String exampleQuery = "(name:(vim) description:(editor) arch:(i386) summary:(editor))"
 args.add(exampleQuery);
 List results = (List)client.invoke("index.search", args);
 }}}
