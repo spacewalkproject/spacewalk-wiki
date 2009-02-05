@@ -76,53 +76,88 @@ TimeLine: Begin: 2nd March 2009 - End: 30th April 2009
 ||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||29th April|| ||
 
 
+=== Iteration 3 ===
+
+TimeLine: Begin: 1st May 2009 - End: 29th May 2009
+
+||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
+
+||M1||Code Merge||Merge code with Head and resolve conflicts.||  ||Jeff O|| 1st May|| ||
+
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||1st May || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| 8th May|| ||
+
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||8th May || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| 8th May|| ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||8th May || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| 22nd May|| ||
+||D5 ??||Development: Upgrade Scripts between versions of Spacewalk||Generate the Pg plan/upgrade script for the application.||  ||Farrukh||22nd May || ||
+
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| 8th May|| ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| 8th May|| ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| 15th May|| ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| 22nd May|| ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| 22nd May|| ||
+||T6 ??||Testing: Upgrade Scripts between versions of Sapcewalk||Test the upgrade scripts migration.||  ||Tushar/Vikram||28th May || ||
+||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||28th May || ||
+
+||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||29th May || ||
+||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||29th May || ||
+
+
 === Iteration 4 ===
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
-||D5 ??||Development: Upgrade Scripts between versions of Spacewalk||Generate the Pg upgrade script for the application.||  ||Gurjeet/Vikram|| || ||
-||T6 ??||Testing: Upgrade Scripts between versions of Sapcewalk||Test the upgrade scripts migration.||  ||Tushar/Vikram|| || ||
-||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
 
+TimeLine: Begin: 1st June 2009 - End: 30th June 2009
 
-=== Iteration 5 ===
 
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
-||T6||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
-||I3||Identify Performance Bottlenecks and other outstanding items||Identify and establish Performance/functional outliners and any other outstanding items||  ||Todd S/Jeff O|| || ||
-||I4||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
-||I5|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
+
+||M1||Code Merge||Merge code with Head and resolve conflicts.||  ||Jeff O|| 3rd June|| ||
+
+
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O||5th June || ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O||5th June || ||
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram||5th June || ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| 5th June|| ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram||5th June || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| 19th June|| ||
+
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| 5th June|| ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| 5th June|| ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| 12th June|| ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| 19th June|| ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| 26th June|| ||
+||T6||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O||26th June || ||
+
+||I3||Identify Performance Bottlenecks and other outstanding items||Identify and establish Performance/functional outliners and any other outstanding items||  ||Todd S/Jeff O||29th June || ||
+||I4||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| 30th June|| ||
+||I5|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||30th June || ||
 
 
 === Final Iteration ===
+
+TimeLine: Begin: 1st July 2009 - End: 31st July 2009
+
+
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
-||I1||Scope Freeze||Identify and freeze the set items identified for completion.||  ||Jeff O|| || ||
-||T1||Testing: User Acceptance Tests||Complete the UAT -- which is part of the continuos iteration - this one should be the final pass||  ||Jeff O|| || ||
-||T2||Testing: Pg Performance Benchmarks with fixes||Execute and Establish the Pg Performance Benchmarks for the application.||  ||Tushar/Vikram/Jeff O|| || ||
-||D1||Develop Guidelines for Database compatibility||Develop a set of guidelines for the general Database compatibility for future enhancements to the product.||  ||Jeff O|| || ||
-||I2||Review & Project Sign-off||Review the above as well as sign-off for the project Completion||  ||Jeff O|| || ||
+
+
+||M1||Code Merge||Merge code with Head and resolve conflicts.||  ||Jeff O|| 3rd July|| ||
+
+||I1||Scope Freeze||Identify and freeze the set items identified for completion.||  ||Jeff O||3rd July || ||
+
+||T1||Testing: User Acceptance Tests||Complete the UAT -- which is part of the continuos iteration - this one should be the final pass||  ||Jeff O||10th July || ||
+||T2||Testing: Pg Performance Benchmarks with fixes||Execute and Establish the Pg Performance Benchmarks for the application.||  ||Tushar/Vikram/Jeff O|| 24th July|| ||
+
+||D1||Develop Guidelines for Database compatibility||Develop a set of guidelines for the general Database compatibility for future enhancements to the product.||  ||Jeff O||24th July || ||
+||D2||Develop Packaging||Build the packaging for the application.||  ||Jeff O||24th July || ||
+||D3||Develop Performance Bottlenecks||Fine tune the application for the identified performances.||  ||Gurjeet/Vikram||17th July || ||
+
+||M2||Final Code Merge||Merge code with Head and resolve conflicts.||  ||Jeff O|| 27th July|| ||
+
+||T2||Testing:Package||Test the end package||  ||Tushar/Vikram/Jeff O|| 31st July|| ||
+
+||I2||Review & Project Sign-off||Review the above as well as sign-off for the project Completion||  ||Jeff O||3rd August || ||
 
 
 
