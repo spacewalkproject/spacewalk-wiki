@@ -361,7 +361,7 @@
 ||rhnServerProfile.sql|| || ||
 ||rhnServerProfileType.sql|| || ||
 ||rhnServerServerGroupArchCompat.sql|| || ||
-||rhnServer.sql|| || ||
+||rhnServer.sql|| Gurjeet || ||
 ||rhnServerTokenRegs.sql|| || ||
 ||rhnServerUuid.sql|| || ||
 ||rhn_service_probe_origins.sql|| || ||
@@ -446,8 +446,8 @@
 ||state_change.sql|| || ||
 ||time_series.sql|| || ||
 ||valid_countries.sql|| || ||
-||web_contact_indexes.sql|| dgoodwin || ||
-||web_contact.sql|| dgoodwin || ||
+||web_contact_indexes.sql|| Gurjeet || ||
+||web_contact.sql|| Gurjeet || ||
 ||web_customer_notification.sql|| || ||
 ||web_customer.sql|| dgoodwin || done ||
 ||web_user_contact_permission.sql|| || ||
