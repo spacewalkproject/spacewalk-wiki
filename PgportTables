@@ -6,45 +6,45 @@
 ||000-rhnPackageChangeLog.sql|| || ||
 ||demo_log.sql|| || ||
 ||PXTSessions.sql|| || ||
-||rhnActionConfigChannel.sql|| Gurjeet || ||
-||rhnActionConfigDateFile.sql|| Gurjeet || ||
-||rhnActionConfigDate.sql|| Gurjeet || ||
-||rhnActionConfigFileName.sql|| Gurjeet || ||
-||rhnActionConfigRevisionResult.sql|| Gurjeet || ||
-||rhnActionConfigRevision.sql|| Gurjeet || ||
-||rhnActionDaemonConfig.sql|| Gurjeet || ||
-||rhnActionErrataUpdate.sql|| Gurjeet || ||
-||rhnActionKickstartFileList.sql|| Gurjeet || ||
-||rhnActionKickstartGuest.sql|| Gurjeet || ||
-||rhnActionKickstart.sql|| Gurjeet || ||
-||rhnActionPackageAnswerfile.sql|| Gurjeet || ||
-||rhnActionPackageDelta.sql|| Gurjeet || ||
-||rhnActionPackageOrder.sql|| Gurjeet || ||
-||rhnActionPackageRemovalFailure.sql|| Gurjeet || ||
-||rhnActionPackage.sql|| Gurjeet || ||
-||rhnActionScript.sql|| Gurjeet || ||
-||rhnAction.sql|| Gurjeet || ||
-||rhnActionStatus.sql|| Gurjeet || ||
-||rhnActionStatus.sql|| Gurjeet || ||
-||rhnActionTransactions.sql|| Gurjeet || ||
-||rhnActionType.sql|| Gurjeet || ||
-||rhnActionVirtDestroy.sql|| Gurjeet || ||
-||rhnActionVirtReboot.sql|| Gurjeet || ||
-||rhnActionVirtRefresh.sql|| Gurjeet || ||
-||rhnActionVirtResume.sql|| Gurjeet || ||
-||rhnActionVirtSchedulePoller.sql|| Gurjeet || ||
-||rhnActionVirtSetMemory.sql|| Gurjeet || ||
-||rhnActionVirtShutdown.sql|| Gurjeet || ||
-||rhnActionVirtStart.sql|| Gurjeet || ||
-||rhnActionVirtSuspend.sql|| Gurjeet || ||
-||rhnActionVirtVcpu.sql|| Gurjeet || ||
+||rhnActionConfigChannel.sql|| Gurjeet || done ||
+||rhnActionConfigDateFile.sql|| Gurjeet || done ||
+||rhnActionConfigDate.sql|| Gurjeet || done ||
+||rhnActionConfigFileName.sql|| Gurjeet || done ||
+||rhnActionConfigRevisionResult.sql|| Gurjeet || done ||
+||rhnActionConfigRevision.sql|| Gurjeet || done ||
+||rhnActionDaemonConfig.sql|| Gurjeet || done ||
+||rhnActionErrataUpdate.sql|| Gurjeet || done ||
+||rhnActionKickstartFileList.sql|| Gurjeet || done ||
+||rhnActionKickstartGuest.sql|| Gurjeet || done ||
+||rhnActionKickstart.sql|| Gurjeet || done ||
+||rhnActionPackageAnswerfile.sql|| Gurjeet || done ||
+||rhnActionPackageDelta.sql|| Gurjeet || done ||
+||rhnActionPackageOrder.sql|| Gurjeet || done ||
+||rhnActionPackageRemovalFailure.sql|| Gurjeet || done ||
+||rhnActionPackage.sql|| Gurjeet || done ||
+||rhnActionScript.sql|| Gurjeet || done ||
+||rhnAction.sql|| Gurjeet || done ||
+||rhnActionStatus.sql|| Gurjeet || done ||
+||rhnActionStatus.sql|| Gurjeet || done ||
+||rhnActionTransactions.sql|| Gurjeet || done ||
+||rhnActionType.sql|| Gurjeet || done ||
+||rhnActionVirtDestroy.sql|| Gurjeet || done ||
+||rhnActionVirtReboot.sql|| Gurjeet || done ||
+||rhnActionVirtRefresh.sql|| Gurjeet || done ||
+||rhnActionVirtResume.sql|| Gurjeet || done ||
+||rhnActionVirtSchedulePoller.sql|| Gurjeet || done ||
+||rhnActionVirtSetMemory.sql|| Gurjeet || done ||
+||rhnActionVirtShutdown.sql|| Gurjeet || done ||
+||rhnActionVirtStart.sql|| Gurjeet || done ( added FKey (action_id) references rhnAction(id) )||
+||rhnActionVirtSuspend.sql|| Gurjeet || done ||
+||rhnActionVirtVcpu.sql|| Gurjeet || done ||
 ||rhnActivationKey.sql|| || ||
 ||rhnAllowTrust.sql|| || ||
 ||rhnAppInstallInstance.sql|| || ||
 ||rhnAppInstallSessionData.sql|| || ||
 ||rhnAppInstallSession.sql|| || ||
 ||rhnArchTypeActions.sql|| || ||
-||rhnArchType.sql|| || ||
+||rhnArchType.sql|| Gurjeet || done ||
 ||rhnBeehivePathMap.sql|| || ||
 ||rhnBlacklistObsoletes.sql|| || ||
 ||rhnChannelArch.sql|| || ||
@@ -95,12 +95,12 @@
 ||rhn_command_requirements.sql|| || ||
 ||rhn_command.sql|| || ||
 ||rhn_command_target.sql|| || ||
-||rhnConfigChannel.sql|| || ||
-||rhnConfigChannelType.sql|| || ||
+||rhnConfigChannel.sql|| Gurjeet || done ||
+||rhnConfigChannelType.sql||Gurjeet || done ||
 ||rhnConfigContent.sql|| || ||
-||rhnConfigFileFailure.sql|| || ||
+||rhnConfigFileFailure.sql|| Gurjeet || done ||
 ||rhnConfigFile_foreignkeys.sql|| || ||
-||rhnConfigFileName.sql|| || ||
+||rhnConfigFileName.sql|| Gurjeet || done ||
 ||rhnConfigFile.sql|| || ||
 ||rhnConfigFileState.sql|| || ||
 ||rhnConfigFileType.sql|| || ||
@@ -111,7 +111,7 @@
 ||rhn_config_macro.sql|| || ||
 ||rhn_config_parameter_data.sql|| || ||
 ||rhn_config_parameter.sql|| || ||
-||rhnConfigRevision.sql|| || ||
+||rhnConfigRevision.sql||Gurjeet || done ||
 ||rhn_config_security_type_data.sql|| || ||
 ||rhn_config_security_type.sql|| || ||
 ||rhn_contact_group_members.sql|| || ||
@@ -268,7 +268,7 @@
 ||rhnProductLine.sql|| || ||
 ||rhnProductName.sql|| || ||
 ||rhnProduct.sql|| || ||
-||rhnProvisionState.sql|| || ||
+||rhnProvisionState.sql|| Gurjeet || done ||
 ||rhnProxyInfo.sql|| || ||
 ||rhnPublicChannelFamily.sql|| || ||
 ||rhnPushClient.sql|| || ||
@@ -318,10 +318,10 @@
 ||rhn_semantic_data_type.sql|| || ||
 ||rhnServerActionPackageResult.sql|| || ||
 ||rhnServerActionScriptResult.sql|| || ||
-||rhnServerAction.sql|| || ||
+||rhnServerAction.sql|| Gurjeet || done ||
 ||rhnServerActionVerifyMissing.sql|| || ||
 ||rhnServerActionVerifyResult.sql|| || ||
-||rhnServerArch.sql|| || ||
+||rhnServerArch.sql|| Gurjeet || done ||
 ||rhnServerCacheInfo.sql|| || ||
 ||rhnServerChannelArchCompat_data.sql|| || ||
 ||rhnServerChannelArchCompat.sql|| || ||
@@ -345,6 +345,7 @@
 ||rhnServerLock.sql|| || ||
 ||rhnServerMessage.sql|| || ||
 ||rhn_server_monitoring_info.sql|| || ||
+
 ||rhnServerNeededErrataCache.sql|| || ||
 ||rhnServerNeededPackageCache.sql|| || ||
 ||rhnServerNetInterface.sql|| || ||
@@ -361,7 +362,7 @@
 ||rhnServerProfile.sql|| || ||
 ||rhnServerProfileType.sql|| || ||
 ||rhnServerServerGroupArchCompat.sql|| || ||
-||rhnServer.sql|| Gurjeet || ||
+||rhnServer.sql|| Gurjeet || done ||
 ||rhnServerTokenRegs.sql|| || ||
 ||rhnServerUuid.sql|| || ||
 ||rhn_service_probe_origins.sql|| || ||
@@ -446,8 +447,8 @@
 ||state_change.sql|| || ||
 ||time_series.sql|| || ||
 ||valid_countries.sql|| || ||
-||web_contact_indexes.sql|| Gurjeet || ||
-||web_contact.sql|| Gurjeet || ||
+||web_contact_indexes.sql|| Gurjeet || done ||
+||web_contact.sql|| Gurjeet || done ||
 ||web_customer_notification.sql|| || ||
 ||web_customer.sql|| dgoodwin || done ||
 ||web_user_contact_permission.sql|| || ||
