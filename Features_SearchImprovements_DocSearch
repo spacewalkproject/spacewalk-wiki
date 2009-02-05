@@ -131,8 +131,15 @@ org.apache.jasper.JasperException: /search.jsp(172,22) Attribute value  language
 ||  '''Issue''' || '''Status''' || '''Notes''' ||
 ||  -----  ||  ||  || 
 ||  add content from a surrounding match to webui || done || requires extra "segments" directory to be included with indexes ||
-||  indexes from www.redhat.com/manuals/satellite need the URLs to be restricted more, i.e. the crawl is picking up entries we don't care about.  ||  ||  ||  
-||  Need to crawl/index in multiple languages.  First non-english language selected will be Japanese.  ||  ||  ||  
-||  Webui needs to recognize language and pass it through to search server request.  ||  ||  ||  
-||  Need to setup a nutch configuration that will parse JSP docs ||  ||  ||  
+||  indexes from www.redhat.com/manuals/satellite need the URLs to be restricted more, i.e. the crawl is picking up entries we don't care about.  || done ||  ||  
+||  Need to crawl/index in multiple languages.  First non-english language selected will be Japanese.  || done || supports all languages present in translated docs ||  
+||  Webui needs to recognize language and pass it through to search server request.  || done || the locale is passed in the xmlrpc call as an argument  ||  
+||  Need to setup a nutch configuration that will parse JSP docs || done || each language has it's own set of configuration files  ||  
 ||  -----  ||  ||  ||  
+
+
+= Outstanding Items as of 2/5/09 =
+ 1. API docs are not currently being indexed/searched.  
+ Estimate: ~3 days
+
+  
