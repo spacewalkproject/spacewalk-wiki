@@ -235,14 +235,14 @@
 ||rhnPackageConflicts.sql|| || ||
 ||rhnPackageDeltaElement.sql|| || ||
 ||rhnPackageDelta.sql|| || ||
-||rhnPackageEVR.sql|| || ||
+||rhnPackageEVR.sql||Vikram || ||
 ||rhnPackageFileDeleteQueue.sql|| || ||
 ||rhnPackageFile.sql|| || ||
 ||rhnPackageGroup.sql|| || ||
 ||rhnPackageKeyAssociation.sql|| || ||
 ||rhnPackageKey.sql|| || ||
 ||rhnPackageKeyType.sql|| || ||
-||rhnPackageName.sql|| || ||
+||rhnPackageName.sql||Vikram || ||
 ||rhnPackageNEVRA.sql|| || ||
 ||rhnPackageObsoletes.sql|| || ||
 ||rhnPackageProvider.sql|| || ||
@@ -346,6 +346,7 @@
 ||rhnServerMessage.sql|| || ||
 ||rhn_server_monitoring_info.sql|| || ||
 
+
 ||rhnServerNeededErrataCache.sql|| || ||
 ||rhnServerNeededPackageCache.sql|| || ||
 ||rhnServerNetInterface.sql|| || ||
@@ -430,16 +431,16 @@
 ||rhnUserServerGroupPerms_triggers.sql|| || ||
 ||rhnUserServerPerms.sql|| || ||
 ||rhnUserServerPrefs.sql|| || ||
-||rhnVersionInfo.sql|| || ||
-||rhnVirtSubLevel.sql|| || ||
-||rhnVirtualInstanceEventLog.sql|| || ||
-||rhnVirtualInstanceEventType.sql|| || ||
-||rhnVirtualInstanceInfo.sql|| || ||
-||rhnVirtualInstanceInstallLog.sql|| || ||
-||rhnVirtualInstance.sql|| || ||
-||rhnVirtualInstanceState.sql|| || ||
-||rhnVirtualInstanceType.sql|| || ||
-||rhnVisibleObjects.sql|| || ||
+||rhnVersionInfo.sql||Vikram || ||
+||rhnVirtSubLevel.sql||Vikram || ||
+||rhnVirtualInstanceEventLog.sql||Vikram || ||
+||rhnVirtualInstanceEventType.sql||Vikram || ||
+||rhnVirtualInstanceInfo.sql||Vikram || ||
+||rhnVirtualInstanceInstallLog.sql||Vikram || ||
+||rhnVirtualInstance.sql||Vikram || ||
+||rhnVirtualInstanceState.sql||Vikram || ||
+||rhnVirtualInstanceType.sql||Vikram || ||
+||rhnVisibleObjects.sql||Vikram || ||
 ||rhnWebContactChangeLog.sql|| || ||
 ||rhnWebContactChangeState.sql|| || ||
 ||rhn_widget_data.sql|| || ||
