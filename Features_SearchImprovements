@@ -40,7 +40,7 @@ System and Errata search will be integrated with the lucene based external searc
  * ID
  * Custom Info
  * Snapshot Tag
- * Running Kernel ('''Added late in dev cycle, after spec was formed''')
+ * Running Kernel ('''Implemented late in dev cycle, after spec was formed''')
 3. Packages
  * Installed Packages
  * Needed Packages
