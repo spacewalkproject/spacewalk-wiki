@@ -20,7 +20,7 @@ System and Errata search will be integrated with the lucene based external searc
   1. Channel Management
   1. Proxy Release Notes
   1. Satellite Release Notes
-  1. API
+  1. API             (''' Wasn't Implemented ''')
 
 = Specifications =
 == Systems ==
@@ -40,6 +40,7 @@ System and Errata search will be integrated with the lucene based external searc
  * ID
  * Custom Info
  * Snapshot Tag
+ * Running Kernel ('''Added late in dev cycle, after spec was formed''')
 3. Packages
  * Installed Packages
  * Needed Packages
@@ -60,10 +61,10 @@ System and Errata search will be integrated with the lucene based external searc
 7. Network Info
  * Hostname
  * IP Address
- * netmask
- * broadcast address
- * mac address
- * network module (driver)
+ * netmask  ('''Not Implemented''')
+ * broadcast address  ('''Not Implemented''')
+ * mac address ('''Not Implemented''')
+ * network module (driver)  ('''Not Implemented''')
 8. Hardware
  * CPU Model
  * CPU MHz Less Than
@@ -245,6 +246,18 @@ Will need to crawl:
 || Sort columns with new list-tag isn't working, i.e. click column but results are not sorted. || DONE || sort only works on data fields which do _not_ require elaboration ||
 || Tighten up the matching threshold to reduce poor matches || DONE || Added a configuration option "system_score_threshold" set to 0.30  ||
 || Add CSV Tag to systemsearch.jsp || || ||
-|| Create a Java version of the reindex script which can be delivered, possibly tie into /etc/init.d/rhn-search so we can give a "reindex" option to it and have it kick off || || ||
-|| Explore how to hook into when a new system is register/modified/deleted and cause SearchServer to reindex on that event || || This won't be for 0.3, it's more something to consider ||
+|| Create a Java version of the reindex script which can be delivered, possibly tie into /etc/init.d/rhn-search so we can give a "reindex" option to it and have it kick off || DONE || ||
+|| Explore how to hook into when a new system is register/modified/deleted and cause SearchServer to reindex on that event || FUTURE|| This won't be for 0.3, it's more something to consider ||
 
+= Outstanding Issues as of 2/5/09 =
+ * System Search
+  * Missing Filter Results on
+   * Filter by specific system group
+   * Filter based on org 
+  * Missing search on network params:
+   * netmask
+   * broadcast address
+   * mac address
+   * network module (driver) 
+ * Doc Search
+  * API Docs are not indexed/searchable
