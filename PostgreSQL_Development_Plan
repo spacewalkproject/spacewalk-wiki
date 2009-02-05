@@ -27,7 +27,7 @@ To create the project plan and mile stones for the project.
   1. Kick off  meeting
   2.  Identify the objectives.
   3. Identify tools and process to be used for communication and tracking of the project.
- 4. Create a Team.
+  4. Create a Team.
 
 === Time Line ===
 
@@ -68,6 +68,9 @@ To share and train the Team with knowledge transfer setup of environments and cr
  7. Setup Development Environments.
  8. Setup of Test Environment.
  9. Creation of the sample database for Pg.
+ 10. Validation of the orafce package to be leveraged.
+ 11. Creation of the make scripts for the database.
+ 12. Database access layer in the different application layers
  10. Further refinement of the Project and Test plan.
  11. Verification of sign offs.
 
@@ -226,6 +229,7 @@ To validate all the modules - functionality, performance and total project sign-
 === Task Lists ===
 
  1. Identify and list the list of issues to fix.
+ 2. Packaging
  2. Complete UAT.
  3. Complete performance Test along with fixes.
  4. Provide guidelines for future projects enhancements - not to break the Pg database option 
