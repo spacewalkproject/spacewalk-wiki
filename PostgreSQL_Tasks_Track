@@ -45,43 +45,35 @@ TimeLine: Begin: Jan 2009 - End: 27 Feb 2009
 ||I112|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||27th Feb||  || 
 
 === Iteration 2 ===
+
+TimeLine: Begin: 2nd March 2009 - End: 30th April 2009
+
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
-||D5||Development: Oracle to Postgres Migration||Generate the Oracle to Postgres Migration script.||  ||Gurjeet/Vikram|| || ||
-||T6||Testing: Oracle to Postgres Migration||Test the Oracle to Postgres Migration.||  ||Tushar/Vikram|| || ||
-||T7||Testing: Establish Oracle Performance Benchmarks||Execute and Establish the Oracle Benchmarks for the application.||  ||Tushar/Vikram/Jeff O|| || ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
+
+||M1||Code Merge||Merge code with Head and resolve conflicts.||  ||Jeff O|| 6th March|| ||
+
+||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.|| in progress ||Jeff O|| 6th March|| ||
+||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| 14th March || ||
+
+||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| 14th March|| ||
+||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| 21st March|| ||
+||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.|| ||Gurjeet/Vikram||21st March  || ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| 10th April|| ||
+||D5||Development: Oracle to Postgres Migration||Generate the Oracle to Postgres Migration script.||  ||Farrukh||20th March || ||
+||D5||Development: Postgres to Oracle Migration||Generate the Postgres to Oracle Migration script.||  ||Farrukh|| 17th April|| ||
+
+||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram||14th March || ||
+||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram||14th March || ||
+||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| 27th March|| ||
+||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O||3rd April || ||
+||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram||24th April || ||
+||T6||Testing: Oracle to Postgres Migration||Test the Oracle to Postgres Migration.||  ||Tushar/Vikram||10th April || ||
+||T7||Testing: Establish Oracle Performance Benchmarks||Execute and Establish the Oracle Benchmarks for the application.||  ||Tushar/Vikram/Jeff O||10th April || ||
+||T6||Testing: Postgres to Oracle Migration||Test the Postgres to Oracle Migration.||  ||Tushar/Vikram||24th April || ||
 
 
-=== Iteration 3 ===
-||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Target Date'''||'''Notes'''
-||I1||Modules Freeze||Identify and freeze the set of modules we are going to work on for this iteration.||  ||Jeff O|| || ||
-||I2||Modules Knowledge Transfer||Modules Knowledge Transfer and detailed Q&A.||  ||Jeff O|| || ||
-||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| || ||
-||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| || ||
-||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.||  ||Gurjeet/Vikram|| || ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| || ||
-||T1||Testing: Test Case Review||Review the existing Test cases for the modules.||  ||Tushar/Vikram|| || ||
-||T2||Testing: Identify Gaps||Identify the gaps in the test cases||  ||Tushar/Vikram|| || ||
-||T3||Testing: Develop Test Cases||Develop the test cases for the identified gaps.||  ||Tushar/Vikram|| || ||
-||T4||Testing: Review||Review the existing Test cases for the modules after adding the new ones.||  ||Jeff O|| || ||
-||T5||Testing: Build Automated Test Cases||Build and run the complete automated test suite.||  ||Tushar/Vikram|| || ||
-||D5||Development: Postgres to Oracle Migration||Generate the Postgres to Oracle Migration script.||  ||Gurjeet/Vikram|| | ||
-||T6||Testing: Postgres to Oracle Migration||Test the Postgres to Oracle Migration.||  ||Tushar/Vikram|| || ||
-||T7||Testing: Establish Pg Performance Benchmarks||Execute and Establish the Pg Performance Benchmarks for the developed modules.||  ||Tushar/Vikram/Jeff O|| || ||
-||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O|| || ||
-||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O|| || ||
+||I3||Review & Sign-off above milestones||Review and Sign-off on the above tasks.||  ||Todd S/Jeff O||29th April || ||
+||I4|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||29th April|| ||
 
 
 === Iteration 4 ===
