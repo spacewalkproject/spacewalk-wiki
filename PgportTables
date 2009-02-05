@@ -1,5 +1,7 @@
 [wiki:PostgresTasks Tasks Page]
 
+'''Note''': ~~Tables~~ - are no longer used and do not need to be migrated.
+
 === Tables To Migrate ===
 
 ||'''Table'''||'''Assigned'''||'''Notes'''||
