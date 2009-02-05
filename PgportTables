@@ -168,8 +168,8 @@
 ||rhnErrataTmp.sql|| || ||
 ||rhnErrata_triggers.sql|| || ||
 ||rhnException.sql|| || ||
-||rhnFAQClass.sql|| || ||
-||rhnFAQ.sql|| || ||
+||~~ rhnFAQClass.sql ~~|| ||  ||
+||~~ rhnFAQ.sql ~~ || ||  ||
 ||rhnFeature.sql|| || ||
 ||rhnFileDownload.sql|| || ||
 ||rhnFileListMembers.sql|| || ||
@@ -442,7 +442,7 @@
 ||rhnVirtualInstance.sql||Vikram || ||
 ||rhnVirtualInstanceState.sql||Vikram || ||
 ||rhnVirtualInstanceType.sql||Vikram || ||
-||rhnVisibleObjects.sql||Vikram || ||
+|| ~~ rhnVisibleObjects.sql ~~ ||Vikram || ||
 ||rhnWebContactChangeLog.sql|| || ||
 ||rhnWebContactChangeState.sql|| || ||
 ||rhn_widget_data.sql|| || ||
