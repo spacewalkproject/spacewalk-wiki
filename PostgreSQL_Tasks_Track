@@ -41,7 +41,7 @@ TimeLine: Begin: Jan 2009 - End: 27 Feb 2009
 ||I8||IMake Files||Creation of make files for schema generation|| in progress || Todd S/Jeff O||20th Feb  || the approach has been identified and first iteration in place||
 ||I9||Orafce Testing||Identify Orafce usages and short comings and find all the required functionality|| in progress || Tushar/Vikram||20th Feb  ||identified a set of bugs -- working with the Orafce team on fixes as well as identified a set of features not available -- creating them||
 ||I10||Database Access Layer||Identify mechanism to effectively to connect to the DB from the application|| in progress || Jeff O||20th Feb  ||||
-|I11||Packaging Plan||Identify the packaging needs of the application|| in progress || Jeff O||26th Feb  ||||
+||I11||Packaging Plan||Identify the packaging needs of the application|| in progress || Jeff O||26th Feb  ||||
 ||I112|| Review next Iteration Plan||Review the plan for the next iteration including tasks, timelines ||  || Todd S/Jeff O||27th Feb||  || 
 
 === Iteration 2 ===
