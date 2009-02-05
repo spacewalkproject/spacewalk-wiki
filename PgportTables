@@ -39,11 +39,11 @@
 ||rhnActionVirtSuspend.sql|| Gurjeet || done ||
 ||rhnActionVirtVcpu.sql|| Gurjeet || done ||
 ||rhnActivationKey.sql|| || ||
-||rhnAllowTrust.sql|| || ||
-||rhnAppInstallInstance.sql|| || ||
-||rhnAppInstallSessionData.sql|| || ||
-||rhnAppInstallSession.sql|| || ||
-||rhnArchTypeActions.sql|| || ||
+||rhnAllowTrust.sql|| Farrukh || ||
+||rhnAppInstallInstance.sql|| Farrukh || ||
+||rhnAppInstallSessionData.sql|| Farrukh || ||
+||rhnAppInstallSession.sql|| Farrukh || ||
+||rhnArchTypeActions.sql|| Farrukh || ||
 ||rhnArchType.sql|| Gurjeet || done ||
 ||rhnBeehivePathMap.sql|| || ||
 ||rhnBlacklistObsoletes.sql|| || ||
@@ -223,6 +223,7 @@
 ||rhnOrgEntitlements.sql|| || ||
 ||rhnOrgEntitlementType.sql|| || ||
 ||rhnOrgErrataCacheQueue.sql|| || ||
+
 ||rhnOrgInfo.sql|| || ||
 ||rhnOrgQuota.sql|| || ||
 ||rhn_os_commands_xref_data.sql|| || ||
