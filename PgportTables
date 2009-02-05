@@ -224,6 +224,7 @@
 ||rhnOrgEntitlementType.sql|| || ||
 ||rhnOrgErrataCacheQueue.sql|| || ||
 
+
 ||rhnOrgInfo.sql|| || ||
 ||rhnOrgQuota.sql|| || ||
 ||rhn_os_commands_xref_data.sql|| || ||
@@ -393,23 +394,23 @@
 ||rhn_strategies_data.sql|| || ||
 ||rhn_strategies.sql|| || ||
 ||rhnSystemMigrations.sql|| || ||
-||rhnTagName.sql|| || ||
-||rhnTag.sql|| || ||
-||rhnTaskQueue.sql|| || ||
-||rhnTemplateCategory.sql|| || ||
-||rhnTemplateString.sql|| || ||
-||rhnTextMessage.sql|| || ||
+||rhnTagName.sql||Sudhakar || ||
+||rhnTag.sql||Sudhakar || ||
+||rhnTaskQueue.sql||Sudhakar || ||
+||rhnTemplateCategory.sql||Sudhakar || ||
+||rhnTemplateString.sql||Sudhakar || ||
+||rhnTextMessage.sql||Sudhakar || ||
 ||rhn_threshold_type_data.sql|| || ||
 ||rhn_threshold_type.sql|| || ||
 ||rhn_time_zone_names_data.sql|| || ||
 ||rhn_time_zone_names.sql|| || ||
-||rhnTimezone.sql|| || ||
-||rhnTinyURL.sql|| || ||
-||rhnTransactionElement.sql|| || ||
-||rhnTransactionOperation.sql|| || ||
-||rhnTransactionPackage.sql|| || ||
-||rhnTransaction.sql|| || ||
-||rhnTrustedOrgs.sql|| || ||
+||rhnTimezone.sql||Sudhakar || ||
+||rhnTinyURL.sql||Sudhakar || ||
+||rhnTransactionElement.sql||Sudhakar || ||
+||rhnTransactionOperation.sql||Sudhakar || ||
+||rhnTransactionPackage.sql||Sudhakar || ||
+||rhnTransaction.sql||Sudhakar || ||
+||rhnTrustedOrgs.sql||Sudhakar || ||
 ||rhn_units_data.sql|| || ||
 ||rhn_units.sql|| || ||
 ||rhn_url_probe.sql|| || ||
