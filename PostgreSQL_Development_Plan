@@ -110,47 +110,12 @@ To develop and test the identified modules.
      4. Automate and run the test cases.
  5. Identify/Establish Oracle Benchmarks
  6. Create Oracle to Postgres -- migration scripts.
- 7. Review and sign-off of the above tasks
+ 7. Create Postgres to Oracle -- migration scripts.
+ 8. Review and sign-off of the above tasks
 
 === Time Line ===
 
-March 2009
-
-== Iteration 3 ==
-
-=== Objective ===
-
-To develop and test the identified modules.
-
-=== Task Lists ===
-
- 1. Identified modules (here the modules are placed as the priority is not set as yet)
-       1.  Advanced Search
-       2. Channels
-       3. Errata
-       4. Auto Errata Updates
-       5. Errata Search
-       6. Configuration Management
-       7. Pagination
-       8. RHN Registration
- 2. Knowledge Transfer -- Detailed for the identified modules (including Q&A)
- 3. Development:
-      1. Identify the queries.
-      2. Identify the stored procedures/functions/packages
-      3. Make the appropriate changes.
-      4. Unit and regression Test the same
- 4. Testing:
-     1. Review existing test cases.
-     2. Identify gaps.
-     3. Fill the gaps -- and review -> refill -> review and signoff.
-     4. Automate and run the test cases.
- 5. Identify/Establish Pg Benchmarks for developed modules
- 6. Create Postgres to Oracle -- migration scripts.
- 7. Review and sign-off of the above tasks
-
-=== Time Line ===
-
-April 2009
+March/April 2009
 
 == Iteration 4 ==
 
@@ -233,6 +198,7 @@ To validate all the modules - functionality, performance and total project sign-
  2. Complete UAT.
  3. Complete performance Test along with fixes.
  4. Provide guidelines for future projects enhancements - not to break the Pg database option 
+ 5. Packaging of the application
  5. Review and sign-off of the project
 
 === Time Line ===
