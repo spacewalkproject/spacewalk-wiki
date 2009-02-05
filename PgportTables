@@ -6,37 +6,38 @@
 ||000-rhnPackageChangeLog.sql|| || ||
 ||demo_log.sql|| || ||
 ||PXTSessions.sql|| || ||
-||rhnActionConfigChannel.sql|| || ||
-||rhnActionConfigDateFile.sql|| || ||
-||rhnActionConfigDate.sql|| || ||
-||rhnActionConfigFileName.sql|| || ||
-||rhnActionConfigRevisionResult.sql|| || ||
-||rhnActionConfigRevision.sql|| || ||
-||rhnActionDaemonConfig.sql|| || ||
-||rhnActionErrataUpdate.sql|| || ||
-||rhnActionKickstartFileList.sql|| || ||
-||rhnActionKickstartGuest.sql|| || ||
-||rhnActionKickstart.sql|| || ||
-||rhnActionPackageAnswerfile.sql|| || ||
-||rhnActionPackageDelta.sql|| || ||
-||rhnActionPackageOrder.sql|| || ||
-||rhnActionPackageRemovalFailure.sql|| || ||
-||rhnActionPackage.sql|| || ||
-||rhnActionScript.sql|| || ||
-||rhnAction.sql|| || ||
-||rhnActionStatus.sql|| || ||
-||rhnActionTransactions.sql|| || ||
-||rhnActionType.sql|| || ||
-||rhnActionVirtDestroy.sql|| || ||
-||rhnActionVirtReboot.sql|| || ||
-||rhnActionVirtRefresh.sql|| || ||
-||rhnActionVirtResume.sql|| || ||
-||rhnActionVirtSchedulePoller.sql|| || ||
-||rhnActionVirtSetMemory.sql|| || ||
-||rhnActionVirtShutdown.sql|| || ||
-||rhnActionVirtStart.sql|| || ||
-||rhnActionVirtSuspend.sql|| || ||
-||rhnActionVirtVcpu.sql|| || ||
+||rhnActionConfigChannel.sql|| Gurjeet || ||
+||rhnActionConfigDateFile.sql|| Gurjeet || ||
+||rhnActionConfigDate.sql|| Gurjeet || ||
+||rhnActionConfigFileName.sql|| Gurjeet || ||
+||rhnActionConfigRevisionResult.sql|| Gurjeet || ||
+||rhnActionConfigRevision.sql|| Gurjeet || ||
+||rhnActionDaemonConfig.sql|| Gurjeet || ||
+||rhnActionErrataUpdate.sql|| Gurjeet || ||
+||rhnActionKickstartFileList.sql|| Gurjeet || ||
+||rhnActionKickstartGuest.sql|| Gurjeet || ||
+||rhnActionKickstart.sql|| Gurjeet || ||
+||rhnActionPackageAnswerfile.sql|| Gurjeet || ||
+||rhnActionPackageDelta.sql|| Gurjeet || ||
+||rhnActionPackageOrder.sql|| Gurjeet || ||
+||rhnActionPackageRemovalFailure.sql|| Gurjeet || ||
+||rhnActionPackage.sql|| Gurjeet || ||
+||rhnActionScript.sql|| Gurjeet || ||
+||rhnAction.sql|| Gurjeet || ||
+||rhnActionStatus.sql|| Gurjeet || ||
+||rhnActionStatus.sql|| Gurjeet || ||
+||rhnActionTransactions.sql|| Gurjeet || ||
+||rhnActionType.sql|| Gurjeet || ||
+||rhnActionVirtDestroy.sql|| Gurjeet || ||
+||rhnActionVirtReboot.sql|| Gurjeet || ||
+||rhnActionVirtRefresh.sql|| Gurjeet || ||
+||rhnActionVirtResume.sql|| Gurjeet || ||
+||rhnActionVirtSchedulePoller.sql|| Gurjeet || ||
+||rhnActionVirtSetMemory.sql|| Gurjeet || ||
+||rhnActionVirtShutdown.sql|| Gurjeet || ||
+||rhnActionVirtStart.sql|| Gurjeet || ||
+||rhnActionVirtSuspend.sql|| Gurjeet || ||
+||rhnActionVirtVcpu.sql|| Gurjeet || ||
 ||rhnActivationKey.sql|| || ||
 ||rhnAllowTrust.sql|| || ||
 ||rhnAppInstallInstance.sql|| || ||
