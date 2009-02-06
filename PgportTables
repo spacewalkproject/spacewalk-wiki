@@ -401,10 +401,10 @@
 ||rhnTemplateCategory.sql||Sudhakar || ||
 ||rhnTemplateString.sql||Sudhakar || ||
 ||rhnTextMessage.sql||Sudhakar || ||
-||rhn_threshold_type_data.sql|| || ||
-||rhn_threshold_type.sql|| || ||
-||rhn_time_zone_names_data.sql|| || ||
-||rhn_time_zone_names.sql|| || ||
+||rhn_threshold_type_data.sql||Sudhakar || ||
+||rhn_threshold_type.sql||Sudhakar || ||
+||rhn_time_zone_names_data.sql||Sudhakar || ||
+||rhn_time_zone_names.sql||Sudhakar || ||
 ||rhnTimezone.sql||Sudhakar || ||
 ||rhnTinyURL.sql||Sudhakar || ||
 ||rhnTransactionElement.sql||Sudhakar || ||
