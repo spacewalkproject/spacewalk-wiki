@@ -60,7 +60,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, string startDate, string endDate) || 0.3 || 6 || bbuckingham || done ||  ||
-||  channel.software.uploadPackage(package) || 0.5 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
+||  channel.software.uploadPackage(package) || 0.6 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
 ||  configchannel.channelExists(sessionKey, string channelLabel) || 0.3 || || coec || done || returns 1 if the channel exists or 0 if it does not ||
@@ -136,9 +136,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.filepreservation.getDetails(string sessionKey, string name) || 0.4 || 3 || bbuckingham || done || Retrieve details on a file preservation list. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
-||  monitoring.listProbes(sid) || 0.5 || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || 0.5 || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || 0.5 || 3 ||  ||  ||  ||
+||  monitoring.listProbes(sid) || 0.6 || 3 ||  ||  ||  ||
+||  monitoring.getLatestProbeResults(sid) || 0.6 || 3 ||  ||  ||  ||
+||  monitoring.getAllResults(sid, probe_id) || 0.6 || 3 ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
 ||  org.listOrgs(string sessionKey)   || 0.4 || 4 || jortel || done ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
@@ -157,7 +157,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: packages''' ||  ||  ||  ||  ||  ||
-||  packages.getDetails(*,downloadURL)   || 0.5 ||  ||  ||  ||  ||
+||  packages.getDetails(*,downloadURL)   || 0.6 ||  ||  ||  ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
 ||  schedule.listAllActions(string sessionKey) || 0.4 || 3 || bbuckingham || done ||  ||
@@ -250,7 +250,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.getOsadStatus(sid) (system.getDetails()) || 0.1 || 2 || jsherrill || Done ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system.config''' ||  ||  ||  ||  ||  ||
-|| system.config.scheduleImport([sids], [files])|| 0.5 || 5 || paji || ||  ||
+|| system.config.scheduleImport([sids], [files])|| 0.6 || 5 || paji || ||  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: systemgroup''' ||  ||  ||  ||  ||  ||
 ||  systemgroup.listActiveSystemsInGroup(group) || 0.1 || 3 || jsherrill || Done ||  ||
