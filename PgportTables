@@ -74,28 +74,28 @@
 ||rhn_check_suites.sql|| || ||
 ||rhnClientCapabilityName.sql|| || ||
 ||rhnClientCapability.sql|| || ||
-||rhn_command_center_state.sql|| || ||
-||rhn_command_class_data.sql|| || ||
-||rhn_command_class.sql|| || ||
-||rhn_command_data.sql|| || ||
-||rhn_command_groups_data.sql|| || ||
-||rhn_command_groups.sql|| || ||
-||rhn_command_parameter_data.sql|| || ||
-||rhn_command_parameter.sql|| || ||
-||rhn_command_param_threshold_data.sql|| || ||
-||rhn_command_param_threshold.sql|| || ||
-||rhn_command_queue_commands_data.sql|| || ||
-||rhn_command_queue_commands.sql|| || ||
-||rhn_command_queue_execs_bk.sql|| || ||
-||rhn_command_queue_execs.sql|| || ||
-||rhn_command_queue_instances_bk.sql|| || ||
-||rhn_command_queue_instances.sql|| || ||
-||rhn_command_queue_params.sql|| || ||
-||rhn_command_queue_sessions.sql|| || ||
-||rhn_command_requirements_data.sql|| || ||
-||rhn_command_requirements.sql|| || ||
-||rhn_command.sql|| || ||
-||rhn_command_target.sql|| || ||
+||rhn_command_center_state.sql|| Farrukh || ||
+||rhn_command_class_data.sql|| Farrukh || ||
+||rhn_command_class.sql|| Farrukh || ||
+||rhn_command_data.sql|| Farrukh || ||
+||rhn_command_groups_data.sql|| Farrukh || ||
+||rhn_command_groups.sql|| Farrukh || ||
+||rhn_command_parameter_data.sql|| Farrukh || ||
+||rhn_command_parameter.sql|| Farrukh || ||
+||rhn_command_param_threshold_data.sql|| Farrukh || ||
+||rhn_command_param_threshold.sql|| Farrukh || ||
+||rhn_command_queue_commands_data.sql|| Farrukh || ||
+||rhn_command_queue_commands.sql|| Farrukh || ||
+||rhn_command_queue_execs_bk.sql|| Farrukh || ||
+||rhn_command_queue_execs.sql|| Farrukh || ||
+||rhn_command_queue_instances_bk.sql|| Farrukh || ||
+||rhn_command_queue_instances.sql|| Farrukh || ||
+||rhn_command_queue_params.sql|| Farrukh || ||
+||rhn_command_queue_sessions.sql|| Farrukh || ||
+||rhn_command_requirements_data.sql|| Farrukh || ||
+||rhn_command_requirements.sql|| Farrukh || ||
+||rhn_command.sql|| Farrukh || ||
+||rhn_command_target.sql|| Farrukh || ||
 ||rhnConfigChannel.sql|| Gurjeet || done ||
 ||rhnConfigChannelType.sql||Gurjeet || done ||
 ||rhnConfigContent.sql|| || ||
