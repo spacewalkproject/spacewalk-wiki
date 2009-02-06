@@ -166,6 +166,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: supportuser''' || 0.6 ||  ||  ||  || TODO: A new API handler will be defined to support the [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser SupportUser] feature.  Details will be coming as the content for Support user are finalized. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
+||  system.getDetails(string sessionKey, int sid) || 0.5 || 1 || bbuckingham || done || Existing API to retrieve details on a system.  Add "boolean lock_status" to the return result. ||
 ||  system.getName(string sessionKey, int sid) || 0.3 || 3 || bbuckingham || done || Get system name and last check in information for the given system ID. ||
 ||  system.getRelevantErrataByType(string sessionKey, int sid, string advisoryType) || 0.3 || 3 || bbuckingham || done || Returns a list of all errata of the specified type that are relevant to the system. ||
 ||  system.provisionSystem(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
@@ -173,6 +174,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham || done || Compare the system to an existing package profile. ||
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || bbuckingham || done || * Schedule a package list refresh for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise. ||
 ||  system.schedulePackageRemove(string sessionKey, int serverId, array[int packageId], dateTime.iso860 earliestOccurrence) || 0.4 || 4 || bbuckingham || done || * Schedule a package remove for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise. ||
+||  system.setLockStatus(string sessionKey, int serverId, boolean status) || 0.5 || 3 || bbuckingham || done || * Set a system's status to locked or unlocked.  Note: status=true indicates locked.  ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system.search''' ||  ||  ||  ||  ||  ||
 ||  system.search.nameAndDescription(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by name and description  ||
