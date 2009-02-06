@@ -64,6 +64,8 @@ Targeted version of PostgreSQL is 8.1+
 
 [PostgresDevelopmentNotes Development Notes] - Notes on how to actually work with the as of yet unreleased PostgreSQL code in the pgsql git branch.
 
+[PostgresTestNotes Testing Notes] - Notes on current testing activities
+
 === Resources ===
 
 Orafce: Oracle support functions http://pgfoundry.org/projects/orafce/
