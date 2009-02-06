@@ -55,7 +55,7 @@ Looking at: hadoop-0.19.0
 || commons-net-1.4.1.jar ||  jakarta-commons-net ||  || 1.4.1 ||  ||  || IN_FEDORA ||
 || hsqldb-1.8.0.10.jar || hsqldb  ||  || 1.8.0.10 (F10) ||  ||  || IN_FEDORA ||
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  || IN_FEDORA ||
-|| jets3t-0.6.1.jar ||  ||  ||  ||  || https://jets3t.dev.java.net/ || in progress - jmatthews ||
+|| jets3t-0.6.1.jar ||  || ||  || jmatthews || https://jets3t.dev.java.net/ || !FedoraPackageReview - [https://bugzilla.redhat.com/show_bug.cgi?id=484281 bz 484281]||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || IN_FEDORA ||
 || kfs-0.2.0.jar ||  ||  ||  ||  || http://kosmosfs.wiki.sourceforge.net/ || BUILD FAILED, I think it needs log4cpp ||
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  || IN_FEDORA ||
