@@ -176,6 +176,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence) || 0.3 || 4 || bbuckingham || done || * Schedule a package list refresh for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise. ||
 ||  system.schedulePackageRemove(string sessionKey, int serverId, array[int packageId], dateTime.iso860 earliestOccurrence) || 0.4 || 4 || bbuckingham || done || * Schedule a package remove for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise. ||
 ||  system.setLockStatus(string sessionKey, int serverId, boolean status) || 0.5 || 3 || bbuckingham || done || * Set a system's status to locked or unlocked.  Note: status=true indicates locked.  ||
+
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system.search''' ||  ||  ||  ||  ||  ||
 ||  system.search.nameAndDescription(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by name and description  ||
@@ -289,9 +290,9 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.software.setContactDetails  || Tested ||    ||    ||    || 
 ||  configchannel.channelExists  || Tested ||    ||    ||    || 
 ||  configchannel.scheduleFileComparisons  || Tested ||    ||    ||    || 
-||  errata.addPackages  || Missing ||    ||    ||skarmark|| 
-||  errata.findByCve  || Missing ||    ||    ||skarmark|| 
-||  errata.removePackages  || Missing ||    ||    ||skarmark|| 
+||  errata.addPackages  || Tested ||    ||    ||skarmark|| 
+||  errata.findByCve  || Tested ||    ||    ||skarmark|| 
+||  errata.removePackages  || Tested ||    ||    ||skarmark|| 
 ||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.addScript  || Missing ||    ||    ||    || 
 ||  kickstart.deleteProfile  || Missing ||    ||    ||    || 
