@@ -1,0 +1,65 @@
+= Orafce Testing =
+
+== Overview ==
+
+The Motive of the testing is to make sure that Orafce "Oracle Function " features is compatible with Postgres and also used by spacewalk.
+
+The minimum supported version of Postgres is PG 8.1+.
+
+Targeted version of Orafce is 3.0.0.
+
+
+=== About Orafce Features ===
+
+Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functionality_(en)
+
+
+
+=== Oracle Compatible Function's of Orafce using in Spacewalk ===
+
+
+||'''Function Name'''||DBMS_OUTPUT||NVL||NVL2||ROUND||TRUNC||SUBSTR||INSTR||DECODE||TO_DATE||LENGTH||LAST_DAY
+
+
+=== Oracle Compatible Function's of Orafce NOT using in spacewalk ===
+
+
+||'''Function Name'''||MONTHS_BETWEEN||ADD_MONTHS||NEXT_DAY||DBMS_ALERT||DBMS_PIPE||UTL_FILE||RESERVE||CONCAT
+
+
+=== Oracle compatible Function's which are already in PG  ===
+
+||'''Function Name'''||TO_CHAR||TO_DATE||CONCATENATION OPERATOR
+
+
+=== Tracking ===
+
+'''About the Bugs and Issue's raised so far ...'''
+
+Reported in January http://lists.pgfoundry.org/pipermail/orafce-general/2009-January/thread.html.
+
+Reported in Feburary http://lists.pgfoundry.org/pipermail/orafce-general/2009-February/thread.html.
+
+
+
+=== Test Cases ===
+
+The Test cases file has been uploaded in this link ,the sql file name is "orafce_testcases_version0.1.sql" along with the output file .whatever the test-cases which has been left out and new feature(undiscovered) will be added in version 0.2.
+
+
+=== Limitation ===
+
+1.Oracle grouping function is not supported by Orafce.
+
+2.In Most of the function ,we have use to explicit type casting  like:-
+  
+  select decode(1,1,null::int)
+  
+ for more detail pls review  test-case file(orafce_testcases_version0.1.sql)
+
+
+=== Feedback ===
+
+Most welcome.
+
+
