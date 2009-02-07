@@ -33,6 +33,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  activationkey.enableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 3  || coec || done  ||  ||
 ||  activationkey.disableConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
 ||  activationkey.checkConfigDeployment(string sessionKey, string activationKey) || 0.3 || 2 || coec || done  ||  ||
+||  activationkey.listActivatedSystems(string sessionKey, string activationKey) || 0.5 || 3 || bbuckingham || done  || List the systems that have been activated by the given activation key. ||
 ||  '''Namespace: channel.access''' ||  ||  ||  ||  ||  ||
 || channel.access.enableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
 || channel.access.disableUserRestrictions(string sessionKey, string channelLabel) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise.||
