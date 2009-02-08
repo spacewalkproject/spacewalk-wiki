@@ -1,30 +1,19 @@
 == Introducing Spacewalk and Cobbler ==
 
-Version 0.4 of Spacewalk adds significantly enhanced machine kickstarting capabilities due the the advent of tight integration between Spacewalk and the [https://fedorahosted.org/cobbler/ Cobbler] installation server system.  Cobbler is in fact now a component of Spacewalk - when you install Spacewalk, Cobbler will be included as a dependency.  
+Version 0.4 of Spacewalk has improved installation abilities since Spacewalk now includes the [http://fedorahosted.org/cobbler Cobbler] install server.
 
-With Cobbler integration, Spacewalk gains some exciting new features:
+These new features include:
 
- * Xen installs now use the virtinst library (same as virt manager)
- * Support for qemu/kvm based virtual machines
- * Support for lvm-backed guest installs
- * Support for virtual machines with multiple disks
- * Support for virtual machines with multiple NICs
- * Increased breadth of operating system support:
-	* First-class support for
-		* RHEL
-		* Fedora
-		* CentOS
-	* Second-class support (ks templates and PXE only) for
-		* Debian / Ubuntu
-		* SuSE
- * Additional deployment options:
-	* Bare-metal PXE kickstarting is supported
-		* Auto-generated and updated menus
-		* No longer necessary to install an OS in order to kickstart
- 	* LiveCD / DeadCD support for bare metal rollouts where PXE isn't possible
-	* Bare-metal kickstarts possible on multiple subnets
- * Integrated DHCP and DNS management
- * Powerful kickstart file templating
+ * Installing and manage qemu/KVM based virtual machines and Xen fullvirt installs (previously, only Xen paravirt was supported)
+ * Installing guests to LVM backed storage
+ * Creating guests with multiple disks (question: does Spacewalk surface this?)
+ * Creating guests with multiple virtual NICs on multiple bridges (question: does Spacewalk surface this?)
+ * First-class support for Fedora and CentOS instead of just RHEL
+ * Evolving support for Debian, SuSE, and Ubuntu (limited exposure in Spacewalk -- just template editing and PXE, no virtual guests?)
+ * Automatic PXE setup with auto-generated PXE menus for bare metal deployments
+ * Integrated DHCP and DNS management (can be enabled, but is not surfaced in Spacewalk)
+ * Powerful kickstart file templating using Cheetah (see https://fedorahosted.org/cobbler/wiki/KickstartTemplating and https://fedorahosted.org/cobbler/wiki/KickstartSnippets)
+ * other features (see [http://fedorahosted.org/cobbler Cobbler Wiki])
 
 == Quick Start Guide ==
 
