@@ -17,7 +17,7 @@ These new features include:
 
 == Quick Start Guide ==
 
-Here's a quick guide to get you going with the new goodies:
+Here are some setup instructions for using Cobbler with Spacewalk.  Note that these instructions are different from the regular [https://fedorahosted.org/cobbler/wiki/UsingCobblerImport cobbler setup instructions] because Spacewalk also requires that you push the RPMs into Spacewalk, not just into Cobbler.   Many of the steps below are for that process.
 
  1. Create a Distro
     a. Some prep work
@@ -28,13 +28,14 @@ Here's a quick guide to get you going with the new goodies:
 			* within that directory make a directory Fedora-9
 		a. mount -oloop /var/iso-images/Fedora-9-i386-DVD.iso /var/distro-trees/Fedora-9
 			* You may find it useful to include an entry in /etc/fstab to ensure this mount persists across reboots
-        1. Create a channel for the distribution you wish to kickstart (if you have one set up already, go to the next step)
+                        * Cobbler does not require this.   Spacewalk channels /might/  (FIXME)
+        1. Create a Spacewalk channel for the distribution you wish to kickstart (if you have one set up already, go to the next step)
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9" with a label "fedora-9"
 		a. Populate the channel with packages using rhnpush
 			* e.g. rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9 /var/distro-trees/Fedora-9/Packages/*.rpm
 			* Note that this step takes "a while" - don't be alarmed - just take a *long* lunch. We're working on the speed issue for the next release.
-	1. Having made the base channel, you must now create a child channel that contains some kickstart helper tools
+	1. Having made the Spacewalk base channel, you must now create a child channel that contains some kickstart helper tools
 		a. Select Channels|Manage Software Channels and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
 		a. Download the following packages from http://spacewalk.redhat.com/yum/0.4:
@@ -44,6 +45,7 @@ Here's a quick guide to get you going with the new goodies:
 			* spacewalk-koan*
 		a. Populate your new child channel with these rpms using  "rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9-with-tools /path/to/the/helper/rpms/*.rpm"
 		a. You're now ready to create a kickstart distro
+                a. (FIXME) shouldn't this be automatic?
     a. Select Systems|Kickstart|Distributions and select "+ create new distribution"
 	1. On the "Create Kickstart Distribution" page, fill in the items as described
 		a. Distribution label in this case might be Fedora-9
@@ -51,10 +53,11 @@ Here's a quick guide to get you going with the new goodies:
 		a. Base channel should be "Fedora 9 with Tools"
 		a. Installer generation should be Fedora 9 in this case.
 		a. Once you've pressed the "Create Kickstart Distribution" button you'll see a table that includes your new entry.
-		a. If you run "cobbler distro list" at your spacewalk system's command line, you'll now see these entries in addition to any others you may have already defined:
+		a. If you run "cobbler distro list" at your spacewalk system's command line, you'll now see these entries in addition to any others you may have already defined.  These are named automatically by Spacewalk (FIXME: explain what "Public Cert" means and what "1" means):
 			* Fedora-9:1:Spacewalk-Public-Cert
 			* Fedora-9:xen:1:Spacewalk-Public-Cert
- 1. Having created your kickstartable distribution, you can now create a new kickstart profile:
+
+ 1. Having created your kickstartable distribution, you can now create a new Spacewalk kickstart profile:
     a. select Systems|Kickstart|Profiles and then select "+ create new kickstart profile"
     a. Give your new profile a label - in this case "Fedora-9-No-Tools"
     a. Select the base channel you created earlier
@@ -64,39 +67,50 @@ Here's a quick guide to get you going with the new goodies:
     a. Give you new machine type a default root password, and then click "Finish"
     a. If you run cobbler profile list you'll now see this entry in addition to those you've already defined:
             * Fedora-9:1:Spacewalk-Public-Cert
+            * FIXME: explain naming convention
  1. Use Spacewalk to kickstart a system with your profiles
      a. Kickstarting  "bare-metal" machines
-        1. You can kickstart "bare metal" machines (actual physical machines or 'blank' virtual machines) with spacewalk provided you've set up a few things:
-            a. Pay particular attention to any instructions related to kickstarting in the Spacewalk installation and setup documentation
+        1. You can kickstart "bare-metal" machines (actual physical machines without an OS installed) with spacewalk provided you've set up a few things:
             a. On your network
-                1. Setup a dhcp server with entries - dynamic or static - that set next-server to point to your spacewalk machine
-                1. (optional but probably desired) set up DNS (bind) with an entry that points to your spacewalk machine (both forward and reverse resolution)
+                1. Setup a dhcp server that set the next-server variable to point to your spacewalk machine
+                1. (optional) make sure your spacewalk machine can be found in DNS.
             a. On the spacewalk server
                 * edit /etc/xinetd.d/tftp and change the value of "disabled" to "no"
+                * generally, running "cobbler check" is an excellent way to see if your install server configuration has any problems like this that should be addressed.
             a. A fairly well documented example of how to set up a small kickstart lab with Spacewalk can be found [https://fedorahosted.org/spacewalk/wiki/kickstartingLabNetworkingSetup here]
         1. Bare metal machines can be kickstarted in one of two ways:
             a. * Note that this is an area where we've yet to add proper functionality to Spacewalk; at this point it's necessary for you to interact with the cobbler command line, and you'll see no indication of the existence of the system in question in the Spacewalk UI. We will most definitely remedy this in a future release.
-            a. Semi-automatically (with a small amount of console interaction at the beginning of the process)
-                1. Plug a machine into one of the network segments that the spacewalk's dhcp server is configured to respond on.
-                1. Power on the machine and ensure via BIOS configuration that the machine will PXE boot over the network
-                1. Boot the machine.  The PXE bootstrap process will take you to a menu that will include the kickstart profile you've just defined (along with any others).
-                1. Select the profile you want to build the box to and press enter.
-                1. The box will kickstart itself without any further interaction on your part.
+            a. From the PXE menu
+                1. Connect a machine to the network, assuming DHCP is available and next-server for the network is set to point to the Spacewalk server
+                1. Power on the machine.   The BIOS configuration should be set to boot over the network /first/ for maximum flexibility.  If not, select PXE boot from the menu.  Your choice.
+                1. Choose what profile you want to install from the PXE menu.
+                1. The box will finish installation automatically
             a. Fully automatically (with some prep work).
                 1. Get a command line on your spacewalk server
-                1. Run this cobbler command: '''cobbler system add --name <short unique name> --hostname <fqdn> --mac <mac addr of netboot interface> --ip <IP addr the resulting box should have> --profile <a profile from 'cobbler profile list'>'''
-                1. Power on the machine, ensure that bios is set so that the meachine will PXE boot over the network
-                1. Boot the machine.  The PXE kickstart process will complete without any interaction on your part.
+                1. Run this cobbler command: '''cobbler system add --name <nameOfYourSystem> --mac <mac addr of netboot interface> --profile <a profile from 'cobbler profile list'>'''.   
+                1. Boot the machine.   The install will continue without any user interaction.
             a. '''We need your input! '''  As we've gone down the path of incorporating cobbler's superior provisioning capabilities into Spacewalk, it's become clear that there are some areas where it's just not obvious what our priorities should be as we advance baremetal provisioning.   In all cases, this basically comes down to use cases and questions about workflow.  We've started a [wiki:bareMetalBrainstorming provisioning brainstorming page here] - please take some time to read and reflect and add your thoughts - it's a prety big topic and we'd like to ensure our development focus gets the biggest bang for the buck up front.
         a. Kickstarting machines that already have an OS on them
-	   1. With koan
+	   1. With koan:  koan --replace-self --server=cobbler.example.org [--profile=profile-name] [--system=system-name]
 	   1. In Spacewalk
+       
+Virtual machines:
+
+Koan can be run on any Spacewalk managed machine to install new VMs.
+
+{{{
+
+man koan, read the instructions for --virt
+
+}}}
+
+If you use profiles set up in Spacewalk, virtual machines will be registered to the Spacewalk server automatically. 
 
 == Cobbler Templating Variables, Kernel Options, and how they can help ==
 
  * How to add variables to Kickstart Distributions, Profiles and Systems in the Spacewalk GUI
- * How to do the same in Cobbler
- * How to use these variables in a kickstart file
+ * How to do the same in Cobbler and how to use these variables in a kickstart file
+    * Read https://fedorahosted.org/cobbler/wiki/KickstartTemplating and https://fedorahosted.org/cobbler/wiki/KickstartSnippets
 
 == Upload your own Kickstart File ==
 
@@ -117,8 +131,11 @@ Here's a quick guide to get you going with the new goodies:
 == Cobbler Tips And Tricks ==
 
  * Cobbler editing of fields in Spacewalk through the cobbler command line
+     * see "man cobbler" for more information.
  * PXE features in more depth
    * PXE boot loop prevention and all about BIOS order
+      * If your machines are set up to PXE ahead of the local disks in BIOS order, pxe_just_once /must/ be set in /etc/cobbler/settings to avoid install loops.
+      * Any custom kickstart templates must reference $kickstart_done in %post to make use of this feature.
  * Virt features in more depth
  * cobbler power management (integration in a future release?)
  * cobbler dhcp/dns management
