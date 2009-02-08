@@ -1,12 +1,12 @@
 '''Spacewalk DHCP Kickstarting Lab Setup'''
 
-
 This document describes steps required to put together a lab suitable for kickstarting machines independent of corp infrastructure. Isolation is required as part of the overall goal is to have spacewallk manipulate DHCP configuration directly, and having multiple DHCP servers on a single segment is problematic (not impossible however).
-
 
 The lab consists of at least two nodes and exactly two network segments. One segment is internet connected for development purposes, the other is isolated to provide a pristine environment for development and testing. One node is a spacewalk with access to both network segments. One or more other nodes reside on the isolated segment as kickstart targets.
 
 [[PageOutline]]
+
+NOTE:  You don't have to do this if your only goal is to find a way to install new baremetal machines via Cobbler.   Cobbler provides a buildiso feature that allows you to bring up new hosts without configuring DHCP or setting up a lab.  See [See https://fedorahosted.org/cobbler/wiki/BuildIso BuildIso].   In addition, if you ask /very/ nicely, most admins can change the next-server address for just a couple of hosts and then you don't need to set up DHCP either.  This is the way I have my office setup -- I just nicely asked helpdesk to point my server's next-server parameter to my laptop. -- mpd
 
 = Networking = 
 
@@ -268,6 +268,7 @@ shared-network cloud{
          * by defining a “host” entity with a “hardware ethernet” and “fixed-address” pair, dhcp will react to a machine presenting the MAC in question by issuing the specified fixed IP address assignment.
 === tftp server ===
        * edit the file /etc/xinetd.d/tftp and alter the line that says “disable = yes” to “disable = no”
+       * just run "cobbler check" and it will report on problems like this.
        * execute service xinetd restart
 == Target node(s) ==
 === Bare metal ===
@@ -278,9 +279,13 @@ shared-network cloud{
          a. pxe
        1. To prepare a node for bare metal kickstart, execute “dd if=/dev/zero of=/dev/<hard disk device e.g. hda> bs=512 count=1”.  '''WARNING: This command destroys your system's boot sector and partition map – it wipes out the drive for all intents and purposes. Obviously: don't issue this command on any machine, physical or otherwise, unless you can afford to loose its contents forever!!! '''
 
+{{{
 NOTE:  a safer approach is to just set the machine to PXE boot the first time in the cycle, and use Cobbler with the pxe_just_once flag enabled so that once the machine installs it will get a PXE config file that says "boot locally" and then we use that to control what falls through to the local disk.  This way the "blitz MBR" hack is never needed.
+}}}
 
-ANOTHER NOTE:  "cobbler buildiso" allows for a nice way to setup infrastructure that is PXE-like without needing PXE, and provides a good option to bring up hosts without the above instructions.
+{{{
+ANOTHER NOTE:  "cobbler buildiso" allows for a nice way to setup infrastructure that is PXE-like without needing PXE, and provides a good option to bring up hosts without the above instructions.   This eliminates the need to set up DHCP in the first place and still provides a bare-metal install solution.   
+}}}
 
 === VM Hosts ===
        * Create one or more virtual machines using whatever technology is appropriate, and then prepare the machines as you would a bare metal target
