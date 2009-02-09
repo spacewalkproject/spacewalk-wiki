@@ -18,13 +18,32 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 === Oracle Compatible Function's of Orafce using in Spacewalk ===
 
 
-||'''Function Name'''||DBMS_OUTPUT||NVL||NVL2||ROUND||TRUNC||SUBSTR||INSTR||DECODE||TO_DATE||LENGTH||LAST_DAY
+||'''Function Name'''||'''Remarks'''||
+||DBMS_OUTPUT|| ||
+||NVL|| ||
+||NVL2|| ||
+||ROUND|| ||
+||TRUNC|| ||
+||SUBSTR|| ||
+||INSTR|| ||
+||DECODE|| ||
+||TO_DATE|| ||
+||LENGTH|| ||
+||LAST_DAY|| ||
 
 
 === Oracle Compatible Function's of Orafce NOT using in spacewalk ===
 
 
-||'''Function Name'''||MONTHS_BETWEEN||ADD_MONTHS||NEXT_DAY||DBMS_ALERT||DBMS_PIPE||UTL_FILE||RESERVE||CONCAT
+||'''Function Name'''||'''Remarks'''||
+||MONTHS_BETWEEN|| ||
+||ADD_MONTHS|| ||
+||NEXT_DAY|| ||
+||DBMS_ALERT|| ||
+||DBMS_PIPE|| ||
+||UTL_FILE|| ||
+||RESERVE|| ||
+||CONCAT|| ||
 
 
 === Oracle compatible Function's which are already in PG  ===
