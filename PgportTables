@@ -48,7 +48,7 @@
 ||rhnArchType.sql|| Gurjeet || done ||
 ||rhnBeehivePathMap.sql|| || ||
 ||rhnBlacklistObsoletes.sql|| || ||
-||rhnChannelArch.sql|| || ||
+||rhnChannelArch.sql||Vikram || ||
 ||rhnChannelCloned.sql|| || ||
 ||rhnChannelComps.sql|| || ||
 ||rhnChannelDownloads.sql|| || ||
@@ -56,7 +56,7 @@
 ||rhnChannelFamilyLicenseConsent.sql|| || ||
 ||rhnChannelFamilyLicense.sql|| || ||
 ||rhnChannelFamilyMembers.sql|| || ||
-||rhnChannelFamily.sql|| || ||
+||rhnChannelFamily.sql||Vikram || ||
 ||rhnChannelFamilyVirtSubLevel.sql|| || ||
 ||rhnChannelNewestPackageAudit.sql|| || ||
 ||rhnChannelNewestPackage.sql|| || ||
@@ -66,8 +66,8 @@
 ||rhnChannelParent.sql|| || ||
 ||rhnChannelPermissionRole.sql|| || ||
 ||rhnChannelPermission.sql|| || ||
-||rhnChannelProduct.sql|| || ||
-||rhnChannel.sql|| || ||
+||rhnChannelProduct.sql||Vikram || ||
+||rhnChannel.sql||Vikram || ||
 ||rhnChannelTrust.sql|| || ||
 ||rhn_check_probe.sql|| || ||
 ||rhn_check_suite_probe.sql|| || ||
@@ -261,7 +261,7 @@
 ||rhnPaidErrataTempCache.sql|| || ||
 ||rhnPathChannelMap.sql|| || ||
 ||rhn_physical_location.sql|| || ||
-||rhnPrivateChannelFamily.sql|| || ||
+||rhnPrivateChannelFamily.sql||Vikram || ||
 ||rhn_probe_param_value.sql|| || ||
 ||rhn_probe.sql|| || ||
 ||rhn_probe_state.sql|| || ||
@@ -269,11 +269,11 @@
 ||rhn_probe_types.sql|| || ||
 ||rhnProductChannel.sql|| || ||
 ||rhnProductLine.sql|| || ||
-||rhnProductName.sql|| || ||
+||rhnProductName.sql||Vikram || ||
 ||rhnProduct.sql|| || ||
 ||rhnProvisionState.sql|| Gurjeet || done ||
 ||rhnProxyInfo.sql|| || ||
-||rhnPublicChannelFamily.sql|| || ||
+||rhnPublicChannelFamily.sql||Vikram || ||
 ||rhnPushClient.sql|| || ||
 ||rhnPushClientState_data.sql|| || ||
 ||rhnPushClientState.sql|| || ||
