@@ -178,6 +178,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.setLockStatus(string sessionKey, int serverId, boolean status) || 0.5 || 3 || bbuckingham || done || * Set a system's status to locked or unlocked.  Note: status=true indicates locked.  ||
 
 
+
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: system.search''' ||  ||  ||  ||  ||  ||
 ||  system.search.nameAndDescription(string sessionKey, string searchTerm) || 0.4 || 4 || jmatthews || done || search for system by name and description  ||
@@ -342,7 +343,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||    || 
 ||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||    || 
 ||  kickstart.profile.system.addFilePreservations  || Tested ||    ||    ||skarmark|| 
-||  kickstart.profile.system.addKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.addKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableConfigManagement  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableRemoteCommands  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.enableConfigManagement  || Missing ||    ||    ||skarmark|| 
@@ -351,7 +352,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.system.listFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.listKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.removeFilePreservations  || Tested ||    ||    ||skarmark|| 
-||  kickstart.profile.system.removeKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.system.removeKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setLocale  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setNetworkConnection  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setSELinux  || Missing ||    ||    ||skarmark|| 
