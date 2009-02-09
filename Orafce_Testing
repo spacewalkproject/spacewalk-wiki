@@ -48,7 +48,10 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 
 === Oracle compatible Function's which are already in PG  ===
 
-||'''Function Name'''||TO_CHAR||TO_DATE||CONCATENATION OPERATOR
+||'''Function Name'''||'''Remarks'''||
+||TO_CHAR|| ||
+||TO_DATE|| ||
+||CONCATENATION OPERATOR|| ||
 
 
 === Tracking ===
