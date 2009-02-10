@@ -288,7 +288,9 @@ root:system_r:spacewalk_monitoring_t nocpulse 2167 0.0  2.8 49924 26960 pts/2  S
 == Parts that are missing in Spacewalk 0.4 ==
 
  * Monitoring is not supported by any of the SELinux policy modules. You will likely see monitoring processes running as {{{initrc_t}}}, and you may see AVC denials in the log.
+   * In nightly repo and in Spacewalk 0.5, monitoring is supported via spacewalk-monitoring-selinux package.
  * Spacewalk Proxy is not supported by any of the SELinux policy modules.
+   * In nightly repo and in Spacewalk Proxy 0.5, the default Apache and squid, plus Spacewalk's spacewalk-proxy-selinux, osa-dispatcher-selinux, and spacewalk-monitoring-selinux packages are available.
 
 == Other documents ==
 
