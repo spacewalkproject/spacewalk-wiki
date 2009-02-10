@@ -69,10 +69,10 @@ Configure the Oracle XE database
 # /etc/init.d/oracle-xe configure
 }}}
 
+Here are some sane values for the configure. Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9000, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}:
 
-Here are some sane values (note: if SELinux is enforcing you need to choose port 9000 as the App Express HTTP port here):
 {{{
- HTTP port for Oracle Application Express: 9000 (8080 is tomcat)
+ HTTP port for Oracle Application Express: 9000
  Database listener port: 1521
  Password for SYS/SYSTEM: <password>
  Start at boot: y
