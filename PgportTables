@@ -6,7 +6,7 @@
 
 ||'''Table'''||'''Assigned'''||'''Notes'''||
 ||~~demo_log.sql~~ || || ||
-||PXTSessions.sql|| || ||
+||PXTSessions.sql||Vikram ||Done ||
 ||rhnActionConfigChannel.sql|| Gurjeet || done ||
 ||rhnActionConfigDateFile.sql|| Gurjeet || done ||
 ||rhnActionConfigDate.sql|| Gurjeet || done ||
@@ -98,16 +98,16 @@
 ||rhn_command_target.sql|| Farrukh || ||
 ||rhnConfigChannel.sql|| Gurjeet || done ||
 ||rhnConfigChannelType.sql||Gurjeet || done ||
-||rhnConfigContent.sql|| || ||
+||rhnConfigContent.sql||Vikram ||Done ||
 ||rhnConfigFileFailure.sql|| Gurjeet || done ||
 ||rhnConfigFile_foreignkeys.sql|| || ||
 ||rhnConfigFileName.sql|| Gurjeet || done ||
-||rhnConfigFile.sql|| || ||
-||rhnConfigFileState.sql|| || ||
-||rhnConfigFileType.sql|| || ||
+||rhnConfigFile.sql||Vikram ||Done ||
+||rhnConfigFileState.sql||Vikram ||Done ||
+||rhnConfigFileType.sql||Vikram ||Done ||
 ||rhn_config_group_data.sql|| || ||
 ||rhn_config_group.sql||Vikram ||Done ||
-||rhnConfigInfo.sql|| || ||
+||rhnConfigInfo.sql||Vikram ||Done ||
 ||rhn_config_macro_data.sql|| || ||
 ||rhn_config_macro.sql||Vikram ||Done ||
 ||rhn_config_parameter_data.sql|| || ||
@@ -131,8 +131,8 @@
 ||rhnDaemonState.sql|| || ||
 ||rhnDailySummaryQueue.sql|| || ||
 ||rhn_db_environment_data.sql|| || ||
-||rhn_db_environment.sql|| || ||
-||rhn_deployed_probe.sql|| || ||
+||rhn_db_environment.sql||Vikram ||Done ||
+||rhn_deployed_probe.sql||Vikram ||Done ||
 ||rhnDevice.sql|| || ||
 ||rhnDistChannelMap.sql|| || ||
 ||rhnDownloads.sql|| || ||
@@ -164,8 +164,8 @@
 ||rhnErrataPackage.sql|| || ||
 ||rhnErrataPackageTmp.sql|| || ||
 ||rhnErrataQueue.sql|| || ||
-||rhnErrataSeverity.sql|| || ||
-||rhnErrata.sql|| || ||
+||rhnErrataSeverity.sql||Vikram ||Done ||
+||rhnErrata.sql||Vikram ||Done ||
 ||rhnErrataTmp.sql|| || ||
 ||rhnErrata_triggers.sql|| || ||
 ||rhnException.sql||Vikram ||Done ||
@@ -174,17 +174,17 @@
 ||rhnFeature.sql|| || ||
 ||rhnFileDownload.sql|| || ||
 ||rhnFileListMembers.sql|| || ||
-||rhnFileList.sql|| || ||
+||rhnFileList.sql||Vikram ||Done ||
 ||rhnFileLocation.sql|| || ||
 ||rhnFile.sql|| || ||
 ||rhnGrailComponentChoices.sql|| || ||
 ||rhnGrailComponents.sql|| || ||
-||rhn_host_check_suites.sql|| || ||
-||rhn_host_probe.sql|| || ||
+||rhn_host_check_suites.sql||Vikram ||Done ||
+||rhn_host_probe.sql||Vikram ||Done ||
 ||rhnIndexerWork.sql|| || ||
 ||rhnInfoPane.sql|| || ||
-||rhn_interface_monitoring.sql|| || ||
-||rhnKickstartableTree.sql|| || ||
+||rhn_interface_monitoring.sql||Vikram ||Done ||
+||rhnKickstartableTree.sql||Vikram ||Done ||
 ||rhnKickstartChildChannel.sql|| || ||
 ||rhnKickstartCommandName.sql|| || ||
 ||rhnKickstartCommand.sql|| || ||
@@ -195,30 +195,30 @@
 ||rhnKickstartPreserveFileList.sql|| || ||
 ||rhnKickstartScript.sql|| || ||
 ||rhnKickstartSessionHistory.sql|| || ||
-||rhnKickstartSession.sql|| || ||
+||rhnKickstartSession.sql||Vikram ||Done ||
 ||rhnKickstartSessionState_data.sql|| || ||
-||rhnKickstartSessionState.sql|| || ||
+||rhnKickstartSessionState.sql||Vikram ||Done ||
 ||rhnKickstartSession_triggers.sql|| || ||
 ||rhnKickstartTimezone.sql|| || ||
-||rhnKickstartVirtualizationType.sql|| || ||
-||rhnKSData.sql|| || ||
-||rhnKSInstallType.sql|| || ||
+||rhnKickstartVirtualizationType.sql||Vikram ||Done ||
+||rhnKSData.sql||Vikram ||Done ||
+||rhnKSInstallType.sql||Vikram ||Done ||
 ||rhnKSTreeFile.sql|| || ||
-||rhnKSTreeType.sql|| || ||
-||rhn_ll_netsaint.sql|| || ||
+||rhnKSTreeType.sql||Vikram ||Done ||
+||rhn_ll_netsaint.sql||Vikram ||Done ||
 ||rhnMessagePriority.sql|| || ||
 ||rhnMessage.sql|| || ||
 ||rhnMessageType.sql|| || ||
 ||rhn_method_types_data.sql|| || ||
 ||rhn_method_types.sql||Vikram ||Done ||
 ||rhn_metrics_data.sql|| || ||
-||rhn_metrics.sql|| || ||
+||rhn_metrics.sql||Vikram ||Done ||
 ||rhnMonitorGranularity.sql|| || ||
 ||rhnMonitor.sql|| || ||
-||rhn_multi_scout_threshold.sql|| || ||
+||rhn_multi_scout_threshold.sql||Vikram ||Done ||
 ||rhn_notification_formats_data.sql|| || ||
 ||rhn_notification_formats.sql||Vikram ||Done ||
-||rhn_notifservers.sql|| || ||
+||rhn_notifservers.sql||Vikram ||Done ||
 ||rhnOrgChannelSettings.sql|| || ||
 ||rhnOrgChannelSettingsType.sql|| || ||
 ||rhnOrgEntitlements.sql|| || ||
@@ -229,15 +229,15 @@
 ||rhnOrgInfo.sql|| || ||
 ||rhnOrgQuota.sql|| || ||
 ||rhn_os_commands_xref_data.sql|| || ||
-||rhn_os_commands_xref.sql|| || ||
+||rhn_os_commands_xref.sql||Vikram ||Done ||
 ||rhn_os_data.sql|| || ||
-||rhn_os.sql|| || ||
+||rhn_os.sql||Vikram ||Done ||
 ||rhnPackageArch.sql||Vikram ||Done ||
-||rhnPackageCapability.sql|| || ||
+||rhnPackageCapability.sql||Vikram ||Done ||
 ||rhnPackageChangeLog.sql|| || ||
 ||rhnPackageConflicts.sql|| || ||
 ||rhnPackageDeltaElement.sql|| || ||
-||rhnPackageDelta.sql|| || ||
+||rhnPackageDelta.sql||Vikram ||Done ||
 ||rhnPackageEVR.sql||Vikram ||Done ||
 ||rhnPackageFileDeleteQueue.sql|| || ||
 ||rhnPackageFile.sql|| || ||
@@ -262,9 +262,9 @@
 ||rhnPathChannelMap.sql|| || ||
 ||rhn_physical_location.sql||Vikram ||Done ||
 ||rhnPrivateChannelFamily.sql||Vikram ||Done ||
-||rhn_probe_param_value.sql|| || ||
+||rhn_probe_param_value.sql||Vikram ||Done ||
 ||rhn_probe.sql||Vikram || ||
-||rhn_probe_state.sql|| || ||
+||rhn_probe_state.sql||Vikram ||Done ||
 ||rhn_probe_types_data.sql|| || ||
 ||rhn_probe_types.sql||Vikram ||Done ||
 ||rhnProductChannel.sql|| || ||
@@ -279,18 +279,18 @@
 ||rhnPushClientState.sql|| || ||
 ||rhnPushDispatcher.sql|| || ||
 ||rhn_quanta_data.sql|| || ||
-||rhn_quanta.sql|| || ||
+||rhn_quanta.sql||Vikram ||Done ||
 ||rhnRam.sql|| || ||
 ||rhnRedHatCanonVersion.sql|| || ||
-||rhn_redirect_criteria.sql|| || ||
-||rhn_redirect_email_targets.sql|| || ||
-||rhn_redirect_group_targets.sql|| || ||
+||rhn_redirect_criteria.sql||Vikram ||Done ||
+||rhn_redirect_email_targets.sql||Vikram ||Done ||
+||rhn_redirect_group_targets.sql||Vikram ||Done ||
 ||rhn_redirect_match_types_data.sql|| || ||
-||rhn_redirect_match_types.sql|| || ||
-||rhn_redirect_method_targets.sql|| || ||
-||rhn_redirects.sql|| || ||
+||rhn_redirect_match_types.sql||Vikram ||Done ||
+||rhn_redirect_method_targets.sql||Vikram ||Done ||
+||rhn_redirects.sql||Vikram ||Done ||
 ||rhn_redirect_types_data.sql|| || ||
-||rhn_redirect_types.sql|| || ||
+||rhn_redirect_types.sql||Vikram ||Done ||
 ||rhnRegTokenChannels.sql|| || ||
 ||rhnRegTokenConfigChannels.sql|| || ||
 ||rhnRegTokenEntitlement.sql|| || ||
@@ -300,23 +300,23 @@
 ||rhnRegToken.sql|| || ||
 ||rhnRelationshipType.sql|| || ||
 ||rhnReleaseChannelMap.sql|| || ||
-||rhn_sat_cluster_probe.sql|| || ||
+||rhn_sat_cluster_probe.sql||Vikram ||Done ||
 ||rhn_sat_cluster.sql||Vikram ||Done ||
 ||rhnSatelliteCert.sql|| || ||
 ||rhnSatelliteChannelFamily.sql|| || ||
 ||rhnSatelliteInfo.sql|| || ||
 ||rhnSatelliteServerGroup.sql|| || ||
-||rhn_satellite_state.sql|| || ||
-||rhn_sat_node_probe.sql|| || ||
-||rhn_sat_node.sql|| || ||
+||rhn_satellite_state.sql||Vikram ||Done ||
+||rhn_sat_node_probe.sql||Vikram ||Done ||
+||rhn_sat_node.sql||Vikram ||Done ||
 ||rhnSavedSearch.sql|| || ||
 ||rhnSavedSearchType.sql|| || ||
-||rhn_schedule_days_norm.sql|| || ||
-||rhn_schedule_days.sql|| || ||
+||rhn_schedule_days_norm.sql||Vikram ||Done ||
+||rhn_schedule_days.sql||Vikram ||Done ||
 ||rhn_schedules.sql||Vikram ||Done ||
 ||rhn_schedule_types_data.sql|| || ||
 ||rhn_schedule_types.sql||Vikram ||Done ||
-||rhn_schedule_weeks.sql|| || ||
+||rhn_schedule_weeks.sql||Vikram ||Done ||
 ||rhn_semantic_data_type_data.sql||Vikram ||Done ||
 ||rhn_semantic_data_type.sql|| || ||
 ||rhnServerActionPackageResult.sql||Vikram ||Done ||
@@ -347,7 +347,7 @@
 ||rhnServerLocation.sql||Vikram ||Done ||
 ||rhnServerLock.sql||Vikram ||Done ||
 ||rhnServerMessage.sql||Vikram ||Done ||
-||rhn_server_monitoring_info.sql|| || ||
+||rhn_server_monitoring_info.sql||Vikram ||Done ||
 
 
 ||rhnServerNeededErrataCache.sql||sudhakar ||Done ||
