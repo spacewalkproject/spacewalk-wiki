@@ -100,7 +100,7 @@
 ||rhnConfigChannelType.sql||Gurjeet || done ||
 ||rhnConfigContent.sql||Vikram ||Done ||
 ||rhnConfigFileFailure.sql|| Gurjeet || done ||
-||rhnConfigFile_foreignkeys.sql||sudhakar || ||
+||rhnConfigFile_foreignkeys.sql|| || ||
 ||rhnConfigFileName.sql|| Gurjeet || done ||
 ||rhnConfigFile.sql||Vikram ||Done ||
 ||rhnConfigFileState.sql||Vikram ||Done ||
