@@ -40,11 +40,11 @@
 ||rhnActionVirtSuspend.sql|| Gurjeet || done ||
 ||rhnActionVirtVcpu.sql|| Gurjeet || done ||
 ||rhnActivationKey.sql||sudhakar || ||
-||rhnAllowTrust.sql|| Farrukh || ||
-||rhnAppInstallInstance.sql|| Farrukh || ||
-||rhnAppInstallSessionData.sql|| Farrukh || ||
-||rhnAppInstallSession.sql|| Farrukh || ||
-||rhnArchTypeActions.sql|| Farrukh || ||
+||rhnAllowTrust.sql|| Farrukh || done ||
+||rhnAppInstallInstance.sql|| Farrukh || done ||
+||rhnAppInstallSessionData.sql|| Farrukh || done ||
+||rhnAppInstallSession.sql|| Farrukh || done ||
+||rhnArchTypeActions.sql|| Farrukh || done ||
 ||rhnArchType.sql|| Gurjeet || done ||
 ||rhnBeehivePathMap.sql||sudhakar || ||
 ||rhnBlacklistObsoletes.sql||sudhakar || ||
