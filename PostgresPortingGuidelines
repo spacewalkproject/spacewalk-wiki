@@ -13,8 +13,8 @@
 2. AS keyword necessary for column aliases in Postgres (fixed in 8.4).
  Suggestion is to modify even the Oracle code to use this convention, because this convention, being standard, is supported across very many databases, and will cause less pain to anybody trying to fix a bug in both versions (Oracle and Postgres) of code.
 
-3. Reduce the usage of keywords as identifiers.
- TODO: explain
+3. Do not use keywords as identifiers.
+ This is again a coding convention suggestion that we should abstain from using keywords such as 'date', 'time', 'timestamp' as column or object names.
 
 4. Set operator MINUS is not supported; use SQL standard EXCEPT instead.
  occurances in schema: 2; find ./ -name "*.sql" | xargs grep -iw minus
@@ -29,7 +29,7 @@
  occurrences in schema: 17; find ./ -name "*.sql" | xargs grep \'\' | grep -iv values | grep -v rhnFAQ_satdata.sql
 
 7. Convert DECODE calls to CASE expressions.
- Although Orafce provides DECODE support, suggestion here is again to modify the Oracle code to use CASE expressions for the reason mentioned in point 2.
+ Although Orafce provides DECODE support, suggestion here is again to modify the Oracle code to use CASE expressions for the reason that this construct is in SQL standard, and Oracle also supports it.
 
 8. Make the app use standard Outer Join syntax instead of legacy Oracle syntax (+).
  Again, it is recommended that Oracle code also be modified to use the standard syntax.
@@ -43,6 +43,8 @@
 
 11. ROWID is not supported by Postgres.
  Fortunately, ROWID keyword is used in very few places across the code, so it can be easily ported to Postgres by using the result of expression 'tableoid::varchar || ctid::varchar' as a row identifier. Better still, using a Primary or Unique Key instead is recommended.
+
+    Consensus: It has been agreed that we should try to use Primary Key instead of ROWID as much as possible.
 
 12. ROWNUM is not supported by Postgres.
  But LIMIT ... OFFSET clause can be used to achieve the same result.
@@ -80,6 +82,8 @@ FROM (SELECT last_name, first_name
 
 Note: Tablespace feature was introduced in Postgres 8.0, and hence not available in Postgres version 7.4.
 
+    Consensus: It has been agreed that since Postgres 8.1 supports tablespace clause, we will keep the tablespace clauses.
+
 = Datatype handling =
 
  Special care needs to be taken while mapping datatypes. Following generic mappings are recommended, but we might need a few iterations to achieve optimal performance while retaining application behavior and portability.
@@ -108,7 +112,7 @@ defualt (sysdate)
 default(CURRENT_TIMESTAMP)
 }}}
 
- * TABLESPACE clause in PRIMARY KEY clause needs to be changed if porting to 7.4 because 7.4 does not support tablespaces.
+ * (obsolete) TABLESPACE clause in PRIMARY KEY clause needs to be changed if porting to 7.4 because 7.4 does not support tablespaces.
 
  * Strip out NOLOGGING clause. (incompatible)
  * Strip out ENABLE ROW MOVEMENT. (incompatible)
@@ -126,7 +130,7 @@ default(CURRENT_TIMESTAMP)
 
 = Porting Views =
 
- * Oracle stryle Outer Join syntax should be changed to ANSI:
+ * Oracle style Outer Join syntax should be changed to ANSI:
 {{{
 (+) -> {LEFT|RIGHT} [OUTER] JOIN
 }}}
@@ -196,6 +200,8 @@ function, so that the queries usin this type can perform ORDER BY based on this 
 
  It seems that synonyms are being used as a convenience (after all, thats what they are!), so we propose that the calling code be changed to reference the objects directly. (Need to vet it out with the community).
 
+    Consensus: It has been agreed that we'll get rid of all the synonyms.
+
 = Porting Types =
 
  There are 4 TYPE objects in schema, and all of them are used only in stored procedures, and two views (using multiset()). So, hopefully it wil be easy to migrate that PL/SQL code, without afecting the rest of the code. TODO
@@ -208,12 +214,14 @@ occurances in schema: 16; find ./ -type f | grep -v .html | xargs grep -iwE 'cha
 
  * Port the RHN_Exception package using RAISE EXCEPTION.
 
- * Postgres version 7.4's PL/PGSQL does not have EXCEPTION support.
+ * (obsolete) Postgres version 7.4's PL/PGSQL does not have EXCEPTION support.
+
+= Anonymous Blocks =
+  Have noticed some anonymous block usage in Python code (search for autonomous_transaction). Anonymous blocks are not supported in Postgres; one has to CREATE FUNCTION for any programmatic interface. So the proposal here is to either reduce these anon-blocks to single line queries that achieve the same affect or create function for each of these and call those functions from Python.
 
 = TODO =
 
  * What would channel_name_join() return if the first IF condition succeeds?
-'' or NULL?
+  {quote}{quote} or NULL?
 
  * One time anonymous block usage in new_user_postop.sql; handle it.
-
