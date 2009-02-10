@@ -105,20 +105,20 @@
 ||rhnConfigFile.sql||Vikram ||Done ||
 ||rhnConfigFileState.sql||Vikram ||Done ||
 ||rhnConfigFileType.sql||Vikram ||Done ||
-||rhn_config_group_data.sql||sudhakar || ||
+||rhn_config_group_data.sql|| || ||
 ||rhn_config_group.sql||Vikram ||Done ||
 ||rhnConfigInfo.sql||Vikram ||Done ||
-||rhn_config_macro_data.sql||sudhakar || ||
+||rhn_config_macro_data.sql|| || ||
 ||rhn_config_macro.sql||Vikram ||Done ||
-||rhn_config_parameter_data.sql||sudhakar || ||
+||rhn_config_parameter_data.sql|| || ||
 ||rhn_config_parameter.sql||Vikram ||Done ||
 ||rhnConfigRevision.sql||Gurjeet || done ||
-||rhn_config_security_type_data.sql||sudhakar || ||
+||rhn_config_security_type_data.sql|| || ||
 ||rhn_config_security_type.sql||Vikram ||Done ||
 ||rhn_contact_group_members.sql||Vikram ||Done ||
 ||rhn_contact_groups.sql||Vikram ||Done ||
 ||rhn_contact_methods.sql||Vikram ||Done ||
-||rhnCpuArch_data.sql||sudhakar || ||
+||rhnCpuArch_data.sql|| || ||
 ||rhnCpuArch.sql||sudhakar || ||
 ||rhnCpu.sql||sudhakar || ||
 ||rhnCryptoKeyKickstart.sql||sudhakar || ||
