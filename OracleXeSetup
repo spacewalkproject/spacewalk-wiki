@@ -31,34 +31,42 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 
 === Install: Letting Yum Resolve Dependencies ===
 
- * sudo yum install bc
- * sudo yum install --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+{{{
+# yum install bc
+# yum install --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+}}}
 
   * bc is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
   * nogpgcheck is required because the Oracle RPMs are not signed.
 
 === Install: Manually ===
 
- * sudo yum install libaio.i386
- * sudo rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
+{{{
+# yum install libaio.i386
+# rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
+}}}
 
 '''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
 
- * sudo yum install glibc.i686
+{{{
+# yum install glibc.i686
+}}}
 
 === Install: SELinux Policy ===
 
 If you are running with SELinux enforcing then install the following packages from the Spacewalk repo. If you're not running with SELinux enforcing then skip this step:.
 
- * sudo yum install oracle-xe-selinux oracle-instantclient-selinux
+{{{
+# yum install oracle-xe-selinux oracle-instantclient-selinux
+}}}
 
 == Server Setup ==
 Configure the Oracle XE database
 
-  * Ensure your hostname is in /etc/hosts prior to running "oracle-xe configure"
+  * Ensure your hostname is in /etc/hosts prior to running
 
 {{{
- sudo /etc/init.d/oracle-xe configure
+# /etc/init.d/oracle-xe configure
 }}}
 
 
