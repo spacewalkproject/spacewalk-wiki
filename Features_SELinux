@@ -121,7 +121,7 @@ Contains '''jabber''' policy module for jabberd.
 
 Note that the SELinux policy module is available in the reference policy but it is not compiled in to '''selinux-policy-targeted''' on EL 5. That's why we distribute it separate rpm with Spacewalk, and we also tune the file context to the version of jabberd we ship.
 
-This package is optional in Spacewalk 0.4, we recommend you install it.
+This package is optional in Spacewalk 0.4, we recommend you install it. This package will be installed in Spacewalk 0.5 by default.
 
 === osa-dispatcher-selinux ===
 
@@ -129,7 +129,7 @@ Version 5.9.2-1.el5.noarch.
 
 Contains '''osa-dispatcher''' policy module for osa-dispatcher.
 
-This package is optional in Spacewalk 0.4, we recommend you install it.
+This package is optional in Spacewalk 0.4, we recommend you install it. This package will be installed in Spacewalk 0.5 by default.
 
 === oracle-xe-selinux ===
 
@@ -151,6 +151,14 @@ Also, the policy module expects Oracle XE's web interface to be on port 9000. If
 {{{
 # semanage port -a -t oracle_port_t -p tcp <your_port_number>
 }}}
+
+=== spacewalk-monitoring-selinux ===
+
+This package is not in Spacewalk 0.4 but is available in nightly repo, and will be in Spacewalk 0.5.
+
+Version 0.5.4-1.el5.noarch.
+
+Contains '''spacewalk-monitoring''' policy module, for monitoring and monitoring scout.
 
 == What a working Spacewalk 0.4 system looks like ==
 
@@ -239,6 +247,43 @@ root:system_r:oracle_db_t       oracle   16177  0.0  1.8 334848 17292 ?        S
 root:system_r:oracle_db_t       oracle   16179  0.0  4.1 336452 39208 ?        Ss   Jan14   0:28 xe_cjq0_XE
 root:system_r:oracle_db_t       oracle   16181  0.0  6.6 337600 62296 ?        Ss   Jan14   0:13 xe_mmon_XE
 }}}
+
+=== Monitoring ===
+
+So add SELinux support for monitoring and monitoring scout, package spacewalk-monitoring-selinux version 0.5.* or higher needs to be installed. It is in the nightly repo and will be in Spacewalk 0.5.
+
+==== Monitoring and monitoring scout: spacewalk_monitoring_t ====
+
+{{{
+root:system_r:spacewalk_monitoring_t root 1861  0.0  0.1  14596  1500 pts/2    S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=GenerateNotifConfig --us
+root:system_r:spacewalk_monitoring_t nocpulse 1862 0.0  0.2 14596 2460 pts/2   S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=GenerateNotifConfig --us
+root:system_r:spacewalk_monitoring_t nocpulse 1863 0.0  2.1 107412 20240 pts/2 S    12:06   0:00 /usr/bin/perl /usr/bin/generate-config
+root:system_r:spacewalk_monitoring_t root 1885  0.0  0.1  14596  1468 pts/2    S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=NotifEscalator --user=no
+root:system_r:spacewalk_monitoring_t nocpulse 1886 0.0  0.2 14596 2356 pts/2   S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=NotifEscalator --user=no
+root:system_r:spacewalk_monitoring_t nocpulse 1887 0.4  1.5 33952 14476 pts/2  S    12:06   0:15 /usr/bin/perl /usr/bin/notif-escalator
+root:system_r:spacewalk_monitoring_t root 1903  0.0  0.1  14596  1480 pts/2    S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=NotifLauncher --user=noc
+root:system_r:spacewalk_monitoring_t nocpulse 1904 0.0  0.2 14596 2368 pts/2   S    12:06   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=NotifLauncher --user=noc
+root:system_r:spacewalk_monitoring_t nocpulse 1905 0.9  1.5 34248 14768 pts/2  S    12:06   0:33 /usr/bin/perl /usr/bin/notif-launcher
+root:system_r:spacewalk_monitoring_t root 1951  0.0  0.1  14604  1496 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Notifier --user=nocpulse
+root:system_r:spacewalk_monitoring_t nocpulse 1952 0.0  0.2 14604 2456 pts/2   S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Notifier --user=nocpulse
+root:system_r:spacewalk_monitoring_t nocpulse 1953 0.0  2.0 106228 18980 pts/2 R    12:07   0:02 /usr/bin/perl /usr/bin/notifier
+root:system_r:spacewalk_monitoring_t root 2014  0.0  0.1  14596  1500 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=AckProcessor --user=nocp
+root:system_r:spacewalk_monitoring_t nocpulse 2015 0.0  0.2 14596 2460 pts/2   S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=AckProcessor --user=nocp
+root:system_r:spacewalk_monitoring_t nocpulse 2016 0.6  1.4 32568 13128 pts/2  S    12:07   0:23 /usr/bin/perl /usr/bin/ack-processor
+root:system_r:spacewalk_monitoring_t root 2036  0.0  0.1  14604  1408 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=TSDBLocalQueue --user=ap
+root:system_r:spacewalk_monitoring_t apache 2037 0.0  0.2 14604  2484 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=TSDBLocalQueue --user=ap
+root:system_r:spacewalk_monitoring_t apache 2040 0.0  1.2 30904 11440 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/TSDBLocalQueue.pl
+root:system_r:spacewalk_monitoring_t root 2082  0.0  0.1  14604  1484 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=SputLite --user=root --h
+root:system_r:spacewalk_monitoring_t root 2083  0.0  0.2  14604  2368 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=SputLite --user=root --h
+root:system_r:spacewalk_monitoring_t root 2084  0.0  1.5  21852 14808 pts/2    S    12:07   0:03 /usr/bin/perl /usr/bin/execute_commands
+root:system_r:spacewalk_monitoring_t root 2114  0.0  0.1  14604   948 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Dequeuer --user=nocpulse
+root:system_r:spacewalk_monitoring_t nocpulse 2115 0.0  0.2 14604 1876 pts/2   S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Dequeuer --user=nocpulse
+root:system_r:spacewalk_monitoring_t nocpulse 2116 0.1  1.2 18500 11916 pts/2  S    12:07   0:04 /usr/bin/perl /usr/bin/dequeue
+root:system_r:spacewalk_monitoring_t root 2165  0.0  0.1  14596  1496 pts/2    S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Dispatcher --user=nocpul
+root:system_r:spacewalk_monitoring_t nocpulse 2166 0.0  0.2 14728 2444 pts/2   S    12:07   0:00 /usr/bin/perl /usr/bin/gogo.pl --fname=Dispatcher --user=nocpul
+root:system_r:spacewalk_monitoring_t nocpulse 2167 0.0  2.8 49924 26960 pts/2  S    12:07   0:02 /usr/bin/perl /usr/bin/kernel.pl --loglevel 1
+}}}
+
 
 == Parts that are missing in Spacewalk 0.4 ==
 
