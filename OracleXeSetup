@@ -12,21 +12,22 @@ You can download [http://www.oracle.com/technology/software/products/database/xe
 
  * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
 
-You will also need a client. For this you should download the Oracle Instant Client: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html i386] or [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxx86_64soft.html x86_64]. Do '''NOT''' use oracle-xe-client. Download all four (4) of the following (where ARCH is either i386 or x86_64). For now, stick with the 10.2.0.4 version.
+You will also need a client. For this you should download the Oracle Instant Client: [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxsoft.html i386] or [http://www.oracle.com/technology/software/tech/oci/instantclient/htdocs/linuxx86_64soft.html x86_64]. Do '''NOT''' use oracle-xe-client. Download the following two rpms (where ARCH is either i386 or x86_64). For now, stick with the 10.2.0.4 version:
 
  * oracle-instantclient-basic-10.2.0.4-1.ARCH.rpm
- * oracle-instantclient-jdbc-10.2.0.4-1.ARCH.rpm
- * oracle-instantclient-devel-10.2.0.4-1.ARCH.rpm
  * oracle-instantclient-sqlplus-10.2.0.4-1.ARCH.rpm 
 
 === SELinux ===
 
-If you want to disable SELinux you should do it now. If you'd prefer to have SELinux enabled, complete the step below to prepare for the oracle-xe policy module which will be installed later. See [https://fedorahosted.org/spacewalk/wiki/Features/SELinux Features/SELinux] for more details and limitations of SELinux support.
+If you want to run with SELinux enabled, run the following two commands to create the group and user for the oracle-xe package:
 
 {{{
 # /usr/sbin/groupadd -r dba
 # /usr/sbin/useradd -r -M -g dba -d /usr/lib/oracle/xe -s /bin/bash oracle
 }}}
+
+This is needed to give the oracle user uid below 500. See [https://fedorahosted.org/spacewalk/wiki/Features/SELinux Features/SELinux] for more details and limitations of SELinux support.
+
 
 === Install: Letting Yum Resolve Dependencies ===
 
