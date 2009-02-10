@@ -80,7 +80,7 @@ Here are some sane values (note: if SELinux is enforcing you need to choose port
 
 '''NOTE:''' if you messed up these entries, you '''WILL''' have to uninstall and reinstall.
 
- * rpm -e oracle-xe-client oracle-xe-univ
+ * rpm -e oracle-xe-univ
  * OracleXeSetup#Installation
 
 
