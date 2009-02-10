@@ -39,41 +39,41 @@
 ||rhnActionVirtStart.sql|| Gurjeet || done ( added FKey (action_id) references rhnAction(id) )||
 ||rhnActionVirtSuspend.sql|| Gurjeet || done ||
 ||rhnActionVirtVcpu.sql|| Gurjeet || done ||
-||rhnActivationKey.sql|| || ||
+||rhnActivationKey.sql||sudhakar || ||
 ||rhnAllowTrust.sql|| Farrukh || ||
 ||rhnAppInstallInstance.sql|| Farrukh || ||
 ||rhnAppInstallSessionData.sql|| Farrukh || ||
 ||rhnAppInstallSession.sql|| Farrukh || ||
 ||rhnArchTypeActions.sql|| Farrukh || ||
 ||rhnArchType.sql|| Gurjeet || done ||
-||rhnBeehivePathMap.sql|| || ||
-||rhnBlacklistObsoletes.sql|| || ||
+||rhnBeehivePathMap.sql||sudhakar || ||
+||rhnBlacklistObsoletes.sql||sudhakar || ||
 ||rhnChannelArch.sql||Vikram ||Done ||
-||rhnChannelCloned.sql|| || ||
-||rhnChannelComps.sql|| || ||
-||rhnChannelDownloads.sql|| || ||
-||rhnChannelErrata.sql|| || ||
-||rhnChannelFamilyLicenseConsent.sql|| || ||
-||rhnChannelFamilyLicense.sql|| || ||
-||rhnChannelFamilyMembers.sql|| || ||
+||rhnChannelCloned.sql||sudhakar || ||
+||rhnChannelComps.sql||sudhakar || ||
+||rhnChannelDownloads.sql||sudhakar || ||
+||rhnChannelErrata.sql||sudhakar || ||
+||rhnChannelFamilyLicenseConsent.sql||sudhakar || ||
+||rhnChannelFamilyLicense.sql||sudhakar || ||
+||rhnChannelFamilyMembers.sql||sudhakar || ||
 ||rhnChannelFamily.sql||Vikram ||Done ||
-||rhnChannelFamilyVirtSubLevel.sql|| || ||
-||rhnChannelNewestPackageAudit.sql|| || ||
-||rhnChannelNewestPackage.sql|| || ||
-||rhnChannelPackageArchCompat_data.sql|| || ||
-||rhnChannelPackageArchCompat.sql|| || ||
+||rhnChannelFamilyVirtSubLevel.sql||sudhakar || ||
+||rhnChannelNewestPackageAudit.sql||sudhakar || ||
+||rhnChannelNewestPackage.sql||sudhakar || ||
+||rhnChannelPackageArchCompat_data.sql||sudhakar || ||
+||rhnChannelPackageArchCompat.sql||sudhakar || ||
 ||rhnChannelPackage.sql||Vikram ||Done ||
-||rhnChannelParent.sql|| || ||
-||rhnChannelPermissionRole.sql|| || ||
-||rhnChannelPermission.sql|| || ||
+||rhnChannelParent.sql||sudhakar || ||
+||rhnChannelPermissionRole.sql||sudhakar || ||
+||rhnChannelPermission.sql||sudhakar || ||
 ||rhnChannelProduct.sql||Vikram ||Done ||
 ||rhnChannel.sql||Vikram ||Done ||
-||rhnChannelTrust.sql|| || ||
+||rhnChannelTrust.sql||sudhakar || ||
 ||rhn_check_probe.sql||Vikram ||Done ||
 ||rhn_check_suite_probe.sql||Vikram ||Done ||
 ||rhn_check_suites.sql||Vikram ||Done ||
-||rhnClientCapabilityName.sql|| || ||
-||rhnClientCapability.sql|| || ||
+||rhnClientCapabilityName.sql||sudhakar || ||
+||rhnClientCapability.sql||sudhakar || ||
 ||rhn_command_center_state.sql|| Farrukh || ||
 ||rhn_command_class_data.sql|| Farrukh || ||
 ||rhn_command_class.sql|| Farrukh || ||
@@ -100,54 +100,54 @@
 ||rhnConfigChannelType.sql||Gurjeet || done ||
 ||rhnConfigContent.sql||Vikram ||Done ||
 ||rhnConfigFileFailure.sql|| Gurjeet || done ||
-||rhnConfigFile_foreignkeys.sql|| || ||
+||rhnConfigFile_foreignkeys.sql||sudhakar || ||
 ||rhnConfigFileName.sql|| Gurjeet || done ||
 ||rhnConfigFile.sql||Vikram ||Done ||
 ||rhnConfigFileState.sql||Vikram ||Done ||
 ||rhnConfigFileType.sql||Vikram ||Done ||
-||rhn_config_group_data.sql|| || ||
+||rhn_config_group_data.sql||sudhakar || ||
 ||rhn_config_group.sql||Vikram ||Done ||
 ||rhnConfigInfo.sql||Vikram ||Done ||
-||rhn_config_macro_data.sql|| || ||
+||rhn_config_macro_data.sql||sudhakar || ||
 ||rhn_config_macro.sql||Vikram ||Done ||
-||rhn_config_parameter_data.sql|| || ||
+||rhn_config_parameter_data.sql||sudhakar || ||
 ||rhn_config_parameter.sql||Vikram ||Done ||
 ||rhnConfigRevision.sql||Gurjeet || done ||
-||rhn_config_security_type_data.sql|| || ||
+||rhn_config_security_type_data.sql||sudhakar || ||
 ||rhn_config_security_type.sql||Vikram ||Done ||
 ||rhn_contact_group_members.sql||Vikram ||Done ||
 ||rhn_contact_groups.sql||Vikram ||Done ||
 ||rhn_contact_methods.sql||Vikram ||Done ||
-||rhnCpuArch_data.sql|| || ||
-||rhnCpuArch.sql|| || ||
-||rhnCpu.sql|| || ||
-||rhnCryptoKeyKickstart.sql|| || ||
-||rhnCryptoKey.sql|| || ||
-||rhnCryptoKeyType.sql|| || ||
+||rhnCpuArch_data.sql||sudhakar || ||
+||rhnCpuArch.sql||sudhakar || ||
+||rhnCpu.sql||sudhakar || ||
+||rhnCryptoKeyKickstart.sql||sudhakar || ||
+||rhnCryptoKey.sql||sudhakar || ||
+||rhnCryptoKeyType.sql||sudhakar || ||
 ||rhn_current_alerts.sql||Vikram ||Done ||
 ||rhn_current_state_summaries.sql||Vikram ||Done ||
-||rhnCustomDataKey.sql|| || ||
-||rhnCVE.sql|| || ||
-||rhnDaemonState.sql|| || ||
-||rhnDailySummaryQueue.sql|| || ||
-||rhn_db_environment_data.sql|| || ||
+||rhnCustomDataKey.sql||sudhakar || ||
+||rhnCVE.sql||sudhakar || ||
+||rhnDaemonState.sql||sudhakar || ||
+||rhnDailySummaryQueue.sql||sudhakar || ||
+||rhn_db_environment_data.sql||sudhakar || ||
 ||rhn_db_environment.sql||Vikram ||Done ||
 ||rhn_deployed_probe.sql||Vikram ||Done ||
-||rhnDevice.sql|| || ||
-||rhnDistChannelMap.sql|| || ||
-||rhnDownloads.sql|| || ||
-||rhnDownloadType.sql|| || ||
-||rhnEmailAddress_indexes.sql|| || ||
-||rhnEmailAddressLog.sql|| || ||
-||rhnEmailAddress.sql|| || ||
-||rhnEmailAddressState_data.sql|| || ||
-||rhnEmailAddressState.sql|| || ||
-||rhnEntitlementLog.sql|| || ||
-||rhn_environment_data.sql|| || ||
+||rhnDevice.sql||sudhakar || ||
+||rhnDistChannelMap.sql||sudhakar || ||
+||rhnDownloads.sql||sudhakar || ||
+||rhnDownloadType.sql||sudhakar || ||
+||rhnEmailAddress_indexes.sql||sudhakar || ||
+||rhnEmailAddressLog.sql||sudhakar || ||
+||rhnEmailAddress.sql||sudhakar || ||
+||rhnEmailAddressState_data.sql||sudhakar || ||
+||rhnEmailAddressState.sql||sudhakar || ||
+||rhnEntitlementLog.sql||sudhakar || ||
+||rhn_environment_data.sql||sudhakar || ||
 ||rhn_environment.sql||Vikram ||Done ||
-||rhnErrataBuglist.sql|| || ||
-||rhnErrataBuglistTmp.sql|| || ||
-||rhnErrataCloned.sql|| || ||
+||rhnErrataBuglist.sql||sudhakar || ||
+||rhnErrataBuglistTmp.sql||sudhakar || ||
+||rhnErrataCloned.sql||sudhakar || ||
 ||rhnErrataClonedTmp.sql|| || ||
 ||rhnErrataCVE.sql|| || ||
 ||rhnErrataFileChannel.sql|| || ||
