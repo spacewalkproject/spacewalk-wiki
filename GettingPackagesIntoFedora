@@ -88,7 +88,6 @@ This packages need to be edited and then eventualy imported to Fedora:
  || hadoop || Apache v2.0 || || jmatthews ||
  || hibernate3-3.2.4-1.SP1_CP01.0jpp.ep1.1.el5.1.src.rpm || || || ||
  || ivy-1.4.1-1.noarch.rpm || BSD || in prep || jmatthews ||
- || jabberpy-0.5-0.13.el5.src.rpm || || || ||
  || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || mmccune ||
  || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || mmccune ||
  || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
