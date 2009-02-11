@@ -148,22 +148,22 @@
 ||rhnErrataBuglist.sql||sudhakar || ||
 ||rhnErrataBuglistTmp.sql||sudhakar || ||
 ||rhnErrataCloned.sql||sudhakar || ||
-||rhnErrataClonedTmp.sql|| Farrukh || ||
-||rhnErrataCVE.sql|| Farrukh || ||
-||rhnErrataFileChannel.sql|| Farrukh || ||
-||rhnErrataFileChannelTmp.sql|| Farrukh || ||
-||rhnErrataFilePackageSource.sql|| Farrukh || ||
-||rhnErrataFilePackage.sql|| Farrukh || ||
-||rhnErrataFilePackageTmp.sql|| Farrukh || ||
-||rhnErrataFile.sql|| Farrukh || ||
-||rhnErrataFileTmp.sql|| Farrukh || ||
-||rhnErrataFileType.sql|| Farrukh || ||
-||rhnErrataKeyword.sql|| Farrukh || ||
-||rhnErrataKeywordTmp.sql|| Farrukh || ||
-||rhnErrataNotificationQueue.sql|| Farrukh || ||
-||rhnErrataPackage.sql|| Farrukh || ||
-||rhnErrataPackageTmp.sql|| Farrukh || ||
-||rhnErrataQueue.sql|| Farrukh || ||
+||rhnErrataClonedTmp.sql|| Farrukh || Done ||
+||rhnErrataCVE.sql|| Farrukh || Done ||
+||rhnErrataFileChannel.sql|| Farrukh || Done ||
+||rhnErrataFileChannelTmp.sql|| Farrukh || Done ||
+||rhnErrataFilePackageSource.sql|| Farrukh || Done ||
+||rhnErrataFilePackage.sql|| Farrukh || Done ||
+||rhnErrataFilePackageTmp.sql|| Farrukh || Done ||
+||rhnErrataFile.sql|| Farrukh || Done ||
+||rhnErrataFileTmp.sql|| Farrukh || Done ||
+||rhnErrataFileType.sql|| Farrukh || Done ||
+||rhnErrataKeyword.sql|| Farrukh || Done ||
+||rhnErrataKeywordTmp.sql|| Farrukh || Done ||
+||rhnErrataNotificationQueue.sql|| Farrukh || Done ||
+||rhnErrataPackage.sql|| Farrukh || Done ||
+||rhnErrataPackageTmp.sql|| Farrukh || Done ||
+||rhnErrataQueue.sql|| Farrukh || Done ||
 ||rhnErrataSeverity.sql||Vikram ||Done ||
 ||rhnErrata.sql||Vikram ||Done ||
 ||rhnErrataTmp.sql||sudhakar || ||
