@@ -2,7 +2,7 @@
 
 In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
-   * [HowToInstall How to install] -- How to download and install Spacewalk Server.
+   * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
    * [HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
    * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
    * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
