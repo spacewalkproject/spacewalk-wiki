@@ -74,28 +74,28 @@
 ||rhn_check_suites.sql||Vikram ||Done ||
 ||rhnClientCapabilityName.sql||sudhakar || ||
 ||rhnClientCapability.sql||sudhakar || ||
-||rhn_command_center_state.sql|| Farrukh || ||
-||rhn_command_class_data.sql|| Farrukh || ||
-||rhn_command_class.sql|| Farrukh || ||
-||rhn_command_data.sql|| Farrukh || ||
-||rhn_command_groups_data.sql|| Farrukh || ||
-||rhn_command_groups.sql|| Farrukh || ||
-||rhn_command_parameter_data.sql|| Farrukh || ||
-||rhn_command_parameter.sql|| Farrukh || ||
-||rhn_command_param_threshold_data.sql|| Farrukh || ||
-||rhn_command_param_threshold.sql|| Farrukh || ||
-||rhn_command_queue_commands_data.sql|| Farrukh || ||
-||rhn_command_queue_commands.sql|| Farrukh || ||
-||rhn_command_queue_execs_bk.sql|| Farrukh || ||
-||rhn_command_queue_execs.sql|| Farrukh || ||
-||rhn_command_queue_instances_bk.sql|| Farrukh || ||
-||rhn_command_queue_instances.sql|| Farrukh || ||
-||rhn_command_queue_params.sql|| Farrukh || ||
-||rhn_command_queue_sessions.sql|| Farrukh || ||
-||rhn_command_requirements_data.sql|| Farrukh || ||
-||rhn_command_requirements.sql|| Farrukh || ||
-||rhn_command.sql|| Farrukh || ||
-||rhn_command_target.sql|| Farrukh || ||
+||rhn_command_center_state.sql|| Farrukh || Done ||
+||rhn_command_class_data.sql|| Farrukh || Done ||
+||rhn_command_class.sql|| Farrukh || Done ||
+||rhn_command_data.sql|| Farrukh || Done ||
+||rhn_command_groups_data.sql|| Farrukh || Done ||
+||rhn_command_groups.sql|| Farrukh || Done ||
+||rhn_command_parameter_data.sql|| Farrukh || Done ||
+||rhn_command_parameter.sql|| Farrukh || Done ||
+||rhn_command_param_threshold_data.sql|| Farrukh || Done ||
+||rhn_command_param_threshold.sql|| Farrukh || Done ||
+||rhn_command_queue_commands_data.sql|| Farrukh || Done ||
+||rhn_command_queue_commands.sql|| Farrukh || Done ||
+||rhn_command_queue_execs_bk.sql|| Farrukh || Done ||
+||rhn_command_queue_execs.sql|| Farrukh || Done ||
+||rhn_command_queue_instances_bk.sql|| Farrukh || Done ||
+||rhn_command_queue_instances.sql|| Farrukh || Done ||
+||rhn_command_queue_params.sql|| Farrukh || Done ||
+||rhn_command_queue_sessions.sql|| Farrukh || Done ||
+||rhn_command_requirements_data.sql|| Farrukh || Done ||
+||rhn_command_requirements.sql|| Farrukh || Done ||
+||rhn_command.sql|| Farrukh || Done ||
+||rhn_command_target.sql|| Farrukh || Done ||
 ||rhnConfigChannel.sql|| Gurjeet || done ||
 ||rhnConfigChannelType.sql||Gurjeet || done ||
 ||rhnConfigContent.sql||Vikram ||Done ||
