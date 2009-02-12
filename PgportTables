@@ -39,41 +39,41 @@
 ||rhnActionVirtStart.sql|| Gurjeet || done ( added FKey (action_id) references rhnAction(id) )||
 ||rhnActionVirtSuspend.sql|| Gurjeet || done ||
 ||rhnActionVirtVcpu.sql|| Gurjeet || done ||
-||rhnActivationKey.sql||sudhakar || ||
+||rhnActivationKey.sql||sudhakar ||Done ||
 ||rhnAllowTrust.sql|| Farrukh || done ||
 ||rhnAppInstallInstance.sql|| Farrukh || done ||
 ||rhnAppInstallSessionData.sql|| Farrukh || done ||
 ||rhnAppInstallSession.sql|| Farrukh || done ||
 ||rhnArchTypeActions.sql|| Farrukh || done ||
 ||rhnArchType.sql|| Gurjeet || done ||
-||rhnBeehivePathMap.sql||sudhakar || ||
-||rhnBlacklistObsoletes.sql||sudhakar || ||
+||rhnBeehivePathMap.sql||sudhakar ||Done ||
+||rhnBlacklistObsoletes.sql||sudhakar ||Done ||
 ||rhnChannelArch.sql||Vikram ||Done ||
-||rhnChannelCloned.sql||sudhakar || ||
-||rhnChannelComps.sql||sudhakar || ||
-||rhnChannelDownloads.sql||sudhakar || ||
-||rhnChannelErrata.sql||sudhakar || ||
-||rhnChannelFamilyLicenseConsent.sql||sudhakar || ||
-||rhnChannelFamilyLicense.sql||sudhakar || ||
-||rhnChannelFamilyMembers.sql||sudhakar || ||
+||rhnChannelCloned.sql||sudhakar ||Done ||
+||rhnChannelComps.sql||sudhakar ||Done ||
+||rhnChannelDownloads.sql||sudhakar ||Done ||
+||rhnChannelErrata.sql||sudhakar ||Done ||
+||rhnChannelFamilyLicenseConsent.sql||sudhakar ||Done ||
+||rhnChannelFamilyLicense.sql||sudhakar ||Done ||
+||rhnChannelFamilyMembers.sql||sudhakar ||Done ||
 ||rhnChannelFamily.sql||Vikram ||Done ||
-||rhnChannelFamilyVirtSubLevel.sql||sudhakar || ||
-||rhnChannelNewestPackageAudit.sql||sudhakar || ||
-||rhnChannelNewestPackage.sql||sudhakar || ||
+||rhnChannelFamilyVirtSubLevel.sql||sudhakar ||Done ||
+||rhnChannelNewestPackageAudit.sql||sudhakar ||Done ||
+||rhnChannelNewestPackage.sql||sudhakar ||Done ||
 ||rhnChannelPackageArchCompat_data.sql|| || ||contains function in insert stmt.
-||rhnChannelPackageArchCompat.sql||sudhakar || ||
+||rhnChannelPackageArchCompat.sql||sudhakar ||Done ||
 ||rhnChannelPackage.sql||Vikram ||Done ||
-||rhnChannelParent.sql||sudhakar || ||
-||rhnChannelPermissionRole.sql||sudhakar || ||
-||rhnChannelPermission.sql||sudhakar || ||
+||rhnChannelParent.sql||sudhakar ||Done ||
+||rhnChannelPermissionRole.sql||sudhakar ||Done ||
+||rhnChannelPermission.sql||sudhakar ||Done ||
 ||rhnChannelProduct.sql||Vikram ||Done ||
 ||rhnChannel.sql||Vikram ||Done ||
-||rhnChannelTrust.sql||sudhakar || ||
+||rhnChannelTrust.sql||sudhakar ||Done ||
 ||rhn_check_probe.sql||Vikram ||Done ||
 ||rhn_check_suite_probe.sql||Vikram ||Done ||
 ||rhn_check_suites.sql||Vikram ||Done ||
-||rhnClientCapabilityName.sql||sudhakar || ||
-||rhnClientCapability.sql||sudhakar || ||
+||rhnClientCapabilityName.sql||sudhakar ||Done ||
+||rhnClientCapability.sql||sudhakar ||Done ||
 ||rhn_command_center_state.sql|| Farrukh || Done ||
 ||rhn_command_class_data.sql|| Farrukh || Done ||
 ||rhn_command_class.sql|| Farrukh || Done ||
@@ -418,7 +418,7 @@
 ||rhn_url_probe_step.sql||Sudhakar ||Done ||
 ||rhnUserDefaultSystemGroups.sql||Sudhakar ||Done ||
 ||rhnUserGroup_indexes.sql||Sudhakar ||Done ||
-||rhnUserGroupMembers_email_triggers.sql||Sudhakar ||Done ||
+||rhnUserGroupMembers_email_triggers.sql|| || ||
 ||rhnUserGroupMembers_indexes.sql||Sudhakar ||Done ||
 ||rhnUserGroupMembers.sql||Sudhakar ||Done ||
 ||rhnUserGroup.sql||Sudhakar ||Done ||
@@ -431,7 +431,7 @@
 ||rhnUserMessageType.sql||Sudhakar ||Done ||
 ||rhnUserReserved.sql||Sudhakar ||Done ||
 ||rhnUserServerGroupPerms.sql||Sudhakar ||Done ||
-||rhnUserServerGroupPerms_triggers.sql||Sudhakar ||Done ||
+||rhnUserServerGroupPerms_triggers.sql|| || ||
 ||rhnUserServerPerms.sql||Sudhakar ||Done ||
 ||rhnUserServerPrefs.sql||Sudhakar ||Done ||
 ||rhnVersionInfo.sql||Vikram ||Done ||
