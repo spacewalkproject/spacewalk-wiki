@@ -453,7 +453,7 @@
 ||valid_countries.sql||sudhakar ||Done ||
 ||web_contact_indexes.sql|| Gurjeet || done ||
 ||web_contact.sql|| Gurjeet || done ||
-||web_customer_notification.sql|| Farrukh || ||
+||web_customer_notification.sql|| Farrukh || Done ||
 ||web_customer.sql|| dgoodwin || done ||
 ||web_user_contact_permission.sql||sudhakar ||Done ||
 ||web_user_personal_info.sql|| dgoodwin || ||
