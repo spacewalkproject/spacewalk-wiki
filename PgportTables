@@ -277,11 +277,11 @@
 ||rhnPushClient.sql||Sudhakar ||Done ||
 ||rhnPushClientState_data.sql||Sudhakar ||Done ||
 ||rhnPushClientState.sql||Sudhakar ||Done ||
-||rhnPushDispatcher.sql|| || ||
-||rhn_quanta_data.sql|| || ||
+||rhnPushDispatcher.sql||Sudhakar ||Done ||
+||rhn_quanta_data.sql||Sudhakar ||Done ||
 ||rhn_quanta.sql||Vikram ||Done ||
-||rhnRam.sql|| || ||
-||rhnRedHatCanonVersion.sql|| || ||
+||rhnRam.sql||Sudhakar ||Done ||
+||rhnRedHatCanonVersion.sql||Sudhakar ||Done ||
 ||rhn_redirect_criteria.sql||Vikram ||Done ||
 ||rhn_redirect_email_targets.sql||Vikram ||Done ||
 ||rhn_redirect_group_targets.sql||Vikram ||Done ||
@@ -302,15 +302,15 @@
 ||rhnReleaseChannelMap.sql|| Farrukh || ||
 ||rhn_sat_cluster_probe.sql||Vikram ||Done ||
 ||rhn_sat_cluster.sql||Vikram ||Done ||
-||rhnSatelliteCert.sql|| || ||
-||rhnSatelliteChannelFamily.sql|| || ||
-||rhnSatelliteInfo.sql|| || ||
-||rhnSatelliteServerGroup.sql|| || ||
+||rhnSatelliteCert.sql||Sudhakar ||Done ||
+||rhnSatelliteChannelFamily.sql||Sudhakar ||Done ||
+||rhnSatelliteInfo.sql||Sudhakar ||Done ||
+||rhnSatelliteServerGroup.sql||Sudhakar ||Done ||
 ||rhn_satellite_state.sql||Vikram ||Done ||
 ||rhn_sat_node_probe.sql||Vikram ||Done ||
 ||rhn_sat_node.sql||Vikram ||Done ||
-||rhnSavedSearch.sql|| || ||
-||rhnSavedSearchType.sql|| || ||
+||rhnSavedSearch.sql||Sudhakar ||Done ||
+||rhnSavedSearchType.sql||Sudhakar ||Done ||
 ||rhn_schedule_days_norm.sql||Vikram ||Done ||
 ||rhn_schedule_days.sql||Vikram ||Done ||
 ||rhn_schedules.sql||Vikram ||Done ||
@@ -394,7 +394,7 @@
 ||rhnSourceRPM.sql||Vikram ||Done ||
 ||rhn_strategies_data.sql||sudhakar ||Done ||
 ||rhn_strategies.sql||Vikram ||Done ||
-||rhnSystemMigrations.sql|| || ||
+||rhnSystemMigrations.sql||Sudhakar ||Done ||
 ||rhnTagName.sql||Sudhakar ||Done ||
 ||rhnTag.sql||Sudhakar ||Done ||
 ||rhnTaskQueue.sql||Sudhakar ||Done ||
