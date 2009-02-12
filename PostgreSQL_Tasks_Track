@@ -58,7 +58,7 @@ simply need to be completed and are not necessarily risks to the project.
 ||D1||Development: Schema Verification||Verify the schema in Pg for the identified modules.||  ||Gurjeet/Vikram|| 14th March|| ||
 ||D2||Development: Query Identification||Identify the queries and validate them.||  ||Gurjeet/Vikram|| 21st March|| ||
 ||D3||Development: Stored functions/procedures/packages ||Identify all the stored functions/packages/procedures .. and validate them.|| ||Gurjeet/Vikram||21st March  || ||
-||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| 10th April|| ||
+||D4||Development: Make the appropriate code Changes||Develop all the required code and validate them.||  ||Gurjeet/Vikram|| 10th April||  ||
 ||D5||Development: Oracle to Postgres Migration||Generate the Oracle to Postgres Migration script.||  ||Farrukh||20th March || ||
 ||D5||Development: Postgres to Oracle Migration||Generate the Postgres to Oracle Migration script.||  ||Farrukh|| 17th April|| ||
 
