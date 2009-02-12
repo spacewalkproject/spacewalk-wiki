@@ -291,15 +291,15 @@
 ||rhn_redirects.sql||Vikram ||Done ||
 ||rhn_redirect_types_data.sql|| || ||
 ||rhn_redirect_types.sql||Vikram ||Done ||
-||rhnRegTokenChannels.sql|| Farrukh || ||
-||rhnRegTokenConfigChannels.sql|| Farrukh || ||
-||rhnRegTokenEntitlement.sql|| Farrukh || ||
-||rhnRegTokenGroups.sql|| Farrukh || ||
-||rhnRegTokenOrgDefault.sql|| Farrukh || ||
-||rhnRegTokenPackages.sql|| Farrukh || ||
-||rhnRegToken.sql|| Farrukh || ||
-||rhnRelationshipType.sql|| Farrukh || ||
-||rhnReleaseChannelMap.sql|| Farrukh || ||
+||rhnRegTokenChannels.sql|| Farrukh || Done ||
+||rhnRegTokenConfigChannels.sql|| Farrukh || Done ||
+||rhnRegTokenEntitlement.sql|| Farrukh || Done ||
+||rhnRegTokenGroups.sql|| Farrukh || Done ||
+||rhnRegTokenOrgDefault.sql|| Farrukh || Done ||
+||rhnRegTokenPackages.sql|| Farrukh || Done ||
+||rhnRegToken.sql|| Farrukh || Done ||
+||rhnRelationshipType.sql|| Farrukh || Done ||
+||rhnReleaseChannelMap.sql|| Farrukh || Done ||
 ||rhn_sat_cluster_probe.sql||Vikram ||Done ||
 ||rhn_sat_cluster.sql||Vikram ||Done ||
 ||rhnSatelliteCert.sql||Sudhakar ||Done ||
