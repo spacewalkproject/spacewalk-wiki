@@ -330,7 +330,6 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.downloadKickstart  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.getAdvancedOptions  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.getCustomOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.getPartitioningScheme  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.listIpRanges  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.listScripts  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.removeIpRange  || Missing ||    ||    ||skarmark|| 
@@ -339,13 +338,12 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.setChildChannels  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.setCustomOptions  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.setKickstartTree  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.setPartitioningScheme  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.keys.addActivationKey  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.keys.getActivationKeys  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.keys.removeActivationKey  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.software.appendToSoftwareList  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.keys.addActivationKey  || Tested ||    ||    ||    || 
+||  kickstart.profile.keys.getActivationKeys  || Tested ||    ||    ||    || 
+||  kickstart.profile.keys.removeActivationKey  || Tested ||    ||    ||    || 
+||  kickstart.profile.software.appendToSoftwareList  || Tested ||    ||    ||    || 
+||  kickstart.profile.software.getSoftwareList  || Tested ||    ||    ||    || 
+||  kickstart.profile.software.setSoftwareList  || Tested ||    ||    ||    || 
 ||  kickstart.profile.system.addFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.addKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableConfigManagement  || Missing ||    || Unable to test because of absence of getter. Proposing getConfigManagement API or some workaround in QA testing. ||skarmark|| 
