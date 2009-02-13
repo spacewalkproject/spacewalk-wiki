@@ -306,7 +306,6 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.deleteProfile  || Missing ||    ||    ||    || 
 ||  kickstart.downloadKickstart  || Missing ||    ||    ||    || 
 ||  kickstart.findKickstartForIp  || Missing ||    ||    ||    || 
-||  kickstart.getPartitioningScheme  || Missing ||    ||    ||    || 
 ||  kickstart.importRawFile  || Missing ||    ||    ||    || 
 ||  kickstart.listAllIpRanges  || Missing ||    ||    ||    || 
 ||  kickstart.listKickstarts  || Missing ||    ||    ||    || 
@@ -315,7 +314,6 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.renameProfile  || Missing ||    ||    ||    || 
 ||  kickstart.setChildChannels  || Missing ||    ||    ||    || 
 ||  kickstart.setKickstartTree  || Missing ||    ||    ||    || 
-||  kickstart.setPartitioningScheme  || Missing ||    ||    ||    || 
 ||  kickstart.filepreservation.create  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.delete  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.getDetails  || Tested ||    ||    ||    || 
@@ -324,30 +322,30 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.keys.delete  || Tested ||    ||    ||    || 
 ||  kickstart.keys.getDetails  || Tested ||    ||    ||    || 
 ||  kickstart.keys.listAllKeys  || Tested ||    ||    ||    || 
-||  kickstart.profile.addIpRange  || Missing ||    ||    ||    || 
-||  kickstart.profile.addScript  || Missing ||    ||    ||    || 
-||  kickstart.profile.compareActivationKeys  || Missing ||    ||    ||    || 
-||  kickstart.profile.compareAdvancedOptions  || Missing ||    ||    ||    || 
-||  kickstart.profile.comparePackages  || Missing ||    ||    ||    || 
-||  kickstart.profile.downloadKickstart  || Missing ||    ||    ||    || 
-||  kickstart.profile.getAdvancedOptions  || Missing ||    ||    ||    || 
-||  kickstart.profile.getCustomOptions  || Missing ||    ||    ||    || 
-||  kickstart.profile.getPartitioningScheme  || Missing ||    ||    ||    || 
-||  kickstart.profile.listIpRanges  || Missing ||    ||    ||    || 
-||  kickstart.profile.listScripts  || Missing ||    ||    ||    || 
-||  kickstart.profile.removeIpRange  || Missing ||    ||    ||    || 
-||  kickstart.profile.removeScript  || Missing ||    ||    ||    || 
-||  kickstart.profile.setAdvancedOptions  || Missing ||    ||    ||    || 
-||  kickstart.profile.setChildChannels  || Missing ||    ||    ||    || 
-||  kickstart.profile.setCustomOptions  || Missing ||    ||    ||    || 
-||  kickstart.profile.setKickstartTree  || Missing ||    ||    ||    || 
-||  kickstart.profile.setPartitioningScheme  || Missing ||    ||    ||    || 
-||  kickstart.profile.keys.addActivationKey  || Missing ||    ||    ||    || 
-||  kickstart.profile.keys.getActivationKeys  || Missing ||    ||    ||    || 
-||  kickstart.profile.keys.removeActivationKey  || Missing ||    ||    ||    || 
-||  kickstart.profile.software.appendToSoftwareList  || Missing ||    ||    ||    || 
-||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||    || 
-||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||    || 
+||  kickstart.profile.addIpRange  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.addScript  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.compareActivationKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.compareAdvancedOptions  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.comparePackages  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.downloadKickstart  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.getAdvancedOptions  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.getCustomOptions  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.getPartitioningScheme  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.listIpRanges  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.listScripts  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.removeIpRange  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.removeScript  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.setAdvancedOptions  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.setChildChannels  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.setCustomOptions  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.setKickstartTree  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.setPartitioningScheme  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.keys.addActivationKey  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.keys.getActivationKeys  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.keys.removeActivationKey  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.software.appendToSoftwareList  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.software.getSoftwareList  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.software.setSoftwareList  || Missing ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.addFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.addKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.disableConfigManagement  || Missing ||    || Unable to test because of absence of getter. Proposing getConfigManagement API or some workaround in QA testing. ||skarmark|| 
@@ -355,12 +353,14 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.system.enableConfigManagement  || Missing ||    || Unable to test because of absence of getter. Proposing getConfigManagement API ||skarmark|| 
 ||  kickstart.profile.system.enableRemoteCommands  || Missing ||    || Unable to test because of absence of getter. Proposing getRemoteCommands API ||skarmark|| 
 ||  kickstart.profile.system.getLocale  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.system.getPartitioningScheme  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.listFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.listKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.removeFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.removeKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setLocale  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setNetworkConnection  || Missing ||    || Unable to test because of absence of getter. Proposing getNetworkConnection API ||skarmark|| 
+||  kickstart.profile.system.setPartitioningScheme  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setSELinux  || Missing ||    || Unable to test because of absence of getter. Proposing getSELinux API ||skarmark|| 
 ||  kickstart.tree.create  || Missing ||    ||    ||    || 
 ||  kickstart.tree.delete  || Missing ||    ||    ||    || 
