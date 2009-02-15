@@ -2,16 +2,16 @@
 
 == Overview ==
 
-The Motive of the testing/googling is to make sure that Oracle Build-In function (apart from orafce) and operator which are using by Spacewalk are Present in PG
+The Motive of the testing/googling is to identify that Oracle Build-In function (apart from orafce) and operator which are using by Spacewalk are Present/Not Present in PG
 
 The minimum supported version of Postgres is PG 8.1+.
 
 
 === About Oracle Built-In Function ===
 
-Oracle built-function: Oracle functions http://ist.marshall.edu/ist466/functions.html
+Oracle built-function:    Oracle functions http://ist.marshall.edu/ist466/functions.html
 
-Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index.php       
+Oracle Build in Operator: Other sql/plsql  http://www.techonthenet.com/oracle/index.php       
 
 
 
@@ -31,8 +31,7 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||SUM||
 ||UPPER||
 ||LPAD||
-||UNION||
-||UNION ALL|| 
+
 
 
 === Oracle Operator using in Spacewalk available in Postgres ===
@@ -65,3 +64,12 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||'''DATA DICTIONARY TABLE'''||
 
 ||USER_CONSTRAINTS||
+
+
+=== Observation ===
+
+*Apart from all above theses,Didn't find any other Function Which are using/not using in Spacewalk.
+
+*Oracle and Postgres Built-in function/operator which are using in Spacewalk are Compatible.
+
+*Spacewalk is using these function's But '''NOT''' in a great Extend. 
