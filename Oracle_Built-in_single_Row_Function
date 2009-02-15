@@ -1,2 +1,68 @@
-Under Construction !!
+= Oracle Built-in fUNCTION/Operator  =
 
+== Overview ==
+
+The Motive of the testing/googling is to make sure that Oracle Build-In function (apart from orafce) and operator which are using by Spacewalk are Present in PG
+
+The minimum supported version of Postgres is PG 8.1+.
+
+Targeted version of Orafce is 3.0.0.
+
+
+=== About Oracle Built-In Function ===
+
+Oracle built-function: Oracle functions http://ist.marshall.edu/ist466/functions.html
+Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index.php       
+
+
+
+=== Oracle Function using in Spacewalk Present in Postgres ===
+
+||'''Function Name'''||
+
+||ASCII||
+||AVG||
+||MAX||
+||COUNT||
+||CHR||
+||CAST||
+||TO_NUMBER||
+||GREATEST||
+||MOD||
+||SUM||
+||UPPER||
+||LPAD||
+||UNION||
+||UNION ALL|| 
+
+
+=== Oracle Operator using in Spacewalk Present in Postgres ===
+
+||'''OPERATOR NAME'''||
+
+||UNION||
+||UNION ALL||
+||EXISTS||
+
+
+=== Oracle Function using in Spacewalk Not Present in Postgres ===
+
+||'''Function Name'''||
+
+||ROWID||
+||ROWNUM||
+||GROUPING||
+
+=== Oracle Operator using in Spacewalk Not Present in Postgres ===
+
+
+||'''OPERATOR NAME'''||
+
+||MULITSET||
+
+
+=== Oracle Data Dictionary table using in Spacewalk Not Present in  Postgres ===
+
+||'''DATA DICTIONARY TABLE'''||
+
+||USER_CONSTRAINTS||
