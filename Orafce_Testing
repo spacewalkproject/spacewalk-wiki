@@ -91,7 +91,7 @@ Example:-select decode(1,1,null::int)
 
 === Sql File's Location ===
 
-[wiki:"Sql Files Location" Sql File Location for Oracfce Built-in function using by spacewalk]
+[wiki:"Sql Files Location" Sql File Location for Oracle(Supported by Orafce) Built-in functions using by spacewalk]
 
 
 === Conclusion ===
