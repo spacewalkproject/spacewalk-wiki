@@ -89,12 +89,18 @@ Example:-select decode(1,1,null::int)
 
  for more detail pls review  test-case file(orafce_testcases_version0.1.sql)
 
+=== Sql File's Location ===
+
+[wiki:"Sql Files Location" Sql File Location for Oracfce Built-in function using by spacewalk]
+
 
 === Conclusion ===
 
 * This is all about Orafce Feature's apart from this, there are other Single-row functions which are Using by spacewalk which has been taken care in other wiki page.
 
 * Grouping is not a part of  Orafce Feature but still mentioning here .
+
+* Still Orafce 3.0.0 testing pending aganist PG8.1.
 
 
 
