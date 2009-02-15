@@ -22,12 +22,12 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 ||DBMS_OUTPUT|| To see the data we must have to enable the serveroutput on also we need to Use select statement before DBMS_OUTPUT,we can also use in RETURN statement of Plpgsql fuctions ||
 ||NVL|| It is almost Compatible with oracle but  it give  Error due to its PG limitation for ex:-{{{select nvl('a','b') from dual;ERROR:  could not determine anyarray/anyelement type because input has type "unknown"}}}.Comments which i have got from Itagaki: "Yeah, PostgreSQL 8.2 has a limitation in treating anyelement.Please use 8.3 or add explicit type casts".so this is applicable for 8.1 too ||
 ||NVL2|| same commets which has given for NVL ||
-||ROUND|| spacewalk is using this function in RETURN and IF statement ||
+||ROUND|| spacewalk is using this function like RETURN and IF statement ||
 ||TRUNC|| spacwalk is using this function for passing to variable i.e target_date := trunc(add_months(sysdate,-months_ago)-(7*weeks_ago))||
-||SUBSTR|| it is better to use oracle.substr instead of substr in PG because by default it will search in pg_catalog.substr which is not oracle compatible ||
-||INSTR|| using in IF,inside Substr function ||
-||DECODE|| same comments which has given for NVL2 ||
-||LENGTH|| it is commanly using in DBMS_OUTPUT,SUBSTR,IF,FOR Loop,||
+||SUBSTR|| It is better to use oracle.substr instead of substr in PG because by default it will search in pg_catalog.substr which is not oracle compatible ||
+||INSTR|| It is using in IF,inside Substr function ||
+||DECODE|| Same comments which has given for NVL2 ||
+||LENGTH|| it is commanly using in DBMS_OUTPUT,SUBSTR,IF,FOR Loop||
 ||LAST_DAY||using this function for passing to variable i.e target_date := last_day(target_date)||
 ||ADD_MONTHS||one of the sql statment using by spacewalk is add_months(sysdate,-5)-(7*5) , if we changed sysdate to current_timestamp and try to run this query, it will throw an error saying:-ERROR:  function add_months(timestamp with time zone, integer) does not exist,to avoid this error ,either we can use explicit type casting OR instead of using Current_timestamp ,we can use current_date.||
 
@@ -82,14 +82,19 @@ It is Commented so we should not worry for this.
 }}}
 
 2.In Most of the function ,we have to use  explicit type casting  because PostgreSQL 8.2/8.1 has a limitation in treating anyelement-
-  
+
+{{{  
 Example:-select decode(1,1,null::int)
-  
+}}} 
+
  for more detail pls review  test-case file(orafce_testcases_version0.1.sql)
 
 
-=== Feedback ===
+=== Conclusion ===
 
-Most welcome.
+* This is all about Orafce Feature's apart from this, there are other Single-row functions which are Using by spacewalk which has been taken care in other wiki page.
+
+* Grouping is not a part of  Orafce Feature but still mentioning here .
+
 
 
