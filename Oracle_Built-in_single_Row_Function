@@ -43,12 +43,14 @@ Oracle Build in Operator: Other sql/plsql  http://www.techonthenet.com/oracle/in
 ||EXISTS||
 
 
+
 === Oracle Function using in Spacewalk '''Not''' available in Postgres ===
 
 ||'''Function Name'''||
 
 ||ROWID||
 ||ROWNUM||
+
 
 
 === Oracle Operator using in Spacewalk '''Not''' available in Postgres ===
@@ -59,6 +61,7 @@ Oracle Build in Operator: Other sql/plsql  http://www.techonthenet.com/oracle/in
 ||MULITSET||
 
 
+
 === Oracle Data Dictionary table using in Spacewalk '''Not''' available in Postgres ===
 
 ||'''DATA DICTIONARY TABLE'''||
@@ -66,11 +69,14 @@ Oracle Build in Operator: Other sql/plsql  http://www.techonthenet.com/oracle/in
 ||USER_CONSTRAINTS||
 
 
+
 === Oracle pl/sql data type using in Spacewalk '''Not''' available in Postgres ===
 
 ||'''Pl/sql data type'''||
 
 ||BINARY_INTEGER||
+
+
 === Observation ===
 
 *Apart from all above theses,Didn't find any other Function Which are using/not using in Spacewalk.
