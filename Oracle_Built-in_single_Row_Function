@@ -1,4 +1,4 @@
-= Oracle Built-in fUNCTION/Operator  =
+= Oracle Built-in Function/Operator  =
 
 == Overview ==
 
@@ -6,17 +6,16 @@ The Motive of the testing/googling is to make sure that Oracle Build-In function
 
 The minimum supported version of Postgres is PG 8.1+.
 
-Targeted version of Orafce is 3.0.0.
-
 
 === About Oracle Built-In Function ===
 
 Oracle built-function: Oracle functions http://ist.marshall.edu/ist466/functions.html
+
 Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index.php       
 
 
 
-=== Oracle Function using in Spacewalk Present in Postgres ===
+=== Oracle Function using in Spacewalk available in Postgres ===
 
 ||'''Function Name'''||
 
@@ -36,7 +35,7 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||UNION ALL|| 
 
 
-=== Oracle Operator using in Spacewalk Present in Postgres ===
+=== Oracle Operator using in Spacewalk available in Postgres ===
 
 ||'''OPERATOR NAME'''||
 
@@ -45,7 +44,7 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||EXISTS||
 
 
-=== Oracle Function using in Spacewalk Not Present in Postgres ===
+=== Oracle Function using in Spacewalk '''Not''' available in Postgres ===
 
 ||'''Function Name'''||
 
@@ -53,7 +52,7 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||ROWNUM||
 ||GROUPING||
 
-=== Oracle Operator using in Spacewalk Not Present in Postgres ===
+=== Oracle Operator using in Spacewalk '''Not''' available in Postgres ===
 
 
 ||'''OPERATOR NAME'''||
@@ -61,7 +60,7 @@ Oracle Operator      : Other sql/plsql  http://www.techonthenet.com/oracle/index
 ||MULITSET||
 
 
-=== Oracle Data Dictionary table using in Spacewalk Not Present in  Postgres ===
+=== Oracle Data Dictionary table using in Spacewalk '''Not''' available in Postgres ===
 
 ||'''DATA DICTIONARY TABLE'''||
 
