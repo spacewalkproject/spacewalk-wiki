@@ -172,6 +172,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.getDetails(string sessionKey, int sid) || 0.5 || 1 || bbuckingham || done || Existing API to retrieve details on a system.  Add "boolean lock_status" to the return result. ||
 ||  system.getName(string sessionKey, int sid) || 0.3 || 3 || bbuckingham || done || Get system name and last check in information for the given system ID. ||
 ||  system.getRelevantErrataByType(string sessionKey, int sid, string advisoryType) || 0.3 || 3 || bbuckingham || done || Returns a list of all errata of the specified type that are relevant to the system. ||
+||  system.listActivationKeys(string sessionKey, int systemId) || 0.5 || 4 || bbuckingham || done || Return the list of activation keys used during registration of the given system.  If no key was used, the list will be empty. ||
 ||  system.provisionSystem(sid, kslabel, date) || 0.3 || 4 || skarmark || done ||  ||
 ||  system.provisionSystem(sid, kslabel) || 0.3 || 1 || skarmark || done ||  ||
 ||  system.comparePackageProfile(string sessionKey, int sid, string profileLabel) || 0.3 || 3 || bbuckingham || done || Compare the system to an existing package profile. ||
