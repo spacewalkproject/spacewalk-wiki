@@ -68,6 +68,9 @@ Oracle Build in Operator: Other sql/plsql  http://www.techonthenet.com/oracle/in
 ||'''DATA DICTIONARY TABLE'''||
 
 ||USER_CONSTRAINTS||
+||ALL_CONS_COLUMNS||
+||ALL_CONSTRAINTS||
+
 
 
 
