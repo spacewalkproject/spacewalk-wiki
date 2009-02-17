@@ -93,7 +93,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  kickstart.profile.listIpRanges(string sessionKey, int ksLabel) || 0.2 || 3 || jsherrill  || done || list ip ranges for a kickstart ||  
 ||  kickstart.profile.addIpRange(string sessionKey, int ksLabel) || 0.2 || 4 || jsherrill  || done || ksLabel is an int? || 
-||  kickstart.profile.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||   
+||  kickstart.profile.removeIpRange(string sessionKey, ksLabel, ip) || 0.2 || 3 || jsherrill ||done || ||
+||  kickstart.profile.getKickstartTree(string sessionKey, string ksLabel) || 0.5 || 2 || bbuckingham ||done || Retrieve the label of the kickstart tree associated with the profile.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: kickstart.profile.system''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.system.setNetworkConnection(string sessionKey, string kslabel, boolean dhcp, string interface) || 0.2 || 3 ||partha||done  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
