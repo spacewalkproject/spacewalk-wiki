@@ -98,6 +98,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart.profile.system''' ||  ||  ||  ||  ||  ||
 ||  kickstart.profile.system.setNetworkConnection(string sessionKey, boolean dhcp, string interface) || 0.2 || 3 ||partha||done  || Set the network connection details.  If dhcp is true, dhcp will be utilized; otherwise, it will be static IP. ||
 ||  kickstart.profile.system.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||done || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
+||  kickstart.profile.system.getSELinux(string sessionKey, string kslabel) || 0.5 || 2 || bbuckingham ||done || Get the SELinux preference where return is enforcing, permissive or disabled. ||
 ||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
 ||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
 ||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
