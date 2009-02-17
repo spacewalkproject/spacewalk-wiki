@@ -101,7 +101,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || perl-NOCpulse-CLAC-1.9.4-10.el5.src.rpm || || || ||
  || perl-NOCpulse-Debug-1.23.4-6.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=483016 || msuchy || Now in Fedora ||
  || perl-NOCpulse-Gritch-1.16.1-5.el5.src.rpm || || || ||
- || perl-NOCpulse-Object-1.26.4-7.el5.src.rpm || || || ||
+ || perl-NOCpulse-Object-1.26.4-7.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=485893 || msuchy ||
  || perl-NOCpulse-OracleDB-1.28.2-12.el5.src.rpm || || || ||
  || perl-NOCpulse-Probe-1.183.1-21.el5.src.rpm || || || ||
  || perl-NOCpulse-SetID-1.5.2-5.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=466906 || msuchy || Now in Fedora ||
