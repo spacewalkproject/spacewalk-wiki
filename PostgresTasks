@@ -31,9 +31,21 @@ simply need to be completed and are not necessarily risks to the project.
 ||Q2||Sysdate addition|| Add Postgres timestamp + float compatibility operator || || || ||
 ||Q3||nextval()|| Handle nextval() differences || || || ||
 
-=== Tables ===
+=== Table (DDL) Migration ===
 
-[wiki:PgportTables tables]
+Here is the assignment table for migrating the table DDL.  Please put you name in the ''Assigned'' column __before__ you begin working on a table.  Start by copying
+oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/tables to $GIT/spacewalk/schema/spacewalk/postgresql/tables.  Then proceed with the migration.
+Also, please note any items of interest in the ''notes'' column.
+
+[wiki:PgportTables Table Migration].
+
+=== Stored Procedure Migration ===
+
+Here is the assignment table for migrating the stored procedures __not__ associated with a package.  Please put you name in the ''Assigned'' column __before__ you begin working on a procedure.  Start by copying
+oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/procs to $GIT/spacewalk/schema/spacewalk/postgresql/procedures.  Then proceed with the migration.
+Also, please note any items of interest in the ''notes'' column
+
+[wiki:PgportProcedures Stored Procedure Migration]
 
 === Notes ===
  ![1]:: 
