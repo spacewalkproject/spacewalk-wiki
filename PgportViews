@@ -1,4 +1,10 @@
-|| '''name''' || '''status''' || '''assigned''' || '''notes''' ||
+[wiki:PostgresTasks Tasks Page]
+
+'''Note''': ~~Views~~ - are no longer used and do not need to be migrated.
+
+=== Views To Migrate ===
+
+|| '''View''' || '''Status''' || '''Assigned''' || '''Notes''' ||
 ||rhnOrgChannelFamilyPermissions|| || || ||
 ||rhn_contact_monitoring|| || || ||
 ||rhn_customer_monitoring|| || || ||
