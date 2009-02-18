@@ -102,10 +102,12 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.profile.system.getNetworkConnection(string sessionKey, string kslabel) || 0.5 || 2 || bbuckingham||done  || Get the network connection properties. ||
 ||  kickstart.profile.system.setSELinux(string sessionKey, string kslabel, string enforcingMode) || 0.2 || 2 || partha ||done || Set the SELinux preference where enforcingMode is enforcing, permissive or disabled. ||
 ||  kickstart.profile.system.getSELinux(string sessionKey, string kslabel) || 0.5 || 2 || bbuckingham ||done || Get the SELinux preference where return is enforcing, permissive or disabled. ||
-||  kickstart.profile.system.enableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
-||  kickstart.profile.system.disableConfigMgmt(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
-||  kickstart.profile.system.enableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
-||  kickstart.profile.system.disableRemoteCmds(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
+||  kickstart.profile.system.checkConfigManagement(string sessionKey, string kslabel) || 0.5 || 2 || bbuckingham  ||done  || Check the configuration management status for a kickstart profile. ||
+||  kickstart.profile.system.enableConfigManagement(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.disableConfigManagement(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.checkRemoteCommands(string sessionKey, string kslabel) || 0.5 || 2 || bbuckingham ||done  || Check the remote command status for a kickstart profile. ||
+||  kickstart.profile.system.enableRemoteCommands(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done  ||  ||
+||  kickstart.profile.system.disableRemoteCommands(string sessionKey, string kslabel) || 0.2 || 2 ||partha  ||done ||  ||
 ||  kickstart.profile.system.getLocale(string sessionKey, string kslabel) || 0.3 || 3 || bbuckingham || done || * Retrieve the locale information for the kickstart profile.[[BR]] * Returns struct[string locale, int useUtc] ||
 ||  kickstart.profile.system.setLocale(string sessionKey, string kslabel, string locale, boolean useUtc) || 0.3 || 3 || bbuckingham || done ||  ||
 ||  kickstart.profile.system.listFilePreservations(string sessionKey, string kslabel) || 0.4 || 3 || bbuckingham || done || List the file preservation lists associated with the profile. ||
