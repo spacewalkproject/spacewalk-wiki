@@ -15,7 +15,7 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 
 
 
-=== Oracle Compatible Function's of Orafce using in Spacewalk ===
+=== Oracle Compatible Function's of Orafce being used in Spacewalk ===
 
 
 ||'''Function Name'''||'''Remarks'''||
@@ -30,8 +30,9 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 ||LENGTH|| it is commanly using in DBMS_OUTPUT,SUBSTR,IF,FOR Loop||
 ||LAST_DAY||using this function for passing to variable i.e target_date := last_day(target_date)||
 ||ADD_MONTHS||one of the sql statment using by spacewalk is add_months(sysdate,-5)-(7*5) , if we changed sysdate to current_timestamp and try to run this query, it will throw an error saying:-ERROR:  function add_months(timestamp with time zone, integer) does not exist,to avoid this error ,either we can use explicit type casting OR instead of using Current_timestamp ,we can use current_date.||
+||BITAND|| Being used in the function adler32 ||
 
-=== Oracle Compatible Function's of Orafce '''NOT''' using in spacewalk ===
+=== Oracle Compatible Function's of Orafce '''NOT''' being used in Spacewalk ===
 
 
 ||'''Function Name'''||
@@ -42,7 +43,6 @@ Orafce: Oracle support functions http://www.postgres.cz/index.php/Oracle_functio
 ||UTL_FILE|| 
 ||RESERVE|| 
 ||CONCAT|| 
-||BITAND||
 ||SINH||	
 ||COSH||
 ||TANH  	
