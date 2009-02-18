@@ -46,8 +46,6 @@
 ||lookup_tag|| || || 
 ||lookup_transaction_package|| || || 
 ||lookup_virt_sub_level|| || || 
-||Makefile|| || || 
-||Makefile.deps|| || || 
 ||name_join|| || || 
 ||new_user_postop|| || || 
 ||pxt_session_cleanup|| || || 
