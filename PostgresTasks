@@ -35,15 +35,15 @@ simply need to be completed and are not necessarily risks to the project.
 
 Here is the assignment table for migrating the table DDL.  Please put you name in the ''Assigned'' column __before__ you begin working on a table.  Start by copying
 oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/tables to $GIT/spacewalk/schema/spacewalk/postgresql/tables.  Then proceed with the migration.
-Also, please note any items of interest in the ''notes'' column.
+Also, please note any items of interest in the ''notes'' column and be sure to follow the [wiki:PostgresPortingGuidelines porting guidelines].
 
 [wiki:PgportTables Table Migration].
 
 === Stored Procedure Migration ===
 
-Here is the assignment table for migrating the stored procedures __not__ associated with a package.  Please put you name in the ''Assigned'' column __before__ you begin working on a procedure.  Start by copying
-oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/procs to $GIT/spacewalk/schema/spacewalk/postgresql/procedures.  Then proceed with the migration.
-Also, please note any items of interest in the ''notes'' column
+Here is the assignment table for migrating the stored procedures __not__ associated with a package.  Please put you name in the ''Assigned'' column __before__ you begin 
+working on a procedure.  Start by copying oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/procs to $GIT/spacewalk/schema/spacewalk/postgresql/procedures.
+Then proceed with the migration.  Also, please note any items of interest in the ''notes'' column and sure to follow the [wiki:PostgresPortingGuidelines porting guidelines].
 
 [wiki:PgportProcedures Stored Procedure Migration]
 
