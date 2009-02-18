@@ -39,6 +39,14 @@ Also, please note any items of interest in the ''notes'' column and be sure to f
 
 [wiki:PgportTables Table Migration].
 
+=== View Migration ===
+
+Here is the assignment table for migrating the view DDL.  Please put you name in the ''Assigned'' column __before__ you begin working on a view.  Start by copying
+oracle .sql file located in $GIT/spacewalk/schema/spacewalk/rhnsat/views to $GIT/spacewalk/schema/spacewalk/postgresql/views  Then proceed with the migration.
+Also, please note any items of interest in the ''notes'' column and be sure to follow the [wiki:PostgresPortingGuidelines porting guidelines].
+
+[wiki:PgportViews View Migration].
+
 === Stored Procedure Migration ===
 
 Here is the assignment table for migrating the stored procedures __not__ associated with a package.  Please put you name in the ''Assigned'' column __before__ you begin 
