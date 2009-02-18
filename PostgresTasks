@@ -21,9 +21,9 @@ simply need to be completed and are not necessarily risks to the project.
 ||G12||Monitoring||Are we converting the monitoring module?|| done || tsanders || Yes ||
 ||G13||Remove dead java queries|| Remove the dead java data source queries from git || done || dgoodwin ||  ||
 ||G14||Orafce|| Orafce requires Postgres 8.2; port Orafce to Postgres 8.1; packaging issues? || || bmomjian || Orafce 3.0 back-ported to 8.1 in orafce CVS||
-||G15|| Setup schema review meeting || Have developers review schema beforehand, meet to discuss core tables and answer questions with as many developers as possible. || || jortel || ||
+||G15|| Setup schema review meeting || Have developers review schema beforehand, meet to discuss core tables and answer questions with as many developers as possible. || done || jortel || ||
 ||G16|| db-control || what about the RHN db-control stuff.  It's probably oracle based || || || ||
-||G17|| Prioritized Modules || Provide a prioritized list of modules (feature sets).  || || jortel || ||
+||G17|| Prioritized Modules || Provide a prioritized list of modules (feature sets).  || 25% done || jortel || Iteration 1 scoped but need to do 3+. ||
 
 === Queries ===
 ||'''ID'''||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
