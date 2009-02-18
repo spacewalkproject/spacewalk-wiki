@@ -2,6 +2,8 @@
 
 '''Note''': ~~Views~~ - are no longer used and do not need to be migrated.
 
+This table __is__ ordered by dependency so working ''top down'' will probably work best.
+
 === Views To Migrate ===
 
 || '''View''' || '''Status''' || '''Assigned''' || '''Notes''' ||
