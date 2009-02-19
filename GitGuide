@@ -71,7 +71,7 @@ A good sample ~/.gitconfig:
 
 == Things To Remember ==
 
- 1. Work in local branches and use master or other tracking branches just for pushing/pulling changes.
+ 1. Try to work in local branches and use master (or other tracking branches) just for pushing/pulling changes.
  1. Your git commits are local only until you push them to the remote repository. (or submit a patch if you do not have commit access) 
  1. Use rebase to update your local branch before you merge it.
  1. git commands can be run with {{{git-command}}} or {{{git command}}}
@@ -205,12 +205,27 @@ Applying patches is as simple as:
 
 Note that if you examine the git log, both the git identity of the patch author and the patch committer are tracked.
 
-== Why Use Local Branches ==
+== Understanding Branches ==
 
-The use of local branch has proven one of the more difficult things to adapt to for those coming from non-distributed scm's like subversion. While you can work in your master branch (or another tracking branch), using local branches offers several benefits.
+The use of branches has proven one of the more difficult things to adapt to for those coming from non-distributed scm's like subversion. 
 
- 1. Context Switching: Local branches allow you to work on something, and in the middle either commit or stash your changes and git checkout another local branch to work on something else. This could be a new local branch for some other more urgent task, a release branch for a past version of the product, even a specific commit in the history you need to examine the source tree at. Considering our development setup, this also allows you to switch to run old versions of the application code with a single command.
- 1. Safety: Assume you work on some substantial fix, but a major conflict is brewing in master. When merging/rebasing you may get into a situation where you'd just as soon start over. You can easily reset master to point to the state of the remote master branch and begin again, your changes are safely tucked away in your local branch.
+ * Branches can be local (only in your git clone) or remote (i.e. they exist in the remote repository).
+ * List local branches with '''git branch''', remote branches with '''git branch -r'''.
+ * When listing remote branches you'll see things like "origin/master". Origin is a default remote reference created when you do a git clone of some remote repository. Because git is designed for highly distributed workflow, it is possible to actually have MANY remote references configured within one git repository and push/pull from them all to collaborate with others. For our situation however all you really need to know is that "origin" is a remote reference to the spacewalk git repository, thus origin/master refers to the remote master branch.
+ * After doing a git clone, a local "master" branch is configured for you as a tracking branch for origin/master. You can create other tracking branches easily with '''git checkout --track -b mylocalbranch origin/someremotebranch''' (commonly used to work release or feature branches)
+ * If you git checkout origin/somebranch you've checked out a pointer to a remote branch, and thus you cannot commit here. (git will indicate this clearly) If you wish to make some modifications you just need to create a local branch off of that commit with '''git checkout -b mybranch'''.
+ * The main advantage to working in local branches is context switching. If working in a local branch and something comes up, you need to go to master and look at something, fix a bug in some release branch, change to some other urgent task, whatever, all you need to do is commit your work (or stash it) and go about your business. Return to your branch when you wish to resume work.
+
+== Working In Master ==
+
+If you feel you cannot keep track of or understand the use of local branches, you can work directly in your master tracking branch. Please just be sure to use the --rebase option to git pull.
+
+{{{
+git pull --rebase
+}}}
+
+Not using --rebase means that git pull will merge the remote references in instead, resulting in many of the dreaded "merge commits" in the git history which clutter up the log unnecessarily.
+
 
 == Managing Remote Branches ==
 
@@ -253,6 +268,32 @@ Deleting a remote branch entirely: For all intents and purposes lets leave remot
  * It is a very good idea to treat your tracking branches as you do master. I.e. *do not* work directly in them, but rather create local branches off them to do your work and only use the tracking branch for pulling down changes and then merging in your work and immediately pushing it out.
  * Running "git push" without specifying the branches as per the above syntax will cause git to attempt to push your local commits from all tracked remote branches back to their respective remote counterparts. This is definitely counterintuitive. However if you only use tracking branches for pushing/pulling changes and instead work in local branches, this will not be an issue for you.
  * You will see git pull fetching information about other remote branches, please note this is not applying those commits in your local tracking branch, it's just updating internal info and noticing that something has changed in the remote repo. Only the current branch will have it's changes applied.
+
+
+== Difference Between Merge and Rebase ==
+
+Consider the following two branches with some commits:
+
+Branch 1: A -> B -> C -> D -> E
+
+Branch 2: A -> B -> C -> C1 -> C2
+
+Here Branch 2 was created off of Branch 1 at the point in time when commit C was the most recent.
+
+If we were to merge Branch 2 directly into Branch 1 (git checkout branch1 && git merge branch2) we could end up with:
+
+Branch 1: A -> B -> C -> D -> E -> C1 -> C2 -> MC
+
+Where MC is a "merge commit" identifying that a merge took place, what files were involved, and most importantly what files conflicted and had to be resolved.
+
+If however we ran a rebase first (git checkout branch2 && git rebase branch1 && git checkout branch1 && git merge branch2) we would end up with the following:
+
+Branch 1: A -> B -> C -> D -> E -> E1 -> E2
+
+Where E1 and E2 are the commits previously known as C1 and C2, but re-applied on top of commit E instead.
+
+The key difference is that rebase re-applies the new commits on top of the current state of the tree, whereas merge brings them in and adds them to the history, plus a merge commit. Rebase is generally much better (cleaner history) for small individual changes, while we frequently use merge for long lived release/feature branches that are not so simple.
+
 
 
 == Other Common Tasks ==
