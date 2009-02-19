@@ -294,7 +294,43 @@ Where E1 and E2 are the commits previously known as C1 and C2, but re-applied on
 
 The key difference is that rebase re-applies the new commits on top of the current state of the tree, whereas merge brings them in and adds them to the history, plus a merge commit. Rebase is generally much better (cleaner history) for small individual changes, while we frequently use merge for long lived release/feature branches that are not so simple.
 
+== Resolving Conflicts ==
 
+Git will normally merge just about anything that can be safely automatically merged but conflicts can still occur. If you get the dreaded ''Automatic merge failed; fix conflicts and then commit the result.'' during a merge, here is how you can go about resolving it.
+
+First list the files that require merging:
+{{{
+git ls-files --unmerged
+}}}
+
+Choose a file, open it, and search for the conflict markers just as you would when resolving a svn conflict.
+
+If the conflict is not obvious you can use gitk to view ONLY the commits made in each branch that are resulting in your conflict:
+
+{{{
+gitk --merge path/to/file
+}}}
+
+If you'd like try a three way merge, try:
+{{{
+git mergetool -t meld
+}}}
+
+This will fire up a merge tool (in my case "meld") with three columns. On the left will be the file as it was in your current branch, in the middle the state of the file now (after automatic merging including conflict markers), and on the left the state of the file from the branch being merged in.
+
+Once you've resolved your conflict:
+{{{
+git add path/to/resolved/file
+}}}
+
+And proceed to the next file.
+
+Once you've resolved all conflicts:
+{{{
+git commit -a
+}}}
+
+Git will pre-populate the commit message with the data for your merge commit including what files conflicted. Add anything you feel is necessary and you're ready to push out your changes.
 
 == Other Common Tasks ==
 
