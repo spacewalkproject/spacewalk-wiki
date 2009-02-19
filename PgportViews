@@ -7,65 +7,65 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 === Views To Migrate ===
 
 || '''View''' || '''Status''' || '''Assigned''' || '''Notes''' ||
-||rhnOrgChannelFamilyPermissions|| || || ||
-||rhn_contact_monitoring|| || || ||
-||rhn_customer_monitoring|| || || ||
-||rhn_host_monitoring|| || || ||
-||rhnActionOverview|| || || ||
-||rhnOrgChannelTreeView|| || || ||
-||rhnSharedChannelView|| || || ||
-||rhnSharedChannelTreeView|| || || ||
-||rhnAvailableChannels|| || || ||
-||rhnCDDevice|| || || ||
-||rhnChannelFamilyOverview|| || || ||
-||rhnChannelFamilyPermissions|| || || ||
-||rhnServerEntitlementView|| || || ||
-||rhnChannelFamilyServerPhysical|| || || ||
-||rhnChannelFamilyServers|| || || ||
-||rhnChannelFamilyServerVirtual|| || || ||
-||rhnChannelNewestPackageView|| || || ||
-||rhnChannelPackageOverview|| || || ||
-||rhnChannelPermissions|| || || ||
-||rhnChannelTreeView|| || || ||
-||rhnDemoOrgs|| || || ||
-||rhnEntitledServers|| || || ||
-||rhnHistoryView_refresh|| || || ||
-||rhnHistoryView_packages|| || || ||
-||rhnHistoryView_errata|| || || ||
-||rhnHistoryView|| || || ||
-||rhnHWDevice|| || || ||
-||rhnOrgErrata|| || || ||
-||rhnOrgPackageOverview|| || || ||
-||rhnPaidOrgs|| || || ||
-||rhnWebContactDisabled|| || || ||
-||rhnPrivateErrataMail|| || || ||
-||rhnServerEntitlementPhysical|| || || ||
-||rhnServerEntitlementVirtual|| || || ||
-||rhnServerErrataTypeView|| || || ||
-||rhnServerFeaturesView|| || || ||
-||rhnServerGroupMembership|| || || ||
-||rhnUserManagedServerGroups|| || || ||
-||rhnServerGroupOverview|| || || ||
-||rhnServerGroupOVLiteHelper|| || || ||
-||rhnServerNeededPackageView|| || || ||
-||rhnServerOutdatedPackages|| || || ||
-||rhnVisibleServerGroupMembers|| || || ||
-||rhnServerOverview|| || || ||
-||rhnStorageDevice|| || || ||
-||rhnUserActionOverview|| || || ||
-||rhnUserAppletOverview|| || || ||
-||rhnUserChannelFamilyPerms|| || || ||
-||rhnUserChannelTreeView|| || || ||
-||rhnUserAvailableChannels|| || || ||
-||rhnUserChannel|| || || ||
-||rhnUserGroupMembership|| || || ||
-||rhnUserServerPermsDupes|| || || ||
-||rhnVisibleServerGroup|| || || ||
-||rhnUserTypeBase|| || || ||
-||rhnUserTypeArray|| || || ||
-||rhnUserTypeCommaView|| || || ||
-||rhnUsersInOrgOverview|| || || ||
-||rhnVisServerGroupMembership|| || || ||
-||rhnVisServerGroupOverviewLite|| || || ||
-||rhnVisServerGroupOverview|| || || ||
-||rhnWebContactEnabled|| || || ||
+||rhnOrgChannelFamilyPermissions|| || Gurjeet || ||
+||rhn_contact_monitoring|| || Gurjeet || ||
+||rhn_customer_monitoring|| || Gurjeet || ||
+||rhn_host_monitoring|| || Gurjeet || ||
+||rhnActionOverview|| || Gurjeet || ||
+||rhnOrgChannelTreeView|| || Gurjeet || ||
+||rhnSharedChannelView|| || Gurjeet || ||
+||rhnSharedChannelTreeView|| || Gurjeet || ||
+||rhnAvailableChannels|| || Gurjeet || ||
+||rhnCDDevice|| || Gurjeet || ||
+||rhnChannelFamilyOverview|| || Gurjeet || ||
+||rhnChannelFamilyPermissions|| || Gurjeet || ||
+||rhnServerEntitlementView|| || Gurjeet || ||
+||rhnChannelFamilyServerPhysical|| || Gurjeet || ||
+||rhnChannelFamilyServers|| || Gurjeet || ||
+||rhnChannelFamilyServerVirtual|| || Gurjeet || ||
+||rhnChannelNewestPackageView|| || Gurjeet || ||
+||rhnChannelPackageOverview|| || Gurjeet || ||
+||rhnChannelPermissions|| || Gurjeet || ||
+||rhnChannelTreeView|| || Gurjeet || ||
+||rhnDemoOrgs|| || Gurjeet || ||
+||rhnEntitledServers|| || Gurjeet || ||
+||rhnHistoryView_refresh|| || Gurjeet || ||
+||rhnHistoryView_packages|| || Gurjeet || ||
+||rhnHistoryView_errata|| || Gurjeet || ||
+||rhnHistoryView|| || Gurjeet || ||
+||rhnHWDevice|| || Gurjeet || ||
+||rhnOrgErrata|| || Gurjeet || ||
+||rhnOrgPackageOverview|| || Gurjeet || ||
+||rhnPaidOrgs|| || Gurjeet || ||
+||rhnWebContactDisabled|| || Gurjeet || ||
+||rhnPrivateErrataMail|| || Gurjeet || ||
+||rhnServerEntitlementPhysical|| || Gurjeet || ||
+||rhnServerEntitlementVirtual|| || Gurjeet || ||
+||rhnServerErrataTypeView|| || Gurjeet || ||
+||rhnServerFeaturesView|| || Gurjeet || ||
+||rhnServerGroupMembership|| || Gurjeet || ||
+||rhnUserManagedServerGroups|| || Gurjeet || ||
+||rhnServerGroupOverview|| || Gurjeet || ||
+||rhnServerGroupOVLiteHelper|| || Gurjeet || ||
+||rhnServerNeededPackageView|| || Gurjeet || ||
+||rhnServerOutdatedPackages|| || Gurjeet || ||
+||rhnVisibleServerGroupMembers|| || Gurjeet || ||
+||rhnServerOverview|| || Gurjeet || ||
+||rhnStorageDevice|| || Gurjeet || ||
+||rhnUserActionOverview|| || Gurjeet || ||
+||rhnUserAppletOverview|| || Gurjeet || ||
+||rhnUserChannelFamilyPerms|| || Gurjeet || ||
+||rhnUserChannelTreeView|| || Gurjeet || ||
+||rhnUserAvailableChannels|| || Gurjeet || ||
+||rhnUserChannel|| || Gurjeet || ||
+||rhnUserGroupMembership|| || Gurjeet || ||
+||rhnUserServerPermsDupes|| || Gurjeet || ||
+||rhnVisibleServerGroup|| || Gurjeet || ||
+||rhnUserTypeBase|| || Gurjeet || ||
+||rhnUserTypeArray|| || Gurjeet || Removed; since rhnUserTypeCommaView includes the required functionality ||
+||rhnUserTypeCommaView|| || Gurjeet || ||
+||rhnUsersInOrgOverview|| ||Gurjeet  || ||
+||rhnVisServerGroupMembership|| || Gurjeet || ||
+||rhnVisServerGroupOverviewLite|| || Gurjeet || ||
+||rhnVisServerGroupOverview|| || Gurjeet || ||
+||rhnWebContactEnabled|| || Gurjeet || ||
