@@ -73,8 +73,7 @@ A good sample ~/.gitconfig:
 
  1. Try to work in local branches and use master (or other tracking branches) just for pushing/pulling changes.
  1. Your git commits are local only until you push them to the remote repository. (or submit a patch if you do not have commit access) 
- 1. Use rebase to update your local branch before you merge it.
- 1. git commands can be run with {{{git-command}}} or {{{git command}}}
+ 1. Always run '''gitk --all''' (or tig) before you push changes. Examine what will be pushed so you can address anything unexpected before you push. (after which the commit is for all intents and purposes, permanent)
 
 == Everyday Workflow ==
 
@@ -174,6 +173,18 @@ To push your fixes in 'mybugfix' out you would do the following:
   git push origin master        # push commits from local branch master to remote branch with the same name
 }}}
 
+=== Working Directly In Master ===
+
+If you feel you cannot keep track of local branches (or just do not want to use them), you can work directly in your master tracking branch. Please just be sure to use the --rebase option when you have unpushed changes committed and go to pull from master.
+
+{{{
+git pull --rebase
+}}}
+
+Not using --rebase means that git pull will merge the remote references in instead, resulting in many of the dreaded "merge commits" in the git history which clutter up the log unnecessarily.
+
+Note that using local branches offers some substantial benefits and is the recommended approach, see Understand Branches section below for more.
+
 
 === Submitting Patches ===
 
@@ -181,8 +192,8 @@ For those without commit access, or those who just prefer to submit a patch for 
 {{{
   git checkout master                 
   git pull                      # fetch latest remote changes into master (should apply clean)
-  git checkout mybugfix        # return to your branch
-  git rebase master             # apply changes from master intelligently into your branch
+  git checkout mybugfix         # return to your branch
+  git rebase master             # re-apply you changes on top of current state of master
   git format-patch master       # generate a patch against master
 }}}
 
@@ -193,14 +204,7 @@ This will generate a number of patch files, one for each commit in your branch, 
 
 Applying patches is as simple as:
 {{{
-  git checkout master              # switch to master so we can update it to the latest
-  git pull
-  git checkout -b applying-patch   # create a branch to work in
-  git am 0001-incoming.patch       # apply the patch in the branch
-  (repeat for all .patch files)
-  git checkout master       
-  git merge applying-patch
-  git push
+  git am 0001-incoming.patch       # apply the patch in your current branch
 }}}
 
 Note that if you examine the git log, both the git identity of the patch author and the patch committer are tracked.
@@ -214,17 +218,7 @@ The use of branches has proven one of the more difficult things to adapt to for 
  * When listing remote branches you'll see things like "origin/master". Origin is a default remote reference created when you do a git clone of some remote repository. Because git is designed for highly distributed workflow, it is possible to actually have MANY remote references configured within one git repository and push/pull from them all to collaborate with others. For our situation however all you really need to know is that "origin" is a remote reference to the spacewalk git repository, thus origin/master refers to the remote master branch.
  * After doing a git clone, a local "master" branch is configured for you as a tracking branch for origin/master. You can create other tracking branches easily with '''git checkout --track -b mylocalbranch origin/someremotebranch''' (commonly used to work release or feature branches)
  * If you git checkout origin/somebranch you've checked out a pointer to a remote branch, and thus you cannot commit here. (git will indicate this clearly) If you wish to make some modifications you just need to create a local branch off of that commit with '''git checkout -b mybranch'''.
- * The main advantage to working in local branches is context switching. If working in a local branch and something comes up, you need to go to master and look at something, fix a bug in some release branch, change to some other urgent task, whatever, all you need to do is commit your work (or stash it) and go about your business. Return to your branch when you wish to resume work.
-
-== Working In Master ==
-
-If you feel you cannot keep track of or understand the use of local branches, you can work directly in your master tracking branch. Please just be sure to use the --rebase option to git pull.
-
-{{{
-git pull --rebase
-}}}
-
-Not using --rebase means that git pull will merge the remote references in instead, resulting in many of the dreaded "merge commits" in the git history which clutter up the log unnecessarily.
+ * The main advantage to working in local branches is context switching. If working in a local branch and something comes up, (you need to go to master and look at something, fix a bug in some release branch, change to some other urgent task, etc.) just commit your work (or stash it) and go about your business. Return to your branch when you wish to resume work.
 
 
 == Managing Remote Branches ==
@@ -255,7 +249,7 @@ If you ever want to use that branch again, you can just do:
 git-checkout my-branchname
 }}}
 
-As with any long lived branch it's important to sync it with master periodically to prevent a merge disaster when you rejoin. In the case of long lived branches, use git merge instead of git rebase.
+As with any long lived branch it's important to sync it with master periodically to prevent a merge disaster when you rejoin. In the case of long lived branches, '''use git merge instead of git rebase'''.
 {{{
 git checkout master
 git pull
@@ -266,7 +260,7 @@ git merge master
 Deleting a remote branch entirely: For all intents and purposes lets leave remote branches for the time being. Deleting them can be a little dangerous if you were to happen to do it on a RELEASE branch, and send us digging into scm backups to recover it. Check with someone if you have a temporary remote branch that you really want deleted. Otherwise we'll probably clean them up from time to time.
 
  * It is a very good idea to treat your tracking branches as you do master. I.e. *do not* work directly in them, but rather create local branches off them to do your work and only use the tracking branch for pulling down changes and then merging in your work and immediately pushing it out.
- * Running "git push" without specifying the branches as per the above syntax will cause git to attempt to push your local commits from all tracked remote branches back to their respective remote counterparts. This is definitely counterintuitive. However if you only use tracking branches for pushing/pulling changes and instead work in local branches, this will not be an issue for you.
+ * Running "git push" without specifying the branches as per the above syntax will cause git to attempt to push your local commits from all tracked remote branches back to their respective remote counterparts. This is definitely counterintuitive. However if you only use tracking branches for pushing/pulling changes and instead work in local branches, this will not be an issue for you. Use the recommended '''git push origin master:master''' syntax to be specific.
  * You will see git pull fetching information about other remote branches, please note this is not applying those commits in your local tracking branch, it's just updating internal info and noticing that something has changed in the remote repo. Only the current branch will have it's changes applied.
 
 
