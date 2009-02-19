@@ -5,23 +5,23 @@
 == Procedures and Functions to Migrate/Replace ==
 
 ||'''Procedure/Function'''||'''Assigned'''||'''Notes'''||
-||adler32|| || || 
+||adler32|| Farrukh || || 
 ||channel_name_join|| || || 
-||create_first_org|| || || 
+||create_first_org|| Gurjeet || Done || 
 ||create_new_org|| || || 
 ||create_new_user|| || || 
-||create_pxt_session|| || || 
+||create_pxt_session|| Gurjeet || Done || 
 ||delete_channel|| || || 
 ||delete_errata|| || || 
-||delete_server_bulk|| || || 
+||delete_server_bulk|| Gurjeet || Done || 
 ||delete_server|| || || 
 ||does_user_have_role|| || || 
 ||entitle_order|| || || 
 ||id_join|| || || 
 ||is_user_applicant|| || || 
 ||label_join|| || || 
-||lookup_arch_type|| || || 
-||lookup_cf_state|| || || 
+||lookup_arch_type|| Gurjeet || Done || 
+||lookup_cf_state|| Gurjeet || Done || 
 ||lookup_channel_arch|| || || 
 ||lookup_client_capability|| || || 
 ||lookup_config_filename|| || || 
@@ -29,15 +29,15 @@
 ||lookup_cve|| || || 
 ||lookup_erratafile_type|| || || 
 ||lookup_evr|| || || 
-||lookup_feature_type|| || || 
+||lookup_feature_type|| Gurjeet || Done || 
 ||lookup_first_matching_cf|| || || 
 ||lookup_package_arch|| || || 
 ||lookup_package_capability|| || || 
 ||lookup_package_delta|| || || 
-||lookup_package_key_type|| || || 
+||lookup_package_key_type|| Gurjeet || Done || 
 ||lookup_package_name|| || || 
 ||lookup_package_nevra|| || || 
-||lookup_package_provider|| || || 
+||lookup_package_provider|| Gurjeet || Done || 
 ||lookup_server_arch|| || || 
 ||lookup_sg_type|| || || 
 ||lookup_snapshot_invalid_reason|| || || 
@@ -49,13 +49,13 @@
 ||name_join|| || || 
 ||new_user_postop|| || || 
 ||pxt_session_cleanup|| || || 
-||queue_errata|| || || 
+||queue_errata|| Gurjeet || Done || 
 ||queue_server|| || || 
 ||rhn_install_org_satellites|| || || 
 ||rhn_install_satellite|| || || 
 ||rhn_prepare_install|| || || 
 ||rhn_synch_probe_state|| || || 
-||sequence_currval|| || || 
-||sequence_nextval|| || || 
+||sequence_currval|| Gurjeet || Done || 
+||sequence_nextval|| Gurjeet || Done || 
 ||set_ks_session_history_message|| || || 
-||truncateCacheQueue|| || ||
+||truncateCacheQueue|| Gurjeet || Done ||
