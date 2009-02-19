@@ -54,6 +54,8 @@ Targeted version of PostgreSQL is 8.1+
  * Views & Stored Procedures: porting to postgres - (Gurjeet, Vikram)
  * Spacewalk Infrastructure/Installer developent - (dgoodwin)
  * Schema ''templating'' tool - (jortel)
+ * Sample database - (jortel)
+ * Setup testing environment - (jortel)
 
 [PostgresIssues Project Issues]
 
