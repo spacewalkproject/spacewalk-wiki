@@ -37,6 +37,8 @@ Authors: dgoodwin
   * Despite this driver abstraction, the implementation and class structure remained ridiculously Oracle specific and required another heavy refactor.
   * Did *ALL* this in master thinking that the PostgreSQL driver is completely unused and just sits there. Now contemplating moving this into the pgsql branch however and leaving the Oracle refactor in master.
   * Currently when I last left off, PostgreSQL rhnsql driver is mostly complete but still lacks ability to call procedures, as well as a LOT of testing.
+  * Ran into empty_blob() function in Oracle. PostgreSQL blob columns appear to be ported as bytea's, chose to get past this by adding a PostgreSQL function of the same name that just returns an empty bytea.
+  * Blob population in Oracle issue (select column for as, followed by explicit write in the Python code). To workaround introduced rhnSQL.Cursor.update_blob() function which abstracts the weirdness required for Oracle blobs, but just does a normal update for the PostgreSQL column.
 
 = ORDER BY ... NULLS {FIRST|LAST} =
   * (open) This is a syntax that is provided by Oracle, but available in Postgres only since version 8.3. So we need a way to port such queries to Postgres version 8.1 and 8.2.
