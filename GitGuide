@@ -387,6 +387,18 @@ See what you have committed but not pushed:
 {{{
 git log --pretty=oneline origin/master..master
 }}}
+
+Ever find yourself working on something then have to go fix a bug? You can stash away your files, fix your bug, then go back to what you were doing.
+Save your work:
+{{{
+git stash save mymessage
+FIX YOUR BUG, commit and push. See what you have stashed:
+git stash list
+git stash apply stash@{0}
+}}}
+
+
+
 == Tips ==
 
  * Install '''tig''' for a very handsome mutt-like command line app for browsing git history and diffs.
