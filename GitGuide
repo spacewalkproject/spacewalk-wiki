@@ -326,6 +326,16 @@ git commit -a
 
 Git will pre-populate the commit message with the data for your merge commit including what files conflicted. Add anything you feel is necessary and you're ready to push out your changes.
 
+== Cleaning Up A Confused Git Tree ==
+
+If you run into a situation where your git tree is seemingly confused and you cannot pull or checkout another branch, here are the steps you can take to correct it. This can sometimes happen when files in your checkout are owned by root (seems to be happening for some users using our devel setup) or when a merge or pull encounters conflicts that are never resolved.
+
+ 1. Make sure you don't actually *need* any of the files that git shows as modified or untracked, because these steps below '''will delete them'''.
+ 1. Make sure all files in your git tree are owned by the correct user.
+ 1. Get rid of modified files by resetting your tree to the last known commit for the branch you're on: '''git reset --hard HEAD'''
+ 1. Cleanup files git lists as untracked with: '''git clean -xfd''' (be careful here, this will delete any untracked files in your checkout) If you want to keep some of them, back them up or remove untracked files manually.
+ 1. Verify your git tree is now clean, then try to git pull or git checkout as you were before.
+
 == Other Common Tasks ==
 
 Revert a file with uncommitted changes you do not wish to keep:
