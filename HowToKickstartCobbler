@@ -120,10 +120,40 @@ If you use profiles set up in Spacewalk, virtual machines will be registered to 
  * Details where these files are stored on the file system
 
 == How Integration Works ==
+'''note - don't count on the accuracy of this section yet - there is much construction dust here'''
 
- * What happens when you create a Distro in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
+Spacewalk and Cobbler integration is decidedly an interplay: elements of object definition - distros, profiles, and systems - are stored across both system's databases.  Spacewalk's awareness of these objects is both by virtue of records it keeps that contain information germane to Spacewalk level management, and by virtue of a UID arrangement it maintains with Cobbler for each of these types of objects for access to Cobbler level detail.  In a real sense object definition is both split and shared thanks to an XMLRPC-based protocol.  This affords you a great deal of flexibility as how much (or little) you interact directly with Spacewalk and Cobbler.
+
+The following describes in some detail the "interplay" between the two systems by virtue of a cataloging of which data lives where for each of the key object types - Distros, Profiles, and Systems.
+
+ * When you create a Distro in the Spacewalk GUI, what happens behind the scenes amounts to this:
+    * Two XMLRPC calls are made to Cobbler to create two versions of a distro (one with a Xen kernel, one without) with:
+        * http_server and http_port set to point to the spacewalk/cobbler server's apache instance
+        * distro_name set to <Spacewalk Distribution Label>:<spacewalk organization id>:<spacewalk organization name>
+        * ks_meta with the key-value pair "media_path"=><absolute path to distro tree in web space on the sw/cobbler server>
+        * initrd set to the absolute path to the initrd for the distribution in question - calculated by spacewalk
+        * kernel set to the absolute path to the kernel for the distribution in question - calculated by spacewalk
+    * When cobbler processes the creation request, it generates UIDs for the Xen and non-Xen distro in question.  These are stored both in Cobbler and in Spacewalk.  From the point of distro creation on, these UIDs maintain a logical link between spacewalk and cobbler for the distro in question; any aspect of the distro can be changed - the UID ensures that the conversation continues to be about the same thing.
+    * On the spacewalk side, the cobbler distro UIDs are stored together with a spacewalk org id, the distro's label text, the absolute path to the distro tree's root, the channel id in which the distros packages reside, an RHNKSTREETYPE reference indicating that the distribution is managed by Spacewalk, an RHNINSTALLTYPE reference indicating more specifically the type of installation tree the distro uses (e.g. RHEL_5 or Fedora_10), 
+    * Note also that if you're managing the distro from Spacewalk, the fact of the existence of two distros in Cobbler will be transparent to you.  If you happen to select Xen vertualization, the Xen version gets used, else the other. 
+    * [ add specific rpc calls ]
  * What happens when you create a Profile in the GUI, outline creation in spacewalk DB and XMLRPC calls into cobbler
- * When and why we create cobbler system records. 
+ * When you create a profile in the Spacewalk UI, the following are stored to the Spacewalk and Cobbler data stores (* denotes "stored in Oracle, not visible on profile details screen", ** denotes "stored in Cobbler via UID association")
+            * An RHNKSDATA record is created that records the following facts:
+                * The kickstart type (wizard, [] (??) ) *
+                * The spacewalk organization ID *
+                * The profile's label text
+                * Any comments associtated with the profile
+                * Whether or not the profile is active
+                * Whether or not the kickstart process should write output of custom post scripts to /root/ks-post.log
+                * Whether or not the kickstart process should write output of pre- scripts to /root/ks-pre.log
+                * Whether or not the kickstart process should write ks.cfg and all %include fragments to /root/
+                * The Cobbler UID for the profile
+                * Any additional arguments you might wish to pass to the anaconda (kickstart) kernel
+                * Any additional arguments you might wish to pass to the installed kernel
+                * Whether or not this profile should be considereed the default one for the organization
+        * XMLRPC
+ * When and why we create cobbler system records.
  * What happens when the user creates cobbler objects and when they show up in Spacewalk, and where these operations are limited
  * taskomatic's job in syncing changes from spacewalk to cobbler
  * taskomatic's job in syncing changes from cobbler to cobbler
