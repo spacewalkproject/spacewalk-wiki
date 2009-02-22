@@ -61,9 +61,9 @@ Looking at: hadoop-0.19.0
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  || IN_FEDORA ||
 || oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  ||  || IN_FEDORA ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  || IN_FEDORA ||
-|| slf4j-api-1.4.3.jar ||  ||  ||  || fabiand || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM, in progress - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
-|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || fabiand || http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || Build uses maven, NEEDS_RPM, in progress - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
-||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA (F11), [https://bugzilla.redhat.com/show_bug.cgi?id=481667 bz 481667] ||
+|| slf4j-api-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
+|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
+||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA ||
 
 
 
