@@ -11,13 +11,13 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 ||rhn_contact_monitoring|| || Gurjeet || ||
 ||rhn_customer_monitoring|| || Gurjeet || ||
 ||rhn_host_monitoring|| || Gurjeet || ||
-||rhnActionOverview|| || Gurjeet || ||
+||rhnActionOverview|| || Gurjeet || Had Oracle style join syntax ||
 ||rhnOrgChannelTreeView|| || Gurjeet || ||
 ||rhnSharedChannelView|| || Gurjeet || ||
 ||rhnSharedChannelTreeView|| || Gurjeet || ||
 ||rhnAvailableChannels|| || Gurjeet || ||
 ||rhnCDDevice|| || Gurjeet || ||
-||rhnChannelFamilyOverview|| || Gurjeet || ||
+||rhnChannelFamilyOverview|| || Gurjeet || Was using NVL(); replaced with COALESCE() ||
 ||rhnChannelFamilyPermissions|| || Gurjeet || ||
 ||rhnServerEntitlementView|| || Gurjeet || ||
 ||rhnChannelFamilyServerPhysical|| || Gurjeet || ||
@@ -32,40 +32,40 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 ||rhnHistoryView_refresh|| || Gurjeet || ||
 ||rhnHistoryView_packages|| || Gurjeet || ||
 ||rhnHistoryView_errata|| || Gurjeet || ||
-||rhnHistoryView|| || Gurjeet || ||
+||rhnHistoryView|| || Gurjeet || pending; contains functions ||
 ||rhnHWDevice|| || Gurjeet || ||
 ||rhnOrgErrata|| || Gurjeet || ||
 ||rhnOrgPackageOverview|| || Gurjeet || ||
-||rhnPaidOrgs|| || Gurjeet || ||
+||rhnPaidOrgs|| || Gurjeet || Was using the reserved word 'do' as table alias; Was using NVL(); replaced with COALESCE() ||
 ||rhnWebContactDisabled|| || Gurjeet || ||
 ||rhnPrivateErrataMail|| || Gurjeet || ||
 ||rhnServerEntitlementPhysical|| || Gurjeet || ||
 ||rhnServerEntitlementVirtual|| || Gurjeet || ||
 ||rhnServerErrataTypeView|| || Gurjeet || ||
 ||rhnServerFeaturesView|| || Gurjeet || ||
-||rhnServerGroupMembership|| || Gurjeet || ||
+||rhnServerGroupMembership|| || Gurjeet || Had Oracle style join syntax ||
 ||rhnUserManagedServerGroups|| || Gurjeet || ||
 ||rhnServerGroupOverview|| || Gurjeet || ||
 ||rhnServerGroupOVLiteHelper|| || Gurjeet || ||
 ||rhnServerNeededPackageView|| || Gurjeet || ||
 ||rhnServerOutdatedPackages|| || Gurjeet || ||
 ||rhnVisibleServerGroupMembers|| || Gurjeet || ||
-||rhnServerOverview|| || Gurjeet || ||
+||rhnServerOverview|| || Gurjeet || Was using NVL(); replaced with COALESCE() ||
 ||rhnStorageDevice|| || Gurjeet || ||
-||rhnUserActionOverview|| || Gurjeet || ||
+||rhnUserActionOverview|| || Gurjeet || Was using DECODE(), replaced with appropriate COALESCE() ||
 ||rhnUserAppletOverview|| || Gurjeet || ||
 ||rhnUserChannelFamilyPerms|| || Gurjeet || ||
 ||rhnUserChannelTreeView|| || Gurjeet || ||
 ||rhnUserAvailableChannels|| || Gurjeet || ||
 ||rhnUserChannel|| || Gurjeet || ||
-||rhnUserGroupMembership|| || Gurjeet || ||
+||rhnUserGroupMembership|| || Gurjeet || Had Oracle style join syntax ||
 ||rhnUserServerPermsDupes|| || Gurjeet || ||
 ||rhnVisibleServerGroup|| || Gurjeet || ||
 ||rhnUserTypeBase|| || Gurjeet || ||
-||rhnUserTypeArray|| || Gurjeet || Removed; since rhnUserTypeCommaView includes the required functionality ||
+||~~rhnUserTypeArray~~|| || Gurjeet || Removed; since rhnUserTypeCommaView includes the required functionality ||
 ||rhnUserTypeCommaView|| || Gurjeet || ||
-||rhnUsersInOrgOverview|| ||Gurjeet  || ||
-||rhnVisServerGroupMembership|| || Gurjeet || ||
+||rhnUsersInOrgOverview|| ||Gurjeet  || Was using NVL(); replaced with COALESCE() ||
+||rhnVisServerGroupMembership|| || Gurjeet || Had Oracle style join syntax ||
 ||rhnVisServerGroupOverviewLite|| || Gurjeet || ||
 ||rhnVisServerGroupOverview|| || Gurjeet || ||
 ||rhnWebContactEnabled|| || Gurjeet || ||
