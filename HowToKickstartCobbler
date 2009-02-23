@@ -18,7 +18,7 @@ Some new features include:
 == Quick Start Guide ==
 
  1. Some context
-    a. This document is intended primarily for Spacewalk users.  While the new kickstart capabilities rely heavily on Cobbler, and Cobbler itself is orders of magnitude more flexible as to the mechanics of how one goes about engineering a kickstarting environment, this document purposefully does not explore those avenues.  Rather, it provides a starting point from which someone can get started using Spacewalk with Cobbler.  If you want to explore Cobbler in more detail, visit its project site at https://fedorahosted.org/cobbler - it has an extensive wiki and a great deal of documentation available.
+    a. This document is intended primarily for Spacewalk users.  While Spacewalk's new kickstart capabilities are based on Cobbler, and Cobbler itself is offers orders of magnitude more flexibility as far as engineering a Linux installation environment is concerned, this document purposefully does not explore those many avenues.  Rather, it provides a starting point from which one can get started using Spacewalk with Cobbler.  If you want to explore Cobbler in more detail, visit [https://fedorahosted.org/cobbler its project site] - it has an extensive wiki and a great deal of documentation available.
     a. In addition, this document does not attempt to exhaustively describe all of the paths by which one *can* set up Spacewalk to work with Cobbler - rather (again) it provides a starting point and an approach that's known to work.
  1. Create a Distro
     a. Some prep work
