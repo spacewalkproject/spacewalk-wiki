@@ -72,3 +72,7 @@ yum install up2date
 {{{
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel>
 }}}
+
+= Solaris 8, 9 or 10 =
+
+See [wiki:Solaris Solaris Support].
