@@ -2,6 +2,9 @@
 
 Version 0.4 of Spacewalk adds siginificantly enhanced operating system installation capabilities as Spacewalk now includes integration with the [http://fedorahosted.org/cobbler Cobbler] Linux installation server.
 
+''Some context: This document is intended primarily for Spacewalk users.  While Spacewalk's new kickstart capabilities are based on Cobbler and Cobbler's flexibility in the engineering of a Linux installation environment stretches the imagination, this document purposefully does not explore those many avenues.  Rather, it provides a starting point from which one can get started using Spacewalk with Cobbler.  If you want to explore Cobbler in more detail, visit [https://fedorahosted.org/cobbler its project site] - it has an ''extensive'' wiki and a great deal of documentation available.  In addition, this document does not attempt to exhaustively describe all of the paths by which one can set up Spacewalk to work with Cobbler - rather (again) it provides a starting point and a relatively simple approach that's known to work.''
+
+
 Some new features include:
 
  * Installing and manage qemu/KVM based virtual machines and Xen fullvirt installs (previously, only Xen paravirt was supported)
@@ -17,9 +20,6 @@ Some new features include:
 
 == Quick Start Guide ==
 
- 1. Some context
-    a. This document is intended primarily for Spacewalk users.  While Spacewalk's new kickstart capabilities are based on Cobbler and Cobbler's flexibility in the engineering of a Linux installation environment stretches the imagination, this document purposefully does not explore those many avenues.  Rather, it provides a starting point from which one can get started using Spacewalk with Cobbler.  If you want to explore Cobbler in more detail, visit [https://fedorahosted.org/cobbler its project site] - it has an ''extensive'' wiki and a great deal of documentation available.
-    a. In addition, this document does not attempt to exhaustively describe all of the paths by which one can set up Spacewalk to work with Cobbler - rather (again) it provides a starting point and a relatively simple approach that's known to work.
  1. Create a Distro
     a. Some prep work
 	1. You're going to need some distribution isos and some loop mounts of them to get the ball rolling here, so...
