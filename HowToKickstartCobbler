@@ -80,16 +80,18 @@ These new features include:
             a. A fairly well documented example of how to set up a small kickstart lab with Spacewalk can be found [https://fedorahosted.org/spacewalk/wiki/kickstartingLabNetworkingSetup here]
         1. Bare metal machines can be kickstarted in one of two ways:
             a. * Note that this is an area where we've yet to add proper functionality to Spacewalk; at this point it's necessary for you to interact with the cobbler command line, and you'll see no indication of the existence of the system in question in the Spacewalk UI. We will most definitely remedy this in a future release.
-            a. From the PXE menu
+            a. Semi-automatically (interacting with the PXE menu)
                 1. Connect a machine to the network, assuming DHCP is available and next-server for the network is set to point to the Spacewalk server
-                1. Power on the machine.   The BIOS configuration should be set to boot over the network /first/ for maximum flexibility.  If not, select PXE boot from the menu.  Your choice.
+                1. Power on the machine.
+                    a. In most situations, a machine whose disks have no bootable operating system will eventually end up trying to boot over the network but:
+                    a. The BIOS configuration can be set to boot over the network /first/ (however see note below regarding Cobbler's "pxe_just_once" parameter).
                 1. Choose what profile you want to install from the PXE menu.
                 1. The box will finish installation automatically
             a. Fully automatically (with some prep work).
                 1. Get a command line on your spacewalk server
                 1. Run this cobbler command: '''cobbler system add --name <nameOfYourSystem> --mac <mac addr of netboot interface> --profile <a profile from 'cobbler profile list'>'''.   
-                1. Boot the machine.   The install will continue without any user interaction.
-            a. '''We need your input! '''  As we've gone down the path of incorporating cobbler's superior provisioning capabilities into Spacewalk, it's become clear that there are some areas where it's just not obvious what our priorities should be as we advance baremetal provisioning.   In all cases, this basically comes down to use cases and questions about workflow.  We've started a [wiki:bareMetalBrainstorming provisioning brainstorming page here] - please take some time to read and reflect and add your thoughts - it's a prety big topic and we'd like to ensure our development focus gets the biggest bang for the buck up front.
+                1. Boot the machine.   The machine's BIOS should be set such that a PXE bootstrap will occur.  The install will continue without any user interaction.
+            a. '''We need your input! '''  As we've gone down the path of incorporating cobbler's superior provisioning capabilities into Spacewalk, it's become clear that there are some areas where it's just not obvious what our priorities should be as we advance baremetal provisioning.   In all cases, this basically comes down to use cases and questions about workflow.  We've started a [wiki:bareMetalBrainstorming provisioning brainstorming page here] - please take some time to read and reflect and add your thoughts - it's a pretty big topic and we'd like to ensure our development focus gets the biggest bang for the buck up front.
         a. Kickstarting machines that already have an OS on them
 	   1. With koan:  koan --replace-self --server=cobbler.example.org [--profile=profile-name] [--system=system-name]
 	   1. In Spacewalk
@@ -109,7 +111,8 @@ If you use profiles set up in Spacewalk, virtual machines will be registered to 
 == Cobbler Templating Variables, Kernel Options, and how they can help ==
 
  * How to add variables to Kickstart Distributions, Profiles and Systems in the Spacewalk GUI
- * How to do the same in Cobbler and how to use these variables in a kickstart file
+ * How to do the same in Cobbler
+ * How to use these variables in a kickstart file
     * Read https://fedorahosted.org/cobbler/wiki/KickstartTemplating and https://fedorahosted.org/cobbler/wiki/KickstartSnippets
 
 == Upload your own Kickstart File ==
@@ -150,8 +153,8 @@ The following describes in some detail the interplay between the two systems as 
         * initrd set to the absolute path to the initrd for the distribution in question - calculated by spacewalk
         * kernel set to the absolute path to the kernel for the distribution in question - calculated by spacewalk
     * When Cobbler processes the creation request, it generates UIDs for the Xen and non-Xen distros in question.   As mentioned above, these UIDs form the tie that binds Spacewalk's '''Distribution''' to Cobbler's '''distro''' - as long as the two exist (and unless you explicitly disable the mechanism manually in Cobbler), these UIDs serve to uniquely identify each distro.
-    * On the Spacewalk side, the Cobbler distro UIDs are stored together with a Spacewalk Organization ID, the distributions's label text, the absolute path to the distribution tree's root (which, in the case of a Spacewalk managed distribution, is a web-space path to Spacewalk package management logic - ''not'' a plain old directory of files on disk), the channel id in which the distribution's  packages reside, an RHNKSTREETYPE reference indicating that the distribution is managed by Spacewalk, and an RHNINSTALLTYPE reference indicating more specifically the type of installation tree the distro uses (e.g. RHEL_5 or Fedora_10).
-    * Note that if you're managing the distro entirely from Spacewalk, the fact of the existence of the ''two'' distros (Xen and non) in Cobbler will be transparent to you.  If you happen to select Xen vertualization, the Xen version gets used, else the other.
+    * On the Spacewalk side, the Cobbler distro UIDs are stored together with a Spacewalk Organization ID, the distribution's label text, the absolute path to the distribution tree's root (which, in the case of a Spacewalk managed distribution, is a web-space path to Spacewalk package management logic - ''not'' a plain old directory of files on disk), the channel id in which the distribution's  packages reside, an RHNKSTREETYPE reference indicating that the distribution is managed by Spacewalk, and an RHNINSTALLTYPE reference indicating more specifically the type of installation tree the distro uses (e.g. RHEL_5 or Fedora_10).
+    * Note that if you're managing the distro entirely from Spacewalk, the fact of the existence of the ''two'' distros (Xen and non) in Cobbler will be transparent to you.  If you happen to select Xen virtualization, the Xen version gets used, else the other.
  * When you create a '''Kickstart Profile''' in the Spacewalk GUI, you make a corresponding '''profile''' in Cobbler:
         * One XMLRPC call is made to Cobbler to create a '''profile'''.  The call passes:
             * 
@@ -159,7 +162,7 @@ The following describes in some detail the interplay between the two systems as 
             * The kickstart type (wizard, unless you upload your own ks file - see below)
             * The spacewalk organization ID *
             * The profile's label text
-            * Any comments associtated with the profile
+            * Any comments associated with the profile
             * Whether or not the profile is active
             * Whether or not the kickstart process should write output of custom post scripts to /root/ks-post.log
             * Whether or not the kickstart process should write output of pre- scripts to /root/ks-pre.log
@@ -167,7 +170,7 @@ The following describes in some detail the interplay between the two systems as 
             * The Cobbler UID for the profile
             * Any additional arguments you might wish to pass to the anaconda (kickstart) kernel
             * Any additional arguments you might wish to pass to the installed kernel
-            * Whether or not this profile should be considereed the default one for the organization
+            * Whether or not this profile should be considered the default one for the organization
  * When and why we create cobbler system records.
  * What happens when the user creates cobbler objects and when they show up in Spacewalk, and where these operations are limited
  * taskomatic's job in syncing changes from spacewalk to cobbler
