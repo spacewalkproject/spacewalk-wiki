@@ -1,8 +1,8 @@
 == Introducing Spacewalk and Cobbler ==
 
-Version 0.4 of Spacewalk has improved installation abilities since Spacewalk now includes the [http://fedorahosted.org/cobbler Cobbler] install server.
+Version 0.4 of Spacewalk adds siginificantly enhanced operating system installation capabilities as Spacewalk now includes integration with the [http://fedorahosted.org/cobbler Cobbler] Linux installation server.
 
-These new features include:
+Some new features include:
 
  * Installing and manage qemu/KVM based virtual machines and Xen fullvirt installs (previously, only Xen paravirt was supported)
  * Installing guests to LVM backed storage
