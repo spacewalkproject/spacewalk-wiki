@@ -51,7 +51,7 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhncfg-5.2.0-0.src.rpm|| GPLv2 (According source in client/tools/rhncfg)|| || prad || in prep ||
 ||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| || jsherrill || in prep ||
 ||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || mmccune || in prep ||
-||spacewalk-koan-0.1.6-1.src.rpm  || GPLv2 (According source in client/tools/spacewalk-koan)  || || mmccune || in prep ||
+||spacewalk-koan-0.1.6-1.src.rpm  || GPLv2 (According source in client/tools/spacewalk-koan)  || [https://bugzilla.redhat.com/show_bug.cgi?id=481668 481668]|| mmccune || in prep ||
 ||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) ||  ||prad || in prep ||
 ||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || prad|| in prep ||
 ||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || prad || in prep ||
@@ -115,7 +115,6 @@ This packages need to be edited and then eventualy imported to Fedora:
  || rhn-java-sat-0.1-3.el5.src.rpm || || || ||
  || rhn-oracle-jdbc-1.0-13.el5.src.rpm || || || ||
  || rhns-0.1-3.src.rpm || || in prep || prad ||
-
  || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || || ||
  || rhn-satellite-config-5.2.0-1.el5.src.rpm || || || ||
  || rhn-satellite-schema-5.1.0-27.src.rpm || || || ||
