@@ -120,7 +120,6 @@ If you use profiles set up in Spacewalk, virtual machines will be registered to 
  * Details where these files are stored on the file system
 
 == How Integration Works ==
-'''note - don't count on the accuracy of this section yet - there is much construction dust here'''
 
 Spacewalk and Cobbler integration is uniquely flexible: relevant elements of object definition - distros, profiles, and systems - are stored across both system's databases.  Spacewalk's awareness of these objects is both by virtue of records keeps for and by itself that contain information germane to Spacewalk level management, and by virtue of a UID arrangement it maintains with Cobbler for each of these types of objects for access to Cobbler level detail.
 
