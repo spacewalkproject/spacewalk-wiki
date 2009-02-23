@@ -15,6 +15,7 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
    * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
    * ApiDocs -- Learn how to use our XMLRPC api to control your Spacewalk server.
    * ManagingFedoraSystems  -- Putting all the above together in a best practice guide for management of Fedora deployments.
+   * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
