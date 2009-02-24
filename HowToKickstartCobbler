@@ -157,9 +157,23 @@ The following describes in some detail the interplay between the two systems as 
     * Note that if you're managing the distro entirely from Spacewalk, the fact of the existence of the ''two'' distros (Xen and non) in Cobbler will be transparent to you.  If you happen to select Xen virtualization, the Xen version gets used, else the other.
  * When you create a '''Kickstart Profile''' in the Spacewalk GUI, you make a corresponding '''profile''' in Cobbler:
         * One XMLRPC call is made to Cobbler to create a '''profile'''.  The call passes:
-            * 
+            * Profile name
+            * Distro name
+            * Virtualization type
+            * Organization ID (in ks_meta as org)
+            * Virtual machine path (apropos virt type)
+            * Virtual machine bridge network device name
+            * Kickstart kernel path
+            * Kernel options for the kickstart operation itself
+            * Kernel options the machine should boot with after it's installed
+            * Redhat management key
+            * If there is virtualization, then also:
+                * Amount of ram vm should get
+                * Number of cpus vm should get
+                * Size of disk vm should get
         * On the Spacewalk side, an RHNKSDATA record is created that records the following facts:
             * The kickstart type (wizard, unless you upload your own ks file - see below)
+
             * The spacewalk organization ID *
             * The profile's label text
             * Any comments associated with the profile
