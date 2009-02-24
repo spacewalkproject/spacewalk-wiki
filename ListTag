@@ -172,7 +172,10 @@ public class ViewModifyPathsAction extends RhnAction implements Listable {
 
 
 == jsp side ==
-Here is an example of a complete jsp showing a very simple list with only one column (name):
+Here is an example of a complete jsp showing a very simple list with only one column (name).
+
+Note: the rl:listset tag will take care of creating the HTML form element for you. Any other form elements, such as hidden parameters, should be placed within the rl:listset tag.
+
 {{{
 #!text/html
 <%@ taglib uri="http://rhn.redhat.com/rhn" prefix="rhn" %>
