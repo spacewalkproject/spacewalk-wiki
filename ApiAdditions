@@ -63,7 +63,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  string package.getPackageUrl(string sessionKey, int packageId) || 0.2 || 5 || jsherrill || Done || Obtain the package download URL. ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel) || 0.3 || 3 || bbuckingham || done ||  ||
 ||  channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel, string startDate, string endDate) || 0.3 || 6 || bbuckingham || done ||  ||
-||  channel.software.uploadPackage(package) || 0.6 || 12 ||  ||  || This API provides the same basic function as rhnpush; therefore, it may be removed in a future update. ||
+||  channel.software.uploadPackage(package) || 0.6 || 12 ||  ||  || This API provides the same basic function as rhnpush; however, there is a desire from the community to include it. ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: configchannel''' ||  ||  ||  ||  ||  ||
 ||  configchannel.channelExists(sessionKey, string channelLabel) || 0.3 || || coec || done || returns 1 if the channel exists or 0 if it does not ||
