@@ -10,6 +10,11 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
 
 === Schema Management ===
 
+The ''common'' schema approach is the goal for managing the table/index DDL files.  The following describes how this can be accomplished 
+with a templating or ''schema generator'' tool that would be used at __build__ time to create the DB specific .sql files from the ''common' schema files.  The team has ''hand'' created the postgres .sql files
+as both a fall back and an example of what the end schema needs to be for postgres.  Should the ''common'' schema approach prove to be too complex or unmanageable in
+some way, we can always manage duplicate schema files.
+
  * /schema/spacewalk/rhnsat
     Contains DDL files.
  * /schema/spacewalk/rhnsat/common
@@ -43,10 +48,14 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
  * /schema/spacewalk/rhnsat/postgres/packages
     Contains only '''postgres''' specific ''forked'' package/package body creation files.
 
+See: [attachment:commonSchema.jpg Illustration]
+
 === Database Upgrade ===
 
 Example directories for upgrade listed to demonstrate concepts.  Having common upgrade DDL that is used to generate
 the DB specific upgrade DDL (like the table schema) may not be feasible but a worthy goal.  Any de duplication will be good.
+
+'''note:''' We need some work here.
 
  * /schema/spacewalk/upgrade/spacewalk_04-05
  * /schema/spacewalk/upgrade/spacewalk_04-05/common
