@@ -1,5 +1,9 @@
 [wiki:PostgreSqlProject Main Project Page]
 
+=== Application Infrastructure ===
+
+[wiki:PostgresAppInfrastructure Application Infrastructure]
+
 === Approach ===
 
 ''' DDL '''
