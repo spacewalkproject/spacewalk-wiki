@@ -85,6 +85,16 @@ Here are some sane values for the configure. Note that the port 8080 is used by 
  * rpm -e oracle-xe-univ
  * OracleXeSetup#Installation
 
+== Creating the spacewalk database user ==
+
+{{{
+# sqlplus 'sys/<password>@//localhost:1521/xe as sysdba'
+create user spacewalk identified by spacewalk default tablespace users;
+grant dba to spacewalk;
+quit
+}}}
+
+=== Alternatively, using WebUI ===
 
 Login to the webui and configure a user (if you don't have access to localhost see OracleXeWebAccessPrep):
 
