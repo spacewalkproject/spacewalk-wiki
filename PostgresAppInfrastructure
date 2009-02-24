@@ -1,1 +1,38 @@
 [wiki:PostgresTechnicalApproach Technical Approach Page]
+
+This page describes the work needed to facilitate using both Oracle and {{{PostgreSQL}}} within the Spacewalk application.
+
+=== Installation ===
+
+ * Driver packaging
+ * spacewalk-setup
+ * db-control
+
+=== Schema Management ===
+
+ * Common (table) Schema
+ * Common (view) Schema
+ * ''Forked'' (table) Schema
+ * ''Forked'' (view) Schema
+
+=== Database Upgrade ===
+
+ * Common upgrade scripts
+ * ''Forked'' upgrade scripts
+
+=== Java Stack ===
+
+ * Driver setup
+ * Handling ''forked'' queries.
+    * Hibernate queries
+    * Datasource queries
+
+=== Python Stack ===
+
+ * Driver setup
+ * Handling ''forked'' queries.
+
+=== Perl Stack ===
+
+ * Driver setup
+ * Handling ''forked'' queries.
