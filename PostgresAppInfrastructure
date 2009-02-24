@@ -93,7 +93,7 @@ the DB specific upgrade DDL (like the table schema) may not be feasible but a wo
 || I2 || Create ''postgres'' version of db-control || admin || || ||
 || I3.1 || Schema generator || schema || prototyped || jortel || most grammar supported ||
 || I3.2 || Change postgres NUMERIC to BIGINT || schema || || jortel || ||
-|| I3.3 || Should resize NUMBER(38) to something reasonable (like NUMBER(9) in oracle || schema || || jortel || need to run by community || nice to have ||
+|| I3.3 || Should resize NUMBER(38) to something reasonable ( like NUMBER(9) ) in oracle || schema || || jortel || need to run by community || nice to have ||
 || I4 || Add support for forked queries: hibernate || java || || jortel || ||
 || I5 || Add support for forked queries: datasource || java || || jortel || ||
 || I6 || Add support for named queries || python || ||  || ||
