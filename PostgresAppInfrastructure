@@ -10,44 +10,47 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
 
 === Schema Management ===
 
-==== Directories ====
-
  * /schema/spacewalk
- * /schema/spacewalk/common
+ * /schema/spacewalk/rhnsat/common
     Common schema.
- * /schema/spacewalk/common/tables
+ * /schema/spacewalk/rhnsat/common/tables
     Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
- * /schema/spacewalk/common/views
+ * /schema/spacewalk/rhnsat/common/views
     Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  In order for a view to be common, it must contain a query that works for all databases.
- * /schema/spacewalk/oracle
+ * /schema/spacewalk/rhnsat/oracle
     Contains both: generated (dynamic) '''oracle''' specific schema and ''forked'' (static) schema files.
- * /schema/spacewalk/oracle/tables
+ * /schema/spacewalk/rhnsat/oracle/tables
     Contains both: generated (dynamic) '''oracle''' specific table & index schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/oracle/views
+ * /schema/spacewalk/rhnsat/oracle/views
     Contains both: generated (dynamic) '''oracle''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/oracle/triggers
+ * /schema/spacewalk/rhnsat/oracle/triggers
     Contains only '''oracle''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/oracle/procs
+ * /schema/spacewalk/rhnsat/oracle/procs
     Contains only '''oracle''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/oracle/packages
+ * /schema/spacewalk/rhnsat/oracle/packages
     Contains only '''oracle''' specific ''forked'' package/package body creation files.
- * /schema/spacewalk/postgres
+ * /schema/spacewalk/rhnsat/postgres
     Contains both: generated (dynamic) '''postgres''' specific schema and ''forked'' (static) schema files.
- * /schema/spacewalk/postgres/tables
+ * /schema/spacewalk/rhnsat/postgres/tables
     Contains both generated (dynamic) '''postgres''' specific table & index schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/postgres/views
+ * /schema/spacewalk/rhnsat/postgres/views
     Contains both: generated (dynamic) '''postgres''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/postgres/triggers
+ * /schema/spacewalk/rhnsat/postgres/triggers
     Contains only '''postgres''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/postgres/procs
+ * /schema/spacewalk/rhnsat/postgres/procs
     Contains only '''postgres''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/postgres/packages
+ * /schema/spacewalk/rhnsat/postgres/packages
     Contains only '''postgres''' specific ''forked'' package/package body creation files.
 
 === Database Upgrade ===
 
- * Common upgrade scripts
- * ''Forked'' upgrade scripts
+Example directories for upgrade listed to demonstrate concepts.  Having common upgrade DDL that is used to generate
+the DB specific upgrade DDL (like the table schema) may not be feasible but a worthy goal.  Any de duplication will be good.
+
+ * /schema/spacewalk/upgrade/spacewalk_04-05
+ * /schema/spacewalk/upgrade/spacewalk_04-05/common
+ * /schema/spacewalk/upgrade/spacewalk_04-05/oracle
+ * /schema/spacewalk/upgrade/spacewalk_04-05/postgres
 
 === Java Stack ===
 
