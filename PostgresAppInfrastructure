@@ -10,6 +10,27 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
 
 === Schema Management ===
 
+==== Directories ====
+
+ * /schema/spacewalk
+ * /schema/spacewalk/common
+ * /schema/spacewalk/common/tables
+ * /schema/spacewalk/common/views
+ * /schema/spacewalk/oracle
+ * /schema/spacewalk/oracle/tables
+ * /schema/spacewalk/oracle/views
+ * /schema/spacewalk/oracle/triggers
+ * /schema/spacewalk/oracle/procs
+ * /schema/spacewalk/oracle/packages
+ * /schema/spacewalk/postgres
+ * /schema/spacewalk/postgres/tables
+ * /schema/spacewalk/postgres/views
+ * /schema/spacewalk/postgres/triggers
+ * /schema/spacewalk/postgres/procs
+ * /schema/spacewalk/postgres/packages
+
+==== Management ====
+
  * Common (table) Schema
        Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in a ''/common/tables'' directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  Eg: the oracle .sql files would be generated in ''/schema/spacewalk/'''oracle'''/tables'' and the postgres .sql files in the ''/schema/spacewalk/'''postgres'''/tables'' directory.  These DB specific directories would also contain ''static'' or ''forked'' files as well and would be checked into git.
  * Common (view) Schema
