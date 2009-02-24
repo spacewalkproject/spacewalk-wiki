@@ -10,7 +10,8 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
 
 === Schema Management ===
 
- * /schema/spacewalk
+ * /schema/spacewalk/rhnsat
+    Contains DDL files.
  * /schema/spacewalk/rhnsat/common
     Common schema.
  * /schema/spacewalk/rhnsat/common/tables
