@@ -14,37 +14,35 @@ This page describes the work needed to facilitate using both Oracle and {{{Postg
 
  * /schema/spacewalk
  * /schema/spacewalk/common
+    Common schema.
  * /schema/spacewalk/common/tables
+    Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
  * /schema/spacewalk/common/views
+    Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  In order for a view to be common, it must contain a query that works for all databases.
  * /schema/spacewalk/oracle
+    Contains both: generated (dynamic) '''oracle''' specific schema and ''forked'' (static) schema files.
  * /schema/spacewalk/oracle/tables
+    Contains both: generated (dynamic) '''oracle''' specific table & index schema files and ''forked'' (static) schema files.
  * /schema/spacewalk/oracle/views
+    Contains both: generated (dynamic) '''oracle''' specific view schema files and ''forked'' (static) schema files.
  * /schema/spacewalk/oracle/triggers
+    Contains only '''oracle''' specific ''forked'' trigger creation files.
  * /schema/spacewalk/oracle/procs
+    Contains only '''oracle''' specific ''forked'' stored procedure creation files.
  * /schema/spacewalk/oracle/packages
+    Contains only '''oracle''' specific ''forked'' package/package body creation files.
  * /schema/spacewalk/postgres
+    Contains both: generated (dynamic) '''postgres''' specific schema and ''forked'' (static) schema files.
  * /schema/spacewalk/postgres/tables
+    Contains both generated (dynamic) '''postgres''' specific table & index schema files and ''forked'' (static) schema files.
  * /schema/spacewalk/postgres/views
+    Contains both: generated (dynamic) '''postgres''' specific view schema files and ''forked'' (static) schema files.
  * /schema/spacewalk/postgres/triggers
+    Contains only '''postgres''' specific ''forked'' trigger creation files.
  * /schema/spacewalk/postgres/procs
+    Contains only '''postgres''' specific ''forked'' stored procedure creation files.
  * /schema/spacewalk/postgres/packages
-
-==== Management ====
-
- * Common (table) Schema
-       Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in a ''/common/tables'' directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  Eg: the oracle .sql files would be generated in ''/schema/spacewalk/'''oracle'''/tables'' and the postgres .sql files in the ''/schema/spacewalk/'''postgres'''/tables'' directory.  These DB specific directories would also contain ''static'' or ''forked'' files as well and would be checked into git.
- * Common (view) Schema
-       Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in a ''/common/views'' directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  Eg: the oracle .sql files would be generated in ''/schema/spacewalk/'''oracle'''/views'' and the postgres .sql files in the ''/schema/spacewalk/'''postgres'''/views'' directory.  These DB specific directories would also contain ''static'' or ''forked'' files as well and would be checked into git.
- * ''Forked'' (table) Schema
-    These DB specific directories would also contain ''static'' or ''forked'' files as well and would be checked into git.
- * ''Forked'' (view) Schema
-    These DB specific directories would also contain ''static'' or ''forked'' files as well and would be checked into git.
- * Triggers
-    The trigger .sql files will be ''static'' or ''forked'' files as well and would be checked into git in the DB specific directory.
- * Stored Procedures
-    The stored procedure .sql files will be ''static'' or ''forked'' files as well and would be checked into git in the DB specific directory.
- * Packages
-    The package .sql files will be ''static'' or ''forked'' files as well and would be checked into git in the DB specific directory.
+    Contains only '''postgres''' specific ''forked'' package/package body creation files.
 
 === Database Upgrade ===
 
