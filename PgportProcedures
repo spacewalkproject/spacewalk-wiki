@@ -6,20 +6,20 @@
 
 ||'''Procedure/Function'''||'''Assigned'''||'''Notes'''||
 ||adler32|| Farrukh || || 
-||channel_name_join|| || || 
+||channel_name_join|| || Discarded|| 
 ||create_first_org|| Gurjeet || Done || 
-||create_new_org|| || || 
-||create_new_user|| || || 
+||create_new_org|| Farrukh || || 
+||create_new_user|| Farrukh || || 
 ||create_pxt_session|| Gurjeet || Done || 
-||delete_channel|| || || 
-||delete_errata|| || || 
+||delete_channel|| Farrukh || || 
+||delete_errata|| Farrukh || || 
 ||delete_server_bulk|| Gurjeet || Done || 
-||delete_server|| || || 
-||does_user_have_role|| || || 
-||entitle_order|| || || 
-||id_join|| || || 
-||is_user_applicant|| || || 
-||label_join|| || || 
+||delete_server|| Farrukh || || 
+||does_user_have_role|| Farrukh || || 
+||entitle_order|| Farrukh || || 
+||id_join|| || Discarded || 
+||is_user_applicant|| Farrukh || || 
+||label_join|| || Discarded || 
 ||lookup_arch_type|| Gurjeet || Done || 
 ||lookup_cf_state|| Gurjeet || Done || 
 ||lookup_channel_arch|| Farrukh || || 
@@ -46,7 +46,7 @@
 ||lookup_tag|| Farrukh || || 
 ||lookup_transaction_package|| || || 
 ||lookup_virt_sub_level|| || || 
-||name_join|| || || 
+||name_join|| || Discarded|| 
 ||new_user_postop|| || || 
 ||pxt_session_cleanup|| || || 
 ||queue_errata|| Gurjeet || Done || 
