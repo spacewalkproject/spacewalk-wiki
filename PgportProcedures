@@ -6,7 +6,7 @@
 
 ||'''Procedure/Function'''||'''Assigned'''||'''Notes'''||
 ||adler32|| Farrukh || || 
-||channel_name_join|| || Discarded|| 
+||channel_name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||create_first_org|| Gurjeet || Done || 
 ||create_new_org|| Farrukh || || 
 ||create_new_user|| Farrukh || || 
@@ -17,9 +17,9 @@
 ||delete_server|| Farrukh || || 
 ||does_user_have_role|| Farrukh || || 
 ||entitle_order|| Farrukh || This procedure has 2 OUT parameter, but luckily it's not being anywhere in the app so skipping this one|| 
-||id_join|| || Discarded || 
+||id_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||is_user_applicant|| Farrukh || || 
-||label_join|| || Discarded || 
+||label_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||lookup_arch_type|| Gurjeet || Done || 
 ||lookup_cf_state|| Gurjeet || Done || 
 ||lookup_channel_arch|| Farrukh || || 
@@ -46,7 +46,7 @@
 ||lookup_tag|| Farrukh || || 
 ||lookup_transaction_package|| || || 
 ||lookup_virt_sub_level|| || || 
-||name_join|| || Discarded|| 
+||name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure || 
 ||new_user_postop|| Farrukh || || 
 ||pxt_session_cleanup|| || || 
 ||queue_errata|| Gurjeet || Done || 
