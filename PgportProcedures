@@ -59,3 +59,26 @@
 ||sequence_nextval|| Gurjeet || Done || 
 ||set_ks_session_history_message|| || || 
 ||truncateCacheQueue|| Gurjeet || Done ||
+
+
+[[BR]]
+[[BR]]
+
+'''Workaround for OUT parameters'''
+[[BR]]
+For tackling OUT parameters we can go with one of the below possibilities:
+
+1. Use functions for postgres and use RETURN keyword instead of OUT to obtain the desired results. This would require changes in application and every procedure call (with OUT parameters) would have two code paths; one for Oracle and One for Postgres in a fashion similar to below:
+
+    if Oracle then
+            Oracle procedure call statement
+    else if postgres
+           Postgres function call statement
+   end if;
+
+And more changes might also be required to handle/take care of the function return value.
+
+
+2. As mentioned above there is only one OUT parameter in all the procedures and they can easily be converted to functions with return values to get the results of OUT parameter. We can change those procedures for both Oracle and Postgres to behave the same way i.e. using RETURN values. This would provide similar calling code from application for both Oracle and Postgres. This would/might also require changes in the application but according to my understanding the changes would be minimal as compared to CASE1 and the application won't require separate codes for calling Oracle and Postgers functions.
+
+We have opted for second approach.
