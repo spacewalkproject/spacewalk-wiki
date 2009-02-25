@@ -225,3 +225,7 @@ occurances in schema: 16; find ./ -type f | grep -v .html | xargs grep -iwE 'cha
   {quote}{quote} or NULL?
 
  * One time anonymous block usage in new_user_postop.sql; handle it.
+
+ *"RANK() over partition by" function not supported in PG8.1.
+   eg:-SELECT CP.package_id, CP.channel_id,
+               RANK() OVER (PARTITION BY P.name_id, P.package_arch_id ORDER BY PE.evr DESC) AS DEPTH
