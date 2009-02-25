@@ -72,6 +72,13 @@ FROM (SELECT last_name, first_name
 
 14. TODO : Mention port from sysdate to CURRENT_TIMESTAMP, and research their differences (formatting etc.).
 
+15.SELECT DISTINCT, ORDER BY expressions must appear in select list in Postgres but not required in oracle,hence we have write the query in this manner
+
+create table t( a int );
+select distinct a from t order by upper( a || '-' ); -- fails on PG
+select a from ( select distinct a, upper( a || '-' ) from t order by upper( a || '-' ) ) s; -- works on both Ora and PG
+
+
 = Tablespaces =
 
  Talespaces are supported in Postgres, but they do not mean exactly the same thing as in Oracle. There is a GUC variable in Postgres that allows us to set a global tablespace (at system or session level), and any object being created that does not have a TABLESPACE clause gets created in that {quote}global{quote} tablespace.
@@ -226,6 +233,6 @@ occurances in schema: 16; find ./ -type f | grep -v .html | xargs grep -iwE 'cha
 
  * One time anonymous block usage in new_user_postop.sql; handle it.
 
- *"RANK() over partition by" function not supported in PG8.1.
+ * "RANK() over partition by" function not supported in PG8.1.
    eg:-SELECT CP.package_id, CP.channel_id,
                RANK() OVER (PARTITION BY P.name_id, P.package_arch_id ORDER BY PE.evr DESC) AS DEPTH
