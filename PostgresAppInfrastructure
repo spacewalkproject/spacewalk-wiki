@@ -65,25 +65,23 @@ the DB specific upgrade DDL (like the table schema) may not be feasible but a wo
 === Java Stack ===
 
  * Driver setup
-    The ''/etc/rhn/rhn.conf'' file needs to have the proper driver specified (see spacewalk-setup).
+   * The ''/etc/rhn/rhn.conf'' file needs to have the proper driver specified (see spacewalk-setup).
  * Handling ''forked'' queries.
-    Queries are already resolved by name in the Java stack.  So, the work to be done here is to provide for ''forked'' queries using a namespace prefix.  Common queries would retain the ''plain'' name as the do today.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).
-    * Hibernate queries
-    * Datasource queries
+   * Queries are already resolved by name in the Java stack.  So, the work to be done here is to provide for ''forked'' queries using a namespace prefix.  Common queries would retain the ''plain'' name as the do today.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).
+     * Hibernate queries
+     * Datasource queries
 
 === Python Stack ===
 
- * Driver setup
-    The ''/etc/rhn/rhn.conf'' file needs to have the proper driver specified (see spacewalk-setup).
  * Handling ''forked'' queries.
-    Queries are __not__ currently resolved by name in the Python stack.  So, the work to be done here is to add this capability into rhnSQL and provide for ''forked'' queries using a namespace prefix.  An approach could be to add a python ''package'' containing one or more python ''modules'' containing a dictionary of named queries.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).  Unlike the Java stack, __only__ the ''forked'' queries would be added to the dictionaries and the calling code modified to perform the lookup.
+   * Queries are __not__ currently resolved by name in the Python stack.  So, the work to be done here is to add this capability into rhnSQL and provide for ''forked'' queries using a namespace prefix.  An approach could be to add a python ''package'' containing one or more python ''modules'' containing a dictionary of named queries.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).  Unlike the Java stack, __only__ the ''forked'' queries would be added to the dictionaries and the calling code modified to perform the lookup.
 
 === Perl Stack ===
 
  * Driver setup
-    The ''/etc/rhn/rhn.conf'' file needs to have the proper driver specified (see spacewalk-setup).
+   * Perl DB code must be modified to know to instantiate Oracle or PostgreSQL driver using settings in rhn.conf.
  * Handling ''forked'' queries.
-    Queries are already __mostly__ resolved by name in the Perl stack.  So, the work to be done here is to provide for ''forked'' queries using a namespace prefix.  Common queries would retain the ''plain'' name as the do today.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).  Queries embedded in the code will have to be moved to using the lookup mechanism.
+   * Queries are already __mostly__ resolved by name in the Perl stack.  So, the work to be done here is to provide for ''forked'' queries using a namespace prefix.  Common queries would retain the ''plain'' name as the do today.  ''Forked'' queries would have their name qualified by a prefixed matching the database ''type'' property defined in the ''/etc/rhn/rhn.conf'' file.  An oracle specific query named "listAllChannels" when forked would be qualified as: "oracle:listAllChannels" and "postgres:listAllChannels".  This qualification would be transparent to the caller.  The underlying query resolution mechanism would first try to resolve as a common query then try the DB specific prefix.  The hunting order can be reversed for performance if it turns out there are more forked queries then common (although this would be contrary to our goal).  Queries embedded in the code will have to be moved to using the lookup mechanism.
 
 
 === Tasks ===
@@ -100,3 +98,4 @@ the DB specific upgrade DDL (like the table schema) may not be feasible but a wo
 || I7 || Move embedded SQL to named queries || python || ||  || ||
 || I8 || Add support for forked queries: datasource || perl || || shughes :) || ||
 || I9 || Move embedded SQL to datasource || perl || || shughes :) || ||
+|| I10 || RPM Packaging || rpm || || || ||
