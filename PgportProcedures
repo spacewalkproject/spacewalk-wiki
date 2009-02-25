@@ -47,7 +47,7 @@
 ||lookup_transaction_package|| || || 
 ||lookup_virt_sub_level|| || || 
 ||name_join|| || Discarded|| 
-||new_user_postop|| || || 
+||new_user_postop|| Farrukh || || 
 ||pxt_session_cleanup|| || || 
 ||queue_errata|| Gurjeet || Done || 
 ||queue_server|| || || 
