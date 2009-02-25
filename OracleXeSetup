@@ -89,9 +89,9 @@ Here are some sane values for the configure. Note that the port 8080 is used by 
 
 {{{
 # sqlplus 'sys/<password>@//localhost:1521/xe as sysdba'
-create user spacewalk identified by spacewalk default tablespace users;
-grant dba to spacewalk;
-quit
+SQL> create user spacewalk identified by spacewalk default tablespace users;
+SQL> grant dba to spacewalk;
+SQL> quit;
 }}}
 
 === Alternatively, using WebUI ===
