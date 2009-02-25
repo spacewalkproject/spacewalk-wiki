@@ -54,7 +54,7 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 
 === Install: SELinux Policy ===
 
-If you are running with SELinux enforcing then install the following packages from the Spacewalk repo before running {{{oracle-xe configure}}}:
+If you are running with SELinux enabled then install the following packages from the Spacewalk repo before running {{{oracle-xe configure}}}:
 
 {{{
 # yum install oracle-xe-selinux oracle-instantclient-selinux
