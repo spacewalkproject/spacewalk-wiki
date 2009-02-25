@@ -58,6 +58,17 @@ Targeted version of PostgreSQL is 8.1+
  * Sample database - (jortel)
  * Setup testing environment - (jortel)
 
+|| Tables & Indexes || 99% || [wiki:PgportTables Details] ||
+|| Views || 94% || [wiki:PgportViews Details] ||
+|| Triggers || 30% || ||
+|| Procedures || 90% || [wiki:PgportProcedures Details] ||
+|| Packages || 1% ||
+|| Application infrastructure || 30% || [wiki:PostgresAppInfrastructure Details] ||
+|| Query tagging || 0% || ||
+|| Query migration:java || 0%|| ||
+|| Query migration:python || 0%|| ||
+|| Query migration:perl || 0%|| ||
+
 [PostgresIssues Project Issues]
 
 [PostgresTasks Project Tasks]
