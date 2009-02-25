@@ -19,7 +19,7 @@ You will also need a client. For this you should download the Oracle Instant Cli
 
 === SELinux ===
 
-If you want to run with SELinux enabled, run the following two commands to create the group and user for the oracle-xe package:
+If you want to run with SELinux enabled, run the following two commands to create the group and user for the oracle-xe-univ package, prior to installing said package:
 
 {{{
 # /usr/sbin/groupadd -r dba
