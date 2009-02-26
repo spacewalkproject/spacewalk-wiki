@@ -415,6 +415,20 @@ git stash apply stash@{0}
 
  * Install '''gitk''' for a brutally ugly yet still rather useful graphical tool for doing the same thing.
 
+ * Keep track of what branch you are in by looking at your prompt. Update your prompt as follows:
+{{{
+PS1="[\u@\h \W\$(git-branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$ "
+}}}
+
+Here is what you will see when you cd into a git repository:
+{{{
+[speedy@gonzalez spacewalk{master}]$
+}}}
+If you chdir to a non git repository, you're prompt will look as normal:
+{{{
+[speedy@gonzalez ~]$ 
+}}}
+
 == Building Test RPMs ==
 
 Here is an example workflow where we are working on a spec file and testing with {{{build.py --test --srpm}}}.
