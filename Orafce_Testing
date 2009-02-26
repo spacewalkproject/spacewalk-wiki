@@ -100,7 +100,7 @@ Example:-select decode(1,1,null::int)
 
 * Grouping is not a part of  Orafce Feature but still mentioning here .
 
-* Still Orafce 3.0.0 testing pending aganist PG8.1.
+* Orafce 3.0.0 testing done aganist PG8.1 . currently one has to update the orafce 3.0.0 with CVS to run against PG8.1
 
 
 
