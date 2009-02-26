@@ -78,12 +78,14 @@ create table t( a int );
 select distinct a from t order by upper( a || '-' ); -- fails on PG
 select a from ( select distinct a, upper( a || '-' ) from t order by upper( a || '-' ) ) s; -- works on both Ora and PG
 
-Tagging examples for queries:
+'''Tagging examples for queries:'''
 
 The numbers 1,2,3,4 after PGPORT specifies what class of changes are required.
 
-SAMPLE 1:
+'''SAMPLE 1:'''
 
+
+{{{
 <!-- PGPORT_2:AS Keyword-->
 
 <!-- PGPORT_3:DECODE()  -->
@@ -109,9 +111,14 @@ ORDER BY CM.method_name
   </query>
 
 </mode>
+}}}
 
-SAMPLE 2:
 
+
+'''SAMPLE 2:'''
+
+
+{{{
 <!-- PGPORT_2:AS Keyword -->
 
 <!-- PGPORT_3:DECODE() -->
@@ -145,9 +152,14 @@ SELECT WC.id contact_id,
    AND CM.method_type_id = MT.recid (+)
 
 ORDER BY WC.login, CM.method_name
+}}}
 
-SAMPLE 3:
 
+
+'''SAMPLE 3:'''
+
+
+{{{
 <!-- PGPORT_1:NO Change -->
 
 SELECT CG.recid, 
@@ -179,6 +191,8 @@ SELECT CG.recid,
    AND CGM.contact_group_id = CG.recid
 
    AND CM.recid = :method_id
+
+}}}
 
 = Tablespaces =
 
