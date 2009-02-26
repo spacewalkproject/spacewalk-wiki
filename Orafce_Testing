@@ -63,7 +63,7 @@ Reported in Feburary http://lists.pgfoundry.org/pipermail/orafce-general/2009-Fe
 
 === Test Cases ===
 
-The Test cases file has been uploaded in this link ,the sql file name is "orafce_testcases_version0.1.sql"  .whatever the test-cases which has been left out and new feature(undiscovered) will be added in version 0.2.
+The Test cases file has been uploaded in this link ,the sql file name is "orafce_testcases_version0.1.sql"
 
 
 === Limitation ===
