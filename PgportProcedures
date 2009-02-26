@@ -50,14 +50,14 @@
 ||new_user_postop|| Farrukh || || 
 ||pxt_session_cleanup|| || || 
 ||queue_errata|| Gurjeet || Done || 
-||queue_server|| || || 
-||rhn_install_org_satellites|| || || 
-||rhn_install_satellite|| || || 
-||rhn_prepare_install|| || || 
-||rhn_synch_probe_state|| || || 
+||queue_server|| Farrukh || || 
+||rhn_install_org_satellites|| Farrukh || || 
+||rhn_install_satellite|| Farrukh || || 
+||rhn_prepare_install|| Farrukh || || 
+||rhn_synch_probe_state|| Farrukh || || 
 ||sequence_currval|| Gurjeet || Done || 
 ||sequence_nextval|| Gurjeet || Done || 
-||set_ks_session_history_message|| || || 
+||set_ks_session_history_message|| Farrukh|| || 
 ||truncateCacheQueue|| Gurjeet || Done ||
 
 
