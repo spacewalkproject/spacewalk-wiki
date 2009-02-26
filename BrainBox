@@ -3,7 +3,6 @@
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
 
  * HelpSystem to make help a bit easier to work with.
- * NevraIssue Handle package with the same EVRA within the same org
  * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client
@@ -21,7 +20,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * finish migrating [RemainingPxtPages perl pages] to Java, and remove the perl stack entirely.
  * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
  * [wiki:Deb_support_in_spacewalk add support for deb packages/Debian]
- * add support for external repositories so that Spacewalk doesn't have to have a local copy of all RPMs, just retrieves the headers in the same way yum does and can direct subscribed clients to download directly from the 3rd party repo.
+ * add support for external repositories so that Spacewalk doesn't have to have a local copy of all RPMs, just retrieves the headers in the same way yum does and can direct subscribed clients to download directly from the 3rd party repo. (Proxy already does this. What is the use case that YUM covers differently?)
  * add support for Jumpstarting Solaris
  * IPv6
    * note that Oracle libraries use gethostbyaddr and friends, so may not be usable under IPv6
@@ -29,7 +28,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Provide a tree structure with a depth greater than 1 for the Software Channel Subscriptions
  * Provide an embedded editor for the pre/post Kickstart scripts that does syntax highlighting (something like http://www.cdolivet.net/editarea/) - Patch submitted to spacewalk-devel mailing list
  * Provide a way to add arbitrary metadata to any given repository. Like modifyrepo does in createrepo.
- * [wiki:MySQL_support MySQL as database backend] 
+ * [wiki:MySQL_support MySQL as database backend]
  * allow system.scheduleScriptRun to work with scripts that have been saved in the database. This way scripts can be re-used and later maybe even attached to triggers like configchannel actions.
  * [wiki:Container_support Containers in Spacewalk]
  * Replace the current "Custom Build Content Management System" with one that is Open Source (GPL'd) like [http://www.alfresco.com Alfresco].  This could replace the legacy PERL/RPC scheme with a more current Javascript/REST scheme.  Alfresco is willing to contribute to this development as there is a need for an Alfresco "Network" and we don't want to reinvent the wheel.  If you would like to contact me: lee.faus at alfresco dot com.
