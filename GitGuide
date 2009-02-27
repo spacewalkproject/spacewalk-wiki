@@ -431,8 +431,8 @@ If you chdir to a non git repository, you're prompt will look as normal:
 
 == Building Test RPMs ==
 
-Here is an example workflow where we are working on a spec file and testing with {{{build.py --test --srpm}}}.
-For readability we will name different SHA1 number as SHA1-A, SHA1-B, ... You can find build.py in the rel-eng/bin directory of your git checkout, and it can be called relatively or added to your path.
+Here is an example workflow where we are working on a spec file and testing with {{{tito build --test --srpm}}}.
+For readability we will name different SHA1 number as SHA1-A, SHA1-B, ... You can find tito in the rel-eng/bin directory of your git checkout, and it can be called relatively or added to your path.
 
 When we begin, the tree has SHA1-A
 
@@ -448,14 +448,14 @@ Review the changes, then do some testing. You find error,for example, rpmlint co
 
 The tree now has SHA1-C
 
- {{{$ build.py --test --srpm}}}
+ {{{$ tito build --test --srpm}}}
 
 We still find errors, re-edit the spec file.
 
  {{{$ git commit -a -m 'I hate you rpmlint'}}}
 
 The tree now has SHA1-D
- {{{$ build.py --test --srpm}}}
+ {{{$ tito build --test --srpm}}}
 
 Again, still more errors, edit the spec file.
 
@@ -463,7 +463,7 @@ Again, still more errors, edit the spec file.
 
 The tree now has SHA1-E
 
- {{{$ build.py --test --srpm}}}
+ {{{$ tito build --test --srpm}}}
 
 Finally, {{{rpmlint}}} is silent. We will reject all our previous commits,
 but they are still in git you may in following steps do in {{{gitk 'Update'}}} to see what happened
@@ -486,7 +486,7 @@ Now we have one commit including all of the changes:
 
 Confirm this is what we wanted and we are ready to merge and push
 
- {{{$ build.py --test --srpm}}}
+ {{{$ tito build --test --srpm}}}
 
 
 == Other Resources ==
