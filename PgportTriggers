@@ -16,11 +16,11 @@
 ||rhnKickstartSession_triggers|| Farrukh || Done || 
 ||rhnPrivateChannelFamily_triggers|| Farrukh || Done || 
 ||rhnServerChannel_triggers|| Farrukh || Done || 
-||rhnServerGroupMembers_email_triggers|| Farrukh || || 
-||rhnServerGroupMembers_triggers|| Farrukh || || 
-||rhnServerGroup_triggers|| Farrukh|| || 
-||rhnTransactionOperation_triggers|| Farrukh || || 
-||rhnTransaction_triggers|| Farrukh || || 
+||rhnServerGroupMembers_email_triggers|| Farrukh || Done || 
+||rhnServerGroupMembers_triggers|| Farrukh || Done || 
+||rhnServerGroup_triggers|| Farrukh|| Done || 
+||rhnTransactionOperation_triggers|| Farrukh || Done || 
+||rhnTransaction_triggers|| Farrukh || Done || 
 ||rhnUserGroupMembers_email_triggers|| Farrukh || || 
 ||rhnUserGroupMembers_triggers|| Farrukh || || 
 ||rhnUserGroup_triggers|| Farrukh || || 
