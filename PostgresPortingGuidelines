@@ -79,7 +79,7 @@ select distinct a from t order by upper( a || '-' ); -- fails on PG
 select a from ( select distinct a, upper( a || '-' ) from t order by upper( a || '-' ) ) s; -- works on both Ora and PG
 
 
-[wiki:"Tagging examples for queries" Tagging examples for queries]
+[wiki:QueryTaggingExamples Tagging examples for queries]
 
 
 
