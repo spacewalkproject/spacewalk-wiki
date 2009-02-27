@@ -60,7 +60,7 @@ Targeted version of PostgreSQL is 8.1+
 
 || Tables & Indexes || 99% || [wiki:PgportTables Details] ||
 || Views || 94% || [wiki:PgportViews Details] ||
-|| Triggers || 30% || ||
+|| Triggers || 30% || [wiki:PgportTriggers Details] ||
 || Procedures || 90% || [wiki:PgportProcedures Details] ||
 || Packages || 1% ||
 || Application infrastructure || 30% || [wiki:PostgresAppInfrastructure Details] ||
