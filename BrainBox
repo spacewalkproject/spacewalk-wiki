@@ -22,7 +22,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [wiki:Deb_support_in_spacewalk add support for deb packages/Debian]
  * add support for external repositories so that Spacewalk doesn't have to have a local copy of all RPMs, just retrieves the headers in the same way yum does and can direct subscribed clients to download directly from the 3rd party repo. (Proxy already does this. What is the use case that YUM covers differently?)
  * add support for Jumpstarting Solaris
- * IPv6
+ * [https://bugzilla.redhat.com/show_bug.cgi?id=487666 IPv6]
    * note that Oracle libraries use gethostbyaddr and friends, so may not be usable under IPv6
  * make db-control usable with Oracle XE
  * Provide a tree structure with a depth greater than 1 for the Software Channel Subscriptions
