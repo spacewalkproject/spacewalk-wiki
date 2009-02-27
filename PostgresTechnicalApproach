@@ -19,21 +19,21 @@ Functions will need to be categorized as easy and hard and then worked on by peo
 
 3k queries and ~63 views must be studied and perhaps modified.
 
-Queries and views (Non-DDL) must be managed differently.  Queries and views will fall into four categories (lower numbers are better):
-        1. work unchanged in both Oracle and Postgres
-        2. can be rewritten to work on both databases, e.g. ANSI joins, CURRENT_TIMESTAMP, CASE instead of decode(), COALESCE instead of NVL()
-        3. (same) but requires db changes, e.g. add compatibility functions from Orafce
-        4. need to create a Postgres-specific version of the query
-
+Queries and views (Non-DDL) must be managed differently.  Queries and views will fall into five categories (lower numbers are better):
+        1. Work unchanged in both Oracle and Postgres
+        2. Simple changes to the query eg: adding as keyword to specify alias name.
+        3. Requires db changes, e.g. add compatibility functions from Orafce eg: decode(), NVL()
+        4. Query rewrite which will work for both db's eg: ANSI joins
+        5. Need to create a Postgres-specific version of the query eg: CURRENT_TIMESTAMP
 This analysis is going to require major effort so it is best to handle it in stages:
 
-        1.  Mark all queries and views via SQL comments?  '-- PGPORT myfile.pl:535 ?'.  This gives each query a unique identifier so it can be referenced in later stages
+        1.  Mark all queries and views via SQL comments?  '-- PGPORT_1:condition ?'.  This gives each query a unique identifier so it can be referenced in later stages
         2.  Make wholesale changes to minimize incompatibility, like sysdate
         3.  Change all comment question marks to one of the four values listed above
         4.  Create a GIT branch
         5.  Rewrite # 2 queries to # 1
         6.  Add db changes and change # 3 queries to # 1
-        7.  Develop and implement a system to allow for Postgres-specific versions of # 4 queries
+        7.  Develop and implement a system to allow for Postgres-specific versions of # 5 queries
 
 
 ''' Installation '''
