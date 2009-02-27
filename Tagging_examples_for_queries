@@ -1,4 +1,9 @@
-The numbers 1,2,3,4 after PGPORT specifies what class of changes are required.
+To understand what the tagging codes mean and how to use them, follow the below link:
+
+[wiki:PostgresTechnicalApproach Tagging queries]
+
+
+
 
 '''SAMPLE 1:'''
 
