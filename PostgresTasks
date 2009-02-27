@@ -55,6 +55,9 @@ Then proceed with the migration.  Also, please note any items of interest in the
 
 [wiki:PgportProcedures Stored Procedure Migration]
 
+=== Trigger Migration ===
+[wiki:PgportTriggers Trigger Migration status]
+
 === Notes ===
  ![1]:: 
  RHEL-4 includes postgres 7.4 and RHEL-5 includes postgres 8.1.  The latest postgres is 8.3.8.
