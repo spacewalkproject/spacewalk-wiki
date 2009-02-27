@@ -5,17 +5,17 @@
 == Triggers to Migrate ==
 
 ||'''Trigger'''||'''Assigned'''||'''Notes'''||
-||rhnActionStatus_triggers|| || || 
-||rhnChannelCloned_triggers|| || || 
-||rhnChannelPackage_triggers|| || || 
-||rhnChannel_triggers|| || || 
-||rhnConfigChannel_triggers|| || || 
-||rhnConfigRevision_triggers|| || || 
-||rhnErrataPackage_triggers|| || || 
-||rhnErrata_triggers|| || || 
-||rhnKickstartSession_triggers|| || || 
-||rhnPrivateChannelFamily_triggers|| || || 
-||rhnServerChannel_triggers|| || || 
+||rhnActionStatus_triggers|| Farrukh || || 
+||rhnChannelCloned_triggers|| Farrukh || || 
+||rhnChannelPackage_triggers|| Farrukh || || 
+||rhnChannel_triggers|| Farrukh || || 
+||rhnConfigChannel_triggers|| Farrukh || || 
+||rhnConfigRevision_triggers|| Farrukh || || 
+||rhnErrataPackage_triggers|| Farrukh || || 
+||rhnErrata_triggers|| Farrukh || || 
+||rhnKickstartSession_triggers|| Farrukh || || 
+||rhnPrivateChannelFamily_triggers|| Farrukh || || 
+||rhnServerChannel_triggers|| Farrukh || || 
 ||rhnServerGroupMembers_email_triggers|| || || 
 ||rhnServerGroupMembers_triggers|| || || 
 ||rhnServerGroup_triggers|| || || 
