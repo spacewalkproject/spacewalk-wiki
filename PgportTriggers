@@ -1,0 +1,33 @@
+[wiki:PostgresTasks Tasks Page]
+
+'''Note''': The below list of triggers includes the ones under src/schema/spacewalk/rhnsat/tables and they do not include the onces which were inside the associated table ddl file; they have already been migrated.
+
+== Triggers to Migrate ==
+
+||'''Trigger'''||'''Assigned'''||'''Notes'''||
+||rhnActionStatus_triggers|| || || 
+||rhnChannelCloned_triggers|| || || 
+||rhnChannelPackage_triggers|| || || 
+||rhnChannel_triggers|| || || 
+||rhnConfigChannel_triggers|| || || 
+||rhnConfigRevision_triggers|| || || 
+||rhnErrataPackage_triggers|| || || 
+||rhnErrata_triggers|| || || 
+||rhnKickstartSession_triggers|| || || 
+||rhnPrivateChannelFamily_triggers|| || || 
+||rhnServerChannel_triggers|| || || 
+||rhnServerGroupMembers_email_triggers|| || || 
+||rhnServerGroupMembers_triggers|| || || 
+||rhnServerGroup_triggers|| || || 
+||rhnTransactionOperation_triggers|| || || 
+||rhnTransaction_triggers|| || || 
+||rhnUserGroupMembers_email_triggers|| || || 
+||rhnUserGroupMembers_triggers|| || || 
+||rhnUserGroup_triggers|| || || 
+||rhnUserInfo_triggers|| || || 
+||rhnUserServerGroupPerms_triggers|| || || 
+||rhnVirtualInstance_triggers|| || || 
+||web_contact_triggers|| || || 
+||web_customer_triggers|| || || 
+||web_user_contact_permission_triggers|| || || 
+
