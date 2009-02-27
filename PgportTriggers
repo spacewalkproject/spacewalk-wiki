@@ -5,29 +5,29 @@
 == Triggers to Migrate ==
 
 ||'''Trigger'''||'''Assigned'''||'''Notes'''||
-||rhnActionStatus_triggers|| Farrukh || || 
-||rhnChannelCloned_triggers|| Farrukh || || 
-||rhnChannelPackage_triggers|| Farrukh || || 
-||rhnChannel_triggers|| Farrukh || || 
-||rhnConfigChannel_triggers|| Farrukh || || 
-||rhnConfigRevision_triggers|| Farrukh || || 
-||rhnErrataPackage_triggers|| Farrukh || || 
-||rhnErrata_triggers|| Farrukh || || 
-||rhnKickstartSession_triggers|| Farrukh || || 
-||rhnPrivateChannelFamily_triggers|| Farrukh || || 
-||rhnServerChannel_triggers|| Farrukh || || 
-||rhnServerGroupMembers_email_triggers|| || || 
-||rhnServerGroupMembers_triggers|| || || 
-||rhnServerGroup_triggers|| || || 
-||rhnTransactionOperation_triggers|| || || 
-||rhnTransaction_triggers|| || || 
-||rhnUserGroupMembers_email_triggers|| || || 
-||rhnUserGroupMembers_triggers|| || || 
-||rhnUserGroup_triggers|| || || 
-||rhnUserInfo_triggers|| || || 
-||rhnUserServerGroupPerms_triggers|| || || 
-||rhnVirtualInstance_triggers|| || || 
-||web_contact_triggers|| || || 
-||web_customer_triggers|| || || 
-||web_user_contact_permission_triggers|| || || 
+||rhnActionStatus_triggers|| Farrukh || Done || 
+||rhnChannelCloned_triggers|| Farrukh || Done || 
+||rhnChannelPackage_triggers|| Farrukh || Done || 
+||rhnChannel_triggers|| Farrukh || Done || 
+||rhnConfigChannel_triggers|| Farrukh || Done || 
+||rhnConfigRevision_triggers|| Farrukh || Done || 
+||rhnErrataPackage_triggers|| Farrukh || Done || 
+||rhnErrata_triggers|| Farrukh || Done || 
+||rhnKickstartSession_triggers|| Farrukh || Done || 
+||rhnPrivateChannelFamily_triggers|| Farrukh || Done || 
+||rhnServerChannel_triggers|| Farrukh || Done || 
+||rhnServerGroupMembers_email_triggers|| Farrukh || || 
+||rhnServerGroupMembers_triggers|| Farrukh || || 
+||rhnServerGroup_triggers|| Farrukh|| || 
+||rhnTransactionOperation_triggers|| Farrukh || || 
+||rhnTransaction_triggers|| Farrukh || || 
+||rhnUserGroupMembers_email_triggers|| Farrukh || || 
+||rhnUserGroupMembers_triggers|| Farrukh || || 
+||rhnUserGroup_triggers|| Farrukh || || 
+||rhnUserInfo_triggers|| Farrukh || || 
+||rhnUserServerGroupPerms_triggers|| Farrukh || || 
+||rhnVirtualInstance_triggers|| Farrukh || || 
+||web_contact_triggers|| Farrukh || || 
+||web_customer_triggers|| Farrukh || || 
+||web_user_contact_permission_triggers|| Farrukh || || 
 
