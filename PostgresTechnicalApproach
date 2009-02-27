@@ -25,6 +25,9 @@ Queries and views (Non-DDL) must be managed differently.  Queries and views will
         3. Requires db changes, e.g. add compatibility functions from Orafce eg: decode(), NVL()
         4. Query rewrite which will work for both db's eg: ANSI joins
         5. Need to create a Postgres-specific version of the query eg: CURRENT_TIMESTAMP
+
+[wiki:QueryTaggingExamples Tagging examples for queries]
+
 This analysis is going to require major effort so it is best to handle it in stages:
 
         1.  Mark all queries and views via SQL comments?  '-- PGPORT_1:condition ?'.  This gives each query a unique identifier so it can be referenced in later stages
