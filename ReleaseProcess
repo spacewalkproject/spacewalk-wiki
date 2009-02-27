@@ -80,18 +80,18 @@ can do
 	tito build --srpm
 }}}
 which will create .src.rpm, this time named with the version-release
-of the latest tag for that package. You should build this .src.rpm
-in koji. Note that for koji, the command is
-{{{
-	tito build --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate
-        tito build --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate
-}}}
-so that the {{{%{dist}}}} tag is populated correctly.
+of the latest tag for that package. 
 
-tito will call koji with "build --nowait" as arguments. If you need something more explicit you can do:
+To submit a build to whatever build system is configured for your current git repository and branch:
 {{{
-	tito build --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
-        tito build --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
+	tito build --release
+}}}
+
+In spacewalk.git this build srpms with appropriate dist tags and submit them to Koji tags as configured in global.build.py.props.
+
+tito will call koji with "build --nowait" as arguments by default. If you need something more explicit you can add to ~/.spacewalk-build-rc:
+{{{
+KOJI_OPTIONS=-c ~/.koji/koji-spacewalk.conf build --nowait
 }}}
 
 
