@@ -40,12 +40,12 @@ the ~/.spacewalk-ca.cert file can be found linked at the bottom of this page
 
 == Get your packages tagged, get your packages built ==
 
-The build.py script can be used to tag and build packages from git. It can be found in rel-eng/bin/. (good candidate to add to your $PATH, although the script can be called directly)
+The tito script can be used to tag and build packages from git. It can be found in rel-eng/bin/. (good candidate to add to your $PATH, although the script can be called directly)
 
 To have a particular package in a Spacewalk release, we should know from which
 commit we plan to take the code. To to that, I suggest you do
 {{{
-        build.py --srpm --test
+        tito build--srpm --test
 }}}
 and try to create test .src.rpm package.
 
@@ -61,7 +61,7 @@ any problems that appear, do more commits, revert commits, etc.
 When you are happy with the .src.rpm, you should run:
 {{{
         git pull
-        build.py --tag-release
+        tito build --tag-release
 }}}
 
 and tag your HEAD with name-version-release, and push that commit and
@@ -77,21 +77,21 @@ tag to the upstream repository. Run
 After you have your tag in the upstream repository, you
 can do
 {{{
-	build.py --srpm
+	tito build --srpm
 }}}
 which will create .src.rpm, this time named with the version-release
 of the latest tag for that package. You should build this .src.rpm
 in koji. Note that for koji, the command is
 {{{
-	build.py --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate
-        build.py --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate
+	tito build --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate
+        tito build --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate
 }}}
 so that the {{{%{dist}}}} tag is populated correctly.
 
-build.py will call koji with "build --nowait" as arguments. If you need something more explicit you can do:
+tito will call koji with "build --nowait" as arguments. If you need something more explicit you can do:
 {{{
-	build.py --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
-        build.py --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
+	tito build --srpm --dist='.el5' --koji=dist-5E-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
+        tito build --srpm --dist='.fc10' --koji=dist-f10-sw-0.5-candidate --koji-opts="-c ~/.koji/spacewalk-config build --nowait"
 }}}
 
 
