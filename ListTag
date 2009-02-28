@@ -58,7 +58,7 @@ public class SystemGroupListAction extends RhnAction implements Listable {
             HttpServletRequest request,
             HttpServletResponse response) {
 
-        ListRhnSetHelper helper = new ListRhnSetHelper(request,RhnSetDecl.SYSTEM_GROUPS)
+        ListRhnSetHelper helper = new ListRhnSetHelper(this, request,RhnSetDecl.SYSTEM_GROUPS)
         helper.execute();
         if(helper.isDispatched()) {
             //handle the dispatch action (like removing groups etc)
