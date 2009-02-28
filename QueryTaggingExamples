@@ -116,3 +116,22 @@ SELECT CG.recid,
    AND CM.recid = :method_id
 
 }}}
+
+'''SAMPLE 4:'''
+{{{
+<!-- PGPORT_3:DECODE(),AS Keyword,Rewrite Join -->
+SELECT WC.id contact_id,
+       WC.login contact_login,
+       CM.recid method_id,
+       CM.method_name method_name,
+       DECODE( MT.method_type_name, 
+         'Email', CM.email_address, 
+         'Pager', CM.pager_email) method_target
+  FROM rhn_contact_methods CM, 
+       web_contact WC,
+       rhn_method_types MT
+ WHERE WC.org_id = :org_id
+   AND CM.contact_id (+) = WC.id
+   AND CM.method_type_id = MT.recid (+)
+ORDER BY WC.login, CM.method_name
+}}}
