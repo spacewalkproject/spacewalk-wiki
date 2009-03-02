@@ -8,7 +8,7 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
    * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
    * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
    * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
-   * [UploadFedoraContent Upload Fedora Content] -- Spacewalk was originally intended for RHEL rpm's, here's how to make it work with Fedora.
+   * [UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
    * [KickstartDistro Create kickstart trees ] -- Use Spacewalk to kickstart Fedora, CentOS, and RHEL
    * [HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
    * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
