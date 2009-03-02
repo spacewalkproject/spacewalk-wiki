@@ -356,17 +356,17 @@
 ||spacewalk/monitoring/NOCpulsePlugins/Windows/Disk.pm||||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/ClientConnectivity.pm||||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/NetworkService/FTP.pm||||||||||
-||spacewalk/monitoring/MessageQueue/SNMPQueue.pm||||||||||
-||spacewalk/java/scripts/java-map-hibernate-table.pl||||||||||
-||spacewalk/java/scripts/api/managechannel.py||||||||||
-||spacewalk/java/scripts/api/config.py||||||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/listcustomkeys.jsp||||||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/createkey.jsp||||||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/configuration/channel/filecreate.jsp||||||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/common/fragments/configuration/channel/create.jspf||||||||||
+||spacewalk/monitoring/MessageQueue/SNMPQueue.pm||Sudhakar||NO QUERY||||||
+||spacewalk/java/scripts/java-map-hibernate-table.pl||Sudhakar||Done||||||
+||spacewalk/java/scripts/api/managechannel.py||Sudhakar||NO QUERY||||||
+||spacewalk/java/scripts/api/config.py||Sudhakar||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/listcustomkeys.jsp||Sudhakar||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/createkey.jsp||Sudhakar||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/configuration/channel/filecreate.jsp||Sudhakar||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/common/fragments/configuration/channel/create.jspf||Sudhakar||NO QUERY||||||
 ||spacewalk/java/code/webapp/WEB-INF/nav/action_detail.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/frontend/taglibs/test/sitenav-test.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/frontend/nav/test/sitenav.xml||Sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/frontend/taglibs/test/sitenav-test.xml||Sudhakar||NO QUERY||||||
+||spacewalk/java/code/src/com/redhat/rhn/frontend/nav/test/sitenav.xml||Sudhakar||NO QUERY||||||
 ||spacewalk/java/code/src/com/redhat/rhn/domain/token/ActivationKey.hbm.xml||Sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/domain/task/Task.hbm.xml||Sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/domain/session/WebSessionImpl.hbm.xml||Sudhakar||||||||
@@ -378,30 +378,30 @@
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/package_search_elaborators.xml||Sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_elaborators.xml||Sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/database_queries.xml||Sudhakar||||||||
-||spacewalk/contrib/rhn-tool||Sudhakar||||||||
-||spacewalk/client/tools/rhnpush/rhnpush.py||Sudhakar||||||||
-||spacewalk/client/tools/rhn-virtualization/virtualization/support.py||Sudhakar||||||||
-||spacewalk/client/tools/rhn-virtualization/virtualization/start_domain.py||Sudhakar||||||||
-||spacewalk/client/tools/osad/src/rhnLockfile.py||Sudhakar||||||||
-||spacewalk/client/tools/osad/src/jabber_lib.py||Sudhakar||||||||
-||spacewalk/client/tools/osad/src/_ConfigParser.py||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/up2date||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/smart/interfaces/text/interface.py||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interface.py||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/smart/commands/upgrade.py||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/smart/commands/priority.py||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/mkinstalldirs||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/ltmain.sh||Sudhakar||||||||
+||spacewalk/contrib/rhn-tool||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/rhnpush/rhnpush.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/rhn-virtualization/virtualization/support.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/rhn-virtualization/virtualization/start_domain.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/osad/src/rhnLockfile.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/osad/src/jabber_lib.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/tools/osad/src/_ConfigParser.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/up2date||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/interfaces/text/interface.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interface.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/commands/upgrade.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/commands/priority.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/mkinstalldirs||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/ltmain.sh||Sudhakar||NO QUERY||||||
 ||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/install-sh ||Sudhakar|||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/cvs-clean.pl||Sudhakar||||||||
-||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||||||||
-||spacewalk/client/solaris/rhnclient/rhn/client/translate.py||Sudhakar||||||||
-||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||||||||
-||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/tui.py||Sudhakar||||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhncli.py||Sudhakar||||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnLockfile.py||Sudhakar||||||||
-||spacewalk/client/rhel/rhn-client-tools/src/firstboot/rhn_create_profile_gui.py||Sudhakar||||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/cvs-clean.pl||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||NO QUERY||||||
+||spacewalk/client/solaris/rhnclient/rhn/client/translate.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/tui.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhncli.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnLockfile.py||Sudhakar||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/firstboot/rhn_create_profile_gui.py||Sudhakar||NO QUERY||||||
 ||spacewalk/backend/server/test/unit-test/test_rhnServerGroup.py||Sudhakar||||||||
 ||spacewalk/backend/server/test/test_leak3.py||Sudhakar||||||||
 ||spacewalk/backend/server/test/test_leak2.py||Sudhakar||||||||
