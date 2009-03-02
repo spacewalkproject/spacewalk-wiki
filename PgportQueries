@@ -422,8 +422,6 @@
 ||spacewalk/backend/server/handlers/xmlrpc/queue.py||Vikram||||||||
 ||spacewalk/backend/server/apacheHandler.py||Vikram||||||||
 ||spacewalk/backend/server/action/packages.py||Vikram||||||||
-||spacewalk/backend/satellite_tools/xmlSource.py||Vikram||||||||
-||spacewalk/backend/satellite_tools/xmlDiskDumper.py||Vikram||||||||
 ||spacewalk/backend/satellite_tools/test/test-store_rhnCryptoKey.py||Vikram||||||||
 ||spacewalk/backend/satellite_tools/satsync.py||Vikram||||||||
 ||spacewalk/backend/satellite_tools/satComputePkgHeaders.py||Vikram||||||||
