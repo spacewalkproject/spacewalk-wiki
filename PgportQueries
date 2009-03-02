@@ -356,65 +356,65 @@
 ||spacewalk/monitoring/NOCpulsePlugins/Windows/Disk.pm||||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/ClientConnectivity.pm||||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/NetworkService/FTP.pm||||||||||
-||spacewalk/monitoring/MessageQueue/SNMPQueue.pm||Sudhakar||NO QUERY||||||
+||spacewalk/monitoring/MessageQueue/SNMPQueue.pm||Sudhakar||Done||NO QUERY||||||
 ||spacewalk/java/scripts/java-map-hibernate-table.pl||Sudhakar||Done||||||
-||spacewalk/java/scripts/api/managechannel.py||Sudhakar||NO QUERY||||||
-||spacewalk/java/scripts/api/config.py||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/listcustomkeys.jsp||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/createkey.jsp||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/configuration/channel/filecreate.jsp||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/webapp/WEB-INF/pages/common/fragments/configuration/channel/create.jspf||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/webapp/WEB-INF/nav/action_detail.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/frontend/taglibs/test/sitenav-test.xml||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/src/com/redhat/rhn/frontend/nav/test/sitenav.xml||Sudhakar||NO QUERY||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/token/ActivationKey.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/task/Task.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/session/WebSessionImpl.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/server/ServerSnapshot.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/rhnpackage/PackageSource.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/org/usergroup/UserGroupImpl.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/org/OrgImpl.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/kickstart/KickstartGuestInstallLog.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/package_search_elaborators.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_elaborators.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/database_queries.xml||Sudhakar||||||||
-||spacewalk/contrib/rhn-tool||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/rhnpush/rhnpush.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/rhn-virtualization/virtualization/support.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/rhn-virtualization/virtualization/start_domain.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/osad/src/rhnLockfile.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/osad/src/jabber_lib.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/tools/osad/src/_ConfigParser.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/up2date||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/smart/interfaces/text/interface.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interface.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/smart/commands/upgrade.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/smart/commands/priority.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/mkinstalldirs||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/ltmain.sh||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/install-sh ||Sudhakar|||||||
-||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/cvs-clean.pl||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||NO QUERY||||||
-||spacewalk/client/solaris/rhnclient/rhn/client/translate.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/tui.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhncli.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnLockfile.py||Sudhakar||NO QUERY||||||
-||spacewalk/client/rhel/rhn-client-tools/src/firstboot/rhn_create_profile_gui.py||Sudhakar||NO QUERY||||||
-||spacewalk/backend/server/test/unit-test/test_rhnServerGroup.py||Sudhakar||||||||
-||spacewalk/backend/server/test/test_leak3.py||Sudhakar||||||||
-||spacewalk/backend/server/test/test_leak2.py||Sudhakar||||||||
-||spacewalk/backend/server/test/test_leak.py||Sudhakar||||||||
-||spacewalk/backend/server/test/test_dcoracle2.py||Sudhakar||||||||
-||spacewalk/backend/server/test/test-cx_Oracle-memleak.py||Sudhakar||||||||
-||spacewalk/backend/server/test/TestServer.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnUser.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnServer/server_token.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnServer/server_kickstart.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnSQL/sql_sequence.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnSQL/sql_base.py||Sudhakar||||||||
-||spacewalk/backend/server/rhnSQL/driver_cx_Oracle.py||Sudhakar||||||||
+||spacewalk/java/scripts/api/managechannel.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/scripts/api/config.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/listcustomkeys.jsp||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/systems/customkey/createkey.jsp||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/configuration/channel/filecreate.jsp||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/pages/common/fragments/configuration/channel/create.jspf||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/webapp/WEB-INF/nav/action_detail.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/frontend/taglibs/test/sitenav-test.xml||Sudhakar||Done||NO QUERY||||||
+||spacewalk/java/code/src/com/redhat/rhn/frontend/nav/test/sitenav.xml||Sudhakar||NO QUERY||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/token/ActivationKey.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/task/Task.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/session/WebSessionImpl.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/server/ServerSnapshot.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/rhnpackage/PackageSource.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/org/usergroup/UserGroupImpl.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/org/OrgImpl.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/kickstart/KickstartGuestInstallLog.hbm.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/package_search_elaborators.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_elaborators.xml||Sudhakar||Done||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/database_queries.xml||Sudhakar||Done||||||||
+||spacewalk/contrib/rhn-tool||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/tools/rhnpush/rhnpush.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/tools/rhn-virtualization/virtualization/support.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/tools/rhn-virtualization/virtualization/start_domain.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/tools/osad/src/rhnLockfile.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/tools/osad/src/jabber_lib.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/tools/osad/src/_ConfigParser.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/up2date||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/interfaces/text/interface.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interface.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/commands/upgrade.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/smart/commands/priority.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/mkinstalldirs||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/ltmain.sh||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/install-sh ||Sudhakar||Done|||||||
+||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/cvs-clean.pl||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/solaris/rhnclient/rhn/client/translate.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/tui.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhncli.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnLockfile.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/client/rhel/rhn-client-tools/src/firstboot/rhn_create_profile_gui.py||Sudhakar||Done||NO QUERY||||||
+||spacewalk/backend/server/test/unit-test/test_rhnServerGroup.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/test_leak3.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/test_leak2.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/test_leak.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/test_dcoracle2.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/test-cx_Oracle-memleak.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/test/TestServer.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnUser.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnServer/server_token.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnServer/server_kickstart.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnSQL/sql_sequence.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnSQL/sql_base.py||Sudhakar||Done||||||||
+||spacewalk/backend/server/rhnSQL/driver_cx_Oracle.py||Sudhakar||Done||||||||
 ||spacewalk/backend/server/rhnMapping.py||Vikram||||||||
 ||spacewalk/backend/server/rhnAction.py||Vikram||||||||
 ||spacewalk/backend/server/importlib/test/test_backendOracle.py||Vikram||||||||
