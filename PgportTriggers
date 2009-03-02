@@ -21,13 +21,13 @@
 ||rhnServerGroup_triggers|| Farrukh|| Done || 
 ||rhnTransactionOperation_triggers|| Farrukh || Done || 
 ||rhnTransaction_triggers|| Farrukh || Done || 
-||rhnUserGroupMembers_email_triggers|| Farrukh || || 
-||rhnUserGroupMembers_triggers|| Farrukh || || 
-||rhnUserGroup_triggers|| Farrukh || || 
-||rhnUserInfo_triggers|| Farrukh || || 
-||rhnUserServerGroupPerms_triggers|| Farrukh || || 
-||rhnVirtualInstance_triggers|| Farrukh || || 
-||web_contact_triggers|| Farrukh || || 
-||web_customer_triggers|| Farrukh || || 
-||web_user_contact_permission_triggers|| Farrukh || || 
+||rhnUserGroupMembers_email_triggers|| Farrukh || Done || 
+||rhnUserGroupMembers_triggers|| Farrukh || Done || 
+||rhnUserGroup_triggers|| Farrukh || Done || 
+||rhnUserInfo_triggers|| Farrukh || Done || 
+||rhnUserServerGroupPerms_triggers|| Farrukh || Done || 
+||rhnVirtualInstance_triggers|| Farrukh || Done || 
+||web_contact_triggers|| Farrukh || Done || 
+||web_customer_triggers|| Farrukh || Done || 
+||web_user_contact_permission_triggers|| Farrukh || Done || 
 
