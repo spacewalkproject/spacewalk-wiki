@@ -32,7 +32,7 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 ||rhnHistoryView_refresh|| done || Gurjeet || ||
 ||rhnHistoryView_packages|| done || Gurjeet || ||
 ||rhnHistoryView_errata|| done || Gurjeet || ||
-||rhnHistoryView|| Pending || Gurjeet || contains functions ||
+||rhnHistoryView|| done || Gurjeet || File contains functions ||
 ||rhnHWDevice|| done || Gurjeet || ||
 ||rhnOrgErrata|| done || Gurjeet || ||
 ||rhnOrgPackageOverview|| done || Gurjeet || ||
@@ -48,7 +48,7 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 ||rhnServerGroupOverview|| done || Gurjeet || ||
 ||rhnServerGroupOVLiteHelper|| done || Gurjeet || ||
 ||rhnServerNeededPackageView|| done || Gurjeet || ||
-||rhnServerOutdatedPackages|| Pending || Gurjeet || Uses EVR_T ||
+||rhnServerOutdatedPackages|| done || Gurjeet || Uses EVR_T, and uses Oracle style outer join syntax ||
 ||rhnVisibleServerGroupMembers|| done || Gurjeet || ||
 ||rhnServerOverview|| done || Gurjeet || Was using NVL(); replaced with COALESCE() ||
 ||rhnStorageDevice|| done || Gurjeet || ||
@@ -56,7 +56,7 @@ This table __is__ ordered by dependency so working ''top down'' will probably wo
 ||rhnUserAppletOverview|| done || Gurjeet || ||
 ||rhnUserChannelFamilyPerms|| done || Gurjeet || ||
 ||rhnUserChannelTreeView|| done || Gurjeet || ||
-||rhnUserAvailableChannels|| Pending || Gurjeet || ||
+||rhnUserAvailableChannels|| done || Gurjeet || commented in main.sql since uses rhn_channel package's member function ||
 ||rhnUserChannel|| done || Gurjeet || ||
 ||rhnUserGroupMembership|| done || Gurjeet || Had Oracle style join syntax ||
 ||rhnUserServerPermsDupes|| done || Gurjeet || ||
