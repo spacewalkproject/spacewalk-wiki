@@ -1,16 +1,16 @@
 === Queries to tag ===
 
 
-||'''Query'''||'''Assigned'''||'''Notes'''||
+||'''Query'''||'''Assigned'''||'''Status'''||'''Notes'''||
 
 ||spacewalk/documentation/db-schema/spacewalk-0.1/fk-indexes.sql||not-needed||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Server.pm||Gurjeet||||||||
-||spacewalk/web/modules/rhn/RHN/DB/User.pm||Gurjeet||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Scheduler.pm||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Server.pm||Gurjeet||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/User.pm||Gurjeet||done||no queries||||
+||spacewalk/web/modules/rhn/RHN/DB/Scheduler.pm||Gurjeet||done||no queries||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||sudhakar||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/config_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||Gurjeet||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Channel.pm||Tushar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml||||||||||
