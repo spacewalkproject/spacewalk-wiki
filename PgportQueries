@@ -7,8 +7,8 @@
 ||spacewalk/web/modules/rhn/RHN/DB/Server.pm||Gurjeet||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/User.pm||Gurjeet||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Scheduler.pm||||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||sudhakar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/config_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Org.pm||||||||||
