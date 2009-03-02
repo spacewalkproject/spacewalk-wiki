@@ -394,10 +394,10 @@
 ||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/ltmain.sh||Sudhakar||Done||NO QUERY||||||
 ||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/install-sh ||Sudhakar||Done|||||||
 ||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/cvs-clean.pl||Sudhakar||Done||NO QUERY||||||
-||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/solaris/smartpm/MANIFEST.in||Sudhakar||DONE||NO QUERY||||||
 ||spacewalk/client/solaris/rhnclient/rhn/client/translate.py||Sudhakar||Done||NO QUERY||||||
-||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||NO QUERY||Done||||||
-||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||NO QUERY||Done||||||
+||spacewalk/client/rhel/yum-rhn-plugin/man/rhnplugin.8||Sudhakar||DONE||NO QUERY||||||
+||spacewalk/client/rhel/rhnlib/rhn/nonblocking.py||Sudhakar||DONE||NO QUERY||||||
 ||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/tui.py||Sudhakar||Done||NO QUERY||||||
 ||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhncli.py||Sudhakar||Done||NO QUERY||||||
 ||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnLockfile.py||Sudhakar||Done||NO QUERY||||||
