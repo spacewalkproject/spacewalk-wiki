@@ -114,7 +114,7 @@
 ||spacewalk/backend/server/test/unit-test/test_misc_functions.py||Tushar||done||||||
 ||spacewalk/backend/server/rhnChannel.py||Tushar||done||||||
 ||spacewalk/backend/server/importlib/test/test_blob_update.py||Tushar||done||||||
-||spacewalk/backend/server/importlib/backendLib.py||Tushar||done||no queries||||
+||spacewalk/backend/server/importlib/backendLib.py||Tushar||done||||||
 ||spacewalk/web/modules/sniglets/Sniglets/Probes.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/rhn/RHN/Session.pm||Tushar||done||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Notes.pm||Tushar||done||||||
