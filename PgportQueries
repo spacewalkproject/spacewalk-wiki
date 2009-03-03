@@ -11,13 +11,13 @@
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/config_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||Gurjeet||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Channel.pm||Tushar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Channel.pm||Tushar||done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml|| Farrukh ||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Package.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Errata.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Kickstart.pm||Tushar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Package.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Errata.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Kickstart.pm||Tushar||done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Errata_queries.xml||Sudhakar||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Channel_queries.xml||Sudhakar||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/system_search.xml||Sudhakar||||||||
@@ -115,14 +115,14 @@
 ||spacewalk/backend/server/rhnChannel.py||||||||||
 ||spacewalk/backend/server/importlib/test/test_blob_update.py||||||||||
 ||spacewalk/backend/server/importlib/backendLib.py||||||||||
-||spacewalk/web/modules/sniglets/Sniglets/Probes.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/Session.pm||Tushar||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Notes.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Message.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Kickstart/Session.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/CustomInfo_queries.xml||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/CryptoKey.pm||Tushar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/ConfigFile.pm||Tushar||||||||
+||spacewalk/web/modules/sniglets/Sniglets/Probes.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/rhn/RHN/Session.pm||Tushar||done||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Notes.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Message.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Kickstart/Session.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/CustomInfo_queries.xml||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/CryptoKey.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/ConfigFile.pm||Tushar||done||||||
 ||spacewalk/web/html/applications/rhn-proxy/5.3/install-rhn-proxy.xml||||||||||
 ||spacewalk/web/html/applications/rhn-proxy/5.2/install-rhn-proxy.xml||||||||||
 ||spacewalk/web/html/applications/rhn-proxy/5.1/install-rhn-proxy.xml||||||||||
