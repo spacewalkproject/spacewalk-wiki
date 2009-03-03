@@ -8,56 +8,56 @@
 ||adler32|| Farrukh || || 
 ||channel_name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||create_first_org|| Gurjeet || Done || 
-||create_new_org|| Farrukh || || 
-||create_new_user|| Farrukh || || 
+||create_new_org|| Farrukh || Done || 
+||create_new_user|| Farrukh || Done || 
 ||create_pxt_session|| Gurjeet || Done || 
-||delete_channel|| Farrukh || || 
+||delete_channel|| Farrukh || Done || 
 ||delete_errata|| Farrukh || || 
 ||delete_server_bulk|| Gurjeet || Done || 
 ||delete_server|| Farrukh || || 
-||does_user_have_role|| Farrukh || || 
+||does_user_have_role|| Farrukh || Done || 
 ||entitle_order|| Farrukh || This procedure has 2 OUT parameter, but luckily it's not being anywhere in the app so skipping this one|| 
 ||id_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
-||is_user_applicant|| Farrukh || || 
+||is_user_applicant|| Farrukh || Done || 
 ||label_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||lookup_arch_type|| Gurjeet || Done || 
 ||lookup_cf_state|| Gurjeet || Done || 
-||lookup_channel_arch|| Farrukh || || 
-||lookup_client_capability|| Farrukh || || 
-||lookup_config_filename|| Farrukh || || 
-||lookup_config_info|| Farrukh || || 
-||lookup_cve|| Farrukh|| || 
-||lookup_erratafile_type|| Farrukh || || 
-||lookup_evr|| Farrukh || || 
+||lookup_channel_arch|| Farrukh || Done || 
+||lookup_client_capability|| Farrukh || Done || 
+||lookup_config_filename|| Farrukh || Done || 
+||lookup_config_info|| Farrukh || Done || 
+||lookup_cve|| Farrukh|| Done || 
+||lookup_erratafile_type|| Farrukh || Done || 
+||lookup_evr|| Farrukh || Done || 
 ||lookup_feature_type|| Gurjeet || Done || 
-||lookup_first_matching_cf|| Farrukh || || 
-||lookup_package_arch|| Farrukh || || 
-||lookup_package_capability|| Farrukh || || 
-||lookup_package_delta|| Farrukh || || 
+||lookup_first_matching_cf|| Farrukh || Done || 
+||lookup_package_arch|| Farrukh || Done || 
+||lookup_package_capability|| Farrukh || Done || 
+||lookup_package_delta|| Farrukh || Done || 
 ||lookup_package_key_type|| Gurjeet || Done || 
-||lookup_package_name|| Farrukh || || 
-||lookup_package_nevra|| Farrukh || || 
+||lookup_package_name|| Farrukh || Done || 
+||lookup_package_nevra|| Farrukh || Done || 
 ||lookup_package_provider|| Gurjeet || Done || 
-||lookup_server_arch|| Farrukh || || 
-||lookup_sg_type|| Farrukh || || 
-||lookup_snapshot_invalid_reason|| Farrukh || || 
-||lookup_source_name|| Farrukh || || 
-||lookup_tag_name|| Farrukh || || 
-||lookup_tag|| Farrukh || || 
-||lookup_transaction_package|| || || 
-||lookup_virt_sub_level|| || || 
+||lookup_server_arch|| Farrukh || Done || 
+||lookup_sg_type|| Farrukh || Done || 
+||lookup_snapshot_invalid_reason|| Farrukh || Done || 
+||lookup_source_name|| Farrukh || Done || 
+||lookup_tag_name|| Farrukh || Done || 
+||lookup_tag|| Farrukh || Done || 
+||lookup_transaction_package|| Farrukh || Done || 
+||lookup_virt_sub_level|| Farrukh || Done || 
 ||name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure || 
-||new_user_postop|| Farrukh || || 
-||pxt_session_cleanup|| || || 
+||new_user_postop|| Farrukh || Done || 
+||pxt_session_cleanup|| Farrukh || || 
 ||queue_errata|| Gurjeet || Done || 
 ||queue_server|| Farrukh || || 
-||rhn_install_org_satellites|| Farrukh || || 
-||rhn_install_satellite|| Farrukh || || 
-||rhn_prepare_install|| Farrukh || || 
-||rhn_synch_probe_state|| Farrukh || || 
+||rhn_install_org_satellites|| Farrukh || Done || 
+||rhn_install_satellite|| Farrukh || Done || 
+||rhn_prepare_install|| Farrukh || Done || 
+||rhn_synch_probe_state|| Farrukh || Done || 
 ||sequence_currval|| Gurjeet || Done || 
 ||sequence_nextval|| Gurjeet || Done || 
-||set_ks_session_history_message|| Farrukh|| || 
+||set_ks_session_history_message|| Farrukh|| Done || 
 ||truncateCacheQueue|| Gurjeet || Done ||
 
 
