@@ -110,7 +110,7 @@
 ||spacewalk/java/code/src/com/redhat/rhn/domain/action/Action_legacyUser.hbm.xml||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/SystemGroup_queries.xml||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/General_queries.xml||||||||||
-||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnreg_constants.py||Tushar||||||||
+||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnreg_constants.py||Tushar||done||no queries||||
 ||spacewalk/backend/server/test/unit-test/test_misc_functions.py||Tushar||||||||
 ||spacewalk/backend/server/rhnChannel.py||Tushar||||||||
 ||spacewalk/backend/server/importlib/test/test_blob_update.py||Tushar||||||||
