@@ -263,8 +263,9 @@ If you get errors such as:
   or anything from Oracle complaing that it can't '''extend''' an index, a table, etc.. you should run:
 
 {{{
-  SQL> ALTER TABLESPACE system ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/system_02.dbf' size 200m
-  SQL> ALTER TABLESPACE users ADD DATAFILE ‘/usr/lib/oracle/xe/oradata/XE/users_02.dbf’ size 200m
+  SQL> ALTER TABLESPACE system ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/system_02.dbf' size 200m;
+  SQL> ALTER TABLESPACE users ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/users_02.dbf' size 200m;
+  SQL> ALTER TABLESPACE undo ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/undo_02.dbf' size 200m;
 }}}
 
 Quit sqlplus and restart spacewalk and oracle-xe (may not require a restart)
