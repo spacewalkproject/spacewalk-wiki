@@ -1,4 +1,6 @@
-= Steps to kickstarting Fedora/CentOS =
+= As of Spacewalk 0.4 you should refer to this page [HowToKickstartCobbler] =
+
+== Steps to kickstarting Fedora/CentOS (Pre Spacewalk 0.4) ==
   
 
  1. Create a fedora 9/CentOS/RHEL channel [UploadFedoraContent (See this page for details.)]
