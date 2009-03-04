@@ -141,9 +141,9 @@
 ||spacewalk/backend/server/test/unit-test/misc_functions.py||Tushar||done||||||
 ||spacewalk/backend/server/test/misc_functions.py||Tushar||done||||||
 ||spacewalk/backend/server/rhnServer/server_solarispatches.py||Tushar||done||||||
-||spacewalk/backend/server/rhnServer/server_hardware.py||Tushar||||||||
-||spacewalk/backend/server/action_extra_data/script.py||Tushar||||||||
-||spacewalk/backend/satellite_tools/satCerts.py||Tushar||||||||
+||spacewalk/backend/server/rhnServer/server_hardware.py||Tushar||done||||||
+||spacewalk/backend/server/action_extra_data/script.py||Tushar||done||||||
+||spacewalk/backend/satellite_tools/satCerts.py||Tushar||done||||||
 ||spacewalk/web/modules/sniglets/Sniglets/ChannelEditor.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/Mail.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/TinyURL.pm||||||||||
