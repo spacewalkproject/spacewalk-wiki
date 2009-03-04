@@ -136,11 +136,11 @@
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/TroubleTicket/TroubleTicket.pm||Tushar||done||||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/TelAlert/SQLtest.pl||Tushar||done||no queries||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/test/TestRelease.pm||Tushar||done||||||
-||spacewalk/monitoring/NOCpulsePlugins/Oracle/IdleSessions.pm||||||||||
-||spacewalk/client/tools/rhnpush/solaris2mpm.py||||||||||
-||spacewalk/backend/server/test/unit-test/misc_functions.py||||||||||
-||spacewalk/backend/server/test/misc_functions.py||||||||||
-||spacewalk/backend/server/rhnServer/server_solarispatches.py||||||||||
+||spacewalk/monitoring/NOCpulsePlugins/Oracle/IdleSessions.pm||Tushar||||||||
+||spacewalk/client/tools/rhnpush/solaris2mpm.py||Tushar||||||||
+||spacewalk/backend/server/test/unit-test/misc_functions.py||Tushar||||||||
+||spacewalk/backend/server/test/misc_functions.py||Tushar||||||||
+||spacewalk/backend/server/rhnServer/server_solarispatches.py||Tushar||||||||
 ||spacewalk/backend/server/rhnServer/server_hardware.py||||||||||
 ||spacewalk/backend/server/action_extra_data/script.py||||||||||
 ||spacewalk/backend/satellite_tools/satCerts.py||||||||||
