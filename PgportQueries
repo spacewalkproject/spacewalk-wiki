@@ -100,7 +100,7 @@
 ||spacewalk/web/modules/rhn/RHN/DB.pm||Vikram||||||||
 ||spacewalk/monitoring/SatConfig/bootstrap-server/Bootstrap.pm||Vikram||||||||
 ||spacewalk/monitoring/PerlModules/NP/OracleDB/NPRecords.pm||Vikram||||||||
-||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/UTILITIES
+||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/UTILITIES||||||||||
 ||spacewalk/monitoring/NPalert/NotificationIni.pm||Vikram||||||||
 ||spacewalk/monitoring/NPalert/Escalator.pm||Vikram||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/ActiveSessions.pm||Vikram||||||||
@@ -418,7 +418,7 @@
 ||spacewalk/backend/server/rhnMapping.py||Vikram||Done||||||
 ||spacewalk/backend/server/rhnAction.py||Vikram||Done||||||
 ||spacewalk/backend/server/importlib/test/test_backendOracle.py||Vikram||Done||||||
-||spacewalk/backend/server/handlers/xmlrpc/registration.py||Vikram||||||||
+||spacewalk/backend/server/handlers/xmlrpc/registration.py||Vikram||Done||||||
 ||spacewalk/backend/server/handlers/xmlrpc/queue.py||Vikram||Done||||||
 ||spacewalk/backend/server/apacheHandler.py||Vikram||Done||||||
 ||spacewalk/backend/server/action/packages.py||Vikram||Done||||||
