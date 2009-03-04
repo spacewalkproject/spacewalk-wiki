@@ -123,16 +123,16 @@
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/CustomInfo_queries.xml||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/CryptoKey.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/ConfigFile.pm||Tushar||done||||||
-||spacewalk/web/html/applications/rhn-proxy/5.3/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/5.2/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/5.1/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/5.0/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/4.2/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/4.1/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/4.0/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/3.7/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/3.6/install-rhn-proxy.xml||Tushar||||||||
-||spacewalk/web/html/applications/rhn-proxy/0.1/install-rhn-proxy.xml||Tushar||||||||
+||spacewalk/web/html/applications/rhn-proxy/5.3/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/5.2/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/5.1/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/5.0/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/4.2/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/4.1/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/4.0/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/3.7/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/3.6/install-rhn-proxy.xml||Tushar||done||no queries||||
+||spacewalk/web/html/applications/rhn-proxy/0.1/install-rhn-proxy.xml||Tushar||done||no queries||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/TroubleTicket/TroubleTicket.pm||||||||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/TelAlert/SQLtest.pl||||||||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/test/TestRelease.pm||||||||||
