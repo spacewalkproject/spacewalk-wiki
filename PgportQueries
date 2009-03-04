@@ -38,9 +38,9 @@
 ||spacewalk/web/modules/rhn/RHN/DB/Set.pm||Sudhakar||||||||
 ||spacewalk/monitoring/NPalert/NotificationDB.pm||Sudhakar||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/ServerGroup.pm||Sudhakar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/SatInstall.pm||||||||||
-||spacewalk/spacewalk/setup/lib/Spacewalk/Setup.pm||||||||||
-||spacewalk/scripts/ncsu-rhntools/rhnstats/rhndb.py||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/SatInstall.pm||Tushar||||||||
+||spacewalk/spacewalk/setup/lib/Spacewalk/Setup.pm||Tushar||||||||
+||spacewalk/scripts/ncsu-rhntools/rhnstats/rhndb.py||Tushar||||||||
 ||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/ReleaseDB.pm||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/ErrataCache_queries.xml||||||||||
 ||spacewalk/backend/test/suites/dbtests.py||||||||||
