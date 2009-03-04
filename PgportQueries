@@ -7,8 +7,8 @@
 ||spacewalk/web/modules/rhn/RHN/DB/Server.pm||Gurjeet||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/User.pm||Gurjeet||done||no queries||||
 ||spacewalk/web/modules/rhn/RHN/DB/Scheduler.pm||Gurjeet||done||no queries||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||sudhakar||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/config_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||Gurjeet||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||done||||||
@@ -41,15 +41,15 @@
 ||spacewalk/web/modules/rhn/RHN/DB/SatInstall.pm||Tushar||done||||||
 ||spacewalk/spacewalk/setup/lib/Spacewalk/Setup.pm||Tushar||done||||||
 ||spacewalk/scripts/ncsu-rhntools/rhnstats/rhndb.py||Tushar||done||||||
-||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/ReleaseDB.pm||||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/ErrataCache_queries.xml||||||||||
-||spacewalk/backend/test/suites/dbtests.py||||||||||
-||spacewalk/monitoring/PerlModules/NP/Probe/Utils/gencmdsql.pl||||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Action_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Profile.pm||||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/channel/Channel.hbm.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/ConfigChannel_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Feedback.pm||||||||||
+||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/ReleaseDB.pm||Sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/ErrataCache_queries.xml||Sudhakar||||||||
+||spacewalk/backend/test/suites/dbtests.py||Sudhakar||||||||
+||spacewalk/monitoring/PerlModules/NP/Probe/Utils/gencmdsql.pl||Sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Action_queries.xml||Sudhakar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Profile.pm||Sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/channel/Channel.hbm.xml||Sudhakar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/ConfigChannel_queries.xml||Sudhakar||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Feedback.pm||Sudhakar||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Action_queries.xml||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/User_queries.xml||||||||||
 ||spacewalk/backend/server/handlers/app/channel.py||||||||||
