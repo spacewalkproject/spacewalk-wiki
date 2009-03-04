@@ -146,7 +146,7 @@
 ||spacewalk/backend/satellite_tools/satCerts.py||Tushar||done||||||
 ||spacewalk/web/modules/sniglets/Sniglets/ChannelEditor.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/rhn/RHN/Mail.pm||Tushar||done||no queries||||
-||spacewalk/web/modules/rhn/RHN/DB/TinyURL.pm||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/TinyURL.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Product.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/MonitoringConfigMacro.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/JoinClass.pm||||||||||
