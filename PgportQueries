@@ -140,7 +140,7 @@
 ||spacewalk/client/tools/rhnpush/solaris2mpm.py||Tushar||done||no queries||||
 ||spacewalk/backend/server/test/unit-test/misc_functions.py||Tushar||done||||||
 ||spacewalk/backend/server/test/misc_functions.py||Tushar||done||||||
-||spacewalk/backend/server/rhnServer/server_solarispatches.py||Tushar||||||||
+||spacewalk/backend/server/rhnServer/server_solarispatches.py||Tushar||done||||||
 ||spacewalk/backend/server/rhnServer/server_hardware.py||||||||||
 ||spacewalk/backend/server/action_extra_data/script.py||||||||||
 ||spacewalk/backend/satellite_tools/satCerts.py||||||||||
