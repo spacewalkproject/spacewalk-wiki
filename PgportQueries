@@ -133,9 +133,9 @@
 ||spacewalk/web/html/applications/rhn-proxy/3.7/install-rhn-proxy.xml||Tushar||done||no queries||||
 ||spacewalk/web/html/applications/rhn-proxy/3.6/install-rhn-proxy.xml||Tushar||done||no queries||||
 ||spacewalk/web/html/applications/rhn-proxy/0.1/install-rhn-proxy.xml||Tushar||done||no queries||||
-||spacewalk/monitoring/PerlModules/NP/NOT-USED/TroubleTicket/TroubleTicket.pm||Tushar||||||||
-||spacewalk/monitoring/PerlModules/NP/NOT-USED/TelAlert/SQLtest.pl||Tushar||||||||
-||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/test/TestRelease.pm||Tushar||||||||
+||spacewalk/monitoring/PerlModules/NP/NOT-USED/TroubleTicket/TroubleTicket.pm||Tushar||done||||||
+||spacewalk/monitoring/PerlModules/NP/NOT-USED/TelAlert/SQLtest.pl||Tushar||done||no queries||||
+||spacewalk/monitoring/PerlModules/NP/NOT-USED/ReleaseDB/test/TestRelease.pm||Tushar||done||||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/IdleSessions.pm||||||||||
 ||spacewalk/client/tools/rhnpush/solaris2mpm.py||||||||||
 ||spacewalk/backend/server/test/unit-test/misc_functions.py||||||||||
