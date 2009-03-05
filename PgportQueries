@@ -179,10 +179,10 @@
 ||spacewalk/backend/server/rhnServer/server_lib.py||Tushar||done||||||
 ||spacewalk/backend/server/rhnSQL/sql_row.py||Tushar||done||||||
 ||spacewalk/backend/server/importlib/test/test_strict_channel_package_subscription.py||Tushar||done||no queries||||
-||spacewalk/web/modules/sniglets/Sniglets/Servers.pm||||||||||
-||spacewalk/web/modules/sniglets/Sniglets/ListView/List.pm||||||||||
-||spacewalk/web/modules/sniglets/Sniglets/ListView/GeneralList.pm||||||||||
-||spacewalk/web/modules/sniglets/Sniglets/Inspector.pm||||||||||
+||spacewalk/web/modules/sniglets/Sniglets/Servers.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/sniglets/Sniglets/ListView/List.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/sniglets/Sniglets/ListView/GeneralList.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/sniglets/Sniglets/Inspector.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/sniglets/Sniglets/HTML.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/DataSource.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/ServerActions.pm||||||||||
