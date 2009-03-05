@@ -183,11 +183,11 @@
 ||spacewalk/web/modules/sniglets/Sniglets/ListView/List.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/sniglets/Sniglets/ListView/GeneralList.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/sniglets/Sniglets/Inspector.pm||Tushar||done||no queries||||
-||spacewalk/web/modules/sniglets/Sniglets/HTML.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/DataSource.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/ServerActions.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/SatCluster.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/Inspector.pm||||||||||
+||spacewalk/web/modules/sniglets/Sniglets/HTML.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/rhn/RHN/DataSource.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/rhn/RHN/DB/ServerActions.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/SatCluster.pm||Tushar||done||||||
+||spacewalk/web/modules/rhn/RHN/DB/Inspector.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/Cert.pm||||||||||
 ||spacewalk/web/modules/rhn/RHN/AppInstall/ActionHandler/ActionRunner.pm||||||||||
 ||spacewalk/web/modules/pxt/PXT/Utils.pm||||||||||
