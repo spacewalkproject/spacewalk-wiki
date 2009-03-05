@@ -83,10 +83,10 @@
 ||spacewalk/monitoring/nocpulse-db-perl/Database.pm|||Sudhakar||Done|||||
 ||spacewalk/monitoring/SputLite/html/cgi-bin/create_commands.cgi||Sudhakar||Done||||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/DataSource/SoapLite.pm||Sudhakar||Done||||||
-||spacewalk/monitoring/NPalert/scripts/generate-config||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/server/Server_legacyUser.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/package_search_setbuilder.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Set_queries.xml||Sudhakar||||||||
+||spacewalk/monitoring/NPalert/scripts/generate-config||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/server/Server_legacyUser.hbm.xml||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/package_search_setbuilder.xml||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Set_queries.xml||Sudhakar||Done||||||
 ||spacewalk/backend/server/rhnVirtualization.py||Vikram||||||||
 ||spacewalk/backend/satellite_tools/satrm.py||Vikram||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/UserGroup.pm||Vikram||||||||
@@ -105,10 +105,10 @@
 ||spacewalk/monitoring/NPalert/Escalator.pm||Vikram||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/ActiveSessions.pm||Vikram||||||||
 ||spacewalk/monitoring/NOCpulsePlugins/General/TCP.pm||Vikram||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/rhnpackage/Package_satellite.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/errata/impl/PublishedErrata.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/domain/action/Action_legacyUser.hbm.xml||Sudhakar||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/SystemGroup_queries.xml||Sudhakar||||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/rhnpackage/Package_satellite.hbm.xml||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/errata/impl/PublishedErrata.hbm.xml||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/domain/action/Action_legacyUser.hbm.xml||Sudhakar||Done||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/SystemGroup_queries.xml||Sudhakar||Done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/General_queries.xml||Tushar||done||||||
 ||spacewalk/client/rhel/rhn-client-tools/src/up2date_client/rhnreg_constants.py||Tushar||done||no queries||||
 ||spacewalk/backend/server/test/unit-test/test_misc_functions.py||Tushar||done||||||
