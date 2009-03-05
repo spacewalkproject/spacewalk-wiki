@@ -13,7 +13,7 @@
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||Gurjeet||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Channel.pm||Tushar||done||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml|| Farrukh ||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml|| Farrukh || Done ||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/System_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Package.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Errata.pm||Tushar||done||||||
