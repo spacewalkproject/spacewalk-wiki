@@ -158,8 +158,8 @@
 ||spacewalk/web/modules/dobby/Dobby/Reporting.pm||Tushar||done||||||
 ||spacewalk/search-server/spacewalk-doc-indexes/crawl_www/conf/nutch-default.xml||Tushar||done||no queries||||
 ||spacewalk/search-server/nutch/crawl_jsp/conf/nutch-default.xml||Tushar||done||no queries||||
-||spacewalk/scripts/ncsu-rhntools/rhnstats/schema.py||||||||||
-||spacewalk/monitoring/PerlModules/NP/Probe/DataSource/test/TestSQLServer.pm||||||||||
+||spacewalk/scripts/ncsu-rhntools/rhnstats/schema.py||Tushar||done||||||
+||spacewalk/monitoring/PerlModules/NP/Probe/DataSource/test/TestSQLServer.pm||Tushar||done||||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/DataSource/test/TestOracle.pm||||||||||
 ||spacewalk/monitoring/PerlModules/NP/OracleDB/OracleDB.pm||||||||||
 ||spacewalk/monitoring/PerlModules/CPAN/MIME-tools-5.410/t/Entity.t
