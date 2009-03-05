@@ -1,0 +1,33 @@
+
+Packages to get into Cent
+
+
+|| '''Package''' || '''Owner''' || '''Status''' || '''Notes''' ||
+|| '''EL 4''' ||
+||  redhat-rpm-config ||  ||  ||
+|| rhn-applet         ||  ||  ||
+|| rhnlib             ||  ||  ||
+|| rpmdb-redhat       ||  ||  ||
+|| up2date            ||  ||  ||
+|| '''EL 5'''  || 
+|| redhat-rpm-config  ||  ||  ||
+|| rhn-client-tools   ||  ||  ||
+|| rhnlib             ||  ||  ||
+|| rhnsd ||  ||  ||
+|| yum-rhn-plugin ||  ||  ||
+|| yum-metadata-parser ||  ||  ||
+|| '''rhn-tools''' ||
+|| auto-kickstart  || || || is this actully still needed? || 
+|| jabberpy || || ||
+|| osad || || ||
+|| rhn-custom-info || || ||
+|| rhn-kickstart || ||  || is this still needed? ||
+|| rhn-virtualization || || ||
+||rhncfg || || ||
+|| rhnmd || || ||
+|| rhns-certs-tools || || ||
+|| spacewalk-koan || || ||
+
+
+
+
