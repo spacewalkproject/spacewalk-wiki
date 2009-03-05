@@ -200,9 +200,9 @@
 ||spacewalk/monitoring/tsdb/LocalQueue/drainer||Tushar||done||no queries||||
 ||spacewalk/monitoring/status_log_acceptor/AcceptStatusLog.pm||Tushar||done||||||
 ||spacewalk/monitoring/PerlModules/NP/Scheduler/kernel.pl||Tushar||done||no queries||||
-||spacewalk/monitoring/PerlModules/NP/Probe/Utils/test/TestWindowsUpdate.pm||||||||||
-||spacewalk/monitoring/PerlModules/NP/Probe/Utils/WindowsUpdate.pm||||||||||
-||spacewalk/monitoring/PerlModules/NP/Probe/Result.pm||||||||||
+||spacewalk/monitoring/PerlModules/NP/Probe/Utils/test/TestWindowsUpdate.pm||Tushar||done||no queries||||
+||spacewalk/monitoring/PerlModules/NP/Probe/Utils/WindowsUpdate.pm||Tushar||done||no queries||||
+||spacewalk/monitoring/PerlModules/NP/Probe/Result.pm||Tushar||done||no queries||||
 ||spacewalk/monitoring/PerlModules/NP/FcntlLock/FcntlLock.pm||||||||||
 ||spacewalk/monitoring/PerlModules/CPAN/MIME-tools-5.410/t/ExtUtils/TBone.pm||||||||||
 ||spacewalk/monitoring/PerlModules/CPAN/MIME-tools-5.410/lib/MIME/Parser/Filer.pm||||||||||
