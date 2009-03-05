@@ -188,11 +188,11 @@
 ||spacewalk/web/modules/rhn/RHN/DB/ServerActions.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/SatCluster.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Inspector.pm||Tushar||done||||||
-||spacewalk/web/modules/rhn/RHN/Cert.pm||||||||||
-||spacewalk/web/modules/rhn/RHN/AppInstall/ActionHandler/ActionRunner.pm||||||||||
-||spacewalk/web/modules/pxt/PXT/Utils.pm||||||||||
-||spacewalk/web/modules/pxt/PXT/Handlers.pm||||||||||
-||spacewalk/web/modules/dobby/Dobby/DB.pm||||||||||
+||spacewalk/web/modules/rhn/RHN/Cert.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/rhn/RHN/AppInstall/ActionHandler/ActionRunner.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/pxt/PXT/Utils.pm||Tushar||done||||||
+||spacewalk/web/modules/pxt/PXT/Handlers.pm||Tushar||done||no queries||||
+||spacewalk/web/modules/dobby/Dobby/DB.pm||Tushar||done||||||
 ||spacewalk/spacewalk/certs-tools/rhn-ssl-tool.sgml||||||||||
 ||spacewalk/spacewalk/admin/rhn-config-schema.pl||||||||||
 ||spacewalk/scripts/channel-to-update-level/create-channel-to-update.pl||||||||||
