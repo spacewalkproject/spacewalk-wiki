@@ -15,7 +15,6 @@ Packages to get into CentOs
 || rhnlib             ||  ||  ||
 || rhnsd ||  ||  ||
 || yum-rhn-plugin ||  ||  ||
-|| yum-metadata-parser ||  ||  ||
 || '''rhn-tools''' ||
 || auto-kickstart  || || || is this still needed? || 
 || jabberpy || || ||
