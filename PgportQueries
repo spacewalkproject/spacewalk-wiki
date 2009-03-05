@@ -167,9 +167,9 @@
 ||spacewalk/monitoring/PerlModules/CPAN/Error-0.15/Error.pm||Tushar||done||no queries||||
 ||spacewalk/monitoring/NPalert/Strategy.pm||Tushar||done||no queries||||
 ||spacewalk/monitoring/NPalert/Alert.pm||Tushar||done||no queries||||
-||spacewalk/monitoring/NOCpulsePlugins/SQLServer/Availability.pm||||||||||
-||spacewalk/monitoring/NOCpulsePlugins/Oracle/BlockingSessions.pm||||||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/profile_queries.xml||||||||||
+||spacewalk/monitoring/NOCpulsePlugins/SQLServer/Availability.pm||Tushar||done||no queries||||
+||spacewalk/monitoring/NOCpulsePlugins/Oracle/BlockingSessions.pm||Tushar||done||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/profile_queries.xml||Tushar||done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_setbuilder.xml||||||||||
 ||spacewalk/documentation/db-schema/spacewalk-0.1/sql_sources/view/rhnhistoryview.sql||||||||||
 ||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interactive.py||||||||||
