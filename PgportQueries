@@ -193,13 +193,13 @@
 ||spacewalk/web/modules/pxt/PXT/Utils.pm||Tushar||done||||||
 ||spacewalk/web/modules/pxt/PXT/Handlers.pm||Tushar||done||no queries||||
 ||spacewalk/web/modules/dobby/Dobby/DB.pm||Tushar||done||||||
-||spacewalk/spacewalk/certs-tools/rhn-ssl-tool.sgml||||||||||
-||spacewalk/spacewalk/admin/rhn-config-schema.pl||||||||||
-||spacewalk/scripts/channel-to-update-level/create-channel-to-update.pl||||||||||
-||spacewalk/satellite/install/lib/Params/ValidatePP.pm||||||||||
-||spacewalk/monitoring/tsdb/LocalQueue/drainer||||||||||
-||spacewalk/monitoring/status_log_acceptor/AcceptStatusLog.pm||||||||||
-||spacewalk/monitoring/PerlModules/NP/Scheduler/kernel.pl||||||||||
+||spacewalk/spacewalk/certs-tools/rhn-ssl-tool.sgml||Tushar||done||no queries||||
+||spacewalk/spacewalk/admin/rhn-config-schema.pl||Tushar||done||no queries||||
+||spacewalk/scripts/channel-to-update-level/create-channel-to-update.pl||Tushar||done||no queries||||
+||spacewalk/satellite/install/lib/Params/ValidatePP.pm||Tushar||done||no queries||||
+||spacewalk/monitoring/tsdb/LocalQueue/drainer||Tushar||done||no queries||||
+||spacewalk/monitoring/status_log_acceptor/AcceptStatusLog.pm||Tushar||done||||||
+||spacewalk/monitoring/PerlModules/NP/Scheduler/kernel.pl||Tushar||done||no queries||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/Utils/test/TestWindowsUpdate.pm||||||||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/Utils/WindowsUpdate.pm||||||||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/Result.pm||||||||||
