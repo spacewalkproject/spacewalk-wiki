@@ -253,11 +253,11 @@
 ||spacewalk/client/solaris/smartpm/contrib/ksmarttray/admin/libtool.m4.in||Tushar||done||no queries||||
 ||spacewalk/client/rhel/yum-rhn-plugin/po/Makefile||Tushar||done||no queries||||
 ||spacewalk/client/rhel/rhnsd/po/Makefile||Tushar||done||no queries||||
-||spacewalk/client/rhel/rhn-client-tools/po/Makefile||||||||||
-||spacewalk/client/rhel/rhn-client-tools/man/en/rhn-profile-sync.8||||||||||
-||spacewalk/backend/server/test/unit-test/rhnSQL/test_lob.py||||||||||
-||spacewalk/backend/server/test/unit-test/rhnSQL/test_executemany.py||||||||||
-||spacewalk/backend/server/test/unit-test/cx_create_table.py||||||||||
+||spacewalk/client/rhel/rhn-client-tools/po/Makefile||Tushar||done||no queries||||
+||spacewalk/client/rhel/rhn-client-tools/man/en/rhn-profile-sync.8||Tushar||done||no queries||||
+||spacewalk/backend/server/test/unit-test/rhnSQL/test_lob.py||Tushar||done||||||
+||spacewalk/backend/server/test/unit-test/rhnSQL/test_executemany.py||Tushar||done||||||
+||spacewalk/backend/server/test/unit-test/cx_create_table.py||Tushar||done||||||
 ||spacewalk/backend/server/rhnServer/server_transactions.py||||||||||
 ||spacewalk/backend/server/rhnSQL/sql_lib.py||||||||||
 ||spacewalk/backend/server/rhnSQL/driver_postgresql.py||||||||||
