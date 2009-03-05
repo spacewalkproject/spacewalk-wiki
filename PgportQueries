@@ -150,7 +150,7 @@
 ||spacewalk/web/modules/rhn/RHN/DB/Product.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/MonitoringConfigMacro.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/JoinClass.pm||Tushar||done||no queries||||
-||spacewalk/web/modules/rhn/RHN/DB/Grail.pm||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/Grail.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/profile_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/errata_search_setbuilder.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/contact_method_queries.xml||||||||||
