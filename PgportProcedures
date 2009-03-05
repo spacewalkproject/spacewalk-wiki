@@ -12,9 +12,9 @@
 ||create_new_user|| Farrukh || Done || 
 ||create_pxt_session|| Gurjeet || Done || 
 ||delete_channel|| Farrukh || Done || 
-||delete_errata|| Farrukh || || 
+||delete_errata|| Farrukh || Done || 
 ||delete_server_bulk|| Gurjeet || Done || 
-||delete_server|| Farrukh || || 
+||delete_server|| Farrukh || Done || 
 ||does_user_have_role|| Farrukh || Done || 
 ||entitle_order|| Farrukh || This procedure has 2 OUT parameter, but luckily it's not being anywhere in the app so skipping this one|| 
 ||id_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
@@ -48,9 +48,9 @@
 ||lookup_virt_sub_level|| Farrukh || Done || 
 ||name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure || 
 ||new_user_postop|| Farrukh || Done || 
-||pxt_session_cleanup|| Farrukh || || 
+||pxt_session_cleanup|| Farrukh || Done || 
 ||queue_errata|| Gurjeet || Done || 
-||queue_server|| Farrukh || || 
+||queue_server|| Farrukh || Done || 
 ||rhn_install_org_satellites|| Farrukh || Done || 
 ||rhn_install_satellite|| Farrukh || Done || 
 ||rhn_prepare_install|| Farrukh || Done || 
