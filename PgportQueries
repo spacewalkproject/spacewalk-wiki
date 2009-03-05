@@ -156,7 +156,7 @@
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/contact_method_queries.xml||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/CustomInfoKey.pm||Tushar||done||||||
 ||spacewalk/web/modules/dobby/Dobby/Reporting.pm||Tushar||done||||||
-||spacewalk/search-server/spacewalk-doc-indexes/crawl_www/conf/nutch-default.xml||||||||||
+||spacewalk/search-server/spacewalk-doc-indexes/crawl_www/conf/nutch-default.xml||Tushar||done||||||
 ||spacewalk/search-server/nutch/crawl_jsp/conf/nutch-default.xml||||||||||
 ||spacewalk/scripts/ncsu-rhntools/rhnstats/schema.py||||||||||
 ||spacewalk/monitoring/PerlModules/NP/Probe/DataSource/test/TestSQLServer.pm||||||||||
