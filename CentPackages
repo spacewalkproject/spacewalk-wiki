@@ -12,7 +12,7 @@ Packages to get into CentOs
 || '''EL 5'''  || 
 || redhat-rpm-config  ||  ||  ||
 || rhn-client-tools   ||  ||  ||
-|| rhnlib             || jsherril ||  ||
+|| rhnlib             || jsherrill ||  ||
 || rhnsd ||  ||  ||
 || yum-rhn-plugin ||  ||  ||
 || '''rhn-tools''' ||
