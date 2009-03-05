@@ -17,7 +17,7 @@ Packages to get into CentOs
 || yum-rhn-plugin ||  ||  ||
 || yum-metadata-parser ||  ||  ||
 || '''rhn-tools''' ||
-|| auto-kickstart  || || || is this actully still needed? || 
+|| auto-kickstart  || || || is this still needed? || 
 || jabberpy || || ||
 || osad || || ||
 || rhn-custom-info || || ||
