@@ -153,7 +153,7 @@
 ||spacewalk/web/modules/rhn/RHN/DB/Grail.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/profile_queries.xml||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/errata_search_setbuilder.xml||Tushar||done||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/contact_method_queries.xml||||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/contact_method_queries.xml||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/CustomInfoKey.pm||||||||||
 ||spacewalk/web/modules/dobby/Dobby/Reporting.pm||||||||||
 ||spacewalk/search-server/spacewalk-doc-indexes/crawl_www/conf/nutch-default.xml||||||||||
