@@ -170,9 +170,9 @@
 ||spacewalk/monitoring/NOCpulsePlugins/SQLServer/Availability.pm||Tushar||done||no queries||||
 ||spacewalk/monitoring/NOCpulsePlugins/Oracle/BlockingSessions.pm||Tushar||done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/profile_queries.xml||Tushar||done||||||
-||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_setbuilder.xml||||||||||
-||spacewalk/documentation/db-schema/spacewalk-0.1/sql_sources/view/rhnhistoryview.sql||||||||||
-||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interactive.py||||||||||
+||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/errata_search_setbuilder.xml||Tushar||done||||||
+||spacewalk/documentation/db-schema/spacewalk-0.1/sql_sources/view/rhnhistoryview.sql||Tushar||done||||||
+||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/interactive.py||Tushar||done||no queries||||
 ||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/channels.py||||||||||
 ||spacewalk/client/rhel/yum-rhn-plugin/actions/packages.py||||||||||
 ||spacewalk/backend/server/test/test_leak4.py||||||||||
