@@ -5,7 +5,7 @@
 == Procedures and Functions to Migrate/Replace ==
 
 ||'''Procedure/Function'''||'''Assigned'''||'''Notes'''||
-||adler32|| Farrukh || || 
+||adler32|| Farrukh || Done || 
 ||channel_name_join|| || Discarded, the procedure was not exposed to the app, was being used by a view which has been modified to work without the procedure|| 
 ||create_first_org|| Gurjeet || Done || 
 ||create_new_org|| Farrukh || Done || 
