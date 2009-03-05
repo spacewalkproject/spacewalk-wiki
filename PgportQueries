@@ -176,9 +176,9 @@
 ||spacewalk/client/solaris/smartpm/smart/interfaces/gtk/channels.py||Tushar||done||no queries||||
 ||spacewalk/client/rhel/yum-rhn-plugin/actions/packages.py||Tushar||done||no queries||||
 ||spacewalk/backend/server/test/test_leak4.py||Tushar||done||||||
-||spacewalk/backend/server/rhnServer/server_lib.py||||||||||
-||spacewalk/backend/server/rhnSQL/sql_row.py||||||||||
-||spacewalk/backend/server/importlib/test/test_strict_channel_package_subscription.py||||||||||
+||spacewalk/backend/server/rhnServer/server_lib.py||Tushar||done||||||
+||spacewalk/backend/server/rhnSQL/sql_row.py||Tushar||done||||||
+||spacewalk/backend/server/importlib/test/test_strict_channel_package_subscription.py||Tushar||done||no queries||||
 ||spacewalk/web/modules/sniglets/Sniglets/Servers.pm||||||||||
 ||spacewalk/web/modules/sniglets/Sniglets/ListView/List.pm||||||||||
 ||spacewalk/web/modules/sniglets/Sniglets/ListView/GeneralList.pm||||||||||
