@@ -1,0 +1,23 @@
+[wiki:PostgresTasks Tasks Page]
+
+'''Note''': The below list of packages includes the ones under src/schema/spacewalk/rhnsat/packages.
+
+== Packages to Migrate ==
+
+||'''Package Name '''||'''Assigned'''||'''Notes'''||
+||rhn_bel|| Farrukh || || 
+||rhn_cache|| Farrukh || || 
+||rhn_channel|| || || 
+||rhn_config_channel|| || || 
+||rhn_config|| || || 
+||rhn_date_manip|| || || 
+||rhn_entitlements|| || || 
+||rhn_exception|| || || 
+||rhn_org|| || || 
+||rhn_package|| || || 
+||rhn_qos|| || || 
+||rhn_quota|| || || 
+||rhn_server|| || || 
+||rhn_set|| Farrukh || || 
+||rhn_user|| Gurjeet || Done || 
+||rpm|| || || 
