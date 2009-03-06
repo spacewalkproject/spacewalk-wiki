@@ -64,7 +64,7 @@ Targeted version of PostgreSQL is 8.1+
 || Procedures || 90% || [wiki:PgportProcedures Details] ||
 || Packages || 1% ||
 || Application infrastructure || 30% || [wiki:PostgresAppInfrastructure Details] ||
-|| Query tagging || 0% || [wiki:PgportQueries Details]||
+|| Query tagging || 75% || [wiki:PgportQueries Details]||
 || Query migration:java || 0%|| ||
 || Query migration:python || 0%|| ||
 || Query migration:perl || 0%|| ||
