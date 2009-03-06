@@ -10,7 +10,7 @@
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Package_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/Package_queries.xml||||||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/config_queries.xml||||||||||
-||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||Gurjeet||||||||
+||spacewalk/web/modules/rhn/RHN/DB/DataSource/xml/System_queries.xml||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Org.pm||Tushar||done||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Channel.pm||Tushar||done||||||
 ||spacewalk/java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml|| Farrukh || Done ||||||
