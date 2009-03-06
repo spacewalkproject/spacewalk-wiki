@@ -16,7 +16,7 @@ The idea here is to be able to sync down the Solaris MPM content via satellite-s
  * Handle caching similar to rpms.
 
 
-== Specifications : ==
+==Technical Specifications : ==
 
 === Changes to Importer: ===
 
