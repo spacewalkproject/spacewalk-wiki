@@ -82,11 +82,11 @@ or similar.
 
 === Database tables of interest: ===
 
-rhnSolarisPatch
-rhnSolarisPatchPackages
-rhnSolarisPatchSet
-rhnSolarisPatchSetMembers
-rhnSolarisPackage
+ * rhnSolarisPatch
+ * rhnSolarisPatchPackages
+ * rhnSolarisPatchSet
+ * rhnSolarisPatchSetMembers
+ * rhnSolarisPackage
 
 
 === Exporter Changes: ===
