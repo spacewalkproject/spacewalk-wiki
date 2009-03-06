@@ -18,7 +18,7 @@ The idea here is to be able to sync down the Solaris MPM content via satellite-s
 
 == Technical Specifications : ==
 
-=== Changes to Importer: === (''Estimate: 3 week'')
+=== Changes to Importer: (''Estimate: 3 week'') ===  
 
     * Need to make sure we bipass all the rpm, errata and kickstart logic and fork sat-sync to only deal with solaris specific content.
 
@@ -89,7 +89,7 @@ or similar.
  * rhnSolarisPackage
 
 
-=== Exporter Changes: === (''Estimate: 2 week'')
+=== Exporter Changes:(''Estimate: 2 week'') === 
 
 These are the changes to the master satellite's exporter module to export the content from database and send it across to the slaves.
 
@@ -164,7 +164,7 @@ These are the changes to the master satellite's exporter module to export the co
 
         }}}
 
-=== rhn-satellite-Exporter Changes === (''Estimate: 1 week'')
+=== rhn-satellite-Exporter Changes: (''Estimate: 1 week'') === 
 
     * We need to add the necessary flags to enable exports through the exporter tool.
     {{{ 
