@@ -185,7 +185,7 @@ These are the changes to the master satellite's exporter module to export the co
 1. Sync a solaris channel from master to slave satellite.
    $ satellite-sync --parent-sat=master-satellite.redhat.com -c <sol-channel-name> --solaris
 
-2. Export a solaris channel form a master or slave satellite
+2. Export a solaris channel from a master or slave satellite
    $ rhn-satellite-export --dir /mnt/sol-dump -c <sol-channel-name> --solaris
 
 3. Sync a solaris cahnenl from an exported dump
