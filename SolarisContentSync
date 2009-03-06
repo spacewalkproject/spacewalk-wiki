@@ -3,7 +3,7 @@
 
 == Goal: ==
 
-The idea here is to be able to sync down the Solaris MPM content via satellite-sync from one satellite to another. This feature is exclusively for inter-spacewalk-sync.This includes to be able to export the content through the exporter as well. The exporter needs the ability to look for solaris specific content, export it to an xml stream and sent it across to the destination server. The importer then reads the solaris xml stream, parses the content and puts the mpm files on to the file system mount point under /var/satellite and into the database.
+The idea here is to be able to sync down the Solaris MPM(patches and patch clusters) content via satellite-sync from one satellite to another. This feature is exclusively for inter-spacewalk-sync.This includes to be able to export the content through the exporter as well. The exporter needs the ability to look for solaris specific content, export it to an xml stream and sent it across to the destination server. The importer then reads the solaris xml stream, parses the content and puts the mpm files on to the file system mount point under /var/satellite and into the database.
 
 == Requirements: ==
 
