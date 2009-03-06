@@ -168,7 +168,7 @@ These are the changes to the master satellite's exporter module to export the co
 
     * We need to add the necessary flags to enable exports through the exporter tool.
     {{{ 
-        $ rhn-satellite-exporter -c sol-test --solaris
+        $ rhn-satellite-exporter -c sol-test --solaris --dir /mnt/sol-dumps
     }}}
 
     * Changes to iss_ui.py will be necessary to support the srpm flags and step sequence functionality.
