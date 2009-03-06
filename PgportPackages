@@ -5,8 +5,8 @@
 == Packages to Migrate ==
 
 ||'''Package Name '''||'''Assigned'''||'''Notes'''||
-||rhn_bel|| Farrukh || || 
-||rhn_cache|| Farrukh || || 
+||rhn_bel|| Farrukh || Done || 
+||rhn_cache|| Farrukh || Done || 
 ||rhn_channel|| || || 
 ||rhn_config_channel|| || || 
 ||rhn_config|| || || 
@@ -18,6 +18,6 @@
 ||rhn_qos||Tushar || done|| 
 ||rhn_quota|| || || 
 ||rhn_server|| || || 
-||rhn_set|| Farrukh || || 
+||rhn_set|| Farrukh || Does not contain any procedural logic; just a cursor variable. Skipping for now || 
 ||rhn_user|| Gurjeet || Done || 
 ||rpm|| || || 
