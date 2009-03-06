@@ -75,3 +75,9 @@ order by CASE WHEN version IS NULL
               ELSE 0
          END, version
 }}}
+
+= rhn-ssl-dbstore script =
+
+ * Script used to store generated SSL cert in the database. Accepts a --db=user/pass@sid option.
+ * --db obviously needs to go, question is should it be removed or replaced with all --db-user --db-pass --db-host --db-name --db-port etc.
+   * Usage seems rare, removing for now.
