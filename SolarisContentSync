@@ -7,7 +7,7 @@ The idea here is to be able to sync down the Solaris MPM content via satellite-s
 
 == Requirements: ==
 
- * satelite-sync should be able to sync down the content from master servers
+ * satellite-sync should be able to sync down the content from master servers
 
  * Support for importer to be able to import the Solaris mpm content as patches and path clusters.
 
@@ -16,9 +16,9 @@ The idea here is to be able to sync down the Solaris MPM content via satellite-s
  * Handle caching similar to rpms.
 
 
-==Technical Specifications : ==
+== Technical Specifications : ==
 
-=== Changes to Importer: ===
+=== Changes to Importer: === (''Estimate: 3 week'')
 
     * Need to make sure we bipass all the rpm, errata and kickstart logic and fork sat-sync to only deal with solaris specific content.
 
@@ -89,7 +89,7 @@ or similar.
  * rhnSolarisPackage
 
 
-=== Exporter Changes: ===
+=== Exporter Changes: === (''Estimate: 2 week'')
 
 These are the changes to the master satellite's exporter module to export the content from database and send it across to the slaves.
 
@@ -164,7 +164,7 @@ These are the changes to the master satellite's exporter module to export the co
 
         }}}
 
-=== rhn-satellite-Exporter Changes ===
+=== rhn-satellite-Exporter Changes === (''Estimate: 1 week'')
 
     * We need to add the necessary flags to enable exports through the exporter tool.
     {{{ 
@@ -174,3 +174,22 @@ These are the changes to the master satellite's exporter module to export the co
     * Changes to iss_ui.py will be necessary to support the srpm flags and step sequence functionality.
 
     * changes to dumper.py as well, should be same as the exporter changes above.
+
+
+'''''Total Dev estimate: 6 weeks '''''
+
+* Note: This content and code in this spec is just a boilerplate emphasising what and where the changes are required. This can change once the implementation begins.
+
+=== Use Cases: ===
+
+1. Sync a solaris channel from master to slave satellite.
+   $ satellite-sync --parent-sat=master-satellite.redhat.com -c <sol-channel-name> --solaris
+
+2. Export a solaris channel form a master or slave satellite
+   $ rhn-satellite-export --dir /mnt/sol-dump -c <sol-channel-name> --solaris
+
+3. Sync a solaris cahnenl from an exported dump
+   $ satellite-sync -m /mnt/sol-dump -c <sol-channel-name> --solaris
+
+=== Test Plans: ===
+  * TODO
