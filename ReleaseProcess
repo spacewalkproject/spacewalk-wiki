@@ -91,7 +91,7 @@ In spacewalk.git this build srpms with appropriate dist tags and submit them to 
 
 tito will call koji with "build --nowait" as arguments by default. If you need something more explicit you can add to ~/.spacewalk-build-rc:
 {{{
-KOJI_OPTIONS=-c ~/.koji/koji-spacewalk.conf build --nowait
+KOJI_OPTIONS=-c ~/.koji/spacewalk-config build --nowait
 }}}
 
 
