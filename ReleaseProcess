@@ -61,7 +61,7 @@ any problems that appear, do more commits, revert commits, etc.
 When you are happy with the .src.rpm, you should run:
 {{{
         git pull
-        tito build --tag-release
+        tito tag --tag-release
 }}}
 
 and tag your HEAD with name-version-release, and push that commit and
