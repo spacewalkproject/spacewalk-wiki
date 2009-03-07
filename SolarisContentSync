@@ -24,11 +24,11 @@ The idea here is to be able to sync down the Solaris MPM(patches and patch clust
 
     * We need to add the necessary flags to turn on solaris support on satellite-syncs, possibly  --solaris.
 
-     {{{ $ satellite-sync -c solaris-136540 --solaris }}}
+     {{{ $ satellite-sync -c solaris-136540  }}}
 
     > Can't we determine the content type by channel arch vs the need to specify any special --solaris flag?  (tsanders)
 
-Basically some flag signifying non rpm content --content-type=blah or --mpm or --solaris ( not sure about the name yet), it will bipass current flow and fork(visualize some if checks) satsync to take a separate path for solaris specific content. This is to ensure that we dont conflict with existing rpm logic.
+So as todd said, we'll try to do this by some means to determine if its a solaris channel and handle the logic appropriately. <s> Basically --content-type or mpm or --solaris ( not sure about the name yet), it will bipass current flow and fork(visualize some if checks) satsync to take a separate path for solaris specific content. </s> This is to ensure that we dont conflict with existing rpm logic.
 
     * Hopefully caching scheme should already work for mpm as its by file basis luckly.
 
@@ -185,13 +185,12 @@ These are the changes to the master satellite's exporter module to export the co
 === Use Cases: ===
 
 1. Sync a solaris channel from master to slave satellite.
-   $ satellite-sync --parent-sat=master-satellite.redhat.com -c <sol-channel-name> --solaris
+   $ satellite-sync --parent-sat=master-satellite.redhat.com -c <sol-channel-name> 
 
 2. Export a solaris channel from a master or slave satellite
-   $ rhn-satellite-export --dir /mnt/sol-dump -c <sol-channel-name> --solaris
-
-3. Sync a solaris cahnenl from an exported dump
-   $ satellite-sync -m /mnt/sol-dump -c <sol-channel-name> --solaris
+   $ rhn-satellite-export --dir /mnt/sol-dump -c <sol-channel-name> 
+3. Sync a solaris channel from an exported dump
+   $ satellite-sync -m /mnt/sol-dump -c <sol-channel-name> 
 
 === Test Plans: ===
   * TODO
