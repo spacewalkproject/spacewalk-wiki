@@ -10,14 +10,14 @@
 ||rhn_channel|| || || 
 ||rhn_config_channel|| || || 
 ||rhn_config|| || || 
-||rhn_date_manip|| || || 
+||rhn_date_manip||Sudhakar ||Done || 
 ||rhn_entitlements|| || || 
-||rhn_exception|| || || 
+||rhn_exception||Sudhakar || || 
 ||rhn_org|| || || 
-||rhn_package|| || || 
+||rhn_package||Tushar || || 
 ||rhn_qos||Tushar || done|| 
 ||rhn_quota|| Farrukh || || 
 ||rhn_server|| || || 
 ||rhn_set|| Farrukh || Does not contain any procedural logic; just a cursor variable. Skipping for now || 
 ||rhn_user|| Gurjeet || Done || 
-||rpm|| || || 
+||rpm|| Tushar|| || 
