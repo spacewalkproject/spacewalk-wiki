@@ -17,7 +17,7 @@
 ||rhn_package|| Tushar||done || 
 ||rhn_qos||Tushar || done|| 
 ||rhn_quota|| Farrukh || || 
-||rhn_server|| Tushar || || 
+||rhn_server||  || || 
 ||rhn_set|| Farrukh || Does not contain any procedural logic; just a cursor variable. Skipping for now || 
 ||rhn_user|| Gurjeet || Done || 
 ||rpm|| Tushar|| done || 
