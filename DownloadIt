@@ -1,5 +1,8 @@
 = Downloads =
-
+{{{
+#!html
+<!-- do you see this -->
+}}}
 == Binary ==
 
 Releases: You can also download the binaries from the [HowToInstall#Installation yum repo].
