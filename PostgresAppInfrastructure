@@ -15,38 +15,50 @@ with a templating or ''schema generator'' tool that would be used at __build__ t
 as both a fall back and an example of what the end schema needs to be for postgres.  Should the ''common'' schema approach prove to be too complex or unmanageable in
 some way, we can always manage duplicate schema files.
 
- * /schema/spacewalk/rhnsat
+ * /schema/spacewalk
     Contains DDL files.
- * /schema/spacewalk/rhnsat/common
+ * '''/schema/spacewalk/common'''
     Common schema.
- * /schema/spacewalk/rhnsat/common/tables
+ * /schema/spacewalk/common/tables
     Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
- * /schema/spacewalk/rhnsat/common/views
+ * /schema/spacewalk/common/views
     Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  In order for a view to be common, it must contain a query that works for all databases.
- * /schema/spacewalk/rhnsat/oracle
+ * /schema/spacewalk/common/data
+    Although we have created ''static'' postgres data loading (.sql) files (inserts), the long term goal is to have most of the data loading .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DML grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
+ * '''/schema/spacewalk/oracle'''
     Contains both: generated (dynamic) '''oracle''' specific schema and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/oracle/tables
+ * /schema/spacewalk/oracle/class
+    Contains only '''oracle''' specific user defined types (such as EVR_T) schema files.
+ * /schema/spacewalk/oracle/tables
     Contains both: generated (dynamic) '''oracle''' specific table & index schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/oracle/views
+ * /schema/spacewalk/oracle/views
     Contains both: generated (dynamic) '''oracle''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/oracle/triggers
+ * /schema/spacewalk/oracle/triggers
     Contains only '''oracle''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/rhnsat/oracle/procs
+ * /schema/spacewalk/oracle/procs
     Contains only '''oracle''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/rhnsat/oracle/packages
+ * /schema/spacewalk/oracle/packages
     Contains only '''oracle''' specific ''forked'' package/package body creation files.
- * /schema/spacewalk/rhnsat/postgres
+ * /schema/spacewalk/oracle/synonyms
+    Contains only '''oracle''' specific ''forked'' synonym creation files (although the plan is to get rid of these).
+ * /schema/spacewalk/oracle/data
+    Contains both: generated (dynamic) '''oracle''' specific data loading (insert) files and ''forked'' (static) insert files.
+ * '''/schema/spacewalk/postgres'''
     Contains both: generated (dynamic) '''postgres''' specific schema and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/postgres/tables
+ * /schema/spacewalk/oracle/class
+    Contains only '''postgres''' specific user defined types (such as EVR_T) schema files.
+ * /schema/spacewalk/postgres/tables
     Contains both generated (dynamic) '''postgres''' specific table & index schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/postgres/views
+ * /schema/spacewalk/postgres/views
     Contains both: generated (dynamic) '''postgres''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/rhnsat/postgres/triggers
+ * /schema/spacewalk/postgres/triggers
     Contains only '''postgres''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/rhnsat/postgres/procs
+ * /schema/spacewalk/postgres/procs
     Contains only '''postgres''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/rhnsat/postgres/packages
+ * /schema/spacewalk/postgres/packages
     Contains only '''postgres''' specific ''forked'' package/package body creation files.
+ * /schema/spacewalk/postgres/data
+    Contains both: generated (dynamic) '''postgres''' specific data loading (insert) files and ''forked'' (static) insert files.
 
 See: [attachment:commonSchema.jpg Illustration]
 
