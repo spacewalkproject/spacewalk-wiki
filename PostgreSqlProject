@@ -45,25 +45,24 @@ Targeted version of PostgreSQL is 8.1+
 
 === Tracking ===
 
-'''What's happening this week ...'''^02/16/09^
+'''What's happening this week ...'''^03/16/09^
 
  ''Analysis / Planning ''
 
- * Refine Test Plan - (gwilliams)
- * Refine Project Plan - (gwilliams)
- * Views & Stored Procedures: porting to postgres - (Gurjeet, Vikram)
- * Spacewalk Infrastructure/Installer developent - (dgoodwin)
- * Merge from master - (dgoodwin)
- * Schema ''templating'' tool - (jortel)
- * Sample database - (jortel)
- * Setup testing environment - (jortel)
+ * Getting perl stack connecting/working with postgres (dgoodwin)
+ * Refactoring ''/schema'' directory into:  (jortel)
+    * common parts
+    * forked '''oracle''' parts
+    * forked '''postgres''' parts
+ * Get build, install & packaging working with refactored directory (jortel).
+
 
 || Tables & Indexes || 100% || [wiki:PgportTables Details] ||
 || Data (inserts) || 80% ||  ||
 || Views || 100% || [wiki:PgportViews Details] ||
 || Triggers || 100% || [wiki:PgportTriggers Details] ||
 || Procedures || 100% || [wiki:PgportProcedures Details] ||
-|| Packages || 70% ||
+|| Packages || 70% || ||
 || Application infrastructure || 30% || [wiki:PostgresAppInfrastructure Details] ||
 || Query tagging || 75% || [wiki:PgportQueries Details]||
 || Query migration:java || 0%|| ||
