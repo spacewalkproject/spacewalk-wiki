@@ -12,7 +12,7 @@ Targeted version of PostgreSQL is 8.1+
 
  * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)]
  * IRC: #spacewalk-devel on [http://freenode.net/ (irc.freenode.net)]
- * GIT: branch "pgsql" ''( last merged w/ master: 01-08-09 )''
+ * [wiki:GitGuide git repo]: branch "pgsql" ''( last merged w/ master: 01-08-09 )''
     {{{
     git branch --track pgsql origin/pgsql
     git checkout pgsql
