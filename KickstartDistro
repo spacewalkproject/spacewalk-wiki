@@ -3,50 +3,6 @@
 == Steps to kickstarting Fedora/CentOS (Pre Spacewalk 0.4) ==
   
 
- 1. Create a fedora 9/CentOS/RHEL channel [UploadFedoraContent (See this page for details.)]
- 2. Push the content for that particular channel.  [UploadFedoraContent (See this page for details.)]
- 3. Mount the first CD or DVD of whichever distribution you are using (We will mount it to /mnt/iso):
-{{{
-mount Fedora-9-i386-DVD.iso /mnt/iso -o loop
-}}}
- 4. Download kickstart script (We plan on streamlining this and getting a single script packaged with Spacewalk).
- {{{ 
-mkdir make-ks-tree
-cd make-ks-tree 
-wget -Omake-ks-tree.tar.gz https://fedorahosted.org/spacewalk/attachment/wiki/KickstartDistro/make-ks-tree.tar.gz?format=raw
-tar -xzf make-ks-tree.tar.gz
-mkdir /var/satellite/rhn && mkdir /var/satellite/rhn/kickstart
-chown -R apache:root /var/satellite/rhn 
- }}}
- 5.  Upload the kickstart tree and test to make sure everything is sane:
-{{{
-For Fedora 9 32-bit:
-  ./make-ks-tree.sh --channel fedora-9-i386 --source /mnt/iso --dsn spacewalk/spacewalk@xe  --install-type fedora_9 
-
-For CentOS 5u1 (Since CentOS is a clone of RHEL 5, we use the rhel_5 install-type):
-  ./make-ks-tree.sh --channel centos5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant centos --update u1
-
-For RHEL5.2 Server:
-  ./make-ks-tree.sh --channel rhel5 --source /mnt/iso --dsn spacewalk/spacewalk@xe --install-type rhel_5  --variant server --update u2
-
-}}}
-
- 6.  If the above ran without error, simply run the same command with "--commit" to apply the changes to the database.
-
- 7.  Create a kickstart file within the Spacewalk UI.
-{{{     
-     a) log in with your appropriate user.
-     b) click on Systems in the top bar
-     c) Click on Kickstart on the left hand side
-     d) Click "Create new kickstart profile" in the upper right corner
-     e) Follow prompts, selecting your appropriate base channel and kickstart distribution and filling out the information as desired.  
-}}}
- 8.
-    a) If the kickstart and channel were created in Org 1 (the initial org), you can kickstart using the url  http://SPACEWALK.DOMAIN.COM/kickstart/ks/label/KS_LABEL   where KS_LABEL is the kickstart label that you specified and SPACEWALK.DOMAIN.COM is the fqdn of your Spacewalk server.  So when booting from a cd (or pxe booting) you can just add "ks=http://SPACEWALK.DOMAIN.COM/kickstart/ks/label/KS_LABEL" as a kernel option and it should start kickstarting.
-   
-    b) If you are using a secondary org, you will need to use a secure kickstart url (that contains a hash).  To obtain this url, from the profile page of the kickstart you just created, click on the "Bare Metal Kickstart" subtab. The url you would need to use looks like this: http://SPACEWALK.DOMAIN.COM/kickstart/ks/org/2xabc5d8b042d51da814985b037fcd10d1/label/centos-5 .
-
-
 
 == Accessing the kickstart tree directly ==
 
