@@ -192,6 +192,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.setBaseChannel(string sessionKey, int serverId, string channelLabel) || 0.5 || 3 || bbuckingham || done || * Set a system's base channel.  This will deprecate the existing setBaseChannel API that takes an int channelId as an input.  ||
 ||  system.setChildChannels(string sessionKey, int serverId, array[int channelId OR string channelLabel]) || 0.5 || 4 || bbuckingham || done || * Set a system's child channels.  This is an existing API that takes an array[int channelId] that has been enhanced to take an array[string channelLabel] instead.  The intent is to deprecate the usage of array[int channelId]. ||
 ||  system.setLockStatus(string sessionKey, int serverId, boolean status) || 0.5 || 3 || bbuckingham || done || * Set a system's status to locked or unlocked.  Note: status=true indicates locked.  ||
+||  system.deleteCustomValues(string sessionKey, int serverId, array[string customInfoLabel]) || 0.5 || 4 || bbuckingham || done || * Delete one or more custom values from a system.  ||
 ||  system.deleteNote(string sessionKey, int serverId, int noteId) || 0.5 || 4 || jdobies || done || Deletes a note from a server. ||
 ||  system.deleteNotes(string sessionKey, int serverId) || 0.5 || 4 || jdobies || done || Deletes all notes on a given server. ||
 
