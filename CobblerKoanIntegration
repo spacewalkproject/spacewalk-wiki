@@ -317,6 +317,8 @@ the naming convention is <profile-name>-<orgid>-<orgname>
 
 * Likewise if you are using cobbler to manage a PXE host all the kickstart profiles will show up in the PXE menu when booting.
 
+* Previously in order to manipulate 'kickstart' objects in Spacewalk required  access to the Spacewalk GUI or API with a username and password.  You are now able to also from the Spacewalk server's shell directly manipulate Kickstart Distributions and Profiles.  This means that someone with root access to your Spacewalk box is able to create/update/delete kickstart distributions and profiles.  
+
 
 
 
