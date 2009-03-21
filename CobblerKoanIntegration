@@ -151,7 +151,6 @@ Phase III is where we build on the work from the previous phases to fully integr
  * LVM backed virtual guests
  * Expose the "netboot-enabled flag" and look into integrating power management
 
-
 == Estimates ==
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (days)''' || '''Developer''' || '''Status''' || '''Notes''' ||
@@ -297,4 +296,19 @@ Our first pass of integration testing brought forward some critical issues with 
 || Docs: cobbler setup Q&A || 0.4 || 1 || jha ||  ||  ||
 || Docs: BIOS options || 0.4 || 1 || jha ||  ||  ||
 || Docs: list of new features || 0.4 || 1 || jha ||  ||  ||
+
+== Post Implementation Details ==
+
+After implementation of the Cobbler-Spacewalk integration we wanted to document some of the important changes that affect Spacewalk.
+
+* Kickstart trees must be stored locally:  We used to support the ability to point your kickstart distribution at an external location such as http://someserver.example.com/repo/rhel5-i38/.  We now no longer support this option as all kickstart trees must be stored on the Spacewalk server.
+
+* Kickstart distribution URLs have changed:  Previous releases had http://spacewalk.example.com/kickstart/dist/ks-tree-label as the base for their --url stanzas.  This has been shortened a bit to: http://spacewalk.example.com/ks/dist/ks-tree-label
+
+* All kickstart profiles are available for viewing using the koan tool.  In previous releases the only way to know what Kickstart Profiles were available for use in bare metal installs was to login and list all the kickstart profiles.  Now users are able to run the 'koan --server=spacewalk.example.com --list=profiles' to view all the kickstart profiles available for use.
+
+For example, if you have a
+
+* 
+
 
