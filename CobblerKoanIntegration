@@ -307,8 +307,16 @@ After implementation of the Cobbler-Spacewalk integration we wanted to document 
 
 * All kickstart profiles are available for viewing using the koan tool.  In previous releases the only way to know what Kickstart Profiles were available for use in bare metal installs was to login and list all the kickstart profiles.  Now users are able to run the 'koan --server=spacewalk.example.com --list=profiles' to view all the kickstart profiles available for use.
 
-For example, if you have a
+For example, if you have a Spacewalk instance setup with 2 organizations and 2 kickstart profiles, 1 in org 1 and 1 in org 2 koan will display and make available both kickstart profiles:
 
-* 
+# koan --server=spacewalk.example.com --list=profiles
+rhel5-i386-pv:2:org2
+rhel5-i386-pv:1:Spacewalk-Public-Cert
+
+the naming convention is <profile-name>-<orgid>-<orgname>
+
+* Likewise if you are using cobbler to manage a PXE host all the kickstart profiles will show up in the PXE menu when booting.
+
+
 
 
