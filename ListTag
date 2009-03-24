@@ -286,7 +286,7 @@ To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do 
 Feel free to look in system_listdisplay.jspf for an example of usage. 
 
 
-== useful notes ==
+=== Useful Notes ===
 
  * If your table supports a view change (such as displaying only certain packages in a channel - see adding packages to an erratum for an example), keep the following in mind:
   * I found it easiest to put the drop down in a separate form, which prevents the helper.isDispatched from accidentally tripping.
