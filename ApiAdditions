@@ -353,10 +353,10 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.software.setSoftwareList  || Tested ||    ||    ||    || 
 ||  kickstart.profile.system.addFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.addKeys  || Tested ||    ||    ||skarmark|| 
-||  kickstart.profile.system.disableConfigManagement  || Tested ||    || Unable to test because of absence of getter. Proposing getConfigManagement API or some workaround in QA testing. kickstart.profile.system.checkConfigManagement was added  ||skarmark|| 
-||  kickstart.profile.system.disableRemoteCommands  || Tested ||    || Unable to test because of absence of getter. Proposing getRemoteCommands API ||skarmark|| 
-||  kickstart.profile.system.enableConfigManagement  || Tested||    || Unable to test because of absence of getter. Proposing getConfigManagement API ||skarmark|| 
-||  kickstart.profile.system.enableRemoteCommands  || Tested ||    || Unable to test because of absence of getter. Proposing getRemoteCommands API ||skarmark|| 
+||  kickstart.profile.system.disableConfigManagement  || Tested ||    || kickstart.profile.system.checkConfigManagement was added to allow testing ||skarmark|| 
+||  kickstart.profile.system.disableRemoteCommands  || Tested ||    ||  ||skarmark|| 
+||  kickstart.profile.system.enableConfigManagement  || Tested||    ||  ||skarmark|| 
+||  kickstart.profile.system.enableRemoteCommands  || Tested ||    ||  ||skarmark|| 
 ||  kickstart.profile.system.getLocale  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.getPartitioningScheme  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.listFilePreservations  || Tested ||    ||    ||skarmark|| 
@@ -364,9 +364,9 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.system.removeFilePreservations  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.removeKeys  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setLocale  || Tested ||    ||    ||skarmark|| 
-||  kickstart.profile.system.setNetworkConnection  || Tested ||    || Unable to test because of absence of getter. Proposing getNetworkConnection API ||skarmark|| 
+||  kickstart.profile.system.setNetworkConnection  || Tested ||    ||  ||skarmark|| 
 ||  kickstart.profile.system.setPartitioningScheme  || Tested ||    ||    ||skarmark|| 
-||  kickstart.profile.system.setSELinux  || Tested ||    || Unable to test because of absence of getter. Proposing getSELinux API - kickstart.profile.system.getSELinux was added  ||skarmark|| 
+||  kickstart.profile.system.setSELinux  || Tested ||    || kickstart.profile.system.getSELinux was added to allow test  ||skarmark|| 
 ||  kickstart.tree.create  || Missing ||    ||    ||    || 
 ||  kickstart.tree.delete  || Missing ||    ||    ||    || 
 ||  kickstart.tree.deleteTreeAndProfiles  || Missing ||    ||    ||    || 
