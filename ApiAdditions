@@ -294,7 +294,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  activationkey.disableConfigDeployment  || Tested ||    ||    ||    || 
 ||  activationkey.enableConfigDeployment  || Tested ||    ||    ||    || 
 ||  activationkey.removePackages  || Tested ||    ||    ||    || 
-||  auth.checkAuthToken  || Missing ||    ||    ||ssalevan|| 
+||  auth.checkAuthToken  || UnPublished ||    ||  test was commented out, reason being method isn't published  ||ssalevan|| 
 ||  channel.listAllChannels  || Tested ||    ||    ||    || 
 ||  channel.listMyChannels  || Tested ||    ||    ||    || 
 ||  channel.listPopularChannels  || Tested ||    ||    ||    || 
@@ -305,9 +305,6 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.access.enableUserRestrictions  || Tested ||    ||    ||    || 
 ||  channel.access.getOrgSharing  || Tested ||    ||    ||    || 
 ||  channel.access.setOrgSharing  || Tested ||    ||    ||    || 
-||  channel.org.disableAccess  || Missing ||    ||    ||ssalevan|| 
-||  channel.org.enableAccess  || Tested ||    ||    ||    || 
-||  channel.org.list  || Missing ||    ||    ||    || 
 ||  channel.software.listErrataByType  || Tested ||    ||    ||    || 
 ||  channel.software.mergeErrata  || Tested ||    ||    ||    || 
 ||  channel.software.mergeErrata  || Tested ||    ||    ||    || 
@@ -318,10 +315,8 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  errata.findByCve  || Tested ||    ||    ||skarmark|| 
 ||  errata.removePackages  || Tested ||    ||    ||skarmark|| 
 ||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
-||  kickstart.addScript  || Missing ||    ||    ||    || 
-||  kickstart.deleteProfile  || Missing ||    ||    ||    || 
-||  kickstart.downloadKickstart  || Missing ||    ||    ||    || 
-||  kickstart.findKickstartForIp  || Missing ||    ||    ||    || 
+||  kickstart.deleteProfile  || Tested ||    ||    ||    || 
+||  kickstart.findKickstartForIp  || Tested ||    ||    ||    || 
 ||  kickstart.importRawFile  || Missing ||    ||    ||    || 
 ||  kickstart.listAllIpRanges  || Missing ||    ||    ||    || 
 ||  kickstart.listKickstarts  || Missing ||    ||    ||    || 
