@@ -333,22 +333,22 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.keys.delete  || Tested ||    ||    ||    || 
 ||  kickstart.keys.getDetails  || Tested ||    ||    ||    || 
 ||  kickstart.keys.listAllKeys  || Tested ||    ||    ||    || 
-||  kickstart.profile.addIpRange  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.addScript  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.compareActivationKeys  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.compareAdvancedOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.comparePackages  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.downloadKickstart  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.getAdvancedOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.getCustomOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.listIpRanges  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.listScripts  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.removeIpRange  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.removeScript  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.setAdvancedOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.setChildChannels  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.setCustomOptions  || Missing ||    ||    ||skarmark|| 
-||  kickstart.profile.setKickstartTree  || Missing ||    ||    ||skarmark|| 
+||  kickstart.profile.addIpRange  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.addScript  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.compareActivationKeys  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.compareAdvancedOptions  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.comparePackages  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.downloadKickstart  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.getAdvancedOptions  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.getCustomOptions  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.listIpRanges  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.listScripts  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.removeIpRange  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.removeScript  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.setAdvancedOptions  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.setChildChannels  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.setCustomOptions  || Tested ||    ||    ||skarmark|| 
+||  kickstart.profile.setKickstartTree  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.keys.addActivationKey  || Tested ||    ||    ||    || 
 ||  kickstart.profile.keys.getActivationKeys  || Tested ||    ||    ||    || 
 ||  kickstart.profile.keys.removeActivationKey  || Tested ||    ||    ||    || 
