@@ -374,7 +374,6 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.tree.listInstallTypes  || Missing ||    ||    ||    || 
 ||  kickstart.tree.rename  || Missing ||    ||    ||    || 
 ||  kickstart.tree.update  || Missing ||    ||    ||    || 
-||  org.addTrust  || Missing ||    ||    ||ssalevan|| 
 ||  org.create  || Tested ||    ||    ||    || 
 ||  org.delete  || Tested ||    ||    ||    || 
 ||  org.getDetails  || Tested ||    ||    ||    || 
@@ -386,10 +385,8 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  org.listSystemEntitlements  || Tested ||    ||    ||    || 
 ||  org.listSystemEntitlements  || Tested ||    ||    ||    || 
 ||  org.listSystemEntitlementsForOrg  || Tested ||    ||    ||    || 
-||  org.listTrusts  || Missing ||    ||    ||    || 
 ||  org.listUsers  || Tested ||    ||    ||    || 
-||  org.migrateSystems  || Missing ||    ||    ||    || 
-||  org.removeTrust  || Missing ||    ||    ||    || 
+||  org.migrateSystems  || Tested ||    ||    ||    || 
 ||  org.setSoftwareEntitlements  || Tested ||    ||    ||    || 
 ||  org.setSystemEntitlements  || Tested ||    ||    ||    || 
 ||  org.updateName  || Tested ||    ||    ||    || 
@@ -398,15 +395,15 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  org.trusts.listChannelsConsumed  || Tested ||    ||    ||    || 
 ||  org.trusts.listChannelsProvided  || Tested ||    ||    ||    || 
 ||  org.trusts.listOrgs  || Tested ||    ||    ||    || 
-||  org.trusts.listSystemsAffected  || Missing ||    ||    ||    || 
+||  org.trusts.listSystemsAffected  || Tested ||    ||    ||    || 
 ||  org.trusts.listTrusts  || Tested ||    ||    ||    || 
 ||  org.trusts.removeTrust  || Tested ||    ||    ||    || 
 ||  packages.getPackage  || Tested ||    ||    ||    || 
-||  packages.getPackageUrl  || Missing ||    ||    ||    || 
+||  packages.getPackageUrl  || Tested ||    ||    ||    || 
 ||  packages.provider.associateKey  || Tested ||    ||    ||    || 
 ||  packages.provider.list  || Tested ||    ||    ||    || 
 ||  packages.provider.listKeys  || Tested ||    ||    ||    || 
-||  proxy.isProxy  || Missing ||    ||    ||ssalevan|| 
+||  proxy.isProxy  || Tested ||    ||    ||ssalevan|| 
 ||  satellite.getCertificateExpirationDate  || Tested ||    ||    ||    || 
 ||  schedule.cancelActions  || Tested ||    ||    ||    || 
 ||  schedule.listAllActions  || Tested ||    ||    ||    || 
@@ -426,28 +423,28 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.listInactiveSystems  || Tested ||    ||    ||    || 
 ||  system.listNotes  || Tested ||    ||    ||    || 
 ||  system.listSnapshotConfigFiles  || Missing ||    ||    ||    || 
-||  system.listSnapshotPackages  || Missing ||    ||    ||    || 
+||  system.listSnapshotPackages  || Tested ||    ||    ||    || 
 ||  system.listSnapshots  || Tested ||    ||    ||    || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listVirtualGuests  || Tested ||    ||    ||    || 
 ||  system.listVirtualHosts  || Tested ||    ||    ||    || 
-||  system.provisionSystem  || Missing ||    ||    ||    || 
-||  system.provisionSystem  || Missing ||    ||    ||    || 
+||  system.provisionSystem  || Tested ||    ||    ||    || 
+||  system.provisionSystem  || Tested ||    ||    ||    || 
 ||  system.scheduleGuestAction  || Tested ||    ||    ||    || 
 ||  system.scheduleGuestAction  || Tested ||    ||    ||    || 
 ||  system.schedulePackageRefresh  || Tested ||    ||    ||    || 
 ||  system.schedulePackageRemove  || Tested ||    ||    ||    || 
 ||  system.setGuestCpus  || Tested ||    ||    ||    || 
-||  system.setGuestMemory  || Missing ||    ||    ||    || 
+||  system.setGuestMemory  || Tested ||    ||    ||    || 
 ||  system.whoRegistered  || Tested ||    ||    ||    || 
 ||  system.custominfo.createKey  || Tested ||    ||    ||    || 
 ||  system.custominfo.deleteKey  || Tested ||    ||    ||    || 
 ||  system.custominfo.listAllKeys  || Tested ||    ||    ||    || 
 ||  system.search.deviceDescription  || Tested ||    ||    ||    || 
 ||  system.search.deviceDriver  || Tested ||    ||    ||    || 
-||  system.search.deviceId  || Missing ||    ||    ||    || 
-||  system.search.deviceVendorId  || Missing ||    ||    ||    || 
+||  system.search.deviceId  || Missing ||    || not in api tests - unsure how to add test data   ||    || 
+||  system.search.deviceVendorId  || Missing ||  || not in api tests - unsure how to add test data   ||    || 
 ||  system.search.hostname  || Tested ||    ||    ||    || 
 ||  system.search.ip  || Tested ||    ||    ||    || 
 ||  system.search.nameAndDescription  || Tested ||    ||    ||    || 
