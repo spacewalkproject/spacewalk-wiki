@@ -10,6 +10,7 @@ Packages to get into CentOs
 || up2date            ||  ||  ||
 || '''EL 5'''  || 
 || rhn-setup   ||     ||  ||  ||
+|| rhn-setup-gnome   ||     ||  ||  ||
 || rhn-check  ||     ||  ||  ||
 || rhn-client-tools   ||  ||  ||
 || rhnlib             || jsherrill ||  ||
