@@ -413,11 +413,11 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  schedule.listAllActions  || Tested ||    ||    ||    || 
 ||  schedule.listArchivedActions  || Tested ||    ||    ||    || 
 ||  schedule.listCompletedActions  || Tested ||    ||    ||    || 
-||  schedule.listCompletedSystems  || Recheck - call params don't match definition ||    || we aren't calling with an actionId   ||    || 
+||  schedule.listCompletedSystems  || Recheck - call params don't match definition ||    || docs need update   ||    || 
 ||  schedule.listFailedActions  || Tested ||    ||    ||    || 
-||  schedule.listFailedSystems  || Recheck - call params don't match definition ||    ||  we aren't calling with an actionId  ||    || 
+||  schedule.listFailedSystems  || Recheck - call params don't match definition ||    ||  docs need update  ||    || 
 ||  schedule.listInProgressActions  || Tested ||    ||    ||    || 
-||  schedule.listInProgressSystems  || Recheck - call params don't match definition ||    ||  we aren't calling with an actionId  ||    || 
+||  schedule.listInProgressSystems  || Recheck - call params don't match definition ||    ||  docs need update  ||    || 
 ||  system.comparePackageProfile  || Tested ||    ||    ||    || 
 ||  system.deleteCustomValues String Integer List || Missing ||    ||    ||    || 
 ||  system.deleteSnapshot  || Tested ||    ||    ||    || 
