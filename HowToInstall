@@ -39,6 +39,17 @@ Otherwise you get error messeges like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
+== Fedora 10 jpackage Repo setup ==
+
+Some packages needed on Fedora 10 are provided by jpackage's repository. Put the following content to {{{/etc/yum.repos.d/jpackage.repo}}}:
+
+{{{
+[jpackage]
+name=jpackage-f10
+baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
+gpgcheck=0
+}}}
+
 == Installation ==
 
 '''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
