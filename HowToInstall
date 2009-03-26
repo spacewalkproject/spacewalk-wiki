@@ -20,9 +20,7 @@ rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client
 
 == Oracle Pre-Requisites ==
 
-In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE.  Instructions on how todo this can be found here:
-
-[OracleXeSetup Oracle XE Setup instructions]
+In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE.  Instructions on how todo this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
 == EPEL Repo setup ==
 
