@@ -4,13 +4,11 @@ Packages to get into CentOs
 
 || '''Package''' || '''Owner''' || '''Status''' || '''Notes''' ||
 || '''EL 4''' ||
-||  redhat-rpm-config ||  ||  ||
 || rhn-applet         ||  ||  ||
 || rhnlib             ||  ||  ||
 || rpmdb-redhat       ||  ||  ||
 || up2date            ||  ||  ||
 || '''EL 5'''  || 
-|| redhat-rpm-config  ||  ||  ||
 || rhn-client-tools   ||  ||  ||
 || rhnlib             || jsherrill ||  ||
 || rhnsd ||  ||  ||
