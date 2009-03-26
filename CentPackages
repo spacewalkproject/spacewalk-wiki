@@ -9,10 +9,7 @@ Packages to get into CentOs
 || rpmdb-redhat       ||  ||  ||
 || up2date            ||  ||  ||
 || '''EL 5'''  || 
-|| rhn-setup   ||     ||  ||  ||
-|| rhn-setup-gnome   ||     ||  ||  ||
-|| rhn-check  ||     ||  ||  ||
-|| rhn-client-tools   ||  ||  ||
+|| rhn-client-tools   ||  ||  || includes rhn-setup, rhn-check, rhn-setup-gnome||
 || rhnlib             || jsherrill ||  ||
 || rhnsd ||  ||  ||
 || yum-rhn-plugin ||  ||  ||
