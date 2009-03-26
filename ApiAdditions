@@ -311,6 +311,9 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.software.setContactDetails  || Tested ||    ||    ||    || 
 ||  configchannel.channelExists  || Tested ||    ||    ||    || 
 ||  configchannel.scheduleFileComparisons  || Tested ||    ||    ||    || 
+||  configchannel.deleteFiles String String List  || Tested ||    ||    ||    ||
+||  configchannel.lookupChannelInfo String List || Tested ||    ||    ||    ||
+||  configchannel.lookupFileInfo String String List  || Tested ||    ||    ||    ||
 ||  errata.addPackages  || Tested ||    ||    ||skarmark|| 
 ||  errata.findByCve  || Tested ||    ||    ||skarmark|| 
 ||  errata.removePackages  || Tested ||    ||    ||skarmark|| 
