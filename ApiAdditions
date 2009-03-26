@@ -311,11 +311,12 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  channel.software.setContactDetails  || Tested ||    ||    ||    || 
 ||  configchannel.channelExists  || Tested ||    ||    ||    || 
 ||  configchannel.scheduleFileComparisons  || Tested ||    ||    ||    || 
-||  configchannel.deleteFiles String String List  || Tested ||    ||    ||    ||
-||  configchannel.lookupChannelInfo String List || Tested ||    ||    ||    ||
-||  configchannel.lookupFileInfo String String List  || Tested ||    ||    ||    ||
+||  configchannel.deleteFiles String String List  || Missing ||    ||    ||    ||
+||  configchannel.lookupChannelInfo String List || Missing ||    ||    ||    ||
+||  configchannel.lookupFileInfo String String List  || Missing ||    ||    ||    ||
 ||  errata.addPackages  || Tested ||    ||    ||skarmark|| 
-||  errata.findByCve  || Tested ||    ||    ||skarmark|| 
+||  errata.create String Map List List List Boolean List || Missing ||    ||    || || 
+||  errata.findByCve  || Recheck it looks like this only calls listCVE, not findByCve ||    ||    ||skarmark|| 
 ||  errata.removePackages  || Tested ||    ||    ||skarmark|| 
 ||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.deleteProfile  || Tested ||    ||    ||    || 
