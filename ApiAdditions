@@ -321,10 +321,10 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.deleteProfile  || Tested ||    ||    ||    || 
 ||  kickstart.findKickstartForIp  || Tested ||    ||    ||    || 
-||  kickstart.importRawFile  || Missing ||    ||    ||    || 
+||  kickstart.importRawFile String String String String String || Missing ||    ||    ||    || 
 ||  kickstart.listAllIpRanges  || Tested ||    ||    ||    || 
 ||  kickstart.listKickstarts  || Tested ||    ||    ||    || 
-||  kickstart.renameProfile  || Missing ||    ||    ||    || 
+||  kickstart.renameProfile  String String String || Missing ||    ||    ||    || 
 ||  kickstart.filepreservation.create  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.delete  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.getDetails  || Tested ||    ||    ||    || 
@@ -413,11 +413,11 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  schedule.listAllActions  || Tested ||    ||    ||    || 
 ||  schedule.listArchivedActions  || Tested ||    ||    ||    || 
 ||  schedule.listCompletedActions  || Tested ||    ||    ||    || 
-||  schedule.listCompletedSystems  || Tested ||    ||    ||    || 
+||  schedule.listCompletedSystems  || Recheck - call params don't match definition ||    || we aren't calling with an actionId   ||    || 
 ||  schedule.listFailedActions  || Tested ||    ||    ||    || 
-||  schedule.listFailedSystems  || Tested ||    ||    ||    || 
+||  schedule.listFailedSystems  || Recheck - call params don't match definition ||    ||  we aren't calling with an actionId  ||    || 
 ||  schedule.listInProgressActions  || Tested ||    ||    ||    || 
-||  schedule.listInProgressSystems  || Tested ||    ||    ||    || 
+||  schedule.listInProgressSystems  || Recheck - call params don't match definition ||    ||  we aren't calling with an actionId  ||    || 
 ||  system.comparePackageProfile  || Tested ||    ||    ||    || 
 ||  system.deleteSnapshot  || Tested ||    ||    ||    || 
 ||  system.deleteSnapshots  || Tested ||    ||    ||    || 
