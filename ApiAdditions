@@ -419,6 +419,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  schedule.listInProgressActions  || Tested ||    ||    ||    || 
 ||  schedule.listInProgressSystems  || Recheck - call params don't match definition ||    ||  we aren't calling with an actionId  ||    || 
 ||  system.comparePackageProfile  || Tested ||    ||    ||    || 
+||  system.deleteCustomValues String Integer List || Missing ||    ||    ||    || 
 ||  system.deleteSnapshot  || Tested ||    ||    ||    || 
 ||  system.deleteSnapshots  || Tested ||    ||    ||    || 
 ||  system.getName  || Tested ||    ||    ||    || 
@@ -429,6 +430,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.listSnapshotConfigFiles  || Missing ||    ||    ||    || 
 ||  system.listSnapshotPackages  || Tested ||    ||    ||    || 
 ||  system.listSnapshots  || Tested ||    ||    ||    || 
+||  system.listSubscribableBaseChannels String Integer  || Missing ||    ||    ||    || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listVirtualGuests  || Tested ||    ||    ||    || 
@@ -441,6 +443,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.schedulePackageRemove  || Tested ||    ||    ||    || 
 ||  system.setGuestCpus  || Tested ||    ||    ||    || 
 ||  system.setGuestMemory  || Tested ||    ||    ||    || 
+||  system.setLockStatus String Integer Boolean  || Missing ||    ||    ||    ||
 ||  system.whoRegistered  || Tested ||    ||    ||    || 
 ||  system.config.createOrUpdatePath String Integer Boolean String Map Integer   || Missing ||    ||    ||    ||
 ||  system.config.deleteFiles String Integer List Boolean  || Missing ||    ||    ||    ||
@@ -459,5 +462,5 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.search.ip  || Tested ||    ||    ||    || 
 ||  system.search.nameAndDescription  || Tested ||    ||    ||    || 
 ||  systemgroup.listActiveSystemsInGroup  || Tested ||    ||    ||    || 
-||  systemgroup.listInactiveSystemsInGroup  || Tested ||    ||    ||    || 
-||  systemgroup.listInactiveSystemsInGroup  || Tested ||    ||    ||    || 
+||  systemgroup.listInactiveSystemsInGroup  String String Integer || Tested ||    ||    ||    || 
+||  systemgroup.listInactiveSystemsInGroup  String String || Missing ||    ||    ||    || 
