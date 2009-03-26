@@ -24,6 +24,8 @@ Packages to get into CentOs
 || rhnmd || || ||
 || rhns-certs-tools || || ||
 || spacewalk-koan || || ||
+|| '''rhn-tools''' ||  || Extra stuff that helps spacewalk run on cent||
+|| rhel-instnum    ||
 
 
 
