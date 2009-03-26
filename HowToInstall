@@ -16,6 +16,20 @@ rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 }}}
 
+= Fedora 10 =
+
+For Spacewalk 0.5 a couple additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation:
+
+{{{
+cat > /etc/yum.repos.d/jpackage.repo << EOF
+[jpackage]
+name=jpackage-f10
+baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
+gpgkey=http://www.jpackage.org/jpackage.asc
+gpgcheck=1
+EOF
+}}}
+
 = Red Hat Enterprise Linux 5 =
 
 == Oracle Pre-Requisites ==
