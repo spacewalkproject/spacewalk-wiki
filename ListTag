@@ -214,7 +214,8 @@ Note: the rl:listset tag will take care of creating the HTML form element for yo
 				   bound="false"
                            styleclass="first-column last-column"
 		           headerkey="grouplist.jsp.name" 
-		           sortattr="name">
+		           sortattr="name"
+                           defaultsort="asc"  >
 			<c:out value="<a href=\"/network/systems/groups/details.pxt?sgid=${current.id}\">${current.name}</a>" escapeXml="false" />
 		</rl:column>		
 
