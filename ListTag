@@ -268,9 +268,12 @@ To add CSV support to a page add the below tag to the jsp.
     name="list" 
     exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
 }}}
-"dataset" is the name of the dataset which is holding your list
 
-"list" should match the name given to the <rl:list> this works with (by default its the word list) . This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
+This should be outside of a  <rl:list> </rl:list>  section, but within <rl:listset></rl:listset>
+
+(Optional) "dataset" is the name of the dataset which is holding your list 
+
+(Optional) "list" should match the name given to the <rl:list> this works with (by default its the word list) . This allows the CSV tag to reuse an Elaborator if it was stored with the associated <rl:list>.
 
 exportColumns is a comma separated string of attributes you want to export.
 
