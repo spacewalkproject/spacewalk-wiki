@@ -32,7 +32,7 @@ public class SystemGroupListSetupAction extends RhnAction implements Listable{
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
-        ListHelper helper = new ListHelper(request);
+        ListHelper helper = new ListHelper(this, request);
         helper.execute();
         return mapping.findForward("default");
     }
@@ -87,7 +87,7 @@ public class SystemGroupListAction extends RhnAction implements Listable {
             ActionForm formIn,
             HttpServletRequest request,
             HttpServletResponse response) {
-        ListSessionSetHelper helper = new ListSessionSetHelper(request);
+        ListSessionSetHelper helper = new ListSessionSetHelper(this, request);
         helper.execute();
         if(helper.isDispatched()) {
             //handle the dispatch action (like removing groups etc)
