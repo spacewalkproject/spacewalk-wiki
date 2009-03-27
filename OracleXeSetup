@@ -52,14 +52,6 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
   * nogpgcheck is required because the Oracle RPMs are not signed.
   * '''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
 
-=== Alternative: manual install ===
-
-{{{
-# yum install bc libaio.i386 glibc.i686
-# rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
-# yum install oracle-lib-compat
-}}}
-
 == Install SELinux Policy ==
 
 If you are running with SELinux enabled then install the following packages from the Spacewalk repo before running {{{oracle-xe configure}}}:
