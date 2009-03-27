@@ -45,6 +45,7 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 {{{
 # yum install bc libaio.i386 glibc.i686
 # yum localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+# yum install oracle-lib-compat
 }}}
 
   * bc is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
@@ -56,6 +57,7 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 {{{
 # yum install bc libaio.i386 glibc.i686
 # rpm -Uvh oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic-10.2.0.4-1.*.rpm oracle-instantclient-sqlplus*.rpm
+# yum install oracle-lib-compat
 }}}
 
 == Install SELinux Policy ==
