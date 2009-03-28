@@ -1,25 +1,34 @@
 
-=== List Tag ===
+== List Tag ==
 
-There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag.  When writing new pages, or updating existing pages, we use the new Java list tag.  It has the most features (including filters, pagination, page size selector, csv support), and is the easiest to use.
-
-
+There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag (known as ListTag 3.0).  New and updates to existing pages should use ListTag 3.0.  ListTag 3.0 has the largest set of features features (including filters, pagination, page size selector, csv support) and is the easiest to use.
 
 
-=== Using the new list tag ===
+== Using List Tag 3.0 ==
 
 Like any struts page, it consists of 
 
- a) An action[[BR]]
- b) A jsp
+ a) Struts Action
+ b) JSP
 
-The action may be responsible for retrieving/manipulating data and attaching data to the request and the jsp is responsible for formatting and displaying the data.  Both require specific things related to this list tag.  
+A single action is typically used for both the retrieval of the data to display on the page (including any filtering that takes place) as well as handling form submissions from the page. This is a slight change from the older model that used a *SetupAction to populate the data and a *Action class to collect the selected results and process them.
 
-
-It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the new List Tag. The New List Tag can readily use any DTO or beanified object/value holders. Infact one of the primary motivations of the new List Tag was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
+It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the ListTag. ListTag 3.0 can readily use any DTO or beanified object/value holders. In fact one of the primary motivations of ListTag 3.0 was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
 
 
 == Action side ==
+
+=== Summary ===
+
+The following is a high level summary of the steps needed in the action.
+
+ * The action must extend RhnAction (overriding the execute method) and implement Listable (implementing the getResults method).
+ * The action should use one of the "ListHelper" classes to set up the action correctly. Possible options are (details on each follow):
+  * ListHelper - used when there is no user selection involved in the page.
+  * ListRhnSetHelper - used when the user's selections should be stored in an RhnSet.
+  * ListSessionSetHelper - used when the user's selections should be stored in the session.
+ * The getResults() method should return the data to display in the page.
+ * Often, the ListHelper "isDispatched()" method is used to determine if the page form has been submitted.
 
 ==== Simplest case ====
 
