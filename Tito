@@ -28,6 +28,7 @@ blacklist = another-package-name
 [cvs]
 cvsroot = :gserver:cvs.example.com:/cvs/repo
 branches = CVS_BRANCH1 CVS_BRANCH2
+}}}
 
 
 === globalconfig ===
