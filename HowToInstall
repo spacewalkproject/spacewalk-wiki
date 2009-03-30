@@ -31,6 +31,8 @@ gpgcheck=1
 EOF
 }}}
 
+Note that Fedora 10 does not require the EPEL repositories.
+
 = Red Hat Enterprise Linux 5 =
 
 == Oracle Pre-Requisites ==
@@ -38,6 +40,8 @@ EOF
 In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE.  Instructions on how todo this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
 == EPEL Repo setup ==
+
+'''NOTE:''' Not required for Fedora.
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
@@ -56,16 +60,6 @@ Otherwise you get error messeges like :
 
 You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL testing is currently required for Spacewalk 0.5.
 
-== Fedora 10 jpackage Repo setup ==
-
-Some packages needed on Fedora 10 are provided by jpackage's repository. Put the following content to {{{/etc/yum.repos.d/jpackage.repo}}}:
-
-{{{
-[jpackage]
-name=jpackage-f10
-baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
-gpgcheck=0
-}}}
 
 == Installation ==
 
@@ -109,7 +103,7 @@ enabled=1
 gpgcheck=0
 }}}
 
-Note that Fedora 10 repo is at:
+Note that Fedora 10 devel repo is at:
 
 {{{ 
 http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
