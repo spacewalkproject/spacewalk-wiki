@@ -45,24 +45,26 @@ Targeted version of PostgreSQL is 8.1+
 
 === Tracking ===
 
-'''What's happening this week ...'''^03/16/09^
-
- ''Analysis / Planning ''
+'''What's happening this week ...'''^03/30/09^
 
  * Getting perl stack connecting/working with postgres (dgoodwin)
  * Refactoring ''/schema'' directory into:  (jortel)
-    * common parts
-    * forked '''oracle''' parts
-    * forked '''postgres''' parts
+    * common parts (done)
+    * forked '''oracle''' parts (done)
+    * forked '''postgres''' parts 
  * Get build, install & packaging working with refactored directory (jortel).
+   * oracle build working.
+   * postgres build working but:
+      * syntax problems in many of the procs
+      * missing 119 trigger files.
 
 
-|| Tables & Indexes || 100% || [wiki:PgportTables Details] ||
-|| Data (inserts) || 80% ||  ||
-|| Views || 100% || [wiki:PgportViews Details] ||
-|| Triggers || 100% || [wiki:PgportTriggers Details] ||
-|| Procedures || 100% || [wiki:PgportProcedures Details] ||
-|| Packages || 70% || ||
+|| Tables & Indexes || 100% || [wiki:PgportTables Details] || ||
+|| Data (inserts) || 100% ||  || ||
+|| Views || 100% || [wiki:PgportViews Details] || ||
+|| Triggers || 50% || [wiki:PgportTriggers Details] || 119 missing
+|| Procedures || 80% || [wiki:PgportProcedures Details] || 13/57 loaded by EDB || 
+|| Packages || 70% || || Also needs .pks created.||
 || Application infrastructure || 30% || [wiki:PostgresAppInfrastructure Details] ||
 || Query tagging || 75% || [wiki:PgportQueries Details]||
 || Query migration:java || 0%|| ||
