@@ -53,6 +53,8 @@ Otherwise you get error messeges like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
+You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL testing is currently required for Spacewalk 0.5.
+
 == Fedora 10 jpackage Repo setup ==
 
 Some packages needed on Fedora 10 are provided by jpackage's repository. Put the following content to {{{/etc/yum.repos.d/jpackage.repo}}}:
@@ -117,10 +119,8 @@ Then just ask yum to install the application:
 {{{
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-former
 yum install gpg
-yum --enablerepo=epel-testing install spacewalk
+yum install spacewalk
 }}}
-
-'''NOTE:''' Ignore the --enablerepo option if you are installing on Fedora.
 
 This will pull down and install the set of RPMs required to get Spacewalk to run.
 
