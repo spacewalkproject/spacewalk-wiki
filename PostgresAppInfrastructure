@@ -76,9 +76,6 @@ some way, we can always manage duplicate schema files.
  * /schema/spacewalk/postgres/packages
     Contains '''postgres''' specific ''forked'' package/package body creation files.
 
-
-See: [attachment:commonSchema.jpg Illustration]
-
 === Database Upgrade ===
 
 Example directories for upgrade listed to demonstrate concepts.  Having common upgrade DDL that is used to generate
