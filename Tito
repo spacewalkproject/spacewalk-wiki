@@ -48,9 +48,9 @@ Allow you to customize some behavior for a koji tag you're submitting a build to
 
 disttag is optional, but often useful. This identifies the disttag to be applied to the source rpms you submit, otherwise the default for your system will be used.
 
-blacklist is optional, and will prevent the packages listed from being built in this koji tag. Separate package names with a space.
+blacklist is optional, and will prevent the packages listed from being built in this koji tag. Separate package names with a space. Additionally this will prevent the package from appearing when checking for missing builds in a particular tag.
 
-whitelist is optional, but if present tito will assume that all other packages are blacklisted and only those whitelisted explicitly will be built in this tag. whitelist and blacklist cannot be combined and tito will error out if both are present.
+whitelist is optional, but if present tito will assume that all other packages are blacklisted and only those whitelisted explicitly will be built in this tag. whitelist and blacklist cannot be combined and tito will error out if both are present. This setting currently has no effect when checking for missing builds in a particular tag.
 
 == ~/.spacewalk-build-rc ==
 
