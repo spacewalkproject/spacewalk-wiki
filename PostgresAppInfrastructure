@@ -20,45 +20,62 @@ some way, we can always manage duplicate schema files.
  * '''/schema/spacewalk/common'''
     Common schema.
  * /schema/spacewalk/common/tables
-    Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
+    Although we have created ''static'' postgres table DDL (.sql) files, the long term goal is to have most of the table .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  Also contains the ''common'' tables.deps file.
  * /schema/spacewalk/common/views
-    Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  In order for a view to be common, it must contain a query that works for all databases.
+    Although we have created ''static'' postgres view DDL (.sql) files, the long term goal is to have most of the view .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DDL grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  In order for a view to be common, it must contain a query that works for all databases.  Also contains the ''common'' views.deps file.
  * /schema/spacewalk/common/data
-    Although we have created ''static'' postgres data loading (.sql) files (inserts), the long term goal is to have most of the data loading .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DML grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.
+    Although we have created ''static'' postgres data loading (.sql) files (inserts), the long term goal is to have most of the data loading .sql files would go in this directory.  The ''common'' schema syntax would be a superset of both DML grammars.  At build time, the ''common'' schema would be used to generate the ''dynamic'' DDL files for each DB in the DB specific directories.  Also contains the ''common'' data.deps file.
  * '''/schema/spacewalk/oracle'''
     Contains both: generated (dynamic) '''oracle''' specific schema and ''forked'' (static) schema files.
  * /schema/spacewalk/oracle/class
-    Contains only '''oracle''' specific user defined types (such as EVR_T) schema files.
+    Contains '''oracle''' specific user defined types  (such as EVR_T) DDL files.
+ * /schema/spacewalk/oracle/types
+    Contains '''oracle''' specific user defined types DDL files.
  * /schema/spacewalk/oracle/tables
-    Contains both: generated (dynamic) '''oracle''' specific table & index schema files and ''forked'' (static) schema files.
+    Contains '''oracle''' specific ''(forked)'' table DDL files.
+ * /schema/spacewalk/oracle/tables/common
+    Contains '''common'''  table DDL and (.dep) files.  Populated at build.
  * /schema/spacewalk/oracle/views
-    Contains both: generated (dynamic) '''oracle''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/oracle/triggers
-    Contains only '''oracle''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/oracle/procs
-    Contains only '''oracle''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/oracle/packages
-    Contains only '''oracle''' specific ''forked'' package/package body creation files.
- * /schema/spacewalk/oracle/synonyms
-    Contains only '''oracle''' specific ''forked'' synonym creation files (although the plan is to get rid of these).
+    Contains '''oracle''' specific ''(forked)'' view DDL files.
+ * /schema/spacewalk/oracle/views/common
+    Contains '''common'''  view DDL and (.dep) files.  Populated at build.
  * /schema/spacewalk/oracle/data
-    Contains both: generated (dynamic) '''oracle''' specific data loading (insert) files and ''forked'' (static) insert files.
+    Contains '''oracle''' specific ''(forked)'' data loading (insert) files.
+ * /schema/spacewalk/oracle/data/common
+    Contains '''common''' data loading (insert) and (.dep) files.  Populated at build.
+ * /schema/spacewalk/oracle/triggers
+    Contains '''oracle''' specific ''forked'' trigger creation files.
+ * /schema/spacewalk/oracle/procs
+    Contains '''oracle''' specific ''forked'' stored procedure creation files.
+ * /schema/spacewalk/oracle/packages
+    Contains '''oracle''' specific ''forked'' package/package body creation files.
+ * /schema/spacewalk/oracle/synonyms
+    Contains '''oracle''' specific ''forked'' synonym creation files (although the plan is to get rid of these).
  * '''/schema/spacewalk/postgres'''
     Contains both: generated (dynamic) '''postgres''' specific schema and ''forked'' (static) schema files.
- * /schema/spacewalk/oracle/class
-    Contains only '''postgres''' specific user defined types (such as EVR_T) schema files.
+ * /schema/spacewalk/postgres/class
+    Contains '''postgres''' specific user defined types  (such as EVR_T) DDL files.
+ * /schema/spacewalk/postgres/types
+    Contains '''postgres''' specific user defined types DDL files.
  * /schema/spacewalk/postgres/tables
-    Contains both generated (dynamic) '''postgres''' specific table & index schema files and ''forked'' (static) schema files.
+    Contains '''postgres''' specific ''(forked)'' table DDL files.
+ * /schema/spacewalk/postgres/tables/common
+    Contains '''common'''  table DDL and (.dep) files.  Populated at build.
  * /schema/spacewalk/postgres/views
-    Contains both: generated (dynamic) '''postgres''' specific view schema files and ''forked'' (static) schema files.
- * /schema/spacewalk/postgres/triggers
-    Contains only '''postgres''' specific ''forked'' trigger creation files.
- * /schema/spacewalk/postgres/procs
-    Contains only '''postgres''' specific ''forked'' stored procedure creation files.
- * /schema/spacewalk/postgres/packages
-    Contains only '''postgres''' specific ''forked'' package/package body creation files.
+    Contains '''postgres''' specific ''(forked)'' view DDL files.
+ * /schema/spacewalk/postgres/views/common
+    Contains '''common'''  view DDL and (.dep) files.  Populated at build.
  * /schema/spacewalk/postgres/data
-    Contains both: generated (dynamic) '''postgres''' specific data loading (insert) files and ''forked'' (static) insert files.
+    Contains '''postgres''' specific ''(forked)'' data loading (insert) files.
+ * /schema/spacewalk/postgres/data/common
+    Contains '''common''' ''(generated)'' data loading (insert) and (.dep) files.  Populated at build.
+ * /schema/spacewalk/postgres/triggers
+    Contains '''postgres''' specific ''forked'' trigger creation files.
+ * /schema/spacewalk/postgres/procs
+    Contains '''postgres''' specific ''forked'' stored procedure creation files.
+ * /schema/spacewalk/postgres/packages
+    Contains '''postgres''' specific ''forked'' package/package body creation files.
+
 
 See: [attachment:commonSchema.jpg Illustration]
 
