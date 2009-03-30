@@ -4,6 +4,11 @@
  * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#CentOS5 CentOS 5]
  * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#Fedora10 Fedora 10]
 
+== Prerequisites ==
+
+ * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring)
+ * Inbound open ports 80, 443, 5222 (only if you want to push actions to client machines) and 5269 (only for push actions to a Spacewalk Proxy)
+
 = CentOS 5 =
 
 Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
