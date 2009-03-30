@@ -117,8 +117,10 @@ Then just ask yum to install the application:
 {{{
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-former
 yum install gpg
-yum install spacewalk
+yum --enablerepo=epel-testing install spacewalk
 }}}
+
+'''NOTE:''' Ignore the --enablerepo option if you are installing on Fedora.
 
 This will pull down and install the set of RPMs required to get Spacewalk to run.
 
