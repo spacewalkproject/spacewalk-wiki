@@ -50,7 +50,7 @@ disttag is optional, but often useful. This identifies the disttag to be applied
 
 blacklist is optional, and will prevent the packages listed from being built in this koji tag. Separate package names with a space.
 
-whitelist is optional, but if present tito will assume that all other packages are blacklisted and only those whitelisted explicitly will be built in this tag. 
+whitelist is optional, but if present tito will assume that all other packages are blacklisted and only those whitelisted explicitly will be built in this tag. whitelist and blacklist cannot be combined and tito will error out if both are present.
 
 == ~/.spacewalk-build-rc ==
 
