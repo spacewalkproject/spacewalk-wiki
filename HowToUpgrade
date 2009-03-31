@@ -1,4 +1,9 @@
 = Spacewalk Upgrade Instructions =
+{{{
+#!html
+<h1 style="color: red">DO NOT USE THIS FOR 0.4 to 0.5 UPGRADES YET!</h1>
+}}}
+We will announce upgrades as soon as we can.
 
 Spacewalk upgrade from version 0.3 to 0.4 involves several basic steps:
   1.  Configuration files and Spacewalk database backup
