@@ -75,7 +75,9 @@ You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL
 RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum
-
+{{{
+#!html
+<!--
 To use this repository either install spacewalk-repo RPM
 
 {{{
@@ -86,7 +88,10 @@ or
 rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/x86_64/spacewalk-repo-0.4-1.el5.noarch.rpm
 }}}
 
-or manually add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
+or manually
+-->
+}}}
+add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
 === Red Hat Enterprise Linux ===
 {{{
 [spacewalk]
