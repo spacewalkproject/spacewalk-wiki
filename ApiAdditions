@@ -444,7 +444,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.schedulePackageRemove  || Tested ||    ||    ||    || 
 ||  system.setGuestCpus  || Tested ||    ||    ||    || 
 ||  system.setGuestMemory  || Tested ||    ||    ||    || 
-||  system.setLockStatus String Integer Boolean  || Missing ||    ||    ||    ||
+||  system.setLockStatus String Integer Boolean  || Tested ||    ||    ||  jmatthews  ||
 ||  system.whoRegistered  || Tested ||    ||    ||    || 
 ||  system.config.createOrUpdatePath String Integer Boolean String Map Integer   || Missing ||    ||    ||    ||
 ||  system.config.deleteFiles String Integer List Boolean  || Missing ||    ||    ||    ||
