@@ -372,13 +372,13 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.profile.system.setNetworkConnection  || Tested ||    ||  ||skarmark|| 
 ||  kickstart.profile.system.setPartitioningScheme  || Tested ||    ||    ||skarmark|| 
 ||  kickstart.profile.system.setSELinux  || Tested ||    || kickstart.profile.system.getSELinux was added to allow test  ||skarmark|| 
-||  kickstart.tree.create  || Missing ||    ||    ||    || 
-||  kickstart.tree.delete  || Missing ||    ||    ||    || 
-||  kickstart.tree.deleteTreeAndProfiles  || Missing ||    ||    ||    || 
-||  kickstart.tree.list  || Missing ||    ||    ||    || 
-||  kickstart.tree.listInstallTypes  || Missing ||    ||    ||    || 
-||  kickstart.tree.rename  || Missing ||    ||    ||    || 
-||  kickstart.tree.update  || Missing ||    ||    ||    || 
+||  kickstart.tree.create  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.delete  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.deleteTreeAndProfiles  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.list  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.listInstallTypes  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.rename  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.update  || Missing ||    ||    || skarmark || 
 ||  org.create  || Tested ||    ||    ||    || 
 ||  org.delete  || Tested ||    ||    ||    || 
 ||  org.getDetails  || Tested ||    ||    ||    || 
