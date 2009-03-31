@@ -87,11 +87,21 @@ rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/x86_64/spacewalk-repo-
 }}}
 
 or manually add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
-
+=== Red Hat Enterprise Linux ===
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.4/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.5/RHEL/5/$basearch/os/
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=1
+}}}
+
+=== Fedora ===
+{{{
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/0.5/Fedora/10/$basearch/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
