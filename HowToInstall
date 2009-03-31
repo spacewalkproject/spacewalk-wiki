@@ -107,7 +107,7 @@ enabled=1
 gpgcheck=1
 }}}
 
-'''NOTE:''' If you are looking for versions 0.2 or 0.3 replace 0.4 with appropriate version in the {{{baseurl}}}.
+'''NOTE:''' If you are looking for versions 0.4 replace 0.5 with appropriate version in the {{{baseurl}}}.
 
 If you want to use the nightly builds, use the following config:
 
