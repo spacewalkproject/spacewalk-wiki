@@ -325,7 +325,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.importRawFile String String String String String || Missing ||    ||    ||    || 
 ||  kickstart.listAllIpRanges  || Tested ||    ||    ||    || 
 ||  kickstart.listKickstarts  || Tested ||    ||    ||    || 
-||  kickstart.renameProfile  String String String || Missing ||    ||    ||    || 
+||  kickstart.renameProfile  String String String || Tested ||    ||    || skarmark || 
 ||  kickstart.filepreservation.create  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.delete  || Tested ||    ||    ||    || 
 ||  kickstart.filepreservation.getDetails  || Tested ||    ||    ||    || 
