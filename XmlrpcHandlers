@@ -1,5 +1,5 @@
 = XML-RPC Handlers =
-Spacewalk exports a significant chunk of operations through its XML-RPC API. This page is intended to get you up and running with sample client scripts, and implement a sample XML-RPC call in one of the handlers. To find the list of supported API calls goto {{{LINK TO API HERE /rhn/rpc/api}}}.
+Spacewalk exports a significant chunk of operations through its XML-RPC API. This page is intended to get you up and running with sample client scripts, and implement a sample XML-RPC call in one of the handlers. To find the list of supported API calls goto ApiDocs.
 
 == Using the API ==
 
