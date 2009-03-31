@@ -31,26 +31,26 @@ branches = CVS_BRANCH1 CVS_BRANCH2
 }}}
 
 
-=== globalconfig ===
+=== [globalconfig] ===
 
 
-default_builder and default_tagger are required, these apply to most all projects in your repository. (can be overridden for specific packages but this feature is seldom needed)
+'''default_builder''' & '''default_tagger''' (required): The default builder and tagger classes to use. These are the defaults, specific packages can override them but this is seldom needed.
 
-tag_suffix is optional, when tagging package releases this suffix will be appended to the git tag. Useful for projects inheriting from an upstream git repository, allowing you to identify which tags were created in your repository vs those that were pulled down from upstream.
+'''tag_suffix''' (optional): When tagging package releases this suffix will be appended to the git tag. Useful for projects inheriting from an upstream git repository, allowing you to identify which tags were created in your repository vs those that were pulled down from upstream.
 
-=== koji ===
+=== [koji] ===
 
-Configures which koji tags packages should be built into. The actual koji configuration is your own koji client configuration. The default command used to submit packages can be customized in ~/.spacewalk-build-rc. (see section below)
+'''autobuild_tags''': Configures which koji tags packages should be built into. The actual koji configuration is your own koji client configuration. The default command used to submit packages can be customized in ~/.spacewalk-build-rc. (see section below)
 
 === [kojitag] ===
 
 Allow you to customize some behavior for a koji tag you're submitting a build to.
 
-disttag is optional, but often useful. This identifies the disttag to be applied to the source rpms you submit, otherwise the default for your system will be used.
+'''disttag''' (optional): Identifies the disttag to be applied to the source rpms you submit, otherwise the default for your OS will be used.
 
-blacklist is optional, and will prevent the packages listed from being built in this koji tag. Separate package names with a space. Additionally this will prevent the package from appearing when checking for missing builds in a particular tag.
+'''blacklist''' (optional): Prevent the packages listed from being built in the koji tag, and from appearing when checking for missing builds in that tag. Separate package names with a space.
 
-whitelist is optional, but if present tito will assume that all other packages are blacklisted and only those whitelisted explicitly will be built in this tag. whitelist and blacklist cannot be combined and tito will error out if both are present. This setting currently has no effect when checking for missing builds in a particular tag.
+'''whitelist''' (optional): Only allow the listed packages to be build in this koji tag. Implies all other packages are blacklisted and as such, if whitelist is defined the blacklist setting is ignored. This setting has no effect when checking for missing package builds. (yet)
 
 == ~/.spacewalk-build-rc ==
 
