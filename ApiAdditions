@@ -316,7 +316,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  configchannel.lookupChannelInfo String List || Tested ||    ||    || skarmark ||
 ||  configchannel.lookupFileInfo String String List  || Tested ||    ||    || skarmark ||
 ||  errata.addPackages  || Tested ||    ||    ||skarmark|| 
-||  errata.create String Map List List List Boolean List || Missing ||    ||    || || 
+||  errata.create String Map List List List Boolean List || Tested ||    ||    || skarmark || 
 ||  errata.findByCve  || Recheck it looks like this only calls listCVE, not findByCve ||    ||    ||skarmark|| 
 ||  errata.removePackages  || Tested ||    ||    ||skarmark|| 
 ||  errata.setDetails  || Tested ||    ||    ||skarmark|| 
