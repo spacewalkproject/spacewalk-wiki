@@ -26,28 +26,19 @@ The current version is x.y. It was built from the RELEASE-x.y branch.
 
 An example:
 
-Development for the 0.2 release is proceeding. Code is being checked into '''master''', and there are no active branches. The {{{Version:}}} in the spec files in '''master''' contain {{{0.2.x 1%{?dist}.}}} Eventually 0.2 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.3. 
+Development for the 0.6 release is proceeding. Code is being checked into '''master''', and there are no active branches. The {{{Version:}}} in the spec files in '''master''' contain {{{0.6.x 1%{?dist}.}}} Eventually 0.6 becomes stable enough that we are ready to build RPMS, or a developer is ready to work on release 0.7. 
 
 So, we create the branch. There may be point releases, so we name the branch appropriately.
 {{{
 git checkout master
 git pull (make sure things are clean)
-git checkout -b release-0.2
-git push origin release-0.2:refs/heads/RELEASE-0.2
-git checkout --track -b my-branchname origin/RELEASE-0.2
+git checkout -b spacewalk-0.6
+git push origin spacewalk-0.6:refs/heads/SPACEWALK-0.6
+git checkout --track -b my-localbranch origin/SPACEWALK-0.6
 }}}
 
-RELEASE-0.2 branch will then be used to build any 0.2 point releases (including .0).
+SPACEWALK-0.6 branch will then be used to build any 0.6 point releases (including .0).
 
 So far so good. One problem: The {{{Version:}}} in the spec files in the branch and in '''master''' are identical! If we build RPMs from both the branch and '''master''', we will end up with version conflicts, and be very sad. Now we can go back to '''master''' and fix the {{{Version:}}} in the spec files there. 
 
-{{{
-git checkout master
-
-PUT IN COMMAND TO SWITCH VERSIONS TO 0.3
-
-git commit
-git push
-}}}
-
-All code committed to release branches must also be included in master. (git cherry-pick and git merge very useful for this)
+All code committed to release branches must also be included in master. (git cherry-pick and git merge very useful for this). For help with the git commands see GitGuide
