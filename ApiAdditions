@@ -376,7 +376,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  kickstart.tree.delete  || Tested ||    ||    || skarmark || 
 ||  kickstart.tree.deleteTreeAndProfiles  || Tested ||    ||    || skarmark || 
 ||  kickstart.tree.list  || Tested ||    ||    || skarmark || 
-||  kickstart.tree.listInstallTypes  || Missing ||    ||    || skarmark || 
+||  kickstart.tree.listInstallTypes  || Tested ||    ||    || skarmark || 
 ||  kickstart.tree.rename  || Tested ||    ||    || skarmark || 
 ||  kickstart.tree.update  || Tested ||    ||    || skarmark || 
 ||  org.create  || Tested ||    ||    ||    || 
