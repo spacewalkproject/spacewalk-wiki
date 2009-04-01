@@ -128,7 +128,7 @@ echo ".  /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh" 
 As the oracle user, run
 
 {{{
-sqlplus 'sys/<password>@xe as sysdba'
+sqlplus 'sys@xe as sysdba'
 }}} 
  
 You should see something like
@@ -148,7 +148,7 @@ SQL>
 == Create the spacewalk database user ==
 
 {{{
-# sqlplus 'sys/<password>@xe as sysdba'
+# sqlplus 'sys@xe as sysdba'
 SQL> create user spacewalk identified by spacewalk default tablespace users;
 SQL> grant dba to spacewalk;
 SQL> quit
