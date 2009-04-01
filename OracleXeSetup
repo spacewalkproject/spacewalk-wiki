@@ -115,7 +115,17 @@ Run {{{ldconfig -v}}} to enable these changes on your system.
 
 == Test your connection with sqlplus ==
 
-Run
+To set up required environment variables run:
+{{{
+/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh
+}}}
+
+Add to your .bash_profile to make permanent for the oracle user:
+{{{
+echo ".  /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh" >> ~oracle/.bash_profile
+}}}
+
+As the oracle user, run
 
 {{{
 sqlplus 'sys/<password>@xe as sysdba'
