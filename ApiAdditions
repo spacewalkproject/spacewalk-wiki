@@ -464,4 +464,4 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.search.nameAndDescription  || Tested ||    ||    ||    || 
 ||  systemgroup.listActiveSystemsInGroup  || Tested ||    ||    ||    || 
 ||  systemgroup.listInactiveSystemsInGroup  String String Integer || Tested ||    ||    ||    || 
-||  systemgroup.listInactiveSystemsInGroup  String String || Missing ||    ||    ||    || 
+||  systemgroup.listInactiveSystemsInGroup  String String || Tested ||    ||    || skarmark || 
