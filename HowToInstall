@@ -166,7 +166,6 @@ DB port [1521]?
 DB protocol [TCP]? 
 ** Database: Testing database connection.
 ** Database: Populating database.
-sh: dbhome: command not found
 *** Progress: ###################################################################
 You must enter an email address.
 Admin Email Address? tito@example.com
