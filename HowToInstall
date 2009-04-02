@@ -62,19 +62,6 @@ http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
 
 = Aditional repos & packages =
 
-=== CentOS 5 ===
-
-Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
- 1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
-{{{ 
-rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm 
-}}} 
- 1.  You will need Redhat's RPM GPG key:
-{{{
-# wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
-# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
-}}}
-
 === Fedora 10 ===
 
 For Spacewalk 0.5 a couple additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation:
@@ -89,13 +76,7 @@ gpgcheck=1
 EOF
 }}}
 
-Note that Fedora 10 does not require the EPEL repositories.
-
 === Red Hat Enterprise Linux 5 ===
-
-== EPEL Repo setup ==
-
-'''NOTE:''' Not required for Fedora.
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
 
@@ -114,6 +95,18 @@ Otherwise you get error messeges like :
 
 You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL testing is currently required for Spacewalk 0.5.
 
+=== CentOS 5 ===
+
+Follow the instructions for '''Red Hat Enterprise Linux 5''' with the exceptions:
+ 1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
+{{{ 
+rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm 
+}}} 
+ 1.  You will need Redhat's RPM GPG key:
+{{{
+# wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
+# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+}}}
 
 = Oracle Pre-Requisites =
 
