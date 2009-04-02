@@ -117,8 +117,6 @@ In order to get Spacewalk to run it needs to point itself at a Oracle 10g databa
 
 = Installing Spacewalk =
 
-'''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
-
 Just ask yum to install the application:
 
 {{{
@@ -130,6 +128,8 @@ yum install spacewalk
 This will pull down and install the set of RPMs required to get Spacewalk to run.
 
 = Configuring Spacewalk =
+
+'''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
 Once the Spacewalk RPM is installed you need to configure the application, you can run:
 
