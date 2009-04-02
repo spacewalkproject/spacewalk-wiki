@@ -83,8 +83,8 @@ $ ls -l fedora/Fedora/
   ...
  }}}
 
-== push the content ==
-Finally, time to push the content into the server. Once you have the rpms, use {{{rhnpush}}} to push them to the Spacewalk server.
+== Push the Content ==
+Finally, time to push the content into the server. Once you have the RPMs, use {{{rhnpush}}} (provided by the rhnpush package) to push them to the Spacewalk server.
 
 For example, to upload the content downloaded using {{{reposync}}} do the following:
  {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
