@@ -180,7 +180,7 @@ This can be accomplished by following steps:
 
 ----
 What's bellow are additional steps that were required for Spacewalk 0.2 to Spacewalk 0.3 upgrades. These steps are no longer required for
-Spacewalk 0.3 to Spacewalk 0.4 upgrades and can be safely ignored.
+Spacewalk 0.4 to Spacewalk 0.5 upgrades and can be safely ignored.
 
 =  Activate Spacewalk services  =
 
