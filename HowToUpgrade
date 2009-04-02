@@ -6,7 +6,7 @@ Spacewalk upgrade from version 0.4 to 0.5 involves several basic steps:
   3.  Package upgrade
   4.  Schema upgrade
   5.  Upgrade of Spacewalk configuration
-  6.  Disable jabber and osa-dispatcher services
+  6.  Disable jabberd and osa-dispatcher services
   7.  Update Spacewalk configuration files
   8.  Restart Spacewalk
   9.  Rebuild search indexes
@@ -139,7 +139,7 @@ SSLProxyEngine on
 }}}
 
 
-= Disable jabber and osa-dispatcher services =
+= Disable jabberd and osa-dispatcher services =
 
 jabberd-2.2 is known not to work correctly with Spacewalk 0.5 and RHEL-5 / CentOS-5 and it is highly recommended to disable jabberd and osa-dispatcher
 services after Spacewalk upgrade:
