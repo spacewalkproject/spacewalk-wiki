@@ -55,9 +55,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 || channel.org.disableAccess(string sessionKey, string channelLabel, int trustOrgId) || 0.4 || 4 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Sat/Org/Channel Admin.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
-|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.5 || 1 || jsherrill || || deprecated string-date version ||
-|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate) || 0.5 || 1 ||  jsherrill || || deprecated string-date version ||
-|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 endDate) || 0.5 || 1 || jsherrill ||  || deprecated string-date version ||
+|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.5 || 1 || jsherrill || done || deprecated string-date version ||
+|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate) || 0.5 || 1 ||  jsherrill || done || deprecated string-date version ||
+|| channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 endDate) || 0.5 || 1 || jsherrill || done || deprecated string-date version ||
 || channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate) || 0.5 || 3 || bbuckingham || done || * List all packages based on the start date given.[[BR]]* This API will deprecate the existing listAllPackages API that has startDate defined as a string. ||
 || channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate) || 0.5 || 3 || bbuckingham || done || * List all packages based on the start/end date given.[[BR]]* This API will deprecate the existing listAllPackages API that has startDate and endDate defined as a string. ||
 || channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType) || 0.3 || 4 || bbuckingham || done ||  ||
