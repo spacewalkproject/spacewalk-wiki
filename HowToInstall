@@ -26,21 +26,21 @@ To use this repository install spacewalk-repo RPM
 === Red Hat Enterprise Linux, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.5/RHEL/5/i386/os/Packages/spacewalk-repo-0.5-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/RHEL/5/i386/os/Packages/spacewalk-repo-0.5-2.el5.noarch.rpm
 }}}
 or
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.4/RHEL/5/x86_64/os/Packages/spacewalk-repo-0.5-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.4/RHEL/5/x86_64/os/Packages/spacewalk-repo-0.5-2.el5.noarch.rpm
 }}}
 
 === Fedora ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/i386/os/Packages/spacewalk-repo-0.5-1.fc10.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/i386/os/Packages/spacewalk-repo-0.5-2.fc10.noarch.rpm
 }}}
 or
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/x86_64/os/Packages/spacewalk-repo-0.5-1.fc10.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/x86_64/os/Packages/spacewalk-repo-0.5-2.fc10.noarch.rpm
 }}}
 
 === Nightly builds ===
