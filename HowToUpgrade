@@ -22,7 +22,7 @@ Spacewalk upgrade from version 0.4 to 0.5 involves several basic steps:
 =  Database and configuration backup  =
 
 
-  *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn/ and /etc/rhn/
+  *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
   *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle documentation or contact your DBA
 
 
@@ -40,7 +40,7 @@ Setup your yum configuration to point to Spacewalk 0.5 repo:
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.5/rhel/5Server/$basearch/
+baseurl=http://spacewalk.redhat.com/yum/0.5/RHEL/5/$basearch/os
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
