@@ -96,7 +96,7 @@ Otherwise you get error messeges like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
-You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL testing is currently required for Spacewalk 0.5.
+It also requires cobbler 1.6.0 or greater which is in '''epel-testing''' repo. You must edit /etc/yum.repos.d/epel-testing.repo and change enabled=1.
 
 === CentOS 5 ===
 
