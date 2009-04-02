@@ -74,7 +74,9 @@ You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL
 
 RPM downloads of the project are available through a yum repository
 
-  * http://spacewalk.redhat.com/yum
+  * http://spacewalk.redhat.com/yum - Binary RPMs
+  * http://spacewalk.redhat.com/source - Source RPMs and tarballs
+
 {{{
 #!html
 <!--
@@ -139,17 +141,7 @@ yum install gpg
 yum install spacewalk
 }}}
 
-This will pull down and install the set of RPMs required to get Spacewalk to run.
-
-
-'''NOTE:''' x86_64 users will need to add a file {{{/etc/ld.so.conf.d}}} (e.g. {{{/etc/ld.so.conf.d/spacewalk.conf}}}) with the following contents (check for {{{/etc/ld.so.conf.d/oracle-xe.conf}}} first!!):
-{{{
-  /usr/lib/oracle/10.2.0.4/client64/lib/
-  /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib/
-}}}
-Run {{{ldconfig -v}}} to enable these changes on your system
-
-Once the Spacewalk rpm is installed you need to configure the application, you can run:
+This will pull down and install the set of RPMs required to get Spacewalk to run. Once the Spacewalk RPM is installed you need to configure the application, you can run:
 
 {{{
 spacewalk-setup --disconnected
@@ -169,7 +161,6 @@ An example session is as follows:
 DB User? spacewalk
 DB Password? 
 DB SID? xe
-
 DB hostname? localhost
 DB port [1521]? 
 DB protocol [TCP]? 
@@ -198,9 +189,8 @@ Country code (Examples: "US", "JP", "IN", or type "?" to see a list)? US
 ** SSL: Deploying CA certificate.
 ** SSL: Generating server certificate.
 ** SSL: Storing SSL certificates.
-Use of uninitialized value in chown at /usr/bin/rhn-generate-pem.pl line 57.
-Use of uninitialized value in chown at /usr/bin/rhn-generate-pem.pl line 57.
 * Deploying configuration files.
+* Starting Cobbler..
 * Update configuration in database.
 * Restarting services.
 Installation complete.
@@ -218,10 +208,7 @@ cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib &&\
 After {{{spacewalk-setup}}} is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
-You can also find source RPMs and tarballs at the following URL:
-   * http://spacewalk.redhat.com/source
-
-Once you've made sure you can login to the Spacewalk web UI, you can then proceed to the next step: [UploadFedoraContent#Uploading Content].
+Once you've made sure you can login to the Spacewalk web UI, you can then proceed to the next step: [UploadFedoraContent Uploading Content].
 
 == Starting Spacewalk ==
 If you are installing spacewalk 0.3 and later you should be using /usr/sbin/rhn-satellite to stop/start/restart the spacewalk server as the init.d script has been removed.
