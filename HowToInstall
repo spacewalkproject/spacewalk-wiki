@@ -18,46 +18,32 @@ RPM downloads of the project are available through a yum repository
   * http://spacewalk.redhat.com/yum - Binary RPMs
   * http://spacewalk.redhat.com/source - Source RPMs and tarballs
 
-{{{
-#!html
-<!--
-To use this repository either install spacewalk-repo RPM
+To use this repository install spacewalk-repo RPM
+
+=== Red Hat Enterprise Linux, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/i386/spacewalk-repo-0.4-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/RHEL/5/i386/os/Packages/spacewalk-repo-0.5-1.el5.noarch.rpm
 }}}
 or
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.4/rhel/5Server/x86_64/spacewalk-repo-0.4-1.el5.noarch.rpm
-}}}
-
-or manually
--->
-}}}
-add a file in {{{yum.repos.d}}} (e.g. {{{/etc/yum.repos.d/spacewalk.repo}}}) with the following contents:
-=== Red Hat Enterprise Linux ===
-{{{
-[spacewalk]
-name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.5/RHEL/5/$basearch/os/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=1
+rpm -Uvh http://spacewalk.redhat.com/yum/0.4/RHEL/5/x86_64/os/Packages/spacewalk-repo-0.5-1.el5.noarch.rpm
 }}}
 
 === Fedora ===
+
 {{{
-[spacewalk]
-name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.5/Fedora/10/$basearch/os/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=1
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/i386/os/Packages/spacewalk-repo-0.5-1.fc10.noarch.rpm
+}}}
+or
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.5/Fedora/10/x86_64/os/Packages/spacewalk-repo-0.5-1.fc10.noarch.rpm
 }}}
 
-'''NOTE:''' If you are looking for versions 0.4 replace 0.5 with appropriate version in the {{{baseurl}}}.
+=== Nightly builds ===
 
-If you want to use the nightly builds, use the following config:
+If you want to use the nightly builds 
+add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the following contents:
 
 {{{
 [spacewalk]
@@ -68,7 +54,7 @@ enabled=1
 gpgcheck=0
 }}}
 
-Note that Fedora 10 devel repo is at:
+Fedora 10 nightly repo is at:
 
 {{{ 
 http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
