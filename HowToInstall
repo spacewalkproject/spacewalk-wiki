@@ -100,7 +100,7 @@ You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL
 
 === CentOS 5 ===
 
-Follow the instructions for '''Red Hat Enterprise Linux 5''' with the exceptions:
+Follow the instructions for '''Red Hat Enterprise Linux 5''' with the additions:
  1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
 {{{ 
 rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm 
