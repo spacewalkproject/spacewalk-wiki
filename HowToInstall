@@ -1,8 +1,11 @@
 = Spacewalk Installation Instructions =
 
- * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5]
- * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#CentOS5 CentOS 5]
- * [https://fedorahosted.org/spacewalk/wiki/HowToInstall#Fedora10 Fedora 10]
+ * [#SettingupSpacewalkrepo Setting up Spacewalk repo ]
+ * [#Aditionalrepospackages Aditional repos & packages ]
+ * [#OraclePre-Requisites Oracle Pre-Requisites ]
+ * [#InstallingSpacewalk Installing Spacewalk ]
+ * [#ManagingSpacewalk Managing Spacewalk ]
+ * [#KnownIssues Known Issues ]
 
 == Prerequisites ==
 
