@@ -246,4 +246,4 @@ Quit sqlplus and restart spacewalk and oracle-xe (may not require a restart)
 
 [http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian] 
 
-Continue installing Spacewalk: HowToInstall#Installation 
+Continue installing Spacewalk: [HowToInstall#InstallingSpacewalk HowToInstall > InstallingSpacewalk]
