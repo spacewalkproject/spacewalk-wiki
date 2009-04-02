@@ -87,15 +87,27 @@ $ ls -l fedora/Fedora/
 Finally, time to push the content into the server. Once you have the RPMs, use {{{rhnpush}}} (provided by the rhnpush package) to push them to the Spacewalk server.
 
 For example, to upload the content downloaded using {{{reposync}}} do the following:
- {{{rhnpush --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora }}}
+{{{
+rhnpush -v --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora
+}}}
 
-=== usage ===
- {{{rhnpush --channel=<channel-label> --server=http://localhost/APP --dir=<directory> }}}
+Note: Make sure {{{/var/satellite}}} exists on the Spacewalk server and has owner:group {{{apache}}} before pushing. The -v option causes progress information to be printed, e.g.:
 
-Note: Make sure {{{/var/satellite}}} exists and has owner:group {{{apache}}} before pushing.
+{{{
+# rhnpush -v --channel=rhel-x86_64-server-5 --server=http://localhost/APP --dir=update
+Connecting to http://localhost/APP
+Package /root/update/xorg-x11-drv-vga-4.1.0-2.1.x86_64.rpm Not Found on RHN Server -- Uploading
+Uploading package /root/update/xorg-x11-drv-vga-4.1.0-2.1.x86_64.rpm
+Using POST request
+Package /root/update/gnome-python2-gconf-2.16.0-1.fc6.x86_64.rpm Not Found on RHN Server -- Uploading
+Uploading package /root/update/gnome-python2-gconf-2.16.0-1.fc6.x86_64.rpm
+Using POST request
+}}}
 
 Note: I found that the above failed on Fedora 9 Everything.  My work around was
- {{{find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk}}}
+{{{
+find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk
+}}}
 
 Note: If you are running rhnpush from a box that is NOT your spacewalk server, use the correct hostname in the --server param
 
