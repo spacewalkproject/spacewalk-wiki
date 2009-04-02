@@ -168,6 +168,9 @@ use /usr/sbin/rhn-satellite script.
 # /usr/sbin/rhn-satellite start
 }}}
 
+During the start, you will likely see a glibc exception printed out to the console caused by a jabberd misconfiguration. This
+is a known issue and it is recommended to stop jabberd and osa-dispatcher services afterwards.
+
 = Rebuild search indexes =
 
 After a successful upgrade, it is recommended to rebuild search indexes used by Spacewalk search engine (rhn-search service).
