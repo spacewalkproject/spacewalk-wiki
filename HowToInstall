@@ -226,5 +226,4 @@ If you are installing spacewalk 0.3 and later you should be using /usr/sbin/rhn-
 
 = Known Issues =
 
- * During spacewalk-setup, you will be prompted for a satellite certificate, if you do not already have access to one you can generate one by following CertCreation.
  * For issues with Oracle XE, see [OracleXeSetup#KnownIssues Oracle XE Setup Known Issues]
