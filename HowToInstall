@@ -13,8 +13,6 @@
 
 = Setting up Spacewalk repo =
 
-'''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
-
 RPM downloads of the project are available through a yum repository
 
   * http://spacewalk.redhat.com/yum - Binary RPMs
@@ -134,6 +132,8 @@ You must also edit /etc/yum.repos.d/epel-testing.repo and change enabled=1. EPEL
 In order to get Spacewalk to run it needs to point itself at a Oracle 10g database server.  The easiest way todo this is to install Oracle XE. Instructions on how todo this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
 = Installing Spacewalk =
+
+'''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
 Just ask yum to install the application:
 
