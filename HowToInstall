@@ -60,7 +60,9 @@ Fedora 10 nightly repo is at:
 http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
 }}}
 
-= CentOS 5 =
+= Aditional repos & packages =
+
+=== CentOS 5 ===
 
 Please note the following exceptions and then refer to the instructions for [https://fedorahosted.org/spacewalk/wiki/HowToInstall#RedHatEnterpriseLinux5 Red Hat Enterprise Linux 5].
  1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
@@ -73,7 +75,7 @@ rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 }}}
 
-= Fedora 10 =
+=== Fedora 10 ===
 
 For Spacewalk 0.5 a couple additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation:
 
@@ -89,7 +91,7 @@ EOF
 
 Note that Fedora 10 does not require the EPEL repositories.
 
-= Red Hat Enterprise Linux 5 =
+=== Red Hat Enterprise Linux 5 ===
 
 == EPEL Repo setup ==
 
