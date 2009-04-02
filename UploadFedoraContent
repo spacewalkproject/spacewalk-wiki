@@ -6,14 +6,14 @@ In this example, I'll describe how to upload Fedora 9 content into Spacewalk. Ba
  - download the content from a yum repo
  - upload the content to Spacewalk
 
-
-
-== create channel ==
+== Create Channel ==
 
 In order to upload content to Spacewalk, you'll need a channel to contain the packages. Attached you will find a script that can be used to create the channel using the available XML-RPC API.
 
 For example, to create a channel for Fedora 9:
  {{{./create_channel.py --label=fedora-9-i386 --name "Fedora 9 32-bit" --summary "32-bit Fedora 9 channel"}}}
+
+Note: The channel name can't start with "Red Hat" (you will get an "Invalid Channel Name" error).
 
 === usage ===
 
