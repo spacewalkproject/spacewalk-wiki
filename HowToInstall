@@ -133,7 +133,9 @@ Note that Fedora 10 devel repo is at:
 http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
 }}}
 
-Then just ask yum to install the application:
+= Installing Spacewalk =
+
+Just ask yum to install the application:
 
 {{{
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-former
@@ -141,7 +143,11 @@ yum install gpg
 yum install spacewalk
 }}}
 
-This will pull down and install the set of RPMs required to get Spacewalk to run. Once the Spacewalk RPM is installed you need to configure the application, you can run:
+This will pull down and install the set of RPMs required to get Spacewalk to run.
+
+= Configuring Spacewalk =
+
+Once the Spacewalk RPM is installed you need to configure the application, you can run:
 
 {{{
 spacewalk-setup --disconnected
