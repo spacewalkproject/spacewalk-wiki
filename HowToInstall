@@ -221,6 +221,8 @@ After {{{spacewalk-setup}}} is complete your application is ready to go!
 You can also find source RPMs and tarballs at the following URL:
    * http://spacewalk.redhat.com/source
 
+Once you've made sure you can login to the Spacewalk web UI, you can then proceed to the next step: [UploadFedoraContent#Uploading Content].
+
 == Starting Spacewalk ==
 If you are installing spacewalk 0.3 and later you should be using /usr/sbin/rhn-satellite to stop/start/restart the spacewalk server as the init.d script has been removed.
 
