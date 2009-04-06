@@ -65,7 +65,7 @@ As root, run upgrade-cert.sh script attached to this page:
 }}}
 
 This script will try to re-create new rpm package containing your original SSL certificates with server.pem file put
-into a new location and instruct you to do these additional steps:
+into a new location and instruct you to do these additional steps that you are required to do:
 
   *  Uninstall original package containing your certificate files
 
