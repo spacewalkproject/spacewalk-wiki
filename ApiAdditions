@@ -449,8 +449,8 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.config.deleteFiles String Integer List Boolean  || Missing ||    ||    || skarmark ||
 ||  system.config.deployAll String List Date  || Missing ||    ||    || skarmark ||
 ||  system.config.lookupFileInfo String Integer List Integer  || Missing ||    ||    || skarmark ||
-||  system.config.removeChannels String List List || Missing ||    ||    || skarmark ||
-||  system.config.setChannels String List List || Missing ||    ||    || skarmark ||
+||  system.config.removeChannels String List List || Tested ||    ||    || skarmark ||
+||  system.config.setChannels String List List || Tested ||    ||    || skarmark ||
 ||  system.custominfo.createKey  || Tested ||    ||    ||    || 
 ||  system.custominfo.deleteKey  || Tested ||    ||    ||    || 
 ||  system.custominfo.listAllKeys  || Tested ||    ||    ||    || 
