@@ -101,6 +101,12 @@ Make sure your oracle server is running. For oracle-xe that would be:
 # service oracle-xe status
 }}}
 
+For Spacewalk 0.5 upgrades, if you are running with SELinux enforcing, switch SELinux to permissive:
+
+{{{
+# setenforce 0
+}}}
+
 Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
@@ -110,6 +116,7 @@ Run spacewalk-schema-upgrade script to upgrade database schema:
 
 Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
 
+You may switch SELinux back to enforcing now if you wish.
 
 =  Upgrade of Spacewalk configuration  =
 
