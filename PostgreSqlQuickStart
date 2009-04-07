@@ -1,0 +1,33 @@
+= PostgreSql Quick Start Guide =
+
+Want to help fix Spacewalk database queries so that they work in Postgres?  Getting started is easy.
+
+ * Install git, if you don't have it installed
+  * {{{yum install git}}}
+ * Clone spacewalk from git
+  * {{{git clone git://git.fedorahosted.org/git/spacewalk.git/}}}
+ * Install postgres, if you haven't already
+  * {{{yum install postgresql-server}}}
+ * Install the python lex/yacc parser
+  * {{{yum install python-ply}}}
+ * Install schemamagic, the tool that builds both Oracle and Postgres schema from a single meta-schema
+  * {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/dogchow-0.3-1.fc10.noarch.rpm?format=raw}}}
+ * Get the right branch, where the postgres porting work is going on
+  * {{{git checkout origin/schemasandbox}}}
+ * Configure postgres
+  * [as root] {{{/sbin/service postgresql initdb}}}
+  * [as root] {{{vi /var/lib/pgsql/data/pg_hba.conf}}} (Replace all instances of "ident sameuser" with "trust")
+  + [as root] {{{/sbin/service postgresql start}}}
+  + [root] {{{su postgres}}}
+  + [postgres] createuser spacewalk --superuser
+  + [postgres] createdb spacewalk && createlang plpgsql spacewalk
+  + [postgres]  createuser $USERNAME --superuser
+  + [$USERNAME] psql spacewalk (to verify that psql is running)
+
+
+* cd spacewalk/schema/spacewalk/postgres
+* make install
+  + Look at dogchow go!  Warnings are fine.
+  + Also runs genmain.py, which does depsolving and creates a properly ordered
+    set of create scripts.
+
