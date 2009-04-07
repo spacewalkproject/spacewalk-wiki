@@ -1,4 +1,4 @@
-= Postgresql Quick Start Guide =
+= Postgresql Quick Start Guide: DRAFT =
 
 Want to help fix Spacewalk database queries so that they work in Postgres?  Getting started is easy.
 
@@ -28,4 +28,3 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
   * {{{make install}}}
   * Look at schemamagic go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs genmain.py, which does depsolving and creates a properly ordered set of create scripts.
-
