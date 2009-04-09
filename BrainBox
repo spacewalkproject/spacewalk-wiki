@@ -1,7 +1,8 @@
 = Brainbox =
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
-
+ * [https://fedorahosted.org/func func] replaces osad
+ * Integration with [http://www.jasperforge.org/jaspersoft/opensource/business_intelligence/jasperreports/ JasperReports]
  * HelpSystem to make help a bit easier to work with.
  * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
