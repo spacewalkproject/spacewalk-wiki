@@ -123,10 +123,11 @@ sqlplus 'sys@xe as sysdba'
 You should see something like
  
 {{{
-SQL*Plus: Release 10.2.0.4.0 - Production on Thu Mar 26 12:04:30 2009
+SQL*Plus: Release 10.2.0.4.0 - Production on Fri Apr 10 12:59:01 2009
 
 Copyright (c) 1982, 2007, Oracle.  All Rights Reserved.
 
+Enter password: 
 
 Connected to:
 Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
