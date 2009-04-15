@@ -2,6 +2,8 @@
 
 Want to help fix Spacewalk database queries so that they work in Postgres?  Getting started is easy.
 
+== I. Getting everything installed ==
+
  * Install git, if you don't have it installed
   * {{{yum install git}}}
  * Clone spacewalk from git
@@ -28,3 +30,10 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
   * {{{make install}}}
   * Look at schemamagic go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs genmain.py, which does depsolving and creates a properly ordered set of create scripts.
+
+== II. Fixing a query, an example ==
+
+Your process may be different, but this is my process for porting a query, step-by-step.
+
+ * Go find a file with some queries in it.  There's tons.  :)  At some point, we will have a wiki page that will allow contributors to claim a file.  For now, I'm picking a file at random: {{{spacewalk/backend/server/rhnAction.py}}}.  A good way to find queries in the Python codebase, for instance: {{{grep -r rhnSQL .}}}.
+ * Hmm, looks like {{{grep -r "#pgport" .}}} does a better job.  Why are these tags invalid, again?  Is there any way to rescue any of this work?
