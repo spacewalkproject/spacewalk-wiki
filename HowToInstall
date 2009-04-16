@@ -13,6 +13,7 @@
  * Inbound open ports 80, 443, 5222 (only if you want to push actions to client machines) and 5269 (only for push actions to a Spacewalk Proxy)
  * Storage for database: 128KB per client system + 64MB per channel
  * Storage for packages (default /var/satellite): Depends on what you're storing; Red Hat recommend 6GB per channel for their channels
+ * 2GB RAM minimum, 4GB recommended
 
 = Setting up Spacewalk repo =
 
