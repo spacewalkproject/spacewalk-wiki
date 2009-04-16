@@ -26,6 +26,29 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
+= Fedora 10 (v0.5 / x64_64) =
+
+  1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents:
+    {{{
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/0.5/fedora/10/x86_64/
+gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=1
+}}}
+
+tip: adjust the baseurl line to suit your needs: (you can copy/paste the url to see what you need)
+
+  1. Install client packages:
+    {{{
+yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
+    }}}
+  1. Register your Fedora system to Spacewalk using the activation key you created earlier.
+{{{
+rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
+}}}
+
 = CentOS 5 =
 {{{
 #!html
