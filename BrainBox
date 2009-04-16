@@ -37,4 +37,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
  * download packages using torrent protocol
  * enable package/package group selection via a GUI which shows available package/package groups for that distribution
+ * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server
  
