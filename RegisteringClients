@@ -6,6 +6,8 @@ Instructions for registering client systems you wish to manage with Spacewalk
 
 NOTE - rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the --force flag with rhnreg_ks, otherwise there is no need to use --force with registration. 
 
+NOTE - When creating a key, do not use the Generate function but create a human-readable version. eg: fedora-server-channel. This makes the whole more readable and provides more logics into the system.
+
 = Fedora 9 =
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents:
