@@ -33,3 +33,6 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [MultibyteSpacewalk Multibyte (UTF8) input limitations with Spacewalk]
   * [SpacewalkApiPerlGuide Spacewalk API Perl Guide] -- A user contributed guide to using the Spacewalk API in Perl.
   * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
+
+== Work in Progress Document ==
+  * [Spacewalk Virtual Machine install Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction)
