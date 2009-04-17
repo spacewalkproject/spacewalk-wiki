@@ -419,7 +419,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  schedule.listInProgressActions  || Tested ||    ||    ||    || 
 ||  schedule.listInProgressSystems  || Recheck - call params don't match definition ||    ||  docs need update  ||    || 
 ||  system.comparePackageProfile  || Tested ||    ||    ||    || 
-||  system.deleteCustomValues String Integer List || Missing ||    ||    ||    || 
+||  system.deleteCustomValues String Integer List || Tested ||    ||    || skarmark || 
 ||  system.deleteSnapshot  || Tested ||    ||    ||    || 
 ||  system.deleteSnapshots  || Tested ||    ||    ||    || 
 ||  system.getName  || Tested ||    ||    ||    || 
