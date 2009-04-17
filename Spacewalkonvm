@@ -1,0 +1,15 @@
+= Running Spacewalk on a Virtual machine (under construction) =
+
+This Page describes the steps needed to achieve the following '''targets''';
+
+* Do not use any graphical tooling
+* Create a multi disk VM
+* Install a bare minimal fedora 10 x86_64
+* Install Spacewalk 0.5 x86_64 using internal DB and Web interfase (layered setup is later)
+* Make sure that spacewalk starts to provision fedora 10
+* Make sure automatic updates of fedora 10 are in place
+
+== the targets explained ==
+
+'''No graphical tooling: '''
+In a lot of company's (yes, even in this broadband world) network connectivity is not as normal as you should/could expect. A lot of time, due to cost-management a lot of the costs are reduced including bandwith. Also, it's simply too easy to do it with all the gfx tooling around.
