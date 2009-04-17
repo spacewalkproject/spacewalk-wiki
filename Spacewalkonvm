@@ -1,5 +1,7 @@
 = Running Spacewalk on a Virtual machine (under construction) =
 
+
+
 This Page describes the steps needed to achieve the following '''targets''';
 
 A multi-disk-vm-based-non-graphical-spacewalk-server
@@ -14,4 +16,18 @@ A multi-disk-vm-based-non-graphical-spacewalk-server
 == the targets explained ==
 
 '''No graphical tooling: '''
+
 In a lot of company's (yes, even in this broadband world) network connectivity is not as normal as you should/could expect. A lot of time, due to cost-management a lot of the costs are reduced including bandwith. Also, it's simply too easy to do it with all the gfx tooling around.
+
+'''Multi disk VM:'''
+
+In a spacewalk setup you def want to split up some directories to be able to make it grow. The idea is to create a VM with at least 3 files and a local - resizeale disk. Not because it's logical, but just because we can and I want the reader to have some examples on how to do the one or the other.
+
+'''non layered vs layered '''
+
+In this setup we've choosen to stick to the standard layout for now, Yes it is a good idea to do things layered, but we noeed to figure out how and when and where. If we would go for the layered layout we thing about going the httpd -- tomcat -- database -- nfs solution but that needs some researching.. (also a W.I.P :) )
+
+''' Fedora 10 auto updates '''
+
+Currently no automatic fetching mechanism is in place to be able to download and  update a fedora 10 (or better said: yum based) software
+channel. (the current thought is that we (mis)use the yum download-only features combined with rhnpush actions) Not clear yet how this could work but that is also why I've started writing this page in the first place.
