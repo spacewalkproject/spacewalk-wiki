@@ -38,9 +38,9 @@ New features in 0.4 include:
 		a. in the GUI, select "Channels|Manage Software Channels" and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
 		a. Download the following packages from http://spacewalk.redhat.com/yum/0.4:
-			* pyOpenSSL
-			* rhnlib
-			* libxml2-python
+			* pyOpenSSL (in rawhide for F11)
+			* rhnlib (in rawhide for F11)
+			* libxml2-python (in rawhide for F11)
 			* spacewalk-koan*
 		a. Populate your new child channel with these rpms:  "rhnpush --server localhost -u admin -p spacewalk  --channel fedora-9-with-tools /path/to/the/helper/rpms/*.rpm"
 		a. You're now ready to create a distribution.
