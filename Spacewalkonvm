@@ -2,13 +2,14 @@
 
 This Page describes the steps needed to achieve the following '''targets''';
 
+A multi-disk-vm-based-non-graphical-spacewalk-server
 
-* Do not use any graphical tooling
-* Create a multi disk VM
-* Install a bare minimal fedora 10 x86_64
-* Install Spacewalk 0.5 x86_64 using internal DB and Web interfase (layered setup is later)
-* Make sure that spacewalk starts to provision fedora 10
-* Make sure automatic updates of fedora 10 are in place
+  * Do not use any graphical tooling
+  * Create a multi disk VM
+  * Install a bare minimal fedora 10 x86_64
+  * Install Spacewalk 0.5 x86_64 using internal DB and Web interfase (layered setup is later)
+  * Make sure that spacewalk starts to provision fedora 10
+  * Make sure automatic updates of fedora 10 are in place (using a kewl script probably :) )
 
 == the targets explained ==
 
