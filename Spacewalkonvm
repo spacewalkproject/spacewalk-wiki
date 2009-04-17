@@ -25,7 +25,7 @@ In a spacewalk setup you def want to split up some directories to be able to mak
 
 '''non layered vs layered '''
 
-In this setup we've choosen to stick to the standard layout for now, Yes it is a good idea to do things layered, but we noeed to figure out how and when and where. If we would go for the layered layout we thing about going the httpd -- tomcat -- database -- nfs solution but that needs some researching.. (also a W.I.P :) )
+In this setup we've choosen to stick to the standard layout for now, Yes it is a good idea to do things layered, but we need to figure out how and when and where. If we would go for the layered layout we thing about going the httpd -- tomcat -- database -- nfs solution but that needs some researching.. (also a W.I.P :) )
 
 ''' Fedora 10 auto updates '''
 
