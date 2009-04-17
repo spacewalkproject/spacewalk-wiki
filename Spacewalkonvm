@@ -31,3 +31,46 @@ In this setup we've choosen to stick to the standard layout for now, Yes it is a
 
 Currently no automatic fetching mechanism is in place to be able to download and  update a fedora 10 (or better said: yum based) software
 channel. (the current thought is that we (mis)use the yum download-only features combined with rhnpush actions) Not clear yet how this could work but that is also why I've started writing this page in the first place.
+
+
+
+=====================
+(here)
+
+Standard detailed design doc layout:
+
+= architecture =
+== Overall architectural design ==
+== design considerations ==
+== figurative layout ==
+
+= hardware requirements =
+== Hardware type A ==
+== Hardware type B ==
+
+= Software requirements = 
+== Software package A ==
+== Software package B ==
+
+= Installation ==
+== Installation preprarations ==
+== Technical components == 
+== physical install ==
+== Procedure A ==
+== Procedure B ==
+== Control list ==
+
+= B.A.U. Business As usual =
+== BAU Procedures == 
+== BAU Monitors ==
+(skipping a lot of $@#$$$!!)
+
+= Other design considerations = 
+== Functional modules ==
+== Functional scripts ==
+== Backup and Recovery Design ==
+== Security Architecture == 
+== System interfase ==
+== Batch jobs / cron ==
+== performance and responce Considerations ==
+
