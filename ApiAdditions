@@ -430,7 +430,7 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.listSnapshotConfigFiles  || Tested ||    ||    || skarmark || 
 ||  system.listSnapshotPackages  || Tested ||    ||    ||    || 
 ||  system.listSnapshots  || Tested ||    ||    ||    || 
-||  system.listSubscribableBaseChannels String Integer  || Missing ||    ||    ||    || 
+||  system.listSubscribableBaseChannels String Integer  || Tested ||    ||    || skarmark || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listSystemsWithPackage  || Tested ||    ||    ||    || 
 ||  system.listVirtualGuests  || Tested ||    ||    ||    || 
