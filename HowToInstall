@@ -52,7 +52,7 @@ add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the follow
 {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/i386/os/
+baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/$basearch/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
