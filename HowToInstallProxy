@@ -79,7 +79,7 @@ proxyanswers.txt:
 VERSION="0.5"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
-USE_SSL="1"
+USE_SSL="Y"
 CA_CHAIN="/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT"
 HTTP_PROXY=
 SSL_ORG="Example Org"
