@@ -6,7 +6,7 @@ If you're looking for instructions for the RHN Proxy product see http://www.redh
 
 == Prerequisites ==
 
-  * Disable SELinux (work is ongoing to allow SELinux to remain enforcing see [wiki:Features/SELinux])
+  * Disable SELinux or install spacewalk-proxy-selinux
   * Around 6GB storage per distribution under /var/spool/squid (or whereever you want your Squid cache to be)
   * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring) and 5269
   * Inbound open ports 80, 443 and 5222
@@ -64,3 +64,33 @@ You should now be able to navigate to the hostname of your proxy in a web browse
 
   * If all seems well you can now try [RegisteringClients Registering Clients]
   * If you're having problems check [DebuggingProxy Debugging Proxy]
+
+== Automated Installation ==
+
+The configure-proxy.sh install script supports an answer file to allow you to preanswer the questions. For the full list of variables see "man configure-proxy.sh".
+
+{{{
+configure-proxy.sh --answerfile=proxyanswers.txt
+}}}
+
+proxyanswers.txt:
+
+{{{
+VERSION="0.5"
+RHN_PARENT="spacewalk.example.com"
+TRACEBACK_EMAIL="admin@example.com"
+USE_SSL="1"
+CA_CHAIN="/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT"
+HTTP_PROXY=
+SSL_ORG="Example Org"
+SSL_ORGUNIT="proxy1.example.com"
+SSL_COMMON="proxy1.example.com"
+SSL_CITY="New York"
+SSL_STATE="New York"
+SSL_COUNTRY="US"
+SSL_EMAIL="admin@example.com"
+INSTALL_MONITORING="n"
+POPULATE_CONFIG_CHANNEL="n"
+}}}
+
+As this example doesn't answer all the questions (e.g. SSL_PASSWORD) you'd still be prompted for that value. If you know that you've answered all questions then you can run with --non-interactive.
