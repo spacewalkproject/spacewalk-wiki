@@ -58,59 +58,7 @@ Then you need to configure the proxy. Run:
 configure-proxy.sh
 }}}
 
-Example run on 64-bit RHEL5 choosing not to install monitoring:
-
-{{{
-Proxy version to activate [0.2]: 
-RHN Parent [spacewalk.example.com]: 
-Traceback email []: admin@example.com
-Use SSL [0]: 1
-CA Chain [/usr/share/rhn/RHNS-CORP-CA-CERT]: 
-HTTP Proxy []: 
-Regardless of whether you enabled SSL for the connection to the Spacewalk Parent
-Server, you will be prompted to generate an SSL certificate.
-This SSL certificate will allow client systems to connect to this Spacewalk Proxy
-securely. Refer to the Spacewalk Proxy Installation Guide for more information.
-Organization: Example Company
-Organization Unit [proxy1.example.com]:
-Common Name: proxy1.example.com
-City: New York
-State: New York
-Country code: US
-Email [admin@example.com]:
-Loading "rhnplugin" plugin
-Loading "security" plugin
-rhel-x86_64-server-5      100% |=========================| 1.4 kB    00:00     
-rhel-x86_64-server-option 100% |=========================| 1.2 kB    00:00     
-Setting up Install Process
-Parsing package install arguments
-Package spacewalk-proxy-management - 0.2.2-1.el5.sw.noarch is already installed.
-Nothing to do
-You do not have monitoring installed. Do you want to install it?
-Will run 'yum install spacewalk-proxy-monitoring'.  [Y/n]:n
-Generating CA key and public certificate:
-CA password: 
-CA password confirmation: 
-Copying CA public certificate to /var/www/html/pub for distribution to clients:
-Generating SSL key and public certificate:
-CA password: 
-Backup made: 'rhn-ca-openssl.cnf' --> 'rhn-ca-openssl.cnf.1'
-
-Rotated: rhn-ca-openssl.cnf --> rhn-ca-openssl.cnf.1
-Installing SSL certificate for Apache and Jabberd:
-Preparing packages for installation...
-rhn-org-httpd-ssl-key-pair-proxy1.example-1.0-1
-Shutting down rhn-proxy...
-Shutting down Jabber router:                               [FAILED]
-Stopping httpd:                                            [FAILED]
-Stopping squid:                                            [FAILED]
-Done.
-Starting rhn-proxy...
-init_cache_dir /var/spool/squid... Starting squid: .       [  OK  ]
-Starting httpd:                                            [  OK  ]
-Starting Jabber services                                   [  OK  ]
-Done.
-}}}
+and follow the prompts. This will download and configure the nessecery packages. Once installed use /usr/sbin/rhn-proxy to stop and start the service.
 
 You should now be able to navigate to the hostname of your proxy in a web browser and see the Spacewalk Proxy page. If you see an error here there's likely something wrong with your install.
 
