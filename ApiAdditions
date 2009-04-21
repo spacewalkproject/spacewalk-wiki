@@ -447,9 +447,9 @@ Below are APIs that have been included in Spacewalk 0.1, but that were not avail
 ||  system.whoRegistered  || Tested ||    ||    ||    || 
 ||  system.config.createOrUpdatePath String Integer Boolean String Map Integer   || Tested ||    ||    || skarmark ||
 ||  system.config.deleteFiles String Integer List Boolean  || Tested ||    ||    || skarmark ||
-||  system.config.deployAll String List Date  || Missing ||    ||    || skarmark ||
+||  system.config.deployAll String List Date  || Tested ||    ||    || skarmark ||
 ||  system.config.lookupFileInfo String Integer List Integer  || Tested ||    ||    || skarmark ||
-||  system.config.removeChannels String List List || Tested ||    ||    || skarmark ||
+||  system.config.removeChannels String List List || Tested ||    || Not able to check fully, no way to enable config management on a system through api || skarmark ||
 ||  system.config.setChannels String List List || Tested ||    ||    || skarmark ||
 ||  system.custominfo.createKey  || Tested ||    ||    ||    || 
 ||  system.custominfo.deleteKey  || Tested ||    ||    ||    || 
