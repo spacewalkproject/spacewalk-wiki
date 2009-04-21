@@ -8,8 +8,8 @@ There have been several list tag implementations throughout the history of the p
 
 Like any struts page, it consists of 
 
-* Struts Action
-* JSP
+ * Struts Action
+ * JSP
 
 A single action is typically used for both the retrieval of the data to display on the page (including any filtering that takes place) as well as handling form submissions from the page. This is a slight change from the older model that used a *SetupAction to populate the data and a *Action class to collect the selected results and process them.
 
