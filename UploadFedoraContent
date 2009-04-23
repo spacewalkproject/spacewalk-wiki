@@ -34,6 +34,14 @@ options:
 None
 }}}
 
+=== GUI Channel Creation === 
+
+Users can also use the GUI in Spacewalk to create channels.  If you wish to skip the above script you can go to the following path after logging in:
+
+Channels (top nav) -> Manage Software Channels (left nav) -> (+) create new channel
+
+From there you are able to create the channel.
+
 == download content ==
 There are many ways to download content rsync, wget, reposync, etc. Below we'll show two of these mechanisms: wget and reposync.
 
