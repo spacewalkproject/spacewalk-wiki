@@ -298,6 +298,10 @@ To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do 
 }}}
 Feel free to look in system_listdisplay.jspf for an example of usage. 
 
+== decorators ==
+Optional functionality on the ListTag is provided through the use of decorators. A decorator is a tag that adds a specific piece of functionality simply by including it in the JSP.
+
+For more information on how to write a decorator, see the [ListTagDecorators] page.
 
 = Useful Notes =
 
