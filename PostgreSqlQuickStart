@@ -15,7 +15,8 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
  * Install schemamagic, the tool that builds both Oracle and Postgres schema from a single meta-schema
   * {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/dogchow-0.3-1.fc10.noarch.rpm?format=raw}}}
  * Get the right branch, where the postgres porting work is going on
-  * {{{git checkout origin/schemasandbox}}}
+  * NOW: {{{git checkout origin/pgsql}}}
+  * Formerly: {{{git checkout origin/schemasandbox}}}
  * Configure postgres
   * [as root] {{{/sbin/service postgresql initdb}}}
   * [as root] {{{vi /var/lib/pgsql/data/pg_hba.conf}}} (Replace all instances of "ident sameuser" with "trust")
