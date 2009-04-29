@@ -10,6 +10,10 @@ See UploadFedoraContent for an explanation of what is involved.
 
 == OTHER FEATURE IMPACT ==
 == PROPOSED IMPLEMENTATION ==
+ * UI
+  * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
+ * Server-side
+  * Add a server-side task to download the packages from the yum repo and 
 == SAMPLE CODE ==
 == WORK ITEMS ==
 == TEST PLAN ==
