@@ -1,8 +1,18 @@
 = Intro = 
 
 The below instructions are how to set up the Spacewalk Development Enviroment into a Red Hat Enterprise Linux 5 server.  [wiki:"DevelopmentWorkstationSetupFedora9" Future versions ] will include instructions and support for Fedora and other Linux variants.
+For Fedora F10/F9 
 
-Work in progress: [wiki:"DevelopmentWorkstationSetupFedora9" Development env setup for Fedora 9 ]
+Add the following to /etc/yum.repos.d/jpackage.repo
+
+{{{
+[jpackage]
+name=jpackage-f10
+baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
+gpgcheck=0
+enabled=1
+}}}
+
 
 
 = Prerequisites =
