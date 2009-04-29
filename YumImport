@@ -21,37 +21,37 @@ See UploadFedoraContent for an explanation of what is involved.
       * Sync a remote repo to spacewalk database
            
 {{{
- $ ./sw-repo-sync --repo=remote-url --channel=fedora-10-repo --db=user/pass@db
+      $ ./sw-repo-sync --repo=remote-url --channel=fedora-10-repo --db=user/pass@db
 }}}
 
       * Sync a local repo to spacewalk db
                   
 {{{
- $ ./sw-repo-sync --repo=/path/to/local-repo --channel=fedora-10-repo --db=user/pass@db
+      $ ./sw-repo-sync --repo=/path/to/local-repo --channel=fedora-10-repo --db=user/pass@db
 }}}
 
       * Sync only the newest packages from the remote or local repo 
 
 {{{
- $./sw-repo-sync --newest --repo=remote-url --channel=fedora-10-repo  --db=user/pass@db
+      $./sw-repo-sync --newest --repo=remote-url --channel=fedora-10-repo  --db=user/pass@db
 }}}
 
       * Sync remote repo only to a local filer (/var/satellite)             
 
 {{{
-$ ./sw-repo-sync --repo=remote-url --local
+      $ ./sw-repo-sync --repo=remote-url --local
 }}}
               
       * Notify user once sync is complete
                     
 {{{
- $ ./sw-repo-sync --repo=remote-repo --notify=admin@example.com
+      $ ./sw-repo-sync --repo=remote-repo --notify=admin@example.com
 }}}
 
       * Schedule a recurring task
        
 {{{
- $ ./sw-repo-sync --repo=remote-repo --schedule="30 1 * * *"
+      $ ./sw-repo-sync --repo=remote-repo --schedule="30 1 * * *"
 }}}
 
 
