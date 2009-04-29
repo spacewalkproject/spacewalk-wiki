@@ -1,0 +1,16 @@
+= PROTOSPEC DOCUMENT =
+=== TOPIC: Import content from a Yum repo ===
+=== REQUESTOR: jmrodri ===
+=== REVIEWED BY: ===
+=== RELEASE: Spacewalk 0.6 ===
+
+== BUSINESS DEFINITION ==
+Make it easier to import content into Spacewalk. Today a user must download a repo locally then upload the packages via {{{rhnpush}}}.
+See UploadFedoraContent for an explanation of what is involved.
+
+== OTHER FEATURE IMPACT ==
+== PROPOSED IMPLEMENTATION ==
+== SAMPLE CODE ==
+== WORK ITEMS ==
+== TEST PLAN ==
+== RISKS ==
