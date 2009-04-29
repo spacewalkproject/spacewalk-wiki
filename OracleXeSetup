@@ -113,6 +113,10 @@ Users on x86_64 will need to add the following line(s) to the file {{{/etc/ld.so
 }}}
 Run {{{ldconfig -v}}} to enable these changes on your system.
 
+== Configuring sqlplus ==
+
+You must define environment variables properly (LD_LIBRARY_CONFIG and SQLPLUS) to run sqlplus.  Consult the configuration notes: [http://download-east.oracle.com/docs/cd/B19306_01/server.102/b14357/ape.htm#CHDJCDFA]
+
 == Test your connection with sqlplus ==
 
 Run
