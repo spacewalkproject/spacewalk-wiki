@@ -19,6 +19,7 @@ See UploadFedoraContent for an explanation of what is involved.
 == USE CASES == 
 * Command line: (prad)
       * Sync a remote repo to spacewalk database
+        * ''Heads on on the --db syntax. This is incompatible with PostgreSQL and had to be changed for all scripts in that branch. I know with some scripts we setup to not have to specify a database at all (just use the default in rhn.conf), but you could if you wanted to. (in which case you need the full range of options, backend, user, password, host, port, etc, not all of which would be used in the case of Oracle)'' - dgoodwin
            
 {{{
       $ ./sw-repo-sync --repo=remote-url --channel=fedora-10-repo --db=user/pass@db
