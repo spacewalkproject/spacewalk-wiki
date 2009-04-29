@@ -14,10 +14,10 @@ See UploadFedoraContent for an explanation of what is involved.
   * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
  * Server-side
   * Add a server-side task to download the packages from the yum repo and 
-  * The implementation would be similar to already existing reposync tool in yum-utils. We'll need to go a extra mile to import it into the database and tie it to a channel. May be call it sw-repo-sync.
-  * sw-repo-sync will inherit functionality from repo-sync and do few extra methods.
-== USE CASES ==
-* Command line: 
+  * The implementation would be similar to already existing reposync tool in yum-utils. We'll need to go a extra mile to import it into the database and tie it to a channel. May be call it sw-repo-sync.(prad)
+  * sw-repo-sync will inherit functionality from repo-sync and do few extra methods. (prad)
+== USE CASES == 
+* Command line: (prad)
       * Sync a remote repo to spacewalk database
            
 {{{
