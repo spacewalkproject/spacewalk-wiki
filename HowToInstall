@@ -200,6 +200,17 @@ cd /var/lib/tomcat5/webapps/rhn/WEB-INF/lib &&\
 After {{{spacewalk-setup}}} is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
+'''NOTE:''' If you notice you missing some buttons and channels that have been created aren't visible in you UI edit {{{/etc/sysconfig/httpd}}} and change:
+{{{
+export ORACLE_HOME=/opt/oracle
+export NLS_LANG=english.AL32UTF8
+}}}
+to
+{{{
+export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
+export NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+}}}
+
 Once you've made sure you can login to the Spacewalk web UI, you can then proceed to the next step: [UploadFedoraContent Uploading Content].
 
 = Managing Spacewalk =
