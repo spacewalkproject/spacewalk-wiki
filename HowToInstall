@@ -58,6 +58,8 @@ enabled=1
 gpgcheck=0
 }}}
 
+'''NOTE:''' if yum install or update nags about "cobbler >= 1.6.3 is needed by package <bla>" enable the "epel-testing" repo in /etc/yum.repos.d/epel-testing.repo
+
 Fedora 10 nightly repo is at:
 
 {{{ 
