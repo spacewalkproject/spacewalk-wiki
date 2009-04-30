@@ -100,8 +100,8 @@ public class SystemGroupListAction extends RhnAction implements Listable {
         helper.execute();
         if(helper.isDispatched()) {
             //handle the dispatch action (like removing groups etc)
-            RhnSet set = helper.getSet();
-            for (RhnSetElement elem: set) {
+            Set<String> set = helper.getSet();
+            for (String element : set) {
                 //do remove or waht ever operation
             }
             helper.destroy() ; //destroys the set..
