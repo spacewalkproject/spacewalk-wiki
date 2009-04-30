@@ -51,6 +51,11 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
   * bc is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
   * nogpgcheck is required because the Oracle RPMs are not signed.
   * '''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
+  * '''NOTE:''' To automatically get the correct environment settings run the following:
+{{{
+cd /etc/profile.d
+ln -s /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.* .
+}}}
 
 == Install SELinux Policy ==
 
