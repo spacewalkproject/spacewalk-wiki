@@ -37,7 +37,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel (this step may only be necessary once after the initial install)}}} 
- * {{{cd $GITDIR/spacewalk/search-server}}}
+ * {{{cd $GITDIR/search-server}}}
  * {{{../rel-eng/bin/tito build --test --rpm && /tmp/spacewalk-build/noarch/spacewalk-search-*.git.*.noarch.rpm }}}
  * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
  * {{{sudo /usr/sbin/rhn-satellite start}}}
