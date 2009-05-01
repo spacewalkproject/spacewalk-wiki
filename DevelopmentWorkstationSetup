@@ -37,12 +37,18 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel (this step may only be necessary once after the initial install)}}} 
- * {{{cd $GITDIR/search-server}}}
- * {{{../rel-eng/bin/tito build --test --rpm && /tmp/spacewalk-build/noarch/spacewalk-search-*.git.*.noarch.rpm }}}
- * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
  * {{{sudo /usr/sbin/rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
+
+=== Search Server Setup ===
+If you are going to be updating the search server java code, you would have to do the following:
+ * {{{sudo /usr/sbin/rhn-satellite stop}}}
+ * {{{cd $GITDIR/search-server}}}
+ * Change what ever you need to .. Commit it in a local branch in git.
+ * {{{../rel-eng/bin/tito build --test --rpm && /tmp/spacewalk-build/noarch/spacewalk-search-*.git.*.noarch.rpm }}}
+ * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
+ * {{{sudo /usr/sbin/rhn-satellite start}}}
 
 
 === Uninstallation ===
