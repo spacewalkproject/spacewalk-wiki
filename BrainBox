@@ -1,15 +1,15 @@
 = Brainbox =
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
- * [https://fedorahosted.org/func func] replaces osad
  * Integration with [http://www.jasperforge.org/jaspersoft/opensource/business_intelligence/jasperreports/ JasperReports]
  * HelpSystem to make help a bit easier to work with.
  * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client
  * UserPermissions - Discussion around implementing fine grained user permissions.
- * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
+ * [http://fedorahosted.org/func func] instead of osad? What are the advantages/disadvantages? Is it possible?
     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
+    * [[Image(action-add.gif)]] probably should be done considering the recent jabberd trouble we've had. -- jmrodri
  * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
    * [[Image(action-add.gif)]] to integrate with puppet -- jmrodri
  * upgrade monitoring engine?
