@@ -38,4 +38,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * download packages using torrent protocol
  * enable package/package group selection via a GUI which shows available package/package groups for that distribution
  * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server
+   * this is an excellent idea. we can do what numerous photo sites do with uploading. -- jmrodri
  
