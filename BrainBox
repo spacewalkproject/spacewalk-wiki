@@ -26,14 +26,15 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [https://bugzilla.redhat.com/show_bug.cgi?id=487666 IPv6]
    * note that Oracle libraries use gethostbyaddr and friends, so may not be usable under IPv6
  * make db-control usable with Oracle XE
- * [[Image(action-add.gif)]] Provide a tree structure with a depth greater than 1 for the Software Channel Subscriptions
+ * Provide a tree structure with a depth greater than 1 for the Software Channel Subscriptions
+   * [[Image(action-del.gif)]] What does having a depth greater than 1 buy us? I'd rather remove the hieararchy altogether and go with something more like tags ala [http://www.flickr.com/help/tags/ flickr].
  * [[Image(action-add.gif)]] Provide a way to add arbitrary metadata to any given repository. Like modifyrepo does in createrepo.
  * [wiki:MySQL_support MySQL as database backend]
  * allow system.scheduleScriptRun to work with scripts that have been saved in the database. This way scripts can be re-used and later maybe even attached to triggers like configchannel actions.
- * [[Image(action-add.gif)]] [wiki:Container_support Containers in Spacewalk]
-   * I like this idea, it's something we've needed for some time. -- jmrodri
- * [[Image(action-del.gif)]] Replace the current "Custom Build Content Management System" with one that is Open Source (GPL'd) like [http://www.alfresco.com Alfresco].  This could replace the legacy PERL/RPC scheme with a more current Javascript/REST scheme.  Alfresco is willing to contribute to this development as there is a need for an Alfresco "Network" and we don't want to reinvent the wheel.  If you would like to contact me: lee.faus at alfresco dot com.
-   * This request doesn't make much sense.  What Alfresco 'manages' is much more suited to documents than packages. Sure packages can be considered content, but I think the workflows are much different. -- jmrodri
+ * [wiki:Container_support Containers in Spacewalk]
+   * [[Image(action-add.gif)]] I like this idea, it's something we've needed for some time. -- jmrodri
+ * Replace the current "Custom Build Content Management System" with one that is Open Source (GPL'd) like [http://www.alfresco.com Alfresco].  This could replace the legacy PERL/RPC scheme with a more current Javascript/REST scheme.  Alfresco is willing to contribute to this development as there is a need for an Alfresco "Network" and we don't want to reinvent the wheel.  If you would like to contact me: lee.faus at alfresco dot com.
+   * [[Image(action-del.gif)]] This request doesn't make much sense.  What Alfresco 'manages' is much more suited to documents than packages. Sure packages can be considered content, but I think the workflows are much different. -- jmrodri
  * Automatic change logging of Kickstart profiles - Starting with kickstart pre/post revisioning.  https://fedorahosted.org/spacewalk/wiki/KickstartScriptRevisioning details coec's current thinking on the matter.
  * Expand macros to have conditional logic and loops in config files using custom system info or other values stored in satellite/spacewalk.  {| if rhn.system.custom_info(foo) == 'bar' display 'foo' otherwise display 'not found' |}.  
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
