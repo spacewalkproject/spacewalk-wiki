@@ -37,9 +37,9 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Automatic change logging of Kickstart profiles - Starting with kickstart pre/post revisioning.  https://fedorahosted.org/spacewalk/wiki/KickstartScriptRevisioning details coec's current thinking on the matter.
  * Expand macros to have conditional logic and loops in config files using custom system info or other values stored in satellite/spacewalk.  {| if rhn.system.custom_info(foo) == 'bar' display 'foo' otherwise display 'not found' |}.  
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
- * [[Image(action-del.gif)]] download packages using torrent protocol
-   * Not going to happen. What does this mean? yum / up2date can't use torrents. I don't think this feature makes sense. -- jmrodri
+ * download packages using torrent protocol
+   * [[Image(action-del.gif)]] Not going to happen. What does this mean? yum / up2date can't use torrents. I don't think this feature makes sense. -- jmrodri
  * enable package/package group selection via a GUI which shows available package/package groups for that distribution
- * [[Image(action-add.gif)]] enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server
-   * this is an excellent idea. we can do what numerous photo sites do with uploading. -- jmrodri
+ * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server
+   * [[Image(action-add.gif)]]  this is an excellent idea. we can do what numerous photo sites do with uploading. -- jmrodri
  
