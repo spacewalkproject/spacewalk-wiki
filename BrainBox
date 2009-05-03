@@ -25,8 +25,11 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
    * [[Image(action-del.gif)]]/[[Image(action-add.gif)]] I'm not sure what this does for us? unless it's the ability to get koji content into Spacewalk after building? If that's the case then I'm ok with it. -- jmrodri
  * finish migrating [RemainingPxtPages perl pages] to Java, and remove the perl stack entirely.
+   * [[Image(action-add.gif)]] this really has been the piece that has held this project behind. We REALLY need to just finish this up and kill off the perl stack (web side) -- jmrodri
  * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
+   * [[Image(action-del.gif)]] I don't think this buys us anything, should be part of the integration with a different monitoring system. -- jmrodri
  * [wiki:Deb_support_in_spacewalk add support for deb packages/Debian]
+   * [[Image(action-add.gif)]] this would be useful -- jmrodri
  * add support for external repositories so that Spacewalk doesn't have to have a local copy of all RPMs, just retrieves the headers in the same way yum does and can direct subscribed clients to download directly from the 3rd party repo. (Proxy already does this. What is the use case that YUM covers differently?)
  * add support for Jumpstarting Solaris
  * [https://bugzilla.redhat.com/show_bug.cgi?id=487666 IPv6]
