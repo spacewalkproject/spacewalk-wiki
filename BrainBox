@@ -11,13 +11,19 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [http://fedorahosted.org/func] instead of osad? What are the advantages/disadvantages? Is it possible?
     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
  * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
+   * [[Image(action-add.gif)]] to integrate with puppet -- jmrodri
  * upgrade monitoring engine?
+   * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
+   * ? Is this the NEVRA issue? or something else? -- jmrodri
  * streamline development process to encourage more contributions, see [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a The Architecture of Participation: ...]
- * decompose Spacewalk into an aggregation of OSS projects, composed of seperate subprojects that can be used by other projects
+ * decompose Spacewalk into an aggregation of OSS projects, composed of separate subprojects that can be used by other projects
+   * [[Image(action-add.gif)]] cobbler integration is a step in this direction. Though we need a bigger architectural plan to make this work. -- jmrodri
  * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
  * enable usage of Transifex
+   * [[Image(action-add.gif)]] right now most of the translation work occurs internally.
  * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
+   * [[Image(action-del.gif)]]/[[Image(action-add.gif)]] I'm not sure what this does for us? unless it's the ability to get koji content into Spacewalk after building? If that's the case then I'm ok with it. -- jmrodri
  * finish migrating [RemainingPxtPages perl pages] to Java, and remove the perl stack entirely.
  * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
  * [wiki:Deb_support_in_spacewalk add support for deb packages/Debian]
