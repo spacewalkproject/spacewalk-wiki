@@ -75,3 +75,5 @@ to be used in config files with variables that can be obtained from information 
 Using a set of predefined variables combined with internal variables linked to config channels would mean that drastic changes could be done in a controlled way.
 
 A static image of the file would be available for file verification and caching purposes. Updating variables would automatically mean the static image is updated and that image is distributed. This way the server still "knows" what the file should look like.
+
+--- John van Zantvoort (JYDawg)
