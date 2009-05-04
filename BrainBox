@@ -13,6 +13,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
     * [[Image(action-add.gif)]] probably should be done considering the recent jabberd trouble we've had. -- jmrodri
  * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
    * [[Image(action-add.gif)]] to integrate with puppet -- jmrodri
+   * [[Image(action-del.gif)]] [wiki:Why_not_to_use_a_configuration_management_engine Why not to use a configuration management engine] -- jvzantvoort(jydawg)
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
