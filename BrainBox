@@ -55,6 +55,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * debuginfo sync - enable sync of debuginfo packages via satellite-sync.
  * download packages using torrent protocol
    * [[Image(action-del.gif)]] Not going to happen. What does this mean? yum / up2date can't use torrents. I don't think this feature makes sense. -- jmrodri
+   * I thought about something similar to [http://wiki.debian.org/DebTorrent DebTorrent] -- msuchy
  * enable package/package group selection via a GUI which shows available package/package groups for that distribution
    * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] this would be along the lines of using tags to group packages. I'm not in favor of bolting this functionality onto the existing model, but replace it with tags. -- jmrodri
  * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server
