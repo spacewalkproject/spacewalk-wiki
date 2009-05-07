@@ -13,8 +13,8 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
   * {{{yum install postgresql-server}}}
  * Install the python lex/yacc parser
   * {{{yum install python-ply}}}
- * Install ''cameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
-  * NOW: {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/cameleon-0.1-2.fc10.noarch.rpm?format=raw}}}
+ * Install ''chameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
+  * NOW: {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/chameleon-0.1-5.fc10.noarch.rpm?format=raw}}}
   * Formerly: dogchow 
  * Get the right branch, where the postgres porting work is going on
   * NOW: {{{git checkout origin/pgsql}}}
