@@ -11,8 +11,8 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
  * Install postgres, if you haven't already.  You will need '''8.4 beta''' because the schema has not been back-ported to earlier versions.  
    The easiest way to in stall this version is using this public yum repo [http://yum.pgsqlrpms.org/].
   * {{{yum install postgresql-server}}}
- * Install the python lex/yacc parser
-  * {{{yum install python-ply}}}
+ * Install the python lex/yacc parser and PostgreSQL libraries:
+  * {{{yum install python-ply python-postgresql}}}
  * Install ''chameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
   * NOW: {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/chameleon-0.1-5.fc10.noarch.rpm?format=raw}}}
   * Formerly: dogchow 
