@@ -87,6 +87,10 @@ EOF
 spacewalk-setup --disconnected --answer-file=~/answers-postgresql.txt
   }}}
   * ''THIS WILL FAIL'', but it goes a long way before it does. :) Schema will be populated.
+  * If you want to try again, you must destroy your spacewalk database, we cannot "clear" yet.
+  {{{
+dropdb --user spacewalk spacewalk && createdb --user spacewalk spacewalk && createlang --user spacewalk plpgsql spacewalk
+  }}}
 
 == II. Fixing a query, an example ==
 
