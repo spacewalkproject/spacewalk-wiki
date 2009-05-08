@@ -4,39 +4,58 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
 
 == I. Getting everything installed ==
 
- * Install git, if you don't have it installed
-  * {{{yum install git}}}
+ * Install git, if you don't have it installed: (may require EPEL repositories for CentOS/RHEL 5)
+  {{{
+yum install git
+  }}}
  * Clone spacewalk from git
-  * {{{git clone git://git.fedorahosted.org/git/spacewalk.git/}}}
- * Install postgres, if you haven't already.  You will need '''8.4 beta''' because the schema has not been back-ported to earlier versions.  
-   The easiest way to in stall this version is using this public yum repo [http://yum.pgsqlrpms.org/].
-  * {{{yum install postgresql-server}}}
+  {{{
+git clone git://git.fedorahosted.org/git/spacewalk.git/
+  }}}
+ * Install postgres, if you haven't already.  You will need '''8.4 beta''' because the schema has not been back-ported to earlier versions. 
+  The easiest way to in stall this version is using this public yum repo [http://yum.pgsqlrpms.org/].
+  {{{
+yum install postgresql-server
+  }}}
  * Install the python lex/yacc parser and PostgreSQL libraries:
-  * {{{yum install python-ply python-pgsql}}}
+  {{{
+yum install python-ply python-pgsql
+  }}}
  * Install ''chameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
-  * NOW: {{{rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/chameleon-0.1-5.fc10.noarch.rpm?format=raw}}}
+  {{{
+rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/chameleon-0.1-5.fc10.noarch.rpm?format=raw
+  }}}
   * Formerly: dogchow 
  * Get the right branch, where the postgres porting work is going on
-  * NOW: {{{git checkout origin/pgsql}}}
-  * Formerly: {{{git checkout origin/schemasandbox}}}
- * Configure postgres
-  * [as root] {{{/sbin/service postgresql initdb}}}
-  * [as root] {{{vi /var/lib/pgsql/data/pg_hba.conf}}} (Replace all instances of "ident sameuser" with "trust")
-  * [as root] {{{/sbin/service postgresql start}}}
-  * [root] {{{su postgres}}}
-  * [postgres] {{{createuser spacewalk --superuser}}}
-  * [postgres] {{{createdb spacewalk && createlang plpgsql spacewalk}}}
-  * [postgres] {{{createuser $USERNAME --superuser}}}
-  * [$USERNAME] {{{psql spacewalk}}} (to verify that the spacewalk db has been successfully created)
+  {{{
+cd spacewalk
+git checkout origin/pgsql
+  }}}
+ * Configure PostgreSQL:
+  * As root:
+  {{{
+/sbin/service postgresql initdb
+# Setup PostgreSQL authentication
+# TODO: Probably need some careful thought here in the future:
+perl -p -i -e 's/ident sameuser/trust/g' /var/lib/pgsql/data/pg_hba.conf
+perl -p -i -e 's/ident/trust/g' /var/lib/pgsql/data/pg_hba.conf
+/sbin/service postgresql start
+createuser --user postgres spacewalk --superuser
+createdb --user spacewalk spacewalk && createlang --user spacewalk plpgsql spacewalk
+psql --user spacewalk spacewalk # to verify that the spacewalk db has been successfully created
+  }}}
  * Build schema! We hope to improve this and make it simpler soon.
-  * {{{cd spacewalk/schema/spacewalk}}}
-  * {{{../../rel-eng/bin/tito build --rpm --test}}}
-  * {{{rpm -Uvh}}} the resulting noarch RPM.
+  {{{
+cd spacewalk/schema/spacewalk
+../../rel-eng/bin/tito build --rpm --test
   * Look at schemamagic go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs genmain.py, which does depsolving and creates a properly ordered set of create scripts.
+  * Examine output for the location of the noarch RPM that was built and run rpm -Uvh RPM.
  * Deploy PostgreSQL specific modifications not yet packaged:
   * Because we cannot properly tag and build rpms while working in a git branch, we've setup a short shell script that scp's all modified files into their correct locations.
-  * {{{SWHOST=root@localhost scripts/pgsql-deploy.sh}}}
+  {{{
+SWHOST=root@localhost scripts/pgsql-deploy.sh
+  }}}
   * NOTE: Using scp, technically not required with these instructions as we're running the script on the host.
   * The script is setup for Fedora 10. If you need to install on EL5 then you'll need to modify some simple perl directories in the script.
  * Setup an answers file for PostgreSQL:
@@ -62,8 +81,10 @@ ssl-set-email = me@example.com
 EOF
 }}}
  * Install!
-  * {{{spacewalk-setup --disconnected --answer-file=~/answers-postgresql.txt}}}
-  * ''THIS WILL FAIL'', but it goes pretty deep before it does. :)
+  {{{
+spacewalk-setup --disconnected --answer-file=~/answers-postgresql.txt
+  }}}
+  * ''THIS WILL FAIL'', but it goes a long way before it does. :) Schema will be populated.
 
 == II. Fixing a query, an example ==
 
