@@ -28,12 +28,42 @@ Want to help fix Spacewalk database queries so that they work in Postgres?  Gett
   * [postgres] {{{createdb spacewalk && createlang plpgsql spacewalk}}}
   * [postgres] {{{createuser $USERNAME --superuser}}}
   * [$USERNAME] {{{psql spacewalk}}} (to verify that the spacewalk db has been successfully created)
- * Build schema!
-  * DOES NOT WORK NOW.  Wrong branch?
-  * {{{cd spacewalk/schema/spacewalk/postgres}}}
-  * {{{make install}}}
+ * Build schema! We hope to improve this and make it simpler soon.
+  * {{{cd spacewalk/schema/spacewalk}}}
+  * {{{../../rel-eng/bin/tito build --rpm --test}}}
+  * {{{rpm -Uvh}}} the resulting noarch RPM.
   * Look at schemamagic go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs genmain.py, which does depsolving and creates a properly ordered set of create scripts.
+ * Deploy PostgreSQL specific modifications not yet packaged:
+  * Because we cannot properly tag and build rpms while working in a git branch, we've setup a short shell script that scp's all modified files into their correct locations.
+  * {{{SWHOST=root@localhost scripts/pgsql-deploy.sh}}}
+  * NOTE: Using scp, technically not required with these instructions as we're running the script on the host.
+  * The script is setup for Fedora 10. If you need to install on EL5 then you'll need to modify some simple perl directories in the script.
+ * Setup an answers file for PostgreSQL:
+  {{{
+cat > ~/answers-postgresql.txt <<'EOF'
+admin-email = me@example.com
+db-backend = postgresql
+db-user = spacewalk
+db-host = localhost
+db-password = spacewalk
+db-sid = spacewalk
+db-port = 5432
+db-protocol = TCP
+ssl-set-org = My Org
+ssl-set-common-name = My Org Test
+ssl-set-org-unit = BLAH
+ssl-set-city = Raleigh
+ssl-set-state = NC
+ssl-set-country = US
+ssl-password = wer tyu
+ssl-set-email = me@example.com
+
+EOF
+}}}
+ * Install!
+  * {{{spacewalk-setup --disconnected --answer-file=~/answers-postgresql.txt}}}
+  * ''THIS WILL FAIL'', but it goes pretty deep before it does. :)
 
 == II. Fixing a query, an example ==
 
