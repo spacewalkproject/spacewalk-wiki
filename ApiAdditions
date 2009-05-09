@@ -155,6 +155,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org''' ||  ||  ||  ||  ||  ||
 ||  org.listOrgs(string sessionKey)   || 0.4 || 4 || jortel || done ||(Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin.||
+||  org.listSoftwareEntitlements(string sessionKey, string label, boolean includeUnentitled)   || 0.6 || 4 || bbuckingham || done || List each org's allocation of an entitlement.  If includeUnentitled=TRUE, orgs that have 0 defined for that entitlement will also be included.||
+||  org.listSystemEntitlements(string sessionKey, string label, boolean includeUnentitled)   || 0.6 || 4 || bbuckingham || done || List each org's allocation of an entitlement.  If includeUnentitled=TRUE, orgs that have 0 defined for that entitlement will also be included.||
 ||  org.migrateSystems(string sessionKey, array[int serverId], int toOrgId)   || 0.4 || 24 || bbuckingham || done ||(Multi Org Phase2 support)[[BR]]* Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust.||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: org.trusts''' ^NEW^ ||  ||  ||  ||  ||  ||
