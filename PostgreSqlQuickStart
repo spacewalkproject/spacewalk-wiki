@@ -49,8 +49,8 @@ psql --user spacewalk spacewalk # to verify that the spacewalk db has been succe
 cd spacewalk/schema/spacewalk
 ../../rel-eng/bin/tito build --rpm --test
   }}}
-  * Look at schemamagic go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
-  * Also runs genmain.py, which does depsolving and creates a properly ordered set of create scripts.
+  * Look at ''chameleon'' go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
+  * Also runs ''blend'', which does depsolving and creates a properly ordered set of create scripts.
   * Examine output for the location of the noarch RPM that was built and run rpm -Uvh RPM.
  * Deploy PostgreSQL specific modifications not yet packaged:
   * Because we cannot properly tag and build rpms while working in a git branch, we've setup a short shell script that scp's all modified files into their correct locations.
