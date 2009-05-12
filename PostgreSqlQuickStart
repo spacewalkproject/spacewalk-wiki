@@ -48,6 +48,12 @@ psql --user spacewalk spacewalk # to verify that the spacewalk db has been succe
   {{{
 cd spacewalk/schema/spacewalk
 ../../rel-eng/bin/tito build --rpm --test
+
+OR
+
+cd schema/spacewalk/postgres
+make
+psql -f main.sql
   }}}
   * Look at ''chameleon'' go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs ''blend'', which does depsolving and creates a properly ordered set of create scripts.
