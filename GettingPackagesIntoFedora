@@ -60,6 +60,7 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhn-client-tools || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=490438 490438] || msuchy || ||
 ||yum-rhn-plugin || GPLv2 || || ||
 ||rhnmd || GPLv2 || || ||
+||rhnsd || GPLv2 || || msuchy || In prep ||
 
 RPMS found in Satellite RHN Tools Channels where source/binary rpms are not available (AFAIK)
  * All of the auto-* packages 
