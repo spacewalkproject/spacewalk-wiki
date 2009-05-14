@@ -58,11 +58,12 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhnpush-0.3.1-2.fc10.src.rpm || GPL2 || [https://bugzilla.redhat.com/show_bug.cgi?id=452450  452450]|| stahnma/msuchy || Now in Fedora ||
 ||rhnlib-2.5.10 || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=486937 486937] || msuchy || Now in Fedora ||
 ||rhn-client-tools || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=490438 490438] || msuchy || ||
+||yum-rhn-plugin || GPLv2 || || ||
+||rhnmd || GPLv2 || || ||
 
 RPMS found in Satellite RHN Tools Channels where source/binary rpms are not available (AFAIK)
  * All of the auto-* packages 
  * rhn-applet-actions
- * rhnmd 
  * rhns-config-libs
   
  
