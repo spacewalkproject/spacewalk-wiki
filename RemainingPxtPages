@@ -37,9 +37,6 @@ Templates can not be removed until we finish all of the pxt migration.
  * /konq.pxt  '''REMOVE''' ?
  * /errata_hidden/rh_template.pxt '''REMOVE'''
 
-==== Satellite tools ====
- * /internal/satellite/task_engine/index.pxt
-
 ==== Help files ====
 
  * /help/about.pxt
