@@ -64,6 +64,8 @@ Targeted version of PostgreSQL is 8.1+
 || Query migration:python || 0%|| ||
 || Query migration:perl || 0%|| ||
 
+[PostgresBranchReview Branch Review]
+
 [PostgresIssues Project Issues]
 
 [PostgresTasks Project Tasks]
