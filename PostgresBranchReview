@@ -2,6 +2,8 @@
 
 === Discussion Topics  ===
 
+The topics listed here are being discussed on the mailing list.  They are summarized here for tracking purposes only.
+
 1. Don't want to see a big merge commit land in master.
     * Redo work and group commits into feature-based autonomous commits that can be cherry picked into master, reviewed, tested?
     * Merge and rely on ''diffing'' installed schema(s) to verify semantic equivalence?
