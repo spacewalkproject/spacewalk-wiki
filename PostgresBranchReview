@@ -1,0 +1,11 @@
+[wiki:PostgreSqlProject Main Project Page]
+
+=== Discussion Topics  ===
+
+1. Don't want to see a big merge commit land in master.
+    * Redo work and group commits into feature-based autonomous commits that can be cherry picked into master, reviewed, tested?
+    * Merge and rely on ''diffing'' installed schema(s) to verify semantic equivalence?
+
+2. When ''common'' table (.sql) files created from rhnsat/tables/ - reformatting makes diffs useless.
+    * Redo work preserving as much as possible?
+    * Merge and rely on ''diffing'' installed schema(s) to verify semantic equivalence?
