@@ -7,7 +7,7 @@
 
 Releases: You can also download the binaries from the [HowToInstall#Installation yum repo].
 
-Nightly Builds: [http://miroslav.suchy.cz/spacewalk/nightly-candidate/ This repo] ([http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/ F-10 version]) contains all packages which developer explicitly taged into upcoming release.
+Nightly Builds: [http://miroslav.suchy.cz/spacewalk/nightly-candidate/ This repo] ([http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/ F-10 version]) contains all packages which developer explicitly tagged into upcoming release.
 
 == Source ==
 
