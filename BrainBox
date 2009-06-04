@@ -60,10 +60,10 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] this would be along the lines of using tags to group packages. I'm not in favor of bolting this functionality onto the existing model, but replace it with tags. -- jmrodri
  * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server - Antoine
    * [[Image(action-add.gif)]]  this is an excellent idea. we can do what numerous photo sites do with uploading. -- jmrodri
- * Ability to save arbitrary script within satellite for reuse (be able to save a script you use a lot) - Antoine
- * Manage chkconfig via a kewl webinterface on the satellite - Antoine
- * Ability to control activation keys with editor and comments - Antoine
- * Management of symbolic links through configuration channels - Antoine
- * 
-
+ * Ability to save arbitrary script within satellite for reuse (be able to save a script you use a lot) -- Antoine
+ * Manage chkconfig via a kewl webinterface on the satellite -- Antoine
+ * Ability to control activation keys with editor and comments -- Antoine
+ * Management of symbolic links through configuration channels -- Antoine
+ * Allow user-defined types for custom info items -- Antoine
+ 
  
