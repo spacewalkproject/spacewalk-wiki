@@ -1,22 +1,40 @@
-= General Improvements =
+= Enhanced Channel Removal =
+=== Background ===
+=== Requirements ===
+ 1. Remove any channel via
+  * Script (API).
+  * UI.
+ 1. When removing a channel, provide option to:
+  * Remove associated errata.
+  * Remove associated content.
+ 1. Log channel removal action - to include:
+  * user
+  * channel
+  * content removed
+  * systems affected
+=== Specification ===
+=== Notes ===
 
-=== Enhanced Channel Removal ===
+= Spacewalk on KVM =
+=== Background ===
+=== Requirements ===
+=== Specification ===
+=== Notes ===
 
- * Remove any channel via script.
- * Remove any channel via UI.
- * When removing a channel, provide option to:
-   * Remove associated errata.
-   * Remove associated content.
- * Log channel removal action - to include:
-   * user
-   * channel
-   * content removed
-   * systems affected
+== Provide Channel ISO in DVD Format ==
+=== Background ===
+=== Requirements ===
+=== Specification ===
+=== Notes ===
 
-=== Spacewalk on KVM ===
+== Errata Management Polish ==
+=== Background ===
+=== Requirements ===
+=== Specification ===
+=== Notes ===
 
-=== Provide Channel ISO in DVD Format ===
-
-=== Errata Management Polish ===
-
-=== Email Notification For Role Changes ===
+== Email Notification For Role Changes ==
+=== Background ===
+=== Requirements ===
+=== Specification ===
+=== Notes ===
