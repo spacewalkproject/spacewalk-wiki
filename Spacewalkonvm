@@ -4,6 +4,8 @@ page maintainer: antoine at nebula dot nl
 
 This Page describes the steps needed to achieve the following '''targets''';
 
+!!!!Important:  This page does not a procedure, It is ment as example page of how things can be done, just pick out the right bits and pieces you need when installing or designing a system setup.
+
 A multi-disk-vm-based-non-graphical-spacewalk-server
 
   * Do not use any graphical tooling
