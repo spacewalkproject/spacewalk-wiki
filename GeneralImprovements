@@ -1,0 +1,22 @@
+= General Improvements =
+
+=== Enhanced Channel Removal ===
+
+ * Remove any channel via script.
+ * Remove any channel via UI.
+ * When removing a channel, provide option to:
+   * Remove associated errata.
+   * Remove associated content.
+ * Log channel removal action - to include:
+   * user
+   * channel
+   * content removed
+   * systems affected
+
+=== Spacewalk on KVM ===
+
+=== Provide Channel ISO in DVD Format ===
+
+=== Errata Management Polish ===
+
+=== Email Notification For Role Changes ===
