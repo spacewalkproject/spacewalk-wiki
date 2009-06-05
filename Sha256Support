@@ -19,6 +19,8 @@
 || Upgrades || 30 hours ||mmraka ||  || ||
 
 
+The order here represents the dependency chain. Database changes would be the first to get done so we have those to support app code changes. spacewalk and proxy can go in parallel, but these should be done for client work to start so we have supporting server code for clients. Web UI and upgrades can go last.
+
 == Specifications ==  
 
 Following are the possible areas we'll need to make to support sha256 content across board. I'm sure we'll find more as we move along, but this are the major areas ww need to make sure works as expected with new sha256 supported rpms on f11.
