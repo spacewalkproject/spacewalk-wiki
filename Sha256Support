@@ -7,6 +7,7 @@
  * webui should display the right checkSum based on the rpm
  * API calls should be be able to handle sha256 checksum both as input args and output results
  * Both proxy and spacewalk tools should handle shasum.
+ * if possible move to shasum replacing md5 for other non-rpm verifications on spacewalk/proxy
 
 == Tasks (in order) ==
 
