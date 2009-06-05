@@ -95,7 +95,8 @@ We need to make sure the queries used by these pages reflect any new db changes 
  * yum + rhn-plugin:
   * yum repodata (repodata file checksums, rpm file checksums)
   * yum-rhn-plugin plays well with new yum and rpm
-  * What if a custom channel has mixed content? can yum handle it?(check backward compatibility)
+  * older yum clients dont understand sha256 so they will fail if the repo is not sha1.
+  * so we'll need to test that the repo generated on the server is compatible with newer/older clients. 
 
  * Scheduled actions:
   * scheduled actions need to be tested and made sure work on f11
