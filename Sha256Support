@@ -15,8 +15,8 @@
 || Database Changes  || 40 hours || mmraka || || ||
 || spacewalk Server + Tools|| 60 hours || prad  || ||  ||
 || Proxy Server + Tools || 60 hours || msuchy  || || ||
-|| Client tools  || 40 hours || jmatthews  || ||  ||
-|| Web UI + API  || 40 hours ||jmatthews + prad ||  || ||
+|| Client tools  || 40 hours || jmatthews + prad || ||  ||
+|| Web UI + API  || 40 hours ||jmatthews  ||  || ||
 || Upgrades || 30 hours ||mmraka ||  || ||
 
 
