@@ -119,4 +119,4 @@ We need to make sure the queries used by these pages reflect any new db changes 
 === Upgrades ( Estimates: 40 hours) ===
  * Any db changes should be upgradable from older satellites
  * Any existing content should be upgradable as well. 
- * I dont expect any existing content that would need to be migrated to sha256.(something to look for)
+ * I can't think of any existing content that would need to be migrated to sha256.(something to look for)
