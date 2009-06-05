@@ -68,7 +68,7 @@ If I understand this part correctly, once client sends in a package request, apa
  * If the checksum here is from the rpm headers(I presume) then we'll need to make sure nothing breaks here wrt newer sha256 packages.
  * package uploads through proxy should work as expected for newer rpms.
 
-TODO: anything else you can think of for proxy mirek?
+Packages uploaded through rhn_package_manager to local proxy channel should handle sha256 properly.
 
 === Web UI (Estimates: 20 hours) ===
 
