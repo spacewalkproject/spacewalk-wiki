@@ -44,7 +44,10 @@ TODO: Anything else you can think of in this area michael?
 
 These are some of the tables we read the rpm header or compute manually and populate the md5sum. We should make this more generic say "checkSum" column instead of md5sum. This way if we upload or sync newer rpm content such as f11 we can serve any checksum format. 
 
-=== Spacewalk Server (estimates: 40 hours) ===
+=== Spacewalk Server (estimates: 60 hours) ===
+ 
+ * Repo Generation:
+  * server side repo generation should include shasum support for channels with newer rpm content and be backward compatible with older clients.
 
  * Importer/Exporter + ISS:
 This should work as expected as all we're doing is extracting the content from the db and caching it into xml files. But we'll need to fix queries specifically dealing with above tables. For example when we export package metadata for a given channel, we'll need to fix the query to use p.checksum instead of p.md5sum etc. Mostly cosmetic changes.
