@@ -51,7 +51,7 @@ Another thought was to have some kind of a lookup table by checksum type. But I 
  
  * Repo Generation:
   * server side repo generation should include shasum support for channels with newer rpm content and be backward compatible with older clients.
-  * What if a custom channel has mixed content? do we need to generate two separate kinds of repomd's.
+  * What if a custom channel has mixed content? yum doesn't care about whats in the channel, it only cares about the repo format. So as long as the repomd.xml is of compatible format it should work. 
   * So the problem would be for custom channels. Older yum clients will not be able to understand sha256 checksum. So we'll need to make a smarter decision as to which content it is and which checksum to use
   * So once approach is to get the checksum for the packages associated to the custom channel and generate the repomd as sha1 if its older content or sha256 if its newer. This is gona be the tricky part.
 
