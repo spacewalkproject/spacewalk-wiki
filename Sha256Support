@@ -1,0 +1,116 @@
+= SHA256 Support for Spacewalk =
+
+== Goal ==
+ * Clients with sha256 supported content should be able to interact with satellite, hosted and proxy as expected
+ * spacewalk server should be able to support newer rpm content in addition to old
+ * proxy should be able to serve and accept newer rpm content.
+ * webui should display the right checkSum based on the rpm
+ * API calls should be be able to handle sha256 checksum both as input args and output results
+ * Both proxy and spacewalk tools should handle shasum.
+
+== Tasks (in order) ==
+
+|| Task || Estimated Hours || Assignee || Status || Notes ||
+|| Database Changes  || 40 hours || mmraka || || ||
+|| spacewalk Server + Tools|| 60 hours || prad  || ||  ||
+|| Proxy Server + Tools || 60 hours || msuchy  || || ||
+|| Client  || 40 hours || jmatthews  || ||  ||
+|| Web UI + API  || 40 hours ||jmatthews + prad ||  || ||
+|| Upgrades || 30 hours ||mmraka ||  || ||
+
+
+== Specifications ==  
+
+Following are the possible areas we'll need to make to support sha256 content across board. I'm sure we'll find more as we move along, but this are the major areas ww need to make sure works as expected with new sha256 supported rpms on f11.
+
+=== Database(estimates: 30 hrs) ===
+
+Checksum usage in spacewalk (Some of these might be one or the other, depending on rpm version, yum version etc):
+ * rhnPackageFile 
+ * rhnPackage
+ * rhnDownloadFile 
+ * rhnKickstartFile 
+ * rhnKSTreeFile    
+ * rhnPackageSource  
+ * rhnErrataFile     
+ * rhnErrataFileTmp  
+ * rhnPackageFile    
+ * rhnFile
+ and may be more.
+
+TODO: Anything else you can think of in this area michael?        
+
+These are some of the tables we read the rpm header or compute manually and populate the md5sum. We should make this more generic say "checkSum" column instead of md5sum. This way if we upload or sync newer rpm content such as f11 we can serve any checksum format. 
+
+=== Satellite Server (estimates: 40 hours) ===
+
+ * Importer/Exporter + ISS:
+This should work as expected as all we're doing is extracting the content from the db and caching it into xml files. But we'll need to fix queries specifically dealing with above tables. For example when we export package metadata for a given channel, we'll need to fix the query to use p.checksum instead of p.md5sum etc. Mostly cosmetic changes.
+
+ * App Handler:
+  * compares md5sums to check if pkgs is already uploaded, move that to shasum instead
+  * other getMd5Sum calls used on the server
+
+ * xp Handler:
+  * rhn-package-manager server side changes to support sha256
+
+ * Other:
+  * We have other places where we make assumptions about md5sum so migrate those to shasum.
+
+=== Proxy (Estimates: 40 hours) ===
+If I understand this part correctly, once client sends in a package request, apache on proxy generates a url with an md5sum hash to find the package from the squid cache and if missing goes to satellite to fetch that and serve it to the client. 
+ * If the checksum here is from the rpm headers(I presume) then we'll need to make sure nothing breaks here wrt newer sha256 packages.
+ * package uploads through proxy should work as expected for newer rpms.
+
+TODO: anything else you can think of for proxy mirek?
+
+=== Web UI (Estimates: 20 hours) ===
+
+* pages displaying checksum:
+ * packageDetails
+ * Errata
+ * package search
+ * packageFilelists
+
+We need to make sure the queries used by these pages reflect any new db changes that effect checksum display. We now assume md5sum by default.
+
+=== API( Estimates:  20 hours) ===
+ * need to fix the hibernate objects and some cosmetic stuff by renaming the instances
+  * packageHandler.getDetails 
+  * packageHandler.listFiles
+  * errataHandler.listPackages
+
+=== Client( Estimates:  40 hours ) ===
+ * yum + rhn-plugin:
+  * yum repodata (repodata file checksums, rpm file checksums)
+  * yum-rhn-plugin plays well with new yum and rpm
+  * What if a custom channel has mixed content?
+
+ * Scheduled actions:
+  * scheduled actions need to be tested and made sure work on f11
+  * fix rpmUtils and supported calls to incorporate any rpm api changes
+  * rpm verify action verifies newer rpms as expected
+   * this deals with rhnServerActionVerifyResult
+
+=== Tools ( Estimates: 20 hours x 2 = satellite(prad) + proxy(msuchy)) ===
+ * satellite sync:
+  * Need to make sure syncing content works as expected for sha256 supported content
+  * Make sure satellite-sync runs without issues on f11
+  * populate shasum into rhnPackage for newer packages and md5sum for older
+
+ * rhnpush:
+  * sha256 supported package can be uploaded  as expected
+  * populate shasum into rhnPackage for newer packages and md5sum for older
+  * might wanna change the package verify to shasum as well
+
+ * rhn-package-manager(Proxy):
+  * sha256 supported package can be uploaded as expected
+
+ * rhn-ssl-tool:
+  * rhn-ssl-tool deploys rpms. It currently calls gen-rpm call to generate the spec and create and deploy em
+  * need to test and make sure this area is able to generate f11(with sha256) and older rpms (as usual)
+
+=== Upgrades ( Estimates: 40 hours) ===
+ * Any db changes should be upgradable from older satellites
+ * Any existing content should be upgradable as well. 
+ * I dont expect any existing content that would need to be migrated to sha256.(something to look for)
