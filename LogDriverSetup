@@ -32,7 +32,11 @@ hibernate.connection.driver_class=net.rkbloom.logdriver.LogDriver
 }}}
 
 
-3.  edit: /var/lib/tomcat5/webapps/rhn/WEB-INF/classes/log4j.properties
+3. edit: /var/lib/tomcat5/webapps/rhn/WEB-INF/classes/log4j.properties  
+Note:  If you are using a development environment
+   cp  /var/lib/tomcat5/webapps/rhn/WEB-INF/classes/log4j.properties ~/.log4j.properties
+   edit ~/.log4j.properties
+   ant all
 
 Uncomment or add:
 
