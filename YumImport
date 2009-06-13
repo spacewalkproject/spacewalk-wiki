@@ -57,9 +57,10 @@ See UploadFedoraContent for an explanation of what is involved.
 
 
 * WebUI:
-      * TODO
+  * TODO
       
 == SAMPLE CODE ==
+[[Image(channel-creation.png, 50%)]]
 == WORK ITEMS ==
 == TEST PLAN ==
 == RISKS ==
