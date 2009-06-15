@@ -13,12 +13,12 @@ Requirements:
 US-06 1003 – Search improvements
 This is a dumping grounds for specific customer-driven search and filtering improvements.
 
-Goal
-Fulfill the core goals of these bugzillas:
-https://bugzilla.redhat.com/show_bug.cgi?id=452318
-https://bugzilla.redhat.com/show_bug.cgi?id=472889
-https://bugzilla.redhat.com/show_bug.cgi?id=483118
-https://bugzilla.redhat.com/show_bug.cgi?id=481626
+* Goal
+* Fulfill the core goals of these bugzillas:
+ * https://bugzilla.redhat.com/show_bug.cgi?id=452318
+ * https://bugzilla.redhat.com/show_bug.cgi?id=472889
+ * https://bugzilla.redhat.com/show_bug.cgi?id=483118
+ * https://bugzilla.redhat.com/show_bug.cgi?id=481626
 
 
 
