@@ -30,8 +30,8 @@ Preconditions (assumptions)
 Installed Satellite with out of date managed systems.
 
 Main Flow / Description
-1.Search for errata, filtering by the various identified types.
-2.Apply the filtered results to selected systems.
-3.Event history is not filterable. There is a deep desire to be able to filter based on results. E.g. Show me only failed actions on a system or set of systems. Which packages failed to install?
-4.Extend “filter by synopsis” to all listings of errata, to include errata information for a specific system.
-5.The final bugzilla surrounds gleaning information about updating systems, both singly and as a group.
+ * Search for errata, filtering by the various identified types.
+ * Apply the filtered results to selected systems.
+ * Event history is not filterable. There is a deep desire to be able to filter based on results. E.g. Show me only failed actions on a system or set of systems. Which packages failed to install?
+ * Extend “filter by synopsis” to all listings of errata, to include errata information for a specific system.
+ * The final bugzilla surrounds gleaning information about updating systems, both singly and as a group.
