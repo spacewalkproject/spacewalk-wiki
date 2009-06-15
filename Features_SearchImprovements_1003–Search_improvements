@@ -1,27 +1,22 @@
-1003 – Search improvements
-Filtering and more filtering of search queries
+PROTOSPEC DOCUMENT
 
-Requirements:
-||Req #   || Description                                                        || bug # ||
-||1003-00 || Filter by events by package                                        || bug 452318
-||1003-01 || Filter errata so as to apply only filtered errata to a system      || bug 472889
-||1003-02 || Filter by errata synopsis, and apply results to a group of systems || bug 483118 
-||1003-03 || Filter by errata synopsis, and apply results to a group of systems || bug 481626
-
-
-
-US-06 1003 – Search improvements
+TOPIC:  US-06 1003 – Search improvements
 This is a dumping grounds for specific customer-driven search and filtering improvements.
 
-* Goal
-* Fulfill the core goals of these bugzillas:
- * https://bugzilla.redhat.com/show_bug.cgi?id=452318
- * https://bugzilla.redhat.com/show_bug.cgi?id=472889
- * https://bugzilla.redhat.com/show_bug.cgi?id=483118
- * https://bugzilla.redhat.com/show_bug.cgi?id=481626
+BUGZILLA:  452318, 472889, 483118, 481626
 
 
+Developers: jmatthews,paji 
 
+
+REVIEWED BY:  
+
+
+PRODUCT:  
+
+BUSINESS DEFINITION:
+
+USE CASES:
 
 Personas
 Directors of IT and Sysadmins
@@ -35,3 +30,43 @@ Main Flow / Description
  * Event history is not filterable. There is a deep desire to be able to filter based on results. E.g. Show me only failed actions on a system or set of systems. Which packages failed to install?
  * Extend “filter by synopsis” to all listings of errata, to include errata information for a specific system.
  * The final bugzilla surrounds gleaning information about updating systems, both singly and as a group.
+
+
+OTHER FEATURE IMPACT:
+
+PROPOSED IMPLEMENTATION:
+
+
+WORK ITEMS:
+ * Fulfill the core goals of these bugzillas:
+
+Requirements:
+||Req #   || Description                                                        || bug # ||
+||1003-00 || Filter by events by package                                        || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]||
+||1003-01 || Filter errata so as to apply only filtered errata to a system      || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||
+||1003-02 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118]|| 
+||1003-03 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]||
+
+
+TBD
+
+RISKS:
+
+TBD
+
+
+
+
+
+
+
+
+
+1003 – Search improvements
+Filtering and more filtering of search queries
+
+
+
+
+
+
