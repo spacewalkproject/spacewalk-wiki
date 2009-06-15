@@ -1,0 +1,34 @@
+= PROTOSPEC DOCUMENT =
+=== TOPIC: Topic of the feature ===
+=== REQUESTOR: username ===
+=== REVIEWED BY: ===
+=== RELEASE: Spacewalk 0.6 ===
+
+== BUSINESS DEFINITION ==
+Define why the feature should be added, this could be because of customer feedback, marketing reasons, etc.
+
+== OTHER FEATURE IMPACT ==
+Describe how this new feature / change will affect other features in the product, both existing and new ones.
+
+== PROPOSED IMPLEMENTATION ==
+Describe how we plan on implementing or fixing the feature. Point out changes that need to occur in UI, server-side, command line clients, database, etc.
+
+ * UI
+  * Add a URL widget to the some page.
+ * Server-side
+  * Add a server-side task to download the data from some known location.
+== USE CASES == 
+Define the use cases which are used to drive this feature. Be descriptive, how does it affect the command line tools? What about the web UI? How will the user interact with the feature?
+
+== SAMPLE CODE ==
+Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
+
+== WORK ITEMS ==
+Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
+
+== TEST PLAN ==
+Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
+
+== RISKS/CONCERNS ==
+List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
+
