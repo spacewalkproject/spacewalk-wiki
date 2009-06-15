@@ -71,9 +71,6 @@ Due to rapidly expanding complexity we've made intentional efforts to limit the 
  * Migration will remove remove all associations with objects in the old org, migrate the system and it's history over to the new org
  * Migration will return entitlements to old org
  * Migration will remove channels, system groups, virtual guest associations (guests remain in old org as unaffiliated virtual systems), monitoring probes, configuration channels from old org
- * Migration API call will accept an activation key in the destination org and must be provided manually by the destination org admin
- * Entitlements on activation keys will be applied if there are available entitlements in the destination org. 
- * If a entitlement cannot be applied, the system will be unentitled
  * Migration should occur immediately (no moderation queue).
  * An event should appear in the system history indicating that this system was migrated from another org
 
