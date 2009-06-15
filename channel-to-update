@@ -4,6 +4,9 @@ Ever needed to create a channel to a specific update level?  Now you can with th
 
 Current Files:
 
+
+ [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.tar.bz2 Version 2.1] - 06/14/2009 - No Longer Beta!  Added --clone option & --skiplist options.
+
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.0.1-beta.tar.bz2 Version 2.0.1-beta] - 05/29/2009 - Added RHEL 4.8 data files
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.0-beta.tar.gz Version 2.0-beta] - 03/06/2009 (updated 03/10) - Complete rewrite, see Readme for more details
