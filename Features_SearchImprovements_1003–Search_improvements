@@ -44,8 +44,8 @@ WORK ITEMS:
 
 Requirements:
 ||Req #   || Description                                                        || bug # ||
-||1003-00 || Filter by events by package                                        || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]||
-||1003-01 || Filter errata so as to apply only filtered errata to a system      || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||
+||1003-00 || Filter errata so as to apply only filtered errata to a system || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]||
+||1003-01 || Filter by events by package || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||
 ||1003-02 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118]|| 
 ||1003-03 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]||
 
