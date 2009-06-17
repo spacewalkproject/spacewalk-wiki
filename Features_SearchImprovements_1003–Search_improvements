@@ -43,11 +43,11 @@ WORK ITEMS:
  * Fulfill the core goals of these bugzillas:
 
 Requirements:
-||Req #   || Description                                                        || bug # ||
-||1003-00 || Filter errata so as to apply only filtered errata to a system || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]||
-||1003-01 || Filter by events by package || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||
-||1003-02 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118]|| 
-||1003-03 || Need to be able to monitor progress of errata updates on satellite to verify when they complete  || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]||
+||Req #   || Description                                                        || bug # || Comments ||
+||1003-00 || Filter errata so as to apply only filtered errata to a system || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]|| Looks to be implemented already ||
+||1003-01 || Filter by events by package || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||  ||
+||1003-02 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118]||  ||
+||1003-03 || Need to be able to monitor progress of errata updates on satellite to verify when they complete  || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]||  ||
 
 
 Details:
