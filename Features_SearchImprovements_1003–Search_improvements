@@ -33,7 +33,7 @@ Main Flow / Description
 
 
 OTHER FEATURE IMPACT:
- * RPM Package Set Transactions
+ * RPM Package Set Transactions (from 472889) 
 
 
 PROPOSED IMPLEMENTATION:
