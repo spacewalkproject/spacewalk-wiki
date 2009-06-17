@@ -45,9 +45,9 @@ WORK ITEMS:
 Requirements:
 ||Req #   || Description                                                        || bug # || Comments ||
 ||1003-00 || Filter errata so as to apply only filtered errata to a system || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ]|| Functionality implemented already, just needs CSV at: /rhn/systems/details/ErrataList.do ||
-||1003-01 || Filter by events by package || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]||  ||
+||1003-01 || Filter by events by package || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889]|| Concern about request for breaking package install into fine grained/individual transactions, sounds similar to case with errata where individual errata actions cause excess network I/O and poor performance  ||
 ||1003-02 || Filter by errata synopsis, and apply results to a group of systems || [https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118]|| Currently in perl (network/systems/ssm/errata/index.pxt).  Port to Java, add filter by type functionality and CSV ||
-||1003-03 || Need to be able to monitor progress of errata updates on satellite to verify when they complete  || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]||  ||
+||1003-03 || Need to be able to monitor progress of errata updates on satellite to verify when they complete  || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626]|| Probably can monitor taskomatic queue for errata actions and provide updates from that ||
 
 
 Details:
