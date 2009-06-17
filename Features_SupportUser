@@ -13,7 +13,18 @@ Support for users with read-only access has been a common request of Satellite c
 This will likely need to be addressed in APIs. See the API section below for more details.
 
 == PROPOSED IMPLEMENTATION ==
- 1. Define a new "Support User" role which exposes a new top level "Support" tab, visible when they login.
+The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
+
+=== Support User Role ===
+ 1. Support users can search across multiple organizations.
+  1. By default when created or given the support role, users will see all orgs their home org trusts. (trusts are a feature planned for the second phase of multi-org support)
+  1. Create a new UI screen to allow limiting to a selected '''subset''' of the trusted orgs.
+  1. Removal of an org trust must result in removal of the org from any configured subsets. (jdob - Does "configured subsets" mean named/saved subsets? This should be a more prominent point if this is the case)
+ 1. Support role can be given out by org admins to users in their org.
+ 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
+  * Currently a user without roles can just register systems, and view channels / errata / scheduled actions in their home org.
+
+=== Support User UI ===
  1. Support tab will link to a simple search interface.
   * For initial release this interface will allow only for searching of '''systems''' by:
    * Hostname
@@ -22,17 +33,11 @@ This will likely need to be addressed in APIs. See the API section below for mor
    * Package Installed
   * Search results will link to existing SDC pages but with all submit buttons disabled. Must be careful here to not expose actions that shouldn't be available.
   * Other entities to be searched will be added in future releases.
- 1. Support users can search across multiple organizations.
-  1. By default when created or given the support role, users will see all orgs their home org trusts. (trusts are a feature planned for the second phase of multi-org support)
-  1. Create a new UI screen to allow limiting to a selected '''subset''' of the trusted orgs.
-  1. Removal of an org trust must result in removal of the org from any configured subsets. (jdob - Does "configured subsets" mean named/saved subsets? This should be a more prominent point if this is the case)
- 1. Support role can be given out by org admins to users in their org.
- 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
-  * Currently a user without roles can just register systems, and view channels / errata / scheduled actions in their home org.
+
+=== APIs ===
  1. Create support user API handler offering the same functionality as is available in the UI.
   * Lay the groundwork for community involvement in expanding future support user searches.
   * Must ensure support users cannot utilize existing API calls.
-    * When defining apis, let's try to reuse existing calls. i.e. I don't see the need for supportuser.assignSupportUserRole(user) as we already have a user.addRole method.
 
 == USE CASES == 
 Define the use cases which are used to drive this feature. Be descriptive, how does it affect the command line tools? What about the web UI? How will the user interact with the feature?
@@ -42,8 +47,6 @@ Supply some pseudo code and/or links to actual sample code. Screenshots are also
 
 == WORK ITEMS ==
 Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
-
-== APIS AFFECTED ==
 
 == TEST PLAN ==
 Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
