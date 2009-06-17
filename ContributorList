@@ -2,6 +2,8 @@
 
 [http://miroslav.suchy.cz/spacewalk/gitstat/chart.php?chart_parameter1=5&chart_parameter_ver=spacewalk-schema-0.3.4-1&submit=1&chart_parameter2_year=2008&chart_parameter2_month=0&submit=1&showcount=10 Whole list from GIT for year 2008]
 
+[https://www.ohloh.net/p/spacewalk/contributors Contributors tracked by Ohloh.net]
+
 == Development ==
 
  * Cliff Perry
