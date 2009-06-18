@@ -46,6 +46,26 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Lay the groundwork for community involvement in expanding future support user searches.
   * Must ensure support users cannot utilize existing API calls.
 
+=== Search Server ===
+Below is a listing of the different types of searching proposed for the support user and if they are '''currently''' (as of Spacewalk 0.6) supported in the search server. A star indicates the criteria should be available in this iteration.
+
+||   || Type of Search ||Search Criteria || Supported in Search-Server || Comments ||
+|| * ||Systems || hostname || yes || ||
+|| * ||Systems || system id || yes || ||
+|| * ||Systems || custom info || yes || ||
+||   ||Systems || running kernel || yes || ||
+|| * ||Systems || package installed || yes || ||
+||   ||Systems || last checkin || yes || ||
+||   ||Errata || CVE ID  || yes || ||
+||   ||Errata || RHBA/RHSA/RHEA ID || yes ||
+||   ||Errata || Package Name || yes || ||
+||   ||Errata || Issue Date || yes || ||
+||   ||Errata || Severity (Bug | Enhancement | Security (Critical, Moderate, Important) || no || ||
+||   ||Software Channels || * || no || ||
+||   ||ORG || * || no || ||
+||   ||Entitlements || * || no || ||
+||   ||User || * || no || ||
+
 == Mock Ups ==
 Screenshot taken from Support User tab on RHN Hosted:
 
