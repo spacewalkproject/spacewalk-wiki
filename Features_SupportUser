@@ -9,6 +9,10 @@
 == BUSINESS DEFINITION ==
 Support for users with read-only access has been a common request of Satellite customers. After several customer discussions we found that this requirement more often than not boils down to a desire for a support user who can log in and perform some simple searches on systems, users, and organizations. As such we decided to pursue this path by implementing a new tab in the satellite UI exposing a simple search interface to users who have the appropriate role.
 
+The support user's features can be looked as having two aspects:
+ * Read only (or very limited) functionality to change the state of the satellite server
+ * Advanced searching/auditing mechanism for systems spanning multiple organizations
+
 == OTHER FEATURE IMPACT ==
 This will likely need to be addressed in APIs. See the API section below for more details.
 
@@ -21,8 +25,6 @@ The implementation focuses around creating a new "Support User" role and an asso
   1. Create a new UI screen to allow limiting to a selected '''subset''' of the trusted orgs.
   1. Removal of an org trust must result in removal of the org from any configured subsets. (jdob - Does "configured subsets" mean named/saved subsets? This should be a more prominent point if this is the case)
  1. Support role can be given out by org admins to users in their org.
- 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
-  * Currently a user without roles can just register systems, and view channels / errata / scheduled actions in their home org.
 
 === Support User UI ===
  1. Support tab will link to a simple search interface.
@@ -33,6 +35,10 @@ The implementation focuses around creating a new "Support User" role and an asso
    * Package Installed
   * Search results will link to existing SDC pages but with all submit buttons disabled. Must be careful here to not expose actions that shouldn't be available.
   * Other entities to be searched will be added in future releases.
+
+=== Read Only Functionality ===
+ 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
+  * Currently a user without roles can just register systems, and view channels / errata / scheduled actions in their home org.
 
 === APIs ===
  1. Create support user API handler offering the same functionality as is available in the UI.
@@ -46,7 +52,18 @@ Define the use cases which are used to drive this feature. Be descriptive, how d
 Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
 
 == WORK ITEMS ==
-Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
+
+Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremely confident it will be met.
+
+|| Description || Estimate || Confidence ||
+|| Add support user role to database || 1h || 5 ||
+|| Make support user role available to UI || 4h || 4 ||
+
+Work in progress:
+|| Add support tab to UI header || ?? || ?? ||
+|| Support tab UI search page || ?? || ?? ||
+|| Search implementation || ?? || ?? ||
+
 
 == TEST PLAN ==
 Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
