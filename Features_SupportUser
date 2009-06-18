@@ -2,7 +2,7 @@
 
 = PROTOSPEC DOCUMENT =
 === TOPIC: Support User ===
-=== REQUESTOR:  ===
+=== REQUESTOR: multiple ===
 === REVIEWED BY: ===
 === RELEASE: Spacewalk 0.7 ===
 
@@ -46,10 +46,9 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Must ensure support users cannot utilize existing API calls.
 
 == USE CASES == 
-Define the use cases which are used to drive this feature. Be descriptive, how does it affect the command line tools? What about the web UI? How will the user interact with the feature?
 
 == SAMPLE CODE ==
-Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
+
 
 == WORK ITEMS ==
 
@@ -63,11 +62,22 @@ Work in progress:
 || Add support tab to UI header || ?? || ?? ||
 || Support tab UI search page || ?? || ?? ||
 || Search implementation || ?? || ?? ||
+|| Search results page || ?? || ?? ||
 
+|| Add API for support user search || ?? || ?? ||
+|| Verify existing APIs do not allow support users to do bad things || ?? || ?? ||
+
+|| Investigate abilities of no-role user || ?? || ?? ||
+|| Changes to support read only nature of no-role user || ?? || ?? ||
 
 == TEST PLAN ==
-Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
+High level testing areas:
+ * Ability to create support users and see the appropriate support user UI functionality
+ * Support user searching works correctly
+ * Support user only has read only access (potentially tricky due to the scope of what needs to be investigated)
+ * New support user APIs work correctly
+ * Existing APIs do not allow non-read only functionality to support user
 
 == RISKS/CONCERNS ==
-List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
+ * Pretty extensive testing required to ensure read only user is actually read only
 
