@@ -5,6 +5,7 @@ Ever needed to create a channel to a specific update level?  Now you can with th
 Current Files (with md5sum):
 
 
+ [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.1.tar.bz2 Version 2.1.1 (7bc161a904e763e001e1fd38e420d60a)] - 06/18/2009 - few small fixes
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.tar.bz2 Version 2.1 (bd8ca08875f54c00592a8f2178e01b87)] - 06/14/2009 - No Longer Beta!  Added --clone option & --skiplist options.
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.0.1-beta.tar.bz2 Version 2.0.1-beta] - 05/29/2009 - Added RHEL 4.8 data files
@@ -15,9 +16,6 @@ Current Files (with md5sum):
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.5.tar.bz2  Version 1.5] - 11/21/2008 - Added Extras and Supplemental support
 
- [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.4.tar.bz2  Version 1.4] - 09/17/2008 - Improved performance of script.
- 
- [http://jlsherrill.fedorapeople.org/channel-to-update-level-1.3.tar.bz2  Version 1.3] - 07/30/2008 - RHEL 5.2 and 4.7 support
 
 
 === Feature Requests ===
