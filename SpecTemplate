@@ -22,6 +22,14 @@ Describe how we plan on implementing or fixing the feature. Point out changes th
  * Server-side
   * Add a server-side task to download the data from some known location.
 
+=== Known Issues ===
+issues that we know exist with the spec and we should write them down so that they are
+known up front when the spec is approved.  If an issue is severe enough, it
+could warrant the feature not being included in the release/roadmap or
+delayed until those issues can be addressed. 
+
+=== Future Enhancements ===
+
 == Mockups ==
 
 Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
