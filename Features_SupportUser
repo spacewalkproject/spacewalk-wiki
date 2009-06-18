@@ -13,6 +13,10 @@ The support user's features can be looked as having two aspects:
  * Read only (or very limited) functionality to change the state of the satellite server
  * Advanced searching/auditing mechanism for systems spanning multiple organizations
 
+== REQUIREMENTS ==
+
+== USE CASES ==
+
 == OTHER FEATURE IMPACT ==
 This will likely need to be addressed in APIs. See the API section below for more details.
 
@@ -45,10 +49,7 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Lay the groundwork for community involvement in expanding future support user searches.
   * Must ensure support users cannot utilize existing API calls.
 
-== USE CASES == 
-
 == SAMPLE CODE ==
-
 
 == WORK ITEMS ==
 
