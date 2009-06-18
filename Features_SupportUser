@@ -50,6 +50,8 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Must ensure support users cannot utilize existing API calls.
 
 == SAMPLE CODE ==
+Screenshot taken from Support User tab on RHN Hosted:
+[[Image(hosted-support-user-tab.png)]]
 
 == WORK ITEMS ==
 
