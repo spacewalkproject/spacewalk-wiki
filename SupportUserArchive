@@ -69,28 +69,28 @@ While unable to get most of these in for a first release, we'll focus mainly on 
  1. Allow searching for:
   1. Systems
    1. Search By:
-    1. hostname
-    1. system id
-    1. custom info field
-    1. running kernel (or package installed)
+    1. hostname 
+    1. system id  
+    1. custom info field 
+    1. running kernel (or package installed)  
    1. View:
     1. running kernel
-    1. last check in
+    1. last check in   
     1. last booted
     1. available updates and errata
     1. applied errata
     1. subscribed channels
-    1. full hardware profile
+    1. full hardware profile   
     1. scheduled action status
     1. action history
     1. system owner / contact info
   1. Errata
    1. Search By:
-    1. CVE ID
-    1. RHBA/RHSA/RHEA ID
-    1. Package Name
-    1. Issue Date
-    1. Severity (Bug | Enhancement | Security (Critical, Moderate, Important)
+    1. CVE ID     (Supported in Search-Server)
+    1. RHBA/RHSA/RHEA ID   (Supported in Search-Server)
+    1. Package Name   (Supported in Search-Server)
+    1. Issue Date   (Supported in Search-Server)
+    1. Severity (Bug | Enhancement | Security (Critical, Moderate, Important)   
    1. View:
     1. Normal errata details
     1. Systems still affected
@@ -124,3 +124,20 @@ While unable to get most of these in for a first release, we'll focus mainly on 
     1. user details
   1. Activation Keys (look up for user?)
 
+
+||Type of Search ||Search Criteria || Supported in Search-Server || Comments ||
+||Systems || hostname || yes || ||
+||Systems || system id || yes || ||
+||Systems || custom info || yes || ||
+||Systems || running kernel || yes || ||
+||Systems || package installed || yes || ||
+||Systems || last checkin || yes || ||
+||Errata || CVE ID  || yes || ||
+||Errata || RHBA/RHSA/RHEA ID || yes ||
+||Errata || Package Name || yes || ||
+||Errata || Issue Date || yes || ||
+||Errata || Severity (Bug | Enhancement | Security (Critical, Moderate, Important) || NO || ||
+||Software Channels || * || NO ||
+||ORG || * || NO ||
+||Entitlements || * || NO ||
+||User || * || NO ||
