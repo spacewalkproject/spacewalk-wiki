@@ -1,26 +1,22 @@
 [wiki:SupportUserArchive Original Wiki Discussion]
 
-= PROTOSPEC DOCUMENT =
-=== TOPIC: Support User ===
+= Support User =
 === REQUESTOR: multiple ===
 === REVIEWED BY: ===
-=== RELEASE: Spacewalk 0.7 ===
 
-== BUSINESS DEFINITION ==
+== Overview ==
 Support for users with read-only access has been a common request of Satellite customers. After several customer discussions we found that this requirement more often than not boils down to a desire for a support user who can log in and perform some simple searches on systems, users, and organizations. As such we decided to pursue this path by implementing a new tab in the satellite UI exposing a simple search interface to users who have the appropriate role.
 
 The support user's features can be looked as having two aspects:
  * Read only (or very limited) functionality to change the state of the satellite server
  * Advanced searching/auditing mechanism for systems spanning multiple organizations
 
-== REQUIREMENTS ==
+== Requirements ==
 
-== USE CASES ==
-
-== OTHER FEATURE IMPACT ==
+== Other Feature Impact ==
 This will likely need to be addressed in APIs. See the API section below for more details.
 
-== PROPOSED IMPLEMENTATION ==
+== Proposed Implementation ==
 The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
 
 === Support User Role ===
@@ -49,11 +45,11 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Lay the groundwork for community involvement in expanding future support user searches.
   * Must ensure support users cannot utilize existing API calls.
 
-== SAMPLE CODE ==
+== Mock Ups ==
 Screenshot taken from Support User tab on RHN Hosted:
 [[Image(hosted-support-user-tab.png)]]
 
-== WORK ITEMS ==
+== Tasks ==
 
 Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremely confident it will be met.
 
@@ -73,7 +69,7 @@ Work in progress:
 || Investigate abilities of no-role user || ?? || ?? ||
 || Changes to support read only nature of no-role user || ?? || ?? ||
 
-== TEST PLAN ==
+== Test Notes ==
 High level testing areas:
  * Ability to create support users and see the appropriate support user UI functionality
  * Support user searching works correctly
@@ -81,6 +77,6 @@ High level testing areas:
  * New support user APIs work correctly
  * Existing APIs do not allow non-read only functionality to support user
 
-== RISKS/CONCERNS ==
+== Risks/Concerns ==
  * Pretty extensive testing required to ensure read only user is actually read only
 
