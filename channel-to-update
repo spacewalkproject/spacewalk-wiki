@@ -6,6 +6,7 @@ Current Files (with md5sum):
 
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.1.tar.bz2 Version 2.1.1 (7bc161a904e763e001e1fd38e420d60a)] - 06/18/2009 - few small fixes
+
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.tar.bz2 Version 2.1 (bd8ca08875f54c00592a8f2178e01b87)] - 06/14/2009 - No Longer Beta!  Added --clone option & --skiplist options.
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.0.1-beta.tar.bz2 Version 2.0.1-beta] - 05/29/2009 - Added RHEL 4.8 data files
