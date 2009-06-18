@@ -10,6 +10,8 @@ Requirements this feature must fulfill. Include any use cases which are used to 
 == Other Feature Impact ==
 
 Describe how this new feature / change will affect other features in the product, both existing and new ones.
+* UI
+* API
 
 == Proposed Implementation ==
 
