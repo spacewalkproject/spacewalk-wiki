@@ -84,19 +84,24 @@ Search Results Mockup:
 
 Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremely confident it will be met.
 
-|| Description || Estimate || Confidence ||
+Role Creation
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Add support user role to database || 1h || 5 ||
 || Make support user role available to UI || 4h || 4 ||
 
-Work in progress:
+Web UI
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Add support tab to UI header || ?? || ?? ||
 || Support tab UI search page || ?? || ?? ||
-|| Search implementation || ?? || ?? ||
 || Search results page || ?? || ?? ||
+|| Search actions implementation || ?? || ?? ||
 
+APIs
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Add API for support user search || ?? || ?? ||
 || Verify existing APIs do not allow support users to do bad things || ?? || ?? ||
 
+Read Only Features
 || Investigate abilities of no-role user || ?? || ?? ||
 || Changes to support read only nature of no-role user || ?? || ?? ||
 
