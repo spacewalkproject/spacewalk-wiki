@@ -177,5 +177,5 @@ High level testing areas:
  * Existing APIs do not allow non-read only functionality to support user
 
 == Risks/Concerns ==
- * Pretty extensive testing required to ensure read only user is actually read only
-
+ * Pretty extensive testing required to ensure read only user is actually read only.
+ * Could be tricky to figure out how to test the APIs to make sure the support user is not allowed to make changes. Will have to touch base with Brad to see how comfortable he is with our current role support in the APIs.
