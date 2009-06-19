@@ -69,6 +69,7 @@ SQL>
 }}}
 
  * A checksum_id columns will be added to rhnPackage table fk to rhnPackageChecksum
+
 {{{
 
 alter table rhnPackage
