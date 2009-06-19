@@ -66,6 +66,68 @@ Below is a listing of the different types of searching proposed for the support 
 ||   ||Entitlements || * || no || ||
 ||   ||User || * || no || ||
 
+=== Known Issues ===
+
+=== Future Enhancements ===
+The following search abilities have been requested:
+
+ 1. Systems
+  1. Search By:
+   1. hostname 
+   1. system id  
+   1. custom info field 
+   1. running kernel (or package installed)  
+  1. View:
+   1. running kernel
+   1. last check in   
+   1. last booted
+   1. available updates and errata
+   1. applied errata
+   1. subscribed channels
+   1. full hardware profile   
+   1. scheduled action status
+   1. action history
+   1. system owner / contact info
+ 1. Errata
+  1. Search By:
+   1. CVE ID     (Supported in Search-Server)
+   1. RHBA/RHSA/RHEA ID   (Supported in Search-Server)
+   1. Package Name   (Supported in Search-Server)
+   1. Issue Date   (Supported in Search-Server)
+   1. Severity (Bug | Enhancement | Security (Critical, Moderate, Important)   
+  1. View:
+   1. Normal errata details
+   1. Systems still affected
+   1. Systems with errata applied. (including date)
+ 1. Software Channels
+  1. Search By:
+   1. Browsing was requested, not sure if this affects our plans.
+  1. View:
+   1. List of packages.
+   1. List of subscribed systems.
+   1. Errata issued (with issued/cloned date)
+ 1. Organizations
+  1. Search By:
+   1. Org ID
+   1. Org name
+   1. Browsing requested.
+  1. View
+   1. System/software entitlement usage.
+ 1. Entitlements
+  1. Search By:
+   1. Browsing requested.
+  1. View
+   1. Allocation to organizations.
+ 1. User
+  1. Search By:
+   1. email address
+   1. real name
+   1. user id
+   1. login name
+  1. View:
+   1. user details
+ 1. Activation Keys (look up for user?)
+
 == Mock Ups ==
 Screenshot taken from Support User tab on RHN Hosted:
 
