@@ -20,7 +20,7 @@
 || Upgrades || 30 hours ||mmraka/prad ||  || ||
 
 
-The order here represents the dependency chain. Database changes would be the first to get done so we have those to develop and test the app code changes. spacewalk and proxy  development can go in parallel, but these should be done(at least partly) for client work to start so we have supporting server code for clients. Web UI and upgrades can go last I guess. Apparently jmatthews and mmraka are not allocated full time on this feature, So msuchy and I will be primary developers on this feature with some assistance from jmatthews and mmraka.
+The order here represents the dependency chain. Database changes would be the first to get done so we have those to develop and test the app code changes. spacewalk and proxy  development can go in parallel, but these should be done(at least partly) for client work to start so we have supporting server code for clients. Web UI and upgrades can go last I guess. As jmatthews and mmraka are not allocated full time on this feature, So msuchy and I will be primary developers on this feature with some assistance from jmatthews and mmraka.
 
 == Specifications ==  
 
@@ -41,9 +41,55 @@ Checksum usage in spacewalk (Some of these might be one or the other, depending 
  * rhnFile
  and may be more.
 
-* New rhnPackageChecksum table will need to be added as a lookup table for package checksums. 
+ * New rhnPackageChecksum table will need to be added as a lookup table for package checksums.
+  
+{{{
+New Table:
 
-* A checksum_id columns will be added to rhnPackage table fk to rhnPackageChecksum
+rhnPackageCheckSum
+--------------------
+ID                                                   
+NAME                                                
+
+x
+Sample Data:
+1,md5sum
+2,sha1sum
+3,sha256sum
+
+SQL> desc rhnPackageCheckSum
+ Name                                                  Null?    Type
+ ----------------------------------------------------- -------- ------------------------------------
+ ID                                                    NOT NULL NUMBER
+ NAME                                                  NOT NULL VARCHAR2(64)
+
+SQL> 
+
+Schema:
+create table
+rhnErrataFileType
+(
+        id              number
+                        constraint rhn_pkgchecksum_type_id_nn not null,
+        name           varchar2(128)
+                        constraint rhn_pkgchecksum_type_name_nn not null
+)
+        enable row movement
+  ;
+
+create sequence rhn_package_checksum_id_seq start with 100;       
+
+create index rhn_pkg_checksum_id_n_idx
+        on rhnPackageChecksum (id, name )
+        tablespace [[64k_tbs]]
+  ;
+
+alter table rhnPackageChecksum add constraint rhn_pkg_checksum_id_pk primary key (id);
+alter table rhnPackageChecksum add constraint rhn_pkg_checksum_name_uq unique ( name );
+
+}}}
+
+ * A checksum_id columns will be added to rhnPackage table fk to rhnPackageChecksum
 
 TODO: Anything else you can think of in this area michael?        
 
