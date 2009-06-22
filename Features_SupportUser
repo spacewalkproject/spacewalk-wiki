@@ -1,5 +1,3 @@
-[wiki:SupportUserArchive Original Wiki Discussion]
-
 = Support User =
 === REVIEWED BY: ===
 
@@ -11,7 +9,18 @@ The support user's features can be looked as having two aspects:
  * Advanced searching/auditing mechanism for systems spanning multiple organizations
 
 == Requirements ==
-
+ 1. A new user role that corresponds to the support user role.
+  * If a user is assigned the support user role, it '''cannot''' be assigned another role as well.
+  * Permissions to assign the support user role to a user:
+   * Satellite/Spacewalk admin can give to anyone.
+   * Org admins can give to users in their org.
+  * Users in the support user role will have access to the following UI tabs. This list is derived from the tabs available to a user with no roles. For more detail on the capabilities allowed within these sections see the [wiki:SupportUserReadOnly wiki on read only functionality in the existing UI].
+   * Overview
+   * Systems
+   * Errata
+   * Channels
+   * Schedule
+   * Help
 
 == Other Feature Impact ==
 This will likely need to be addressed in APIs. See the API section below for more details.
@@ -26,17 +35,21 @@ The implementation focuses around creating a new "Support User" role and an asso
   1. By default when created or given the support role, users will see all orgs their home org trusts. (trusts are a feature planned for the second phase of multi-org support)
   1. Create a new UI screen to allow limiting to a selected '''subset''' of the trusted orgs.
   1. Removal of an org trust must result in removal of the org from any configured subsets. (jdob - Does "configured subsets" mean named/saved subsets? This should be a more prominent point if this is the case)
- 1. Support role can be given out by org admins to users in their org.
+ 1. Ensure proper permissions to give out support user role.
+ 1. Changes may need to be made to the rest of the visible UI to allow navigation across trusted orgs.
 
-=== Support User UI ===
+=== Support User UI (Auditing UI) ===
  1. Support tab will link to a simple search interface.
   * For initial release this interface will allow only for searching of '''systems''' by:
    * Hostname
    * System ID
    * Custom Field
    * Package Installed
-  * Search results will link to existing SDC pages but with all submit buttons disabled. Must be careful here to not expose actions that shouldn't be available.
-  * Other entities to be searched will be added in future releases.
+  * Search results will provide a link to existing SDC pages with read only functionality (see Read Only Functionality below).
+  * Search results will indicate the following as a summary of systems that match.
+   * Status
+   * System Name
+   * Organization
 
 === Read Only Functionality ===
  1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
@@ -179,3 +192,6 @@ High level testing areas:
 == Risks/Concerns ==
  * Pretty extensive testing required to ensure read only user is actually read only.
  * Could be tricky to figure out how to test the APIs to make sure the support user is not allowed to make changes. Will have to touch base with Brad to see how comfortable he is with our current role support in the APIs.
+
+== Additional Resources ==
+[wiki:SupportUserArchive Original Wiki Discussion]
