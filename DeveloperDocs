@@ -37,6 +37,7 @@ This section contains information about developer topics.  You may also be inter
 
  * Releasing the code
    * ReleaseProcess Process for building RPMs
+   * [http://miroslav.suchy.cz/spacewalk/packages-overview/ List of packages in releases] - including packages already in Fedora. Contains version of each package for each distribution.
 
  * [BrainBox Brainstorming]
  * [ContributorList Contributor List]
