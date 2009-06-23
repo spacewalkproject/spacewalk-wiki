@@ -1,57 +1,17 @@
 = System Inventory =
 
+=== Reviewed by: ===
 
+== Overview ==
 
-
-= PROTOSPEC DOCUMENT =
-=== TOPIC: Topic of the feature ===
-=== REQUESTOR: username ===
-=== REVIEWED BY: ===
-=== RELEASE: Spacewalk 0.6 ===
-
-== BUSINESS DEFINITION ==
-Define why the feature should be added, this could be because of customer feedback, marketing reasons, etc.
-
-== OTHER FEATURE IMPACT ==
-Describe how this new feature / change will affect other features in the product, both existing and new ones.
-
-== PROPOSED IMPLEMENTATION ==
-Describe how we plan on implementing or fixing the feature. Point out changes that need to occur in UI, server-side, command line clients, database, etc.
-
- * UI
-  * Add a URL widget to the some page.
- * Server-side
-  * Add a server-side task to download the data from some known location.
-== USE CASES == 
-Define the use cases which are used to drive this feature. Be descriptive, how does it affect the command line tools? What about the web UI? How will the user interact with the feature?
-
-== SAMPLE CODE ==
-Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
-
-== WORK ITEMS ==
-Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
-
-== TEST PLAN ==
-Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
-
-== RISKS/CONCERNS ==
-List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
-
-
-
-
-
-
-== Background ==
-
-Spacewalk/Satellite currently has very limited capabilities at identifying the operating system, architecture, and capabilities of registered systems. There is a need for a more dynamic discovery service capable of making taxonomic decisions about the systems registered to Spacewalk. This could be leveraged for a number of purposes but most importantly in the Spacewalk context, cleaning up a lot of messy conditional code where we try to do the right thing based on OS version, and allowing better support for Fedora and CentOS.
+This feature refers to our ability to correctly identify the operating system, version, and virtualization capabilities/status of hosts registered to Spacewalk. 
 
 == Requirements ==
 
  1. Identify the following operating systems and versions:
   1. Red Hat Enterprise Linux: 4 (AS, ES, ...), 5 (Server, Desktop)
-  1. Fedora (all versions)
-  1. CentOS (all versions)
+  1. Fedora (10+)
+  1. CentOS (4, 5)
   1. Solaris (all currently supported versions TBD)
   1. "Unknown" system (for everything we can't identify)
  1. System architecture: x86, x86_64, ppc, s390x, etc.
@@ -62,30 +22,45 @@ Spacewalk/Satellite currently has very limited capabilities at identifying the o
  1. System should report basic information for what it thinks it is and not just what we say it is (whether through attribute editing or channel association). 
   * ''Do we want the system reporting what it thinks it is, or the client code dumping us a variety of data and determining what it is server side? This feels like something that should happen on the server to me, we get as much information as possible from the client and then the client side code can hopefully remain relatively stable.'' - dgoodwin
 
+== Other Feature Impact ==
 
-== Specification ==
+TBD
 
-More coming soon, just an outline for now.
+== Proposed Implementation ==
 
-=== Client ===
+  1. Client Tools
+    1. Modify rhnreg to supply additional information that may be needed. Ideally we'll dump as much data to the server as we can, and the server will determine how to classify the system during registration.
+  1. Database
+    1. Design schema changes to effectively store the taxonomy information in a format that can remain consistent despite future changes.
+    1. How do we populate for existing systems? During upgrade? Occasionally re-attempting to classify systems that are unknown?
+  1. Backend
+    1. Modify backend code that handles registration to do the classification based on rules.
+    1. Need method to update rules easily... TBD
+  1. Web UI
+    1. Display taxonomy information prominently in web UI, allow for searching/filtering.
+    1. Should administrator be able to manually specify taxonomy changes?
+ 
 
- 1. Modify client packages to supply additional information that may be needed. 
+=== Known Issues ===
 
-=== Database ===
 
- 1. Design and add database schema to effectively categorize system inventory.
- 1. Must be populated for existing systems during upgrade?
+=== Future Enhancements ===
 
-=== Backend ===
+== Mockups ==
 
- 1. Update backend to parse incoming client data and do the legwork to determine it's classification.
+Mockups?
 
-=== Java ===
+== Tasks ==
 
- 1. Display taxonomy information prominently in web UI.
-   * What screens?
- 1. Allow user defined taxonomy?
- 1. Allow administrator to manually override the taxonomy from the web UI?
- 1. Any additional searching/sorting requirements?
+Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
 
-== Questions ==
+|| Description || Estimate || Confidence ||
+||  || || ||
+||  || || ||
+
+== Test Notes ==
+
+
+== Risks/Concerns ==
+
+
