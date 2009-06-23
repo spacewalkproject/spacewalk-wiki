@@ -21,6 +21,21 @@ The support user's features can be looked as having two aspects:
    * Channels
    * Schedule
    * Help
+ 1. Users in the support user role have access to new search functionality for their needs.
+   * Support user searches must be able to search across all organizations their home org trusts.
+    * The user must be able to select a subset of these organizations at the time of search (potential to add saved/named subsets in the future)
+   * For initial release this interface will allow only for searching of '''systems''' by:
+    * Hostname
+    * System ID
+    * Custom Field
+    * Package Installed
+   * Search results must provide a link to existing SDC pages with read only functionality.
+   * Search results will indicate the following as a summary of systems that match.
+    * Status
+    * System Name
+    * Organization
+ 1. 
+
 
 == Other Feature Impact ==
 This will likely need to be addressed in APIs. See the API section below for more details.
@@ -39,17 +54,7 @@ The implementation focuses around creating a new "Support User" role and an asso
  1. Changes may need to be made to the rest of the visible UI to allow navigation across trusted orgs.
 
 === Support User UI (Auditing UI) ===
- 1. Support tab will link to a simple search interface.
-  * For initial release this interface will allow only for searching of '''systems''' by:
-   * Hostname
-   * System ID
-   * Custom Field
-   * Package Installed
-  * Search results will provide a link to existing SDC pages with read only functionality (see Read Only Functionality below).
-  * Search results will indicate the following as a summary of systems that match.
-   * Status
-   * System Name
-   * Organization
+ 1. Support tab will be added, similar to how the Admin tab appears for the satellite admin.
 
 === Read Only Functionality ===
  1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
@@ -58,7 +63,7 @@ The implementation focuses around creating a new "Support User" role and an asso
 === APIs ===
  1. Create support user API handler offering the same functionality as is available in the UI.
   * Lay the groundwork for community involvement in expanding future support user searches.
-  * Must ensure support users cannot utilize existing API calls.
+  * 
 
 === Search Server ===
 Below is a listing of the different types of searching proposed for the support user and if they are '''currently''' (as of Spacewalk 0.6) supported in the search server. A star indicates the criteria should be available in this iteration.
