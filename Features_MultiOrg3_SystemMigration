@@ -1,3 +1,83 @@
+= Feature Title =
+=== Reviewed by: ===
+== Overview ==
 
+The current multiple organization feature as required by [wiki:/Features/MultiOrg2/Requirements#SystemMigration] provides the ability to migrate systems from one organization to another through either the XMLRPC API or a stand-alone tool (migrate-system-profile); however, as a system is migrated, several of the characteristics of the system associated with the originating organization are removed from the system.  This includes characteristics such as the following:
 
-This is a placeholder for the protospec to support the System Migration enhancements for the Multi Org ...
+ * entitlements
+ * software channel subscriptions
+ * system group membership
+ * virtual guest associations
+ * monitoring probes
+ * configuration channels
+ * custom data values
+ * snapshots
+
+As a result, the system after migration requires some additional configuration to be applied to it, either using the web-UI or XMLRPC APIs.  In order to minimize the amount configuration needed after the migration, it is desirable to have this work done as part of the migration itself by leveraging an Activation Key, similar to what can be done when a system registers in to an organization.
+
+== Requirements ==
+
+ * Support usage of an optional activation key when performing a system migration.  This must be supported by both:
+   * the XMLRPC API org.migrateSystems 
+   * the spacewalk-utils migrate-system-profile script
+   * '''TODO''': Do we need to support using more than 1 activation key during a system migration?
+
+ * The activation key specified during migration must exist in the destination org.
+
+ * When an activation key is included during the migration:
+   * The key can be used to:
+     * assign system entitlements, base channel and child channels to the system
+     * assign system to system groups
+     * subscribe system to configuration channels
+     * schedule action to deploy configuration files to the system
+     * schedule action to install packages to the system
+   * If the key "usage" is not specified (i.e. empty), the usage will be unlimited; otherwise, it will specify the number of times the activation key may be used.
+   * Prior to performing the migration, it will be verified that the destination org has enough entitlements (system and software) to support the requested migration.  If not enough entitlements are available, no systems will be migrated and an error will be generated to the user.
+
+ * Universal default - key to associate with the migration, when no key has been provided.
+   * '''TODO''': Do we want/need to support Universal Default for system migrations?
+   * '''TODO''': If so, should the same Universal Default be used for both system migrations and registrations?  (i.e. should we support 1 Universal Default field or 2 (e.g. Migration Universal Default, Registration Universal Default)?)
+
+== Other Feature Impact ==
+
+ * UI - This feature will use the existing Activation Key UI (i.e. Systems -> Activation Keys) and no impact/changes are currently anticipated to it to support this feature.
+ * API - This feature primarily impacts the existing API (system.migrateSystems) and migrate-system-profile tool.  Details on impact provided in the 'Proposed Implementation'.
+ * Schema - No impacts identified.
+ * Backend - No impacts identified.
+
+== Proposed Implementation ==
+
+ * Script - system-migrate-profile (package: spacewalk-utils)
+  * update script to support the optional "--activationkey=ACTIVATIONKEY" input
+  * update manpage to document "--activationkey=ACTIVATIONKEY"
+  * this script will basically pass the activation key (if provided) to the XMLRPC API that will perform the actual migration of the system to the destination org.
+
+ * API - org.migrateSystems
+  * deprecate the existing org.migrateSystems(string sessionKey, int toOrgId, array[int systemId])
+  * create a new API: array[int serverIdMigrated] org.migrateSystems(string sessionKey, int toOrgId, string activationKey, array[int systemId]), where activation key is optional
+
+=== Known Issues ===
+
+There several decisions that need to be made before this specification is finalized.  Those decisions are highlighted with '''TODO'''. 
+
+=== Future Enhancements ===
+
+== Mockups ==
+
+Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
+
+== Tasks ==
+
+Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
+|| Description || Estimate || Confidence ||
+|| Add support user role to database || 1h || 5 ||
+|| Make support user role available to UI || 4h || 4 ||
+
+== Test Notes ==
+
+Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
+
+== Risks/Concerns ==
+
+List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
+
