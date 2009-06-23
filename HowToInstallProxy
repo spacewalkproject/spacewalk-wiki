@@ -13,17 +13,36 @@ If you're looking for instructions for the RHN Proxy product see http://www.redh
   * An upstream RHN Satellite server with an available Proxy entitlement or a Spacewalk server
   * A provisioning entitlement for the Proxy server
 
-== Installation ==
+== Repository ==
 
-RPM downloads of the project are available through a yum repository
+RPM downloads of the project are available through yum repositories:
 
   * http://spacewalk.redhat.com/yum
+or
+  * nightly builds repo
+(choose one of them)
 
-To use the repository install spacewalk-repo RPM:
+==== Spacewalk-repo ====
+To use the official repository install spacewalk-repo RPM:
 
 {{{
 rpm -Uvh http://spacewalk.redhat.com/yum/0.5/RHEL/5/`uname -i`/os/Packages/spacewalk-repo-0.5-2.el5.noarch.rpm
 }}}
+
+==== Nightly builds ====
+
+To use the nightly builds add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the following contents:
+
+{{{
+[spacewalk]
+name=Spacewalk
+baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/$basearch/os/
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=0
+}}}
+
+== Installation ==
 
 Ensure your machine is registered in Spacewalk and has a provisioning entitlement. Then just ask yum to install the application:
 
