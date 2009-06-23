@@ -12,12 +12,43 @@ See UploadFedoraContent for an explanation of what is involved.
 == PROPOSED IMPLEMENTATION ==
  * UI
   * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
- * Server-side
-  * Add a server-side task to download the packages from the yum repo and 
-  * The implementation would be similar to already existing reposync tool in yum-utils. We'll need to go a extra mile to import it into the database and tie it to a channel. May be call it sw-repo-sync.(prad)
-  * sw-repo-sync will inherit functionality from repo-sync and do few extra methods. (prad)
+  * when user hits 'sync', task will be performed asynchronously.  
+  * Will only be additive, packages removed from the yum repo, will remain in the channel
+ * Yum Repo interaction will use Yum module from jopr
+ * Api support for syncing channel, setting repo
+
 == USE CASES == 
-=== Command line: (prad) ===
+
+
+=== WebUI ===
+
+Add the following section to the Channel creation page.
+
+[[Image(channel-creation-repo-info.png)]]
+      
+== SAMPLE CODE ==
+=== Channel creation page ===
+[[Image(channel-creation.png, 50%)]]
+== WORK ITEMS ==
+
+ * Add schema to support associated yum repo(s) with channel (allow future support of multiple repos)
+ * Integrate Jopr's yum syncing module in
+ * Add UI support for setting yum repo and doing initial sync (asynchronously) 
+ * Add UI support for syncing all channels (asynchronously) 
+ 
+== TEST PLAN ==
+== RISKS/CONCERNS ==
+
+
+=== Future Features (Part 2) ===
+
+* Do a full sync from channel to repo (remove packages if removed)
+* support multiple yum repos -> one channel
+* Command Line support
+* Background periodic (daily, hourly, etc) syncing
+
+
+=== Command line: (prad) (future) ===
       * Sync a remote repo to spacewalk database
         * ''Heads on on the --db syntax. This is incompatible with PostgreSQL and had to be changed for all scripts in that branch. I know with some scripts we setup to not have to specify a database at all (just use the default in rhn.conf), but you could if you wanted to. (in which case you need the full range of options, backend, user, password, host, port, etc, not all of which would be used in the case of Oracle)'' - dgoodwin
            
@@ -54,17 +85,3 @@ See UploadFedoraContent for an explanation of what is involved.
 {{{
       $ ./sw-repo-sync --repo=remote-repo --schedule="30 1 * * *"
 }}}
-
-
-=== WebUI ===
-
-Add the following section to the Channel creation page.
-
-[[Image(channel-creation-repo-info.png)]]
-      
-== SAMPLE CODE ==
-=== Channel creation page ===
-[[Image(channel-creation.png, 50%)]]
-== WORK ITEMS ==
-== TEST PLAN ==
-== RISKS/CONCERNS ==
