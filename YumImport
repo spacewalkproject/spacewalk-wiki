@@ -51,10 +51,10 @@ Add the following section to the Channel creation page.
 
 === Future Features (Part 2) ===
 
-* Do a full sync from channel to repo (remove packages if removed)
-* support multiple yum repos -> one channel
-* Command Line support
-* Background periodic (daily, hourly, etc) syncing
+ * Do a full sync from channel to repo (remove packages if removed)
+ * support multiple yum repos -> one channel
+ * Command Line support
+ * Background periodic (daily, hourly, etc) syncing
 
 
 === Command line: (prad) (future) ===
