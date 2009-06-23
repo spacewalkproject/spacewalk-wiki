@@ -11,11 +11,13 @@ See UploadFedoraContent for an explanation of what is involved.
 == OTHER FEATURE IMPACT ==
 == PROPOSED IMPLEMENTATION ==
  * UI
-  * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
-  * when user hits 'sync', task will be performed asynchronously.  
-  * Will only be additive, packages removed from the yum repo, will remain in the channel
+ ** Add a URL widget to the Channel Edit page to allow one to define the yum repo.
+ ** when user hits 'sync', task will be performed asynchronously.  
+ ** Will only be additive, packages removed from the yum repo, will remain in the channel
  * Yum Repo interaction will use Yum module from jopr
  * Api support for syncing channel, setting repo
+ * Schema Changes
+ ** Add rhnChannelRepo table to store  repo -> channel (many-to-one) mapping
 
 == USE CASES == 
 
