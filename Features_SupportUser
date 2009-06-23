@@ -4,23 +4,12 @@
 == Overview ==
 Support for users with read-only access has been a common request of Satellite customers. After several customer discussions we found that this requirement more often than not boils down to a desire for a support user who can log in and perform some simple searches on systems, users, and organizations. As such we decided to pursue this path by implementing a new tab in the satellite UI exposing a simple search interface to users who have the appropriate role.
 
-The support user's features can be looked as having two aspects:
- * Read only (or very limited) functionality to change the state of the satellite server
- * Advanced searching/auditing mechanism for systems spanning multiple organizations
-
 == Requirements ==
  1. A new user role that corresponds to the support user role.
-  * If a user is assigned the support user role, it '''cannot''' be assigned another role as well.
+  * A user may be assigned to the support user role in the same way as any other role is assigned. The role may be assigned in conjunction with other roles as well. For example, a channel administrator may be granted the support user role in order to be able to access the support user specific functionality (searching, auditing, etc.)
   * Permissions to assign the support user role to a user:
    * Satellite/Spacewalk admin can give to anyone.
    * Org admins can give to users in their org.
-  * Users in the support user role will have access to the following UI tabs. This list is derived from the tabs available to a user with no roles. For more detail on the capabilities allowed within these sections see the [wiki:SupportUserReadOnly wiki on read only functionality in the existing UI].
-   * Overview
-   * Systems
-   * Errata
-   * Channels
-   * Schedule
-   * Help
  1. Users in the support user role have access to new search functionality for their needs.
    * Support user searches must be able to search across all organizations their home org trusts.
     * The user must be able to select a subset of these organizations at the time of search (potential to add saved/named subsets in the future)
@@ -29,18 +18,21 @@ The support user's features can be looked as having two aspects:
     * System ID
     * Custom Field
     * Package Installed
-   * Search results must provide a link to existing SDC pages with read only functionality.
+   * Search results must provide a link to existing SDC pages.
+    * In the case that the user would not normally have access to the system (i.e. the system is not part of the user's assigned system groups), the SDC pages will be rendered as read only.
    * Search results will indicate the following as a summary of systems that match.
     * Status
     * System Name
     * Organization
- 1. 
-
+ 1. New support user searching functionality will be provided through the XMLRPC API layer.
+  * The ability to indicate org boundaries for the search must be supported.
+  * Each of the search criteria above must be supported.
+  * The return of these search APIs should match what is returned for existing search APIs.
 
 == Other Feature Impact ==
-This will likely need to be addressed in APIs. See the API section below for more details.
+Existing APIs check for the existence of a particular role, so there won't be a need to revisit all of the existing APIs to prevent the support user role from having access. New APIs will be added according to the requirements above, which means the addition of QA unit tests as well.
 
-There may be need to enhance the search server's abilities, depending on the final decision on what sort of searches are supported.
+There may be need to enhance the search server's abilities, depending on the final decision on what sort of searches are supported. See the table below for more information on what is currently supported by the search server.
 
 == Proposed Implementation ==
 The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
