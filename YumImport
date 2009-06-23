@@ -35,9 +35,16 @@ Add the following section to the Channel creation page.
  * Integrate Jopr's yum syncing module in
  * Add UI support for setting yum repo and doing initial sync (asynchronously) 
  * Add UI support for syncing all channels (asynchronously) 
- 
+ * New Apis:  (working names)
+  ** channel.software.repo.set
+  ** channel.software.repo.sync  
+
+
 == TEST PLAN ==
+
+
 == RISKS/CONCERNS ==
+`
 
 
 === Future Features (Part 2) ===
