@@ -33,11 +33,11 @@ As a result, the system after migration requires some additional configuration t
      * subscribe system to configuration channels
      * schedule action to deploy configuration files to the system
      * schedule action to install packages to the system
-   * If the key "usage" is not specified (i.e. empty), the usage will be unlimited; otherwise, it will specify the number of times the activation key may be used.
+   * If the activation key's "usage" is not specified (i.e. empty), the usage will be unlimited; otherwise, it will specify the number of times the activation key may be used.
    * Prior to performing the migration, it will be verified that the destination org has enough entitlements (system and software) to support the requested migration.  If not enough entitlements are available, no systems will be migrated and an error will be generated to the user.
 
- * Universal default - key to associate with the migration, when no key has been provided.
-   * '''TODO''': Do we want/need to support Universal Default for system migrations?
+ * Universal default - if an activation key is defined as the Universal Default, it will be used for system migration's where no activation key has been included.
+   * '''TODO''': Do we want/need to support Universal Default for system migrations?  (If so, minor chg needed to Mockup to account for it.)
    * '''TODO''': If so, should the same Universal Default be used for both system migrations and registrations?  (i.e. should we support 1 Universal Default field or 2 (e.g. Migration Universal Default, Registration Universal Default)?)
 
 == Other Feature Impact ==
@@ -50,36 +50,67 @@ As a result, the system after migration requires some additional configuration t
 == Proposed Implementation ==
 
  * Script - system-migrate-profile (package: spacewalk-utils)
-  * update script to support the optional "--activationkey=ACTIVATIONKEY" input
-  * update manpage to document "--activationkey=ACTIVATIONKEY"
-  * this script will basically pass the activation key (if provided) to the XMLRPC API that will perform the actual migration of the system to the destination org.
+  * Update script to support the optional "--activationkey=ACTIVATIONKEY" input
+  * Update manpage to document "--activationkey=ACTIVATIONKEY"
+  * This script will basically pass the activation key (if provided) to the XMLRPC API that will perform the actual migration of the system to the destination org.
 
  * API - org.migrateSystems
-  * deprecate the existing org.migrateSystems(string sessionKey, int toOrgId, array[int systemId])
-  * create a new API: array[int serverIdMigrated] org.migrateSystems(string sessionKey, int toOrgId, string activationKey, array[int systemId]), where activation key is optional
+  * Deprecate the existing org.migrateSystems(string sessionKey, int toOrgId, array[int systemId])
+  * Create a new API: array[int serverIdMigrated] org.migrateSystems(string sessionKey, int toOrgId, string activationKey, array[int systemId]), where activation key is optional
+  * Leverage existing java objects to retrieve the activation key and associate those items it defines (e.g. base channel, child channels, entitlements, server groups, config channels...etc) with the server.  More details included in the Mockups section below.
+    * While investigating the feature, did consider possibly leveraging the backend logic for processing an activation key (e.g. backend/server/rhnServer/server_token.py) in the system migration solution; however, it would likely require the java code to interface with it using XMLRPC as well as need modifications to ensure error handling meets the needs of the new system migration logic.  We do, however, have much of the logic needed to apply the activation key also available in java through various existing hibernate, data source, Manager, Factory and Command objects; therefore, we plan to leverage that logic instead.
 
 === Known Issues ===
 
-There several decisions that need to be made before this specification is finalized.  Those decisions are highlighted with '''TODO'''. 
+There are several decisions that need to be made before this specification is finalized.  Those decisions are highlighted with '''TODO'''. 
 
 === Future Enhancements ===
 
+None currently identified.
+
 == Mockups ==
 
-Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
+This is an API/script-based feature; therefore, no UI mockups are included.
+
+The key changes needed to support applying Activation Keys during a system migration will be to the XMLRPC Java API (system.migrateSystems).  The basic algorithm to be applied will be the following:
+   (Note: some of this logic currently exists.)
+
+ * If the user executing the migration is not an org admin, throw exception.  No migration performed.
+ * If the destination org does not exist, throw exception.  No migration performed.
+ * If an activation key is provided, but does not exist in the destination org, throw exception. No migration performed.
+ * If at least 1 of the servers provided does not exist, throw exception.  No migration performed.
+ * If at least 1 of the servers provided is in an org that is not trusted by the destination org, throw exception.  No migration performed.
+ * If an activation key is provided and --either--
+   * it has a non-null Usage defined and that usage is less than the number of servers provided, throw exception.  No migration performed.  --or --
+   * it has specified assignment of system or channel entitlements, but the destination org does not have enough to support all systems provided, throw exception.  No migration performed.
+ * For each of the servers provided:
+   * Migrate the server to the destination org.  This will perform things such as: 
+     * remove relationships the server has with the originating org including: system and channel entitlements, channels, system groups, custom data values, virt guests, config channels, reactivation keys, errata & package cache, snapshots and monitoring probes.
+     * update org administrator relationships - unassociate the server from org admins in the originating and associate with org admins in the destination org.
+     * reassign the server to the destination org
+   * If an activation key is provided, apply the characteristics defined by that key to the server.  This will perform things such as:
+     * assign system entitlements, base channel and child channels to the system
+     * assign system to system groups
+     * subscribe system to configuration channels
+     * schedule action to deploy configuration files to the system
+     * schedule action to install packages to the system
+   * Add an event to the server history to record the migration.
+   * Add an entry to to rhnSystemMigrations to record the migration.
 
 == Tasks ==
 
 Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
 || Description || Estimate || Confidence ||
-|| Add support user role to database || 1h || 5 ||
-|| Make support user role available to UI || 4h || 4 ||
+|| migrate-system-profile script || 6h || 4 ||
+|| migrate-system-profile manpage || 1h || 5 ||
+|| xmlrpc api : org.migrateSystems || 32h || 4 ||
 
 == Test Notes ==
 
-Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
+The current migrateSystems API and supporting code (e.g. MigrationManager) is currently tested using junit.  As part of this feature enhancement, additional junits will be added to cover the new logic.
+
+In addition, it will also be beneficial to configure and test a migration involving a large number of systems (e.g. 1K).
 
 == Risks/Concerns ==
 
-List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
-
+There no significant risks or concerns to be noted at this time.  
