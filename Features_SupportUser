@@ -1,3 +1,5 @@
+''** Initial Draft - In Progress**''
+
 = Support User =
 === REVIEWED BY: ===
 
@@ -61,15 +63,49 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Where to Search - The user selects one of two options. These options will be presented similar to the Channels > Package Search page (/rhn/channels/software/Search.do).
    * All Trusted Organizations (default)
    * Specific Organizations - The user will be able to select one or more trusted organizations (similar to the specific architecture selection in Package Search)
+  * Invert Results - If checked, results that '''do not match''' the search criteria will be displayed (functionality currently exists on Systems > Advanced Search).
 
-=== Read Only Functionality ===
- 1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
-  * Currently a user without roles can just register systems, and view channels / errata / scheduled actions in their home org.
+=== System Search Results ===
+ 1. The results of a search will be displayed beneath the form used to enter the criteria, keeping consistent with our search model elsewhere in the UI.
+  * The criteria from the previous search will be populated into the form.
+ 1. The data displayed for each system returned by the search will adhere to the requirements listed above, with the following notes:
+  * System Name - The name itself will be a link to the system's SDC page.
+ 1. The results will be displayed using ListTag 3.0 with the following options:
+  * Pagination
+  * Display X items per page
+  * Filter by system name
+ 1. The results should be sortable on the following columns:
+  * System Name
+  * Status
 
 === APIs ===
  1. Create support user API handler offering the same functionality as is available in the UI.
-  * Lay the groundwork for community involvement in expanding future support user searches.
-  * 
+ 1. Keep in mind to lay the groundwork for community involvement in expanding future support user searches.
+
+Looking at the system.search API package, it looks like each criteria has its own API call. There doesn't seem to be a specific reason for doing so, though I'm not sure a single call with a flag indicating the criteria type is necessarily better since it requires the caller to make sure to use the correct flag for indicating the criteria. I'm going to continue to follow the existing model for consistency unless there is a compelling argument to switch to a single call. - jdob, Jun 23, 2009
+
+The APIs will be put into a new package: support.search.system
+
+Following that model, the following APIs should be added:
+ 1. hostname
+ 1. id
+ 1. customField
+ 1. installedPackageName
+
+The return from these calls should also follow the existing model for searching for systems. The following is taken from the API docs for calls in the system.search package as a reference:
+
+array:
+ * struct - system
+  * int "id"
+  * string "name"
+  * dateTime.iso8601 "last_checkin" - Last time server successfully checked in
+  * string "hostname"
+  * string "ip"
+  * string "hw_description" - hw description if not null
+  * string "hw_device_id" - hw device id if not null
+  * string "hw_vendor_id" - hw vendor id if not null
+  * string "hw_driver" - hw driver if not null
+
 
 === Search Server ===
 Below is a listing of the different types of searching proposed for the support user and if they are '''currently''' (as of Spacewalk 0.6) supported in the search server. A star indicates the criteria should be available in this iteration.
@@ -174,7 +210,7 @@ Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremel
 Role Creation
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Add support user role to database || 1h || 5 ||
-|| Make support user role available to UI || 4h || 4 ||
+|| Make support user role available to UI for users with appropriate permissions || 4h || 4 ||
 
 Web UI
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
@@ -185,12 +221,16 @@ Web UI
 
 APIs
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
-|| Add API for support user search || ?? || ?? ||
-|| Verify existing APIs do not allow support users to do bad things || ?? || ?? ||
+|| Add API handler for support.search.system package || ?? || ?? ||
+|| Add hostname call || ?? || ?? ||
+|| Add id call || ?? || ?? ||
+|| Add customField call || ?? || ?? ||
+|| Add installedPackageName call || ?? || ?? ||
 
 Read Only Features
-|| Investigate abilities of no-role user || ?? || ?? ||
-|| Changes to support read only nature of no-role user || ?? || ?? ||
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
+|| Investigate abilities of no-role user to ensure they are acceptable || ?? || ?? ||
+
 
 == Test Notes ==
 High level testing areas:
