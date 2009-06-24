@@ -41,7 +41,7 @@ Sample image of what kickstart details will look like (minus the 'sync schedule 
  * Add schema to support associated yum repo(s) with channel (allow future support of multiple repos)
  * Add schema to support new Taskomatic task
  * Integrate Jopr's yum syncing module in
- * Create new TaskomaticTask
+ * Create new Taskomatic Task
  * Add UI support for setting yum repo and doing initial sync (asynchronously) 
  * Add UI support for syncing all channels (asynchronously) 
  * New Apis:  (working names)
