@@ -21,16 +21,16 @@ See UploadFedoraContent for an explanation of what is involved.
 
 == USE CASES == 
 
+- User wants to sync Fedora repo to a channel
+- User has private yum repo and wants to bring that into his spacewalk server
 
-=== WebUI ===
-
-Add the following section to the Channel creation page.
-
-[[Image(channel-creation-repo-info.png)]]
-      
+     
 == SAMPLE CODE ==
 === Channel creation page ===
+
+Sample image of what kickstart details will look like (minus the 'sync in future feature')
 [[Image(channel-creation.png, 50%)]]
+
 == WORK ITEMS ==
 
  * Add schema to support associated yum repo(s) with channel (allow future support of multiple repos)
