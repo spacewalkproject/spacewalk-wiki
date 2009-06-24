@@ -1,5 +1,7 @@
 ''** Initial Draft - In Progress**''
 
+''TODO: Add auditing functionality (i.e. just a way to navigate around systems across orgs.''
+
 = Support User =
 === REVIEWED BY: ===
 
@@ -219,6 +221,8 @@ Search Results Mockup:
 
 
 == Tasks ==
+
+''TODO: Revisit this after Requirements/Implementation discussions.''
 
 Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremely confident it will be met.
 
