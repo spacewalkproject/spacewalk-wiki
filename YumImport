@@ -32,7 +32,10 @@ None
   * To initiate sync, task is added to new Taskomatic queue
  * Taskomatic task will pick up from queue and use new yum repo module
  * Yum Repo interaction will use Yum module from jopr
- * Api support for syncing channel, setting repo
+ * Api support for syncing channel, setting repo (working titles)
+  * channel.software.repo.set
+  * channel.software.repo.sync  
+  * channel.software.repo.syncAll  
  * Schema Changes
   * Add rhnChannelRepo table to store  repo -> channel (many-to-one) mapping
  * Config option will be added to disable all Yum UI snippets and API calls
@@ -47,16 +50,14 @@ Sample image of what kickstart details will look like (minus the 'sync schedule 
 
 == WORK ITEMS ==
 
- * Add schema to support associated yum repo(s) with channel (allow future support of multiple repos)
- * Add schema to support new Taskomatic task
- * Integrate Jopr's yum syncing module in
- * Create new Taskomatic Task
- * Add UI support for setting yum repo and doing initial sync (asynchronously) 
- * Add UI support for syncing all channels (asynchronously) 
- * New Apis:  (working names)
-  * channel.software.repo.set
-  * channel.software.repo.sync  
-  * channel.software.repo.syncAll  
+|| Task ||   Estimate || Confidence ||
+|| Schema changes (repo & taskomatic) || 1 day || 5  ||
+|| Integrate Jopr's yum syncing module ||      ||    ||
+|| Adding support code for repo syncing ||     ||    ||
+|| Taskomatic Additions              ||  2 days      || 4   ||
+|| UI Changes      ||  2 Days || 5 ||
+|| Apis            ||  2 Days || 5 ||
+
 
 
 == TEST PLAN ==
