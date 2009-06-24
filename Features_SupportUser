@@ -32,9 +32,11 @@ Support for users with read-only access has been a common request of Satellite c
   * The return of these search APIs should match what is returned for existing search APIs.
 
 == Other Feature Impact ==
-Existing APIs check for the existence of a particular role, so there won't be a need to revisit all of the existing APIs to prevent the support user role from having access. New APIs will be added according to the requirements above, which means the addition of QA unit tests as well.
+APIs - Existing APIs check for the existence of a particular role, so there won't be a need to revisit all of the existing APIs to prevent the support user role from having access. New APIs will be added according to the requirements above, which means the addition of QA unit tests as well.
 
-There may be need to enhance the search server's abilities, depending on the final decision on what sort of searches are supported. See the table below for more information on what is currently supported by the search server.
+Search Server - There may be need to enhance the search server's abilities, depending on the final decision on what sort of searches are supported. See the table below for more information on what is currently supported by the search server.
+
+Schema - Small addition to the prepopulated schema data to add the support user role (both for new installations and upgrades)
 
 == Proposed Implementation ==
 The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
@@ -234,15 +236,13 @@ Read Only Features
 
 == Test Notes ==
 High level testing areas:
+ * Test both new installs and upgrades to make sure support user role is correctly added to database
  * Ability to create support users and see the appropriate support user UI functionality
  * Support user searching works correctly
- * Support user only has read only access (potentially tricky due to the scope of what needs to be investigated)
  * New support user APIs work correctly
- * Existing APIs do not allow non-read only functionality to support user
 
 == Risks/Concerns ==
- * Pretty extensive testing required to ensure read only user is actually read only.
- * Could be tricky to figure out how to test the APIs to make sure the support user is not allowed to make changes. Will have to touch base with Brad to see how comfortable he is with our current role support in the APIs.
+
 
 == Additional Resources ==
 [wiki:SupportUserArchive Original Wiki Discussion]
