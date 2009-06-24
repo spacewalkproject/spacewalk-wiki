@@ -38,15 +38,29 @@ There may be need to enhance the search server's abilities, depending on the fin
 The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
 
 === Support User Role ===
- 1. Support users can search across multiple organizations.
-  1. By default when created or given the support role, users will see all orgs their home org trusts. (trusts are a feature planned for the second phase of multi-org support)
-  1. Create a new UI screen to allow limiting to a selected '''subset''' of the trusted orgs.
-  1. Removal of an org trust must result in removal of the org from any configured subsets. (jdob - Does "configured subsets" mean named/saved subsets? This should be a more prominent point if this is the case)
- 1. Ensure proper permissions to give out support user role.
- 1. Changes may need to be made to the rest of the visible UI to allow navigation across trusted orgs.
+ 1. Add support user role to the database (rhnUserGroupType)
+  * Upgrade script
+  * Add to new DB installation scripts
+ 1. Add support user role to user details screen.
+  * Satellite/Spacewalk admin can give to anyone.
+  * Org admins can give to users in their org.
 
-=== Support User UI (Auditing UI) ===
- 1. Support tab will be added, similar to how the Admin tab appears for the satellite admin.
+=== Support User Tab ===
+ 1. Add a new top level tab (same level as Overview, Systems, etc.) for users with the support user role (similar to how the Admin tab only appears for the satellite admin). The tab text will read "Support Tools" (jdob - This was taken from a tab in hosted that provides similar functionality, though I'm not 100% in love with the name)
+ 1. Left navigation while on this tab will (for now) only have an entry for "Search Systems".
+  * This entry leads to the System Search Page described below.
+
+=== System Search Page ===
+ 1. The system search page will follow the model in the current Systems > Advanced Search page (/rhn/systems/Search.do). The page will display the following sections:
+  * Search For - Text field allowing the user to enter the search criteria values
+  * Field to Search - Drop-down providing the following options:
+   * Hostname
+   * System ID
+   * Custom Field
+   * Package Installed
+  * Where to Search - The user selects one of two options. These options will be presented similar to the Channels > Package Search page (/rhn/channels/software/Search.do).
+   * All Trusted Organizations (default)
+   * Specific Organizations - The user will be able to select one or more trusted organizations (similar to the specific architecture selection in Package Search)
 
 === Read Only Functionality ===
  1. Existing functionality available to user with no roles should be audited to ensure we're comfortable with it being available to a user with the Support role.
