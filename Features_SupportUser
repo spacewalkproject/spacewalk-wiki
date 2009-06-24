@@ -29,7 +29,10 @@ Support for users with read-only access has been a common request of Satellite c
     * System Name
     * Organization
  1. New support user searching functionality will be provided through the XMLRPC API layer.
-  * The ability to indicate org boundaries for the search must be supported.
+  * Ability to assign a user the support role.
+  * Ability to set the org visibility for a user (i.e. all trusted orgs or a subset).
+  * Ability to manipulate the subset of orgs for a user.
+  * Ability to indicate org boundaries for the search must be supported.
   * Each of the search criteria above must be supported.
   * The return of these search APIs should match what is returned for existing search APIs.
 
@@ -69,8 +72,8 @@ The implementation focuses around creating a new "Support User" role and an asso
    * Custom Field
    * Package Installed
   * Where to Search - The user selects one of two options. These options will be presented similar to the Channels > Package Search page (/rhn/channels/software/Search.do).
-   * All Trusted Organizations (default)
-   * Specific Organizations - The user will be able to select one or more trusted organizations (similar to the specific architecture selection in Package Search)
+   * All trusted organizations the user has access to (default)
+   * Specific organizations - The user will be able to select one or more of their allowed trusted organizations (similar to the specific architecture selection in Package Search)
   * Invert Results - If checked, results that '''do not match''' the search criteria will be displayed (functionality currently exists on Systems > Advanced Search).
 
 === System Search Results ===
@@ -90,6 +93,10 @@ The implementation focuses around creating a new "Support User" role and an asso
  1. Create support user API handler offering the same functionality as is available in the UI.
  1. Keep in mind to lay the groundwork for community involvement in expanding future support user searches.
 
+==== Role APIs ====
+We can leverage the existing user.addRole API to assign the support user. However, we will still need to add an API for the configuration of which orgs the user will have access to. APIs will be added for retrieving the org visibility for a user (i.e. "all" or "subset") and manipulating the org subset in the latter case.
+
+==== Search APIs ====
 Looking at the system.search API package, it looks like each criteria has its own API call. There doesn't seem to be a specific reason for doing so, though I'm not sure a single call with a flag indicating the criteria type is necessarily better since it requires the caller to make sure to use the correct flag for indicating the criteria. I'm going to continue to follow the existing model for consistency unless there is a compelling argument to switch to a single call. - jdob, Jun 23, 2009
 
 The APIs will be put into a new package: support.search.system
