@@ -52,3 +52,6 @@ Need to test syncing mechanism, as well as the resulting packages and channels t
 == RISKS/CONCERNS ==
 Reading GPG key from package file
 
+== Future Features ==
+[wiki:YumImport2 link]
+
