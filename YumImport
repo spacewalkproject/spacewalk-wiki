@@ -16,6 +16,8 @@ None
   * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
   * when user hits 'sync', task will be performed asynchronously.  
   * Will only be additive, packages removed from the yum repo, will remain in the channel
+  * To initiate sync, task is added to new Taskomatic queue
+ * taskomatic task will pick up from queue and use new yum repo module
  * Yum Repo interaction will use Yum module from jopr
  * Api support for syncing channel, setting repo
  * Schema Changes
@@ -36,12 +38,15 @@ Sample image of what kickstart details will look like (minus the 'sync schedule 
 == WORK ITEMS ==
 
  * Add schema to support associated yum repo(s) with channel (allow future support of multiple repos)
+ * Add schema to support new Taskomatic task
  * Integrate Jopr's yum syncing module in
+ * Create new TaskomaticTask
  * Add UI support for setting yum repo and doing initial sync (asynchronously) 
  * Add UI support for syncing all channels (asynchronously) 
  * New Apis:  (working names)
   * channel.software.repo.set
   * channel.software.repo.sync  
+  * channel.software.repo.syncAll  
 
 
 == TEST PLAN ==
