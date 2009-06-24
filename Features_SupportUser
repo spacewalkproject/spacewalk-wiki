@@ -13,8 +13,10 @@ Support for users with read-only access has been a common request of Satellite c
    * Satellite/Spacewalk admin can give to anyone.
    * Org admins can give to users in their org.
  1. Users in the support user role have access to new search functionality for their needs.
-   * Support user searches must be able to search across all organizations their home org trusts.
-    * The user must be able to select a subset of these organizations at the time of search (potential to add saved/named subsets in the future)
+   * Support user searches must be able to search across multiple organizations (all must be trusted by the home org of the user).
+    * The user may be granted access to only a subset of trusted orgs (somewhat similar to protected access with channels).
+     * Removing a trust relationship must propagate to these subsets.
+    * The user must be able to select a subset of ''their'' allowed organizations at the time of search.
    * For initial release this interface will allow only for searching of '''systems''' by:
     * Hostname
     * System ID
@@ -42,12 +44,16 @@ Schema - Small addition to the prepopulated schema data to add the support user 
 The implementation focuses around creating a new "Support User" role and an associated new section of the UI specifically for its tasks. The APIs will also be added to support the new features, utilizing existing APIs where applicable (i.e. addRole v. assignSupportUserRole).
 
 === Support User Role ===
- 1. Add support user role to the database (rhnUserGroupType)
-  * Upgrade script
-  * Add to new DB installation scripts
+ 1. Database changes (both new DB installation and upgrade scripts)
+  * Add support user role to the database (rhnUserGroupType)
+  * Add table to track what orgs a support user is granted access to
  1. Add support user role to user details screen.
   * Satellite/Spacewalk admin can give to anyone.
   * Org admins can give to users in their org.
+ 1. Add ability to select the orgs for the user from two options:
+  1. All trusted orgs. This option will use the current list of trusted orgs. In other words, when managing trust relationships there won't be a need to edit all support users assigned to this option to add in the new changes.
+  1. Subset of orgs. The list of orgs selectable is taken from the current list of trusted orgs for the user's home org.
+ 1. Hook into the trust relationship code to make sure that removing a trust relationship removes that org from any support users that were explicitly assigned the removed org as part of a previous subset configuration.
 
 === Support User Tab ===
  1. Add a new top level tab (same level as Overview, Systems, etc.) for users with the support user role (similar to how the Admin tab only appears for the satellite admin). The tab text will read "Support Tools" (jdob - This was taken from a tab in hosted that provides similar functionality, though I'm not 100% in love with the name)
