@@ -2,7 +2,7 @@
 
 
 
-=== Future Features (Part 2) ===
+=== Future Features ===
 
  * Do a full sync from channel to repo (remove packages if removed)
  * support multiple yum repos -> one channel
