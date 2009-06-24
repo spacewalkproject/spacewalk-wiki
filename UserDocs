@@ -24,7 +24,7 @@ Do you know the answer to something and think others might find it useful? Feel 
 
 In this section is linked various documents about parts of Spacewalk to give an overview of how various components work and to troubleshoot, debug and configure them. 
 
-   * [HowToRhnpush osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
+   * [OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
    * [DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
 
 
