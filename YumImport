@@ -23,8 +23,8 @@ None
 
 == USE CASES == 
 
-- User wants to sync Fedora repo to a channel
-- User has private yum repo and wants to bring that into his spacewalk server
+* User wants to sync Fedora repo to a channel
+* User has private yum repo and wants to bring that into his spacewalk server
 
      
 == SAMPLE CODE ==
