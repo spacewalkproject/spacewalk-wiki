@@ -4,29 +4,38 @@
 === REVIEWED BY: ===
 === RELEASE: Spacewalk 0.6 ===
 
-== BUSINESS DEFINITION ==
+== Overview ==
 Make it easier to import content into Spacewalk. Today a user must download a repo locally then upload the packages via {{{rhnpush}}}.
 See UploadFedoraContent for an explanation of what is involved.
 
-== OTHER FEATURE IMPACT ==
+
+== Requirements == 
+
+* User wants to sync Fedora repo to a channel
+* User has private yum repo and wants to bring that into his spacewalk server
+
+
+== Other Feature Impact ==
 None
 
-== PROPOSED IMPLEMENTATION ==
+== Proposed Implementation ==
+
  * UI
-  * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
-  * when user hits 'sync', task will be performed asynchronously.  
-  * Will only be additive, packages removed from the yum repo, will remain in the channel
+  * Channel Creation Page
+    * add URL widget to allow one to define the yum repo.
+    * add a check box to indicate if channel should be synced after creation
+  * Channel Edit Page 
+    * Add a URL widget to allow one to change the yum repo.
+    * Add a sync button
+  * sync task will be performed asynchronously.  
+  * Sync only be additive, packages removed from the yum repo will remain in the channel
   * To initiate sync, task is added to new Taskomatic queue
- * taskomatic task will pick up from queue and use new yum repo module
+ * Taskomatic task will pick up from queue and use new yum repo module
  * Yum Repo interaction will use Yum module from jopr
  * Api support for syncing channel, setting repo
  * Schema Changes
   * Add rhnChannelRepo table to store  repo -> channel (many-to-one) mapping
-
-== USE CASES == 
-
-* User wants to sync Fedora repo to a channel
-* User has private yum repo and wants to bring that into his spacewalk server
+ * Config option will be added to disable all Yum UI snippets and API calls
 
      
 == SAMPLE CODE ==
