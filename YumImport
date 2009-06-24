@@ -9,7 +9,7 @@ Make it easier to import content into Spacewalk. Today a user must download a re
 See UploadFedoraContent for an explanation of what is involved.
 
 
-== Requirements == 
+== Requirements/Use Cases == 
 
  * User wants to sync Fedora repo to a channel
  * User has private yum repo and wants to bring that into his spacewalk server
