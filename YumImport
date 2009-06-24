@@ -9,6 +9,8 @@ Make it easier to import content into Spacewalk. Today a user must download a re
 See UploadFedoraContent for an explanation of what is involved.
 
 == OTHER FEATURE IMPACT ==
+None
+
 == PROPOSED IMPLEMENTATION ==
  * UI
   * Add a URL widget to the Channel Edit page to allow one to define the yum repo.
@@ -43,6 +45,8 @@ Sample image of what kickstart details will look like (minus the 'sync in future
 
 
 == TEST PLAN ==
+Need to test syncing mechanism, as well as the resulting packages and channels to ensure they were created properly
+
 
 
 == RISKS/CONCERNS ==
