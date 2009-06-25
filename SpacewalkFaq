@@ -35,9 +35,13 @@ See the instructions here for information about the XE version:  OracleXeSetup
 
 "Why do you use 3 different languages in your product?"   The original WebUI for the Spacewalk code base was purely Perl.  As time went on scalability issues came in to play, which was worrisome because developers who knew (and wanted to develop in) Perl were somewhat hard to come by.  This was to be solved by migrating to Java.  Sadly migrating to Java took longer to accomplish than anticipated and thus is not complete.  All new development is done in either Java or Python, we are only maintaining the Perl at this point in hopes of migrating it all to Java.  We continually migrate pages to Java as new features need to be added to the pages, but it is not a top priority.
 
-=== Why are there two XML-RPC Apis (a frontend and a backend)? ===
+=== Why are there two XML-RPC API endpoints? ===
 
-Originally there was only a backend api (in Python) which was used by the client to communicate with the server.  Documents were not published for this api and it wasn't intended to be used by anything but the client utilities (rhn_register, etc..).  The frontend api was created so that users could write scripts and programs to interact with the satellite and perform the same actions available within the UI.  This was done in the Java side of things since all of the manager code is already in Java and is well documented.  
+Originally there was only a backend/business-logic API (within the application's Python layer) making the Satellite server accessible to clients via XML-PRC.  Documents were not published for this API and it wasn't intended to be used by anything but the pre-built client utilities (rhn_register, etc..).  The frontend/WebUI API (within the application's WebUI Java/Perl layer) was created so that users could write scripts and programs to interact with the Satellite and perform the same actions available within the UI.  This was done in the Java side of things since all of the manager code is already in Java and is well documented.
+
+=== What languages can I use to interact with the XML-RPC APIs? ===
+
+Any language that has XML-RPC bindings can be used to interact with the Spacewalk/Satellite APIs. XML-RPC is a common RPC standard for which most languages have bindings. So, you can exploit the available APIs with Python, TCL, Perl, or Ruby... or even C++ and .Net if you so desire. Many of our examples will be written in Python since it is the simplest and easiest to understand, but don't let that stop you from writing your API scripts in the language of your choosing.
 
 === What OSes are supported? ===
 
