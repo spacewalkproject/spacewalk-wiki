@@ -48,20 +48,23 @@ New Table:
 
 rhnPackageChecksum
 --------------------
-ID                                                   
-NAME                                                
+ID
+PACKAGE_ID
+MD5SUM
+SHA256                                                
 
 x
 Sample Data:
-1,md5sum
-2,sha1sum
-3,sha256sum
+1,100,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
+2,101,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
 
 SQL> desc rhnPackageChecksum
  Name                                                  Null?    Type
  ----------------------------------------------------- -------- ------------------------------------
  ID                                                    NOT NULL NUMBER
- NAME                                                  NOT NULL VARCHAR2(64)
+ PACKAGE_ID                                            NOT NULL NUMBER
+ MD5SUM                                                NOT NULL VARCHAR2(64)
+ SHA256                                                NOT NULL VARCHAR2(64)
 
 SQL> 
 
