@@ -31,7 +31,7 @@ None
   * Sync only be additive, packages removed from the yum repo will remain in the channel
   * To initiate sync, task is added to new Taskomatic queue
  * Taskomatic task will pick up from queue and use new yum repo module
- * Yum Repo interaction will use Yum module from jopr
+ * Yum Repo interaction will use Yum module from RHQ
  * Api support for syncing channel, setting repo (working titles)
   * channel.software.repo.set
   * channel.software.repo.sync  
@@ -52,7 +52,7 @@ Sample image of what kickstart details will look like (minus the 'sync schedule 
 
 || Task ||   Estimate || Confidence ||
 || Schema changes (repo & taskomatic) || 1 day || 5  ||
-|| Integrate Jopr's yum syncing module ||      ||    ||
+|| Integrate RHQ's yum syncing module ||      ||    ||
 || Adding support code for repo syncing ||     ||    ||
 || Taskomatic Additions              ||  2 days      || 4   ||
 || UI Changes      ||  2 Days || 5 ||
