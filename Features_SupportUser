@@ -234,10 +234,10 @@ Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremel
 Role Creation
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Add support user role to database (install and update scripts) || 1h || 5 ||
-|| Make support user role available to UI for users with appropriate permissions || 4h || 4 ||
-|| Add org selection page (all or subset, subset selection) || 8h || 4 ||
+|| Make support user role available to UI for users with appropriate permissions || 12h || 4 ||
+|| Add org selection page (all or subset, subset selection) || 28h || 4 ||
 || Add hook to trust relationship code to propagate trust removals to user subsets || 4h || 4 ||
-'''Total: 2d'''
+'''Total: 5d'''
 
 Support User Tab
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
