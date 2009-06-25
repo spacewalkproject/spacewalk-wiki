@@ -100,10 +100,10 @@ This should work as expected as all we're doing is extracting the content from t
   * make sure the /var/satellite paths are formed as expected with any checksum.
 
 === Proxy (Estimates: 40 hours) ===
-If I understand this part correctly, once client sends in a package request, apache on proxy generates a url with an md5sum hash to find the package from the squid cache and if missing goes to satellite to fetch that and serve it to the client. 
- * If the checksum here is from the rpm headers(I presume) then we'll need to make sure nothing breaks here wrt newer sha256 packages.
- * package uploads through proxy should work as expected for newer rpms.
- * make sure Provisioning of guests through proxy works as expected.
+Checksum is used only in proxy during kickstart. Proxy replace /ty/''sessionid'' with /ty/''packagechecksum'' so squid can cache it. Proxy do not care if that checksum is MD5 or SHA256 or whatever. Only requirement is that it should be unique for each package.
+Only small problem can be if one package is sent with MD5 checksum (checksum is taken from HTTP header) for older client and then for newer client with SHA256 checksum. Proxy will then treat this two as different content. So it will store one package twice. We may change the logic to always require only specific checksum.
+
+* package uploads through proxy should work as expected for newer rpms.
 
 Packages uploaded through rhn_package_manager to local proxy channel should handle sha256 properly.
 
