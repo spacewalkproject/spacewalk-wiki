@@ -27,6 +27,10 @@ None
   * Channel Edit Page 
     * Add a URL widget to allow one to change the yum repo.
     * Add a sync button
+    * Add last synced time
+  * Channel Details page
+    * Show yum repo info
+    * Show last synced time
   * sync task will be performed asynchronously.  
   * Sync only be additive, packages removed from the yum repo will remain in the channel
   * To initiate sync, task is added to new Taskomatic queue
