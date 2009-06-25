@@ -63,7 +63,7 @@ SQL> desc rhnPackageChecksum
  ----------------------------------------------------- -------- ------------------------------------
  PACKAGE_ID                                            NOT NULL NUMBER
  MD5SUM                                                NOT NULL VARCHAR2(64)
- SHA256                                                NOT NULL VARCHAR2(64)
+ SHA256                                                NOT NULL VARCHAR2(128)
 
 SQL> 
 
