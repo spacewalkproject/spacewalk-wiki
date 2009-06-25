@@ -248,8 +248,7 @@ Support User Tab
 Systems List
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Implement page || 8h || 3 ||
-''This one is a bit fuzzy since we haven't fully flushed out what capabilities it will provide.''
-'''Total: 1d'''
+'''Total: 1d''' ''This one is a bit fuzzy since we haven't fully flushed out what capabilities it will provide.''
 
 System Search Page
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
@@ -275,8 +274,8 @@ APIs
 Read Only Features
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Investigate abilities of no-role user to ensure they are acceptable || 8h || 4 ||
-''This investigation may yield small to medium sized tasks relating to existing pages (i.e. what to do about SDC pages for systems in non-home orgs.''
 '''Total: 1d'''
+''This investigation may yield small to medium sized tasks relating to existing pages (i.e. what to do about SDC pages for systems in non-home orgs.''
 
 Adding up the estimated totals from above, the total time is '''13 days''' ''(Note: this value is still very much a work in progress, this is just a first pass)''
 
