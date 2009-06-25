@@ -149,6 +149,8 @@ Below is a listing of the different types of searching proposed for the support 
 ||   ||Entitlements || * || no || ||
 ||   ||User || * || no || ||
 
+To reiterate, for criteria that are already supported, there are no changes necessary to the search server. Any sort of org filtering is already done on the web UI side currently, so in our implementation we will be working with unfiltered data and be able to apply any org boundaries we choose to.
+
 === Known Issues ===
 
 === Future Enhancements ===
@@ -237,7 +239,7 @@ Role Creation
 || Make support user role available to UI for users with appropriate permissions || 12h || 4 ||
 || Add org selection page (all or subset, subset selection) || 28h || 4 ||
 || Add hook to trust relationship code to propagate trust removals to user subsets || 4h || 4 ||
-'''Total: 5.5d'''
+'''Total: 6d'''
 
 Support User Tab
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
@@ -277,7 +279,7 @@ Read Only Features
 '''Total: 1d'''
 ''This investigation may yield small to medium sized tasks relating to existing pages (i.e. what to do about SDC pages for systems in non-home orgs.''
 
-Adding up the estimated totals from above, the total time is '''13 days''' ''(Note: this value is still very much a work in progress, this is just a first pass)''
+Adding up the estimated totals from above, the total time is '''17 days''' ''(Note: this value is still very much a work in progress, this is just a first pass)''
 
 == Test Notes ==
 High level testing areas:
