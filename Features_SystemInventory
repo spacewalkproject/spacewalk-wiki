@@ -17,10 +17,14 @@ This feature refers to our ability to correctly identify the operating system, v
  1. System architecture: x86, x86_64, ppc, s390x, etc.
  1. Virtualization Status
   1. Virtualized guest (Xen, KVM, VMware)
+    1. Can we also detect VMWare, IFL, and Hyper-V guests?
+    1. Identify and associate with host system.
+      1. Deal with scenario where host system is not registered.
+      1. Deal with scenario where host system is registered but not to the same Spacewalk/Satellite.
   1. Virtualization capable host (Xen full/para-virt, KVM full-virt)
- 1. Ability to update taxonomy. (needs clarification)
- 1. System should report basic information for what it thinks it is and not just what we say it is (whether through attribute editing or channel association). 
-  * ''Do we want the system reporting what it thinks it is, or the client code dumping us a variety of data and determining what it is server side? This feels like something that should happen on the server to me, we get as much information as possible from the client and then the client side code can hopefully remain relatively stable.'' - dgoodwin
+ 1. Idenfity number of CPUs and CPU cores.
+ 1. API should allow mining of data for permutiations of hardware, OS, virt capabilities/state, and system grouping (?).
+
 
 == Other Feature Impact ==
 
@@ -29,7 +33,7 @@ TBD
 == Proposed Implementation ==
 
   1. Client Tools
-    1. Modify rhnreg to supply additional information that may be needed. Ideally we'll dump as much data to the server as we can, and the server will determine how to classify the system during registration.
+    1. Modify rhnreg to supply additional information that may be needed. Ideally we'll dump as much data to the server as we can, and the server will determine how to classify the system during registration. This will need to happen early for entitlement considerations.
   1. Database
     1. Design schema changes to effectively store the taxonomy information in a format that can remain consistent despite future changes.
     1. How do we populate for existing systems? During upgrade? Occasionally re-attempting to classify systems that are unknown?
@@ -63,4 +67,4 @@ Break down the work items probably in a table structure. Is there webui work? wh
 
 == Risks/Concerns ==
 
-
+ * What logic/rules/taxonomy needs to be easily updated in this? How easily must the update be?
