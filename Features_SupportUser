@@ -233,15 +233,31 @@ Confidence: Values 1-5, where 1 is very unsure of the estimate and 5 is extremel
 
 Role Creation
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
-|| Add support user role to database || 1h || 5 ||
+|| Add support user role to database (install and update scripts) || 1h || 5 ||
 || Make support user role available to UI for users with appropriate permissions || 4h || 4 ||
+|| Add org selection page (all or subset, subset selection) || 8h || 4 ||
+|| Add hook to trust relationship code to propagate trust removals to user subsets || 4h || 4 ||
+'''Total: 2d'''
 
-Web UI
+Support User Tab
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
-|| Add support tab to UI header || ?? || ?? ||
-|| Support tab UI search page || ?? || ?? ||
-|| Search results page || ?? || ?? ||
-|| Search actions implementation || ?? || ?? ||
+|| Add support tab to UI header || 2h || 3 ||
+|| Add left navigation elements for the tab. || 2h || 4 ||
+'''Total: .5d'''
+
+Systems List
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
+|| Implement page || 8h || 3 ||
+''This one is a bit fuzzy since we haven't fully flushed out what capabilities it will provide.''
+'''Total: 1d'''
+
+System Search Page
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
+|| Implement page with search fields and calls to search server || 24h || 3 ||
+'''Total: 3d'''
+
+System Search Results
+|| '''Description''' || '''Estimate''' || '''Confidence''' ||
 
 APIs
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
@@ -253,8 +269,9 @@ APIs
 
 Read Only Features
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
-|| Investigate abilities of no-role user to ensure they are acceptable || ?? || ?? ||
-
+|| Investigate abilities of no-role user to ensure they are acceptable || 8h || 4 ||
+''This investigation may yield small to medium sized tasks relating to existing pages (i.e. what to do about SDC pages for systems in non-home orgs.''
+'''Total: 1d'''
 
 == Test Notes ==
 High level testing areas:
@@ -264,7 +281,7 @@ High level testing areas:
  * New support user APIs work correctly
 
 == Risks/Concerns ==
-
+The read only investigation may potentially produce a number of tasks for modifications to existing pages.
 
 == Additional Resources ==
 [wiki:SupportUserArchive Original Wiki Discussion]
