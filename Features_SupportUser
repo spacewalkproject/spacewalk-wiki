@@ -1,7 +1,5 @@
 ''** Initial Draft - In Progress**''
 
-''TODO: Add auditing functionality (i.e. just a way to navigate around systems across orgs.''
-
 = Support User =
 === REVIEWED BY: ===
 
@@ -14,6 +12,7 @@ Support for users with read-only access has been a common request of Satellite c
   * Permissions to assign the support user role to a user:
    * Satellite/Spacewalk admin can give to anyone.
    * Org admins can give to users in their org.
+ 1. Users in the support user role have access to a listing of all systems across all orgs the user is granted visibility into.
  1. Users in the support user role have access to new search functionality for their needs.
    * Support user searches must be able to search across multiple organizations (all must be trusted by the home org of the user).
     * The user may be granted access to only a subset of trusted orgs (somewhat similar to protected access with channels).
@@ -26,10 +25,12 @@ Support for users with read-only access has been a common request of Satellite c
     * Package Installed
    * Search results must provide a link to existing SDC pages.
     * In the case that the user would not normally have access to the system (i.e. the system is not part of the user's assigned system groups), the SDC pages will be rendered as read only.
-   * Search results will indicate the following as a summary of systems that match.
-    * Status
+   * Search results will indicate the following as a summary of systems that match (this may change to simply be all of the columns listed on the Systems > Systems pages).
     * System Name
+    * Status
     * Organization
+    * Errata Updates Available
+    * Package Updates Available
  1. New support user searching functionality will be provided through the XMLRPC API layer.
   * Ability to assign a user the support role.
   * Ability to set the org visibility for a user (i.e. all trusted orgs or a subset).
@@ -63,8 +64,12 @@ The implementation focuses around creating a new "Support User" role and an asso
 
 === Support User Tab ===
  1. Add a new top level tab (same level as Overview, Systems, etc.) for users with the support user role (similar to how the Admin tab only appears for the satellite admin). The tab text will read "Support Tools" (jdob - This was taken from a tab in hosted that provides similar functionality, though I'm not 100% in love with the name)
- 1. Left navigation while on this tab will (for now) only have an entry for "Search Systems".
-  * This entry leads to the System Search Page described below.
+ 1. Left navigation while on this tab will have the following entries:
+  * Systems - Leads to the Systems List page described below.
+  * Search Systems - Leads to the System Search Page described below.
+
+=== Systems List ===
+ 1. This page is somewhat similar to the Systems > Systems page. It is meant to be a summary of '''all''' systems the user has access to (i.e. crossing org boundaries). Ultimately, this may make similar distinctions such as All v. Out of Date.
 
 === System Search Page ===
  1. The system search page will follow the model in the current Systems > Advanced Search page (/rhn/systems/Search.do). The page will display the following sections:
@@ -90,7 +95,6 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Filter by system name
  1. The results should be sortable on the following columns:
   * System Name
-  * Status
 
 === APIs ===
  1. Create support user API handler offering the same functionality as is available in the UI.
