@@ -56,8 +56,9 @@ The implementation focuses around creating a new "Support User" role and an asso
   * Satellite/Spacewalk admin can give to anyone.
   * Org admins can give to users in their org.
  1. Add ability to select the orgs for the user from two options:
-  1. All trusted orgs. This option will use the current list of trusted orgs. In other words, when managing trust relationships there won't be a need to edit all support users assigned to this option to add in the new changes.
-  1. Subset of orgs. The list of orgs selectable is taken from the current list of trusted orgs for the user's home org.
+  * For users with the support user role, add a new subtab on the user details page for Support User. This subtab will let the admin select the org visibility for the user from the following options:
+   1. All trusted orgs. This option will use the current list of trusted orgs. In other words, when managing trust relationships there won't be a need to edit all support users assigned to this option to add in the new changes.
+   1. Subset of orgs. The list of orgs selectable is taken from the current list of trusted orgs for the user's home org. Display the orgs in a table with checkboxes to indicate inclusion of the org in the user's permissions (see the Organizations subtab for a protected channel as a model).
  1. Hook into the trust relationship code to make sure that removing a trust relationship removes that org from any support users that were explicitly assigned the removed org as part of a previous subset configuration.
 
 === Support User Tab ===
