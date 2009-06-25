@@ -55,13 +55,12 @@ SHA256
 
 x
 Sample Data:
-1,100,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
-2,101,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
+100,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
+101,fcfe8fb56662d2831d5cce8a5157db75, 1g367fcfe8fb56662d2831d5cce8a5157db75
 
 SQL> desc rhnPackageChecksum
  Name                                                  Null?    Type
  ----------------------------------------------------- -------- ------------------------------------
- ID                                                    NOT NULL NUMBER
  PACKAGE_ID                                            NOT NULL NUMBER
  MD5SUM                                                NOT NULL VARCHAR2(64)
  SHA256                                                NOT NULL VARCHAR2(64)
@@ -69,28 +68,9 @@ SQL> desc rhnPackageChecksum
 SQL> 
 
 
-}}}
+}}}       
 
- * A checksum_id columns will be added to rhnPackage table fk to rhnPackageChecksum
-
-{{{
-
-alter table rhnPackage
-  add checksum_id number
-constraint rhn_pkg_checksum_nn not null
-constraint rhn_pkg_checksum_id_fk
-    references rhnPackageChecksum(id);
-
-show errors
-
-}}}
-
-
-TODO: Anything else you can think of in this area michael?        
-
-These are some of the tables we read the rpm header or compute manually and populate the md5sum. We should make this more generic say "checkSum" column instead of md5sum. This way if we upload or sync newer rpm content such as f11 we can serve any checksum format. 
-
-Another thought was to have some kind of a lookup table by checksum type. But I think its much better to make the checksum generic and not bother about what type it is from server perspective.
+We compute both checksums while populating the package info to the above table and we cpould jus do a lookup and get whichever we want based on the type of client we're talking to.
 
 === Spacewalk Server (estimates: 60 hours) ===
  
