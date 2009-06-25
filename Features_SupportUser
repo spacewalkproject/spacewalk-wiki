@@ -258,20 +258,27 @@ System Search Page
 
 System Search Results
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
+|| Implement page || 16h || 3 ||
+'''Total: 2d'''
 
 APIs
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
-|| Add API handler for support.search.system package || ?? || ?? ||
-|| Add hostname call || ?? || ?? ||
-|| Add id call || ?? || ?? ||
-|| Add customField call || ?? || ?? ||
-|| Add installedPackageName call || ?? || ?? ||
+|| Verify existing addRole API allows the support user role to be assigned || 1h || 4 ||
+|| Add API handler for support.search.system package || 2h || 4 ||
+|| Add hostname call (includes QA API test) || 4h || 4 ||
+|| Add id call (includes QA API test) || 4h || 4 ||
+|| Add customField call (includes QA API test) || 4h || 4 ||
+|| Add installedPackageName call (includes QA API test) || 4h || 4 ||
+|| Add listSystems call (includes QA API test) || 4h || 4 ||
+'''Total: 3d'''
 
 Read Only Features
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
 || Investigate abilities of no-role user to ensure they are acceptable || 8h || 4 ||
 ''This investigation may yield small to medium sized tasks relating to existing pages (i.e. what to do about SDC pages for systems in non-home orgs.''
 '''Total: 1d'''
+
+Adding up the estimated totals from above, the total time is '''13 days''' ''(Note: this value is still very much a work in progress, this is just a first pass)''
 
 == Test Notes ==
 High level testing areas:
