@@ -52,7 +52,7 @@ Sample image of what kickstart details will look like (minus the 'sync schedule 
 
 || Task ||   Estimate || Confidence ||
 || Schema changes (repo & taskomatic) || 1 day || 5  ||
-|| Integrate RHQ's yum syncing module ||      ||    ||
+|| Port/Integrate RHQ's yum syncing module ||   3 days   || 4   ||
 || Adding support code for repo syncing ||     ||    ||
 || Taskomatic Additions              ||  2 days      || 4   ||
 || UI Changes      ||  2 Days || 5 ||
