@@ -67,9 +67,11 @@ rhnPackageFile Table:
 
 * Extend the md5sum column size to 128
 * rename md5sum to checksum
-* fix filelists page to reflect rename
+* fix filelists page to reflect the rename
 
+rhnPackageSource Table:
 
+* Add sha256 column
 
 }}}       
 
