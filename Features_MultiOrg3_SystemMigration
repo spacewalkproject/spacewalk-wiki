@@ -23,7 +23,7 @@ As a result, the system after migration requires some additional configuration t
    * the XMLRPC API org.migrateSystems 
    * the spacewalk-utils migrate-system-profile script
    * '''TODO''': Do we need to support using more than 1 activation key during a system migration?
-     I don't know. We'd have to discuss this and the implications -taw
+     [[BR]]''I don't know. We'd have to discuss this and the implications -taw''
 
  * The activation key specified during migration must exist in the destination org.
 
@@ -39,9 +39,9 @@ As a result, the system after migration requires some additional configuration t
 
  * Universal default - if an activation key is defined as the Universal Default, it will be used for system migration's where no activation key has been included.
    * '''TODO''': Do we want/need to support Universal Default for system migrations?  (If so, minor chg needed to Mockup to account for it.)
-     I would assume so. What does it mean if we don't? -taw
+     [[BR]]''I would assume so. What does it mean if we don't? -taw''
    * '''TODO''': If so, should the same Universal Default be used for both system migrations and registrations?  (i.e. should we support 1 Universal Default field or 2 (e.g. Migration Universal Default, Registration Universal Default)?)
-     I would assume so. Need to discuss. -taw
+     [[BR]]''I would assume so. Need to discuss. -taw''
 
 == Other Feature Impact ==
 
