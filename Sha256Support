@@ -48,7 +48,6 @@ New Table:
 
 rhnPackageChecksum
 --------------------
-ID
 PACKAGE_ID
 MD5SUM
 SHA256                                                
