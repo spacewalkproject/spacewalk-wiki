@@ -237,7 +237,7 @@ Role Creation
 || Make support user role available to UI for users with appropriate permissions || 12h || 4 ||
 || Add org selection page (all or subset, subset selection) || 28h || 4 ||
 || Add hook to trust relationship code to propagate trust removals to user subsets || 4h || 4 ||
-'''Total: 5d'''
+'''Total: 5.5d'''
 
 Support User Tab
 || '''Description''' || '''Estimate''' || '''Confidence''' ||
