@@ -31,13 +31,10 @@ Following are the possible areas we'll need to make to support sha256 content ac
 Checksum usage in spacewalk (Some of these might be one or the other, depending on rpm version, yum version etc):
  * rhnPackageFile 
  * rhnPackage
- * rhnDownloadFile 
- * rhnKickstartFile 
  * rhnKSTreeFile    
  * rhnPackageSource  
  * rhnErrataFile     
- * rhnErrataFileTmp  
- * rhnPackageFile    
+ * rhnErrataFileTmp      
  * rhnFile
  and may be more.
 
@@ -65,6 +62,13 @@ SQL> desc rhnPackageChecksum
  SHA256                                                NOT NULL VARCHAR2(128)
 
 SQL> 
+
+rhnPackageFile Table:
+
+* Extend the md5sum column size to 128
+* rename md5sum to checksum
+* fix filelists page to reflect rename
+
 
 
 }}}       
