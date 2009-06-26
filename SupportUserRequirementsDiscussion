@@ -1,3 +1,5 @@
+== Questions ==
+
 The following are notes from a discussion between jdob and dgoodwin regarding the definition of the support user role and its function.
 
 There seem to be two things being discussed in relation to the support user role:
@@ -18,6 +20,8 @@ These two features lead to a number of questions:
   * Again, this requires fitting in an entire UI with checking to disable writeable actions when the user is flagged as read only.
   * There may be a desire for access to certain admin menus with read only access, however this seems like a contradiction to have a read only admin.
 
+== Proposed Solution ==
+
 As a result of the above questions, the following is the usage of the support user role:
  1. The only read only functionality exists within the Support User tab. All existing pages retain their existing role permissions.
   * The pages inside of this tab should be implemented using snippets from existing pages without writeable actions (will likely require some refactoring of existing pages and potentially some porting from perl to java).
@@ -26,3 +30,7 @@ As a result of the above questions, the following is the usage of the support us
  1. For users that only have the Support User role, the only tabs displayed are: Overview, Support User tab, and Help.
   * This is '''different''' than a no-role user, which also has access to Systems, Errata, Channels, and Schedule. A no-role user is able to access writeable actions on those tabs (e.g. delete system, package install).
   * The effect of this tab restriction is that users with only the Support User role effectively become read only users.
+ 1. For users that have roles in addition to the Support User role, the Systems, Errata, Channels, and Schedule tabs will appear in addition to the Support User tab.
+  * This is a little wonky because the no-role user has so many default permissions. One idea is to convert the no-role user into a User role, however that also carries some complications (e.g. what happens if you make a System Groups admin without the User role?).
+  * To reiterate, no changes occur inside of the Support User tab, it still does not offer any writeable actions. All other tabs continue to function as they do currently.
+  * In other words, adding the Support User role to a user with other enhanced permissions (i.e. other roles) is simply to add the Support User tab to their interface.
