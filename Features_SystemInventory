@@ -41,6 +41,7 @@ TBD
   1. Separate library to allow for re-use in candlepin.
   1. Identify rpm based distros by first checking for rpm command, and then redhat-release and equivalents.
   1. '''TODO''': How to identify Solaris?
+  1. Alternatively, Smolt looks *dangerously* close to what we're describing here, and is already based on our RHN code. Maybe a good time to integrate with Smolt, or at least make use of the client bits?
  1. Modify client tools to use new library and supply this information to Spacewalk/Satellite very early during registration.
   1. Must not require this if communicating with hosted.
  1. Schema
