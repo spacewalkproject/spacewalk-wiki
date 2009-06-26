@@ -83,8 +83,6 @@ rhnPackageFile Table:
 
 rhnPackageSource Table:
 
-* Add sha256 column
-
 }}}       
 
 We compute both checksums while populating the package info to the above table and we cpould jus do a lookup and get whichever we want based on the type of client we're talking to.
