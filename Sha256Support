@@ -12,8 +12,8 @@
 == Tasks (in order) ==
 
 || Task || Estimated Hours || Assignee || Status || Notes ||
-|| Database Changes  || 40 hours || mmraka/prad || || ||
-|| spacewalk Server + Tools|| 60 hours || prad  || ||  ||
+|| Database Changes  || 40 hours || mmraka/prad ||  || ||
+|| spacewalk Server + Tools|| 60 hours || prad  ||  ||  ||
 || Proxy Server + Tools || 60 hours || msuchy  || || ||
 || Client tools  || 40 hours || jmatthews + prad || ||  ||
 || Web UI + API  || 40 hours || jmatthews  ||  || ||
