@@ -7,6 +7,9 @@
 Support for users with read-only access has been a common request of Satellite customers. After several customer discussions we found that this requirement more often than not boils down to a desire for a support user who can log in and perform some simple searches on systems, users, and organizations. As such we decided to pursue this path by implementing a new tab in the satellite UI exposing a simple search interface to users who have the appropriate role.
 
 == Requirements ==
+
+[wiki:SupportUserRequirementsDiscussion Requirements Discussion]
+
  1. A new user role that corresponds to the support user role.
   * A user may be assigned to the support user role in the same way as any other role is assigned. The role may be assigned in conjunction with other roles as well. For example, a channel administrator may be granted the support user role in order to be able to access the support user specific functionality (searching, auditing, etc.)
   * Permissions to assign the support user role to a user:
