@@ -37,6 +37,8 @@ TBD
  1. Create new client side Python library whose sole purpose is to identify the information above.
   1. Modify RHN client tools to require this library as a dependency. (implies this must be added to base installs of RHEL)
   1. Separate library to allow for re-use in candlepin.
+  1. Identify rpm based distros by first checking for rpm command, and then redhat-release and equivalents.
+  1. '''TODO''': How to identify Solaris?
  1. Modify client tools to use new library and supply this information to Spacewalk/Satellite very early during registration.
   1. Must not require this if communicating with hosted.
  1. Schema
