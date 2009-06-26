@@ -43,13 +43,22 @@ TBD
   1. Must not require this if communicating with hosted.
  1. Schema
   1. Modify to store this information in a format that can accommodate future changes or additions.
+  1. Sync up with existing storage of architecture, CPU info.
  1. Backend
   1. Accept the new incoming data, populate database.
   1. Again, ensure this happens before entitlement checks.
  1. Web UI
-  1. Display new data prominently.
-  1. Allow for searching/filtering.
-  1. '''TODO''': Need specifics and mockups.
+  1. Under Systems -> (system) -> Details -> Overview in the "System Info" section:
+   1. Add "Operating System". (Fedora 10, Red Hat Enterprise Linux 5 Server, CentOS 5)
+   1. Already display if system if a para-virt host/guest, update to include include KVM and clearly differentiate between the two.
+  1. Under Systems -> (system) -> Details -> Hardware:
+   1. Update General section with number of CPU cores.
+   1. Add virtualization section, display virtualization capabilities.  (KVM, Xen full-virt, Xen para-virt)
+  1. Allow for searching/filtering, expand search interface "Field to Search" to include:
+   1. Operating System
+   1. Virtualization Capabilities (Xen/KVM?)
+   1. Guest systems (somehow...)
+   1. Host systems (somehow)
  1. API
   1. Allow for searching for various permutations of the new pieces of inventory information. 
   1. '''TODO''': Specific API calls to implement.
