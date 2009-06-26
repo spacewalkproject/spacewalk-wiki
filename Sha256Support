@@ -14,7 +14,7 @@
 || Task || Estimated Hours || Assignee || Status || Notes ||
 || Database Changes  || 40 hours || mmraka/prad ||  || ||
 || spacewalk Server + Tools|| 60 hours || prad  ||  ||  ||
-|| Proxy Server + Tools || 60 hours || msuchy  || || ||
+|| Proxy Server + Tools || 40 hours || msuchy  || || ||
 || Client tools  || 40 hours || jmatthews + prad || ||  ||
 || Web UI + API  || 40 hours || jmatthews  ||  || ||
 || Upgrades || 30 hours ||mmraka/prad ||  || ||
@@ -55,7 +55,7 @@ SQL> desc rhnChecksumType
 x
 Sample Data:
 1, md5, md5sum, 26-JUN-09, 28-JUN-09
-2, sha256, sha256, 26-JUN-09, 28-JUN-09 1g367fcfe8fb56662d2831d5cce8a5157db75
+2, sha256, sha256, 26-JUN-09, 28-JUN-09 
 
 SQL> desc rhnPackageChecksum
  Name                                                  Null?    Type
