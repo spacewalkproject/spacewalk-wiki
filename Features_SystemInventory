@@ -12,18 +12,20 @@ This feature refers to our ability to correctly identify the operating system, v
   1. Red Hat Enterprise Linux: 4 (AS, ES, ...), 5 (Server, Desktop)
   1. Fedora (10+)
   1. CentOS (4, 5)
-  1. Solaris (all currently supported versions TBD)
+  1. Solaris ('''TODO''': what versions do we want to support?)
   1. "Unknown" system (for everything we can't identify)
  1. System architecture: x86, x86_64, ppc, s390x, etc.
  1. Virtualization Status
   1. Virtualized guest (Xen, KVM, VMware)
-    1. Can we also detect VMWare, IFL, and Hyper-V guests?
+    1. Can we also detect IFL, and Hyper-V guests?
     1. Identify and associate with host system.
+      1. '''TODO''': Is this possible? Safe?
       1. Deal with scenario where host system is not registered.
       1. Deal with scenario where host system is registered but not to the same Spacewalk/Satellite.
   1. Virtualization capable host (Xen full/para-virt, KVM full-virt)
  1. Idenfity number of CPUs and CPU cores.
  1. API should allow mining of data for permutiations of hardware, OS, virt capabilities/state, and system grouping (?).
+  1. '''TODO''': Need specific examples of queries to run.
 
 
 == Other Feature Impact ==
@@ -44,7 +46,11 @@ TBD
   1. Again, ensure this happens before entitlement checks.
  1. Web UI
   1. Display new data prominently.
-  1. Allow for searching/filtering. 
+  1. Allow for searching/filtering.
+  1. '''TODO''': Need specifics and mockups.
+ 1. API
+  1. Allow for searching for various permutations of the new pieces of inventory information. 
+  1. '''TODO''': Specific API calls to implement.
 
 === Known Issues ===
 
@@ -54,10 +60,12 @@ TBD
 === Future Enhancements ===
 
  * Moving our existing hardware detection code into this library seems like a good idea.
+ * Expand client side library to detect other operating systems and versions. (Debian, Ubuntu, etc)
+ * Expand client side library to detect other virtualization technologies. 
 
 == Mockups ==
 
-Mockups needed for UI changes.
+'''TODO'''
 
 == Tasks ==
 
