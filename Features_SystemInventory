@@ -76,6 +76,10 @@ TBD
 
 == Test Notes ==
 
+ * New library will have it's own unit testing framework. Must be able to mock out other operating systems somehow to increase coverage.
+ * RHN client tools do not currently have much in the way of unit test framework, these will largely be left to manual testing.
+ * Backend code unit tests can be used to cover new logic. Will have a dependency on the new library which may be tricky if testing from source. (is new library installed? is it part of spacewalk.git and needs to be added to python path?)
+ * Java web UI and API can be tested using existing unit test and API test framework respectively.
 
 == Risks/Concerns ==
 
