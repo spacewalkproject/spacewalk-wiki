@@ -12,9 +12,17 @@ These two features lead to a number of questions:
    * Despite being a lot of legwork, we run into a conflict if a user is assigned the Support User role and another role (e.g. System Groups Admin). Do we assume that the readonly nature of the Support User role is overridden by having another role assigned?
  1. Along the same lines, can the Support User role be assigned in conjunction with other roles?
   * This would be desirable if, for instance, an admin also wanted access to the new search abilities.
-  * Again, we run into the question of how the read only aspect of the Support User role gets resolved with the admin roles.
+  * Again, we run into the question of how the read only aspect of the Support User role gets resolved with the change functionality provided by admin roles.
  1. Are the audit features and read only user necessarily the same thing? Should they be implemented as two distinct options, an Audit role and a read only flag?
   * This approach makes the Support User tab a simple addition if the role is present, similar to the Admin menu for admins.
   * Again, this requires fitting in an entire UI with checking to disable writeable actions when the user is flagged as read only.
   * There may be a desire for access to certain admin menus with read only access, however this seems like a contradiction to have a read only admin.
- 1. 
+
+As a result of the above questions, the following is the usage of the support user role:
+ 1. The only read only functionality exists within the Support User tab. All existing pages retain their existing role permissions.
+  * The pages inside of this tab should be implemented using snippets from existing pages without writeable actions (will likely require some refactoring of existing pages and potentially some porting from perl to java).
+  * The Support User tab is read only no matter what other roles the user possesses. In other words, the satellite admin will still not see writeable actions from within the Support User tab.
+  * The Support User tab will be flushed out in the future with more search options. In this iteration, only system searches (potentially across multiple trusted orgs) will be implemented.
+ 1. For users that only have the Support User role, the only tabs displayed are: Overview, Support User tab, and Help.
+  * This is '''different''' than a no-role user, which also has access to Systems, Errata, Channels, and Schedule. A no-role user is able to access writeable actions on those tabs (e.g. delete system, package install).
+  * The effect of this tab restriction is that users with only the Support User role effectively become read only users.
