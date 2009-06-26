@@ -32,31 +32,35 @@ TBD
 
 == Proposed Implementation ==
 
-  1. Client Tools
-    1. Modify rhnreg to supply additional information that may be needed. Ideally we'll dump as much data to the server as we can, and the server will determine how to classify the system during registration. This will need to happen early for entitlement considerations.
-  1. Database
-    1. Design schema changes to effectively store the taxonomy information in a format that can remain consistent despite future changes.
-    1. How do we populate for existing systems? During upgrade? Occasionally re-attempting to classify systems that are unknown?
-  1. Backend
-    1. Modify backend code that handles registration to do the classification based on rules.
-    1. Need method to update rules easily... TBD
-  1. Web UI
-    1. Display taxonomy information prominently in web UI, allow for searching/filtering.
-    1. Should administrator be able to manually specify taxonomy changes?
- 
+ 1. Create new client side Python library whose sole purpose is to identify the information above.
+  1. Modify RHN client tools to require this library as a dependency. (implies this must be added to base installs of RHEL)
+  1. Separate library to allow for re-use in candlepin.
+ 1. Modify client tools to use new library and supply this information to Spacewalk/Satellite very early during registration.
+  1. Must not require this if communicating with hosted.
+ 1. Schema
+  1. Modify to store this information in a format that can accommodate future changes or additions.
+ 1. Backend
+  1. Accept the new incoming data, populate database.
+  1. Again, ensure this happens before entitlement checks.
+ 1. Web UI
+  1. Display new data prominently.
+  1. Allow for searching/filtering. 
 
 === Known Issues ===
 
+ * How do we populate this information for pre-existing systems on an upgraded install?
+ * Can an administrator manually override the data our library determine to be accurate in the UI?
 
 === Future Enhancements ===
 
+ * Moving our existing hardware detection code into this library seems like a good idea.
+
 == Mockups ==
 
-Mockups?
+Mockups needed for UI changes.
 
 == Tasks ==
 
-Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
 
 || Description || Estimate || Confidence ||
 ||  || || ||
@@ -67,4 +71,3 @@ Break down the work items probably in a table structure. Is there webui work? wh
 
 == Risks/Concerns ==
 
- * What logic/rules/taxonomy needs to be easily updated in this? How easily must the update be?
