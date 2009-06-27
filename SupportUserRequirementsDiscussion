@@ -11,7 +11,7 @@ For the purposes of this discussion, all of the new auditing features (the new s
 These two features lead to a number of questions:
  1. Does a user with the Support User role see all of the default tabs (Systems, Channels, etc.) or simply the Support User tab?
   * If the support user does see all tabs, we'll have to add checks on all of these pages to ensure that any writeable functionality is disabled.
-   * Despite being a lot of legwork, we run into a conflict if a user is assigned the Support User role and another role (e.g. System Groups Admin). Do we assume that the readonly nature of the Support User role is overridden by having another role assigned?
+   * Despite being a lot of legwork, we run into a conflict if a user is assigned the Support User role and another role (e.g. System Groups Admin). Do we assume that the read only nature of the Support User role is overridden by having another (admin) role assigned?
  1. Along the same lines, can the Support User role be assigned in conjunction with other roles?
   * This would be desirable if, for instance, an admin also wanted access to the new search abilities.
   * Again, we run into the question of how the read only aspect of the Support User role gets resolved with the change functionality provided by admin roles.
