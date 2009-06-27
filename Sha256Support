@@ -170,9 +170,14 @@ We need to make sure the queries used by these pages reflect any new db changes 
  * Any existing content should be upgradable as well. 
  * I can't think of any existing content that would need to be migrated to sha256.(something to look for)
 
-=== Other Feature Impact ===
+=== Other Feature Impact: ===
  * Nvrea feature needs to be revisited to handle regressions
 
+===Future Enhancements:===
+N/A
+
+=== Mockups: ===
+N/A
 
 === Test Notes: ===
 Will update as feature rolls.
