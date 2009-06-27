@@ -25,8 +25,8 @@ These two features lead to a number of questions:
 As a result of the above questions, the following is the usage of the support user role:
  1. The only read only functionality exists within the Support User tab. All existing pages retain their existing role permissions.
   * The pages inside of this tab should be implemented using snippets from existing pages without writeable actions (will likely require some refactoring of existing pages and potentially some porting from perl to java).
-  * The Support User tab is read only no matter what other roles the user possesses. In other words, the satellite admin will still not see writeable actions from within the Support User tab.
-  * The Support User tab will be flushed out in the future with more search options. In this iteration, only system searches (potentially across multiple trusted orgs) will be implemented.
+  * The Support User tab is read only no matter what other roles the user possesses. In other words, even the satellite admin will still not see writeable actions from within the Support User tab.
+  * The Support User tab will be flushed out in the future with more search options. In this iteration, only system searches (across multiple trusted orgs) will be implemented.
  1. For users that only have the Support User role, the only tabs displayed are: Overview, Support User tab, and Help.
   * This is '''different''' than a no-role user, which also has access to Systems, Errata, Channels, and Schedule. A no-role user is able to access writeable actions on those tabs (e.g. delete system, package install).
   * The effect of this tab restriction is that users with only the Support User role effectively become read only users.
