@@ -6,7 +6,7 @@ There seem to be two things being discussed in relation to the support user role
  * Read only access to the web UI and APIs
  * Auditing features (for instance, system searching across trusted orgs)
 
-For the purposes of this discussion, all of the new auditing features are presumed to fall under a new UI tab (the Support User tab).
+For the purposes of this discussion, all of the new auditing features (the new search interface and its results) are presumed to fall under a new UI tab (the Support User tab).
 
 These two features lead to a number of questions:
  1. Does a user with the Support User role see all of the default tabs (Systems, Channels, etc.) or simply the Support User tab?
