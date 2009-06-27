@@ -1,6 +1,6 @@
 = SHA256 Support for Spacewalk =
 
-== Goal ==
+== Overview ==
  * Fedora 11 Clients with sha256 supported content should be able to interact with spacewalk and proxy as expected
  * spacewalk server should be able to support newer rpm content in addition to old
  * proxy should be able to serve and accept newer rpm content.
@@ -22,7 +22,7 @@
 
 The order here represents the dependency chain. Database changes would be the first to get done so we have those to develop and test the app code changes. spacewalk and proxy  development can go in parallel, but these should be done(at least partly) for client work to start so we have supporting server code for clients. Web UI and upgrades can go last I guess. 
 
-== Specifications ==  
+== Proposed Implementation ==  
 
 Following are the possible areas we'll need to make to support sha256 content across board. I'm sure we'll find more as we move along, but these are the major areas we need to make sure works as expected with new sha256 supported rpms on f11.
 
@@ -169,3 +169,13 @@ We need to make sure the queries used by these pages reflect any new db changes 
  * Any db changes should be upgradable from older satellites
  * Any existing content should be upgradable as well. 
  * I can't think of any existing content that would need to be migrated to sha256.(something to look for)
+
+=== Other Feature Impact ===
+ * Nvrea feature needs to be revisited to handle regressions
+
+
+=== Test Notes: ===
+Will update as feature rolls.
+
+=== Risks/Concerns: ===
+None So far.
