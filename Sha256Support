@@ -173,7 +173,7 @@ We need to make sure the queries used by these pages reflect any new db changes 
 === Other Feature Impact: ===
  * Nvrea feature needs to be revisited to handle regressions
 
-===Future Enhancements:===
+=== Future Enhancements: ===
 N/A
 
 === Mockups: ===
