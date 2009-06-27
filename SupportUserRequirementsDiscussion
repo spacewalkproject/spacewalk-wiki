@@ -3,7 +3,7 @@
 The following are notes from a discussion between jdob and dgoodwin regarding the definition of the support user role and its function.
 
 There seem to be two things being discussed in relation to the support user role:
- * Read only access to the web UI
+ * Read only access to the web UI and APIs
  * Auditing features (for instance, system searching across trusted orgs)
 
 For the purposes of this discussion, all of the new auditing features are presumed to fall under a new UI tab (the Support User tab).
