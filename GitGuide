@@ -417,7 +417,7 @@ git stash apply stash@{0}
 
  * Keep track of what branch you are in by looking at your prompt. Update your prompt as follows:
 {{{
-PS1="[\u@\h \W\$(git-branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$ "
+PS1="[\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$ "
 }}}
 
 Here is what you will see when you cd into a git repository:
