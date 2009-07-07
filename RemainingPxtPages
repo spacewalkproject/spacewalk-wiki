@@ -219,13 +219,10 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/patchsets/index.pxt
  * /network/systems/ssm/patchsets/install_channel.pxt
  * /network/systems/ssm/patchsets/install.pxt
- * /network/systems/ssm/provisioning/kickstart.pxt
- * /network/systems/ssm/provisioning/missing_packages.pxt
  * /network/systems/ssm/provisioning/remote_command_conf.pxt
  * /network/systems/ssm/provisioning/rollback_by_tag_conf.pxt
  * /network/systems/ssm/provisioning/tag_systems.pxt
  * /network/systems/ssm/provisioning/rollback.pxt
- * /network/systems/ssm/provisioning/kickstart_options.pxt
  * /network/systems/ssm/provisioning/remote_command.pxt
  * /network/systems/ssm/misc/unlock_systems_conf.pxt
  * /network/systems/ssm/misc/delete_systems_conf.pxt
