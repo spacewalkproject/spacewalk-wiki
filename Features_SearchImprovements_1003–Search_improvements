@@ -1,3 +1,82 @@
+= Search Improvements 0.6+ (US-06 1003) =
+=== Reviewed by: ===
+== Overview ==
+Define why the feature should be added, this could be because of customer feedback, marketing reasons, etc.
+
+== Requirements ==
+Questions: 
+
+||Req #   || bug # || Title || Description                                                        || Comments ||
+||1003-00 || [https://bugzilla.redhat.com/show_bug.cgi?id=452318 bug 452318 ] || Ability to filter errata so as to apply only filtered errata to a system || Would like the ability to selectively filter errata by type, and to apply errata by type. This would allow an organization to only apply certain types of patches (e.g. Security only). For example, for a given system there would be a method to apply only RHSA errata. The ability to export this list into a CSV file would be nice too. Finally, a status report summary (exportable as well) of the patching process would be a welcome addition || Filter errata by type and apply is already implemented.  Need to add CSV at: /rhn/systems/details/ErrataList.do and CSV to a summary page of what was deployed. When errata are deployed, do we get a status of what errata were successfully deployed, what errata failed?  BZ asks for a report of this activity, maybe a CSV list would acceptable? ||
+||1003-01 || [https://bugzilla.redhat.com/show_bug.cgi?id=472889 bug 472889] ||  User would like to know how they can filter the history of what package has been installed and what package failed to be installed.
+
+        Customer would like to be able to filter RHN Events to search for failed package installations. Currently, Event History is not filterable.
+
+        This will allow finer grained control/visibility into system states regarding what needs to be upgraded. Currently there is an all or nothing approach - if one package fails to install, the entire event fails. The customer would like to see partial installations and failures.
+
+        Currently, when building the transaction set, if one package fails to install the whole transaction won't install. In order for the customer to filter the results, we would have to change how the transaction set is carried out.
+
+        Instead of building a complete transaction set and then trying to install all at once - in which case one package with a missing dependency would cause the whole transaction set to fail - we would have to install one package and its dependencies at a time. This would then allow for some installations/updates and some failures.
+
+        At that point, Event History could then be filtered for package installation or failure.
+
+|| Filter by events by package || Concern about request for breaking package install into fine grained/individual transactions, sounds similar to case with errata where individual errata actions cause excess network I/O and poor performance  ||
+||1003-02 ||[https://bugzilla.redhat.com/show_bug.cgi?id=483118 bug 483118] || Need Filter by Synopsis - while Applying errata when working with system groups || Filter by errata synopsis, and apply results to a group of systems || Currently in perl (network/systems/ssm/errata/index.pxt).  Port to Java, add filter by type functionality and CSV ||
+||1003-03 || [https://bugzilla.redhat.com/show_bug.cgi?id=481626 bug 481626] || Filtering and sorting of pending (and other) events || Need to be able to monitor progress of errata updates on satellite to verify when they complete  || Probably can monitor taskomatic queue for errata actions and provide updates from that ||
+
+Requirements this feature must fulfill. Include any use cases which are used to drive this feature. Be descriptive, how does it affect the command line tools? What about the web UI? How will the user interact with the feature?
+
+== Other Feature Impact ==
+
+Describe how this new feature / change will affect other features in the product, both existing and new ones.
+* UI
+* API
+
+== Proposed Implementation ==
+
+Describe how we plan on implementing or fixing the feature. Point out changes that need to occur in UI, server-side, command line clients, database, etc.
+
+ * UI
+  * Add a URL widget to the some page.
+ * Server-side
+  * Add a server-side task to download the data from some known location.
+
+=== Known Issues ===
+issues that we know exist with the spec and we should write them down so that they are
+known up front when the spec is approved.  If an issue is severe enough, it
+could warrant the feature not being included in the release/roadmap or
+delayed until those issues can be addressed. 
+
+=== Future Enhancements ===
+
+== Mockups ==
+
+Supply some pseudo code and/or links to actual sample code. Screenshots are also considered sample code.
+
+== Tasks ==
+
+Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
+|| Description || Estimate || Confidence ||
+|| Add support user role to database || 1h || 5 ||
+|| Make support user role available to UI || 4h || 4 ||
+
+== Test Notes ==
+
+Describe a high-level test plan. Could contain links to testopia (except those links are internal so would look weird in a spec on Spacewalk's wiki).
+
+== Risks/Concerns ==
+
+List out the risks and concerns for a particular feature. I.e. will it make upgrades particularly difficult? Will it cause a full regression test? etc.
+
+
+
+
+
+
+
+
+
+
 = PROTOSPEC DOCUMENT =
 === TOPIC: US-06 1003 – Search improvements ===
 This is a dumping grounds for specific customer-driven search and filtering improvements.
