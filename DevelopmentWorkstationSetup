@@ -50,6 +50,11 @@ If you are going to be updating the search server java code, you would have to d
  * {{{it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"}}}
  * {{{sudo /usr/sbin/rhn-satellite start}}}
 
+=== Set Permissions ===
+
+Make sure that permissions are properly set.  If your Git repo is in your homedir, then apache and tomcat must be able to get read and execute access to not only the Git repo, but your homedir as well.  The following commands should work when run from homedir:
+ * {{{[you@yourmachine ~]$ setfacl  -R  -m  u:apache:rx .}}}
+ * {{{[you@yourmachine ~]$ setfacl  -R  -m  u:tomcat:rx .}}}
 
 === Uninstallation ===
 
