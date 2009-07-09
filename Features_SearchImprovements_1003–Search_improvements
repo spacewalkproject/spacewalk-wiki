@@ -59,6 +59,32 @@ List out the risks and concerns for a particular feature. I.e. will it make upgr
 == Potential Work Items - Not mentioned in PRD ==
  * Add in support for handling deletion of errata (might be related to bug 510122)
  * Add in sanity check of search indexes, possibly create a uniq ID stored per index and in DB, compare to ensure that index files and DB are in sync.   Or do away with DB for storing state of indexes completely.  Store state in index directory.
+ * Add support to recover from error cases of an index being locked.  Below is a result example which stopped new erratas from being indexed. 
+{{{
+ INFO  - Job updateIndex.errata threw a JobExecutionException: 
+ org.quartz.JobExecutionException: com.redhat.satellite.search.index.IndexingException: org.apache.lucene.store.LockObtainFailedException: Lock obtain timed out: SimpleFSLock@/usr/share/rhn/search/indexes/errata/write.lock  [See nested exception: com.redhat.satellite.search.index.IndexingException: org.apache.lucene.store.Lock
+ObtainFailedException: Lock obtain timed out: SimpleFSLock@/usr/share/rhn/search/indexes/errata/write.lock]
+        at com.redhat.satellite.search.scheduler.tasks.IndexErrataTask.execute(IndexErrataTask.java:81)
+        at org.quartz.core.JobRunShell.run(JobRunShell.java:203)
+        at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:520)
+* Nested Exception (Underlying Cause) ---------------
+com.redhat.satellite.search.index.IndexingException: org.apache.lucene.store.LockObtainFailedException: Lock obtain timed out: SimpleFSLock@/usr/share/rhn/search/i
+ndexes/errata/write.lock
+        at com.redhat.satellite.search.index.IndexManager.addToIndex(IndexManager.java:241)
+        at com.redhat.satellite.search.scheduler.tasks.IndexErrataTask.indexErrata(IndexErrataTask.java:146)
+        at com.redhat.satellite.search.scheduler.tasks.IndexErrataTask.execute(IndexErrataTask.java:67)
+        at org.quartz.core.JobRunShell.run(JobRunShell.java:203)
+        at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:520)
+Caused by: 
+org.apache.lucene.store.LockObtainFailedException: Lock obtain timed out: SimpleFSLock@/usr/share/rhn/search/indexes/errata/write.lock
+        at org.apache.lucene.store.Lock.obtain(Lock.java:85)
+        at org.apache.lucene.index.IndexWriter.init(IndexWriter.java:692)
+        at org.apache.lucene.index.IndexWriter.init(IndexWriter.java:672)
+        at org.apache.lucene.index.IndexWriter.<init>(IndexWriter.java:524)
+        at com.redhat.satellite.search.index.IndexManager.getIndexWriter(IndexManager.java:346)
+        at com.redhat.satellite.search.index.IndexManager.addToIndex(IndexManager.java:222)
+        ... 4 more
+}}}
 
 
 
