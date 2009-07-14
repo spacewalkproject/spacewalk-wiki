@@ -14,7 +14,7 @@ This feature refers to our ability to correctly identify the operating system, v
   1. CentOS (4, 5)
   1. Solaris ('''TODO''': what versions do we want to support?)
   1. "Unknown" system (for everything we can't identify)
- 1. System architecture: x86, x86_64, ppc, s390x, etc.
+ 1. System architecture: i386, i686, x86_64, ppc, s390x, etc. 
  1. Virtualization Status
   1. Virtualized guest (Xen, KVM, VMware)
     1. Can we also detect IFL, and Hyper-V guests?
