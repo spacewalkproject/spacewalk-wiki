@@ -47,7 +47,7 @@ TBD
   1. Sync up with existing storage of architecture, CPU info.
   1. Investigate smoon data model.
  1. Backend
-  1. Accept the new incoming data, populate database.
+  1. Accept the new incoming data, populate database. Hooking into registration process should cover us for fresh registrations and kickstart re-registrations. Do we also need to periodically refresh for hardware changes?
   1. Need to ensure this information is available before doing entitlement checks.
   1. Must support older clients that are missing these new capabilities.
  1. Web UI
@@ -69,13 +69,9 @@ TBD
 === Known Issues ===
 
  * How do we populate this information for pre-existing systems on an upgraded install?
- * Can an administrator manually override the data our library determine to be accurate in the UI?
+ * Can an administrator manually override the data our code determines to be accurate in the UI?
 
 === Future Enhancements ===
-
- * Moving our existing hardware detection code into this library seems like a good idea.
- * Expand client side library to detect other operating systems and versions. (Debian, Ubuntu, etc)
- * Expand client side library to detect other virtualization technologies. 
 
 == Mockups ==
 
@@ -90,9 +86,8 @@ TBD
 
 == Test Notes ==
 
- * New library will have it's own unit testing framework. Must be able to mock out other operating systems somehow to increase coverage.
  * RHN client tools do not currently have much in the way of unit test framework, these will largely be left to manual testing.
- * Backend code unit tests can be used to cover new logic. Will have a dependency on the new library which may be tricky if testing from source. (is new library installed? is it part of spacewalk.git and needs to be added to python path?)
+ * Backend code unit tests can be used to cover new logic. 
  * Java web UI and API can be tested using existing unit test and API test framework respectively.
 
 == Risks/Concerns ==
