@@ -35,21 +35,21 @@ This feature refers to our ability to correctly identify the operating system, v
 TBD
 
 == Proposed Implementation ==
-
- 1. Create new client side Python library whose sole purpose is to identify the information above.
-  1. Modify RHN client tools to require this library as a dependency. (implies this must be added to base installs of RHEL)
-  1. Separate library to allow for re-use in candlepin.
-  1. Identify rpm based distros by first checking for rpm command, and then redhat-release and equivalents.
-  1. '''TODO''': How to identify Solaris?
-  1. Alternatively, Smolt looks *dangerously* close to what we're describing here, and is already based on our RHN code. Maybe a good time to integrate with Smolt, or at least make use of the client bits?
- 1. Modify client tools to use new library and supply this information to Spacewalk/Satellite very early during registration.
-  1. Must not require this if communicating with hosted.
+ 1. Add dependency on smolt to rhn-setup.
+  1. Will require the smolt package now be available in base RHEL?
+  1. Might require a rebuild as default smolt package is configured to automatically submit (monthly) to smolt.org in an rpm post script, whereas we just want to leverage the client side bits.
+ 1. Modify client side hardware code to leverage smolt bits to lookup required info about the system.
+  1. Watchout for dead code, Smolt was originally based on our client side code.
+ 1. Submit data to Spacewalk. 
+  1. Not sure how to do this, need to examine how we pass over the hardware info today, and how smolt does the same. No intention to run the smolt server side (smoon).
  1. Schema
   1. Modify to store this information in a format that can accommodate future changes or additions.
   1. Sync up with existing storage of architecture, CPU info.
+  1. Investigate smoon data model.
  1. Backend
   1. Accept the new incoming data, populate database.
-  1. Again, ensure this happens before entitlement checks.
+  1. Need to ensure this information is available before doing entitlement checks.
+  1. Must support older clients that are missing these new capabilities.
  1. Web UI
   1. Under Systems -> (system) -> Details -> Overview in the "System Info" section:
    1. Add "Operating System". (Fedora 10, Red Hat Enterprise Linux 5 Server, CentOS 5)
