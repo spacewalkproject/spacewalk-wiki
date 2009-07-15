@@ -23,7 +23,7 @@ yum install python-ply python-pgsql
   }}}
  * Install ''chameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
   {{{
-rpm -Uvh https://fedorahosted.org/spacewalk/attachment/wiki/PostgreSqlProject/chameleon-0.1-5.fc10.noarch.rpm?format=raw
+rpm -Uvh https://fedorahosted.org/releases/c/h/chameleon/chameleon-0.1-6.fc10.noarch.rpm?format=raw
   }}}
   * Formerly: dogchow 
  * Get the right branch, where the postgres porting work is going on
