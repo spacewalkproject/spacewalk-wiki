@@ -38,7 +38,7 @@ TBD
 
 === Packaging ===
  1. Add dependency on smolt to rhn-setup.
-  * Must deal with issue where smolt currently sets up cron job in post script to re-submit hardware details to an actual smolt server (called smoon) monthly. We do not want this, we're just aiming to leverage the client side bits.
+  * Must deal with issue where smolt currently sets up cron job in post script to re-submit hardware details to an actual smolt server (called smoon) monthly. We do not want this, we're just aiming to leverage the client side bits. Maybe able to split smolt from say libsmolt upstream.
   * Will need this slightly modified smolt rpm available in stock RHEL.
    * ''Will this be a problem?'' - dgoodwin
 
@@ -109,4 +109,137 @@ TBD
  * If we go the route of re-using smolt, will probably need to submit some patches to add some of the data we're interested in.
  * Replacing our hardware/OS detection with the more recent smolt code would require a bit of work and a lot of testing in the client side tools, CLI, GUI, and TUI.
   * What happens with respect to hosted if we start messing around with the client side packages? Information going up to the server may have to remain exactly the same, although perhaps with additions which the server can gracefully ignore if it's not ready for the new.
+ * Is smolt the best option, or should we just hack onto what we have, perhaps just using pieces of their code? Worth noting that guest detection will probably need to be added upstream in smolt unless we're content inferring it based on other info in the profile already as we do today.
+ * There are '''no EL4 smolt packages''' in EPEL as there are for RHEL 5. Why?
+
+== Additional Info ==
+
+Some smolt data samples:
+
+Fedora 10 KVM guest:
+
+{{{
+[root@sw2 ~]# smoltSendProfile 
+	UUID: 05668b04-abdb-4306-8196-c101b1223319
+	OS: Fedora release 10 (Cambridge)
+	Default run level: 3
+	Language: en_US.utf8
+	Platform: i686
+	BogoMIPS: 4788.27
+	CPU Vendor: GenuineIntel
+	CPU Model: QEMU Virtual CPU version 0.10.5
+	Number of CPUs: 1
+	CPU Speed: 2393
+	System Memory: 1008
+	System Swap: 2047
+	Vendor: Unknown
+	System: Unknown
+	Form factor: unknown
+	Kernel: 2.6.27.25-170.2.72.fc10.i686
+	SELinux Enabled: False
+	SELinux Policy: targeted
+	SELinux Enforce: Unknown
+
+		 Devices
+		=================================
+		(None:None:None:None) platform, i8042, None, Platform Device (i8042)
+		(None:None:None:None) platform, pcspkr, None, Platform Device (pcspkr)
+		(None:None:None:None) input, Unknown, None, Power Button (FF)
+		(4115:184:6900:4352) pci, Unknown, VIDEO, GD 5446
+		(None:None:None:None) pnp, rtc_cmos, None, AT Real-Time Clock
+		(None:None:None:None) input, Unknown, MOUSE, ImExPS/2 Generic Explorer Mouse
+		(6900:4096:6900:1) pci, virtio-pci, NETWORK, Virtio network device
+		(None:None:None:None) input, Unknown, MOUSE, Macintosh mouse button emulation
+		(None:None:None:None) scsi_generic, Unknown, None, SCSI Generic Interface
+		(6900:4097:6900:2) pci, virtio-pci, OTHER, Virtio block device
+		(6900:4098:6900:5) pci, virtio-pci, OTHER, Unknown (0x1002)
+		(None:None:None:None) input, Unknown, None, PC Speaker
+		(None:None:None:None) tty, Unknown, None, 16550A-compatible COM port
+		(None:None:None:None) serio, psmouse, None, i8042 AUX port
+		(None:None:None:None) platform, serial8250, None, Platform Device (serial8250)
+		(32902:28688:6900:4352) pci, ata_piix, IDE, 82371SB PIIX3 IDE [Natoma/Triton II]
+		(32902:28947:6900:4352) pci, piix4_smbus, OTHER, 82371AB/EB/MB PIIX4 ACPI
+		(None:None:None:None) serio, atkbd, None, i8042 KBD port
+		(None:None:None:None) scsi, sr, None, SCSI Device
+		(None:None:None:None) net, Unknown, NETWORK, Bridge Interface
+		(None:None:None:None) scsi_host, Unknown, None, SCSI Host Adapter
+		(None:None:None:None) input, Unknown, KEYBOARD, AT Translated Set 2 keyboard
+		(None:None:None:None) platform, Unknown, None, Platform Device (vesafb.0)
+		(None:None:None:None) pnp, serial, None, 16550A-compatible COM port
+		(None:None:None:None) pnp, i8042 aux, None, PS/2 Port for PS/2-style Mice
+		(None:None:None:None) net, Unknown, NETWORK, Loopback device Interface
+		(32902:4663:6900:4352) pci, Unknown, OTHER, 440FX - 82441FX PMC [Natoma]
+		(32902:28704:6900:4352) pci, uhci_hcd, USB, 82371SB PIIX3 USB [Natoma/Triton II]
+		(32902:28672:6900:4352) pci, Unknown, OTHER, 82371SB PIIX3 ISA [Natoma/Triton II]
+		(None:None:None:None) scsi_host, Unknown, None, SCSI Host Adapter
+		(None:None:None:None) net, Unknown, NETWORK, Networking Interface
+		(None:None:None:None) scsi_host, Unknown, None, SCSI Host Adapter
+		(None:None:None:None) pnp, i8042 kbd, None, IBM Enhanced (101/102-key, PS/2 mouse support)
+		(None:None:None:None) virtio, virtio_blk, None, VirtIO Device (virtio1)
+		(None:None:None:None) virtio, virtio_net, None, VirtIO Device (virtio0)
+		(None:None:None:None) virtio, virtio_balloon, None, VirtIO Device (virtio2)
+
+	Filesystem Information
+		device mtpt type bsize frsize blocks bfree bavail file ffree favail
+		===================================================================
+		/dev/root / ext3 4096 4096 9740660 7798251 7303455 2473984 2399106 2399106
+		/dev/vda1 /boot ext3 1024 1024 194442 174442 164403 50200 50160 50160
+}}}
+
+
+RHEL 5 Physical Host:
+
+{{{
+[root@rlx-3-12 ~]# smoltSendProfile 
+	UUID: d48ed2dd-b97a-411f-84d2-dd22305b2ccd
+	OS: RedHatEnterpriseServer 5.3 Tikanga
+	Default run level: 3
+	Language: en_US.UTF-8
+	Platform: i686
+	BogoMIPS: 5980.16
+	CPU Vendor: GenuineIntel
+	CPU Model: Mobile Intel(R) Pentium(R) III CPU - M  1200MHz
+	Number of CPUs: 1
+	CPU Speed: 1493
+	System Memory: 1770
+	System Swap: 996
+	Vendor: RLX Technologies
+	System: SB 1200i 0A07
+	Form factor: unknown
+	Kernel: 2.6.18-128.el5xen
+	SELinux Enabled: True
+	SELinux Policy: targeted
+	SELinux Enforce: Permissive
+
+		 Devices
+		=================================
+		(None:None:None:None) platform, i8042, None, Platform Device (i8042)
+		(None:None:None:None) platform, pcspkr, None, Platform Device (pcspkr)
+		(4281:28929:5961:4160) pci, ali1535_smbus, OTHER, M7101 Power Management Controller [PMU]
+		(None:None:None:None) platform, Unknown, None, Platform Device (bluetooth)
+		(None:None:None:None) input, Unknown, None, PC Speaker
+		(4932:13104:0:0) pci, Unknown, OTHER, Unknown (0x3330)
+		(None:None:None:None) platform, Unknown, None, Platform Device (vesafb.0)
+		(4281:5427:5961:4112) pci, Unknown, OTHER, M1533/M1535/M1543 PCI to ISA Bridge [Aladdin IV/V/V+]
+		(None:None:None:None) serio, Unknown, None, i8042 KBD port
+		(32902:4649:5961:8208) pci, e100, NETWORK, 82557/8/9/0/1 Ethernet Pro 100
+		(None:None:None:None) pnp, i8042 aux, None, PS/2 Port for PS/2-style Mice
+		(32902:4649:5961:8208) pci, e100, NETWORK, 82557/8/9/0/1 Ethernet Pro 100
+		(4932:13089:4162:4162) pci, Unknown, OTHER, Unknown (0x3321)
+		(4932:13088:4162:4162) pci, Unknown, OTHER, Unknown (0x3320)
+		(None:None:None:None) ide, ide-disk, None, IDE device (master)
+		(None:None:None:None) net, Unknown, NETWORK, Networking Interface
+		(None:None:None:None) net, Unknown, NETWORK, Networking Interface
+		(None:None:None:None) net, Unknown, NETWORK, Networking Interface
+		(4281:21033:5961:4128) pci, ALI15x3_IDE, IDE, M5229 IDE
+		(32902:4649:5961:8208) pci, e100, NETWORK, 82557/8/9/0/1 Ethernet Pro 100
+		(None:None:None:None) pnp, i8042 kbd, None, IBM Enhanced (101/102-key, PS/2 mouse support)
+
+	Filesystem Information
+		device mtpt type bsize frsize blocks bfree bavail file ffree favail
+		===================================================================
+		/dev/root / ext3 4096 4096 13886985 13618579 12901779 14338368 14303111 14303111
+		/dev/hda1 /boot ext3 1024 1024 194442 181309 171270 50200 50164 50164
+
+}}}
 
