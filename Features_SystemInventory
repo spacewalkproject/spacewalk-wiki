@@ -94,3 +94,5 @@ TBD
 
 == Risks/Concerns ==
 
+ * If we go the route of re-using smolt, will probably need to submit some patches to add some of the data we're interested in.
+
