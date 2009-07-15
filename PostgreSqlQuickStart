@@ -53,7 +53,7 @@ OR
 
 cd schema/spacewalk/postgres
 make
-psql -f main.sql
+psql -U postgres -f main.sql
   }}}
   * Look at ''chameleon'' go, creating both Oracle and Postgres schema on the fly!  Warnings are fine.
   * Also runs ''blend'', which does depsolving and creates a properly ordered set of create scripts.
