@@ -65,6 +65,8 @@ TBD
  1. API
   1. Allow for searching for various permutations of the new pieces of inventory information. 
   1. '''TODO''': Specific API calls to implement.
+ 1. Allow admins to specify custom channels as the default for a particular version of an operating system.
+  1. This would allow Spacewalk users to create their Fedora or Cent OS channels, and then automatically register systems to then without the need for an explicit activation key. (similar to the way we auto-subscribe to RHEL channels in Satellite, which may also be a candidate for cleanup)
 
 === Known Issues ===
 
