@@ -95,4 +95,5 @@ TBD
 == Risks/Concerns ==
 
  * If we go the route of re-using smolt, will probably need to submit some patches to add some of the data we're interested in.
+ * Replacing our hardware/OS detection with the more recent smolt code would require a bit of work and a lot of testing in the client side tools, CLI, GUI, and TUI.
 
