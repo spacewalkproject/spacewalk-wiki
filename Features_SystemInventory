@@ -35,38 +35,50 @@ This feature refers to our ability to correctly identify the operating system, v
 TBD
 
 == Proposed Implementation ==
+
+=== Packaging ===
  1. Add dependency on smolt to rhn-setup.
-  1. Will require the smolt package now be available in base RHEL?
-  1. Might require a rebuild as default smolt package is configured to automatically submit (monthly) to smolt.org in an rpm post script, whereas we just want to leverage the client side bits.
- 1. Modify client side hardware code to leverage smolt bits to lookup required info about the system.
-  1. Watchout for dead code, Smolt was originally based on our client side code.
+  * Must deal with issue where smolt currently sets up cron job in post script to re-submit hardware details to an actual smolt server (called smoon) monthly. We do not want this, we're just aiming to leverage the client side bits.
+  * Will need this slightly modified smolt rpm available in stock RHEL.
+   * ''Will this be a problem?'' - dgoodwin
+
+=== Client Side Tools ===
+
+ 1. Modify rhn-setup code replacing existing hardware detection bits with Smolt data.
+  * Note that smolt's code was originally based on ours.
+  * Most of our hardware detection happens where we instantiate a "hardware.Hardware" object.
  1. Submit data to Spacewalk. 
-  1. Not sure how to do this, need to examine how we pass over the hardware info today, and how smolt does the same. No intention to run the smolt server side (smoon).
- 1. Schema
-  1. Modify to store this information in a format that can accommodate future changes or additions.
-  1. Sync up with existing storage of architecture, CPU info.
-  1. Investigate smoon data model.
- 1. Backend
-  1. Accept the new incoming data, populate database. Hooking into registration process should cover us for fresh registrations and kickstart re-registrations. Do we also need to periodically refresh for hardware changes?
-  1. Need to ensure this information is available before doing entitlement checks.
-  1. Must support older clients that are missing these new capabilities.
- 1. Web UI
-  1. Under Systems -> (system) -> Details -> Overview in the "System Info" section:
-   1. Add "Operating System". (Fedora 10, Red Hat Enterprise Linux 5 Server, CentOS 5)
-   1. Already display if system if a para-virt host/guest, update to include include KVM and clearly differentiate between the two.
-  1. Under Systems -> (system) -> Details -> Hardware:
-   1. Update General section with number of CPU cores.
-   1. Add virtualization section, display virtualization capabilities.  (KVM, Xen full-virt, Xen para-virt)
-  1. Allow for searching/filtering, expand search interface "Field to Search" to include:
-   1. Operating System
-   1. Virtualization Capabilities (Xen/KVM?)
-   1. Guest systems (somehow...)
-   1. Host systems (somehow)
- 1. API
-  1. Allow for searching for various permutations of the new pieces of inventory information. 
-  1. '''TODO''': Specific API calls to implement.
+  * I believe we must make sure that even after leveraging smolt code to lookup hardware data, what we submit must appear in *exactly* the same format as it used to for the benefit of RHN hosted. We can likely add additional information, but probably not take anything away. 
+  * Data submission happens in rhnreg.sendHardware and is received on the server in registration.add_hw_profile.
+
+=== Database ===
+
+ 1. Introduce new schema to store any new information.
+  * Most of the hardware information is stored already, it's primarily the new OS/Version info we'll need to add on.
+
+=== Backend ===
+
+ 1. Accept the new incoming data, populate database. Hooking into registration process should cover us for fresh registrations and kickstart re-registrations. Do we also need to periodically refresh for hardware changes? (this probably happens already but need to verify)
+ 1. Information should be available before doing entitlement checks, but rhnreg_ks sends it after registering...
+
+=== Web UI ===
+ 1. Under Systems -> (system) -> Details -> Overview in the "System Info" section:
+  1. Add "Operating System". (Fedora 10, Red Hat Enterprise Linux 5 Server, CentOS 5)
+  1. Already display if system if a para-virt host/guest, update to include include KVM and clearly differentiate between the two.
+ 1. Under Systems -> (system) -> Details -> Hardware:
+  1. Update General section with number of CPU cores.
+  1. Add virtualization section, display virtualization capabilities.  (KVM, Xen full-virt, Xen para-virt)
+ 1. Allow for searching/filtering, expand search interface "Field to Search" to include:
+  1. Operating System
+  1. Virtualization Capabilities (Xen/KVM?)
+  1. Guest systems (somehow...)
+  1. Host systems (somehow)
  1. Allow admins to specify custom channels as the default for a particular version of an operating system.
-  1. This would allow Spacewalk users to create their Fedora or Cent OS channels, and then automatically register systems to then without the need for an explicit activation key. (similar to the way we auto-subscribe to RHEL channels in Satellite, which may also be a candidate for cleanup)
+  * This would allow Spacewalk users to create their Fedora or Cent OS channels, and then automatically register systems to then without the need for an explicit activation key. (similar to the way we auto-subscribe to RHEL channels in Satellite, which may also be a candidate for cleanup)
+
+=== API ===
+ 1. Allow for searching for various permutations of the new pieces of inventory information. 
+ 1. '''TODO''': Specific API calls to implement.
 
 === Known Issues ===
 
