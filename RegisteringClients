@@ -28,7 +28,7 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
-= Fedora 10 (v0.5 / x64_64) =
+= Fedora 10 (v0.5 / x86_64) =
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
