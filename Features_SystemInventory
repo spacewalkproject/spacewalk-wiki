@@ -24,6 +24,7 @@ This feature refers to our ability to correctly identify the operating system, v
       1. Deal with scenario where host system is registered but not to the same Spacewalk/Satellite.
   1. Virtualization capable host (Xen full/para-virt, KVM full-virt)
  1. Idenfity number of CPUs and CPU cores.
+  * ''Pretty sure we already have this, see current hardware info example below. cat /proc/cpuinfo on a multi-cpu multi-core system looks like we'll have enough info to work with.'' - dgoodwin
  1. Allow searching of this data in web UI.
   1. '''TODO''': Need examples of specific searches to see where to go with this. Take a look at current advanced search screen to see what we have to work with.
  1. API should allow mining of data for permutiations of hardware, OS, virt capabilities/state, and system grouping (?).
