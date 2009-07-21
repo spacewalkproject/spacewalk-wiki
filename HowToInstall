@@ -99,8 +99,6 @@ Otherwise you get error messeges like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
-It also requires cobbler 1.6.0 or greater which is in '''epel-testing''' repo. You must edit /etc/yum.repos.d/epel-testing.repo and change enabled=1.
-
 === CentOS 5 ===
 
 Follow the instructions for '''Red Hat Enterprise Linux 5''' with the additions:
