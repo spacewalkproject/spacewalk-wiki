@@ -120,4 +120,4 @@ find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://loca
 Note: If you are running rhnpush from a box that is NOT your spacewalk server, use the correct hostname in the --server param
 
 == Channel-to-update == 
-If you are using centOs or RHEL content, and wish to create channels according to an update level.  You may be interested in this script [https://fedorahosted.org/spacewalk/wiki/channel-to-update here].
+If you are using CenOS or RHEL content, and wish to create channels according to an update level.  You may be interested in this script [https://fedorahosted.org/spacewalk/wiki/channel-to-update here].
