@@ -5,21 +5,11 @@
 
 = Server Setup =
 
- * Install osa-dispatcher and jabberd
+ * Install osa-dispatcher:
 {{{
-yum install osa-dispatcher jabberd
-}}}
- * Edit /etc/jabberd/c2s.xml
-  * Uncomment both of the ''<pemfile>'' lines
-  * Uncomment the ''<starttls>'' line
-
- * Copy the server cert to the default location for osa-dispatcher
-{{{
-cp -p /etc/jabberd/server.pem /usr/share/rhn/RHNS-OSA-CERT
-}}}
- * Restart the rhn-satellite service to apply the changes
-{{{
-service rhn-satellite restart
+yum install osa-dispatcher
+chkconfig osa-dispatcher on
+service osa-dispatcher start
 }}}
 
 = Client Setup =
