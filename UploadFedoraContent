@@ -117,6 +117,10 @@ Note: I found that the above failed on Fedora 9 Everything.  My work around was
 find . -name "*rpm" | xargs rhnpush --channel=fedora-9-i386 --server=http://localhost/APP -v --tolerant -u spacewalk -p spacewalk
 }}}
 
+Note: The directory you pass as --dir=suchandsuch HAS TO contain the RPMs. rhnpush won't descend into directories to find RPMs.
+      Also, I had to put the -v at the end of the group of parameters.
+        --onekopaka
+
 Note: If you are running rhnpush from a box that is NOT your spacewalk server, use the correct hostname in the --server param
 
 == Channel-to-update == 
