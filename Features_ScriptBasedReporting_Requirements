@@ -148,3 +148,7 @@ State is unchanged. This is a read-only operation.
 This is a "should have" requirement.
 
 No details.
+
+== Specification ==
+
+See [wiki:Features/ScriptBasedReporting/Spec] for specification based on these requirements.
