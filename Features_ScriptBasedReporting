@@ -8,3 +8,6 @@
 
 [wiki:Features/ScriptBasedReporting/Spec]
 
+== Progress ==
+
+ * 2009-07-24: spacewalk-backend-0.6.24-1 contains /usr/bin/spacewalk-report and the inventory report
