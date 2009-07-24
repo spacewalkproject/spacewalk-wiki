@@ -19,10 +19,6 @@ This is a report users might run every month or every year in order to determine
 
 Determination of usage of consumed product denominated by subscriptions and entitlements.
 
-==== Persona ====
-
-CIO, Purchasing/Licensing Manager, Director of IT
-
 ==== Preconditions (assumptions) ====
 
 Spacewalk is installed and all manageable/purchased systems are connected and managed by Spacewalk. Organizations are defined and systems are allocated appropriately.
@@ -54,10 +50,6 @@ This is a report users might run every month or every year in order to better un
 ==== Goal ====
 
 Generate a report broken down by physical and virtual hardware and network information. Also included will be some basic information surrounding check-in dates, entitlements and package installation status. As for entitlement/subscription information, think entitlement report, but per system.
-
-==== Persona ====
-
-Director of IT, CIO
 
 ==== Preconditions (assumptions) ====
 
@@ -110,10 +102,6 @@ Twenty Most Important Controls and Metrics for Effective Cyber Defense and Conti
 ==== Goal ====
 
 Generate a report in compliance with the basic requirements of security software installation needs.
-
-==== Persona ====
-
-CIO, Director if IT
 
 ==== Preconditions (assumptions) ====
 
