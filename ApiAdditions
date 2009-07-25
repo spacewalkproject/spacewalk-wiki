@@ -197,7 +197,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.deleteCustomValues(string sessionKey, int serverId, array[string customInfoLabel]) || 0.5 || 4 || bbuckingham || done || * Delete one or more custom values from a system.  ||
 ||  system.deleteNote(string sessionKey, int serverId, int noteId) || 0.5 || 4 || jdobies || done || Deletes a note from a server. ||
 ||  system.deleteNotes(string sessionKey, int serverId) || 0.5 || 4 || jdobies || done || Deletes all notes on a given server. ||
-
+||  system.getDetails(string sessionKey, int sid) || 0.6 || 1 || jsherrill ||  ||  Add last_boot ||
 
 
 
