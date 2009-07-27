@@ -1,6 +1,8 @@
 
 = Directory Structure =
 
+== Common ==
+
  === /schema/spacewalk ===
 Contains DDL files.
 
@@ -20,6 +22,8 @@ Contains (.sql) files with DDL for ''common'' views.  File names match the name 
 
 === /schema/spacewalk/common/data ===
 Contains (.sql) files with SQL for inserting ''primer'' data into ''common'' tables.  File names match the name of table into which the data is inserted/updated.
+
+== Oracle ^only^ ==
 
 === /schema/spacewalk/oracle/class ===
 Contains '''oracle''' specific user defined types  (such as EVR_T) DDL files.  File names match the database type begin created.
@@ -66,7 +70,7 @@ Contains (.pks|.pkb) files with DDL for creating/replacing '''oracle''' packages
 === /schema/spacewalk/oracle/synonyms ===
 Contains (.sql) files with DDL for creating/replacing '''oracle''' synonyms.  File names match the name of synonym begin created.
 
-
+== PostgreSQL ^only^ ==
 
 === /schema/spacewalk/postgres/class ===
 Contains '''postgres''' specific user defined types  (such as EVR_T) DDL files.  File names match the database type begin created.
