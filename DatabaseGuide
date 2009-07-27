@@ -1,3 +1,17 @@
+[[PageOutline]]
+
+= Overview =
+
+To support multiple databases, the spacewalk schema source is divided into ''common'', ''oracle'' specific and ''postgres'' specific as of 0.6.
+In general, most of the tables, views and data (inserts) go into ''common''.  The triggers, stored procedures, packages, classes and types
+will go in the DB specific directories.  The build uses ''chameleon'' and ''blend'' to convert the common parts of the schema and blend them
+together with the specific parts into an installable file.
+
+= How To =
+
+== Adding A New DB Object ==
+
+== Building & Installing ==
 
 = Directory Structure =
 
@@ -113,3 +127,6 @@ Contains (.pks|.pkb) files with DDL for creating/replacing '''postgres''' packag
     Package Declaration (header)
   .pkb::
     Package Definition (body)
+
+= HowTo ==
+
