@@ -9,7 +9,7 @@ Common DDL/SQL (schema).
 
 === /schema/spacewalk/common/tables ===
 Contains (.sql) files with DDL for ''common'' tables.  File names match the name of the table being created and may include
-   * Tables definition
+   * Table definition
    * Table / Column comments
    * Constraints
    * Indexes
@@ -19,7 +19,7 @@ Contains (.sql) files with DDL for ''common'' tables.  File names match the name
 Contains (.sql) files with DDL for ''common'' views.  File names match the name of view begin created and contain the DDL for creating or replacing the view.
 
 === /schema/spacewalk/common/data ===
-Contains (.sql) files with SQL for inserting ''common'' ''primer'' data into tables.  File names match the name of table into which the data is inserted/updated.
+Contains (.sql) files with SQL for inserting ''primer'' data into ''common'' tables.  File names match the name of table into which the data is inserted/updated.
 
 === /schema/spacewalk/oracle/class ===
 Contains '''oracle''' specific user defined types  (such as EVR_T) DDL files.  File names match the database type begin created.
@@ -29,7 +29,7 @@ Contains '''oracle''' specific user defined types  (such as EVR_T) DDL files.  F
 
 === /schema/spacewalk/oracle/tables ===
 Contains (.sql) files with DDL for '''oracle''' only tables.  File names match the name of the table being created and may include:
-   * Tables definition
+   * Table definition
    * Table / Column comments
    * Constraints
    * Indexes
@@ -45,7 +45,7 @@ Contains (.sql) files with DDL for '''oracle''' views.  File names match the nam
 Populated at build ^''read-only''^
 
 === /schema/spacewalk/oracle/data ===
-Contains (.sql) files with SQL for inserting '''oracle''' ''primer'' data into tables.  File names match the name of table into which the data is inserted/updated.
+Contains (.sql) files with SQL for inserting ''primer'' data into '''oracle''' tables.  File names match the name of table into which the data is inserted/updated.
 
 === /schema/spacewalk/oracle/data/common ===
 Populated at build ^''read-only''^
