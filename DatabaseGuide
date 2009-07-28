@@ -26,12 +26,12 @@ Otherwise
  * Don't forget to ''port'' and add to all other database specific schema(s).
 
 Then
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Add your ''tablename''.sql file containing the DDL to create your table along with comments, constraints, indexes and sequences.
- * Update dependencies as needed.  See: ''Dependencies'' section
- * If you need to define triggers for your table, see ''Triggers'' section
- * If you need to prime your table with data at install, see ''Data'' section
- * Build the schema(s) and verify.   See: [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Building & Installing]
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
+ * If you need to define [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Triggers triggers] for your table
+ * If you need to prime your table with [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Data data] at install
+ * [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Build] the schema(s) and verify.
 
 To verify ''common'' table in oracle:
 
@@ -61,10 +61,10 @@ Otherwise
  * Don't forget to ''port'' and add to all other database specific schema(s).
 
 Then
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Add your ''tablename''.sql file containing the insert(s) SQL (named for table in which the data is inserted)
- * Update dependencies as needed.  See: ''Dependencies'' section
- * Build the schema(s) and verify.   See: [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Building & Installing]
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
+ * [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Build] the schema(s) and verify.
 
 To verify ''common'' data insert in oracle:
 
@@ -93,7 +93,7 @@ Otherwise
 Then
 
  * Add your ''viewname''.sql file containing the DDL/SQL to create/replace your view.
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
@@ -107,10 +107,10 @@ These objects are always database specific and need to be created in database sp
 
  * cd schema/spacewalk/oracle/class
  * Add your ''classname''.sql or ''typename''.sql file defining the class/type
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * cd schema/spacewalk/postgres/class
  * Add your __ported__ ''classname''.sql or ''typename''.sql file defining the class/type
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
@@ -122,10 +122,10 @@ These objects are always database specific and need to be created in database sp
 
  * cd schema/spacewalk/oracle/procs
  * Add your ''procedurename''.sql or ''functionname''.sql file in the /procs directory
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * cd schema/spacewalk/postgres/procs
  * Add your __ported__ ''procedurename''.sql or ''functionname''.sql file defining the proc/function
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
@@ -137,10 +137,10 @@ These objects are always database specific and need to be created in database sp
 
  * cd schema/spacewalk/oracle/packages
  * Add your ''packagename''.pks and ''packagename''.pkb or files defining the package header and body.
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * cd schema/spacewalk/postgres/packages
  * Add your __ported__ ''packagename''.pks and ''packagename''.pkb or files defining the package header and body.
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
@@ -156,8 +156,10 @@ These objects are always database specific and need to be created in database sp
 
  * cd schema/spacewalk/oracle/triggers
  * Add your ''tablename''.sql file defining the triggers for a given table (named for table not trigger)
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * cd schema/spacewalk/postgres/packages
  * Add your __ported__ ''tablename''.sql file defining the triggers for a given table (named for table not trigger).
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
@@ -170,7 +172,7 @@ These objects are oracle specific and need to be created in database specific di
 
  * cd schema/spacewalk/oracle/synonyms
  * Add your ''synonymname''.sql file defining the synonym.
- * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Test, no build required
 
 Notes:
