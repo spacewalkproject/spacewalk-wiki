@@ -1,5 +1,8 @@
 [[PageOutline]]
 
+
+ *** THIS PAGE IN-PROGRESS ****
+
 = Overview =
 
 To support multiple databases, the spacewalk schema source is divided into ''common'', ''oracle'' specific and ''postgres'' specific as of 0.6.
@@ -9,11 +12,141 @@ together with the specific parts into an installable file.
 
 = How To =
 
-== Adding A New DB Object ==
+=== Adding An Object ===
 
-== Update An Existing Object ==
+==== Tables ====
 
-== Building & Installing ==
+If the table is common for both oracle and postres (and they almost always are), you want to:
+
+ * cd schema/spacewalk/common/tables
+
+Otherwise
+
+ * cd schema/spacewalk(oracle|postgres)/tables
+ * Don't forget to add to all other database specific schema(s).
+
+Then
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Add your ''tablename''.sql file containing the DDL to create your table along with comments, constraints, indexes and sequences.
+ * Update dependencies as needed.  See: ''Dependencies'' section * Update dependencies as needed.  See: ''Dependencies'' section
+ * If you need to define triggers for your table, see ''Triggers'' section
+ * If you need to prime your table with data at install, see ''Data'' section
+ * Build the schema(s) and verify.   See: ''Building & Installing''
+
+To verify ''common'' table in oracle:
+
+  cd schema/spacewalk/oracle/tables/common/''tablename''.sql  <--- transformed by chameleon, output here
+
+To verify in ''common'' table  postgres:
+
+  cd schema/spacewalk/postgres/tables/common/''tablename''.sql  <--- transformed by chameleon, output here
+
+Notes:
+ * No TABs please!
+ * Do not create ''tablename''_trigger files in the /tables directory.  They now belong in /triggers
+ * Do not create ''tablename''_data files in the /tables directory.  They now belong in /data
+ * Do not define columns as NOT NULL using named ''column_name''_nn constraints.  Simply use the NOT NULL keyword.
+ * To be ''common'', your table must be defined using the ''common'' DDL grammar and need to be loaded in all databases.
+
+==== Views ====
+
+If the view is common for both oracle and postres (and they almost always are), you want to:
+
+ * cd schema/spacewalk/common/views
+
+Otherwise
+
+ * cd schema/spacewalk(oracle|postgres)/views
+ * Don't forget to add to all other database specific directories /views
+ 
+Then
+
+ * Add your ''viewname''.sql file containing the DDL to create/replace your view.
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+ * To be common, the view DDL and query must be compatible for all databases.
+ * Common views are simply copied to (oracle|postgres)/views/common.
+
+==== Classes & Types ====
+
+These objects are always database specific and need to be created in database specific directories.
+
+ * cd schema/spacewalk/oracle/class
+ * Add your ''classname''.sql or ''typename''.sql file defining the class/type
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * cd schema/spacewalk/postgres/class
+ * Add your __ported__ ''classname''.sql or ''typename''.sql file defining the class/type
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+
+==== Stored Procedures & Functions ====
+
+These objects are always database specific and need to be created in database specific directories.
+
+ * cd schema/spacewalk/oracle/procs
+ * Add your ''procedurename''.sql or ''functionname''.sql file in the /procs directory
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * cd schema/spacewalk/postgres/procs
+ * Add your __ported__ ''procedurename''.sql or ''functionname''.sql file defining the proc/function
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+
+==== Packages ====
+
+These objects are always database specific and need to be created in database specific directories.
+
+ * cd schema/spacewalk/oracle/packages
+ * Add your ''packagename''.pks and ''packagename''.pkb or files defining the package header and body.
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * cd schema/spacewalk/postgres/packages
+ * Add your __ported__ ''packagename''.pks and ''packagename''.pkb or files defining the package header and body.
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+
+==== Triggers ====
+
+These objects are always database specific and need to be created in database specific directories.
+
+ * cd schema/spacewalk/oracle/triggers
+ * Add your ''tablename''.sql file defining the triggers for a given table (named for table not trigger)
+ * cd schema/spacewalk/postgres/packages
+ * Add your __ported__ ''tablename''.sql file defining the triggers for a given table (named for table not trigger).
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+ * Triggers __always__ loaded after tables, views, procedures and packages so not need to add dependencies.
+
+==== Synonym ====
+
+These objects are oracle specific and need to be created in database specific directories.
+
+ * cd schema/spacewalk/oracle/synonyms
+ * Add your ''synonymname''.sql file defining the synonym.
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Test, no build required
+
+Notes:
+ * No TABs please!
+ * Synonyms are always installed last and not referenced by other objects in the schema so no dependencies should be required.
+
+=== Update An Object ===
+
+=== Building & Installing ===
+
+
 
 = Directory Structure =
 
