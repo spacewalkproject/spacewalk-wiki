@@ -114,6 +114,9 @@ These objects are always database specific and need to be created in database sp
 
 Notes:
  * No TABs please!
+ * .pks files define package header
+ * .pkb files define package body
+ * .pkb (package body) files should __never__ be listed as dependency of other objects.
 
 ==== Triggers ====
 
@@ -144,9 +147,39 @@ Notes:
 
 === Update An Object ===
 
+==== Dependencies ====
+
 === Building & Installing ===
 
+Files found in schema/spacewalk/common/
+ * tables
+ * data
 
+Are transformed from common -> specific using ''chameleon'' during the build and written into
+the schema/spacewalk/<db>/*/common directories.  Then ''blend'' aggregates and
+orders all of the (.sql, .pks, .pkb) files and generates a main.sql that may be used to install the schema.
+  {{{
+  cd schema/spacealk/oracle
+  make
+  }}}
+Or, to replace tablespace in Oracle Express:
+  {{{
+  cd schema/spacealk/oracle
+  make devel
+  }}}
+Or, to replace tablespace in Oracle Enterprise:
+  {{{
+  cd schema/spacealk/oracle
+  make devel TBS=data_tbs
+  }}}
+
+The ''devel'' target creates a devel.sql file that has the {{{[[tbs]]}}} macro replaced
+with the appropriate tablespace name.
+
+Then, for oracle using ''sqlplus'' load the ''devel'' schema.
+  {{{
+  SQL> @devel
+  }}}
 
 = Directory Structure =
 
