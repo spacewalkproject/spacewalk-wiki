@@ -285,6 +285,8 @@ Then, for oracle using ''sqlplus'' load the ''devel'' schema.
   SQL> @devel
   }}}
 
+RPMs for '''chameleon''' can be found [https://fedorahosted.org/releases/c/h/chameleon/ here] until released into Fedora extras.
+
 = Directory Structure =
 
 == Common ==
