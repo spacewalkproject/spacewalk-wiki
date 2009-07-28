@@ -23,10 +23,8 @@ If the table is common for both oracle and postres (and they almost always are),
 Otherwise
 
  * cd schema/spacewalk(oracle|postgres)/tables
- * Don't forget to ''port'' and add to all other database specific schema(s).
 
 Then
- * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Add your ''tablename''.sql file containing the DDL to create your table along with comments, constraints, indexes and sequences.
  * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * If you need to define [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Triggers triggers] for your table
@@ -43,6 +41,7 @@ To verify in ''common'' table  postgres:
 
 Notes:
  * No TABs please!
+ * If you added in a database specific directory, don't forget to replicate these steps in __all__ for all other databases.
  * Do not create ''tablename''_trigger files in the /tables directory.  They now belong in /triggers
  * Do not create ''tablename''_data files in the /tables directory.  They now belong in /data
  * Do not define columns as NOT NULL using named ''column_name''_nn constraints.  Simply use the NOT NULL keyword.
@@ -58,10 +57,8 @@ statements, you want to:
 Otherwise
 
  * cd schema/spacewalk(oracle|postgres)/data
- * Don't forget to ''port'' and add to all other database specific schema(s).
 
 Then
- * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * Add your ''tablename''.sql file containing the insert(s) SQL (named for table in which the data is inserted)
  * Update [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#Dependencies dependencies] as needed
  * [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Build] the schema(s) and verify.
@@ -76,6 +73,7 @@ To verify in ''common'' data insert  postgres:
 
 Notes:
  * No TABs please!
+ * If you added in a database specific directory, don't forget to replicate these steps in __all__ for all other databases.
  * Insert (select ...) cannot be handled by chameleon.
  * May contain sysdate, sequence (nextval) references, etc ..
 
@@ -88,7 +86,6 @@ If the view is common for both oracle and postres (and they almost always are), 
 Otherwise
 
  * cd schema/spacewalk(oracle|postgres)/views
- * Don't forget to ''port'' and add to all other database specific directories /views
  
 Then
 
@@ -98,6 +95,7 @@ Then
 
 Notes:
  * No TABs please!
+ * If you added in a database specific directory, don't forget to __port__ and replicate these steps in __all__ for all other databases.
  * To be common, the view DDL/SQL and query must be compatible for all databases.
  * Common views are simply copied to (oracle|postgres)/views/common.
 
