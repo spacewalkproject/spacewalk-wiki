@@ -28,7 +28,7 @@ Otherwise
 Then
  * Update dependencies as needed.  See: ''Dependencies'' section
  * Add your ''tablename''.sql file containing the DDL to create your table along with comments, constraints, indexes and sequences.
- * Update dependencies as needed.  See: ''Dependencies'' section * Update dependencies as needed.  See: ''Dependencies'' section
+ * Update dependencies as needed.  See: ''Dependencies'' section
  * If you need to define triggers for your table, see ''Triggers'' section
  * If you need to prime your table with data at install, see ''Data'' section
  * Build the schema(s) and verify.   See: ''Building & Installing''
@@ -40,6 +40,39 @@ To verify ''common'' table in oracle:
 To verify in ''common'' table  postgres:
 
   cd schema/spacewalk/postgres/tables/common/''tablename''.sql  <--- transformed by chameleon, output here
+
+Notes:
+ * No TABs please!
+ * Do not create ''tablename''_trigger files in the /tables directory.  They now belong in /triggers
+ * Do not create ''tablename''_data files in the /tables directory.  They now belong in /data
+ * Do not define columns as NOT NULL using named ''column_name''_nn constraints.  Simply use the NOT NULL keyword.
+ * To be ''common'', your table must be defined using the ''common'' DDL grammar and need to be loaded in all databases.
+
+==== Data ====
+
+If the table is common for both oracle and postres (and they almost always are) and the data is loaded using simple insert
+statements, you want to:
+
+ * cd schema/spacewalk/common/data
+
+Otherwise
+
+ * cd schema/spacewalk(oracle|postgres)/data
+ * Don't forget to ''port'' and add to all other database specific schema(s).
+
+Then
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Add your ''tablename''.sql file containing the insert(s) SQL (named for table in which the data is inserted)
+ * Update dependencies as needed.  See: ''Dependencies'' section
+ * Build the schema(s) and verify.   See: ''Building & Installing''
+
+To verify ''common'' data insert in oracle:
+
+  cd schema/spacewalk/oracle/data/common/''tablename''.sql  <--- transformed by chameleon, output here
+
+To verify in ''common'' data insert  postgres:
+
+  cd schema/spacewalk/postgres/data/common/''tablename''.sql  <--- transformed by chameleon, output here
 
 Notes:
  * No TABs please!
@@ -61,13 +94,13 @@ Otherwise
  
 Then
 
- * Add your ''viewname''.sql file containing the DDL to create/replace your view.
+ * Add your ''viewname''.sql file containing the DDL/SQL to create/replace your view.
  * Update dependencies as needed.  See: ''Dependencies'' section
  * Test, no build required
 
 Notes:
  * No TABs please!
- * To be common, the view DDL and query must be compatible for all databases.
+ * To be common, the view DDL/SQL and query must be compatible for all databases.
  * Common views are simply copied to (oracle|postgres)/views/common.
 
 ==== Classes & Types ====
