@@ -7,7 +7,7 @@
 
 To support multiple databases, the spacewalk schema source is divided into ''common'', ''oracle'' specific and ''postgres'' specific as of 0.6.
 In general, most of the tables, views and data (inserts) go into ''common''.  The triggers, stored procedures, packages, classes and types
-will go in the DB specific directories.  The build uses ''chameleon'' and ''blend'' to convert the common parts of the schema and blend them
+will go in the DB specific directories.  The build uses [https://fedorahosted.org/releases/c/h/chameleon/ chameleon] and ''blend'' to convert the common parts of the schema and blend them
 together with the specific parts into an installable file.
 
 = How To =
