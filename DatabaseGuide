@@ -179,7 +179,78 @@ Notes:
 
 === Update An Object ===
 
-==== Dependencies ====
+TBD
+
+=== Dependencies ===
+
+Dependencies between database objects are defined in .deps files.  The dependency (.deps) files resemble GNU Make
+dependency files - but they are not.  These files are processed by ''blend'' and conveniently have a similar syntax but there are
+several differences:
+ * Spaces not Tabs
+ * Namespaces used to handle duplicate file names that are naturally scoped by directory.
+ * Analysed for unused rules and unfound references.
+ * All (.deps) files are processed not just those listed.
+
+Blend and (.deps) files have a concept of ''namespaces''.  Each ''root'' directory listed on the command line for
+blend to process is considered a ''namespace'' which recursively includes all files and sub-directories.  Each .deps file
+can list a ''path'' which defines the order in which unqualified references are resolved with (.) dot being the
+current ''namespace''.  Support for both duplicate file names (in difference directories) and unqualified references
+at the same time provides for natural file names and keeps the .deps files clean and readable.
+
+For example:
+  {{{
+    path .
+  }}}
+Or
+  {{{
+  path . tables
+  }}}
+To resolve references first in the current ''namespace'' then within the tables ''namespace''.
+
+For example, this (.deps) file contained within the ''tables'' namespace:
+  {{{
+    path . views
+    ...
+    tableA :: viewB
+  }}}
+Where 'viewB' would first be resolved as:
+ 1. tables/viewB
+ 1. views/viewB
+
+This is compact and safe since names must be unique between tables and views.
+
+Namespaces provides for deterministic resolution of unqualified references.  Optionally, references
+may be qualified by ''namespace'' such as ''tables''/rhnChannel where ''tables'' is the namespace and rhnChannel is
+the object.  References may be further qualified by file extension such as rhn_user.pks 
+
+For example, this (.deps) file contained within the ''views'' namespace:
+  {{{
+    path . packages
+    ...
+    viewA :: procs/procA
+  }}}
+
+Would always resolve to a procedure named 'procA' because it has been qualified.
+
+The object (flie) ordering is deterministic and sorted as follows:
+
+ 1. By directory listed to blend
+ 2. Alphabetically as listed in the directory.
+ 3. As defined by dependency.
+
+Directory order (defined by DIRS in db Makefile):
+    1. class
+    1. types
+    1. tables
+    1. procs 
+    1. packages 
+    1. views 
+    1. triggers
+    1. data
+    1. synonyms
+
+Triggers, data and synonyms which are never referenced as dependencies really don't need (.deps) files
+because the directory ordering is enough.
 
 === Building & Installing ===
 
