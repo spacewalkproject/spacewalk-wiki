@@ -23,7 +23,7 @@ If the table is common for both oracle and postres (and they almost always are),
 Otherwise
 
  * cd schema/spacewalk(oracle|postgres)/tables
- * Don't forget to add to all other database specific schema(s).
+ * Don't forget to ''port'' and add to all other database specific schema(s).
 
 Then
  * Update dependencies as needed.  See: ''Dependencies'' section
@@ -57,7 +57,7 @@ If the view is common for both oracle and postres (and they almost always are), 
 Otherwise
 
  * cd schema/spacewalk(oracle|postgres)/views
- * Don't forget to add to all other database specific directories /views
+ * Don't forget to ''port'' and add to all other database specific directories /views
  
 Then
 
