@@ -231,7 +231,7 @@ Perhaps a required shared library or dll isn't installed where expected
 
 == Troubleshooting ==
 
-If you get errors such as: 
+* If you get errors such as: 
 {{{
    ORA-01654: unable to extend index SPACEWALK.RHN_PACKAGE_FILE_CID_PID_IDX by 5 in tablespace SPACEWALK
 }}}
@@ -245,6 +245,12 @@ If you get errors such as:
 }}}
 
 Quit sqlplus and restart spacewalk and oracle-xe (may not require a restart)
+
+* If you run out of space in Oracle XE you can try and reclaim some space by shrinking your storage:
+
+Administration > Storage > Compact Storage 
+in XE webUI (http://your.satellite.tld:9000/apex/) .
+
 
 == Misc links ==
 
