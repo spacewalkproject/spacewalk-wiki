@@ -76,10 +76,8 @@ To verify in ''common'' data insert  postgres:
 
 Notes:
  * No TABs please!
- * Do not create ''tablename''_trigger files in the /tables directory.  They now belong in /triggers
- * Do not create ''tablename''_data files in the /tables directory.  They now belong in /data
- * Do not define columns as NOT NULL using named ''column_name''_nn constraints.  Simply use the NOT NULL keyword.
- * To be ''common'', your table must be defined using the ''common'' DDL grammar and need to be loaded in all databases.
+ * Insert (select ...) cannot be handled by chameleon.
+ * May contain sysdate, sequence (nextval) references, etc ..
 
 ==== Views ====
 
