@@ -117,6 +117,7 @@ Notes:
  * .pks files define package header
  * .pkb files define package body
  * .pkb (package body) files should __never__ be listed as dependency of other objects.
+ * Packages are simulated using ''schemas'' in postgres
 
 ==== Triggers ====
 
@@ -132,7 +133,7 @@ Notes:
  * No TABs please!
  * Triggers __always__ loaded after tables, views, procedures and packages so not need to add dependencies.
 
-==== Synonym ====
+==== Synonyms ====
 
 These objects are oracle specific and need to be created in database specific directories.
 
@@ -296,5 +297,4 @@ Contains (.pks|.pkb) files with DDL for creating/replacing '''postgres''' packag
   .pkb::
     Package Definition (body)
 
-= HowTo ==
 
