@@ -190,6 +190,7 @@ several differences:
  * Namespaces used to handle duplicate file names that are naturally scoped by directory.
  * Analysed for unused rules and unfound references.
  * All (.deps) files are processed not just those listed.
+ * Named ''namespace''.deps instead of Makefile.deps to avoid confusion.  Eg: tables.deps, views.deps ...
 
 Blend and (.deps) files have a concept of ''namespaces''.  Each ''root'' directory listed on the command line for
 blend to process is considered a ''namespace'' which recursively includes all files and sub-directories.  Each .deps file
