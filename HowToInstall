@@ -132,6 +132,14 @@ This will pull down and install the set of RPMs required to get Spacewalk to run
 
 '''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
+Also, this will not work unless the spacewalk account has a password.  You can set up a password by logging in to sqlplus with the sys account and using the command 
+
+{{{
+PASSWORD user_name
+}}}
+
+where user_name = spacewalk.
+
 Once the Spacewalk RPM is installed you need to configure the application, you can run:
 
 {{{
