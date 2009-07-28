@@ -31,7 +31,7 @@ Then
  * Update dependencies as needed.  See: ''Dependencies'' section
  * If you need to define triggers for your table, see ''Triggers'' section
  * If you need to prime your table with data at install, see ''Data'' section
- * Build the schema(s) and verify.   See: ''Building & Installing''
+ * Build the schema(s) and verify.   See: [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Building & Installing]
 
 To verify ''common'' table in oracle:
 
@@ -64,7 +64,7 @@ Then
  * Update dependencies as needed.  See: ''Dependencies'' section
  * Add your ''tablename''.sql file containing the insert(s) SQL (named for table in which the data is inserted)
  * Update dependencies as needed.  See: ''Dependencies'' section
- * Build the schema(s) and verify.   See: ''Building & Installing''
+ * Build the schema(s) and verify.   See: [https://fedorahosted.org/spacewalk/wiki/DatabaseGuide#BuildingInstalling Building & Installing]
 
 To verify ''common'' data insert in oracle:
 
