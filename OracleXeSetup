@@ -86,7 +86,7 @@ Note that the port 8080 is used by tomcat so you cannot accept the default for t
 
 If you messed up these entries, you '''WILL''' have to uninstall and reinstall.
 
- * rpm -e oracle-xe-univ
+ * yum remove oracle-xe-univ
  * OracleXeSetup#Install
 
 == Setup tnsnames.ora ==
