@@ -1,0 +1,28 @@
+= Audit Reviewing in Spacewalk =
+
+== Introduction: What? Why? ==
+
+This capability was added to Spacewalk to make the lives of Information Assurance teams easier on Linux.
+
+Please see [http://www.stl.gtri.gatech.edu/jroys/] for the full details.
+
+== Basic setup ==
+
+  * Install Spacewalk 0.6 or above.
+  * Download aup.c [http://git.fedorahosted.org/git/spacewalk.git/?p=spacewalk.git;a=blob_plain;f=contrib/aup.c;hb=HEAD aup.c]
+  * Install audit-libs and audit-libs-devel
+  * Compile aup: `gcc -O2 -s -o /path/to/put/aup aup.c -lauparse`
+  * `cd /var/satellite/systemlogs/ ; mkdir host1{,/audit} host2{,/audit} localhost{,/audit}`
+  * `ausearch -r -ts $START -te $END | /path/to/aup > localhost/audit/audit-$T1-$T2.parsed`
+    * `export START="07/26/2009 00:00:00"`
+    * `export END="08/01/2009 23:59:59"`
+    * {{{export T1=`date -d "$START" +%s`}}}
+    * {{{export T2=`date -d "$END" +%s`}}}
+  * Or, put something like the following in a cronjob (and use pubkey ssh authentication):
+{{{
+ausearch -r -ts $START -te $END | /path/to/aup | \
+ssh spacewalk 'cat > /var/satellite/systemlogs/$OURHOSTNAME/audit/audit-$T1-$T2.parsed'
+}}}
+  * Or, use rsync to sync the entire /var/log over to /var/satellite/systemlogs/$OURHOSTNAME/
+
+To be continued.
