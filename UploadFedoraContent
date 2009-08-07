@@ -1,22 +1,23 @@
 = Upload content to Spacewalk =
 
-In order to use Spacewalk, you need to upload content to it. At the moment there is no nice way to sync a yum repo.
-In this example, I'll describe how to upload Fedora 9 content into Spacewalk. Basically, here are the steps:
- - create channel to hold the content
- - download the content from a yum repo
- - upload the content to Spacewalk
+In order to use Spacewalk, you need to populate it with content.  There are two ways to do this:
+ 1.  spacewalk repo sync (For syncing yum repos)
+ 2.  rhnpush (For simply pushing a rpms directly to the spacewalk server)
+
+Before doing either of these things, you will need to create a custom software channel within spacewalk.
+
 
 == Create Channel ==
 
-In order to upload content to Spacewalk, you'll need a channel to contain the packages. Attached you will find a script that can be used to create the channel using the available XML-RPC API.
+The easiest way to create a channel is through. the WebUI.  Simply log in and navigate to the "Channels"->"Manage Software Channels"-> "Create"  page.  
 
-For example, to create a channel for Fedora 9:
- {{{./create_channel.py --label=fedora-9-i386 --name "Fedora 9 32-bit" --summary "32-bit Fedora 9 channel"}}}
 
-Note: The channel name can't start with "Red Hat" (you will get an "Invalid Channel Name" error).
+Alternatively you can use the attached api script to create a channel from the command line. 
 
-=== usage ===
+For example, to create a channel for Cent Os 5:
+ {{{./create_channel.py --label=centos5-i386 --name "CentOS 5 32-bit" --summary "32-bit CentOS 5 channel"}}}
 
+Usage:
 {{{
 ./create_channel.py 
 usage: create_channel.py [options] --label <channel label> --name <channel name>
@@ -34,69 +35,41 @@ options:
 None
 }}}
 
-=== GUI Channel Creation === 
+Note: The channel name can't start with "Red Hat" (you will get an "Invalid Channel Name" error).
 
-Users can also use the GUI in Spacewalk to create channels.  If you wish to skip the above script you can go to the following path after logging in:
 
-Channels (top nav) -> Manage Software Channels (left nav) -> (+) create new channel
 
-From there you are able to create the channel.
 
-== download content ==
-There are many ways to download content rsync, wget, reposync, etc. Below we'll show two of these mechanisms: wget and reposync.
+== Repo-sync ==
 
-=== wget ===
-One way of getting content is to simply use wget to suck down the packages from a given yum repo. While not the most elegant method, it works, using easily available tools. Let's get the Fedora 9 content and put them into a Fedora9 directory.
+New in Spacewalk 0.6, we now support syncing directly with yum repositories.  
 
- - {{{mkdir Fedora9}}}
- - {{{cd Fedora9}}}
- - {{{wget -r -l1 --no-parent \}}}
-   {{{   http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/}}}
+On the channel details page ("Channels"->"Manage Software Channels"-> click on your channel), you can configure the yum repository to sync against.  Simply enter the repository URL, and a label.  The label can be anything, but it is used mainly for logging and caching purposes.  If you would like to go ahead and start a sync, simply check the 'Sync Repo' box before submitting the page.  After initiating a sync, it should begin in a minute or two (as long as another sync is not already in progress, in which case it will start once that one is done).  Once the sync starts, the 'last sync time' will become a link and you can click on it to view the log file of the current sync.  These logs are stored in /var/log/rhn/reposync/
 
-=== fetching content using reposync ===
-A more elegant method of getting packages for uploading, is using reposync. [http://wiki.linux.duke.edu/YumUtils YumUtils] has a really useful tool called [http://wiki.linux.duke.edu/YumUtils/RepoSync reposync] to synchronize packages to a local directory.
+Anytime you would like to re-sync the repo, simply revisit this details page, check 'Sync Repo' and hit update.  In the future we hope to add scheduled syncs in so you can sync every night for example. 
 
- - First, install it: {{{ yum install yum-utils}}}
- - Install the desired repo in this case, fedora.
- - 
+
+If you would prefer to sync using the command line, you can use the 'spacewalk-repo-sync' command.  It's usage is:
 {{{
-   $ head /etc/yum.repos.d/fedora.repo
-   [fedora]
-   name=Fedora $releasever - $basearch
-   baseurl=http://download.fedora.redhat.com/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
-   mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
-   enabled=1
-   gpgcheck=1
-   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora file:///etc/pki/rpm-gpg/RPM-GPG-KEY
-   }}}
-
- - Now pass in the repoid to reposync:
- {{{
-$ reposync --repoid=fedora
-[fedora: 1     of 7390  ] Downloading Fedora/915resolution-0.5.3-1.fc7.i386.rpm
-  915resolution-0.5.3-1.fc7 100% |=========================|  16 kB    00:00     
-[fedora: 2     of 7390  ] Downloading Fedora/AGReader-1.2-2.fc6.i386.rpm
-  AGReader-1.2-2.fc6.i386.r 100% |=========================|  47 kB    00:00     
-[fedora: 3     of 7390  ] Downloading Fedora/AllegroOGG-1.0.3-3.fc6.i386.rpm
-  AllegroOGG-1.0.3-3.fc6.i3 100% |=========================|  16 kB    00:00
-  ...
+spacewalk-repo-sync --channel CHANNEL_LABEL --URL YUM_URL --label REPO_LABEL --type TYPE
 }}}
- - Once the above step is done packages should be in the {{{fedora}}} directory:
- {{{
-$ ls -l fedora/Fedora/
-  total 18936
-  -rw-rw-r-- 1 root root   15960 2007-05-23 10:18 915resolution-0.5.3-1.fc7.i386.rpm
-  -rw-rw-r-- 1 root root   48528 2007-05-23 10:18 AGReader-1.2-2.fc6.i386.rpm
-  -rw-rw-r-- 1 root root   16687 2007-05-23 10:19 AllegroOGG-1.0.3-3.fc6.i386.rpm
-  ...
- }}}
+for example, to sync CentOs 5 to your custon 'centos5-i386' channel you would run:
+{{{
+/usr/bin/spacewalk-repo-sync --channel centos5-i386 --url http://mirrors.kernel.org/centos/5/os/i386/ --type yum --label centos5-base
+}}}
+
+Currently only 'yum' type is supported.  You can use any repo url that is supported by yum (http://, file://, etc...).  If running the command line directly, you must be the root user.
+
+
 
 == Push the Content ==
-Finally, time to push the content into the server. Once you have the RPMs, use {{{rhnpush}}} (provided by the rhnpush package) to push them to the Spacewalk server.
 
-For example, to upload the content downloaded using {{{reposync}}} do the following:
+If the packages you are wanting to push to the Spacewalk server are not in a yum repository, you can push them directly using the rhnpush tool.
+
+
+For example, to upload a directory of packages called 'dir_of_packges' to the channel 'my-custom-channel':
 {{{
-rhnpush -v --channel=fedora-9-i386 --server=http://localhost/APP --dir=fedora
+rhnpush -v --channel=my-custom-channel --server=http://localhost/APP --dir=dir_of_packages
 }}}
 
 Note: Make sure {{{/var/satellite}}} exists on the Spacewalk server and has owner:group {{{apache}}} before pushing. The -v option causes progress information to be printed, e.g.:
