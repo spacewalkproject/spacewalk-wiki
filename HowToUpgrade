@@ -233,6 +233,8 @@ This can be accomplished by the following:
 What's below are additional steps that were required for Spacewalk 0.4 to Spacewalk 0.5 upgrades. These steps are no longer required for
 Spacewalk 0.5 to Spacewalk 0.6 and can be safely ignored.
 
+= Update of Jabber SSL certificate location =
+
 With jabberd-2.2.5 package present in EPEL, it is necessary to update location of SSL certificate used by jabberd service: /etc/jabberd/server.pem
 This change is required to avoid file conflict that would otherwise occur during package upgrade: the PEM file in question is owned by both
 new jabberd from EPEL and another package from your earlier Spacewalk installation created at setup time 
