@@ -25,6 +25,7 @@ Spacewalk upgrade from version 0.5 to 0.6 involves several basic steps:
 
 
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
+  *  Backup your ssl build directory, ordinarily /root/ssl-build
   *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle documentation or contact your DBA
 
 
@@ -51,6 +52,9 @@ yum upgrade jabberd
 }}}
 
 At this point, jabberd ver. 2.2.8 should be installed on your system.
+
+For jabberd, osa-dispatcher and osad clients to work correctly, SSL certificate used by jabberd services needs to have correct
+user & group ownership (user & group == jabber).
 
 Check user and group ownership of file containing SSL certificate and private key used by jabberd services for setting up encrypted channels:
 
@@ -99,7 +103,7 @@ and instruct you to do these additional steps that you are required to do:
 
   *  Remove temporary content created in previous steps.
 
-One last time, make sure SSL certificate file used by jabberd services is user & group owned by "jabber" :
+One last time, make sure SSL certificate file used by jabberd services is now user & group owned by "jabber" :
 
 {{{
 # ls -l /etc/pki/spacewalk/jabberd/server.pem 
