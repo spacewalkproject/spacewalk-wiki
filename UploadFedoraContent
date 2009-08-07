@@ -42,7 +42,9 @@ Note: The channel name can't start with "Red Hat" (you will get an "Invalid Chan
 
 == Repo-sync ==
 
-New in Spacewalk 0.6, we now support syncing directly with yum repositories.  
+New in Spacewalk 0.6, we now support syncing directly with yum repositories:
+
+[[Image(reposync.jpg)]]
 
 On the channel details page ("Channels"->"Manage Software Channels"-> click on your channel), you can configure the yum repository to sync against.  Simply enter the repository URL, and a label.  The label can be anything, but it is used mainly for logging and caching purposes.  If you would like to go ahead and start a sync, simply check the 'Sync Repo' box before submitting the page.  After initiating a sync, it should begin in a minute or two (as long as another sync is not already in progress, in which case it will start once that one is done).  Once the sync starts, the 'last sync time' will become a link and you can click on it to view the log file of the current sync.  These logs are stored in /var/log/rhn/reposync/
 
