@@ -14,9 +14,9 @@ http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/
 
 configuration for sources.list:
 
-deb http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main[[BR]]
+deb http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ lenny main[[BR]]
 
-deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ sid main
+deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ lenny main
 
 '''ATTENTION: Packages are highly experimental.''' [[BR]]
 
@@ -69,6 +69,11 @@ and then I will start work on creating deb packages.
 
 Now I have virtual Debian server. I started to experiment with debian packages.
 I created deb package for rhnlib. Debian repo for getting packages was established.
+
+'''August 2009'''[[BR]]
+
+Rhnlib, rhpl and rhn-client-tools are in repository. It is possible to register
+with debian machine in spacewalk.
 
 
 
