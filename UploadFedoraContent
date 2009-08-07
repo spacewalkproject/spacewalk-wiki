@@ -64,7 +64,7 @@ Currently only 'yum' type is supported.  You can use any repo url that is suppor
 
 
 
-== Push the Content ==
+== rhnpush ==
 
 If the packages you are wanting to push to the Spacewalk server are not in a yum repository, you can push them directly using the rhnpush tool.
 
