@@ -1,7 +1,7 @@
 = Spacewalk Installation Instructions =
 
  * [#SettingupSpacewalkrepo Setting up Spacewalk repo ]
- * [#Aditionalrepospackages Aditional repos & packages ]
+ * [#Additionalrepospackages Additional repos & packages ]
  * [#OraclePre-Requisites Oracle Pre-Requisites ]
  * [#InstallingSpacewalk Installing Spacewalk ]
  * [#ManagingSpacewalk Managing Spacewalk ]
@@ -74,7 +74,7 @@ Fedora 11 nightly repo is at:
 http://miroslav.suchy.cz/spacewalk/nightly-candidate-f11/
 }}}
 
-= Aditional repos & packages =
+= Additional repos & packages =
 
 === Fedora 10 & 11 ===
 
