@@ -263,17 +263,17 @@ Are transformed from common -> specific using ''chameleon'' during the build and
 the schema/spacewalk/<db>/*/common directories.  Then ''blend'' aggregates and
 orders all of the (.sql, .pks, .pkb) files and generates a main.sql that may be used to install the schema.
   {{{
-  cd schema/spacealk/oracle
+  cd schema/spacewalk/oracle
   make
   }}}
 Or, to replace tablespace in Oracle Express:
   {{{
-  cd schema/spacealk/oracle
+  cd schema/spacewalk/oracle
   make devel
   }}}
 Or, to replace tablespace in Oracle Enterprise:
   {{{
-  cd schema/spacealk/oracle
+  cd schema/spacewalk/oracle
   make devel TBS=data_tbs
   }}}
 
