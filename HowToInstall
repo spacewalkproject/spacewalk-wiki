@@ -46,18 +46,6 @@ rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/x86_64/os/Packages/spacew
 
 NOTE: Fedora 10 is still available, just replace 11 above with 10.
 
-You might need to do
-
-{{{
-rpm --import http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-}}}
-
-to avoid error
-
-{{{
-error: unpacking of archive failed on file /etc/yum.repos.d/spacewalk.repo;4a813295: cpio: MD5 sum mismatch
-}}}
-
 === Nightly builds ===
 
 If you want to use the nightly builds 
