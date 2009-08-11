@@ -125,7 +125,6 @@ In order to get Spacewalk to run you need the Oracle client and an Oracle 10g da
 Just ask yum to install the application:
 
 {{{
-rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-former
 yum install gpg
 yum install spacewalk
 }}}
