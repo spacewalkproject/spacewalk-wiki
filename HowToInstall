@@ -22,7 +22,7 @@ RPM downloads of the project are available through a yum repository
   * http://spacewalk.redhat.com/yum - Binary RPMs
   * http://spacewalk.redhat.com/source - Source RPMs and tarballs
 
-To use this repository install spacewalk-repo RPM
+To use this repository install spacewalk-repo with commands below:
 
 === Red Hat Enterprise Linux, CentOS ===
 
@@ -45,6 +45,18 @@ rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/x86_64/os/Packages/spacew
 }}}
 
 NOTE: Fedora 10 is still available, just replace 11 above with 10.
+
+You might need to do
+
+{{{
+rpm --import http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+}}}
+
+to avoid error
+
+{{{
+error: unpacking of archive failed on file /etc/yum.repos.d/spacewalk.repo;4a813295: cpio: MD5 sum mismatch
+}}}
 
 === Nightly builds ===
 
