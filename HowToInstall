@@ -125,7 +125,7 @@ In order to get Spacewalk to run you need the Oracle client and an Oracle 10g da
 Just ask yum to install the application:
 
 {{{
-yum install gpg
+yum install gpg   # not needed for 0.7+, see 28a5a1ef314891a2b212930e64b5c9ca60088fe3
 yum install spacewalk
 }}}
 
