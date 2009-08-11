@@ -29,9 +29,11 @@ To use this repository install spacewalk-repo with commands below:
 {{{
 rpm -Uvh http://spacewalk.redhat.com/yum/0.6/RHEL/5/i386/os/Packages/spacewalk-repo-0.6-5.el5.noarch.rpm
 }}}
-or
+
+=== Fedora 10 ===
+
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.6/RHEL/5/x86_64/os/Packages/spacewalk-repo-0.6-5.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/10/i386/os/Packages/spacewalk-repo-0.6-5.fc10.noarch.rpm
 }}}
 
 === Fedora 11 ===
@@ -39,12 +41,6 @@ rpm -Uvh http://spacewalk.redhat.com/yum/0.6/RHEL/5/x86_64/os/Packages/spacewalk
 {{{
 rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/i386/os/Packages/spacewalk-repo-0.6-5.fc11.noarch.rpm
 }}}
-or
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/x86_64/os/Packages/spacewalk-repo-0.6-5.fc11.noarch.rpm
-}}}
-
-NOTE: Fedora 10 is still available, just replace 11 above with 10.
 
 === Nightly builds ===
 
