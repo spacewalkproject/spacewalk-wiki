@@ -53,7 +53,7 @@ Anytime you would like to re-sync the repo, simply revisit this details page, ch
 
 If you would prefer to sync using the command line, you can use the 'spacewalk-repo-sync' command.  It's usage is:
 {{{
-spacewalk-repo-sync --channel CHANNEL_LABEL --URL YUM_URL --label REPO_LABEL --type TYPE
+spacewalk-repo-sync --channel CHANNEL_LABEL --url YUM_URL --label REPO_LABEL --type TYPE
 }}}
 for example, to sync CentOs 5 to your custon 'centos5-i386' channel you would run:
 {{{
