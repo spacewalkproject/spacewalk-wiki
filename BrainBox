@@ -65,5 +65,10 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Ability to control activation keys with editor and comments -- Antoine
  * Management of symbolic links through configuration channels -- Antoine
  * Allow user-defined types for custom info items -- Antoine
- 
+ * Make it possible to subscribe to Errata and create the errata to subscribe to -- red
+  * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Lots of work, but also great benefit --red
+ * ...or maybe create an option to create stupid standard errata (like one for each update/rpm without any text, just to allow the pushing of updates to clients) automatically -- red
+  * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Fine enough to at least enable the pushing to the clients, but creating errata just for that?! -- red
+ * ...or make it possible to push updates/rpm to the clients instead of errata only -- red
+  * [[Image(action-add.gif)]] Enables pushing of updates to clients without anyone having to write errata - might just suffice for lots of use cases
  
