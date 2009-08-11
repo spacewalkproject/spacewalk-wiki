@@ -20,6 +20,18 @@ Spacewalk upgrade from version 0.5 to 0.6 involves several basic steps:
 = Assumptions =
 
   * For RHEL or CentOS, you will need the Base and EPEL repositories enabled for dependencies.
+  * You had set up your yum repository configuration to point to spacewalk 0.6 repo. Ordinarily, your yum repo configuration might look like:
+
+
+{{{
+[spacewalk]
+name=Spacewalk
+baseurl=http://spacewalk.redhat.com/yum/0.6/RHEL/5/$basearch/os/
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=1
+}}}
+
 
 =  Database and configuration backup  =
 
