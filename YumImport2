@@ -8,4 +8,5 @@
  * support multiple yum repos -> one channel
  * Better UI support
  * Background periodic (daily, weekly, etc) syncing
+ * Support Mirror lists
 
