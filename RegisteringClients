@@ -56,10 +56,10 @@ rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<k
 #!html
 <table border=1  style="border-collapse: collapse;background-color: #6D7B8D;">
 <td class="ambox-text" style=""><b><i style="color: red">Reminder:</i> If your spacewalk server is not running on official RHEL</b><br />
-<small>You will need to install the rhel-instnum package on Centos, Scientific, etc if it is hosting your spacewalk server.  You can download this package <a href="http://stahnma.fedorapeople.org/spacewalk-tools/">here</a>.</small></td>
+<small>You will need to install the rhel-instnum package on CentOS, Scientific, etc if it is hosting your spacewalk server.  You can download this package <a href="http://stahnma.fedorapeople.org/spacewalk-tools/">here</a>.</small></td>
 </table>
 }}}
-  if you're Spacewalk server is running on Centos (or probably any EL other than RHEL) you will need the rhel-instnum package installed on the server. 
+  if you're Spacewalk server is running on CentOS (or probably any EL other than RHEL) you will need the rhel-instnum package installed on the server. 
 
   1. Install required packages before the red hat network packages: 
     {{{
