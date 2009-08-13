@@ -154,35 +154,43 @@ spacewalk-setup --disconnected
 An example session is as follows:
 
 {{{
-[root@fjs-0-11 tmp]# spacewalk-setup --disconnected
-* Loading answer file: /usr/share/spacewalk/setup/defaults.conf.
-* Setting up environment and users.
-** GPG: Initializing GPG and importing RHN key.
+[root@fjs-0-02 yum.repos.d]# spacewalk-setup --disconnected
+Available database backends:
+   oracle
+   postgresql
+Database? oracle
+* Setting up Oracle environment.
 * Setting up database.
 ** Database: Setting up database connection.
 DB User? spacewalk
 DB Password? 
-DB SID? xe
+DB SID? XE
 DB hostname? localhost
 DB port [1521]? 
 DB protocol [TCP]? 
 ** Database: Testing database connection.
 ** Database: Populating database.
-*** Progress: ###################################################################
+*** Progress: ##########################################################
+* Setting up users and groups.
+** GPG: Initializing GPG and importing key.
+** GPG: Creating /root/.gnupg directory
 You must enter an email address.
 Admin Email Address? tito@example.com
 * Performing initial configuration.
-* Activating Satellite.
-** Loading Satellite Certificate.
+* Activating Spacewalk.
+** Loading Spacewalk Certificate.
 ** Verifying certificate locally.
-** Activating Satellite.
+** Activating Spacewalk.
 * Enabling Monitoring.
+* Configuring apache SSL virtual host.
+Should setup configure apache's default ssl server for you (saves original ssl.conf) y/n? y
+** /etc/httpd/conf.d/ssl.conf has been backed up to ssl.conf-swsave
 * Creating SSL certificates.
 CA certificate password? 
 Re-enter CA certificate password? 
 Organization? Tito Puente Solutions
-Organization Unit [fjs-0-11.example.com]? 
-Email Address [tito@example.com]? 
+Organization Unit [fjs-0-02.rhndev.redhat.com]? 
+Email Address [jesusr@redhat.com]? 
 City? Raleigh
 State? NC
 Country code (Examples: "US", "JP", "IN", or type "?" to see a list)? US
@@ -191,11 +199,12 @@ Country code (Examples: "US", "JP", "IN", or type "?" to see a list)? US
 ** SSL: Generating server certificate.
 ** SSL: Storing SSL certificates.
 * Deploying configuration files.
-* Starting Cobbler..
 * Update configuration in database.
+* Setting up Cobbler..
+Cobbler requires tftp and xinetd services be turned on for PXE provisioning functionality. Enable these services (y/n, default = 'y')?y
 * Restarting services.
 Installation complete.
-Visit https://fjs-0-11.example.com to create the satellite administrator account.
+Visit https://fjs-0-02.rhndev.redhat.com to create the Spacewalk administrator account.
 }}}
 
 If you are on x86_64 and tomcat5 fails to restart you need todo a:
