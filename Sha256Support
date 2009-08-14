@@ -68,7 +68,10 @@ rhnPackageFile Table:
 * rename md5sum to checksum
 * fix filelists page to reflect the rename
 
-rhnPackageSource Table:
+rhnChannel table:
+
+* Add a checksum_type_id column which is a fk to rhnChecksumType by id.
+
 
 }}}       
 
