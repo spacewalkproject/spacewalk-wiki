@@ -71,4 +71,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
   * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Fine enough to at least enable the pushing to the clients, but creating errata just for that?! -- red
  * ...or make it possible to push updates/rpm to the clients instead of errata only -- red
   * [[Image(action-add.gif)]] Enables pushing of updates to clients without anyone having to write errata - might just suffice for lots of use cases -- red
+ * Manage OpenVZ Containers
  
