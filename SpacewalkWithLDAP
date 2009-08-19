@@ -4,14 +4,15 @@ This page contains useful information in case you are deploying Spacewalk in an 
 it is common for user and group information to be pulled from an LDAP server.
 
 Note, that here we mean unix user accounts and groups, that are normally created during package installation (for example:
-apache, tomcat, nocpulse, ...). Instructions contained here do not describe how to setup your Spacewalk
+apache, tomcat, nocpulse, ...). [[BR]]
+Instructions contained here do not describe how to setup your Spacewalk
 server to authenticate users accessing Spacewalk web ui and API against a centralized identity service (LDAP, Kerberos).
 
 Setting up an environment for Spacewalk to play nice with users & groups defined in LDAP consists of two basic steps:
 
-* Creating user and group records in LDAP
+ * Creating user and group records in LDAP
 
-* Setting up client -- supposedly the system that Spacewalk is about to be deployed on
+ * Setting up the client -- supposedly the system that Spacewalk is about to be deployed on
 
 
 ----
@@ -21,31 +22,31 @@ Setting up an environment for Spacewalk to play nice with users & groups defined
 
 Let's assume the following:
 
-* you have your LDAP server configured, up and running
+ * you have your LDAP server configured, up and running
 
-* your database superuser is "admin"
+ * your database superuser is "admin"
 
-* your base of your organization is "dc=organization,dc=org"
+ * base of your organization is "dc=organization,dc=org"
 
-These were chosen for the simplicity of the whole description, values for your environment may be different.
+These values were chosen for the simplicity of the whole description, values for your environment may be different.
 
-Spacewalk requires following:
+Spacewalk installation requires the following:
 
-* users: apache, oracle, nocpulse, tomcat, jabber
+ * users: ''apache'', ''oracle'', ''nocpulse'', ''tomcat'', ''jabber''
 
-* groups: apache, oracle, tomcat, nocpulse, dba, jabber
+ * groups: ''apache'', ''oracle'', ''tomcat'', ''nocpulse'', ''dba'', ''jabber''
 
-* all apache, oracle, nocpulse, tomcat, jabber need to be created as system accounts (that is uid & gid < 500)
+ * all ''apache'', ''oracle'', ''nocpulse'', ''tomcat'', ''jabber'' need to be created as system accounts (that is uid & gid < 500)
 
-* oracle, nocpulse, tomcat have apache as their secondary group
+ * ''oracle'', ''nocpulse'', ''tomcat'' have ''apache'' as their secondary group
 
-* oracle is has dba as its secondary group
+ * ''oracle'' is has ''dba'' as its secondary group
 
 For convenience and more details, see file users-groups.ldif attached to this page. Edit this file to reflect the reality of your environment:
 
-* edit the dc values (in the example set to "dc=organization,dc=org")
+ * edit the ''dc'' values (in the example set to "dc=organization,dc=org")
 
-* edit the userPassword values (in the example set to MD5 encoded string 'password') 
+ * edit the ''userPassword'' values (in the example set to MD5 encoded string 'password') 
 
 Deploy the ldif file:
 
@@ -64,7 +65,7 @@ Make sure you have nss_ldap & authconfig packages installed:
 # yum install nss_ldap authconfig
 }}}
 
-Run authconfig-tui 
+Run authconfig-tui: 
 {{{
 # authconfig-tui
 }}}
@@ -130,6 +131,8 @@ oracle:x:101:103:oracle:/usr/lib/oracle/xe:/bin/bash
 # getent group apache
 apache:*:48:oracle,nocpulse,tomcat
 }}}
+
+If your LDAP server & client setup was successful, you may proceed with Spacewalk installation now.
 
 
 ----
