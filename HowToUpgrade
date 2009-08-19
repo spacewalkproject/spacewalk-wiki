@@ -124,6 +124,12 @@ One last time, make sure SSL certificate file used by jabberd services is now us
 
 = Package upgrade =
 
+Before the actual package upgrade, run following command:
+
+{{{
+# semanage port -d -t cobbler_port_t -p tcp 25152
+}}}
+
 Perform package upgrade using yum:
 
 {{{
