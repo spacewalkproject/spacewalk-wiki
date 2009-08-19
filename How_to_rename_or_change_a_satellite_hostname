@@ -118,8 +118,10 @@ SQL> quit
 }}}
 
  12. Go to 'Satellite Tools' -> 'String Manager' in the UI and ensure that all strings are updated to reflect the new hostname.
+ 
+ 13. In /etc/cobbler/settings change "next_server:", "redhat_management_server:", and "server:" to point to your new FQDN.
 
- 13. Test, test and test some more.
+ 14. Test, test and test some more.
 
 '''Done.'''
 
