@@ -46,7 +46,7 @@ gpgcheck=1
 Stop Spacewalk:
 
 {{{
-/usr/sbin/rhn-satellite stop
+# /usr/sbin/rhn-satellite stop
 }}}
 
 At this point, all jabberd processes (c2s, s2s, sm, router) need to be stopped.
@@ -54,13 +54,13 @@ At this point, all jabberd processes (c2s, s2s, sm, router) need to be stopped.
 Clean jabberd database:
 
 {{{
-rm -f /var/lib/jabberd/db/*
+# rm -f /var/lib/jabberd/db/*
 }}}
 
 Upgrade jabberd:
 
 {{{
-yum upgrade jabberd
+# yum upgrade jabberd
 }}}
 
 At this point, jabberd ver. 2.2.8 should be installed on your system.
@@ -71,7 +71,7 @@ user & group ownership (user & group == jabber).
 Check user and group ownership of file containing SSL certificate and private key used by jabberd services for setting up encrypted channels:
 
 {{{
-ls -l /etc/pki/spacewalk/jabberd/server.pem
+# ls -l /etc/pki/spacewalk/jabberd/server.pem
 }}}
 
 This will either say "jabber" :
@@ -206,7 +206,7 @@ as root (note that you should run this command regardless of your current monito
 enabled, running this script will have no ill effect):
 
 {{{
-/usr/share/spacewalk/setup/upgrade/rhn-update-monitoring.pl
+# /usr/share/spacewalk/setup/upgrade/rhn-update-monitoring.pl
 }}}
 
 You may now choose to activate monitoring or both monitoring & monitoring scout on your Spacewalk.
@@ -214,13 +214,13 @@ You may now choose to activate monitoring or both monitoring & monitoring scout 
 If you had monitoring enabled previously and wish to re-enable it now (without having to do so in the web ui), run as root:
 
 {{{
-/usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
+# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
 }}}
 
 If you'd like to re-enable both monitoring and monitoring scout on your Spacewalk (without having to do so in the web ui), instead run as root
 
 {{{
-/usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
+# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
 }}}
 
 = Update Spacewalk configuration files =
