@@ -148,12 +148,17 @@ Make sure your Spacewalk server is down:
 # /usr/sbin/rhn-satellite status
 }}}
 
-Make sure your oracle server is running. For oracle-xe that would be:
+Make sure your oracle server is running (likely it isn't running since the earlier 'rhn-satellite stop' command stops the oracle-xe processes). For oracle-xe that would be:
 
 {{{
 # service oracle-xe status
 }}}
 
+If Oracle isn't running, start it
+
+{{{
+# service oracle-xe start
+}}}
 Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
