@@ -14,6 +14,7 @@
  * Storage for database: 128KB per client system + 64MB per channel
  * Storage for packages (default /var/satellite): Depends on what you're storing; Red Hat recommend 6GB per channel for their channels
  * 2GB RAM minimum, 4GB recommended
+ * If you use LDAP as a central identity service and wish to pull user and group information from it, see [https://fedorahosted.org/spacewalk/wiki/SpacewalkWithLDAP]
 
 = Setting up Spacewalk repo =
 
