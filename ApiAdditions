@@ -22,6 +22,12 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 ||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
-||  monitoring.listProbes(sid) || 0.6 || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || 0.6 || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || 0.6 || 3 ||  ||  ||  ||
+||  monitoring.listProbes(sid) || 0.7 || 3 ||  ||  ||  ||
+||  monitoring.getLatestProbeResults(sid) || 0.7 || 3 ||  ||  ||  ||
+||  monitoring.getAllResults(sid, probe_id) || 0.7 || 3 ||  ||  ||  ||
+
+||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
+||  channel.software.listChildren(sid) || 0.7 || 3 ||  ||  ||  ||
+
+
+
