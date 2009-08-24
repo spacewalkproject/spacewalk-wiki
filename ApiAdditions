@@ -28,6 +28,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 ||  channel.software.listChildren(cid) || 0.7 || 3 ||  ||  ||  ||
+||  channel.software.CloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
 
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
 ||  schedule.archiveActions(array[aid]) || 0.7 || 3 ||  ||  ||  ||
