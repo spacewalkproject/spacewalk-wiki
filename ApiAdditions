@@ -27,7 +27,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  monitoring.getAllResults(sid, probe_id) || 0.7 || 3 ||  ||  ||  ||
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
-||  channel.software.listChildren(sid) || 0.7 || 3 ||  ||  ||  ||
+||  channel.software.listChildren(cid) || 0.7 || 3 ||  ||  ||  ||
 
+||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
+||  schedule.archiveActions(array[aid]) || 0.7 || 3 ||  ||  ||  ||
 
 
