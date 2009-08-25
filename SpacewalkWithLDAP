@@ -40,7 +40,7 @@ Spacewalk installation requires the following:
 
  * ''oracle'', ''nocpulse'', ''tomcat'' have ''apache'' as their secondary group
 
- * ''oracle'' is has ''dba'' as its secondary group
+ * ''oracle'' has ''dba'' as its secondary group
 
 For convenience and more details, see file users-groups.ldif attached to this page. Edit this file to reflect the reality of your environment:
 
