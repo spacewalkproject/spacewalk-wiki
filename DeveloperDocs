@@ -21,6 +21,7 @@ This section contains information about developer topics.  You may also be inter
    * CodeAnalysis -- a document going through the java packages describing what they contain and what work is needed.
    * [https://www.ohloh.net/p/spacewalk/analyses/latest CodeAnalysis] -- Analyze of code on Ohloh.net
    * TaskoMatic -- Document outlining what taskomatic is and what each task is used for.
+   * CobblerIntegration - How spacewalk and cobbler interact
 
  * Working with the code
    * [GitGuide Git Guide] -- how to work with Git, the source control of choice for Spacewalk
