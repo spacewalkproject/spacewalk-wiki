@@ -8,6 +8,8 @@
 
 == Directory Structure (where things are stored) ==
 
+{{{
 /var/lib/rhn/kickstart/snippets
 /var/lib/rhn/kickstart/wizard
 /var/lib/rhn/kickstart/raw
+}}}
