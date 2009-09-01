@@ -28,7 +28,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
   * Index name  - controls which index to search, example: {docs, errata, hwdevice, package, server}
    * This corresponds to the directory name for the index, typically stored at: /usr/share/rhn/search/indexes 
   * Query - this is what we are searching for, could be a package name, system name, phrase for doc search etc
- * In our code, this is the main method which begins a search "com.redhat.satellite.search.index.IndexManager::search"
+ * In our code, the entry point for search functionality is defined here: "com.redhat.satellite.search.index.IndexManager::search"
 
 
 === XMLRPC ===
@@ -36,15 +36,37 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
   * The address to listen on is configured by : "search.rpc_address"
   * The port number is configured by : "search.rpc_port"
  * Namespace: index  
- * Handler: com.redhat.satellite.search.rpc.handlers.IndexHandler
+ * Handler: com.redhat.satellite.search.rpc.handlers.!IndexHandler
   * Description:  This handles the basic searches through lucene indexes.  Most searches use this namespace.
  * Namespace: db  
- * Handler: com.redhat.satellite.search.rpc.handlers.DatabaseHandler
+ * Handler: com.redhat.satellite.search.rpc.handlers.!DatabaseHandler
   * Description:  This handles searches which ONLY look at the database, it will not search any lucene indexes.  It's mainly used for errata search by a date range.   
  * Namespace: admin  
- * Handler:com.redhat.satellite.search.rpc.handlers.AdminHandler
-  * Description:  This is the administration interface, currently is supports triggering a "reindex" for any index type we know about.  This is useful if you 
+ * Handler: com.redhat.satellite.search.rpc.handlers.!AdminHandler
+  * Description:  This is the administration interface, currently is supports triggering a "reindex" for any index type we know about.  This is useful if you want the index to be updated immediately, example: this is invoked by the python backend after a server is registered and when a new custom errata is created. 
+
 === Lucene ===
+ * Index files are stored at: /usr/share/rhn/search/indexes
+  * Documentation "doc" indexes are delivered through a RPM "spacewalk-doc-indexes".  
+  * All other doc indexes are generated based on the database !SearchServer is connected to.  
+ * How can I see what is indexed
+  * You can use [http://www.getopt.org/luke Luke] to open a lucene index in a GUI and see what is available
+   * We include a luke jar in our git repo, this is not bundled for delivery, it is only for development
+    * spacewalk/search-server/scripts/lukeall-0.8.1.jar
+   * Example run:
+    * java -jar spacewalk/search-server/scripts/lukeall-0.8.1.jar
+    * Select index to open: "/usr/share/rhn/search/indexes/package"  
+    * Click OK
+    * Select the "Documents" view, then browse through the items.
+     * Note:  Lucene does not store all values in a way we can view, only fields which were marked as "Stored" will be displayed.  
+    * Searches will likely not work as desired from Luke.  Since we are using a custom NGramAnalyzer, we need to import this into Luke in order for our searches to function.
+
+ * How to Clean
+  * If you want to clean the existing indexes you can run a script: "/etc/init.d/rhn-search cleanindex"
+   * REMEMBER  there are 2 parts to cleaning the indexes
+    * Delete the directory containing the indexes
+    * Adjust the database 'rhnIndexerWork' entry for the specified 'object_type'.  This is what will trigger the data to be re-read.
+
 === Database ===
  * [http://ibatis.apache.org iBatis] is the ORM !SearchServer uses
  * Location of queries
@@ -54,9 +76,9 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
 == Howto Build/Run ==
 == Configuration ==
-* Resides in git at: spacewalk/search-server/src/config/rhn-search.conf
- * Is installed on a target machine at: /etc/rhn/search/rhn-search.conf
-* Example
+ * Resides in git at: spacewalk/search-server/src/config/rhn-search.conf
+  * Is installed on a target machine at: /etc/rhn/search/rhn-search.conf
+ * Example
 {{{
 search.index_work_dir=/usr/share/rhn/search/indexes
 search.rpc_handlers=index:com.redhat.satellite.search.rpc.handlers.IndexHandler,db:com.redhat.satellite.search.rpc.handlers.DatabaseHandler,admin:com.redhat.satellite.search.rpc.handlers.AdminHandler
@@ -94,7 +116,13 @@ search.log.explain.results = false
 === System Search ===
 === Documentation Search ===
 == Misc Notes ==
-* Security Limitations
- * !SearchServer does little limiting of results to user permissions, it is expected that the webui/api will handle user/org permission filtering.   Typically this is handled automatically in the webui/api code when we "flesh" out a DTO from the list of ids.  
+ * [http://en.wikipedia.org/wiki/N-gram NGram]
+  * We are using a ngram analyzer.  This gives us a "fuzzy" like search behavior, it allows spelling errors to be forgiven and likely matches to be found.  
+   * Drawback - people are often confused initially when they search on a specific term and see unrelated matches.  
+   * Since results are presented with highest score first, users will be presented with best choices first, followed by potentially undesired results.
+ * Security Limitations
+  * !SearchServer does little limiting of results to user permissions, it is expected that the webui/api will handle user/org permission filtering.   Typically this is handled automatically in the webui/api code when we "flesh" out a DTO from the list of ids.  
+== Further Questions ==
+Send an email to jmatthews AT redhat DOT com
 
 
