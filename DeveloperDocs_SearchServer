@@ -1,35 +1,54 @@
-= SearchServer - Developer Notes =
+= !SearchServer - Developer Notes =
 == Overview ==
-The spacewalk webui performs searches through a XMLRPC interface to a separate java process, which we call "!SearchServer".[[BR]]
-This !SearchServer uses [http://lucene.apache.org Lucene] for the search engine.
-* Input:  XMLRPC message, generally a query in LuceneQueryParser syntax
-* Output: List of matches with score/rank, highest scoring matches on top
+The spacewalk webui performs searches through a XMLRPC interface to a separate java process that uses [http://lucene.apache.org Lucene] for the search engine.  We call this separate process the "!SearchServer".[[BR]]
+
+A typical search involves
+ * WebUI forming a query in [http://lucene.apache.org/java/2_3_2/queryparsersyntax.html LuceneQueryParser] syntax.
+ * WebUI sends the query to !SearchServer through XMLRPC
+ * !SearchServer looks to see what index should be searched: {Errata, Packages, System, Documentation}
+ * Lucene searches index files, and a list of results are obtained.
+  * Result consists of the object ID and the score from lucene (float 1.0 max value, 0.0 lowest) 
+ * !SearchServer trims the returned list so only values which are above a threshold score (set in configuration file) are returned.
+  * Additionally the max number of results returned is limited by the configuration setting of "search.max_hits_returned"
+ * WebUI uses the returned ids to flesh out the info it wants to display
+  * This step is also responsible for filtering the data to retain proper user/org permission rules.
+ * Fleshed out objects displayed 
 
 === Basic Operations ===
 ==== Index ====
-Upon start up !SearchServer reads the database table, "rhnIndexerWork" to determine what has been indexed previously.  Each row corresponds to a different object_type, ex: {errata, packages, systems}.   Once !SearchServer knows the last time the index operation ran, and the last id it indexed, it asks the database for objects which are new and/or modified since then.   These new objects get indexed by lucene.
+ * Upon start up !SearchServer reads the database table, "rhnIndexerWork" to determine what has been indexed previously. 
+  * Each row corresponds to a different object_type, ex: {errata, packages, systems}.   
+ * Once !SearchServer knows the last time the index operation ran, and the last id it indexed, it asks the database for objects which are new and/or modified since then.
+ * These new objects are passed into Lucene so they may be indexed for later searching.
+ * After startup, !SearchServer will poll the database for updated changes.  Typical polling period is 5 minutes, but this configurable.
 ==== Retrieval ====
 When a request comes in through XMLRPC and matches the "index" namespace, lucene is used to search the indexes for a match.  
-* Format of message:  
- * Session ID  - corresponds to logged in user id
- * Index name  - 
- * Query 
-"com.redhat.satellite.search.index.IndexManager::search"
+ * Format of message:  
+  * Session ID  
+  * Index name  - controls which index to search, example: {docs, errata, hwdevice, package, server}
+   * This corresponds to the directory name for the index, typically stored at: /usr/share/rhn/search/indexes 
+  * Query - this is what we are searching for, could be a package name, system name, phrase for doc search etc
+ * In our code, this is the main method which begins a search "com.redhat.satellite.search.index.IndexManager::search"
 
 
 === XMLRPC ===
+ * By default we listen on 127.0.0.1, port 2828
+  * The address to listen on is configured by : "search.rpc_address"
+  * The port number is configured by : "search.rpc_port"
  * Namespace: index  
  * Handler: com.redhat.satellite.search.rpc.handlers.IndexHandler
-  * Description:  
+  * Description:  This handles the basic searches through lucene indexes.  Most searches use this namespace.
  * Namespace: db  
  * Handler: com.redhat.satellite.search.rpc.handlers.DatabaseHandler
-  * Description
+  * Description:  This handles searches which ONLY look at the database, it will not search any lucene indexes.  It's mainly used for errata search by a date range.   
  * Namespace: admin  
  * Handler:com.redhat.satellite.search.rpc.handlers.AdminHandler
-  * Description
+  * Description:  This is the administration interface, currently is supports triggering a "reindex" for any index type we know about.  This is useful if you 
 === Lucene ===
 === Database ===
-
+ * [http://ibatis.apache.org iBatis] is the ORM !SearchServer uses
+ * Location of queries
+  * spacewalk/search-server/src/config/com/redhat/satellite/search/db
 
 
 
@@ -76,8 +95,6 @@ search.log.explain.results = false
 === Documentation Search ===
 == Misc Notes ==
 * Security Limitations
- * !SearchServer does little limiting of results to user permissions, it is expected that the webui/api will handle user/org permission filtering.   Typically this handled automatically in the webui/api code when we "flesh" out a DTO from the list of ids.  
-* Results limited to top 500
- * If you run a query which returns 3000 results, only the top 500 are returned.  This could create a problem for large installs with many organizations.  Since !SearchServer is not aware of organization trust/sharing, it will blindly rank the 3000 results based on highest score, this could mean that it returns 0 results which are visible to the current user.  [https://bugzilla.redhat.com/show_bug.cgi?id=515795 bz515795]
+ * !SearchServer does little limiting of results to user permissions, it is expected that the webui/api will handle user/org permission filtering.   Typically this is handled automatically in the webui/api code when we "flesh" out a DTO from the list of ids.  
 
 
