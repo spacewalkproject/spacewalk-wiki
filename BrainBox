@@ -73,5 +73,5 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
   * [[Image(action-add.gif)]] Enables pushing of updates to clients without anyone having to write errata - might just suffice for lots of use cases -- red
  * Manage OpenVZ Containers
  * Allow a channel to be available as a raw yum repo.  This would work for building tools like mock.  I often have to keep rpms around in 2 spots so I can perform mock biulds.  Please, please fix this. --stahnma
-  * [wiki:Per_Channel_Vars Per Channel Vars for Config Channels]
-  * Allow postinstall actions for the server. E.g. force software and configuration updates, set custom variables, send mail.
+ * [wiki:Per_Channel_Vars Per Channel Vars for Config Channels]
+ * Allow postinstall actions for the server. E.g. force software and configuration updates, set custom variables, send mail.
