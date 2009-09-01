@@ -1,7 +1,7 @@
 NOTE: WORK IN PROGRESS, DONT RECOMMEND YOU FOLLOW THIS YET AS ITS VERY OLD.
 
-<pre>
-Introduction
+
+== Introduction ==
 -------------
 This is a small document to help developers configure Eclipse for
 use with Spacewalk's java code.  
@@ -11,14 +11,14 @@ You will still need to go to the command line to make sure things still
 work in the common build environment using Ant.
 
 
-Install Eclipse from your Distro:
+== Install Eclipse from your Distro: ==
 -------------------------------
 
 yum install eclipse
 
 
 
- OR Install Eclipse from GZIP file
+== OR Install Eclipse from GZIP file ==
 ------------------------------
 
 Go here to grab the latest rev of eclipse.  Make sure you get the gtk version
@@ -45,7 +45,7 @@ If you downloaded / extracted this to a directory below your home directory, you
 Now skip down below to the Create Project Directory step.
 
 
-Setup the Project directory
+== Setup the Project directory ==
 ----------------------------
 1) Create a directory called workspace in your home directory
 
@@ -130,7 +130,7 @@ Setup the Project directory
 
 You are ready to build the project.  Project -> Build All.
 
-Code generation
+== Code generation ==
 ----------------
 
 If you want to configure Eclipse to generate code to match the coding
@@ -166,7 +166,7 @@ Configure import statement order:
 5) Click OK
 
 
-Getting JUnit to run in eclipse:
+== Getting JUnit to run in eclipse: ==
 --------------------------------
 You need to add a few libararies to your path to get eclipse to 
 run JUnit.  Right click on your top level entry in your project.  Click
@@ -211,4 +211,3 @@ it conflicts with the IBM rpm).  Then change the JAVACMD in your
     JAVACMD="/usr/java/j2sdk1.4.2_06/bin/java"
 
 The above command uses the Sun VM installed using the Sun RPM.
-</pre>
