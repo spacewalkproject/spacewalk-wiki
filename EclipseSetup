@@ -25,18 +25,18 @@ Go here to grab the latest rev of eclipse.  Make sure you get the gtk version
 Download Eclipse SDK 3.X.X. to /tmp, where .X.X translates to the version they display on their downloads page.  Make sure in the below commands that you substitute the proper version.
 
 tar/gunzip the downloaded file:
-
-  # tar xvzf eclipse-SDK-3.X.X-linux-gtk.tar.gz
-
+{{{
+   tar xvzf eclipse-SDK-3.X.X-linux-gtk.tar.gz
+}}}
 This will create a new subdir with a bunch of files in ./eclipse
 
 Now, as root, move ./eclipse to /opt/eclipse-3.X.X 
-
+{{{
   # su root
   # mv ./eclipse /opt/eclipse-3.X.X
   # cd /opt
   # ln -s eclipse-3.X.X eclipse
-
+}}}
 If you downloaded / extracted this to a directory below your home directory, you will not be able to see it once you become root.  You will need to move it to /tmp, then become root and move it to /opt.
 
 Now skip down below to the Create Project Directory step.
@@ -44,32 +44,39 @@ Now skip down below to the Create Project Directory step.
 
 == Setup the Project directory ==
 1) Create a directory called workspace in your home directory
-
+{{{
    cd ~/
    mkdir workspace
-
+}}}
 2) In that workspace directory, create a symlink to your java directory.
    NOTE: assumes your checkout is in ~/spacewalk
-
+{{{
    cd ~/workspace
    ln -s ~/spacewalk/java spacewalk
-
+}}}
 2.5) cd to ~/spacewalk/java/.  We use ivy to resolve our jar dependancies.  Run the following cmd below to properly setup some of your .classpath entries.
 
-   
+{{{
    ant gen-eclipse
+}}}
 
 3) Copy eclipse support files from rhn-java/eng/java/conf to the root of your rhn-java checkout.
    NOTE: DO NOT COPY THE XML FILES
-
+{{{
    cd  ~/spacewalk/java/
    cp eng/java/conf/eclipse/.project .
    cp -R eng/java/conf/eclipse/.externalToolBuilders .
+}}}
 
 4) Start Eclipse.
+{{{
+   eclipse
+}}}
+or if you installed manually
 
+{{{
    /opt/eclipse/eclipse
-
+}}}
 5) Once, Eclipse is started setup the project:
 
    - File -> New Project
@@ -172,6 +179,7 @@ Properties:
 2) Click "Add Class Folder"
 3) Select rhn-java/code/webapp.  Make sure it shows up in the list.
 4) Add the following jars by clicking "Add JARs":
+{{{
    spacewalk/buildconf/tempjars/antlr-2.7.5H3.jar
    spacewalk/buildconf/tempjars/asm.jar
    spacewalk/buildconf/tempjars/asm-attrs.jar
@@ -179,7 +187,7 @@ Properties:
    spacewalk/buildconf/tempjars/hibernate3.jar
    /usr/share/java/logdriver.jar
    spacewalk/buildconf/tempjars/strutstest-2.1.3.jar
-   
+}}}
 5) You should be able to right click on a FooTest class and
    say "Run As -> Junit Test"
    
