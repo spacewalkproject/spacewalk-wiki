@@ -10,7 +10,15 @@ For now, I use Eclipse to create and edit classes and run unit tests.
 You will still need to go to the command line to make sure things still
 work in the common build environment using Ant.
 
-Install Eclipse from GZIP file
+
+Install Eclipse from your Distro:
+-------------------------------
+
+yum install eclipse
+
+
+
+ OR Install Eclipse from GZIP file
 ------------------------------
 
 Go here to grab the latest rev of eclipse.  Make sure you get the gtk version
@@ -44,13 +52,13 @@ Setup the Project directory
    cd ~/
    mkdir workspace
 
-2) In that workspace directory, create a symlink to your rhnjava directory.
-   NOTE: assumes your checkout is in ~/rhn-java
+2) In that workspace directory, create a symlink to your java directory.
+   NOTE: assumes your checkout is in ~/spacewalk
 
    cd ~/workspace
-   ln -s ~/rhn-java .
+   ln -s ~/spacewalk/java spacewalk
 
-2.5) cd to rhn-java.  We use ivy to resolve our jar dependancies.  Run the following cmd below to properly setup some of your .classpath entries.
+2.5) cd to ~/spacewalk/java/.  We use ivy to resolve our jar dependancies.  Run the following cmd below to properly setup some of your .classpath entries.
 
    
    ant gen-eclipse
@@ -58,7 +66,7 @@ Setup the Project directory
 3) Copy eclipse support files from rhn-java/eng/java/conf to the root of your rhn-java checkout.
    NOTE: DO NOT COPY THE XML FILES
 
-   cd ~/rhn-java
+   cd  ~/spacewalk/java/
    cp eng/java/conf/eclipse/.project .
    cp -R eng/java/conf/eclipse/.externalToolBuilders .
 
@@ -75,7 +83,7 @@ Setup the Project directory
    - Check "Create separate source and output folders are checked"
    - Then type in the name of your symlink, i.e. rhn-java in the Project Name.
      * Ensure the directory under location points to your workspace directory
-       /home/devel/username/workspace/rhn-java
+       /home/devel/username/workspace/spacewalk
    - The following should appear at the bottom:
 
      The specified external location already exists. If a project is created
@@ -96,7 +104,7 @@ Setup the Project directory
    - In the "Edit Library" dialog, check rhnjava
    - Click User Libraries... button
    - Ensure rhnjava is highlighted, click the Import... button
-   - Browse to the ~/rhn-java/conf/eclipse/rhn_eclipse_libraries.xml
+   - Browse to the ~/spacewalk/java/conf/eclipse/rhn_eclipse_libraries.xml
    - Click OK
    - Click OK
    - Click Finish, to return to the "Properties for rhn-java" dialog.
@@ -133,7 +141,7 @@ Configure Code Formatter:
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Code Formatter
 3) Click the Import... button.
-4) Browse to the ~/rhn-java/conf/eclipse/code_formatter_rhn.xml
+4) Browse to the ~/spacewalk/java/conf/eclipse/code_formatter_rhn.xml
 5) Click OK
 
 Configure Code Templates:
@@ -142,11 +150,11 @@ Configure Code Templates:
 2) In the Preferences dialog, Click Java -> Code Style -> Code Templates
 3) Select Comments
 4) Click the Import... button.
-5) Browse to the ~/rhn-java/eng/java/conf/eclipse/code_templates_comments.xml
+5) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/code_templates_comments.xml
 6) Click OK
 7) Select Code
 8) Click the Import... button.
-9) Browse to the ~/rhn-java/eng/java/conf/eclipse/code_templates_code.xml
+9) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/code_templates_code.xml
 10) Click OK
 
 Configure import statement order:
@@ -154,7 +162,7 @@ Configure import statement order:
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Organize Imports
 3) Click the Import... button.
-4) Browse to the ~/rhn-java/eng/java/conf/eclipse/rhn.importorder
+4) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/rhn.importorder
 5) Click OK
 
 
@@ -168,13 +176,13 @@ Properties:
 2) Click "Add Class Folder"
 3) Select rhn-java/code/webapp.  Make sure it shows up in the list.
 4) Add the following jars by clicking "Add JARs":
-   rhn-java/buildconf/tempjars/antlr-2.7.5H3.jar
-   rhn-java/buildconf/tempjars/asm.jar
-   rhn-java/buildconf/tempjars/asm-attrs.jar
-   rhn-java/buildconf/tempjars/cglib-2.1.2.jar
-   rhn-java/buildconf/tempjars/hibernate3.jar
+   spacewalk/buildconf/tempjars/antlr-2.7.5H3.jar
+   spacewalk/buildconf/tempjars/asm.jar
+   spacewalk/buildconf/tempjars/asm-attrs.jar
+   spacewalk/buildconf/tempjars/cglib-2.1.2.jar
+   spacewalk/buildconf/tempjars/hibernate3.jar
    /usr/share/java/logdriver.jar
-   rhn-java/buildconf/tempjars/strutstest-2.1.3.jar
+   spacewalk/buildconf/tempjars/strutstest-2.1.3.jar
    
 5) You should be able to right click on a FooTest class and
    say "Run As -> Junit Test"
