@@ -48,7 +48,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 === Lucene ===
  * Index files are stored at: /usr/share/rhn/search/indexes
   * Documentation "doc" indexes are delivered through a RPM "spacewalk-doc-indexes".  
-  * All other doc indexes are generated based on the database !SearchServer is connected to.  
+  * All other indexes are generated based on the database !SearchServer is connected to.  
  * How can I see what is indexed
   * You can use [http://www.getopt.org/luke Luke] to open a lucene index in a GUI and see what is available
    * We include a luke jar in our git repo, this is not bundled for delivery, it is only for development
@@ -75,8 +75,23 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
 
 == Howto Build/Run ==
+=== Build ===
+ * cd {SPACEWALK_GIT}/spacewalk/search-server
+ * ant
+
+=== Run === 
+ * We include a run script "run.sh" which will run !SearchServer
+ * You can interact with the !SearchServer through spacewalk/search-server/scripts/search.py
+  * ./search.py --help
+  * ./search.py --username admin --password spacewalk --package firefox
+   * When is "--serverAddr" helpful
+    * During development you may want to run a spacewalk instance and db on a remote machine while running search-server on your local box.
+    * --serverAddr allows you to specify the spacewalk instance you want to log into for retrieving the session-id
+     * NOTE:  The search-server must be running locally (to search.py), unless you open up the rpc binding to occur on the network interface and not 127.0.0.1
+
 == Configuration ==
- * Resides in git at: spacewalk/search-server/src/config/rhn-search.conf
+ * Configuration values from: /etc/rhn/rhn.conf are inherited by !SearchServer
+ * !SearchServer specific configuration resides in git at: spacewalk/search-server/src/config/rhn-search.conf
   * Is installed on a target machine at: /etc/rhn/search/rhn-search.conf
  * Example
 {{{
@@ -95,19 +110,18 @@ search.schedule.interval = 300000
 search.log.explain.results = false
 }}}
  * search.index_work_dir  : Specifies where Lucene indexes are kept
- * search.rpc_handlers  : ";" list of classes to act as handlers for XMLRPC calls.   
- * satellite.search.rpc.handlers.AdminHandler
- * search.max_hits_returned=500
- * search.connection.driver_class=oracle.jdbc.driver.OracleDriver
- * search.score_threshold=.10
- * search.system_score_threshold=.01
- * search.errata_score_threshold=.20
- * search.errata.advisory_score_threshold=.30
- * search.min_ngram = 1
- * search.max_ngram = 5
- * search.doc.limit_results = false
- * search.schedule.interval = 300000
- * search.log.explain.results = false
+ * search.rpc_handlers  : semi-colon separated list of classes to act as handlers for XMLRPC calls.   
+ * search.max_hits_returned : maximum number of results which will be returned to the caller
+ * search.connection.driver_class : JDBC class
+ * search.score_threshold : minimum score a result needs to be returned back to caller
+ * search.system_score_threshold : minimum score a system search result needs to be returned back to caller
+ * search.errata_score_threshold : minimum score an errata search result needs to be returned back to caller
+ * search.errata.advisory_score_threshold : minimum score an errata advisory result needs to be returned back to caller
+ * search.min_ngram : minimum length of n-gram characters (any change to this value requires 'clean-index' to be run, plus doc-indexes need to be modified and rebuilt)
+ * search.max_ngram : maximum length of n-gram characters (any change to this value requires 'clean-index' to be run, plus doc-indexes need to be modified and rebuilt)
+ * search.doc.limit_results : true means we limit the number of results both on search.score_threshold and restrict max hits to be below search.max_hits_returned, false means to return all doc search matches
+ * search.schedule.interval : value is in milliseconds, controls the interval !SearchServer polls the database for changes, default is 5 minutes (300000)
+ * search.log.explain.results : used during development/debugging.  If set to true, will log additional info hinting at what influenced the score of each result.
 
 
 == Specific Areas ==
