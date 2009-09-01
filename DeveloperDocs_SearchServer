@@ -43,7 +43,8 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
   * Description:  This handles searches which ONLY look at the database, it will not search any lucene indexes.  It's mainly used for errata search by a date range.   
  * Namespace: admin  
  * Handler: com.redhat.satellite.search.rpc.handlers.!AdminHandler
-  * Description:  This is the administration interface, currently is supports triggering a "reindex" for any index type we know about.  This is useful if you want the index to be updated immediately, example: this is invoked by the python backend after a server is registered and when a new custom errata is created. 
+  * Description:  This is the administration interface, currently is supports triggering a "reindex" for any index type we know about.  This is useful if you want the index to be updated immediately, 
+   * Example: this is invoked by the python backend after a server is registered and from webui when a new custom errata is created. 
 
 === Lucene ===
  * Index files are stored at: /usr/share/rhn/search/indexes
@@ -66,6 +67,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
    * REMEMBER  there are 2 parts to cleaning the indexes
     * Delete the directory containing the indexes
     * Adjust the database 'rhnIndexerWork' entry for the specified 'object_type'.  This is what will trigger the data to be re-read.
+    * NEVER delete the doc indexes, they come pre-packaged in a RPM.  (spacewalk-doc-indexes)
 
 === Database ===
  * [http://ibatis.apache.org iBatis] is the ORM !SearchServer uses
@@ -123,12 +125,16 @@ search.log.explain.results = false
  * search.schedule.interval : value is in milliseconds, controls the interval !SearchServer polls the database for changes, default is 5 minutes (300000)
  * search.log.explain.results : used during development/debugging.  If set to true, will log additional info hinting at what influenced the score of each result.
 
-
-== Specific Areas ==
-=== Package Search ===
-=== Errata Search ===
-=== System Search ===
 === Documentation Search ===
+ * Documentation search requires pre-packaged indexes to be installed, these indexes will not be re-generated if they are deleted.
+  * rpm -q spacewalk-doc-indexes
+  * The 'clean-index' script is intelligent enough to leave document indexes alone
+ * To build updated doc indexes 
+  * cd {SPACEWALK_GIT}/spacewalk/search-server/spacewalk-doc-indexes
+  * run "./crawl_www.sh"
+  * rpmbuild -ba ./spacewalk-doc-indexes.spec 
+ * The build process involves running "nutch" to crawl the online documents and generated index files which are then packaged into the spacewalk-doc-indexes rpm
+
 == Misc Notes ==
  * [http://en.wikipedia.org/wiki/N-gram NGram]
   * We are using a ngram analyzer.  This gives us a "fuzzy" like search behavior, it allows spelling errors to be forgiven and likely matches to be found.  
