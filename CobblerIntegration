@@ -4,14 +4,14 @@
 
 Cobbler requires users to authenticate to it and we wanted to be able to re-use existing spacewalk users.  When spacewalk needs to do anything in cobbler it does the following steps:
 
-1.  User 'john' is logged into spacewalk and does something that requires communication with cobbler. (create a ks profile, etc..)
-2.  A random token is created for "john" and associated with the user.  (i.e. "john" -> "34n3k4343k").  This is stored within tomcat as a Map in a way that is shared between threads
-3.  Cobbler is contacted over XMLRPC and authentication is done with ("john", TOKEN) 
-4.  Cobbler checks uses a particular authentication method (by default spacewalk_auth is set when installed from spacewalk/satellite)
-5.  If spacewalk_auth is set, cobbler calls an xmlrpc call from the spacewalk server to authenticate the user. It calls  auth.checkAuthToken("john", TOKEN) on the spacewalk server. 
-6.  A lookup is done on the Token map for the "john" user.  If the token matches what is in the map, authentication is successful and 1 is returned to cobbler.
-7.  If cobbler receives a 1 back, then it has confirmed the user and token, creates and stores it's own auth token, and then returns that token back to spacewalk.
-8.  Spacewalk receives the cobbler auth token and uses it in the future to actually do things with cobbler.  
+ 1.  User 'john' is logged into spacewalk and does something that requires communication with cobbler. (create a ks profile, etc..)
+ 2.  A random token is created for "john" and associated with the user.  (i.e. "john" -> "34n3k4343k").  This is stored within tomcat as a Map in a way that is shared between threads
+ 3.  Cobbler is contacted over XMLRPC and authentication is done with ("john", TOKEN) 
+ 4.  Cobbler checks uses a particular authentication method (by default spacewalk_auth is set when installed from spacewalk/satellite)
+ 5.  If spacewalk_auth is set, cobbler calls an xmlrpc call from the spacewalk server to authenticate the user. It calls  auth.checkAuthToken("john", TOKEN) on the spacewalk server. 
+ 6.  A lookup is done on the Token map for the "john" user.  If the token matches what is in the map, authentication is successful and 1 is returned to cobbler.
+ 7.  If cobbler receives a 1 back, then it has confirmed the user and token, creates and stores it's own auth token, and then returns that token back to spacewalk.
+ 8.  Spacewalk receives the cobbler auth token and uses it in the future to actually do things with cobbler.  
 
 So to summarize:  spacewalk creates a temporary token and stores it, that gets passed to cobbler, which calls back to spacewalk to confirm the token.  
 
