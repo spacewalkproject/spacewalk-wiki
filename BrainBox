@@ -76,3 +76,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [wiki:Per_Channel_Vars Per Channel Vars for Config Channels]
  * Allow postinstall actions for the server. E.g. force software and configuration updates, set custom variables, send mail.
   * [[Image(action-del.gif)]] - can be already done using System details -> Software -> Install -> select some package -> Install -> Run command
+  * I mean, postinstall of a server, not a package. the '%post' part of a kickstart if you will.
