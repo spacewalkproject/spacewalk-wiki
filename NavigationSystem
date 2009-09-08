@@ -1,7 +1,7 @@
 == Navigation ==
 
 === Main navigation (top bar and left side bar) ===
-
+[[Image(wiki:NavigationSystem:topnav.png)]]
 These navigation bars are handled by two files:
 
  * sitenav-authenticated.xml  (for authenticated sessions)
