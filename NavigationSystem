@@ -29,13 +29,16 @@ Each tag has a set of attributes:
 ||               || invisible || 1 if you want to hide the top level of the navigation used by sub-navigation files ||
 ||               || formvar || sets the default formvar to be added to all urls ||
 ||               || acl-mixins || a comma separated list of fully qualified ACLHandler classnames ||
+||               ||            || ||
 || '''rhn-tab''' || name || i18n key used to lookup the label shown in the UI for this tab. Maybe plain English i.e. Errata, or channel.nav.all, as long as it maps to a !StringResource value. ||
 ||         || url || the url, usually relative, where the tab is to link ||
 ||         || acl || the [#ACLs ACL] guarding the tab, used to conditionally display the tab ||
 ||         || active-image || image filename used to highlight the tab when active (selected)  ||
 ||         || inactive-image || image filename used to highlight the tab when inactive (unselected)  ||
 ||         || on-click || '''PERL ONLY''' calls the specified perl module when clicked ||
+||               ||            || ||
 || '''rhn-tab-url''' || NONE  || this takes in a value of url no attributes {{{<rhn-tab-url>/rhn/account/EditAddress.do</rhn-tab-url>}}} ||
+||               ||            || ||
 || '''rhn-tab-directory''' || NONE  || this takes in a value of url no attributes {{{<rhn-tab-directory>/rhn/users</rhn-tab-directory>}}} ||
 
 
