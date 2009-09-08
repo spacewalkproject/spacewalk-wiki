@@ -1,21 +1,26 @@
 == Navigation ==
 
 === Main navigation (top bar and left side bar) ===
+Spacewalk has three navigation menu bars: topnav, left nav, and dialog nav. The top nav is the one you see at the top of every page. It is used to navigate to the main pages of the application.
+
 [[Image(wiki:NavigationSystem:topnav.png)]]
+
+The left nav is located, you guessed it, on the left and offers a more detailed level of navigation under the main tab.
+
+[[Image(wiki:NavigationSystem:leftnav.png)]]
+
 These navigation bars are handled by two files:
 
  * sitenav-authenticated.xml  (for authenticated sessions)
  * sitenav.xml (for sessions that have not logged in)
 
-Each of these files exist of perl and java (and both are independent).  The java versions are in {{{/eng/java/code/webapp/WEB-INF/nav}}} and the perl versions are in {{{/eng/web/html/nav/}}}.
+Each of these files exist in perl and java (and both are independent). The java versions are in {{{/eng/java/code/webapp/WEB-INF/nav}}} and the perl versions are in {{{/eng/web/html/nav/}}}.
 
 Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pretty self explanatory.  The following tags are valid:
-
 
 ||rhn-tab||Defines a tab within the navigation bars.
 ||rhn-tab-url || Used when specifying more than one url that corresponds to a tab. (When a user is browsing to that url, the tab will be shaded to indicate it is active).
 ||rhn-tab-directory ||Used to specify a directory from which to match urls.
-
 
 === Sub-navigation ===
 On many pages (System details page, Channel detail page, etc..) there is a tab bar within the page.  These are defined by files within separate files from the sitenav.xml and sitenav-authenticated.xml.  Within the same directories listed above are files called:
