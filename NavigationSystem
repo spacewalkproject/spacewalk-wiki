@@ -22,6 +22,23 @@ Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pr
 ||rhn-tab-url || Used when specifying more than one url that corresponds to a tab. (When a user is browsing to that url, the tab will be shaded to indicate it is active).
 ||rhn-tab-directory ||Used to specify a directory from which to match urls.
 
+Each tag has a set of attributes:
+|| '''Tag'''     || '''Attribute''' || '''Description''' ||
+|| '''rhn-navi-tree''' || label || internal label used by parser ||
+||               || title-depth || how deep in the tree to parse to generate the title of the page ||
+||               || invisible || 1 if you want to hide the top level of the navigation used by sub-navigation files ||
+||               || formvar || sets the default formvar to be added to all urls ||
+||               || acl-mixins || a comma separated list of fully qualified ACLHandler classnames ||
+|| '''rhn-tab''' || name || i18n key used to lookup the label shown in the UI for this tab. Maybe plain English i.e. Errata, or channel.nav.all, as long as it maps to a !StringResource value. ||
+||         || url || the url, usually relative, where the tab is to link ||
+||         || acl || the [#ACLs ACL] guarding the tab, used to conditionally display the tab ||
+||         || active-image || image filename used to highlight the tab when active (selected)  ||
+||         || inactive-image || image filename used to highlight the tab when inactive (unselected)  ||
+||         || on-click || '''PERL ONLY''' calls the specified perl module when clicked ||
+|| '''rhn-tab-url''' || NONE  || this takes in a value of url no attributes {{{<rhn-tab-url>/rhn/account/EditAddress.do</rhn-tab-url>}}} ||
+|| '''rhn-tab-directory''' || NONE  || this takes in a value of url no attributes {{{<rhn-tab-directory>/rhn/users</rhn-tab-directory>}}} ||
+
+
 === Sub-navigation ===
 On many pages (System details page, Channel detail page, etc..) there is a tab bar within the page.  These are defined by files within separate files from the sitenav.xml and sitenav-authenticated.xml.  Within the same directories listed above are files called:
 
