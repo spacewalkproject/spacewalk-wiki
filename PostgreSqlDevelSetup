@@ -8,7 +8,7 @@ out and hopefully contributing here's the basic steps to get going now,
      configured. We still need to sort out a lot of deps issues.
  1. Switch to spacewalk devel repo: http://miroslav.suchy.cz/spacewalk/
  1. Update packages.
- 1. Make sure you have PostgreSQL 8.4 installed: http://yum.pgsqlrpms.org/ I use a script like this to blow it away and reinstall fresh:
+ 1. Make sure you have PostgreSQL 8.4 installed: http://yum.pgsqlrpms.org/howtoyum.php I use a script like this to blow it away and reinstall fresh:
 {{{
 yum remove -y postgresql postgresql-server
 rm -rf /var/lib/pgsql/
