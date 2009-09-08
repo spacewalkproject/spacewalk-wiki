@@ -75,3 +75,206 @@ Additional ACL classes exist for the sub-tab xml files.  Within [http://spacewal
 The ACLs are handled in a similar fashion on the Perl side. The ACL syntax used for rhn-tab in Perl is the same as is on the Java side. The difference is where the code is found, the {{{com.redhat.rhn.common.security.acl.Access}}} equivalent in Perl is {{{RHN::Access}}}.
 
 Mappings between ACL statements and Perl sub-routines is more direct. {{{org_entitlement(sw_mgr_enterprise)}}} maps to {{{RHN::Access->org_entitlement}}}.
+
+=== Behind the scenes ===
+I'm sure you want to know all of the magic that goes on behind the scenes. The driving code is the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavDigester.java;h=26c344f9f3c8c759c564dc1e2c8358116a840fea;hb=HEAD NavDigester] class. It uses {{{commons-digester}}} to parse the navigation files and create the appropriate !NavTree.
+
+{{{
+#!java
+/**
+ * Copyright (c) 2009 Red Hat, Inc.
+ *
+ * This software is licensed to you under the GNU General Public License,
+ * version 2 (GPLv2). There is NO WARRANTY for this software, express or
+ * implied, including the implied warranties of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. You should have received a copy of GPLv2
+ * along with this software; if not, see
+ * http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
+ *
+ * Red Hat trademarks are not licensed under GPLv2. No permission is
+ * granted to use or replicate Red Hat trademarks that are incorporated
+ * in this software or its documentation.
+ */
+
+package com.redhat.rhn.frontend.nav;
+
+import org.apache.commons.digester.Digester;
+
+import java.net.URL;
+
+/**
+ * Helper class to parse a sitenav.xml file, returning the tree
+ * @version $Rev$
+ */
+public class NavDigester {
+    // no contruction, please
+    private NavDigester() { }
+
+    /**
+     * buildTree, method to take a url and parse the contents
+     * into a NavTree
+     * @param url the file to parse
+     * @return NavTree the tree represented by the file
+     * @throws Exception if something breaks. XXX: fix to be tighter
+     */
+    public static NavTree buildTree(URL url) throws Exception {
+        if (url == null) {
+            throw new IllegalArgumentException("URL is null, your definition tag " +
+                    "probably points to a non existing file.");
+        }
+        Digester digester = new Digester();
+        digester.setValidating(false);
+
+        digester.addObjectCreate("rhn-navi-tree", NavTree.class);
+        digester.addSetProperties("rhn-navi-tree");
+        digester.addSetProperties("rhn-navi-tree",
+                                  "acl_mixins",
+                                  "aclMixins");
+
+        digester.addObjectCreate("*/rhn-tab", NavNode.class);
+        digester.addSetProperties("*/rhn-tab",
+                                  "active-image",
+                                  "activeImage");
+        digester.addSetProperties("*/rhn-tab",
+                                  "inactive-image",
+                                  "inactiveImage");
+
+        digester.addCallMethod("*/rhn-tab",
+                               "addPrimaryURL",
+                               1);
+        digester.addCallParam("*/rhn-tab",
+                              0,
+                              "url");
+
+        digester.addCallMethod("*/rhn-tab/rhn-tab-url",
+                               "addURL",
+                               0);
+        digester.addCallMethod("*/rhn-tab/rhn-tab-directory",
+                               "addDirectory",
+                               0);
+
+        digester.addSetNext("*/rhn-tab", "addNode");
+        return (NavTree)digester.parse(url.openStream());
+    }
+}
+}}}
+
+[http://commons.apache.org/digester/ Digester] offers an easy way to define how to build objects from an XML file. Given a sitenav.xml file, it will create a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavTree.java;h=49c678e976d9275e292b96eafd236d46cd8e2377;hb=HEAD NavTree] object which contains a {{{NavNode}}} for each of the rhn-tab tags found. Once the {{{NavTree}}} is created, we then pass it to the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavTreeIndex.java;h=377159c860c63ffede721fa90c2e57c9ecd7a4c1;hb=HEAD NavTreeIndex] to index the tree by urls so that it makes it easier to do matching while rendering the UI. This allows the appropriate tab to be highlighted as well as the page title to be set properly.
+
+
+The algorithm used by {{{NavTreeIndex}}} is pretty simple, we first harvest the primary urls, and any subsequent urls and directory definitions into separate maps. The real work happens when we browse a url and need to determine which is the currently active node. That's where {{{computeActiveNodes}}} method comes into play. We split the given url into an array making it more general. For example, given /rhn/users/ActiveList.do we create an array with 3 entries: "/rhn/users/ActiveList.do", "/rhn/users", "/rhn". We then try to find the {{{NavNode}}} that best matches those URLs. This gives us our active node and we know which {{{NavNode}}} to render and thus highlight in the UI.
+
+{{{
+#!java
+
+// NavTreeIndex excerpt
+    public String computeActiveNodes(String url, String lastActive) {
+        String[] prefixes = splitUrlPrefixes(url);
+
+        // If we have a lastActive URL we 
+        // will add it to the end of the list of URLs to 
+        // use it as a last resort.
+        if (lastActive != null) {
+            String[] urls = new String[prefixes.length + 1];
+
+            // Add the lastActive to the end
+            for (int i = 0; i < prefixes.length; i++) {
+                urls[i] = prefixes[i];
+            }
+            urls[prefixes.length] = lastActive;
+            prefixes = urls;
+        }
+
+        return computeActiveNodes(prefixes);
+    }
+    private String computeActiveNodes(String[] urls) {
+        bestNode = findBestNode(urls);
+        if (bestNode == null) {
+            // can't find an best node. assume topmost leftmost node is best
+            ArrayList depthZero = (ArrayList)nodeLevels.get(0);
+            bestNode = (NavNode)depthZero.get(0);
+        }
+
+        NavNode walker = bestNode;
+
+        activeNodes = new HashSet();
+        while (walker != null) {
+            activeNodes.add(walker);
+            walker = (NavNode)childToParentMap.get(walker);
+        }
+
+        if (log.isDebugEnabled()) {
+            log.debug("returning [" + bestNode.getPrimaryURL() +
+                      "] as the url of the active node");
+        }
+        return bestNode.getPrimaryURL();
+    }
+
+    private NavNode findBestNode(String[] urls) {
+
+        for (int i = 0; i < urls.length; i++) {
+
+            if (log.isDebugEnabled()) {
+                log.debug("Url being searched [" + urls[i] + "]");
+            }
+            // first match by the primary url which is the
+            // first rhn-tab-url definition in the sitenav.xml.
+            if (primaryURLMap.get(urls[i]) != null) {
+                if (log.isDebugEnabled()) {
+                    log.debug("Primary node for [" + urls[i] + "] is [" +
+                            primaryURLMap.get(urls[i]) + "]");
+                }
+
+                // we found a match, now let's make sure it is accessible
+                // we need to do this because sometimes there are multiple
+                // nodes with the same url.  At that point they are 
+                // distinguishable only by acls.
+
+                if (canViewUrl((NavNode)primaryURLMap.get(urls[i]), 0)) {
+                    return (NavNode)primaryURLMap.get(urls[i]);
+                }
+            }
+
+            // either we couldn't find a primary url match OR it isn't
+            // accessible.  Let's go through the other url mappings (if any)
+            // looking for an accessible url.
+
+            List nodesByUrl = (List) nodeURLMap.get(urls[i]);
+            if (nodesByUrl != null) {
+                Iterator nodeItr = nodesByUrl.iterator();
+                while (nodeItr.hasNext()) {
+                    NavNode next = (NavNode)nodeItr.next();
+                    if (canViewUrl(next, 1)) {
+                        if (log.isDebugEnabled()) {
+                            log.debug("Best node for [" + urls[i] + "] is [" +
+                                    primaryURLMap.get(urls[i]) + "]");
+                        }
+                        return next;
+                    }
+                }
+            }
+
+            // finally, we couldn't find a match by primary url, nor by
+            // any of the other mappings.  At this point we will attempt
+            // to match by directory if there was an rhn-tab-directory
+            // definition.  Otherwise, we're just going to bail and return
+            // null.
+
+            if (nodeDirMap.get(urls[i]) != null) {
+                List nodes = (List)nodeDirMap.get(urls[i]);
+                // what do we do with a list that contains
+                // more than one.
+                if (log.isDebugEnabled()) {
+                    log.debug("Best node for [" + urls[i] + "] is [" +
+                            nodes.get(0) + "]");
+                }
+                return (NavNode)nodes.get(0);
+            }
+        }
+
+        return null;
+    }
+
+   // ...
+
+}}}
