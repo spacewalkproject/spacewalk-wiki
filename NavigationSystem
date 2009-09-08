@@ -43,36 +43,8 @@ Each tag has a set of attributes:
 
 Below is a sample sitenav file.
 
-{{{
-#!xml
-<?xml version="1.0" encoding="UTF-8"?>
-<rhn-navi-tree xmlns:xi="http://www.w3.org/2001/XInclude" label="sitenav" title-depth="0"
-  acl_mixins="com.redhat.rhn.common.security.acl.MonitoringAclHandler">
-  <rhn-tab name="Overview" url="/rhn/YourRhn.do" active-image="tab-your_rhn-selected.gif" inactive-image="tab-your_rhn.gif">
-    <rhn-tab name="Overview" url="/rhn/YourRhn.do"/>
-    <rhn-tab name="Your Account" url="/rhn/account/UserDetails.do" >
-      <rhn-tab name="Addresses">
-        <rhn-tab-url>/rhn/account/Addresses.do</rhn-tab-url>
-        <rhn-tab-url>/rhn/account/EditAddress.do</rhn-tab-url>
-      </rhn-tab>
-      <rhn-tab name="Change Email" url="/rhn/account/ChangeEmail.do" />
-      <rhn-tab name="Account Deactivation" url="/rhn/account/AccountDeactivation.do"/>
-    </rhn-tab>
-    <rhn-tab name="Your Preferences" url="/rhn/account/UserPreferences.do" />
-    <rhn-tab name="Locale Preferences" url="/rhn/account/LocalePreferences.do" />
-    <rhn-tab name="Subscription Management" url="/rhn/systems/SystemEntitlements.do" acl="user_role(org_admin)" >
-      <rhn-tab name="System Entitlements" url="/rhn/systems/SystemEntitlements.do" acl="user_role(org_admin)" />
-      <rhn-tab name="virtualization.entitlements" url="/rhn/systems/entitlements/GuestLimitedHosts.do" acl="user_role(org_admin)"/>
-      <rhn-tab name="Software Channel Entitlements" url="/rhn/channels/software/Entitlements.do" acl="user_role(org_admin)" />
-    </rhn-tab>
-    <rhn-tab name="Organization Trusts" url="/rhn/multiorg/Organizations.do" acl="user_role(org_admin)">
-        <rhn-tab-url>/rhn/multiorg/OrgTrustDetails.do</rhn-tab-url>
-        <rhn-tab-url>/rhn/multiorg/channels/Consumed.do</rhn-tab-url>
-        <rhn-tab-url>/rhn/multiorg/channels/Provided.do</rhn-tab-url>
-    </rhn-tab>
-  </rhn-tab>
-</rhn-navi-tree>
-}}}
+[[Image(wiki:NavigationSystem:sitenav.png)]]
+
 
 === Sub-navigation ===
 On many pages (System details page, Channel detail page, etc..) there is a tab bar within the page.  These are defined by files within separate files from the sitenav.xml and sitenav-authenticated.xml.  Within the same directories listed above are files called:
