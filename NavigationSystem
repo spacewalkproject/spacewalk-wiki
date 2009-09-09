@@ -278,3 +278,5 @@ The algorithm used by {{{NavTreeIndex}}} is pretty simple, we first harvest the 
    // ...
 
 }}}
+
+==== Rendering ====
