@@ -280,3 +280,11 @@ The algorithm used by {{{NavTreeIndex}}} is pretty simple, we first harvest the 
 }}}
 
 ==== Rendering ====
+Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderEngine.java;h=60888e62be2f4043fb19d8c5e8e19b2707315440;hb=HEAD RenderEngine] that is used to display the menus of varying levels. The {{{RenderEngine}}} takes in a {{{NavTreeIndex}}} and a URL. As part of the rendering process we had a need to render the menus in different ways and also turn off some based on [#ACLs ACLs].
+
+To accomplish the displaying of the menus, Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/Renderable.java;h=3e7247cf0be4283cd71c6f690bf3035de44c3983;hb=HEAD Renderable] abstract class used to implement different {{{Renderers}}}. Out of the box Navi has five (5) renderers:
+|| !DialogNavRenderer ||
+|| !SidenavRenderer ||  [[Image(wiki:NavigationSystem:leftnav.png)]]
+|| !TextRenderer ||
+|| !TitleRenderer ||
+|| !TopnavRenderer || [[Image(wiki:NavigationSystem:topnav.png)]]
