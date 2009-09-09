@@ -289,4 +289,9 @@ To accomplish the displaying of the menus, Navi has a [http://git.fedorahosted.o
 || !TitleRenderer || [[Image(wiki:NavigationSystem:title.png)]] [[Image(wiki:NavigationSystem:title-html.png)]]
 || !TopnavRenderer || [[Image(wiki:NavigationSystem:topnav.png)]]
 
-= TODO: FINISH eXPLAINING GUARDS =
+==== Guarding ====
+Guarding is the ability to enable/disable the rendering of a given node based on any boolean expression as defined by the [#ACLs ACL system], be it a configuration entry, dynamic application data, or even assigned user roles. Navi takes the same approach to guarding as it did with the rendering, there is a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderGuard.java;h=2fde567456cba4cdfd2c59c57ae8ba582e8c52eb;hb=HEAD RenderGuard] interface which simply returns {{{true}} or {{{false}}} on whether the {{{NavNode}}} can be rendered.
+
+Navi contains two (2) guards: [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/AclGuard.java;h=582fbe1cb70d33aabdd2c4589a6d47ae72883b08;hb=HEAD AclGuard], which returns the result of evaluating the [#ACLs ACL], and [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/DepthGuard.java;h=22b3be5d93fec30eaa713c797381137218b9309b;hb=HEAD DepthGuard], which evaluates the depth of the menu. 
+
+There is also a need to group !RenderGuards, hence the creation of [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderGuardComposite.java;h=542c91f53dbcf333fc298108d60373c199812822;hb=HEAD RenderGuardComposite]. !RenderGuardComposite takes a list of !RenderGuards and evaluates them in order as an '''and''' operation. First !RenderGuard to fail causes the entire operation to return {{{false}}}.
