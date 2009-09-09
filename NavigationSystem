@@ -286,5 +286,5 @@ To accomplish the displaying of the menus, Navi has a [http://git.fedorahosted.o
 || !DialogNavRenderer ||
 || !SidenavRenderer ||  [[Image(wiki:NavigationSystem:leftnav.png)]]
 || !TextRenderer ||
-|| !TitleRenderer ||
+|| !TitleRenderer || [[Image(wiki:NavigationSystem:title.png)]] [[Image(wiki:NavigationSystem:title-html.png)]]
 || !TopnavRenderer || [[Image(wiki:NavigationSystem:topnav.png)]]
