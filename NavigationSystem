@@ -285,7 +285,7 @@ Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/
 To accomplish the displaying of the menus, Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/Renderable.java;h=3e7247cf0be4283cd71c6f690bf3035de44c3983;hb=HEAD Renderable] abstract class used to implement different {{{Renderers}}}. Out of the box Navi has five (5) renderers:
 || !DialogNavRenderer || [[Image(wiki:NavigationSystem:dialognav.png)]]
 || !SidenavRenderer ||  [[Image(wiki:NavigationSystem:leftnav.png)]]
-|| !TextRenderer ||
+|| !TextRenderer || [[Image(wiki:NavigationSystem:textnav.png)]]
 || !TitleRenderer || [[Image(wiki:NavigationSystem:title.png)]] [[Image(wiki:NavigationSystem:title-html.png)]]
 || !TopnavRenderer || [[Image(wiki:NavigationSystem:topnav.png)]]
 
