@@ -26,6 +26,10 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  monitoring.getLatestProbeResults(sid) || 0.7 || 3 ||  ||  ||  ||
 ||  monitoring.getAllResults(sid, probe_id) || 0.7 || 3 ||  ||  ||  ||
 
+
+||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
+||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 ||  ||  ||  ||
+
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 ||  channel.software.listChildren(cid) || 0.7 || 3 ||  ||  ||  ||
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
