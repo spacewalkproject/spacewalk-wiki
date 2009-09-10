@@ -27,9 +27,9 @@ web.session_swap_secret_1 is a random value in /etc/rhn/rhn.conf that is generat
 
 We communicate with cobbler over XMLRPC.  Upon first integrating the two we were using raw xmlrpc calls all over the place.  Very quickly we created and started using cobbler objects.  You will see raw xmlrpc calls scattered here and there, but this is HIGHLY DISCOURAGED.  Xmlrpc calls should only be made in the cobbler objects themselves.  Hopefully we can get rid of these scattered calls soon.
 
-org.cobbler.SystemRecord
-org.cobbler.Profile
-org.cobbler.Distro
+ org.cobbler.SystemRecord
+ org.cobbler.Profile
+ org.cobbler.Distro
 
 You should be able to create/edit/list these items from here.  DO NOT CALL COBBLER OVER XMLRPC ANYWHERE ELSE WITHOUT A GOOD REASON.
 
