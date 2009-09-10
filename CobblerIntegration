@@ -37,6 +37,12 @@ You should be able to create/edit/list these items from here.  DO NOT CALL COBBL
 
 == Taskomatic Tasks ==
 
+A couple of taskomatic tasks exist do ensure cobbler and spacewalk stay in sync.  
+
+ CobblerSyncTask - creates a cobbler profile or distro within cobbler if it doesn't exist (but exists within satellite).  Will also sync details between the two if cobbler has changed, but this isn't used for much.  This is integral for Distros that are imported through Satellite-sync to show up within cobbler.  Also during upgrade from 5.2 -> 5.3, if this task did not run, none of the existing profiles or distros would be created within cobbler.
+
+ KickstartFileSyncTask -  This task simply creates the files in /var/lib/rhn/kickstart/wizard/ if they do not already exist.  This is what is responsible for creating those files after an upgrade to 5.3
+
 == Provisioning a System ==
 
 == Directory Structure (where things are stored) ==
