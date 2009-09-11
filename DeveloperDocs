@@ -12,7 +12,6 @@ This section contains information about developer topics.  You may also be inter
      * PxtForDummies -- explains how to work with PXT
    * AclDesign -- detailed explanation of ACLs
    * Database
-      * [http://www.redhat.com/spacewalk/documentation/db-schema/spacewalk-0.1/ DBSchema] -- Database schema
       * [DatabaseGuide Development Guide]
    * [http://www.redhat.com/spacewalk/documentation/javadoc/ JavaDoc] -- Documentation of Java code
    * PythonDocumentation -- Documentation of python code
