@@ -40,6 +40,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  kickstart.snippet.deleteSnippet(name) || 0.7 || 3 ||  ||  ||  ||
 ||  kickstart.snippet.editSnippet(name, newContent) || 0.7 || 3 ||  ||  ||  ||
 
+||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
+||  system.createCobblerSystemRecord(sid, ks_label) || 0.7 || 3 ||  ||  ||  ||
+
 
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
 ||  schedule.archiveActions(array[aid]) || 0.7 || 3 ||  ||  ||  ||
