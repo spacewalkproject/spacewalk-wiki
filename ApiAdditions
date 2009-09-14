@@ -35,6 +35,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
 ||  kickstart.snippet.listCustomSnippets() || 0.7 || 3 ||  ||  || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listDefaultSnippets() || 0.7 || 3 ||  ||  || return array[(name, content, macro usage, filename)] ||
 ||  kickstart.snippet.createSnippet(name, content) || 0.7 || 3 ||  ||  ||  ||
 ||  kickstart.snippet.deleteSnippet(name) || 0.7 || 3 ||  ||  ||  ||
 ||  kickstart.snippet.editSnippet(name, newContent) || 0.7 || 3 ||  ||  ||  ||
