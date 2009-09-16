@@ -60,12 +60,12 @@ Now skip down below to the Create Project Directory step.
    ant gen-eclipse
 }}}
 
-3) Copy eclipse support files from rhn-java/eng/java/conf to the root of your rhn-java checkout.
+3) Copy eclipse support files from ~/spacewalk/java/conf to the root of your spacewalk/java/ checkout.
    NOTE: DO NOT COPY THE XML FILES
 {{{
    cd  ~/spacewalk/java/
-   cp eng/java/conf/eclipse/.project .
-   cp -R eng/java/conf/eclipse/.externalToolBuilders .
+   cp ./conf/eclipse/.project .
+   cp -R ./conf/eclipse/.externalToolBuilders .
 }}}
 
 4) Start Eclipse.
