@@ -54,19 +54,13 @@ Now skip down below to the Create Project Directory step.
    cd ~/workspace
    ln -s ~/spacewalk/java spacewalk
 }}}
-2.5) cd to ~/spacewalk/java/.  We use ivy to resolve our jar dependancies.  Run the following cmd below to properly setup some of your .classpath entries.
+3) cd to ~/spacewalk/java/.  We use ivy to resolve our jar dependencies.  Run the following cmd below to properly setup some of your .classpath entries.
 
 {{{
-   ant gen-eclipse
+   ant make-eclipse-project
 }}}
 
-3) Copy eclipse support files from ~/spacewalk/java/conf to the root of your spacewalk/java/ checkout.
-   NOTE: DO NOT COPY THE XML FILES
-{{{
-   cd  ~/spacewalk/java/
-   cp ./conf/eclipse/.project .
-   cp -R ./conf/eclipse/.externalToolBuilders .
-}}}
+
 
 4) Start Eclipse.
 {{{
@@ -79,57 +73,25 @@ or if you installed manually
 }}}
 5) Once, Eclipse is started setup the project:
 
-   - File -> New Project
-   - Click Java Project
-   - Click Next
-   - Check "Create project in workspace is checked"
-   - Check "Create separate source and output folders are checked"
-   - Then type in the name of your symlink, i.e. rhn-java in the Project Name.
-     * Ensure the directory under location points to your workspace directory
-       /home/devel/username/workspace/spacewalk
-   - The following should appear at the bottom:
+   - File -> Import
+   - Expand "General"
+   - select "Existing projects into workspace"
+   - Click next
+   - Browse or enter  ~/workspace/spacewalk
+   - click "Finish"
 
-     The specified external location already exists. If a project is created
-     in this location, the wizard will automatically try to detect existing
-     sources and class files and configure the classpath appropriately.
-   
-   - Click Next
-   - Click Finish
 
-6) Configure RHN Java libraries:
-
-   - Right mouse click on the newly created Java project
-   - Click Properties
-   - In the "Properties for rhn-java" dialog click on "Java Build Path"
-   - Click the Libraries tab
-   - Select rhnjava library
-   - Click Edit...
-   - In the "Edit Library" dialog, check rhnjava
-   - Click User Libraries... button
-   - Ensure rhnjava is highlighted, click the Import... button
-   - Browse to the ~/spacewalk/java/conf/eclipse/rhn_eclipse_libraries.xml
-   - Click OK
-   - Click OK
-   - Click Finish, to return to the "Properties for rhn-java" dialog.
-   - Click OK
-
-7) We use assertions in our code which requires a compiler option to be 
+6) We use assertions in our code which requires a compiler option to be 
    set.  Do the following:
    
    Window -> Preferences -> Java -> Compiler -> Compliance and Classfiles: 
    
    uncheck "use default compliance settings"
-   Select 1.4 for all of the drop downs:
+   Select 1.5 for all of the drop downs:
 
-   Compiler compliance level: 1.4
-   Generated .class files compatibility: 1.4
-   Source compatibility: 1.4
-   
-   Also: Window > Preferences > Java > Installed JREs, select the JRE you 
-   are using, hit Edit and add -ea as a default VM arg
-   
-   Its recommended that you do this so eclipse will catch any runtime 
-   assertion errors that your unit tests may have forgotten.
+   Compiler compliance level: 1.5
+   Generated .class files compatibility: 1.5
+   Source compatibility: 1.5
 
 You are ready to build the project.  Project -> Build All.
 
@@ -169,30 +131,7 @@ Configure import statement order:
 5) Click OK
 
 
-== Getting JUnit to run in eclipse: ==
-
-You need to add a few libararies to your path to get eclipse to 
-run JUnit.  Right click on your top level entry in your project.  Click
-Properties:
-
-1) Go to Java Build Path.
-2) Click "Add Class Folder"
-3) Select rhn-java/code/webapp.  Make sure it shows up in the list.
-4) Add the following jars by clicking "Add JARs":
-{{{
-   spacewalk/buildconf/tempjars/antlr-2.7.5H3.jar
-   spacewalk/buildconf/tempjars/asm.jar
-   spacewalk/buildconf/tempjars/asm-attrs.jar
-   spacewalk/buildconf/tempjars/cglib-2.1.2.jar
-   spacewalk/buildconf/tempjars/hibernate3.jar
-   /usr/share/java/logdriver.jar
-   spacewalk/buildconf/tempjars/strutstest-2.1.3.jar
-}}}
-5) You should be able to right click on a FooTest class and
-   say "Run As -> Junit Test"
-   
-
-== Performance issues ==
+== Performance issues  (might not be relevant) ==
 
 In order to increase Eclipse's performance, add the following to your
 /etc/eclipse.conf file, overriding any other memory settings:
@@ -207,11 +146,3 @@ If using the Sun JVM, make the following tweaks:
  VM_ARGS="-Xverify:none -XX:+UseParallelGC -XX:PermSize=20M -XX:MaxNewSize=32M -XX:NewSize=32M -Xms192M -Xmx256M"
 
 
-Another thing that will help dramatically is to use the Sun
-JVM.  Install the Sun JVM (don't use the jpackage RPM because
-it conflicts with the IBM rpm).  Then change the JAVACMD in your
-/etc/eclipse.conf i.e.:
-
-    JAVACMD="/usr/java/j2sdk1.4.2_06/bin/java"
-
-The above command uses the Sun VM installed using the Sun RPM.
