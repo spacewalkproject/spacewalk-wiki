@@ -99,15 +99,15 @@ If you want to configure Eclipse to generate code to match the coding
 standards follow the following steps.
 
 Configure Code Formatter:
-
+{{{
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Code Formatter
 3) Click the Import... button.
 4) Browse to the ~/spacewalk/java/conf/eclipse/code_formatter_rhn.xml
 5) Click OK
-
+}}}
 Configure Code Templates:
-
+{{{
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Code Templates
 3) Select Comments
@@ -118,15 +118,15 @@ Configure Code Templates:
 8) Click the Import... button.
 9) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/code_templates_code.xml
 10) Click OK
-
+}}}
 Configure import statement order:
-
+{{{
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Organize Imports
 3) Click the Import... button.
 4) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/rhn.importorder
 5) Click OK
-
+}}}
 
 == Performance issues  (might not be relevant) ==
 
