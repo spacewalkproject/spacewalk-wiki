@@ -13,6 +13,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 === Scratchpad ===
 
  * Be able to add CVE's to errata
+ * Change Base- and Child-Groups for system groups, not just a single systems
  * idea2
  * idea3
 
