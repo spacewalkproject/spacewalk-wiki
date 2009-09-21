@@ -108,6 +108,20 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
 }}}
   The most likely culprit is actually a permissions problem for the apache user, give {{{apache}}} user access to the directory.
 
+== Still having issues? ==
+
+Make sure there are no broken symlinks in /var/lib/tomcat5/common/libs:
+{{{
+  ls -l /var/lib/tomcat5/common/libs/
+}}}
+
+Also make sure your symlink is setup correctly for the webapp
+
+{{{
+ll /var/lib/tomcat5/webapps/rhn
+lrwxrwxrwx 1 root root 26 Feb 18  2009 /var/lib/tomcat5/webapps/rhn -> /home/USER/spacewalk/java/rhnwebapp/
+}}}
+
 = Building spacewalk-java RPM =
 
 * See here for info on rebuilding the spacewalk-java RPM: BuildingJavaRpm
