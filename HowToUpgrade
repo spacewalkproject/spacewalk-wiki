@@ -176,7 +176,7 @@ For Spacewalk 0.6, it is required to deploy configuration for cobbler and update
 # spacewalk-setup --disconnected --upgrade
 }}}
 
-You'll be asked by spacewalk-setup to provide your database connection information. Following this spacewalk-setup will ask you whether you wish to
+You'll be asked by spacewalk-setup to provide your database connection information.  This is the same information you provided to HowToInstall. Following this spacewalk-setup will ask you whether you wish to
 have your apache ssl configuration (/etc/httpd/conf.d/ssl.conf) updated by spacewalk-setup. You may choose to setup your ssl.conf manually, in which
 case you have to make sure you have the following directives present in your /etc/httpd/conf.d/ssl.conf:
 
