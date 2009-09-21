@@ -62,7 +62,7 @@ for example, to sync CentOs 5 to your custon 'centos5-i386' channel you would ru
 
 Currently only 'yum' type is supported.  You can use any repo url that is supported by yum (http://, file://, etc...).  If running the command line directly, you must be the root user.
 
-
+If, when doing a spacewalk-repo-sync, you get a "yum.Errors.NoMoreMirrorsRepoError" error then you need to install python-hashlib.
 
 == rhnpush ==
 
