@@ -132,7 +132,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || velocity-dvsl-0.45-5jpp_1rh.src.rpm || || || ||
  || velocity-tools-1.2-1jpp_1rh.src.rpm || || || ||
  || spacewalk-proxy-html || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=494292 494292] || msuchy ||
- || spacewalk-proxy-docs || Open Publication || [https://bugzilla.redhat.com/show_bug.cgi?id=501655 501655] || msuchy ||
+ || spacewalk-proxy-docs || Open Publication || [https://bugzilla.redhat.com/show_bug.cgi?id=501655 501655] || msuchy || Now in Fedora ||
 
 There is also a set of jars currently in search-server which are not rpms which will probably need to be packaged up to be accepted into Fedora.
 See GettingPackagesIntoFedora/Nutch
