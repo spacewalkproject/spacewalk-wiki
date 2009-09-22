@@ -90,6 +90,20 @@ This will completely drop all data from the database and recreate all tables, st
 }}}
 
 
+= Taskomatic =
+
+To be able to edit Taskomatic code you simply need to create a symlink:
+{{{
+  cd /usr/share/rhn/lib/
+  mv rhn.jar rhn.jar.bak
+  ln -s ~/spacewalk/java/build/run-lib/rhn.jar rhn.jar
+  service taskomatic restart
+}}}
+
+Now you can simply edit the code as desired.  To have taskomatic pick up those changes simply run 'ant' from the java directory and restart taskomatic.
+
+
+
 = Troubleshooting =
  * catalina.out has the following error:
 {{{
