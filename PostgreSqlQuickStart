@@ -23,6 +23,10 @@ yum install python-ply python-pgsql
   }}}
  * Install ''chameleon'', the tool that builds both Oracle and Postgres schema from a single meta-schema
   {{{
+yum install chameleon
+  }}}
+  Or,
+  {{{
 rpm -Uvh https://fedorahosted.org/releases/c/h/chameleon/chameleon-0.2-1.fc10.noarch.rpm?format=raw
   }}}
   * Formerly: dogchow 
