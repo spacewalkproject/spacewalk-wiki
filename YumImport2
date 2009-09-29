@@ -14,3 +14,4 @@
  * allow syncing of a base repo together with all its childs without having to specify the childs (e.g. add --with-childs) [https://bugzilla.redhat.com/show_bug.cgi?id=517468]
  * ~~Support Mirror lists~~ (Commited in c9c2d15afdf2537fff94aa47c0931aca198cc9d7 in master)
  * http proxy support
+ * allow seeing a list of what will be imported (commandline only)
