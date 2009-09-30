@@ -45,6 +45,11 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  system.createCobblerSystemRecord(sid, ks_label) || 0.7 || 3 ||  ||  ||  ||
 
 
+
+||  '''Namespace: system.config''' ||  ||  ||  ||  ||  ||
+||  system.config.deployFiles(auth, array(string filename), array(sid)) || 0.7 || 3 ||  ||  || schedule deployment of specific files to specific systems ||
+
+
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
 ||  schedule.archiveActions(array[aid]) || 0.7 || 3 ||  ||  ||  ||
 
