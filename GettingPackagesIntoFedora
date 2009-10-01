@@ -17,7 +17,6 @@ We can update the list of packages here and provide bugzilla numbers.
 ||perl-Crypt-GeneratePassword-0.03-11.el5.src.rpm||GPL/Artistic|| https://bugzilla.redhat.com/show_bug.cgi?id=452458 ||Nigel Jones || Now in Fedora ||
 ||~~perl-Crypt-RIPEMD160-0.04-14.el5.src.rpm~~||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452453|| Nigel Jones|| Legal looking into License -- we get rid of this package
 ||~~perl-Crypt-Rijndael-1.06-1.el5.src.rpm~~ ||LGPLv2||https://bugzilla.redhat.com/show_bug.cgi?id=452454||Nigel Jones|| This package might actually not be needed for Spacewalk at all. --adelton (CVS Branched)||
-||perl-Crypt-OpenPGP-1.03-14.el5.src.rpm||||In Prep||Nigel Jones|| Dependency on perl-Crypt-RIPEMD160 ||
 ||perl-DateTime-Locale-0.4001-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452455||Nigel Jones|| Already in Fedora, just under a slightly different name || 
 ||perl-DateTime-TimeZone-0.7701-1.el5.src.rpm||GPL/Artistic||https://bugzilla.redhat.com/show_bug.cgi?id=452456||Nigel Jones|| Already in Fedora, just under a slightly different name ||
 
@@ -47,14 +46,14 @@ We can update the list of packages here and provide bugzilla numbers.
 I am moving phase 2 to be client side tools (stuff that normally would be in the Tools Channels).  
 ||Name|| License || Bugzilla || Submitter || Notes || 
 ||jabberpy-0.5-0.13.el5.src.rpm|| LGPLv2+ (According to the SRPM)  || [https://bugzilla.redhat.com/show_bug.cgi?id=468299 468299] || stahnma|| now in fedora ||
-||osad-5.2.0-1.src.rpm|| GPLv2 || || prad || in prep || 
+||osad-5.2.0-1.src.rpm|| GPLv2 || ||  || || 
 ||rhncfg-5.2.0-0.src.rpm|| GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491088 491088] || msuchy ||  ||
-||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| || jsherrill || in prep ||
-||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || || mmccune || in prep ||
+||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| ||  ||  ||
+||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || ||  ||  ||
 ||spacewalk-koan-0.1.6-1.src.rpm  || GPLv2 (According source in client/tools/spacewalk-koan)  || [https://bugzilla.redhat.com/show_bug.cgi?id=481668 481668]|| mmccune/msuchy || Now in Fedora ||
-||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) ||  ||prad || in prep ||
-||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || prad|| in prep ||
-||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || || prad || in prep ||
+||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) ||  || || ||
+||rhns-certs-tools-5.2.0-2.el5.src.rpm|| LGPL (According to the SRPM) || || || ||
+||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || ||  ||  ||
 ||rhnpush-0.3.1-2.fc10.src.rpm || GPL2 || [https://bugzilla.redhat.com/show_bug.cgi?id=452450  452450]|| stahnma/msuchy || Now in Fedora ||
 ||rhnlib-2.5.10 || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=486937 486937] || msuchy || Now in Fedora ||
 ||rhn-client-tools || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=490438 490438] || msuchy || Now in Fedora ||
@@ -90,17 +89,17 @@ This packages need to be edited and then eventualy imported to Fedora:
  || cx_Oracle-4.2.1-4.el5.src.rpm || Not compatible || with Fedora licensing, as it requires oracle-instantclient-devel || ||
  || eventReceivers-2.20.11-1 || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=487128 || msuchy ||
  || freemarker-2.3.6-2jpp_1rh.src.rpm || || || ||
- || hadoop || Apache v2.0 || || jmatthews ||
+ || hadoop || Apache v2.0 || ||  ||
  || hibernate3-3.2.4-1.SP1_CP01.0jpp.ep1.1.el5.1.src.rpm || || || ||
- || ivy-1.4.1-1.noarch.rpm || BSD || in prep || jmatthews ||
- || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || mmccune ||
- || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || mmccune ||
- || jpam-0.4-16.el5.src.rpm || || in prep || jmrodri aka jesusr ||
+ || ivy-1.4.1-1.noarch.rpm || BSD || || ||
+ || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || ||
+ || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || ||  ||
+ || jpam-0.4-16.el5.src.rpm || ||  ||  ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
  || ~~np-config-2.110.3-6.el5.src.rpm~~ || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=453111 453111] - merging with NPuser into nocpulse-common || msuchy ||
  || ~~NPusers-1.17.11-6.el5.src.rpm~~ nocpulse-common || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=453109 || msuchy || Now in Fedora ||
- || nutch || Apache v2.0 || || jmatthews ||
+ || nutch || Apache v2.0 || || ||
  || oscache-2.2-2jpp.ep1.1.el5.src.rpm || || || ||
  || perl-Satcon-1.3-9.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=466777 || msuchy || Now in Fedora ||
  || perl-NOCpulse-CLAC-1.9.4-10.el5.src.rpm || GPLv2 || https://bugzilla.redhat.com/show_bug.cgi?id=485893 || msuchy || Now in Fedora ||
@@ -115,11 +114,11 @@ This packages need to be edited and then eventualy imported to Fedora:
  || PyPAM-0.4.2-20.el5.src.rpm || || || ||
  || python-gzipstream-1.4.0-15.el5.src.rpm || || || ||
  || python-sgmlop-1.1.1-20040207.15.el5.src.rpm || || || ||
- || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || || jmrodri ||
- || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || in prep || jmrodri aka jesusr ||
+ || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || ||  ||
+ || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || ||  ||
  || rhn-java-sat-0.1-3.el5.src.rpm || || || ||
  || rhn-oracle-jdbc-1.0-13.el5.src.rpm || || || ||
- || rhns-0.1-3.src.rpm || || in prep || prad ||
+ || rhns-0.1-3.src.rpm || ||  ||  ||
  || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || || ||
  || spacewalk-config || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491331 491331] || msuchy ||
  || rhn-satellite-schema-5.1.0-27.src.rpm || || || ||
