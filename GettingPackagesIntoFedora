@@ -57,7 +57,7 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhnpush-0.3.1-2.fc10.src.rpm || GPL2 || [https://bugzilla.redhat.com/show_bug.cgi?id=452450  452450]|| stahnma/msuchy || Now in Fedora ||
 ||rhnlib-2.5.10 || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=486937 486937] || msuchy || Now in Fedora ||
 ||rhn-client-tools || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=490438 490438] || msuchy || Now in Fedora ||
-||yum-rhn-plugin || GPLv2 ||[https://bugzilla.redhat.com/show_bug.cgi?id=525453 525453]  || Now in Fedora ||
+||yum-rhn-plugin || GPLv2 ||[https://bugzilla.redhat.com/show_bug.cgi?id=525453 525453]  || msuchy || Now in Fedora ||
 ||rhnmd || GPLv2 || || ||
 ||rhnsd || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=524558 524558] || msuchy || Now in Fedora ||
 
