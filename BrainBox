@@ -1,6 +1,15 @@
 = Brainbox =
 
 This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
+ * Inter-satellite-sync 
+   * Activations Keys, Kickstart profiles & Solaris content
+ * Asset identification
+ * [wiki:Features/SupportUser Support User]
+ * Usecase deployment - make initial enable & deployment of the following simple 
+   * Remote Commands, Configuration Management, Monitoring 
+ * [GeneralImprovements General Improvements]
+ * Start looking at func as possible future alternative to osad, or AMQP (with osad/osa-dispatcher) [https://bugzilla.redhat.com/show_bug.cgi?id=453459 bugzilla 453459]
+ * DeltaRpmSupport
  * Integration with [http://www.jasperforge.org/jaspersoft/opensource/business_intelligence/jasperreports/ JasperReports]
    * [[Image(action-del.gif)]] not sure how important this is to Spacewalk. -- jmrodri
  * HelpSystem to make help a bit easier to work with.
