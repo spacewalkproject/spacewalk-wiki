@@ -11,7 +11,19 @@
 
 == Proposed Implementation ==  
 
-Following are the possible areas we'll need to make to support sha256 content across board. I'm sure we'll find more as we move along, but these are the major areas we need to make sure works as expected with new sha256 supported rpms on f11.
+* Create rhnChecksum table which is able to hold a checksum and it's type for any (general) content.
+* Replace md5 columns in various tables with reference to a row in rhnChecksum table.
+* Modify web pages so we can show different checksums (i.e. longer than md5 and
+also show type of checksum).
+* For old rpms we have to store md5 sums. For new sha256 rpm we have to store
+sha256 checksums.
+* Store checksum type along with channel date which will be used for
+(yum) metadata repo generation (sha1 for RHEL5 & Fedora 10, sha256 for Fedora
+11).
+* Have repo checksum type be a channel variable (defined by user at channel
+creation time).
+* Switch md5 checksums to sha256 whereever it's possible (i.e. checksum is
+computed and used on spacewalk server / client so we can modify both data & checksum producer and consumer).
 
 === Database(estimates: 30 hrs) ===
 
