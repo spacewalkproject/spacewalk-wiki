@@ -21,7 +21,7 @@
 
 === Database(estimates: 30 hrs) ===
 
-Checksum usage in spacewalk (Some of these might be one or the other, depending on rpm version, yum version etc):
+Current checksum usage in spacewalk:
  * rhnPackageFile 
  * rhnPackage
  * rhnKSTreeFile    
@@ -31,8 +31,8 @@ Checksum usage in spacewalk (Some of these might be one or the other, depending 
  * rhnFile
  and may be more.
 
- * New rhnPackageChecksum table will need to be added as a lookup table for package checksums.
-  
+ * New tables rhnChecksum and rhnChecksumType will be added to accumulate checksum of any content in satellite:
+
 {{{
 
 SQL> desc rhnChecksumType
@@ -43,45 +43,31 @@ SQL> desc rhnChecksumType
  DESCRIPTION				   NOT NULL VARCHAR2(64)
  CREATED				   NOT NULL DATE
  MODIFIED				   NOT NULL DATE
-                                               
 
-x
 Sample Data:
 1, md5, md5sum, 26-JUN-09, 28-JUN-09
-2, sha256, sha256, 26-JUN-09, 28-JUN-09 
+2, sha1, sha256sum, 26-JUN-09, 28-JUN-09
+3, sha224, sha224sum, 26-JUN-09, 28-JUN-09
+4, sha256, sha256sum, 26-JUN-09, 28-JUN-09
+5, sha384, sha384sum, 26-JUN-09, 28-JUN-09
+6, sha512, sha512sum, 26-JUN-09, 28-JUN-09
 
-SQL> desc rhnPackageChecksum
+SQL> desc rhnChecksum
  Name                                                  Null?    Type
  ----------------------------------------------------- -------- ------------------------------------
- PACKAGE_ID                                            NOT NULL NUMBER
+ ID                                                                                          NOT NULL NUMBER
  CHECKSUM_TYPE_ID			               NOT NULL NUMBER
  CHECKSUM				               NOT NULL VARCHAR2(128)
-x
+
 Sample Data:
 1001, 1, 1g367fcfe8fb56662d2831d5cce8a5157db75
-1001, 2, 9a06da045a9d4468e5d678a0cebe7ada3ae0f4f01ec7da0e39cba3277974beea
 1002, 1, 2f367fcfe8fb56662d2831d5cce8a5157db56
-1002, 2, 1906da045a9d4468e5d678a0cebe7ada3ae0f4f01ec7da0e39cba3277974becw
+1003, 2, 1906da045a9d4468e5d678a0cebe7ada3ae0f4f01ec7da0e39cba3277974becw
 
-* Drop md5sum from rhnPackage table
+}}}
 
-* remove index on orgid, md5sum
-
-
-rhnPackageFile Table:
-
-* Extend the md5sum column size to 128
-* rename md5sum to checksum
-* fix filelists page to reflect the rename
-
-rhnChannel table:
-
-* Add a checksum_type_id column which is a fk to rhnChecksumType by id.
-
-
-}}}       
-
-We compute both checksums while populating the package info to the above table and we cpould jus do a lookup and get whichever we want based on the type of client we're talking to.
+ * Move checksum(s) from all tables to rhnChecksum
+ * replace current md5sum columns with a foreign key to rhnChecksum
 
 === Spacewalk Server (estimates: 60 hours) ===
  
