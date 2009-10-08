@@ -74,15 +74,15 @@ Sample Data:
  * Repo Generation:
   * server side repo generation should include shasum support for channels with newer rpm content and be backward compatible with older clients.
   * What if a custom channel has mixed content? yum doesn't care about whats in the channel, it only cares about the repo format. So as long as the repomd.xml is of compatible format it should work. 
-  * So the problem would be for custom channels. Older yum clients will not be able to understand sha256 checksum. So we'll need to make a smarter decision as to which content it is and which checksum to use
-  * So once approach is to get the checksum for the packages associated to the custom channel and generate the repomd as sha1 if its older content or sha256 if its newer. This is gona be the tricky part.
+  * Custom channels have type of yum repo checksum associated by user at creation time.
+  * For imported / synced channels we have to decide the checksum type at (their) creation time.
 
  * Importer/Exporter + ISS:
-This should work as expected as all we're doing is extracting the content from the db and caching it into xml files. But we'll need to fix queries specifically dealing with above tables. For example when we export package metadata for a given channel, we'll need to fix the query to use p.checksum instead of p.md5sum etc. Mostly cosmetic changes.
+  * This should work as expected as all we're doing is extracting the content from the db and caching it into xml files. But we'll need to fix queries specifically dealing with above tables. 
 
  * App Handler:
-  * compares md5sums to check if pkgs is already uploaded, move that to shasum instead
-  * other getMd5Sum calls used on the server
+  * compares md5sums to check if pkgs is already uploaded, move that to a general checksum instead
+  * fix other getMd5Sum calls used on the server
 
  * xp Handler:
   * rhn-package-manager server side changes to support sha256
@@ -134,6 +134,7 @@ We need to make sure the queries used by these pages reflect any new db changes 
   * Need to make sure syncing content works as expected for sha256 supported content
   * Make sure satellite-sync runs without issues on f11
   * populate shasum into rhnPackage for newer packages and md5sum for older
+  * Populate checksum type for channels created by satellite-sync
 
  * rhnpush:
   * sha256 supported package can be uploaded  as expected
@@ -142,6 +143,7 @@ We need to make sure the queries used by these pages reflect any new db changes 
 
  * rhn-package-manager(Proxy):
   * sha256 supported package can be uploaded as expected
+  * Populate checksum type for channels created by rhn-package-manager
 
  * rhn-ssl-tool:
   * rhn-ssl-tool deploys rpms. It currently calls gen-rpm call to generate the spec and create and deploy em
@@ -150,7 +152,7 @@ We need to make sure the queries used by these pages reflect any new db changes 
 === Upgrades ( Estimates: 40 hours) ===
  * Any db changes should be upgradable from older satellites
  * Any existing content should be upgradable as well. 
- * I can't think of any existing content that would need to be migrated to sha256.(something to look for)
+ * An existing checksums have to be moved to new rhnChecksum table.
 
 === Other Feature Impact: ===
  * Nvrea feature needs to be revisited to handle regressions
