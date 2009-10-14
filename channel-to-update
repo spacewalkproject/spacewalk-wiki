@@ -4,7 +4,7 @@ Ever needed to create a channel to a specific update level?  Now you can with th
 
 Current Files (with md5sum):
 
-[http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.3.tar.bz2 Version 2.1.3 (162bc3e0d04e84eb700da631baa31ae0)] - 10/14/2009 - added RHEL5u4 data files
+ [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.3.tar.bz2 Version 2.1.3 (162bc3e0d04e84eb700da631baa31ae0)] - 10/14/2009 - added RHEL5u4 data files
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.1.2.tar.bz2 Version 2.1.2 (37c16b31a54b40eed7339aa62b765500)] - 08/26/2009 - fix for RHEL 4 compatibility
 
