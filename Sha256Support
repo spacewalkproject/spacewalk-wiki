@@ -9,6 +9,21 @@
  * Both proxy and spacewalk tools should handle shasum.
  * if possible move to shasum replacing md5 for other non-rpm verifications on spacewalk/proxy
 
+== Background - RPM changes ==
+
+There are several places in rpm format where a kind of checksum/signature is used. An old rpm format (used e.g. RHEL5) uses MD5 and SHA1. A new rpm format (e.g. in Fedora 11) uses MD5, SHA1 and SHA256.
+
+|| || old rpm ||  || new rpm || ||
+|| || hash || rpm tag || hash || rpm tag ||
+|| Header digest || SHA1 || || SHA1 ||
+|| Header signature || V3 DSA (SHA1) || SIGTAG_GPG SIGTAG_DSA || V3 RSA/SHA256 || SIGTAG_PGP SIGTAG_RSA
+|| (Payload) digest || MD5 || || MD5 ||
+|| (Payload) signature || V3 DSA (SHA1) || SIGTAG_GPG SIGTAG_DSA || V3 RSA/SHA256 || SIGTAG_PGP SIGTAG_RSA
+|| (Payload) files checksum || MD5 || RPMTAG_FILEMD5S || SHA256 ||  RPMTAG_FILEDIGESTS RPMTAG_FILEDIGESTALGO ||
+
+
+See: [https://fedoraproject.org/wiki/RPM_file_format_changes_to_support_SHA-256 RPM file format changes to support SHA-256]
+
 == Proposed Implementation ==  
 
  * Create rhnChecksum table which is able to hold a checksum and it's type for any (general) content.
