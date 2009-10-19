@@ -237,6 +237,12 @@ Note: the rl:listset tag will take care of creating the HTML form element for yo
 }}}
 
 
+== Selectable column ==
+{{{
+	 	<rl:selectablecolumn value="${current.id}"
+	 						selected="${current.selected}"
+	 						styleclass="first-column"/>
+}}}
 
 
 == filters == 
