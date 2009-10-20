@@ -75,5 +75,11 @@ I created deb package for rhnlib. Debian repo for getting packages was establish
 Rhnlib, rhpl and rhn-client-tools are in repository. It is possible to register
 with debian machine in spacewalk.
 
+'''October 2009'''[[BR]]
+
+You can use apt-get install rhn-setup to install all available packages. There are
+rhnsd, rhn-client-tools, rhncfg. Some of functions do not work and everything is in
+experimental state, but if you like it, try it and send me feedback.
+
 
 
