@@ -37,7 +37,7 @@ New features in 0.4 include:
 	1. Having made the Spacewalk base channel, you must now create a child channel for the kickstart helper tools
 		a. in the GUI, select "Channels|Manage Software Channels" and select "+ create new channel"
 		a. Fill in the required fields as described - call it "Fedora 9 with Tools" and label "fedora-9-with-tools"
-		a. Download the following packages from http://spacewalk.redhat.com/yum/0.4:
+		a. Download the following packages from http://spacewalk.redhat.com/yum/0.6:
 			* pyOpenSSL (in rawhide for F11)
 			* rhnlib (in rawhide for F11)
 			* libxml2-python (in rawhide for F11)
