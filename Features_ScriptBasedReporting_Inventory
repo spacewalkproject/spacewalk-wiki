@@ -72,3 +72,7 @@ server_id,profile_name,hostname,ip_address,registered_by,registration_time,last_
 1000010862,dri,dri,192.168.5.2,msuchy,2007-10-25 08:27:27,2009-08-03 14:08:05,2.6.18-92.1.17.el5,1,1,Red Hat Network Proxy (v5.2 for Server v5 x86),RHN Proxy Config Channel for dri,RHN Provisioning Entitled Servers,msuchy,Miroslav Suchy,,i686,1 CPUs; eth0 192.168.5.2/255.255.252.0 00:13:72:7e:b0:82; lo 127.0.0.1/255.0.0.0 00:00:00:00:00:00; peth0 0/0 fe:ff:ff:ff:ff:ff; sit0 0/0 00:00:00:00:00:00; veth1 0/0 00:00:00:00:00:00; veth2 0/0 00:00:00:00:00:00; veth3 0/0 00:00:00:00:00:00; vif0.0 0/0 fe:ff:ff:ff:ff:ff; vif0.1 0/0 fe:ff:ff:ff:ff:ff; vif0.2 0/0 fe:ff:ff:ff:ff:ff; vif0.3 0/0 fe:ff:ff:ff:ff:ff; xenbr0 0/0 fe:ff:ff:ff:ff:ff
 1000010862,dri,dri,192.168.5.2,msuchy,2007-10-25 08:27:27,2009-08-03 14:08:05,2.6.18-92.1.17.el5,1,1,Red Hat Network Proxy (v5.2 for Server v5 x86),RHN Proxy Config Channel for dri,Virtualization Host Platform Entitled Servers,msuchy,Miroslav Suchy,,i686,1 CPUs; eth0 192.168.5.2/255.255.252.0 00:13:72:7e:b0:82; lo 127.0.0.1/255.0.0.0 00:00:00:00:00:00; peth0 0/0 fe:ff:ff:ff:ff:ff; sit0 0/0 00:00:00:00:00:00; veth1 0/0 00:00:00:00:00:00; veth2 0/0 00:00:00:00:00:00; veth3 0/0 00:00:00:00:00:00; vif0.0 0/0 fe:ff:ff:ff:ff:ff; vif0.1 0/0 fe:ff:ff:ff:ff:ff; vif0.2 0/0 fe:ff:ff:ff:ff:ff; vif0.3 0/0 fe:ff:ff:ff:ff:ff; xenbr0 0/0 fe:ff:ff:ff:ff:ff
 }}}
+
+----
+
+Back to [wiki:Features/ScriptBasedReporting#Progress].
