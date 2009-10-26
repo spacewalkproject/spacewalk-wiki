@@ -1,0 +1,65 @@
+= Subscription and entitlement report =
+
+2009-08-05: spacewalk-backend 0.6.29-1 contains the subscription and entitlement report.
+
+Report fields:
+
+{{{
+# spacewalk-report entitlements --list
+organization_id
+organization
+entitlement_type
+entitlement
+used
+}}}
+
+The output:
+
+{{{
+# spacewalk-report entitlements
+organization_id,organization,entitlement_type,entitlement,used
+1,Miroslav Suchy,system,RHN Management Entitled Servers,75
+1,Miroslav Suchy,system,RHN Monitoring Entitled Servers,1
+1,Miroslav Suchy,system,RHN Provisioning Entitled Servers,1
+1,Miroslav Suchy,system,RHN Update Entitled Servers,0
+1,Miroslav Suchy,system,Virtualization Host Entitled Servers,0
+1,Miroslav Suchy,system,Virtualization Host Platform Entitled Servers,9
+1,Miroslav Suchy,channel,"JBoss Enterprise Application Platform (v 4, zip format)",0
+1,Miroslav Suchy,channel,JBoss Enterprise Middleware,0
+1,Miroslav Suchy,channel,Jan Pazdziora (1) Channel Family,2
+1,Miroslav Suchy,channel,RHEL Cluster-Storage,4
+1,Miroslav Suchy,channel,RHEL Cluster-Storage EUS,0
+1,Miroslav Suchy,channel,RHEL Clustering,5
+1,Miroslav Suchy,channel,RHEL Clustering EUS,0
+1,Miroslav Suchy,channel,RHEL Desktop FasTrack,3
+1,Miroslav Suchy,channel,RHEL Desktop Multi OS,2
+1,Miroslav Suchy,channel,RHEL Desktop Supplementary,2
+1,Miroslav Suchy,channel,RHEL Desktop Workstation,3
+1,Miroslav Suchy,channel,RHEL Desktop Workstation FasTrack,2
+1,Miroslav Suchy,channel,RHEL Extended Update Support,4
+1,Miroslav Suchy,channel,RHEL FasTrack,9
+1,Miroslav Suchy,channel,RHEL FasTrack (v. 5 for 64-bit IBM System z),0
+1,Miroslav Suchy,channel,RHEL Hardware Certification,0
+1,Miroslav Suchy,channel,RHEL Optional Productivity Apps,11
+1,Miroslav Suchy,channel,RHEL Optional Productivity Apps EUS,0
+1,Miroslav Suchy,channel,RHEL Supplementary,18
+1,Miroslav Suchy,channel,RHEL Supplementary (v. 5 for 64-bit IBM System z),0
+1,Miroslav Suchy,channel,RHEL Supplementary EUS,0
+1,Miroslav Suchy,channel,RHEL Virtualization,21
+1,Miroslav Suchy,channel,RHEL Virtualization EUS,0
+1,Miroslav Suchy,channel,Red Hat Application Server 1.0 (AS for i386),0
+1,Miroslav Suchy,channel,Red Hat Application Stack 1.0 (for AS v. 4 x86),3
+1,Miroslav Suchy,channel,Red Hat Cluster Suite,0
+1,Miroslav Suchy,channel,Red Hat Developer Suite,0
+1,Miroslav Suchy,channel,Red Hat Enterprise Linux (core server),65
+1,Miroslav Suchy,channel,Red Hat Enterprise Linux (v. 5 64-bit IBM System z),0
+1,Miroslav Suchy,channel,Red Hat Enterprise Linux Desktop (core client),6
+1,Miroslav Suchy,channel,Red Hat Enterprise MRG Grid,3
+1,Miroslav Suchy,channel,Red Hat Global File System 6.0 (for AS v3 x86),0
+1,Miroslav Suchy,channel,Red Hat Network Proxy,1
+1,Miroslav Suchy,channel,Red Hat Network Tools for Red Hat Enterprise Linux,24
+}}}
+
+----
+
+Back to [wiki:Features/ScriptBasedReporting#Progress].
