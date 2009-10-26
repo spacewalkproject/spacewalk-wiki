@@ -12,12 +12,22 @@
 
 === Script and the inventory report ===
 
+2009-07-24: spacewalk-backend 0.6.24-1 contains /usr/bin/spacewalk-report and the inventory report. 
+
 [wiki:Features/ScriptBasedReporting/Inventory]
 
 === Subscription and entitlement report ===
+
+2009-08-05: spacewalk-backend 0.6.29-1 contains the subscription and entitlement report. 
 
 [wiki:Features/ScriptBasedReporting/Entitlements]
 
 === Basic FISMA Report: Software inventory report - errata out of compliance information ===
 
+2009-10-23: spacewalk-backend 0.7.9-1 contains two errata reports. 
+
 [wiki:Features/ScriptBasedReporting/Erratas]
+
+=== Documentation ===
+
+2009-10-26: spacewalk-backend 0.7.10-1 contains spacewalk-report which supports the --info options, and all four existing reports now have documentation.
