@@ -1,0 +1,63 @@
+= Basic FISMA Report: Software inventory report - errata out of compliance information =
+
+2009-09-23: spacewalk-backend 0.7.9-1 contains two errata reports.
+
+Report fields:
+
+{{{
+# spacewalk-report errata-list --list
+advisory
+cve
+synopsis
+systems_affected
+# spacewalk-report errata-systems --list
+advisory
+server_id
+profile_name
+hostname
+ip_address
+}}}
+
+Note that there is no severity field in the errata-list report, as the severity table is empty on Satellite (5.3.0).
+
+The output:
+
+{{{
+# spacewalk-report errata-list | tail
+RHSA-2009:1484,CVE-2009-0922;CVE-2009-3230,Moderate: postgresql security update,77
+RHSA-2009:1485,CVE-2009-3230,Moderate: postgresql security update,3
+RHSA-2009:1490,CVE-2009-2964,Moderate: squirrelmail security update,3
+RHSA-2009:1500,CVE-2009-0791;CVE-2009-3604;CVE-2009-3606;CVE-2009-3609,Important: xpdf security update,1
+RHSA-2009:1501,CVE-2009-0791;CVE-2009-1188;CVE-2009-3604;CVE-2009-3606;CVE-2009-3608;CVE-2009-3609,Important: xpdf security update,1
+RHSA-2009:1503,CVE-2009-0791;CVE-2009-1188;CVE-2009-3604;CVE-2009-3608;CVE-2009-3609,Important: gpdf security update,12
+RHSA-2009:1504,CVE-2009-3603;CVE-2009-3608;CVE-2009-3609,Important: poppler security and bug fix update,50
+RHSA-2009:1512,CVE-2009-0791;CVE-2009-1188;CVE-2009-3604;CVE-2009-3608;CVE-2009-3609,Important: kdegraphics security update,3
+RHSA-2009:1513,CVE-2009-3608;CVE-2009-3609,Moderate: cups security update,123
+RHSA-2009:1522,CVE-2005-4881;CVE-2009-3228,Moderate: kernel security and bug fix update,38
+# spacewalk-report --multival-on-rows errata-list | tail
+RHSA-2009:1504,CVE-2009-3609,Important: poppler security and bug fix update,50
+RHSA-2009:1512,CVE-2009-0791,Important: kdegraphics security update,3
+RHSA-2009:1512,CVE-2009-1188,Important: kdegraphics security update,3
+RHSA-2009:1512,CVE-2009-3604,Important: kdegraphics security update,3
+RHSA-2009:1512,CVE-2009-3608,Important: kdegraphics security update,3
+RHSA-2009:1512,CVE-2009-3609,Important: kdegraphics security update,3
+RHSA-2009:1513,CVE-2009-3608,Moderate: cups security update,123
+RHSA-2009:1513,CVE-2009-3609,Moderate: cups security update,123
+RHSA-2009:1522,CVE-2005-4881,Moderate: kernel security and bug fix update,38
+RHSA-2009:1522,CVE-2009-3228,Moderate: kernel security and bug fix update,38
+# spacewalk-report errata-systems | tail
+RHSA-2009:1522,1000012916,xen12.example.com,xen12.example.com,10.12.24.12
+RHSA-2009:1522,1000012918,xen69.example.com,xen69.example.com,10.12.24.69
+RHSA-2009:1522,1000013269,jasan-chroot-rhel4,slanina.virtual.jsn,192.168.1.254
+RHSA-2009:1522,1000013401,dell-pe1950-04.example.com,dell-pe1950-04.example.com,10.12.23.69
+RHSA-2009:1522,1000013428,xen84.example.com,xen84.example.com,10.12.24.84
+RHSA-2009:1522,1000013667,rhel4.virtual.jsn,rhel4.virtual.jsn,192.168.1.2
+RHSA-2009:1522,1000013927,rhel4s-x86_64-work,,
+RHSA-2009:1522,1000014067,hp-dl360-05.example.com,hp-dl360-05.example.com,10.12.23.59
+RHSA-2009:1522,1000014547,vmware146.example.com,vmware146.example.com,10.12.24.146
+RHSA-2009:1522,1000014787,nahan,unknown,192.168.122.145
+}}}
+
+----
+
+Back to [wiki:Features/ScriptBasedReporting#Progress].
