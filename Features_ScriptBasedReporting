@@ -25,6 +25,7 @@
 === Basic FISMA Report: Software inventory report - errata out of compliance information ===
 
 2009-10-23: spacewalk-backend 0.7.9-1 contains two errata reports. 
+2009-10-30: spacewalk-backend 0.7.11-1 adds column type to the errata-list report.
 
 [wiki:Features/ScriptBasedReporting/Erratas]
 
