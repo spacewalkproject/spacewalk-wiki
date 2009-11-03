@@ -7,18 +7,35 @@
 Report fields:
 
 {{{
-# spacewalk-report errata-list --list
-advisory
-type
-cve
-synopsis
-systems_affected
-# spacewalk-report errata-systems --list
-advisory
-server_id
-profile_name
-hostname
-ip_address
+# spacewalk-report --info errata-list --list --info
+Errata out of compliance information - errata details
+
+    List of erratas that are applicable to at least one registered
+    system, together with basic info about the errata. Also see
+    errata-systems report to get list of systems that are affected.
+
+Fields in the report:
+
+    advisory: Advisory / errata identifier
+    type: Advisory type (Enhancement, Bug Fix, Security)
+    cve: List of CVE names (Common Vulnerabilities and Exposures Identifiers) addressed by the errata
+    synopsis: Synopsis of the errata
+    systems_affected: Number of systems to which this errata is applicable
+}}}
+
+{{{
+# spacewalk-report --info errata-systems --list --info
+Errata out of compliance information - erratas for systems
+
+    List of applicable erratas and systems that are affected.
+
+Fields in the report:
+
+    advisory: Advisory / errata identifier
+    server_id: System identifier
+    profile_name: Profile name, as stored on server
+    hostname: Hostname, as reported by the system
+    ip_address: IP address, as reported by the system
 }}}
 
 Note that there is no severity field in the errata-list report, as the severity table is empty on Satellite (5.3.0).
