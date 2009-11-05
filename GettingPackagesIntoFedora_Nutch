@@ -55,15 +55,17 @@ Looking at: hadoop-0.19.0
 || commons-net-1.4.1.jar ||  jakarta-commons-net ||  || 1.4.1 ||  ||  || IN_FEDORA ||
 || hsqldb-1.8.0.10.jar || hsqldb  ||  || 1.8.0.10 (F10) ||  ||  || IN_FEDORA ||
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  || IN_FEDORA ||
-|| jets3t-0.6.1.jar ||  || ||  || jmatthews || https://jets3t.dev.java.net/ || !FedoraPackageReview - [https://bugzilla.redhat.com/show_bug.cgi?id=484281 bz 484281]||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || IN_FEDORA ||
-|| kfs-0.2.0.jar ||  ||  ||  ||  || http://kosmosfs.wiki.sourceforge.net/ || BUILD FAILED, I think it needs log4cpp ||
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  || IN_FEDORA ||
 || oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  ||  || IN_FEDORA ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  || IN_FEDORA ||
+||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA ||
+|| jets3t-0.6.1.jar ||  || ||  || jmatthews || https://jets3t.dev.java.net/ || !FedoraPackageReview - [https://bugzilla.redhat.com/show_bug.cgi?id=484281 bz 484281]||
+|| kfs-0.2.0.jar ||  ||  ||  ||  || http://kosmosfs.wiki.sourceforge.net/ || BUILD FAILED, I think it needs log4cpp ||
 || slf4j-api-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
 || slf4j-log4j12-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
-||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA ||
+
+And looking at hadoop 0.20 they use ivy, http://ant.apache.org/ivy/, a new buildtool, maybe similar to maven ...
 
 
 
