@@ -1,0 +1,58 @@
+= How to backup Spacewalk =
+
+
+== Directories ==
+
+ * '''/var/satellite'''  contains all the pushed packages
+ * '''/var/lib/cobbler'''  all the cobbler configuration
+ * '''/etc'''
+ * '''/root/ssl-build''' with the package containing your SSL certificate
+ * '''/home/nocpulse'''
+ * '''/var/lib/rhn/kickstarts''' wich contains all the kickstart files
+
+
+
+== Oracle backup ==
+
+=== Setting up archivelog for online backup ===
+
+{{{
+bash-3.2$ su oracle
+bash-3.2$ sqlplus /nolog
+ connect / as sysdba
+ shutdown immediate
+ startup mount
+ alter database archivelog;
+ alter database open;
+ SELECT LOG_MODE FROM SYS.V$DATABASE;
+ quit
+
+You should get:
+ SQL> SELECT LOG_MODE FROM SYS.V$DATABASE;
+ 
+ LOG_MODE
+ ------------
+ ARCHIVELOG
+ --
+}}}
+
+=== Run (online) backup ===
+
+The backup script can be found at /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh
+Please note that you have to run it under the '''oracle''' system user.
+
+{{{
+bash-3.2$ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh
+Doing online backup of the database.
+Backup of the database succeeded.
+Log file is at /usr/lib/oracle/xe/oxe_backup_current.log.
+}}}
+
+Location of the backup files: /usr/lib/oracle/xe/app/oracle/flash_recovery_area/XE/autobackup/
+
+
+
+
+== Links ==
+ * [http://www.markcallen.com/oracle/oracle-xe-backup]
+ * [http://www.mail-archive.com/spacewalk-list@redhat.com/msg02732.html]
