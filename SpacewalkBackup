@@ -48,7 +48,7 @@ Backup of the database succeeded.
 Log file is at /usr/lib/oracle/xe/oxe_backup_current.log.
 }}}
 
-Location of the backup files: /usr/lib/oracle/xe/app/oracle/flash_recovery_area/XE/autobackup/
+Location of the backup files: /usr/lib/oracle/xe/app/oracle/flash_recovery_area/XE/
 
 
 
