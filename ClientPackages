@@ -15,6 +15,7 @@ rhncfg-client
 rhncfg-management
 rhnlib
 rhnmd
+rhnsd
 spacewalk-koan
 yum-rhn-plugin
 }}}
