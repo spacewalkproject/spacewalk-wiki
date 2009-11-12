@@ -1,5 +1,5 @@
 == Client Packages needed for all functionality (monitoring, provisioning, updates) ==
-
+{{{
 osad
 rhn-check
 rhn-client-tools
@@ -17,3 +17,4 @@ rhnlib
 rhnmd
 spacewalk-koan
 yum-rhn-plugin
+}}}
