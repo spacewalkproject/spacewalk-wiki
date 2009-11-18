@@ -33,3 +33,9 @@
 === Documentation ===
 
 2009-10-26: spacewalk-backend 0.7.10-1 contains spacewalk-report which supports the --info options, and all four existing reports now have documentation.
+
+=== Basic FISMA Report: user report ===
+
+2009-11-18: spacewalk-backend 0.7.14-1 contains "users" and "users-systems" reports.
+
+[wiki:Features/ScriptBasedReporting/Users]
