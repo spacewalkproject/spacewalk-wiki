@@ -1,0 +1,7 @@
+http://www.icann.org/en/announcements/announcement-30oct09-en.htm
+
+From article:
+"The coming introduction of non-Latin characters represents the biggest technical change to the Internet since it was created four decades ago," said ICANN chairman Peter Dengate Thrush. "Right now Internet address endings are limited to Latin characters – A to Z. But the Fast Track Process is the first step in bringing the 100,000 characters of the languages of the world online for domain names."
+
+Do we know what that means for Spacewalk? Will handle it. Can somebody test it?
+According to my information Fedora 12 should be able to handle such domains. At least bind will support it. Older Fedoras and RHELs will probably not support it. 
