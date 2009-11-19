@@ -5,7 +5,7 @@
 Report fields:
 
 {{{
-# spacewalk-report --info entitlements --list --info
+# spacewalk-report --info --list-fields-info entitlements
 Entitlement and channel list and usage
 
     For each organization, list of system entitlements and
