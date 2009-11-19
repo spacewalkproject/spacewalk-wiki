@@ -11,7 +11,7 @@ User reports were created based on the following requirements:
 Report fields:
 
 {{{
-# spacewalk-report --info users --list --info
+# spacewalk-report --info --list-fields-info users
 Users in the system
 
     List of all users for all organizations, with their details
@@ -36,7 +36,7 @@ Fields in the report:
 Note that there are two additional columns identifying the organization, and the user type is not present because the User Type field is basically list of roles in older Satellites, and empty in 5.1+.
 
 {{{
-# spacewalk-report --info users-systems --list --info
+# spacewalk-report --info --list-fields-info users-systems
 Systems administered by individual users
 
     List of systems that users can administer.
