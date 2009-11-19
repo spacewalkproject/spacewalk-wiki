@@ -34,6 +34,8 @@
 
 2009-10-26: spacewalk-backend 0.7.10-1 contains spacewalk-report which supports the --info options, and all four existing reports now have documentation.
 
+2009-11-19: spacewalk-backend 0.7.15-1 dropped the usage of report-specific options; instead of --list-fields --info, use --list-fields-info.
+
 === Basic FISMA Report: user report ===
 
 2009-11-18: spacewalk-backend 0.7.14-1 contains "users" and "users-systems" reports.
