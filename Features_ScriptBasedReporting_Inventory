@@ -5,7 +5,7 @@
 Report fields:
 
 {{{
-# spacewalk-report --info inventory --list --info
+# spacewalk-report --info --list-fields-info inventory
 Inventory report
 
     List of systems registered to the server, together with
