@@ -47,7 +47,7 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||Name|| License || Bugzilla || Submitter || Notes || 
 ||jabberpy-0.5-0.13.el5.src.rpm|| LGPLv2+ (According to the SRPM)  || [https://bugzilla.redhat.com/show_bug.cgi?id=468299 468299] || stahnma|| now in fedora ||
 ||osad-5.2.0-1.src.rpm|| GPLv2 || ||  || || 
-||rhncfg-5.2.0-0.src.rpm|| GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491088 491088] || msuchy ||  ||
+||rhncfg-5.2.0-0.src.rpm|| GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491088 491088] || msuchy || Now in Fedora ||
 ||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| ||  ||  ||
 ||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || ||  ||  ||
 ||spacewalk-koan-0.1.6-1.src.rpm  || GPLv2 (According source in client/tools/spacewalk-koan)  || [https://bugzilla.redhat.com/show_bug.cgi?id=481668 481668]|| mmccune/msuchy || Now in Fedora ||
@@ -130,7 +130,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || spacewalk-setup-0.01-3.el5.src.rpm || || || ||
  || velocity-dvsl-0.45-5jpp_1rh.src.rpm || || || ||
  || velocity-tools-1.2-1jpp_1rh.src.rpm || || || ||
- || spacewalk-proxy-html || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=494292 494292] || msuchy ||
+ || spacewalk-proxy-html || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=494292 494292] || msuchy || Now in Fedora ||
  || spacewalk-proxy-docs || Open Publication || [https://bugzilla.redhat.com/show_bug.cgi?id=501655 501655] || msuchy || Now in Fedora ||
 
 There is also a set of jars currently in search-server which are not rpms which will probably need to be packaged up to be accepted into Fedora.
