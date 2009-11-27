@@ -45,16 +45,17 @@ rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/i386/os/Packages/spacewal
 
 === Nightly builds ===
 
-If you want to use the nightly builds 
-add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the following contents:
+If you want to use the nightly builds, add a .repo file pointing to the nightly repository:
 
 {{{
+cat > /etc/yum.repos.d/spacewalk.repo << EOF
 [spacewalk]
 name=Spacewalk
 baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/$basearch/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
+EOF
 }}}
 
 '''NOTE:''' if yum install or update nags about "cobbler >= 1.6.3 is needed by package <bla>" enable the "epel-testing" repo in /etc/yum.repos.d/epel-testing.repo
