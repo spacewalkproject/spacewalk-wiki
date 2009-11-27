@@ -108,6 +108,7 @@ XE =
        )
     )
 EOF
+restorecon -v /etc/tnsnames.ora
 }}} 
 
 == Test your connection with sqlplus ==
