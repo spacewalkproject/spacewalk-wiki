@@ -110,16 +110,6 @@ XE =
 EOF
 }}} 
 
-== Client setup on 64bit platform == 
-
-Users on x86_64 will need to verify the following lines exist in {{{/etc/ld.so.conf.d/oracle-lib-compat.conf}}}   
-
-{{{
-/usr/lib/oracle/10.2.0.4/client64/lib
-/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/lib
-}}}
-Run {{{ldconfig -v}}} to enable these changes on your system.
-
 == Configuring sqlplus ==
 
 You must define environment variables properly (LD_LIBRARY_CONFIG and SQLPLUS) to run sqlplus.  Consult the [http://download-east.oracle.com/docs/cd/B19306_01/server.102/b14357/ape.htm#CHDJCDFA config notes] for more info.
