@@ -43,10 +43,10 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 == Install ==
 
 {{{
-# yum install -y bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
-# yum localinstall -y --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
-# yum localinstall -y --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
-# yum install oracle-lib-compat
+# yum -y install bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
+# yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
+# yum -y localinstall --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+# yum -y install oracle-lib-compat
 }}}
 
 === Notes ===
@@ -61,7 +61,7 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 If you are running with SELinux enabled then install the following packages from the Spacewalk repo before running {{{oracle-xe configure}}}:
 
 {{{
-# yum install oracle-xe-selinux oracle-instantclient-selinux
+# yum -y install oracle-xe-selinux oracle-instantclient-selinux
 }}}
 
 This will likely pull in {{{compat-libstdc++-33}}}, {{{oracle-lib-compat}}}, and {{{oracle-nofcontext-selinux}}} as well.
