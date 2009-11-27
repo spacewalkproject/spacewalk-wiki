@@ -44,13 +44,16 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 
 {{{
 # yum install -y bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
-# yum localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+# yum localinstall -y --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
+# yum localinstall -y --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
 # yum install oracle-lib-compat
 }}}
 
-  * '''NOTE:''' bc is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
-  * nogpgcheck is required because the Oracle RPMs are not signed.
-  * '''NOTE:''' Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
+=== Notes ===
+  * '''bc''' is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
+  * '''--nogpgcheck''' is required because the Oracle RPMs are not signed.
+  * If the installation of oracle-xe-univ fails on Fedora 12 with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
+  * Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
   * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user.
 
 == Install SELinux Policy ==
