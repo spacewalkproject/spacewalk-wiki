@@ -43,7 +43,7 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 == Install ==
 
 {{{
-# yum install bc libaio.i386 glibc.i686
+# yum install -y bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
 # yum localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
 # yum install oracle-lib-compat
 }}}
