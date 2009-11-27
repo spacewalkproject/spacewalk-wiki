@@ -94,18 +94,20 @@ If you messed up these entries, you '''WILL''' have to uninstall and reinstall.
 
 == Setup tnsnames.ora ==
 
-Place the following into {{{/etc/tnsnames.ora}}}:
+Define the service name in {{{/etc/tnsnames.ora}}}:
 
-{{{ 
-XE = 
-    (DESCRIPTION = 
-       (ADDRESS_LIST = 
-          (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521)) 
-       ) 
-       (CONNECT_DATA = 
-          (SERVICE_NAME = xe) 
-       ) 
-    ) 
+{{{
+cat >> /etc/tnsnames.ora << 'EOF'
+XE =
+    (DESCRIPTION =
+       (ADDRESS_LIST =
+          (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
+       )
+       (CONNECT_DATA =
+          (SERVICE_NAME = xe)
+       )
+    )
+EOF
 }}} 
 
 == Client setup on 64bit platform == 
