@@ -79,13 +79,13 @@ Configure the Oracle XE database by running
 Here are some sane values for the configure:
 
 {{{
- HTTP port for Oracle Application Express: 9000
+ HTTP port for Oracle Application Express: 9055
  Database listener port: 1521
  Password for SYS/SYSTEM: <password>
  Start at boot: y
 }}}
 
-Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9000, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}.
+Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9055, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}. (This 9055 value is new for Spacewalk 0.7, as we needed to give way to Fedora 12's default allocation of port 9000 for squid.)
 
 If you messed up these entries, you '''WILL''' have to uninstall and reinstall.
 
@@ -241,7 +241,7 @@ Perhaps a required shared library or dll isn't installed where expected
 
  * If you run out of space in Oracle XE you can try and reclaim some space by shrinking your storage:
 
- Administration > Storage > Compact Storage in XE webUI (http://your.satellite.tld:9000/apex/) .
+ Administration > Storage > Compact Storage in XE webUI (http://your.satellite.tld:9055/apex/) .
 
  * If you get `ORA-12514` using `oracle-xe` it could be `bc` is not installed, among many other things (ask google about ORA-##### errors)
 
