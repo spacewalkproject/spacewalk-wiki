@@ -125,14 +125,28 @@ In order to get Spacewalk to run you need the Oracle client and an Oracle 10g da
 
 = Installing Spacewalk =
 
-Just ask yum to install the application:
+Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
+
+'''Pre 0.7 installation:'''
 
 {{{
 yum install gpg   # not needed for 0.7+, see 28a5a1ef314891a2b212930e64b5c9ca60088fe3
 yum install spacewalk
 }}}
 
-This will pull down and install the set of RPMs required to get Spacewalk to run.
+'''0.7+ installation:'''
+
+If you tend to use the Oracle backend:
+{{{
+yum install spacewalk-oracle 
+}}}
+
+If you prefer the PostgreSQL backend:
+{{{
+yum install spacewalk-postgresql 
+}}}
+
+'''Note:''' PostgreSQL support is in early development stage. You may want to take a look at the [PostgreSqlProject PostgreSql Project] page for further information.
 
 = Configuring Spacewalk =
 
