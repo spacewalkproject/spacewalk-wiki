@@ -1,36 +1,34 @@
 = Spacewalk Upgrade Instructions =
 
-These upgrade instructions apply to Spacewalk 0.5 running on Red Hat Enterprise Linux 5 Server or CentOS 5.
+These are upgrade instruction for upgrading Spacewalk 0.6 to Spacewalk 0.7.
 
-Spacewalk upgrade from version 0.5 to 0.6 involves several basic steps:
+These upgrade instruction apply to Spacewalk installations meeting the following criteria:
+
+  *  Spacewalk 0.6 running on Red Hat Enterprise Linux 5 Server or CentOS 5
+  *  the server uses Oracle 10g / Oracle-XE as a database backend
+
+
+----
+
+
+Spacewalk upgrade from version 0.6 to 0.7 involves several basic steps:
   1.  Configuration files and Spacewalk database backup
-  2.  Preparation for jabberd ver. 2.2.8
-  3.  Package upgrade
-  4.  Schema upgrade
-  5.  Upgrade of Spacewalk configuration
-  6.  Restart Spacewalk
-  7.  Update of monitoring setup
-  8.  Update Spacewalk configuration files
-  9.  Restart Spacewalk
-  10.  Rebuild search indexes
+  2.  Package upgrade
+  3.  Schema upgrade
+  4.  Upgrade of Spacewalk configuration
+  5.  Restart Spacewalk
+  6.  Update of monitoring setup
+  7.  Update Spacewalk configuration files
+  8.  Restart Spacewalk
+  9.  Rebuild search indexes
 
 ----
 
 
 = Assumptions =
 
-  * For RHEL or CentOS, you will need the Base and EPEL repositories enabled for dependencies.
-  * You had set up your yum repository configuration to point to spacewalk 0.6 repo. Ordinarily, your yum repo configuration might look like:
-
-
-{{{
-[spacewalk]
-name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.6/RHEL/5/$basearch/os/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=1
-}}}
+  * For RHEL or CentOS, you will need the Base, EPEL 5 and EPEL 5 testing repositories enabled for dependencies.
+  * You had set up your yum repository configuration to point to spacewalk 0.7 repo.
 
 
 =  Database and configuration backup  =
@@ -41,99 +39,12 @@ gpgcheck=1
   *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle documentation or contact your DBA
 
 
-= Preparation for jabberd ver. 2.2.8 =
-
-Stop Spacewalk:
-
-{{{
-# /usr/sbin/rhn-satellite stop
-}}}
-
-At this point, all jabberd processes (c2s, s2s, sm, router) need to be stopped.
-
-Clean jabberd database:
-
-{{{
-# rm -f /var/lib/jabberd/db/*
-}}}
-
-Upgrade jabberd:
-
-{{{
-# yum upgrade jabberd
-}}}
-
-At this point, jabberd ver. 2.2.8 should be installed on your system.
-
-For jabberd, osa-dispatcher and osad clients to work correctly, SSL certificate used by jabberd services needs to have correct
-user & group ownership (user & group == jabber).
-
-Check user and group ownership of file containing SSL certificate and private key used by jabberd services for setting up encrypted channels:
-
-{{{
-# ls -l /etc/pki/spacewalk/jabberd/server.pem
-}}}
-
-This will either say "jabber" :
-
-{{{
-# ls -l /etc/pki/spacewalk/jabberd/server.pem 
--rw------- 1 jabber jabber 7244 Aug  6 16:53 /etc/pki/spacewalk/jabberd/server.pem
-}}}
-
-or it will say "jabberd" :
-
-{{{
-# ls -l /etc/pki/spacewalk/jabberd/server.pem 
--rw------- 1 jabberd jabberd 7244 Aug  7 10:20 /etc/pki/spacewalk/jabberd/server.pem
-}}}
-
-If the user and group ownership says "jabber", you can safely skip rest of this step and continue with a step named "Package upgrade" below.
-
-If the user and group ownership says "jabberd", you need to do following steps:
-
-As root run:
-
-{{{
-# getent passwd jabberd && userdel -r jabberd
-}}}
-
-As root, run upgrade-cert.sh script attached to this page:
-
-{{{
-# ./upgrade-cert.sh
-}}}
-
-This script will try to re-create new rpm package containing your original SSL certificates 
-and instruct you to do these additional steps that you are required to do:
-
-  *  Uninstall original package containing your certificate files
-
-  *  Install updated package with your original certificate files
-
-  *  Create a backup of rpm files that were created
-
-  *  Remove temporary content created in previous steps.
-
-One last time, make sure SSL certificate file used by jabberd services is now user & group owned by "jabber" :
-
-{{{
-# ls -l /etc/pki/spacewalk/jabberd/server.pem 
--rw------- 1 jabber jabber 7244 Aug  7 11:14 /etc/pki/spacewalk/jabberd/server.pem
-}}}
-
 = Package upgrade =
-
-Before the actual package upgrade, run following command:
-
-{{{
-# semanage port -d -t cobbler_port_t -p tcp 25152
-}}}
 
 Perform package upgrade using yum:
 
 {{{
-# yum upgrade
+# yum -x spacewalk-postgresql upgrade
 }}}
 
 During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux.
@@ -170,7 +81,7 @@ Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgra
 
 =  Upgrade of Spacewalk configuration  =
 
-For Spacewalk 0.6, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
+For Spacewalk 0.7, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
 
 {{{
 # spacewalk-setup --disconnected --upgrade
@@ -238,9 +149,7 @@ Restore some of the custom values you might have set previously in /etc/rhn/rhn.
 
 =  Restart Spacewalk  =
 
-If all of the above steps completed successfully, you can start your upgraded Spacewalk server. With Spacewalk 0.3, rhn-satellite init script
-was decommissioned and all Spacewalk services are being started individually. If you need to restart your Spacewalk using one command,
-use /usr/sbin/rhn-satellite script.
+If all of the above steps completed successfully, you can start your upgraded Spacewalk server.
 
 {{{
 # /usr/sbin/rhn-satellite restart
@@ -253,105 +162,4 @@ This can be accomplished by the following:
 
 {{{
 # /etc/init.d/rhn-search cleanindex
-}}} 
-
-
-----
-What's below are additional steps that were required for Spacewalk 0.4 to Spacewalk 0.5 upgrades. These steps are no longer required for
-Spacewalk 0.5 to Spacewalk 0.6 and can be safely ignored.
-
-= Update of Jabber SSL certificate location =
-
-With jabberd-2.2.5 package present in EPEL, it is necessary to update location of SSL certificate used by jabberd service: /etc/jabberd/server.pem
-This change is required to avoid file conflict that would otherwise occur during package upgrade: the PEM file in question is owned by both
-new jabberd from EPEL and another package from your earlier Spacewalk installation created at setup time 
-(by spacewalk-setup / rhn-ssl-tool).
-
-To update the location, follow these steps: 
-
-Setup your yum configuration to point to Spacewalk 0.5 repo:
-
-{{{
-[spacewalk]
-name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.5/RHEL/5/$basearch/os
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=1
-}}}
-
-Stop your Spacewalk server. To accomplish this, execute following command as root:
-
-{{{
-# /usr/sbin/rhn-satellite stop
-}}}
-
-Update spacewalk-certs-tools package:
-
-{{{
-# yum upgrade spacewalk-certs-tools
-}}}
-
-
-As root, run upgrade-cert.sh script attached to this page:
-{{{
-# ./upgrade-certs.sh
-}}}
-
-This script will try to re-create new rpm package containing your original SSL certificates with server.pem file put
-into a new location and instruct you to do these additional steps that you are required to do:
-
-  *  Uninstall original package containing your certificate files
-
-  *  Install updated package with your original certificate files
-
-  *  Create a backup of rpm files that were created
-
-  *  Remove temporary content created in previous steps.
-
-
-----
-What's bellow are additional steps that were required for Spacewalk 0.2 to Spacewalk 0.3 upgrades. These steps are no longer required for
-Spacewalk 0.4 to Spacewalk 0.5 upgrades and can be safely ignored.
-
-=  Activate Spacewalk services  =
-
-With release of 0.3, spacewalk services (rhn-search, satellite-httpd, taskomatic, ...) are no longer started from /etc/init.d/rhn-satellite,
-every service has its own init.d script with chkconfig entries.
-
-When doing a new Spacewalk 0.3 installation, all the services are being activated by spacewalk-setup. When upgrading existing Spacewalk 0.2
-installation, you have to activate all these services manually:
-
-{{{
-# for service in jabberd osa-dispatcher taskomatic tomcat5 satellite-httpd Monitoring MonitoringScout rhn-search; do
-    if [ -e "/etc/init.d/$service" ]; then
-        /sbin/chkconfig --level 345 $service on
-    fi
-done
-}}}
-
-
----
-
-What's bellow are additional steps that were required for Spacewalk 0.1 to Spacewalk 0.2 upgrades. These steps are no longer required for
-Spacewalk 0.2 to Spacewalk 0.3 upgrades and can be safely ignored.
-
-=  Package paths upgrade =
-
-Spacewalk ver. 0.2 introduced new layout of /var/satellite directory (change coming with multiple distribution support). To migrate
-existing packages into new locations, use update-packages script (spacewalk-backend-satellite-tools) with a valid database connection string.
-
-{{{
-# /usr/bin/update-packages --db=spacewalk/spacewalk@xe
-}}}
-
-
-=  Update configuration  =
-
-
-If you're upgrading Spacewalk 0.1 to version 0.2, add the following line into /etc/rhn/rhn.conf and /etc/rhn/default/rhn_web.conf:
-
-
-{{{
-web.product_name = Spacewalk
 }}}
