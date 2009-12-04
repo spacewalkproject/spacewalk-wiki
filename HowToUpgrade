@@ -2,10 +2,13 @@
 
 These are upgrade instruction for upgrading Spacewalk 0.6 to Spacewalk 0.7.
 
+Spacewalk 0.5 to 0.6 upgrade instructions, are available at
+[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06]
+
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
   *  Spacewalk 0.6 running on Red Hat Enterprise Linux 5 Server or CentOS 5
-  *  the server uses Oracle 10g / Oracle-XE as a database backend
+  *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend
 
 
 ----
