@@ -28,19 +28,19 @@ To use this repository install spacewalk-repo with commands below:
 === Red Hat Enterprise Linux, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.6/RHEL/5/i386/os/Packages/spacewalk-repo-0.6-5.el5.noarch.rpm
-}}}
-
-=== Fedora 10 ===
-
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/10/i386/os/Packages/spacewalk-repo-0.6-5.fc10.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.7/RHEL/5/i386/spacewalk-repo-0.7-4.el5.noarch.rpm
 }}}
 
 === Fedora 11 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.6/Fedora/11/i386/os/Packages/spacewalk-repo-0.6-5.fc11.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.7/Fedora/11/i386/spacewalk-repo-0.7-4.fc11.noarch.rpm
+}}}
+
+=== Fedora 12 ===
+
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.7/Fedora/12/i386/spacewalk-repo-0.7-4.fc12.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -58,12 +58,14 @@ gpgcheck=0
 EOF
 }}}
 
-'''NOTE:''' if yum install or update nags about "cobbler >= 1.6.3 is needed by package <bla>" enable the "epel-testing" repo in /etc/yum.repos.d/epel-testing.repo
+'''NOTE:''' if yum install or update nags about conflict on "file /usr/bin/ipv4calc" enable the "epel-testing" repo in /etc/yum.repos.d/epel-testing.repo
 
-Fedora 10 nightly repo is at:
+'''NOTE:''' Nigthly repo contains developers snapshot and is not suitable in production environment.
+
+Fedora 12 nightly repo is at:
 
 {{{ 
-http://miroslav.suchy.cz/spacewalk/nightly-candidate-f10/
+http://miroslav.suchy.cz/spacewalk/nightly-candidate-f12/
 }}}
 
 Fedora 11 nightly repo is at:
@@ -81,8 +83,8 @@ For Spacewalk 0.5/0.6 a couple of additional dependencies are needed from jpacka
 {{{
 cat > /etc/yum.repos.d/jpackage.repo << EOF
 [jpackage]
-name=jpackage-f10
-baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
+name=jpackage-f12
+baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-12/free/
 gpgkey=http://www.jpackage.org/jpackage.asc
 gpgcheck=1
 EOF
@@ -127,14 +129,7 @@ In order to get Spacewalk to run you need the Oracle client and an Oracle 10g da
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
-'''Pre 0.7 installation:'''
-
-{{{
-yum install gpg   # not needed for 0.7+, see 28a5a1ef314891a2b212930e64b5c9ca60088fe3
-yum install spacewalk
-}}}
-
-'''0.7+ installation:'''
+'''0.7 installation:'''
 
 If you tend to use the Oracle backend:
 {{{
@@ -172,10 +167,6 @@ An example session is as follows:
 
 {{{
 [root@fjs-0-02 yum.repos.d]# spacewalk-setup --disconnected
-Available database backends:
-   oracle
-   postgresql
-Database? oracle
 * Setting up Oracle environment.
 * Setting up database.
 ** Database: Setting up database connection.
