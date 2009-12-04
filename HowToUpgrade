@@ -56,6 +56,18 @@ Perform package upgrade using yum:
 # yum -x spacewalk-postgresql upgrade
 }}}
 
+If you receive this yum error while upgrading, remove perl-Network-IPv4Addr and replace it with perl-Net-IPv4Addr
+{{{
+Transaction Check Error:
+  file /usr/bin/ipv4calc from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
+  file /usr/share/man/man1/ipv4calc.1.gz from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
+}}}
+{{{
+# rpm -e --nodeps perl-Network-IPv4Addr
+# yum install perl-Net-IPv4Addr
+}}}
+
+
 During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux.
 These messages are produced by restorecon and do not pose any harm.
 On the contrary, these messages indicate relabeling of file system objects that is required for correct Spacewalk and SELinux symbiosis.
