@@ -28,7 +28,7 @@ In this section is linked various documents about parts of Spacewalk to give an 
 
    * [OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
    * [DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
-   * [MultiOrgGuide] -- A guide to setting up multiple organisations
+   * [MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
 
 == Misc Information ==
 
