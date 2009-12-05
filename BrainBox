@@ -26,6 +26,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * [[Image(action-del.gif)]] [wiki:Why_not_to_use_a_configuration_management_engine Why not to use a configuration management engine] -- jvzantvoort(jydawg)
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
+   * [[Image(action-del.gif)]] Agreed, could there be some integration with NRPE or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
    * ? Is this the NEVRA issue? or something else? -- jmrodri
  * streamline development process to encourage more contributions, see [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a The Architecture of Participation: ...]
@@ -82,9 +83,15 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * ...or make it possible to push updates/rpm to the clients instead of errata only -- red
   * [[Image(action-add.gif)]] Enables pushing of updates to clients without anyone having to write errata - might just suffice for lots of use cases -- red
  * Manage OpenVZ Containers
+  * [[Image(action-add.gif)]] Seconded. -- phil
  * Allow a channel to be available as a raw yum repo.  This would work for building tools like mock.  I often have to keep rpms around in 2 spots so I can perform mock biulds.  Please, please fix this. --stahnma
+  * [[Image(action-add.gif)]] Seconded, it would also make migration, manual changes easier? An export as yum repo hierarchy button somewhere? -- Phil
  * [wiki:Per_Channel_Vars Per Channel Vars for Config Channels]
  * Allow postinstall actions for the server. E.g. force software and configuration updates, set custom variables, send mail.
   * [[Image(action-del.gif)]] - can be already done using System details -> Software -> Install -> select some package -> Install -> Run command
   * I mean, postinstall of a server, not a package. the '%post' part of a kickstart if you will.
  * [wiki:Features/NonLatinCharacters non-Latin characters in domain names]
+ * Integration with some sort of FIM such as [http://en.wikipedia.org/wiki/AIDE_(software) AIDE], such features as exporting the compiled database back to the spacewalk server and comparison of databases and file hashes between Groups/SSMs. I have clusters of machines that need to be kept consistent, which is harder than it sounds when some are taken out of service for developers or tweaked for special purposes. Plus security obviously. --Phil
+ * Addition of a GSSAPI/Kerberos authentication method in place of the RHNSD and SSH method for remote client access. Instead of providing the identity file and a user for SSHing (shared keys are banned and impractical in my environment) I'd like to use my existing automaton user and distribute his key tab so that a simple kinit would allow password-less SSH to client machines. --Phil
+ * PAM authentication to be extended so that local GIDs can be mapped to organisations. --Phil
+ * See above about NRPE and NPC but integration with Cacti and Nagios perhaps? I know Redhat has "func" but they aren't quite the same and Nagios + Cacti + NPC is becoming an almost defacto standard in quite a few places I've worked/consulted. --Phil
