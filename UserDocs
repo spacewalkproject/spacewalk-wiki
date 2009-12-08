@@ -1,6 +1,6 @@
 [[PageOutline]]
 
-== User Documentation ==
+= User Documentation =
 In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
    * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
@@ -41,8 +41,22 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
   * [DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
 
-== FAQ ==
-  * [SpacewalkFaq Frequently Asked Questions]
+== [wiki:SpacewalkFaq FAQ] ==
+  * [wiki:SpacewalkFaq#General General]
+    * [wiki:SpacewalkFaq#WhatisSpacewalk What Is Spacewalk?]
+    * [wiki:SpacewalkFaq#HowlonghasSpacewalkbeenaround How long has Spacewalk been around?]
+  * [wiki:SpacewalkFaq#Installation Installation]
+    * [wiki:SpacewalkFaq#IsaSatelliteSpacewalkcertificaterequiredtouseSpacewalk Is a Satellite/Spacewalk certificate required to use Spacewalk?]
+  * [wiki:SpacewalkFaq#SpacewalkArchitecture Architecture]
+    * [wiki:SpacewalkFaq#WhydoyouuseOracleAnyplansforsupportingotherdatabases Any plans for supporting other databases?]
+    * [wiki:SpacewalkFaq#WhatifIdonthaveOracle What if I don't have Oracle?]
+    * [wiki:SpacewalkFaq#PerlPythonandJavaOHMY Perl, Python, and Java OH MY!]
+    * [wiki:SpacewalkFaq#WhyaretheretwoXML-RPCAPIendpoints Why are there two XML-RPC API endpoints?]
+    * [wiki:SpacewalkFaq#WhatlanguagescanIusetointeractwiththeXML-RPCAPIs What languages can I use to interact with the XML-RPC APIs?]
+    * [wiki:SpacewalkFaq#WhatOSesaresupported What OSes are supported?]
+  * [wiki:SpacewalkFaq#TheFuture The Future]
+    * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
+    * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
 
 == Known Issues ==
   * Installation
@@ -50,19 +64,18 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * Oracle XE
   * Postgresql
 
-== Communications ==
-  * [Communications Contact Details]
-     * [Email Addresses]
-     * [Email Lists]
-     * [IRC]
-     * [Websites]
+== [wiki:Communications] ==
+  * [wiki:Communications#EmailListsArchives Email Lists & Archives]
+  * [wiki:Communications#InternetRelayChat Internet Relay Chat Room]
+  * [wiki:Communications#Bugs Bugs & Reporting]
+  * [wiki:Communications#Meetings Community Meetings]
 
 == Appendices ==
-  * [BrainBox Feature Requests/BrainBox]
-  * [https://fedorahosted.org/spacewalk/roadmap Roadmap]
-  * [HowToUpgrade Migrating from 0.6 to 0.7]
-  * [https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06 Migrating from 0.5 to 0.6]
-  * [ReleaseNotes07 Release notes for 0.7]
-  * [ReleaseNotes06 Release notes for 0.6]
-  * [ReleaseNotes05 Release notes for 0.5]
-  * [Licenses Licenses]
+  * [wiki:BrainBox Feature Requests/BrainBox]
+  * [https://fedorahosted.org/spacewalk/wiki/roadmap Roadmap]
+  * [wiki:HowToUpgrade Migrating from 0.6 to 0.7]
+  * [wiki:HowToUpgrade06 Migrating from 0.5 to 0.6]
+  * [wiki:ReleaseNotes07 Release notes for 0.7]
+  * [wiki:ReleaseNotes06 Release notes for 0.6]
+  * [wiki:ReleaseNotes05 Release notes for 0.5]
+  * [source:/LICENSE License]
