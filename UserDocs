@@ -17,6 +17,7 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
    * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
    * [AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
    * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
+   * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
@@ -28,13 +29,6 @@ In this section is linked various documents about parts of Spacewalk to give an 
    * [OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
    * [DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
    * [MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
-
-== Misc Information ==
-  * [MultibyteSpacewalk Multibyte (UTF8) input limitations with Spacewalk]
-  * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
-
-== Work in Progress Document ==
-  * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction)
 
 == Core API Reference ==
   * [ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
@@ -57,12 +51,14 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [wiki:SpacewalkFaq#TheFuture The Future]
     * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
     * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
+  * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
 
-== Known Issues ==
-  * Installation
-  * Configuration
-  * [wiki:OracleXeSetup#Troubleshooting Oracle XE]
-  * Postgresql
+== Known Issues & Current Limitations ==
+  * [MultibyteSpacewalk Multibyte (UTF8) input limitations of Spacewalk]
+  * Installation Issues
+  * Configuration Issues
+  * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
+  * Postgresql Support
 
 == [wiki:Communications] ==
   * [wiki:Communications#EmailListsArchives Email Lists & Archives]
