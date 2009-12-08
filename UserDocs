@@ -61,7 +61,7 @@ In this section is linked various documents about parts of Spacewalk to give an 
 == Known Issues ==
   * Installation
   * Configuration
-  * Oracle XE
+  * [wiki:OracleXeSetup#Troubleshooting Oracle XE]
   * Postgresql
 
 == [wiki:Communications] ==
