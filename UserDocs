@@ -1,23 +1,27 @@
 [[PageOutline]]
 
-= User Documentation =
+= __User Documentation__ =
 In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
-   * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
-   * [HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
-   * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
-   * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
-   * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
-   * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
-   * [UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
-   * [HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
-   * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
-   * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
-   * ManagingFedoraSystems  -- Putting all the above together in a best practice guide for management of Fedora deployments.
-   * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
-   * [AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
-   * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
-   * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
+== Getting Started ==
+  * Overview
+    * [wiki:Preface Preface]
+    * [wiki:Conventions Conventions]
+  * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
+  * [HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
+  * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
+  * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
+  * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
+  * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
+  * [UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
+  * [HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
+  * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
+  * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
+  * ManagingFedoraSystems  -- Putting all the above together in a best practice guide for management of Fedora deployments.
+  * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
+  * [AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
+  * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
+  * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
@@ -51,6 +55,7 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [wiki:SpacewalkFaq#TheFuture The Future]
     * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
     * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
+
   * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
 
 == Known Issues & Current Limitations ==
@@ -67,11 +72,14 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [wiki:Communications#Meetings Community Meetings]
 
 == Appendices ==
-  * [wiki:BrainBox Feature Requests/BrainBox]
-  * [https://fedorahosted.org/spacewalk/wiki/roadmap Roadmap]
-  * [wiki:HowToUpgrade Migrating from 0.6 to 0.7]
-  * [wiki:HowToUpgrade06 Migrating from 0.5 to 0.6]
-  * [wiki:ReleaseNotes07 Release notes for 0.7]
-  * [wiki:ReleaseNotes06 Release notes for 0.6]
-  * [wiki:ReleaseNotes05 Release notes for 0.5]
+  * Features
+     * [wiki:BrainBox Feature Requests/BrainBox]
+     * [https://fedorahosted.org/spacewalk/wiki/roadmap Roadmap]
+  * Upgrade Notes
+     * [wiki:HowToUpgrade From 0.6 to 0.7]
+     * [wiki:HowToUpgrade06 From 0.5 to 0.6]
+  * Release Notes
+    * [wiki:ReleaseNotes07 Notes for 0.7]
+    * [wiki:ReleaseNotes06 Notes for 0.6]
+    * [wiki:ReleaseNotes05 Release notes for 0.5]
   * [source:/LICENSE License]
