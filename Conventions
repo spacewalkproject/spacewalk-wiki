@@ -1,0 +1,9 @@
+{{{
+#!html
+<div style="background-color:#9e292b; color:white; background-image:url(../images/warning.png); background-repeat:no-repeat; background-position:1em 1em; padding:1em;" class="warning">
+   <h2>Warning</h2>
+   <div class="para">
+      A Warning should not be ignored. Ignoring warnings will most likely cause data loss.
+   </div>
+</div>
+}}}
