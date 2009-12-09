@@ -1,8 +1,25 @@
+== Note Tag ==
+
+== Caution Tag ==
+
+== Warning Tag ==
+{{{
 {{{
 #!html
-<div style="background-color:#9e292b; color:white; background-image:url(../images/warning.png); background-repeat:no-repeat; background-position:1em 1em; padding:1em;" class="warning">
+<div style="background-color:#9e292b; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/warning.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
    <h2>Warning</h2>
-   <div class="para">
+   <div style="padding-bottom:0.5em;" >
+      A Warning should not be ignored. Ignoring warnings will most likely cause data loss.
+   </div>
+</div>
+}}}
+}}}
+
+{{{
+#!html
+<div style="background-color:#9e292b; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/warning.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Warning</h2>
+   <div style="padding-bottom:0.5em;" >
       A Warning should not be ignored. Ignoring warnings will most likely cause data loss.
    </div>
 </div>
