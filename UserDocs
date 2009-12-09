@@ -8,6 +8,12 @@ In this section you can find user documentation for Spacewalk.  Are you a develo
     * [wiki:Preface Preface]
     * [wiki:Conventions Conventions]
   * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
+    * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo ]
+    * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages ]
+    * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites ]
+    * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk ]
+    * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk ]
+    * [wiki:HowToInstall#KnownIssues Known Issues ]
   * [HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
   * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
   * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
