@@ -1,6 +1,48 @@
 == Note Tag ==
+{{{
+{{{
+#!html
+<div style="background-color:#8e9f00; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/note.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Note</h2>
+   <div style="padding-bottom:0.5em;" >
+       A note is a tip or shortcut or alternative approach to the task at hand. Ignoring a note should have no negative consequences, but you might miss out on a trick that makes your life easier.
+   </div>
+</div>
+}}}
+}}}
 
-== Caution Tag ==
+{{{
+#!html
+<div style="background-color:#8e9f00; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/note.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Note</h2>
+   <div style="padding-bottom:0.5em;" >
+       A note is a tip or shortcut or alternative approach to the task at hand. Ignoring a note should have no negative consequences, but you might miss out on a trick that makes your life easier.
+   </div>
+</div>
+}}}
+
+== Important Tag ==
+{{{
+{{{
+#!html
+<div style="background-color:#d08e13; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/important.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Important</h2>
+   <div style="padding-bottom:0.5em;" >
+       Important boxes detail things that are easily missed: configuration changes that only apply to the current session, or services that need restarting before an update will apply. Ignoring Important boxes won't cause data loss but may cause irritation and frustration. 
+   </div>
+</div>
+}}}
+}}}
+
+{{{
+#!html
+<div style="background-color:#d08e13; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/important.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Important</h2>
+   <div style="padding-bottom:0.5em;" >
+       Important boxes detail things that are easily missed: configuration changes that only apply to the current session, or services that need restarting before an update will apply. Ignoring Important boxes won't cause data loss but may cause irritation and frustration. 
+   </div>
+</div>
+}}}
 
 == Warning Tag ==
 {{{
