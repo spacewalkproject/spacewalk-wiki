@@ -1,4 +1,32 @@
-== Note Tag ==
+= Conventions =
+
+== Tags ==
+A number of tags are recommended for annotating the contents of this wiki, they are...
+
+=== Work in Progress Tag ===
+{{{
+{{{
+#!html
+<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Work in Progress</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>A Work in Progress tag is to indicate documentation that may not be finished, is otherwise considered incomplete or which provides only a very approximate guide to a particular matter.</p>
+   </div>
+</div>
+}}}
+}}}
+
+{{{
+#!html
+<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Work in Progress</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>A Work in Progress tag is to indicate documentation that may not be finished, is otherwise considered incomplete or which provides only a very approximate guide to a particular matter.</p>
+   </div>
+</div>
+}}}
+
+=== Note Tag ===
 {{{
 {{{
 #!html
@@ -21,7 +49,7 @@
 </div>
 }}}
 
-== Important Tag ==
+=== Important Tag ===
 {{{
 {{{
 #!html
@@ -44,7 +72,7 @@
 </div>
 }}}
 
-== Warning Tag ==
+=== Warning Tag ===
 {{{
 {{{
 #!html
