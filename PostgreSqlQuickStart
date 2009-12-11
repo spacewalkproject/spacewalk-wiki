@@ -1,4 +1,13 @@
-= Postgresql Quick Start Guide: DRAFT =
+= Postgresql Quick Start Guide =
+{{{
+#!html
+<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Work in Progress</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>This is page in currently in a draft state.</p>
+   </div>
+</div>
+}}}
 
 Want to help fix Spacewalk database queries so that they work in Postgres?  Getting started is easy.
 
