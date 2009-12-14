@@ -20,6 +20,8 @@
 
 2009-08-05: spacewalk-backend 0.6.29-1 contains the subscription and entitlement report. 
 
+2009-12-14: spacewalk-backend 0.8.10-1 adds column total to the report.
+
 [wiki:Features/ScriptBasedReporting/Entitlements]
 
 === Basic FISMA Report: Software inventory report - errata out of compliance information ===
