@@ -154,29 +154,29 @@ Tasks fall into three groups: hosted only, satellite only, and both.
 All Taskomatic logging is controlled by the log4j configuration file /usr/share/rhn/classes/log4j.properties. Taskomatic task engine and individual task log output is configured to go to /var/log/rhn/rhn_taskomatic.log.
 
 Make sure that these lines exist in the log4j.properties file
-<pre>
 
-log4j.appender.TaskomaticAppender=org.apache.log4j.FileAppender
-log4j.appender.TaskomaticAppender.file=/var/log/rhn/rhn_taskomatic.log
-log4j.appender.TaskomaticAppender.layout=org.apache.log4j.PatternLayout
-log4j.appender.TaskomaticAppender.layout.ConversionPattern=[%d] %-5p %c - %m%n
-</pre>
+{{{
+ log4j.appender.TaskomaticAppender=org.apache.log4j.FileAppender
+ log4j.appender.TaskomaticAppender.file=/var/log/rhn/rhn_taskomatic.log
+ log4j.appender.TaskomaticAppender.layout=org.apache.log4j.PatternLayout
+ log4j.appender.TaskomaticAppender.layout.ConversionPattern=[%d] %-5p %c - %m%n
+}}}
 
 To enable Taskomatic task engine logging add or edit the following line in log4j.properties:
-
+{{{
  log4j.logger.com.redhat.rhn.taskomatic=DEBUG,TaskomaticAppender
-
+}}}
 To enable coarse-grained task logging add or edit the following line in log4j.properties:
-
+{{{
  log4j.logger.com.redhat.rhn.task=DEBUG,TaskomaticAppender
-
+}}}
 To enable task-specific execution logging add or edit the following line, as needed, in log4j.properties:
-
+{{{
  log4j.logger.<insert_task_name_here>=DEBUG,TaskomaticAppender
-
+}}}
 The Taskomatic daemon process can be started in console mode as well. This is helpful in diagnosing problems where Taskomatic itself will not run:
-
+{{{
   sudo /sbin/service taskomatic stop
   sudo /sbin/service taskomatic console
-
+}}}
 
