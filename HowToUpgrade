@@ -50,7 +50,7 @@ Stop your Spacewalk by running:
 # /usr/sbin/rhn-satellite stop
 }}}
 
-Perform package upgrade using yum:
+Perform package upgrade using yum (excluding the spacewalk-postgresql repository):
 
 {{{
 # yum -x spacewalk-postgresql upgrade
