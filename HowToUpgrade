@@ -31,7 +31,7 @@ Spacewalk upgrade from version 0.6 to 0.7 involves several basic steps:
 = Assumptions =
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 and EPEL 5 testing repositories enabled for dependencies.
-  * You had set up your yum repository configuration to point to spacewalk 0.7 repo. For the repo setup specifics, see [HowToInstall#SettingupSpacewalkrepo].
+  * You had set up your yum repository configuration to point to spacewalk 0.7 repo. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
 
 
 =  Database and configuration backup  =
@@ -50,7 +50,7 @@ Stop your Spacewalk by running:
 # /usr/sbin/rhn-satellite stop
 }}}
 
-Perform package upgrade using yum (excluding the spacewalk-postgresql repository):
+Perform package upgrade using yum (excluding the spacewalk-postgresql package):
 
 {{{
 # yum -x spacewalk-postgresql upgrade
