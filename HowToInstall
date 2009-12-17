@@ -78,7 +78,7 @@ http://miroslav.suchy.cz/spacewalk/nightly-candidate-f11/
 
 === Fedora 10/11/12 ===
 
-For Spacewalk 0.5/0.6 a couple of additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation (Note: F11 is using the f10 jpackage repo intentionally) :
+For Spacewalk 0.5/0.6 a couple of additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation (Note: F11,F12 use the f10 jpackage repo intentionally) :
 
 {{{
 cat > /etc/yum.repos.d/jpackage.repo << EOF
