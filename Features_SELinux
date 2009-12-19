@@ -250,7 +250,7 @@ root:system_r:oracle_db_t       oracle   16181  0.0  6.6 337600 62296 ?        S
 
 === Monitoring ===
 
-So add SELinux support for monitoring and monitoring scout, package spacewalk-monitoring-selinux version 0.5.* or higher needs to be installed. It is in the nightly repo and will be in Spacewalk 0.5.
+To add SELinux support for monitoring and monitoring scout, package spacewalk-monitoring-selinux version 0.5.* or higher needs to be installed. It is in the nightly repo and will be in Spacewalk 0.5.
 
 ==== Monitoring and monitoring scout: spacewalk_monitoring_t ====
 
