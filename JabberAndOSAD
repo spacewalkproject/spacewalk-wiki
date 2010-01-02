@@ -1,9 +1,12 @@
 == Jabber and OSAD client connection issues ==
 
-I found out that our firewalls have session timeouts, thus the jabber connections were timing out. This also causes the strange behaviour of a clients 'netstat -an |grep
-5222' command saying "ESTABLISHED" even though there is no connection on the spacewalk server.
+=== Symptoms ===
+We were seeing a 104 connections connected with local port 5222 (jabber) to our server, whenever we reboot it the connections dropped back to 3 (local connections). It seems that the client connections aren't reconnecting if the connection is lost.
+Setting debug to 10 on the client showed nothing in the logs when it stops responding (nothing in "osa-dispatcher" log on server either). We noticed that on the client side that netstat shows an "ESTABLISHED" connection to the server whilst on the actual server it does not show any corresponding connection from the client.
+We then found that our firewalls have session time-outs, thus the jabber connections were timing out. This also causes the strange behaviour of a clients 'netstat -an |grep 5222' command saying "ESTABLISHED" even though there is no connection on the spacewalk server.
 
-After doing the following, I am having no issues with time-outs...
+=== Fix ===
+After doing the following, we saw no further issues with time-outs...
 
 {{{
 sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
