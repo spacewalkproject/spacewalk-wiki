@@ -65,11 +65,14 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
 
 == Known Issues & Current Limitations ==
-  * [MultibyteSpacewalk Multibyte (UTF8) input limitations of Spacewalk]
   * Installation Issues
   * Configuration Issues
-  * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
-  * Postgresql Support
+    * [wiki:MultibyteSpacewalk Multibyte (UTF8) input limitations]
+  * Networking Issues
+    * [wiki:JabberAndOSAD Jabber & OSAD]
+  * Database Issues
+    * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
+    * Postgresql Support
 
 == [wiki:Communications] ==
   * [wiki:Communications#EmailListsArchives Email Lists & Archives]
