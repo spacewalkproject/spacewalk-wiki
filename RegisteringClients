@@ -12,8 +12,8 @@ NOTE - When creating a key, do not use the Generate function but create a human-
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
-[spacewalk]
-name=Spacewalk
+[spacewalk-client]
+name=Spacewalk client
 baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/x86_64/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
@@ -35,8 +35,8 @@ rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<k
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
-[spacewalk]
-name=Spacewalk
+[spacewalk-client]
+name=Spacewalk Client
 baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/x86_64/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
@@ -54,7 +54,7 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
-= CentOS 5 =
+= CentOS 5 or Red Hat Enterprise Linux 5 =
 {{{
 #!html
 <table border=1  style="border-collapse: collapse;background-color: #6D7B8D;">
@@ -62,26 +62,35 @@ rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<k
 <small>You will need to install the rhel-instnum package on CentOS, Scientific, etc if it is hosting your spacewalk server.  You can download this package <a href="http://stahnma.fedorapeople.org/spacewalk-tools/">here</a>.</small></td>
 </table>
 }}}
-  if you're Spacewalk server is running on CentOS (or probably any EL other than RHEL) you will need the rhel-instnum package installed on the server. 
+  If you're Spacewalk server is running on CentOS (or probably any EL other than RHEL) you will need the rhel-instnum package installed on the server. 
+
+  Warning: if you are installing these package in Red Hat Enterprise Linux it will override some base packages and you may lost support on these part.
 
   1. Install required packages before the red hat network packages: 
     {{{
 yum -q -y install usermode-gtk pyOpenSSL 1>/dev/null 2>&1
     }}}
-  2. Download and Install client packages (get the files from: http://www-personal.umich.edu/~lrsmith/Spacewalk/ or another supplier such as http://stahnma.fedorapeople.org/spacewalk-tools):
+  
+  2. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
-wget -r http://www-personal.umich.edu/~lrsmith/Spacewalk/rpms/
-rpm -Uvh *.rpm
-    }}} 
-    or 
-{{{
-rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
-yum install rhn-setup
+[spacewalk-client]
+name=Spacewalk Client
+baseurl=http://spacewalk.redhat.com/yum/0.7-client/RHEL/5/x86_64/
+gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
+enabled=1
+gpgcheck=1
 }}}
+ 
+tip: adjust the baseurl line to suit your needs: (you can copy/paste the url to see what you need)
 
-  3. Register your CentOS system to Spacewalk using the activation key you created earlier.
+  3. Install client packages:
+    {{{
+yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
+    }}}
+
+  4. Register your CentOS or Red Hat Enterprise Linux system to Spacewalk using the activation key you created earlier.
 {{{
-rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel> 
+rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-rhel-custom-channel> 
 }}}
 
 = CentOS 4 =
