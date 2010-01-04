@@ -14,7 +14,7 @@ NOTE - When creating a key, do not use the Generate function but create a human-
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/x86_64/os/
+baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/x86_64/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
@@ -37,7 +37,7 @@ rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<k
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/x86_64/os/
+baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/x86_64/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
