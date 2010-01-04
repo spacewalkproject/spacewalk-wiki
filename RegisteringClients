@@ -8,17 +8,20 @@ NOTE - rhnreg_ks is used for registration of clients to Spacewalk. If you need t
 
 NOTE - When creating a key, do not use the Generate function but create a human-readable version. eg: fedora-server-channel. This makes the whole more readable and provides more logics into the system.
 
-= Fedora 9 =
+= Fedora 11 (v0.7 / x86_64) =
 
-  1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents:
+  1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.4/fedora/9/i386/
+baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/x86_64/os/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
+ 
+tip: adjust the baseurl line to suit your needs: (you can copy/paste the url to see what you need)
+
   1. Install client packages:
     {{{
 yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
@@ -28,18 +31,18 @@ yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
 rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
 }}}
 
-= Fedora 10 (v0.5 / x86_64) =
+= Fedora 12 (v0.7 / x86_64) =
 
   1. Install the Spacewalk yum repository by creating a file in /etc/yum.repos.d with the following contents (note the capital F in Fedora):
     {{{
 [spacewalk]
 name=Spacewalk
-baseurl=http://spacewalk.redhat.com/yum/0.5/Fedora/10/x86_64/os/
+baseurl=http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/x86_64/os/
 gpgkey=http://www.redhat.com/spacewalk/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=1
 }}}
-
+ 
 tip: adjust the baseurl line to suit your needs: (you can copy/paste the url to see what you need)
 
   1. Install client packages:
