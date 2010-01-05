@@ -42,6 +42,8 @@ This is needed to give the oracle user uid below 500. See [https://fedorahosted.
 
 == Install ==
 
+To install oracle-lib-compat, you'll need the spacewalk channel, installation directions for that are in HowToInstall.
+
 {{{
 # yum -y install bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
 # yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
