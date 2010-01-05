@@ -98,6 +98,8 @@ Here are some sane values for the configure:
 
 Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9055, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}. (This 9055 value is new for Spacewalk 0.7, as we needed to give way to Fedora 12's default allocation of port 9000 for squid.)
 
+Note that Oracle does not like certain characters in your password, but will not tell you until you can't login as sys later on.
+
 If you messed up these entries, you '''WILL''' have to uninstall and reinstall.
 
  * yum remove oracle-xe-univ
