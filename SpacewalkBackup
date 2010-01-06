@@ -17,7 +17,8 @@
 === Setting up archivelog for online backup ===
 
 {{{
-bash-3.2$ su oracle
+bash-3.2# su oracle
+bash-3.2$ . /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/bin/oracle_env.sh
 bash-3.2$ sqlplus /nolog
  connect / as sysdba
  shutdown immediate
