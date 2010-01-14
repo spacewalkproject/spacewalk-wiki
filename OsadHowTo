@@ -47,7 +47,8 @@ osa-dispatcher.jabber_password = rhn-dispatcher-a44631
 The script run by the service commands is located at /usr/sbin/osa-dispatcher.
 
 osa-dispatcher logs are dumped in /var/log/rhn/osa-dispatcher.log
-osa-dispatcher.debug = X within the /etc/rhn/rhn.conf file to increase debug logging
+
+Use osa-dispatcher.debug = X within the /etc/rhn/rhn.conf file to increase debug logging
 
 osa-dispatcher is installed by the osa-dispatcher-*.rpm package and should be included on Spacewalk when it is installed.
 
