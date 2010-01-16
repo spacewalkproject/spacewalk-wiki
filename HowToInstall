@@ -114,7 +114,7 @@ Otherwise you get error messeges like :
 Follow the instructions for '''Red Hat Enterprise Linux 5''' with the additions:
  1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
 {{{ 
-rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5/i386/spacewalk-client-tools-0.0-1.noarch.rpm 
+rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5Server/i386/rhel-instnum-1.0.8-1.el5.noarch.rpm
 }}} 
  1.  You will need Redhat's RPM GPG key:
 {{{
