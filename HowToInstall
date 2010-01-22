@@ -112,11 +112,15 @@ Otherwise you get error messeges like :
 === CentOS 5 ===
 
 Follow the instructions for '''Red Hat Enterprise Linux 5''' with the additions:
- 1. You will need rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
+ * Install rhel-instnum which is packaged and provided by stahnma's client tools repo for CentOS. Switch to x86_64 if you are using that arch. 
 {{{ 
 rpm -Uvh http://stahnma.fedorapeople.org/spacewalk-tools/5Server/i386/rhel-instnum-1.0.8-1.el5.noarch.rpm
-}}} 
- 1.  You will need Redhat's RPM GPG key:
+}}}
+ * Necessary ackages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.7/RHEL/5/i386/spacewalk-client-repo-0.7-4.el5.noarch.rpm
+}}}
+ *  Import Redhat's RPM GPG key:
 {{{
 # wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
