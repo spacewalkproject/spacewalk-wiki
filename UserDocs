@@ -3,47 +3,48 @@
 = __User Documentation__ =
 In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
+Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
+
+Do you know the answer to something and think others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
+
 == Getting Started ==
-  * Overview
+  * Introduction
     * [wiki:Preface Preface]
     * [wiki:Conventions Conventions]
   * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
     * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo ]
     * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages ]
     * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites ]
+    * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
     * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk ]
     * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk ]
     * [wiki:HowToInstall#KnownIssues Known Issues ]
-  * [HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
-  * [HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
-  * [RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
-  * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
-  * [OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
-  * [UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
-  * [HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
-  * [CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
-  * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
-  * ManagingFedoraSystems  -- Putting all the above together in a best practice guide for management of Fedora deployments.
-  * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
-  * [AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
-  * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
-  * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
+  * First step guides
+    * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
+    * [wiki:CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
+    * [wiki:UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
+    * [wiki:RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
+    * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
+    * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
+    * [wiki:HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
 
-Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
-
-Do you know the answer to something and think others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
-
-== Administrative Documentation ==
-In this section is linked various documents about parts of Spacewalk to give an overview of how various components work and to troubleshoot, debug and configure them.
-
-   * [OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
-   * [DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
-   * [MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
-
-== Core API Reference ==
-  * [ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
-  * [SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
-  * [DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
+== General ==
+  * Advanced topics
+    * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
+    * [wiki:ManagingFedoraSystems] -- Putting all the above together in a best practice guide for management of Fedora deployments.
+    * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
+    * [wiki:AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
+    * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
+  * Ongoing maintenance and administration
+    * [wiki:HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
+    * [wiki:DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
+  * Extra and in-depth guides
+    * [wiki:OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
+    * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
+  * Core API Reference
+    * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
+    * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
+    * [wiki:DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
 
 == [wiki:SpacewalkFaq FAQ] ==
   * [wiki:SpacewalkFaq#General General]
@@ -61,7 +62,6 @@ In this section is linked various documents about parts of Spacewalk to give an 
   * [wiki:SpacewalkFaq#TheFuture The Future]
     * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
     * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
-
   * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
 
 == Known Issues & Current Limitations ==
