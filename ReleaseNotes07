@@ -63,6 +63,8 @@ If you are upgrading from older release, please checkout:
 
 * Documentation search does not work, other search are unaffected.
 
+* The version of rhnsd in this release (rhnsd-4.5.16-1) does not work.
+
 == Community ==
 *  We greatly appreciate the contributions the community has made to this release. Thank you very much.
      - Colin Coe
