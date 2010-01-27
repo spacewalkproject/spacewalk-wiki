@@ -36,3 +36,10 @@ def postdownload_hook(conduit):
 to the plugin (From downloadonly)
 
 Then add something to set the dlonly option within packages.py.
+
+==== Schema changes ====
+Add new action type
+
+==== Backend ====
+
+Support new action type
