@@ -12,9 +12,10 @@ This means we'll need to duplicate it's functionality just for our plugin (basic
 
 === Whats Needed ===
 
+{{{
 Add client side support (client utils and yum-rhn-plugin)
 Add backend support
 Add schema support
 Add Package UI support  (SDC & SSM)
 Add Errata UI support (SDC & SSM)
-
+}}}
