@@ -34,3 +34,5 @@ def postdownload_hook(conduit):
         raise PluginYumExit('exiting because --downloadonly specified ')
 }}}
 to the plugin (From downloadonly)
+
+Then add something to set the dlonly option within packages.py.
