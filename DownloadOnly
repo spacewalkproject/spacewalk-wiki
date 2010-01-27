@@ -38,7 +38,7 @@ to the plugin (From downloadonly)
 Then add something to set the dlonly option within packages.py.
 
 ==== Schema changes ====
-Add new action type
+Add new action type.  Should be able to re-use rhnActionPackage for the package information.  
 
 ==== Backend ====
 
