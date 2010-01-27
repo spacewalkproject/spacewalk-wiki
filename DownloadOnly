@@ -19,3 +19,18 @@ Add schema support
 Add Package UI support  (SDC & SSM)
 Add Errata UI support (SDC & SSM)
 }}}
+
+
+=== Client Side Changes ===
+
+==== yum-rhn-plugin ====
+
+basically add:
+{{{
+def postdownload_hook(conduit):
+    opts, commands = conduit.getCmdLine()
+    # Don't die on errors, or we'll never see them.
+    if not conduit.getErrors() and opts.dlonly:
+        raise PluginYumExit('exiting because --downloadonly specified ')
+}}}
+to the plugin (From downloadonly)
