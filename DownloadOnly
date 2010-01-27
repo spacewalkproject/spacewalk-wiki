@@ -21,7 +21,6 @@ Add Errata UI support (SDC & SSM)
 }}}
 
 
-=== Client Side Changes ===
 
 ==== yum-rhn-plugin ====
 
