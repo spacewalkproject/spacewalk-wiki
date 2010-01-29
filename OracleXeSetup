@@ -56,16 +56,7 @@ To install oracle-lib-compat, you'll need the spacewalk channel, installation di
   * '''--nogpgcheck''' is required because the Oracle RPMs are not signed.
   * If the installation of oracle-xe-univ fails on Fedora 12 with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
   * Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
-
-{{{
-#!html
-<div style="background-color:#9e292b; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/warning.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
-   <h2>Warning</h2>
-   <div style="padding-bottom:0.5em;" >
-      <p>Do not run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your environment settings. The Instantclient libraries will work fine without it. It is useful only for command line Oracle XE server management whilst using the {{{oracle}}} user account.</p>
-   </div>
-</div>
-}}}
+  * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user. 
 
 == Install SELinux Policy ==
 
