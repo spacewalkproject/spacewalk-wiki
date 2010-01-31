@@ -97,3 +97,10 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * See above about NRPE and NPC but integration with Cacti and Nagios perhaps? I know Redhat has "func" but they aren't quite the same and Nagios + Cacti + NPC is becoming an almost defacto standard in quite a few places I've worked/consulted. --Phil
  * New page for signing and uploading your own packages.  A browse button for selecting the rpm you want to upload, then a multi-select list of channels you want to upload to. The rpm would be automatically signed by your rpm key specified in /root/.rpmmacros .  --Josh
  * Default base channel for non-Redhat supplied channels. --heydrick [https://bugzilla.redhat.com/show_bug.cgi?id=559370 bugzilla 559370]
+ * Add NIM on Linux support, based largely around straight TFTP, a Network Installation Manager is used to boot, update and manage AIX servers, IBM have already packaged NIMOL in PRM form for their engineers to use on Linux laptops at client sites, unsure as to feasibility of managing spot sources and LPP in spacewalk? See links...
+  * http://www-01.ibm.com/support/docview.wss?uid=isg3T1010948
+  * http://www.ibm.com/developerworks/forums/thread.jspa?messageID=13894772
+  * http://publib.boulder.ibm.com/infocenter/pseries/v5r3/index.jsp?topic=/com.ibm.aix.howtos/doc/howto/sw_installation_maintenance.htm
+  * http://www.redbooks.ibm.com/redpapers/pdfs/redp4194.pdf
+  * http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds4/nimol_install.htm?resultof=%22%6e%69%6d%6f%6c%22%20
+  * http://dag.wieers.com/howto/bits/aix-lpp.php
