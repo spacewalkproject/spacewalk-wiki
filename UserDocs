@@ -24,14 +24,26 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
     * [wiki:UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
     * [wiki:RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
-    * [wiki:Solaris Solaris Support] -- Registering Solaris clients and uploading content.
     * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
     * [wiki:HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
   * Core Guides
     * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
+    * [wiki:ManagingRHELSystems Managing RHEL Systems]
     * [wiki:ManagingFedoraSystems Managing Fedora Systems]
+      * [wiki:ManagingFedoraSystems#Channel_Setup Channel Setup]
+      * [wiki:ManagingFedoraSystems#Provisioning_Clients Provisioning]
+      * [wiki:ManagingFedoraSystems#Registering_Clients Registering]
+      * [wiki:ManagingFedoraSystems#Pushing_Packages_to_Clients Pushing Packages]
+      * [wiki:ManagingFedoraSystems#Managing_Client_Configurations Configuration Management]
+      * [wiki:ManagingFedoraSystems#Related_Documentation Related Documentation]
     * [wiki:ManagingCentOSSystems Managing CentOS Systems] 
     * [wiki:ManagingSolarisSystems Managing Solaris Systems] -- Registering Solaris clients and uploading content.
+      * [wiki:ManagingSolarisSystems#Channel_Setup Channel Setup]
+      * [wiki:ManagingSolarisSystems#Provisioning_Clients Provisioning]
+      * [wiki:ManagingSolarisSystems#Registering_Clients Registering]
+      * [wiki:ManagingSolarisSystems#Pushing_Packages_to_Clients Pushing Packages]
+      * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
+      * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
 
 == General ==
   * Advanced topics
