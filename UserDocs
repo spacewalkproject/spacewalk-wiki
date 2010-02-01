@@ -1,117 +1,125 @@
 [[PageOutline]]
 
-= __User Documentation__ =
+= '''User Documentation''' =
 In this section you can find user documentation for Spacewalk.  Are you a developer? You may also be interested in the [DeveloperDocs Developer Documentation] and [DownloadIt Source/RPM Download Information].
 
 Is there documentation missing or you simply would like to see? Is there something you would like to understand better? Please feel free to let us know using the [https://fedorahosted.org/spacewalk/wiki#Communication mailing list] or look for us on #spacewalk on irc.freenode.net.
 
 Do you know the answer to something and think others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
 
-== Getting Started ==
-  * Introduction
-    * [wiki:Preface Preface]
-    * [wiki:Conventions Conventions]
-  * [HowToInstall How to install] -- How to download and install Spacewalk Server. [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
+[[TOC(inline)]]
+[[BR]]
+== __Getting Started__ ==
+=== Introduction ===
+  * [wiki:Preface Preface]
+  * [wiki:Conventions Conventions]
+=== Installation  ===
+  * [wiki:HowToInstall How to install]
     * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo ]
     * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages ]
     * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites ]
-    * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
     * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk ]
     * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk ]
     * [wiki:HowToInstall#KnownIssues Known Issues ]
-  * First step guides
-    * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
-    * [wiki:CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
-    * [wiki:UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
-    * [wiki:RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
-    * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
-    * [wiki:HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
-  * Core Guides
-    * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
-    * [wiki:ManagingRHELSystems Managing RHEL Systems]
-    * [wiki:ManagingFedoraSystems Managing Fedora Systems]
-      * [wiki:ManagingFedoraSystems#Channel_Setup Channel Setup]
-      * [wiki:ManagingFedoraSystems#Provisioning_Clients Provisioning]
-      * [wiki:ManagingFedoraSystems#Registering_Clients Registering]
-      * [wiki:ManagingFedoraSystems#Pushing_Packages_to_Clients Pushing Packages]
-      * [wiki:ManagingFedoraSystems#Managing_Client_Configurations Configuration Management]
-      * [wiki:ManagingFedoraSystems#Related_Documentation Related Documentation]
-    * [wiki:ManagingCentOSSystems Managing CentOS Systems] 
-    * [wiki:ManagingSolarisSystems Managing Solaris Systems] -- Registering Solaris clients and uploading content.
-      * [wiki:ManagingSolarisSystems#Channel_Setup Channel Setup]
-      * [wiki:ManagingSolarisSystems#Provisioning_Clients Provisioning]
-      * [wiki:ManagingSolarisSystems#Registering_Clients Registering]
-      * [wiki:ManagingSolarisSystems#Pushing_Packages_to_Clients Pushing Packages]
-      * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
-      * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
-
-== General ==
-  * Advanced topics
-    * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
-    * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
-    * [wiki:AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
-  * Ongoing maintenance and administration
-    * [wiki:HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
-    * [wiki:DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
-  * Extra and in-depth guides
-    * [wiki:OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
-    * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
-  * Core API Reference
-    * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
-    * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
-    * [wiki:DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
-
-== [wiki:SpacewalkFaq FAQ] ==
+  * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
+  * [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
+=== Post-Installation Steps ===
+  * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
+  * [wiki:CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
+  * [wiki:UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
+  * [wiki:RegisteringClients Registering Clients] -- How to register Fedora / Cent OS clients to Spacewalk.
+  * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
+  * [wiki:HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
+=== Core Guides ===
+  * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
+  * [wiki:ManagingRHELSystems Managing RHEL Systems]
+  * [wiki:ManagingFedoraSystems Managing Fedora Systems]
+    * [wiki:ManagingFedoraSystems#Channel_Setup Channel Setup]
+    * [wiki:ManagingFedoraSystems#Provisioning_Clients Provisioning]
+    * [wiki:ManagingFedoraSystems#Registering_Clients Registering]
+    * [wiki:ManagingFedoraSystems#Pushing_Packages_to_Clients Pushing Packages]
+    * [wiki:ManagingFedoraSystems#Managing_Client_Configurations Configuration Management]
+    * [wiki:ManagingFedoraSystems#Related_Documentation Related Documentation]
+  * [wiki:ManagingCentOSSystems Managing CentOS Systems] 
+  * [wiki:ManagingSolarisSystems Managing Solaris Systems] -- Registering Solaris clients and uploading content.
+    * [wiki:ManagingSolarisSystems#Channel_Setup Channel Setup]
+    * [wiki:ManagingSolarisSystems#Provisioning_Clients Provisioning]
+    * [wiki:ManagingSolarisSystems#Registering_Clients Registering]
+    * [wiki:ManagingSolarisSystems#Pushing_Packages_to_Clients Pushing Packages]
+    * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
+    * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
+[[BR]]
+== __General__ ==
+=== Advanced topics ===
+  * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
+  * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
+  * [wiki:AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
+=== Ongoing Maintenance and Administration ===
+  * [wiki:HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
+  * [wiki:DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy
+=== In-depth Guides ===
+  * [wiki:OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
+  * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
+=== Core API Reference ===
+  * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
+  * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
+  * [wiki:DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
+[[BR]]
+== __Frequently Asked Questions__ ==
+=== [wiki:SpacewalkFaq FAQ] ===
   * [wiki:SpacewalkFaq#General General]
-    * [wiki:SpacewalkFaq#WhatisSpacewalk What Is Spacewalk?]
-    * [wiki:SpacewalkFaq#HowlonghasSpacewalkbeenaround How long has Spacewalk been around?]
-  * [wiki:SpacewalkFaq#Installation Installation]
-    * [wiki:SpacewalkFaq#IsaSatelliteSpacewalkcertificaterequiredtouseSpacewalk Is a Satellite/Spacewalk certificate required to use Spacewalk?]
-  * [wiki:SpacewalkFaq#SpacewalkArchitecture Architecture]
-    * [wiki:SpacewalkFaq#WhydoyouuseOracleAnyplansforsupportingotherdatabases Any plans for supporting other databases?]
-    * [wiki:SpacewalkFaq#WhatifIdonthaveOracle What if I don't have Oracle?]
-    * [wiki:SpacewalkFaq#PerlPythonandJavaOHMY Perl, Python, and Java OH MY!]
-    * [wiki:SpacewalkFaq#WhyaretheretwoXML-RPCAPIendpoints Why are there two XML-RPC API endpoints?]
-    * [wiki:SpacewalkFaq#WhatlanguagescanIusetointeractwiththeXML-RPCAPIs What languages can I use to interact with the XML-RPC APIs?]
-    * [wiki:SpacewalkFaq#WhatOSesaresupported What OSes are supported?]
-  * [wiki:SpacewalkFaq#TheFuture The Future]
-    * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
-    * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
-
-== Known Issues & Current Limitations ==
-  * Installation Issues
-  * Configuration Issues
-    * [wiki:MultibyteSpacewalk Multibyte (UTF8) input limitations]
-  * Networking Issues
-    * [wiki:JabberAndOSAD Jabber & OSAD]
-  * Database Issues
-    * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
-    * Postgresql Support
-
-== [wiki:Communications] ==
+  * [wiki:SpacewalkFaq#WhatisSpacewalk What Is Spacewalk?]
+  * [wiki:SpacewalkFaq#HowlonghasSpacewalkbeenaround How long has Spacewalk been around?]
+=== [wiki:SpacewalkFaq#Installation Installation] ===
+  * [wiki:SpacewalkFaq#IsaSatelliteSpacewalkcertificaterequiredtouseSpacewalk Is a Satellite/Spacewalk certificate required to use Spacewalk?]
+=== [wiki:SpacewalkFaq#SpacewalkArchitecture Architecture] ===
+  * [wiki:SpacewalkFaq#WhydoyouuseOracleAnyplansforsupportingotherdatabases Any plans for supporting other databases?]
+  * [wiki:SpacewalkFaq#WhatifIdonthaveOracle What if I don't have Oracle?]
+  * [wiki:SpacewalkFaq#PerlPythonandJavaOHMY Perl, Python, and Java OH MY!]
+  * [wiki:SpacewalkFaq#WhyaretheretwoXML-RPCAPIendpoints Why are there two XML-RPC API endpoints?]
+  * [wiki:SpacewalkFaq#WhatlanguagescanIusetointeractwiththeXML-RPCAPIs What languages can I use to interact with the XML-RPC APIs?]
+  * [wiki:SpacewalkFaq#WhatOSesaresupported What OSes are supported?]
+=== [wiki:SpacewalkFaq#TheFuture The Future] ===
+  * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
+  * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
+[[BR]]
+== __Known Issues & Current Limitations__ ==
+=== Installation Issues ===
+=== Configuration Issues ===
+  * [wiki:MultibyteSpacewalk Multibyte (UTF8) input limitations]
+=== Networking Issues ===
+  * [wiki:JabberAndOSAD Jabber & OSAD]
+=== Database Issues ===
+  * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
+  * Postgresql Support
+[[BR]]
+== __Contact__ ==
+=== [wiki:Communications] ===
   * [wiki:Communications#EmailListsArchives Email Lists & Archives]
   * [wiki:Communications#InternetRelayChat Internet Relay Chat Room]
   * [wiki:Communications#Bugs Bugs & Reporting]
   * [wiki:Communications#Meetings Community Meetings]
-
-== Appendices ==
-  * Features
-     * [wiki:BrainBox Feature Requests/BrainBox]
-     * [https://fedorahosted.org/spacewalk/roadmap Road Map]
-  * Upgrade Notes
-     * [wiki:HowToUpgrade From 0.6 to 0.7]
-     * [wiki:HowToUpgrade06 From 0.5 to 0.6]
-  * Dependency Notes -- A Quick list of rpms that a 'yum install spacewalk' adds to a box.
-     * [wiki:ListofRPMsInstalled Version 0.7]
-     * [wiki:ListofRPMsInstalled06 Version 0.6]
-     * [wiki:ListofRPMsInstalled05 Version 0.5]
-     * [wiki:ListofRpms04Installs Version 0.4]
-  * Release Notes
-    * [wiki:ReleaseNotes07 Notes for 0.7]
-    * [wiki:ReleaseNotes06 Notes for 0.6]
-    * [wiki:ReleaseNotes05 Release notes for 0.5]
+[[BR]]
+== __Appendices__ ==
+=== Features ===
+  * [wiki:BrainBox Feature Requests/BrainBox]
+  * [https://fedorahosted.org/spacewalk/roadmap Road Map]
+=== Upgrade Notes ===
+  * [wiki:HowToUpgrade From 0.6 to 0.7]
+  * [wiki:HowToUpgrade06 From 0.5 to 0.6]
+=== Dependency Notes -- A Quick list of rpms that a 'yum install spacewalk' adds to a box. ===
+  * [wiki:ListofRPMsInstalled Version 0.7]
+  * [wiki:ListofRPMsInstalled06 Version 0.6]
+  * [wiki:ListofRPMsInstalled05 Version 0.5]
+  * [wiki:ListofRpms04Installs Version 0.4]
+=== Release Notes ===
+  * [wiki:ReleaseNotes07 Notes for 0.7]
+  * [wiki:ReleaseNotes06 Notes for 0.6]
+  * [wiki:ReleaseNotes05 Release notes for 0.5]
   * [wiki:Meta-WikiPage Meta-Wiki Page]
-    * [wiki:Meta-WikiPage#User_Documentation_Requests User Documentation Requests]
-    * [wiki:Meta-WikiPage#DocumentationMarkedasWorkinProgressTodoList Documentation Marked as Work in Progress/Todo List]
-    * [wiki:Meta-WikiPage#User_Docs_Road_Map User Docs Road Map]
+  * [wiki:Meta-WikiPage#User_Documentation_Requests User Documentation Requests]
+  * [wiki:Meta-WikiPage#DocumentationMarkedasWorkinProgressTodoList Documentation Marked as Work in Progress/Todo List]
+  * [wiki:Meta-WikiPage#User_Docs_Road_Map User Docs Road Map]
+=== Licensing and Copyright ===
   * [source:/LICENSE License]
+  * Copyright
