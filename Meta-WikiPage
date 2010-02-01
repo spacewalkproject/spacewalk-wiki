@@ -1,3 +1,5 @@
+[[PageOutline]]
+
 = __Meta-Wiki Page__ =
 This is a page to document the documentation as it were, basically just a place to put requests for further doucmentation if you think something is missing, a page to keep a list of stuff that needs working on and a road map to keep track of bigger ideas...
 
@@ -20,7 +22,7 @@ To update this click this [https://fedorahosted.org/spacewalk/search?q=%22Work+i
 == User Docs Road Map ==
 A place to record larger general improvements to the user documentation and to anticipate pages and things that will need updating when a new release is available...
 
- * Update the conventions page to include some more guidelines perhaps.
+ * Update the conventions page to include some more guidelines perhaps. Specifically PageOutline, underlining of first header and some sort of template footer with a link back to the user docs?
  * Add a section on related documentation and guides.
  * Add diagrams and screen shots where possible.
 
