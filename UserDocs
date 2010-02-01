@@ -77,7 +77,6 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:SpacewalkFaq#TheFuture The Future]
     * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
     * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
-  * [wiki:ListofRpms04Installs] -- quick list of rpms that a 'yum install spacewalk' adds to a box
 
 == Known Issues & Current Limitations ==
   * Installation Issues
@@ -102,6 +101,11 @@ Do you know the answer to something and think others might find it useful? Feel 
   * Upgrade Notes
      * [wiki:HowToUpgrade From 0.6 to 0.7]
      * [wiki:HowToUpgrade06 From 0.5 to 0.6]
+  * Dependency Notes -- A Quick list of rpms that a 'yum install spacewalk' adds to a box.
+     * [wiki:ListofRPMsInstalled Version 0.7]
+     * [wiki:ListofRPMsInstalled06 Version 0.6]
+     * [wiki:ListofRPMsInstalled05 Version 0.5]
+     * [wiki:ListofRpms04Installs Version 0.4]
   * Release Notes
     * [wiki:ReleaseNotes07 Notes for 0.7]
     * [wiki:ReleaseNotes06 Notes for 0.6]
