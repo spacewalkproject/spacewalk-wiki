@@ -62,7 +62,6 @@ These have already been migrated.
 ==== Software Channel Management ====
  * /network/software/cannot_download.pxt
  * /network/software/channels/license.pxt
- * /network/software/channels/target_systems.pxt
  * /network/software/channels/patches.pxt
  * /network/software/channels/subscribers.pxt
  * /network/software/channels/patchsets.pxt
