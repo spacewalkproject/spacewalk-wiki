@@ -61,13 +61,13 @@ These have already been migrated.
 
 ==== Software Channel Management ====
  * /network/software/cannot_download.pxt
- * /network/software/channels/license.pxt
+ * /network/software/channels/license.pxt (Can be removed??)
  * /network/software/channels/patches.pxt
  * /network/software/channels/subscribers.pxt
  * /network/software/channels/patchsets.pxt
  * /network/software/channels/download_packages.pxt
- * /network/software/channels/subscribe_confirm.pxt  
- * /network/software/channels/display_license.pxt
+ * /network/software/channels/subscribe_confirm.pxt   (Can be removed if license.pxf is removed).
+ * /network/software/channels/display_license.pxt 
  * /network/software/channels/managers.pxt
  * /network/software/channels/gpg_info.pxt
  * /network/software/channels/manage/edit.pxt
