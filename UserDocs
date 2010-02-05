@@ -21,7 +21,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:HowToInstall#KnownIssues Known Issues ]
   * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
   * [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
-=== Post-Installation Steps ===
+=== Post-Installation Guides ===
   * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
   * [wiki:CertCreation Entitlement Certs ] -- Create and activate your own certs for Spacewalk
   * [wiki:UploadFedoraContent Upload  Content] -- Upload RHEL, CENT, or Fedora content (or any other rpms)
@@ -48,8 +48,8 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
     * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
 [[BR]]
-== __General__ ==
-=== Advanced topics ===
+== __General Documentation__ ==
+=== Advanced Guides ===
   * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
   * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
   * [wiki:AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
@@ -63,6 +63,23 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
   * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
   * [wiki:DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
+[[BR]]
+
+== __Other Documentation__ ==
+=== Up/Down-stream Documentation ===
+  * The upstream, [http://www.redhat.com/docs/manuals/satellite/ Official Red Hat Network Satellite Documentation]
+    * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Installation_Guide/html/index.html The official Red Hat Satellite Installation Section]
+    * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Proxy_Installation_Guide/index.html The official Red Hat Proxy Installation Section]
+  * The downstream, [http://centos.org/ CentOS] Project Documentation
+    * [http://wiki.centos.org/HowTos/PackageManagement/Spacewalk The CentOS Project's Package Management/Spacewalk HowTo]
+=== Related Technology Resources ===
+  * [http://www.rpm.org/ The RPM Homepage]
+    * [http://en.wikipedia.org/wiki/RPM_Package_Manager Wikipedia article on RPM]
+    * [http://docs.fedoraproject.org/drafts/rpm-guide-en/index.html The Fedora RPM guide]
+  * [http://docs.fedoraproject.org/deployment-guide/f12/en-US/html/pt-pkg-management.html The Fedora 12 Deployment guide]
+  * [http://yum.baseurl.org/ The YUM Homepage]
+    * [http://en.wikipedia.org/wiki/Yellow_Dog_Updater_Modified Wikipedia article on YUM]
+    * [http://prefetch.net/articles/yum.html Useful article about YUM]
 [[BR]]
 == __Frequently Asked Questions__ ==
 === [wiki:SpacewalkFaq FAQ] ===
