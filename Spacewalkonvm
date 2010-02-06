@@ -2,7 +2,7 @@
 
 {{{
 #!html
-<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
    <h2>Work in Progress</h2>
    <div style="padding-bottom:0.5em;" >
        <p>This page is currently under construction, page maintainer: antoine at nebula dot nl. </p>
@@ -14,7 +14,7 @@ This Page describes the steps needed to achieve the following '''targets''';
 
 {{{
 #!html
-<div style="background-color:#d08e13; color:white; background-image:url('/spacewalk/attachment/wiki/Conventions/important.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+<div style="background-color:#d08e13; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/important.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
    <h2>Important</h2>
    <div style="padding-bottom:0.5em;" >
        <p>This page does not constitute a procedure, It is meant as an example page of how things can be done, just pick out the right bits and pieces you need when installing or designing a system.</p>
