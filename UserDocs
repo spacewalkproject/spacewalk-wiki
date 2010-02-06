@@ -5,8 +5,9 @@ Is there documentation missing or you simply would like to see? Is there somethi
 
 Do you know the answer to something and think others might find it useful? Feel free to add your own docs and/or additions, it is a wiki you know.
 
+----
 [[TOC(inline)]]
-[[BR]]
+----
 == __Getting Started__ ==
 === Introduction ===
   * [wiki:Preface Preface]
@@ -47,7 +48,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:ManagingSolarisSystems#Pushing_Packages_to_Clients Pushing Packages]
     * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
     * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
-[[BR]]
+----
 == __General Documentation__ ==
 === Advanced Guides ===
   * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
@@ -63,8 +64,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
   * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
   * [wiki:DeveloperDocs Developer documentation] -- Learn how to work on and build Spacewalk, and how Spacewalk is put together. 
-[[BR]]
-
+----
 == __Other Documentation__ ==
 === Up/Down-stream Documentation ===
   * The upstream, [http://www.redhat.com/docs/manuals/satellite/ Official Red Hat Network Satellite Documentation]
@@ -80,7 +80,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [http://yum.baseurl.org/ The YUM Homepage]
     * [http://en.wikipedia.org/wiki/Yellow_Dog_Updater_Modified Wikipedia article on YUM]
     * [http://prefetch.net/articles/yum.html Useful article about YUM]
-[[BR]]
+----
 == __Frequently Asked Questions__ ==
 === [wiki:SpacewalkFaq FAQ] ===
   * [wiki:SpacewalkFaq#General General]
@@ -98,7 +98,7 @@ Do you know the answer to something and think others might find it useful? Feel 
 === [wiki:SpacewalkFaq#TheFuture The Future] ===
   * [wiki:SpacewalkFaq#WhataboutintegratingtechnologyX What about integrating technology X?]
   * [wiki:SpacewalkFaq#Whatkindofcommunitycontributionsareyouinterestedin What kind of community contributions are you interested in?]
-[[BR]]
+----
 == __Known Issues & Current Limitations__ ==
 === Installation Issues ===
 === Configuration Issues ===
@@ -108,14 +108,14 @@ Do you know the answer to something and think others might find it useful? Feel 
 === Database Issues ===
   * [wiki:OracleXeSetup#Troubleshooting Oracle XE] Issues
   * Postgresql Support
-[[BR]]
+----
 == __Contact__ ==
 === [wiki:Communications] ===
   * [wiki:Communications#EmailListsArchives Email Lists & Archives]
   * [wiki:Communications#InternetRelayChat Internet Relay Chat Room]
   * [wiki:Communications#Bugs Bugs & Reporting]
   * [wiki:Communications#Meetings Community Meetings]
-[[BR]]
+----
 == __Appendices__ ==
 === Features ===
   * [wiki:BrainBox Feature Requests/BrainBox]
