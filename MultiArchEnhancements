@@ -1,4 +1,12 @@
-This page is a 'work in progress' and will continue to go through modifications as solutions are finalized.
+{{{
+#!html
+<div style="background-color:#2b299e; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/workinprogress.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Work in Progress</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>This page is a 'work in progress' and will continue to go through modifications as solutions are finalized.</p>
+   </div>
+</div>
+}}}
 
 == Problem Statement: ==
 
