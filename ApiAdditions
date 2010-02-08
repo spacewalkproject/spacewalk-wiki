@@ -37,12 +37,16 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
 ||  kickstart.snippet.listCustomSnippets() || 0.7 || 3 ||  ||  || return array[(name, content, macro usage, filename)] ||
 ||  kickstart.snippet.listDefaultSnippets() || 0.7 || 3 ||  ||  || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.createSnippet(name, content) || 0.7 || 3 ||  ||  ||  ||
-||  kickstart.snippet.deleteSnippet(name) || 0.7 || 3 ||  ||  ||  ||
-||  kickstart.snippet.editSnippet(name, newContent) || 0.7 || 3 ||  ||  ||  ||
-
+||  kickstart.snippet.createCustom(name, content) || 0.7 || 3 ||  ||  ||  ||
+||  kickstart.snippet.deleteCustom(name) || 0.7 || 3 ||  ||  ||  ||
+||  kickstart.snippet.modifyCustom(name, newContent) || 0.7 || 3 ||  ||  ||  ||
+||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
+||  system.kickstart.profile.getVariables(label) || 0.7 || 3 ||  ||  ||  return map||
+||  system.kickstart.profile.setVariables(label, map) || 0.7 || 3 ||  ||  ||  return map||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
 ||  system.createCobblerSystemRecord(sid, ks_label) || 0.7 || 3 ||  ||  ||  ||
+||  system.getVariables(sid) || 0.7 || 3 ||  ||  ||  return map||
+||  system.setVariables(sid, map) || 0.7 || 3 ||  ||  ||  return map||
 
 
 
