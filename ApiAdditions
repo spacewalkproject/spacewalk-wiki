@@ -35,9 +35,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.listChildren(cid) || 0.7 || 3 ||  ||  ||  ||
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
-||  kickstart.snippet.listAllSnippets() || 0.8 || 3 || jsherrill ||  || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listCustomSnippets() || 0.8 || 3 || jsherrill ||  || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listDefaultSnippets() || 0.8 || 3 || jsherrill  ||  || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listAllSnippets() || 0.8 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listCustomSnippets() || 0.8 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listDefaultSnippets() || 0.8 || 3 || jsherrill  || done || return array[(name, content, macro usage, filename)] ||
 ||  kickstart.snippet.createCustom(name, content) || 0.8 || 3 ||  ||  ||  ||
 ||  kickstart.snippet.deleteCustom(name) || 0.8 || 3 ||  ||  ||  ||
 ||  kickstart.snippet.modifyCustom(name, newContent) || 0.8 || 3 ||  ||  ||  ||
