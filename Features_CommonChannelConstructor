@@ -1,1 +1,25 @@
-Place holder
+[[PageOutline]]
+
+= __Common Channel Constructor__ =
+== Overview ==
+=== Sponsor and Reviewer ===
+== Requirement ==
+== Specification ==
+=== Functional ===
+=== Non-functional ===
+== Implementation ==
+=== Technical ===
+=== Architectural ===
+== Mock Ups ==
+== Tests ==
+== Risks ==
+== Tasks ==
+== Progress ==
+|| '''Phase''' || '''Task''' || '''Description''' || '''Estimate''' || '''Confidence''' || '''Progress''' || '''Owner'''
+|| Back-end    || Big piles of stuff || Drink lots of coffee || 72H || 3 || 70% || Mr. Z. Developer
+||             ||                    || '''Subtotal:''' || 72H || 3 || 70% || Mr. Z. Developer 
+|| Front-end   || Develop new media  || Develop "Next", "Prev" and "Dancing Spaceman" images || 6H || 4 || 70% || Mr. A. Designer
+||             || Review Wire frames || Specifically for consistency with existing || 4H || 2 || 10% || Mr. A. N. Other
+||             || Realise Mock ups   || The actual business of pulling it all together || 32H || 4 || 10% || Mr. A. Designer
+||             ||                    || '''Subtotal:''' || 42H || 4 || 30% || Ms. Lead Designer
+||             ||                    || '''__Total:__'''|| 114H || 5 || 50% || Project Lead
