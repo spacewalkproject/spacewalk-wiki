@@ -99,8 +99,7 @@ TBD
 ||  || || ||
 ||  || || ||
 
-== Test Notes ==
-
+== Tests ==
  * RHN client tools do not currently have much in the way of unit test framework, these will largely be left to manual testing.
  * Backend code unit tests can be used to cover new logic. 
  * Java web UI and API can be tested using existing unit test and API test framework respectively.
