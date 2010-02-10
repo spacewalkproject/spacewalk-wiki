@@ -5,15 +5,15 @@
  * [wiki:Features/NonLatinCharacters Non-Latin Character Hostnames]
  * [wiki:Features/SystemInventory System Inventory]
    * '''[wiki:Features/SystemInventory#Overview Overview]'''
-   * '''[wiki:Features/SystemInventory#Requirements Requirements]'''
-   * '''[wiki:Features/SystemInventory#Implementation Implementation]'''
+   * '''[wiki:Features/SystemInventory#Requirements Requirement]'''
+   * '''[wiki:Features/SystemInventory#ProposedImplementation Implementation]'''
    * '''[wiki:Features/SystemInventory#MockUps Mock Ups]'''
    * '''[wiki:Features/SystemInventory#Tasks Tasks]'''
    * '''[wiki:Features/SystemInventory#Tests Tests]'''
    * '''[wiki:Features/SystemInventory#Risks Risks]'''
  * [wiki:Features/CliProxyInstaller CLI Proxy Installer]
     * '''[wiki:Features/CliProxyInstaller#Overview Overview]'''
-    * '''[wiki:Features/CliProxyInstaller#Requirement Requirements]'''
+    * '''[wiki:Features/CliProxyInstaller#Requirement Requirement]'''
     * '''[wiki:Features/CliProxyInstaller#Specification Specification]'''
 
 == Works in Progress ==
