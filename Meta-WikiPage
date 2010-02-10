@@ -23,7 +23,7 @@ To update this click this [https://fedorahosted.org/spacewalk/search?q=%22Work+i
 A place to record larger general improvements to the user documentation and to anticipate pages and things that will need updating when a new release is available...
 
  * Update the conventions page to include some more guidelines perhaps. Specifically PageOutline, underlining of first header and some sort of template footer with a link back to the user docs?
- * Add a section on related documentation and guides.
+ * Move everything applicable to being a sub-page of UserDocs (i.e. UserDocs/Meta-WikiPage).
  * Add diagrams and screen shots where possible.
 
 === Things to update upon release ===
