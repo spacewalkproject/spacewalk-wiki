@@ -1,6 +1,6 @@
 = Command Line Proxy Installer =
 
-== Background ==
+== Overview ==
 Historically when Satellite and RHN Hosted was one team and releases of code for both happened at the same time, we choose to implement the Proxy installation process based on code changes that had to be implemented for each Proxy release within both Satellite and RHN Hosted. This issue continues into the Spacewalk release. This Proxy installer code is also written and maintained within our perl stack. We have a continued task to move perl pages to java, or retire the need for those perl pages. 
 
 == Requirement == 
@@ -10,7 +10,6 @@ Since we can not commit to hosted, nor does this code make a huge amount of sens
  * We plan to have full release within Spacewalk 0.3 code
 
 == Specification ==
-
 Below is outline to show how we plan to implement a solution. 
 
 Code currently grow in /proxy/installer/ and goal is to have Command Line (CLI) installer, with this process:
