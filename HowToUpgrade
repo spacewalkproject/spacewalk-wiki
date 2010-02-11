@@ -1,42 +1,41 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 0.6 to Spacewalk 0.7.
-
-Spacewalk 0.5 to 0.6 upgrade instructions, are available at
-[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06]
+These are upgrade instruction for upgrading Spacewalk 0.7 to Spacewalk 0.8.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 0.6 running on Red Hat Enterprise Linux 5 Server or CentOS 5
+  *  Spacewalk 0.7 running on Red Hat Enterprise Linux 5 Server or CentOS 5
   *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend
 
 = Archive of older upgrade instruction =
 
-If you are upgrading from older version of Spacewalk, you may as well check these instructions:
- 
- * [https://fedorahosted.org/spacewalk/wiki/HowToUpgrade?version=29 0.4 ->  0.5]
- * [https://fedorahosted.org/spacewalk/wiki/HowToUpgrade?version=37 0.5 ->  0.6]
+Spacewalk 0.5 to 0.6 upgrade instructions, are available at
+[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06 HowToUpgrade06]
+
+Spacewalk 0.6 to 0.7 upgrade instructions, are available at
+[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade07 HowToUpgrade07]
+
 ----
 
 
-Spacewalk upgrade from version 0.6 to 0.7 involves several basic steps:
+Spacewalk upgrade involves several basic steps:
   1.  Configuration files and Spacewalk database backup
   2.  Package upgrade
   3.  Schema upgrade
-  4.  Upgrade of Spacewalk configuration
-  5.  Restart Spacewalk
-  6.  Update of monitoring setup
-  7.  Update Spacewalk configuration files
+  4.  SHA-256 content update
+  5.  Upgrade of Spacewalk configuration
+  6.  Restart Spacewalk
+  7.  Update of monitoring setup
   8.  Restart Spacewalk
-  9.  Rebuild search indexes
+  9. Rebuild search indexes
 
 ----
 
 
 = Assumptions =
 
-  * For RHEL or CentOS, you will need the Base, EPEL 5 and EPEL 5 testing repositories enabled for dependencies.
-  * You had set up your yum repository configuration to point to spacewalk 0.7 repo. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
+  * You had set up your yum repository configuration to point to spacewalk 0.8 repo. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
 
 
 =  Database and configuration backup  =
@@ -55,23 +54,11 @@ Stop your Spacewalk by running:
 # /usr/sbin/rhn-satellite stop
 }}}
 
-Perform package upgrade using yum (excluding the spacewalk-postgresql package):
+Perform package upgrade using yum:
 
 {{{
-# yum -x spacewalk-postgresql upgrade
+# yum upgrade
 }}}
-
-If you receive this yum error while upgrading, remove perl-Network-IPv4Addr and replace it with perl-Net-IPv4Addr
-{{{
-Transaction Check Error:
-  file /usr/bin/ipv4calc from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
-  file /usr/share/man/man1/ipv4calc.1.gz from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
-}}}
-{{{
-# rpm -e --nodeps perl-Network-IPv4Addr
-# yum install perl-Net-IPv4Addr
-}}}
-
 
 During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux.
 These messages are produced by restorecon and do not pose any harm.
@@ -105,9 +92,23 @@ Run spacewalk-schema-upgrade script to upgrade database schema:
 
 Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
 
+= SHA-256 content update =
+
+In Spacewalk 0.8, it is necessary to update checksums and filer locations for existing SHA-256 content. This is to ensure all previously pushed 
+SHA-256 capable packages (Fedora 11, Fedora-12) will have correct checksums and will be stored in correct locations on filer.
+
+Note 1: This will likely be a slow process (approximately 5000 packages / hour on an entry level hardware).
+
+Note 2: With --debug option specified, all actions will be logged into /var/log/rhn/update-packages.log
+
+{{{
+# update-packages --debug --verbose --db $(spacewalk-cfg-get default_db) --update-sha256
+}}}
+
+
 =  Upgrade of Spacewalk configuration  =
 
-For Spacewalk 0.7, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
+For Spacewalk 0.8, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
 
 {{{
 # spacewalk-setup --disconnected --upgrade
@@ -133,6 +134,17 @@ SSLProxyEngine on
 ...
 </VirtualHost>
 ...
+}}}
+
+Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
+
+  *  debug = 3
+  *  pam_auth_service = rhn-satellite
+
+Clean jabberd authentication database:
+
+{{{
+# rm -f /var/lib/jabberd/db/authreg.db
 }}}
 
 = Restart Spacewalk = 
@@ -164,14 +176,6 @@ If you'd like to re-enable both monitoring and monitoring scout on your Spacewal
 {{{
 # /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
 }}}
-
-= Update Spacewalk configuration files =
-
-Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
-
-  *  debug = 3
-  *  pam_auth_service = rhn-satellite
-  *  default_db = user/password@sid
 
 =  Restart Spacewalk  =
 
