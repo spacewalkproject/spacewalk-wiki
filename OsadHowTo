@@ -90,9 +90,20 @@ Osad can be run from the command line like this:
 
 The best way to figure out what is going on is to run osad on the clients in the foreground as described above, and tail the logfiles for osa-dispatcher and the jabberd components. When that is done, schedule some actions (package installs, remote commands, errata updates, etc.) and watch for errors that get generated. It can often be useful to compare to a known 'good' system as well, in both log files and configuration files. 
 
+=== General Troubleshooting Tips ===
+
+If you have issues with osa-dispatcher, jabberd, or clients connecting make absolutely sure that your Spacewalk and/or Proxy use FQDN for their hostnames and that they're properly listed in /etc/hosts.  Also make sure that your Spacewalk SSL certificate uses the FQDN.  Jabber is very fragile when it comes to hostnames.
+
+
 === use ntpd on server/clients ===
 
 The authentication of osad instances to a jabberd server is time dependent. If the time on the client system is more than 120 seconds off from the time on the server, the osad instance on the client will fail authentication. This can make testing osad in a vmware instance a little painful. This is pretty easy to spot in the logs for osad, there will be an error complaining about the time drift being too large. This is a security feature and is working as intended, even if it can be annoying at times.
+
+
+=== osad stops responding ===
+
+In some cases, your firewall or network settings may cause osad's to think they're still connected when they're not.  Possible solution for this here: http://fedorahosted.org/spacewalk/wiki/JabberAndOSAD
+
 
 === Berkeley DB corruption ===
 
