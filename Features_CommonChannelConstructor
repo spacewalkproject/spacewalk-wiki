@@ -16,7 +16,7 @@ Common repositories to offer predefined channel configurations for...
  * RHEL
  * CentOS
  * Fedora
- * ScientificLinux - http://ftp.scientificlinux.org/linux/scientific/
+ * Scientific Linux - http://ftp.scientificlinux.org/linux/scientific/
  * EPEL - http://download.fedora.redhat.com/pub/epel/
  * VMWare - http://packages.vmware.com/tools
  * Spacewalk - http://spacewalk.redhat.com/yum/
