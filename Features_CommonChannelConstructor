@@ -2,24 +2,39 @@
 
 = __Common Channel Constructor__ =
 == Overview ==
+This feature proposal is to extend [attachment:wiki:UploadFedoraContent:create_channel.py create_channel.py] so that when run with say a "--addcommon" flag it presents a simple CLI menu system that allows the selection and configuration of some very common channel configurations, making such API calls as required to set them up and installs appropriate entries into the crontab to keep them up to date.
+
 === Sponsor and Reviewer ===
+Sponsor: philip.mather
+
 == Requirement ==
 == Specification ==
 === Functional ===
 === Non-functional ===
 == Implementation ==
+Common repositories to offer predefined channel configurations for...
+ * RHEL
+ * CentOS
+ * Fedora
+ * ScientificLinux - http://ftp.scientificlinux.org/linux/scientific/
+ * EPEL - http://download.fedora.redhat.com/pub/epel/
+ * VMWare - http://packages.vmware.com/tools
+ * Spacewalk - http://spacewalk.redhat.com/yum/
+ * RPMFusion - http://rpmfusion.org/
+ * AIX - ftp://ftp.software.ibm.com/aix/freeSoftware/aixtoolbox/RPMS/ppc/
+ * Solaris?
+
 === Technical ===
 === Architectural ===
 == Mock Ups ==
 == Tests ==
 == Risks ==
+ * Deluging a single under resourced repository with unnecessary requests.
+ * Concentrating requests to a single repository into to small a time frame.
+
 == Tasks ==
 == Progress ==
-|| '''Phase''' || '''Task''' || '''Description''' || '''Estimate''' || '''Confidence''' || '''Progress''' || '''Owner'''
-|| Back-end    || Big piles of stuff || Drink lots of coffee || 72H || 3 || 70% || Mr. Z. Developer
-||             ||                    || '''Subtotal:''' || 72H || 3 || 70% || Mr. Z. Developer 
-|| Front-end   || Develop new media  || Develop "Next", "Prev" and "Dancing Spaceman" images || 6H || 4 || 70% || Mr. A. Designer
-||             || Review Wire frames || Specifically for consistency with existing || 4H || 2 || 10% || Mr. A. N. Other
-||             || Realise Mock ups   || The actual business of pulling it all together || 32H || 4 || 10% || Mr. A. Designer
-||             ||                    || '''Subtotal:''' || 42H || 4 || 30% || Ms. Lead Designer
-||             ||                    || '''__Total:__'''|| 114H || 5 || 50% || Project Lead
+|| '''Phase''' || '''Task''' || '''Description''' || '''Estimate''' || '''Confidence''' || '''Progress''' || '''Owner''' ||
+||             ||            ||                   ||                ||                  || 0%             ||             ||
+||             ||            || '''Subtotal:'''   ||                ||                  || 0%             ||             ||
+||             ||            || '''__Total:__'''  ||                ||                  || 0%             ||             ||
