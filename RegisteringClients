@@ -11,9 +11,25 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
   2. Create an activation key with the new base channel.
 
-'''NOTE:''' rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the --force flag with rhnreg_ks, otherwise there is no need to use --force with registration. 
+{{{
+#!html
+<div style="background-color:#8e9f00; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/note.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Note</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the "--force" flag with rhnreg_ks, otherwise there is no need to use "--force".</p>
+   </div>
+</div>
+}}}
 
-'''NOTE:''' When creating a key, do not use the Generate function but create a human-readable version. eg: fedora-server-channel. This makes the whole more readable and provides more logics into the system.
+{{{
+#!html
+<div style="background-color:#8e9f00; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/note.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Note</h2>
+   <div style="padding-bottom:0.5em;" >
+       <p>When creating a registration key do not use the generate function, create a human-readable version. eg: fedora-server-channel. This makes your installation more understandable and provides greater logical consistency to the whole system.</p>
+   </div>
+</div>
+}}}
 
 = Fedora 11 =
 
@@ -47,7 +63,15 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
 
 = CentOS 5 or Red Hat Enterprise Linux 5 =
 
-  '''Warning:''' if you are installing these package in Red Hat Enterprise Linux it will override some base packages and you may lost support on these part.
+{{{
+#!html
+<div style="background-color:#9e292b; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/warning.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
+   <h2>Warning</h2>
+   <div style="padding-bottom:0.5em;" >
+      <p>If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Redhat!</p>
+   </div>
+</div>
+}}}
 
   1. Install the Spacewalk yum repository
    {{{
