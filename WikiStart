@@ -1,4 +1,7 @@
 = Spacewalk =
+----
+[[TOC(inline)]]
+----
 
 == Spacewalk 0.7 RELEASED! ==
 [HowToInstall Download]
@@ -31,26 +34,29 @@ View photos from the [http://www.flickr.com/photos/mairin/sets/72157605713726653
 
 == Content ==
 
-[SpacewalkFaq FAQs]
+[wiki:SpacewalkFaq FAQs]
     * Answers to your questions.
 
-[UserDocs User Documentation]
+[wiki:UserDocs User Documentation]
     * In this section of the Wiki, learn more about how to set up and use Spacewalk
 
-[DeveloperDocs Developer Documentation]
+[wiki:DeveloperDocs Developer Documentation]
     * Learn how to work on and build Spacewalk, and how Spacewalk is put together.
 
-[DownloadIt Downloads (Source and RPMs)]
+[wiki:DownloadIt Downloads (Source and RPMs)]
     * Find out how to check out the source code and get RPM releases.
 
 [https://fedorahosted.org/spacewalk/roadmap Roadmap] formerly ~~TheRoadmap~~
     * What are the plans for the future of Spacewalk?
 
-[ReleaseProcess Release Process]
+[wiki:ReleaseProcess Release Process]
     * What is the process for releasing Spacewalk.
 
-[BrainBox Brainbox]
+[wiki:BrainBox Brainbox]
     * Some ideas that might end up in the roadmap. Just a page to collect them.
+
+[wiki:Features Features]
+    * An index page of ideas that have graduated from the [wiki:BrainBox] to become features.
 
 == Communication ==
 
