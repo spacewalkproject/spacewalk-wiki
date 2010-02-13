@@ -102,7 +102,7 @@ The authentication of osad instances to a jabberd server is time dependent. If t
 
 === osad stops responding ===
 
-In some cases, your firewall or network settings may cause osad's to think they're still connected when they're not.  Possible solution for this here: http://fedorahosted.org/spacewalk/wiki/JabberAndOSAD
+In some cases, your firewall or network settings may cause osad's to think they're still connected when they're not. A number of possible solution for this are discussed in [wiki:JabberAndOSAD the Jabber and OSAD] section.
 
 
 === Berkeley DB corruption ===
@@ -110,8 +110,6 @@ In some cases, your firewall or network settings may cause osad's to think they'
 There is an intermittent problem with the interaction between jabberd and the Berkeley database it uses by default. Occasionally (not seen much any more), the database will become “wedged” and the osads on the clients will not pick up scheduled actions. Pings, however, still work. When/if this occurs, the only known solution is to restart jabberd - this will automatically remove the files in /var/lib/jabberd/. 
 
 === Resources ===
-http://jabberd.jabberstudio.org/2/docs/
- 
-http://www.ietf.org/rfc/rfc3920.txt
- 
-http://www.ietf.org/rfc/rfc3921.txt
+ * http://jabberd.jabberstudio.org/2/docs/
+ * http://www.ietf.org/rfc/rfc3920.txt
+ * http://www.ietf.org/rfc/rfc3921.txt
