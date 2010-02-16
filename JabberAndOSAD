@@ -23,39 +23,47 @@ Of course depending on your firewall time-out settings, you may need to tweak th
 
 
 
-'''On the spacewalk server:'''
-{{{
+==== On the spacewalk server ====
+
 
 1. Set the timeout intervals for jabber daemon
 
-       sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
-       sed -i 's/<keepalive>.*/<keepalive>120<\/keepalive>/' /etc/jabberd/*.xml*
-       sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml* |grep '<idle>'
-
+{{{
+sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
+sed -i 's/<keepalive>.*/<keepalive>120<\/keepalive>/' /etc/jabberd/*.xml*
+sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml* |grep '<idle>'
+}}}
 
 2. Restart spacewalk
+{{{
+rhn-satellite restart
+}}}
 
-       rhn-satellite restart
-
-
-Create cronjob in root's crontab that runs:
-
+3. Create cronjob in root's crontab
+{{{
 /sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
-
 }}}
 
 
+
+
+
+==== On spacewalk clients ====
+
+1. Create cronjob in root's crontab that restarts osad every 4 hours or so.
+(I also disable rhnsd to alleviate issues with that daemon not checking in.)
 {{{
-On spacewalk clients:
-
-Create cronjob in root's crontab:
-
-
+SAMPLE
 # Check in with spacewalk and restart osad every ~4 hours
 0 */3 * * *  sleep `expr ${RANDOM:0:4} / 2` ; /sbin/service osad restart ; /usr/sbin/rhn_check ; /usr/sbin/rhn-profile-sync
+}}}
+
+2. Restart OSAD on all clients.
+{{{
+/sbin/service osad restart
+}}}
 
 
-...and restarted OSAD on all clients (although this step may not be necessary).
 
 
 Hope this helps someone else.
