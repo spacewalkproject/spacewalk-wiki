@@ -51,6 +51,7 @@ apt-key add ~/.gnupg/pubring.gpg
 {{{
 $(MAKE) -f Makefile.rhn-client-tools install  DESTDIR=$(CURDIR)/debian/rhn-client-tools PREFIX=$(CURDIR)/debian/rhn-client-tools
 }}}
+ * dpkg-buildpackage -rfakeroot
 
 
 
