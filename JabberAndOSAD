@@ -81,6 +81,19 @@ SAMPLE
 
 
 
+
+== Results ==
+
+
+
+I now have no issues whatsoever with getting spacewalk clients to pickup scheduled actions within 5 minutes.
+
+Currently working with 235 clients.
+
+
+
+
+
 Hope this helps someone else.
 
 -- Josh Mullis (CCI - Atlanta)
