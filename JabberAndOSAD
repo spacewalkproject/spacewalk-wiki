@@ -45,10 +45,10 @@ sed -i 's/<idle>.*/<idle>200<\/idle>/' /etc/jabberd/*.xml*
 rhn-satellite restart
 }}}
 
-3. Create cronjob in root's crontab
+3. Create cronjob in root's crontab that reinitializes the jabber DB.
 {{{
 SAMPLE
-# Restart osa-dispatcher everyday @6am
+# Restart jabber everyday @6am
 00 06 * * *  /sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
 }}}
 
