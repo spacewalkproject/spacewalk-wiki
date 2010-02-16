@@ -37,7 +37,7 @@ Of course depending on your firewall time-out settings, you may need to tweak th
 {{{
 sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
 sed -i 's/<keepalive>.*/<keepalive>120<\/keepalive>/' /etc/jabberd/*.xml*
-sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml* |grep '<idle>'
+sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml*
 }}}
 
 2. Restart spacewalk
