@@ -91,13 +91,16 @@ Note: The f10 is intentional here even if you have newer version of Fedora -- th
 
 === Red Hat Enterprise Linux 5 ===
 
-Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  To get packages from EPEL just install this RPM:
+Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk. Also for Red Hat Enterprise Linux 5.4 and older you have to install python-dmidecode manually.
+To get packages from EPEL just install this RPM:
 
 {{{
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/i386/python-dmidecode-3.10.7-3.el5.i386.rpm
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
 }}}
 or
 {{{
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/x86_64/python-dmidecode-3.10.7-3.el5.x86_64.rpm
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-3.noarch.rpm
 }}}
 
