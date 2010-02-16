@@ -4,7 +4,7 @@
 
 - Client connections aren't reconnecting if the connection is lost.
 
-- Netstat shows an "ESTABLISHED" connection to the server whilst on the actual server it does not show any corresponding connection from the client.
+- Netstat on spacewalk client shows an "ESTABLISHED" connection, while on the spacewalk server it does not show any corresponding connection from the client.
 
    -  Usually happens if there are firewalls with session timeout's
 
