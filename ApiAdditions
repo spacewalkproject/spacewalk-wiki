@@ -35,19 +35,18 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.software.listChildren(cid) || 0.7 || 3 ||  ||  ||  ||
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
-||  kickstart.snippet.listAllSnippets() || 0.8 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listCustomSnippets() || 0.8 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listDefaultSnippets() || 0.8 || 3 || jsherrill  || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.createCustom(name, content) || 0.8 || 3 ||  ||  ||  ||
-||  kickstart.snippet.deleteCustom(name) || 0.8 || 3 ||  ||  ||  ||
-||  kickstart.snippet.modifyCustom(name, newContent) || 0.8 || 3 ||  ||  ||  ||
+||  kickstart.snippet.listAll() || 0.9 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listCustom() || 0.9 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.listDefault() || 0.9 || 3 || jsherrill  || done || return array[(name, content, macro usage, filename)] ||
+||  kickstart.snippet.createOrUpdate(name, contents) || 0.9 || 3 || jsherrill || done || return (name, contents, fragment, file) ||
+||  kickstart.snippet.delete(name) || 0.9 || 3 || jsherrill || done || return 1 ||
 ||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
-||  system.kickstart.profile.getVariables(label) || 0.8 || 3 ||  ||  ||  return map||
-||  system.kickstart.profile.setVariables(label, map) || 0.8 || 3 ||  ||  ||  return map||
+||  kickstart.profile.getVariables(label) || 0.9 || 3 || tlestach || done ||  return map ||
+||  kickstart.profile.setVariables(label, map) || 0.9 || 3 || tlestach || done ||  return 1 ||
 ||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
-||  system.createCobblerSystemRecord(sid, ks_label) || 0.8 || 3 ||  ||  ||  ||
-||  system.getVariables(sid) || 0.8 || 3 ||  ||  ||  return map||
-||  system.setVariables(sid, map) || 0.8 || 3 ||  ||  ||  return map||
+||  system.createSystemRecord(sid, ks_label) || 0.9 || 3 || tlestach || done || return 1 ||
+||  system.getVariables(sid) || 0.9 || 3 || tlestach || done || return (netboot, map) ||
+||  system.setVariables(sid, netboot, map) || 0.8 || 3 || tlestach || done || return map ||
 
 
 
