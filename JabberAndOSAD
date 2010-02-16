@@ -18,9 +18,13 @@ We then found that our firewalls have session time-outs, thus the jabber connect
 === Fix ===
 After doing the following, we saw no further issues with time-outs.
 
+
 The below jabber settings are all explained in the .xml configs under /etc/jabberd/.
-Essentially, it will send a "whitespace" character as a keepalive, every 2 minutes in the above case.
-I verified this in tcpdump and jabber does only send 1 small packet every 2 minutes.
+
+Essentially, it will send a "whitespace" character as a keepalive. (Every 2 minutes with the below settings.)
+
+This may be verified with tcpdump.
+
 Of course depending on your firewall time-out settings, you may need to tweak this a bit.
 
 
