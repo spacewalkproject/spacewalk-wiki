@@ -1,24 +1,62 @@
 == Jabber and OSAD client connection issues ==
 
 === Symptoms ===
+
+- Client connections aren't reconnecting if the connection is lost.
+- Netstat shows an "ESTABLISHED" connection to the server whilst on the actual server it does not show any corresponding connection from the client.
+   -  Usually happens if there are firewalls with session timeout's
+
+
+=== Symptom Description ===
 We were seeing a 104 connections connected with local port 5222 (jabber) to our server, whenever we reboot it the connections dropped back to 3 (local connections). It seems that the client connections aren't reconnecting if the connection is lost.
 Setting debug to 10 on the client showed nothing in the logs when it stops responding (nothing in "osa-dispatcher" log on server either). We noticed that on the client side that netstat shows an "ESTABLISHED" connection to the server whilst on the actual server it does not show any corresponding connection from the client.
 We then found that our firewalls have session time-outs, thus the jabber connections were timing out. This also causes the strange behaviour of a clients 'netstat -an |grep 5222' command saying "ESTABLISHED" even though there is no connection on the spacewalk server.
 
+
 === Fix ===
-After doing the following, we saw no further issues with time-outs...
+After doing the following, we saw no further issues with time-outs.
+
+The above settings are all explained in the .xml configs under /etc/jabberd/.
+Essentially, it will send a "whitespace" character as a keepalive, every 2 minutes in the above case.
+I verified this in tcpdump and jabber does only send 1 small packet every 2 minutes.
+Of course depending on your firewall time-out settings, you may need to tweak this a bit.
+
+
+
+'''On the spacewalk server:'''
+{{{
+
+1. Set the timeout intervals for jabber daemon
+
+       sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
+       sed -i 's/<keepalive>.*/<keepalive>120<\/keepalive>/' /etc/jabberd/*.xml*
+       sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml* |grep '<idle>'
+
+
+2. Restart spacewalk
+
+       rhn-satellite restart
+
+
+Create cronjob in root's crontab that runs:
+
+/sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
+
+}}}
+
 
 {{{
-sed -i 's/<interval>.*/<interval>120<\/interval>/' /etc/jabberd/*.xml*
-sed -i 's/<keepalive>.*/<keepalive>120<\/keepalive>/' /etc/jabberd/*.xml*
-sed -i 's/<idle>.*/<idle>600<\/idle>/' /etc/jabberd/*.xml* |grep '<idle>'
+On spacewalk clients:
 
-rhn-satellite restart
-}}}
+Create cronjob in root's crontab:
+
+
+# Check in with spacewalk and restart osad every ~4 hours
+0 */3 * * *  sleep `expr ${RANDOM:0:4} / 2` ; /sbin/service osad restart ; /usr/sbin/rhn_check ; /usr/sbin/rhn-profile-sync
+
 
 ...and restarted OSAD on all clients (although this step may not be necessary).
 
-The above settings are all explained in the .xml configs under /etc/jabberd/. Essentially, it will send a "whitespace" character as a keepalive, every 2 minutes in the above case. I verified this in tcpdump and jabber does only send 1 small packet every 2 minutes. Of course depending on your firewall time-out settings, you may need to tweak this a bit.
 
 Hope this helps someone else.
 
