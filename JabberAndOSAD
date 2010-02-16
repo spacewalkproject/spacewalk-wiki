@@ -47,7 +47,9 @@ rhn-satellite restart
 
 3. Create cronjob in root's crontab
 {{{
-/sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
+SAMPLE
+# Restart osa-dispatcher everyday @6am
+00 06 * * *  /sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
 }}}
 
 
