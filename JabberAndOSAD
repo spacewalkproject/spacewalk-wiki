@@ -53,13 +53,20 @@ SAMPLE
 }}}
 
 
+4. Actually run the command now.
+
+{{{
+/sbin/service jabberd stop ; /sbin/service osa-dispatcher stop ; rm -Rf /var/lib/jabberd/db/* ; /sbin/service jabberd start ; /sbin/service osa-dispatcher start
+}}}
 
 
 
 ==== On spacewalk clients ====
 
 1. Create cronjob in root's crontab that restarts osad every 4 hours or so.
+
 (I also disable rhnsd to alleviate issues with that daemon not checking in.)
+
 {{{
 SAMPLE
 # Check in with spacewalk and restart osad every ~4 hours
