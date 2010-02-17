@@ -120,21 +120,27 @@ Do you know the answer to something and think others might find it useful? Feel 
 === Features ===
   * [wiki:BrainBox Feature Requests/BrainBox]
   * [https://fedorahosted.org/spacewalk/roadmap Road Map]
+=== Installation Guides ===
+  * [wiki:HowToInstall for 0.8]
+  * [wiki:HowToInstall07 for 0.7]
 === Upgrade Notes ===
-Historic upgrade guides.
-  * [wiki:HowToUpgrade From 0.6 to 0.7]
+Upgrade guides.
+  * [wiki:HowToUpgrade From 0.7 to 0.8]
+  * [wiki:HowToUpgrade07 From 0.6 to 0.7]
   * [wiki:HowToUpgrade06 From 0.5 to 0.6]
 === Dependency Notes ===
 A quick list of rpms that a 'yum install spacewalk' adds to a box.
-  * [wiki:ListofRPMsInstalled Version 0.7]
+  * [wiki:ListofRPMsInstalled Version 0.8]
+  * [wiki:ListofRPMsInstalled07 Version 0.7]
   * [wiki:ListofRPMsInstalled06 Version 0.6]
   * [wiki:ListofRPMsInstalled05 Version 0.5]
   * [wiki:ListofRpms04Installs Version 0.4]
 === Release Notes ===
 Release notes for each version, taken from mailing lists.
-  * [wiki:ReleaseNotes07 Notes for 0.7]
-  * [wiki:ReleaseNotes06 Notes for 0.6]
-  * [wiki:ReleaseNotes05 Release notes for 0.5]
+  * [wiki:ReleaseNotes08 for 0.8]
+  * [wiki:ReleaseNotes07 for 0.7]
+  * [wiki:ReleaseNotes06 for 0.6]
+  * [wiki:ReleaseNotes05 for 0.5]
 === Wiki ===
   * [wiki:WikiSnippetsAndTemplates Snippets and Templates]
   * [wiki:WikiPageIndex Wiki Page Index]
