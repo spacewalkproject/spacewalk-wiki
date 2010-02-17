@@ -75,7 +75,12 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
 
   1. Install the Spacewalk yum repository
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/0.8/RHEL/5/$(uname -i)/spacewalk-client-repo-0.8-1.el5.noarch.rpm
+# BASEARCH=$(uname -i)
+# rpm -Uvh http://spacewalk.redhat.com/yum/0.8/RHEL/5/$BASEARCH/spacewalk-client-repo-0.8-1.el5.noarch.rpm
+   }}}
+  1. For Red Hat Enterprise Linux 5.4 and older you have to install python-dmidecode manually
+   {{{
+# rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/$BASEARCH/python-dmidecode-3.10.7-3.el5.$BASEARCH.rpm
    }}}
   1. Install client packages
     {{{
