@@ -1,3 +1,5 @@
+[[PageOutline]]
+
 = Spacewalk Installation Instructions =
 
 These are installation instruction for Spacewalk 0.8.
@@ -5,13 +7,6 @@ These are installation instruction for Spacewalk 0.8.
 Spacewalk 0.7 installation instructions are available at [https://fedorahosted.org/spacewalk/wiki/HowToInstall07 HowToInstall07]
 
 ----
-
- * [#SettingupSpacewalkrepo Setting up Spacewalk repo ]
- * [#Additionalrepospackages Additional repos & packages ]
- * [#OraclePre-Requisites Oracle Pre-Requisites ]
- * [#InstallingSpacewalk Installing Spacewalk ]
- * [#ManagingSpacewalk Managing Spacewalk ]
- * [#KnownIssues Known Issues ]
 
 == Prerequisites ==
 
