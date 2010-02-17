@@ -90,13 +90,9 @@ Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http:
 To get packages from EPEL just install this RPM:
 
 {{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/i386/python-dmidecode-3.10.7-3.el5.i386.rpm
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-3.noarch.rpm
-}}}
-or
-{{{
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/x86_64/python-dmidecode-3.10.7-3.el5.x86_64.rpm
-rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-3.noarch.rpm
+BASEARCH=$(uname -i)
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/$BASEARCH/python-dmidecode-3.10.7-3.el5.$BASEARCH.rpm
+rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/$BASEARCH/epel-release-5-3.noarch.rpm
 }}}
 
 Please make sure you have only one java version installed. 
