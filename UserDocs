@@ -14,12 +14,13 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:Conventions Conventions]
 === Installation  ===
   * [wiki:HowToInstall How to install]
-    * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo ]
-    * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages ]
-    * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites ]
-    * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk ]
-    * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk ]
-    * [wiki:HowToInstall#KnownIssues Known Issues ]
+    * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo]
+    * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages]
+    * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites]
+    * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk]
+    * [wiki:HowToInstall#ConfiguringSpacewalk Configuring Spacewalk]
+    * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk]
+    * [wiki:HowToInstall#KnownIssues Known Issues]
   * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
   * [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
 === Post-Installation Guides ===
