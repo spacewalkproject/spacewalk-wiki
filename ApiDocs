@@ -4,6 +4,7 @@ Going forward our api will be published for each spacewalk version.
 
 
 ----
+ [http://www.redhat.com/spacewalk/documentation/api/0.8/ Spacewalk 0.8]
 
  [http://www.redhat.com/spacewalk/documentation/api/0.6/ Spacewalk 0.6]
 
@@ -17,6 +18,3 @@ Going forward our api will be published for each spacewalk version.
  
  Spacewalk 0.1 (Unavailable)
 
-
-
- [http://www.redhat.com/spacewalk/documentation/api/devel/ Current Development (unstable, and possibly outdated)]
