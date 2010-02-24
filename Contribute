@@ -2,30 +2,30 @@
 
 == Coding ==
 
-Are you familier with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk&classification=Other reported bugs] and 
+Are you familiar with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk&classification=Other reported bugs] and 
 pick up one. Assign it to yourself and start working on it. When you are done send us [PatchProcess a patch].
-Did not find anything interresting for you? Check [BrainBox brainbox] or come with your own idea.
+Did not find anything interesting for you? Check [BrainBox brainbox] or come up with your own idea.
 
-Did you write some usefull script which use [ApiDocs Spacewalk API]? Share it with others!
+Did you write some useful script which uses [ApiDocs Spacewalk API]? Share it with the others!
 
 == Testing ==
 
-Just use Spacewalk and report bugs you may find.
+Just use Spacewalk and report any bugs you find.
 
-Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether are they still valid. Sometimes bug is fixed as side effect of other fix. You may find such case and close bug without any work!
+Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether they are still valid. Sometimes bug is fixed as a side effect of other fix. You may find such case and close the bug without any work!
 
 == Documentation ==
 
-A lot of spacewalk programs or configuration files do not have a man page. Do you want to write it?
+A lot of spacewalk programs or configuration files do not have a manual page. Do you want to write it?
 
-We need general documentation of Spacewalk. You did not find documentation for task you are currently doing? Just create new wiki page and document what you did.
+We need general documentation of Spacewalk. You did not find documentation for the task you are currently doing? Just create a new wiki page and document what it is you did.
 Some existing documentation is outdated and you may review it and update it.
 
-Although we have some [http://www.redhat.com/spacewalk/documentation/ documentation], we still have wide areas undocumented. Just start reading code and document it. We use [http://epydoc.sourceforge.net/manual-docstring.html epydoc] style for python and Javadoc for Java. The documentation is inline in code. So will send result as [PatchProcess a patch]. This is best start if you want to start coding, but you are not familier with our code base.
+Although we have some [http://www.redhat.com/spacewalk/documentation/ documentation], we still have wide areas undocumented. Just start reading code and document it. We use [http://epydoc.sourceforge.net/manual-docstring.html epydoc] style for python and Javadoc for Java. The documentation is inline in code. So send result as [PatchProcess a patch]. This is the best start if you want to start coding, but you are not familiar with our code base.
 
 == Help others ==
 
-Or you can just hang on [WikiStart#Communication IRC or mailing list] and try to answer question others may have.
+Or you can just hang on [WikiStart#Communication IRC or mailing list] and try to answer questions others may have.
 
 == Money ==
 
