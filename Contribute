@@ -21,7 +21,7 @@ A lot of spacewalk programs or configuration files do not have a man page. Do yo
 We need general documentation of Spacewalk. You did not find documentation for task you are currently doing? Just create new wiki page and document what you did.
 Some existing documentation is outdated and you may review it and update it.
 
-Although we have some [http://www.redhat.com/spacewalk/documentation/ documentation], we still have wide areas undocumented. Just start reading documentation and document it. We use [http://epydoc.sourceforge.net/manual-docstring.html epydoc] style for python and Javadoc for Java. The documentation is inline in code. So will send result as [PatchProcess a patch]. This is best start if you want to start coding, but you are not familier with our code base.
+Although we have some [http://www.redhat.com/spacewalk/documentation/ documentation], we still have wide areas undocumented. Just start reading code and document it. We use [http://epydoc.sourceforge.net/manual-docstring.html epydoc] style for python and Javadoc for Java. The documentation is inline in code. So will send result as [PatchProcess a patch]. This is best start if you want to start coding, but you are not familier with our code base.
 
 == Help others ==
 
