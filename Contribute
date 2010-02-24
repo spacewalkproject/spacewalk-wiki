@@ -12,7 +12,7 @@ Did you write some usefull script which use Spacewalk API? Share it with others!
 
 Just use Spacewalk and report bugs you may find.
 
-Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and rest older bugs if they still happen. Sometimes they are fixed as side effect of other fix. You may find such case and close bug without any work!
+Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether are they still valid. Sometimes bug is fixed as side effect of other fix. You may find such case and close bug without any work!
 
 == Documentation ==
 
