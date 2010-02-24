@@ -1,0 +1,32 @@
+= Contribute =
+
+== Coding ==
+
+Are you familier with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk&classification=Other reported bugs] and 
+pick up one. Assign it to yourself and start working on it. When you are done send us [PatchProcess a patch].
+Did not find anything interresting for you? Check [BrainBox brainbox] or come with your own idea.
+
+Did you write some usefull script which use Spacewalk API? Share it with others!
+
+== Testing ==
+
+Just use Spacewalk and report bugs you may find.
+
+Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and rest older bugs if they still happen. Sometimes they are fixed as side effect of other fix. You may find such case and close bug without any work!
+
+== Documentation ==
+
+A lot of spacewalk programs or configuration files do not have a man page. Do you want to write it?
+
+We need general documentation of Spacewalk. You did not find documentation for task you are currently doing? Just create new wiki page and document what you did.
+Some existing documentation is outdated and you may review it and update it.
+
+Although we have some [http://www.redhat.com/spacewalk/documentation/ documentation], we still have wide areas undocumented. Just start reading documentation and document it. We use [http://epydoc.sourceforge.net/manual-docstring.html epydoc] style for python and Javadoc for Java. The documentation is inline in code. So will send result as [PatchProcess a patch]. This is best start if you want to start coding, but you are not familier with our code base.
+
+== Helping others ==
+
+Or you can just hang on [WikiStart#Communication IRC or mailing list] and try to answer question others have.
+
+== Money ==
+
+We could not accept any money directly. But since Spacewalk is heavily sponsored by [http://www.redhat.com/ Red Hat], if you [http://shop.redhat.de/store/rhnw/RH13-085-EN/en?set_language=en&cl=en buy RHN Satellite], you directly support development of Spacewalk.
