@@ -207,6 +207,33 @@ Installation complete.
 Visit https://fjs-0-02.rhndev.redhat.com to create the Spacewalk administrator account.
 }}}
 
+=== Configuring Spacewalk with an Answer File  ===
+You can also configure spacewalk by using an answer file.  To configure spacewalk by using an answer you just need to run the following
+{{{
+spacwalk-setup --disconnected --answer-file=<FILENAME>
+}}}
+An example answer file is as follows
+{{{
+admin-email = root@localhost
+ssl-set-org = Spacewalk Org
+ssl-set-org-unit = spacewalk
+ssl-set-city = My City
+ssl-set-state = My State
+ssl-set-country = US
+ssl-password = spacewalk
+ssl-set-email = root@localhost
+ssl-config-sslvhost = Y
+db-backend=oracle
+db-user=spacewalk
+db-password=spacewalk
+db-sid=xe
+db-host=localhost
+db-port=1521
+db-protocol=TCP
+enable-tftp=Y
+}}}
+'''NOTE:''' If you do not supply a value or leave out a key you will be prompted to supply that answer
+
 After {{{spacewalk-setup}}} is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
