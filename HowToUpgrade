@@ -54,11 +54,6 @@ Stop your Spacewalk by running:
 # /usr/sbin/rhn-satellite stop
 }}}
 
-On Red Hat Enterprise Linux 5.4 and older install python-dmidecode:
-{{{
-# BASEARCH=$(uname -i) ; rpm -Uvh http://download.fedora.redhat.com/pub/epel/testing/5/$BASEARCH/python-dmidecode-3.10.7-3.el5.$BASEARCH.rpm
-}}}
-
 Perform package upgrade using yum:
 
 {{{
