@@ -46,7 +46,7 @@ Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyrin
 
 == Signing the Certificate ==
 
- 1. Add the {{{gen-oss-sat-cert.pl}}} script to your Spacewalk (see below under '''Attachments''')
+ 1. Download the [http://git.fedoraproject.org/git/?p=spacewalk.git;a=blob_plain;f=scripts/gen-oss-sat-cert.pl gen-oss-sat-cert.pl] script to your Spacewalk.
  2. Modify the {{{template.cert}}} or create a new certifcate to sign
  3. Review the usage statement from {{{gen-oss-cert.pl}}}:
 {{{
