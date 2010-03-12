@@ -82,7 +82,7 @@ gpgcheck=1
 EOF
 }}}
 
-Note: The f10 is intentional here even if you have newer version of Fedora -- there simply are not newer jpackage repos.
+Note: substitute f10 and f11 if applicable
 
 === Red Hat Enterprise Linux 5 ===
 
