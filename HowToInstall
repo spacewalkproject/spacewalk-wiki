@@ -75,14 +75,14 @@ For Spacewalk on Fedora, a couple of additional dependencies are needed from jpa
 {{{
 cat > /etc/yum.repos.d/jpackage.repo << EOF
 [jpackage]
-name=jpackage-f12
-baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-12/free/
+name=jpackage-f10
+baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
 gpgkey=http://www.jpackage.org/jpackage.asc
 gpgcheck=1
 EOF
 }}}
 
-Note: substitute f10 and f11 if applicable
+Note: the dirs for f11 and f12 do not contain the rpms yet
 
 === Red Hat Enterprise Linux 5 ===
 
