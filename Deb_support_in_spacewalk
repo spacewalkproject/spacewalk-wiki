@@ -82,5 +82,10 @@ You can use apt-get install rhn-setup to install all available packages. There a
 rhnsd, rhn-client-tools, rhncfg. Some of functions do not work and everything is in
 experimental state, but if you like it, try it and send me feedback.
 
+'''March 2010'''[[BR]]
+
+Work on rhnpush has started. Already available packages: jabberpy, osad,
+rhn-client-tools, rhn-setup, rhncfg, rhnlib, rhnsd.
+
 
 
