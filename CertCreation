@@ -59,7 +59,7 @@ gpg --import mysecretkey.gpg
 }}}
  5. Resign/sign the cert, for example:
 {{{
-perl gen-oss-sat-cert.pl --dsn spacewalk/spacewalk@xe --signer 74E73973 --resign template-eval.cert
+perl gen-oss-sat-cert.pl --signer 74E73973 --resign template-eval.cert
 }}}
 
 == Activating the Spacewalk locally (optional) ==
