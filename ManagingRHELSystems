@@ -1,0 +1,27 @@
+== Managing Configuration Files ==
+This section details managing configuration files in the spacewal web
+interface.  Configuration files can be managed on both a per system
+configuration level and a central configuration channel level.  Per system
+configuration files always over-ride central channel configuration files, keep
+that in mind when deploying configuration files.  Additionally, a system may
+be subscribed to more than one centrally managed configuration channels.  When
+this is the case, the administrator should ensure that proper channel
+hierarchy is maintained.  Channels with lower number rank have higher priority
+than channels with a higher number rank, ie Rank 1 files take priority over
+Rank 2 files.
+=== Centrally Managed Configuration Channels ===
+ 1. To create a centrally managed configuration channel, log in as a spacewalk administrator and select the Configuration tab from the top menu bar.
+ 1. Select Configuration Channels
+   * You will be presented with a list of the current Centrally Managed Configuration Channels.
+   * From this screen you can {{{create new config channel}}} or view information about the previously configured channels.
+==== Creating a Centrally Managed Configuration Channel ====
+ * Choose {{{create new config channel}}} and then fill in a {{{Name}}}, {{{Label}}}, and {{{Description}}}.
+==== Managing a Central Configuration Channel ====
+Choosing a configuration channel on the {{{Configuration Channels}}} listing page takes you to the {{{Overview}}} page for the configuration channel.  This page shows the basic information about the channel and various actions that are available such as deploying the configurationt files or comparing files or creating new files.
+
+To see what files are in a configuration channel, choose the {{{List/Remove
+Files}}} link from the header.  This view shows you the files that are
+contained in the configuration channel along with their revision and when they
+were last modified.  Choosing {{{\[View\]}}} next to a file takes you to the
+file details page which lists the information about the file and the contents
+(if it is not a directory or binary file).
