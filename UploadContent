@@ -8,15 +8,6 @@ In order to use Spacewalk, you'll need to upload rpm packages into it. At the mo
         - [UploadContent#Uploadtherpmpackages Upload the rpm packages] into your Spacewalk Server
 
 
-'''Important Notice:'''
-
-Currently due to the way Spacewalk handles rpm packages you can only manage one distribution in an organization at a time.  Plans to allow multiple distributions assigned to a single organization is in the works and will be available soon.  Mixed environments are something we want to fully support.
-
-For example, right now, you can have one organization for Red Hat Enterprise Linux content, one organization for CentOS content, and one organization for Fedora content.  Servers cannot be in multiple organizations.  The technical reason for this is that Fedora 9, CentOS 5, and RHEL 5 all contain packages with the same EVRA (Epoch, Version, Release, Arch), and Satellite (Spacewalk) cannot currently differentiate between packages from different sources with the same EVRA.
-
-We hope to have this fixed soon so co-management of Fedora, CentOS, and RHEL is possible.  You can however have multiple versions of the same distribution (F-8, F-9, etc) within the same organization.
-
-
 ----
 
 
