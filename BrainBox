@@ -5,6 +5,8 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * Activations Keys, Kickstart profiles & Solaris content
  * Asset identification
  * Associate a config file with a remote command to allow e.g. dependent service restart after config file deployment. It should be possible to define pre or post deployment scripts.
+      * [[Image(action-add.gif)]] Seconded...but this should include the ability to tie scripts with RPM and/or erratum deployment as well
+ * Enable "superadmins" to select the current working orginization from a drop down menu, instead of being forced to logout and login as a specific user for that orginization
  * [wiki:Features/SupportUser Support User]
  * Usecase deployment - make initial enable & deployment of the following simple 
    * Remote Commands, Configuration Management, Monitoring 
