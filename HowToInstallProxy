@@ -25,21 +25,37 @@ or
 ==== Spacewalk-repo ====
 To use the official repository install spacewalk-repo RPM:
 
+Red Hat Enterprise Linux, CentOS
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/0.5/RHEL/5/`uname -i`/os/Packages/spacewalk-repo-0.5-2.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/0.8/RHEL/5/i386/spacewalk-repo-0.8-1.el5.noarch.rpm
+}}}
+Fedora 11
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.8/Fedora/11/i386/spacewalk-repo-0.8-1.fc11.noarch.rpm
+}}}
+Fedora 12
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/0.8/Fedora/12/i386/spacewalk-repo-0.8-1.fc12.noarch.rpm
 }}}
 
 ==== Nightly builds ====
 
-To use the nightly builds add a file in yum.repos.d (e.g. /etc/yum.repos.d/spacewalk.repo) with the following contents:
+If you want to use the nightly builds, add a .repo file pointing to the nightly repository:
 
 {{{
+cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
+# RHEL 5 / CentOS 5
 baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/$basearch/os/
+# Fedora 12
+#baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate-f12/$basearch/os
+# Fedora 11
+#baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate-f11/$basearch/os
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
+EOF
 }}}
 
 == Installation ==
