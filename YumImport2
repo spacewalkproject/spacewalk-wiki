@@ -15,3 +15,4 @@
  * ~~Support Mirror lists~~ (Commited in c9c2d15afdf2537fff94aa47c0931aca198cc9d7 in master)
  * http proxy support
  * allow seeing a list of what will be imported (commandline only)
+ * allow multiple (different) channels to be synced at the same time.
