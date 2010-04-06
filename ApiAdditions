@@ -32,7 +32,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 ||  ||  ||  ||
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
-||  channel.software.listChildren(cid) || 0.7 || 3 || coec ||  || return array[(id, label)] ||
+||  channel.software.listChildren(cid) || 0.7 || 3 || coec || done || return array[(id, label)] ||
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || 0.7 || 3 ||  ||  ||  ||
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
 ||  kickstart.snippet.listAll() || 0.9 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
