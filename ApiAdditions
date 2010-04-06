@@ -29,7 +29,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 ||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
-||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 ||  ||  ||  ||
+||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 || coec ||  ||  ||
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 ||  channel.software.listChildren(cid) || 0.7 || 3 || coec || done || return array[(id, label)] ||
