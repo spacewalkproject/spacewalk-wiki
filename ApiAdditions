@@ -32,7 +32,8 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 || coec ||  ||  ||
 
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
-||  errata.addCve(session, advisory_name, array(cveNames) || 0.9 || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
+||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || 0.9 || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
+||  errata.createCve(session, cveName) || 0.9 || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 ||  channel.software.listChildren(cid) || 0.7 || 3 || coec || done || return array[(id, label)] ||
