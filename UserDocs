@@ -72,6 +72,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * The upstream, [http://www.redhat.com/docs/manuals/satellite/ Official Red Hat Network Satellite Documentation]
     * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Installation_Guide/html/index.html The official Red Hat Satellite Installation Section]
     * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Proxy_Installation_Guide/index.html The official Red Hat Proxy Installation Section]
+    * [http://www.redhat.com/pdf/ISS_Best_Practices_Whitepaper.pdf ISS Best Practices Whitepaper]
   * The downstream, [http://centos.org/ CentOS] Project Documentation
     * [http://wiki.centos.org/HowTos/PackageManagement/Spacewalk The CentOS Project's Package Management/Spacewalk HowTo]
 === Related Technology Resources ===
