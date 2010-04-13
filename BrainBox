@@ -9,6 +9,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Enable "superadmins" to select the current working orginization from a drop down menu, instead of being forced to logout and login as a specific user for that organization.
     * [[Image(action-add.gif)]] Seconded!
  * [wiki:Features/SupportUser Support User]
+ * API-only user, with access to only specific API's.  Or a way to login to the API from a client without having to store username/password in cleartext.
  * Usecase deployment - make initial enable & deployment of the following simple 
    * Remote Commands, Configuration Management, Monitoring 
  * [GeneralImprovements General Improvements]
