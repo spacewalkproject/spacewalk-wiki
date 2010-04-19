@@ -21,8 +21,8 @@ Spacewalk 0.7 installation instructions are available at [https://fedorahosted.o
 
 RPM downloads of the project are available through a yum repository
 
-  * http://spacewalk.redhat.com/yum - Binary RPMs
-  * http://spacewalk.redhat.com/source - Source RPMs and tarballs
+  * http://spacewalk.redhat.com/yum/ - Binary RPMs
+  * http://spacewalk.redhat.com/source/ - Source RPMs and tarballs
 
 To use this repository install spacewalk-repo with commands below:
 
