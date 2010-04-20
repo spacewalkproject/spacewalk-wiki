@@ -109,3 +109,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
   * http://publib.boulder.ibm.com/infocenter/pseries/v5r3/topic/com.ibm.aix.cmds/doc/aixcmds4/nimol_install.htm?resultof=%22%6e%69%6d%6f%6c%22%20
   * http://dag.wieers.com/howto/bits/aix-lpp.php
   --Phil
+ * Spacewalk can serve metalink file with list of Spacewalk Proxies, from which can download package too. --msuchy
