@@ -1,5 +1,8 @@
 = How To Rename A Satellite =
 
+'''This page is outdated, new way to rename satellite hostname is on
+https://fedorahosted.org/spacewalk/wiki/SpacewalkHostnameRename'''
+
 == I want to change the hostname and/or IP address of my Satellite - how do I do this? ==
 
 '''READ EVERYTHING BEFORE doing anything.'''
