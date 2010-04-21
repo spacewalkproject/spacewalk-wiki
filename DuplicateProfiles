@@ -19,8 +19,8 @@ Four snippets will be automatically (non-optional) included in /var/lib/rhn/kick
 
 === UI Changes ===
 The initial UI mockups are located at
- * http://duffy.fedorapeople.org/spacewalk/dupe%20profiles/20Apr2010-Spacewalk-DuplicateSystemsMockup-List-1.png -> This page will show a grouping of systems which Spacewalk has identified as duplicates based on Same Hostname/ip address/mac address. The customer will be able to select systems for comparison and make a decision on the bad ones.
- * http://duffy.fedorapeople.org/spacewalk/dupe%20profiles/20Apr2010-Spacewalk-DuplicateSystemsMockup-Comparison-1.png -> This page shows a comparison of a group of systems which were identified as duplicates and lets the users decide which one to delete  
+ * http://duffy.fedorapeople.org/spacewalk/dupe%20profiles/20Apr2010-Spacewalk-DuplicateSystemsMockup-List-2.png -> This page will show a grouping of systems which Spacewalk has identified as duplicates based on Same Hostname/ip address/mac address. The customer will be able to select systems for comparison and make a decision on the bad ones.
+ * http://duffy.fedorapeople.org/spacewalk/dupe%20profiles/20Apr2010-Spacewalk-DuplicateSystemsMockup-Comparison-2.png -> This page shows a comparison of a group of systems which were identified as duplicates and lets the users decide which one to delete  
  * Add a check box  option in Systems-> Kickstart -> Select Profile-> System Details page. "[  ] Remove the system history of any systems using this kickstart file. All existing subscriptions, entitlements, and other system profile data will be deleted." This option will dictate if the profile adds a "deleteSystem" or "obtainReactivationKey"  in the pre script.
  * Redo the SSM systems deletion page to java -> http://<FQDN>/network/systems/ssm/misc/delete_systems_conf.pxt and make "deleteSystems" an asynchronous queued background task.
  * Make system header jspf check to see if the system is currently in the deletion queue and if so say "System has been deleted."
