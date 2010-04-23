@@ -5,7 +5,21 @@ spacewalk-hostname-rename script is an automated tool for re-configuration of Sp
 It takes care of reconfiguration of /etc/rhn/rhn.conf file, SSL certificate, database, jabberd, cobbler, monitoring ... everything what's needed.
 
 == Prerequisites ==
-After the hostname/ip of the system gets changed, the systems shall be rebooted and spacewalk-hostname-rename script can be run. The script make some initial checks, whether the hostname is correctly set.
+If you change the system hostname, make sure you know your SSL CA passphrase. It will be needed by the script.
+Verify that CA password is working:
+{{{
+# openssl rsa -in ssl-build/RHN-ORG-PRIVATE-SSL-KEY
+Enter pass phrase for ssl-build/RHN-ORG-PRIVATE-SSL-KEY:
+writing RSA key
+-----BEGIN RSA PRIVATE KEY-----
+cut
+-----END RSA PRIVATE KEY-----
+}}}
+
+ * Schedule a maintenance window for the rename process.
+ * Change the hostname/ip of the system.
+ * Reboot the system to ensure that the new hostname is active
+ * Run the spacewalk-hostname-rename script
 
 == How to use it ==
 
@@ -23,8 +37,7 @@ IP_ADDRESS is the default ip address of the system used mainly for monitoring. I
 
 {{{
 # spacewalk-hostname-rename <my_ip_address>
-Validating input arguments:
- Validating IP ... OK
+Validating IP ... OK
 =============================================
 hostname: <my_hostname>
 ip: <my_ip_address>
@@ -32,22 +45,27 @@ ip: <my_ip_address>
 Stopping rhn-satellite services ... OK
 Testing DB connection ... OK
 Updating /etc/rhn/rhn.conf ... OK
-Actual SSL key pair package: rhn-org-httpd-ssl-key-pair-tml.brq-1.0-13.noarch
+Actual SSL key pair package: rhn-org-httpd-ssl-key-pair-rlx-2-18.rhndev-1.0-6
  No need to re-generate SSL certificate.
 Regenerating new bootstrap client-config-overrides.txt ... OK
 Updating NOCpulse.ini ... OK
 Updating monitoring data ... OK
+Pushing monitoring scounts ... OK
 Updating other DB entries ... OK
 Changing cobbler settings ... OK
 Changing jabberd settings ... OK
 Starting rhn-satellite services ... OK
 }}}
 
-== Additional info ==
+== Logging and backup ==
 
-spacewalk-hostname-rename logs to /var/log/rhn/rhn_hostname_rename.log
+spacewalk-hostname-rename logs to /var/log/rhn/rhn_hostname_rename.log and all manually changed files get backup-ed with predefined .rhnbck extension.
 
-== What about clients? ==
+== What about the clients? ==
 
 Check serverURL value in /etc/sysconfig/rhn/up2date on every client registered to the renamed satellite and change it to the new hostname/ip value.
 Reconfiguration of RHN Proxy servers isn't trivial and it's recommended to recreate RHN Proxy servers.
+
+== Script failures ==
+
+The script makes some initial checks, whether the hostname is correctly set. The most problems may pop-up because of wrongly set system hostname. The script would write a concrete error message what shall be fixed in these cases. After the problem gets removed, the script can be re-run.
