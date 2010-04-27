@@ -37,6 +37,20 @@ When the <rhn-channel> element has the has-comps attribute set to True, the comp
 
 During inter-sat-sync, the has-comps attribute is set, and the satellite-sync then retrieves the comps file using new dump.get_comps XMLRPC call and stores it to /var/satellite and to rhnChannelComps like in the previous cases.
 
+== Where are these changes available ==
+
 The above changes were tagged as spacewalk-backend-1.1.5-1.
 
 To generate correct repomd.xml file, use_taskomatic_repomd needs to be set to 0 to use the Python repomd generator, or changes d2e58acd844365aadda7d9fc6c7922d9889d1ce2 and 44ebff2b482862ee8aa3eb5fe42ac7dad0d282c8 from Spacewalk master need to be applied (not tagged to spacewalk-java yet).
+
+== Problems, TODOs ==
+
+As noted above, RHN hosted only provides boolean information about comps presence for given channel. That means that when syncing from RHN hosted, we have no good way to determine if we need to retrieve the comps file or not. Currently we use the channel's last modified value, however, it gets updated with any package added, while comps will change less frequently, generally only with new minor version.
+
+And we keep this has-comps approach throughout the whole solution, to keep things consistent.
+
+There are three possible ways currently considered:
+
+ * Do nothing, this is sufficient.
+ * Change RHN hosted to generate comps-last-modified attribute with comps' last modified information, instead of that has-comps attribute, and use this value in the other cases as well.
+ * Do a HEAD request to retrieve the comps file from RHN hosted instead of GET and only issue full GET if the Last-Modified HTTP header shows that the file has changed.
