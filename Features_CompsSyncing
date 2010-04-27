@@ -1,0 +1,34 @@
+= Comps Syncing =
+
+The comps.xml file is an XML file describing groups of packages that yum can use for group operations, things like groupinstall or groupinfo. With Fedora yum repositories, the comps.xml file is "attached" to the repository via
+
+  <data type="group">
+
+entry in repomd.xml.
+
+For repos/channel served from RHN Satellite and Spacewalk servers, we need to add correct information about correct comps file to the repomd.xml file, so that the client machines are able to do the group operations.
+
+To support group operations for RHEL 5 clients fast, we have hardcoded paths to comps files in the kickstart trees in the server code, done in bugzilla 247156. However, that means that the kickstart trees need to be synced, and the paths always point to the 5.0 GA files, so for example RHEL 5.5 still gets 5.0 comps.xml file.
+
+In bugzilla 585233 we aim at supporting the comps syncing properly, both from RHN hosted to RHN Satellite, to channel dumps, and across Satellites.
+
+== RHN hosted support ==
+
+RHN hosted has added the support for exposing the comps data for channels in bugzilla 249141. It has two parts:
+
+ * The <rhn-channel> element in the channel XML now has attribute has-comps, with values "True" or "False"; if the value is True, the channel has comps information available.
+ * In that case, the comps file can be retrieved on the URL http://satellite.rhn.webdev.redhat.com/SAT/$RHN/$CHANNEL_LABEL/repodata/comps.xml, with correct authentication HTTP headers.
+
+== RHN Satellite / Spacewalk syncing ==
+
+=== Live sync from RHN hosted ===
+
+On RHN Satellite / Spacewalk side, we process this has-comps attribute. If it is True, we check if file /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$CHANNEL_LAST_MODIFIED.xml already exist and retrieve it with GET if it does not. Then we update the rhnChannelComps table to hold the correct record with correct relative_filename value.
+
+=== Generating channel dumps ===
+
+When rhn-satellite-exporter generates the export and the channel has value in rhnChannelComps, we set the has-comps attribute accordingly, and store the comps.xml file gzipped in the channels/$CHANNEL_LABEL/comps.xml.gz file.
+
+=== Sync from channel dumps ===
+
+When the <rhn-channel> element has the has-comps attribute set to True, the comps.xml.gz file is ungzipped from channels/$CHANNEL_LABEL to /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$CHANNEL_LAST_MODIFIED.xml, and rhnChannelComps record is set.
