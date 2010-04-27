@@ -32,3 +32,11 @@ When rhn-satellite-exporter generates the export and the channel has value in rh
 === Sync from channel dumps ===
 
 When the <rhn-channel> element has the has-comps attribute set to True, the comps.xml.gz file is ungzipped from channels/$CHANNEL_LABEL to /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$CHANNEL_LAST_MODIFIED.xml, and rhnChannelComps record is set.
+
+=== Inter-sat-sync ===
+
+During inter-sat-sync, the has-comps attribute is set, and the satellite-sync then retrieves the comps file using new dump.get_comps XMLRPC call and stores it to /var/satellite and to rhnChannelComps like in the previous cases.
+
+The above changes were tagged as spacewalk-backend-1.1.5-1.
+
+To generate correct repomd.xml file, use_taskomatic_repomd needs to be set to 0 to use the Python repomd generator, or changes d2e58acd844365aadda7d9fc6c7922d9889d1ce2 and 44ebff2b482862ee8aa3eb5fe42ac7dad0d282c8 from Spacewalk master need to be applied (not tagged to spacewalk-java yet).
