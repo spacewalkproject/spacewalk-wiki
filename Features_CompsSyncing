@@ -41,7 +41,7 @@ During inter-sat-sync, the has-comps attribute is set, and the satellite-sync th
 
 The above changes were tagged as spacewalk-backend-1.1.5-1.
 
-To generate correct repomd.xml file, use_taskomatic_repomd needs to be set to 0 to use the Python repomd generator, or changes d2e58acd844365aadda7d9fc6c7922d9889d1ce2 and 44ebff2b482862ee8aa3eb5fe42ac7dad0d282c8 from Spacewalk master need to be applied (not tagged to spacewalk-java yet).
+The spacewalk-java-1.1.7-1 is also needed unless use_taskomatic_repomd is set to 0 to use the Python repomd generator.
 
 == Problems, TODOs ==
 
