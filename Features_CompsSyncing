@@ -17,7 +17,7 @@ In bugzilla 585233 we aim at supporting the comps syncing properly, both from RH
 RHN hosted has added the support for exposing the comps data for channels in bugzilla 249141. It has two parts:
 
  * The <rhn-channel> element in the channel XML now has attribute has-comps, with values "True" or "False"; if the value is True, the channel has comps information available.
- * In that case, the comps file can be retrieved on the URL http://satellite.rhn.webdev.redhat.com/SAT/$RHN/$CHANNEL_LABEL/repodata/comps.xml, with correct authentication HTTP headers.
+ * In that case, the comps file can be retrieved on the URL http://satellite.rhn.redhat.com/SAT/$RHN/$CHANNEL_LABEL/repodata/comps.xml, with correct authentication HTTP headers.
 
 == RHN Satellite / Spacewalk syncing ==
 
