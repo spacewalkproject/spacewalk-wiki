@@ -29,7 +29,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 
 
 ||  '''Namespace: channel''' ||  ||  ||  ||  ||  ||
-||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 || coec ||  ||  ||
+||  channel.list*Channels() (Add arch to return struct) || 0.7 || 1 || coec || Done ||  ||
 
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || 0.9 || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
