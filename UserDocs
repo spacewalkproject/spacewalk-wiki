@@ -140,6 +140,7 @@ A quick list of rpms that a 'yum install spacewalk' adds to a box.
   * [wiki:ListofRpms04Installs Version 0.4]
 === Release Notes ===
 Release notes for each version, taken from mailing lists.
+  * [wiki:ReleaseNotes1.0 for 1.0]
   * [wiki:ReleaseNotes08 for 0.8]
   * [wiki:ReleaseNotes07 for 0.7]
   * [wiki:ReleaseNotes06 for 0.6]
