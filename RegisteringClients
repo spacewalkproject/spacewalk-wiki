@@ -2,9 +2,11 @@
 
 Instructions for registering client systems you wish to manage with Spacewalk
 
-These are instruction for Spacewalk 0.8. 
+These are instruction for Spacewalk 1.0. 
 
-Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
+Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07][[BR]]
+
+Spacewalk 0.8 instructions are available at [wiki:RegisteringClients08]
 
 ----
 = Before Starting =
@@ -35,7 +37,7 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
 
  1. Install the Spacewalk client yum repository
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/0.8/Fedora/11/$(uname -i)/spacewalk-client-repo-0.8-1.fc11.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/11/$(uname -i)/spacewalk-client-repo-1.0-2.fc11.noarch.rpm
    }}}
  1. Install client packages
    {{{
@@ -50,7 +52,7 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
 
   1. Install the Spacewalk yum repository
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/0.8/Fedora/12/$(uname -i)/spacewalk-client-repo-0.8-1.fc12.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/12/$(uname -i)/spacewalk-client-repo-1.0-2.fc12.noarch.rpm
    }}}
   1. Install client packages
     {{{
@@ -76,7 +78,7 @@ Spacewalk 0.7 instructions are available at [wiki:RegisteringClients07]
   1. Install the Spacewalk yum repository
    {{{
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://spacewalk.redhat.com/yum/0.8/RHEL/5/$BASEARCH/spacewalk-client-repo-0.8-1.el5.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.0/RHEL/5/$BASEARCH/spacewalk-client-repo-1.0-2.el5.noarch.rpm
    }}}
   1. For Red Hat Enterprise Linux 5.4 and older you have to install python-dmidecode from EPEL
    {{{
