@@ -120,7 +120,7 @@ In order to get Spacewalk to run you need the Oracle client and an Oracle 10g da
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
-'''0.8 installation:'''
+'''1.0 installation:'''
 
 If you tend to use the Oracle backend:
 {{{
