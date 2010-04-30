@@ -74,8 +74,15 @@ There are several ways to get in touch with Spacewalk developers and users:
 
     * Read the latest minutes from our Community led meetings [CommunityMeetingMinutes minutes]
     
-== Need To Edit This Wiki or File a Bug/RFE? ==
+== Need To Edit This Wiki? ==
 
     * [http://admin.fedoraproject.org/accounts Get a Fedora account here]
         * FYI: You don't need to ask to be in the spacewalk account system group, that's only for commit access, see PatchProcess
+
+== Want to File a Bug/RFE? ==
+
+    * [https://bugzilla.redhat.com/query.cgi?format=specific&bug_status=__all__&product=Spacewalk Check if the issue already has bugzilla filed at bugzilla.redhat.com]
+    * If it has, feel free to add yourself to Cc list of that bugzilla and add comments with more details, logs, etc.
+    * If it does not, [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk file a new bugzilla].
+    * You will need an account in bugzilla to add comments or file new bugzillas.
 
