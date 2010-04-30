@@ -24,9 +24,9 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  ----   ||  ||  ||  ||  ||  ||
 
 ||  '''Namespace: api''' ||  ||  ||  ||  ||  ||
-||  api.getApiNamespaces() || 1.0 || - || tlestach || Done || return list of namespaces ||
-||  api.getApiCallList() || 1.0 || - || tlestach || Done || return map of apicalls ||
-||  api.getApiNamespaceCallList(namespace) || 1.0 || - || tlestach || Done || return map of calllists ||
+||  api.getApiNamespaces() || 1.0 || - || tlestach || done || return list of namespaces ||
+||  api.getApiCallList() || 1.0 || - || tlestach || done || return map of apicalls ||
+||  api.getApiNamespaceCallList(namespace) || 1.0 || - || tlestach || done || return map of calllists ||
 
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
 ||  channel.software.listChildren(channel_label) || 1.0 || 3 || coec || done || return array of channels] ||
@@ -37,7 +37,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
 ||  errata.createCve(session, cveName) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
-||  errata.listUnpublishedErrata() || 1.0 || - || jroys ||  || return map of errata ||
+||  errata.listUnpublishedErrata() || 1.0 || - || jroys || done || return map of errata ||
 
 ||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
 ||  kickstart.snippet.listAll() || 1.0 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
