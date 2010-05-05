@@ -56,9 +56,10 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://spacewalk.redhat.com/yum/1.0/RHEL/5/$BASEARCH/spacewalk-client-repo-1.0-2.el5.noarch.rpm
    }}}
-  1. For Red Hat Enterprise Linux 5.4 and older you have to install python-dmidecode from EPEL
+  1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux 5. These dependencies can be found in EPEL, just like for the Spacewalk server:
    {{{
-# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/$BASEARCH/python-dmidecode-3.10.7-3.el5.$BASEARCH.rpm
+# BASEARCH=$(uname -i)
+# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/$BASEARCH/epel-release-5-3.noarch.rpm
    }}}
   1. Install client packages
     {{{
