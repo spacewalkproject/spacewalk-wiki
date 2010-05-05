@@ -70,7 +70,7 @@ Spacewalk 0.8 instructions are available at [wiki:RegisteringClients08]
 <div style="background-color:#9e292b; color:white; background-image:url('/spacewalk/attachment/wiki/WikiSnippetsAndTemplates/warning.png?format=raw'); background-repeat:no-repeat; padding-left:7em;background-position:1em;" >
    <h2>Warning</h2>
    <div style="padding-bottom:0.5em;" >
-      <p>If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Redhat!</p>
+      <p>If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!</p>
    </div>
 </div>
 }}}
