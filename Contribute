@@ -27,6 +27,10 @@ Although we have some [http://www.redhat.com/spacewalk/documentation/ documentat
 
 Or you can just hang on [WikiStart#Communication IRC or mailing list] and try to answer questions others may have.
 
+== Translations ==
+
+Checkout Spacewalk project at https://translate.fedoraproject.org/projects/p/spacewalk/ and create translation for your language.
+
 == Money ==
 
 We could not accept any money directly. But since Spacewalk is heavily sponsored by [http://www.redhat.com/ Red Hat], if you [http://shop.redhat.de/store/rhnw/RH13-085-EN/en?set_language=en&cl=en buy RHN Satellite], you directly support development of Spacewalk.
