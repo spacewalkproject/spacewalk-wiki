@@ -11,6 +11,7 @@
  * Background periodic (daily, weekly, etc) syncing
  * also get stage2.img and vmlinuz/initrd.img for the kickstartable trees while syncing [https://bugzilla.redhat.com/show_bug.cgi?id=517165]
  * allow syncing of all yum repos in one command (i.e. --label should no longer be mandatory) [https://bugzilla.redhat.com/show_bug.cgi?id=517467]
+   * Addressed in Spacewalk 1.0
  * allow syncing of a base repo together with all its childs without having to specify the childs (e.g. add --with-childs) [https://bugzilla.redhat.com/show_bug.cgi?id=517468]
  * ~~Support Mirror lists~~ (Commited in c9c2d15afdf2537fff94aa47c0931aca198cc9d7 in master)
  * http proxy support
