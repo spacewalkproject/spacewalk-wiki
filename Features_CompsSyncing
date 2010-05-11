@@ -8,13 +8,13 @@ entry in repomd.xml.
 
 For repos/channel served from RHN Satellite and Spacewalk servers, we need to add correct information about correct comps file to the repomd.xml file, so that the client machines are able to do the group operations.
 
-To support group operations for RHEL 5 clients fast, we have hardcoded paths to comps files in the kickstart trees in the server code, done in bugzilla 247156. However, that means that the kickstart trees need to be synced, and the paths always point to the 5.0 GA files, so for example RHEL 5.5 still gets 5.0 comps.xml file.
+To support group operations for RHEL 5 clients fast, we have hardcoded paths to comps files in the kickstart trees in the server code, done in [https://bugzilla.redhat.com/show_bug.cgi?id=247156 bugzilla 247156]. However, that means that the kickstart trees need to be synced, and the paths always point to the 5.0 GA files, so for example RHEL 5.5 still gets 5.0 comps.xml file.
 
-In bugzilla 585233 we aim at supporting the comps syncing properly, both from RHN hosted to RHN Satellite, to channel dumps, and across Satellites.
+In [https://bugzilla.redhat.com/show_bug.cgi?id=585233 bugzilla 585233] we aim at supporting the comps syncing properly, both from RHN hosted to RHN Satellite, to channel dumps, and across Satellites.
 
 == RHN hosted support ==
 
-RHN hosted has added the support for exposing the comps data for channels in bugzilla 249141. It has two parts:
+RHN hosted has added the support for exposing the comps data for channels in [https://bugzilla.redhat.com/show_bug.cgi?id=249141 bugzilla 249141]. It has two parts:
 
  * The <rhn-channel> element in the channel XML now has attribute has-comps, with values "True" or "False"; if the value is True, the channel has comps information available.
  * This mechanism is going to be changed for the <rhn-channel> to contain <rhn-channel-comps-last-modified> element instead, with timestamp of the comps information, taken from hosted's rhnChannelComps table. If there is no comps information associated with the channel, the element is not present.
