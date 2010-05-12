@@ -78,7 +78,6 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Ability to save arbitrary script within satellite for reuse (be able to save a script you use a lot) -- Antoine
  * Manage chkconfig via a kewl webinterface on the satellite -- Antoine
  * Ability to control activation keys with editor and comments -- Antoine
- * Management of symbolic links through configuration channels -- Antoine
  * Allow user-defined types for custom info items -- Antoine
  * Make it possible to subscribe to Errata and create the errata to subscribe to -- red
   * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Lots of work, but also great benefit -- red
