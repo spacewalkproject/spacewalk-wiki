@@ -38,8 +38,6 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * decompose Spacewalk into an aggregation of OSS projects, composed of separate subprojects that can be used by other projects
    * [[Image(action-add.gif)]] cobbler integration is a step in this direction. Though we need a bigger architectural plan to make this work. -- jmrodri
  * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
- * enable usage of Transifex
-   * [[Image(action-add.gif)]] right now most of the translation work occurs internally.
  * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
    * [[Image(action-del.gif)]]/[[Image(action-add.gif)]] I'm not sure what this does for us? unless it's the ability to get koji content into Spacewalk after building? If that's the case then I'm ok with it. -- jmrodri
  * finish migrating [RemainingPxtPages perl pages] to Java, and remove the perl stack entirely.
