@@ -1,0 +1,52 @@
+= Taskomatic Enhancements =
+
+== Requirements ==
+
+ * schedule tasks on the satellite server
+  * local commands (f.e. satellite-sync, spacewalk-repo-sync)
+  * java tasks (f.e. todays tasks, remove duplicate profiles)
+ * possibility to run the tasks periodically and at specific time
+ * have the settings fully configurable (via WebUI and API)
+ * maintenance window support (group scheduled tasks together)
+ * task schedule per Satellite and per Organisation
+ * to have pre-defined tasks after satellite installation
+
+== Quartz ==
+
+The heart of the scheduling will be the quartz library. It can schedule tasks at specified time, run them periodically. And ... it can use configuration directly from the database.
+The idea is to create necessary tables for quartz (qrtz_job_listeners, qrtz_simple_triggers, qrtz_job_details, qrtz_locks, ...), and let quartz schedule tasks. The advantage is, that the WebUI or API can directly change configuration (like change time/periodicity of already scheduled tasks, add new tasks, disable others) in the DB and quartz will work with the actual data.
+
+=== Quartz job parameters ===
+
+Because every task type requires different set of parameters and every task different parameter values, Quartz introduces a !JobDataMap class, that can hold any number of (serializable) objects which you wish to have made available to the job instance when it executes.
+
+=== Quartz documentation ===
+http://www.quartz-scheduler.org/docs/index.html
+
+=== Data model ===
+
+Preliminary concept:
+ * rhnTaskoTask
+  * contains basically only task types that is possible to run on the satellite
+
+ * rhnTaskoGroup
+  * contains a list of rhnTaskoTasks that shall be scheduled within the same time
+  * contains also information, that a task will be run only after the previous finishes/finishes successfully/fails
+
+ * rhnTaskoSchedule
+  * contains information when, how often rhnTaskoGroup shall be scheduled
+  * (will be probably replaced by a default qrtz_ table)
+
+ * rhnTaskoRun
+  * describes a concrete run of a rhnTaskoTask
+  * contains information about what rhnTaskoRun and rhnTaskoGroup it's an instance of
+  * contains information when it started and ended and it's status
+  * contains logs (std output, std error if available)
+
+== Presentation ==
+Scheduled tasks shall be visible on WebUI. Another page would display finished runs together with appropriate logs.
+ * sat admin can see/edit his own tasks and see tasks of all org admins
+ * an org admin can see/edit his own tasks (and read a rough list of sat admins' tasks, if he enables it)
+
+== Scheduled commands ==
+It's possible to schedule predefined commands only. (Running any command would be a high security risk.) User would choose from a drop-down menu a predefined task and can specify a parameter if needed.
