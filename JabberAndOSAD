@@ -2,7 +2,7 @@
 
 == Connection Errors ==
 
- 1.  Verify jabberd and osa-dispatcher are running:
+1.  Verify jabberd and osa-dispatcher are running:
    a)  service jabberd status
    b) service osa-dispatcher status
 
@@ -15,7 +15,8 @@
 
 Where FQDN is your fully qualified domain name and NOT your shortname (i.e.  spacewalk.domain.com)
 
-3.  verify in /etc/jabberd:
+3.  
+  verify in /etc/jabberd:
   server.pem has the same FQDN as above.
   within c2s.xml you should have:
 
