@@ -7,11 +7,11 @@
    b) service osa-dispatcher status
 
 2.  verify in /etc/rhn/rhn.conf 
- server.jabber_server = FQDN
- osa-dispatcher.jabber_server = FQDN
- osa-dispatcher.jabber_username = rhn-dispatcher-sat
- osa-dispatcher.jabber_password = rhn-dispatcher-RANDOM_STRING
- osa-dispatcher.osa_ssl_cert = /var/www/html/pub/RHN-ORG-TRUSTED-SSL-CERT
+ * server.jabber_server = FQDN
+ * osa-dispatcher.jabber_server = FQDN
+ * osa-dispatcher.jabber_username = rhn-dispatcher-sat
+ * osa-dispatcher.jabber_password = rhn-dispatcher-RANDOM_STRING
+ * osa-dispatcher.osa_ssl_cert = /var/www/html/pub/RHN-ORG-TRUSTED-SSL-CERT
 
 Where FQDN is your fully qualified domain name and NOT your shortname (i.e.  spacewalk.domain.com)
 
