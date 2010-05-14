@@ -2,7 +2,7 @@
 
 == Connection Errors ==
 
-1.  Verify jabberd and osa-dispatcher are running:
+ 1.  Verify jabberd and osa-dispatcher are running:
    a)  service jabberd status
    b) service osa-dispatcher status
 
