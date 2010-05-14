@@ -1,6 +1,10 @@
-== Jabber and OSAD client connection issues ==
+= Jabber and OSAD client connection issues =
 
-=== Symptoms ===
+== Connection Errors ==
+
+
+
+== Lost Connections ==
 
 - Client connections aren't reconnecting if the connection is lost.
 
@@ -84,15 +88,9 @@ SAMPLE
 
 == Results ==
 
-
-
 I now have no issues whatsoever with getting spacewalk clients to pickup scheduled actions within 5 minutes.
 
 Currently working with 235 clients.
-
-
-
-
 
 Hope this helps someone else.
 
