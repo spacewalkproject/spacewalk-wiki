@@ -7,7 +7,6 @@
   * java tasks (f.e. todays tasks, remove duplicate profiles)
  * possibility to run the tasks periodically and at specific time
  * have the settings fully configurable (via WebUI and API)
- * maintenance window support (group scheduled tasks together)
  * task schedule per Satellite and per Organisation
  * to have pre-defined tasks after satellite installation
 
@@ -25,23 +24,45 @@ http://www.quartz-scheduler.org/docs/index.html
 
 === Data model ===
 
-Preliminary concept:
+Preliminary concept of database tables:
+
  * rhnTaskoTask
   * contains basically only task types that is possible to run on the satellite
-
- * rhnTaskoGroup
-  * contains a list of rhnTaskoTasks that shall be scheduled within the same time
-  * contains also information, that a task will be run only after the previous finishes/finishes successfully/fails
+    * id
+    * name
+    * parallelizable
 
  * rhnTaskoSchedule
   * contains information when, how often rhnTaskoGroup shall be scheduled
   * (will be probably replaced by a default qrtz_ table)
+    * id
+    * next_run
+    * periodicity
+    * params
+
+ * rhnTaskoTemplate
+  * contains a list of rhnTaskoTasks that shall be scheduled within the same time
+  * contains also information, that a task will be run only after the previous finishes/finishes successfully/fails
+    * id
+    * task_id
+    * schedule_id
+    * start_if
+    * active_from
+    * active_till
 
  * rhnTaskoRun
   * describes a concrete run of a rhnTaskoTask
-  * contains information about what rhnTaskoRun and rhnTaskoGroup it's an instance of
+  * contains information about what rhnTaskoRun and rhnTaskoTemplate it's an instance of
   * contains information when it started and ended and it's status
   * contains logs (std output, std error if available)
+    * id
+    * task_id
+    * template_id
+    * start_time
+    * end_time
+    * std_output
+    * std_error
+    * status
 
 == Presentation ==
 Scheduled tasks shall be visible on WebUI. Another page would display finished runs together with appropriate logs.
@@ -50,3 +71,20 @@ Scheduled tasks shall be visible on WebUI. Another page would display finished r
 
 == Scheduled commands ==
 It's possible to schedule predefined commands only. (Running any command would be a high security risk.) User would choose from a drop-down menu a predefined task and can specify a parameter if needed.
+
+== Satellite Installation/Upgrade ==
+There're two parts:
+ * schema changes, there's a need to drop actually used taskomatic tables and to create new tables
+ * to pre-fill database with default task templates and default scheduling of these templates
+    * these data should be deployed as a part of the database population process
+
+== Task parallelization ==
+Most probably there will be tasks scheduled at the same time (org admins won't have the right to each other's schedules). Some tasks can be run at the same time, some not. Most critical are the tasks of the same type. Because some tasks of the same type can be run in parallel (f.e. spacewalk-repo-sync) and some not (f.e. satellite-sync), there's a "parallelizable" property for every task type. If a task cannot be run, will posponed.
+
+== History ==
+It will be possible to check chronological history of task runs, runs of the same task type, within the same template within the organisation.
+ 
+== Open issues ==
+ * how to store task parameters
+   * whether to use quartz'es !JobDataMap
+   * or to store them into equivalent table columns
