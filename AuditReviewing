@@ -9,7 +9,7 @@ Please see [http://www.stl.gtri.gatech.edu/jroys/] for the full details.
 == Basic setup ==
 
   * Install Spacewalk 0.6 or above.
-  * Download aup.c [http://git.fedorahosted.org/git/spacewalk.git/?p=spacewalk.git;a=blob_plain;f=contrib/aup.c;hb=HEAD aup.c]
+  * Download aup.c [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=contrib/aup.c;hb=HEAD aup.c]
   * Install audit-libs and audit-libs-devel
   * Compile aup: `gcc -O2 -s -o /path/to/put/aup aup.c -lauparse`
   * `cd /var/satellite/systemlogs/ ; mkdir host1{,/audit} host2{,/audit} localhost{,/audit}`
