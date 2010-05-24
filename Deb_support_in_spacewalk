@@ -12,7 +12,7 @@ You can test packages, they are available on:
 
 https://build.opensuse.org/project/show?project=home%3Axsuchy%3Adebian-spacewalk
 
-'''ATTENTION: Packages are highly experimental.''' [[BR]]
+'''ATTENTION: Packages can be unstable.''' [[BR]]
 
 
 == Example of creating package ==
