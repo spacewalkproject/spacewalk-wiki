@@ -8,25 +8,11 @@ RHN Satellite Engineer.
 
 == Debian repo with spacewalk packages ==
 
-You can test my packages, which are stored in this repo:
+You can test packages, they are available on:
 
-http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/
-
-configuration for sources.list:
-
-deb http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ lenny main[[BR]]
-
-deb-src http://www.stud.fit.vutbr.cz/~xdurfi00/spacewalk_debian/ lenny main
+https://build.opensuse.org/project/show?project=home%3Axsuchy%3Adebian-spacewalk
 
 '''ATTENTION: Packages are highly experimental.''' [[BR]]
-
-Pulbic key is in attachment on the bottom of site.[[BR]]
-Or use this:
-
-{{{
-gpg --keyserver keys.gnupg.net --recv-keys 121A13C3
-apt-key add ~/.gnupg/pubring.gpg
-}}}
 
 
 == Example of creating package ==
@@ -87,5 +73,12 @@ experimental state, but if you like it, try it and send me feedback.
 Work on rhnpush has started. Already available packages: jabberpy, osad,
 rhn-client-tools, rhn-setup, rhncfg, rhnlib, rhnsd.
 
+'''May 2010'''[[BR]]
 
+Thesis is done. The most important features as registration, deployment of configuration
+files and running scritps were implemented. Spacewalk can received DEB package, but
+unfortunately the clients are not able to get these packages from Spacewalk (this would
+require some modification to APT as some plugin or similar).
+
+Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf
 
