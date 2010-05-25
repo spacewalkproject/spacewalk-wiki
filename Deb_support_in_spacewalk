@@ -80,5 +80,5 @@ files and running scritps were implemented. Spacewalk can received DEB package, 
 unfortunately the clients are not able to get these packages from Spacewalk (this would
 require some modification to APT as some plugin or similar).
 
-Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf
+Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf or http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf
 
