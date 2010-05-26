@@ -83,8 +83,3 @@ Most probably there will be tasks scheduled at the same time (org admins won't h
 
 == History ==
 It will be possible to check chronological history of task runs, runs of the same task type, within the same template within the organisation.
- 
-== Open issues ==
- * how to store task parameters
-   * whether to use quartz'es !JobDataMap
-   * or to store them into equivalent table columns
