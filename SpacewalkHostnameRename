@@ -73,3 +73,7 @@ Check the serverURL value in /etc/sysconfig/rhn/up2date on every client register
 == Script failures ==
 
 The most frequent cause of problems is an incorrectly set system hostname. The script checks whether the hostname is correctly set. If not, an error message will inform you of what needs to be fixed. After the problem is resolved, the script can be re-run.
+
+== Where do I find the script? ==
+
+spacewalk-hostname-rename is a part of '''spacewalk-utils''' package.
