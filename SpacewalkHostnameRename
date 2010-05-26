@@ -4,8 +4,18 @@ spacewalk-hostname-rename script is an automated tool for re-configuration of Sp
 
 It takes care of reconfiguration of /etc/rhn/rhn.conf file, SSL certificate, database, jabberd, cobbler, monitoring ... everything what's needed.
 
+== Rename process ==
+To change the hostname or IP of the RHN Satellite:
+ * Schedule a maintenance window for the rename process.
+ * Change the hostname/IP of the system.
+ * Reboot the system to ensure that the new hostname gets active
+ * Run the spacewalk-hostname-rename script
+
+The spacewalk-hostname-rename script is an automated tool for reconfiguration of the RHN Satellite server. In the event that you change the ip address and hostname of the RHN Satellite, this script will automatically reconfigure the /etc/rhn/rhn.conf file, SSL certificate, database, jabberd, cobbler, monitoring, and so on.
+
 == Prerequisites ==
-If you change the system hostname, make sure you know your SSL CA passphrase. It will be needed by the script.
+If you've changed the system hostname, make sure you know your SSL CA passphrase. It will be needed by the script.
+ 
 Verify that CA password is working:
 {{{
 # openssl rsa -in ssl-build/RHN-ORG-PRIVATE-SSL-KEY
@@ -16,24 +26,19 @@ cut
 -----END RSA PRIVATE KEY-----
 }}}
 
- * Schedule a maintenance window for the rename process.
- * Change the hostname/ip of the system.
- * Reboot the system to ensure that the new hostname is active
- * Run the spacewalk-hostname-rename script
+== How to use the script ==
 
-== How to use it ==
-
-spacewalk-hostname-rename takes one mandatory argument - IP_ADDRESS regardless of whether the IP address has changed or not. If there is a need to generate a new SSL certificate, all necessary information will be asked interactivelly, unless it is specified by the options. When the system  hostname has not changed, the re-generation of a new SSL server certificate is not necessary. However, if at least one --ssl-*  option is specified, certificate generation is forced.
+spacewalk-hostname-rename takes one mandatory argument - IP_ADDRESS - regardless of whether the IP address has changed or not. If there is a need to generate a new SSL certificate, all necessary information will be asked interactivelly, unless it is specified by the options. When the system hostname has not changed, the regeneration of a new SSL server certificate is not necessary. However, if at least one --ssl-* option is specified, certificate generation is forced.
 
 {{{
 Usage:
-   spacewalk-hostname-rename <IP_ADDRESS> [ --ssl-country=<SSL_COUNTRY> --ssl-state=<SSL_STATE> --ssl-org=<SSL_ORG> --ssl-orgunit=<SSL_ORGUNIT> --ssl-email=<SSL_EMAILl> --ssl-ca-password=<SSL_CA_PASSWORD>]
+   spacewalk-hostname-rename <IP_ADDRESS> [ --ssl-country=<SSL_COUNTRY> --ssl-state=<SSL_STATE> --ssl-org=<SSL_ORG> --ssl-orgunit=<SSL_ORGUNIT> --ssl-email=<SSL_EMAIL> --ssl-ca-password=<SSL_CA_PASSWORD>]
    spacewalk-hostname-rename { -h | --help }
 }}}
 
-IP_ADDRESS is the default ip address of the system used mainly for monitoring. It's a mandatory argument even if the IP didn't change.
+IP_ADDRESS is the default IP address of the system used mainly for monitoring.
 
-== Rename process ==
+Example usage:
 
 {{{
 # spacewalk-hostname-rename <my_ip_address>
@@ -46,11 +51,11 @@ Stopping rhn-satellite services ... OK
 Testing DB connection ... OK
 Updating /etc/rhn/rhn.conf ... OK
 Actual SSL key pair package: rhn-org-httpd-ssl-key-pair-rlx-2-18.rhndev-1.0-6
- No need to re-generate SSL certificate.
+No need to re-generate SSL certificate.
 Regenerating new bootstrap client-config-overrides.txt ... OK
 Updating NOCpulse.ini ... OK
 Updating monitoring data ... OK
-Pushing monitoring scounts ... OK
+Pushing monitoring scouts ... OK
 Updating other DB entries ... OK
 Changing cobbler settings ... OK
 Changing jabberd settings ... OK
@@ -59,13 +64,12 @@ Starting rhn-satellite services ... OK
 
 == Logging and backup ==
 
-spacewalk-hostname-rename logs to /var/log/rhn/rhn_hostname_rename.log and all manually changed files get backup-ed with predefined .rhnbck extension.
+spacewalk-hostname-rename logs to /var/log/rhn/rhn_hostname_rename.log and all manually changed files get backed up with predefined .rhnbck extension.
 
 == What about the clients? ==
 
-Check serverURL value in /etc/sysconfig/rhn/up2date on every client registered to the renamed satellite and change it to the new hostname/ip value.
-Reconfiguration of RHN Proxy servers isn't trivial and it's recommended to recreate RHN Proxy servers.
+Check the serverURL value in /etc/sysconfig/rhn/up2date on every client registered to the renamed satellite and change it to the new hostname/IP value. Reconfiguration of RHN proxy servers isn't trivial and it is recommended to recreate the RHN proxy servers.
 
 == Script failures ==
 
-The script makes some initial checks, whether the hostname is correctly set. The most problems may pop-up because of wrongly set system hostname. The script would write a concrete error message what shall be fixed in these cases. After the problem gets removed, the script can be re-run.
+The most frequent cause of problems is an incorrectly set system hostname. The script checks whether the hostname is correctly set. If not, an error message will inform you of what needs to be fixed. After the problem is resolved, the script can be re-run.
