@@ -13,7 +13,7 @@
 == Quartz ==
 
 The heart of the scheduling will be the quartz library. It can schedule tasks at specified time, run them periodically. And ... it can use configuration directly from the database.
-The idea is to create necessary tables for quartz (qrtz_job_listeners, qrtz_simple_triggers, qrtz_job_details, qrtz_locks, ...), and let quartz schedule tasks. The advantage is, that the WebUI or API can directly change configuration (like change time/periodicity of already scheduled tasks, add new tasks, disable others) in the DB and quartz will work with the actual data.
+The idea is to create necessary tables for quartz (qrtz_job_listeners, qrtz_simple_triggers, qrtz_job_details, qrtz_locks, ...), and let quartz schedule tasks.
 
 === Quartz job parameters ===
 
@@ -21,6 +21,12 @@ Because every task type requires different set of parameters and every task diff
 
 === Quartz documentation ===
 http://www.quartz-scheduler.org/docs/index.html
+
+=== Taskomatic communication ===
+The quartz scheduler will run within the taskomatic process. It'll use a XMLRPM server to enable communication with WebUI and API from a different process (similar to cobbler and search-server communication).
+
+Because we introduce a regular taskomatic API, the taskomatic handler will pass the API call to the taskomatic XMLRPC server and pass the response back.
+The user authentication shall be done in the taskomatic handler and dis/allow the further communication.
 
 === Data model ===
 
