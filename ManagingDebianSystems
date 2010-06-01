@@ -13,6 +13,7 @@
 }}}
 
 [wiki:Deb_support_in_spacewalk Work is under way] to add .deb package support.
+[http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf Debian Support Thesis] which can also be downloaded [http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf here].
 
 == Channel Setup ==
 == Provisioning Clients ==
