@@ -64,6 +64,7 @@ Do you know the answer to something and think others might find it useful? Feel 
 === In-depth Guides ===
   * [wiki:OsadHowTo osad and osa-dispatcher] -- How does osad / osa-dispatcher / jabberd work
   * [http://www.redhat.com/docs/manuals/satellite/ Red Hat Network Satellite docs] -- These are the official docs for the production product.  Over time we will have some docs more closely related to upstream here.
+  * [http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf Debian Support Thesis] which can also be downloaded [http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf here].
 === Core API Reference ===
   * [wiki:ApiDocs Core API Guide] -- Learn how to use our XMLRPC API to control your Spacewalk server.
   * [wiki:SpacewalkApiPerlGuide API Guide for Perl] -- A user contributed guide to using the Spacewalk API in Perl.
