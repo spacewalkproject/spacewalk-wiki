@@ -153,7 +153,7 @@ yum install spacewalk-postgresql
 
 '''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
-Also, this will not work unless the spacewalk account in database has a password.  You can set up a password by logging in to sqlplus with the sys account and using the command 
+Also, this will not work unless the spacewalk account in the database has a password.  You can set up a password by logging in to sqlplus with the sys account and using the command 
 
 {{{
 PASSWORD user_name
