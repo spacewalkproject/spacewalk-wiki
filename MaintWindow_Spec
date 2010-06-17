@@ -309,7 +309,7 @@ selected config files to this new Remote Script.
 
 == Scheduling Reoccurring remote commands ==
 
-In SystemDetail ->  Remote Command provide drop down menu which allows you to select existing remote script, but keep option to write new command in text box.
+In SystemDetail ->  Remote Command provide drop down menu which allows you to select existing remote script, but keep option to write new command in text box. The same for SSM.
  
 = API =
 
