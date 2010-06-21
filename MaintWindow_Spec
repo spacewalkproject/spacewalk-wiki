@@ -3,6 +3,7 @@
 Schema:
 add to table [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHNSERVER.html rhnserver] reference to table rhntimezone to track in which
 timezone is server.
+add to table RHNACTION column IN_SERVERTIME: CHAR(1) = 'N', 'Y' means that time should be treated as localtime of target machine, 'N' is meant as localtime of Spacewalk server.
 
 During every rhn_check we will update TZ of server.
 All times in action schedule will be treated as GMT. Client should sent all
