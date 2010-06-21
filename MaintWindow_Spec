@@ -69,7 +69,7 @@ group by
 }}}
 This select is pretty instant.
 
-If no rows are returned use query accross all erratas:
+If no rows are returned use query average errata deployment time for errata on target machine and as last instance we can query deploy time across all erratas:
 {{{
 select
        avg(86400*(COMPLETION_TIME-PICKUP_TIME)) errata_avg
