@@ -187,7 +187,7 @@ Create new table:
 RHNCONFIGSCRIPTS:
   CONFIG_FILE_ID: NUMBER(38)
   SCRIPT_ID: NUMBER(38)
-}}
+}}}
 
 which will reference to table [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHNCONFIGFILE.html RhnConfigFile] and table RhnScriptLabel.
 
