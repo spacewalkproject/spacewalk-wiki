@@ -5,7 +5,10 @@ add to table [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHN
 timezone is server.
 
 During every rhn_check we will update TZ of server.
-All times in action schedule will be treated as local time of that machine.
+All times in action schedule will be treated as GMT. Client should sent all
+request in GMT. Server have to sent all actions which should be executed at
+this time or before.
+
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
 || Convert schema from DATE to TIMESTAMP with TIME ZONE || 4h ||
@@ -81,6 +84,7 @@ This select takes ~1 sec (on sputnik-prod).
 And if this return no rows too use hard coded constant 7 sec.
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| Create function for estimate prediction || 4 h ||
 
 = Maintance Window =
 
@@ -142,6 +146,14 @@ Modify client code
     back to satellite new code with meaning "End of maintenance window"
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| schema change || 4 h ||
+|| modify backend || 20 h ||
+|| modify client to comunicate with new semantic of protocol || 20 h ||
+|| prefetch rpm || 12 h ||
+|| prefetch config files || 8 h ||
+|| prefetch scripts || 4 h ||
+|| prefetch kickstarts || 20 h ||
+|| '''Total''' ||| 88h ||
 
 Modify WebUI:
 
@@ -157,6 +169,14 @@ Add new options:
 * Not before X and not later then Y
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| modify schema || 4 h ||
+|| enable to specify  maintenance window in admin section in webui || 4 h ||
+|| add to all scheduling form: Do during maintenance window and Not before X
+and not later then Y || 20 h ||
+|| enable to specify  maintenance window for organization || 8 h ||
+|| enable to specify  maintenance window for individual machines || 8 h ||
+|| ''' Total ''' || 44 h ||
+
 
 = Linking scripts to config deployments  =
 
@@ -346,7 +366,7 @@ Crete new api calls:
  * remotecommand.linkToConfigFile()
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
-|| api calls || 12 h ||
+|| api calls || 20 h ||
 
 == Backend API & actions ==
 
