@@ -7,6 +7,15 @@ timezone is server.
 During every rhn_check we will update TZ of server.
 All times in action schedule will be treated as local time of that machine.
 
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| Convert schema from DATE to TIMESTAMP with TIME ZONE || 4h ||
+|| Convert all stored data to GMT || 8h ||
+|| Fix backend to work with new format || 8h ||
+|| Fix java stack to work with new format || 8h ||
+|| update client tools to communicate with time only in GMT || 20 h ||
+|| add checkbox to all scheduled event "Run in server localtime" || 20 h ||
+|| '''Total''' || '''68 h''' ||
+
 = Create new function which will predict how long it will take to deploy errata =
 
 Average errata took 7 seconds to deploy:
@@ -71,7 +80,7 @@ This select takes ~1 sec (on sputnik-prod).
 
 And if this return no rows too use hard coded constant 7 sec.
 
-
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
 
 = Maintance Window =
 
@@ -132,6 +141,8 @@ Modify client code
   - if current time + estimated time for errata > end of maintenance window send
     back to satellite new code with meaning "End of maintenance window"
 
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+
 Modify WebUI:
 
 add to Satellite Administration new option - default maintenance window. The
@@ -144,6 +155,8 @@ for scheduling action:
 Add new options:
 * Do during maintenance window
 * Not before X and not later then Y
+
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
 
 = Linking scripts to config deployments  =
 
@@ -253,6 +266,9 @@ For SSM:
 In detail of configuration channel -> tab List/RemoveFiles add new button
 "Asociate with script" where we can associate more files with one script.
 
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+
+
 = Reoccurring remote commands =
 
 In Main tab Configuration put to left menu new option "Remote Scripts" so we
@@ -310,7 +326,9 @@ selected config files to this new Remote Script.
 == Scheduling Reoccurring remote commands ==
 
 In SystemDetail ->  Remote Command provide drop down menu which allows you to select existing remote script, but keep option to write new command in text box. The same for SSM.
- 
+
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+
 = API =
 
 == Java API == 
@@ -326,6 +344,9 @@ Crete new api calls:
  * remotecommand.getDetail()
  * remotecommand.delete()
  * remotecommand.linkToConfigFile()
+
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| api calls || 12 h ||
 
 == Backend API & actions ==
 
@@ -345,5 +366,5 @@ No need to modify rhncfg-manager as its mode "get" outputs to stdout only.
 We will need to create new backend xmlrpc call which allow rhncfg-client fetch
 content of remote script for given configuration file.
 
-
+|| '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
 
