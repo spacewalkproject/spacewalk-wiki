@@ -153,7 +153,7 @@ Modify client code
 || prefetch config files || 8 h ||
 || prefetch scripts || 4 h ||
 || prefetch kickstarts || 20 h ||
-|| '''Total''' ||| 88h ||
+|| '''Total''' || '''88h''' ||
 
 Modify WebUI:
 
@@ -171,11 +171,10 @@ Add new options:
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
 || modify schema || 4 h ||
 || enable to specify  maintenance window in admin section in webui || 4 h ||
-|| add to all scheduling form: Do during maintenance window and Not before X
-and not later then Y || 20 h ||
+|| add to all scheduling form: Do during maintenance window and Not before X and not later then Y || 20 h ||
 || enable to specify  maintenance window for organization || 8 h ||
 || enable to specify  maintenance window for individual machines || 8 h ||
-|| ''' Total ''' || 44 h ||
+|| ''' Total ''' || '''44 h''' ||
 
 
 = Linking scripts to config deployments  =
@@ -287,7 +286,18 @@ In detail of configuration channel -> tab List/RemoveFiles add new button
 "Asociate with script" where we can associate more files with one script.
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
-
+|| schema change || 4 h ||
+|| add new tab for editing configuration files || 8 h ||
+|| create java classes for saving this data and general manipulation with scripts || 4 h ||
+|| revision handling || 8 h ||
+|| revison handling for SSM || 16 h ||
+|| suggest body of script if conf file belong to service || 8 h ||
+|| suggest installation of package, which owns this config file || 8 h ||
+|| schedule script run if config file is scheduled from webui || 8 h ||
+|| modify backend to send associate script || 12 h ||
+|| mofigy rhncfg-get to retrieve associate script || 8 h ||
+|| guess script name from content || 4 h ||
+|| ''' Total ''' || ''' 88 ''' ||
 
 = Reoccurring remote commands =
 
@@ -348,6 +358,12 @@ selected config files to this new Remote Script.
 In SystemDetail ->  Remote Command provide drop down menu which allows you to select existing remote script, but keep option to write new command in text box. The same for SSM.
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| implement list of remote scripts || 3 h ||
+|| webui for edit of remote scripts || 12 h ||
+|| handle conflitcs || 8 h ||
+|| add drop down box to "Run Remote Command" || 4 h ||
+|| dtto for SSM || 4 h ||
+|| '''Total''' || '''31''' ||
 
 = API =
 
