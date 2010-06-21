@@ -363,7 +363,7 @@ In SystemDetail ->  Remote Command provide drop down menu which allows you to se
 || handle conflitcs || 8 h ||
 || add drop down box to "Run Remote Command" || 4 h ||
 || dtto for SSM || 4 h ||
-|| '''Total''' || '''31''' ||
+|| '''Total''' || '''31 h''' ||
 
 = API =
 
@@ -403,4 +403,5 @@ We will need to create new backend xmlrpc call which allow rhncfg-client fetch
 content of remote script for given configuration file.
 
 || '''Task'''                   || '''Size Estimate''' || '''Owner''' || '''Remaining Hours''' || '''Status''' ||
+|| none needed, everything was used previously' ||
 
