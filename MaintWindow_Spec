@@ -182,7 +182,7 @@ Add new options:
 
 Schema change:
 
-Add to table [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHNCONFIGFILE.html RhnConfigFile] new column SCRIPT_ID which will reference table
+Add to table [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHNCONFIGFILE.html RhnConfigFile] new columns SCRIPT_PRE_ID and SCRIPT_POST_ID which will reference table
 RhnScriptLabel.
 
 add new row to [http://www.redhat.com/spacewalk/documentation/schema-doc/table-RHNCONFIGFILETYPE.html rhnconfigfiletype] with name and label set to "script"
