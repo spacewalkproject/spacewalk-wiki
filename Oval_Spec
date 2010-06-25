@@ -23,6 +23,7 @@
   * XML-RPC call: errata.getOval(string sessionKey, string identifier)
   * oval data is currently not exported for satellite-sync
   * oval xml files available at http://rhn.redhat.com/rhn/oval?errata=<...>&format=<zip|xml>
+    * https://rhn.redhat.com/rhn/oval?errata=10006
     * errata parameter can be either, errata id (rhnErrata.id), errata advisory (rhnErrata.advisory), CVE name (rhnCVE.name)
     * java application, no authentication required
     * linked from rhn/errata/details/Details.do (authenticated) pages
