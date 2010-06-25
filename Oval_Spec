@@ -109,9 +109,9 @@ will be able to display download link to the actual xml file.
 
 There are some little differences between Spacewalk & RHN Hosted code
 which are worth investigating and including in our code (if needed)
-(classes: ''OvalServlet.java'', ''ErrataDetailsSetupAction.java'', ''ErrataHandler.java'')
+(classes: ''!OvalServlet.java'', ''!ErrataDetailsSetupAction.java'', ''!ErrataHandler.java'')
 
-Branding issue in ''OvalFileAggregator.java'': Spacewalk -> Red Hat Network Satellite
+Branding issue in ''!OvalFileAggregator.java'': Spacewalk -> Red Hat Network Satellite
 
 
 === User story 3: ===
