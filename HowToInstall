@@ -53,11 +53,11 @@ cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
 # RHEL 5 / CentOS 5
-baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate/$basearch/os/
+baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.1/$basearch/os/
 # Fedora 12
-#baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate-f12/$basearch/os
-# Fedora 11
-#baseurl=http://miroslav.suchy.cz/spacewalk/nightly-candidate-f11/$basearch/os
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.1/$basearch/os
+# Fedora 13
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.1/$basearch/os
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
