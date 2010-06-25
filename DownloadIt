@@ -7,7 +7,7 @@
 
 Releases: You can also download the binaries from the [HowToInstall#SettingupSpacewalkrepo yum repo].
 
-Nightly Builds: [http://miroslav.suchy.cz/spacewalk/nightly-candidate/ This repo] ([http://miroslav.suchy.cz/spacewalk/nightly-candidate-f12/ F-12 version]) contains all packages which developer explicitly tagged into upcoming release.
+Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [HowToInstall#Nightlybuilds nightly builds].
 
 == Source ==
 
