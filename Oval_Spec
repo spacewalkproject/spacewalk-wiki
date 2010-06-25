@@ -90,7 +90,7 @@ insert into rhnErrataFileType ( id, label )
   a channel dump
 
   * steps ''download-errata'' & ''errata'' in satellite-sync will be modified
-  to process oval data downloaded from RHN / channel dump
+  to process oval data downloaded from RHN / channel dump. Alternatively, new step ''download-oval'' could be introduced (dependent on ''download-errata'' step).
  
   * in case a particular errata has a file in its filelist with a file_type
   'OVAL', this file will be downloaded from RHN (either plain XML or compressed;
