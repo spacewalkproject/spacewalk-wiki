@@ -22,6 +22,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk]
     * [wiki:HowToInstall#KnownIssues Known Issues]
   * [wiki:OracleXeSetup Oracle XE Setup] -- How to get Oracle XE running if you do not already have Oracle.
+  * [http://www.redhat.com/f/pdf/rhn/satellite_redundancy.pdf Configuring redundant Satellites].
   * [http://wiki.woop.es/Instalacion_Spacewalk Spanish Translation]
 === Post-Installation Guides ===
   * [wiki:SpacewalkBackup Backup Spacewalk] -- How to backup a Spacewalk server
