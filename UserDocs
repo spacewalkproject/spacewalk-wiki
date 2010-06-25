@@ -31,6 +31,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:OSADSetup How to install osad] -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
   * [wiki:HowToInstallProxy How to install Proxy] -- How to download and install Spacewalk Proxy.
   * [http://www.redhat.com/docs/manuals/satellite/Red_Hat_Network_Satellite-5.2.0/html/Reference_Guide/s2-mon-rhnmd-sshd.html Implement monitoring via SSH] -- Instead of RHNMD/port 4545
+  * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Installation_Guide/html/s1-maintenance-pam-auth.html Implement PAM authentication]  -- For the spacewalk web portal.
 === Core Guides ===
   * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
   * [wiki:ManagingRHELSystems Managing RHEL Systems]
