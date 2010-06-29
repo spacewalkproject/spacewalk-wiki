@@ -239,4 +239,6 @@ This is only for use if running a development environment or development version
 
 [http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian] 
 
+[http://www.mail-archive.com/spacewalk-list@redhat.com/msg03837.html HowTo migrate from local Oracle XE to an external Oracle instance]
+
 Continue installing Spacewalk: [HowToInstall#InstallingSpacewalk HowToInstall > InstallingSpacewalk]
