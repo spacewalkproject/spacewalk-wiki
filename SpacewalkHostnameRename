@@ -4,6 +4,8 @@ spacewalk-hostname-rename script is an automated tool for re-configuration of Sp
 
 It takes care of reconfiguration of /etc/rhn/rhn.conf file, SSL certificate, database, jabberd, cobbler, monitoring ... everything what's needed.
 
+'''NOTE''' Customizations within the rhn.conf file such as pam settings or different path for /var/satellite may need to be manually re-added post reconfiguration. 
+ 
 == Rename process ==
 To change the hostname or IP of the RHN Satellite:
  * Schedule a maintenance window for the rename process.
