@@ -60,6 +60,7 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
    * Another thing is to make sure that we know when Oracle schema file (which is where the primary changes will be done for months to come anyway) changes and PostgreSQL version needs to be verified. I was thinking about putting SHA1 of the Oracle file to the first line of every PostgreSQL file and then in {{{spacewalk-schema}}} build time check that if Oracle file has changed, that it was reflected in the PostgreSQL file.
      * The issue with this approach might be that currently the schemas are out of sync -- PostgreSQL variants were not updated in ages. So we might want to do this based on Oracle status at the time the PostgreSQL files were crafted, back in Spacewalk 0.6 timeframe.
    * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
+ * The {{{chameleon}}} tool is used to generate DDL from {{{common/}}} but it only seems to work for tables. Do we want to extend that tool, or drop it completely?
 
 == Database schema upgrades ==
 
