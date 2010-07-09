@@ -45,13 +45,21 @@ Password?
 
 ==== TODO ====
 
-We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.
+ * We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.
 
 === Database schema ===
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
 
 Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both. Also note that {{{postgres/manual/}}} is probably not needed -- I was tempted to remove it completely but I left it for now, in case people thought there were some pearls of wisdom there. But it will be gone in a week or so unless you stop me.
+
+==== TODO ====
+
+ * We desperately need some mechanism which would keep the PostgreSQL variant of the schema definitions in our git repo in sync with the Oracle schema.
+   * One thing is to make sure all objects have their equivalents (or at least the equivalent {{{.sql}}} file which would say something like "in this db backend, this is not needed").
+   * Another thing is to make sure that we know when Oracle schema file (which is where the primary changes will be done for months to come anyway) changes and PostgreSQL version needs to be verified. I was thinking about putting SHA1 of the Oracle file to the first line of every PostgreSQL file and then in {{{spacewalk-schema}}} build time check that if Oracle file has changed, that it was reflected in the PostgreSQL file.
+     * The issue with this approach might be that currently the schemas are out of sync -- PostgreSQL variants were not updated in ages. So we might want to do this based on Oracle status at the time the PostgreSQL files were crafted, back in Spacewalk 0.6 timeframe.
+   * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
 
 === Python and Perl stack ===
 
