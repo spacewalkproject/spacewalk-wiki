@@ -1,0 +1,39 @@
+
+= Setup of the PostgreSQL database =
+
+You should have PostgreSQL server running somewhere. Let's assume you will run the server on the same machine:
+
+{{{
+yum install postgresql-server
+chkconfig postgresql on
+service postgresql initdb
+service postgresql start
+}}}
+
+Create database, user, and plpgsql language there:
+
+{{{
+su - postgres -c 'createdb spaceschema ; createlang plpgsql spaceschema ; createuser -P -SDR spaceuser'
+}}}
+
+Configure the user to use md5 password to connect to that database -- put lines like
+
+{{{
+local spaceschema spaceuser md5
+host  spaceschema spaceuser localhost md5
+}}}
+
+to {{{/var/lib/pgsql/data/pg_hba.conf}}}. Make sure you put them before those existing lines that are for {{{all}}}. Then reload PostgreSQL:
+
+{{{
+service postgresql reload
+}}}
+
+and test the connection:
+
+{{{
+PGPASSWORD=spacepw psql -a -U spaceuser spaceschema
+PGPASSWORD=spacepw psql -h localhost -a -U spaceuser spaceschema
+}}}
+
+Please note that you will want the TCP connection allowed as well because the JDBC driver cannot use the Unix domain socket. So even if the Python and Perl stack will use the Unix domain socket if you do not specify the hostname, JDBC will still go to localhost via TCP.
