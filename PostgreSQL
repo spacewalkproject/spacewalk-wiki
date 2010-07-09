@@ -76,4 +76,22 @@ For PL/SQL, use [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h
 
 For Hibernate, it should just work.
 
-Except, it does not for blobs.
+Except, [wiki:PostgreSQL/Blobs it does not for blobs]. This is currently a blocker which will prevent Spacewalk to start:
+
+{{{
+* Restarting services.
+Tomcat failed to start properly or the installer ran out of tries.  Please check /var/log/tomcat*/catalina.out for errors.
+}}}
+
+I've built {{{spacewalk-java-1.1.18}}} [http://koji.spacewalkproject.org/koji/taskinfo?taskID=41743 rpms with the blob property removed], so that should help you overcome this blob issue for now and move forward -- download and install the packages.
+
+==== TODO ====
+
+ * Fix the [wiki:PostgreSQL/Blobs] issue.
+ * Address any issues after that.
+
+=== Spacewalk installed and running, go hack ===
+
+With the above {{{spacewalk-java-*}}} fix, you should be able to get WebUI running, and create the first user, and log in.
+
+You will see some error popups, but you will at least have something to click at and work with.
