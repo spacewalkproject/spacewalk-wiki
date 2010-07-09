@@ -107,6 +107,6 @@ I've built {{{spacewalk-java-1.1.21}}} [http://koji.spacewalkproject.org/koji/ta
 
 == Spacewalk installed and running, go hack ==
 
-With the above {{{spacewalk-java-*}}} fix, you should be able to get WebUI running, and create the first user, and log in.
+With the above {{{spacewalk-java-*}}} fix, you should be able to get WebUI running with Spacewalk nightly repo on Fedora 12, and create the first user, and log in.
 
 You will see some error popups, but you will at least have something to click at and work with.
