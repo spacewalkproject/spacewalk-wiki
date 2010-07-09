@@ -67,3 +67,13 @@ For Perl, I assume we will do the same once we hit the first case when it's need
  * We should check if the function already exists and not create it again.
  * Do the same for Perl stack once needed.
  * The function creation could probably be done by some PL/pgSQL function, so that we don't duplicate the code between Python and Perl.
+
+=== Java stack ===
+
+Queries should be the same story as with Pyrhon and Perl -- rewrite them with some reasonable SQL syntax to make both Oracle and PostgreSQL happy.
+
+For PL/SQL, use [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h=73a318ccd254d4abd16ee40f2913dc183f652f8e the { call ... } syntax] -- it seems to do the trick.
+
+For Hibernate, it should just work.
+
+Except, it does not for blobs.
