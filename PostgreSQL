@@ -1,13 +1,13 @@
 
+[[TOC]]
+
 = Spacewalk with PostgreSQL backend =
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In an attempt to make the whole Spacewalk project use open source software, we'd like to add support for PostgreSQL as database backend. For Spacewalk 0.6, quite a lot of work went into Spacewalk schema changes to make the schema PostgreSQL compatible. Unfortunately, little effort was made to make those changes and the whole PostgreSQL support sustainable.
 
 This is a page describing the status of the PostgreSQL support as of July 2010, before Spacewalk 1.1 release.
 
-== Parts of the problem (and solution) ==
-
-=== What bits to use ===
+== What bits to use ==
 
 The setup as decribed below will only work on Fedora 12 for now, with nightly repo. RHEL 5 has PostgreSQL which is too old, and Fedora 13 nightly repo is not complete yet.
 
@@ -23,11 +23,11 @@ gpgcheck=0
 EOF
 }}}
 
-=== Get the PostgreSQL server running ===
+== Get the PostgreSQL server running ==
 
 Follow [wiki:PostgreSQLServerSetup].
 
-=== Install the spacewalk-postgresql and configure it ===
+== Install the spacewalk-postgresql and configure it ==
 
 When installing Spacewalk, you install either {{{spacewalk-oracle}}} or {{{spacewalk-postgresql}}} which should give you correct backend and dependencies. To use PostgreSQL backend, install {{{spacewalk-postgresql}}}.
 
@@ -43,17 +43,17 @@ Password?
 ** Database: Populating database.
 }}}
 
-==== TODO ====
+=== TODO ===
 
  * We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.
 
-=== Database schema ===
+== Database schema ==
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
 
 Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both. Also note that {{{postgres/manual/}}} is probably not needed -- I was tempted to remove it completely but I left it for now, in case people thought there were some pearls of wisdom there. But it will be gone in a week or so unless you stop me.
 
-==== TODO ====
+=== TODO ===
 
  * We desperately need some mechanism which would keep the PostgreSQL variant of the schema definitions in our git repo in sync with the Oracle schema.
    * One thing is to make sure all objects have their equivalents (or at least the equivalent {{{.sql}}} file which would say something like "in this db backend, this is not needed").
@@ -61,7 +61,7 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
      * The issue with this approach might be that currently the schemas are out of sync -- PostgreSQL variants were not updated in ages. So we might want to do this based on Oracle status at the time the PostgreSQL files were crafted, back in Spacewalk 0.6 timeframe.
    * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
 
-=== Python and Perl stack ===
+== Python and Perl stack ==
 
 They mostly run direct SQL queries and commands against the database schema. I just fixed those I encountered during {{{spacewalk-setup}}}. In general, it should be possible to fix any queries to be fine both for Oracle and PostgreSQL.
 
@@ -69,14 +69,14 @@ With PL/SQL code the things are a bit more tricky because PostgreSQL does not su
 
 For Perl, I assume we will do the same once we hit the first case when it's needed.
 
-==== TODO ====
+=== TODO ===
 
  * The types are not used at all.
  * We should check if the function already exists and not create it again.
  * Do the same for Perl stack once needed.
  * The function creation could probably be done by some PL/pgSQL function, so that we don't duplicate the code between Python and Perl.
 
-=== Java stack ===
+== Java stack ==
 
 Queries should be the same story as with Pyrhon and Perl -- rewrite them with some reasonable SQL syntax to make both Oracle and PostgreSQL happy.
 
@@ -93,12 +93,12 @@ Tomcat failed to start properly or the installer ran out of tries.  Please check
 
 I've built {{{spacewalk-java-1.1.18}}} [http://koji.spacewalkproject.org/koji/taskinfo?taskID=41743 rpms with the blob property removed], so that should help you overcome this blob issue for now and move forward -- download and install the packages.
 
-==== TODO ====
+=== TODO ===
 
  * Fix the [wiki:PostgreSQL/Blobs] issue.
  * Address any issues after that.
 
-=== Spacewalk installed and running, go hack ===
+== Spacewalk installed and running, go hack ==
 
 With the above {{{spacewalk-java-*}}} fix, you should be able to get WebUI running, and create the first user, and log in.
 
