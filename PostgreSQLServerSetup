@@ -13,7 +13,7 @@ service postgresql start
 Create database, user, and plpgsql language there:
 
 {{{
-su - postgres -c 'createdb spaceschema ; createlang plpgsql spaceschema ; createuser -P -SDR spaceuser'
+su - postgres -c 'createdb spaceschema ; createlang plpgsql spaceschema ; createuser -P -sDR spaceuser'
 }}}
 
 Configure the user to use md5 password to connect to that database -- put lines like
