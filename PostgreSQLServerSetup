@@ -20,7 +20,8 @@ Configure the user to use md5 password to connect to that database -- put lines 
 
 {{{
 local spaceschema spaceuser md5
-host  spaceschema spaceuser localhost md5
+host  spaceschema spaceuser 127.0.0.1/8 md5
+host  spaceschema spaceuser ::1/128 md5
 }}}
 
 to {{{/var/lib/pgsql/data/pg_hba.conf}}}. Make sure you put them before those existing lines that are for {{{all}}}. Then reload PostgreSQL:
