@@ -1,7 +1,7 @@
 
 = Setup of the PostgreSQL database =
 
-You should have PostgreSQL server running somewhere. Let's assume you will run the server on the same machine:
+You should have PostgreSQL server running somewhere. Let's assume you will run the server on the same machine as Spacewalk itself:
 
 {{{
 yum install postgresql-server
