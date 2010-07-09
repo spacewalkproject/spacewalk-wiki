@@ -30,3 +30,4 @@ but obviously better solution is needed.
 
  * I've tried changing the type to {{{binary}}} but that breaks Oracle. But maybe with some more changes to the application code {{{binary}}} is the way to go for both database backends?
  * Another possibility would be to tweak the JDBC driver or the dialect of that driver not to try the oid approach for blobs.
+ * Maybe we should go with oids longs instead of byteas?
