@@ -73,6 +73,8 @@ With PL/SQL code the things are a bit more tricky because PostgreSQL does not su
 
 For Perl, I assume we will do the same once we hit the first case when it's needed.
 
+Of course, we might as well just rewrite all these anonymous PL/SQL snippets to PL/SQL procedures and just call those. But that would mean that we'd need to keep and maintain two sources. But that might not prove to be that hard, especially if we have some sort of sanity checking (see above). Opinions welcome.
+
 === TODO ===
 
  * The types are not used at all.
