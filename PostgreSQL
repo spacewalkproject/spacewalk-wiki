@@ -49,4 +49,21 @@ We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}
 
 === Database schema ===
 
-When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects. For PostgreSQL support, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo.
+When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
+
+Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both. Also note that {{{postgres/manual/}}} is probably not needed -- I was tempted to remove it completely but I left it for now, in case people thought there were some pearls of wisdom there. But it will be gone in a week or so unless you stop me.
+
+=== Python and Perl stack ===
+
+They mostly run direct SQL queries and commands against the database schema. I just fixed those I encountered during {{{spacewalk-setup}}}. In general, it should be possible to fix any queries to be fine both for Oracle and PostgreSQL.
+
+With PL/SQL code the things are a bit more tricky because PostgreSQL does not support anonymous PL/pgSQL blocks. Please check [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h=30903ca16fa55cab6994dbd97595eb549bd3f619 commit "Add initial support for anonymous PL/pgSQL blocks"] to see what markup ({{{/*pg_cs*/}}} and {{{/*pg ...*/}}}) can be used in Python code to amend the PL/SQL code to also run as PL/pgSQL. You then want to run {{{rhnSQL.prepare}}} with new parameter {{{params}}} which should have the types of the new function which gets created.
+
+For Perl, I assume we will do the same once we hit the first case when it's needed.
+
+==== TODO ====
+
+ * The types are not used at all.
+ * We should check if the function already exists and not create it again.
+ * Do the same for Perl stack once needed.
+ * The function creation could probably be done by some PL/pgSQL function, so that we don't duplicate the code between Python and Perl.
