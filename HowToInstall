@@ -147,7 +147,7 @@ If you prefer the PostgreSQL backend:
 yum install spacewalk-postgresql 
 }}}
 
-'''Note:''' PostgreSQL support is in early development stage. You may want to take a look at the [PostgreSqlProject PostgreSql Project] page for further information.
+'''Note:''' PostgreSQL support is in early development stage. You may want to take a look at the [wiki:PostgreSQL] page for further information.
 
 = Configuring Spacewalk =
 
