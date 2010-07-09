@@ -95,7 +95,7 @@ Except, [wiki:PostgreSQL/Blobs it does not for blobs]. This is currently a block
 Tomcat failed to start properly or the installer ran out of tries.  Please check /var/log/tomcat*/catalina.out for errors.
 }}}
 
-I've built {{{spacewalk-java-1.1.18}}} [http://koji.spacewalkproject.org/koji/taskinfo?taskID=41743 rpms with the blob property removed], so that should help you overcome this blob issue for now and move forward -- download and install the packages.
+I've built {{{spacewalk-java-1.1.21}}} [http://koji.spacewalkproject.org/koji/taskinfo?taskID=41745 rpms with the blob property removed], so that should help you overcome this blob issue for now and move forward -- download and install the packages.
 
 === TODO ===
 
