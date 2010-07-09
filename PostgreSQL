@@ -61,6 +61,10 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
      * The issue with this approach might be that currently the schemas are out of sync -- PostgreSQL variants were not updated in ages. So we might want to do this based on Oracle status at the time the PostgreSQL files were crafted, back in Spacewalk 0.6 timeframe.
    * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
 
+== Database schema upgrades ==
+
+We ignore the issue for now. Will revisit when we have at least something solid to work with.
+
 == Python and Perl stack ==
 
 They mostly run direct SQL queries and commands against the database schema. I just fixed those I encountered during {{{spacewalk-setup}}}. In general, it should be possible to fix any queries to be fine both for Oracle and PostgreSQL.
