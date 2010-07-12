@@ -14,13 +14,13 @@ a spacewalk koji config file in ~/.koji/spacewalk-config
 ;configuration for koji cli tool
 
 ;url of XMLRPC server
-server = http://koji.rhndev.redhat.com/kojihub
+server = http://koji.spacewalkproject.org/kojihub
 
 ;url of web interface
-weburl = http://koji.rhndev.redhat.com/koji
+weburl = http://koji.spacewalkproject.org/koji
 
 ;url of package download site
-pkgurl = http://koji.rhndev.redhat.com/mnt/koji/packages
+pkgurl = http://koji.spacewalkproject.org/packages
 
 ;path to the koji top directory
 ;topdir = /mnt/koji
