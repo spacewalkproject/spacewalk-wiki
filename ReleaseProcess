@@ -5,7 +5,7 @@ Each Spacewalk release will be roughly two (2) months in duration. See [https://
 == Mechanics ==
 We will build our non Fedora RPMs using an internal Red Hat instance of Koji.  
 
-The Koji server lives at [http://koji.rhndev.redhat.com/koji spacewalk koji]
+The Koji server lives at [http://koji.spacewalkproject.org/koji spacewalk koji]
 to build you need a user cert,  you need to ask Dennis for it
 a spacewalk koji config file in ~/.koji/spacewalk-config
 {{{
