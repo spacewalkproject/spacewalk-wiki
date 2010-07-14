@@ -122,6 +122,16 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
 }}}
   The most likely culprit is actually a permissions problem for the apache user, give {{{apache}}} user access to the directory.
 
+ * using '''tomcat6''' and getting following traceback:
+{{{
+org.apache.jasper.JasperException: Unable to read TLD "META-INF/c.tld" from JAR file "file:/home/tlestach/spacewalk/java/lib/taglibs-standard-1.1.0.jar": org.apache.jasper.JasperException: Failed to load or instantiate TagLibraryValidator class: org.apache.taglibs.standard.tlv.JstlCoreTLV
+}}}
+   Just remove jspapi-5.0.18.jar:
+{{{
+mv /usr/share/tomcat6/webapps/rhn/WEB-INF/lib/jspapi-5.0.18.jar /tmp/
+}}}
+   and restart tomcat.
+
 == Still having issues? ==
 
 Make sure there are no broken symlinks in /var/lib/tomcat5/common/libs:
