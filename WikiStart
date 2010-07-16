@@ -1,6 +1,23 @@
 = Spacewalk =
 [[TOC]]
 == Latest News: Spacewalk 1.0 RELEASED! ==
+'''Certificate Expiring:''' If you are receiving this message via the Spacewalk web interface below is an explanation along with the resolution:
+ * Explanation for expired certificate can be by reading this [https://www.redhat.com/archives/spacewalk-list/2010-July/msg00036.html mailing list post]
+ * To resolve the issue, install the Spacewalk 1.0 certificate
+  * If you have already '''upgraded''' to Spacewalk 1.0 run this command (service/server restart is '''not''' required)
+{{{
+#!sh
+$ sudo rhn-satellite-activate --rhn-cert /usr/share/spacewalk/setup/spacewalk-public.cert --disconnected
+
+}}}
+  * If you are still running version 0.8 download the 1.0 certificate and install (again, no need to restart the server/service)
+{{{
+#!sh
+$ wget 'http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=branding/setup/spacewalk-public.cert;h=d7674be743358ad2f20346d78d9d53e8fe11f034;hb=HEAD' -O spacewalk-public.cert
+
+$ sudo rhn-satellite-activate --rhn-cert spacewalk-public.cert --disconnected
+
+}}}
 
 [[Image(wiki:WikiStart:spacewalk-1-0-release.png)]]
 
