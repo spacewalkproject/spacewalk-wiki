@@ -16,44 +16,29 @@ In [https://bugzilla.redhat.com/show_bug.cgi?id=585233 bugzilla 585233] we aim a
 
 RHN hosted has added the support for exposing the comps data for channels in [https://bugzilla.redhat.com/show_bug.cgi?id=249141 bugzilla 249141]. It has two parts:
 
- * The <rhn-channel> element in the channel XML now has attribute has-comps, with values "True" or "False"; if the value is True, the channel has comps information available.
- * This mechanism is going to be changed for the <rhn-channel> to contain <rhn-channel-comps-last-modified> element instead, with timestamp of the comps information, taken from hosted's rhnChannelComps table. If there is no comps information associated with the channel, the element is not present.
+ * The <rhn-channel> element in the channel XML now has <rhn-channel-comps-last-modified> element, with timestamp of the comps information, taken from hosted's rhnChannelComps table. If there is no comps information associated with the channel, the element is not present.
  * In the case when attribute or element in <rhn-channel> indicates that comps is associated, the comps file can be retrieved on the URL http://satellite.rhn.redhat.com/SAT/$RHN/$CHANNEL_LABEL/repodata/comps.xml, with correct authentication HTTP headers.
 
 == RHN Satellite / Spacewalk syncing ==
 
 === Live sync from RHN hosted ===
 
-On RHN Satellite / Spacewalk side, we process ~~this has-comps attribute~~ the rhn-channel-comps-last-modified element. If it is ~~True~~ present, we check if file /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$COMPS_LAST_MODIFIED.xml already exist and retrieve it with GET if it does not. Then we update the rhnChannelComps table to hold the correct record with correct relative_filename value.
+On RHN Satellite / Spacewalk side, we process the rhn-channel-comps-last-modified element. If it is present, we check if file /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$COMPS_LAST_MODIFIED.xml already exist and retrieve it with GET if it does not. Then we update the rhnChannelComps table to hold the correct record with correct relative_filename value.
 
 === Generating channel dumps ===
 
-When rhn-satellite-exporter generates the export and the channel has value in rhnChannelComps, we ~~set the has-comps attribute~~ create the rhn-channel-comps-last-modified element accordingly, and store the comps.xml file gzipped in the channels/$CHANNEL_LABEL/comps.xml.gz file.
+When rhn-satellite-exporter generates the export and the channel has value in rhnChannelComps, it creates the rhn-channel-comps-last-modified element accordingly, and stores the comps.xml file gzipped in the channels/$CHANNEL_LABEL/comps.xml.gz file.
 
 === Sync from channel dumps ===
 
-When the <rhn-channel> element has the ~~has-comps attribute set to True~~ rhn-channel-comps-last-modified subelement, the comps.xml.gz file is ungzipped from channels/$CHANNEL_LABEL to /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$COMPS_LAST_MODIFIED.xml, and rhnChannelComps record is set.
+When the <rhn-channel> element has the rhn-channel-comps-last-modified subelement, the comps.xml.gz file is ungzipped from channels/$CHANNEL_LABEL to /var/satellite/rhn/comps/$CHANNEL_LABEL/comps-$COMPS_LAST_MODIFIED.xml, and rhnChannelComps record is set.
 
 === Inter-sat-sync ===
 
-During inter-sat-sync, the ~~has-comps attribute is set~~ rhn-channel-comps-last-modified subelement is created, and the satellite-sync then retrieves the comps file using new dump.get_comps XMLRPC call and stores it to /var/satellite and to rhnChannelComps like in the previous cases.
+During inter-sat-sync, the rhn-channel-comps-last-modified subelement is created, and the satellite-sync then retrieves the comps file using new dump.get_comps XMLRPC call and stores it to /var/satellite and to rhnChannelComps like in the previous cases.
 
 == Where are these changes available ==
 
 The above changes were tagged as spacewalk-backend-1.1.11-1.
 
 The spacewalk-java-1.1.7-1 with other comps-related fixes is also needed unless use_taskomatic_repomd is set to 0 to use the Python repomd generator.
-
-== Problems ==
-
-None known as of 2010-05-03. The issue below was fixed with patch to RHN hosted which is on it way to hosted prod.
-
-As noted above, RHN hosted only provides boolean information about comps presence for given channel. That means that when syncing from RHN hosted, we have no good way to determine if we need to retrieve the comps file or not. Currently we use the channel's last modified value, however, it gets updated with any package added, while comps will change less frequently, generally only with new minor version.
-
-And we keep this has-comps approach throughout the whole solution, to keep things consistent.
-
-There are three possible ways currently considered:
-
- * Do nothing, this is sufficient.
- * Change RHN hosted to generate comps-last-modified attribute with comps' last modified information, instead of that has-comps attribute, and use this value in the other cases as well.
- * Do a HEAD request to retrieve the comps file from RHN hosted instead of GET and only issue full GET if the Last-Modified HTTP header shows that the file has changed.
