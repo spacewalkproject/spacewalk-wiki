@@ -42,3 +42,5 @@ During inter-sat-sync, the rhn-channel-comps-last-modified subelement is created
 The above changes were tagged as spacewalk-backend-1.1.11-1.
 
 The spacewalk-java-1.1.7-1 with other comps-related fixes is also needed unless use_taskomatic_repomd is set to 0 to use the Python repomd generator.
+
+For Satellite 5.3.*, errata [http://rhn.redhat.com/errata/RHBA-2010-0443.html RHBA-2010:0443-1] includes the changes.
