@@ -54,6 +54,8 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:ManagingDebianSystems Managing Debian Systems]
 ----
 == __General Documentation__ ==
+=== Known Issues ===
+  * [wiki:KnownIssues/CertExpiring "Certificate Expiring" messages] -- What to do when such a message appears in the GUI.
 === Advanced Guides ===
   * [wiki:HowToKickstartCobbler How to Kickstart with Spacewalk and Cobbler] -- Spacewalk and Cobbler together: How to use the new integration released in Spacewalk 0.4
   * [wiki:Spacewalkonvm Spacewalk on Virtual Machine Procedure] -- A brain/screendump of installing a Fedora 10, kvm install of a spacewalk server (under construction!)
