@@ -1,11 +1,8 @@
 spacecmd is a command-line interface to Satellite and Spacewalk servers.  It has been developed and tested against RHN Satellite 5.3.
 
-= Homepage =
-[http://github.com/aparsons/spacecmd]
-
 = Requirements =
  * >= python-2.4
- * >= Satellite 5.3 (v10.8 of the API)
+ * >= API version 10.8 (e.g., Satellite 5.3)
 
 = Highlights =
  * view and manage nearly every aspect of Satellite
