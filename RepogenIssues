@@ -1,0 +1,17 @@
+Seeing some trouble with repo generation for a particular channel?
+
+1.  rm -rf /var/cache/rhn/repodata/CHANNEL_LABEL/*
+2.  sqlplus spacewalk/spacewalk@xe
+3.  sql> delete from rhnRepoRegenQueue
+4.  sql> commit;
+5.  sql> quit
+6.  Then run 'yum clean all && yum list' on a client that is connected to that channel
+7.  Monitor /var/cache/rhn/repodata/CHANNEL_LABEL/ for files being created. 
+
+
+Still not working?   Make sure taskomatic is running:
+
+/etc/init.d/taskomatic restart
+
+
+and look for error messages in /var/log/rhn/rhn_taskomatic_daemon.log
