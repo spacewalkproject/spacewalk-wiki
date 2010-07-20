@@ -16,3 +16,18 @@ Still not working?   Make sure taskomatic is running:
 
 
 and look for error messages in /var/log/rhn/rhn_taskomatic_daemon.log
+
+
+Are you seeing the following in the log file:
+
+{{{
+| com.redhat.rhn.taskomatic.core.TaskomaticDaemon - Tomcat is not up yet, sleeping 4   │ mccun934
+| seconds
+}}}
+
+Most likely something is interfering with the apache configs:
+{{{
+# grep VirtualHost  /etc/httpd/conf.d/*
+}}}
+
+Look for any <VirtualHost *:80> or <VirtualHost 192.168.0.1:80>  entries   (Where 192.168.0.1 is your ip address)
