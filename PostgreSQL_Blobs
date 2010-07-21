@@ -1,6 +1,10 @@
 
 = PostgreSQL and blobs and Hibernate =
 
+This issue seems to have been resolved by Justin in spacewalk-java-1.1.33.
+
+----
+
 There is a problem with declarations like
 
 {{{
