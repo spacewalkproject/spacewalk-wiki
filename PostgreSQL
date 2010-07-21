@@ -5,7 +5,7 @@
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In an attempt to make the whole Spacewalk project use open source software, we'd like to add support for PostgreSQL as database backend. For Spacewalk 0.6, quite a lot of work went into Spacewalk schema changes to make the schema PostgreSQL compatible. Unfortunately, little effort was made to make those changes and the whole PostgreSQL support sustainable.
 
-This is a page describing the status of the PostgreSQL support as of July 2010, before Spacewalk 1.1 release.
+This is a page describing the status of the PostgreSQL support as of 21st July 2010, before Spacewalk 1.1 release.
 
 == What bits to use ==
 
@@ -91,22 +91,15 @@ For PL/SQL, use [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h
 
 For Hibernate, it should just work.
 
-Except, [wiki:PostgreSQL/Blobs it does not for blobs]. This is currently a blocker which will prevent Spacewalk to start:
-
-{{{
-* Restarting services.
-Tomcat failed to start properly or the installer ran out of tries.  Please check /var/log/tomcat*/catalina.out for errors.
-}}}
-
-I've built {{{spacewalk-java-1.1.21}}} [http://koji.spacewalkproject.org/koji/taskinfo?taskID=41745 rpms with the blob property removed], so that should help you overcome this blob issue for now and move forward -- download and install the packages.
+The [wiki:PostgreSQL/Blobs blob issue] was resolved with spacewalk-java-1.1.33.
 
 === TODO ===
 
- * Fix the [wiki:PostgreSQL/Blobs] issue.
+ * ~~Fix the [wiki:PostgreSQL/Blobs] issue.~~
  * Address any issues after that.
 
 == Spacewalk installed and running, go hack ==
 
-With the above {{{spacewalk-java-*}}} fix, you should be able to get WebUI running with Spacewalk nightly repo on Fedora 12, and create the first user, and log in.
+You should be able to get WebUI running with Spacewalk nightly repo on Fedora 12, and create the first user, and log in.
 
 You will see some error popups, but you will at least have something to click at and work with.
