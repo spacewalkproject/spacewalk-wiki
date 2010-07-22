@@ -43,3 +43,12 @@ rhncfg-manager - Meant for managing the config files on the server.
  * revisions
  * update
  * upload-channel
+
+
+== FAQ ==
+
+1.  Can I automatically restart a service after a congfig file is deployed?
+
+2.  Can I upload files to the local sandbox from the client (not to a config channel).
+
+
