@@ -20,26 +20,26 @@ File Attribute support:
 == Client utility functions ==
 
 rhncfg-client:
-	diff
-	get
-	list
-	elist
-	channels
-	verify
+ * diff
+ * get
+ * list
+ * elist
+ * channels
+ * verify
 
 
 
 rhncfg-manager:
-	add
-	create-channel
-	diff
-	diff-revisions
-	download-channel
-	get
-	list
-	list-channels
-	remove
-	remove-channel
-	revisions
-	update
-	upload-channel
+ * add
+ * create-channel
+ * diff
+ * diff-revisions
+ * download-channel
+ * get
+ * list
+ * list-channels
+ * remove
+ * remove-channel
+ * revisions
+ * update
+ * upload-channel
