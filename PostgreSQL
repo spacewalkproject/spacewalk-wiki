@@ -9,12 +9,14 @@ This is a page describing the status of the PostgreSQL support as of 21st July 2
 
 == What bits to use ==
 
-The setup as decribed below will only work on Fedora 12 for now, with nightly repo. RHEL 5 has PostgreSQL which is too old, and Fedora 13 nightly repo is not complete yet.
+The setup as decribed below will work on RHEL 5 and Fedora 12 for now. On Fedora 13, we do not have {{{python-pgsql}}}, which is a dependence issue.
 
 {{{
 cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
+# RHEL 5
+# baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.1/$basearch/os
 # Fedora 12
 baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.1/$basearch/os
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
@@ -100,6 +102,6 @@ The [wiki:PostgreSQL/Blobs blob issue] was resolved with spacewalk-java-1.1.33.
 
 == Spacewalk installed and running, go hack ==
 
-You should be able to get WebUI running with Spacewalk nightly repo on Fedora 12, and create the first user, and log in.
+You should be able to get WebUI running with Spacewalk nightly repo, and create the first user, and log in.
 
 You will see some error popups, but you will at least have something to click at and work with.
