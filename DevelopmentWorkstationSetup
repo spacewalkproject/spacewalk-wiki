@@ -134,9 +134,9 @@ mv /usr/share/tomcat6/webapps/rhn/WEB-INF/lib/jspapi-5.0.18.jar /tmp/
 
 == Still having issues? ==
 
-Make sure there are no broken symlinks in /var/lib/tomcat5/common/libs:
+Make sure there are no broken symlinks in /var/lib/tomcat5/common/lib:
 {{{
-  ls -l /var/lib/tomcat5/common/libs/
+  ls -l /var/lib/tomcat5/common/lib/
 }}}
 
 Also make sure your symlink is setup correctly for the webapp
