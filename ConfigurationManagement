@@ -17,6 +17,18 @@ File Attribute support:
 
 == Getting started ==
 
+This assumes you have pushed the spacewalk client repo to your spacewalk server and subscribed a server to it.
+
+1. Install the client utilities:
+   yum install rhncfg*
+2. Enable config management:
+   rhn-actions-control --enable-all
+3. Within the webUI create a configuration channel and add files
+4. Subscribe the client to the configuration channel
+5. Either schedule a config deploy from the webUI or run 'rhncfg-client get' on the client
+
+
+
 == Client utility functions ==
 
 rhncfg-client - Meant for managing the config files in relation to what is on the client
@@ -48,7 +60,8 @@ rhncfg-manager - Meant for managing the config files on the server.
 == FAQ ==
 
 1.  Can I automatically restart a service after a congfig file is deployed?
+       No, you can schedule a separate remote command though.  Hopefully this is coming soon.
 
-2.  Can I upload files to the local sandbox from the client (not to a config channel).
-
+2.  Can I upload files to the local sandbox or override list from the client (not to a config channel).
+       No, you can only upload to a specified config channel from the client.
 
