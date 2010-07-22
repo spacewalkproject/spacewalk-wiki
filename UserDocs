@@ -41,7 +41,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:ManagingFedoraSystems#Provisioning_Clients Provisioning]
     * [wiki:ManagingFedoraSystems#Registering_Clients Registering]
     * [wiki:ManagingFedoraSystems#Pushing_Packages_to_Clients Pushing Packages]
-    * [wiki:ManagingFedoraSystems#Managing_Client_Configurations Configuration Management]
+    * [wiki:ConfigurationManagement# Configuration Management]
     * [wiki:ManagingFedoraSystems#Related_Documentation Related Documentation]
   * [wiki:ManagingCentOSSystems Managing CentOS Systems] 
   * [wiki:ManagingSolarisSystems Managing Solaris Systems] -- Registering Solaris clients and uploading content.
