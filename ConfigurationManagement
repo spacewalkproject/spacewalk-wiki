@@ -19,7 +19,7 @@ File Attribute support:
 
 == Client utility functions ==
 
-rhncfg-client:
+rhncfg-client - Meant for managing the config files in relation to what is on the client
  * diff
  * get
  * list
@@ -29,7 +29,7 @@ rhncfg-client:
 
 
 
-rhncfg-manager:
+rhncfg-manager - Meant for managing the config files on the server.
  * add
  * create-channel
  * diff
