@@ -2,6 +2,18 @@
 
 == Features ==
 
+File Support:
+
+ * Binary Files
+ * Text files
+ * Directories
+ * Symlinks
+
+File Attribute support:
+ * User/Group ownership
+ * Mode Permission
+ * selinux permissions
+
 
 == Getting started ==
 
