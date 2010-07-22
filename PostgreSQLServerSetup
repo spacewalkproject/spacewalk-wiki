@@ -3,12 +3,22 @@
 
 You should have PostgreSQL server running somewhere. Let's assume you will run the server on the same machine as Spacewalk itself:
 
+On Fedora 12, do
+
 {{{
 yum install -y postgresql-server
 chkconfig postgresql on
 service postgresql initdb
 service postgresql start
 }}}
+
+On RHEL 5, install {{{postgresql84-server}}} instead of just {{{postgresql-server}}}:
+
+{{{
+yum install -y postgresql84-server
+}}}
+
+and continue with the three steps above.
 
 Create database, user, and plpgsql language there:
 
