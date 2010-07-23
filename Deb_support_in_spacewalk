@@ -18,7 +18,7 @@ deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/Deb
 }}}
 for Debian 5.0 (Lenny) or for Ubuntu_9.10 add this line:
 {{{
-http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUbuntu_9.10/ /
+deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUbuntu_9.10/ /
 }}}
   
 == Example of creating package ==
