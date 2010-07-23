@@ -12,9 +12,15 @@ You can test packages, they are available on:
 
 https://build.opensuse.org/project/show?project=home%3Axsuchy%3Adebian-spacewalk
 
-'''ATTENTION: Packages can be unstable.''' [[BR]]
-
-
+If you want to install packages, add this line to /etc/apt/sources.list
+{{{
+deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/Debian_5.0 /
+}}}
+for Debian 5.0 (Lenny) or for Ubuntu_9.10 add this line:
+{{{
+http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUbuntu_9.10/ /
+}}}
+  
 == Example of creating package ==
 
  * wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
