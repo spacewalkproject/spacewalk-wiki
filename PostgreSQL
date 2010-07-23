@@ -47,7 +47,7 @@ Password?
 
 === TODO ===
 
- * We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.
+ * ~~We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.~~ Resolved in spacewalk-postgresql-1.1.6-1.
 
 == Database schema ==
 
