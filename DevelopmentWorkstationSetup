@@ -114,7 +114,7 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
         at org.apache.catalina.core.StandardContext.start(StandardContext.java:4024)
 ...
 }}}
-   This typically means the {{{tomcat}}} user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.
+   This typically means the {{{tomcat}}} user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.  (See https://fedorahosted.org/spacewalk/wiki/DevelopmentWorkstationSetup#SetPermissions)
 
  * browse webapp and it looks plain like a webapp from 1995, usually caused by the css files not being loaded. 
 {{{
