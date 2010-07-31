@@ -35,13 +35,14 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [http://www.redhat.com/docs/en-US/Red_Hat_Network_Satellite/5.3/Installation_Guide/html/s1-maintenance-pam-auth.html Implement PAM authentication]  -- For the spacewalk web portal.
 === Core Guides ===
   * [wiki:MultiOrgGuide Multiple Organizations] -- A guide to setting up multiple organisations
+  * [wiki:ConfigurationManagement General Configuration Management]
   * [wiki:ManagingRHELSystems Managing RHEL Systems]
   * [wiki:ManagingFedoraSystems Managing Fedora Systems]
     * [wiki:ManagingFedoraSystems#Channel_Setup Channel Setup]
     * [wiki:ManagingFedoraSystems#Provisioning_Clients Provisioning]
     * [wiki:ManagingFedoraSystems#Registering_Clients Registering]
     * [wiki:ManagingFedoraSystems#Pushing_Packages_to_Clients Pushing Packages]
-    * [wiki:ConfigurationManagement# Configuration Management]
+    * [wiki:ManagingFedoraSystems#Managing_Client_Configurations Fedora Specific Configuration Management]
     * [wiki:ManagingFedoraSystems#Related_Documentation Related Documentation]
   * [wiki:ManagingCentOSSystems Managing CentOS Systems] 
   * [wiki:ManagingSolarisSystems Managing Solaris Systems] -- Registering Solaris clients and uploading content.
@@ -49,7 +50,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:ManagingSolarisSystems#Provisioning_Clients Provisioning]
     * [wiki:ManagingSolarisSystems#Registering_Clients Registering]
     * [wiki:ManagingSolarisSystems#Pushing_Packages_to_Clients Pushing Packages]
-    * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Configuration Management]
+    * [wiki:ManagingSolarisSystems#Managing_Client_Configurations Solaris Specific Configuration Management]
     * [wiki:ManagingSolarisSystems#Related_Documentation Related Documentation]
   * [wiki:ManagingDebianSystems Managing Debian Systems]
 ----
