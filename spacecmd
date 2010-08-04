@@ -1,8 +1,7 @@
 spacecmd is a command-line interface to Satellite and Spacewalk servers.  It has been developed and tested against RHN Satellite 5.3.
 
 = Downloads =
-Prebuilt RPMs can be found on Spacewalk's koji server:
- * http://koji.spacewalkproject.org/spacewalk/
+RPMs are available in Fedora 13+ and [http://mirrors.fedoraproject.org/publiclist/EPEL/ EPEL].
 
 The source is available in the Spacewalk git repo at /spacecmd:
  * http://git.fedorahosted.org/git/?p=spacewalk.git;a=tree;f=spacecmd
