@@ -184,7 +184,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/history/package_event_results.pxt
  * /network/systems/details/satellite.pxt
  * /network/systems/details/activation.pxt
- * /network/systems/details/hardware.pxt
+ * /network/systems/details/hardware.pxt  '''(2010-08-04 Converted to Java)'''
  * /network/systems/details/notes/edit.pxt
  * /network/systems/details/notes/delete_note_conf.pxt
  * /network/systems/details/notes/notes_list.pxt
