@@ -24,10 +24,11 @@ Spacewalk upgrade involves several basic steps:
   2.  Package upgrade
   3.  Schema upgrade
   4.  Upgrade of Spacewalk configuration
-  5.  Restart Spacewalk
-  6.  Update of monitoring setup
-  7.  Restart Spacewalk
-  8. Rebuild search indexes
+  5.  Regenerate kickstart files
+  6.  Restart Spacewalk
+  7.  Update of monitoring setup
+  8.  Restart Spacewalk
+  9.  Rebuild search indexes
 
 ----
 
@@ -131,6 +132,12 @@ Clean jabberd authentication database:
 
 {{{
 # rm -f /var/lib/jabberd/db/authreg.db
+}}}
+
+= Regenerate kickstart files =
+
+{{{
+# rm -f /var/lib/rhn/kickstarts/wizard/*
 }}}
 
 = Restart Spacewalk = 
