@@ -5,20 +5,22 @@
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In an attempt to make the whole Spacewalk project use open source software, we'd like to add support for PostgreSQL as database backend. For Spacewalk 0.6, quite a lot of work went into Spacewalk schema changes to make the schema PostgreSQL compatible. Unfortunately, little effort was made to make those changes and the whole PostgreSQL support sustainable.
 
-This is a page describing the status of the PostgreSQL support as of 21st July 2010, before Spacewalk 1.1 release.
+This is a page describing the status of the PostgreSQL support as of 12st August 2010, the nightly composes.
 
 == What bits to use ==
 
-The setup as decribed below will work on RHEL 5 and Fedora 12 for now. On Fedora 13, we do not have {{{python-pgsql}}}, which is a dependence issue.
+The setup as decribed below will work on RHEL 5 and Fedora 12 and 13.
 
 {{{
 cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
 # RHEL 5
-# baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.1/$basearch/os
+# baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.2/$basearch/os
 # Fedora 12
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.1/$basearch/os
+baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.2/$basearch/os
+# Fedora 12
+baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.2/$basearch/os
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
 enabled=1
 gpgcheck=0
