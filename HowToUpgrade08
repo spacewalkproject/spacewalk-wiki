@@ -7,6 +7,9 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   *  Spacewalk 0.7 running on Red Hat Enterprise Linux 5 Server or CentOS 5
   *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend
 
+= Archive of older upgrade instruction =
+Spacewalk 0.6 to 0.7 upgrade instructions, are available at
+[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade07 HowToUpgrade07]
 ----
 
 
