@@ -185,9 +185,9 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/satellite.pxt
  * /network/systems/details/activation.pxt
  * /network/systems/details/hardware.pxt  '''(2010-08-04 Converted to Java)'''
- * /network/systems/details/notes/edit.pxt
- * /network/systems/details/notes/delete_note_conf.pxt
- * /network/systems/details/notes/notes_list.pxt
+ * /network/systems/details/notes/edit.pxt '''(2010-08-13 Converted to Java)'''
+ * /network/systems/details/notes/delete_note_conf.pxt '''(2010-08-13 Converted to Java)'''
+ * /network/systems/details/notes/notes_list.pxt '''(2010-08-13 Converted to Java)'''
  * /network/systems/details/custominfo/edit.pxt
  * /network/systems/details/custominfo/remove_value_conf.pxt
  * /network/systems/details/custominfo/new_value.pxt
