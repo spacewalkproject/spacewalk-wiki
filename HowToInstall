@@ -2,9 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instruction for Spacewalk 1.0.
+These are installation instruction for Spacewalk 1.1.
 
-Spacewalk 0.8 installation instructions are available at [https://fedorahosted.org/spacewalk/wiki/HowToInstall08 HowToInstall08]
+Spacewalk 1.0 installation instructions are available at [https://fedorahosted.org/spacewalk/wiki/HowToInstall08 HowToInstall10]
 
 ----
 
@@ -29,19 +29,19 @@ To use this repository install spacewalk-repo with commands below:
 === Red Hat Enterprise Linux, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/RHEL/5/i386/spacewalk-repo-1.0-2.el5.noarch.rpm
-}}}
-
-=== Fedora 11 ===
-
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/11/i386/spacewalk-repo-1.0-2.fc11.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/RHEL/5/i386/spacewalk-repo-1.1-3.el5.noarch.rpm
 }}}
 
 === Fedora 12 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/12/i386/spacewalk-repo-1.0-2.fc12.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/12/i386/spacewalk-repo-1.1-3.fc11.noarch.rpm
+}}}
+
+=== Fedora 13 ===
+
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/i386/spacewalk-repo-1.1-3.fc12.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -53,12 +53,12 @@ cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
 # RHEL 5 / CentOS 5
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.1/$basearch/os/
+baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.2/$basearch/os/
 # Fedora 12
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.1/$basearch/os
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.2/$basearch/os
 # Fedora 13
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.1/$basearch/os
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.2/$basearch/os
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
 EOF
@@ -104,7 +104,7 @@ Otherwise you get error messeges like :
 Follow the instructions for '''Red Hat Enterprise Linux 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/RHEL/5/i386/spacewalk-client-repo-1.0-2.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/RHEL/5/i386/spacewalk-client-repo-1.1-3.el5.noarch.rpm
 }}}
  *  Import Redhat's RPM GPG key:
 {{{
@@ -135,7 +135,7 @@ exclude=cobbler-web
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
-'''1.0 installation:'''
+'''1.1 installation:'''
 
 If you tend to use the Oracle backend:
 {{{
