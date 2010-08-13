@@ -1,4 +1,4 @@
-spacecmd is a command-line interface to Satellite and Spacewalk servers.  It has been developed and tested against RHN Satellite 5.3.
+spacecmd is a command-line interface to Satellite and Spacewalk servers.
 
 = Downloads =
 RPMs are available in Fedora 12+ and [http://mirrors.fedoraproject.org/publiclist/EPEL/ EPEL].
