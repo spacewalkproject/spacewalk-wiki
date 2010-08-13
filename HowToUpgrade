@@ -36,7 +36,8 @@ Spacewalk upgrade involves several basic steps:
 = Assumptions =
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
-  * You had set up your yum to point to spacewalk 1.1 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to spacewalk 1.1 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. Note, that with Spacewalk 1.1, the gpg key
+    used to sign packages has been changed. New gpg key location is http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 
 
 =  Database and configuration backup  =
