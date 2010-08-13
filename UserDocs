@@ -133,25 +133,30 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:BrainBox Feature Requests/BrainBox]
   * [https://fedorahosted.org/spacewalk/roadmap Road Map]
 === Installation Guides ===
-  * [wiki:HowToInstall for 1.0]
+  * [wiki:HowToInstall for 1.1]
+  * [wiki:HowToInstall10 for 1.0]
   * [wiki:HowToInstall08 for 0.8]
   * [wiki:HowToInstall07 for 0.7]
 === Upgrade Notes ===
 Upgrade guides, sequential, stepped upgrades are recommended to cover multiple update levels, i.e. to get from 0.6 to 0.8 please upgrade via 0.7 (and we recommend testing at each intermediate level as you proceed) rather than trying to go directly from 0.6 to 0.8. Jumping levels is deeply discouraged with the exception of version 0.9 which was never released.
-  * [wiki:HowToUpgrade From 0.8 to 1.0]
+  * [wiki:HowToUpgrade From 1.0 to 1.1]
+  * [wiki:HowToUpgrade10 From 0.8 to 1.0]
   * [wiki:HowToUpgrade08 From 0.7 to 0.8]
   * [wiki:HowToUpgrade07 From 0.6 to 0.7]
   * [wiki:HowToUpgrade06 From 0.5 to 0.6]
 === Dependency Notes ===
 A quick list of rpms that a 'yum install spacewalk' adds to a box.
-  * [wiki:ListofRPMsInstalled Version 0.8]
+  * [wiki:ListofRPMsInstalled11 Version 1.1]
+  * [wiki:ListofRPMsInstalled10 Version 1.0]
+  * [wiki:ListofRPMsInstalled08 Version 0.8]
   * [wiki:ListofRPMsInstalled07 Version 0.7]
   * [wiki:ListofRPMsInstalled06 Version 0.6]
   * [wiki:ListofRPMsInstalled05 Version 0.5]
   * [wiki:ListofRpms04Installs Version 0.4]
 === Release Notes ===
 Release notes for each version, taken from mailing lists.
-  * [wiki:ReleaseNotes1.0 for 1.0]
+  * [wiki:ReleaseNotes for 1.1]
+  * [wiki:ReleaseNotes10 for 1.0]
   * [wiki:ReleaseNotes08 for 0.8]
   * [wiki:ReleaseNotes07 for 0.7]
   * [wiki:ReleaseNotes06 for 0.6]
