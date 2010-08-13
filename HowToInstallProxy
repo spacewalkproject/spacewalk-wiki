@@ -27,15 +27,15 @@ To use the official repository install spacewalk-repo RPM:
 
 Red Hat Enterprise Linux, CentOS
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/RHEL/5/i386/spacewalk-repo-1.0-2.el5.noarch.rpm
-}}}
-Fedora 11
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/11/i386/spacewalk-repo-1.0-2.fc11.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/RHEL/5/i386/spacewalk-repo-1.1-3.el5.noarch.rpm
 }}}
 Fedora 12
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.0/Fedora/12/i386/spacewalk-repo-1.0-2.fc12.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/12/i386/spacewalk-repo-1.1-3.fc11.noarch.rpm
+}}}
+Fedora 13
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/i386/spacewalk-repo-1.1-3.fc12.noarch.rpm
 }}}
 
 ==== Nightly builds ====
@@ -47,12 +47,12 @@ cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
 # RHEL 5 / CentOS 5
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.1/$basearch/os/
+baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.2/$basearch/os/
 # Fedora 12
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.1/$basearch/os
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.2/$basearch/os
 # Fedora 13
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.1/$basearch/os
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.2/$basearch/os
+gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
 EOF
@@ -112,7 +112,7 @@ configure-proxy.sh --answerfile=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="1.0"
+VERSION="1.1"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
