@@ -27,8 +27,8 @@ A place to record larger general improvements to the user documentation and to a
  * Add diagrams and screen shots where possible.
 
 === Things to update upon release ===
- * Pull the release notes from the email list and put them into a new page.
- * Update the front page of the user documentation so the the "Release Notes" and "Upgrade Notes" sections of the appendices is current.
+ * Pull the release notes from the email list and put them into a new page, shuffle the old version to a numbered version.
+ * Ditto the howtoinstall page.
  * Generate a ListofRPMsInstalled page and add to appendices.
  * Review the "Known Issues & Current Limitations" section.
  * Review the "Brain Box" section to see if any features have been added.
