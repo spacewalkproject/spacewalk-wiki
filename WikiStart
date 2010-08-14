@@ -16,8 +16,7 @@
  * Provision virtual guests
  * Start/stop/configure virtual guests
 
-Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ Red Hat Network Satellite]. Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS, Scientific Linux, etc. We are working on getting it packaged
-for inclusion in Fedora.
+Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ Red Hat Network Satellite]. Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS, Scientific Linux, etc. [wiki:ManagingSolarisSystems Solaris] & [wiki:Deb_support_in_spacewalk Debian] support are also making progress and we are working on getting it packaged for inclusion in Fedora.
 
 This wiki is primarily focused on the usage and development of Spacewalk. For a higher-level overview of Spacewalk, what it does, and for a full gallery of screenshots, please visit the [http://redhat.com/spacewalk Spacewalk website at redhat.com].
 
