@@ -7,7 +7,6 @@
 
 == __Introduction__ ==
 [http://redhat.com/spacewalk/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
-
  * Inventory your systems (hardware and software information)
  * Install and update software on your systems
  * Collect and distribute your custom software packages into manageable groups
@@ -23,6 +22,7 @@ for inclusion in Fedora.
 This wiki is primarily focused on the usage and development of Spacewalk. For a higher-level overview of Spacewalk, what it does, and for a full gallery of screenshots, please visit the [http://redhat.com/spacewalk Spacewalk website at redhat.com].
 
 == __Content__ ==
+The main subsections of this wiki;
  * [wiki:UserDocs User Documentation]: Learn more about how to set up and use Spacewalk
  * [wiki:DeveloperDocs Developer Documentation]: Learn how to work on and build Spacewalk, and how Spacewalk is put together.
  * [wiki:SpacewalkFaq FAQs]: Answers to your questions.
@@ -35,7 +35,6 @@ This wiki is primarily focused on the usage and development of Spacewalk. For a 
 
 == __Communication__ ==
 There are several ways to get in touch with Spacewalk developers and users:
-
  * Announcement list (Moderated): spacewalk-announce-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-announce-list (signup)] [https://www.redhat.com/archives/spacewalk-announce-list/ (archives)]
  * User list: spacewalk-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-list (signup)] [https://www.redhat.com/archives/spacewalk-list/ (archives)]
  * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)] [https://www.redhat.com/archives/spacewalk-devel/ (archives)]
@@ -48,8 +47,8 @@ There are several ways to get in touch with Spacewalk developers and users:
 View photos from the [http://www.flickr.com/photos/mairin/sets/72157605713726653/ Spacewalk Campground] at the [http://redhat.com/summit 2008 Red Hat Summit].
 
 == __Need To Edit This Wiki?__ ==
- * [http://admin.fedoraproject.org/accounts Get a Fedora account here]
- ** FYI: You don't need to ask to be in the spacewalk account system group, that's only for commit access, see [wiki:PatchProcess]
+You don't need to ask to be in the spacewalk account system group, that's only for commit access, see the [wiki:PatchProcess Patch Process]. To get started simply;
+ * [http://admin.fedoraproject.org/accounts Get a Fedora account]: Come back and start editing.
 
 == __Want to File a Bug/RFE?__ ==
  * [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk Enter a bug here]: Check if the issue already has bugzilla filed at bugzilla.redhat.com.
