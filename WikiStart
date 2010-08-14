@@ -1,86 +1,58 @@
-= Spacewalk =
 [[TOC]]
-== Latest News: Spacewalk 1.1 RELEASED! ==
+= '''Spacewalk''' =
+== __Latest News__ ==
+''' Spacewalk 1.1 has been released! '''
+ * [HowToInstall Download and Install]
+ * [wiki:ReleaseNotes Release Notes]
 
-[HowToInstall Download]
-
-[wiki:ReleaseNotes Release Notes]
-
-== Introduction ==
-
+== __Introduction__ ==
 [http://redhat.com/spacewalk/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
 
-  * Inventory your systems (hardware and software information)
-  * Install and update software on your systems
-  * Collect and distribute your custom software packages into manageable groups
-  * Provision (Kickstart) your systems
-  * Manage and deploy configuration files to your systems
-  * Monitor your systems
-  * Provision virtual guests
-  * Start/stop/configure virtual guests
+ * Inventory your systems (hardware and software information)
+ * Install and update software on your systems
+ * Collect and distribute your custom software packages into manageable groups
+ * Provision (Kickstart) your systems
+ * Manage and deploy configuration files to your systems
+ * Monitor your systems
+ * Provision virtual guests
+ * Start/stop/configure virtual guests
 
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ Red Hat Network Satellite]. Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS, Scientific Linux, etc. We are working on getting it packaged
 for inclusion in Fedora.
 
 This wiki is primarily focused on the usage and development of Spacewalk. For a higher-level overview of Spacewalk, what it does, and for a full gallery of screenshots, please visit the [http://redhat.com/spacewalk Spacewalk website at redhat.com].
 
-== Community ==
-[[Image(http://farm4.static.flickr.com/3257/2594729312_4c72913c2c_m.jpg)]]
+== __Content__ ==
+ * [wiki:UserDocs User Documentation]: Learn more about how to set up and use Spacewalk
+ * [wiki:DeveloperDocs Developer Documentation]: Learn how to work on and build Spacewalk, and how Spacewalk is put together.
+ * [wiki:SpacewalkFaq FAQs]: Answers to your questions.
+ * [wiki:Contribute How to Contribute]: Do you want to help us? Start here.
+ * [wiki:DownloadIt Downloads (Source and RPMs)]: Find out how to check out the source code and get RPM releases.
+ * [https://fedorahosted.org/spacewalk/roadmap Roadmap]: What are the plans for the future of Spacewalk? Formerly ~~TheRoadmap~~.
+ * [wiki:ReleaseProcess Release Process]: What is the process for releasing Spacewalk.
+ * [wiki:BrainBox Brainbox]: Some ideas that might end up in the roadmap. Just a page to collect them.
+ * [wiki:Features Features]: An index page of ideas that have graduated from the [wiki:BrainBox] to become features.
 
+== __Communication__ ==
+There are several ways to get in touch with Spacewalk developers and users:
+
+ * Announcement list (Moderated): spacewalk-announce-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-announce-list (signup)] [https://www.redhat.com/archives/spacewalk-announce-list/ (archives)]
+ * User list: spacewalk-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-list (signup)] [https://www.redhat.com/archives/spacewalk-list/ (archives)]
+ * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)] [https://www.redhat.com/archives/spacewalk-devel/ (archives)]
+ * IRC: #spacewalk & #spacewalk-devel on [http://freenode.net/ (irc.freenode.net)]
+ * Read the latest minutes from our Community led meetings [CommunityMeetingMinutes minutes]
+
+== __Community__ ==
+[[Image(http://farm4.static.flickr.com/3257/2594729312_4c72913c2c_m.jpg)]]
 
 View photos from the [http://www.flickr.com/photos/mairin/sets/72157605713726653/ Spacewalk Campground] at the [http://redhat.com/summit 2008 Red Hat Summit].
 
-== Content ==
+== __Need To Edit This Wiki?__ ==
+ * [http://admin.fedoraproject.org/accounts Get a Fedora account here]
+ ** FYI: You don't need to ask to be in the spacewalk account system group, that's only for commit access, see [wiki:PatchProcess]
 
-[wiki:SpacewalkFaq FAQs]
-    * Answers to your questions.
-
-[wiki:Contribute How to Contribute]
-    * Do you want to help us? Start here.
-
-[wiki:UserDocs User Documentation]
-    * In this section of the Wiki, learn more about how to set up and use Spacewalk
-
-[wiki:DeveloperDocs Developer Documentation]
-    * Learn how to work on and build Spacewalk, and how Spacewalk is put together.
-
-[wiki:DownloadIt Downloads (Source and RPMs)]
-    * Find out how to check out the source code and get RPM releases.
-
-[https://fedorahosted.org/spacewalk/roadmap Roadmap] formerly ~~TheRoadmap~~
-    * What are the plans for the future of Spacewalk?
-
-[wiki:ReleaseProcess Release Process]
-    * What is the process for releasing Spacewalk.
-
-[wiki:BrainBox Brainbox]
-    * Some ideas that might end up in the roadmap. Just a page to collect them.
-
-[wiki:Features Features]
-    * An index page of ideas that have graduated from the [wiki:BrainBox] to become features.
-
-== Communication ==
-
-There are several ways to get in touch with Spacewalk developers and users:
-
-    * Announcement list (Moderated):  spacewalk-announce-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-announce-list (signup)] [https://www.redhat.com/archives/spacewalk-announce-list/ (archives)]
-    * User list:  spacewalk-list@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-list (signup)] [https://www.redhat.com/archives/spacewalk-list/ (archives)]
-    * Developer list: spacewalk-devel@redhat.com [https://www.redhat.com/mailman/listinfo/spacewalk-devel (signup)] [https://www.redhat.com/archives/spacewalk-devel/ (archives)]
-    * IRC: #spacewalk & #spacewalk-devel on [http://freenode.net/ (irc.freenode.net)]
-    * Enter a Bug here [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk (Bugzilla)]
-    * Search for Bugs here [https://bugzilla.redhat.com/query.cgi?product=Spacewalk (Bugzilla)]
-
-    * Read the latest minutes from our Community led meetings [CommunityMeetingMinutes minutes]
-    
-== Need To Edit This Wiki? ==
-
-    * [http://admin.fedoraproject.org/accounts Get a Fedora account here]
-        * FYI: You don't need to ask to be in the spacewalk account system group, that's only for commit access, see PatchProcess
-
-== Want to File a Bug/RFE? ==
-
-    * [https://bugzilla.redhat.com/query.cgi?format=specific&bug_status=__all__&product=Spacewalk Check if the issue already has bugzilla filed at bugzilla.redhat.com]
-    * If it has, feel free to add yourself to Cc list of that bugzilla and add comments with more details, logs, etc.
-    * If it does not, [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk file a new bugzilla].
-    * You will need an account in bugzilla to add comments or file new bugzillas.
-
+== __Want to File a Bug/RFE?__ ==
+ * [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk Enter a bug here]: Check if the issue already has bugzilla filed at bugzilla.redhat.com.
+ * [https://bugzilla.redhat.com/query.cgi?product=Spacewalk Search for bugs here]: If it has, feel free to add yourself to Cc list of that bugzilla and add comments with more details, logs, etc.
+ * [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk Report a new bug]: If it has not, then please report it here with all the detail you can muster.
+ * [https://bugzilla.redhat.com/createaccount.cgi Get a Bugzilla account]: You will need an account in bugzilla to add comments or file new bugzillas.
