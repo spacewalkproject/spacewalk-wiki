@@ -28,7 +28,6 @@ For upgrades, consult:
  * Support for [https://fedorahosted.org/spacewalk/wiki/Features/CompsSyncing synchronization of comps files].
  * support for staging content - ability to have all updates pulled off Spacewalk onto registered systems prior to the start of maintenance window
  * support for [https://fedorahosted.org/spacewalk/wiki/DuplicateProfiles eliminating orphaned (duplicate) profiles].
-
  * new API calls:
   * channel.software.getChannelLastBuildById
   * configchannel.listSubscribedSystems
