@@ -35,13 +35,13 @@ rpm -Uvh http://spacewalk.redhat.com/yum/1.1/RHEL/5/i386/spacewalk-repo-1.1-3.el
 === Fedora 12 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/12/i386/spacewalk-repo-1.1-3.fc11.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/12/i386/spacewalk-repo-1.1-3.fc12.noarch.rpm
 }}}
 
 === Fedora 13 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/i386/spacewalk-repo-1.1-3.fc12.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/i386/spacewalk-repo-1.1-3.fc13.noarch.rpm
 }}}
 
 === Nightly builds ===
