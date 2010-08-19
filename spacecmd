@@ -6,9 +6,12 @@ RPMs are available in Fedora 12+ and [http://mirrors.fedoraproject.org/publiclis
 The source is available in the Spacewalk git repo at /spacecmd:
  * http://git.fedorahosted.org/git/?p=spacewalk.git;a=tree;f=spacecmd
 
+= Bugs =
+Bugs should be reported to [https://bugzilla.redhat.com Red Hat's Bugzilla] under the "spacecmd" component.
+
 = Requirements =
  * >= python-2.4
- * >= API version 10.8 (e.g., Satellite 5.3)
+ * >= API version 10.8
 
 = Highlights =
  * view and manage nearly every aspect of Satellite
