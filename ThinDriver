@@ -10,7 +10,7 @@ hibernate.connection.driver_proto=jdbc:oracle:thin
 }}}
 
 
-If you are using the logdriver (Development only) then set it to :
+If you are using the logdriver (Development only) then set it to Normal users ignore this:
 {{{
 hibernate.connection.driver_proto=jdbc:log:oracle.jdbc.driver.OracleDriver:oracle:thin
 }}}
