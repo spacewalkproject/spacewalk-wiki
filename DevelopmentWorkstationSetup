@@ -132,6 +132,15 @@ mv /usr/share/tomcat6/webapps/rhn/WEB-INF/lib/jspapi-5.0.18.jar /tmp/
 }}}
    and restart tomcat.
 
+ * tomcat starts too quickly (and browsing to the webUI gives a 404)
+
+From IRC:
+{{{
+[20:41] <jsherrill> i think your rhn.xml disappeared
+[20:41] <jsherrill> if you're using tomcat5 copy ~/spacewalk/java/conf/rhn.xml to /etc/tomcat5/Catalina/localhost/
+[20:42] <jsherrill> for tomcat6 copy ~/spacewalk/java/conf/rhn6.xml to /etc/tomcat6/Catalina/localhost/
+}}}
+
 == Still having issues? ==
 
 Make sure there are no broken symlinks in /var/lib/tomcat5/common/lib:
