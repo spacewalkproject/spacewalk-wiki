@@ -141,6 +141,21 @@ From IRC:
 [20:42] <jsherrill> for tomcat6 copy ~/spacewalk/java/conf/rhn6.xml to /etc/tomcat6/Catalina/localhost/
 }}}
 
+
+* Java crashes on startup (a hard JVM crash, not a normal traceback):
+{{{
+- remove /home/tlestach/spacewalk/java/lib/ojdbc14-1.10.jar
+- create simlink /home/tlestach/spacewalk/java/lib/ojdbc14.jar that points to /usr/share/java/ojdbc14.jar
+
+- unlink /var/lib/tomcat6/webapps/rhn/WEB-INF/lib/ojdbc14-1.10.jar
+- create simlink /var/lib/tomcat6/webapps/rhn/WEB-INF/lib/ojdbc14.jar that points to /usr/share/java/ojdbc14.jar
+
+- unlink /home/tlestach/spacewalk/java/build/run-lib/external/ojdbc14-1.10.jar
+}}}
+
+
+
+
 == Still having issues? ==
 
 Make sure there are no broken symlinks in /var/lib/tomcat5/common/lib:
