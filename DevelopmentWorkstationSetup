@@ -124,7 +124,7 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
 
  * using '''tomcat6''' and getting following traceback:
 {{{
-org.apache.jasper.JasperException: Unable to read TLD "META-INF/c.tld" from JAR file "file:/home/tlestach/spacewalk/java/lib/taglibs-standard-1.1.0.jar": org.apache.jasper.JasperException: Failed to load or instantiate TagLibraryValidator class: org.apache.taglibs.standard.tlv.JstlCoreTLV
+org.apache.jasper.JasperException: Unable to read TLD "META-INF/c.tld" from JAR file "file:~/spacewalk/java/lib/taglibs-standard-1.1.0.jar": org.apache.jasper.JasperException: Failed to load or instantiate TagLibraryValidator class: org.apache.taglibs.standard.tlv.JstlCoreTLV
 }}}
    Just remove jspapi-5.0.18.jar:
 {{{
@@ -144,13 +144,13 @@ From IRC:
 
 * Java crashes on startup (a hard JVM crash, not a normal traceback):
 {{{
-- remove /home/tlestach/spacewalk/java/lib/ojdbc14-1.10.jar
-- create simlink /home/tlestach/spacewalk/java/lib/ojdbc14.jar that points to /usr/share/java/ojdbc14.jar
+- remove ~/spacewalk/java/lib/ojdbc14-1.10.jar
+- create simlink ~/spacewalk/java/lib/ojdbc14.jar that points to /usr/share/java/ojdbc14.jar
 
 - unlink /var/lib/tomcat6/webapps/rhn/WEB-INF/lib/ojdbc14-1.10.jar
 - create simlink /var/lib/tomcat6/webapps/rhn/WEB-INF/lib/ojdbc14.jar that points to /usr/share/java/ojdbc14.jar
 
-- unlink /home/tlestach/spacewalk/java/build/run-lib/external/ojdbc14-1.10.jar
+- unlink ~/spacewalk/java/build/run-lib/external/ojdbc14-1.10.jar
 }}}
 
 
