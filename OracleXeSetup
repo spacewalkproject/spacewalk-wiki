@@ -40,6 +40,14 @@ If you want to run with SELinux enabled, run the following two commands to creat
 
 This is needed to give the oracle user uid below 500. See [https://fedorahosted.org/spacewalk/wiki/Features/SELinux Features/SELinux] for more details and limitations of SELinux support.
 
+Check if you have swap > 1GB because Oracle XE RPM will need it. You can create temporary one (or grow existing) with
+
+{{{
+# dd if=/dev/zero of=/var/swapfile bs=1M count=1100
+# mkswap /var/swapfile
+# swapon /var/swapfile
+}}}
+
 == Install ==
 
 To install oracle-lib-compat, you'll need the spacewalk channel, installation directions for that are in HowToInstall.
