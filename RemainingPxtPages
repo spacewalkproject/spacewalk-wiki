@@ -239,7 +239,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 
 
  * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
- * /network/systems/ssm/index.pxt
+ * /network/systems/ssm/index.pxt  '''(Patch pending)'''
  * /network/systems/ssm/groups/alter_membership_conf.pxt
  * /network/systems/ssm/groups/index.pxt
  * /network/systems/ssm/groups/create.pxt
