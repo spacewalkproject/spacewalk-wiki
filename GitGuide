@@ -4,6 +4,18 @@
 == Getting Started ==
 A quick start guide to using git, especially if you're used to using svn or cvs.
 
+== Install Git ==
+
+To install git on Fedora just
+
+  # yum -y install git
+
+For installation on RHEL you have to add repository. For example for RHEL5-server it is
+
+  # rpm -Uvh http://download.fedora.redhat.com/pub/epel/5Server/i386/epel-release-5-4.noarch.rpm
+
+For other version see http://download.fedora.redhat.com/pub/epel directory. Then you can install git as usual.
+
 === Clone the Spacewalk git repository ===
 For anonymous access to the Spacewalk source code, feel free to clone the repository:
 {{{
