@@ -61,7 +61,7 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
   1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux 5. These dependencies can be found in EPEL, just like for the Spacewalk server:
    {{{
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/$BASEARCH/epel-release-5-3.noarch.rpm
+# rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/$BASEARCH/epel-release-5-4.noarch.rpm
    }}}
   1. Install client packages
     {{{
