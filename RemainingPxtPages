@@ -239,7 +239,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 
 
  * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
- * /network/systems/ssm/index.pxt  '''(Patch pending)'''
+ * /network/systems/ssm/index.pxt  '''(Patch submitted to devel list, Sep 10)'''
  * /network/systems/ssm/groups/alter_membership_conf.pxt
  * /network/systems/ssm/groups/index.pxt
  * /network/systems/ssm/groups/create.pxt
@@ -270,6 +270,6 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 
 ==== Activation keys ====
  * /network/account/activation_keys/packages.pxt '''(Looks like this one has already been done)'''
- * /network/account/activation_keys/child_channels.pxt  '''(Patch pending)'''
+ * /network/account/activation_keys/child_channels.pxt  '''(Patch submitted to devel list, Sep 9)'''
 
 
