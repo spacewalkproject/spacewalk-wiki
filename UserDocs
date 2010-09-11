@@ -17,6 +17,7 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [wiki:HowToInstall#SettingupSpacewalkrepo Setting up Spacewalk repo]
     * [wiki:HowToInstall#Additionalrepospackages Additional repos & packages]
     * [wiki:HowToInstall#OraclePre-Requisites Oracle Pre-Requisites]
+    * [wiki:HowToInstall#ConflictingPackages Conflicting Packages]
     * [wiki:HowToInstall#InstallingSpacewalk Installing Spacewalk]
     * [wiki:HowToInstall#ConfiguringSpacewalk Configuring Spacewalk]
     * [wiki:HowToInstall#ManagingSpacewalk Managing Spacewalk]
