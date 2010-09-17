@@ -63,7 +63,7 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
 ||  monitoring.getAllResults(sid, probe_id) || ? || 3 ||  ||  ||  ||
 
 ||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
-||  schedule.archiveActions(array[aid]) || ? || 3 ||  ||  ||  ||
+||  schedule.archiveActions(array[aid]) || ? || 3 || coec || done (patch pending) || return 1 on success ||
 
 ||  '''Namespace: system.config''' ||  ||  ||  ||  ||  ||
 ||  system.config.deployFiles(auth, array(string filename), array(sid)) || ? || 3 ||  ||  || schedule deployment of specific files to specific systems ||
