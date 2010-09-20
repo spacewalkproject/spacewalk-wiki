@@ -11,6 +11,10 @@ The source is available in the Spacewalk git repo at /spacecmd:
 = Bugs =
 Bugs should be reported to [https://bugzilla.redhat.com Red Hat's Bugzilla] under the "spacecmd" component.
 
+= Support =
+ * https://www.redhat.com/mailman/listinfo/rhn-satellite-users
+ * https://www.redhat.com/mailman/listinfo/spacewalk-list
+
 = Requirements =
  * >= python-2.4
  * >= API version 10.8
