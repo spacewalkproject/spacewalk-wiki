@@ -30,6 +30,30 @@ This feature refers to our ability to correctly identify the operating system, v
  1. API should allow mining of data for permutiations of hardware, OS, virt capabilities/state, and system grouping (?).
   1. '''TODO''': Need examples.
 
+=== Question: Two Birds with One Stone? ===
+
+Have we looked at how the push for a stronger Configuration Management Framework may support this? Cross requirement integration is good right? :)
+
+* Given that Puppet is a strong candidate for doing Configuration Management - perhaps a lot of this work falls into our lap for 'free'?
+ * [http://www.puppetlabs.com/puppet/related-projects/facter/] : Gives all the data, 'Facts' and more
+ * [http://www.puppetlabs.com/puppet/related-projects/dashboard/] : Makes it pretty and printable
+
+The 'Reporting Framework' issue may also be addressed via extension?
+
+Side Thoughts:
+
+* Pros
+  * Puppet worries about the supported architectures (RHEL, OSX, Solaris, Windows, AIX, Ubuntu, etc.) - so that we can just 'consume'
+  * Puppet has a REST API and Python/Perl interfaces
+  * The Data / System Reports are in yummy YAML
+  * I think the 'Facts' concept could really add some punch for customers/end-users to 'self service' on defining and redefining what they want Satellite/Spacewalk to be telling them
+
+* Cons
+  * Ruby not Python ( but has Python APIs - [The kernel is C right? ;) ]
+  * Possible 'stretch'/'function creep' of what Puppet / Facter are designed for ? ( Good? / Bad? )
+  * Not in [http://www.fedorahosted.org] :)
+
+--aaronlippold (lippold@gmail.com)
 
 == Other Feature Impact ==
 
