@@ -38,7 +38,7 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 
   1. Install the Spacewalk yum repository
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/$(uname -i)/spacewalk-client-repo-1.1-3.fc12.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.1/Fedora/13/$(uname -i)/spacewalk-client-repo-1.1-3.fc13.noarch.rpm
    }}}
   1. Install client packages
     {{{
