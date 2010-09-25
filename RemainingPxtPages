@@ -229,16 +229,16 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/misc/set_value.pxt
  * /network/systems/ssm/misc/lock_systems_conf.pxt
  * /network/systems/ssm/misc/reboot_systems.pxt
- * /network/systems/ssm/misc/index.pxt
+ * /network/systems/ssm/misc/index.pxt '''(Patch pending)'''
  * /network/systems/ssm/misc/choose_value_to_set.pxt
  * /network/systems/ssm/misc/choose_value_to_remove.pxt
- * /network/systems/ssm/misc/hw_prof_update_conf.pxt
+ * /network/systems/ssm/misc/hw_prof_update_conf.pxt '''(Patch pending)'''
  * /network/systems/ssm/misc/reboot_confirm.pxt
  * /network/systems/ssm/misc/remove_value.pxt
 
 
 
- * /network/systems/ssm/misc/pkg_prof_update_conf.pxt
+ * /network/systems/ssm/misc/pkg_prof_update_conf.pxt '''(Patch pending)'''
  * /network/systems/ssm/index.pxt  '''(Patch submitted to devel list, Sep 10)'''
  * /network/systems/ssm/groups/alter_membership_conf.pxt
  * /network/systems/ssm/groups/index.pxt
