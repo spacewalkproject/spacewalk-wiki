@@ -84,7 +84,7 @@ the rpm changelog.
 After that, run
 {{{
         gitk --all
-        # review and verify that things look same and that you did not
+        # review and verify that things look sane and that you did not
         # introduce unnecessary merges
         git push && git push --tags
 }}}
