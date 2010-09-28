@@ -57,7 +57,7 @@ have is sane. Change to the directory of the package and run
 }}}
 
 This will create a .src.rpm package from your local HEAD on
-whatever branch your are. It will have that commit's SHA1 in name
+whatever branch you are. It will have that commit's SHA1 in name
 and if will also appear in the .tar.gz within that .src.rpm. It's
 done that way on purpose, so that .src.rpm from your local HEAD is
 not confused with "official" package releases.
@@ -71,7 +71,7 @@ the rpm on your local machine, you can also do
 which will do it in one step. Or you can submit a scratch build to koji.
 
 When you are happy with the .src.rpm, you should run (still in the directory
-of the package your are tagging)
+of the package you are tagging)
 {{{
         git pull --rebase
         tito tag 
