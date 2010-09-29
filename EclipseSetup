@@ -142,4 +142,5 @@ If using the Sun JVM, make the following tweaks:
 
  VM_ARGS="-Xverify:none -XX:+UseParallelGC -XX:PermSize=20M -XX:MaxNewSize=32M -XX:NewSize=32M -Xms192M -Xmx256M"
 
-
+-------
+The above didn't work for me, so I changed eclipse.ini in the eclipse installation directory, /usr/lib64/eclipse/eclipse.ini in my case. I adjusted the vmargs in there.
