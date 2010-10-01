@@ -250,6 +250,27 @@ enable-tftp=Y
 }}}
 '''NOTE:''' If you do not supply a value or leave out a key you will be prompted to supply that answer
 
+For Postgres you need to create something like this
+{{{
+admin-email = root@localhost
+ssl-set-org = Spacewalk Org
+ssl-set-org-unit = spacewalk
+ssl-set-city = My City
+ssl-set-state = My State
+ssl-set-country = US
+ssl-password = spacewalk
+ssl-set-email = root@localhost
+ssl-config-sslvhost = Y
+db-backend=postgresql
+db-name=spaceschema1
+db-user=spaceuser
+db-password=spacewalk
+db-host=host
+db-port=5432
+db-protocol=TCP
+enable-tftp=Y
+}}}
+
 After {{{spacewalk-setup}}} is complete your application is ready to go!
 '''Be sure to use the FQDN of the host when you connect.'''
 
