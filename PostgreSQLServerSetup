@@ -43,5 +43,11 @@ Please note that you will want the TCP connection allowed as well because the JD
 If you want to have the database on a separate box you will likely need to change this line in pg_hba.conf from 127.0.0.1/8 to something else:
 
 {{{
-host  spaceschema spaceuser 192.168.0.0/16 md5
+host  spaceschema spaceuser 127.0.0.1/8 md5
+}}}
+
+and also to add line to /var/lib/pgsql/data/postgresql.conf 
+
+{{{
+listen_addresses = '*'
 }}}
