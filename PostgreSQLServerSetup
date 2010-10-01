@@ -39,3 +39,9 @@ PGPASSWORD=spacepw psql -h localhost -a -U spaceuser spaceschema
 }}}
 
 Please note that you will want the TCP connection allowed as well because the JDBC driver cannot use the Unix domain socket. So even if the Python and Perl stack will use the Unix domain socket if you do not specify the hostname, JDBC will still go to localhost via TCP.
+
+If you want to have the database on a separate box you will likely need to change this line in pg_hba.conf from 127.0.0.1/8 to something else:
+
+{{{
+host  spaceschema spaceuser 192.168.0.0/16 md5
+}}}
