@@ -238,8 +238,8 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
 
 
 
- * /network/systems/ssm/misc/pkg_prof_update_conf.pxt '''(Patch pending)'''
- * /network/systems/ssm/index.pxt  '''(Patch submitted to devel list, Sep 10)'''
+ * /network/systems/ssm/misc/pkg_prof_update_conf.pxt '''Ported to Java'''
+ * /network/systems/ssm/index.pxt  '''Ported to Java'''
  * /network/systems/ssm/groups/alter_membership_conf.pxt
  * /network/systems/ssm/groups/index.pxt
  * /network/systems/ssm/groups/create.pxt
@@ -258,7 +258,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/errata/systems_affected.pxt
  * /network/systems/ssm/errata/apply_errata_conf.pxt
  * /network/systems/ssm/errata/index.pxt
- * /network/systems/ssm/system_list.pxt
+ * /network/systems/ssm/system_list.pxt   '''Ported to Java'''
  * /network/systems/ssm/patches/remove_conf.pxt
  * /network/systems/ssm/patches/remove.pxt
  * /network/systems/ssm/patches/install_conf.pxt
