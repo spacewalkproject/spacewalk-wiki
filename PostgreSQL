@@ -9,8 +9,10 @@ This is a page describing the status of the PostgreSQL support as of 12st August
 
 == Oracle dependencies ==
 Please note that you still need to download and install the below Oracle distributed RPMs. These packages are used for the monitoring functionality in Spacewalk, where you may monitor an Oracle database using monitoring probes.
- oracle-instantclient-basic-10.2.0.4-1
- oracle-instantclient-sqlplus-10.2.0.4-1
+{{{
+oracle-instantclient-basic-10.2.0.4-1
+oracle-instantclient-sqlplus-10.2.0.4-1
+}}}
 For more information on how to install these dependencies please visit the [OracleXeSetup Oracle 10g Express Edition Setup].
 
 == Yum configuration ==
@@ -64,7 +66,10 @@ Follow [wiki:PostgreSQLServerSetup].
 
 == Install the spacewalk-postgresql and configure it ==
 
-When installing Spacewalk, you install either {{{spacewalk-oracle}}} or {{{spacewalk-postgresql}}} which should give you correct backend and dependencies. To use PostgreSQL backend, install {{{spacewalk-postgresql}}}.
+When installing Spacewalk, you install {{{spacewalk-postgresql}}} which should give you correct backend and dependencies.
+{{{
+# yum install spacewalk-postgresql
+}}}
 
 Then, when you run {{{spacewalk-setup}}}, you'll be asked for connection information:
 
