@@ -10,7 +10,7 @@ This is a page describing the status of the PostgreSQL support as of 12st August
 == Yum configuration ==
 Below is different yum configurations to use.
 
-===For RHEL 5===
+=== For RHEL 5 ===
 The setup as decribed below will work on RHEL 5
 {{{
 cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
@@ -24,7 +24,7 @@ gpgcheck=0
 EOF
 }}}
 
-===For Fedora 12===
+=== For Fedora 12 ===
 The setup as decribed below will work on Fedora 12
 {{{
 cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
@@ -38,7 +38,7 @@ gpgcheck=0
 EOF
 }}}
 
-===For Fedora 13===
+=== For Fedora 13 ===
 The setup as decribed below will work on Fedora 13
 {{{
 cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
