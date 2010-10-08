@@ -1,5 +1,18 @@
 == Issue ==
-Customers during a reprovision will encounter a duplicate system profile getting created in their spacewalk instance eating up a management entitlement + leaving a dead system. This can become very unmanageable for example when several machines are reprovisioned through PXE or standard boot causing several duplicate system profiles.  
+Customers during a reprovision will encounter a duplicate system profile getting created in their spacewalk instance eating up a management entitlement + leaving a dead system. This can become very unmanageable for example when several machines are reprovisioned through PXE or standard boot causing several duplicate system profiles.
+
+== Implementation Summary ==
+
+ * Added UI detection of duplicates by:
+  * Mac address, IP address, Hostname[[BR]]
+    If these match for multiple profiles, they're probably duplicates
+ * Duplicate prevention during day-to-day workflow
+  * Kickstarting through Spacewalk/Satellite's UI automatically reuses existing profiles if applicable
+  * If detected that system is already registered (has a systemid) the server will issue a reactivation key automatically
+  * System details tab has a new '''''Spacewalk Profile''''' option
+   * Reconnected to existing profile (the default behavioral option)
+   * Delete existing profile (i.e., replace it)
+   * Leave old profile in place and make a duplicate (i.e., the old behavior)
 
 == Implementation Notes ==
  * Have the kickstart script send the system id in a pre script and store the returned reactivation key in a file and during a post script send that reactivation key along with rhnreg_ks. This will work for bare metal provisioning cases.
