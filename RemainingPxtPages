@@ -202,7 +202,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/proxy/configure.pxt
  * /network/systems/details/proxy/install.pxt
  * /network/systems/details/connection.pxt
- * /network/systems/details/delete_confirm.pxt
+ * /network/systems/details/delete_confirm.pxt '''Ported to Java'''
  * /network/systems/details/proxy.pxt
  * /network/systems/details/deactivate_satellite_confirm.pxt
  * /network/systems/details/kickstart/missing_packages.pxt
