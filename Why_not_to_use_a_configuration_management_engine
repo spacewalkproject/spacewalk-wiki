@@ -4,7 +4,7 @@ Here's my two cents.
 Most of the configuration management engines use yet another
 language to the ones already used in Spacewalk/Satellite. Puppet for
 example uses ruby. Support would mean learning yet another language,
-creating more library's, etc. I thought we where trying to reduce
+creating more libraries, etc. I thought we where trying to reduce
 the amount of languages?
 
 = Conflicts =
