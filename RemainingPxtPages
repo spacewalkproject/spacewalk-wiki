@@ -146,7 +146,7 @@ These don't seem to be even used anymore except by each other?????
 
 ==== Custom info ====
  * /network/systems/custominfo/edit.pxt
- * /network/systems/custominfo/index.pxt
+ * /network/systems/custominfo/index.pxt '''Ported to Java'''
  * /network/systems/custominfo/delete.pxt
 
 ==== System Group management ====
