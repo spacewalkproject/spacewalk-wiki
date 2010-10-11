@@ -145,9 +145,9 @@ These don't seem to be even used anymore except by each other?????
  * /network/systems/provisioning/preservation/preservation_list.pxt
 
 ==== Custom info ====
- * /network/systems/custominfo/edit.pxt
+ * /network/systems/custominfo/edit.pxt '''Patch Pending'''
  * /network/systems/custominfo/index.pxt '''Ported to Java'''
- * /network/systems/custominfo/delete.pxt
+ * /network/systems/custominfo/delete.pxt '''Patch Pending'''
 
 ==== System Group management ====
  * /network/systems/groups/admin_list.pxt
