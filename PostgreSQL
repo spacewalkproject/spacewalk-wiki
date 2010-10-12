@@ -66,7 +66,6 @@ Of course, we might as well just rewrite all these anonymous PL/SQL snippets to 
 === TODO ===
 
  * The types are not used at all.
- * ~~ We should check if the function already exists and not create it again.~~ Fixed in spacewalk-backend-1.2.2-1.
  * Do the same for Perl stack once needed.
  * The function creation could probably be done by some PL/pgSQL function, so that we don't duplicate the code between Python and Perl.
 
