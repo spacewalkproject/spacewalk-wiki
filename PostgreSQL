@@ -77,11 +77,8 @@ For PL/SQL, use [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h
 
 For Hibernate, it should just work.
 
-The [wiki:PostgreSQL/Blobs blob issue] was resolved with spacewalk-java-1.1.33.
-
 === TODO ===
 
- * ~~Fix the [wiki:PostgreSQL/Blobs] issue.~~
  * Address any issues after that.
 
 == Oracle dependencies ==
