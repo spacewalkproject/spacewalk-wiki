@@ -38,7 +38,7 @@ Password?
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
 
-Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both. Also note that {{{postgres/manual/}}} is probably not needed -- I was tempted to remove it completely but I left it for now, in case people thought there were some pearls of wisdom there. But it will be gone in a week or so unless you stop me.
+Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both.
 
 === TODO ===
 
