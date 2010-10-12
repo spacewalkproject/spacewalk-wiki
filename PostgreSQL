@@ -34,10 +34,6 @@ Password?
 ** Database: Populating database.
 }}}
 
-=== TODO ===
-
- * ~~We should Require {{{postgresql}}} in {{{spacewalk-postgresql}}} to get {{{psql}}} installed even if the PostgreSQL server is on another box. This setup needs to be verified anyway -- I only tried local setup.~~ Resolved in spacewalk-postgresql-1.1.6-1.
-
 == Database schema ==
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
