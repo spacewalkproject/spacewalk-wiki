@@ -5,60 +5,11 @@
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In an attempt to make the whole Spacewalk project use open source software, we'd like to add support for PostgreSQL as database backend. For Spacewalk 0.6, quite a lot of work went into Spacewalk schema changes to make the schema PostgreSQL compatible. Unfortunately, little effort was made to make those changes and the whole PostgreSQL support sustainable.
 
-This is a page describing the status of the PostgreSQL support as of 12st August 2010, the nightly composes.
-
-== Oracle dependencies ==
-Please note that you still need to download and install the below Oracle distributed RPMs. These packages are used for the monitoring functionality in Spacewalk, where you may monitor an Oracle database using monitoring probes.
-{{{
-oracle-instantclient-basic-10.2.0.4-1
-oracle-instantclient-sqlplus-10.2.0.4-1
-}}}
-For more information on how to install these dependencies please visit the [OracleXeSetup Oracle 10g Express Edition Setup].
+This is a page describing the status of the PostgreSQL support as of 12th October 2010, the nightly composes.
 
 == Yum configuration ==
-Below is different yum configurations to use.
 
-=== For RHEL 5 ===
-The setup as decribed below will work on RHEL 5
-{{{
-cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
-[spacewalk]
-name=Spacewalk
-# RHEL 5
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-1.2/$basearch/os
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=0
-EOF
-}}}
-
-=== For Fedora 12 ===
-The setup as decribed below will work on Fedora 12
-{{{
-cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
-[spacewalk]
-name=Spacewalk
-# Fedora 12
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f12/server/spacewalk-f12-1.2/$basearch/os
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=0
-EOF
-}}}
-
-=== For Fedora 13 ===
-The setup as decribed below will work on Fedora 13
-{{{
-cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
-[spacewalk]
-name=Spacewalk
-# Fedora 13
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-1.2/$basearch/os/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
-enabled=1
-gpgcheck=0
-EOF
-}}}
+Please use the Spacewalk nightly repos as described at [wiki:HowToInstall#Nightlybuilds].
 
 == Get the PostgreSQL server running ==
 
@@ -137,6 +88,10 @@ The [wiki:PostgreSQL/Blobs blob issue] was resolved with spacewalk-java-1.1.33.
 
  * ~~Fix the [wiki:PostgreSQL/Blobs] issue.~~
  * Address any issues after that.
+
+== Oracle dependencies ==
+
+The Oracle bits are no longer needed to install Spacewalk with PostgreSQL backend.
 
 == Spacewalk installed and running, go hack ==
 
