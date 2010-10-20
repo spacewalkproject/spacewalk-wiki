@@ -134,6 +134,8 @@ vi /etc/yum.conf
 exclude=cobbler-web
 }}}
 
+There is a workaround to be able to install cobbler-web and use it alongside Spacewalk.  Instructions can be found [CobblerWebWorkaround here].
+
 = Installing Spacewalk =
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
