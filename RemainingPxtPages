@@ -145,15 +145,15 @@ These don't seem to be even used anymore except by each other?????
  * /network/systems/provisioning/preservation/preservation_list.pxt
 
 ==== Custom info ====
- * /network/systems/custominfo/edit.pxt '''Patch Pending'''
+ * /network/systems/custominfo/edit.pxt '''Ported to Java'''
  * /network/systems/custominfo/index.pxt '''Ported to Java'''
- * /network/systems/custominfo/delete.pxt '''Patch Pending'''
+ * /network/systems/custominfo/delete.pxt '''Ported to Java'''
 
 ==== System Group management ====
  * /network/systems/groups/admin_list.pxt
  * /network/systems/groups/edit_properties.pxt
  * /network/systems/groups/errata_list.pxt
- * /network/systems/groups/create.pxt
+ * /network/systems/groups/create.pxt ''Ported to Java'''
  * /network/systems/groups/delete_confirm.pxt
  * /network/systems/groups/details.pxt
  * /network/systems/groups/probe_list.pxt
@@ -188,10 +188,10 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/notes/edit.pxt '''(2010-08-13 Converted to Java)'''
  * /network/systems/details/notes/delete_note_conf.pxt '''(2010-08-13 Converted to Java)'''
  * /network/systems/details/notes/notes_list.pxt '''(2010-08-13 Converted to Java)'''
- * /network/systems/details/custominfo/edit.pxt
- * /network/systems/details/custominfo/remove_value_conf.pxt
- * /network/systems/details/custominfo/new_value.pxt
- * /network/systems/details/custominfo/index.pxt
+ * /network/systems/details/custominfo/edit.pxt '''Ported to Java'''
+ * /network/systems/details/custominfo/remove_value_conf.pxt '''Ported to Java'''
+ * /network/systems/details/custominfo/new_value.pxt '''Ported to Java'''
+ * /network/systems/details/custominfo/index.pxt '''Ported to Java'''
  * /network/systems/details/channel_license.pxt
  * /network/systems/details/proxy-clients.pxt
  * /network/systems/details/remote_commands.pxt
