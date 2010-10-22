@@ -332,6 +332,6 @@ On PG there is a possibility to do {{{ SELECT ... }}} without any table. We have
 
 ERROR: missing FROM-clause entry for table "tablename"
 
-The nextval syntax in different on both platforms. We have defined global function {{{nextval('sequence_name')}}} that works on both platforms.
+The nextval syntax in different on both platforms. We have defined global function {{{sequence_nextval('sequence_name')}}} that works on both platforms. In some cases the explicit sequence insert can be removed at all which is preferred solution.
 
 EX: f2153167da508852183501f320c2e71c08a0441c
