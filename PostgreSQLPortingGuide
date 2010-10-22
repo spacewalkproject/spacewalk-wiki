@@ -4,7 +4,60 @@ On this page we are going to collect all valuable information that can help with
 
 === General rules ===
 
+* Setup two testing scenarios prior to fixing any errors
+ * spacewalk nightly on Oracle
+ * spacewalk nightly on PostgreSQL
+* Always fix only one problem and then test on both
+* Turning on detailed logging is a really good idea:
+ * {{{sed -i 's/^#*hibernate.show_sql=true.*$/hibernate.show_sql=true/' /etc/rhn/default/rhn_hibernate.conf}}}
+ * {{{echo "debug = 5" >> /etc/rhn/rhn.conf}}}
+ * {{{echo "log_statement = 'all'" >> /var/lib/pgsql/data/postgresql.conf}}}
+* The most valuable log file is the postgresql.conf (you have to turn on the logging - see above). You will likely see all database related errors there.
+* Checkout these logs:
+ * /var/lib/pgsql/data/pg_log/postgresql-$(date +%a).log
+ * /var/log/tomcat5/catalina.out
+ * /var/log/httpd/error_log
+ * /var/log/rhn/*log
+
+We use some shortcuts on this pages: ORA = Oracle, PG = PostgreSQL, ERROR = typical error, EX = example git commits with more examples.
+
 === Problems and how to solve it ===
+
+==== JOIN in ANSI syntax ====
+
+ERROR: syntax error at or near ")" at character
+
+We need to rewrite all DML SQL to syntax which is accepted by both Oracle and PostgreSQL. In our codebase we use Oracle outer join syntax:
+
+{{{
+SELECT ...
+ FROM ROM rhnChannel {c}, rhnChannelCloned c_1_
+WHERE c.id = c_1_.id (+)
+}}}
+
+This needs to be rewritten to ANSI:
+
+{{{
+SELECT ...
+ FROM rhnChannel {c}
+  LEFT OUTER JOIN rhnChannelCloned c_1_ ON c.id = c_1_.id
+}}}
+
+This is the same for right outer joins. Inner joins works okay in both Oracle and PostgreSQL so we do not want to rewrite these. This is the same in Hibernate, direct queries, PLSQL/PgSQL, backend and web.
+
+EX: 0b1f33ff900514a03485aa8058b8b277b0d6c66e
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
 
 ==== Procedure call from Hibernate ====
 
@@ -30,4 +83,79 @@ in Hibernate. We need to use the portable form of
  </callable-mode>
 }}}
 
-which is translated to both PostgreSQL and Oracle in a proper way. If you need to call a function (returning a value) then use {{{{ :arch = call lookup_package_arch( :label ) }}}}. See examples 73a318ccd254d4abd16ee40f2913dc183f652f8e or 6e7e07a9055e809ca8994254d8d2ce1e3c4851fd for more info. 
+which is translated to both PostgreSQL and Oracle in a proper way. If you need to call a function (returning a value) then use {{{{ :arch = call lookup_package_arch( :label ) }}}}.
+
+EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e 6e7e07a9055e809ca8994254d8d2ce1e3c4851fd
+
+==== Unnecessary ORDER BY in DISTINCT ====
+
+ERROR:
+
+If you see unnecessary ORDER BY in DISTINCT, remove it. It works in ORA but not in PG.
+
+EX: 263859eb85c9aa56d3707d7cfc808c162be1493b
+
+==== Composite type accessing ====
+
+In PG you have to use braces when accessing a composite type.
+
+EX: 6a511109bde9ef84c3dd9d6dc98c9635acf5765b
+
+==== Concatenating of evr ====
+
+ERROR: DECODE not found...
+
+We often concatenate package evr in many places using this SQL construct
+
+{{{
+... (latest.evr).version || '-' || (latest.evr).release || DECODE((latest.evr).epoch, NULL, '', ':' || (latest.evr).epoch) || (CASE WHEN latest.arch_id IS NULL THEN '' ELSE '.' || latest.arch_label END) ...
+}}}
+
+There is a function that do the same {{{... evr_t_as_vre_simple(PE.evr) ...}}} but please double check the concatenation being replaced is very same. By replacing we got rid of the DECODE function that wont work on PostgreSQL.
+
+EX: 4f9ee9ff1b5d536178d106d4f1541396bf899be5
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
+====  ====
+
