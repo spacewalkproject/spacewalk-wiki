@@ -85,4 +85,4 @@ You will see some error popups, but you will at least have something to click at
 
 == Migration ==
 
-On the page [wiki:PostgreSQLMigration] we are going to collect all known problems and solutions handy for porting to PostgreSQL.
+On the page [wiki:PostgreSQLPortingGuide] we are going to collect all known problems and solutions handy for porting to PostgreSQL.
