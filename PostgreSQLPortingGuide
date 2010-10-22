@@ -1,0 +1,33 @@
+== PostgreSQL Porting Guide ==
+
+On this page we are going to collect all valuable information that can help with porting our codebase to PostgreSQL. You will find description of all problems with links into Git with example solutions on the page.
+
+=== General rules ===
+
+=== Problems and how to solve it ===
+
+==== Procedure call from Hibernate ====
+
+We cannot call stored procedure in the form
+
+{{{
+<callable-mode name="oai_customer_sync">
+   <query params="org_id">
+    begin
+    XXRH_OAI_WRAPPER.sync_customer(:org_id);
+    end;
+   </query>
+ </callable-mode>
+}}}
+
+in Hibernate. We need to use the portable form of
+
+{{{
+<callable-mode name="oai_customer_sync">
+   <query params="org_id">
+    { call XXRH_OAI_WRAPPER.sync_customer(:org_id) }
+   </query>
+ </callable-mode>
+}}}
+
+which is translated to both PostgreSQL and Oracle in a proper way. If you need to call a function (returning a value) then use {{{{ :arch = call lookup_package_arch( :label ) }}}}. See examples 73a318ccd254d4abd16ee40f2913dc183f652f8e or 6e7e07a9055e809ca8994254d8d2ce1e3c4851fd for more info. 
