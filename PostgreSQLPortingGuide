@@ -4,24 +4,82 @@ On this page we are going to collect all valuable information that can help with
 
 === General rules ===
 
-* Setup two testing scenarios prior to fixing any errors
- * spacewalk nightly on Oracle
- * spacewalk nightly on PostgreSQL
-* Always fix only one problem and then test on both
-* Turning on detailed logging is a really good idea:
- * {{{sed -i 's/^#*hibernate.show_sql=true.*$/hibernate.show_sql=true/' /etc/rhn/default/rhn_hibernate.conf}}}
- * {{{echo "debug = 5" >> /etc/rhn/rhn.conf}}}
- * {{{echo "log_statement = 'all'" >> /var/lib/pgsql/data/postgresql.conf}}}
-* The most valuable log file is the postgresql.conf (you have to turn on the logging - see above). You will likely see all database related errors there.
-* Checkout these logs:
- * /var/lib/pgsql/data/pg_log/postgresql-$(date +%a).log
- * /var/log/tomcat5/catalina.out
- * /var/log/httpd/error_log
- * /var/log/rhn/*log
+  * Setup two testing scenarios prior to fixing any errors
+    * spacewalk nightly on Oracle
+    * spacewalk nightly on PostgreSQL
+  * Always fix only one problem and then test on both
+  * Turning on detailed logging is a really good idea:
+    * {{{sed -i 's/^#*hibernate.show_sql=true.*$/hibernate.show_sql=true/' /etc/rhn/default/rhn_hibernate.conf}}}
+    * {{{echo "debug = 5" >> /etc/rhn/rhn.conf}}}
+    * {{{echo "log_statement = 'all'" >> /var/lib/pgsql/data/postgresql.conf}}}
+  * The most valuable log file is the postgresql.conf (you have to turn on the logging - see above). You will likely see all database related errors there.
+  * Checkout these logs:
+    * /var/lib/pgsql/data/pg_log/postgresql-$(date +%a).log
+    * /var/log/tomcat5/catalina.out
+    * /var/log/httpd/error_log
+    * /var/log/rhn/*log
+  * If you edit a file in schema/spacewalk/oracle you need to "synchronize" the counterpart in schema/spacewalk/postgres and make sure the oracle equivalent source header has the correct sha1sum of the oracle part. There is an automatic check that verifies all sha1 values. Example: {{{--- oracle equivalent source sha1 de23851fb6217e6b57baf09fabe5c0e2e41f15b6}}}
+  * For synchronizing SQL files we recommend Meld tool (or any other nice diff) because the PLSQL and PgSQL syntax is very similar. Its also a good learning tool if you are not sure about PLSQL or PgSQL syntax.
 
-We use some shortcuts on this pages: ORA = Oracle, PG = PostgreSQL, ERROR = typical error, EX = example git commits with more examples.
+We use some shortcuts on the page:
+ * ORA = Oracle
+ * PG = PostgreSQL
+ * ERROR = the most important part of the typical error in general form
+ * EXAMPLE = an example error
+ * EX = example git commits links
 
 === Problems and how to solve it ===
+
+Please note the example git commit links are from 2010-10-01 to 2010-10-22.
+
+==== The VARCHAR-NULL problem ====
+
+ERROR: new row for relation "tablename" violates check constraint "vn_tablename_columnname"
+
+EXAMPLE: new row for relation "rhnservernetinterface" violates check constraint "vn_rhnservernetinterface_broadcast"
+
+This is probably the most common issue we are facing to. On ORA the empty varchars are treated as NULLS. On PG the empty VARCHAR is not equivalent to NULL.
+
+The solution is to avoid inserting empty varchars from the database at all. For each nullable varchar we have created a constraint that will check it (a1efdb099baafd8b71680bf55d99545244ffb1e0). All these constraints starts with "vn_" as in VARCHAR-NULL. If you see the above example error you are home.
+
+In our Java code we have created an Hibernate Interceptor (22df0ce35498a3a98f3685305ba892ba18d07c0c) that checks for empty varchars and issues WARNINGs in the Catalina.log when such a field is found. It can be also configured to convert empty varchars to NULLs automatically. It has been configured to do so. The interceptor will be switched off in the future.
+
+If you see a warning in form of 'Object XY is setting empty string on' then you should fix the java code (probably some HTML form) trying to save empty string in the varchar. This should be changed to NULL.
+
+EX: f73476582d8243ec6f5539ad93b9e923f76e06d7 a966e661d27742687e28b4c2fa7c21c4716743d8 d62c91f85775663f3e007d69ec23e173ac8ad818 eedebc4a67de4369bd4bcdd3af558f5bb541facc
+
+==== The DECODE/NVL2 functions problem ====
+
+ERROR: function decode(...) does not exist
+ERROR: function nvl2(...) does not exist
+
+EXAMPLE: function decode(character, unknown, integer, unknown, integer) does not exist
+
+Either DECODE or NVL2 functions do not exist on PG. The fix is to rewrite the statement in CASE ... WHEN ANSI syntax that works on both platforms. Example:
+
+{{{
+... DECODE(column, 1, 'YES', 0, 'NO') ...
+}}}
+
+Must be rewritten as
+
+{{{
+... CASE column WHEN 1 THEN 'YES' WHEN 0 THEN 'NO' END
+}}}
+
+Do not forget the END keyword.
+
+EX: 7d337c4d88e4057d542601e2fb48099557e13e05 f5ef2d83a72b8f4150f17477664ef75d21e45392 3a97bffade6be5edbc399e775ab861a1bd29e02e 5b75844f6410373232f8001686530cbdb2795489
+
+==== The NVL function problem ====
+
+ERROR: function nvl(...) does not exist
+
+EXAMPLE: function nvl(integer, integer) does not exist
+
+The NVL function does not exist on PG and we have defined one: {{{NVL(VARCHAR, VARCHAR)}}}. This is the only one that will work on both platforms. For all other cases you need to replace it with COALESCE function that do the same job on both platforms.
+
+EX: b9d3b3f2d8e09fd0a1d130e31f5c98280269cadf
 
 ==== JOIN in ANSI syntax ====
 
@@ -45,19 +103,91 @@ SELECT ...
 
 This is the same for right outer joins. Inner joins works okay in both Oracle and PostgreSQL so we do not want to rewrite these. This is the same in Hibernate, direct queries, PLSQL/PgSQL, backend and web.
 
-EX: 0b1f33ff900514a03485aa8058b8b277b0d6c66e
+EX: 0b1f33ff900514a03485aa8058b8b277b0d6c66e 126169e289ea91f06960cfdb3dc408961ee10d02 
 
-====  ====
+==== SELECT column AS alias ====
 
-====  ====
+ERROR: "alias" does not exist
 
-====  ====
+EXAMPLE: "name" does not exist
 
-====  ====
+In ORA you can skip AS keyword in column alias definition but PG needs it. We need to add AS keywords in {{{SELECT col AS alias...}}} constructs.
 
-====  ====
+EX: 9296d280982ef8f17815a05fbbb2e98474949da0
 
-====  ====
+==== Default cast to integer ====
+
+ERROR: com.redhat.rhn.common.util.MethodNotFoundException: Could not find method called: xxx in class: yyy with params: [type: ttt, value: n]
+
+EXAMPLE: com.redhat.rhn.common.util.MethodNotFoundException: Could not find method called: setSelectable in class: com.redhat.rhn.frontend.dto.SystemOverview with params: [type: java.lang.Integer, value: 1]
+
+The PG server casts numbers to INTEGER but ORA casts to NUMERIC. In Java INTEGER is mapped to Integer class and NUMERIC to Long class. Unfortunately wrapping classes are not subject of implicit type conversion and our code is trying to call method with incorrect parameter.
+
+In this case the error message tells us everything we need. We need to create new method SystemOverview.setSelectable(Integer param) and just delegate call to setSelectable(Long) method using explicit type conversion. Always do explicit type conversion and do not rely on boxing/unboxing to prevent endless loop.
+
+Please note you might want to explicitely cast in the SQL using CAST (x AS BIGINT) to solve this but the preferred solution is to fix this in Java. It seems Python and Perl have no problems with it since they recast it properly. You may see such commits (f65e7c6932b4a7024f30d0db1ec81975c2ce57dc) but they was fixed in the proper way later on.
+
+EX: c2fda0ad08ff8c7c637eae6a36cf28940f8bda1a 203a68650582ba695a8b730bb8c4be39c199a155
+
+==== The sysdate problem ====
+
+ERROR: column "sysdate" does not exist at character XX
+
+On ORA we use DATE for columns with dates but on PG we use TIMESTAMP WITH TIMEZONE. On ORA the sysdate function returns current date. On PG there is no such function and since we use the timestamp we need to use current_timestamp. Fortunately this is an ANSI function and it works also on ORA but it has some drawbacks.
+
+When we insert a value into table with DATE/TIMESTAMP columns its ok to use it since on ORA the proper date is inserted (and on PG as well). If you run into this problem you can just replace the function call and test if everything is ok.
+
+If this function is used in WHERE clauses in a simple comparsion ({{{ col1 < current_timestamp OR col2 > current_timestamp}}}) this is also ok and it works on both platforms but please make sure the column type is DATE/TIMESTAMP on ORA or PG respectively.
+
+If there is any date/time arithmetics (operators plus/minus, function calls) you cannot simply replace sysdate with current_timestamp. Please see other recepies on this page (Date arithmetics) for more info.
+
+EX: 25fcd0c602946d676ab1b070a64ceba072e214d3 d72a4c04b6d0c6659a89093e5a8c52488db1ad61 aaee1dd0f369ac11476a7af3bd4acd82f63aa089
+
+==== Date arithmetics ====
+
+ERROR: ???
+
+On ORA we use DATE for columns with dates but on PG we use TIMESTAMP WITH TIMEZONE. In the current codebase there are many places where numbers or intervals are being added or substracted from dates (timestamps in PG). This wont work on PG as there are no such operators defined and its not easy to define them in a portable form.
+
+Which function to use depends on what you need as a result:
+  * number of days -> date_diff_in_days (typical scenario is {{{somedate - no_of_days}}})
+  * date -> numtodsinterval (typical scenario is {{{something < somedate - something_else}}})
+
+Please note when using numtodsinterval it currently only accepts the second parameter set to 'second' (as in time not as in counting) for now. So you need to recompute the input value to seconds. For this you need to know first in which scale is the input parameter. Is it in days, months, years or seconds?
+
+Two examples:
+
+{{{
+ select date_column - no_of_days as number_of_days_until_expiration from ...
+}}}
+
+We obviously expect number of days se we rewrite to
+
+{{{
+ select date_diff_in_days(somedate, no_of_days) as number_of_days_until_expiration from ...
+}}}
+
+In this example date vs date are compared:
+
+{{{
+ select ... where column > sysdate - :age
+}}}
+
+After finding out that :age parameter is given in days we can multiply by 86400 and do the timestamptz vs timestamptz comparsion:
+
+{{{
+ select ... where column > current_timestamp - numtodsinterval(:age * 86400, 'second')
+}}}
+
+EX: e43029294891b49940b5c75ddc01227280b89b08 b9dc390cb5101a391f424bd0a5a873076cd7e4b5 93fd4371dfb524b0e9a9e4e9a01b81a9843d4aa3 1959728caebe5c88b0563dc5276f5f8b27128cc5
+
+==== Triggers must return something ====
+
+ERROR: control reached end of trigger procedure without RETURN
+
+In PG all triggers must return record (the "new" in most cases) or null.
+
+EX: 19e1daa3bb5b236e777adb4afce8fe263bda2390
 
 ==== Procedure call from Hibernate ====
 
@@ -89,11 +219,11 @@ EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e 6e7e07a9055e809ca8994254d8d2ce1e3c4
 
 ==== Unnecessary ORDER BY in DISTINCT ====
 
-ERROR:
+ERROR: ???
 
 If you see unnecessary ORDER BY in DISTINCT, remove it. It works in ORA but not in PG.
 
-EX: 263859eb85c9aa56d3707d7cfc808c162be1493b
+EX: 263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df
 
 ==== Composite type accessing ====
 
@@ -115,46 +245,93 @@ There is a function that do the same {{{... evr_t_as_vre_simple(PE.evr) ...}}} b
 
 EX: 4f9ee9ff1b5d536178d106d4f1541396bf899be5
 
-====  ====
+==== Global function evr_t_as_vre_simple ====
 
-====  ====
+ERROR: cross-database references are not implemented: pe.evr.as_vre_simple
 
-====  ====
+Composite types has no member functions and the fix is really straightforward here. Replace 
 
-====  ====
+{{{
+... PE.evr.as_vre_simple() ...
+}}}
 
-====  ====
+with global function
 
-====  ====
+{{{
+... evr_t_as_vre_simple(PE.evr) ...
+}}}
 
-====  ====
+EX: add2a44a2493b877b1a2f869a0d958c706def207 6b4dccb40b9c5b99579b1246623f1afc2db1b1b4
 
-====  ====
+==== No anonymous transactions ====
 
-====  ====
+ERROR: syntax error at or near "autonomous_transaction" at character 
 
-====  ====
+In PG you cannot write
 
-====  ====
+{{{
+declare
+ pragma autonomous_transaction;
+begin
+ -- sql commands
+ commit;
+end;
+}}}
 
-====  ====
+you need to rewrite it into single command(s):
 
-====  ====
+{{{
+ -- sql commands
+}}}
 
-====  ====
+EX: eca6fe0fb34bbea9595527f51e743221ece5e275
 
-====  ====
+==== ORDER BY out of SELECT DISTINCT ====
 
-====  ====
+ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
 
-====  ====
+ERROR: column "xxx" does not exist
 
-====  ====
+Expressions {{{SELECT DISTINCT xxx ... ORDER BY xxx}}} must be enclosed as subselects as PG does not support this. See the commit diffs that shows it in a very nice form.
 
-====  ====
+EX: 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd ec72a2b5fbaad1cf6b684d635b89cc38cf7ebe13 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd 7c754a2ee91ab182808dba4fc718767c92cd5f3d
 
-====  ====
+==== NUMBER to NUMERIC ====
 
-====  ====
+Since ORA NUMBER is NUMERIC in PG we heed to replace these. All DDL were already fixed but you will find these usually in PLSQL/PgSQL.
 
-====  ====
+EX: dacafca6ba2b1d2a2f90ec07864187c69f013791
+
+==== Calling procedures ====
+
+To call a procedure on ORA we use something like
+
+{{{
+BEGIN
+ package.proc(...);
+END;
+}}}
+
+and this wont work on PG. For functions that does not return anything (VOID) use simple
+
+{{{
+ perform package.proc(...);
+}}}
+
+and for functionts that returns something you have to use
+
+{{{
+ select package.proc(...);
+}}}
+
+==== DUAL table ====
+
+On PG there is a possibility to do {{{ SELECT ... }}} without any table. We have created a fake DUAL table so you can do {{{ SELECT ... FROM DUAL }}} on both platforms.
+
+==== Portable nextval ====
+
+ERROR: missing FROM-clause entry for table "tablename"
+
+The nextval syntax in different on both platforms. We have defined global function {{{nextval('sequence_name')}}} that works on both platforms.
+
+EX: f2153167da508852183501f320c2e71c08a0441c
