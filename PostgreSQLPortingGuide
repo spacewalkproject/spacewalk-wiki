@@ -55,7 +55,11 @@ ERROR: function nvl2(...) does not exist
 
 EXAMPLE: function decode(character, unknown, integer, unknown, integer) does not exist
 
-Either DECODE or NVL2 functions do not exist on PG. The fix is to rewrite the statement in CASE ... WHEN ANSI syntax that works on both platforms. Example:
+Either DECODE or NVL2 functions do not exist on PG. The fix is to rewrite the statement in CASE ... WHEN ANSI syntax that works on both platforms.
+
+Please note empty VARCHARS are not permitted to be inserted in the database. We have constraints for that, its not possible to do.
+
+Example:
 
 {{{
 ... DECODE(column, 1, 'YES', 0, 'NO') ...
@@ -77,7 +81,7 @@ ERROR: function nvl(...) does not exist
 
 EXAMPLE: function nvl(integer, integer) does not exist
 
-The NVL function does not exist on PG and we have defined one: {{{NVL(VARCHAR, VARCHAR)}}}. This is the only one that will work on both platforms. For all other cases you need to replace it with COALESCE function that do the same job on both platforms.
+The NVL function does not exist on PG and we have defined one: {{{NVL(VARCHAR, VARCHAR)}}}. This is the only one that will work on both platforms so if you have two VARCHARs you must use NVL (no change here) because of empty varchars problem (see above). For all other cases you need to replace it with COALESCE function that do the same job on both platforms.
 
 EX: b9d3b3f2d8e09fd0a1d130e31f5c98280269cadf
 
@@ -150,7 +154,7 @@ ERROR: ???
 On ORA we use DATE for columns with dates but on PG we use TIMESTAMP WITH TIMEZONE. In the current codebase there are many places where numbers or intervals are being added or substracted from dates (timestamps in PG). This wont work on PG as there are no such operators defined and its not easy to define them in a portable form.
 
 Which function to use depends on what you need as a result:
-  * number of days -> date_diff_in_days (typical scenario is {{{somedate - no_of_days}}})
+  * number of days -> date_diff_in_days (typical scenario is {{{somedate - otherdate}}})
   * date -> numtodsinterval (typical scenario is {{{something < somedate - something_else}}})
 
 Please note when using numtodsinterval it currently only accepts the second parameter set to 'second' (as in time not as in counting) for now. So you need to recompute the input value to seconds. For this you need to know first in which scale is the input parameter. Is it in days, months, years or seconds?
@@ -158,13 +162,13 @@ Please note when using numtodsinterval it currently only accepts the second para
 Two examples:
 
 {{{
- select date_column - no_of_days as number_of_days_until_expiration from ...
+ select date_column - otherdate as number_of_days_until_expiration from ...
 }}}
 
 We obviously expect number of days se we rewrite to
 
 {{{
- select date_diff_in_days(somedate, no_of_days) as number_of_days_until_expiration from ...
+ select date_diff_in_days(somedate, otherdate) as number_of_days_until_expiration from ...
 }}}
 
 In this example date vs date are compared:
@@ -215,13 +219,21 @@ in Hibernate. We need to use the portable form of
 
 which is translated to both PostgreSQL and Oracle in a proper way. If you need to call a function (returning a value) then use {{{{ :arch = call lookup_package_arch( :label ) }}}}.
 
+Also please note that in the example above the XXRH_OAI_WRAPPER is not a package in PG but schema. We use schemas to "simulate" packages from ORA.
+
 EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e 6e7e07a9055e809ca8994254d8d2ce1e3c4851fd
 
 ==== Unnecessary ORDER BY in DISTINCT ====
 
-ERROR: ???
+ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
 
-If you see unnecessary ORDER BY in DISTINCT, remove it. It works in ORA but not in PG.
+If you see unnecessary ORDER BY in DISTINCT, remove it. It works in ORA but not in PG. Example:
+
+{{{
+select distinct * from rhnchannel
+order by upper(label)
+}}}
+	
 
 EX: 263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df
 
