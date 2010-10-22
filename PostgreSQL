@@ -69,14 +69,6 @@ Of course, we might as well just rewrite all these anonymous PL/SQL snippets to 
  * Do the same for Perl stack once needed.
  * The function creation could probably be done by some PL/pgSQL function, so that we don't duplicate the code between Python and Perl.
 
-== Java stack ==
-
-Queries should be the same story as with Pyrhon and Perl -- rewrite them with some reasonable SQL syntax to make both Oracle and PostgreSQL happy.
-
-For PL/SQL, use [http://git.fedorahosted.org/git/?p=spacewalk.git;a=commitdiff;h=73a318ccd254d4abd16ee40f2913dc183f652f8e the { call ... } syntax] -- it seems to do the trick.
-
-For Hibernate, it should just work.
-
 === TODO ===
 
  * Address any issues after that.
@@ -90,3 +82,7 @@ The Oracle bits are no longer needed to install Spacewalk with PostgreSQL backen
 You should be able to get WebUI running with Spacewalk nightly repo, and create the first user, and log in.
 
 You will see some error popups, but you will at least have something to click at and work with.
+
+== Migration ==
+
+On the page [[PostgreSQLMigration]] we are going to collect all known problems and solutions handy for porting to PostgreSQL.
