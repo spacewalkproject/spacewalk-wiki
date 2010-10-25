@@ -262,9 +262,9 @@ You may find some commits that are simply enclosing the select as subselect but 
 
 ERROR:  subquery in FROM must have an alias at
 
-It seems all subqueries in PG must have an alias. Its easy to add one.
+It seems all subqueries in PG must have an alias. Its easy to add one e.g. {{{ ... (select ....) XXX ... }}}. We usually name the subselect as SUBSELECT (or SUBSELECT1, SUBSELECT2...).
 
-EX: e68b1067d31010eb3249c2e09bc5795ef62c4a71
+EX: e68b1067d31010eb3249c2e09bc5795ef62c4a71 (please note the AS keyword should not be present and has been fixed in 546adc9416d999ae8f198bf7a5952a9956d204be)
 
 ==== Composite type accessing ====
 
