@@ -193,6 +193,19 @@ In PG all triggers must return record (the "new" in most cases) or null.
 
 EX: 19e1daa3bb5b236e777adb4afce8fe263bda2390
 
+==== Triggers mustn't touch old if they are on insert ====
+
+ERROR:
+{{{
+    record "old" is not assigned yet
+    DETAIL:  The tuple structure of a not-yet-assigned record is indeterminate.
+    CONTEXT:  PL/pgSQL function "rhn_package_mod_trig_fun" line 24 at IF
+}}}
+
+We cannot touch old if tg_op is INSERT. Apparently, if does not use lazy evaluation in PL/pgSQL, so we need to split the ifs into two.
+
+EX: 590e9da99719ce814190f859c940cd94baf4e7ab 6746cbdb36e75b36ac05ab02eba9eb60330c30ee
+
 ==== Procedure call from Hibernate ====
 
 We cannot call stored procedure in the form
