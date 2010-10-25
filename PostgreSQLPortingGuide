@@ -327,6 +327,10 @@ you need to rewrite it into single command(s):
 
 EX: eca6fe0fb34bbea9595527f51e743221ece5e275
 
+The autonomous transactions are generally used in lookup situations where we want to either find the entity if it already exists in the table, or insert new one and return the id. When we replace it with normal SQL, obviously we confine it to the transaction, so any concurrent transaction will block before our transaction commits (or rollbacks), and most probably it will then fail with some unique constraint violation.
+
+We can address this issue by making the transactions where we've inserted new lookup records as short as possible (we do not worry if the lookup entries end up in the database even if the main transaction then rollbacks), or we can use second connection to the database to do those parallel inserts. That however seems to be hard because the backend (Python stack) code seems to assume there is only one connection to the database -- we don't even have any dbh object/variable in that code.
+
 ==== NUMBER to NUMERIC ====
 
 Since ORA NUMBER is NUMERIC in PG we heed to replace these. All DDL were already fixed but you will find these usually in PLSQL/PgSQL.
