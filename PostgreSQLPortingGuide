@@ -370,3 +370,17 @@ ERROR: missing FROM-clause entry for table "tablename"
 The nextval syntax in different on both platforms. We have defined global function {{{sequence_nextval('sequence_name')}}} that works on both platforms. In some cases the explicit sequence insert can be removed at all which is preferred solution.
 
 EX: f2153167da508852183501f320c2e71c08a0441c
+
+==== Anonymous procedural SQL blocks, in Python (backend) ==== # anonymous_plpgsql
+
+PG does not support anonymous PL/pgSQL blocks. We workaround this by creating functions on-the-fly, and then calling them.
+
+In the {{{backend.dbmodule.prepare}}}, use {{{params}}} parameter with list of strings that list the parameter names and types.
+
+EX: 683d908f67cc7d79ad392d377f13ef8c674818a7
+
+If the anonymous block does not take any arguments, the list will be empty.
+
+EX: 30903ca16fa55cab6994dbd97595eb549bd3f619
+
+Since the ORA and PG syntax for cursors differs a bit, you can use comments {{{/*pg_cs*/}}} and {{{/*pg cursor*/}}} to tell the PG driver to massage the source to make PG happy, while masking those strings from ORA -- the {{{pg_cs}}} eats the following {{{cursor}}} word, and {{{pg cursor}}} puts that {{{cursor}}} back for PG.
