@@ -32,7 +32,7 @@ We use some shortcuts on the page:
 
 Please note the example git commit links are from 2010-10-01 to 2010-10-22.
 
-==== The VARCHAR-NULL problem ====
+==== The VARCHAR-NULL problem ==== #empty_string_null
 
 ERROR: new row for relation "tablename" violates check constraint "vn_tablename_columnname"
 
