@@ -243,6 +243,16 @@ order by label_sort
 
 EX: 263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df
 
+You may find some commits that are simply enclosing the select as subselect but this was a quick hack and we are going to get rid of it. Please use the recommended way. Such as commits are 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd ec72a2b5fbaad1cf6b684d635b89cc38cf7ebe13 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd 7c754a2ee91ab182808dba4fc718767c92cd5f3d
+
+==== Subquery with no alias ====
+
+ERROR:  subquery in FROM must have an alias at
+
+It seems all subqueries in PG must have an alias. Its easy to add one.
+
+EX: e68b1067d31010eb3249c2e09bc5795ef62c4a71
+
 ==== Composite type accessing ====
 
 In PG you have to use braces when accessing a composite type.
@@ -303,16 +313,6 @@ you need to rewrite it into single command(s):
 }}}
 
 EX: eca6fe0fb34bbea9595527f51e743221ece5e275
-
-==== ORDER BY out of SELECT DISTINCT ====
-
-ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
-
-ERROR: column "xxx" does not exist
-
-Expressions {{{SELECT DISTINCT xxx ... ORDER BY xxx}}} must be enclosed as subselects as PG does not support this. See the commit diffs that shows it in a very nice form.
-
-EX: 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd ec72a2b5fbaad1cf6b684d635b89cc38cf7ebe13 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd 7c754a2ee91ab182808dba4fc718767c92cd5f3d
 
 ==== NUMBER to NUMERIC ====
 
