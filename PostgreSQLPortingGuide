@@ -304,7 +304,7 @@ with global function
 
 EX: add2a44a2493b877b1a2f869a0d958c706def207 6b4dccb40b9c5b99579b1246623f1afc2db1b1b4
 
-==== No anonymous transactions ====
+==== No autonomous transactions ====
 
 ERROR: syntax error at or near "autonomous_transaction" at character 
 
