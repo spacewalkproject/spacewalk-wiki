@@ -63,4 +63,4 @@ The Oracle bits are no longer needed to install Spacewalk with PostgreSQL backen
 
 == Migration ==
 
-At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{satellite-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
+At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
