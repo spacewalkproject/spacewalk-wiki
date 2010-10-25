@@ -371,7 +371,7 @@ The nextval syntax in different on both platforms. We have defined global functi
 
 EX: f2153167da508852183501f320c2e71c08a0441c
 
-==== Anonymous procedural SQL blocks, in Python (backend) ==== # anonymous_plpgsql
+==== Anonymous procedural SQL blocks, in Python (backend) ==== #anonymous_plpgsql
 
 PG does not support anonymous PL/pgSQL blocks. We workaround this by creating functions on-the-fly, and then calling them.
 
