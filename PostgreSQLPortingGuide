@@ -193,6 +193,8 @@ After finding out that :age parameter is given in days we can multiply by 86400 
  select ... where column > current_timestamp - numtodsinterval(:age * 86400, 'second')
 }}}
 
+The numtodsinterval now accepts: second, minute, hour, day. You can use any of these.
+
 EX: e43029294891b49940b5c75ddc01227280b89b08 b9dc390cb5101a391f424bd0a5a873076cd7e4b5 93fd4371dfb524b0e9a9e4e9a01b81a9843d4aa3 1959728caebe5c88b0563dc5276f5f8b27128cc5
 
 ==== Triggers must return something ====
