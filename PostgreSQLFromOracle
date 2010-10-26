@@ -75,6 +75,8 @@ We will want to remove spacewalk-oracle and install spacewalk-postgresql.
 # spacewalk-setup --db-only
 }}}
 
+You need at least spacewalk-setup-1.2.13-1 for the --db-only to work.
+
 == Load the Spacewalk data dump to PostgreSQL ==
 
 {{{
