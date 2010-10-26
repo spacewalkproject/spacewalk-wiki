@@ -7,6 +7,8 @@ Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as 
 
 This is a page describing the status of the PostgreSQL support as of 25th October 2010, the nightly composes.
 
+'''Warning:''' Spacewalk on PostgreSQL is still for developers only. Do not install it if you do not plan to help with the port.
+
 == Yum configuration ==
 
 Please use the Spacewalk nightly repos as described at [wiki:HowToInstall#Nightlybuilds].
