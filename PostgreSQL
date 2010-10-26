@@ -61,6 +61,10 @@ You should be able to get WebUI running with Spacewalk nightly repo, create the 
 
 The Oracle bits are no longer needed to install Spacewalk with PostgreSQL backend.
 
-== Migration ==
+== Porting to PostgreSQL ==
 
 At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
+
+== Migrating existing Spacewalk on Oracle ==
+
+If you have an existing Spacewalk with Oracle backend installation, you can use it as a base of your Spacewalk on PostgreSQL setup -- see [wiki:PostgreSQLFromOracle].
