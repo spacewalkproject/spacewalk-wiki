@@ -44,7 +44,7 @@ Log files from schema upgrade are being put into {{{/var/log/spacewalk/schema-up
 == Make sure spacewalk-utils is installed ==
 
 {{{
-# yum install spacewalk-utils
+# yum install 'spacewalk-utils >= 1.2.6'
 }}}
 
 == Make an Oracle data dump ==
