@@ -64,6 +64,10 @@ At this point, you can stop the Oracle server if it is on the same box as the Sp
 # chkconfig oracle-xe off
 }}}
 
+=== Direct dump to psql ===
+
+Alternatively, you can just keep the Oracle server running and instead of redirecting the '''spacewalk-dump-schema''' output to a file, you can pipe it directly to '''psql''' in the step below.
+
 == Install and start the PostgreSQL server ==
 
 [wiki:PostgreSQLServerSetup]
@@ -93,6 +97,15 @@ You need at least spacewalk-setup-1.2.13-1 for the --db-only to work.
 }}}
 
 Make sure you have enough disk space for the dump and for the newly populated PostgreSQL database.
+
+If your Oracle server is still running, you can do
+
+{{{
+# spacewalk-dump-schema --db=xe --user=spacewalk --password=o9k2HInsl \
+   | PGPASSWORD=o9k2HInsl psql -h localhost -U spaceuser spaceschema
+}}}
+
+Without storing the dump on disk.
 
 == Continue with the upgrade ==
 
