@@ -153,7 +153,17 @@ ERROR: ???
 
 On ORA we use DATE for columns with dates but on PG we use TIMESTAMP WITH TIMEZONE. In the current codebase there are many places where numbers or intervals are being added or substracted from dates (timestamps in PG). This wont work on PG as there are no such operators defined and its not easy to define them in a portable form.
 
-Which function to use depends on what you need as a result:
+The easiest situation is in constant addition or subctraction (days are most relevant here). This select
+
+{{{select sysdate as one, sysdate - 1 as two from dual}}}
+
+can be rewritten as
+
+{{{select current_timestamp as one, current_timestamp - interval '1' day as two from dual}}}
+
+Please note you cant bind parameters to this form and the only situation this will work is a constant. The same applies for second, minute, month, year. Do not use plurals and enquote only the number.
+
+The situation complicates with parameters and we have defined several functions for arithmetics. Which function to use depends on what you need as a result:
   * number of days -> date_diff_in_days (typical scenario is {{{somedate - otherdate}}})
   * date -> numtodsinterval (typical scenario is {{{something < somedate - something_else}}})
 
