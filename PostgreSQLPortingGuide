@@ -389,6 +389,14 @@ The nextval syntax in different on both platforms. We have defined global functi
 
 EX: f2153167da508852183501f320c2e71c08a0441c
 
+==== Recursion with opened cursors ====
+
+ERROR: cursor "cursorname" already in use
+
+ORA allows to set variable open_cursors (we have currently 300) that allows recursion in PLSQL with opened cursor. Unfortunately PG does not allow this but there is possibility to rewrite the loop without any cursor using FOR record IN SELECT ... LOOP syntax.
+
+EX: 3f1647100781a1172644567a2575c0a2d3fe5da3
+
 ==== Anonymous procedural SQL blocks, in Python (backend) ==== #anonymous_plpgsql
 
 PG does not support anonymous PL/pgSQL blocks. We workaround this by creating functions on-the-fly, and then calling them.
