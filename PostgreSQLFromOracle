@@ -1,0 +1,88 @@
+
+= Migrating Spacewalk on Oracle installation to PostgreSQL =
+
+If you have an existing Spacewalk installation with Oracle backend, you can migrate it to use the PostgreSQL database server instead.
+
+Please note that the PostgreSQL port is still only partial and no upgrades will be provided for the PostgreSQL database schema. However, if you are ready to help with the PostgreSQL port, it might be useful to take your populated Oracle schema and migrate it to PostgreSQL because you might get database content which you cannot get with PostgreSQL itself. For example, if provisioning does not work on PostgreSQL, you won't get any records about kickstart history. If you migrate Oracle schema, you can immediately start hacking on errors on WebUI viewing that history -- data that you would not get on PostgreSQL otherwise.
+
+== Schema version is important ==
+
+When migrating the data from database schema from Oracle to PostgreSQL, you will use a dump of the data from the Oracle database and import it to a fresh PostgreSQL database schema. Therefore, you need the PostgreSQL schema to be of the same version as the one in Oracle. In other words, you need to upgrade the Spacewalk and the Oracle schema to the latest version, to match the schema that you will likely have in PostgreSQL.
+
+Generally, the steps at HowToUpgrade apply.
+
+== Perform database and configuration backup ==
+
+HowToUpgrade#Databaseandconfigurationbackup
+
+== Upgrade the Spacewalk packages ==
+
+HowToUpgrade#Packageupgrade
+
+== Upgrade the Oracle schema ==
+
+Make sure your Spacewalk server is down:
+
+{{{
+# /usr/sbin/rhn-satellite status
+}}}
+
+Make sure your Oracle server is running if you have the server on the same machine as Spacewalk itself. For example, to start the Oracle XE, you can use
+
+{{{
+# service oracle-xe start
+}}}
+
+Run '''spacewalk-schema-upgrade''' script to upgrade the database schema:
+
+{{{
+# /usr/bin/spacewalk-schema-upgrade
+}}}
+
+Log files from schema upgrade are being put into {{{/var/log/spacewalk/schema-upgrade}}}.
+
+== Make sure spacewalk-utils is installed ==
+
+{{{
+# yum install spacewalk-utils
+}}}
+
+== Make an Oracle data dump ==
+
+{{{
+# spacewalk-dump-schema --db=xe --user=spacewalk --password=o9k2HInsl > spacewalk-oracle.dump
+}}}
+
+Make sure you have enough disk space for the dump.
+
+== Install and start the PostgreSQL server ==
+
+[wiki:PostgreSQLServerSetup]
+
+== Install spacewalk-postgresql backend ==
+
+We will want to remove spacewalk-oracle and install spacewalk-postgresql.
+
+{{{
+# yum remove spacewalk-oracle
+[...]
+# yum install spacewalk-postgresql
+}}}
+
+== Populate the PostgreSQL database with Spacewalk schema ==
+
+{{{
+# spacewalk-setup --db-only
+}}}
+
+== Load the Spacewalk data dump to PostgreSQL ==
+
+{{{
+# PGPASSWORD=o9k2HInsl psql -h localhost -U spaceuser spaceschema < spacewalk-oracle.dump
+}}}
+
+Make sure you have enough disk space for the dump and for the newly populated PostgreSQL database.
+
+== Continue with the upgrade ==
+
+Continue from HowToUpgrade#UpgradeofSpacewalkconfiguration.
