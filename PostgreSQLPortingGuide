@@ -252,7 +252,7 @@ EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e 6e7e07a9055e809ca8994254d8d2ce1e3c4
 
 ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
 
-ORA allows to sort by columns which are not in the select list but PG need to have it there. We can rewrite it to include the sorting column. Example:
+ORA allows to sort by columns which are not in the select list but PG need to have it there. The temporary solution is to wrap the whole query as a subselect named "X". Example:
 
 {{{
 select distinct a, b, c, label from rhnchannel
@@ -262,13 +262,15 @@ order by upper(label)
 Rewritten as:
 
 {{{
-select distinct a, b, c, label, upper(label) as label_sort from rhnchannel
-order by label_sort
+select * from
+select distinct a, b, c, label from rhnchannel
+) X
+order by upper(X.label)
 }}}	
 
-EX: 263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df
+EX: a283b7f6b7192250e9ab99c3942a3c0e5be3b1f2
 
-You may find some commits that are simply enclosing the select as subselect but this was a quick hack and we are going to get rid of it. Please use the recommended way. Such as commits are 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd ec72a2b5fbaad1cf6b684d635b89cc38cf7ebe13 7c7d4dfe71d0fd7adb54157fec15fa8dde9050dd 7c754a2ee91ab182808dba4fc718767c92cd5f3d
+You may find some commits that was trying to add a new column in the original query (263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df) but it turned out this is problematic approach and we have removed this.
 
 ==== Subquery with no alias ====
 
