@@ -272,6 +272,18 @@ EX: a283b7f6b7192250e9ab99c3942a3c0e5be3b1f2
 
 You may find some commits that was trying to add a new column in the original query (263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df) but it turned out this is problematic approach and we have removed this.
 
+==== Rownum problem ====
+
+ERROR:  column "rownum" does not exist
+
+There is no ROWNUM alternative in PG except. There is no such feature in PG with the same behaviour but for limiting results there is a LIMIT - OFFSET syntax.
+
+We use ROWNUM only for limiting results at the moment. There are only 2 occurances in our java code base and three in the backend. As there is no ANSI SQL compatible syntax that could work on both platforms the fix is to create separate queries for both.
+
+There are situations where rownum column is used for separating odd and even records during a presentation in the java UI. The fix is to use {{{${loop.count % 2 == 0}}}} syntax instead of the rownum.
+
+EX: TBD
+
 ==== Subquery with no alias ====
 
 ERROR:  subquery in FROM must have an alias at
