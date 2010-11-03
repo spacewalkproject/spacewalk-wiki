@@ -385,6 +385,24 @@ and for functionts that returns something you have to use
  select package.proc(...);
 }}}
 
+==== SELECT UNIQUE ====
+
+ERROR:  syntax error at or near "column"
+
+We use SELECT UNIQUE sometimes but AskTom says that from version 10g its only synonym for SELECT DISTINCT. And DISTINCT works on both platforms.
+
+EX: a7b4842c705e2c9032a3b2a8dfa23d31068c063b
+
+==== TO_NUMBER function ====
+
+ERROR: function to_number(unknown) does not exist
+
+The fucntion TO_NUMBER(string) is not recognized in PG. We have to use TO_NUMBER(string, string) version - with the second parameter which is the number format. This is the same as on Oracle.
+
+We use to_number(null) very often, the fix is to convert it to to_number(null, null). For other occurances the fix is to include the second parameter.
+
+EX: a7b4842c705e2c9032a3b2a8dfa23d31068c063b
+
 ==== DELETE without FROM ====
 
 ERROR: syntax error at or near "tablename"
