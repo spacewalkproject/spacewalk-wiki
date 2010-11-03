@@ -117,7 +117,7 @@ rpm -Uvh http://spacewalk.redhat.com/yum/1.1/RHEL/5/i386/spacewalk-client-repo-1
 
 In order to get Spacewalk to run you need the Oracle client and an Oracle 10g database server. The easiest way to do this is to install Oracle XE and the Oracle Instant Client. Instructions on how to do this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
-If you install Spacewalk nightly on PostgreSQL, the Oracle bits are no longer needed.
+If you install Spacewalk nightly on PostgreSQL, the Oracle bits are no longer needed.  This is still not stable, and is generally not recommended.  
 
 = Conflicting Packages =
 There is an open [https://bugzilla.redhat.com/show_bug.cgi?id=593402 bug 593402] that identifies the package cobbler-web as conflicting with Spacewalk's Taskomatic process. Until the issue is addressed, it is recommended that the cobbler-web package be removed from the Spacewalk server.
