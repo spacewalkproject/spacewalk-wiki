@@ -18,7 +18,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Integration with [http://www.jasperforge.org/jaspersoft/opensource/business_intelligence/jasperreports/ JasperReports]
    * [[Image(action-del.gif)]] not sure how important this is to Spacewalk. -- jmrodri
  * HelpSystem to make help a bit easier to work with.
- * PathToPostgreSql - Don't get too excited, yet.  This path is very long but worth it.
+ * [wiki:PostgreSQL PostgreSQL Support] - content sync, rhnpush, registration and yum operations work
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client
  * UserPermissions - Discussion around implementing fine grained user permissions.
