@@ -2,6 +2,8 @@
 
 On this page we are going to collect all valuable information that can help with porting our codebase to PostgreSQL. You will find description of all problems with links into Git with example solutions on the page.
 
+[[TOC]]
+
 === General rules ===
 
   * Setup two testing scenarios prior to fixing any errors
