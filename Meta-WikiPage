@@ -14,7 +14,6 @@ This is a page to document the documentation as it were, basically just a place 
 == Documentation Marked as Work in Progress/Todo List ==
 To update this click this [https://fedorahosted.org/spacewalk/search?q=%22Work+in+Progress%22&wiki=on&changeset=on&ticket=on link] and then just pull out the conventions, this and the user docs front page...
 
- * [wiki:PostgreSqlQuickStart]
  * [wiki:Spacewalkonvm]
  * [https://fedorahosted.org/spacewalk/wiki/Features/SupportUser]
  * [wiki:MultiArchEnhancements]
