@@ -1,3 +1,8 @@
+
+For up-to-date information about the PostgreSQL port, see [wiki:PostgreSQL]. This page is now obsolete.
+
+----
+
 = Introduction =
 
 Below is a collection of information related to the effort to remove Spacewalk's dependency on Oracle, support PostgreSQL, and ultimately be database agnostic. If you are interested in participating in this effort please feel free to review the projects and tasks below to find something that suits your abilities. If you find something you can assign the task to yourself. Help should be available if you require it on IRC and the mailing list.
