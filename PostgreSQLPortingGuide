@@ -415,6 +415,22 @@ PG does not allow to skip FROM keyword in DELETE FROM tablename. Its easy fix to
 
 On PG there is a possibility to do {{{ SELECT ... }}} without any table. We have created a fake DUAL table so you can do {{{ SELECT ... FROM DUAL }}} on both platforms.
 
+==== MINUS keyword ====
+
+ERROR:  syntax error at or near "MINUS" at character xxx
+
+The PG does not recognize this ORA keyword and we have to rewrite the query for PG with ANSI keyword EXCEPT. We have only several occurances of this keyword in Spacewalk.
+
+EX: b7aebd62e3660471687c669892ec3013f155ecc4
+
+==== Bind parameter with space ====
+
+ERROR:  syntax error at or near ":" at character xxx
+
+There must not be space between : and parameter in ":parameter". Between equal sign and colon must be at least one white space. We have to remove these.
+
+EX: cdcf957618fd50457624a3bf9d1207258fea517a
+
 ==== Portable nextval ====
 
 ERROR: missing FROM-clause entry for table "tablename"
