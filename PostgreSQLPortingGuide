@@ -421,7 +421,7 @@ ERROR:  syntax error at or near "MINUS" at character xxx
 
 The PG does not recognize this ORA keyword and we have to rewrite the query for PG with ANSI keyword EXCEPT. We have only several occurances of this keyword in Spacewalk.
 
-EX: b7aebd62e3660471687c669892ec3013f155ecc4
+EX: 125a1e4cd60785a667f11cd1f921dd7ccaaf92e7
 
 ==== Bind parameter with space ====
 
