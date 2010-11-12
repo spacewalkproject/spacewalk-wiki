@@ -419,9 +419,15 @@ On PG there is a possibility to do {{{ SELECT ... }}} without any table. We have
 
 ERROR:  syntax error at or near "MINUS" at character xxx
 
-The PG does not recognize this ORA keyword and we have to rewrite the query for PG with ANSI keyword EXCEPT. We have only several occurances of this keyword in Spacewalk.
+Postgres doesn't support Oracle's MINUS, it supports EXCEPT. But EXCEPT isn't supported by Oracle.
+
+If it is possible to distinguish, whether we're on PG or on ORA, it can be solved in the following way:
 
 EX: 125a1e4cd60785a667f11cd1f921dd7ccaaf92e7
+
+otherwise it's possible to rewrite every MINUS into a OUTER JOIN (recommended way)
+
+EX: 3f95a42cb3640370579ef81d52157c1e53cf2fb5 b8f305136a2f525670ef901a5d986eb7050c98dc
 
 ==== Bind parameter with space ====
 
