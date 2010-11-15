@@ -75,7 +75,7 @@ Must be rewritten as
 
 Do not forget the END keyword.
 
-EX: 7d337c4d88e4057d542601e2fb48099557e13e05 f5ef2d83a72b8f4150f17477664ef75d21e45392 3a97bffade6be5edbc399e775ab861a1bd29e02e 5b75844f6410373232f8001686530cbdb2795489
+EX: 7d337c4d88e4057d542601e2fb48099557e13e05 f5ef2d83a72b8f4150f17477664ef75d21e45392 3a97bffade6be5edbc399e775ab861a1bd29e02e
 
 ==== The NVL function problem ====
 
@@ -248,7 +248,7 @@ which is translated to both PostgreSQL and Oracle in a proper way. If you need t
 
 Also please note that in the example above the XXRH_OAI_WRAPPER is not a package in PG but schema. We use schemas to "simulate" packages from ORA.
 
-EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e 6e7e07a9055e809ca8994254d8d2ce1e3c4851fd
+EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e
 
 ==== ORDER BY expression in DISTINCT select ====
 
@@ -292,7 +292,7 @@ ERROR:  subquery in FROM must have an alias at
 
 It seems all subqueries in PG must have an alias. Its easy to add one e.g. {{{ ... (select ....) XXX ... }}}. We usually name the subselect as SUBSELECT (or SUBSELECT1, SUBSELECT2...).
 
-EX: e68b1067d31010eb3249c2e09bc5795ef62c4a71 (please note the AS keyword should not be present and has been fixed in 546adc9416d999ae8f198bf7a5952a9956d204be)
+EX: 62a15afa13dfe890c6bc86ce010699419fbf7383 (please note the AS keyword should not be present and has been fixed in 546adc9416d999ae8f198bf7a5952a9956d204be)
 
 ==== Composite type accessing ====
 
@@ -393,7 +393,7 @@ ERROR:  syntax error at or near "column"
 
 We use SELECT UNIQUE sometimes but AskTom says that from version 10g its only synonym for SELECT DISTINCT. And DISTINCT works on both platforms.
 
-EX: a7b4842c705e2c9032a3b2a8dfa23d31068c063b
+EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
 
 ==== TO_NUMBER function ====
 
@@ -403,7 +403,7 @@ The fucntion TO_NUMBER(string) is not recognized in PG. We have to use TO_NUMBER
 
 We use to_number(null) very often, the fix is to convert it to to_number(null, null). For other occurances the fix is to include the second parameter.
 
-EX: a7b4842c705e2c9032a3b2a8dfa23d31068c063b
+EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
 
 ==== DELETE without FROM ====
 
@@ -435,7 +435,7 @@ ERROR:  syntax error at or near ":" at character xxx
 
 There must not be space between : and parameter in ":parameter". Between equal sign and colon must be at least one white space. We have to remove these.
 
-EX: cdcf957618fd50457624a3bf9d1207258fea517a
+EX: 910e069f689bc91abcf962f5d10f8ef3e4b3073c
 
 ==== Portable nextval ====
 
@@ -451,7 +451,7 @@ ERROR: cursor "cursorname" already in use
 
 ORA allows to set variable open_cursors (we have currently 300) that allows recursion in PLSQL with opened cursor. Unfortunately PG does not allow this but there is possibility to rewrite the loop without any cursor using FOR record IN SELECT ... LOOP syntax.
 
-EX: 3f1647100781a1172644567a2575c0a2d3fe5da3
+EX: 0bb8c201eb593018ffcb66aded1321106acda81f
 
 ==== Anonymous procedural SQL blocks, in Python (backend) ==== #anonymous_plpgsql
 
