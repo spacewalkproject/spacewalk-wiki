@@ -1,7 +1,7 @@
 
 = Migrating Spacewalk on Oracle installation to PostgreSQL =
 
-If you have an existing Spacewalk installation with Oracle backend, you can migrate it to use the PostgreSQL database server instead.
+If you have an existing Spacewalk 1.2+ installation with Oracle backend, you can migrate it to use the PostgreSQL database server instead.
 
 Please note that the PostgreSQL port is still only partial and no upgrades will be provided for the PostgreSQL database schema. However, if you are ready to help with the PostgreSQL port, it might be useful to take your populated Oracle schema and migrate it to PostgreSQL because you might get database content which you cannot get with PostgreSQL itself. For example, if provisioning does not work on PostgreSQL, you won't get any records about kickstart history. If you migrate Oracle schema, you can immediately start hacking on errors on WebUI viewing that history -- data that you would not get on PostgreSQL otherwise.
 
@@ -44,7 +44,7 @@ Log files from schema upgrade are being put into {{{/var/log/spacewalk/schema-up
 == Make sure spacewalk-utils is installed ==
 
 {{{
-# yum install 'spacewalk-utils >= 1.2.6'
+# yum install spacewalk-utils
 }}}
 
 == Make an Oracle data dump ==
@@ -87,8 +87,6 @@ We will want to remove spacewalk-oracle and install spacewalk-postgresql.
 {{{
 # spacewalk-setup --db-only
 }}}
-
-You need at least spacewalk-setup-1.2.13-1 for the --db-only to work.
 
 == Load the Spacewalk data dump to PostgreSQL ==
 
