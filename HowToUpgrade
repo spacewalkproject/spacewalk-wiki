@@ -1,16 +1,16 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.0 to Spacewalk 1.1.
+These are upgrade instruction for upgrading Spacewalk 1.1 to Spacewalk 1.2.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.0 running on Red Hat Enterprise Linux 5 Server or CentOS 5
-  *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend
+  *  Spacewalk 1.1 running on Red Hat Enterprise Linux 5 Server or CentOS 5, and on Fedora 12 and 13.
+  *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend.
 
 = Archive of older upgrade instruction =
 
-Spacewalk 0.8 to 1.0 upgrade instructions, are available at
-[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade10 HowToUpgrade10]
+ * Spacewalk 1.0 to 1.1 upgrade instructions, are available at [wiki:HowToUpgrade11]
+ * Spacewalk 0.8 to 1.0 upgrade instructions, are available at [wiki:HowToUpgrade10]
 
 
 ----
@@ -33,8 +33,7 @@ Spacewalk upgrade involves several basic steps:
 = Assumptions =
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
-  * You had set up your yum to point to spacewalk 1.1 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. Note, that with Spacewalk 1.1, the gpg key
-    used to sign packages has been changed. New gpg key location is http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
+  * You had set up your yum to point to Spacewalk 1.2 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
 
 
 =  Database and configuration backup  =
