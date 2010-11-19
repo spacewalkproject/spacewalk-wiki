@@ -64,6 +64,10 @@ These messages are produced by restorecon and do not pose any harm.
 On the contrary, these messages indicate relabeling of file system objects that is required for correct Spacewalk and SELinux symbiosis.
 
 Check any {{{.rpmnew}}}/{{{.rpmsave}}} files that were created during the upgrade for you config files and make sure changes to your config files are preserved while new content from the distribution files is carried over.
+{{{
+# yum install rpmconf
+# rpmconf -a
+}}}
 
 =  Schema upgrade  =
 
