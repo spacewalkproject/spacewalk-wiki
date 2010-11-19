@@ -17,7 +17,8 @@ Create database, user, and plpgsql language there:
 su - postgres -c 'PGPASSWORD=spacepw; createdb spaceschema ; createlang plpgsql spaceschema ; yes $PGPASSWORD | createuser -P -sDR spaceuser'
 }}}
 
-Configure the user to use md5 password to connect to that database -- put lines like
+Configure the user to use md5 password to connect to that database. Put the lines like following to
+{{{/var/lib/pgsql/data/pg_hba.conf}}}. Avoid the common pitfall: '''Make sure you put them *before* those existing lines that are for {{{all}}}.'''.
 
 {{{
 local spaceschema spaceuser md5
@@ -25,7 +26,7 @@ host  spaceschema spaceuser 127.0.0.1/8 md5
 host  spaceschema spaceuser ::1/128 md5
 }}}
 
-to {{{/var/lib/pgsql/data/pg_hba.conf}}}. Make sure you put them before those existing lines that are for {{{all}}}. Then reload PostgreSQL:
+Then reload PostgreSQL:
 
 {{{
 service postgresql reload
