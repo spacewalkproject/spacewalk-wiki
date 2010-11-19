@@ -23,7 +23,7 @@ or if you will upgrade from older release, consult
 
         * [wiki:HowToUpgrade]
 
-== Features & Enhancements in Spacewalk 1.2: ==
+== Features & Enhancements in Spacewalk 1.2 ==
 
         * Support for re-provisioning of FV Xen & KVM guests was added.
         * Large rpm support fixes.
@@ -56,7 +56,7 @@ or if you will upgrade from older release, consult
 
 Spacewalk 1.2 is the last version to run on Fedora 12.
 
-== Some notes about the PostgreSQL support: ==
+== Some notes about the PostgreSQL support ==
 
 We've been fixing bits and pieces that prevented Spacewalk to use
 PostgreSQL database server to store the data. Currently known to work are:
@@ -79,7 +79,7 @@ need help. If you are ready to code, please check
         * [wiki:PostgreSQL]
         * [wiki:PostgreSQLPortingGuide]
 
-== Community contributors: ==
+== Community contributors ==
 
 We thank the community members who contributed to this release:
 
@@ -89,7 +89,7 @@ We thank the community members who contributed to this release:
         * Francesco Tombolini
         * Jaswinder Singh Phulewala
         * Joshua Roys
-        * KrishnaBabu Krothapalli
+        * !KrishnaBabu Krothapalli
         * Luc de Louw
         * Manoj Kumar Giri
         * Timo Trinks
@@ -101,6 +101,6 @@ with special kudos to Colin Coe for his Java porting and API work.
 
 Yours,
 
---
-Jan Pazdziora
+-- [[BR]]
+Jan Pazdziora [[BR]]
 Principal Software Engineer, Satellite Engineering, Red Hat
