@@ -5,13 +5,18 @@
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In an attempt to make the whole Spacewalk project use open source software, we are adding support for PostgreSQL as database backend.
 
-This is a page describing the status of the PostgreSQL support as of 25th October 2010, the nightly composes.
+This is a page describing the status of the PostgreSQL support as of 19th November, 2010, Spacewalk version 1.2.
 
-'''Warning:''' Spacewalk on PostgreSQL is still for developers only. Do not install it if you do not plan to help with the port.
+== Functionality known to work ==
 
-== Yum configuration ==
+Spacewalk on PostgreSQL still only has limited functionality. Areas known to work with Spacewalk 1.2 are:
 
-Please use the Spacewalk nightly repos as described at [wiki:HowToInstall#Nightlybuilds].
+ * content sync with satellite-sync and spacewalk-repo-sync;
+ * rhnpush;
+ * client registration;
+ * yum operations.
+
+Anything else might, but most likely will not work for you.
 
 == Get the PostgreSQL server running ==
 
@@ -36,13 +41,25 @@ Password?
 ** Database: Populating database.
 }}}
 
-== Database schema ==
+The {{{spacewalk-setup}}} finishes and you are good to go -- enjoy your Spacewalk on PostgreSQL!
+
+== Migrating existing Spacewalk on Oracle ==
+
+If you have an existing Spacewalk with Oracle backend installation, you can use it as a base of your Spacewalk on PostgreSQL setup -- see [wiki:PostgreSQLFromOracle].
+
+== When you hit error ==
+
+For the above mentioned areas that are known to work, if you hit a problem, please file bugzilla.
+
+For other areas, please help us by submitting a patch to spacewalk-devel@redhat.com mailing list. See below for how to fix issues.
+
+=== Database schema ===
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
 
 Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both.
 
-=== TODO ===
+==== TODO ====
 
  * Not all Oracle sources have their PostgreSQL counterparts.
    * Run {{{perl schema-source-sanity-check.pl -I}}} to see what needs to be worked on.
@@ -51,22 +68,11 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
  * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
  * The {{{chameleon}}} tool is used to generate DDL from {{{common/}}} but it only seems to work for tables. Do we want to extend that tool, or drop it completely?
 
-== Database schema upgrades ==
+=== Database schema upgrades ===
 
-Spacewalk on PostgreSQL is for developers only at this moment and we do not provide any way to upgrade the schema across versions. We will revisit the issue later, probably with Spacewalk 1.3.
+With PostgreSQL support announced with Spacewalk 1.2, we need to start supporting schema upgrades on PostgreSQL with Spacewalk 1.3.
 
-== Application code ==
-
-You should be able to get WebUI running with Spacewalk nightly repo, create the first user, log in, create channels and repositories, sync content.
-
-== Oracle dependencies ==
-
-The Oracle bits are no longer needed to install Spacewalk with PostgreSQL backend.
-
-== Porting to PostgreSQL ==
+=== Porting to PostgreSQL ===
 
 At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
 
-== Migrating existing Spacewalk on Oracle ==
-
-If you have an existing Spacewalk with Oracle backend installation, you can use it as a base of your Spacewalk on PostgreSQL setup -- see [wiki:PostgreSQLFromOracle].
