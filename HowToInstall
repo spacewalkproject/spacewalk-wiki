@@ -30,7 +30,8 @@ To use this repository install spacewalk-repo with commands below:
 === Red Hat Enterprise Linux, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.2/RHEL/5/i386/spacewalk-repo-1.2-0.el5.noarch.rpm
+BASEARCH=$(uname -i)
+rpm -Uvh http://spacewalk.redhat.com/yum/1.2/RHEL/5/$BASEARCH/spacewalk-repo-1.2-0.el5.noarch.rpm
 }}}
 
 === Fedora 13 ===
