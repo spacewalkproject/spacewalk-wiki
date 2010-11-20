@@ -37,7 +37,7 @@ Then, when you run {{{spacewalk-setup}}}, you'll be asked for connection informa
 Hostname (leave empty for local)? 
 Database? spaceschema
 Username? spaceuser
-Password? 
+Password? spacepw
 ** Database: Populating database.
 }}}
 
