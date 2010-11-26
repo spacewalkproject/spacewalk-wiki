@@ -204,3 +204,16 @@ If you're running java code on your dev workstation and want to trace through it
    Simply add breakpoints by double clicking on the left grey strip running from top to bottom beside the code.
 
 6.  Run some code.  Simple browse the webUI or do whatever for it to run over that section of the code, and the debugger will activate.
+
+= Debugging code running in taskomatic with eclipse =
+
+1. edit your /etc/rhn/default/rhn_taskomatic_daemon.conf and add following lines:
+
+{{{
+wrapper.java.additional.2=-Xdebug
+wrapper.java.additional.3=-Xrunjdwp:transport=dt_socket,address=8001,server=y,suspend=n
+
+wrapper.java.detect_debug_jvm=TRUE
+}}}
+
+2. restart taskomatic and follow the tomcat debugging procedure with one change: connect port is 8001
