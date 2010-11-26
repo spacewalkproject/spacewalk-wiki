@@ -112,7 +112,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || perl-NOCpulse-Utils-1.14.2-8.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=466953 || msuchy || Now in Fedora ||
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || LGPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=612998 612998] || msuchy || Now in Fedora ||
- || python-gzipstream-1.4.0-15.el5.src.rpm || || || ||
+ || python-gzipstream-1.4.0-15.el5.src.rpm || Python and GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657531 657531] || msuchy ||
  || python-sgmlop-1.1.1-20040207.15.el5.src.rpm || || || ||
  || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || ||  ||
  || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || ||  ||
