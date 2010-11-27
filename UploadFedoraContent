@@ -42,14 +42,21 @@ Note: The channel name can't start with "Red Hat" (you will get an "Invalid Chan
 
 == Repo-sync ==
 
-New in Spacewalk 0.6, we now support syncing directly with yum repositories:
+Intruduced in Spacewalk 0.6, repo sync was enhanced in Spacewalk 1.1. For version 1.1 and newer proceed as following :
 
-[[Image(reposync.jpg)]]
+Goto Channels -> Manage Software Channels -> Manage Repositories -> create new repository
 
-On the channel details page ("Channels"->"Manage Software Channels"-> click on your channel), you can configure the yum repository to sync against.  Simply enter the repository URL, and a label.  The label can be anything, but it is used mainly for logging and caching purposes.  If you would like to go ahead and start a sync, simply check the 'Sync Repo' box before submitting the page.  After initiating a sync, it should begin in a minute or two (as long as another sync is not already in progress, in which case it will start once that one is done).  Once the sync starts, the 'last sync time' will become a link and you can click on it to view the log file of the current sync.  These logs are stored in /var/log/rhn/reposync/
+[[Image(spacewalk_reposync_v1_2_scaled.jpeg)]]
 
-Anytime you would like to re-sync the repo, simply revisit this details page, check 'Sync Repo' and hit update.  In the future we hope to add scheduled syncs in so you can sync every night for example. 
+After creating the repository, you need to link it to one or more Software Channels. Goto: Channels -> Manage Software Channels -> Choose the channel to be linked -> Repositories -> Select the repositories to be linked to the channel -> Update Repositories. Now you can sync the repository clicking on the sync tab. Click on sync now or schedule a sync.
 
+Alternatively you can start a sync by command line:
+
+{{{
+spacewalk-repo-sync -c your-channel -t yum 
+}}}
+
+The logs are stored in /var/log/rhn/reposync/
 
 If you would prefer to sync using the command line, you can use the 'spacewalk-repo-sync' command.  It's usage is:
 {{{
