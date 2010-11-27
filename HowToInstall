@@ -79,10 +79,11 @@ baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/client/spa
 # Fedora 13
 #baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/client/spacewalk-f13-nightly/$basearch/os/
 # Fedora 14
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f14/client/spacewalk-f13-nightly/$basearch/os/
+#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f14/client/spacewalk-f14-nightly/$basearch/os/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
+EOF
 }}}
 
 '''NOTE:''' Nigthly repo contains developers snapshot and is not suitable in production environment.
