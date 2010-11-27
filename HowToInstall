@@ -159,6 +159,21 @@ yum install spacewalk-postgresql
 
 '''Note:''' Please note that the functionality of Spacewalk on PostgreSQL is very limited. You may want to take a look at the [wiki:PostgreSQL] page for further information.
 
+== Configuring the firewall ==
+Spacewalk needs different inbound ports to be connectible. Assuming you have a default RHEL5/CentOS5 set up, proceed as following:
+
+{{{
+iptables -D RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
+iptables -A RH-Firewall-1-INPUT -p tcp -m tcp --dport 443 -j ACCEPT
+iptables -A RH-Firewall-1-INPUT -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
+service iptables save
+service iptables restart
+}}}
+
+Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
+
+
 == Configuring Spacewalk ==
 
 '''Note''': Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
