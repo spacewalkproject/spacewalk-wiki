@@ -50,27 +50,33 @@ Goto Channels -> Manage Software Channels -> Manage Repositories -> create new r
 
 After creating the repository, you need to link it to one or more Software Channels. Goto: Channels -> Manage Software Channels -> Choose the channel to be linked -> Repositories -> Select the repositories to be linked to the channel -> Update Repositories. Now you can sync the repository clicking on the sync tab. Click on sync now or schedule a sync.
 
-Alternatively you can start a sync by command line:
+Alternatively you can start a sync of a yum repository defined in the web ui by command line:
 
 {{{
-spacewalk-repo-sync -c your-channel -t yum 
+spacewalk-repo-sync --channel CHANNEL_LABEL --type yum 
 }}}
 
-The logs are stored in /var/log/rhn/reposync/
-
-If you would prefer to sync using the command line, you can use the 'spacewalk-repo-sync' command.  It's usage is:
+If you would prefer to do it only by using the command line:
 {{{
 spacewalk-repo-sync --channel CHANNEL_LABEL --url YUM_URL
 }}}
-for example, to sync CentOs 5 to your custon 'centos5-i386' channel you would run:
+for example, to sync CentOS5 to your custon 'centos5-i386' channel you would run:
 {{{
-/usr/bin/spacewalk-repo-sync --channel centos5-i386 --url http://mirrors.kernel.org/centos/5/os/i386/
+spacewalk-repo-sync --channel centos5-i386 --url http://mirrors.kernel.org/centos/5/os/i386/
 }}}
 
+In this case Spacewalk does not remember the URL to be synced, the information will not be available on the web ui. On each subsequent sync you need to provide the URL again.
 
 Currently only 'yum' type is supported.  You can use any repo url that is supported by yum (http://, file://, etc...).  If running the command line directly, you must be the root user.
 
+For more information also see
+{{{
+man 8 spacewalk-repo-sync
+}}}
+
 If, when doing a spacewalk-repo-sync, you get a "yum.Errors.NoMoreMirrorsRepoError" error then you need to install python-hashlib.
+
+The logs are stored in /var/log/rhn/reposync/
 
 == rhnpush ==
 
