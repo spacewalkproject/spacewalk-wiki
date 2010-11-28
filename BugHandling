@@ -65,7 +65,9 @@ Some invalid ones:
  483815 minor messaging change ...
 }}}
 
-Why is this important you ask? Because when I build packages I run:
+Why is this important you ask? Because when we tag the package using {{{tito tag}}}, we get nice changelog prepopulated.
+
+You can try it yourself with:
 {{{
  $ git log --pretty=oneline . 
 
@@ -75,13 +77,12 @@ Why is this important you ask? Because when I build packages I run:
  SHA1 484285 - Moved the SSM channel subscription  ...
 }}}
 
-This gives me a really nice changelog which I usually like to just cut and paste, notice how the : stands out. 
+=== Commit Id (SHA1) into Bugzilla Comment ===
 
-===  Bugzilla Comment  ===
-If you move your bugzilla to MODIFIED, please also include a comment about what commit you think has fix for the problem. This is especially helpful if you forget to put the bugzilla number to the commit message, so your fix cannot be found by another means. 
-Optional (but recommended for most packages - generally excluding java) - which package (the tag: you know, that name-version-1 thing you get after tagging in git) the fix will be included in. By stating within the bugzilla  the expected package which has the fix, if for some reason the package did not reach the webqa then QA can quickly determine this and not attempt to validate with an old package (which is likely to FAIL). 
+If you move your bugzilla to MODIFIED, please also include a comment about what commit you think has fix for the problem. It makes much easier for people looking at the bugzilla two years from now to figure our where you think you've fixed the issue.
 
-===  Note On Recording Git Commit IDs === 
-when recording a git commit ID in bugzilla you want to do your fix, push your changes, THEN lookup the SHA1 for your commit in the history.
+Make sure to put the SHA1 (the commit id) to the bugzilla only after you're resolved any {{{git push}}} issues and the push actually went through. Especially when you rebase, SHA1s of your commits change, so take the commit id only after they are safely in the public repo.
 
-Note that a rebase is basically taking your local commits and re-applying them on top of the current state of the upstream branch. (which often has changed since you started working) Because these diffs are getting reapplied, the commit SHA1s (which are specific to the state of the source tree as a whole) will change.
+=== Fixed In Version ===
+
+Once the package is tagged and built, put the tag value into the Fixed In Version in bugzilla (and maybe to bugzilla comment as well). Again, it makes it easier for people who don't (want to) know about git to figure our what rpm to try.
