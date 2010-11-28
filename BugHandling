@@ -37,3 +37,51 @@ If you want to commit fix for a bugzilla opened against Spacewalk, either becaus
    6. VERIFIED - Testing/confidence complete in our QA yum repository.
    7. RELEASE_PENDING - Not used.
    8. CLOSED - Release nanny closes the bugzilla with the note in which Spacewalk release the bug was addressed.
+
+==  Commit Message With Associated Bugzilla Comment  ==
+
+===  Commit Message  ===
+Within your git commit message please use the following format. 
+
+If you're fixing a bug:
+{{{
+  bznumber - message
+}}}
+
+If no bug associated then:
+{{{
+  message
+}}}
+
+Here are some VALID examples:
+{{{
+ 481767 - be more forgiving of busted kicstart ...
+ Moving SystemDetailsHandler.java and its junit test ...
+}}}
+
+Some invalid ones:
+{{{
+ 199560: Fix epoch being returned ...
+ 483815 minor messaging change ...
+}}}
+
+Why is this important you ask? Because when I build packages I run:
+{{{
+ $ git log --pretty=oneline . 
+
+ SHA1 Added note to make sure devs realize the han ...
+ SHA1 484532 - api - fix description on ErrataHand ...
+ SHA1 439834: Basically no system groups message w ...
+ SHA1 484285 - Moved the SSM channel subscription  ...
+}}}
+
+This gives me a really nice changelog which I usually like to just cut and paste, notice how the : stands out. 
+
+===  Bugzilla Comment  ===
+If you move your bugzilla to MODIFIED, please also include a comment about what commit you think has fix for the problem. This is especially helpful if you forget to put the bugzilla number to the commit message, so your fix cannot be found by another means. 
+Optional (but recommended for most packages - generally excluding java) - which package (the tag: you know, that name-version-1 thing you get after tagging in git) the fix will be included in. By stating within the bugzilla  the expected package which has the fix, if for some reason the package did not reach the webqa then QA can quickly determine this and not attempt to validate with an old package (which is likely to FAIL). 
+
+===  Note On Recording Git Commit IDs === 
+when recording a git commit ID in bugzilla you want to do your fix, push your changes, THEN lookup the SHA1 for your commit in the history.
+
+Note that a rebase is basically taking your local commits and re-applying them on top of the current state of the upstream branch. (which often has changed since you started working) Because these diffs are getting reapplied, the commit SHA1s (which are specific to the state of the source tree as a whole) will change.
