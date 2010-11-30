@@ -112,7 +112,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || perl-NOCpulse-Utils-1.14.2-8.el5.src.rpm || || https://bugzilla.redhat.com/show_bug.cgi?id=466953 || msuchy || Now in Fedora ||
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || LGPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=612998 612998] || msuchy || Now in Fedora ||
- || python-gzipstream-1.4.0-15.el5.src.rpm || Python and GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657531 657531] || msuchy ||
+ || python-gzipstream-1.4.0-15.el5.src.rpm || Python and GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657531 657531] || msuchy || Now in Fedora ||
  || python-sgmlop-1.1.1-20040207.15.el5.src.rpm || || || ||
  || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || ||  ||
  || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || ||  ||
@@ -134,7 +134,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || spacewalk-proxy-docs || Open Publication || [https://bugzilla.redhat.com/show_bug.cgi?id=501655 501655] || msuchy || Now in Fedora ||
  || spacewalk-backend || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=612581 612581] || msuchy || Now in Fedora ||
  || spacecmd || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=616120 616120] || msuchy || Now in Fedora ||
- || spacewalk-branding || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657366 657366] || msuchy || ||
+ || spacewalk-branding || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657366 657366] || msuchy || Now in Fedora ||
 
 There is also a set of jars currently in search-server which are not rpms which will probably need to be packaged up to be accepted into Fedora.
 See GettingPackagesIntoFedora/Nutch
