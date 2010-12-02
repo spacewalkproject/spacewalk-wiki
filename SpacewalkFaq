@@ -8,7 +8,13 @@ That's the first thing posted here:  See https://fedorahosted.org/spacewalk :)
 
 === How long has Spacewalk been around? ===
 
-Red Hat Network (RHN) first started around 2001 as a hosted application.  Two years later RHN spawned a stand alone product called Red Hat Network Satellite.  Spacewalk as a project officially became an open source, community driven product in June 2008 -- it is the upstream for Red Hat Network Satellite.
+In 2000, Red Hat launched a hosted update service called '''Red Hat Network (RHN)'''.
+
+It wasn't long though, before Red Hat customers began clamoring for an on-premise point-of-presence solution. In 2001, '''Red Hat Network Proxy Server''' was launched to serve this need, helping to bridge network layers and scale infrastucture beyond a few managed servers.
+
+Though popular as a product, RHN Proxy Server was not sufficient for real application life cycle or more complex system management, '''Red Hat Network Satellite Server''' was released for the first time in April 2002 to serve these needs. RHN Satellite Server took off and now is used to manage servers performing a miriad of workloads; from military applications to banking and financial services, to airlines, to ecommerce behomoths, to retail, to manufacturing plants. RHN Satellite is used everywhere.
+
+Viewed as a service, RHN Satellite and Proxy Servers languished as proprietary offerings for some time. Finally, in June 2008, the open source, community-drive '''Spacewalk Project''' was born and remains the upstream project for the very popular and successful Red Hat Network Satellite and Proxy Server family of products.
 
 === Who designed Spacewalk logo? Can I get hi-res picture? ===
 
