@@ -14,7 +14,9 @@ It wasn't long though, before Red Hat customers began clamoring for an on-premis
 
 Though popular as a product, RHN Proxy Server was not sufficient for real application life cycle or more complex system management. '''Red Hat Network Satellite Server''' was released for the first time in April 2002 to serve these needs. RHN Satellite Server took off and now is used to manage servers performing a miriad of workloads -- from military applications to banking and financial services, to airlines, to ecommerce behomoths, to retail, to manufacturing plants. RHN Satellite is used everywhere.
 
-Viewed as a service, RHN Satellite and Proxy Servers languished as proprietary offerings for some time. Finally, in June 2008, the open source, community-drive '''Spacewalk Project''' was born and remains the upstream project for the very popular and successful Red Hat Network Satellite and Proxy Server family of products.
+Viewed as a service, RHN Satellite and Proxy Servers languished as proprietary offerings for some time. Finally, in June 2008, the open source, community-drive project, '''Spacewalk''', was born and remains the upstream project for the very popular and successful Red Hat Network Satellite and Proxy Server family of products.
+
+On April 30th, 2010, Spacewalk v1.0 was released, achieving an important milestone for this project.
 
 === Who designed Spacewalk logo? Can I get hi-res picture? ===
 
