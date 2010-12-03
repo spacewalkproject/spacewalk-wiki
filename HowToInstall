@@ -56,11 +56,11 @@ cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
 [spacewalk]
 name=Spacewalk
 # RHEL 5 / CentOS 5
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/server/spacewalk-5E-nightly/$basearch/os/
+baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/5/$basearch/
 # Fedora 13
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/server/spacewalk-f13-nightly/$basearch/os
+#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/13/$basearch/
 # Fedora 14
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f14/server/spacewalk-f14-nightly/$basearch/os
+#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/14/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
@@ -74,11 +74,11 @@ cat > /etc/yum.repos.d/spacewalk-client.repo << 'EOF'
 [spacewalk-client]
 name=Spacewalk
 # RHEL 5 / CentOS 5
-baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-5E/client/spacewalk-5E-nightly/$basearch/os/
+baseurl=http://spacewalk.redhat.com/yum/nightly-client/RHEL/5/$basearch/
 # Fedora 13
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f13/client/spacewalk-f13-nightly/$basearch/os/
+#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/13/$basearch/
 # Fedora 14
-#baseurl=http://koji.spacewalkproject.org/spacewalk/split/spacewalk-f14/client/spacewalk-f14-nightly/$basearch/os/
+#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/14/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
