@@ -6,5 +6,10 @@ Please add yourself here if you run a local version of the Spacewalk. Please als
 
 35 systems under management. System and virtual system management and update, post-build configuration, monitoring and asset inventory (via custom info)
 
+=== Anonymous Organization ===
+
+Approx. 40 Oracle Enterprise Linux boxes and 10 CentOS, managed updates and configurations.
+
+
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
