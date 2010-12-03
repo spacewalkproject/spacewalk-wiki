@@ -11,5 +11,9 @@ Please add yourself here if you run a local version of the Spacewalk. Please als
 Approx. 40 Oracle Enterprise Linux boxes and 10 CentOS, managed updates and configurations.
 
 
+=== [http://www.cs.manchester.ac.uk University of Manchester School of Computer Science] ===
+
+Over 400 systems under management. System management and update, imaging and re-imaging and asset inventory
+
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
