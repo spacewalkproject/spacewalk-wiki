@@ -30,5 +30,9 @@ Over 400 systems (growing, with 900 as target) under management. System manageme
 
 82 systems (target is 200+) under management. System management, update, monitoring, configuration, provisioning.
 
+=== College of LSA, University of Michigan ===
+
+Testing Spacewalk server to support Scientific Linux, CERN Linux, and latest Fedora.
+
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
