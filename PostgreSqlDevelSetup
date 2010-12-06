@@ -1,4 +1,3 @@
-
 For up-to-date information about the PostgreSQL port, see [wiki:PostgreSQL]. This page is now obsolete.
 
 ----
@@ -11,7 +10,7 @@ out and hopefully contributing here's the basic steps to get going now,
  1. Install 0.6 normally, but don't run spacewalk-setup.
    * Yes Oracle packages need to be installed but it doesn't need to be
      configured. We still need to sort out a lot of deps issues.
- 1. Switch to Spacewalk nightly repo: http://koji.spacewalkproject.org/spacewalk/split/
+ 1. Switch to Spacewalk nightly repo: http://spacewalk.redhat.com/yum/nightly/
  1. Update packages.
  1. Make sure you have PostgreSQL 8.4 installed: http://yum.pgsqlrpms.org/howtoyum.php I use a script like this to blow it away and reinstall fresh:
 {{{
