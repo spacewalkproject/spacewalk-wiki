@@ -26,5 +26,9 @@ Over 400 systems (growing, with 900 as target) under management. System manageme
 
 ~ 500 Fedora desktops and a bunch of CentOS machines (growing) fully managed. Provisioning, configuration management, update management, monitoring, reprovisioning.
 
+=== [http://www.unipa.it University of Palermo (Italy)] ===
+
+82 systems (target is 200+) under management. System management, update, monitoring, configuration, provisioning.
+
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
