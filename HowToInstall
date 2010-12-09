@@ -260,7 +260,7 @@ Visit https://fjs-0-02.rhndev.redhat.com to create the Spacewalk administrator a
 === Configuring Spacewalk with an Answer File  ===
 You can also configure spacewalk by using an answer file.  To configure spacewalk by using an answer you just need to run the following
 {{{
-spacwalk-setup --disconnected --answer-file=<FILENAME>
+spacewalk-setup --disconnected --answer-file=<FILENAME>
 }}}
 An example answer file is as follows
 {{{
