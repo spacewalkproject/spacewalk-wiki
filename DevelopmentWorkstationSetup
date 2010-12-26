@@ -170,6 +170,12 @@ ll /var/lib/tomcat5/webapps/rhn
 lrwxrwxrwx 1 root root 26 Feb 18  2009 /var/lib/tomcat5/webapps/rhn -> /home/USER/spacewalk/java/rhnwebapp/
 }}}
 
+On Fedora 14 (and maybe previous Fedora versions) if the git repo is in a users home directory, the followin maybe neccessary if Apache reports "DocumentRoot must be a directory".
+
+{{{
+sudo setsebool -P httpd_enable_homedirs 1
+}}}
+
 = Building spacewalk-java RPM =
 
 * See here for info on rebuilding the spacewalk-java RPM: BuildingJavaRpm
