@@ -12,7 +12,7 @@ The Spacewalk Server provides all services to customers through the setting of e
 gpg --gen-key
     }}}
 
- 2. Then see if your key appears in listed. For example, we generated a key for Scooby below.
+ 2. Then see if your key appears in the output of the following commands. For example, we generated a key for Scooby below.
 
     {{{
 [scooby@scooby ~]$ gpg --list-keys
