@@ -1,3 +1,5 @@
+== Java edit on place == 
+
 Let say you want to edit single .java file on existing running machine. Let say the file you want to edit is KickstartCommand.java (picked up by random):
 
 
