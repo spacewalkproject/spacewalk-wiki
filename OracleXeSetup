@@ -94,8 +94,6 @@ This will likely pull in {{{compat-libstdc++-33}}}, {{{oracle-lib-compat}}}, and
 
 == Server Setup ==
 
-Ensure your hostname is in /etc/hosts prior to configuring the Oracle XE database.
-
 Configure the Oracle XE database by running
 
 {{{
