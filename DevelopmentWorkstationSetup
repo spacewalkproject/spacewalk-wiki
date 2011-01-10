@@ -181,6 +181,34 @@ sudo setsebool -P httpd_read_user_content 1
 
 * See here for info on rebuilding the spacewalk-java RPM: BuildingJavaRpm
 
+= Ant problems? =
+
+{{{
+[coec@sw-pg java]$ ant
+Buildfile: build.xml
+     [echo] Importing buildconf/build-props-${tomcat}.xml
+
+BUILD FAILED
+/home/coec/git/spacewalk/java/build.xml:8: Cannot find buildconf/build-props-${tomcat}.xml imported from /home/coec/git/spacewalk/java/build.xml
+
+Total time: 0 seconds
+[coec@sw-pg java]$
+}}}
+
+Try 
+{{{
+ant -Dtomcat=tomcat6
+Buildfile: build.xml
+     [echo] Importing buildconf/build-props-tomcat6.xml
+
+boot-deps:
+    [mkdir] Created dir: /home/coec/git/spacewalk/java/build/boot-lib
+     [echo] Symlinking ivy
+
+init-ivy:
+...
+}}}
+
 
 = Debugging code running in tomcat with eclipse = 
 
