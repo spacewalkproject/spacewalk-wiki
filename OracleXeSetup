@@ -50,21 +50,37 @@ Check if you have swap > 1GB because Oracle XE RPM will need it. You can create 
 
 == Install ==
 
-To install oracle-lib-compat, you'll need the spacewalk channel, installation directions for that are in HowToInstall.
+=== Various packages needed ===
+
+The '''bc''' is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete. We also make sure glibc and libaio are installed in 32bit variant, as Oracle XE is 32bit but it won't pull glibc.i686 automatically.
 
 {{{
-# yum -y install bc libc.so.6 libaio.so.1 # this installs bc, plus glibc and libaio in 32bit variant
-# yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
-# yum -y localinstall --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
-# yum -y install oracle-lib-compat
+# yum -y install bc libc.so.6 libaio.so.1
 }}}
 
-=== Notes ===
-  * '''bc''' is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete!
-  * '''--nogpgcheck''' is required because the Oracle RPMs are not signed.
-  * If the installation of oracle-xe-univ fails on Fedora 12+ with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
-  * Don't forget to have glibc.i686 installed on an x86_64 system. It will not be pulled in automagically!
+=== Oracle XE itself ===
+
+{{{
+# yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
+}}}
+
+The '''--nogpgcheck''' is required because the Oracle RPMs are not signed. If the installation of oracle-xe-univ fails on Fedora 12+ with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
+
+=== Oracle !InstantClient ===
+
+{{{
+# yum -y localinstall --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+}}}
+
   * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user. 
+
+=== Oracle compatibility library ===
+
+To install oracle-lib-compat, you'll need to have the Spacewalk channel configured, installation directions for that are in HowToInstall.
+
+{{{
+# yum -y install oracle-lib-compat
+}}}
 
 == Install SELinux Policy ==
 
