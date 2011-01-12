@@ -91,6 +91,8 @@ EOF
 
 === Fedora ===
 
+==== Fedora 13 & 14 ====
+
 For Spacewalk on Fedora, a couple of additional dependencies are needed from jpackage. Please create the following yum repository before beginning your Spacewalk installation:
 
 {{{
@@ -104,6 +106,21 @@ EOF
 }}}
 
 We specifically want fedora-10 directory in the above URL as the directories for newer Fedoras are empty.
+
+==== Fedora nightly ====
+
+For nightly Spacewalk on Fedora, we need JPP5 generic repo:
+
+{{{
+cat > /etc/yum.repos.d/jpackage.repo << EOF
+[jpackage]
+name=jpackage
+baseurl=http://mirrors.dotsrc.org/jpackage/5.0/generic/free/
+enabled=1
+gpgcheck=1
+gpgkey=http://www.jpackage.org/jpackage.asc
+EOF
+}}}
 
 === Red Hat Enterprise Linux 5 ===
 
