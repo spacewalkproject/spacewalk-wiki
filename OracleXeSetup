@@ -119,7 +119,7 @@ If you find out you are not happy with the configuration, you can revert by doin
 
 {{{
 # service oracle-xe stop
-# rm -f /etc/sysconfig/oracle-xe
+# rm -f /etc/sysconfig/oracle-xe /var/tmp/.oracle
 # rpm2cpio oracle-xe-univ-10.2.0.1-1.0.i386.rpm | \
     ( cd / && cpio -iud ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/DatabaseHomePage.sh \
                         ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/postDBCreation.sql \
