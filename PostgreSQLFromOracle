@@ -24,7 +24,7 @@ HowToUpgrade#Packageupgrade
 Make sure your Spacewalk server is down:
 
 {{{
-# /usr/sbin/rhn-satellite status
+# /usr/sbin/spacewalk-service status
 }}}
 
 Make sure your Oracle server is running if you have the server on the same machine as Spacewalk itself. For example, to start the Oracle XE, you can use
