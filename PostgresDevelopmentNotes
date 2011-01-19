@@ -1,3 +1,8 @@
+
+For up-to-date information about the PostgreSQL port, see [wiki:PostgreSQL]. This page is now obsolete.
+
+----
+
 Currently we have no yum repo setup with customized pgsql packages, due to the way we're branched off master this is a tricky task to accomplish and involves significant overhead, for now we'll attempt to get by with the following steps:
 
  * Install latest spacewalk release. (0.4)
