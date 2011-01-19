@@ -330,7 +330,7 @@ Once you've made sure you can login to the Spacewalk web UI, you can then procee
 == Managing Spacewalk ==
 Spacewalk consists of several services. Each of them has its own init.d script to stop/start/restart. If you want manage all spacewalk services at once use 
 {{{
-/usr/sbin/rhn-satellite [stop|start|restart].
+/usr/sbin/spacewalk-service [stop|start|restart].
 }}}
 
 == Known Issues ==
