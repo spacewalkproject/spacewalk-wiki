@@ -2,32 +2,19 @@
 
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.1 to Spacewalk 1.2.
+These are upgrade instruction for upgrading Spacewalk 1.2 to Spacewalk 1.3.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.1 running on Red Hat Enterprise Linux 5 Server or CentOS 5, and on Fedora 12 and 13.
-  *  Your Spacewalk uses Oracle 10g / Oracle-XE as a database backend.
+  *  Spacewalk 1.2 running on Red Hat Enterprise Linux 5 Server or CentOS 5, and on Fedora 13 and 14.
+  *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
-== Archive of older upgrade instruction ==
+== Archive of older upgrade instructions ==
 
+ * Spacewalk 1.1 to 1.2 upgrade instructions, are available at [wiki:HowToUpgrade12]
  * Spacewalk 1.0 to 1.1 upgrade instructions, are available at [wiki:HowToUpgrade11]
- * Spacewalk 0.8 to 1.0 upgrade instructions, are available at [wiki:HowToUpgrade10]
 
 
-----
-
-
-Spacewalk upgrade involves several basic steps:
-  1.  Configuration files and Spacewalk database backup
-  2.  Package upgrade
-  3.  Schema upgrade
-  4.  Upgrade of Spacewalk configuration
-  5.  Regenerate kickstart files
-  6.  Restart Spacewalk
-  7.  Update of monitoring setup
-  8.  Restart Spacewalk
-  9.  Rebuild search indexes
 
 ----
 
@@ -35,36 +22,57 @@ Spacewalk upgrade involves several basic steps:
 == Assumptions ==
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
-  * You had set up your yum to point to Spacewalk 1.2 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * For Fedora, your Fedora yum repositories are setup properly.
+  * You had set up your yum to point to Spacewalk 1.3 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
 
 
 == Database and configuration backup ==
 
 
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
-  *  Backup your ssl build directory, ordinarily /root/ssl-build
-  *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle documentation or contact your DBA
+  *  Backup your SSL build directory, ordinarily /root/ssl-build
+  *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle / PostgreSQL documentation or contact your DBA
+
+
+== Oracle Instant Client upgrade (Oracle DB backends only) ==
+
+If you use PostgreSQL as a database backend, you may safely skip this step.
+
+Spacewalk 1.3 requires Oracle Instant Client 11g. Before commencing with package upgrade, you need to upgrade oracle-instantclient* packages:
+
+  1. Navigate to http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html choose correct architecture and download latest available versions of following packages:
+    * oracle-instantclient11.2-basic
+    * oracle-instantclient11.2-sqlplus
+
+  2. Stop your Spacewalk and uninstall previous oracle-instantclient packages. Run as root:
+
+{{{
+# rhn-satellite stop
+# rpm -e --nodeps oracle-instantclient-basic oracle-instantclient-sqlplus
+}}}
+
+  3. Install oracle-instantclient11.2* packages you downloaded in step 1. Run as root:
+
+{{{
+# rpm -ivh oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm \
+           oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm 
+Preparing...                ########################################### [100%]
+   1:oracle-instantclient11.########################################### [ 50%]
+   2:oracle-instantclient11.########################################### [100%]
+}}}
 
 
 == Package upgrade ==
 
-Stop your Spacewalk by running:
-
-{{{
-# /usr/sbin/rhn-satellite stop
-}}}
-
-Perform package upgrade using yum:
+Your Spacewalk should be stopped at this point. Perform package upgrade using yum:
 
 {{{
 # yum upgrade
 }}}
 
-During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux.
-These messages are produced by restorecon and do not pose any harm.
-On the contrary, these messages indicate relabeling of file system objects that is required for correct Spacewalk and SELinux symbiosis.
+During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux. These messages are produced by restorecon and do not pose any harm.
 
-Check any {{{.rpmnew}}}/{{{.rpmsave}}} files that were created during the upgrade for you config files and make sure changes to your config files are preserved while new content from the distribution files is carried over.
+Check any {{{.rpmnew}}}/{{{.rpmsave}}} files that were created during the upgrade for your configuration files and make sure changes to your configuration files are preserved while new content from the distribution files is carried over.
 {{{
 # yum install rpmconf
 # rpmconf -a
@@ -78,116 +86,56 @@ Make sure your Spacewalk server is down:
 # /usr/sbin/rhn-satellite status
 }}}
 
-Make sure your oracle server is running (likely it isn't running since the earlier 'rhn-satellite stop' command stops the oracle-xe processes). For oracle-xe that would be:
-
-{{{
-# service oracle-xe status
-}}}
-
-If Oracle isn't running, start it
-
-{{{
-# service oracle-xe start
-}}}
-Run spacewalk-schema-upgrade script to upgrade database schema:
+Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
 # /usr/bin/spacewalk-schema-upgrade
 }}}
 
+Important notes:
 
-Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
+  * The above command will inform you whether or not was the schema upgrade successful.
+  * Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade.
+  * Should the schema upgrade fail because of insufficient space in some of the tablespaces, restore the database from backup, extend the tablespaces as needed and execute this step again.
 
 == Upgrade of Spacewalk configuration ==
 
-For a successful upgrade, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
+  1. Use spacewalk-setup to upgrade Spacewalk configuration. Run as root:
 
 {{{
 # spacewalk-setup --disconnected --upgrade
 }}}
 
-You'll be asked by spacewalk-setup to provide your database connection information.  This is the same information you provided to HowToInstall. Following this spacewalk-setup will ask you whether you wish to
-have your apache ssl configuration (/etc/httpd/conf.d/ssl.conf) updated by spacewalk-setup. You may choose to setup your ssl.conf manually, in which
-case you have to make sure you have the following directives present in your /etc/httpd/conf.d/ssl.conf:
-
-{{{
-# cat /etc/httpd/conf.d/ssl.conf
-...
-<VirtualHost _default_:443>
-...
-SSLCertificateFile /etc/pki/tls/certs/spacewalk.crt
-SSLCertificateKeyFile /etc/pki/tls/private/spacewalk.key
-RewriteEngine on
-RewriteOptions inherit
-SSLProxyEngine on
-<IfModule mod_jk.c>
-    JkMountCopy On
-</IfModule>
-...
-</VirtualHost>
-...
-}}}
-
-Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
+  2. Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
 
   *  debug = 3
   *  pam_auth_service = rhn-satellite
 
-Clean jabberd authentication database:
+  3. Enable (or re-enable) monitoring (and monitoring scout).
+
+  * If you wish to enable (or re-enable) monitoring without enabling monitoring scout, run the following command as root:
 
 {{{
-# rm -f /var/lib/jabberd/db/authreg.db
+# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
 }}}
 
-== Regenerate kickstart files ==
+  * If you wish to enable (or re-enable) both monitoring and monitoring scout, run the following command:
 
 {{{
-# rm -f /var/lib/rhn/kickstarts/wizard/*
+# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
+}}}
+
+
+== Clean jabberd database ==
+
+Run as root:
+
+{{{
+# rm -f /var/lib/jabberd/db/*
 }}}
 
 == Restart Spacewalk ==
 
 {{{
 # /usr/sbin/rhn-satellite start
-}}}
-
-== Update of monitoring setup ==
-
-Recent Spacewalk installations may have set several important monitoring configuration values incorrectly. To correct these, run the following
-as root (note that you should run this command regardless of your current monitoring status; even on installations that never had monitoring
-enabled, running this script will have no ill effect):
-
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-update-monitoring.pl
-}}}
-
-You may now choose to activate monitoring or both monitoring & monitoring scout on your Spacewalk.
-
-If you had monitoring enabled previously and wish to re-enable it now (without having to do so in the web ui), run as root:
-
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
-}}}
-
-If you'd like to re-enable both monitoring and monitoring scout on your Spacewalk (without having to do so in the web ui), instead run as root
-
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
-}}}
-
-== Restart Spacewalk ==
-
-If all of the above steps completed successfully, you can start your upgraded Spacewalk server.
-
-{{{
-# /usr/sbin/rhn-satellite restart
-}}}
-
-== Rebuild search indexes ==
-
-After a successful upgrade, it is recommended to rebuild search indexes used by Spacewalk search engine (rhn-search service).
-This can be accomplished by the following:
-
-{{{
-# /etc/init.d/rhn-search cleanindex
 }}}
