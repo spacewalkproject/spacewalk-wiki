@@ -54,8 +54,7 @@ Spacewalk 1.3 requires Oracle Instant Client 11g. Before commencing with package
   3. Install oracle-instantclient11.2* packages you downloaded in step 1. Run as root:
 
 {{{
-# rpm -ivh oracle-instantclient11.2-basic-11.2.0.2.0.i386.rpm \
-           oracle-instantclient11.2-sqlplus-11.2.0.2.0.i386.rpm 
+# rpm -ivh oracle-instantclient11.2-*.rpm
 Preparing...                ########################################### [100%]
    1:oracle-instantclient11.########################################### [ 50%]
    2:oracle-instantclient11.########################################### [100%]
