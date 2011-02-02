@@ -76,13 +76,13 @@ Add this line to file /etc/apt/sources.list:
 {{{
 deb http://miroslav.suchy.cz/spacewalk/debian spacewalk-unstable ./
 }}}
-Note: packages are not signed. We are working on direct inclusion in Debian and proper signing.
+'''Note''': packages are not signed. We are working on direct inclusion in Debian and proper signing.
 
-When you register either using rhnreg_ks or rhn_register you need to add to file /etc/apt/sources.list
+When you register either using '''rhnreg_ks''' or '''rhn_register''' you need to add to file /etc/apt/sources.list
 {{{
 deb spacewalk://<spacewalk_fqdn> channels: main child01 child02 
 }}}
-Note: you have to add there names of channel for now. In future versions it will not be required.
+'''Note''': you have to add there names of channel for now. In future versions it will not be required.
 
 
 
