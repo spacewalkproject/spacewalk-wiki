@@ -1,4 +1,3 @@
-
 [[TOC]]
 
 = Spacewalk with PostgreSQL backend =
@@ -14,7 +13,8 @@ Spacewalk on PostgreSQL still only has limited functionality. Areas known to wor
  * content sync with satellite-sync and spacewalk-repo-sync;
  * rhnpush;
  * client registration;
- * yum operations.
+ * yum operations;
+ * Spacewalk Proxy activation.
 
 Anything else might, but most likely will not work for you.
 
