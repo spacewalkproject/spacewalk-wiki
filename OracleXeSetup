@@ -1,4 +1,3 @@
-
 = Oracle 10g Express Edition Setup =
 
 == Limitations ==
@@ -24,10 +23,10 @@ which is the Multi-byte Unicode/UTF-8 database, not the "Western European" Singl
 
 You will also need the Oracle Instant Client: [http://www.oracle.com/technetwork/topics/linuxsoft-082809.html i386] or [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html x86_64] version. Download the following two rpms (where ARCH is either i386 or x86_64):
 
- * oracle-instantclient-basic-10.2.0.4-1.ARCH.rpm
- * oracle-instantclient-sqlplus-10.2.0.4-1.ARCH.rpm 
+ * oracle-instantclient11.2-basic-11.2.0.2.0.ARCH.rpm
+ * oracle-instantclient11.2-sqlplus-11.2.0.2.0.ARCH.rpm
 
-For now, stick with the 10.2.0.4 version. Do '''NOT''' use oracle-xe-client nor oracle-instantclient11.2.
+For now, stick with the 10.2.0.4 version. Do '''NOT''' use oracle-xe-client.
 
 == Before installing Oracle XE ==
 
@@ -64,12 +63,12 @@ The '''bc''' is a dependency of oracle-xe which is not resolved automatically ca
 # yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
 }}}
 
-The '''--nogpgcheck''' is required because the Oracle RPMs are not signed. If the installation of oracle-xe-univ fails on Fedora 12+ with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
+The '''--nogpgcheck''' is required because the Oracle RPMs are not signed. If the installation of oracle-xe-univ fails on RHEL6 and Fedora 12+ with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
 
 === Oracle !InstantClient ===
 
 {{{
-# yum -y localinstall --nogpgcheck oracle-instantclient-basic*.rpm oracle-instantclient-sqlplus*.rpm
+# yum -y localinstall --nogpgcheck oracle-instantclient11.2-basic*.rpm oracle-instantclient11.2-sqlplus*.rpm
 }}}
 
   * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user. 
@@ -130,30 +129,12 @@ If you find out you are not happy with the configuration, you can revert by doin
 # /etc/init.d/oracle-xe configure
 }}}
 
-== Setup tnsnames.ora ==
-
-Define the service name in {{{/etc/tnsnames.ora}}}:
-
-{{{
-cat >> /etc/tnsnames.ora << 'EOF'
-XE =
-    (DESCRIPTION =
-       (ADDRESS_LIST =
-          (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
-       )
-       (CONNECT_DATA =
-          (SERVICE_NAME = xe)
-       )
-    )
-EOF
-restorecon -v /etc/tnsnames.ora
-}}} 
 
 == Test your connection with sqlplus ==
 
 Run
 {{{
-sqlplus 'sys@xe as sysdba'
+sqlplus 'sys/<password>@//localhost/XE as sysdba'
 }}} 
  
 You should see something like
@@ -174,7 +155,7 @@ SQL>
 == Create the spacewalk database user ==
 
 {{{
-# sqlplus 'sys@xe as sysdba'
+# sqlplus 'sys/<password>@//localhost/XE as sysdba'
 SQL> create user spacewalk identified by spacewalk default tablespace users;
 SQL> grant dba to spacewalk;
 SQL> quit
@@ -183,7 +164,7 @@ SQL> quit
 Test that
 
 {{{
-# sqlplus spacewalk/spacewalk@xe
+# sqlplus spacewalk/<password>@//localhost/XE
 }}}
 
 works.
@@ -199,7 +180,7 @@ Oracle XE has a bug that causes an Internal Server Error (500) in Spacewalk when
 In order to avoid these two problems we need to increase the max processes in Oracle and to 
  
 {{{ 
-# sqlplus spacewalk/spacewalk@xe 
+# sqlplus spacewalk/<password>@//localhost/XE
 SQL> alter system set processes = 400 scope=spfile; 
 SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
 SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
@@ -219,7 +200,7 @@ ORA-07445: exception encountered: core dump [08F93BDE] [SIGSEGV] [Address not ma
 
 you might try to workaround it with
 {{{ 
-# sqlplus spacewalk/spacewalk@xe 
+# sqlplus spacewalk/<password>@//localhost/XE
 SQL>  alter system set query_rewrite_enabled=TRUE ;
 SQL> quit
 }}}
@@ -236,7 +217,7 @@ yum install rlwrap
 You can then do  
 
 {{{ 
-rlwrap sqlplus spacewalk/spacewalk@xe 
+rlwrap sqlplus spacewalk/<password>@//localhost/XE
 }}}  
  
 == Setup development schema (optional) == 
