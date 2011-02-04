@@ -26,7 +26,7 @@ You will also need the Oracle Instant Client: [http://www.oracle.com/technetwork
  * oracle-instantclient11.2-basic-11.2.0.2.0.ARCH.rpm
  * oracle-instantclient11.2-sqlplus-11.2.0.2.0.ARCH.rpm
 
-For now, stick with the 10.2.0.4 version. Do '''NOT''' use oracle-xe-client.
+Do '''NOT''' use oracle-xe-client.
 
 == Before installing Oracle XE ==
 
