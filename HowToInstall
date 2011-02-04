@@ -350,3 +350,5 @@ Workaround:
 {{{
 # chmod g+w /var/log/tomcat6
 }}}
+ * if installing Spacewalk with oracle DB on Fedora14, you might get selinux AVC denials containing oracledb_port_t type
+Workaround: do not use selinux-policy-targeted-3.9.7-28.fc14.noarch, install a newer (or older) policy before the install process
