@@ -48,7 +48,7 @@ Spacewalk 1.3 requires Oracle Instant Client 11g. Before commencing with package
   2. Stop your Spacewalk and uninstall previous oracle-instantclient packages. Run as root:
 
 {{{
-# rhn-satellite stop
+# spacewalk-service stop
 # rpm -e --nodeps oracle-instantclient-basic oracle-instantclient-sqlplus
 }}}
 
@@ -83,7 +83,7 @@ Check any {{{.rpmnew}}}/{{{.rpmsave}}} files that were created during the upgrad
 Make sure your Spacewalk server is down:
 
 {{{
-# /usr/sbin/rhn-satellite status
+# /usr/sbin/spacewalk-service status
 }}}
 
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
@@ -137,5 +137,5 @@ Run as root:
 == Restart Spacewalk ==
 
 {{{
-# /usr/sbin/rhn-satellite start
+# /usr/sbin/spacewalk-service start
 }}}
