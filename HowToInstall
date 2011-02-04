@@ -117,18 +117,19 @@ EOF
 }}}
 
 We specifically want 5.0 generic directory in the above URL.
+Make sure, you do not use the jpackage-generic repository on RHEL5.
 
 === EPEL repository ===
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
 To get packages from EPEL just install this RPM:
 
-==== RHEL5 ====
+==== EPEL5 (use for RHEL5) ====
 {{{
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 }}}
 
-==== RHEL6 ====
+==== EPEL6 (use for RHEL6) ====
 {{{
 rpm -Uvh http://download.fedora.redhat.com/pub/epel/6/i386/epel-release-6-5.noarch.rpm
 }}}
@@ -144,7 +145,7 @@ When using RHEL6, make suer you are subscribed to following channels as well:
 
 === CentOS 5 ===
 
-Follow the instructions for '''Red Hat Enterprise Linux''' with the additions:
+Follow the instructions to use '''EPEL5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
 rpm -ihv http://spacewalk.redhat.com/yum/1.3-client/RHEL/5/i386/spacewalk-client-repo-1.3-1.el5.noarch.rpm
