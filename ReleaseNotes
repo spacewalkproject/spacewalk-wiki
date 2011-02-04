@@ -29,18 +29,14 @@ or if you will upgrade from older release, consult
         * Spacewalk on PostgreSQL can be upgraded from older versions
         * Spacewalk on Oracle now uses Oracle InstantClient version 11g
         * Spacewalk Proxy works with Spacewalk on PostgreSQL
-    * tnsnames.ora file no longer needed
+        * tnsnames.ora file no longer needed
         * New API calls:
-        * system.getUuid
-        * system.search.uuid
-        * errata.publishAccordingToParents
-    * Extended API calls:
-        * system.listPackages by id
-        * channel.software.getDetails,
-          channel.software.listChildren,
-          kickstart.listKickstartableChannels,
-          system.listSubscribedChildChannels,
-          system.getSubscribedBaseChannel by last_modified
+           * system.getUuid
+           * system.search.uuid
+           * errata.publishAccordingToParents
+        * Extended API calls:
+           * system.listPackages by id
+           * channel.software.getDetails, channel.software.listChildren, kickstart.listKickstartableChannels, system.listSubscribedChildChannels,         system.getSubscribedBaseChannel by last_modified
 
 
 == Some notes about apt-get plug-in ==
