@@ -164,7 +164,7 @@ SQL> quit
 Test that
 
 {{{
-# sqlplus spacewalk/<password>@//localhost/XE
+# sqlplus spacewalk/spacewalk@//localhost/XE
 }}}
 
 works.
@@ -180,7 +180,7 @@ Oracle XE has a bug that causes an Internal Server Error (500) in Spacewalk when
 In order to avoid these two problems we need to increase the max processes in Oracle and to 
  
 {{{ 
-# sqlplus spacewalk/<password>@//localhost/XE
+# sqlplus spacewalk/spacewalk@//localhost/XE
 SQL> alter system set processes = 400 scope=spfile; 
 SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
 SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
@@ -200,7 +200,7 @@ ORA-07445: exception encountered: core dump [08F93BDE] [SIGSEGV] [Address not ma
 
 you might try to workaround it with
 {{{ 
-# sqlplus spacewalk/<password>@//localhost/XE
+# sqlplus spacewalk/spacewalk@//localhost/XE
 SQL>  alter system set query_rewrite_enabled=TRUE ;
 SQL> quit
 }}}
@@ -217,7 +217,7 @@ yum install rlwrap
 You can then do  
 
 {{{ 
-rlwrap sqlplus spacewalk/<password>@//localhost/XE
+rlwrap sqlplus spacewalk/spacewalk@//localhost/XE
 }}}  
  
 == Setup development schema (optional) == 
