@@ -89,7 +89,13 @@ deb http://miroslav.suchy.cz/spacewalk/debian spacewalk-unstable ./
 }}}
 '''Note''': packages are not signed. We are working on direct inclusion in Debian and proper signing.
 
-When you register either using '''rhnreg_ks''' or '''rhn_register''' you need to add to file /etc/apt/sources.list
+Register either using '''rhnreg_ks''' or '''rhn_register'''.
+
+Run command:
+{{{
+apt-get install apt-spacewalk
+}}}
+Then you need to add to file /etc/apt/sources.list
 {{{
 deb spacewalk://<spacewalk_fqdn> channels: main child01 child02 
 }}}
