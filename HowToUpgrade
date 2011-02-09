@@ -125,6 +125,14 @@ Important notes:
 # /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
 }}}
 
+== Clean old rhn cache ==
+Run as root:
+
+{{{
+# rm -rf /var/cache/rhn/satsync
+# rm -rf /var/cache/rhn/xml-*
+}}}
+
 
 == Clean jabberd database ==
 
