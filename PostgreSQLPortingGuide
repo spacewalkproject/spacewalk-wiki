@@ -265,6 +265,7 @@ Rewritten as:
 
 {{{
 select * from
+(
 select distinct a, b, c, label from rhnchannel
 ) X
 order by upper(X.label)
