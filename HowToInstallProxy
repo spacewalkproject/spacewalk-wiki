@@ -12,6 +12,7 @@ If you're looking for instructions for the RHN Proxy product see http://www.redh
   * Inbound open ports 80, 443 and 5222
   * An upstream RHN Satellite server with an available Proxy entitlement or a Spacewalk server
   * A provisioning entitlement for the Proxy server
+  * Enable EPEL yum repository
 
 == Repository ==
 
