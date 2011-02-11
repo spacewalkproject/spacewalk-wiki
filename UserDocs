@@ -83,6 +83,9 @@ Do you know the answer to something and think others might find it useful? Feel 
     * [http://www.redhat.com/pdf/ISS_Best_Practices_Whitepaper.pdf ISS Best Practices Whitepaper]
   * The downstream, [http://centos.org/ CentOS] Project Documentation
     * [http://wiki.centos.org/HowTos/PackageManagement/Spacewalk The CentOS Project's Package Management/Spacewalk HowTo]
+  * J. Tanner's notes about RHN Satellite
+    * http://tannerjc.net/wiki/index.php?title=Satellite
+
 === Related Technology Resources ===
   * [http://www.rpm.org/ The RPM Homepage]
     * [http://en.wikipedia.org/wiki/RPM_Package_Manager Wikipedia article on RPM]
