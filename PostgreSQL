@@ -76,3 +76,7 @@ With PostgreSQL support announced with Spacewalk 1.2, we need to start supportin
 
 At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
 
+== Slides for Developer Conference 2011 ==
+
+ * http://www.adelton.com/docs/spacewalk/spacewalk-on-postgresql
+   * The history and state of the port, issues that we hit, examples, and hopefully an inspiration for you to contribute or use our experience in migration of your legacy applications.
