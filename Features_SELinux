@@ -1,3 +1,5 @@
+[[TOC]]
+
 = Spacewalk and SELinux =
 
 SELinux is different layer of access control, besides the owner / group / other. For a process to access file, directory, socket, etc., an explicit '''allow''' has to be specified in the SELinux policy. If there is no allow rule in the system, access is denied and logged (if SELinux is run in Enforcing mode) or the (so called) AVC denial is logged but the operation succeeds (in Permissive).
