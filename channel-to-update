@@ -2,7 +2,14 @@
 
 Ever needed to create a channel to a specific update level?  Now you can with the channel-to-update script.  The data files and script itself is located in the git repo under /scripts/channel-to-update/  but the tarball is hosted here.
 
-Current Files (with md5sum):
+
+'''NOTE''': this script is now fully supported with Satellite 5.4 and Spacewalk.  It is part of the spacewalk-remote-utils package and has been renamed spacewalk-create-channel.  
+
+So you can either grab this package from the rhn-tools channel (for satellite customers).  Or grab the newest from http://koji.spacewalkproject.org/koji/packageinfo?packageID=7036
+
+
+
+Old Versions (with md5sum):
 
  [http://jlsherrill.fedorapeople.org/channel-to-update-level-2.2.1.tar.bz2 Version 2.2.1 (bfa45d65beff44ef6ab0e3991aec2a63)] - 04/26/2009 - Added RHEL 5.5 data files
 
