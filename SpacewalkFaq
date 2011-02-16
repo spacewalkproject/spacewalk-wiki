@@ -31,6 +31,9 @@ See [wiki:Logo Logo] page.
 === Is a Satellite/Spacewalk certificate required to use Spacewalk? ===
 Traditionally for Red Hat Satellite a Satellite certificate was required to use the product and listed what channel families and entitlements (and how many) the customer had purchased.  Spacewalk still uses a certificate, but it is provided for free and activated upon installation.  You shouldn't ever have to worry about it expiring or about running out of entitlements.  
 
+=== Help - Spacewalk require Oracle 11, while OracleXE is only 10 ===
+That is not true. Spacewalk requires only Oracle Instant Client 11g. Instant Client is just client libraries and it is completly different thing from database itself. You can use Oracle Instant Client 11g to connect to Oracle Database 11g or 10 or Oracle XE.
+
 [[BR]]
 [[BR]]
 
