@@ -58,4 +58,6 @@ There exist [http://www.gnu.org/software/libidn/ library libidn], which contains
 
 [http://www.gnu.org/software/libidn/javadoc/ Javadoc] -  usage is similar as in Perl example above.
  
+=== Python ===
 
+In original libidn library is also directory ./contrib/idn-python which contains python binding. But it has to be reviewed and packaged.
