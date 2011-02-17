@@ -52,3 +52,10 @@ For presentetaion layer (PXT), we will need to use something like:
  print Net::LibIDN::idn_to_unicode("ascii.org"), "\n";
 Again for classic url, this is idempotent, for IDN we will get Unicode (!) representation of URL.
 
+=== Java ===
+
+There exist [http://www.gnu.org/software/libidn/ library libidn], which contains (by the way) Java bindings. It is however not packed. In Fedora, RHEL(4,5,6) is packed C library (.so), but not java bindings.
+
+[http://www.gnu.org/software/libidn/javadoc/ Javadoc] -  usage is similar as in Perl example above.
+ 
+
