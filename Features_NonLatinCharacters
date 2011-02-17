@@ -15,8 +15,10 @@ According to my information Fedora 12 should be able to handle such domains. At 
  * client tools communicating to Satellite - rhnpush, config etc
  * rhel/fedora client tools - yum-rhn-plugin, rhn_check
 
-== IANA Guidelines for the Implementation of Internationalized Domain Names ==
-http://www.icann.org/en/general/idn-guidelines-20jun03.htm
-
-== IDN on Wikipedia ==
-http://en.wikipedia.org/wiki/Internationalized_domain_name
+Links:
+ * IANA Guidelines for the Implementation of Internationalized Domain Names
+   http://www.icann.org/en/general/idn-guidelines-20jun03.htm
+ * IDN on Wikipedia
+   http://en.wikipedia.org/wiki/Internationalized_domain_name
+ * RFC
+   http://tools.ietf.org/html/rfc3490
