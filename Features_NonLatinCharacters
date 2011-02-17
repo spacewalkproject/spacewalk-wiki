@@ -14,3 +14,6 @@ According to my information Fedora 12 should be able to handle such domains. At 
  * Proxy server hostname - do things work
  * client tools communicating to Satellite - rhnpush, config etc
  * rhel/fedora client tools - yum-rhn-plugin, rhn_check
+
+== IANA Guidelines for the Implementation of Internationalized Domain Names ==
+http://www.icann.org/en/general/idn-guidelines-20jun03.htm
