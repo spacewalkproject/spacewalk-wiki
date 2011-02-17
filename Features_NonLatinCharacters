@@ -27,3 +27,28 @@ Example:
 
 IDN name: Bücher.ch
 Pune, i.e real hostname: xn--bcher-kva.ch
+
+== Code changes ==
+
+=== Perl ===
+
+We can use module Net::LibIDN, which is available as package perl-Net-LibIDN in Fedora and RHEL6.
+
+We need to use this code before every connect.
+
+ $ cat example
+ use Net::LibIDN;
+ print Net::LibIDN::idn_to_ascii("müller.org"), "\n";
+ print Net::LibIDN::idn_to_ascii("ascii.org"), "\n";
+ $ perl p
+ xn--m14ller-xwa2143e.org
+ ascii.org
+
+I.e. for classic url, this operation is idempotent, for IDN url, it give you punny encoded url.
+
+For presentetaion layer (PXT), we will need to use something like:
+ use Encode;
+ print decode('utf-8', Net::LibIDN::idn_to_unicode("xn--m14ller-xwa2143e.org", 'utf-8')), "\n";
+ print Net::LibIDN::idn_to_unicode("ascii.org"), "\n";
+Again for classic url, this is idempotent, for IDN we will get Unicode (!) representation of URL.
+
