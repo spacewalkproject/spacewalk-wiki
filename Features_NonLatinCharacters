@@ -28,6 +28,8 @@ Example:
 IDN name: Bücher.ch
 Pune, i.e real hostname: xn--bcher-kva.ch
 
+http://xn--4gbrim.xn----ymcbaaajlc6dj7bxne2c.xn--wgbh1c/Ar/default.aspx
+
 == Code changes ==
 
 === Perl ===
