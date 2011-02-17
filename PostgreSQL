@@ -8,7 +8,7 @@ This is a page describing the status of the PostgreSQL support as of 4th Februar
 
 == Functionality known to work ==
 
-Spacewalk on PostgreSQL still only has limited functionality. Areas known to work with Spacewalk 1.2 are:
+Spacewalk on PostgreSQL still only has limited functionality. Areas known to work are:
 
  * content sync with satellite-sync and spacewalk-repo-sync;
  * rhnpush;
