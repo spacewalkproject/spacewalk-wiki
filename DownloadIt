@@ -27,7 +27,7 @@ If you have a firewall that is blocking the git clone operation, you can also cl
 git clone http://git.fedorahosted.org/git/spacewalk.git/
 }}}
 
-You can view the source via [http://git.fedoraproject.org/git/?p=spacewalk.git;a=summary gitweb]
+You can view the source via [http://git.fedorahosted.org/git/?p=spacewalk.git;a=summary gitweb]
 
 === Commiter Git Information ===
 
