@@ -85,3 +85,7 @@ While running
   sock.connect((server_name, 80))
 }}}
 Will run without problem.
+
+== Proposal ==
+
+I propose to store hostnames in db in their localized form and before every connect we call idn_to_ascii() (or its equivalent). No transformation will be needed in UI then.
