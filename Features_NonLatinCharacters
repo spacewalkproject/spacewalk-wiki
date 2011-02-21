@@ -66,3 +66,22 @@ There exist [http://www.gnu.org/software/libidn/ library libidn], which contains
 === Python ===
 
 In original libidn library is also directory ./contrib/idn-python which contains python binding. But it has to be reviewed and packaged.
+
+I verified for Python, that you really need to do the transformation. 
+If you run:
+{{{
+ import socket
+ # -*- coding: utf-8 -*-
+ server_name='bücher.ch'
+ sock.connect((server_name, 80))
+}}}
+You will get:
+{{{
+ socket.gaierror: [Errno -2] Name or service not known
+}}}
+While running
+{{{
+  server_name='xn--bcher-kva.ch'
+  sock.connect((server_name, 80))
+}}}
+Will run without problem.
