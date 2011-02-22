@@ -86,6 +86,13 @@ While running
 }}}
 Will run without problem.
 
-== Proposal ==
+== Requirements ==
 
-I propose to store hostnames in db in their localized form and before every connect we call idn_to_ascii() (or its equivalent). No transformation will be needed in UI then.
+Client tools need to make sure that all host names are in Pune encoding before sending to rhnParent.
+Client tools should accept non latin domains as entry (eg. serverURL) and encode it to Pune, before connect() or before it is send to rhnParent.
+
+We will store host names in DB in Pune encoding.
+
+We will have to go through WebUI and anytime we present hostname (SDC, device info, monitoring...) we will decode Pune string to UTF-8.
+
+We will modify JavaDoc for API calls and whenever hostname is used, we will note that we accept/return hostname in Pune encoding.
