@@ -81,7 +81,7 @@ To install oracle-lib-compat, you'll need to have the Spacewalk channel configur
 # yum -y install oracle-lib-compat
 }}}
 
-This will likely pull in {{{compat-libstdc++-33}}} as well
+This will likely pull in {{{compat-libstdc++-33}}}.
 
 == Install SELinux Policy ==
 
