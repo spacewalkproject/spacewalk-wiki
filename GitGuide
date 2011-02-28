@@ -22,7 +22,7 @@ For anonymous access to the Spacewalk source code, feel free to clone the reposi
 git clone git://git.fedorahosted.org/git/spacewalk.git/
 }}}
 
-Spacewalk [ContibutorList committers] can clone the repository using the ssh url, which is required if you want to push changes into the repo (and of course you need permission to do so).
+Spacewalk [wiki:ContributorList committers] can clone the repository using the ssh url, which is required if you want to push changes into the repo (and of course you need permission to do so).
 
 {{{
 git clone ssh://git.fedorahosted.org/git/spacewalk.git/
