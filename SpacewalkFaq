@@ -18,13 +18,11 @@ Viewed as a service, RHN Satellite and Proxy Servers languished as proprietary o
 
 On April 30th, 2010, Spacewalk v1.0 was released, achieving an important milestone for this project.
 
+On November 19th, 2010, Spacewalk v1.2 was released which was the first release installable and usable with PostgreSQL database backend (albeit with limited feature set), making Spacewalk a full open-source solution.
+
 === Who designed Spacewalk logo? Can I get hi-res picture? ===
 
 See [wiki:Logo Logo] page.
-
-
-[[BR]]
-[[BR]]
 
 == Installation ==
 
@@ -37,7 +35,7 @@ That is not true. Spacewalk requires only Oracle Instant Client 11g. Instant Cli
 === Should I give a try PostgreSQL version? ===
 Support for PostgreSQL still has lots of issues. But on the other hand it is quite usable. So the answer is tricky.
 If you use Spacewalk in production you should use Oracle backend. If you are nervous when you hit "Internal Server Error", then use Oracle backend. If you expect flawless usage, if you are not willing to report errors, if your business rely on Spacewalk, if your boss is shouting at you if something break... then use Oracle backend.
-But PosgreSQL backend is quite mature enough. We tried all basic thing with PostgreSQL. You are able to install Spacewalk itself, register machine, activate Spacewalk Proxy, download packages from Spacewalk, rhnpush package, run spacewalk-repo-sync. Anything else may work, but most probably you will get sooner or later you will "Internal Server Error".
+But PostgreSQL backend is quite mature enough. We tried all basic thing with PostgreSQL. You are able to install Spacewalk itself, register machine, activate Spacewalk Proxy, download packages from Spacewalk, rhnpush package, run spacewalk-repo-sync. Anything else may work, but most probably you will get sooner or later you will "Internal Server Error".
 Therefore use PostgreSQL version if the basic functionality is good enough for you. If you are willing to report errors and test fixes. If you do not mind to workaround problems or even if you will not miss some functionality of Spacewalk.
 (Updated 2011-02-16)
 
