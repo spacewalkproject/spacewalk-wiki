@@ -65,12 +65,8 @@ Again for classic url, this is idempotent, for IDN we will get Unicode (!) repre
 
 === Java ===
 
-There exist [http://www.gnu.org/software/libidn/ library libidn], which contains (by the way) Java bindings. It is however not packed. In Fedora, RHEL(4,5,6) is packed C library (.so), but not java bindings.
+There exist [http://download.oracle.com/javase/6/docs/api/java/net/IDN.html library java.net.IDN] directly in java, which contains IDN bindings. Usage is similar as in Perl example above.
 
-[http://www.gnu.org/software/libidn/javadoc/ Javadoc] -  usage is similar as in Perl example above.
-
-Upstream of libidn is willing to create java binding:
-https://bugzilla.redhat.com/show_bug.cgi?id=681927
  
 === Python ===
 
