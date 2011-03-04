@@ -75,5 +75,5 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
 
 == Slides for Developer Conference 2011 ==
 
- * http://www.adelton.com/docs/spacewalk/spacewalk-on-postgresql
+ * [http://www.adelton.com/docs/spacewalk/spacewalk-on-postgresql Spacewalk on PostgreSQL by Jan Pazdziora]
    * The history and state of the port, issues that we hit, examples, and hopefully an inspiration for you to contribute or use our experience in migration of your legacy applications.
