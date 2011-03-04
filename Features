@@ -2,8 +2,9 @@
 = __Index of Features__ =
 
 == Proposed ==
+
  * [wiki:Features/CommonChannelConstructor Common Channel Constructor]
- * [wiki:Features/NonLatinCharacters Non-Latin Character Hostnames]
+
  * [wiki:Features/SystemInventory System Inventory]
    * '''[wiki:Features/SystemInventory#Overview Overview]'''
    * '''[wiki:Features/SystemInventory#Requirements Requirement]'''
@@ -12,12 +13,7 @@
    * '''[wiki:Features/SystemInventory#Tasks Tasks]'''
    * '''[wiki:Features/SystemInventory#Tests Tests]'''
    * '''[wiki:Features/SystemInventory#Risks Risks]'''
- * [wiki:Features/CliProxyInstaller CLI Proxy Installer]
-    * '''[wiki:Features/CliProxyInstaller#Overview Overview]'''
-    * '''[wiki:Features/CliProxyInstaller#Requirement Requirement]'''
-    * '''[wiki:Features/CliProxyInstaller#Specification Specification]'''
 
-== Works in Progress ==
  * [wiki:Features/SupportUser Support User]
    * '''[wiki:Features/SupportUser#Overview Overview]'''
    * '''[wiki:Features/SupportUser#Requirements Requirements]'''
@@ -26,14 +22,6 @@
    * '''[wiki:Features/SupportUser#Tasks Tasks]'''
    * '''[wiki:Features/SupportUser#Tests Tests]'''
    * '''[wiki:Features/SupportUser#Risks Risk]'''
-
- * [wiki:Features/ScriptBasedReporting Script Based Reporting]
-    * '''[wiki:Features/ScriptBasedReporting/Requirements Requirements]'''
-    * '''[wiki:Features/ScriptBasedReporting/Spec Specification]'''
-    * [wiki:Features/ScriptBasedReporting/Inventory Inventory]
-    * [wiki:Features/ScriptBasedReporting/Entitlements Entitlements]
-    * [wiki:Features/ScriptBasedReporting/Erratas Erratas]
-    * [wiki:Features/ScriptBasedReporting/Users Users]
 
  * [wiki:Features/SearchImprovements Search Improvements]
    * '''[wiki:Features/SearchImprovements#Overview Overview]'''
@@ -44,9 +32,29 @@
 
  * [wiki:Features/MultiOrg3 Multiple Organisations] (currently [wiki:Features/MultiOrg2 Multiple Organisations v2])
 
+
+== Works in Progress ==
+
+ * [wiki:Features/NonLatinCharacters Non-Latin Character Hostnames]
+
 == Implemented ==
+
+ * [wiki:Features/CliProxyInstaller CLI Proxy Installer]
+    * '''[wiki:Features/CliProxyInstaller#Overview Overview]'''
+    * '''[wiki:Features/CliProxyInstaller#Requirement Requirement]'''
+    * '''[wiki:Features/CliProxyInstaller#Specification Specification]'''
+
  * [wiki:Features/SELinux SELinux]
+
  * [wiki:Features/WebuiErrataAndCvesEnhancements Web UI Errata and CVES Enhancements]
    * '''[wiki:Features/WebuiErrataAndCvesEnhancements#Requirements Requirements]'''
    * '''[wiki:Features/WebuiErrataAndCvesEnhancements#Specification Specification]'''
    * '''[wiki:Features/WebuiErrataAndCvesEnhancements#Progress Progress]'''
+
+ * [wiki:Features/ScriptBasedReporting Script Based Reporting]
+    * '''[wiki:Features/ScriptBasedReporting/Requirements Requirements]'''
+    * '''[wiki:Features/ScriptBasedReporting/Spec Specification]'''
+    * [wiki:Features/ScriptBasedReporting/Inventory Inventory]
+    * [wiki:Features/ScriptBasedReporting/Entitlements Entitlements]
+    * [wiki:Features/ScriptBasedReporting/Erratas Erratas]
+    * [wiki:Features/ScriptBasedReporting/Users Users]
