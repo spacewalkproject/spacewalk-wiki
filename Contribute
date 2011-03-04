@@ -12,7 +12,7 @@ Did you write some useful script which uses [ApiDocs Spacewalk API]? Share it wi
 
 Just use Spacewalk and report any bugs you find.
 
-Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether they are still valid. Sometimes bug is fixed as a side effect of other fix. You may find such case and close the bug without any work!
+Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether they are still valid. Sometimes bug is fixed as a side effect of other fix. You may find such case and close the bug as CURRENTRELEASE without any work!
 
 == Documentation ==
 
