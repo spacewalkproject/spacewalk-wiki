@@ -16,7 +16,7 @@ Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classificatio
 
 == Documentation ==
 
-A lot of spacewalk programs or configuration files do not have a manual page. Do you want to write it?
+A lot of Spacewalk programs or configuration files do not have a manual page. Do you want to write it?
 
 We need general documentation of Spacewalk. You did not find documentation for the task you are currently doing? Just create a new wiki page and document what it is you did.
 Some existing documentation is outdated and you may review it and update it.
