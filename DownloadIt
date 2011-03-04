@@ -62,8 +62,9 @@ The output of this command will show you if the package is signed, and which key
 
 Release Package Signing
 {{{
-Name: RPM-GPG-KEY-spacewalk
-Fingerprint: B6F4 CBE4 8B8F 45E1 85F8  34B2 9542 3D4E 430A 1C35
+Key ID: b3892132
+Name: RPM-GPG-KEY-spacewalk-2010
+Fingerprint: 7AB4 0878 5D10 5907 0572  F465 ED63 5379 B389 2132
 }}}
 
-The public key is here:  [https://fedorahosted.org/spacewalk/attachment/wiki/DownloadIt/RPM-GPG-KEY-spacewalk?format=raw RPM-GPG-KEY-spacewalk]
+The public key is here: [http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010]
