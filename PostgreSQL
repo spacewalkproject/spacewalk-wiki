@@ -53,6 +53,12 @@ For the above mentioned areas that are known to work, if you hit a problem, plea
 
 For other areas, please help us by submitting a patch to spacewalk-devel@redhat.com mailing list. See below for how to fix issues.
 
+== Info for developers ==
+
+=== Porting to PostgreSQL ===
+
+At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
+
 === Database schema ===
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
@@ -63,14 +69,9 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
 
  * Not all Oracle sources have their PostgreSQL counterparts.
    * Run {{{perl schema-source-sanity-check.pl -I}}} to see what needs to be worked on.
- * Even those that have them most probably have gone out of sync since the time the PostgreSQL files were crafted back in Spacewalk 0.6 timeframe. Especially those that don't start with the {{{-- oracle equivalent source sha1 ...}}} line.
-   * Run {{{perl schema-source-sanity-check.pl -I}}} to see what needs to be worked on.
+   * When you fix PostgreSQL schema source to be equivalent to the Oracle file, add line {{{-- oracle equivalent source sha1 ...}}} to the start of the PostgreSQL file, with SHA1 of the Oracle file there.
  * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
  * The {{{chameleon}}} tool is used to generate DDL from {{{common/}}} but it only seems to work for tables. Do we want to extend that tool, or drop it completely?
-
-=== Porting to PostgreSQL ===
-
-At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
 
 == Slides for Developer Conference 2011 ==
 
