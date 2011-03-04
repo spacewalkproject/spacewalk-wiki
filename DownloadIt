@@ -5,7 +5,7 @@
 }}}
 == Binary ==
 
-Releases: The binaries can be downloaded from the [HowToInstall#SettingupSpacewalkrepo yum repo].
+Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [http://spacewalk.redhat.com/yum/ yum repositories]. Please [HowToInstall#SettingupSpacewalkrepo follow installation information] on how to best setup yum to have dependencies resolved properly.
 
 Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [HowToInstall#Nightlybuilds nightly builds].
 
