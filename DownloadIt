@@ -46,7 +46,8 @@ git clone ssh://USERNAME@git.fedorahosted.org/git/spacewalk.git/
 Replacing USERNAME with your FAS username.
 
 === Source RPMs ===
-Are available [http://www.redhat.com/spacewalk/source/  here]
+
+Source packages [http://spacewalk.redhat.com/source/ are available from spacewalk.redhat.com/source/].
 
 == RPM Package Signing ==
 
