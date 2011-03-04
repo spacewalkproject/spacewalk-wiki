@@ -152,15 +152,6 @@ Upgrade guides, sequential, stepped upgrades are recommended to cover multiple u
   * [wiki:HowToUpgrade08 From 0.7 to 0.8]
   * [wiki:HowToUpgrade07 From 0.6 to 0.7]
   * [wiki:HowToUpgrade06 From 0.5 to 0.6]
-=== Dependency Notes ===
-A quick list of rpms that a 'yum install spacewalk' adds to a box.
-  * [wiki:ListofRPMsInstalled11 Version 1.1]
-  * [wiki:ListofRPMsInstalled10 Version 1.0]
-  * [wiki:ListofRPMsInstalled08 Version 0.8]
-  * [wiki:ListofRPMsInstalled07 Version 0.7]
-  * [wiki:ListofRPMsInstalled06 Version 0.6]
-  * [wiki:ListofRPMsInstalled05 Version 0.5]
-  * [wiki:ListofRpms04Installs Version 0.4]
 === Release Notes ===
 Release notes for each version:
   * [wiki:ReleaseNotes13 for 1.3]
