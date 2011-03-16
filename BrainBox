@@ -28,6 +28,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
    * [[Image(action-add.gif)]] to integrate with puppet -- jmrodri
    * [[Image(action-del.gif)]] [wiki:Why_not_to_use_a_configuration_management_engine Why not to use a configuration management engine] -- jvzantvoort(jydawg)
+   * [[Image(action-del.gif)]] I think spacewalk has a great foundation for config management and should be expanded.  No other tool has the ability to control access to files, thus preventing accidents.
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
    * [[Image(action-del.gif)]] Agreed, could there be some integration with NRPE or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
