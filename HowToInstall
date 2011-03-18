@@ -2,7 +2,7 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instruction for Spacewalk 1.3.
+These are installation instruction for new installations of Spacewalk 1.3. If you are upgrading from older versions, see HowToUpgrade.
 
 Spacewalk 1.2 installation instructions are available at [wiki:HowToInstall12].
 
