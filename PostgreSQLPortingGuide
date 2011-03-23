@@ -467,3 +467,13 @@ If the anonymous block does not take any arguments, the list will be empty.
 EX: 30903ca16fa55cab6994dbd97595eb549bd3f619
 
 Since the ORA and PG syntax for cursors differs a bit, you can use comments {{{/*pg_cs*/}}} and {{{/*pg cursor*/}}} to tell the PG driver to massage the source to make PG happy, while masking those strings from ORA -- the {{{pg_cs}}} eats the following {{{cursor}}} word, and {{{pg cursor}}} puts that {{{cursor}}} back for PG.
+
+==== Relation (table) does not exists ==== #tablenotexist
+
+ERROR:  relation "table_alias" does not exist at character XX
+
+PG does not support table aliases. This could be partially workarounded by creating view from original table but even simple views in PG does not support updates (i.e. updating underlying tables via {{{update view set ....}}} query).
+
+So the right fix is replacing table alias with name of referenced table.
+
+EX: d292753948be6718cee2639c68b7a98d58c2f11a, 566bbf371d4cf831705c4a3afe19bb1e7f9efe81, d347f40a137622b4b12a9400a5d4ca8dfdb6ede9
