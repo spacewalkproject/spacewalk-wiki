@@ -477,3 +477,15 @@ PG does not support table aliases. This could be partially workarounded by creat
 So the right fix is replacing table alias with name of referenced table.
 
 EX: d292753948be6718cee2639c68b7a98d58c2f11a, 566bbf371d4cf831705c4a3afe19bb1e7f9efe81, d347f40a137622b4b12a9400a5d4ca8dfdb6ede9
+
+==== Inserting / writing blob in Python (backend) ==== #blob_in_python
+
+ERROR: !AttributeError: 'buffer' object has no attribute 'write'
+
+Oracle does not support direct insert into blob columns. This is traditionally solved by inserting {{{empty_blob()}}} instead, then selecting blob id and writing content to it.
+On PG we use {{{bytea}}}s instead of blobs in most cases which can be inserted directly but content can't be written into it (as it is for blobs in Oracle).
+We overcome this difference by extending oracle python driver with support for direct blob inserts.
+
+In the {{{backend.dbmodule.prepare}}}, use {{{blob_map}}} parameter with dict of {blob1_column_name: bind_variable_name1, ...} pairs.
+
+EX: c795aaae8e3d6d68418c066fc0c190fb60e7df08, 1966210148756644c244fed259e93d2b4f2d5cef
