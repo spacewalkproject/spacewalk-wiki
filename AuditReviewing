@@ -20,8 +20,9 @@ Please see [http://www.stl.gtri.gatech.edu/jroys/] for the full details.
     * {{{export T2=`date -d "$END" +%s`}}}
   * Or, put something like the following in a cronjob (and use pubkey ssh authentication):
 {{{
-ausearch -r -ts $START -te $END | /path/to/aup | \
-ssh spacewalk 'cat > /var/satellite/systemlogs/$OURHOSTNAME/audit/audit-$T1-$T2.parsed'
+ausearch -r -ts `date +"%D %T" -d "$(date -d yesterday +"%D")"` \
+-te `date +"%D %T" -d "$(date -d now +"%D") - 1 seconds"` | /path/to/aup | \
+ssh spacewalk 'cat > /var/satellite/systemlogs/$OURHOSTNAME/audit/audit-`date +"%s" -d "$(date -d yesterday +"%D")"`-`date +"%s" -d "$(date -d now +"%D") - 1 seconds"`.parsed'
 }}}
   * Or, use rsync to sync the entire /var/log over to /var/satellite/systemlogs/$OURHOSTNAME/
 
