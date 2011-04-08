@@ -47,6 +47,8 @@ Check if you have swap > 1GB because Oracle XE RPM will need it. You can create 
 # swapon /var/swapfile
 }}}
 
+Ensure your hostname is resolvable either with by DNS or an entry in /etc/hosts. Otherwise the configuration of the Oracle Net Listener will fail.
+
 == Install ==
 
 === Various packages needed ===
