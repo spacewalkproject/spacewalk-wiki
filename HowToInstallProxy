@@ -11,6 +11,7 @@ If you're looking for instructions for the RHN Proxy product see the [http://doc
   * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring) and 5269
   * Inbound open ports 80, 443 and 5222
   * An upstream RHN Satellite server with an available Proxy entitlement or a Spacewalk server
+  * Machine where you will install Spacewalk Proxy must be registered against Spacewalk Server, which you will proxy.
   * A provisioning entitlement for the Proxy server
   * Enable EPEL yum repository
 
