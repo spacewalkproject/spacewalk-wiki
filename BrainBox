@@ -32,6 +32,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
    * [[Image(action-del.gif)]] Agreed, could there be some integration with NRPE or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
+   * [[Image(action-del.gif)]] +1 this idea.  Nagios is gaining more ground and provides excellent monitoring solution that could provide excellent integration with Spacewalk.
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
    * ? Is this the NEVRA issue? or something else? -- jmrodri
  * streamline development process to encourage more contributions, see [http://209.85.215.104/search?q=cache:0hNSibSYPmYJ:www.people.hbs.edu/cbaldwin/DR2/BaldwinArchPartAll.pdf+%22architecture+of+participation%22+harvard&hl=en&ct=clnk&cd=1&gl=us&client=firefox-a The Architecture of Participation: ...]
