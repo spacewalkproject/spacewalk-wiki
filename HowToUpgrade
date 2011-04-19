@@ -2,7 +2,7 @@
 
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.2 to Spacewalk 1.3.
+These are upgrade instruction for upgrading Spacewalk 1.3 to Spacewalk 1.4.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
@@ -11,8 +11,8 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 1.2 to 1.3 upgrade instructions, are available at [wiki:HowToUpgrade13]
  * Spacewalk 1.1 to 1.2 upgrade instructions, are available at [wiki:HowToUpgrade12]
- * Spacewalk 1.0 to 1.1 upgrade instructions, are available at [wiki:HowToUpgrade11]
 
 
 
@@ -23,7 +23,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 1.3 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to Spacewalk 1.4 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, for Fedora 13 and 14 make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
@@ -33,33 +33,6 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
   *  Backup your SSL build directory, ordinarily /root/ssl-build
   *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle / PostgreSQL documentation or contact your DBA
-
-
-== Oracle Instant Client upgrade (Oracle DB backends only) ==
-
-If you use PostgreSQL as a database backend, you may safely skip this step.
-
-Spacewalk 1.3 requires Oracle Instant Client 11g. Before commencing with package upgrade, you need to upgrade oracle-instantclient* packages:
-
-  1. Navigate to http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html choose correct architecture and download latest available versions of following packages:
-    * oracle-instantclient11.2-basic
-    * oracle-instantclient11.2-sqlplus
-
-  2. Stop your Spacewalk and uninstall previous oracle-instantclient packages. Run as root:
-
-{{{
-# spacewalk-service stop
-# rpm -e --nodeps oracle-instantclient-basic oracle-instantclient-sqlplus
-}}}
-
-  3. Install oracle-instantclient11.2* packages you downloaded in step 1. Run as root:
-
-{{{
-# rpm -ivh oracle-instantclient11.2-*.rpm
-Preparing...                ########################################### [100%]
-   1:oracle-instantclient11.########################################### [ 50%]
-   2:oracle-instantclient11.########################################### [100%]
-}}}
 
 
 == Package upgrade ==
