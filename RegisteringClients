@@ -82,6 +82,15 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 # rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel>
 }}}
 
+== SuSe ==
+
+Repositories are here:
+{{{
+  http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_11.4/
+  http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_Factory/
+}}}
+
+
 == Debian ==
 
 Add this line to file /etc/apt/sources.list:
