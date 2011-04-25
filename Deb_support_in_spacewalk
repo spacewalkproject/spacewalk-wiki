@@ -6,25 +6,10 @@ Brno University of Technology. In my master thesis I am going to work on support
 deb systems/packages in spacewalk. My technical consultant is Miroslav Suchy,
 RHN Satellite Engineer.
 
-== Debian repo with spacewalk packages ==
+== Client packages ==
 
-You can test packages, they are available on:
+For the latest Debian GNU/Linux client packages please refer to [wiki:RegisteringClients#Debian]
 
-https://build.opensuse.org/project/show?project=home%3Axsuchy%3Adebian-spacewalk
-
-If you want to install packages, add this line to /etc/apt/sources.list
-{{{
-deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/Debian_5.0 /
-}}}
-for Debian 5.0 (Lenny) or for Ubuntu_9.10 add this line:
-{{{
-deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUbuntu_9.10/ /
-}}}
-or for Ubuntu_10.04 add this line to /etc/apt/sources.list:
-{{{
-deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUbuntu_10.04 /
-}}}
-  
 == Example of creating package ==
 
  * wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
@@ -48,8 +33,6 @@ deb http://download.opensuse.org/repositories/home:/xsuchy:/debian-spacewalk/xUb
 $(MAKE) -f Makefile.rhn-client-tools install  DESTDIR=$(CURDIR)/debian/rhn-client-tools PREFIX=$(CURDIR)/debian/rhn-client-tools
 }}}
  * dpkg-buildpackage -rfakeroot
-
-
 
 
 == History ==
@@ -89,6 +72,11 @@ Thesis is done. The most important features as registration, deployment of confi
 files and running scritps were implemented. Spacewalk can received DEB package, but
 unfortunately the clients are not able to get these packages from Spacewalk (this would
 require some modification to APT as some plugin or similar).
+
+'''April 2011'''[[BR]]
+Šimon Lukašík introduces Apt-Spacewalk package -- the equivalent of yum-rhn-plugin
+on Debian clients. Rhnlib and rhn-client-tools packages are rebased to the latest versions.
+
 
 Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf or http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf
 
