@@ -29,19 +29,19 @@ To use the official repository install spacewalk-repo RPM:
 
 Red Hat Enterprise Linux 5, CentOS
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/RHEL/5/i386/spacewalk-repo-1.3-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/RHEL/5/x86_64/spacewalk-repo-1.4-1.el5.noarch.rpm
 }}}
 Red Hat Enterprise Linux 6
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/RHEL/6/i386/spacewalk-repo-1.3-1.el6.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/RHEL/6/x86_64/spacewalk-repo-1.4-1.el6.noarch.rpm
 }}}
 Fedora 13
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/Fedora/13/i386/spacewalk-repo-1.3-1.fc13.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/Fedora/13/x86_64/spacewalk-repo-1.4-1.fc13.noarch.rpm
 }}}
 Fedora 14
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/Fedora/14/i386/spacewalk-repo-1.3-1.fc14.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/Fedora/14/x86_64/spacewalk-repo-1.4-1.fc14.noarch.rpm
 }}}
 
 ==== Nightly builds ====
@@ -120,7 +120,7 @@ configure-proxy.sh --answerfile=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="1.3"
+VERSION="1.4"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
