@@ -84,11 +84,24 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 
 == SUSE ==
 
-Repositories are here:
+  1. Add the '''spacewalk-tools''' repo to get access to the tools and install them:
+
+For openSUSE 11.4:
 {{{
-  http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_11.4/
-  http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_Factory/
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_11.4/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
+
+For Factory:
+{{{
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_Factory/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
+}}}
+
+ 2. Register your SUSE system to Spacewalk using the activation key you created earlier
+   {{{
+# rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-SUSE-custom-channel> 
+   }}}
 
 
 == Debian ==
