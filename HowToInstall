@@ -2,8 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instruction for new installations of Spacewalk 1.3. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instruction for new installations of Spacewalk 1.4. If you are upgrading from older versions, see HowToUpgrade.
 
+Spacewalk 1.3 installation instructions are available at [wiki:HowToInstall13].
 Spacewalk 1.2 installation instructions are available at [wiki:HowToInstall12].
 
 ----
@@ -30,25 +31,25 @@ To use this repository install spacewalk-repo with commands below:
 === Red Hat Enterprise Linux 5, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/RHEL/5/i386/spacewalk-repo-1.3-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/RHEL/5/x86_64/spacewalk-repo-1.4-1.el5.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 6 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/RHEL/6/i386/spacewalk-repo-1.3-1.el6.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/RHEL/6/x86_64/spacewalk-repo-1.4-1.el6.noarch.rpm
 }}}
 
 === Fedora 13 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/Fedora/13/i386/spacewalk-repo-1.3-1.fc13.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/Fedora/13/x86_64/spacewalk-repo-1.4-1.fc13.noarch.rpm
 }}}
 
 === Fedora 14 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.3/Fedora/14/i386/spacewalk-repo-1.3-1.fc14.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.4/Fedora/14/x86_64/spacewalk-repo-1.4-1.fc14.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -148,7 +149,7 @@ When using RHEL6, make suer you are subscribed to following channels as well:
 Follow the instructions to use '''EPEL5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://spacewalk.redhat.com/yum/1.3-client/RHEL/5/i386/spacewalk-client-repo-1.3-1.el5.noarch.rpm
+rpm -ihv http://spacewalk.redhat.com/yum/1.4-client/RHEL/5/x86_64/spacewalk-client-repo-1.4-1.el5.noarch.rpm
 }}}
  *  Import Redhat's RPM GPG key:
 {{{
@@ -165,7 +166,7 @@ In order to get Spacewalk to run with Oracle database backend, you need the Orac
 
 In order to get Spacewalk ro run with PostgreSQL database backend, you need PostgreSQL 8.4 server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup.
 
-Please note that the functionality of Spacewalk on PostgreSQL is very limited and sooner than later you will hit weird behaviour or Internal Server Error.
+Please note that the functionality of Spacewalk on PostgreSQL is limited and sooner than later you may hit Internal Server Error.
 
 == Conflicting Packages ==
 There is an open [https://bugzilla.redhat.com/show_bug.cgi?id=593402 bug 593402] that identifies the package cobbler-web as conflicting with Spacewalk's Taskomatic process. Until the issue is addressed, it is recommended that the cobbler-web package be removed from the Spacewalk server.
