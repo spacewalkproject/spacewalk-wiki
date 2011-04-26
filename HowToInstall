@@ -346,8 +346,8 @@ Spacewalk consists of several services. Each of them has its own init.d script t
 
  * For issues with Oracle XE, see [OracleXeSetup#KnownIssues Oracle XE Setup Known Issues]
  * You can find following messages:
-java.io.FileNotFoundException: /usr/share/tomcat6/logs/catalina.2011-02-03.log (Permission denied)
- in /var/log/tomcat6/catalina.out on RHEL6. The reason is a bug in tomcat6.
+java.io.!FileNotFoundException: /usr/share/tomcat6/logs/catalina.2011-02-03.log (Permission denied)
+ in /var/log/tomcat6/catalina.out on RHEL6. The reason is a [https://bugzilla.redhat.com/show_bug.cgi?id=634863 bug] in tomcat6.
 Workaround:
 {{{
 # chmod g+w /var/log/tomcat6
