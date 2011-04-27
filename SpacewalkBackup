@@ -8,7 +8,7 @@
  * '''/etc'''
  * '''/root/ssl-build''' with the package containing your SSL certificate
  * '''/home/nocpulse'''
- * '''/var/lib/rhn/kickstarts''' wich contains all the kickstart files
+ * '''/var/lib/rhn/''' which contains all the kickstart files
 
 
 
