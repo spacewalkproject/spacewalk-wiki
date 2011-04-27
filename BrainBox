@@ -114,3 +114,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Integrate Clickheat as a method for determining how the UI is used.  Determine some (optional) method to "phone home" data that can be used to aggregate usage data for future UI improvements.
   * http://www.labsmedia.com/clickheat/index.html --cswiii
  * replace ssh probes in monitoring with regular scripts from remote action (will imply usage of osad).
+ * implement native [http://freedesktop.org/wiki/Software/systemd/ systemd] services.
