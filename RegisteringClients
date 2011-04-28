@@ -95,7 +95,7 @@ For openSUSE 11.4:
 For Factory:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_Factory/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
  2. Register your SUSE system to Spacewalk using the activation key you created earlier
