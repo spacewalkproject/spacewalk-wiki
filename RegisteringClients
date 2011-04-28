@@ -89,7 +89,7 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 For openSUSE 11.4:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_11.4/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
 For Factory:
