@@ -1,16 +1,15 @@
 
 == Deb support in Spacewalk ==
 
-Hi, my name is Lukas Durfina. I am studying on Faculty of Information Technology,
-Brno University of Technology. In my master thesis I am going to work on support
-deb systems/packages in spacewalk. My technical consultant is Miroslav Suchy,
-RHN Satellite Engineer.
+In 2010, Lukaš Ďurfina has introduced a support of Debian in Spacewalk server. In 2011, Šimon Lukašík reasumed his work
+and created Apt-Spacewalk package, the equivalent of yum-rhn-plugin for Debian clients. Nowadays, Debian clients are
+able to register with Spacewalk server, install, and update packages.
 
 == Client packages ==
 
 For the latest Debian GNU/Linux client packages please refer to [wiki:RegisteringClients#Debian]
 
-== Example of creating package ==
+== Example of package creation ==
 
  * wget http://www.redhat.com/spacewalk/source/0.3/rhn-client-tools-0.4.17-10.fc9.src.rpm
  * rpm2cpio rhn-client-tools-0.4.17-10.fc9.src.rpm | cpio -idmv --no-absolute-filenames
@@ -36,6 +35,11 @@ $(MAKE) -f Makefile.rhn-client-tools install  DESTDIR=$(CURDIR)/debian/rhn-clien
 
 
 == History ==
+
+Hi, my name is Lukas Durfina. I am studying on Faculty of Information Technology,
+Brno University of Technology. In my master thesis I am going to work on support
+deb systems/packages in spacewalk. My technical consultant is Miroslav Suchy,
+RHN Satellite Engineer.
 
 On this page I would describe progress of my work.
 
@@ -73,10 +77,11 @@ files and running scritps were implemented. Spacewalk can received DEB package, 
 unfortunately the clients are not able to get these packages from Spacewalk (this would
 require some modification to APT as some plugin or similar).
 
+Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf or http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf
+
 '''April 2011'''[[BR]]
 Šimon Lukašík introduces Apt-Spacewalk package -- the equivalent of yum-rhn-plugin
 on Debian clients. Rhnlib and rhn-client-tools packages are rebased to the latest versions.
 
 
-Text of thesis can be downloaded from http://www.stud.fit.vutbr.cz/~xdurfi00/diplomka/xdurfi00.pdf or http://www.redhat.com/spacewalk/documentation/master-thesis-debian-support.pdf
 
