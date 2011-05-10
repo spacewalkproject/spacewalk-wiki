@@ -115,3 +115,4 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
   * http://www.labsmedia.com/clickheat/index.html --cswiii
  * replace ssh probes in monitoring with regular scripts from remote action (will imply usage of osad).
  * implement native [http://freedesktop.org/wiki/Software/systemd/ systemd] services.
+ * intergration with [http://www.open-scap.org/page/Main_Page OpenSCAP].
