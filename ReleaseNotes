@@ -1,84 +1,20 @@
-= __Spacewalk 1.4 Release Notes__ =
+= Spacewalk Release Notes =
 
-Hello world, 
+== The latest Spacewalk release is 1.4 ==
 
-Spacewalk 1.4 is now available for download from 
+ * [wiki:ReleaseNotes14 Release notes for Spacewalk 1.4] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2011-April/msg00000.html on April 26th, 2011]
 
-  * http://spacewalk.redhat.com/yum/1.4/RHEL/5/$basearch/ 
-  * http://spacewalk.redhat.com/yum/1.4/RHEL/6/$basearch/ 
-  * http://spacewalk.redhat.com/yum/1.4/Fedora/13/$basearch/ 
-  * http://spacewalk.redhat.com/yum/1.4/Fedora/14/$basearch/ 
+== Older Spacewalk releases ==
 
-depending on your operating system, with client repositories under 
-
-  * http://spacewalk.redhat.com/yum/1.4-client/Fedora/13
-  * http://spacewalk.redhat.com/yum/1.4-client/Fedora/14
-  * http://spacewalk.redhat.com/yum/1.4-client/RHEL/5
-  * http://spacewalk.redhat.com/yum/1.4-client/RHEL/6
-  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_11.4/
-  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.4/openSUSE_Factory/
-  * http://miroslav.suchy.cz/spacewalk/debian
-
-Check the installation steps at 
-
-  * https://fedorahosted.org/spacewalk/wiki/HowToInstall 
-
-or if you will upgrade from older release, consult 
-
-  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
-
-
-== Features & Enhancements in Spacewalk 1.4 ==
-
-        * client packages for Debian
-        * client packages for !OpenSuse
-        * support for [http://en.wikipedia.org/wiki/Internationalized_domain_name IDN] (but RHN Tools part)
-                 - you can now have Spacewalk server and clients, whose
-                  hostnames contains non latin domain name.
-        * issues in PostgreSQL backend, reported by user, were fixed. [https://fedorahosted.org/spacewalk/wiki/PostgreSQL PostgreSQL status]
-        * system history reports were added in spacewalk-reports
-        * spacewalk-repo-sync now automatically create errata from updateinfo
-
-
-Spacewalk 1.4 contains support for apt-get plug-in. 
-An apt-get plug-in client package is available at 
- * http://miroslav.suchy.cz/spacewalk/debian/ 
-Feel free to try it and report any issues. 
-This repo contains apt with spacewalk patches.
-
-For more information check: 
-https://fedorahosted.org/spacewalk/wiki/RegisteringClients#Debian 
-
-
-== Community contributors ==
-
-We thank the community members who contributed to this release: 
-
- * Aron Parsons
- * Dale Bewley
- * Jerome Fenal
- * Johannes Renner
- * John van Zantvoort
- * Luc de Louw
- * Marcelo Moreira de Mello
- * mareklaane
- * Michael Calmer
- * Paresh Mutha
- * Šimon Lukašík
- * Trent Johnson
- * Uwe Gansert
- * ypoyarko
-
-https://fedorahosted.org/spacewalk/wiki/ContributorList 
-
-
-== Bug fixes and commits ==
-
-In Spacewalk 1.4 there were: 
-
-    * 68 bugs solved 
-    * 634  changesets committed 
-    * 899 commits done 
-
-
-Enjoy using Spacewalk! 
+ * [wiki:ReleaseNotes13 Release notes for Spacewalk 1.3] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2011-February/msg00000.html on February 4th, 2011]
+ * [wiki:ReleaseNotes12 Release notes for Spacewalk 1.2] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2010-November/msg00000.html on November 19th, 2010]
+ * [wiki:ReleaseNotes11 Release notes for Spacewalk 1.1] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2010-August/msg00000.html on August 13th, 2010]
+ * [wiki:ReleaseNotes10 Release notes for Spacewalk 1.0] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2010-April/msg00000.html on April 29th, 2010]
+ * [wiki:ReleaseNotes08 Release notes for Spacewalk 0.8] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2010-February/msg00000.html on Februrary 16th, 2010]
+ * [wiki:ReleaseNotes07 Release notes for Spacewalk 0.7] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2009-December/msg00000.html on December 4th, 2009]
+ * [wiki:ReleaseNotes06 Release notes for Spacewalk 0.6] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2009-August/msg00000.html on August 7th, 2009]
+ * [wiki:ReleaseNotes05 Release notes for Spacewalk 0.5] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2009-March/msg00001.html on March 31st, 2009]
+ * Spacewalk 0.4 was released [http://www.redhat.com/archives/spacewalk-announce-list/2009-January/msg00000.html on January 15th, 2009]
+ * Spacewalk 0.3 was released [http://www.redhat.com/archives/spacewalk-list/2008-November/msg00039.html on November 7th, 2008]
+ * Spacewalk 0.2 was released [http://www.redhat.com/archives/spacewalk-list/2008-September/msg00041.html on September 16th, 2008]
+ * Spacewalk project was announced on [http://www.redhat.com/archives/spacewalk-list/2008-June/msg00000.html on June 17th, 2008]
