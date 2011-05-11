@@ -131,6 +131,12 @@ apt-get update
 
 Finally, you rhnpush your favourite Debian packages to your Spacewalk 1.4 in order to be able to apply them using the Spacewalk Web.
 
+{{{
+# Workaround broken rhnpush for Spacewalk 1.4:
+echo 'Fault = xmlrpclib.Fault' \
+    >> /usr/share/pyshared/rhn/rpclib.py
+}}}
+
 '''Note''' that for Debian clients neither Spacewalk proxy, satellite-sync, repo-sync, source packages nor staging content will work.
 
 
