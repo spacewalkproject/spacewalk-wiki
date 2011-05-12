@@ -6,7 +6,7 @@ These are upgrade instruction for upgrading Spacewalk 1.3 to Spacewalk 1.4.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.2 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5, and on Fedora 13 and 14.
+  *  Spacewalk 1.3 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5, and on Fedora 13 and 14.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
 == Archive of older upgrade instructions ==
