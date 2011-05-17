@@ -120,12 +120,12 @@ This packages need to be edited and then eventualy imported to Fedora:
  || rhns-0.1-3.src.rpm || ||  ||  ||
  || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || || ||
  || spacewalk-config || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491331 491331] || msuchy || Now in Fedora ||
- || rhn-satellite-schema-5.1.0-27.src.rpm || || || ||
+ || rhn-satellite-schema-5.1.0-27.src.rpm || requires spacewalk-setup || || ||
  || SatConfig-cluster-1.54.2-5.el5.src.rpm || || || ||
  || servletapi4-4.0.4-3jpp_5rh.src.rpm || || || ||
  || sitemesh-2.1-1jpp_1rh.src.rpm || || || ||
  || spacewalk-0.1-7.src.rpm || || || mmccune ||
- || spacewalk-setup-0.01-3.el5.src.rpm || || || ||
+ || spacewalk-setup-0.01-3.el5.src.rpm || requires spacewalk-web || || ||
  || velocity-dvsl-0.45-5jpp_1rh.src.rpm || || || ||
  || velocity-tools-1.2-1jpp_1rh.src.rpm || || || ||
  || spacewalk-proxy-html || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=494292 494292] || msuchy || Now in Fedora ||
