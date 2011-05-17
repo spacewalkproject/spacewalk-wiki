@@ -18,7 +18,7 @@ Looking at: nutch-2008-11-12_04-01-21
 || commons-logging-api-1.0.4.jar || jakarta-commons-logging ||  || 1.0.4 ||  ||  || DONE ||
 || commons-codec-1.3.jar || jakarta-commons-codec ||  || 1.3 ||  ||  || DONE ||
 || commons-el.jar || jakarta-commons-el ||  || 1.0 ||  || under jetty-ext  || DONE ||
-|| commons-httpclient-3.0.1.jar || jakarta-commons-httpclient ||  || 3.1.0 ||  ||  ||  ||
+|| commons-httpclient-3.0.1.jar || jakarta-commons-httpclient ||  || 3.1.0 ||  ||  || IN_FEDORA ||
 || commons-lang-2.1.jar || jakarta-commons-lang ||  || 2.3 ||  ||  ||  ||
 || log4j-1.2.15.jar || log4j ||  || 1.2.14 ||  ||  || IN_FEDORA ||
 || pmd-3.6.jar || pmd ||  || 3.6 ||  ||  || DONE ||
