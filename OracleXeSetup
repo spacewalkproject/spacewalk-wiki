@@ -136,6 +136,8 @@ If you find out you are not happy with the configuration, you can revert by doin
 
 == Test your connection with sqlplus ==
 
+Replace <password> with the password provided on /etc/init.d/oracle-xe configure
+
 Run
 {{{
 sqlplus 'sys/<password>@//localhost/XE as sysdba'
@@ -157,6 +159,8 @@ SQL>
 }}} 
 
 == Create the spacewalk database user ==
+
+Replace <password> with the password provided on /etc/init.d/oracle-xe configure
 
 {{{
 # sqlplus 'sys/<password>@//localhost/XE as sysdba'
