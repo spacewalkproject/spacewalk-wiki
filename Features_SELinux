@@ -299,7 +299,5 @@ root:system_r:spacewalk_monitoring_t nocpulse 2167 0.0  2.8 49924 26960 pts/2  S
  * Development notes: [wiki:Features/SELinuxNotes]
  * Current requirements: [wiki:Features/SELinux/Requirements2]
    * Original version of requirements: [wiki:Features/SELinux/Requirements]
- * Slides for Open Source Conference 2011: [http://www.adelton.com/docs/spacewalk/confining-spacewalk-with-selinux-2011-04-19 Confining Spacewalk with SELinux by Jan Pazdziora]
+ * Presentation about the experience: [http://www.adelton.com/docs/spacewalk/selinux-how-we-confined-spacewalk SELinux: how we confined Spacewalk by Jan Pazdziora]
    * How to confine a large application, with examples. 
- * Slides for Developer Conference 2011: [http://www.adelton.com/docs/spacewalk/confining-spacewalk-with-selinux-2011-02-12 Confining Spacewalk with SELinux by Jan Pazdziora]
-   * Older version of the above presentation.
