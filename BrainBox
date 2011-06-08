@@ -8,6 +8,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
       * [[Image(action-add.gif)]] Seconded...but this should include the ability to tie scripts with RPM and/or erratum deployment as well
  * Enable "superadmins" to select the current working orginization from a drop down menu, instead of being forced to logout and login as a specific user for that organization.
     * [[Image(action-add.gif)]] Seconded!
+    * [[Image(action-add.gif)]] Thirded! -- Phil
  * [wiki:Features/SupportUser Support User]
  * API-only user, with access to only specific API's.  Or a way to login to the API from a client without having to store username/password in cleartext.
  * Usecase deployment - make initial enable & deployment of the following simple 
@@ -15,6 +16,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [GeneralImprovements General Improvements]
  * Start looking at func as possible future alternative to osad, or AMQP (with osad/osa-dispatcher) [https://bugzilla.redhat.com/show_bug.cgi?id=453459 bugzilla 453459]
  * DeltaRpmSupport
+    * [[Image(action-add.gif)]] Seconded! -- Phil
  * Integration with [http://www.jasperforge.org/jaspersoft/opensource/business_intelligence/jasperreports/ JasperReports]
    * [[Image(action-del.gif)]] not sure how important this is to Spacewalk. -- jmrodri
  * HelpSystem to make help a bit easier to work with.
@@ -22,17 +24,19 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * [https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec SRPM Sync] to enable sync of source RPM content via satellite-sync.
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client
  * UserPermissions - Discussion around implementing fine grained user permissions.
+    * [[Image(action-add.gif)]] Seconded! -- Phil
  * [http://fedorahosted.org/func func] instead of osad? What are the advantages/disadvantages? Is it possible?
     * half of an answer:  func can change, and it's probably possible :) Let's start a discussion on the ML. Do we have a page about OSAD here? -- mpd
     * [[Image(action-add.gif)]] probably should be done considering the recent jabberd trouble we've had. -- jmrodri
  * upgrade configuration management engine? Integrate with puppet or cfengine, let's avoid enhancing our current implementation.
    * [[Image(action-add.gif)]] to integrate with puppet -- jmrodri
+   * [[Image(action-add.gif)]] to integrate with puppet -- Phil
    * [[Image(action-del.gif)]] [wiki:Why_not_to_use_a_configuration_management_engine Why not to use a configuration management engine] -- jvzantvoort(jydawg)
    * [[Image(action-del.gif)]] I think spacewalk has a great foundation for config management and should be expanded.  No other tool has the ability to control access to files, thus preventing accidents.
    * [[Image(action-add.gif)]] +1 Puppet integration.  Puppet has really started to blossom in the last few years and is gaining a real foothold in Corporate land.  I would suggest it's the "best of breed" that Spacewalk could really do with integrating -- Duncan
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
-   * [[Image(action-del.gif)]] Agreed, could there be some integration with NRPE or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
+   * [[Image(action-del.gif)]] Agreed, could there be some integration with Nagios or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
    * [[Image(action-del.gif)]] +1 this idea.  Nagios is gaining more ground and provides "best of breed" monitoring solution that should provide excellent integration with Spacewalk. -- Duncan
  * easier support for importing content from multiple distributions and managing those distributions in parallel 
    * ? Is this the NEVRA issue? or something else? -- jmrodri
@@ -43,6 +47,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * continually ask the question: what use cases are new and not covered by the app because of previous datacenter focus, if any?  Where can it and it's subprojects grow?
  * integration with koji -- this is building the packages in koji which will occur when we submit to Fedora.
    * [[Image(action-del.gif)]]/[[Image(action-add.gif)]] I'm not sure what this does for us? unless it's the ability to get koji content into Spacewalk after building? If that's the case then I'm ok with it. -- jmrodri
+   * Koji can push packages to a repo directory once their built anyway? Just run a standard, local, flat file repo fully of SRPMS, build in koji and push back to arch specifc directories before sync'ing into spacewalk locally? 
  * finish migrating [RemainingPxtPages perl pages] to Java, and remove the perl stack entirely.
    * [[Image(action-add.gif)]] this really has been the piece that has held this project behind. We REALLY need to just finish this up and kill off the perl stack (web side) -- jmrodri
  * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
@@ -72,6 +77,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * download packages using torrent protocol
    * [[Image(action-del.gif)]] Not going to happen. What does this mean? yum / up2date can't use torrents. I don't think this feature makes sense. -- jmrodri
    * I thought about something similar to [http://wiki.debian.org/DebTorrent DebTorrent] -- msuchy
+   * There's a proposal over here http://software-libre.rudd-o.com/Proposal_for_Yum_updates_via_torrent, is it case that it's not taken off because no one offers a tracker? If Spacewalk were to have an "enable tracker server" that latched onto another port would it not help get things rolling (even if there wasn't a yum-plugin for it even)?
  * enable package/package group selection via a GUI which shows available package/package groups for that distribution
    * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] this would be along the lines of using tags to group packages. I'm not in favor of bolting this functionality onto the existing model, but replace it with tags. -- jmrodri
  * enable uploads of (single or max 5)RPMS into the system from the web page, so a user does not have to have a login on the console of the server - Antoine
@@ -80,7 +86,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Manage chkconfig via a kewl webinterface on the satellite -- Antoine
  * Ability to control activation keys with editor and comments -- Antoine
  * Allow user-defined types for custom info items -- Antoine
- * Make it possible to subscribe to Errata and create the errata to subscribe to -- red
+ * Make it possible to subscribe to Errata and create the errata to subscribe to -- red (Done? -- Phil)
   * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Lots of work, but also great benefit -- red
  * ...or maybe create an option to create stupid standard errata (like one for each update/rpm without any text, just to allow the pushing of updates to clients) automatically -- red
   * [[Image(action-add.gif)]]/[[Image(action-del.gif)]] Fine enough to at least enable the pushing to the clients, but creating errata just for that?! -- red
@@ -89,13 +95,13 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * Manage OpenVZ Containers
   * [[Image(action-add.gif)]] Seconded. -- phil
  * Allow a channel to be available as a raw yum repo.  This would work for building tools like mock.  I often have to keep rpms around in 2 spots so I can perform mock biulds.  Please, please fix this. --stahnma
-  * [[Image(action-add.gif)]] Seconded, it would also make migration, manual changes easier? An export as yum repo hierarchy button somewhere? -- Phil
+  * [[Image(action-add.gif)]] Seconded, it would also make migration, manual changes easier? An export as yum repo hierarchy button somewhere? and would help with Koji integration. -- Phil
  * [wiki:Per_Channel_Vars Per Channel Vars for Config Channels]
  * Allow postinstall actions for the server. E.g. force software and configuration updates, set custom variables, send mail.
   * [[Image(action-del.gif)]] - can be already done using System details -> Software -> Install -> select some package -> Install -> Run command
   * I mean, postinstall of a server, not a package. the '%post' part of a kickstart if you will.
   * [[Image(action-add.gif)]] +1 for Postinstall of server.  Have done this many times by writing large series of scripts which are then deployed by Config Channels via Activation Keys.  Then builds up to an init.d type of environment where all scripts in this deployed directory are run.  It works, but it's fiddly.
- * [wiki:Features/NonLatinCharacters non-Latin characters in domain names]
+ * [wiki:Features/NonLatinCharacters non-Latin characters in domain names] (Done? -- Phil)
  * Integration with some sort of FIM such as [http://en.wikipedia.org/wiki/AIDE_(software) AIDE], such features as exporting the compiled database back to the spacewalk server and comparison of databases and file hashes between Groups/SSMs. I have clusters of machines that need to be kept consistent, which is harder than it sounds when some are taken out of service for developers or tweaked for special purposes. Plus security obviously. --Phil
  * Addition of a GSSAPI/Kerberos authentication method in place of the RHNSD and SSH method for remote client access. Instead of providing the identity file and a user for SSHing (shared keys are banned and impractical in my environment) I'd like to use my existing automaton user and distribute his key tab so that a simple kinit would allow password-less SSH to client machines. --Phil
  * PAM authentication to be extended so that local GIDs can be mapped to organisations. --Phil
