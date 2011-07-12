@@ -12,7 +12,7 @@ In order to push patches and patch clusters, you first have to convert them to M
 == Registering Clients ==
 
 == Pushing Packages to Clients Pushing ==
- 2.  Either on a solaris system with the client packages installed (from above), or on the Spacewalk Server itself, run: 'solaris2mpm Recommended.zip'  where Recommended.zip is your patch cluster or patch. This will create a bunch of mpm files.
+ 2.  On the Spacewalk Server run: 'solaris2mpm Recommended.zip'  where Recommended.zip is your patch cluster or patch. This will create a bunch of mpm files.
  3.  Now push the mpms into your channel:  'rhnpush --server=http://SW_FQDN/APP --channel=CHANNEL_LABEL  *.mpm'  Where SW_FQDN is the FQDN of the server, and CHANNEL_LABEL is the label of the channel you made in step 1.
 
 == Managing Client Configurations ==
