@@ -22,7 +22,7 @@ Anything else might, but most likely will not work for you.
 
 Things working on PostgreSQL in Spacewalk nightly include:
 
-
+ * everything except monitoring
 
 == Get the PostgreSQL server running ==
 
