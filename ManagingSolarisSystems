@@ -1,7 +1,7 @@
 [[PageOutline]]
 
 = __Managing Solaris Systems__ =
-We haven't gotten a solaris build environment up yet for spacewalk, so until we do all files you need can be found here: http://jlsherrill.fedorapeople.org/solaris/
+We haven't gotten a solaris build environment up yet for spacewalk, so until we do all files you need can be found here: http://spacewalk.redhat.com/solaris/ 
 In each tarball is a Readme file which should go over what you need to do to install the client side packages within solaris.
 In order to push patches and patch clusters, you first have to convert them to Mpm files.  Here is the general order of doing things:
 
@@ -18,4 +18,4 @@ In order to push patches and patch clusters, you first have to convert them to M
 == Managing Client Configurations ==
 
 == Related Documentation ==
- * [http://jlsherrill.fedorapeople.org/solaris/]
+ * [http://spacewalk.redhat.com/solaris/]
