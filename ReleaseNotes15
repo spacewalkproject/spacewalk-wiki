@@ -15,7 +15,7 @@ with client repositories under
   * http://spacewalk.redhat.com/yum/1.5-client
   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.5/openSUSE_11.4/
   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.5/openSUSE_Factory/
-  * http://miroslav.suchy.cz/spacewalk/debian
+  * http://miroslav.suchy.cz/spacewalk/debian (based on Spacewalk 1.4 code)
 
 If you want to do fresh installation, use steps from
 
