@@ -36,7 +36,7 @@ can be useful:
   * Spacewalk 1.5 can be installed on Fedora 15
   * Modified API calls:
      * errata.listPackages returns file attribute
-     * user.GetDetails returns use_pam attribute
+     * user.getDetails returns use_pam attribute
      * org.listOrgs
   * New APIs:
      * channel.software.setUserManagable
