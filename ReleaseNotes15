@@ -38,7 +38,7 @@ can be useful:
      * errata.listPackages returns file attribute
      * user.getDetails returns use_pam attribute
      * org.listOrgs
-  * New APIs:
+  * New API calls:
      * channel.software.setUserManagable
      * channel.software.isUserManagable
      * channel.listVendorChannels is now equivalent and preferred to channel.listRedHatChannels
