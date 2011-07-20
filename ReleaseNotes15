@@ -2,8 +2,10 @@
 
 Hello world, 
 
-we are happy to announce the release 1.5 of Spacewalk. The
-download locations are
+we are happy to announce the release 1.5 of Spacewalk, a systems
+management solution.
+
+The download locations are
 
   * http://spacewalk.redhat.com/yum/1.5/RHEL/5/$basearch/ 
   * http://spacewalk.redhat.com/yum/1.5/RHEL/6/$basearch/ 
