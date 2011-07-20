@@ -45,7 +45,7 @@ can be useful:
      * errata.cloneAsOriginal
 
 
-== Community contributors ==
+== Contributors ==
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -68,7 +68,7 @@ Our thanks go to the community members who contributed to this release:
 https://fedorahosted.org/spacewalk/wiki/ContributorList 
 
 
-== Bug fixes and commits ==
+== Some statistics ==
 
 In Spacewalk 1.5, we've seen
 
@@ -77,4 +77,4 @@ In Spacewalk 1.5, we've seen
     * 904 commits done 
 
 
-Thank you for using Spacewalk!
+Thank you for using Spacewalk! Keep the patches flowing!
