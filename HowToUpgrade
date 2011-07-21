@@ -2,17 +2,17 @@
 
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.3 to Spacewalk 1.4.
+These are upgrade instruction for upgrading Spacewalk 1.4 to Spacewalk 1.5.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.3 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5, and on Fedora 13 and 14.
+  *  Spacewalk 1.4 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5, or on Fedora 14.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 1.3 to 1.4 upgrade instructions, are available at [wiki:HowToUpgrade14]
  * Spacewalk 1.2 to 1.3 upgrade instructions, are available at [wiki:HowToUpgrade13]
- * Spacewalk 1.1 to 1.2 upgrade instructions, are available at [wiki:HowToUpgrade12]
 
 
 
@@ -21,10 +21,10 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Assumptions ==
 
-  * For RHEL or CentOS, you will need the Base, EPEL 5 repositories enabled for dependencies.
+  * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 1.4 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
-    * In particular, for Fedora 13 and 14 make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
+  * You had set up your yum to point to Spacewalk 1.5 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+    * In particular, for Fedora 14, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
 == Database and configuration backup ==
