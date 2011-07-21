@@ -371,5 +371,5 @@ Spacewalk consists of several services. Each of them has its own init.d script t
 
 == Known Issues ==
 
- * For issues with Oracle XE, see [OracleXeSetup#KnownIssues Oracle XE Setup Known Issues]
+ * For issues with Oracle XE, see [OracleXeSetup#Troubleshooting Oracle XE Setup Troubleshooting]
 
