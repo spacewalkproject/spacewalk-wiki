@@ -137,7 +137,8 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:BrainBox Feature Requests/BrainBox]
   * [https://fedorahosted.org/spacewalk/roadmap Road Map]
 === Installation Guides ===
-  * [wiki:HowToInstall for 1.4]
+  * [wiki:HowToInstall for 1.5]
+  * [wiki:HowToInstall14 for 1.4]
   * [wiki:HowToInstall13 for 1.3]
   * [wiki:HowToInstall12 for 1.2]
   * [wiki:HowToInstall11 for 1.1]
@@ -146,7 +147,8 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:HowToInstall07 for 0.7]
 === Upgrade Notes ===
 Upgrade guides, sequential, stepped upgrades are recommended to cover multiple update levels, i.e. to get from 0.6 to 0.8 please upgrade via 0.7 (and we recommend testing at each intermediate level as you proceed) rather than trying to go directly from 0.6 to 0.8. Jumping levels is deeply discouraged with the exception of version 0.9 which was never released.
-  * [wiki:HowToUpgrade From 1.3 to 1.4]
+  * [wiki:HowToUpgrade From 1.4 to 1.5]
+  * [wiki:HowToUpgrade14 From 1.3 to 1.4]
   * [wiki:HowToUpgrade13 From 1.2 to 1.3]
   * [wiki:HowToUpgrade13 From 1.2 to 1.3]
   * [wiki:HowToUpgrade12 From 1.1 to 1.2]
@@ -157,6 +159,7 @@ Upgrade guides, sequential, stepped upgrades are recommended to cover multiple u
   * [wiki:HowToUpgrade06 From 0.5 to 0.6]
 === Release Notes ===
 Release notes for each version:
+  * [wiki:ReleaseNotes15 for 1.5]
   * [wiki:ReleaseNotes14 for 1.4]
   * [wiki:ReleaseNotes13 for 1.3]
   * [wiki:ReleaseNotes12 for 1.2]
