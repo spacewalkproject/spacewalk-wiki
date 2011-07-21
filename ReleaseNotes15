@@ -39,7 +39,6 @@ can be useful:
   * Modified API calls:
      * errata.listPackages returns file attribute
      * user.getDetails returns use_pam attribute
-     * org.listOrgs
   * New API calls:
      * channel.software.setUserManagable
      * channel.software.isUserManagable
