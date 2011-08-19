@@ -1,22 +1,7 @@
 === Api Docs ===
 
-Going forward our api will be published for each spacewalk version.
+API available in Spacewalk:
 
+ [http://www.redhat.com/spacewalk/documentation/api/1.5/ Spacewalk 1.5]
 
-----
- [http://www.redhat.com/spacewalk/documentation/api/1.1/ Spacewalk 1.1]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.8/ Spacewalk 0.8]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.6/ Spacewalk 0.6]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.5/ Spacewalk 0.5]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.4/ Spacewalk 0.4]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.3/ Spacewalk 0.3]
-
- [http://www.redhat.com/spacewalk/documentation/api/0.2/ Spacewalk 0.2]
- 
- Spacewalk 0.1 (Unavailable)
-
+ [http://www.redhat.com/spacewalk/documentation/api/1.4/ Spacewalk 1.4]
