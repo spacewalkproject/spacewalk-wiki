@@ -162,7 +162,7 @@ rpm -ihv http://spacewalk.redhat.com/yum/1.5-client/RHEL/5/x86_64/spacewalk-clie
 In order to get Spacewalk to run with Oracle database backend, you need:
  * the Oracle Instant Client
  * an oracle database, this can either be:
-  * Oracle 10g or 11g database server [full oracle Setup] (we assume here you use a seperate host running an oracle)
+  * Oracle 10g or 11g database server see the [Full oracle Setup] page. (we assume here you use a seperate host running oracle)
   * the free alternative Oracle XE. Instructions on how to do this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
 == PostgreSQL Pre-Requisites ==
