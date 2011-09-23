@@ -1,0 +1,50 @@
+=== Client ===
+
+You will also need the Oracle Instant Client: [http://www.oracle.com/technetwork/topics/linuxsoft-082809.html i386] or [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html x86_64] version. Download the following two rpms (where ARCH is either i386 or x86_64):
+
+ * oracle-instantclient11.2-basic-11.2.0.2.0.ARCH.rpm
+ * oracle-instantclient11.2-sqlplus-11.2.0.2.0.ARCH.rpm
+
+Do '''NOT''' use oracle-xe-client.
+
+=== Oracle !InstantClient ===
+
+{{{
+# yum -y localinstall --nogpgcheck oracle-instantclient11.2-basic*.rpm oracle-instantclient11.2-sqlplus*.rpm
+}}}
+
+  * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user. 
+
+=== Server Data ===
+
+you should get from your DBA for example this, I will refer to these values in the underneath configs:
+ * db_host=oraclehost
+ * db_user=spacewalkdbuser
+ * db_password=spacewalkdbpassword
+ * db_name=spacewalkdb
+ * db_port=1521
+
+make sure that you connect to it from your spacewalk machine (open the correct ports on the firewall in between for example!)
+simple test:
+{{{
+telnet oraclehost 1521 
+}}}
+
+should at least work.
+
+create tnsnames.ora:
+ * for i386 under /usr/lib/oracle/11.2/client/lib/network/admin
+ * for x86_64 under /usr/lib/oracle/11.2/client64/lib/network/admin
+
+the contents of this file:
+{{{
+ORACLEHOST=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclehost)(PORT=1521)))(CONNECT_DATA=(SID=spacewalkdb)(SERVER=DEDICATED)))
+}}}
+
+now you can test the connection:
+
+{{{
+# sqlplus spacewalkdbuser/spacewalkdbpassword@spacewalkdb
+}}}
+
+if this works you are ready to go configure your spacewalk server.
