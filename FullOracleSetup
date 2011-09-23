@@ -41,7 +41,7 @@ the contents of this file:
 ORACLEHOST=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclehost)(PORT=1521)))(CONNECT_DATA=(SID=spacewalkdb)(SERVER=DEDICATED)))
 }}}
 
-tnsnames.ora is something similar to a hosts file for your oracle, it maps the name 'spacewalkdb to the specified oraclehost+port so your oracle can use the 'spacewalkdb' to refer to the database server and correct database.
+tnsnames.ora is something similar to a hosts file for your oracle, it maps the name 'spacewalkdb' to the specified oraclehost+port so your oracle can use the 'spacewalkdb' to refer to the database server and correct database.
 
 now you can test the connection:
 
