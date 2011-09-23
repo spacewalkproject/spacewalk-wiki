@@ -157,15 +157,6 @@ rpm -ihv http://spacewalk.redhat.com/yum/1.5-client/RHEL/5/x86_64/spacewalk-clie
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 }}}
 
-=== Fedora 15 ===
-
-On Fedora 15, selinux-policy which is not yet in updates is needed. Please get it from Fedora build system:
-
-{{{
-# rpm -Uvh 'http://kojipkgs.fedoraproject.org/packages/selinux-policy/3.9.16/35.fc15/noarch/selinux-policy-targeted-3.9.16-35.fc15.noarch.rpm' 'http://kojipkgs.fedoraproject.org/packages/selinux-policy/3.9.16/35.fc15/noarch/selinux-policy-3.9.16-35.fc15.noarch.rpm'
-}}}
-
-
 == Oracle Pre-Requisites ==
 
 In order to get Spacewalk to run with Oracle database backend, you need the Oracle client and an Oracle 10g or 11g database server. The easiest way to do this is to install Oracle XE and the Oracle Instant Client. Instructions on how to do this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
