@@ -117,6 +117,11 @@ apt-get update
 apt-get install apt-spacewalk rhnsd rhnpush
 }}}
 
+If you want to run rhnsd. You have to manualy create one directory:
+{{{
+mkdir /var/lock/subsys
+}}}
+
 And then register with your Spacewalk 1.3 or above using rhnreg_ks and activation key. In order to get dynamic repositories (as you know them with yum-rhn-plugin) you need to apply the [http://isimluk.fedorapeople.org/sw_deb/apt-refresh-sources.patch patch] to your Apt. Eventually you can use patched version from the above repository.
 {{{
 vim /etc/sysconfig/rhn/up2date
