@@ -39,5 +39,7 @@ See http://spacewalk.redhat.com/documentation/python-hwdata
 
 Follow GitGuide and code is located in directory projects/python-hwdata/ within checkout.
 If you run:
-{{{ tito build --tgz }}}
+{{{
+tito build --tgz
+}}}
 in that directory you will get latest tar.gz file.
