@@ -4,4 +4,4 @@
 These are separate libraries, which were developed for Spacewalk project, but can be helpful somewhere else as well:
 
  * [wiki:Projects/python-hwdata python-hwdata]
- * python-gzipstream
+ * [wiki:Projects/python-gzipstream python-gzipstream]
