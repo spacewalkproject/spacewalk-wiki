@@ -58,6 +58,10 @@ print "They should match."
 print 'Elapsed:', (time.time() - t0)/60.0, 'mins'
 }}}
 
+== Documentation ==
+
+See http://spacewalk.redhat.com/documentation/python-gzipstream
+
 == Get the code ==
 
 Follow GitGuide and code is located in directory projects/python-gzipstream/ within checkout.
