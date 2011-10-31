@@ -70,3 +70,5 @@ If you run:
 tito build --tgz
 }}}
 in that directory you will get latest tar.gz file.
+
+Or download [https://fedorahosted.org/releases/s/p/spacewalk/python-gzipstream-1.6.2.tar.gz python-gzipstream-1.6.2.tar.gz]
