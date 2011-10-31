@@ -1,7 +1,7 @@
 
 == python-hwdata - python bindings to [https://fedorahosted.org/hwdata/ hwdata] package ==
 
-Provide python interface to database stored in [https://fedorahosted.org/hwdata/ hwdata] package.
+Provides python interface to database stored in [https://fedorahosted.org/hwdata/ hwdata] package.
 It allows you to get human readable description of USB and PCI devices.
 
 
