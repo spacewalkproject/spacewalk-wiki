@@ -9,19 +9,32 @@ If you are working with the Spacewalk code and need to make a change to the DB s
   spacewalk/schema/spacewalk/upgrade
 }}}
 
-This script will alter the '''existing''' schema with your changes.
+This script will alter the '''existing''' schema with your changes. In correct versioned subdirectory (you will probably want the latest one), pick the next free number and create upgrade scripts. If they are database-specific, you will need to provide both Oracle and PostgreSQL version of the schema upgrades script.
 
 2.  Modify the original schema so fresh installs also contain your changes.  The DDL files that are ran during an initial install are found in:
 
 {{{
-  spacewalk/schema/spacewalk/rhnsat
+  spacewalk/schema/spacewalk/common
+  spacewalk/schema/spacewalk/oracle
+  spacewalk/schema/spacewalk/postgres
 }}}
 
-In there you will see subdirs:  '''class  packages  poll  procs  synonyms  tables  types  views'''.  The '''tables''' subdir contains all the definitions for the tables, their indexes and constraits.  '''packages''' and '''procs''' dirs contain our stored procedures and functions.  If you are creating a new table that depends on other tables being created before it please view and edit spacewalk/schema/spacewalk/rhnsat/tables/Makefile.deps
+In there you will see subdirs:  '''class data packages procs  synonyms tables triggers types views'''.  The '''tables''' subdir contains all the definitions for the tables, their indexes and constraits.  '''packages''' and '''procs''' dirs contain our stored procedures and functions.  If you are creating a new table that depends on other tables being created before it please view and edit spacewalk/schema/spacewalk/*/tables/tables.deps.
 
-3.  Please run your upgrade script against our unit test database.  Ask a spacewalk teammate the hostname if you are not aware of it.
+Use the common directory for things that are, well, common syntax, or things that are easily preprocessed -- for example, most of our tables are in the common directory even if they contain varchar2 because we just run substitution for PostgreSQL on the SQL sources.
 
-4.  Notify the developers on spacewalk-devel that a schema change is necessary and can be found in the ugprade directory for the current release.
+3. Run
 
+{{{
+  perl schema-source-sanity-check.pl
+}}}
 
+in the spacewalk/schema directory to check that your changes are sane.
 
+4. Run
+
+{{{
+  tito build --test --rpm
+}}}
+
+in the spacewalk/schema directory to check that your changes will be buildable.
