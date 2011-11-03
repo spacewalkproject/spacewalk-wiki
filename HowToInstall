@@ -34,7 +34,7 @@ To use this repository install spacewalk-repo with commands below:
 rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/5/x86_64/spacewalk-repo-1.5-1.el5.noarch.rpm
 }}}
 
-=== Red Hat Enterprise Linux 6 ===
+=== Red Hat Enterprise Linux 6, CentOS ===
 
 {{{
 rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/6/x86_64/spacewalk-repo-1.5-1.el6.noarch.rpm
@@ -102,15 +102,17 @@ EOF
 
 === Jpackage repository ===
 
-==== RHEL 6 and Fedora 14 & 15 ====
+==== RHEL, CentOS 6 and Fedora 14 & 15 ====
 
-For Spacewalk on RHEL 6 and Fedora, a couple of additional dependencies are needed from jpackage. Please configure the following yum repository before beginning your Spacewalk installation:
+For Spacewalk on RHEL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
+If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
+Please configure the following yum repository before beginning your Spacewalk installation:
 
 {{{
 cat > /etc/yum.repos.d/jpackage-generic.repo << EOF
 [jpackage-generic]
 name=JPackage generic
-baseurl=http://mirrors.dotsrc.org/jpackage/5.0/generic/free/
+baseurl=http://mirror.ibcp.fr/pub/jpackage/5.0/generic/free/
 enabled=1
 gpgcheck=1
 gpgkey=http://www.jpackage.org/jpackage.asc
@@ -119,6 +121,22 @@ EOF
 
 We specifically want 5.0 generic directory in the above URL.
 Make sure, you do not use the jpackage-generic repository on RHEL 5.
+
+
+=== CentOS - CR repository ===
+
+selinux update need CR repository:
+
+{{{
+cat > /etc/yum.repos.d/cr.repo << EOF
+[CR-repository]
+name=CR Repository
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=cr
+baseurl=http://mirror.centos.org/centos/$releasever/cr/$basearch/
+enabled=1
+gpgcheck=1
+EOF
+}}}
 
 === EPEL repository ===
 
