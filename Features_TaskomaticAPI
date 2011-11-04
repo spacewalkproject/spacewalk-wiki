@@ -26,6 +26,9 @@ namespace: taskomatic
   - get last specified number of bytes of the satellite run std output log, whole log is returned if nBytes is negative
  * String getSatRunStdErrorLog(Integer runId, Integer nBytes) throws !InvalidParamException
   - get last specified number of bytes of the satellite run std error log, whole log is returned if nBytes is negative
+ * List<!TaskoSchedule> reinitializeAllSchedulesFromNow()
+  - reinitialize all schedules
+  - meant to be called, when taskomatic has to be reinitialized (f.e. because of time shift)
 
 '''Note:''' To call the methods over tomcat, make sure you prepend sessionKey as the first parameter.
 
