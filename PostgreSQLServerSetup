@@ -7,7 +7,11 @@ You should have PostgreSQL server running somewhere. Let's assume you will run t
 yum install -y 'postgresql-server > 8.4'
 # we do this to get postgresql84-server on RHEL 5
 chkconfig postgresql on
+# on Fedora 16 run:
+postgresql-setup initdb
+# everywhere else ruN:
 service postgresql initdb
+
 service postgresql start
 }}}
 
