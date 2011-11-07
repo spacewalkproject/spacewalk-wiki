@@ -9,7 +9,7 @@ yum install -y 'postgresql-server > 8.4'
 chkconfig postgresql on
 # on Fedora 16 run:
 postgresql-setup initdb
-# everywhere else ruN:
+# everywhere else run:
 service postgresql initdb
 
 service postgresql start
