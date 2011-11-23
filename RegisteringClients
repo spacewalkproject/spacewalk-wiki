@@ -137,7 +137,7 @@ Finally, you rhnpush your favourite Debian packages to your Spacewalk server in 
 
 {{{
 # Workaround broken rhnpush for Spacewalk 1.5:
-echo 'Fault = xmlrpclib.Fault' \
+echo 'ProtocolError = Fault = xmlrpclib.Fault' \
     >> /usr/share/pyshared/rhn/rpclib.py
 }}}
 
