@@ -231,7 +231,7 @@ These lines ensure that no netfilter logic acts on the bridge interface. Alterna
 == On your spacewalk machine ==
      * Ensure that the following packages and their dependencies have been installed:
        * spacewalk (which will include cobbler, which will include tftpd)
-       * koan (which will include syslinux)
+       * koan (which will include syslinux (not on Fedora 16, at least))
        * dhcp
 == On your target machine(s) ==
      * If your target is to be a VM host, install packages appropriate to the technology you're going to provision with.[[BR]] 
