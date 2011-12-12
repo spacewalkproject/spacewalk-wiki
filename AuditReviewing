@@ -4,8 +4,6 @@
 
 This capability was added to Spacewalk to make the lives of Information Assurance teams easier on Linux.
 
-Please see [http://www.stl.gtri.gatech.edu/jroys/] for the full details.
-
 == Basic setup ==
 
   * Install Spacewalk 0.6 or above.
