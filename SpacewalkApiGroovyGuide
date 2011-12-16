@@ -37,80 +37,65 @@ import groovy.net.xmlrpc.*
 
 class RHNSession {
 
-    // Set the host appropriately
-    def host = "satellite.company.com"
+    def configFile = "/etc/satellite_api.conf"
 
-    def url = "http://${host}/rpc/api"
-    def client = new XMLRPCServerProxy(url)
+    def client
+    def key
 
-    // Use the client to obtain the authentication key
-    def key = client.auth.login(username, password)
+    def isLoggedIn() {
+        client != null && key != null
+    }
 
-    assert client != null && key != null  : "Login to satellite failed!"
+    def login() {
+        def config = new File(configFile)
+        assert config.exists() : "Failed reading ${configFile} because it doesn't exist"
+
+        def (hostname, username, password) = config.readLines()[0].split(" ")
+
+        client = new XMLRPCServerProxy("http://${hostname}/rpc/api")
+        key = client.auth.login(username, password)
+
+        assert isLoggedIn() : "Failed logging into ${hostname} as ${username}"
+    }
+
+    def logout() {
+        assert isLoggedIn() : "Not logged into Satellite"
+        assert client.auth.logout(key) == 1 : "Failed logging out of Satellite"
+        client = null
+        key = null
+    }
+
 }
 }}}
-1.	package RHNSession;
 
-2.	use strict;
-3.	use Exporter;
-4.	use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
+So your minimal API Groovy script is now:
 
-5.	$VERSION     = 0.01;
-6.	@ISA         = qw(Exporter);
-7.	@EXPORT      = ();
-8.	@EXPORT_OK   = qw(Session);
-9.	%EXPORT_TAGS = ( DEFAULT => [qw(&Session)] );
+{{{
+RHNSession rhn = new RHNSession()
+rhn.login()
 
-10.	sub Session {
+def apiNamespaces = rhn.client.api.getApiNamespaces(rhn.key)
+apiNamespaces.each { apiNamespace ->
+    println apiNamespace
+}
 
-11.	open(IN, "/etc/satellite_api.conf") or die "Couldn't open file for reading: $!";
-12.	$_ = <IN>;
-13.	my ($HOST, $USER, $PASS) = (split);
-14.	close(IN);
+rhn.logout()
+}}}
 
-15.	my $client = new Frontier::Client(url => "http://$HOST/rpc/api");
-16.	my $session = $client->call('auth.login', $USER, $PASS);
+== API Insights ==
 
-17.	return ($client, $session);
+=== Troubleshooting ===
 
-18.	}
+Like Satellite itself, the API is not trivial and can take some time to get your head around. It’s very difficult to understand why your code isn’t working as expected if:
 
-19.	1;
-So your minimal API script is now:
+* You can’t visualise the data you are working with; and
+* You don’t know how the module you are using is designed to work.
 
-1.	#!/usr/bin/perl
-
-2.	use strict;
-3.	use warnings;
-4.	use Frontier::Client;
-5.	use RHNSession;
-
-6.	my ($client, $session) = RHNSession::Session;
-7.	$client->call('auth.logout', $session);
-This allows you to have your scripts readable by other people (so they can see what’s going on) but keep your username/password secret.
-
-API Insights
-Troubleshooting
-
-Like Satellite itself, the API is not trivial and can take some time to get your head around. The best three pieces of advice I can give is always do:
-
-2.	use strict;
-3.	use warnings;
-And
-
-4.	use Data::Dumper;
-And
-
-man Frontier::Client
-It’s very difficult to understand why your code isn’t working as expected if:
-
-Perl isn’t warning you about common mistakes (undeclared variables for example can be cased by typing mistakes);
-You can’t visualise the data you are working with; and
-You don’t know how the Perl module you are using is designed to work.
-Passing Arrays
+==== Passing Arrays ====
 
 When you view the API help pages, you will often see descriptions similar to:
 
+{{{
 Method: addChildChannels
 Description:
 Add child channels to an activation key. 
@@ -120,6 +105,8 @@ Parameters:
  	array 
  	string childChannelLabel 
 Returns: int - 1 on success
+}}}
+
 On first thought, it’s quite reasonable to do thing following:
 
 1.	#!/usr/bin/perl
