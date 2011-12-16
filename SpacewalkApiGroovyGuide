@@ -73,8 +73,7 @@ So your minimal API Groovy script is now:
 RHNSession rhn = new RHNSession()
 rhn.login()
 
-def apiNamespaces = rhn.client.api.getApiNamespaces(rhn.key)
-apiNamespaces.each { apiNamespace ->
+rhn.client.api.getApiNamespaces(rhn.key).each { apiNamespace ->
     println apiNamespace
 }
 
