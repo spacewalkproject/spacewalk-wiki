@@ -80,6 +80,103 @@ rhn.client.api.getApiNamespaces(rhn.key).each { apiNamespace ->
 rhn.logout()
 }}}
 
+=== Complex Example ===
+
+{{{
+def releaseChannels = [
+    'rhel-i386-es-4':"rhel4-32",
+    'rhel-i386-server-5':"rhel5-32",
+    'rhel-i386-server-6':"rhel6-32",
+    'rhel-x86_64-es-4':"rhel4-64",
+    'rhel-x86_64-server-5':"rhel5-64",
+    'rhel-x86_64-server-6':"rhel6-64"
+]
+
+def now = new Date()
+def year = now.format("yyyy")
+def month = now.format("MMM").toLowerCase()
+
+releaseChannels.each { original, label ->
+    def release = "fy$year-$month-$label"
+    println "Working on $release ..."
+
+    // Make sure we're logged in
+    assert isLoggedIn() : "Failed logging in, check username and password"
+
+    def orig = rhn.client.channel.software.getDetails(key, original)
+    def prev = null
+
+    try {
+        prev = rhn.client.channel.software.getDetails(key, release)
+    } catch (all) { /* We can ignore this exception; it most likely means channel not found, which is good */ }
+
+    if (prev) {
+        // the new release already exists!  it must be deleted... women and children first!
+        println " -- Finding child channels for ${prev.label}"
+        rhn.client.channel.software.listChildren(key, release).each { child ->
+            println "   -- Deleting child channel ${child.label}"
+            assert rhn.client.channel.software.delete(key, child.label) == 1 : "Failed deleting ${child.label}"
+            Thread.sleep(1000)
+        }
+        assert rhn.client.channel.software.delete(key, prev.label) == 1 : "Failed removing parent channel ${prev.label}"
+        println " -- ${prev.label} successfully deleted"
+        Thread.sleep(1000)
+    }
+
+    def params = [:]
+
+    if (orig.name) params << [name: "FY $year ${month.toUpperCase()} - ${orig.name}"]
+    params << [label: release]
+    if (orig.summary) params << [summary: orig.summary]
+    if (orig.parent_channel_label) params << [parent_label: release]
+    if (orig.gpg_key_url) params << [gpg_url: orig.gpg_key_url]
+    if (orig.gpg_key_id) params << [gpg_id: orig.gpg_key_id]
+    if (orig.gpg_key_fp) params << [gpg_fingerprint: orig.gpg_key_fp]
+    if (orig.description) params << [description: orig.description]
+
+    println " ++ Cloning $original as $release"
+    assert rhn.client.channel.software.clone(
+            key, original, params, false
+        ) > 0 : " ** Failed creating parent channel $release"
+    Thread.sleep(1000)
+
+    assert rhn.client.channel.software.setGloballySubscribable(key, release, true) == 1 : "Failed setting ${release} as a globally subscribable channel"
+    assert rhn.client.channel.access.setOrgSharing(key, release, "public") == 1 : "Failed setting ${release} as a public channel"
+    assert rhn.client.channel.software.regenerateYumCache(key, release) == 1 : "Failed regenerating YUM cache for ${release}"
+    Thread.sleep(1000)
+
+    rhn.client.channel.software.listChildren(key, original).each { child ->
+        params.clear()
+
+        def childRelease = "fy$year-$month-${child.label}"
+        def childName = child.name
+
+        if (child.name) params << [name: "FY $year ${month.toUpperCase()} - ${childName}"]
+        params << [label: childRelease]
+        if (child.summary) params << [summary: child.summary]
+        if (child.parent_channel_label) params << [parent_label: release]
+        if (child.gpg_key_url) params << [gpg_url: child.gpg_key_url]
+        if (child.gpg_key_id) params << [gpg_id: child.gpg_key_id]
+        if (child.gpg_key_fp) params << [gpg_fingerprint: child.gpg_key_fp]
+        if (child.description) params << [description: child.description]
+
+        println "   ++ Cloning ${child.label} as child $childRelease"
+        assert rhn.client.channel.software.clone(
+                key, child.label, params, false
+            ) > 0 : "  ** Failed creating child channel $childRelease"
+        Thread.sleep(1000)
+
+        assert rhn.client.channel.software.setGloballySubscribable(key, childRelease, true) == 1 : "Failed setting ${childRelease} as a globally subscribable channel"
+        assert rhn.client.channel.access.setOrgSharing(key, childRelease, "public") == 1 : "Failed setting ${childRelease} as a public channel"
+        assert rhn.client.channel.software.regenerateYumCache(key, childRelease) == 1 : "Failed regenerating YUM cache for ${childRelease}"
+        Thread.sleep(1000)
+    }
+
+    println "Sleeping 5 seconds before next channel..."
+    Thread.sleep(5000)
+}
+}}}
+
 == API Insights ==
 
 
