@@ -80,9 +80,18 @@ rhn.client.api.getApiNamespaces(rhn.key).each { apiNamespace ->
 rhn.logout()
 }}}
 
-=== Complex Example ===
+=== Cloning Software Channels ===
+
+This example is to demonstrate real world release management, where patches and updates must be vetted or promoted via a predefined release lifecycle.
+
+# Identify the source channels; typically these are the RedHat source channels.
 
 {{{
+RHNSession rhn = new RHNSession()
+rhn.login()
+
+// this map identifies the source channel's label and the new channels label
+// [ sourceLabel: destinationLabel ]
 def releaseChannels = [
     'rhel-i386-es-4':"rhel4-32",
     'rhel-i386-server-5':"rhel5-32",
@@ -92,6 +101,7 @@ def releaseChannels = [
     'rhel-x86_64-server-6':"rhel6-64"
 ]
 
+// Get the date and format it for naming the new channels
 def now = new Date()
 def year = now.format("yyyy")
 def month = now.format("MMM").toLowerCase()
@@ -101,7 +111,7 @@ releaseChannels.each { original, label ->
     println "Working on $release ..."
 
     // Make sure we're logged in
-    assert isLoggedIn() : "Failed logging in, check username and password"
+    assert rhn.isLoggedIn() : "Not logged into RHN Satellite"
 
     def orig = rhn.client.channel.software.getDetails(key, original)
     def prev = null
@@ -175,6 +185,8 @@ releaseChannels.each { original, label ->
     println "Sleeping 5 seconds before next channel..."
     Thread.sleep(5000)
 }
+
+rhn.logout()
 }}}
 
 == API Insights ==
