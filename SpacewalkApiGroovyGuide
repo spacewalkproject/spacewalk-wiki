@@ -27,6 +27,12 @@ def client = new XMLRPCServerProxy(url)
 def key = client.auth.login("username", "password")
 
 assert client != null && key != null  : "Login to RHN Satellite failed!"
+
+rhn.client.api.getApiNamespaces(rhn.key).each { apiNamespace ->
+    println apiNamespace
+}
+
+assert client.auth.logout(key) == 1 : "Failed logging out of Satellite"
 }}}
 
 == RHNSession Helper ==
