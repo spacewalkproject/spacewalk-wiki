@@ -189,7 +189,7 @@ releaseChannels.each { original, label ->
 rhn.logout()
 }}}
 
-=== Downloading Config Channel Files ===
+=== Download Config Channel Files ===
 
 {{{
 import groovy.xml.MarkupBuilder
@@ -201,14 +201,14 @@ rhn.login()
 assert rhn.isLoggedIn() : "Failed logging in, check username and password"
 
 // Get the list of all configuration channels
-def channelList = rhn.client.configchannel.listGlobals(key)
+def channelList = rhn.client.configchannel.listGlobals(rhn.key)
 channelList.each { channel ->
     // set the configuration channel name
     def name = channel.label
     println "Working on channel $name"
 
     // set the base path
-    def base = "/channels/$name"
+    def base = "configchannels/$name"
 
     // this is the easiest way to create it; I'm on a unix machine and I'd rather not mess with
     // coding this in groovy... we're just making sure the base directory exists
@@ -216,7 +216,7 @@ channelList.each { channel ->
 
     // list the files in the configuration channel
     try {
-        def fileList = rhn.client.configchannel.listFiles(key, name)
+        def fileList = rhn.client.configchannel.listFiles(rhn.key, name)
 
         // create the dircetory metadata (dump of the file info)
         File fileListFile = new File("$base/files.metadata")
@@ -250,7 +250,7 @@ channelList.each { channel ->
             def bp = "/usr/bin/dirname ${file.path}".execute().in.text
             "/bin/mkdir -p $base/$bp".execute()
 
-            def info = rhn.client.configchannel.lookupFileInfo(key, name, [file.path])
+            def info = rhn.client.configchannel.lookupFileInfo(rhn.key, name, [file.path])
 
             String type = info.type[0]
             String path = info.path[0]
@@ -309,6 +309,86 @@ channelList.each { channel ->
             "/bin/ln -s ${symlink.target_path} $base/${symlink.path}".execute()
         }
     } catch (Exception e) { println "ERROR: ${e.message}"; e.printStackTrace() }
+}
+
+rhn.logout()
+}}}
+
+=== Upload Configuration Files ===
+
+{{{
+RHNSession rhn = new RHNSession()
+
+// set the base path
+def base = "configchannels"
+"/bin/mkdir -p $base".execute()
+
+// Step 1: Login!
+rhn.login()
+
+// Make sure we're logged in
+assert isLoggedIn() : "Failed logging in, check username and password"
+
+// We either specify the list; OR we assume that any directories in our base path are the channel names
+//def channels = ["config-channel-label"]
+
+def channelList = new File(base).eachDir {
+    channels << it.name
+}
+
+channels.each { channel ->
+    assert rhn.client.configchannel.channelExists(rhn.key, channel) == 1 : "Configuration channel [$channel] does not exist in satellite!"
+
+    new File(base, channel).traverse { file ->
+        switch (file.name) {
+            case ".DS_Store":
+            case ~/.*\.metadata$/:
+            case ~/.*\.svn.*$/:
+            break
+            
+            default:
+                if ( !file.isDirectory() ) {
+                    def metadata
+
+                    def metadataName = file.path + ".metadata"
+                    def metadataFile = new File(metadataName)
+                    if ( metadataFile.exists() ) {
+                        metadata = new XmlSlurper().parse(metadataFile)
+                    }
+
+                    if (metadata) {
+                        def actualPath = file.path.toString().substring(base.size() + channel.size() + 1)
+
+                        assert channel.equals(metadata.channel.toString()) : "Specified channel in repository [$channel] is different than metadata channel [${metadata.channel}]"
+                        assert actualPath.equals(metadata.path.toString()) : "Derived actual path [$actualPath] is different than metadata path [${metadata.path}]!"
+
+                        def contentsName = file.path
+                        def contentsFile = new File(contentsName)
+                        def contents = contentsFile.text
+
+                        def result = rhn.client.configchannel.createOrUpdatePath(
+                            rhn.key,
+                            metadata.channel.toString(),
+                            metadata.path.toString(),
+                            metadata.type.toString().equals("directory"),
+                            [
+                                contents: contents.bytes.encodeBase64().toString(),
+                                contents_enc64: true,
+                                owner: metadata.owner.toString(),
+                                group: metadata.group.toString(),
+                                permissions: metadata.permissions_mode.toString(),
+                                selinux_ctx: metadata.selinux_ctx.toString(),
+                                "macro-start-delimiter": metadata."macro-start-delimiter".toString(),
+                                "macro-end-delimiter": metadata."macro-end-delimiter".toString(),
+                                revision: metadata.revision.toInteger() + 1
+                            ]
+                            )
+                    }
+                }
+
+            break
+        }
+    }
 }
 
 rhn.logout()
