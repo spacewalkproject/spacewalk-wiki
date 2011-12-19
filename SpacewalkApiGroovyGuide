@@ -94,6 +94,33 @@ rhn.client.api.getApiNamespaces(rhn.key).each { apiNamespace ->
 rhn.logout()
 }}}
 
+=== Export Server Information ===
+
+{{{
+RHNSession rhn = new RHNSession()
+// Step 1: Login!
+rhn.login()
+
+// Make sure we're logged in
+assert isLoggedIn() : "Failed logging in, check username and password"
+
+// Find all hosts and print them in csv format
+println "ID,name,hostname,last_checkin,ip,cpu-arch,cpu-count,memory,swap,kernel"
+rhn.client.system.listSystems(rhn.key) { system ->
+    def network = rhn.client.system.getNetwork(rhn.key, system.id)
+    def memory = rhn.client.system.getMemory(rhn.key, system.id)
+    def kernel = rhn.client.system.getRunningKernel(rhn.key, system.id)
+    def cpu = rhn.client.system.getCpu(rhn.key, system.id)
+    if ( cpu.class == String.class) {
+        println "**** ${system.name} doesn't have CPU info... needs investigation"
+    } else {
+        println "${system.id},${system.name},${system.last_checkin},${network.hostname},${network.ip},${cpu.arch},${cpu.count},${memory.ram},${memory.swap},${kernel}"
+    }
+}
+
+rhn.logout()
+}}}
+
 === Cloning Software Channels ===
 
 This example is to demonstrate real world release management, where patches and updates must be vetted or promoted via a predefined release lifecycle.
