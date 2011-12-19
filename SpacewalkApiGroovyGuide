@@ -355,7 +355,7 @@ channelList.each { channel ->
 rhn.logout()
 }}}
 
-=== Upload Configuration Files ===
+=== Upload Config Channel Files ===
 
 {{{
 RHNSession rhn = new RHNSession()
