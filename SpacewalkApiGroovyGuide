@@ -373,6 +373,7 @@ assert isLoggedIn() : "Failed logging in, check username and password"
 // We either specify the list; OR we assume that any directories in our base path are the channel names
 //def channels = ["config-channel-label"]
 
+def channels = []
 def channelList = new File(base).eachDir {
     channels << it.name
 }
