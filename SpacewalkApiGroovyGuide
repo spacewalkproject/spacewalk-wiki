@@ -189,6 +189,131 @@ releaseChannels.each { original, label ->
 rhn.logout()
 }}}
 
+=== Downloading Config Channel Files ===
+
+{{{
+import groovy.xml.MarkupBuilder
+
+RHNSession rhn = new RHNSession()
+rhn.login()
+
+// Make sure we're logged in
+assert rhn.isLoggedIn() : "Failed logging in, check username and password"
+
+// Get the list of all configuration channels
+def channelList = rhn.client.configchannel.listGlobals(key)
+channelList.each { channel ->
+    // set the configuration channel name
+    def name = channel.label
+    println "Working on channel $name"
+
+    // set the base path
+    def base = "/channels/$name"
+
+    // this is the easiest way to create it; I'm on a unix machine and I'd rather not mess with
+    // coding this in groovy... we're just making sure the base directory exists
+    "/bin/mkdir -p $base".execute()
+
+    // list the files in the configuration channel
+    try {
+        def fileList = rhn.client.configchannel.listFiles(key, name)
+
+        // create the dircetory metadata (dump of the file info)
+        File fileListFile = new File("$base/files.metadata")
+        def writer = fileListFile.newWriter()
+        //def writer = new StringWriter()
+
+        def xml = new MarkupBuilder(writer)
+        xml.files() {
+            fileList.each { file ->
+                delegate.file {
+                    'type'(file.type)
+                    'directory'(file.directory)
+                    'path'(file.path)
+                    'last_modified'(file.last_modified)
+                }
+            }
+        }
+        writer.close()
+
+        def files = fileList.findAll { it.type == "file" }
+        def dirs = fileList.findAll { it.type == "directory" }
+        def symlinks = fileList.findAll { it.type == "symlinks" }
+
+        dirs.each { dir ->
+            println "Creating directory $base/${dir.path}"
+            "/bin/mkdir -p $base/${dir.path}".execute()
+        }
+
+        files.each { file ->
+            println "Creating file ${file.path}"
+            def bp = "/usr/bin/dirname ${file.path}".execute().in.text
+            "/bin/mkdir -p $base/$bp".execute()
+
+            def info = rhn.client.configchannel.lookupFileInfo(key, name, [file.path])
+
+            String type = info.type[0]
+            String path = info.path[0]
+            String target_path = info.target_path[0]
+            int revision = info.revision[0]
+            Date creation = info.creation[0]
+            Date modified = info.modified[0]
+            String owner = info.owner[0]
+            String group = info.group[0]
+            int permissions = info.permissions[0]
+            String permissions_mode = info.permissions_mode[0]
+            String selinux_ctx = info.selinux_ctx[0]
+            boolean binary = info.binary[0]
+            String md5 = info.md5[0]
+            String macrostartdelimiter = info."macro-start-delimiter"[0]
+            String macroenddelimiter = info."macro-end-delimiter"[0]
+
+            // create the metadata (dump of the file info)
+            metadataFile = new File("${base}/${file.path}.metadata")
+            writer = metadataFile.newWriter()
+            //writer = new StringWriter()
+
+            xml = new MarkupBuilder(writer)
+            xml.metadata() {
+
+                delegate.'channel'(name)
+                delegate.'type'(type)
+                delegate.'path'(path)
+                delegate.'target_path'(target_path)
+                delegate.'revision'(revision)
+                delegate.'creation'(creation)
+                delegate.'modified'(modified)
+                delegate.'owner'(owner)
+                delegate.'group'(group)
+                delegate.'permissions'(permissions)
+                delegate.'permissions_mode'(permissions_mode)
+                delegate.'selinux_ctx'(selinux_ctx)
+                delegate.'binary'(binary)
+                delegate.'md5'(md5)
+                delegate.'macro-start-delimiter'(macrostartdelimiter)
+                delegate.'macro-end-delimiter'(macroenddelimiter)
+
+            }
+            writer.close()
+
+            // create the real file (dump the contents)
+            contents = new File("${base}/${file.path}")
+            contents.write(info[0].contents)
+
+        }
+
+        symlinks.each { symlink ->
+            println "Creating symlink ${symlink.path}"
+            def bp = "/usr/bin/dirname ${symlink.path}".execute().in.text
+            "/bin/mkdir -p $base/$bp".execute()
+            "/bin/ln -s ${symlink.target_path} $base/${symlink.path}".execute()
+        }
+    } catch (Exception e) { println "ERROR: ${e.message}"; e.printStackTrace() }
+}
+
+rhn.logout()
+}}}
+
 == API Insights ==
 
 
@@ -197,7 +322,7 @@ rhn.logout()
 Like Satellite itself, the API is not trivial and can take some time to get your head around. It’s very difficult to understand why your code isn’t working as expected if:
 
 * You can’t visualise the data you are working with
-* You don’t know how the module you are using is designed to work.
+* You don’t know how the module you are using is designed to work
 
 == Sources ==
 
