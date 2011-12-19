@@ -2,7 +2,13 @@
 
 == Intended Audience ==
 
-The document is intended for system administrators and/or Groovy coders who wish to make use of the RedHat RHN Satellite v5.1 Server API. There may well be better ways to code the examples below and it should be noted that they have not been thoroughly examined for security issues.
+The document is intended for system administrators and/or Groovy coders who wish to make use of the RedHat RHN Satellite v5.1 Server API. There may well be better ways to code the examples below and it should be noted that they have not been thoroughly examined for security issues.  Additionally, there are a few complex examples to help give you a better idea of some of the real life uses of the RHN Satellite Server API.
+
+This guide was modified from the SpacewalkApiPerlGuide and is intended for those individuals to whom merely thinking of PERL gives them a headache, much less actually having to use it.
+
+== Groovy XMLRPC Module ==
+
+In order for your custom code or scripts to access the Satellite API, you must include the Groovy XMLRPC module (http://groovy.codehaus.org/XMLRPC).  This provides the essential groovy.net.xmlrpc.* classes needed for a Groovy XMLRPC client proxy.
 
 == API Introduction ==
 
@@ -18,10 +24,12 @@ def url = "http://${host}/rpc/api"
 def client = new XMLRPCServerProxy(url)
 
 // Use the client to obtain the authentication key
-def key = client.auth.login(username, password)
+def key = client.auth.login("username", "password")
 
 assert client != null && key != null  : "Login to RHN Satellite failed!"
 }}}
+
+== RHNSession Helper ==
 
 The problem with the above approach is the username and password of a valid (and probably privileged) Satellite user is stored in clear text in each and every one of your scripts. To avoid this, I create the file /etc/satellite_api.conf (which a filemode of 0600 and owned by root:root) which contains:
 
