@@ -2,9 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instruction for new installations of Spacewalk 1.5. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instruction for new installations of Spacewalk 1.6. If you are upgrading from older versions, see HowToUpgrade.
 
-Spacewalk 1.4 installation instructions are available at [wiki:HowToInstall14].
+Spacewalk 1.5 installation instructions are available at [wiki:HowToInstall15].
 
 ----
 
@@ -31,26 +31,27 @@ To use this repository install spacewalk-repo with commands below:
 === Red Hat Enterprise Linux 5, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/5/x86_64/spacewalk-repo-1.5-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/5/x86_64/spacewalk-repo-1.6-1.el5.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 6, CentOS ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/6/x86_64/spacewalk-repo-1.5-1.el6.noarch.rpm
-}}}
-
-=== Fedora 14 ===
-
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/Fedora/14/x86_64/spacewalk-repo-1.5-1.fc14.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/6/x86_64/spacewalk-repo-1.6-1.el6.noarch.rpm
 }}}
 
 === Fedora 15 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/Fedora/15/x86_64/spacewalk-repo-1.5-1.fc15.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/15/x86_64/spacewalk-repo-1.6-1.fc15.noarch.rpm
 }}}
+
+=== Fedora 16 ===
+
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/16/x86_64/spacewalk-repo-1.6-1.fc16.noarch.rpm
+}}}
+
 
 === Nightly builds ===
 
@@ -66,10 +67,10 @@ name=Spacewalk
 baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/5/$basearch/
 # RHEL 6
 #baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/6/$basearch/
-# Fedora 14
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/14/$basearch/
 # Fedora 15
 #baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/15/$basearch/
+# Fedora 16
+#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/16/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
@@ -86,10 +87,10 @@ name=Spacewalk
 baseurl=http://spacewalk.redhat.com/yum/nightly-client/RHEL/5/$basearch/
 # RHEL 6 / CentOS 6
 #baseurl=http://spacewalk.redhat.com/yum/nightly-client/RHEL/6/$basearch/
-# Fedora 14
-#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/14/$basearch/
 # Fedora 15
 #baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/15/$basearch/
+# Fedora 16
+#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/16/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
@@ -102,7 +103,7 @@ EOF
 
 === Jpackage repository ===
 
-==== RHEL, CentOS 6 and Fedora 14 & 15 ====
+==== RHEL, CentOS 6 and Fedora 15 & 16 ====
 
 For Spacewalk on RHEL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
 If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
@@ -168,7 +169,7 @@ When using RHEL 6, make sure you are subscribed to following channels as well:
 Follow the instructions to use '''EPEL 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://spacewalk.redhat.com/yum/1.5-client/RHEL/5/x86_64/spacewalk-client-repo-1.5-1.el5.noarch.rpm
+rpm -ihv http://spacewalk.redhat.com/yum/1.6-client/RHEL/5/x86_64/spacewalk-client-repo-1.6-1.el5.noarch.rpm
 }}}
  *  Import Redhat's RPM GPG key:
 {{{
