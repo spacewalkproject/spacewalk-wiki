@@ -67,7 +67,6 @@ Of course, to preserve the changes, you need to get them to the Spacewalk git re
    * Run {{{perl schema-source-sanity-check.pl -I}}} to see what needs to be worked on.
    * When you fix PostgreSQL schema source to be equivalent to the Oracle file, add line {{{-- oracle equivalent source sha1 ...}}} to the start of the PostgreSQL file, with SHA1 of the Oracle file there.
  * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
- * The {{{chameleon}}} tool is used to generate DDL from {{{common/}}} but it only seems to work for tables. Do we want to extend that tool, or drop it completely?
 
 == Slides for Developer Conference 2011 ==
 
