@@ -3,8 +3,6 @@
 
 If you have an existing Spacewalk 1.3+ installation with Oracle backend, you can migrate it to use the PostgreSQL database server instead.
 
-Please note that the PostgreSQL port still only has limited feature set. However, if you are ready to help with the PostgreSQL port, it might be useful to take your populated Oracle schema and migrate it to PostgreSQL because you might get database content which you cannot get with PostgreSQL itself. For example, if provisioning does not work on PostgreSQL, you won't get any records about kickstart history. If you migrate Oracle schema, you can immediately start hacking on errors on WebUI viewing that history -- data that you would not get on PostgreSQL otherwise.
-
 == Schema version is important ==
 
 When migrating the data from database schema from Oracle to PostgreSQL, you will use a dump of the data from the Oracle database and import it to a fresh PostgreSQL database schema. Therefore, you need the PostgreSQL schema to be of the same version as the one in Oracle. In other words, you need to upgrade the Spacewalk and the Oracle schema to the latest version, to match the schema that you will likely have in PostgreSQL.
