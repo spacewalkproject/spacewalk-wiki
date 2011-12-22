@@ -29,19 +29,19 @@ To use the official repository install spacewalk-repo RPM:
 
 Red Hat Enterprise Linux 5, CentOS
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/5/x86_64/spacewalk-repo-1.5-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/5/x86_64/spacewalk-repo-1.6-1.el5.noarch.rpm
 }}}
 Red Hat Enterprise Linux 6
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/RHEL/6/x86_64/spacewalk-repo-1.5-1.el6.noarch.rpm
-}}}
-Fedora 14
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/Fedora/14/x86_64/spacewalk-repo-1.5-1.fc14.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/6/x86_64/spacewalk-repo-1.6-1.el6.noarch.rpm
 }}}
 Fedora 15
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.5/Fedora/15/x86_64/spacewalk-repo-1.5-1.fc15.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/15/x86_64/spacewalk-repo-1.6-1.fc14.noarch.rpm
+}}}
+Fedora 16
+{{{
+rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/16/x86_64/spacewalk-repo-1.6-1.fc15.noarch.rpm
 }}}
 
 ==== Nightly builds ====
@@ -56,10 +56,10 @@ name=Spacewalk
 baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/5/$basearch/
 # RHEL 6
 baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/6/$basearch/
-# Fedora 14
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/14/$basearch/
 # Fedora 15
 #baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/15/$basearch/
+# Fedora 16
+#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/16/$basearch/
 gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
 enabled=1
 gpgcheck=0
@@ -120,7 +120,7 @@ configure-proxy.sh --answerfile=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="1.5"
+VERSION="1.6"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
