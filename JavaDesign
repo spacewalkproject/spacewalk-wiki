@@ -107,7 +107,7 @@ Instead, the logic is:
 {{{
 #!java
      ....
-     action - ActionManager.lookupByIdAndOrgId(actId,
+     action = ActionManager.lookupByIdAndOrgId(actId,
                                                loggedInUser.getOrg().getId());
      ....
 }}}
