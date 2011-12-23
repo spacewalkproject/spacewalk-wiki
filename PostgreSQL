@@ -45,9 +45,11 @@ If you have an existing Spacewalk with Oracle backend installation, you can use 
 
 == When you hit error ==
 
-For the above mentioned areas that are known to work, if you hit a problem, please file bugzilla.
+If you want to do a bit of coding, send a patch to the spacewalk-devel@redhat.com mailing list. See below for porting hints.
 
-For other areas, please help us by submitting a patch to spacewalk-devel@redhat.com mailing list. See below for how to fix issues.
+You can also just report the problem on either spacewalk-devel@redhat.com mailing list or (the more user-oriented) spacewalk-list@redhat.com. Please make sure you have the relevant log parts ready.
+
+You can also file bugzilla, for anything but monitoring (monitoring is known to be incomplete and we need the patches rather than bugzillas).
 
 == Info for developers ==
 
