@@ -1,10 +1,10 @@
-== PostgreSQL Porting Guide ==
+= PostgreSQL Porting Guide =
 
 On this page we are going to collect all valuable information that can help with porting our codebase to PostgreSQL. You will find description of all problems with links into Git with example solutions on the page.
 
 [[TOC]]
 
-=== General rules ===
+== General rules ==
 
   * Setup two testing scenarios prior to fixing any errors
     * spacewalk nightly on Oracle
@@ -30,9 +30,9 @@ We use some shortcuts on the page:
  * EXAMPLE = an example error
  * EX = example git commits links
 
-=== Problems and how to solve them ===
+== Problems and how to solve them ==
 
-==== The VARCHAR-NULL problem ==== #empty_string_null
+=== The VARCHAR-NULL problem === #empty_string_null
 
 ERROR: new row for relation "tablename" violates check constraint "vn_tablename_columnname"
 
@@ -48,7 +48,7 @@ If you see a warning in form of 'Object XY is setting empty string on' then you 
 
 EX: f73476582d8243ec6f5539ad93b9e923f76e06d7 a966e661d27742687e28b4c2fa7c21c4716743d8 d62c91f85775663f3e007d69ec23e173ac8ad818 eedebc4a67de4369bd4bcdd3af558f5bb541facc
 
-==== The DECODE/NVL2 functions problem ====
+=== The DECODE/NVL2 functions problem ===
 
 ERROR: function decode(...) does not exist
 ERROR: function nvl2(...) does not exist
@@ -75,7 +75,7 @@ Do not forget the END keyword.
 
 EX: 7d337c4d88e4057d542601e2fb48099557e13e05 f5ef2d83a72b8f4150f17477664ef75d21e45392 3a97bffade6be5edbc399e775ab861a1bd29e02e
 
-==== The NVL function problem ====
+=== The NVL function problem ===
 
 ERROR: function nvl(...) does not exist
 
@@ -85,7 +85,7 @@ The NVL function does not exist on PG and we have defined one: {{{NVL(VARCHAR, V
 
 EX: b9d3b3f2d8e09fd0a1d130e31f5c98280269cadf
 
-==== JOIN in ANSI syntax ====
+=== JOIN in ANSI syntax ===
 
 ERROR: syntax error at or near ")" at character
 
@@ -109,7 +109,7 @@ This is the same for right outer joins. Inner joins works okay in both Oracle an
 
 EX: 0b1f33ff900514a03485aa8058b8b277b0d6c66e 126169e289ea91f06960cfdb3dc408961ee10d02 
 
-==== SELECT column AS alias ====
+=== SELECT column AS alias ===
 
 ERROR: "alias" does not exist
 
@@ -119,7 +119,7 @@ In ORA you can skip AS keyword in column alias definition but PG needs it. We ne
 
 EX: 9296d280982ef8f17815a05fbbb2e98474949da0
 
-==== Default cast to integer ====
+=== Default cast to integer ===
 
 ERROR: com.redhat.rhn.common.util.MethodNotFoundException: Could not find method called: xxx in class: yyy with params: [type: ttt, value: n]
 
@@ -133,7 +133,7 @@ Please note you might want to explicitely cast in the SQL using CAST (x AS BIGIN
 
 EX: c2fda0ad08ff8c7c637eae6a36cf28940f8bda1a 203a68650582ba695a8b730bb8c4be39c199a155
 
-==== The sysdate problem ====
+=== The sysdate problem ===
 
 ERROR: column "sysdate" does not exist at character XX
 
@@ -147,7 +147,7 @@ If there is any date/time arithmetics (operators plus/minus, function calls) you
 
 EX: 25fcd0c602946d676ab1b070a64ceba072e214d3 d72a4c04b6d0c6659a89093e5a8c52488db1ad61 aaee1dd0f369ac11476a7af3bd4acd82f63aa089
 
-==== Date arithmetics ====
+=== Date arithmetics ===
 
 ERROR: ???
 
@@ -197,7 +197,7 @@ The numtodsinterval now accepts: second, minute, hour, day. You can use any of t
 
 EX: e43029294891b49940b5c75ddc01227280b89b08 b9dc390cb5101a391f424bd0a5a873076cd7e4b5 93fd4371dfb524b0e9a9e4e9a01b81a9843d4aa3 1959728caebe5c88b0563dc5276f5f8b27128cc5
 
-==== Triggers must return something ====
+=== Triggers must return something ===
 
 ERROR: control reached end of trigger procedure without RETURN
 
@@ -205,7 +205,7 @@ In PG all triggers must return record (the "new" in most cases) or null.
 
 EX: 19e1daa3bb5b236e777adb4afce8fe263bda2390
 
-==== Triggers mustn't touch old if they are on insert ====
+=== Triggers mustn't touch old if they are on insert ===
 
 ERROR:
 {{{
@@ -218,7 +218,7 @@ We cannot touch old if tg_op is INSERT. Apparently, if does not use lazy evaluat
 
 EX: 590e9da99719ce814190f859c940cd94baf4e7ab 6746cbdb36e75b36ac05ab02eba9eb60330c30ee
 
-==== Procedure call from Hibernate ====
+=== Procedure call from Hibernate ===
 
 We cannot call stored procedure in the form
 
@@ -248,7 +248,7 @@ Also please note that in the example above the XXRH_OAI_WRAPPER is not a package
 
 EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e
 
-==== ORDER BY expression in DISTINCT select ====
+=== ORDER BY expression in DISTINCT select ===
 
 ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
 
@@ -273,7 +273,7 @@ EX: a283b7f6b7192250e9ab99c3942a3c0e5be3b1f2
 
 You may find some commits that was trying to add a new column in the original query (263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df) but it turned out this is problematic approach and we have removed this.
 
-==== Rownum problem ====
+=== Rownum problem ===
 
 ERROR:  column "rownum" does not exist
 
@@ -285,7 +285,7 @@ There are situations where rownum column is used for separating odd and even rec
 
 EX: TBD
 
-==== Subquery with no alias ====
+=== Subquery with no alias ===
 
 ERROR:  subquery in FROM must have an alias at
 
@@ -293,13 +293,13 @@ It seems all subqueries in PG must have an alias. Its easy to add one e.g. {{{ .
 
 EX: 62a15afa13dfe890c6bc86ce010699419fbf7383 (please note the AS keyword should not be present and has been fixed in 546adc9416d999ae8f198bf7a5952a9956d204be)
 
-==== Composite type accessing ====
+=== Composite type accessing ===
 
 In PG you have to use braces when accessing a composite type.
 
 EX: 6a511109bde9ef84c3dd9d6dc98c9635acf5765b
 
-==== Concatenating of evr ====
+=== Concatenating of evr ===
 
 ERROR: DECODE not found...
 
@@ -313,7 +313,7 @@ There is a function that do the same {{{... evr_t_as_vre_simple(PE.evr) ...}}} b
 
 EX: 4f9ee9ff1b5d536178d106d4f1541396bf899be5
 
-==== Global function evr_t_as_vre_simple ====
+=== Global function evr_t_as_vre_simple ===
 
 ERROR: cross-database references are not implemented: pe.evr.as_vre_simple
 
@@ -331,7 +331,7 @@ with global function
 
 EX: add2a44a2493b877b1a2f869a0d958c706def207 6b4dccb40b9c5b99579b1246623f1afc2db1b1b4
 
-==== No autonomous transactions ====
+=== No autonomous transactions ===
 
 ERROR: syntax error at or near "autonomous_transaction" at character 
 
@@ -358,13 +358,13 @@ The autonomous transactions are generally used in lookup situations where we wan
 
 We can address this issue by making the transactions where we've inserted new lookup records as short as possible (we do not worry if the lookup entries end up in the database even if the main transaction then rollbacks), or we can use second connection to the database to do those parallel inserts. That however seems to be hard because the backend (Python stack) code seems to assume there is only one connection to the database -- we don't even have any dbh object/variable in that code.
 
-==== NUMBER to NUMERIC ====
+=== NUMBER to NUMERIC ===
 
 Since ORA NUMBER is NUMERIC in PG we heed to replace these. All DDL were already fixed but you will find these usually in PLSQL/PgSQL.
 
 EX: dacafca6ba2b1d2a2f90ec07864187c69f013791
 
-==== Calling procedures ====
+=== Calling procedures ===
 
 To call a procedure on ORA we use something like
 
@@ -386,7 +386,7 @@ and for functionts that returns something you have to use
  select package.proc(...);
 }}}
 
-==== SELECT UNIQUE ====
+=== SELECT UNIQUE ===
 
 ERROR:  syntax error at or near "column"
 
@@ -394,7 +394,7 @@ We use SELECT UNIQUE sometimes but AskTom says that from version 10g its only sy
 
 EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
 
-==== TO_NUMBER function ====
+=== TO_NUMBER function ===
 
 ERROR: function to_number(unknown) does not exist
 
@@ -404,17 +404,17 @@ We use to_number(null) very often, the fix is to convert it to to_number(null, n
 
 EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
 
-==== DELETE without FROM ====
+=== DELETE without FROM ===
 
 ERROR: syntax error at or near "tablename"
 
 PG does not allow to skip FROM keyword in DELETE FROM tablename. Its easy fix to add it.
 
-==== DUAL table ====
+=== DUAL table ===
 
 On PG there is a possibility to do {{{ SELECT ... }}} without any table. We have created a fake DUAL table so you can do {{{ SELECT ... FROM DUAL }}} on both platforms.
 
-==== MINUS keyword ====
+=== MINUS keyword ===
 
 ERROR:  syntax error at or near "MINUS" at character xxx
 
@@ -428,7 +428,7 @@ otherwise it's possible to rewrite every MINUS into a OUTER JOIN (recommended wa
 
 EX: 3f95a42cb3640370579ef81d52157c1e53cf2fb5 b8f305136a2f525670ef901a5d986eb7050c98dc
 
-==== Bind parameter with space ====
+=== Bind parameter with space ===
 
 ERROR:  syntax error at or near ":" at character xxx
 
@@ -436,7 +436,7 @@ There must not be space between : and parameter in ":parameter". Between equal s
 
 EX: 910e069f689bc91abcf962f5d10f8ef3e4b3073c
 
-==== Portable nextval ====
+=== Portable nextval ===
 
 ERROR: missing FROM-clause entry for table "tablename"
 
@@ -444,7 +444,7 @@ The nextval syntax in different on both platforms. We have defined global functi
 
 EX: f2153167da508852183501f320c2e71c08a0441c
 
-==== Recursion with opened cursors ====
+=== Recursion with opened cursors ===
 
 ERROR: cursor "cursorname" already in use
 
@@ -452,7 +452,7 @@ ORA allows to set variable open_cursors (we have currently 300) that allows recu
 
 EX: 0bb8c201eb593018ffcb66aded1321106acda81f
 
-==== Anonymous procedural SQL blocks, in Python (backend) ==== #anonymous_plpgsql
+=== Anonymous procedural SQL blocks, in Python (backend) === #anonymous_plpgsql
 
 PG does not support anonymous PL/pgSQL blocks. We workaround this by creating functions on-the-fly, and then calling them.
 
@@ -466,7 +466,7 @@ EX: 30903ca16fa55cab6994dbd97595eb549bd3f619
 
 Since the ORA and PG syntax for cursors differs a bit, you can use comments {{{/*pg_cs*/}}} and {{{/*pg cursor*/}}} to tell the PG driver to massage the source to make PG happy, while masking those strings from ORA -- the {{{pg_cs}}} eats the following {{{cursor}}} word, and {{{pg cursor}}} puts that {{{cursor}}} back for PG.
 
-==== Relation (table) does not exists ==== #tablenotexist
+=== Relation (table) does not exists === #tablenotexist
 
 ERROR:  relation "table_alias" does not exist at character XX
 
@@ -476,7 +476,7 @@ So the right fix is replacing table alias with name of referenced table.
 
 EX: d292753948be6718cee2639c68b7a98d58c2f11a, 566bbf371d4cf831705c4a3afe19bb1e7f9efe81, d347f40a137622b4b12a9400a5d4ca8dfdb6ede9
 
-==== Inserting / writing blob in Python (backend) ==== #blob_in_python
+=== Inserting / writing blob in Python (backend) === #blob_in_python
 
 ERROR: !AttributeError: 'buffer' object has no attribute 'write'
 
