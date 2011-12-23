@@ -33,7 +33,7 @@ can be useful:
 
 * IPv6 support: management and provisioning capabilities
 * Support for Fedora 16 (server and client)
-* Kickstarting via Spacewalk Proxy with a CNAME
+* [http://www.youtube.com/watch?v=3LPHYORuBBc Kickstarting via Spacewalk Proxy with a CNAME]
 * spacewalk-repo-sync supports --include and --exclude options
 * New API calls:
    * channel.software.getRepoSyncCronExpression
