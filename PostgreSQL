@@ -2,17 +2,13 @@
 
 = Spacewalk with PostgreSQL backend =
 
-Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In order to make the whole Spacewalk project use open source software, we are adding support for PostgreSQL as database backend.
+Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In order to make the whole Spacewalk project use open source software, support for PostgreSQL as database backend has been added.
 
 This is a page describing the status of the PostgreSQL support as of 22nd December, 2011, Spacewalk version 1.6.
 
 == Functionality known to work ==
 
-Spacewalk on PostgreSQL still only has limited functionality. Areas known to work are:
-
- * everything except monitoring
-
-Monitoring will most likely not work for you.
+When using Spacewalk on PostgreSQL, you may expect everything except monitoring to work. Monitoring will most likely not work for you.
 
 == Get the PostgreSQL server running ==
 
