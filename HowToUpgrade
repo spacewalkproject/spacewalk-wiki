@@ -39,6 +39,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 Your Spacewalk should be stopped at this point. Perform package upgrade using yum:
 
 {{{
+# yum clean all
 # yum upgrade
 }}}
 
