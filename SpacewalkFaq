@@ -35,13 +35,8 @@ Spacewalk only requires Oracle !InstantClient 11g, not server 11g. Instant Clien
 
 === Should I give a try PostgreSQL version? ===
 
-Short answer: yes!
-
-Longer answer: Support for PostgreSQL still has lots of issues. But on the other hand it is quite usable. So the answer is tricky.
-If you use Spacewalk in production you should use Oracle backend. If you are nervous when you hit "Internal Server Error", then use Oracle backend. If you expect flawless usage, if you are not willing to report errors, if your business rely on Spacewalk, if your boss is shouting at you if something break... then use Oracle backend.
-But PostgreSQL backend is quite mature enough. We tried all basic thing with PostgreSQL. You are able to install Spacewalk itself, register machine, activate Spacewalk Proxy, download packages from Spacewalk, rhnpush package, run spacewalk-repo-sync. Anything else may work, but most probably you will get sooner or later you will "Internal Server Error".
-Therefore use PostgreSQL version if the basic functionality is good enough for you. If you are willing to report errors and test fixes. If you do not mind to workaround problems or even if you will not miss some functionality of Spacewalk.
-(Updated 2011-02-16)
+Yes! Support for PostgreSQL does quite mature over the last releases. The only thing known not to work well with PostgreSQL backend is monitoring.
+(Updated 2012-01-03)
 
 == Spacewalk Architecture ==
 
