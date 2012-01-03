@@ -1,7 +1,7 @@
 = Upload content to Spacewalk =
 
 In order to use Spacewalk, you need to populate it with content.  There are two ways to do this:
- 1.  spacewalk repo sync (For syncing yum repos)
+ 1.  spacewalk-repo-sync (For syncing yum repos)
  2.  rhnpush (For simply pushing a rpms directly to the spacewalk server)
 
 Before doing either of these things, you will need to create a custom software channel within spacewalk.
@@ -12,30 +12,54 @@ Before doing either of these things, you will need to create a custom software c
 The easiest way to create a channel is through. the WebUI.  Simply log in and navigate to the "Channels"->"Manage Software Channels"-> "Create"  page.  
 
 
-Alternatively you can use the attached api script to create a channel from the command line. 
+Alternatively you can use {{{spacewalk-common-channels}}} script from {{{spacewalk-utils}}} package to create a predefined set of channel from the command line. It also creates desired activation keys and definitions for external repositories. 
 
-For example, to create a channel for Cent Os 5:
- {{{./create_channel.py --label=centos5-i386 --name "CentOS 5 32-bit" --summary "32-bit CentOS 5 channel"}}}
+For example, to create i386 and x86_64 channels for CentOS 5, activation keys and their spacewalk client subchannels:
+ {{{/usr/bin/spacewalk-common-channels -v -u admin -p pass -a i386,x86_64 -k unlimited 'centos5*' 'spacewalk-nightly-client*'}}}
 
 Usage:
 {{{
-./create_channel.py 
-usage: create_channel.py [options] --label <channel label> --name <channel name>
+# spacewalk-common-channels -h
+Usage: spacewalk-common-channels [options] <channel1 glob> [<channel2 glob> ... ]
 
-options:
-  -h, --help           show this help message and exit
-  --user=USER          username
-  --password=PASSWORD  password
-  --host=HOST          FQDN of your server
-  --label=LABEL        channel label
-  --name=NAME          channel name
-  --summary=SUMMARY    channel summary
-  --channel-arch=ARCH  channel architecture
-  --debug              enable debug output
-None
+Options:
+  -c CONFIG, --config=CONFIG
+                        configuration file
+  -u USER, --user=USER  username
+  -p PASSWORD, --password=PASSWORD
+                        password
+  -s SERVER, --server=SERVER
+                        your spacewalk server
+  -k KEY_LIMIT, --keys=KEY_LIMIT
+                        activation key usage limit - 'unlimited' or number
+                        (default: options is not set and activation keys are
+                        not created at all)
+  -n, --dry-run         perform a trial run with no changes made
+  -a ARCHS, --archs=ARCHS
+                        list of architectures
+  -v, --verbose         verbose
+  -l, --list            print list of available channels
+  -h, --help            show this help message and exit
+
+
+Examples:
+
+Create Fedora 12 channel, its child channels and activation key limited to 10 servers:
+    /usr/bin/spacewalk-common-channels -u admin -p pass -k 10 'fedora12*'
+
+Create Centos 5 with child channels only on x86_64:
+    /usr/bin/spacewalk-common-channels -u admin -p pass -a x86_64 'centos5*'
+
+Create only Centos 4 base channels for intel archs:
+    /usr/bin/spacewalk-common-channels -u admin -p pass -a i386,x86_64 'centos4'
+
+Create Spacewalk client child channel for every (suitable) defined base channel:
+    /usr/bin/spacewalk-common-channels -u admin -p pass 'spacewalk-client*'
+
+Create everything as well as unlimited activation key for every channel:
+    /usr/bin/spacewalk-common-channels -u admin -p pass -k unlimited '*'
+
 }}}
-
-Note: The channel name can't start with "Red Hat" (you will get an "Invalid Channel Name" error).
 
 
 
@@ -48,26 +72,15 @@ Goto Channels -> Manage Software Channels -> Manage Repositories -> create new r
 
 [[Image(spacewalk_reposync_v1_2_scaled.jpeg)]]
 
-After creating the repository, you need to link it to one or more Software Channels. Goto: Channels -> Manage Software Channels -> Choose the channel to be linked -> Repositories -> Select the repositories to be linked to the channel -> Update Repositories. Now you can sync the repository clicking on the sync tab. Click on sync now or schedule a sync.
+After creating the repository, you need to link it to one or more Software Channels. Goto: Channels -> Manage Software Channels -> Choose the channel to be linked -> Repositories -> Select the repositories to be linked to the channel -> Update Repositories. Now you can sync the repository clicking on the sync tab. Click on sync now or schedule a sync. If you used {{{spacewalk-common-channels}}} it has already setup repositories for you.
 
 Alternatively you can start a sync of a yum repository defined in the web ui by command line:
 
 {{{
-spacewalk-repo-sync --channel CHANNEL_LABEL --type yum 
+spacewalk-repo-sync --channel CHANNEL_LABEL 
 }}}
 
-If you would prefer to do it only by using the command line:
-{{{
-spacewalk-repo-sync --channel CHANNEL_LABEL --url YUM_URL
-}}}
-for example, to sync CentOS5 to your custon 'centos5-i386' channel you would run:
-{{{
-spacewalk-repo-sync --channel centos5-i386 --url http://mirrors.kernel.org/centos/5/os/i386/
-}}}
-
-In this case Spacewalk does not remember the URL to be synced, the information will not be available on the web ui. On each subsequent sync you need to provide the URL again.
-
-Currently only 'yum' type is supported.  You can use any repo url that is supported by yum (http://, file://, etc...).  If running the command line directly, you must be the root user.
+You can use any repo url that is supported by yum (http://, file://, etc...).  If running the command line directly, you must be the root user.
 
 For more information also see
 {{{
