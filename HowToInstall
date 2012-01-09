@@ -160,9 +160,8 @@ Otherwise you get error messeges like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
-When using RHEL 6, make sure you are subscribed to following channels as well:
- * '''Red Hat High Availability Server 6'''
- * '''Red Hat Optional Server 6'''
+When using RHEL 6, make sure you are subscribed to following channel as well:
+  * '''Red Hat Optional Server 6'''
 
 === CentOS 5 ===
 
