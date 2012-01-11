@@ -89,6 +89,12 @@ For openSUSE 11.4:
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
+For openSUSE 12.1:
+{{{
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.6/openSUSE_12.1/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+}}}
+
 For Factory:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.6/openSUSE_Factory/ spacewalk-tools
