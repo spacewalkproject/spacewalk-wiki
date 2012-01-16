@@ -442,7 +442,7 @@ ERROR: missing FROM-clause entry for table "tablename"
 
 The nextval syntax in different on both platforms. We have defined global function {{{sequence_nextval('sequence_name')}}} that works on both platforms. In some cases the explicit sequence insert can be removed at all which is preferred solution.
 
-EX: f2153167da508852183501f320c2e71c08a0441c
+EX: 2cec4e439e2f64a75b5564656c3761d0a85357ce
 
 === Recursion with opened cursors ===
 
