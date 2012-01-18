@@ -191,21 +191,14 @@ In order to get Spacewalk ro run with PostgreSQL database backend, you need Post
 Please note that the functionality of Spacewalk on PostgreSQL is limited and sooner than later you may hit Internal Server Error.
 
 == Conflicting Packages ==
-There is an open [https://bugzilla.redhat.com/show_bug.cgi?id=593402 bug 593402] that identifies the package cobbler-web as conflicting with Spacewalk's Taskomatic process. Until the issue is addressed, it is recommended that the cobbler-web package be removed from the Spacewalk server.
+
+Since version 1.6 it is not possible to install Spacewalk with cobbler-web installed because it conflicts with Spacewalk's Taskomatic process. You should remove cobbler-web package from the Spacewalk server.
+
 {{{
 yum remove cobbler-web
 }}}
 
-Yum can also be configured to exclude that package in the future by adding the following entry to the [main] section in /etc/yum.conf:
-{{{
-vi /etc/yum.conf
-
-[main]
-....
-exclude=cobbler-web
-}}}
-
-There is a workaround to be able to install cobbler-web and use it alongside Spacewalk.  Instructions can be found at CobblerWebWorkaround.
+Note: You can get more information about cobbler-web problem in [wiki:HowToInstall15].
 
 == Installing Spacewalk ==
 
