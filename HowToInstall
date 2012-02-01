@@ -77,6 +77,8 @@ gpgcheck=0
 EOF
 }}}
 
+Or you can install spacewalk-repo package. 
+
 Client:
 
 {{{
@@ -96,8 +98,9 @@ enabled=1
 gpgcheck=0
 EOF
 }}}
+Or you can install spacewalk-client-repo package. 
 
-'''NOTE:''' Nigthly repo contains developers snapshot and is not suitable in production environment.
+'''NOTE:''' Nigthly repo contains developers snapshot and is not suitable in production environment. Especially note, that changes in schema are not automatically applied and after "yum upgrade" your Spacewalk server may be in broken state.
 
 == Additional repos & packages ==
 
