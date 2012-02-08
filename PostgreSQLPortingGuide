@@ -398,11 +398,17 @@ EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
 
 ERROR: function to_number(unknown) does not exist
 
-The fucntion TO_NUMBER(string) is not recognized in PG. We have to use TO_NUMBER(string, string) version - with the second parameter which is the number format. This is the same as on Oracle.
+The function TO_NUMBER(string) is not recognized in PG. We have to use TO_NUMBER(string, string) version - with the second parameter which is the number format. This is the same as on Oracle.
 
 We use to_number(null) very often, the fix is to convert it to to_number(null, null). For other occurances the fix is to include the second parameter.
 
 EX: 62a15afa13dfe890c6bc86ce010699419fbf7383
+
+=== TO_DATE function ===
+
+The function TO_DATE(string, string) returns date (i.e. without hours/minutes/seconds) in PG. We have to use TO_TIMESTAMP(string, string) which returns both date and time of day both in Oracle and PG.
+
+EX: ???
 
 === DELETE without FROM ===
 
