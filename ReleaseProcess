@@ -138,6 +138,7 @@ If you need something more, like point koji to your config file, add it to your
 KOJI_OPTIONS=-c ~/.koji/spacewalk-config build --nowait
 }}}
 
+We do nightly builds (in facts 3 times per day) for every tagged package. So unless you need that rpm, then taggin may be sufficient for you.
 
 == Branching a release ==
 When we're nearing the end of a release cycle, we need to branch the release.
