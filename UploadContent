@@ -68,7 +68,7 @@ One way of getting content is to use [http://www.gnu.org/software/wget/ wget] to
 # mkdir Fedora9
 # cd Fedora9
 # wget -r -l1 --no-parent \
-        http://download.fedora.redhat.com/pub/fedora/linux/releases/9/Everything/i386/os/Packages/
+        http://download.fedoraproject.org/pub/fedora/linux/releases/9/Everything/i386/os/Packages/
 }}}
 
 The same principal but for CentOS 5
@@ -93,7 +93,7 @@ yum install yum-utils
 $ head /etc/yum.repos.d/fedora.repo
 [fedora]
 name=Fedora $releasever - $basearch
-baseurl=http://download.fedora.redhat.com/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
+baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/
 mirrorlist=http://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
 enabled=1
 gpgcheck=1
