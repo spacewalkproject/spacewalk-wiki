@@ -11,7 +11,7 @@ On this page we are going to collect all valuable information that can help with
     * spacewalk nightly on PostgreSQL
   * Always fix only one problem and then test on both
   * Turning on detailed logging is a really good idea:
-    * {{{sed -i 's/^#*hibernate.show_sql=true.*$/hibernate.show_sql=true/' /etc/rhn/default/rhn_hibernate.conf}}}
+    * {{{sed -i 's/^#*hibernate.show_sql=true.*$/hibernate.show_sql=true/' /usr/share/rhn/config-defaults/rhn_hibernate.conf}}}
     * {{{echo "debug = 5" >> /etc/rhn/rhn.conf}}}
     * {{{echo "log_statement = 'all'" >> /var/lib/pgsql/data/postgresql.conf}}}
   * The most valuable log file is the postgresql.conf (you have to turn on the logging - see above). You will likely see all database related errors there.
