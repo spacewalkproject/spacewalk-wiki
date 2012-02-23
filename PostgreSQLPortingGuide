@@ -297,6 +297,18 @@ EX: 62a15afa13dfe890c6bc86ce010699419fbf7383 (please note the AS keyword should 
 
 In PG you have to use braces when accessing a composite type.
 
+E.g. when you have 
+
+{{{
+select PE.evr.epoch AS EPOCH ...
+}}}
+
+PostgreSQL will give error:
+
+{{{
+ERROR:  schema "pe" does not exist
+}}}
+
 EX: 6a511109bde9ef84c3dd9d6dc98c9635acf5765b
 
 === Concatenating of evr ===
