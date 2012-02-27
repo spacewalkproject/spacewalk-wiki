@@ -150,12 +150,12 @@ To get packages from EPEL just install this RPM:
 
 ==== EPEL 5 (use for RHEL 5) ====
 {{{
-rpm -Uvh http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 }}}
 
 ==== EPEL 6 (use for RHEL 6) ====
 {{{
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
 }}}
 
 Please make sure you have only one java version installed. 
