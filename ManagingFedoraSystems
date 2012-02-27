@@ -66,8 +66,8 @@ wget http://spacewalk.redhat.com/yum/0.3/fedora/9/i386/yum-rhn-plugin-0.5.3-6.el
 # This is _very_ necessary
 wget http://mirrors.vexs.net/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/m2crypto-0.18.2-4.x86_64.rpm
 
-wget http://download.fedoraproject.org/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/libxml2-python-2.6.32-1.fc9.x86_64.rpm
-wget http://download.fedoraproject.org/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/pyOpenSSL-0.6-4.fc9.x86_64.rpm
+wget http://dl.fedoraproject.org/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/libxml2-python-2.6.32-1.fc9.x86_64.rpm
+wget http://dl.fedoraproject.org/pub/fedora/linux/releases/9/Everything/x86_64/os/Packages/pyOpenSSL-0.6-4.fc9.x86_64.rpm
 
 # Don't check the signature of RPMs as the spacewalk key may change to the Fedora one soon(ish)
 # Don't check deps as there's a missing Python dep in rhnlib (it's not missing, the rpm file just thinks it is)
