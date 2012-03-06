@@ -57,6 +57,18 @@ Make sure your Spacewalk server is down:
 # /usr/sbin/spacewalk-service status
 }}}
 
+If you're using remote PostgreSQL database, make sure postgresql-contrib (or postgresql-contrib84 for RHEL-5/CentOS 5) package is installed on the machine hosting your database server.
+
+For RHEL-5 / CentOS 5:
+{{{
+rpm -q postgresql-contrib84
+}}}
+
+For RHEL-6 / CentOS 6 and Fedoras:
+{{{
+# rpm -q postgresql-contrib
+}}}
+
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
