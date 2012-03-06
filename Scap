@@ -4,12 +4,13 @@ SCAP provides standardized approach to maintaining the security of systems. Besi
 
 == Spacewalk and OpenSCAP ==
 
-Project to integrate OpenSCAP to Spacewalk has started.
+Project to integrate OpenSCAP to Spacewalk has started. The aim is to provide an easy way for admins to scan whole infrastructure and view results and trends. 
 
-
-With Spacewalk 1.7, user is able:
+Currently, with Spacewalk 1.7, user is able:
  * schedule XCCDF scan for a given machine through FrontendAPI
  * obtain summary of the scan results through spacewalk-reports tool.
+
+The web interface for the feature is under development.
 
 == How to perform scan ==
  * Prerequisites:
