@@ -21,8 +21,18 @@ With Spacewalk 1.7, user is able:
    * The 'parameters' represents additional arguments for oscap tool, e.g d
  * Wait for action to be picked-up
  * Get results by spacewalk-reports tool.
+   * # /usr/bin/spacewalk-reports system-history-scap
+   * # /usr/bin/spacewalk-reports scap-scan
+   * # /usr/bin/spacewalk-reports scap-scan-results
 
-
-
+=== Example ===
+The following is an example of python script which will schedule XCCDF scan for machine with sid=1000010001. The script assumes USGSB content in `/usr/local/share/scap/usgcb-rhel5desktop-xccdf.xml`. Parameters indicates which profile will be evaluated: `united_states_government_configuration_baseline`. The content used for example can be found at [[http://usgcb.nist.gov/usgcb/content/scap/USGCB-rhel5desktop-1.0.5.0.zip|NIST]].
+{{{
+client = xmlrpclib.Server('https://spacewalk.example.com/rpc/api')
+key = client.auth.login('username', 'password')
+client.system.scap.scheduleXccdfScan(key, 1000010001,
+    '/usr/local/share/scap/usgcb-rhel5desktop-xccdf.xml',
+    '--profile united_states_government_configuration_baseline')
+}}}
 
 
