@@ -372,10 +372,6 @@ Spacewalk consists of several services. Each of them has its own init.d script t
 /usr/sbin/spacewalk-service [stop|start|restart].
 }}}
 
-== Known Issues ==
-
- * For issues with Oracle XE, see [OracleXeSetup#Troubleshooting Oracle XE Setup Troubleshooting]
-
 {{{
 #!html
 <script type="text/javascript">
