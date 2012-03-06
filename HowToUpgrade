@@ -1,18 +1,16 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.5 to Spacewalk 1.6.
+These are upgrade instruction for upgrading Spacewalk 1.6 to Spacewalk 1.7.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.5 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5 and CentOS 6 or Fedora 15.
+  *  Spacewalk 1.6 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS 5 and CentOS 6 or Fedora 15.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 1.5 to 1.6 upgrade instructions, are available at [wiki:HowToUpgrade16]
  * Spacewalk 1.4 to 1.5 upgrade instructions, are available at [wiki:HowToUpgrade15]
- * Spacewalk 1.3 to 1.4 upgrade instructions, are available at [wiki:HowToUpgrade14]
-
-
 
 
 ----
@@ -22,7 +20,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 1.6 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to Spacewalk 1.7 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, for Fedora, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
@@ -98,23 +96,6 @@ Important notes:
 # /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
 }}}
 
-
-== Clean jabberd database ==
-
-Run as root:
-
-{{{
-# rm -f /var/lib/jabberd/db/*
-}}}
-
-== Clean search indexes
-
-This step is required for the search server to create indexes of available IPv6 addresses.
-
-Run as root:
-{{{
-# service rhn-search cleanindex
-}}}
 
 == Restart Spacewalk ==
 
