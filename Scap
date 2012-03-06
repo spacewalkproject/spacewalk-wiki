@@ -18,8 +18,8 @@ The web interface for the feature is under development.
    * For the client: spacewalk-oscap package from spacewalk-client repo
    * Distribute the XCCDF content to client machines (e.g by rpm)
  * Schedule scan through FrontendAPI (system.scap.scheduleXccdfScan)
-   * The 'path' parameter point to content location on the client system.
-   * The 'parameters' represents additional arguments for oscap tool, e.g d
+   * The 'path' parameter points to content location on the client system.
+   * The 'parameter' represents additional arguments for oscap tool, e.g d
  * Wait for action to be picked-up
  * Get results by spacewalk-reports tool.
    * # /usr/bin/spacewalk-reports system-history-scap
