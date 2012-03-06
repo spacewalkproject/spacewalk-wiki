@@ -197,31 +197,19 @@ In order to get Spacewalk to run with Oracle database backend, you need:
 
 Installation of the free but limited Oracle 10g XE database server can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page. Hints for making Spacewalk work with external Oracle database server are on the [FullOracleSetup Full Oracle Setup] page.
 
-== Conflicting Packages ==
-
-Since version 1.6 it is not possible to install Spacewalk with cobbler-web installed because it conflicts with Spacewalk's Taskomatic process. You should remove cobbler-web package from the Spacewalk server.
-
-{{{
-yum remove cobbler-web
-}}}
-
-Note: You can get more information about cobbler-web problem in [wiki:HowToInstall15].
-
 == Installing Spacewalk ==
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
+
+If you prefer the [wiki:PostgreSQL] backend:
+{{{
+yum install spacewalk-postgresql 
+}}}
 
 If you tend to use the Oracle backend:
 {{{
 yum install spacewalk-oracle 
 }}}
-
-If you prefer the PostgreSQL backend:
-{{{
-yum install spacewalk-postgresql 
-}}}
-
-You may want to take a look at the [wiki:PostgreSQL] page for further information about the PostgreSQL backend.
 
 == Configuring the firewall ==
 
