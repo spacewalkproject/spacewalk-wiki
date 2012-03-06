@@ -1,0 +1,28 @@
+= OpenSCAP =
+
+SCAP provides standardized approach to maintaining the security of systems. Beside others, OpenSCAP tool can evaluate machine compliance with a given profile. For further information about OpenSCAP please navigate to project's [[http://www.open-scap.org/page/Main_Page|homepage]] or Fedora's feature [[https://fedoraproject.org/wiki/Features/OpenSCAP|page]]
+
+== Spacewalk and OpenSCAP ==
+
+Project to integrate OpenSCAP to Spacewalk has started.
+
+
+With Spacewalk 1.7, user is able:
+ * schedule XCCDF scan for a given machine through FrontendAPI
+ * obtain summary of the scan results through spacewalk-reports tool.
+
+== How to perform scan ==
+ * Prerequisites:
+   * For the server side: Spacewalk 1.7 or higher
+   * For the client: spacewalk-oscap package from spacewalk-client repo
+   * Distribute the XCCDF content to client machines (e.g by rpm)
+ * Schedule scan through FrontendAPI (system.scap.scheduleXccdfScan)
+   * The 'path' parameter point to content location on the client system.
+   * The 'parameters' represents additional arguments for oscap tool, e.g d
+ * Wait for action to be picked-up
+ * Get results by spacewalk-reports tool.
+
+
+
+
+
