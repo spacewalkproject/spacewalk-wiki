@@ -104,6 +104,12 @@ Or you can install spacewalk-client-repo package.
 
 == Additional repos & packages ==
 
+=== Red Hat Optional Server 6 ===
+
+When using RHEL 6, make sure you are subscribed to following RHN channel:
+
+  * '''Red Hat Optional Server 6'''
+
 === Jpackage repository ===
 
 ==== RHEL 6, CentOS 6 and Fedora 15 & 16 ====
@@ -163,9 +169,6 @@ Otherwise you get error messages like :
  * " bad major version at off set=6" or 
  * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
 
-When using RHEL 6, make sure you are subscribed to following channel as well:
-  * '''Red Hat Optional Server 6'''
-
 === CentOS 5 ===
 
 Follow the instructions to use '''EPEL 5''' with the additions:
@@ -179,19 +182,20 @@ rpm -ihv http://spacewalk.redhat.com/yum/1.6-client/RHEL/5/x86_64/spacewalk-clie
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 }}}
 
+== PostgreSQL Pre-Requisites ==
+
+In order to get Spacewalk to run with PostgreSQL database backend, you need PostgreSQL 8.4 server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup.
+
+When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql-contrib84 on RHEL 5) package is installed on the database server.
+
 == Oracle Pre-Requisites ==
 
 In order to get Spacewalk to run with Oracle database backend, you need:
- * the Oracle Instant Client 11.2.0.2.0
- * an oracle database, this can either be:
-  * Oracle 10g or 11g database server see the [FullOracleSetup Full Oracle Setup] page. (we assume here you use a seperate host running oracle)
-  * the free alternative Oracle XE. Instructions on how to do this can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page.
 
-== PostgreSQL Pre-Requisites ==
+ * Instant Client 11.2.0.2.0 installed on the Spacewalk machine
+ * Oracle database server, either on the Spacewalk machine or on another host; versions 10g and 11g are known to work
 
-In order to get Spacewalk ro run with PostgreSQL database backend, you need PostgreSQL 8.4 server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup.
-
-Please note that the functionality of Spacewalk on PostgreSQL is limited and sooner than later you may hit Internal Server Error.
+Installation of the free but limited Oracle 10g XE database server can be found on the [OracleXeSetup Oracle 10g Express Edition Setup] page. Hints for making Spacewalk work with external Oracle database server are on the [FullOracleSetup Full Oracle Setup] page.
 
 == Conflicting Packages ==
 
