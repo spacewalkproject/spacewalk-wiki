@@ -61,10 +61,9 @@ listen_addresses = '*'
 
 You can tune up performance of PostgreSQL by running pgtune:
 
- * download it from http://pgfoundry.org/frs/?group_id=1000416
+ * download and install package from http://koji.fedoraproject.org/koji/packageinfo?packageID=13414
  * mkdir /usr/share/pgtune
- * cp ./pg_settings-* /usr/share/pgtune
- * ./pgtune -S /usr/share/pgtune  -i /var/lib/pgsql/data/postgresql.conf >/tmp/pgtune.conf
+ * pgtune -i /var/lib/pgsql/data/postgresql.conf >/tmp/pgtune.conf
  * Review the changes by diff -i /var/lib/pgsql/data/postgresql.conf /tmp/pgtune.conf
  * cp /var/lib/pgsql/data/postgresql.conf /var/lib/pgsql/data/postgresql.conf.bak
  * cp /tmp/pgtune.conf /var/lib/pgsql/data/postgresql.conf
