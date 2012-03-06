@@ -106,7 +106,7 @@ Or you can install spacewalk-client-repo package.
 
 === Jpackage repository ===
 
-==== RHEL, CentOS 6 and Fedora 15 & 16 ====
+==== RHEL 6, CentOS 6 and Fedora 15 & 16 ====
 
 For Spacewalk on RHEL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
 If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
