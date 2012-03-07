@@ -79,7 +79,7 @@ In Spacewalk 1.7, we've seen
 
 == Reporting errors ==
 
-To report issues with Spacewalk, please use mailing list spacewalk-list@redhat.com to reach the user community. We might ask you file bugzilla at http://bugzilla.redhat.com/ with more details or full logs. From now on, errors related to PostgreSQL database backend are considered bug defects vs. missing capabilities.
+To report issues with Spacewalk, please use mailing list spacewalk-list@redhat.com to reach the user community. We might ask you to file bugzilla at http://bugzilla.redhat.com/ with more details or full logs. From now on, errors related to PostgreSQL database backend are considered bug defects vs. missing capabilities.
 
 Thank you for using Spacewalk.
 
