@@ -153,31 +153,7 @@ yum install spacewalk-oracle
 
 == Configuring the firewall ==
 
-Spacewalk needs various inbound ports to be connectible. Assuming you have a default RHEL/CentOS set up, proceed as following:
-
-For RHEL 5/CentOS 5/Scientific Linux 5
-{{{
-iptables -D RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
-iptables -A RH-Firewall-1-INPUT -p tcp -m tcp --dport 443 -j ACCEPT
-iptables -A RH-Firewall-1-INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
-service iptables save
-service iptables restart
-}}}
-
-For RHEL 6/Scientific Linux 6
-{{{
-iptables -D INPUT -j REJECT --reject-with icmp-host-prohibited
-iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
-iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -A INPUT -j REJECT --reject-with icmp-host-prohibited
-service iptables save
-service iptables restart
-}}}
-
-
-Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
-
+Spacewalk needs various inbound ports to be connectible. Use {{{system-config-firewall}}} or edit {{{/etc/sysconfig/iptables}}}, adding the ports needed -- 80 and 443. Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
 
 == Configuring Spacewalk ==
 
