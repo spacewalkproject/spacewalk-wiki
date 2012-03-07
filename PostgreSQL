@@ -2,13 +2,11 @@
 
 = Spacewalk with PostgreSQL backend =
 
+The PostgreSQL database support now covers all areas of the Spacewalk product, including monitoring.
+
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In order to make the whole Spacewalk project use open source software, support for PostgreSQL as database backend has been added.
 
-This is a page describing the status of the PostgreSQL support as of 22nd December, 2011, Spacewalk version 1.6.
-
-== Functionality known to work ==
-
-When using Spacewalk on PostgreSQL, you may expect everything except monitoring to work. Monitoring will most likely not work for you.
+This is a page describing the status of the PostgreSQL support as of 7th March, 2012, Spacewalk version 1.7.
 
 == Get the PostgreSQL server running ==
 
@@ -51,20 +49,13 @@ You can also file bugzilla, for anything but monitoring (monitoring is known to 
 
 === Porting to PostgreSQL ===
 
-At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making {{{spacewalk-setup}}}, {{{satellite-sync}}}, {{{spacewalk-repo-sync}}}, client registration, as well as WebUI pages work. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
+At [wiki:PostgreSQLPortingGuide] we list issues that we were addressing while making Spacewalk work with the PostgreSQL database backend. Please use it as a reference of fixes when you hit an issue and want to create a patch for it.
 
 === Database schema ===
 
 When Spacewalk is installed and {{{spacewalk-setup}}} run for the first time, database is populated with necessary database objects via {{{psql}}} from {{{/etc/sysconfig/rhn/postgres/main.sql}}}. So this is the file you want to edit if you need to fix something in the schema on your installation. Then rerun {{{spacewalk-setup}}}, it will prompt to clear the schema. Watch {{{/var/log/rhn/populate_db.log}}} for any errors during population of the schema in the PostgreSQL database.
 
 Of course, to preserve the changes, you need to get them to the Spacewalk git repo, so that they get to the next nightly spacewalk-schema package. For PostgreSQL, the schema is compiled from files in the {{{schema/spacewalk/common/}}} and {{{schema/spacewalk/postgres/}}} directories in the Spacewalk git repo. A file should be either in the {{{common/}}} or in {{{postgres/}}} subdirectory, not in both.
-
-==== TODO ====
-
- * Not all Oracle sources have their PostgreSQL counterparts.
-   * Run {{{perl schema-source-sanity-check.pl -I}}} to see what needs to be worked on.
-   * When you fix PostgreSQL schema source to be equivalent to the Oracle file, add line {{{-- oracle equivalent source sha1 ...}}} to the start of the PostgreSQL file, with SHA1 of the Oracle file there.
- * I would like us to check upon rpm build time that every file contains just what its filename says it should contain -- triggers in its own files, table files with just table and index DDL, etc.
 
 == Slides for Developer Conference 2011 ==
 
