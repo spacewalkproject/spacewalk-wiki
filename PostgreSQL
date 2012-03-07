@@ -43,7 +43,7 @@ If you want to do a bit of coding, send a patch to the spacewalk-devel@redhat.co
 
 You can also just report the problem on either spacewalk-devel@redhat.com mailing list or (the more user-oriented) spacewalk-list@redhat.com. Please make sure you have the relevant log parts ready.
 
-You can also file bugzilla, for anything but monitoring (monitoring is known to be incomplete and we need the patches rather than bugzillas).
+You can also file bugzilla. 
 
 == Info for developers ==
 
