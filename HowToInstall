@@ -2,9 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instructions for new installations of Spacewalk 1.6. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instructions for new installations of Spacewalk 1.7. If you are upgrading from older versions, see HowToUpgrade.
 
-Spacewalk 1.5 installation instructions are available at [wiki:HowToInstall15].
+Spacewalk 1.6 installation instructions are available at [wiki:HowToInstall16].
 
 ----
 
@@ -28,79 +28,40 @@ RPM downloads of the project are available through a yum repository
 
 To use this repository install spacewalk-repo with commands below:
 
-=== Red Hat Enterprise Linux 5, CentOS ===
+=== Red Hat Enterprise Linux 5, CentOS 5 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/5/x86_64/spacewalk-repo-1.6-1.el5.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/5/x86_64/spacewalk-repo-1.7-5.el5.noarch.rpm
 }}}
 
-=== Red Hat Enterprise Linux 6, CentOS ===
+=== Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/6/x86_64/spacewalk-repo-1.6-1.el6.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/6/x86_64/spacewalk-repo-1.7-5.el6.noarch.rpm
 }}}
 
 === Fedora 15 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/15/x86_64/spacewalk-repo-1.6-1.fc15.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/15/x86_64/spacewalk-repo-1.7-5.fc15.noarch.rpm
 }}}
 
 === Fedora 16 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/16/x86_64/spacewalk-repo-1.6-1.fc16.noarch.rpm
+rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/16/x86_64/spacewalk-repo-1.7-5.fc16.noarch.rpm
 }}}
 
 
 === Nightly builds ===
 
-If you want to use the nightly builds, add a .repo file pointing to the nightly repository.
-
-Server:
+If you want to use the nightly builds, enable the nightly repository:
 
 {{{
-cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
-[spacewalk]
-name=Spacewalk
-# RHEL 5 / CentOS 5
-baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/5/$basearch/
-# RHEL 6
-#baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/6/$basearch/
-# Fedora 15
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/15/$basearch/
-# Fedora 16
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/16/$basearch/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
-enabled=1
-gpgcheck=0
-EOF
+sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
 }}}
 
-Or you can install spacewalk-repo package. 
-
-Client:
-
-{{{
-cat > /etc/yum.repos.d/spacewalk-client.repo << 'EOF'
-[spacewalk-client]
-name=Spacewalk
-# RHEL 5 / CentOS 5
-baseurl=http://spacewalk.redhat.com/yum/nightly-client/RHEL/5/$basearch/
-# RHEL 6 / CentOS 6
-#baseurl=http://spacewalk.redhat.com/yum/nightly-client/RHEL/6/$basearch/
-# Fedora 15
-#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/15/$basearch/
-# Fedora 16
-#baseurl=http://spacewalk.redhat.com/yum/nightly-client/Fedora/16/$basearch/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
-enabled=1
-gpgcheck=0
-EOF
-}}}
-Or you can install spacewalk-client-repo package. 
-
-'''NOTE:''' Nigthly repo contains developers snapshot and is not suitable in production environment. Especially note, that changes in schema are not automatically applied and after "yum upgrade" your Spacewalk server may be in broken state.
+'''NOTE:''' Nigthly repo contains developers snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 == Additional repos & packages ==
 
