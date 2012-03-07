@@ -55,7 +55,7 @@ rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/16/x86_64/spacewalk-repo-1.7
 
 === Nightly builds ===
 
-If you want to use the nightly builds, enable the nightly repository:
+If you want to use the nightly builds, install the {{{spacewalk-repo}}} package based on your operating system (see above) and then enable the nightly repository:
 
 {{{
 sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
