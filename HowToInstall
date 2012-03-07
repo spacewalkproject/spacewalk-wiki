@@ -73,9 +73,9 @@ When using RHEL 6, make sure you are subscribed to following RHN channel:
 
 === Jpackage repository ===
 
-==== RHEL 6, CentOS 6 and Fedora 15 & 16 ====
+==== RHEL 6, SL 6, CentOS 6 and Fedora 15 & 16 ====
 
-For Spacewalk on RHEL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
+For Spacewalk on EL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
 If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
 Please configure the following yum repository before beginning your Spacewalk installation:
 
@@ -94,22 +94,6 @@ EOF
 We specifically want 5.0 generic directory in the above URL.
 Make sure, you do not use the jpackage-generic repository on RHEL 5.
 
-
-=== CentOS - CR repository ===
-
-selinux update need CR repository:
-
-{{{
-cat > /etc/yum.repos.d/cr.repo << EOF
-[CR-repository]
-name=CR Repository
-#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&arch=$basearch&repo=cr
-baseurl=http://mirror.centos.org/centos/$releasever/cr/$basearch/
-enabled=1
-gpgcheck=1
-EOF
-}}}
-
 === EPEL repository ===
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
@@ -125,19 +109,14 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
 }}}
 
-Please make sure you have only one java version installed. 
-Otherwise you get error messages like :
- * " bad major version at off set=6" or 
- * "INFO: validateJarFile(/usr/share/tomcat5/webapps/rhn/WEB-INF/lib/jspapi.jar) - jar not loaded."
-
 === CentOS 5 ===
 
 Follow the instructions to use '''EPEL 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://spacewalk.redhat.com/yum/1.6-client/RHEL/5/x86_64/spacewalk-client-repo-1.6-1.el5.noarch.rpm
+rpm -ihv http://spacewalk.redhat.com/yum/1.7-client/RHEL/5/x86_64/spacewalk-client-repo-1.7-5.el5.noarch.rpm
 }}}
- *  Import Redhat's RPM GPG key:
+ *  Import Red Hat's RPM GPG key:
 {{{
 # wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
