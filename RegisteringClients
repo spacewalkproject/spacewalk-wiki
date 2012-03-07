@@ -1,8 +1,8 @@
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 1.6
+Instructions for registering client systems you wish to manage with Spacewalk 1.7
 
-Spacewalk 1.5 instructions are available at [wiki:RegisteringClients15].
+Spacewalk 1.6 instructions are available at [wiki:RegisteringClients16].
 
 == Before Starting ==
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
@@ -17,11 +17,11 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
  1. Install the Spacewalk client yum repository
     * For Fedora 15:
 {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/15/x86_64/spacewalk-client-repo-1.6-1.fc15.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/15/x86_64/spacewalk-client-repo-1.7-5.fc15.noarch.rpm
 }}}
     * For Fedora 16:
 {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/16/x86_64/spacewalk-client-repo-1.6-1.fc16.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/16/x86_64/spacewalk-client-repo-1.7-5.fc16.noarch.rpm
 }}}
  2. Install client packages
    {{{
@@ -32,18 +32,18 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 # rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
    }}}
 
-== CentOS 5 or 6 or Red Hat Enterprise Linux 5 and 6 ==
+== Red Hat Enterprise Linux 5 and 6, Scientific Linux 6, CentOS 5 or 6 ==
 
 '''Warning:''' If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!
 
   1. Install the Spacewalk yum repository
  * RHEL 5 / CentOS 5
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/5/i386/spacewalk-client-repo-1.6-1.el5.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/5/i386/spacewalk-client-repo-1.7-5.el5.noarch.rpm
    }}}
- * RHEL 6 / CentOS 6
+ * RHEL 6 / SL 6 / CentOS 6
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/6/i386/spacewalk-client-repo-1.6-1.el6.noarch.rpm
+# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/6/i386/spacewalk-client-repo-1.7-5.el6.noarch.rpm
    }}}
  2. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL, just like for the Spacewalk server:
  * EPEL 5
@@ -85,19 +85,19 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 
 For openSUSE 11.4:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.6/openSUSE_11.4/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_11.4/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
 For openSUSE 12.1:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.6/openSUSE_12.1/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_12.1/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
 For Factory:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.6/openSUSE_Factory/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_Factory/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
@@ -113,7 +113,7 @@ Add following line to file /etc/apt/sources.list:
 {{{
 deb http://miroslav.suchy.cz/spacewalk/debian spacewalk-unstable ./
 }}}
-'''Note''': packages are not signed and are based on Spacewalk 1.4. We are working on direct inclusion in Debian and proper signing.
+'''Note''': packages are not signed.
 
 Install the packages.
 {{{
@@ -126,7 +126,7 @@ If you want to run rhnsd. You have to manualy create one directory:
 mkdir /var/lock/subsys
 }}}
 
-And then register with your Spacewalk 1.3 or above using rhnreg_ks and activation key. In order to get dynamic repositories (as you know them with yum-rhn-plugin) you need to apply the [http://isimluk.fedorapeople.org/sw_deb/apt-refresh-sources.patch patch] to your Apt. Eventually you can use patched version from the above repository.
+And then register with your Spacewalk server using rhnreg_ks and activation key. In order to get dynamic repositories (as you know them with yum-rhn-plugin) you need to apply the [http://isimluk.fedorapeople.org/sw_deb/apt-refresh-sources.patch patch] to your Apt. Eventually you can use patched version from the above repository.
 {{{
 vim /etc/sysconfig/rhn/up2date
 rhnreg_ks --activationkey=1-my-debian-key
@@ -138,12 +138,6 @@ apt-get update
 }}}
 
 Finally, you rhnpush your favourite Debian packages to your Spacewalk server in order to be able to apply them using the Spacewalk WebUI.
-
-{{{
-# Workaround broken rhnpush for Spacewalk 1.5:
-echo 'ProtocolError = Fault = xmlrpclib.Fault' \
-    >> /usr/share/pyshared/rhn/rpclib.py
-}}}
 
 '''Note''' that for Debian clients neither Spacewalk proxy, satellite-sync, repo-sync, source packages nor staging content will work.
 
