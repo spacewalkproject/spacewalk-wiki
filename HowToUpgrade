@@ -69,6 +69,16 @@ For RHEL-6 / CentOS 6 and Fedoras:
 # rpm -q postgresql-contrib
 }}}
 
+If the /var/lib/pgsql/data/pg_hba.conf on your PostgreSQL server does not contain the line
+{{{
+local   all         all                               ident
+}}}
+from the default configuration, add line
+{{{
+local spaceschema postgres  ident
+}}}
+to the start of the file.
+
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
