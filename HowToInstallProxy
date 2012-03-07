@@ -17,54 +17,7 @@ If you're looking for instructions for the RHN Proxy product see the [http://doc
 
 == Repository ==
 
-RPM downloads of the project are available through yum repositories:
-
-  * http://spacewalk.redhat.com/yum
-or
-  * nightly builds repo
-(choose one of them)
-
-==== Spacewalk-repo ====
-To use the official repository install spacewalk-repo RPM:
-
-Red Hat Enterprise Linux 5, CentOS
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/5/x86_64/spacewalk-repo-1.6-1.el5.noarch.rpm
-}}}
-Red Hat Enterprise Linux 6
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/RHEL/6/x86_64/spacewalk-repo-1.6-1.el6.noarch.rpm
-}}}
-Fedora 15
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/15/x86_64/spacewalk-repo-1.6-1.fc14.noarch.rpm
-}}}
-Fedora 16
-{{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.6/Fedora/16/x86_64/spacewalk-repo-1.6-1.fc15.noarch.rpm
-}}}
-
-==== Nightly builds ====
-
-If you want to use the nightly builds, add a .repo file pointing to the nightly repository:
-
-{{{
-cat > /etc/yum.repos.d/spacewalk.repo << 'EOF'
-[spacewalk]
-name=Spacewalk
-# RHEL 5 / CentOS 5
-baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/5/$basearch/
-# RHEL 6
-baseurl=http://spacewalk.redhat.com/yum/nightly/RHEL/6/$basearch/
-# Fedora 15
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/15/$basearch/
-# Fedora 16
-#baseurl=http://spacewalk.redhat.com/yum/nightly/Fedora/16/$basearch/
-gpgkey=http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010
-enabled=1
-gpgcheck=0
-EOF
-}}}
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 1.7 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
 
 == Installation ==
 
@@ -77,22 +30,22 @@ yum install spacewalk-proxy-installer
 This will pull down and install the set of RPMs required for the installer to run. Below is an example of the set of packages pulled in:
 
 {{{
-========================================================================================================================
- Package                                 Arch                 Version                     Repository               Size
-========================================================================================================================
+========================================================================================
+ Package                       Arch       Version            Repository            Size
+========================================================================================
 Installing:
- spacewalk-proxy-installer               noarch               0.5.25-1.el5                spacewalk                40 k
+ spacewalk-proxy-installer     noarch     1.7.6-1.el5        spacewalk             50 k
 Installing for dependencies:
- rhncfg                                  noarch               5.9.5-1.el5                 spacewalk                58 k
- rhncfg-actions                          noarch               5.9.5-1.el5                 spacewalk                28 k
- rhncfg-client                           noarch               5.9.5-1.el5                 spacewalk                24 k
- rhncfg-management                       noarch               5.9.5-1.el5                 spacewalk                33 k
+ rhncfg                        noarch     5.10.27-1.el5      spacewalk-client      68 k
+ rhncfg-actions                noarch     5.10.27-1.el5      spacewalk-client      41 k
+ rhncfg-client                 noarch     5.10.27-1.el5      spacewalk-client      37 k
+ rhncfg-management             noarch     5.10.27-1.el5      spacewalk-client      48 k
 }}}
 
 If this is the first time installing an RPM from the Spacewalk repo, yum will prompt you to install the GPG key:
 
 {{{
-Importing GPG key 0x430A1C35 "Spacewalk <spacewalk-devel@redhat.com>" from http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk
+Importing GPG key 0x863A853D "Spacewalk <spacewalk-devel@redhat.com>" from http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2012
 Is this ok [y/N]: y
 }}}
 
