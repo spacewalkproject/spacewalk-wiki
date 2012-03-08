@@ -59,6 +59,7 @@ If you want to use the nightly builds, install the {{{spacewalk-repo}}} package 
 
 {{{
 sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
+sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
 }}}
 
 '''NOTE:''' Nigthly repo contains developers snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
