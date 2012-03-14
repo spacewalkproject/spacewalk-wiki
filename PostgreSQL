@@ -2,7 +2,7 @@
 
 = Spacewalk with PostgreSQL backend =
 
-The PostgreSQL database support now covers all areas of the Spacewalk product, including monitoring.
+The PostgreSQL database support now covers all areas of the Spacewalk project, including monitoring.
 
 Historically, RHN Satellite and thus Spacewalk servers required Oracle RDBMS as database backend. In order to make the whole Spacewalk project use open source software, support for PostgreSQL as database backend has been added.
 
