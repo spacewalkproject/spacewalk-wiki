@@ -33,7 +33,9 @@ you should get from your DBA for example this, I will refer to these values in t
  * db_name=spacewalkdb
  * db_port=1521
 
-make sure that you connect to it from your spacewalk machine (open the correct ports on the firewall in between for example!)
+Note that in addition to the resource and connect roles, the Oracle Spacewalk user must be granted alter session, create synonym, and create table.  These additional roles can be safely removed after running spacewalk-setup.
+
+Make sure that you connect to it from your spacewalk machine (open the correct ports on the firewall in between for example!)
 simple test:
 {{{
 telnet oraclehost 1521 
