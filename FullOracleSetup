@@ -15,6 +15,15 @@ Do '''NOT''' use oracle-xe-client.
 
   * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline server management under {{{oracle}}} user. 
 
+Add the Oracle Instant Client lib path to LD_LIBRARY_PATH
+
+{{{
+# echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/11.2/client64/lib' > /etc/profile.d/ld_oracle.sh
+# chmod +x /etc/profile.d/ld_oracle.sh
+}}}
+
+Replace client64 with client if you installed the i386 version of Oracle Instant Client.
+
 === Server Data ===
 
 you should get from your DBA for example this, I will refer to these values in the underneath configs:
