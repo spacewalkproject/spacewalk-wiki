@@ -18,11 +18,11 @@ Do '''NOT''' use oracle-xe-client.
 Add the Oracle Instant Client lib path to LD_LIBRARY_PATH
 
 {{{
-# echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/11.2/client64/lib' > /etc/profile.d/ld_oracle.sh
+# echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/oracle/11.2/client/lib' > /etc/profile.d/ld_oracle.sh
 # chmod +x /etc/profile.d/ld_oracle.sh
 }}}
 
-Replace client64 with client if you installed the i386 version of Oracle Instant Client.
+Replace client with client64 if you installed the x86_64 version of Oracle Instant Client.
 
 === Server Data ===
 
@@ -43,11 +43,14 @@ telnet oraclehost 1521
 
 should at least work.
 
-create tnsnames.ora:
- * for i386 under /usr/lib/oracle/11.2/client/lib/network/admin
- * for x86_64 under /usr/lib/oracle/11.2/client64/lib/network/admin
+Next create tnsnames.ora.  The correct folder for it does not get created by the Instant Client install, so create it:
 
-the contents of this file:
+{{{
+# mkdir -p /usr/lib/oracle/11.2/client/lib/network/admin
+}}}
+Replace client with client64 if you installed the x86_64 version of Instant Client.
+
+Now create the tnsnames.ora file in the network/admin folder with the following contents:
 {{{
 ORACLEHOST=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=oraclehost)(PORT=1521)))(CONNECT_DATA=(SID=spacewalkdb)(SERVER=DEDICATED)))
 }}}
