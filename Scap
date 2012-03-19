@@ -10,7 +10,7 @@ Currently, with Spacewalk 1.7, user is able:
  * schedule XCCDF scan for a given machine through FrontendAPI
  * obtain summary of the scan results through spacewalk-reports tool.
 
-The web interface for the feature is under development.
+The web interface for the feature is planned for next release of Spacewalk. You may take a look at [[http://isimluk.fedorapeople.org/sw_openscap/|preview]].
 
 == How to perform scan ==
  * Prerequisites:
