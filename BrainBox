@@ -22,6 +22,9 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * Remote Commands, Configuration Management, Monitoring
    * Clustered/HA profiles? -- Phil
 
+ * gPXE to compliment Cobbler?
+   * Something like boot.kernel.org that could be built on the Spacewalk server via some simple scripts.  Would end up creating a menu from existing kickstarts perhaps?  Or just leaving it entirely to Cobbler?
+
 === Database ===
  * [wiki:PostgreSQL PostgreSQL Support] - content sync, rhnpush, registration and yum operations work
  * make db-control usable with Oracle XE
