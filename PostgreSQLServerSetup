@@ -58,6 +58,15 @@ and also to add line to /var/lib/pgsql/data/postgresql.conf
 listen_addresses = '*'
 }}}
 
+== Note If Using Postgresql 9.0 or Higher ==
+Depending on what version of the JDBC drivers you have available you may hit this issue: [http://stackoverflow.com/questions/4868762/hibernate-3-3-2ga-improperly-loads-bytea-data-from-postgresql-9-0-and-all-type-m]
+
+This would have the effect of displaying a hex number instead of the contents of a config file that you have uploaded. If you hit this issue the easiest workaround is to add this line to postgresql.conf:
+
+{{{
+bytea_output = 'escape'
+}}}
+
 = Tune up PostgreSQL =
 
 You can tune up performance of PostgreSQL by running pgtune:
