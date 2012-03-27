@@ -55,7 +55,7 @@ Looking at: hadoop-0.19.0
 || hsqldb-1.8.0.10.jar || hsqldb  ||  || 1.8.0.10 (F10) ||  ||  || IN_FEDORA ||
 || junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  || IN_FEDORA ||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || IN_FEDORA ||
-|| log4j-1.2.15.jar || log4j ||  || 1.2.14 || jmrodi ||  || IN_FEDORA ||
+|| log4j-1.2.15.jar || log4j ||  || 1.2.14 ||  ||  || IN_FEDORA ||
 || oro-2.0.8.jar || jakarta-oro ||  || 2.0.8 ||  ||  || IN_FEDORA ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  ||  || IN_FEDORA ||
 ||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA ||
