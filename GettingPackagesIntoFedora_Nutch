@@ -62,8 +62,8 @@ Looking at: hadoop-0.19.0
 ||xmlenc-0.52.jar  || xmlenc ||  || 0.52 || fabiand  || http://xmlenc.sourceforge.net/ || IN_FEDORA ||
 || jets3t-0.6.1.jar ||  || ||  || jmatthews || https://jets3t.dev.java.net/ || !FedoraPackageReview - [https://bugzilla.redhat.com/show_bug.cgi?id=484281 bz 484281]||
 || kfs-0.2.0.jar ||  ||  ||  ||  || http://kosmosfs.wiki.sourceforge.net/ || BUILD FAILED, I think it needs log4cpp ||
-|| slf4j-api-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
-|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand, blocked by [https://bugzilla.redhat.com/show_bug.cgi?id=480093 bz 480093] ||
+|| slf4j-api-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand ||
+|| slf4j-log4j12-1.4.3.jar ||  ||  ||  || fabiand || Build uses maven, http://www.slf4j.org/dist/slf4j-1.5.5.tar.gz || NEEDS_RPM, IN_PROGRESS - fabiand ||
 
 And looking at hadoop 0.20 they use ivy, http://ant.apache.org/ivy/, a new buildtool, maybe similar to maven ...
 
