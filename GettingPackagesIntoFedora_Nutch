@@ -29,7 +29,7 @@ Looking at: nutch-2008-11-12_04-01-21
 || jasper-runtime.jar  || tomcat5-jasper ||  || 5.5.27 || || under jetty-ext || ||
 || jsp-api.jar || tomcat5-jsp-2.0-api ||  || 5.5.27 || || as tomcat5-jsp-2.0-api in Fedora || IN_FEDORA ||
 || servlet-api.jar || tomcat5-servlet-2.4-api ||  || 5.5.27 ||  || as tomcat6-servlet-2.5-api in Fedora || IN_FEDORA ||
-|| ant.jar || ant ||  || 1.7.0 || || under jetty-ext ||  ||
+|| ant.jar || ant ||  || 1.7.0 || || under jetty-ext || IN_FEDORA ||
 || lucene-core-2.3.0.jar  || lucene ||  || 2.3.0 ||  ||  || DONE ||
 || lucene-misc-2.3.0.jar || lucene ||  || 2.3.0 ||  ||  || DONE ||
 || xerces-2_6_2-apis.jar || UNSURE ||  ||  ||  || This might be included with xerces-j2, not sure ||  ||
