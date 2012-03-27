@@ -37,7 +37,7 @@ Looking at: nutch-2008-11-12_04-01-21
 || xerces-2_6_2.jar || xerces-j2 ||  || 2.7.1 ||  ||  ||  ||
 || hadoop-0.18.1-core.jar ||  ||  ||  ||  ||  ||  ||
 || jets3t-0.6.0.jar ||  ||  ||  ||  || https://jets3t.dev.java.net/ || NEEDS_RPM ||
-|| junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  ||  ||
+|| junit-3.8.1.jar  || junit ||  || 3.8.2 ||  ||  || IN_FEDORA  ||
 || taglibs-i18n.jar || unsure, might be related to jakarta-taglibs-i18n ||  || not in fedora ||  ||  || NEEDS_RPM ||
 || icu4j-3_6.jar  || icu4j ||  || 3.6.1 ||  ||  || DONE ||
 || jetty-5.1.4.jar || jetty ||  || 5.1.14 ||  ||  || DONE ||
