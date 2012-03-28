@@ -82,7 +82,6 @@ This packages need to be edited and then eventualy imported to Fedora:
  || freemarker-2.3.6-2jpp_1rh.src.rpm || || || ||
  || hadoop || Apache v2.0 || ||  ||
  || hibernate3-3.2.4-1.SP1_CP01.0jpp.ep1.1.el5.1.src.rpm || || || ||
- || ivy-1.4.1-1.noarch.rpm || BSD || || ||
  || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || ||
  || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || || Now in Fedora ||
  || jpam-0.4-16.el5.src.rpm || ||  ||  ||
