@@ -51,7 +51,6 @@ I am moving phase 2 to be client side tools (stuff that normally would be in the
 ||rhn-custom-info-5.2.0-1.src.rpm|| GPLv2 (According source in client/tools/rhncustominform)|| msuchy || [https://bugzilla.redhat.com/show_bug.cgi?id=553649 553649] || Now in Fedora ||
 ||rhn-kickstart-5.2.0-5.src.rpm|| GPLv2 (According source in client/tools/rhn-kickstart)  || ||  ||  ||
 ||spacewalk-koan-0.1.6-1.src.rpm  || GPLv2 (According source in client/tools/spacewalk-koan)  || [https://bugzilla.redhat.com/show_bug.cgi?id=481668 481668]|| mmccune/msuchy || Now in Fedora ||
-||rhns-0.1-4.el5.src.rpm|| GPLv2 (According to the SRPM) ||  || || ||
 ||spacewalk-certs-tools-5.2.0-2.el5.src.rpm|| GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=538046 538046] || msuchy || Now in Fedora ||
 ||rhn-virtualization-5.2.0-5.src.rpm||GPL2 (According to the RPM and source) || ||  ||  ||
 ||rhnpush-0.3.1-2.fc10.src.rpm || GPL2 || [https://bugzilla.redhat.com/show_bug.cgi?id=452450  452450]|| stahnma/msuchy || Now in Fedora ||
@@ -71,15 +70,8 @@ RPMS found in Satellite RHN Tools Channels where source/binary rpms are not avai
 
 = Phase 3 =
 
-We need to break dependancy on Oracle. 
+We need to break dependancy on Oracle. - That is done now.
 
-All java packages should stop on jdbc (which will provide rhn-oracle-jdbc and rhn-pg-jdbc).
-
-All perl code on perl-DBI. Package rhn-base which contain oracle connection string should be edited to depend only on perl-DBI. Only what should be DB specific is connect string in /etc/rhn/rhn.conf.
-
-Package rhns (python backend) should require package rhns-sql which should be virtual package provided by rhns-sql-oracle (with current content of rhns-sql) or rhns-sql-pg (which we will need to write). 
-
-This way all packages (but three) can be included in Fedora.
 
 This packages need to be edited and then eventualy imported to Fedora:
 
@@ -92,7 +84,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || hibernate3-3.2.4-1.SP1_CP01.0jpp.ep1.1.el5.1.src.rpm || || || ||
  || ivy-1.4.1-1.noarch.rpm || BSD || || ||
  || jakarta-commons-configuration-1.2-1jpp_1rh.src.rpm || || || ||
- || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || Now in Fedora ||
+ || jfreechart-0.9.21-2jpp.ep1.1.el5.2.src.rpm || || || || Now in Fedora ||
  || jpam-0.4-16.el5.src.rpm || ||  ||  ||
  || MessageQueue-3.26.0-5.el5.src.rpm || || || ||
  || NPalert-1.125.17-19.el5.src.rpm || || || ||
