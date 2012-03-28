@@ -113,7 +113,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || ProgAGoGo-1.11.0-5.el5.src.rpm || || || ||
  || PyPAM-0.4.2-20.el5.src.rpm || LGPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=612998 612998] || msuchy || Now in Fedora ||
  || python-gzipstream-1.4.0-15.el5.src.rpm || Python and GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657531 657531] || msuchy || Now in Fedora ||
- || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=738079 738079] || Now in Fedora ||
+ || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=738079 738079] || || Now in Fedora ||
  || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || ||  ||
  || spacewalk-java || || Blocked by Nutch || ||
  || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=737972 737972] || Now in Fedora ||
