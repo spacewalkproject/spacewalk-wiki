@@ -124,6 +124,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || spacewalk-branding || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=657366 657366] || msuchy || Now in Fedora ||
  || spacewalk-web || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=705363 705363] || msuchy || Now in Fedora ||
  || spacewalk-pylint || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=800899 800899] || msuchy || ||
+ || spacewalk-setup-jabberd || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=807479 807479] || msuchy || ||
 
 There is also a set of jars currently in search-server which are not rpms which will probably need to be packaged up to be accepted into Fedora.
 See GettingPackagesIntoFedora/Nutch
