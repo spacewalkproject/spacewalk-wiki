@@ -107,7 +107,7 @@ This packages need to be edited and then eventualy imported to Fedora:
  || quartz-1.5.2-1jpp.ep1.5.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=738079 738079] || || Now in Fedora ||
  || redstone-xmlrpc-1.1_20071120-6.el5.src.rpm || || ||  ||
  || spacewalk-java || || Blocked by Nutch || ||
- || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=737972 737972] || Now in Fedora ||
+ || rhn-satellite-admin-5.2.0-3.el5.src.rpm || || [https://bugzilla.redhat.com/show_bug.cgi?id=737972 737972] || || Now in Fedora ||
  || spacewalk-config || GPLv2 || [https://bugzilla.redhat.com/show_bug.cgi?id=491331 491331] || msuchy || Now in Fedora ||
  || rhn-satellite-schema-5.1.0-27.src.rpm || requires spacewalk-setup || || ||
  || SatConfig-cluster-1.54.2-5.el5.src.rpm || || || ||
