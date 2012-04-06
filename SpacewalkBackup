@@ -14,13 +14,13 @@
 
 == Oracle backup ==
 
+=== Setting up archivelog for online backup ===
+
 Make sure nothing is connected to the Oracle database:
 
 {{{
 # spacewalk-service stop
 }}}
-
-=== Setting up archivelog for online backup ===
 
 {{{
 bash-3.2# su oracle
@@ -41,6 +41,11 @@ You should get:
  ------------
  ARCHIVELOG
  --
+}}}
+
+Make sure Oracle XE restart works fine:
+{{{
+# service oracle-xe restart
 }}}
 
 === Run (online) backup ===
