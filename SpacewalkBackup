@@ -54,10 +54,10 @@ The backup script can be found at /usr/lib/oracle/xe/app/oracle/product/10.2.0/s
 Please note that you have to run it under the '''oracle''' system user.
 
 {{{
-bash-3.2$ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh
+bash-3.2$ HOME=/tmp /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh
 Doing online backup of the database.
 Backup of the database succeeded.
-Log file is at /usr/lib/oracle/xe/oxe_backup_current.log.
+Log file is at /tmp/oxe_backup_current.log.
 }}}
 
 Location of the backup files: /usr/lib/oracle/xe/app/oracle/flash_recovery_area/XE/
