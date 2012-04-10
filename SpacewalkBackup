@@ -78,7 +78,7 @@ Press ENTER key to exit
 
 Do one more Oracle XE server restart:
 
-{{
+{{{
 # service oracle-xe restart
 }}}
 
