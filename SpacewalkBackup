@@ -12,7 +12,7 @@
 
 
 
-== Oracle backup ==
+== Oracle XE 10g backup ==
 
 === Setting up archivelog for online backup ===
 
@@ -50,7 +50,7 @@ Make sure Oracle XE restart works fine:
 
 === Run (online) backup ===
 
-The backup script can be found at /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh
+The backup script can be found at {{{/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/backup.sh}}}.
 Please note that you have to run it under the '''oracle''' system user.
 
 {{{
@@ -62,7 +62,25 @@ Log file is at /tmp/oxe_backup_current.log.
 
 Location of the backup files: /usr/lib/oracle/xe/app/oracle/flash_recovery_area/XE/
 
+=== Restore backup ===
 
+The restore script can be found at {{{/usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/restore.sh}}}.
+Please note that you have to run it under the '''oracle''' system user.
+
+{{{
+-bash-3.2$ HOME=/tmp /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/restore.sh 
+This operation will shut down and restore the database. Are you sure [Y/N]?y
+Restore in progress...
+Restore of the database succeeded.
+Log file is at /tmp/oxe_restore.log.
+Press ENTER key to exit
+}}}
+
+Do one more Oracle XE server restart:
+
+{{
+# service oracle-xe restart
+}}}
 
 
 == Links ==
