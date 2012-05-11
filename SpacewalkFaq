@@ -20,6 +20,8 @@ On April 30th, 2010, Spacewalk v1.0 was released, achieving an important milesto
 
 On November 19th, 2010, Spacewalk v1.2 was released which was the first release installable and usable with PostgreSQL database backend (albeit with limited feature set), making Spacewalk a full open-source solution.
 
+On March 7th, 2012, Spacewalk v1.7 was released, making both database backends feature-comparable.
+
 === Who designed Spacewalk logo? Can I get hi-res picture? ===
 
 See [wiki:Logo Logo] page.
@@ -35,14 +37,13 @@ Spacewalk only requires Oracle !InstantClient 11g, not server 11g. Instant Clien
 
 === Should I give a try PostgreSQL version? ===
 
-Yes! Support for PostgreSQL does quite mature over the last releases. The only thing known not to work well with PostgreSQL backend is monitoring.
-(Updated 2012-01-03)
+Yes.
 
 == Spacewalk Architecture ==
 
 === Why do you use Oracle?  Any plans for supporting other databases? ===
 
-Originally the Spacewalk code base was used as a hosted application and Oracle was a good choice for a hosted application in 2001. Over the years open source databases such as PostgreSQL and MySQL have improved tremendously in terms of stability, speed, and scalability. You can use [wiki:PostgreSQL] as a database server (with limited feature set).
+Besides Oracle database backend, Spacewalk can be used with [wiki:PostgreSQL] database server.
 
 === What if I don't have Oracle? ===
 
