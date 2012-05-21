@@ -130,4 +130,4 @@ If you are using CenOS or RHEL content, and wish to create channels according to
 
 == Regularly syncing yum repositories ==
 
-This [https://fedorahosted.org/spacewalk/attachment/wiki/UploadFedoraContent/sync_repos.py script] will get the yum repo information out of the oracle database and trigger spacewalk-repo-sync for every channel that has a yum repository. You can run it from cron to sync your repositories on a regular basis.
+This [https://fedorahosted.org/spacewalk/attachment/wiki/UploadFedoraContent/sync_repos.py script] will get the yum repo information out of the database and trigger spacewalk-repo-sync for every channel that has a yum repository. You can run it from cron to sync your repositories on a regular basis.
