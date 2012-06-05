@@ -39,6 +39,18 @@ Spacewalk only requires Oracle !InstantClient 11g, not server 11g. Instant Clien
 
 Yes.
 
+== Problems? ==
+
+=== I got Internal Server Error. Please help! ===
+
+Investigate logs on Spacewalk Server:
+
+{{{
+tail -f /var/log/rhn/* /var/log/httpd/* /var/log/tomcat*/*
+}}}
+
+Do not panic. Try to interpret those errors and if you could not solve it yourself, then send those errors (just them, not whole files) to mailing list.
+
 == Spacewalk Architecture ==
 
 === Why do you use Oracle?  Any plans for supporting other databases? ===
