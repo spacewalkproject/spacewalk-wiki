@@ -80,3 +80,8 @@ cp /var/lib/pgsql/data/postgresql.conf /var/lib/pgsql/data/postgresql.conf.bak
 cp /tmp/pgtune.conf /var/lib/pgsql/data/postgresql.conf
 service postgresql restart
 }}}
+
+or at least increase maximal number of connections to 600:
+{{{
+echo max_connections = 600 >>/var/lib/pgsql/data/postgresql.conf
+}}}
