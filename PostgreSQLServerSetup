@@ -69,11 +69,11 @@ bytea_output = 'escape'
 
 = Tune up PostgreSQL =
 
-You can tune up performance of PostgreSQL by running pgtune:
+Tune up PostgreSQL's performance by running pgtune:
 
 {{{
 yum install pgtune
-pgtune --type=web -i /var/lib/pgsql/data/postgresql.conf >/tmp/pgtune.conf
+pgtune --type=web -c 600 -i /var/lib/pgsql/data/postgresql.conf >/tmp/pgtune.conf
 # Review the changes by
 diff -u /var/lib/pgsql/data/postgresql.conf /tmp/pgtune.conf
 cp /var/lib/pgsql/data/postgresql.conf /var/lib/pgsql/data/postgresql.conf.bak
