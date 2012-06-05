@@ -54,7 +54,7 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
  * EPEL 6
 {{{
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/$BASEARCH/epel-release-6-6.noarch.rpm
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/$BASEARCH/epel-release-6-7.noarch.rpm
    }}}
 
   3. Install client packages
