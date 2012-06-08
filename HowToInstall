@@ -226,6 +226,8 @@ Installation complete.
 Visit https://spacewalk.server.com to create the Spacewalk administrator account.
 }}}
 
+Should the spacewalk-setup fail, check the error it gives you and also investigate the logs in /var/log/rhn, as well as the logs from your database server, Apache server and tomcat.
+
 === Configuring Spacewalk with an Answer File  ===
 
 You can also configure Spacewalk by using an answer file, by running {{{spacewalk-setup}}} like
