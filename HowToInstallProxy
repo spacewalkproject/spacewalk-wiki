@@ -6,7 +6,6 @@ If you're looking for instructions for the RHN Proxy product see the [http://doc
 
 == Prerequisites ==
 
-  * Disable SELinux or install spacewalk-proxy-selinux
   * Around 6GB storage per distribution under /var/spool/squid (or whereever you want your Squid cache to be)
   * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring) and 5269
   * Inbound open ports 80, 443 and 5222
@@ -24,7 +23,7 @@ RPM downloads of the project are available through yum repositories. Set up your
 Ensure your machine is registered in Spacewalk and has a provisioning entitlement. Then just ask yum to install the application:
 
 {{{
-yum install spacewalk-proxy-installer
+yum install spacewalk-proxy-selinux spacewalk-proxy-installer
 }}}
 
 This will pull down and install the set of RPMs required for the installer to run. Below is an example of the set of packages pulled in:
