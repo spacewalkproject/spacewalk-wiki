@@ -30,6 +30,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * make db-control usable with Oracle XE
  * [wiki:MySQL_support MySQL as database backend]
    * [[Image(action-del.gif)]] honestly this doesn't make much sense until PostgreSQL is done.
+   * [[Image(action-del.gif)]] There is no PL/SQL support in MySQL so this would require a complete rewrite of the database schema among alot of other things so its just not practical - prmarino1
  * allow system.scheduleScriptRun to work with scripts that have been saved in the database. This way scripts can be re-used and later maybe even attached to triggers like configchannel actions.
 
 === General ===
