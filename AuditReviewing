@@ -7,6 +7,10 @@ This capability was added to Spacewalk to make the lives of Information Assuranc
 == Basic setup ==
 
   * Install Spacewalk 0.6 or above.
+  * In /etc/rhn/rhn.conf set following and then restart tomcat:
+{{{
+web.audit.logdir = /var/satellite/systemlogs
+}}}
   * Download aup.c [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=contrib/aup.c;hb=HEAD aup.c]
   * Install audit-libs and audit-libs-devel
   * Compile aup: `gcc -O2 -s -o /path/to/put/aup aup.c -lauparse`
@@ -23,5 +27,9 @@ ausearch -r -ts `date +"%D %T" -d "$(date -d yesterday +"%D")"` \
 ssh spacewalk 'cat > /var/satellite/systemlogs/$OURHOSTNAME/audit/audit-`date +"%s" -d "$(date -d yesterday +"%D")"`-`date +"%s" -d "$(date -d now +"%D") - 1 seconds"`.parsed'
 }}}
   * Or, use rsync to sync the entire /var/log over to /var/satellite/systemlogs/$OURHOSTNAME/
+  * Make sure that `/var/satellite/systemlogs/*/audit/*` are readable by `tomcat` user all the way up from `/`, e.g.:
+{{{
+namei -m /var/satellite/systemlogs/spacewalk/audit
+}}}
 
 To be continued.
