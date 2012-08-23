@@ -66,7 +66,7 @@ You should now be able to navigate to the hostname of your proxy in a web browse
 The configure-proxy.sh install script supports an answer file to allow you to preanswer the questions. For the full list of variables see "man configure-proxy.sh".
 
 {{{
-configure-proxy.sh --answerfile=proxyanswers.txt
+configure-proxy.sh --answer-file=proxyanswers.txt
 }}}
 
 proxyanswers.txt:
