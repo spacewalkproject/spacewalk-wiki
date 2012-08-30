@@ -252,26 +252,55 @@ EX: 73a318ccd254d4abd16ee40f2913dc183f652f8e
 
 ERROR: for SELECT DISTINCT, ORDER BY expressions must appear in select list
 
-ORA allows to sort by columns which are not in the select list but PG need to have it there. The temporary solution is to wrap the whole query as a subselect named "X". Example:
+ORA allows to sort by columns which are not in the select list but PG need to have it there.
 
-{{{
-select distinct a, b, c, label from rhnchannel
-order by upper(label)
-}}}
+* The temporary solution is to wrap the whole query as a subselect named "X". Example:
 
-Rewritten as:
+  {{{
+ select distinct a, b, c, label from rhnchannel
+ order by upper(label)
+  }}}
 
-{{{
-select * from
-(
-select distinct a, b, c, label from rhnchannel
-) X
-order by upper(X.label)
-}}}	
+  Rewritten as:
 
-EX: a283b7f6b7192250e9ab99c3942a3c0e5be3b1f2
+  {{{
+ select * from
+ (
+ select distinct a, b, c, label from rhnchannel
+ ) X
+ order by upper(X.label)
+  }}}	
 
-You may find some commits that was trying to add a new column in the original query (263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df) but it turned out this is problematic approach and we have removed this.
+  EX: a283b7f6b7192250e9ab99c3942a3c0e5be3b1f2
+
+  You may find some commits that was trying to add a new column in the original query (263859eb85c9aa56d3707d7cfc808c162be1493b f3aa49da371994bbd631272b0f66eda8642511df) but it turned out this is problematic approach and we have removed this.
+
+* Another option is to add the column name from the order by part to to the select part. Example:
+
+  {{{
+ SELECT  distinct C.name,
+         UC.channel_id ID,
+ ...
+   FROM rhnUserChannel UC
+ ...
+   WHERE  UC.user_id = :user_id
+   ORDER BY UPPER(C.name)
+  }}}
+
+  Rewritten as:
+
+  {{{
+  SELECT  distinct C.name,
+          UPPER(C.name),
+          UC.channel_id ID,
+ ...
+   FROM rhnUserChannel UC
+ ...
+   WHERE  UC.user_id = :user_id
+   ORDER BY UPPER(C.name)
+  }}}
+
+  EX: 05be4a6f4d509e55dcc9ef21d5a763ebf37f41d1
 
 === Rownum problem ===
 
