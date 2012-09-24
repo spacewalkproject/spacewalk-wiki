@@ -58,6 +58,10 @@ and also to add line to /var/lib/pgsql/data/postgresql.conf
 listen_addresses = '*'
 }}}
 
+=== The contrib package ===
+
+If your PostgreSQL server is installed on different machine than where you setup your Spacewalk server, please make sure the {{{postgresql-contrib >= 8.4}}} (or postgresql84-contrib on RHEL 5) is installed on the PostgreSQL server.
+
 == Note If Using Postgresql 9.0 or Higher ==
 Depending on what version of the JDBC drivers you have available you may hit this issue: [http://stackoverflow.com/questions/4868762/hibernate-3-3-2ga-improperly-loads-bytea-data-from-postgresql-9-0-and-all-type-m]
 
