@@ -1,11 +1,12 @@
-= Oracle 10g Express Edition Setup =
+= Oracle 11g Express Edition Setup =
 
 == Limitations ==
 
- * will use maximum of 1GB RAM
- * 4GB user data (max)
+ * will use maximum of 1 GB RAM
+ * 11 GB user data
  * may be installed on a multiple CPU server, but may only be executed on one processor in any server
- * one database (max)
+ * one database
+ * x86_64 only
 
 The full license agreement is available via the download page linked below.
 
@@ -13,31 +14,25 @@ The full license agreement is available via the download page linked below.
 
 === Server ===
 
-You can download Oracle 10g Express Edition (XE) Server from Oracle's [http://www.oracle.com/technology/software/products/database/xe/htdocs/102xelinsoft.html Oracle Database 10g Express Edition Downloads for Linux x86] page. You will need an Oracle OTN account to download the rpms and you will need to accept the license agreements. Download the "Oracle Database 10g Express Edition ('''Universal''')"
+You can download Oracle 11g Express Edition (XE) Server from Oracle's [http://www.oracle.com/technetwork/products/express-edition/downloads/index.html Oracle Database Express Edition 11g Release 2 Download page]. You will need an Oracle OTN account to download the rpms and you will need to accept the license agreements. Download the "Oracle Database Express Edition 11g Release 2 for Linux x64"
 
- * oracle-xe-univ-10.2.0.1-1.0.i386.rpm
-
-which is the Multi-byte Unicode/UTF-8 database, not the "Western European" Single-byte LATIN1 database.
+ * oracle-xe-11.2.0-1.0.x86_64.rpm
 
 === Client ===
 
-You will also need the Oracle Instant Client: [http://www.oracle.com/technetwork/topics/linuxsoft-082809.html i386] or [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html x86_64] version. Download the following two rpms (where ARCH is either i386 or x86_64):
+You will also need the Oracle Instant Client rpm from [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html Instant Client Downloads for Linux x86-64 page]. Download the following two rpms:
 
- * oracle-instantclient11.2-basic-11.2.0.2.0.ARCH.rpm
- * oracle-instantclient11.2-sqlplus-11.2.0.2.0.ARCH.rpm
-
-Do '''NOT''' use oracle-xe-client.
+ * oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm
+ * oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm
 
 == Before installing Oracle XE ==
 
-If you want to run with SELinux enabled, run the following two commands to create the group and user for the oracle-xe-univ package, prior to installing said package:
+You must run the following two commands before starting the installation to create the oracle user uid below 500 (below 1000 on Fedoras), to be able to run Oracle XE with SELinux enforcing:
 
 {{{
 # /usr/sbin/groupadd -r dba
-# /usr/sbin/useradd -r -M -g dba -d /usr/lib/oracle/xe -s /bin/bash oracle
+# /usr/sbin/useradd -r -M -g dba -d /u01/app/oracle -s /bin/bash oracle
 }}}
-
-This is needed to give the oracle user uid below 500. See [https://fedorahosted.org/spacewalk/wiki/Features/SELinux Features/SELinux] for more details and limitations of SELinux support.
 
 Check if you have swap > 1GB because Oracle XE RPM will need it. You can create temporary one (or grow existing) with
 
@@ -51,33 +46,33 @@ Ensure your hostname is resolvable either with by DNS or an entry in /etc/hosts.
 
 == Install ==
 
-=== Various packages needed ===
+=== Make sure bc is installed ===
 
-The '''bc''' is a dependency of oracle-xe which is not resolved automatically causing the oracle install to be incomplete. We also make sure glibc and libaio are installed in 32bit variant, as Oracle XE is 32bit but it won't pull glibc.i686 automatically.
+The '''bc''' is a dependency of oracle-xe which is not resolved automatically. Therefore, run:
 
 {{{
-# yum -y install bc libc.so.6 libaio.so.1
+# yum -y install bc
 }}}
 
 === Oracle XE itself ===
 
 {{{
-# yum -y localinstall --nogpgcheck oracle-xe-univ-10.2.0.1-1.0.i386.rpm
+# yum -y localinstall --nogpgcheck oracle-xe-11.2.0-1.0.x86_64.rpm
 }}}
 
-The '''--nogpgcheck''' is required because the Oracle RPMs are not signed. If the installation of oracle-xe-univ fails on RHEL6 and Fedora 12+ with {{{error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key}}} and similar errors, just rerun that step and it should work for the second time.
+The '''--nogpgcheck''' is required because the Oracle RPMs are not signed.
 
-=== Oracle !InstantClient ===
+=== Oracle Instant Client ===
 
 {{{
 # yum -y localinstall --nogpgcheck oracle-instantclient11.2-basic*.rpm oracle-instantclient11.2-sqlplus*.rpm
 }}}
 
-  * '''WARNING:''' Don't run {{{oracle_env.sh}}} (or {{{oracle_env.csh}}}) in your root environment settings. Instantclient stuff works fine without it. It's usefull only for commandline XE server management under {{{oracle}}} user. 
+  * '''WARNING:''' Don't run {{{oracle_env.sh}}} or {{{oracle_env.csh}}} in your root environment settings. Instant Client stuff works fine without it. It's useful only for command line XE server management under {{{oracle}}} user. 
 
 === Oracle compatibility library ===
 
-To install oracle-lib-compat, you'll need to have the Spacewalk channel configured, installation directions for that are in HowToInstall.
+To install oracle-lib-compat, you'll need to have the Spacewalk repo configured, see HowToInstall for installation directions. Run:
 
 {{{
 # yum -y install oracle-lib-compat
@@ -100,7 +95,7 @@ This will likely pull in {{{oracle-nofcontext-selinux}}} as well.
 Configure the Oracle XE database by running
 
 {{{
-# /etc/init.d/oracle-xe configure
+# cd / && /etc/init.d/oracle-xe configure
 }}}
 
 Here are some sane values for the configure:
@@ -112,27 +107,13 @@ Here are some sane values for the configure:
  Start at boot: y
 }}}
 
-Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9055, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}. (This 9055 value is new for Spacewalk 0.7, as we needed to give way to Fedora 12's default allocation of port 9000 for squid.)
+Note that the port 8080 is used by tomcat so you cannot accept the default for the Oracle Application Express. Also, the SELinux policy module assumes that the Application Express port is 9055, if you want different value, you need to define it for {{{oracle_port_t}}} via {{{semanage}}}.
 
 Note that Oracle does not like certain characters in your password, but will not tell you until you can't login as sys later on.
 
 === Rerunning the configure ===
 
-If you find out you are not happy with the configuration, you can revert by doing the following steps:
-
-{{{
-# service oracle-xe stop
-# rm -f /etc/sysconfig/oracle-xe /var/tmp/.oracle
-# rpm2cpio oracle-xe-univ-10.2.0.1-1.0.i386.rpm | \
-    ( cd / && cpio -iud ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/DatabaseHomePage.sh \
-                        ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/postDBCreation.sql \
-                        ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/scripts/readonlinehelp.sh \
-                        ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora \
-                        ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora \
-                        ./usr/lib/oracle/xe/app/oracle/product/10.2.0/server/config/seeddb/xeseed.dfb )
-# /etc/init.d/oracle-xe configure
-}}}
-
+If you find out you are not happy with the configuration, remove the oracle-xe rpm and start anew.
 
 == Test your connection with sqlplus ==
 
@@ -146,14 +127,13 @@ sqlplus 'sys/<password>@//localhost/XE as sysdba'
 You should see something like
  
 {{{
-SQL*Plus: Release 10.2.0.4.0 - Production on Fri Apr 10 12:59:01 2009
+SQL*Plus: Release 11.2.0.3.0 Production on Tue Oct 9 14:31:40 2012
 
-Copyright (c) 1982, 2007, Oracle.  All Rights Reserved.
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
 
-Enter password: 
 
 Connected to:
-Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 
 SQL> 
 }}} 
@@ -190,30 +170,9 @@ In order to avoid these two problems we need to increase the max processes in Or
 {{{ 
 # sqlplus spacewalk/spacewalk@//localhost/XE
 SQL> alter system set processes = 400 scope=spfile; 
-SQL> alter system set "_optimizer_filter_pred_pullup"=false scope=spfile; 
-SQL> alter system set "_optimizer_cost_based_transformation"=off scope=spfile; 
 SQL> quit  
 # /sbin/service oracle-xe restart 
 }}}
-
-If you encounder 500s with messages like
-{{{
-DATABASE CONNECTION TO 'xe' LOST
-}}}
-
-and /usr/lib/oracle/xe/app/oracle/admin/XE/bdump/alert_XE.log having messages like
-{{{
-ORA-07445: exception encountered: core dump [08F93BDE] [SIGSEGV] [Address not mapped to object] [0x34979C] [] []
-}}}
-
-you might try to workaround it with
-{{{ 
-# sqlplus spacewalk/spacewalk@//localhost/XE
-SQL>  alter system set query_rewrite_enabled=TRUE ;
-SQL> quit
-}}}
-
-as suggested in http://stephensorablog.blogspot.com/2006/05/solution-to-dreaded-ora-07445-error.html
 
 You might want to install 'rlwrap' to make your sqlplus more usable. {{{rlwrap}}} will retain 
 a [http://en.wikipedia.org/wiki/Curses_(programming_library) 'curses'] like behavior with sqlplus such as maintaining sql call history, etc.
@@ -228,10 +187,6 @@ You can then do
 rlwrap sqlplus spacewalk/spacewalk@//localhost/XE
 }}}  
  
-== Setup development schema (optional) == 
- 
-This is only for use if running a development environment or development version of spacewalk.  See [https://fedorahosted.org/spacewalk/wiki/DevelopmentWorkstationSetup Dev Station setup] for this info.
-
 == Troubleshooting ==
 
  * If you get errors such as: 
@@ -243,9 +198,9 @@ This is only for use if running a development environment or development version
  or anything from Oracle complaing that it can't '''extend''' an index, a table, etc.. you should run:
 
 {{{
-  SQL> ALTER TABLESPACE system ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/system_02.dbf' size 200m;
-  SQL> ALTER TABLESPACE users ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/users_02.dbf' size 200m;
-  SQL> ALTER TABLESPACE undo ADD DATAFILE '/usr/lib/oracle/xe/oradata/XE/undo_02.dbf' size 200m;
+  SQL> ALTER TABLESPACE system ADD DATAFILE '/u01/app/oracle/oradata/XE/system_02.dbf' size 200m;
+  SQL> ALTER TABLESPACE users ADD DATAFILE '/u01/app/oracle/oradata/XE/users_02.dbf' size 200m;
+  SQL> ALTER TABLESPACE undo ADD DATAFILE '/u01/app/oracle/oradata/XE/undo_02.dbf' size 200m;
 }}}
 
  Quit sqlplus and restart spacewalk and oracle-xe (may not require a restart)
@@ -254,14 +209,6 @@ This is only for use if running a development environment or development version
 
  Administration > Storage > Compact Storage in XE webUI (http://your.satellite.tld:9055/apex/) .
 
- * If you get `ORA-12514` using `oracle-xe` it could be `bc` is not installed, among many other things (ask google about ORA-##### errors)
-
 == Misc links ==
-
-[http://www.oracle.com/technology/software/products/database/xe/files/install.102/b25144/toc.htm Installation Guide] 
-
-[http://www.davidpashley.com/articles/oracle-install.html Installing Oracle XE on Debian] 
-
-[http://www.mail-archive.com/spacewalk-list@redhat.com/msg03837.html HowTo migrate from local Oracle XE to an external Oracle instance]
 
 Continue installing Spacewalk: [HowToInstall#InstallingSpacewalk HowToInstall > InstallingSpacewalk]
