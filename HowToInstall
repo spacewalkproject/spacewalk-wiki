@@ -21,35 +21,34 @@ Spacewalk 1.6 installation instructions are available at [wiki:HowToInstall16].
 
 == Setting up Spacewalk repo ==
 
-RPM downloads of the project are available through a yum repository
+RPM downloads of the project are available through yum repositories at
 
-  * http://spacewalk.redhat.com/yum/ - Binary RPMs
-  * http://spacewalk.redhat.com/source/ - Source RPMs and tarballs
+  * http://yum.spacewalkproject.org/ - Binary RPMs
 
 To use this repository install spacewalk-repo with commands below:
 
 === Red Hat Enterprise Linux 5, CentOS 5 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/5/x86_64/spacewalk-repo-1.7-5.el5.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.7/RHEL/5/x86_64/spacewalk-repo-1.7-5.el5.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/6/x86_64/spacewalk-repo-1.7-5.el6.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.7/RHEL/6/x86_64/spacewalk-repo-1.7-5.el6.noarch.rpm
 }}}
 
 === Fedora 15 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/15/x86_64/spacewalk-repo-1.7-5.fc15.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.7/Fedora/15/x86_64/spacewalk-repo-1.7-5.fc15.noarch.rpm
 }}}
 
 === Fedora 16 ===
 
 {{{
-rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/16/x86_64/spacewalk-repo-1.7-5.fc16.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.7/Fedora/16/x86_64/spacewalk-repo-1.7-5.fc16.noarch.rpm
 }}}
 
 
@@ -115,7 +114,7 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
 Follow the instructions to use '''EPEL 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://spacewalk.redhat.com/yum/1.7-client/RHEL/5/x86_64/spacewalk-client-repo-1.7-5.el5.noarch.rpm
+rpm -ihv http://yum.spacewalkproject.org/1.7-client/RHEL/5/x86_64/spacewalk-client-repo-1.7-5.el5.noarch.rpm
 }}}
  *  Import Red Hat's RPM GPG key:
 {{{
