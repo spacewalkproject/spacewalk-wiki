@@ -1,5 +1,9 @@
 [[PageOutline]]
 
+This page is now obsolete. See [wiki:RegisteringClients Registering Clients] for up-to-date instructions.
+
+----
+
 = __Managing Fedora Systems Via Spacewalk__ =
 If you've got a few Fedora workstations you're likely to want to have some sort of centralised management for them. Spacewalk is one tool which can provide this.  We assume you have a spacewalk server and the need to deploy multiple Fedora clients. This guide is based around Fedora 9, please feel free to add any additional notes for other versions.
 
