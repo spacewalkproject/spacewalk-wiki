@@ -1,7 +1,9 @@
 
 = __Spacewalk 1.8 Release Notes__ =
 
-Your wait is now over as we are announcing the release 1.8 of Spacewalk, a systems management solution.
+Hello everyone,
+
+your wait is now over as we are announcing the release 1.8 of Spacewalk, a systems management solution.
 
 The download locations are
 
@@ -97,3 +99,5 @@ In Spacewalk 1.8, we've seen
 To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
 
 Thank you for using Spacewalk.
+
+Happy birthday, Mirek, Michael, and Stephen.
