@@ -73,7 +73,7 @@ When using RHEL 6, make sure you are subscribed to following RHN channel:
 
 === Jpackage repository ===
 
-==== RHEL 6, SL 6, CentOS 6 and Fedora 15 & 16 ====
+==== RHEL 6, SL 6, CentOS 6 and Fedora ====
 
 For Spacewalk on EL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
 If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
