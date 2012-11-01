@@ -46,7 +46,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Modified API calls:
      * configchannel.createOrUpdatePath now accepts also binary attribute and has fixed handling of binary files
      * configchannel.lookupFileInfo and system.getScriptResults now returns base64 encoded content for binary files
-     * system.scap.scheduleXccdfScan can be scheduled for multiple server and with timestamp to fire the scan
+     * system.scap.scheduleXccdfScan can be scheduled for multiple servers and with timestamp to fire the scan
      * system.provisionVirtualGuest accepts MAC address parameter
   * New API calls:
      * channel.software.addRepoFilter, .setRepoFilters, .clearRepoFilters, .removeRepoFilter, .listRepoFilters
