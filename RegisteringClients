@@ -1,8 +1,8 @@
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 1.7
+Instructions for registering client systems you wish to manage with Spacewalk 1.8
 
-Spacewalk 1.6 instructions are available at [wiki:RegisteringClients16].
+Spacewalk 1.7 instructions are available at [wiki:RegisteringClients17].
 
 == Before Starting ==
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
@@ -15,13 +15,13 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 == Fedora ==
 
  1. Install the Spacewalk client yum repository
-    * For Fedora 15:
+    * For Fedora 17:
 {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/15/x86_64/spacewalk-client-repo-1.7-5.fc15.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/1.8/Fedora/17/x86_64/spacewalk-client-repo-1.8-4.fc17.noarch.rpm
 }}}
     * For Fedora 16:
 {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/Fedora/16/x86_64/spacewalk-client-repo-1.7-5.fc16.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/1.8/Fedora/16/x86_64/spacewalk-client-repo-1.8-4.fc16.noarch.rpm
 }}}
  2. Install client packages
    {{{
@@ -39,11 +39,11 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
   1. Install the Spacewalk yum repository
  * RHEL 5 / CentOS 5
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/5/i386/spacewalk-client-repo-1.7-5.el5.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/1.8-client/RHEL/5/i386/spacewalk-client-repo-1.8-4.el5.noarch.rpm
    }}}
  * RHEL 6 / SL 6 / CentOS 6
    {{{
-# rpm -Uvh http://spacewalk.redhat.com/yum/1.7/RHEL/6/i386/spacewalk-client-repo-1.7-5.el6.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/1.8-client/RHEL/6/i386/spacewalk-client-repo-1.8-4.el6.noarch.rpm
    }}}
  2. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL, just like for the Spacewalk server:
  * EPEL 5
@@ -84,21 +84,21 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 
   1. Add the '''spacewalk-tools''' repo to get access to the tools and install them:
 
-For openSUSE 11.4:
+For openSUSE 12.2:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_11.4/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_12.2/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
 For openSUSE 12.1:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_12.1/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_12.1/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
 For Factory:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.7/openSUSE_Factory/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_Factory/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
