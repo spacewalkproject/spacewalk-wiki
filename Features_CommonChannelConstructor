@@ -1,6 +1,11 @@
 [[PageOutline]]
 
 = __Common Channel Constructor__ =
+
+Note that the spacewalk-common-channels command from spacewalk-utils package provides functionality more or less equivalent to what is wanted here.
+
+----
+
 == Overview ==
 This feature proposal is to extend [attachment:wiki:UploadFedoraContent:create_channel.py create_channel.py] so that when run with say a "--addcommon" flag it presents a simple CLI menu system that allows the selection and configuration of some very common channel configurations, making such API calls as required to set them up and installs appropriate entries into the crontab to keep them up to date.
 
