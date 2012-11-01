@@ -28,15 +28,36 @@ If you plan to upgrade from older release, search no more -- the following page 
 
 == Features & Enhancements in Spacewalk 1.8 ==
 
-  *
-  *
-  *
+  * Spacewalk runs on Fedora 17
+  * Spacewalk can be run on the same machine as Oracle XE 11g
+  * OpenSCAP functionality extended
+  * osa-dispatcher is now systemd service in Fedora
+  * Server-side upport for registering ARM clients
+  * Integration with ​SUSE Studio
+  * Basic ABRT notification
+  * Distribution-channel mapping can be customized per organization
+  * Systems requiring reboot view
+  * Extra packages view
+  * spacewalk-repo-sync now downloads comps information, enabling yum group operations
+  * WebUI and usability improvements
+  * PostgreSQL improvements
+  * Cobbler 2.0 now packaged in Spacewalk repos
+  * Archived actions now can be deleted
   * Modified API calls:
-     *
-     *
+     * configchannel.createOrUpdatePath now accepts also binary attribute and has fixed handling of binary files
+     * configchannel.lookupFileInfo and system.getScriptResults now returns base64 encoded content for binary files
+     * system.scap.scheduleXccdfScan can be scheduled for multiple server and with timestamp to fire the scan
+     * system.provisionVirtualGuest accepts MAC address parameter
   * New API calls:
-     *
-     *
+     * channel.software.addRepoFilter, .setRepoFilters, .clearRepoFilters, .removeRepoFilter, .listRepoFilters
+     * errata.cloneAsOriginalAsync, errata.cloneAsync
+     * kickstart.profile.getCfgPreservation, kickstart.profile.setCfgPreservation
+     * schedule.deleteActions
+     * system.scap.listXccdfScans, system.scap.getXccdfScanDetails, system.scap.getXccdfScanRuleResults
+     * system.listSystemsWithExtraPackages, system.listExtraPackages, system.listActiveSystemsDetails
+     * distchannel.listMapsForOrg, distchannel.setMapForOrg
+  * We parted with API call:
+     * distchannel.setDefaultMap
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
 
@@ -69,9 +90,9 @@ https://fedorahosted.org/spacewalk/wiki/ContributorList
 
 In Spacewalk 1.8, we've seen
 
-    * 49  bugs fixed 
-    * 3041 changesets committed 
-    * 4080 commits done 
+    * 258  bugs fixed 
+    * 1799 changesets committed 
+    * 2506 commits done 
 
 == User community, reporting issues ==
 
