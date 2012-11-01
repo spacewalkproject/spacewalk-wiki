@@ -7,7 +7,7 @@ You should have PostgreSQL server running somewhere. Let's assume you will run t
 yum install -y 'postgresql-server > 8.4'
 # we do this to get postgresql84-server on RHEL 5
 chkconfig postgresql on
-# on Fedora 16 run:
+# on Fedoras (16, 17), run:
 postgresql-setup initdb
 # everywhere else run:
 service postgresql initdb
@@ -61,15 +61,6 @@ listen_addresses = '*'
 === The contrib package ===
 
 If your PostgreSQL server is installed on different machine than where you setup your Spacewalk server, please make sure the {{{postgresql-contrib >= 8.4}}} (or postgresql84-contrib on RHEL 5) is installed on the PostgreSQL server.
-
-== Note If Using Postgresql 9.0 or Higher ==
-Depending on what version of the JDBC drivers you have available you may hit this issue: [http://stackoverflow.com/questions/4868762/hibernate-3-3-2ga-improperly-loads-bytea-data-from-postgresql-9-0-and-all-type-m]
-
-This would have the effect of displaying a hex number instead of the contents of a config file that you have uploaded. If you hit this issue the easiest workaround is to add this line to postgresql.conf:
-
-{{{
-bytea_output = 'escape'
-}}}
 
 = Tune up PostgreSQL =
 
