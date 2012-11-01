@@ -5,7 +5,7 @@
 }}}
 == Binary ==
 
-Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [http://spacewalk.redhat.com/yum/ yum repositories]. Please [HowToInstall#SettingupSpacewalkrepo follow installation information] on how to best setup yum to have dependencies resolved properly.
+Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [http://yum.spacewalkproject.org/ yum repositories]. Please [HowToInstall#SettingupSpacewalkrepo follow installation information] on how to best setup yum to have dependencies resolved properly.
 
 Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [HowToInstall#Nightlybuilds nightly builds].
 
@@ -47,7 +47,7 @@ Replacing USERNAME with your FAS username.
 
 === Source RPMs ===
 
-Source packages [http://spacewalk.redhat.com/source/ are available from spacewalk.redhat.com/source/].
+Source packages are available from [http://yum.spacewalkproject.org/]version/OS/release/source directories.
 
 == RPM Package Signing ==
 
@@ -67,4 +67,4 @@ Name: RPM-GPG-KEY-spacewalk-2010
 Fingerprint: 7AB4 0878 5D10 5907 0572  F465 ED63 5379 B389 2132
 }}}
 
-The public key is here: [http://spacewalk.redhat.com/yum/RPM-GPG-KEY-spacewalk-2010]
+The public key is here: [http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2010]
