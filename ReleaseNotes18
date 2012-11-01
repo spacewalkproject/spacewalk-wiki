@@ -1,0 +1,80 @@
+
+= __Spacewalk 1.8 Release Notes__ =
+
+Your wait is now over as we are announcing the release 1.8 of Spacewalk, a systems management solution.
+
+The download locations are
+
+  * http://yum.spacewalkproject.org/1.8/RHEL/5/$basearch/
+  * http://yum.spacewalkproject.org/1.8/RHEL/6/$basearch/
+  * http://yum.spacewalkproject.org/1.8/Fedora/16/x86_64/
+  * http://yum.spacewalkproject.org/1.8/Fedora/17/x86_64/
+
+with client repositories under
+
+  * http://yum.spacewalkproject.org/1.8-client
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_12.1/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_12.2/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/1.8/openSUSE_Factory/
+  * http://miroslav.suchy.cz/spacewalk/debian
+
+For fresh installations, please use steps from
+
+  * https://fedorahosted.org/spacewalk/wiki/HowToInstall
+
+If you plan to upgrade from older release, search no more -- the following page will guide you:
+
+  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+
+== Features & Enhancements in Spacewalk 1.8 ==
+
+  *
+  *
+  *
+  * Modified API calls:
+     *
+     *
+  * New API calls:
+     *
+     *
+
+The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+
+== Contributors ==
+
+Our thanks go to the community members who contributed to this release: 
+
+  * Aron Parsons
+  * Duncan Mac-Vicar
+  * Gael Chamoulaud
+  * Joerg Steffens
+  * Johannes Renner
+  * Jonathan Hoser
+  * Joshua Roys
+  * Michael Calmer
+  * Nigel Jones
+  * Paresh Mutha
+  * Pierre Casenove
+  * Richard Marko
+  * Stefan Meyer
+  * Stephen Herr
+  * Steven Hardy
+  * Tasos Papaioannou
+  * Uwe Gansert
+  * William
+
+https://fedorahosted.org/spacewalk/wiki/ContributorList
+
+== Some statistics ==
+
+In Spacewalk 1.8, we've seen
+
+    * 49  bugs fixed 
+    * 3041 changesets committed 
+    * 4080 commits done 
+
+== User community, reporting issues ==
+
+To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
+
+Thank you for using Spacewalk.
