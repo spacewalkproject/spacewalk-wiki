@@ -32,7 +32,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Spacewalk can be run on the same machine as Oracle XE 11g
   * OpenSCAP functionality extended
   * osa-dispatcher is now systemd service in Fedora
-  * Server-side upport for registering ARM clients
+  * Server-side support for registering ARM clients
   * Integration with ​SUSE Studio
   * Basic ABRT notification
   * Distribution-channel mapping can be customized per organization
