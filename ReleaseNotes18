@@ -33,7 +33,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * OpenSCAP functionality extended
   * osa-dispatcher is now systemd service in Fedora
   * Server-side support for registering ARM clients
-  * Integration with ​SUSE Studio
+  * Integration with SUSE Studio
   * Basic ABRT notification
   * Distribution-channel mapping can be customized per organization
   * Systems requiring reboot view
