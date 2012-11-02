@@ -42,13 +42,13 @@ rpm -Uvh http://yum.spacewalkproject.org/1.8/RHEL/6/x86_64/spacewalk-repo-1.8-4.
 === Fedora 16 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/1.8/RHEL/6/x86_64/spacewalk-repo-1.8-4.fc16.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.8/Fedora/16/x86_64/spacewalk-repo-1.8-4.fc16.noarch.rpm
 }}}
 
 === Fedora 17 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/1.8/RHEL/6/x86_64/spacewalk-repo-1.8-4.fc17.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/1.8/Fedora/17/x86_64/spacewalk-repo-1.8-4.fc17.noarch.rpm
 }}}
 
 
