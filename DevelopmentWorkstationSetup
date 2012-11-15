@@ -34,6 +34,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.6.0-openjdk-devel}}}
  * {{{sudo rpm -Uvh http://mirrors.dotsrc.org/jpackage/1.7/generic/free/RPMS/ivy-1.3.1-1jpp.noarch.rpm}}}
  * {{{cd $SPACEWALK_GIT/java}}}
+ * {{{ant init-install}}}
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel (this step may only be necessary once after the initial install)}}} 
