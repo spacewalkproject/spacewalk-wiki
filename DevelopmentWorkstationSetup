@@ -243,7 +243,7 @@ If you're running java code on your dev workstation and want to trace through it
 
 = Debugging code running in taskomatic with eclipse =
 
-1. edit your /etc/rhn/default/rhn_taskomatic_daemon.conf and add following lines:
+1. edit your /usr/share/rhn/config-defaults/rhn_taskomatic_daemon.conf and add following lines:
 
 {{{
 wrapper.java.additional.2=-Xdebug
