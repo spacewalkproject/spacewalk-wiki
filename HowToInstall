@@ -18,6 +18,7 @@ Spacewalk 1.7 installation instructions are available at [wiki:HowToInstall17].
  * Make sure your underlying OS up-to-date.
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [wiki:SpacewalkWithLDAP]
  * Make sure your operating system is fully up-to-date.
+ * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
 == Setting up Spacewalk repo ==
 
