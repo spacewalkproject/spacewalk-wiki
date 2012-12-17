@@ -6,7 +6,7 @@ it is common for user and group information to be pulled from an LDAP server.
 Note, that here we mean unix user accounts and groups, that are normally created during package installation (for example:
 apache, tomcat, nocpulse, ...). [[BR]]
 Instructions contained here do not describe how to setup your Spacewalk
-server to authenticate users accessing Spacewalk web ui and API against a centralized identity service (LDAP, Kerberos).
+server to authenticate users accessing Spacewalk web ui and API against a centralized identity service (LDAP, Kerberos). This can be accomplished using [https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Network_Satellite/5.5/html/Installation_Guide/sect-Installation_Guide-Maintenance-Implementing_PAM_Authentication.html PAM]
 
 Setting up an environment for Spacewalk to play nice with users & groups defined in LDAP consists of two basic steps:
 
