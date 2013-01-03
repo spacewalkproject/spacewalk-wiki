@@ -107,7 +107,7 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
 ==== EPEL 6 (use for RHEL 6) ====
 {{{
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 }}}
 
 === CentOS 5 ===
