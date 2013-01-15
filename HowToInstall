@@ -125,7 +125,7 @@ rpm -ihv http://yum.spacewalkproject.org/1.8-client/RHEL/5/x86_64/spacewalk-clie
 
 == PostgreSQL Pre-Requisites ==
 
-In order to get Spacewalk to run with PostgreSQL database backend, you need PostgreSQL 8.4+ server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup.
+In order to get Spacewalk to run with PostgreSQL database backend, you need PostgreSQL 8.4+ server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql language created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
 
