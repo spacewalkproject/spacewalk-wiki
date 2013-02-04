@@ -123,26 +123,38 @@ rpm -ihv http://yum.spacewalkproject.org/1.8-client/RHEL/5/x86_64/spacewalk-clie
 # rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 }}}
 
-== PostgreSQL Pre-Requisites ==
+== Database server ==
 
-In order to get Spacewalk to run with PostgreSQL database backend, you need PostgreSQL 8.4+ server installed on the same or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql language created.
+Spacewalk uses database server to store its primary data. It supports either PostgreSQL (version 8.4 and higher) or Oracle RDBMS (version 10g or higher).
+
+=== PostgreSQL server, set up by Spacewalk (embedded) ===
+
+You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
+{{{
+yum install spacewalk-setup-embedded-postgresql
+}}}
+and skip to the section '''Installing Spacewalk'''.
+
+=== PostgreSQL server, set up manually ===
+
+If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql language created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
 
-== Oracle Pre-Requisites ==
+=== Oracle Pre-Requisites ===
 
 In order to get Spacewalk to run with Oracle database backend, you need:
 
  * Instant Client 11.2.0.3.0 installed on the Spacewalk machine
  * Oracle database server, either on the Spacewalk machine or on another host; versions 10g and 11g are known to work
 
-Installation of the free but limited Oracle 10g XE database server can be found on the [wiki:OracleXeSetup Oracle 11g Express Edition Setup] page. Hints for making Spacewalk work with external Oracle database server are on the [FullOracleSetup Full Oracle Setup] page.
+Installation of the free but limited Oracle 11g XE database server can be found on the [wiki:OracleXeSetup Oracle 11g Express Edition Setup] page. Hints for making Spacewalk work with external Oracle database server are on the [FullOracleSetup Full Oracle Setup] page.
 
 == Installing Spacewalk ==
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
-If you prefer the [wiki:PostgreSQL] backend:
+If you prefer the [wiki:PostgreSQL] backend, including the embedded version mentioned above:
 {{{
 yum install spacewalk-postgresql 
 }}}
@@ -163,7 +175,15 @@ Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com
 The setup requires that the database account has a password.[[BR]]
 '''Note:''' Please don't use ''' '#' ''' (number sign/pound/hash) and ''' '@' ''' in your database password otherwise installation will fail.
 
-Once the Spacewalk RPM is installed you need to configure the application, you can run:
+Once the Spacewalk RPM is installed you need to configure the application.
+
+If you have installed {{{spacewalk-setup-embedded-postgresql}}}, run
+
+{{{
+spacewalk-setup --disconnected
+}}}
+
+If you've set up the database server manually (both on the same and on different machine), run
 
 {{{
 spacewalk-setup --disconnected --external-db
