@@ -113,8 +113,11 @@ For Factory:
 All core clients packages are already in Debian and Ubuntu. See:
 
 http://packages.debian.org/sid/apt-transport-spacewalk
+
 http://packages.debian.org/sid/python-rhn
+
 http://packages.debian.org/sid/python-ethtool
+
 http://packages.debian.org/sid/rhnsd
 
 Install the packages.
