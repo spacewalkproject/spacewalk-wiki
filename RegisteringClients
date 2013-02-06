@@ -120,6 +120,8 @@ http://packages.debian.org/sid/python-ethtool
 
 http://packages.debian.org/sid/rhnsd
 
+http://packages.debian.org/sid/rhn-client-tools
+
 Install the packages.
 {{{
 apt-get update
