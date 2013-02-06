@@ -110,24 +110,34 @@ For Factory:
 
 == Debian ==
 
-Add following line to file /etc/apt/sources.list:
-{{{
-deb http://miroslav.suchy.cz/spacewalk/debian spacewalk-unstable ./
-}}}
-'''Note''': packages are not signed.
+All core clients packages are already in Debian and Ubuntu. See:
+
+http://packages.debian.org/sid/apt-transport-spacewalk
+http://packages.debian.org/sid/python-rhn
+http://packages.debian.org/sid/python-ethtool
+http://packages.debian.org/sid/rhnsd
 
 Install the packages.
 {{{
 apt-get update
-apt-get install apt-spacewalk rhnsd rhnpush
+apt-get install apt-transport-spacewalk rhnsd
 }}}
 
-If you want to run rhnsd. You have to manualy create one directory:
+If you want to run rhnsd. You have to manually create one directory:
 {{{
 mkdir /var/lock/subsys
 }}}
 
-And then register with your Spacewalk server using rhnreg_ks and activation key. In order to get dynamic repositories (as you know them with yum-rhn-plugin) you need to apply the [http://isimluk.fedorapeople.org/sw_deb/apt-refresh-sources.patch patch] to your Apt. Eventually you can use patched version from the above repository.
+If you need some additional packages (e.g. rhnpush or osad), add following line to file /etc/apt/sources.list:
+{{{
+deb http://miroslav.suchy.cz/spacewalk/debian spacewalk-unstable ./
+}}}
+But this is not needed for most clients.
+'''Note''': packages on miroslav.suchy.cz are not signed.
+
+
+And then register with your Spacewalk server using rhnreg_ks and activation key.
+
 {{{
 vim /etc/sysconfig/rhn/up2date
 rhnreg_ks --activationkey=1-my-debian-key
@@ -138,7 +148,7 @@ When updating the Apt cache you can watch the status of communication between Ap
 apt-get update
 }}}
 
-Finally, you rhnpush your favourite Debian packages to your Spacewalk server in order to be able to apply them using the Spacewalk WebUI.
+Finally, you rhnpush your favourite Debian packages to your Spacewalk server in order to be able to apply them using the Spacewalk WebUI. You can push packages from your Spacewalk server. There is no needed to run rhnpush on Debian machine.
 
 '''Note''' that for Debian clients neither Spacewalk proxy, satellite-sync, repo-sync, source packages nor staging content will work.
 
