@@ -1,0 +1,24 @@
+= How to use software crash reporting in Spacewalk =
+
+== Overview ==
+
+Spacewalk 1.9 extended on the software crash functionality originally introduced in Spacewalk 1.8.
+
+If you're using / have installed '''abrt''' ([https://fedorahosted.org/abrt/]) on your systems registered to Spacewalk, you may take advantage
+of the software crash functionality provided by Spacewalk.
+
+This functionality allows:
+
+* your clients to automatically report software crashes captured by abrt directly to the Spacewalk server
+* process the captured crashes in a centralized fasion: WEB UI & API for manipulation with the crashes.
+
+== Usage ==
+
+To be able to use the functionality, you need to install '''spacewalk-abrt''' package on your clients. The package is available in Spacewalk client yum repository. The package comes with the following configuration file:
+
+{{{
+/etc/libreport/events.d/spacewalk.conf
+}}}
+
+This configuration file instructs abrt daemon to use /usr/bin/spacewalk-abrt utility to automatically report every new crash that occurs on the system to your Spacewalk server. This is done in a fully automated fashion and ordinarilly does not require any human intervention.
+
