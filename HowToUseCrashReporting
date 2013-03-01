@@ -112,3 +112,14 @@ time:           Wed 26 Sep 2012 07:55:57 PM CEST
 uid:            0
 # spacewalk-abrt --report /var/tmp/abrt/ccpp-2013-02-28-15:48:50-8820
 }}}
+
+Use --sync option to report all crashes that occurred on your system:
+{{{
+# spacewalk-abrt --sync
+}}}
+
+
+== Crash files ==
+
+The crash files captured by abrt will be uploaded to your Spacewalk server for every crash report. These files can be downloaded from webui or via API. On your Spacewalk server, these crash files will be physically stored
+on the file system under: $(spacewalk-cfg-get mount_point)/systems/$org_id/$system_id/crases/$crash_name/
