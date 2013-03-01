@@ -40,6 +40,18 @@ system.crash.getCrashFile()
 
 Consult the API documentation for further details.
 
+4. With every software crash your systems will upload files captured by abrt during the crash to your Spacewalk server. Since these files may have arbitrary length, you can set up an upload size limit for a single crash file.
+This is an organization wide settings and can be changed in webui:
+{{{
+Admin -> | your organization | -> Configuration
+}}}
+
+or with the following API calls:
+{{{
+org.getCrashFileSizeLimit()
+org.setCrashFileSizeLimit()
+}}}
+
 == Usage ==
 
 To be able to use the functionality, you need to install '''spacewalk-abrt''' package on your clients. The package is available in Spacewalk client yum repository. The package comes with the following configuration file:
