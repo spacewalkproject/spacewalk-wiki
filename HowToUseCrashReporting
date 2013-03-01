@@ -120,5 +120,5 @@ Use --sync option to report all crashes that occurred on your system:
 The crash files captured by abrt will be uploaded to your Spacewalk server for every crash report. These files can be downloaded from webui or via API. On your Spacewalk server, these crash files will be physically stored
 on the file system under:
 {{{
-/var/satellite/systems/$org_id/$system_id/crases/$crash_name/
+/var/satellite/systems/$org_id/$system_id/crashes/$crash_name/
 }}}
