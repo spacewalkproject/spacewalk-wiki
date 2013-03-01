@@ -62,7 +62,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:AuditReviewing Using Spacewalk to review Linux audits] -- How to setup Spacewalk to search and review Linux audits
   * [wiki:spacecmd] -- command-line interface to Satellite and Spacewalk servers
   * [wiki:Deb_support_in_spacewalk Debian Support] -- Debian Support
-  * [wiki:HowToUseCrashReporting] -- How to use software crash reporting functionality in Spacewalk
+  * [wiki:HowToUseCrashReporting Software Crash Reporting] -- How to use software crash reporting functionality in Spacewalk (Spacewalk & abrt)
 === Ongoing Maintenance and Administration ===
   * [wiki:HowToUpgrade How to upgrade] -- How to upgrade an existing Spacewalk installation.
   * [wiki:DebuggingProxy Debugging Proxy] -- Tip on solving problems with Spacewalk Proxy.
