@@ -52,9 +52,13 @@ org.getCrashFileSizeLimit()
 org.setCrashFileSizeLimit()
 }}}
 
-== Usage ==
+== Usage details ==
 
-To be able to use the functionality, you need to install '''spacewalk-abrt''' package on your clients. The package is available in Spacewalk client yum repository. The package comes with the following configuration file:
+The spacewalk-abrt package has two important components:
+1. configuration file for abrt: /etc/libreport/events.d/spacewalk.conf
+2. spacewalk-abrt utility: /usr/bin/spacewalk-abrt
+
+spacewalk-abrt package contains the following configuration file:
 
 {{{
 /etc/libreport/events.d/spacewalk.conf
@@ -62,3 +66,15 @@ To be able to use the functionality, you need to install '''spacewalk-abrt''' pa
 
 This configuration file instructs abrt daemon to use /usr/bin/spacewalk-abrt utility to automatically report every new crash that occurs on the system to your Spacewalk server. This is done in a fully automated fashion and ordinarilly does not require any human intervention.
 
+Should you ever need to report a crash manually, use the spacewalk-abrt utility, executed from your client system:
+{{{
+# spacewalk-abrt --help
+Usage: spacewalk-abrt [options]
+  Commands:
+    Specify one of the commands below
+
+    --report=REPORT     Upload content of the specified problem directory
+    --update-count=UPDATE_COUNT
+                        Update crash count for the specified problem directory
+    --sync              Synchronize missing problem directories
+}}}
