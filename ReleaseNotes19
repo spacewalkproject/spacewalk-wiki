@@ -29,6 +29,7 @@ If you plan to upgrade from older release, search no more -- the following page 
 
 == Features & Enhancements in Spacewalk 1.9 ==
 
+  * Spacewalk runs on Fedora 18
   * ABRT enhancements/improvements to make more functional
   * SCAP improvements
       * Support for XCCDF 1.2
