@@ -1,14 +1,15 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.7 to Spacewalk 1.8.
+These are upgrade instruction for upgrading Spacewalk 1.8 to Spacewalk 1.9.
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.7 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 16.
+  *  Spacewalk 1.8 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 17.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 1.6 to 1.7 upgrade instructions, are available at [wiki:HowToUpgrade18]
  * Spacewalk 1.6 to 1.7 upgrade instructions, are available at [wiki:HowToUpgrade17]
  * Spacewalk 1.5 to 1.6 upgrade instructions, are available at [wiki:HowToUpgrade16]
 
@@ -19,7 +20,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 1.8 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to Spacewalk 1.9 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, for Fedora, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
@@ -40,7 +41,7 @@ If you have previously updated your cobbler to version higher than 2.0 from EPEL
 # yum install cobbler-epel
 }}}
 
-If you still use cobbler 2.0, it will be upgraded to cobbler 2.0 shipped with Spacewalk 1.8.
+If you still use cobbler 2.0, it will be upgraded to cobbler 2.0 shipped with Spacewalk 1.9.
 
 Perform package upgrade using yum:
 {{{
