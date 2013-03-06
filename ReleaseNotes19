@@ -46,6 +46,12 @@ If you plan to upgrade from older release, search no more -- the following page 
   * rhnmd works with Fedora systemd Service for startup
   * Move to newer tomcat for Fedora based Spacewalk
   * Bug 878216 - make rhncfg diff output configurable
+  * Updates to spacewalk-repo-sync:
+     * Syncing over SSL and IPv6 works correctly
+     * Sync Kickstart Trees (Distributions)
+  * New features related to Kickstarting systems:
+     * Allow the selection of a primary network interface from hardware profile
+     * Allow Kickstart Profile to automatically update to newest applicable Distribution
   * New reports added to spacewalk-reports:
      * custom-info
      * inactive-systems
