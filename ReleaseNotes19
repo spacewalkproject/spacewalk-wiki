@@ -45,6 +45,18 @@ If you plan to upgrade from older release, search no more -- the following page 
   * rhnmd works with Fedora systemd Service for startup
   * Move to newer tomcat for Fedora based Spacewalk
   * Bug 878216 - make rhncfg diff output configurable
+  * New reports added to spacewalk-reports:
+     * custom-info
+     * inactive-systems
+     * inventory (modified)
+     * packages-updates-all
+     * packages-updates-newest
+     * system-currency
+     * system-groups
+     * system-groups-keys
+     * system-groups-systems
+     * system-groups-users
+     * system-packages-installed
   * Modified API calls:
      * channel.software.clone
      * org.delete
