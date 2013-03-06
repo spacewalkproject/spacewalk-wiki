@@ -16,7 +16,7 @@ If you're looking for instructions for the RHN Proxy product see the [http://doc
 
 == Repository ==
 
-RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 1.8 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 1.9 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
 
 == Installation ==
 
@@ -33,12 +33,12 @@ This will pull down and install the set of RPMs required for the installer to ru
  Package                       Arch       Version            Repository            Size
 ========================================================================================
 Installing:
- spacewalk-proxy-installer     noarch     1.8.4-1.el5        spacewalk             50 k
+ spacewalk-proxy-installer     noarch     1.9.2-1.el5        spacewalk             50 k
 Installing for dependencies:
- rhncfg                        noarch     5.10.36-1.el5      spacewalk-client      68 k
- rhncfg-actions                noarch     5.10.36-1.el5      spacewalk-client      41 k
- rhncfg-client                 noarch     5.10.36-1.el5      spacewalk-client      37 k
- rhncfg-management             noarch     5.10.36-1.el5      spacewalk-client      48 k
+ rhncfg                        noarch     5.10.43-1.el5      spacewalk-client      68 k
+ rhncfg-actions                noarch     5.10.43-1.el5      spacewalk-client      41 k
+ rhncfg-client                 noarch     5.10.43-1.el5      spacewalk-client      37 k
+ rhncfg-management             noarch     5.10.43-1.el5      spacewalk-client      48 k
 }}}
 
 If this is the first time installing an RPM from the Spacewalk repo, yum will prompt you to install the GPG key:
@@ -72,7 +72,7 @@ configure-proxy.sh --answer-file=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="1.6"
+VERSION="1.9"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
