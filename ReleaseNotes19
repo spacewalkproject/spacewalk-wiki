@@ -31,6 +31,7 @@ If you plan to upgrade from older release, search no more -- the following page 
 
   * Spacewalk runs on Fedora 18
   * ABRT enhancements/improvements to make more functional
+      * https://fedorahosted.org/spacewalk/wiki/HowToUseCrashReporting
   * SCAP improvements
       * Support for XCCDF 1.2
       * Allow --cpe command-line argument to oscap 
