@@ -12,7 +12,7 @@ For a more in depth explanation of the Java side, check out the [JavaDesign Java
 === Frontend API ===
 One of the most sought after features of Spacewalk has been its XML-RPC API. Many users want to write automated scripts to perform repetitive tasks, usually tasks that are available via the web UI. While a web UI is useful for performing a few tasks on either one or more servers, sometimes, there is no replacement for a good script.
 
-The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat], in conjunction with web UI, within the web application. Because of this, the [JavaDesign#Businesslogic manager layer] is shared between them. The API documentation can be found on your installation of Spacewalk [http://localhost/rhn/apidoc/index.jsp /rhn/apidoc/index.jsp] or here {{{PUT LINK TO APIDOCS HERE}}}.
+The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat], in conjunction with web UI, within the web application. Because of this, the [JavaDesign#Businesslogic manager layer] is shared between them. The API documentation can be found on your installation of Spacewalk [http://localhost/rhn/apidoc/index.jsp /rhn/apidoc/index.jsp] or [https://fedorahosted.org/spacewalk/wiki/ApiDocs here].
 
 
 === Backend === 
