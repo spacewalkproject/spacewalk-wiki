@@ -40,7 +40,7 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel}}} 
-   * Note: if this fails the first time do not run again! Instead look at the install-java target in java/buildconf/build-webapp.xml and manually walk through those steps. TODO: make this work for tomcat7
+   * Note: if this fails the first time do not run again! Instead look at the install-java target in java/buildconf/build-webapp.xml and manually walk through those steps using the *correct* tomcat directory. TODO: Make this work for tomcat7, correct tomcat directory is /var/lib/tomcat/, not /var/lib/tomcat7/.
  * {{{sudo /usr/sbin/rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
