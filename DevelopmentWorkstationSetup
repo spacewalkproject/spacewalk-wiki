@@ -125,6 +125,32 @@ java.lang.IllegalArgumentException: Document base /usr/share/tomcat5/webapps/rhn
 }}}
    This typically means the {{{tomcat}}} user can not read {{{/usr/share/tomcat5/webapps/rhn}}}, give {{{tomcat}}} user access to directory.  (See https://fedorahosted.org/spacewalk/wiki/DevelopmentWorkstationSetup#SetPermissions)
 
+ * If catalina.out just says the following, then look in localhost.<date>.txt:
+{{{
+SEVERE: Error listenerStart
+SEVERE: Context [/rhn] startup failed due to previous errors
+}}}
+   * If localhost.<date>.txt says the following:
+{{{
+java.lang.ClassNotFoundException: com.mchange.v2.log.MLog
+}}}
+     Then you need to downgrade c3p0.
+{{{
+sudo rpm -e --nodeps c3p0
+sudo yum install -y c3p0 --disablerepo=* --enablerepo=jpackage-generic
+sudo yum versionlock c3p0
+}}}
+   * If localhost.<date>.txt says this instead:
+{{{
+java.lang.NoSuchMethodError: org.objectweb.asm.ClassWriter.<init>(I)V
+}}}
+     Then you need to downgrade cglib
+{{{
+sudo rpm -e --nodeps cglib
+sudo yum install cglib --disablerepo=* --enablerepo=jpackage-generic
+sudo yum versionlock cglib
+}}}
+
  * browse webapp and it looks plain like a webapp from 1995, usually caused by the css files not being loaded. 
 {{{
 [Wed Jul 16 14:56:20 2008] [error] [client 192.168.1.106] Symbolic link not allowed or link target not accessible: /var/www/html, referer: https://bugatti.usersys.redhat.com/rhn/systems/Overview.do
