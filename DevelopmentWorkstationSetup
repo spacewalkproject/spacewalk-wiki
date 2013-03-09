@@ -151,6 +151,16 @@ sudo yum install cglib --disablerepo=* --enablerepo=jpackage-generic
 sudo yum versionlock cglib
 }}}
 
+ * catalina.out says the following:
+{{{
+ERROR org.apache.struts.action.ActionServlet - Unable to initialize Struts ActionServlet due to an unexpected exception or error thrown, so marking the servlet as unavailable.  Most likely, this is due to an incorrect or missing library dependency.
+java.lang.NoClassDefFoundError: org/apache/commons/chain/config/ConfigParser
+}}}
+   Then you need to add commons-chain to your libs:
+{{{
+ln -s /usr/share/java/commons-chain.jar rhnwebapp/WEB-INF/lib/commons-chain.jar
+}}}
+
  * browse webapp and it looks plain like a webapp from 1995, usually caused by the css files not being loaded. 
 {{{
 [Wed Jul 16 14:56:20 2008] [error] [client 192.168.1.106] Symbolic link not allowed or link target not accessible: /var/www/html, referer: https://bugatti.usersys.redhat.com/rhn/systems/Overview.do
