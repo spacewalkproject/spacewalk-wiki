@@ -3,14 +3,15 @@
 The below instructions are how to set up the Spacewalk Development Enviroment into a Red Hat Enterprise Linux 5 server.  [wiki:"DevelopmentWorkstationSetupFedora9" Future versions ] will include instructions and support for Fedora and other Linux variants.
 For Fedora F10/F9 
 
-Add the following to /etc/yum.repos.d/jpackage.repo
+Add the following to /etc/yum.repos.d/jpackage-generic.repo
 
 {{{
-[jpackage]
-name=jpackage-f10
-baseurl=http://mirrors.dotsrc.org/jpackage/6.0/fedora-10/free/
-gpgcheck=0
+[jpackage-generic]
+name=JPackage generic
+#baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
+mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0
 enabled=1
+gpgcheck=0
 }}}
 
 
@@ -31,8 +32,9 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
 
 === Installation ===
  * {{{sudo /usr/sbin/rhn-satellite stop}}}
- * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.6.0-openjdk-devel jmock postgresql-jdbc}}}
- * {{{sudo rpm -Uvh http://mirrors.dotsrc.org/jpackage/1.7/generic/free/RPMS/ivy-1.3.1-1jpp.noarch.rpm}}}
+ * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.6.0-openjdk-devel postgresql-jdbc}}}
+ * {{{sudo yum install jmock --disablerepo=* --enablerepo=jpackage-generic}}}
+   * {{{sudo yum install -y yum-plugin-versionlock; sudo yum versionlock jmock}}}
  * {{{cd $SPACEWALK_GIT/java}}}
  * {{{ant init-install compile}}}
  * {{{ant all, or ant clean all }}}
@@ -106,6 +108,11 @@ Now you can simply edit the code as desired.  To have taskomatic pick up those c
 
 
 = Troubleshooting =
+ * "ant create-webapp-dir" fails with "Problem: failed to create task or type for":
+   ant-contrib.jar needs to have a For.class. Newer versions do not have it. Grab the version of ant-contrib.jar from our ivy repo and use it instead.
+   If your the real jar (not a symlink is at /usr/share/java/ant-contrib-1.0.jar:
+   * {{{wget http://sherr.fedorapeople.org/ivy/ant-contrib-1.0.jar -O /usr/share/java/ant-contrib-1.0.jar}}}
+
  * catalina.out has the following error:
 {{{
 SEVERE: Error starting static Resources
