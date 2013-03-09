@@ -39,7 +39,8 @@ To setup the sources follow the instructions in [GitGuide#InstallGit Install Git
  * {{{ant init-install compile}}}
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
- * {{{sudo ant install-devel (this step may only be necessary once after the initial install)}}} 
+ * {{{sudo ant install-devel}}} 
+   * Note: if this fails the first time do not run again! Instead look at the install-java target in java/buildconf/build-webapp.xml and manually walk through those steps. TODO: make this work for tomcat7
  * {{{sudo /usr/sbin/rhn-satellite start}}}
 
 Your development environment should now be ready to go. Having problems? Check out the [DevelopmentWorkstationSetup#Troubleshooting troubleshooting] section below.
@@ -110,7 +111,7 @@ Now you can simply edit the code as desired.  To have taskomatic pick up those c
 = Troubleshooting =
  * "ant create-webapp-dir" fails with "Problem: failed to create task or type for":
    ant-contrib.jar needs to have a For.class. Newer versions do not have it. Grab the version of ant-contrib.jar from our ivy repo and use it instead.
-   If your the real jar (not a symlink is at /usr/share/java/ant-contrib-1.0.jar:
+   If your the real jar (not a symlink) is at /usr/share/java/ant-contrib-1.0.jar:
    * {{{wget http://sherr.fedorapeople.org/ivy/ant-contrib-1.0.jar -O /usr/share/java/ant-contrib-1.0.jar}}}
 
  * catalina.out has the following error:
