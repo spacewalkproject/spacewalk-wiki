@@ -3,7 +3,7 @@
 
 == Spacewalk git web interface ==
 
-If you just want to browse our git repository use [http://git.fedorahosted.org/git/spacewalk.git/].
+If you just want to browse our git repository use [http://git.fedorahosted.org/git/spacewalk/].
 
 == Getting Started ==
 A quick start guide to using git, especially if you're used to using svn or cvs.
