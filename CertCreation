@@ -31,7 +31,7 @@ ssb   2048g/AFD3819B 2008-06-11
 
    }}}
 
- 3. Finally, export the key.
+ 3. Finally, export the public and secret keys.
 
    {{{
 gpg --export -a 74E73973 > mycertkey.gpg
@@ -42,7 +42,19 @@ gpg --export-secret-keys -a 74E73973 > mysecretkey.gpg
 
 Set the {{{web.gpg_keyring}}} in {{{/usr/share/rhn/config-defaults/rhn_web.conf}}} to your newly exported keyring.
 
-Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyring.
+Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyring.  Here are some commands to help you accomplish this:
+
+   {{{
+gpg --keyring /etc/webapp-keyring.gpg --no-default-keyring --import mycertkey.gpg mysecretkey.gpg
+   }}}
+
+To see the keys in this keyring, use the following command:
+
+   {{{
+gpg --keyring /etc/webapp-keyring.gpg --no-default-keyring --list-keys
+   }}}
+
+NOTE: The {{{--no-default-keyring}}} option excludes the user's keyrings (usually {{{~/.gnupg/*.gpg}}}) from the operation, otherwise they would be included as the {{{--keyring}}} option merely adds the specified keyring to the list of default ones.
 
 == Signing the Certificate ==
 
@@ -52,7 +64,7 @@ Alternatively, you can add your keys to the {{{/etc/webapp-keyring.gpg}}} keyrin
 {{{
 Usage: ./scripts_gen-oss-sat-cert.pl --orgid <org_id> --owner <owner_name> --signer <signer> --no-pass-phrase --output <dest> --expires <when> --slots <num> [ --provisioning-slots <num> ] [ --channel-family label=n ] [ --satellite-version X.Y ] [ --resign ]
 }}}
- 4. Make sure you import your public and secret keys as the user you are running the script. 
+ 4. Make sure you import your public and secret keys as the user you are running the script as. 
 {{{
 gpg --import mycertkey.gpg
 gpg --import mysecretkey.gpg
