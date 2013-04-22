@@ -259,7 +259,7 @@ init-ivy:
 
 If you're running java code on your dev workstation and want to trace through it, you can easily do that with eclipse.
 
-1.  enable debugging within tomcat:
+1.  enable debugging within tomcat5:
    edit /etc/tomcat5/tomcat5.conf  and look for:
 {{{
   # Turn on debugging
@@ -268,8 +268,15 @@ If you're running java code on your dev workstation and want to trace through it
 
   simply uncomment the 2nd line.
 
+  For tomcat6 according to [http://stackoverflow.com/questions/1096642/tomcat-failed-to-shutdown stackoverflow] it's recommended to use:
+
+{{{
+   CATALINA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n"
+}}}
+  Put the line either to /etc/tomcat6/tomcat6.conf or to /etc/sysconfig/tomcat6 .
+
 2.  restart tomcat 
- service tomcat5 restart
+ service tomcat[56] restart
 
 3.  add a debugging profile in eclipse:
   a.  run -> Debug configurations   (or click the little arrow beside the bug in the toolbar and click 'debug configurations')
