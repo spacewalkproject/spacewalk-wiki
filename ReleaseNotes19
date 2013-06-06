@@ -125,6 +125,6 @@ In Spacewalk 1.9, we've seen
 
 == User community, reporting issues ==
 
-To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
+To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file a bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
 
 Thank you for using Spacewalk.
