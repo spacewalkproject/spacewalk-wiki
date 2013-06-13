@@ -74,7 +74,7 @@ When using RHEL 6, make sure you are subscribed to following RHN channel:
 
 === Jpackage repository ===
 
-==== RHEL 6, SL 6, CentOS 6 and Fedora ====
+==== Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 and Fedora ====
 
 For Spacewalk on EL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
 If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
@@ -100,12 +100,12 @@ Make sure, you do not use the jpackage-generic repository on RHEL 5.
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
 To get packages from EPEL just install this RPM:
 
-==== EPEL 5 (use for RHEL 5) ====
+==== EPEL 5 (use for Red Hat Enterprise Linux 5, Scientific Linux 5, CentOS 5) ====
 {{{
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 }}}
 
-==== EPEL 6 (use for RHEL 6) ====
+==== EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6) ====
 {{{
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 }}}
@@ -312,5 +312,4 @@ Spacewalk consists of several services. Each of them has its own init.d script t
 {{{
 /usr/sbin/spacewalk-service [stop|start|restart].
 }}}
-
 
