@@ -102,12 +102,12 @@ To get packages from EPEL just install this RPM:
 
 ==== EPEL 5 (use for Red Hat Enterprise Linux 5, Scientific Linux 5, CentOS 5) ====
 {{{
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
 }}}
 
 ==== EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6) ====
 {{{
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 }}}
 
 === CentOS 5 ===
