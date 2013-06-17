@@ -7,8 +7,10 @@ your wait is now over as we are announcing the release 1.9 of Spacewalk, a syste
 
 The download locations are
 
-  * http://yum.spacewalkproject.org/1.9/RHEL/5/$basearch/
-  * http://yum.spacewalkproject.org/1.9/RHEL/6/$basearch/
+  * http://yum.spacewalkproject.org/1.9/RHEL/5/i386/
+  * http://yum.spacewalkproject.org/1.9/RHEL/5/x86_64/
+  * http://yum.spacewalkproject.org/1.9/RHEL/6/i386/
+  * http://yum.spacewalkproject.org/1.9/RHEL/6/x86_64/
   * http://yum.spacewalkproject.org/1.9/Fedora/17/x86_64/
   * http://yum.spacewalkproject.org/1.9/Fedora/18/x86_64/
 
