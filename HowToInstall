@@ -131,7 +131,7 @@ Spacewalk uses database server to store its primary data. It supports either Pos
 
 You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
 {{{
-yum install spacewalk-setup-embedded-postgresql
+yum install spacewalk-setup-postgresql
 }}}
 and skip to the section '''Installing Spacewalk'''.
 
@@ -179,7 +179,7 @@ The setup requires that the database account has a password.[[BR]]
 
 Once the Spacewalk RPM is installed you need to configure the application.
 
-If you have installed {{{spacewalk-setup-embedded-postgresql}}}, run
+If you have installed {{{spacewalk-setup-postgresql}}}, run
 
 {{{
 spacewalk-setup --disconnected
