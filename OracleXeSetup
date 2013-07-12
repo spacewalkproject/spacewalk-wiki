@@ -146,6 +146,8 @@ Replace <password> with the password provided on /etc/init.d/oracle-xe configure
 # sqlplus 'sys/<password>@//localhost/XE as sysdba'
 SQL> create user spacewalk identified by spacewalk default tablespace users;
 SQL> grant dba to spacewalk;
+SQL> grant create table to spacewalk;
+SQL> grant create trigger to spacewalk;
 SQL> quit
 }}}
 
