@@ -5,6 +5,10 @@ You should have PostgreSQL server running somewhere. Let's assume you will run t
 
 {{{
 yum install -y 'postgresql-server > 8.4'
+# to use pltcl on RHEL5 install:
+yum install -y postgresql84-pltc
+# to use pltcl on RHEL6 and Fedoras:
+yum install -y postgresql-pltcl
 # we do this to get postgresql84-server on RHEL 5
 chkconfig postgresql on
 # on Fedoras, run:
@@ -18,7 +22,7 @@ service postgresql start
 Create database, user, and plpgsql language there:
 
 {{{
-su - postgres -c 'PGPASSWORD=spacepw; createdb -E UTF8 spaceschema ; createlang plpgsql spaceschema ; yes $PGPASSWORD | createuser -P -sDR spaceuser'
+su - postgres -c 'PGPASSWORD=spacepw; createdb -E UTF8 spaceschema ; createlang plpgsql spaceschema ; createlang pltclu spaceschema ; yes $PGPASSWORD | createuser -P -sDR spaceuser'
 }}}
 
 Configure the user to use md5 password to connect to that database. Put the lines like following to
