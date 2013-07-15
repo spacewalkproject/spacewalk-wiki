@@ -68,6 +68,33 @@ listen_addresses = '*'
 
 If your PostgreSQL server is installed on different machine than where you setup your Spacewalk server, please make sure the {{{postgresql-contrib >= 8.4}}} (or postgresql84-contrib on RHEL 5) is installed on the PostgreSQL server.
 
+== Setup with spacewalk-setup-postgresql ==
+
+You may setup your PostgreSQL server for use with Spacewalk with '''spacewalk-setup-postgresql''' utility.
+
+=== PostgreSQL database and Spacewalk on one machine ===
+
+Assuming you have your yum repo configurations for Spacewalk in place, these are the instructions needed to configure PostgreSQL server to be used on the same machine as your Spacewalk.
+
+1. Install '''spacewalk-setup-postgresql''' package.
+
+{{{
+# yum install spacewalk-setup-postgresql
+}}}
+
+2. Run spacewalk-setup-postgresql to configure the PostgreSQL server:
+
+{{{
+# DBNAME=yourdbname
+# DBUSER=yourdbuser
+# DBPASSWORD=youruserpassword
+# spacewalk-setup-postgresql create \
+                             --db $DBNAME \
+                             --user $DBUSER \
+                             --password $DBPASSWORD
+}}}
+
+
 = Tune up PostgreSQL =
 
 Tune up PostgreSQL's performance by running pgtune:
