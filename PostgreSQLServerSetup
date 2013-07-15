@@ -73,7 +73,7 @@ If your PostgreSQL server is installed on different machine than where you setup
 
 You may setup your PostgreSQL server for use with Spacewalk with '''spacewalk-setup-postgresql''' utility.
 
-=== PostgreSQL database and Spacewalk on one machine ===
+=== PostgreSQL database and Spacewalk on one machine === #pg-single-machine
 
 Assuming you have your yum repo configuration for Spacewalk in place, these are the instructions needed to configure PostgreSQL server to be used on the same machine as your Spacewalk.
 
@@ -98,7 +98,7 @@ Assuming you have your yum repo configuration for Spacewalk in place, these are 
                              --password $DBPASSWORD
 }}}
 
-=== PostgreSQL database and Spacewalk on different machines ===
+=== PostgreSQL database and Spacewalk on different machines === #pg-standalone
 
 Assuming you have your yum repo configuration for Spacewalk in place, these are the instructions needed to configure your PostgreSQL database for a multi-server installation (database and Spacewalk on different machines).
 
