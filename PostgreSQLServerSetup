@@ -74,7 +74,7 @@ You may setup your PostgreSQL server for use with Spacewalk with '''spacewalk-se
 
 === PostgreSQL database and Spacewalk on one machine ===
 
-Assuming you have your yum repo configurations for Spacewalk in place, these are the instructions needed to configure PostgreSQL server to be used on the same machine as your Spacewalk.
+Assuming you have your yum repo configuration for Spacewalk in place, these are the instructions needed to configure PostgreSQL server to be used on the same machine as your Spacewalk.
 
 1. Install '''spacewalk-setup-postgresql''' package.
 
@@ -93,6 +93,36 @@ Assuming you have your yum repo configurations for Spacewalk in place, these are
                              --user $DBUSER \
                              --password $DBPASSWORD
 }}}
+
+=== PostgreSQL database and Spacewalk on different machines ===
+
+Assuming you have your yum repo configuration for Spacewalk in place, these are the instructions needed to configure your PostgreSQL database for a multi-server installation (database and Spacewalk on different machines).
+
+1. Install '''spacewalk-setup-postgresql''' package.
+
+{{{
+# yum install spacewalk-setup-postgresql
+}}}
+
+2. Run spacewalk-setup-postgresql to configure the PostgreSQL server. You will need the following data to configure the database server:
+  * database name
+  * database username
+  * database user password
+  * list of local addresses that the DB server will listen on (can be configured to listen on all addresses)
+  * list of remote addresses to allow the connection from (presumably the IP address of your Spacewalk server)
+
+{{{
+# DBNAME=yourdbname
+# DBUSER=yourdbuser
+# DBPASSWORD=youruserpassword
+# spacewalk-setup-postgresql create \
+                             --db $DBNAME \
+                             --user $DBUSER \
+                             --password $DBPASSWORD \
+                             --standalone
+}}}
+
+3. Make sure the firewall is configured correctly for a remote DB access. Normally, this would involve opening the TCP connection to port 5432.
 
 
 = Tune up PostgreSQL =
