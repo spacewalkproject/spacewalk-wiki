@@ -1,3 +1,4 @@
+[[TOC]]
 
 = Setup of the PostgreSQL database =
 
@@ -82,7 +83,10 @@ Assuming you have your yum repo configuration for Spacewalk in place, these are 
 # yum install spacewalk-setup-postgresql
 }}}
 
-2. Run spacewalk-setup-postgresql to configure the PostgreSQL server:
+2. Run spacewalk-setup-postgresql to configure the PostgreSQL server. You will need the following data to configure the database server:
+  * database name
+  * database username
+  * database user password
 
 {{{
 # DBNAME=yourdbname
