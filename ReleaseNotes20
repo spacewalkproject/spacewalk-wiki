@@ -26,8 +26,8 @@ If you plan to upgrade from older release, search no more -- the following page 
 
 == Features & Enhancements in Spacewalk 2.0 ==
 
-  * Spacewalk runs on Fedora 19 instead of Fedora 17
-  * Auditing feature, it enables to track information like "Who created this user?" or "Who deleted this server?"
+  * Spacewalk runs on Fedora 19, support for Fedora 17 has been dropped
+  * Auditing feature which enables tracking information like "Who created this user?" or "Who deleted this server?"
   * Managed external PosgreSQL database
   * Further ABRT enhancements/improvements to make ABRT more functional
       * https://fedorahosted.org/spacewalk/wiki/HowToUseCrashReporting
@@ -69,7 +69,7 @@ Our thanks go to the community members who contributed to this release:
   * Simon Lukasik
   * Trent Johnson
 
-Our big thanks belong to Jan Pazdziora for his 5206 lifetime commits.
+Special thanks to Jan Pazdziora.
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
 
