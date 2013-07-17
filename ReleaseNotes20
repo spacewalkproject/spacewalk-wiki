@@ -1,0 +1,88 @@
+
+= __Spacewalk 2.0 Release Notes__ =
+
+Hello everyone,
+
+we are proudly announcing the release 2.0 of Spacewalk, a systems management solution.
+
+The download locations are
+
+  * http://yum.spacewalkproject.org/2.0/RHEL/5/
+  * http://yum.spacewalkproject.org/2.0/RHEL/6/
+  * http://yum.spacewalkproject.org/2.0/Fedora/18/
+  * http://yum.spacewalkproject.org/2.0/Fedora/19/
+
+with client repositories under
+
+  * http://yum.spacewalkproject.org/2.0-client
+
+For fresh installations, please use steps from
+
+  * https://fedorahosted.org/spacewalk/wiki/HowToInstall
+
+If you plan to upgrade from older release, search no more -- the following page will guide you:
+
+  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+
+== Features & Enhancements in Spacewalk 2.0 ==
+
+  * Spacewalk runs on Fedora 19 instead of Fedora 17
+  * Auditing feature, it enables to track information like "Who created this user?" or "Who deleted this server?"
+  * Managed external PosgreSQL database
+  * Further ABRT enhancements/improvements to make ABRT more functional
+      * https://fedorahosted.org/spacewalk/wiki/HowToUseCrashReporting
+  * SCAP improvements
+  * WebUI is now smoother thanks to CSS3 (if you are using IE8 and lower you won't see this)
+  * Modified API calls:
+
+  * New API calls:
+
+The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+
+== Contributors ==
+
+Our thanks go to the community members who contributed to this release: 
+
+  * Aron Parsons
+  * Avi Miller
+  * Baptiste Agasse
+  * Bram Mertens
+  * Christopher Duryee
+  * Dimitar Yordanov
+  * Duncan Mac-Vicar P
+  * Hubert Mantel
+  * James Slagle
+  * Jiri Mikulka
+  * Johannes Renner
+  * John Matthews
+  * Lukas Pramuk
+  * Marcelo Moreira de Mello
+  * Matej Kollar
+  * Matt Micene
+  * Michael Calmer
+  * Miroslav Suchý
+  * Neha Rawat
+  * Paresh Mutha
+  * Pavel Studenik
+  * Shannon Hughes
+  * Silvio Moioli
+  * Simon Lukasik
+  * Trent Johnson
+
+Our big thanks belong to Jan Pazdziora for his 5206 lifetime commits.
+
+https://fedorahosted.org/spacewalk/wiki/ContributorList
+
+== Some statistics ==
+
+In Spacewalk 1.9, we've seen
+
+    *   bugs fixed 
+    *  changesets committed 
+    *  commits done 
+
+== User community, reporting issues ==
+
+To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file a bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
+
+Thank you for using Spacewalk.
