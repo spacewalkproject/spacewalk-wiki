@@ -29,6 +29,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Spacewalk runs on Fedora 19, support for Fedora 17 has been dropped
   * Auditing feature which enables tracking information like "Who created this user?" or "Who deleted this server?"
   * Managed external PosgreSQL database
+      * https://fedorahosted.org/spacewalk/wiki/PostgreSQLServerSetup#pg-standalone
   * Further ABRT enhancements/improvements to make ABRT more functional
       * https://fedorahosted.org/spacewalk/wiki/HowToUseCrashReporting
   * SCAP improvements
