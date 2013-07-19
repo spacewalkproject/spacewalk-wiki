@@ -1,7 +1,8 @@
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 1.9
+Instructions for registering client systems you wish to manage with Spacewalk 20
 
+Spacewalk 1.9 instructions are available at [wiki:RegisteringClients19].
 Spacewalk 1.8 instructions are available at [wiki:RegisteringClients18].
 
 == Before Starting ==
