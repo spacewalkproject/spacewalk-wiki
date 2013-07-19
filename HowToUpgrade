@@ -1,6 +1,6 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 1.8 to Spacewalk 1.9.
+These are upgrade instruction for upgrading Spacewalk 1.9 to Spacewalk 2.0
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
@@ -21,7 +21,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 1.9 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to Spacewalk 2.0 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, for Fedora, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
