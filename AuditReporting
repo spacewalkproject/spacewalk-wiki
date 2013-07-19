@@ -28,7 +28,7 @@ user_id,audit_stamp,audit_action,audit_user_id,audit_username,organization_id,us
 2,2013-07-19 10:31:10,DELETE,1,admin,1,mike,$1$7PS2LMpf$3za7fb24Ha0rgPeo39jQM/
 }}}
 
-The satellite admin with id 1 was created by (virtual ) 'SETUP' as the first satellite user.
+The satellite admin with id 1 was created by (virtual) 'SETUP' as the first satellite user.
 He then created user with login mike and id 2 and a minute later he deleted him.
 
 === servers ===
