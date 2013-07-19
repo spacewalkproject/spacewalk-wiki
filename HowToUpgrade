@@ -58,19 +58,6 @@ Make sure your Spacewalk server is down:
 
 Do a backup of your database.
 
-== Oracle upgrade setup ==
-
-Update spacewalk database user - replace <spacewalk> with your database user name
-
-{{{
-# sqlplus 'sys/<password>@//localhost/XE as sysdba'
-SQL> grant create table to <spacewalk>;
-SQL> grant create trigger to <spacewalk>;
-SQL> quit
-}}}
-
-== The schema upgrade itself ==
-
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
