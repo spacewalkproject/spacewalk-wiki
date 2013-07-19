@@ -60,7 +60,7 @@ Do a backup of your database.
 
 == PostgreSQL upgrade setup ==
 
-Run this on your DB machine
+You need to create pltclu language in your database
 
 {{{
 service postgresql stop
@@ -90,6 +90,7 @@ SQL> grant create trigger to <spacewalk>;
 SQL> quit
 }}}
 
+== The schema upgrade itself ==
 
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
