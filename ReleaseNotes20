@@ -46,8 +46,52 @@ If you plan to upgrade from older release, search no more -- the following page 
       * New WebUI for managing ISS configuration (see Admin\ISS Configuration)
   * WebUI is now smoother thanks to CSS3 (if you are using IE8 and lower you won't see this)
   * Modified API calls:
-
+      * activationkey.addChildChannels
+      * activationkey.setDetails
+      * errata.setDetails
+      * kickstart.createProfile
+      * kickstart.profile.addScript
+      * proxy.listAvailableProxyChannels
+      * system.listSystemEvents
+      * system.scheduleApplyErrata
+      * system.schedulePackageInstall
+      * system.scheduleHardwareRefresh
+      * system.scheduleReboot
+      * system.scheduleScriptRun
+      * system.scheduleSyncPackagesWithSystem
+      * system.crash.getCrashOverview
+      * system.crash.listSystemCrashFiles
+      * systemgroup.scheduleApplyErrataToActive
   * New API calls:
+      * sync.master.addToMaster
+      * sync.master.create
+      * sync.master.delete
+      * sync.master.getDefaultMaster
+      * sync.master.getMaster
+      * sync.master.getMasterByLabel
+      * sync.master.getMasterOrgs
+      * sync.master.getMasters
+      * sync.master.makeDefault
+      * sync.master.mapToLocal
+      * sync.master.setCaCert
+      * sync.master.setMasterOrgs
+      * sync.master.unsetDefaultMaster
+      * sync.master.update
+      * sync.slave.create
+      * sync.slave.delete
+      * sync.slave.getAllowedOrgs
+      * sync.slave.getSlave
+      * sync.slave.getSlaveByName
+      * sync.slave.getSlaves
+      * sync.slave.setAllowedOrgs
+      * sync.slave.update
+      * system.crash.createCrashNote
+      * system.crash.deleteCrashNote
+      * system.crash.getCrashCountInfo
+      * system.crash.getCrashNotesForCrash
+      * system.crash.getCrashOverview
+      * system.crash.getCrashesByUuid
+
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
 
