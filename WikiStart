@@ -6,6 +6,7 @@
 === '''Spacewalk 2.0''' was released on July 19th, 2013: ===
  * [HowToInstall Download and Install]
  * [wiki:ReleaseNotes20 Release Notes]
+ * please note that Spacewalk 2.0 will be last supported Spacewalk on i386 architecture
 
 == __Introduction__ ==
 [http://spacewalk.redhat.com/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
