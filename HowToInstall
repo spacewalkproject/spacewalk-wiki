@@ -137,7 +137,7 @@ and skip to the section '''Installing Spacewalk'''.
 
 === PostgreSQL server, set up manually ===
 
-If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql language created.
+If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [wiki:PostgreSQLServerSetup] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
 
