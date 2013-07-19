@@ -9,12 +9,11 @@
 
 == Development ==
 
- * Jan Pazdziora
+ * Grant Gainey
+ * Jan Dobes
  * Michael Mraka
  * Milan Zazrivec
- * Miroslav Suchý
  * Pavel Studenik
- * Shannon Hughes
  * Simon Lukasik
  * Stephen Herr
  * Tomas Kasparek
@@ -104,6 +103,7 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Garik Khachikyan
  * Greg Dekoenigsberg
  * James Slagle
+ * Jan Pazdziora
  * Jason Connor
  * Jason Dobies
  * Jeff Ortel
@@ -116,7 +116,8 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Lukáš Zapletal
  * Máirín Duffy
  * Mihai Ibanescu
- * Mike !McCune 
+ * Mike McCune 
+ * Miroslav Suchý
  * Nick Hansen
  * Partha Aji
  * Pavel Novotný
@@ -127,5 +128,6 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Robin Norwood
  * Ryan Bloom
  * Sayli Karmarkar
+ * Shannon Hughes
  * Todd B. Sanders
  * Todd Warner
