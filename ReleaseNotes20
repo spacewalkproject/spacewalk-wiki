@@ -45,6 +45,7 @@ If you plan to upgrade from older release, search no more -- the following page 
       * Custom-channel-permissions and org-trusts synchronized
       * New WebUI for managing ISS configuration (see Admin\ISS Configuration)
   * WebUI is now smoother thanks to CSS3 (if you are using IE8 and lower you won't see this)
+  * Plenty of small enhancements like overview page for Physical systems only
   * Modified API calls:
       * activationkey.addChildChannels
       * activationkey.setDetails
