@@ -1,0 +1,22 @@
+= Audit Reporting =
+
+With Spacewalk 2.0 we started to log Spacewalk user's events.
+So we can track which user did what operation, as an example who has deleted a system from Spacewalk server. 
+
+== What gets logged ==
+
+To catch all the events, the logging is implemented on the database level.
+
+Currently the auditing is enabled on tables:
+ - rhnUser
+ - rhnServer
+ - rhnServerGroup
+
+so we can find out, who, when and what changed within these tables.
+
+== Usage ==
+
+{{{
+# spacewalk-report audit-users
+}}}
+
