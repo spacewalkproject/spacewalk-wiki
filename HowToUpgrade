@@ -9,6 +9,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 1.8 to 1.9 upgrade instructions, are available at [wiki:HowToUpgrade19]
  * Spacewalk 1.7 to 1.8 upgrade instructions, are available at [wiki:HowToUpgrade18]
  * Spacewalk 1.6 to 1.7 upgrade instructions, are available at [wiki:HowToUpgrade17]
  * Spacewalk 1.5 to 1.6 upgrade instructions, are available at [wiki:HowToUpgrade16]
@@ -34,15 +35,6 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Package upgrade ==
 
-Your Spacewalk should be stopped at this point.
-
-If you have previously updated your cobbler to version higher than 2.0 from EPEL / Fedora and you want to keep using that version, run:
-{{{
-# yum install cobbler-epel
-}}}
-
-If you still use cobbler 2.0, it will be upgraded to cobbler 2.0 shipped with Spacewalk 1.9.
-
 Perform package upgrade using yum:
 {{{
 # yum upgrade
@@ -65,6 +57,39 @@ Make sure your Spacewalk server is down:
 }}}
 
 Do a backup of your database.
+
+== PostgreSQL upgrade setup ==
+
+Run this on your DB machine
+
+{{{
+service postgresql stop
+
+# to use pltcl on RHEL5 install:
+yum install -y postgresql84-pltcl
+# to use pltcl on RHEL6 and Fedoras:
+yum install -y postgresql-pltcl
+
+service postgresql start
+}}}
+
+Create pltclu language there:
+
+{{{
+su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;'
+}}}
+
+== Oracle upgrade setup ==
+
+Update spacewalk database user - replace <spacewalk> with your database user name
+
+{{{
+# sqlplus 'sys/<password>@//localhost/XE as sysdba'
+SQL> grant create table to <spacewalk>;
+SQL> grant create trigger to <spacewalk>;
+SQL> quit
+}}}
+
 
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
