@@ -3,7 +3,7 @@
 
 Hello everyone,
 
-we are proudly announcing the release 2.0 of Spacewalk, a systems management solution.
+We are proudly announcing the release 2.0 of Spacewalk, a systems management solution.
 
 The download locations are
 
@@ -39,8 +39,8 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Further ABRT enhancements/improvements to make ABRT more functional
       * https://fedorahosted.org/spacewalk/wiki/HowToUseCrashReporting
   * SCAP improvements
-      * The latest Spacewalk is able to aggregate full SCAP results. That are the XCCDF Result file, OVAL Result Files and OpenSCAP HTML Report. These files are available to user for download at the scan's details page.
-      * This feature needs to be turned on in the organization settings
+      * The latest Spacewalk is able to aggregate full SCAP results, including the XCCDF Result file, OVAL Result Files and OpenSCAP HTML Report. These files are available for user download at the scan's details page.
+      * This feature needs to be turned on in an organization's Configuration settings
   * ISS Features
       * Custom-channel-permissions and org-trusts synchronized
       * New WebUI for managing ISS configuration (see Admin\ISS Configuration)
