@@ -16,6 +16,12 @@ with client repositories under
 
   * http://yum.spacewalkproject.org/2.0-client
 
+SUSE Linux client packages can be found here
+
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.0/openSUSE_12.2
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.0/openSUSE_12.3
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.0/openSUSE_Factory
+
 For fresh installations, please use steps from
 
   * https://fedorahosted.org/spacewalk/wiki/HowToInstall
@@ -81,11 +87,11 @@ https://fedorahosted.org/spacewalk/wiki/ContributorList
 
 == Some statistics ==
 
-In Spacewalk 1.9, we've seen
+In Spacewalk 2.0, we've seen
 
-    *   bugs fixed 
-    *  changesets committed 
-    *  commits done 
+    * 140 bugs fixed 
+    * 921 changesets committed 
+    * 1552 commits done 
 
 == User community, reporting issues ==
 
