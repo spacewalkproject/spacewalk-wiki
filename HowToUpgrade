@@ -58,27 +58,6 @@ Make sure your Spacewalk server is down:
 
 Do a backup of your database.
 
-== PostgreSQL upgrade setup ==
-
-You need to create pltclu language in your database
-
-{{{
-service postgresql stop
-
-# to use pltcl on RHEL5 install:
-yum install -y postgresql84-pltcl
-# to use pltcl on RHEL6 and Fedoras:
-yum install -y postgresql-pltcl
-
-service postgresql start
-}}}
-
-Create pltclu language there:
-
-{{{
-su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;'
-}}}
-
 == Oracle upgrade setup ==
 
 Update spacewalk database user - replace <spacewalk> with your database user name
