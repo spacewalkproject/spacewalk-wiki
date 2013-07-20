@@ -58,6 +58,12 @@ Make sure your Spacewalk server is down:
 
 Do a backup of your database.
 
+If you are running PostgreSQL database backend check whether you have created language pltclu:
+
+{{{
+su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;
+}}}
+
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
