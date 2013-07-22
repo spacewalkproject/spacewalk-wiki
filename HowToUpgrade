@@ -64,6 +64,17 @@ If you are running PostgreSQL database backend check whether you have created la
 su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;
 }}}
 
+If you are running Oracle database backend grant these rights to your database user:
+
+Update spacewalk database user - replace <spacewalk> with your database user name 
+
+{{{ 
+# sqlplus 'sys/<password>@//localhost/XE as sysdba' 
+SQL> grant create table to <spacewalk>; 
+SQL> grant create trigger to <spacewalk>; 
+SQL> quit 
+}}} 
+
 Make sure your database server is running. Run spacewalk-schema-upgrade script to upgrade database schema:
 
 {{{
