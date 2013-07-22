@@ -66,5 +66,11 @@ Then either rhn_check, rhn-profile-sync or any other 'CLIENT' tool was run on th
 Use
 {{{
 # spacewalk-report audit-server-groups
+group_id,audit_stamp,audit_action,audit_user_id,audit_username,organization_id,group_name,group_description,max_members,current_members
+7,2013-07-22 10:29:23,INSERT,1,admin,1,test-group,test-group,,0
+7,2013-07-22 10:30:01,UPDATE,1,admin,1,test-group,test-group,,1
+7,2013-07-22 10:30:45,UPDATE,1,admin,1,test-group,test-group,,0
+7,2013-07-22 10:30:45,DELETE,1,admin,1,test-group,test-group,,0
 }}}
-to get the server group audit log.
+
+Server group test-group was created by user admin, then he added one server into this group. Last two rows of report is deleting server group, last update is removing server from server group as this happens during deletion and the DELETE audit_action is deleting the server group. According to the timestamps of last two actions the removal of the server from the group occurred during deletion of the group.
