@@ -61,7 +61,7 @@ Do a backup of your database.
 If you are running PostgreSQL database backend check whether you have created language pltclu:
 
 {{{
-su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;
+su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu spaceschema ;'
 }}}
 
 If you are running Oracle database backend grant these rights to your database user:
