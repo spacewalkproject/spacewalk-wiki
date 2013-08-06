@@ -4,15 +4,20 @@
 
 == Overview ==
 
-Spacewalk 1.9 extended on the software crash reporting functionality originally introduced in Spacewalk 1.8.
-
 If you're using / have installed '''abrt''' ([https://fedorahosted.org/abrt/]) on your systems registered to Spacewalk, you may take advantage
 of the software crash functionality provided by Spacewalk.
 
+Software crash reporting functionality was introduced first in Spacewalk 1.8 and extended later in Spacewalk 1.9 and Spacewalk 2.0.
+
 This functionality allows:
 
-* your clients to automatically report software crashes captured by abrt directly to the Spacewalk server
-* you to process the captured crashes in a centralized fasion: WEB UI & API for manipulation with the crashes
+* your registered clients to automatically report software crashes captured by abrt directly to the Spacewalk server
+* you to process the captured crashes in a centralized way
+  * ability to see the software crashes that occurred on a system
+  * ability to manipulate directly with the crash files captured with the crash (further processing, reporting a bug)
+  * adding custom notes to a particular crash
+  * ability to group similar software crashes across multiple systems in an organization
+  * creating crash reports with '''spacewalk-report'''
 
 == Quick start ==
 
@@ -21,7 +26,7 @@ To use the software crash reporting functionality:
 1. Install '''spacewalk-abrt''' package on your client system(s). This package will install '''abrt''' as its dependency. Note: neither abrt nor spacewalk-abrt are available for RHEL-5 / CentOS-5.
 2. In your webui, navigate to:
 {{{
-    Systems -> | desired system | -> Software -> Software Crashes
+    Systems -> [desired system] -> Software -> Software Crashes
 }}}
 
 to see the list of software crashes that occurred on the registered system. Click on the particular crash to see the crash details and crash files captured for this crash report.
@@ -40,14 +45,70 @@ system.crash.getCrashFile()
 
 Consult the API documentation for further details.
 
-4. With every software crash, your systems will upload files captured by abrt during the crash to your Spacewalk server. Since these files may have arbitrary length, you can set up an upload size limit for a single crash file. This is an organization wide settings and can be changed in webui:
+== Advanced Usage ==
+
+=== Crash Notes ===
+
+Spacewalk 2.0 supports custom crash notes (adding / viewing / removing).
+
+To manipulate with the crash notes in the webui, navigate to
 {{{
-Admin -> | your organization | -> Configuration
+Systems -> [desired system] -> Software -> Software Crashes -> [desired software crash] -> Crash Notes
 }}}
-or with the following API calls:
+
+To manipulate with the crash notes using the API, use the following calls:
+{{{
+system.crash.createCrashNote()
+system.crash.deleteCrashNote()
+system.crash.getCrashNotesForCrash()
+}}}
+
+=== Similar Software Crashes ===
+
+Spacewalk 2.0 allows you to see identical / similar software crashes across multiple systems in your organization.
+
+ABRT assigns every software crash a UUID. Crashes with identical UUID may potentially indicate similar or identical software crashes.
+
+To see the overview of software crashes that occurred in your organization grouped by their UUID, navigate to
+{{{
+Systems -> Software Crash Overview
+}}}
+
+You can similarly use the following API calls to see similar / identical software crashes in your organization:
+{{{
+system.crash.getCrashOverview()
+system.crash.getCrashesByUuid()
+}}}
+
+=== Organization Configuration ===
+
+Spacewalk allows you to configure the following crash-related settings in your organization:
+
+* turn the crash reporting on / off
+* turn the crash file upload on / off
+* crash file upload size limit, i.e. the size of a single crash file that can be uploaded with every crash report 
+
+To configure these settings in webui, navigate to:
+{{{
+Admin -> | [your organization] | -> Configuration
+}}}
+
+You can also use the following API calls to configure your organization:
 {{{
 org.getCrashFileSizeLimit()
 org.setCrashFileSizeLimit()
+org.isCrashReportingEnabled()
+org.setCrashReporting()
+org.isCrashfileUploadEnabled()
+org.setCrashfileUpload()
+}}}
+
+=== Reporting ===
+
+Spacewalk allows you to use the following crash-related reports with the ''spacewalk-report'' tool:
+{{{
+system-crash-count
+system-crash-details
 }}}
 
 == Usage details ==
