@@ -23,7 +23,7 @@ This functionality allows:
 
 To use the software crash reporting functionality:
 
-1. Install '''spacewalk-abrt''' package on your client system(s). This package will install '''abrt''' as its dependency. Note: neither abrt nor spacewalk-abrt are available for RHEL-5 / CentOS-5.
+1. Install ''spacewalk-abrt'' package (part of Spacewalk client repository) on your client system(s). This package will install '''abrt''' as its dependency. Note: neither abrt nor spacewalk-abrt are available for RHEL-5 / CentOS-5.
 2. In your webui, navigate to:
 {{{
     Systems -> [desired system] -> Software -> Software Crashes
