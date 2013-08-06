@@ -1,5 +1,7 @@
 = How to use software crash reporting in Spacewalk =
 
+[[TOC]]
+
 == Overview ==
 
 Spacewalk 1.9 extended on the software crash reporting functionality originally introduced in Spacewalk 1.8.
