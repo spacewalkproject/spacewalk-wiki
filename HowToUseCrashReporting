@@ -111,19 +111,33 @@ system-crash-count
 system-crash-details
 }}}
 
-== Usage details ==
+== Further details ==
 
-The spacewalk-abrt package has two important components:
+=== Client ===
+
+The ''spacewalk-abrt'' package has two important components:
 1. configuration file for abrt: /etc/libreport/events.d/spacewalk.conf
 2. spacewalk-abrt utility: /usr/bin/spacewalk-abrt
 
-spacewalk-abrt package contains the following configuration file:
+spacewalk-abrt package contains the following ''libreport'' configuration file:
 
 {{{
-/etc/libreport/events.d/spacewalk.conf
+$ cat /etc/libreport/events.d/spacewalk.conf
+
+# To be run when a new software crash occurs
+EVENT=notify
+        /usr/bin/spacewalk-abrt --report $DUMP_DIR
+
+# To be run when abrt detects duplicate of already existing crash
+EVENT=notify-dup
+        /usr/bin/spacewalk-abrt --update-count $DUMP_DIR
+
 }}}
 
-This configuration file instructs abrt daemon to use /usr/bin/spacewalk-abrt utility to automatically report every new crash that occurs on the system to your Spacewalk server. This is done in a fully automated fashion and ordinarilly does not require any human intervention.
+This configuration file instructs abrt daemon to:
+
+* Use /usr/bin/spacewalk-abrt utility to automatically report every new crash that occurs on the system to your Spacewalk server. This is done in a fully automated fashion and ordinarilly does not require any human intervention.
+* Use /usr/bin/spacewalk-abrt utility to inform the Spacewalk server an existing crash occurred again (i.e. it reports the updated crash count for an existing crash)
 
 Should you ever need to report a crash manually, use the spacewalk-abrt utility, executed from your client system:
 {{{
@@ -177,8 +191,9 @@ Use --sync option to report all crashes that occurred on your system:
 # spacewalk-abrt --sync
 }}}
 
+=== Server ===
 
-== Crash files ==
+==== Crash files ====
 
 The crash files captured by abrt will be uploaded to your Spacewalk server for every crash report. These files can be downloaded from webui or via API. On your Spacewalk server, these crash files will be physically stored
 on the file system under:
