@@ -17,7 +17,7 @@ This functionality allows:
   * ability to manipulate directly with the crash files captured with the crash (further processing, reporting a bug)
   * adding custom notes to a particular crash
   * ability to group similar software crashes across multiple systems in an organization
-  * creating crash reports with '''spacewalk-report'''
+  * creating crash reports with ''spacewalk-report''
 
 == Quick start ==
 
