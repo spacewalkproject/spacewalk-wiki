@@ -23,15 +23,23 @@ This functionality allows:
 
 To use the software crash reporting functionality:
 
-1. Install ''spacewalk-abrt'' package (part of Spacewalk client repository) on your client system(s). This package will install '''abrt''' as its dependency. Note: neither abrt nor spacewalk-abrt are available for RHEL-5 / CentOS-5.
-2. In your webui, navigate to:
+1. Install ''spacewalk-abrt'' package (part of Spacewalk client repository) on your client system(s). This package will install ''abrt'' as its dependency. Note: neither abrt nor spacewalk-abrt are available for RHEL-5 / CentOS-5.
+
+2. Wait for a software crash to occur or trigger a crash manually:
+{{{
+$ sleep 60 &
+$ kill -s SEGV %1
+[1]+  Segmentation fault      sleep 60
+}}}
+
+3. In your webui, navigate to:
 {{{
     Systems -> [desired system] -> Software -> Software Crashes
 }}}
 
 to see the list of software crashes that occurred on the registered system. Click on the particular crash to see the crash details and crash files captured for this crash report.
 
-3. Use the following API calls to manipulate with the reported software crashes:
+4. Use the following API calls to manipulate with the reported software crashes:
 {{{
 system.crash.getLastReportDate()
 system.crash.getUniqueCrashCount()
