@@ -119,6 +119,14 @@ system-crash-count
 system-crash-details
 }}}
 
+=== Unpackaged Software ===
+
+If you wish to capture crashes of a software that is not packaged in RPM format (for example Adobe Reader installed from a tar.gz), you need to configure abrt to process crashes from unpackaged software:
+{{{
+# grep ProcessUnpackaged /etc/abrt/abrt-action-save-package-data.conf 
+ProcessUnpackaged = yes
+}}}
+
 == Further details ==
 
 === Client ===
