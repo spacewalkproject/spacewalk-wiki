@@ -198,7 +198,16 @@ From IRC:
 - unlink ~/spacewalk/java/build/run-lib/external/ojdbc14-1.10.jar
 }}}
 
-
+* Tomcat is unable to access antlr.jar:
+{{{
+SEVERE: ContainerBase.addChild: start:
+LifecycleException:  start: :  java.io.IOException: Failed to access resource /WEB-INF/lib/antlr.jar
+        at org.apache.catalina.loader.WebappLoader.start(WebappLoader.java:679
+}}}
+   This is a bizarre problem (that I believe is a bug in tomcat) where tomcat has randomly decided to ignore the bit in rhn.xml where we explicitly told it to follow symlinks. It can be worked around by telling it the exact same thing in a different place and restarting the service:
+{{{
+cp /etc/tomcat*/Catalina/localhost/rhn.xml $git_checkout/java/rhnwebapp/META-INF/context.xml
+}}}
 
 
 == Still having issues? ==
