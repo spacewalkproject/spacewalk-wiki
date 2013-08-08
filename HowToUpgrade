@@ -4,7 +4,7 @@ These are upgrade instruction for upgrading Spacewalk 1.9 to Spacewalk 2.0
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 1.8 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 17.
+  *  Spacewalk 1.9 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 17.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
 
 == Archive of older upgrade instructions ==
