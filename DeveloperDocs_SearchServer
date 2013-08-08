@@ -3,7 +3,7 @@
 The spacewalk webui performs searches through a XMLRPC interface to a separate java process that uses [http://lucene.apache.org Lucene] for the search engine.  We call this separate process the "!SearchServer".[[BR]]
 
 A typical search involves
- * WebUI forming a query in [http://lucene.apache.org/java/2_3_2/queryparsersyntax.html LuceneQueryParser] syntax.
+ * WebUI forming a query in [http://lucene.apache.org/core/2_9_4/queryparsersyntax.html LuceneQueryParser] syntax.
  * WebUI sends the query to !SearchServer through XMLRPC
  * !SearchServer looks to see what index should be searched: {Errata, Packages, System, Documentation}
  * Lucene searches index files, and a list of results are obtained.
@@ -51,7 +51,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
   * Documentation "doc" indexes are delivered through a RPM "spacewalk-doc-indexes".  
   * All other indexes are generated based on the database !SearchServer is connected to.  
  * How can I see what is indexed
-  * You can use [http://www.getopt.org/luke Luke] to open a lucene index in a GUI and see what is available
+  * You can use [http://code.google.com/p/luke/ Luke] to open a lucene index in a GUI and see what is available
    * We include a luke jar in our git repo, this is not bundled for delivery, it is only for development
     * spacewalk/search-server/scripts/lukeall-0.8.1.jar
    * Example run:
