@@ -115,7 +115,7 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.r
 Follow the instructions to use '''EPEL 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://yum.spacewalkproject.org/1.9-client/RHEL/5/x86_64/spacewalk-client-repo-1.9-1.el5.noarch.rpm
+rpm -ihv http://yum.spacewalkproject.org/2.0-client/RHEL/5/x86_64/spacewalk-client-repo-2.0-3.el5.noarch.rpm
 }}}
  *  Import Red Hat's RPM GPG key:
 {{{
