@@ -14,6 +14,7 @@ Bugs should be reported to [https://bugzilla.redhat.com Red Hat's Bugzilla] unde
 = Support =
  * https://www.redhat.com/mailman/listinfo/rhn-satellite-users
  * https://www.redhat.com/mailman/listinfo/spacewalk-list
+ * I've you are interested in development of spacecmd https://www.redhat.com/mailman/listinfo/spacewalk-devel
 
 = Requirements =
  * >= python-2.4
