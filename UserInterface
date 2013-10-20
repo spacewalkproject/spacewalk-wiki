@@ -1,0 +1,37 @@
+= User interface for developers
+
+Note: this documentation is based on the not yet merged bootstrap-css branch
+
+== Basic user interface
+
+== Lists
+
+Lists are done with the ListTag and you should use the JSP tag whenever possible. However, to emulate the
+look of a list, the tag generates the following structure:
+
+{{{
+#!text/html
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      This is the title
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td colspan="X">
+          <!-- header pagination, addons, etc -->
+        </td>
+      </tr>
+      <tr><th>Column1 header</th>...</tr>
+    </thead>
+
+  </table>
+  <div class="panel-footer">
+    <!-- Reference links -->
+  </div>
+</div>
+}}}
+
+If you need to use manual HTML, you can do a simple panel if you don't need the table (mind that you need a panel-body instead), and if you need a simple table you can skip the panel.
