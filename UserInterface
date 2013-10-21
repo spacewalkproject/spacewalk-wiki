@@ -4,6 +4,40 @@ Note: this documentation is based on the not yet merged bootstrap-css branch
 
 == Basic user interface
 
+Basic styles like lists, forms, buttons, images, tables, notifications, pagination, progress bars, panels, etc are provided by Twitter Bootstrap 3.
+
+You can find the documentation here: http://getbootstrap.com
+
+== Icons
+
+The (font) based icons are provided by Font-Awesome (http://fortawesome.github.io/Font-Awesome/) . For the icon list see http://fortawesome.github.io/Font-Awesome/icons/
+
+For how to use them, see http://fortawesome.github.io/Font-Awesome/examples/
+
+For porting, normally you will port a tag like:
+
+{{{
+#!text/html
+<img src="/img/$iconfile.gif" alt="image.key.message"/ border="0"/>
+}}}
+
+To
+
+{{{
+#!text/html
+<i class="icon-$name"></i>
+}}}
+
+== Accesibility
+
+If the icon is already just decorating a label, there is no need for something like the "alt" attribute in images.
+If the icon is the only piece of user interface there, you can add a "title" attribute or use the Bootstrap "sr-only" class, which will be displayed in Screen Readers only:
+
+{{{
+#!text/html
+<div class="sr-only"><bean:message key="image.key.message"/></div>
+}}}
+
 == Lists
 
 Lists are done with the ListTag and you should use the JSP tag whenever possible. However, to emulate the
