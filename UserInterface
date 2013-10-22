@@ -69,3 +69,34 @@ look of a list, the tag generates the following structure:
 }}}
 
 If you need to use manual HTML, you can do a simple panel if you don't need the table (mind that you need a panel-body instead), and if you need a simple table you can skip the panel.
+
+The structure of the generated list is like the following (in a pesudo markup HAML like format)
+
+{{{
+.panel.panel-default.spacewalk-list
+  .panel-heading
+    .panel-title
+      h3
+  table.table.table-striped
+    thead
+      tr
+        td@colspan
+          .spacewalk-list-top
+            .spacewalk-list-top-wrap
+              .spacewalk-list-top-alphabar
+              .spacewalk-list-top-addons
+            .spacewalk-list-top-wrap
+              .spacewalk-list-top-filter
+              .spacewalk-list-top-pagination
+      tr
+        th columns...
+    tbody
+      tr
+        td data...
+    tfoot
+      tr
+        td
+      
+
+ 
+}}}
