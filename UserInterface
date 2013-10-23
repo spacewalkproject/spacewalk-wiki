@@ -45,27 +45,20 @@ look of a list, the tag generates the following structure:
 
 {{{
 #!text/html
+... addons
 <div class="panel panel-default">
   <div class="panel-heading">
-    <div class="panel-title">
-      This is the title
-    </div>
+    <h3 class="panel-title">This is the title</h3>
+    ... addons
   </div>
   <table class="table table-striped">
-    <thead>
-      <tr>
-        <td colspan="X">
-          <!-- header pagination, addons, etc -->
-        </td>
-      </tr>
-      <tr><th>Column1 header</th>...</tr>
-    </thead>
-
+    ...
   </table>
   <div class="panel-footer">
-    <!-- Reference links -->
+     .. addons
   </div>
 </div>
+...addons
 }}}
 
 If you need to use manual HTML, you can do a simple panel if you don't need the table (mind that you need a panel-body instead), and if you need a simple table you can skip the panel.
