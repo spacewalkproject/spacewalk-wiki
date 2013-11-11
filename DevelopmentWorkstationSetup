@@ -209,6 +209,19 @@ LifecycleException:  start: :  java.io.IOException: Failed to access resource /W
 cp /etc/tomcat*/Catalina/localhost/rhn.xml $git_checkout/java/rhnwebapp/META-INF/context.xml
 }}}
 
+* Behind a proxy?
+
+Add the following to your .bash_profile or an equivalent:
+{{{
+export ANT_OPTS="-Dhttp.proxyHost=your.proxy.com -Dhttp.proxyPort=3128"
+}}}
+
+* Ant fails with 'Error: Could not find or load main class org.apache.tools.ant.launch.Launcher'
+
+Add the following to your .bash_profile or an equivalent:
+{{{
+export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64
+}}}
 
 == Still having issues? ==
 
