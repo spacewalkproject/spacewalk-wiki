@@ -49,7 +49,7 @@ The above command should finish instantly and its only purpose is to fix the rel
 
 === 5. Restore your filer ===
 
-Restore the filer (''/var/satellite'') from backup created in step 1. After the restore completes, make sure the user and group ownerships are correct as well as SELinux content:
+Restore the filer (''/var/satellite'') from backup created in step 1. After the restore completes, make sure the user and group ownerships are correct as well as SELinux context:
 
 {{{
 $ chown -R apache.root /var/satellite
