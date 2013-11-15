@@ -66,10 +66,10 @@ $ rhn-ssl-dbstore -vvv --ca-cert=/root/ssl-build/RHN-ORG-TRUSTED-SSL-CERT
 }}}
 
 If you are keeping your original hostname, do the following steps:
-  * Restore content of /root/ssl-build directory from the old Satellite
-  * Rebuild the rhn-httpd-ssl-key-pair-<HOSTNAME> package to meet
+  * Restore content of ''/root/ssl-build'' directory from the old Satellite
+  * Rebuild the ''rhn-httpd-ssl-key-pair-<HOSTNAME>'' package to meet
     the standards of the latest Satellite. Change to the directory containing
-    restored ssl-build directory (assuming /root):
+    restored ssl-build directory (assuming ''/root''):
 {{{
 $ cd /root
 }}}
