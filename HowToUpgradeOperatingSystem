@@ -105,7 +105,7 @@ $ cp nocpulse-identity nocpulse-identity.pub ~nocpulse/.ssh
 $ chown nocpulse.nocpulse ~nocpulse/.ssh/nocpulse-identity*
 }}}
 
-If you wish to enable '''just''' monitoring, run as root
+If you wish to enable '''just''' monitoring, run as root:
 {{{
 $ /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
 }}}
