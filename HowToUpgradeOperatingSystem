@@ -56,7 +56,7 @@ $ chown -R apache.root /var/satellite
 $ restorecon -FRv /var/satellite >& /tmp/restorecon.log
 }}}
 
-=== 6. Update SSL Configuration ===
+=== 6. Update SSL configuration ===
 
 In this step, your instructions will vary depending on whether or not you are renaming your Spacewalk (hostname) as a part of the operating system upgrade.
 
