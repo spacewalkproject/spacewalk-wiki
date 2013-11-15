@@ -53,7 +53,7 @@ Restore the filer (''/var/satellite'') from backup created in step 1. After the 
 
 {{{
 $ chown -R apache.root /var/satellite
-$ restorecon -FRv /var/satellite
+$ restorecon -FRv /var/satellite >& /tmp/restorecon.log
 }}}
 
 === 6. Update SSL Configuration ===
