@@ -92,3 +92,68 @@ The structure of the generated list is like the following (in a pesudo markup HA
       .spacewalk-list-bottom-addons-extra
     .spacewalk-list-bottom-extra
 }}}
+
+== bugs/defects ==
+* hide the documentation question marks on java and perl pages
+* /rhn/systems/Overview.do and other /rhn/systems/*.do pages - entitlements are mentioned 4 times
+ * this is already fixed by Duncan
+* [GENERAL ISSUE] little arrows for listing in lists are missing (at least in my Opera) (in recent FF as well (there are some utf8 glyphs instead))
+  * Overview -> Subscription Management -> System Entitlements - and here there is too many of these arrows
+    * also this page have footer broken
+* Overview -> Most Critical Systems -> Enhancement Errata have no icon in front of that 0 I see these (compare with other two columns there Security and Bugfix)
+* Systems -> System Groups
+  * note that buttons are note styled
+  * as I do have there group with no system, it have small "check" at the beginning of the row meaning "No applicable errata". That "check" is different than the one in the legend ("blue box with check" vs. "green check in circle")
+* Systems -> System Groups -> create new group - create new group and ignore its "Details" page (it is .pxt page) and go to "Target Systems"
+  * "work with group" and "delete group" links should be on the right I guess
+  * name of the group should be bigger
+  * old icons are present here
+* when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"
+* non-virtual system in "Systems" page have different icon instead of the icon in "System legend"
+* on page "Systems" in column "Entitlement" for systems I see "Management, Provisioning, Management, Provisioning" string multiple times (once when system have only "Management", twice when system have "Management" + "Provisioning"...)
+* On Systems -> <some_system> -> Details - there is multiple windows like "System Info", "System Events", "System Properties" and "Subscribed Channels" - second two windows are located differently than in pre-rebranded version, they are stretched to full width instead of respecting two column layout of that webpage area
+* [GENERAL ISSUE] In Systems -> <your_system> -> Software -> Software Channels - buttons are not styled - looks like this is problem with all other sections on this level like ... -> Software -> Packages -> Verify (here check button and drop-down menu for "items on page")
+* In Systems -> <your_system> -> Software -> Packages -> Verify - when you type something into "Filter by Package Name" field and press "Enter", packages are not filtered. If you click on eye icon instead of pressing "Enter", it works as expected.
+* in pre-rebranded version when you have used filtering of the list by first letter, in the resulting list you had little arrow next to first item starting with the given letter (Systems -> <your_system> -> Software -> Packages -> Verify - click on "J" and you get result listing packages iproute, iptables, iputils, isorelax, jabberd - but small arrow marking start of J-packages is missing there)
+* Systems -> <your_system> -> Configuration -> Add Files -> Create File - form is messy here
+* Systems -> <your_system> -> Provisioning -> Snapshots - table with list of the snapshots is not styled properly
+* /rhn/kickstart/CreateProfileWizard.do - when you fill the form but chooses channel without KS tree associated and click "Next", nothing happens (no error message)
+* Channels -> <my_channel> -> Manage Software Channels -> Repositories -> Sync - part where you are choosing date is in the mess (same in Admin -> Task Schedules -> <some_schedule_name> -> Frequency)
+* /rhn/apidoc/index.jsp - API doc have old bitmap icon instead of new one
+* /network/systems/system_list/in_channel_family.pxt?cfam_id=1000 and /network/systems/system_list/regular_in_channel_family.pxt?cfam_id=1000 - not rebranded
+* /rhn/account/Addresses.do - strangely big "Mailing Address" and surrounding text as well
+* icon links /rhn/account/UserPreferences.do and /rhn/Logout.do in upper right corner do not have some hover texts
+* in Sat560 link to change language is in upper left corner, not in up middle as in SWnightly
+ * not an issue IMO - tkasparek
+* when you hover the mouse over the organization name in upper right corner it gets underlined which evokes it is a link, but it is not (in Sat560 it is not underlined)
+* generated HTML seems not to be valid (xmllint fails like [http://pastebin.test.redhat.com/177086 here])
+* ~/help/about.pxt has broken links - [https://www.redhat.com/red_hat_network/deploydetail Read more] about RHN architectures.
+* /rhn/systems/provisioning/preservation/PreservationList.do - selecting and then deleting doesn't do anything, the same on /rhn/configuration/file/ManageRevision.do?cfid=?.
+* ~/rhn/apidoc/index.jsp, ~/rhn/apidoc/faqs.jsp, ~/rhn/apidoc/scripts.jsp - icon in title needs to be changed with FA icon, useless link in title
+* ~/rhn/apidoc/scripts.jsp - syntax of example script may be highlighted (e.g. use [http://highlightjs.org/ highlight.js])
+* ~/rhn/account/LocalePreferences.do - in 21st century and utf8 fonts, do we need pictures with text in national alphabets (if you select hindi as webui language, we have to use some fonts supporting hindi anyway), therefore getting rid of images would be really nice?
+* speaking of fonts - title font is changed to "Roboto Light", but body text remains set to Helvetica, ... -> why not to use one font (different style - Thin, Light, Normal, Medium, Bold, Ultra-Bold)
+* ~/rhn/systems/SystemEntitlements.do - table navigation icons are wierd and wrongly placed
+  * broken page footer
+* ~/rhn/channels/software/Entitlements.do - missing table navigation icons
+* across the whole webui - combining old style selection list on some places with 'bootstraped' new lists doesn't look well
+* ~/rhn/systems/DuplicateIPList.do - squared + icon cannot be expanded
+* ~/network/systems/groups/errata_list.pxt?sgid= - old icons and unstyled title
+* ~/network/systems/ssm/groups/index.pxt - the whole page is in old style
+* ~/rhn/systems/customdata/CustomDataList.do - broken layout
+* ~/rhn/systems/customdata/CreateCustomKey.do - newline before/after icon/title
+
+== usability ==
+* need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these
+* move the '+ create new ...' to the right and make it green, e.g. 'create new note' on /rhn/systems/details/Notes.do page
+* make expanded sub-menu lighter than the higher level menu - e.g. /rhn/systems/SystemList.do page
+* [jhutar] overall theme seems to have low contras to me, I have found this recommendations:
+  * http://www.w3.org/TR/WCAG20-CSS-TECHS/G17.html - Ensuring that a contrast ratio of at least 7:1, but there is also another recommendation speaking about 4.5:1
+  * http://www.javascripter.net/faq/rgbtohex.htm - convert rgb(...) to hex notations if you are lazy like I'm
+  * http://juicystudio.com/services/luminositycontrastratio.php - count contrast of two colors
+  * I have tried these:
+    * h1 (like "Overview") vs. body which gave me 9.51:1 - good but seems worse to me personally
+    * menu item vs. its background gave me 5.13:1 - bad
+    * when you fill something into the form, filled text vs. form (e.g. plain input row) is 4:0 - very bad
+* [jhutar] In Systems -> <choose_your_system> when in "Details" note second level menu which should be smaller I believe (to express this is just sub-menu)
+* API overview list shall be displayed on the right page side, e.g. /rhn/apidoc/handlers/SystemHandler.jsp
