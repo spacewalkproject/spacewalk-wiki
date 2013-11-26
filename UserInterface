@@ -95,9 +95,11 @@ The structure of the generated list is like the following (in a pesudo markup HA
 
 == bugs/defects ==
 * hide the documentation question marks on java and perl pages
+ * tkasparek: 7a18b3cfc69a559a7a890310c02e0cb13758ebea
 * /rhn/systems/Overview.do and other /rhn/systems/*.do pages - entitlements are mentioned 4 times
  * this is already fixed by Duncan
 * [GENERAL ISSUE] little arrows for listing in lists are missing (at least in my Opera) (in recent FF as well (there are some utf8 glyphs instead))
+  * Silvio fixed this
   * Overview -> Subscription Management -> System Entitlements - and here there is too many of these arrows
     * also this page have footer broken
 * Overview -> Most Critical Systems -> Enhancement Errata have no icon in front of that 0 I see these (compare with other two columns there Security and Bugfix)
