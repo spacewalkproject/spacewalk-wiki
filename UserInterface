@@ -145,7 +145,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~/rhn/systems/DuplicateIPList.do - squared + icon cannot be expanded
 * ~/network/systems/groups/errata_list.pxt?sgid= - old icons and unstyled title
 * ~/network/systems/ssm/groups/index.pxt - the whole page is in old style
-* ~/rhn/systems/customdata/CustomDataList.do - broken layout
+* ~~~/rhn/systems/customdata/CustomDataList.do - broken layout~~ (dmacvicar)
 * ~~~/rhn/systems/customdata/CreateCustomKey.do - newline before/after icon/title~~ (dmacvicar)
 * ~/rhn/ssm/index.do - old system icon used there
 * ~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon
