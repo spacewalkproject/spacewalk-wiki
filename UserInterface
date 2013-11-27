@@ -111,8 +111,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * "work with group" and "delete group" links should be on the right I guess
   * name of the group should be bigger
   * old icons are present here
-* when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"
-  * mkollar: 
+* ~~~when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"~~~
+  * mkollar: 4b1e2ad3e1fc44bfc89a259d1f84b61b06f1ece6
 * non-virtual system in "Systems" page have different icon instead of the icon in "System legend"
  * which one should be used?
 * on page "Systems" in column "Entitlement" for systems I see "Management, Provisioning, Management, Provisioning" string multiple times (once when system have only "Management", twice when system have "Management" + "Provisioning"...)
