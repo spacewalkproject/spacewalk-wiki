@@ -94,11 +94,11 @@ The structure of the generated list is like the following (in a pesudo markup HA
 }}}
 
 == bugs/defects ==
-* hide the documentation question marks on java and perl pages
+* ~~hide the documentation question marks on java and perl pages~~
  * tkasparek: 4459f313edad880c8d592606db94599f66e42536
-* /rhn/systems/Overview.do and other /rhn/systems/*.do pages - entitlements are mentioned 4 times
+* ~~/rhn/systems/Overview.do and other /rhn/systems/*.do pages - entitlements are mentioned 4 times~~
  * this is already fixed by Duncan
-* [GENERAL ISSUE] little arrows for listing in lists are missing (at least in my Opera) (in recent FF as well (there are some utf8 glyphs instead))
+* ~~[GENERAL ISSUE] little arrows for listing in lists are missing (at least in my Opera) (in recent FF as well (there are some utf8 glyphs instead))~~
   * Silvio fixed this
   * Overview -> Subscription Management -> System Entitlements - and here there is too many of these arrows
     * also this page have footer broken
@@ -150,7 +150,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~/rhn/ssm/index.do - old system icon used there
 
 == usability ==
-* need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these
+* ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
  * tkasparek: 71c98a54d044621e53db0ce6ee292e864eb0960e
 * move the '+ create new ...' to the right and make it green, e.g. 'create new note' on /rhn/systems/details/Notes.do page
 * make expanded sub-menu lighter than the higher level menu - e.g. /rhn/systems/SystemList.do page
