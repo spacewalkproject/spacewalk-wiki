@@ -112,6 +112,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * old icons are present here
 * when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"
 * non-virtual system in "Systems" page have different icon instead of the icon in "System legend"
+ * which one should be used?
 * on page "Systems" in column "Entitlement" for systems I see "Management, Provisioning, Management, Provisioning" string multiple times (once when system have only "Management", twice when system have "Management" + "Provisioning"...)
 * On Systems -> <some_system> -> Details - there is multiple windows like "System Info", "System Events", "System Properties" and "Subscribed Channels" - second two windows are located differently than in pre-rebranded version, they are stretched to full width instead of respecting two column layout of that webpage area
 * [GENERAL ISSUE] In Systems -> <your_system> -> Software -> Software Channels - buttons are not styled - looks like this is problem with all other sections on this level like ... -> Software -> Packages -> Verify (here check button and drop-down menu for "items on page")
