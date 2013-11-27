@@ -111,7 +111,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * "work with group" and "delete group" links should be on the right I guess
   * name of the group should be bigger
   * old icons are present here
-* ~~~when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"~~~
+* ~~when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"~~
   * mkollar: 4b1e2ad3e1fc44bfc89a259d1f84b61b06f1ece6
 * non-virtual system in "Systems" page have different icon instead of the icon in "System legend"
  * which one should be used?
@@ -149,6 +149,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~~/rhn/systems/customdata/CreateCustomKey.do - newline before/after icon/title~~ (dmacvicar)
 * ~/rhn/ssm/index.do - old system icon used there
 * ~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon
+* Filtering lists (Systems -> <your_system> -> Software -> Packages -> List/Remove) is not working
+  with just Enter, one need to press button with eye to fun filter.
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
