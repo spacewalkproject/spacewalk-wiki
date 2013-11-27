@@ -103,6 +103,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * Overview -> Subscription Management -> System Entitlements - and here there is too many of these arrows
     * also this page have footer broken
 * Overview -> Most Critical Systems -> Enhancement Errata have no icon in front of that 0 I see these (compare with other two columns there Security and Bugfix)
+ * tkasparek: looks fixed
 * Systems -> System Groups
   * note that buttons are note styled
   * as I do have there group with no system, it have small "check" at the beginning of the row meaning "No applicable errata". That "check" is different than the one in the legend ("blue box with check" vs. "green check in circle")
