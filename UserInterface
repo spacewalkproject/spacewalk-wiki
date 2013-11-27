@@ -95,7 +95,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 
 == bugs/defects ==
 * ~~hide the documentation question marks on java and perl pages~~
- * tkasparek: 4459f313edad880c8d592606db94599f66e42536
+ * tkasparek: 4459f313edad880c8d592606db94599f66e42536 c6b325c90cd95790a4c8f346fc0154f87827de77
 * ~~/rhn/systems/Overview.do and other /rhn/systems/*.do pages - entitlements are mentioned 4 times~~
  * this is already fixed by Duncan
 * ~~[GENERAL ISSUE] little arrows for listing in lists are missing (at least in my Opera) (in recent FF as well (there are some utf8 glyphs instead))~~
