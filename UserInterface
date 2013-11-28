@@ -130,7 +130,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * icon links /rhn/account/UserPreferences.do and /rhn/Logout.do in upper right corner do not have some hover texts
 * in Sat560 link to change language is in upper left corner, not in up middle as in SWnightly
  * not an issue IMO - tkasparek
-* when you hover the mouse over the organization name in upper right corner it gets underlined which evokes it is a link, but it is not (in Sat560 it is not underlined)
+* ~~when you hover the mouse over the organization name in upper right corner it gets underlined which evokes it is a link, but it is not (in Sat560 it is not underlined)~~
  * mkollar: 78f697722a2cc3b7758c5505db2eeef408f99719 beabf914f15796b85594945a4487a47b1d5a613d
 * generated HTML seems not to be valid (xmllint fails like [http://pastebin.test.redhat.com/177086 here])
 * ~/help/about.pxt has broken links - [https://www.redhat.com/red_hat_network/deploydetail Read more] about RHN architectures.
