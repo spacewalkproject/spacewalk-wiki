@@ -132,6 +132,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * in Sat560 link to change language is in upper left corner, not in up middle as in SWnightly
  * not an issue IMO - tkasparek
 * when you hover the mouse over the organization name in upper right corner it gets underlined which evokes it is a link, but it is not (in Sat560 it is not underlined)
+ * mkollar: ...
 * generated HTML seems not to be valid (xmllint fails like [http://pastebin.test.redhat.com/177086 here])
 * ~/help/about.pxt has broken links - [https://www.redhat.com/red_hat_network/deploydetail Read more] about RHN architectures.
 * ~~/rhn/systems/provisioning/preservation/PreservationList.do - selecting and then deleting doesn't do anything, the same on /rhn/configuration/file/ManageRevision.do?cfid=?.~~
