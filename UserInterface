@@ -105,7 +105,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Overview -> Most Critical Systems -> Enhancement Errata have no icon in front of that 0 I see these (compare with other two columns there Security and Bugfix)
  * tkasparek: looks fixed
 * Systems -> System Groups
-  * note that buttons are note styled
+  * ~~note that buttons are note styled~~
+   * tkasparek: 3d7d638eee4b065e444a1705d12891e8ffded14f
   * ~~as I do have there group with no system, it have small "check" at the beginning of the row meaning "No applicable errata". That "check" is different than the one in the legend ("blue box with check" vs. "green check in circle")~~
    * tkasparek: ef788cc6d32c21fc54ac2a0ea8efbb512bd84daf
 * Systems -> System Groups -> create new group - create new group and ignore its "Details" page (it is .pxt page) and go to "Target Systems"
