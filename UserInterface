@@ -136,6 +136,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * generated HTML seems not to be valid (xmllint fails like [http://pastebin.test.redhat.com/177086 here])
   * ~~usage of `targer="_new"`, which is not valid construct~~
     * mkollar: fcc32c9cb7a62860286fd265c68781fa52a36d4b
+  * I have not found page where xmllint would complain if --html option was used.
+    Tags `nav`, `header`, footer, and `aside` are part of HTML 5 standard.
 * ~/help/about.pxt has broken links - [https://www.redhat.com/red_hat_network/deploydetail Read more] about RHN architectures.
 * ~~/rhn/systems/provisioning/preservation/PreservationList.do - selecting and then deleting doesn't do anything, the same on /rhn/configuration/file/ManageRevision.do?cfid=?.~~
   * jdobes: 34a271e910250384d8ff1fe7fb21549c3ffd7d9e
