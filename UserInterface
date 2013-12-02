@@ -112,7 +112,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Systems -> System Groups -> create new group - create new group and ignore its "Details" page (it is .pxt page) and go to "Target Systems"
   * ~~"work with group" and "delete group" links should be on the right I guess~~ 4ca619a531965fdbf0505dc87b23ff851223c7ed
   * ~~name of the group should be bigger~~ 4ca619a531965fdbf0505dc87b23ff851223c7ed
-  * old icons are present here
+  * ~~old icons are present here~~ 279f75f57cdd9d6a44c03eae2183fdc5d50e2eaa b2fa9fa5aef7c3054cfacaa0539edbca46a2199c 
 * ~~when you lock system, check "Systems" page and that system have our normal (old) yellow lock icon instead of that one noted in the "System legend"~~
   * mkollar: 4b1e2ad3e1fc44bfc89a259d1f84b61b06f1ece6
 * ~~non-virtual system in "Systems" page have different icon instead of the icon in "System legend"~~
