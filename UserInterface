@@ -117,6 +117,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * mkollar: 4b1e2ad3e1fc44bfc89a259d1f84b61b06f1ece6
 * ~~non-virtual system in "Systems" page have different icon instead of the icon in "System legend"~~
  * ~~which one should be used? (legend is wrong)~~
+ * b5aefe004eb6839ede6e0cff62635496f4f4368c
 * On Systems -> <some_system> -> Details - there is multiple windows like "System Info", "System Events", "System Properties" and "Subscribed Channels" - second two windows are located differently than in pre-rebranded version, they are stretched to full width instead of respecting two column layout of that webpage area
 * [GENERAL ISSUE] In Systems -> <your_system> -> Software -> Software Channels - buttons are not styled - looks like this is problem with all other sections on this level like ... -> Software -> Packages -> Verify (here check button and drop-down menu for "items on page")
 * In Systems -> <your_system> -> Software -> Packages -> Verify - when you type something into "Filter by Package Name" field and press "Enter", packages are not filtered. If you click on eye icon instead of pressing "Enter", it works as expected.
