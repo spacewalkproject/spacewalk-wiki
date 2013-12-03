@@ -128,7 +128,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * /rhn/kickstart/CreateProfileWizard.do - when you fill the form but chooses channel without KS tree associated and click "Next", nothing happens (no error message)
 * Channels -> <my_channel> -> Manage Software Channels -> Repositories -> Sync - part where you are choosing date is in the mess (same in Admin -> Task Schedules -> <some_schedule_name> -> Frequency)
 * /network/systems/system_list/in_channel_family.pxt?cfam_id=1000 and /network/systems/system_list/regular_in_channel_family.pxt?cfam_id=1000 - not rebranded
-* /rhn/account/Addresses.do - strangely big "Mailing Address" and surrounding text as well
+* /rhn/account/Addresses.do - strangely big "Mailing Address" and surrounding text as well -> duncan fixing...
 * icon links /rhn/account/UserPreferences.do and /rhn/Logout.do in upper right corner do not have some hover texts
 * in Sat560 link to change language is in upper left corner, not in up middle as in SWnightly
  * not an issue IMO - tkasparek
