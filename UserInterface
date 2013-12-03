@@ -164,6 +164,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Filtering lists (Systems -> <your_system> -> Software -> Packages -> List/Remove) is not working
   with just Enter, one need to press button with eye to fun filter.
 * "Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)
+* deactivate user uses old icon
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
