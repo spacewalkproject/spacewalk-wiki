@@ -109,7 +109,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
    * tkasparek: 3d7d638eee4b065e444a1705d12891e8ffded14f
   * ~~as I do have there group with no system, it have small "check" at the beginning of the row meaning "No applicable errata". That "check" is different than the one in the legend ("blue box with check" vs. "green check in circle")~~
    * tkasparek: ef788cc6d32c21fc54ac2a0ea8efbb512bd84daf
-* Systems -> System Groups -> create new group - create new group and ignore its "Details" page (it is .pxt page) and go to "Target Systems"
+* ~~Systems -> System Groups -> create new group - create new group and ignore its "Details" page (it is .pxt page) and go to "Target Systems"~~
   * ~~"work with group" and "delete group" links should be on the right I guess~~ 4ca619a531965fdbf0505dc87b23ff851223c7ed
   * ~~name of the group should be bigger~~ 4ca619a531965fdbf0505dc87b23ff851223c7ed
   * ~~old icons are present here~~ 279f75f57cdd9d6a44c03eae2183fdc5d50e2eaa b2fa9fa5aef7c3054cfacaa0539edbca46a2199c 
