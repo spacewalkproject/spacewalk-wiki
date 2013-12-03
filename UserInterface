@@ -159,8 +159,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~~/rhn/ssm/index.do - old system icon used there~~
   * mkollar: 3d535ac4e9292f9cffc15068cd4a122c29273c61
 * ~/rhn/ssm/index.do - Group names are in the middle of table cells, used to be on top
-* ~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon
-  * mkollar(unless someone else is already working on this, if so let me know)
+* ~~~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon~~
+  * mkollar: fe8ada220de98e6a87b8e1e881a1912c50aecccd
 * Filtering lists (Systems -> <your_system> -> Software -> Packages -> List/Remove) is not working
   with just Enter, one need to press button with eye to fun filter.
 * "Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)
