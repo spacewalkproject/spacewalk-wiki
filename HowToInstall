@@ -188,15 +188,25 @@ spacewalk-setup --disconnected
 If you've set up the database server manually (both on the same and on different machine), run
 
 {{{
-spacewalk-setup --disconnected --external-db
+spacewalk-setup --disconnected --external-oracle
 }}}
+
+if you are using Oracle database backend.
+
+Or 
+
+{{{
+spacewalk-setup --disconnected --external-postgresql
+}}}
+
+if you tend to use postgresql.
 
 
 
 An example session is as follows:
 
 {{{
-# spacewalk-setup --disconnected --external-db
+# spacewalk-setup --disconnected --external-oracle
 * Setting up Oracle environment.
 * Setting up database.
 ** Database: Setting up database connection for Oracle backend.
