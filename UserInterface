@@ -158,14 +158,11 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~~/rhn/systems/customdata/CreateCustomKey.do - newline before/after icon/title~~ (dmacvicar)
 * ~~~/rhn/ssm/index.do - old system icon used there~~
   * mkollar: 3d535ac4e9292f9cffc15068cd4a122c29273c61
-* ~~~/rhn/ssm/index.do - Group names are in the middle of table cells, used to be on top~~
- * tkasparek: 710fc3e241932960e32c0c51fe2572b8ed95affe 857f8404f4e086085b1600121bfde0661316ad7c
 * ~~~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon~~
   * mkollar: fe8ada220de98e6a87b8e1e881a1912c50aecccd
-* Filtering lists (Systems -> <your_system> -> Software -> Packages -> List/Remove) is not working
-  with just Enter, one need to press button with eye to fun filter.
 * "Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)
 * deactivate user uses old icon
+* some strings on /rhn/ssm/index.do are missing
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
