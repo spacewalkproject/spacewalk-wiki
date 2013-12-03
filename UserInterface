@@ -127,7 +127,6 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Systems -> <your_system> -> Provisioning -> Snapshots - table with list of the snapshots is not styled properly
 * /rhn/kickstart/CreateProfileWizard.do - when you fill the form but chooses channel without KS tree associated and click "Next", nothing happens (no error message)
 * Channels -> <my_channel> -> Manage Software Channels -> Repositories -> Sync - part where you are choosing date is in the mess (same in Admin -> Task Schedules -> <some_schedule_name> -> Frequency)
-* /rhn/apidoc/index.jsp - API doc have old bitmap icon instead of new one
 * /network/systems/system_list/in_channel_family.pxt?cfam_id=1000 and /network/systems/system_list/regular_in_channel_family.pxt?cfam_id=1000 - not rebranded
 * /rhn/account/Addresses.do - strangely big "Mailing Address" and surrounding text as well
 * icon links /rhn/account/UserPreferences.do and /rhn/Logout.do in upper right corner do not have some hover texts
@@ -143,7 +142,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~/help/about.pxt has broken links - [https://www.redhat.com/red_hat_network/deploydetail Read more] about RHN architectures.
 * ~~/rhn/systems/provisioning/preservation/PreservationList.do - selecting and then deleting doesn't do anything, the same on /rhn/configuration/file/ManageRevision.do?cfid=?.~~
   * jdobes: 34a271e910250384d8ff1fe7fb21549c3ffd7d9e
-* ~/rhn/apidoc/index.jsp, ~/rhn/apidoc/faqs.jsp, ~/rhn/apidoc/scripts.jsp - icon in title needs to be changed with FA icon, useless link in title
+* ~~ ~/rhn/apidoc/index.jsp, ~/rhn/apidoc/faqs.jsp, ~/rhn/apidoc/scripts.jsp - icon in title needs to be changed with FA icon~~ 1a4b309479661a9e9a642ef83ed3080d63bb9e7f
+  * useless link in title
 * ~/rhn/apidoc/scripts.jsp - syntax of example script may be highlighted (e.g. use [http://highlightjs.org/ highlight.js])
 * ~/rhn/account/LocalePreferences.do - in 21st century and utf8 fonts, do we need pictures with text in national alphabets (if you select hindi as webui language, we have to use some fonts supporting hindi anyway), therefore getting rid of images would be really nice?
 * speaking of fonts - title font is changed to "Roboto Light", but body text remains set to Helvetica, ... -> why not to use one font (different style - Thin, Light, Normal, Medium, Bold, Ultra-Bold)
