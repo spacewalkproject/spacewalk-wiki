@@ -161,7 +161,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~~/rhn/YourRhn.do - Recently Scheduled Actions shows green icon for completed actions while in legend there's gray icon~~
   * mkollar: fe8ada220de98e6a87b8e1e881a1912c50aecccd
 * "Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)
-* deactivate user uses old icon
+* ~~deactivate user uses old icon~~ 7eaabf32cbd631015e76ba508e0bd4dc3d0ce5f0
 * ~~some strings on /rhn/ssm/index.do are missing~~
 
 == usability ==
