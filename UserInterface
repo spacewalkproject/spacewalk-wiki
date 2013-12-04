@@ -130,6 +130,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * /network/systems/system_list/in_channel_family.pxt?cfam_id=1000 and /network/systems/system_list/regular_in_channel_family.pxt?cfam_id=1000 - not rebranded
 * ~~/rhn/account/Addresses.do - strangely big "Mailing Address" and surrounding text as well~~ (dmacvicar)
 * icon links /rhn/account/UserPreferences.do and /rhn/Logout.do in upper right corner do not have some hover texts
+  * mkollar:
 * in Sat560 link to change language is in upper left corner, not in up middle as in SWnightly
  * not an issue IMO - tkasparek
 * ~~when you hover the mouse over the organization name in upper right corner it gets underlined which evokes it is a link, but it is not (in Sat560 it is not underlined)~~
