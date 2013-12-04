@@ -162,7 +162,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * mkollar: fe8ada220de98e6a87b8e1e881a1912c50aecccd
 * "Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)
 * deactivate user uses old icon
-* some strings on /rhn/ssm/index.do are missing
+* ~~some strings on /rhn/ssm/index.do are missing~~
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
