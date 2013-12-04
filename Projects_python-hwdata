@@ -44,4 +44,4 @@ tito build --tgz
 }}}
 in that directory you will get latest tar.gz file.
 
-Or download [https://fedorahosted.org/releases/s/p/spacewalk/python-hwdata-1.7.3.tar.gz python-hwdata-1.7.3.tar.gz]
+Or download [https://fedorahosted.org/releases/s/p/spacewalk/python-hwdata-1.10.1.tar.gz python-hwdata-1.10.1.tar.gz]
