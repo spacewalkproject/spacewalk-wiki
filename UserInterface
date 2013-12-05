@@ -164,7 +164,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~"Sytems" -> <system> -> "Events" -> "History" uses old style icon(s)~~ cff9a22f3e09cd0ad063f8b07bb72cd47be7c08b
 * ~~deactivate user uses old icon~~ 7eaabf32cbd631015e76ba508e0bd4dc3d0ce5f0
 * ~~some strings on /rhn/ssm/index.do are missing~~
-* self-closing i-tags are not allowed
+* self-closing i-tags are not allowed (i.e. /rhn/systems/SystemEntitlements.do)
   * mkollar: (todo)
 
 == usability ==
