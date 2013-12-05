@@ -165,7 +165,6 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~deactivate user uses old icon~~ 7eaabf32cbd631015e76ba508e0bd4dc3d0ce5f0
 * ~~some strings on /rhn/ssm/index.do are missing~~
 * self-closing i-tags are not allowed (i.e. /rhn/systems/SystemEntitlements.do)
-  * mkollar: (todo)
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
