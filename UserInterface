@@ -168,6 +168,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * self-closing i-tags are not allowed (i.e. /rhn/systems/SystemEntitlements.do)
 * java/code/src/com/redhat/rhn/frontend/taglibs/list/ListTag.java render header with multiple closing </tr> tags. See for example ~rhn/systems/Overview.do
 * ~/rhn/systems/Overview.do?showgroups=true difference when showing systems (button "View System Groups" vs link "View Systems")
+* `<meta name="page-decorator"` started to leak into html... maybe something important(?) forgotten during migration
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
