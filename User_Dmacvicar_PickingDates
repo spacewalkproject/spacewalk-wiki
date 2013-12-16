@@ -1,1 +1,7 @@
 == Problem ==
+
+Spacewalk asks user to pick dates using a collection of list boxes that is not a common pattern.
+
+[[Image(pickdates-current.png)]]
+
+== Date and time picker ==
