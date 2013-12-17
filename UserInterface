@@ -171,6 +171,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * `<meta name="page-decorator"` leaks into html... was not problem with xhtml 1.0 transitional, but is with html 5.
   Is this some kind of forgotten piece of code from old dark ages?
 * /rhn/ssm/index.do missing **ssm.overview.misc.delete** and **ssm.overview.misc.reboot** resource strings
+* /rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled
+  * the same issue is also on other pages
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
