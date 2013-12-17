@@ -1,4 +1,4 @@
-= Wow to setup Spacewalk with PostgreSQL database over SSL
+= How to setup Spacewalk with PostgreSQL database over SSL
 
 There are two possible ways to get Spacewalk + PostgreSQL database
 to communicate over SSL:
