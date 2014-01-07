@@ -194,3 +194,9 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * API overview list shall be displayed on the right page side, e.g. /rhn/apidoc/handlers/SystemHandler.jsp
 * differenciate info message vs. warning/error messages (used to be blue vs. red, now blue vs. blue)
 * if multiple errors occurs only one error message is shown and other are ignored
+* schedule date picker is not consistent with implementation on other pages:
+  * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
+  * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
+* pages doesn't implement "two phase" confirmation (i.e. confirmation page after submit):
+  * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
+  * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
