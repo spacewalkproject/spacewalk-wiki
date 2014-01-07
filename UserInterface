@@ -173,6 +173,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * /rhn/ssm/index.do missing **ssm.overview.misc.delete** and **ssm.overview.misc.reboot** resource strings
 * /rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled
   * the same issue is also on other pages
+* https://bugzilla.redhat.com/show_bug.cgi?id=1048981
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
