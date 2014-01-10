@@ -124,6 +124,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
  * tkasparek: 3d7d638eee4b065e444a1705d12891e8ffded14f
 * In Systems -> <your_system> -> Software -> Packages -> Verify - when you type something into "Filter by Package Name" field and press "Enter", packages are not filtered. If you click on eye icon instead of pressing "Enter", it works as expected.
 * in pre-rebranded version when you have used filtering of the list by first letter, in the resulting list you had little arrow next to first item starting with the given letter (Systems -> <your_system> -> Software -> Packages -> Verify - click on "J" and you get result listing packages iproute, iptables, iputils, isorelax, jabberd - but small arrow marking start of J-packages is missing there)
+* if a list is sorted by a column, the column used to have "sorted up-down" / "sorted down-up" icons (now fa-sort-amount-asc / fa-sort-amount-desc could be used)
 * Systems -> <your_system> -> Configuration -> Add Files -> Create File - form is messy here
 * Systems -> <your_system> -> Provisioning -> Snapshots - table with list of the snapshots is not styled properly
 * /rhn/kickstart/CreateProfileWizard.do - when you fill the form but chooses channel without KS tree associated and click "Next", nothing happens (no error message)
