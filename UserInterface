@@ -210,4 +210,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
-  
+* layout of   /rhn/systems/details/probes/ProbeDetails.do
+  * create / delete / edit should be aligned to right
+  * tables should not have 100% width
+  * edit probe has wrong icon
