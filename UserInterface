@@ -204,4 +204,10 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Create user page (/rhn/users/CreateUser.do?account_type=into_org)
   * formerly Login: and Account Information: tables were aligned vertically 
   * prefix, firstNames and lastName inputs were aligned horizontally in a row (so label "First, Last Name*:" made sense but now it does not)
+* List pagination and alpha bar
+  * bar goes from 0..9A..Z on /rhn/systems/details/packages/PackageList.do but A..Z0..9 on /rhn/systems/SystemEntitlements.do and /network/systems/system_list/regular_in_channel_family.pxt
+  * different set of pagination arrows on /network/systems/system_list/regular_in_channel_family.pxt
+  * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
+  * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
+  * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
   
