@@ -175,7 +175,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * /rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled
   * the same issue is also on other pages
 * https://bugzilla.redhat.com/show_bug.cgi?id=1048981
-* /rhn/kickstart/KickstartDetailsEdit.do?ksid=1 - form is messy here (the form is outside of screenview)
+* ~~/rhn/kickstart/KickstartDetailsEdit.do?ksid=1 - form is messy here (the form is outside of screenview)~~ 97b2c561bcdc05c65ac8ef6c879b09588b31cb5b
 * /rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do - in the provisioning virtual guest ("Advanced Kickstart Configuration"), buttons "Basic Options" and "Schedule Kickstart and Finish" are not functional. JS error: "TypeError?: form is null"
 * ~~ https://bugzilla.redhat.com/show_bug.cgi?id=1051230 ~~
 
