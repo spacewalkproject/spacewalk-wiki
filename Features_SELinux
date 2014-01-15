@@ -2,6 +2,16 @@
 
 = Spacewalk and SELinux =
 
+The notes below are development notes from the time when feature of confining Spacewalk with SELinux was being added to the project. Spacewalk as of 1.0+ is able to run on systems with SELinux in enforcing mode. As such this feature is now complete and we consider any issue with SELinux in Spacewalk as a normal bug. No active development around SELinux is currently active because it is finished.
+
+So for Spacewalk users, things just work, and if they don't, it's a bug (or sometimes PEBKAC) and should be treated like that (mailing list, bugzilla).
+
+For people interested in history, read on.
+
+----
+
+= Introduction =
+
 SELinux is different layer of access control, besides the owner / group / other. For a process to access file, directory, socket, etc., an explicit '''allow''' has to be specified in the SELinux policy. If there is no allow rule in the system, access is denied and logged (if SELinux is run in Enforcing mode) or the (so called) AVC denial is logged but the operation succeeds (in Permissive).
 
 Red Hat Enterprise Linux 5 comes with '''selinux-policy-targeted''' package which defines the rules for the core system and many applications in the system, especially daemons. They don't however cover Spacewalk as Spacewalk is not part of EL 5, and even for applications that are covered by the generic policy, Spacewalk might need to allow access to additional resources. We add these via additional SELinux policy modules, distributed as additional rpm packages with Spacewalk.
