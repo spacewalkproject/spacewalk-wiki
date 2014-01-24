@@ -18,7 +18,7 @@ For porting, normally you will port a tag like:
 
 {{{
 #!text/html
-<img src="/img/$iconfile.gif" alt="image.key.message"/ border="0"/>
+<img src="/img/$iconfile.gif" alt="image.key.message" border="0" />
 }}}
 
 To
@@ -35,7 +35,7 @@ If the icon is the only piece of user interface there, you can add a "title" att
 
 {{{
 #!text/html
-<div class="sr-only"><bean:message key="image.key.message"/></div>
+<div class="sr-only"><bean:message key="image.key.message" /></div>
 }}}
 
 == Lists
