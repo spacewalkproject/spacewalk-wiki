@@ -128,6 +128,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * Systems -> <your_system> -> Configuration -> Add Files -> Create File - form is messy here
   * [tkasparek] looks fixed
 * Systems -> <your_system> -> Provisioning -> Snapshots - table with list of the snapshots is not styled properly
+  * [tkasparek] looks fixed
 * /rhn/kickstart/CreateProfileWizard.do - when you fill the form but chooses channel without KS tree associated and click "Next", nothing happens (no error message)
 * Channels -> <my_channel> -> Manage Software Channels -> Repositories -> Sync - part where you are choosing date is in the mess (same in Admin -> Task Schedules -> <some_schedule_name> -> Frequency)
 * ~~ /network/systems/system_list/in_channel_family.pxt?cfam_id=1000 and /network/systems/system_list/regular_in_channel_family.pxt?cfam_id=1000 - not rebranded ~~ 9bbabcf7f653f53d8db1521b941accf2d57a084e 31928ce93c928792e60f03203854de2c248d3aad
