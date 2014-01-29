@@ -200,10 +200,10 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * schedule date picker is not consistent with implementation on other pages:
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
-  * Systems > <System> > Schedule System Reboot
 * pages doesn't implement "two phase" confirmation (i.e. confirmation page after submit):
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
+  * Systems > <System> > Schedule System Reboot
 * Create user page (/rhn/users/CreateUser.do?account_type=into_org)
   * formerly Login: and Account Information: tables were aligned vertically 
   * prefix, firstNames and lastName inputs were aligned horizontally in a row (so label "First, Last Name*:" made sense but now it does not)
