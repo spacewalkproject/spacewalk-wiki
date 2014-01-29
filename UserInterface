@@ -200,6 +200,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * schedule date picker is not consistent with implementation on other pages:
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
+  * Systems > <System> > Schedule System Reboot
 * pages doesn't implement "two phase" confirmation (i.e. confirmation page after submit):
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
