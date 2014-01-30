@@ -158,6 +158,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~ ~/rhn/channels/software/Entitlements.do - missing table navigation icons ~~ fixed by Silvio
 * across the whole webui - combining old style selection list on some places with 'bootstraped' new lists doesn't look well
 * ~/rhn/systems/DuplicateIPList.do - squared + icon cannot be expanded
+ * looks like DuplicateSystemsRowRenderer is broken
 * ~~ ~/network/systems/groups/errata_list.pxt?sgid= - old icons and unstyled title ~~ 6f22cd46ae6f5c097694213e5bdced6c275d19a8 fb8d77fa49ac14bf2b4e756188dce9384305cc82 8ea182a4bedeedf6694088e8f3ee9ce4f9660eba
 * ~~ ~/network/systems/ssm/groups/index.pxt - the whole page is in old style ~~ 
 * ~~~/rhn/systems/customdata/CustomDataList.do - broken layout~~ (dmacvicar)
