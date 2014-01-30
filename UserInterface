@@ -182,6 +182,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * /rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do - in the provisioning virtual guest ("Advanced Kickstart Configuration"), buttons "Basic Options" and "Schedule Kickstart and Finish" are not functional. JS error: "TypeError?: form is null"
 * ~~ https://bugzilla.redhat.com/show_bug.cgi?id=1051230 ~~
 * https://bugzilla.redhat.com/show_bug.cgi?id=1058816
+* SSM message [NUMBER] systems selected is broken in all languages apart from English
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
