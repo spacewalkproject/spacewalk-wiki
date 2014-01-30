@@ -205,7 +205,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
 * pages doesn't implement "two phase" confirmation (i.e. confirmation page after submit):
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
-  * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
+  * ~~SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)~~ 13bbe68fa8e90d1eb4506ee38e4e73b5fbc62885
   * Systems > <System> > Schedule System Reboot
 * Create user page (/rhn/users/CreateUser.do?account_type=into_org)
   * formerly Login: and Account Information: tables were aligned vertically 
