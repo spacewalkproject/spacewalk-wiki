@@ -174,7 +174,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~/rhn/systems/Overview.do?showgroups=true difference when showing systems (button "View System Groups" vs link "View Systems")
 * `<meta name="page-decorator"` leaks into html... was not problem with xhtml 1.0 transitional, but is with html 5.
   Is this some kind of forgotten piece of code from old dark ages?
-* /rhn/ssm/index.do missing **ssm.overview.misc.delete** and **ssm.overview.misc.reboot** resource strings
+* ~~/rhn/ssm/index.do missing **ssm.overview.misc.delete** and **ssm.overview.misc.reboot** resource strings~~
 * /rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled
   * the same issue is also on other pages
 * https://bugzilla.redhat.com/show_bug.cgi?id=1048981
