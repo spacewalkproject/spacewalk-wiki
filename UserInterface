@@ -187,6 +187,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * SSM message [NUMBER] systems selected is broken in all languages apart from English
 * /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
  * this is also present in Sat 5.6 so not a bootstrap issue
+* Unstyled elements:
+  * ~/rhn/errata/manage/AddPackages.do?eid=...
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
