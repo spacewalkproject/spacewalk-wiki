@@ -225,6 +225,6 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
 * layout of   /rhn/systems/details/probes/ProbeDetails.do
-  * create / delete / edit should be aligned to right
+  * ~~create / delete / edit should be aligned to right~~ 845d79295a847d7c388b008b4ba6d54388af38ee
   * tables should not have 100% width
   * edit probe has wrong icon
