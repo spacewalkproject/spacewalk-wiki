@@ -194,7 +194,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
  * tkasparek: 71c98a54d044621e53db0ce6ee292e864eb0960e
-* move the '+ create new ...' to the right and make it green, e.g. 'create new note' on /rhn/systems/details/Notes.do page
+* ~~move the '+ create new ...' to the right and make it green, e.g. 'create new note' on /rhn/systems/details/Notes.do page~~ 845d79295a847d7c388b008b4ba6d54388af38ee
 * make expanded sub-menu lighter than the higher level menu - e.g. /rhn/systems/SystemList.do page
 * [jhutar] overall theme seems to have low contras to me, I have found this recommendations:
   * http://www.w3.org/TR/WCAG20-CSS-TECHS/G17.html - Ensuring that a contrast ratio of at least 7:1, but there is also another recommendation speaking about 4.5:1
