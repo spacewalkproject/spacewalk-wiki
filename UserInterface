@@ -227,4 +227,4 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * layout of   /rhn/systems/details/probes/ProbeDetails.do
   * ~~create / delete / edit should be aligned to right~~ 845d79295a847d7c388b008b4ba6d54388af38ee
   * tables should not have 100% width
-  * edit probe has wrong icon
+  * ~~edit probe has wrong icon~~ 03cb1a20fd696365e6b1f0d6448a26b544f90025
