@@ -224,9 +224,9 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
-* layout of   /rhn/systems/details/probes/ProbeDetails.do
+* ~~layout of   /rhn/systems/details/probes/ProbeDetails.do~~
   * ~~create / delete / edit should be aligned to right~~ 845d79295a847d7c388b008b4ba6d54388af38ee
-  * tables should not have 100% width
+  * ~~tables should not have 100% width~~ d691ee9b0663f8db8a71ae689a44e83235cb240c
   * ~~edit probe has wrong icon~~ 03cb1a20fd696365e6b1f0d6448a26b544f90025
 * /rhn/admin/config/MonitoringConfig.do
   * help texts ((e.g. 'redhat.com' for myemail@redhat.com)) should be bellow input bars (see /rhn/activationkeys/Edit.do?tid=1 how it should look like)
