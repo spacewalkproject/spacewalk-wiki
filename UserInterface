@@ -232,3 +232,5 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * help texts ((e.g. 'redhat.com' for myemail@redhat.com)) should be bellow input bars (see /rhn/activationkeys/Edit.do?tid=1 how it should look like)
 * /rhn/software/channels/All.do
   * there missing opening tags (THEAD and TR) in channel table
+* /rhn/systems/details/packages/InstallPackages.do?sid=1000010001
+  *  The tag (input type="hidden" name="list_4021519721_filtername) does not have a right angle bracket. The tag is not closed.
