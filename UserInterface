@@ -225,6 +225,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
+  * in some browsers (Google Chrome) pagination selector displays wrong number (eg. when selected 500 items, 50 is shown; when 250 -> 25 is shown, in case of 100 -> 10 is shown), but correct number of items is shown
 * ~~layout of   /rhn/systems/details/probes/ProbeDetails.do~~
   * ~~create / delete / edit should be aligned to right~~ 845d79295a847d7c388b008b4ba6d54388af38ee
   * ~~tables should not have 100% width~~ d691ee9b0663f8db8a71ae689a44e83235cb240c
