@@ -191,6 +191,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~rhn/systems/details/SystemChannels.do Very strange display of channels~~
 * Unstyled elements:
   * ~/rhn/errata/manage/AddPackages.do?eid=...
+* rewrite /network/monitoring/scout/index.pxt to java
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
