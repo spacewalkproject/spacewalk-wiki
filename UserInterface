@@ -206,8 +206,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
     * when you fill something into the form, filled text vs. form (e.g. plain input row) is 4:0 - very bad
 * [jhutar] In Systems -> <choose_your_system> when in "Details" note second level menu which should be smaller I believe (to express this is just sub-menu)
 * API overview list shall be displayed on the right page side, e.g. /rhn/apidoc/handlers/SystemHandler.jsp
-* differenciate info message vs. warning/error messages (used to be blue vs. red, now blue vs. blue)
-* if multiple errors occurs only one error message is shown and other are ignored
+* ~~differenciate info message vs. warning/error messages (used to be blue vs. red, now blue vs. blue)~~
+* ~~if multiple errors occurs only one error message is shown and other are ignored~~
 * schedule date picker is not consistent with implementation on other pages:
   * SSM > Errata (/rhn/systems/ssm/ListPatches.do)
   * SSM > Misc > Reboot (/rhn/systems/ssm/misc/RebootSystem.do)
