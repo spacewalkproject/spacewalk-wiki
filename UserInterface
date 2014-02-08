@@ -221,9 +221,10 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * formerly Login: and Account Information: tables were aligned vertically 
   * prefix, firstNames and lastName inputs were aligned horizontally in a row (so label "First, Last Name*:" made sense but now it does not)
 * List pagination and alpha bar
-  * bar goes from 0..9A..Z on /rhn/systems/details/packages/PackageList.do but A..Z0..9 on /rhn/systems/SystemEntitlements.do and /network/systems/system_list/regular_in_channel_family.pxt
+  * ~~bar goes from 0..9A..Z on /rhn/systems/details/packages/PackageList.do but A..Z0..9 on /rhn/systems/SystemEntitlements.do and /network/systems/system_list/regular_in_channel_family.pxt~~ Fixed by duncan [master-bootstrap-css-fixes c245169]
+    * Come on guys, open /usr/lib/perl5/vendor_perl/5.10.0/Sniglets/ListView/List.pm and render_alphabar foreach my $alpha ('A' .. 'Z', '0' .. '9'), even in 2.0 :-)
   * ~~different set of pagination arrows on /network/systems/system_list/regular_in_channel_family.pxt~~ fixed by duncan [master-bootstrap-css-fixes 90ed0c7]
-  * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
+  * ~~strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt~ just a side effect of numbers being incorrectly at the end on the perl part
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
   * in some browsers (Google Chrome) pagination selector displays wrong number (eg. when selected 500 items, 50 is shown; when 250 -> 25 is shown, in case of 100 -> 10 is shown), but correct number of items is shown
