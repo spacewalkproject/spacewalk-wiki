@@ -222,7 +222,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * prefix, firstNames and lastName inputs were aligned horizontally in a row (so label "First, Last Name*:" made sense but now it does not)
 * List pagination and alpha bar
   * bar goes from 0..9A..Z on /rhn/systems/details/packages/PackageList.do but A..Z0..9 on /rhn/systems/SystemEntitlements.do and /network/systems/system_list/regular_in_channel_family.pxt
-  * different set of pagination arrows on /network/systems/system_list/regular_in_channel_family.pxt
+  * ~~different set of pagination arrows on /network/systems/system_list/regular_in_channel_family.pxt~~ fixed by duncan [master-bootstrap-css-fixes 90ed0c7]
   * strange horizontal line separating A .. J | K .. Z on /network/systems/system_list/regular_in_channel_family.pxt
   * active letters have border on left and are 1-2px higher than other letters on /rhn/systems/SystemEntitlements.do
   * box around search icon (eye) is 1-2px higher than search input box on /rhn/systems/SystemEntitlements.do
@@ -231,10 +231,10 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * ~~create / delete / edit should be aligned to right~~ 845d79295a847d7c388b008b4ba6d54388af38ee
   * ~~tables should not have 100% width~~ d691ee9b0663f8db8a71ae689a44e83235cb240c
   * ~~edit probe has wrong icon~~ 03cb1a20fd696365e6b1f0d6448a26b544f90025
-* ~~/rhn/admin/config/MonitoringConfig.do~~ not bootstrap specific (2.0 has it too) fixed by duncan 12b3302 in master-bootstrap-css-fixes
+* ~~/rhn/admin/config/MonitoringConfig.do~~ not bootstrap specific (2.0 has it too) fixed by duncan [master-bootstrap-css-fixes 12b3302]
   * help texts ((e.g. 'redhat.com' for myemail@redhat.com)) should be bellow input bars (see /rhn/activationkeys/Edit.do?tid=1 how it should look like)
 * ~~/rhn/software/channels/All.do~~
   * ~~there missing opening tags (THEAD and TR) in channel table~~
-* ~~/rhn/systems/details/packages/InstallPackages.do?sid=1000010001~~ fixed by duncan 8839652c56473be64c9d9017d8e4ef5daac66fa8 in master-bootstrap-css-fixes
+* ~~/rhn/systems/details/packages/InstallPackages.do?sid=1000010001~~ fixed by duncan [master-bootstrap-css-fixes 8839652]
   *  The tag (input type="hidden" name="list_4021519721_filtername) does not have a right angle bracket. The tag is not closed.
   * I've not managed to reproduce it
