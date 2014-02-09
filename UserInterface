@@ -178,8 +178,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * `<meta name="page-decorator"` leaks into html... was not problem with xhtml 1.0 transitional, but is with html 5.
   Is this some kind of forgotten piece of code from old dark ages?
 * ~~/rhn/ssm/index.do missing **ssm.overview.misc.delete** and **ssm.overview.misc.reboot** resource strings~~
-* /rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled
-  * the same issue is also on other pages
+* ~~/rhn/systems/ssm/MigrateSystems.do popup menu (aka select) after 'Target Orgenization' is not styled~~ fixed by duncan [master-bootstrap-css-fixes 97cc7c7]
+  * the same issue is also on other pages -> where?
 * https://bugzilla.redhat.com/show_bug.cgi?id=1048981
 * ~~/rhn/kickstart/KickstartDetailsEdit.do?ksid=1 - form is messy here (the form is outside of screenview)~~ 97b2c561bcdc05c65ac8ef6c879b09588b31cb5b
 * /rhn/systems/details/virtualization/ProvisionVirtualizationWizard.do - in the provisioning virtual guest ("Advanced Kickstart Configuration"), buttons "Basic Options" and "Schedule Kickstart and Finish" are not functional. JS error: "TypeError?: form is null"
