@@ -174,8 +174,9 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~deactivate user uses old icon~~ 7eaabf32cbd631015e76ba508e0bd4dc3d0ce5f0
 * ~~some strings on /rhn/ssm/index.do are missing~~
 * ~~self-closing i-tags are not allowed (i.e. /rhn/systems/SystemEntitlements.do)~~
-* java/code/src/com/redhat/rhn/frontend/taglibs/list/ListTag.java render header with multiple closing </tr> tags. See for example ~rhn/systems/Overview.do
+* ~~java/code/src/com/redhat/rhn/frontend/taglibs/list/ListTag.java render header with multiple closing </tr> tags. See for example ~rhn/systems/Overview.do~~
  * looks fixed
+ * [master-bootstrap-css-fixes e6cfd68] if it is the same thing
 * ~~/rhn/systems/Overview.do?showgroups=true difference when showing systems (button "View System Groups" vs link "View Systems")~~
 * `<meta name="page-decorator"` leaks into html... was not problem with xhtml 1.0 transitional, but is with html 5.
   Is this some kind of forgotten piece of code from old dark ages?
