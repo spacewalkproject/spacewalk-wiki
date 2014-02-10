@@ -189,8 +189,6 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~ https://bugzilla.redhat.com/show_bug.cgi?id=1051230 ~~
 * https://bugzilla.redhat.com/show_bug.cgi?id=1058816
 * SSM message [NUMBER] systems selected is broken in all languages apart from English
-* /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
- * this is also present in Sat 5.6 so not a bootstrap issue
 * ~~rhn/systems/details/SystemChannels.do Very strange display of channels~~
 * ~~Unstyled elements:~~ fixed by duncan [master-bootstrap-css-fixes 23b7285]
   * ~~ ~/rhn/errata/manage/AddPackages.do?eid=...~~
@@ -242,3 +240,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 * ~~/rhn/systems/details/packages/InstallPackages.do?sid=1000010001~~ fixed by duncan [master-bootstrap-css-fixes 8839652]
   *  The tag (input type="hidden" name="list_4021519721_filtername) does not have a right angle bracket. The tag is not closed.
   * I've not managed to reproduce it
+
+== not related to Twitter Bootstrap items  ==
+* /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
+ * this is also present in Sat 5.6 so not a bootstrap issue
