@@ -194,6 +194,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * ~~ ~/rhn/errata/manage/AddPackages.do?eid=...~~
 * ~/rhn/configuration/ChannelUploadFiles.do?ccid=1
   * file upload button looks... bad/wierd/ugly/inconsistent.
+  * maybe adding `btn-file` class to parent element?
 * rewrite /network/monitoring/scout/index.pxt to java
 
 == usability ==
