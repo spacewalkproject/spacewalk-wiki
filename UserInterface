@@ -196,6 +196,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * file upload button looks... bad/wierd/ugly/inconsistent.
   * maybe adding `btn-file` class to parent element?
 * rewrite /network/monitoring/scout/index.pxt to java
+* /rhn/errata/Search.do (/pages/errata/erratasearch.jsp) still uses tables not bootstrap divs/spans
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
