@@ -197,6 +197,13 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * maybe adding `btn-file` class to parent element?
 * rewrite /network/monitoring/scout/index.pxt to java
 * /rhn/errata/Search.do (/pages/errata/erratasearch.jsp) still uses tables not bootstrap divs/spans
+* ~rhn/systems/details/packages/PackageList.do?sid=1000010005&&sid=1000010005&list_4021519721_alpha_key=G
+  alphabet seeking is rendered with two consecutive ampersands (&amp;&amp;)... calling such url
+  causes warnings in catalina:
+  {{{
+Feb 17, 2014 9:17:44 AM org.apache.tomcat.util.http.Parameters processParameters
+WARNING: Parameters: Invalid chunk '' ignored.
+  }}}
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
