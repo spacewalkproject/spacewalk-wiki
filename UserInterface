@@ -246,6 +246,8 @@ The structure of the generated list is like the following (in a pesudo markup HA
   * I've not managed to reproduce it
 * /rhn/apidoc/handlers/PackagesHandler.jsp (this is problem of whole API documentation)
   * When I click on the link (detail of API method, ex. getDetails), than I lost left menu and header of page (look at this /rhn/apidoc/handlers/PackagesHandler.jsp#getDetails)
+  * Sometimes, I get the same problem on standard SW pages, but with unusable reproducer.
+  * I have got the fix of this problem: remove line 6407 from spacewalk.css  (.spacewalk-main-column-layout > overflow: hidden; )
 
 == not related to Twitter Bootstrap items  ==
 * /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
