@@ -255,7 +255,7 @@ WARNING: Parameters: Invalid chunk '' ignored.
   * When I click on the link (detail of API method, ex. getDetails), than I lost left menu and header of page (look at this /rhn/apidoc/handlers/PackagesHandler.jsp#getDetails)
   * Sometimes, I get the same problem on standard SW pages, but with unusable reproducer.
   * I have got the fix of this problem: remove line 6407 from spacewalk.css  (.spacewalk-main-column-layout > overflow: hidden; ), jdobes: yes it works but it brokes layout
-  * jdobes: the reason is described there: http://stackoverflow.com/questions/19695784/how-can-i-make-bootstrap-columns-all-the-same-height , we need to use another solution for columns heights
+  * jdobes: the reason is described there: http://stackoverflow.com/questions/10609288/bug-negative-margin-with-anchor , we need to use another solution for columns heights
 
 == not related to Twitter Bootstrap items  ==
 * /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
