@@ -19,7 +19,7 @@ Spacewalk 2.0 installation instructions are available at [wiki:HowToInstall20].
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [wiki:SpacewalkWithLDAP]
  * Make sure your operating system is fully up-to-date.
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
- * On Fedora20 make sure you have rpm <= 4.11.1-7
+ * On Fedora20 make sure you have installed rpm-build-4.11.1-7.fc20 and rpm-python-4.11.1-7.fc20
 
 == Setting up Spacewalk repo ==
 
