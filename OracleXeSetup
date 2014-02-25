@@ -51,7 +51,7 @@ Ensure your hostname is resolvable either with by DNS or an entry in /etc/hosts.
 The '''bc''' is a dependency of oracle-xe which is not resolved automatically. Therefore, run:
 
 {{{
-# yum -y install bc
+# yum -y install bc net-tools
 }}}
 
 === Oracle XE itself ===
