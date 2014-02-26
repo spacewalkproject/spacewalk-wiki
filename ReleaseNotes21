@@ -42,7 +42,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * Responsive design works on desktops, tablets and phones.
     * New date-picker will make scheduling events joyful.
     * Password strength meter.
-  * Possibility to use SSL for connections to external/managed PostgreSQL
+  * Support for using SSL for connections to external/managed PostgreSQL
     * https://fedorahosted.org/spacewalk/wiki/HowToPostgreSQLoverSSL
   * SCAP improvements
     * Added tailoring support to the Spacewalk (OpenSCAP enabled) client
