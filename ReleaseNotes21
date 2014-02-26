@@ -48,6 +48,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * Added tailoring support to the Spacewalk (OpenSCAP enabled) client
     * Enabled easy comparison between various SCAP scans
   * Identity management (IPA) integration
+    * https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIpa
   * Plenty of small enhancements and fixes
   * This is the last release of Spacewalk for RHEL5.
   * New API calls:
