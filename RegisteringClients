@@ -19,11 +19,11 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
  1. Install the Spacewalk client yum repository
     * For Fedora 19:
 {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.0-client/Fedora/19/x86_64/spacewalk-client-repo-2.0-3.fc19.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.1-client/Fedora/19/x86_64/spacewalk-client-repo-2.0-3.fc19.noarch.rpm
 }}}
-    * For Fedora 18:
+    * For Fedora 20:
 {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.0-client/Fedora/20/x86_64/spacewalk-client-repo-2.0-3.fc18.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.1-client/Fedora/20/x86_64/spacewalk-client-repo-2.0-3.fc20.noarch.rpm
 }}}
  2. Install client packages
    {{{
