@@ -4,7 +4,7 @@
 
 If you're looking for instructions for the Red Hat Satellite Proxy product see the [http://docs.redhat.com/docs/en-US/Red_Hat_Network_Satellite/index.html Red Hat Satellite documentation].
 
-For Spacewalk proxy installation for Spacewalk 1.9 see [wiki:HowToInstallProxy19]
+For Spacewalk proxy installation for Spacewalk 2.0 see [wiki:HowToInstallProxy20]
 
 == Prerequisites ==
 
