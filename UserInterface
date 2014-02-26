@@ -258,5 +258,5 @@ WARNING: Parameters: Invalid chunk '' ignored.
   * jdobes: the reason is described there: http://stackoverflow.com/questions/10609288/bug-negative-margin-with-anchor , we need to use another solution for columns heights
 
 == not related to Twitter Bootstrap items  ==
-* /rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500
- * this is also present in Sat 5.6 so not a bootstrap issue
+* ~~/rhn/channels/manage/repos/RepoCreate.do - When I try to create new repo with url, what have been used in another repo, I get ISE 500~~
+ * ~~this is also present in Sat 5.6 so not a bootstrap issue~~
