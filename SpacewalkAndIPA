@@ -1,5 +1,16 @@
 = Spacewalk and IPA integration =
 
+New with Spacewalk 2.1, it is possible to set up the Spacewalk server WebUI authentication to use external identity management solutions, for example [http://www.freeipa.org/ FreeIPA] or [https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Identity_Management_Guide/ Identity Management]. The new feature extends the original per-user PAM authentication, and includes support for:
+
+* Kerberos authentication in the WebUI (tickets);
+* Users do not need to be pre-created in Spacewalk database;
+* The PAM authentication can be enabled for all users;
+* User roles can be derived from user group membership in the external identity provider.
+
+----
+
+== Development notes ==
+
 The solution proposal for Satellite / Spacewalk is based on four-module setup of WebUI authentication described at: http://www.freeipa.org/page/Web_App_Authentication. It includes:
 - Kerberos SSO via mod_auth_kerb
 - Access control using mod_authnz_pam and sssd
