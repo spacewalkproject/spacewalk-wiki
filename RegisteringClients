@@ -1,7 +1,8 @@
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 20
+Instructions for registering client systems you wish to manage with Spacewalk 2.1.
 
+Spacewalk 2.0 instructions are available at [wiki:RegisteringClients20].
 Spacewalk 1.9 instructions are available at [wiki:RegisteringClients19].
 Spacewalk 1.8 instructions are available at [wiki:RegisteringClients18].
 
@@ -16,13 +17,13 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 == Fedora ==
 
  1. Install the Spacewalk client yum repository
-    * For Fedora 18:
-{{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.0-client/Fedora/18/x86_64/spacewalk-client-repo-2.0-3.fc18.noarch.rpm
-}}}
     * For Fedora 19:
 {{{
 # rpm -Uvh http://yum.spacewalkproject.org/2.0-client/Fedora/19/x86_64/spacewalk-client-repo-2.0-3.fc19.noarch.rpm
+}}}
+    * For Fedora 18:
+{{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.0-client/Fedora/20/x86_64/spacewalk-client-repo-2.0-3.fc18.noarch.rpm
 }}}
  2. Install client packages
    {{{
