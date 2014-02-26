@@ -20,12 +20,11 @@ with client repositories under
   * http://yum.spacewalkproject.org/2.1-client/Fedora/20/
 
 
-TODO: COMMUNICATE WITH SUSE AND UPDATE
 SUSE Linux client packages can be found here
 
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_12.2
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_12.3
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_Factory
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_12.3/
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_13.1/
+   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.1/openSUSE_Factory/
 
 For fresh installations, please use steps from
 
