@@ -6,9 +6,9 @@ The solution proposal for Satellite / Spacewalk is based on four-module setup of
 - PAM support for native login form via mod_intercept_form_submit
 - Ability to populate the users in Spacewalk's internal database with all necessary attributes and roles, via mod_lookup_identity
 
-They are all based on the idea that the protocol-specific work is done in the Apache (modules) configuration and all that is left for the application to do is to consume the result of the Apache work, in the form of the REMOTE_USER* environment variables (in case of Java applications it's request.getAttribute, transferred from Apache to tomcat via mod_proxy_ajp). The change needed in the application is to respect the REMOTE_USER value when it is set, instead of attempting its own login-form-based authentication.
+They are all based on the idea that the protocol-specific work is done in the Apache (modules) configuration and all that is left for the application to do is to consume the result of the Apache work, in the form of the REMOTE_USER* environment variables (in case of Java applications it's request.getAttribute, transferred from Apache to tomcat via mod_proxy_ajp). The change needed in the application is to respect the REMOTE_USER value when it is set, instead of attempting its own login-form-based authentication. When no external authentication has happened, the application will fall-back to login-form-based authentication.
 
-The changes should be pretty localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
+The changes are fairly localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
 
 == SSO using kerberos ticket ==
 
