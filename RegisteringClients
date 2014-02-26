@@ -2,9 +2,9 @@
 
 Instructions for registering client systems you wish to manage with Spacewalk 2.1.
 
-Spacewalk 2.0 instructions are available at [wiki:RegisteringClients20].
-Spacewalk 1.9 instructions are available at [wiki:RegisteringClients19].
-Spacewalk 1.8 instructions are available at [wiki:RegisteringClients18].
+ * Spacewalk 2.0 instructions are available at [wiki:RegisteringClients20].
+ * Spacewalk 1.9 instructions are available at [wiki:RegisteringClients19].
+ * Spacewalk 1.8 instructions are available at [wiki:RegisteringClients18].
 
 == Before Starting ==
   1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
