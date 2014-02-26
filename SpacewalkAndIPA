@@ -1,0 +1,167 @@
+= Spacewalk and IPA integration =
+
+The solution proposal for Satellite / Spacewalk is based on four-module setup of WebUI authentication described at: http://www.freeipa.org/page/Web_App_Authentication. It includes:
+- Kerberos SSO via mod_auth_kerb
+- Access control using mod_authnz_pam and sssd
+- PAM support for native login form via mod_intercept_form_submit
+- Ability to populate the users in Spacewalk's internal database with all necessary attributes and roles, via mod_lookup_identity
+
+They are all based on the idea that the protocol-specific work is done in the Apache (modules) configuration and all that is left for the application to do is to consume the result of the Apache work, in the form of the REMOTE_USER* environment variables (in case of Java applications it's request.getAttribute, transferred from Apache to tomcat via mod_proxy_ajp). The change needed in the application is to respect the REMOTE_USER value when it is set, instead of attempting its own login-form-based authentication.
+
+The changes should be pretty localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
+
+== SSO using kerberos ticket ==
+
+Using mod_auth_kerb. Actual spacewalk-java extracts REMOTE_USER information and logs the user in according to the kerberos ticket.
+
+- Here's a typical session, run on your Spacewalk server:
+
+{{{
+ # The following is on RHEL 6. In general case, click on
+ # http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/ 
+ # and get .repo file based on your OS.
+ wget -O /etc/yum.repos.d/adelton-identity_demo.repo \
+    http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-i386/
+}}}
+
+{{{
+ yum install -y ipa-client mod_auth_kerb mod_lookup_identity mod_intercept_form_submit sssd-dbus
+ cp /etc/resolv.conf /etc/resolv.conf.orig
+ echo nameserver <IPA_server_IP> > /etc/resolv.conf
+ ipa-client-install --domain example.com
+}}}
+
+- here the ipa service-add HTTP/<spacewalk_hostname> on the *IPA server* must happen:
+{{{
+kinit admin
+ipa service-add HTTP/<spacewalk_hostname>
+}}}
+
+- continue on Spacewalk server:
+{{{
+ kinit admin
+ ipa-getkeytab -s $( awk '/^server/ { print $3 }' /etc/ipa/default.conf ) -k /etc/http.keytab -p HTTP/$( hostname )
+ chown apache /etc/http.keytab
+ chmod 600 /etc/http.keytab
+}}}
+
+- To /etc/httpd/conf.d/auth_kerb.conf put:
+{{{
+ # /etc/httpd/conf.d/auth_kerb.conf
+ <Location /rhn/Login.do>
+  AuthType Kerberos
+  AuthName "Kerberos Login" 
+  KrbMethodNegotiate On
+  KrbMethodK5Passwd Off
+  KrbAuthRealms EXAMPLE.COM
+  Krb5KeyTab /etc/http.keytab
+  KrbLocalUserMapping On
+  require valid-user
+  ErrorDocument 401 /rhn/Login401.do
+  # The following is needed as a workaround for https://bugzilla.redhat.com/show_bug.cgi?id=1020087
+  ErrorDocument 500 '<html><meta http-equiv="refresh" content="0; URL=/rhn/Login2.do"><body>Kerberos authentication did not pass.</body></html>'
+ </Location>
+}}}
+
+- To /etc/httpd/conf.d/lookup_identity.conf put:
+{{{
+ # /etc/httpd/conf.d/lookup_identity.conf
+ LoadModule lookup_identity_module modules/mod_lookup_identity.so
+ <Location /rhn/Login.do>
+  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
+  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
+  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
+  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
+  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
+ </Location>
+ <Location /rhn/LoginSubmit.do>
+  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
+  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
+  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
+  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
+  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
+ </Location>
+ <Location /rhn/ReLoginSubmit.do>
+  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
+  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
+  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
+  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
+  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
+ </Location>
+}}}
+
+- To /etc/httpd/conf.d/intercept_form_submit.conf put:
+{{{
+ LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
+ LoadModule authnz_pam_module modules/mod_authnz_pam.so
+ <Location /rhn/LoginSubmit.do>
+  InterceptFormPAMService rhn-satellite
+  InterceptFormLogin username
+  InterceptFormPassword password
+  InterceptFormClearRemoteUserForSkipped on
+ </Location>
+ <Location /rhn/ReLoginSubmit.do>
+  InterceptFormPAMService rhn-satellite
+  InterceptFormLogin username
+  InterceptFormPassword password
+  InterceptFormClearRemoteUserForSkipped on
+ </Location>
+}}}
+
+Update /etc/sssd/sssd.conf to enable the Infopipe feature of sssd:
+{{{
+--- /etc/sssd/sssd.conf.orig    2013-12-10 03:09:20.751552952 -0500
++++ /etc/sssd/sssd.conf    2013-12-12 00:52:30.791240631 -0500
+@@ -11,8 +11,10 @@
+ chpass_provider = ipa
+ ipa_server = _srv_, ipa.example.com
+ dns_discovery_domain = example.com
++ldap_user_extra_attrs = mail, givenname, sn
++
+ [sssd]
+-services = nss, pam, ssh
++services = nss, pam, ssh, ifp
+ config_file_version = 2
+
+ domains = example.com
+@@ -28,3 +30,7 @@
+
+ [pac]
+
++[ifp]
++allowed_uids = apache, root
++user_attributes = +mail, +givenname, +sn
++
+}}}
+
+- Set SELinux to permissive. I know, this is bad but it's a temporary workaround before the sssd-dbus feature settles in completely:
+{{{
+setenforce 0
+}}}
+
+- Restart sssd and Apache:
+{{{
+service sssd restart
+service httpd restart
+}}}
+
+== Tomcat configuration ==
+- We need tomcat to accept apache authentication, so add 'tomcatAuthentication="false"' to Connectors in /etc/tomcat*/server.xml:
+{{{
+@@ -80,9 +80,9 @@
+     -->
+ 
+     <!-- Define an AJP 1.3 Connector on port 8009 -->
+-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="127.0.0.1"/>
++    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="127.0.0.1" tomcatAuthentication="false" />
+   
+-    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="::1"/>
++    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="::1" tomcatAuthentication="false" />
+ 
+ 
+     <!-- An Engine represents the entry point (within Catalina) that processes
+}}}
+
+== Workstation setup ==
+- Make sure you can access the IPA server, if not, add it to /etc/hosts
+- Make sure you have <spacewalk_hostname> = EXAMPLE.COM in your /etc/krb5.conf within the [domain_realm] section
