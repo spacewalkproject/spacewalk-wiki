@@ -18,32 +18,20 @@ Spacewalk uses [http://git.or.cz git] for source control.
 To checkout the latest version from git:
 
 {{{
-git clone git://git.fedorahosted.org/git/spacewalk.git/
+git clone git@github.com:spacewalkproject/spacewalk.git/
 }}}
 
 If you have a firewall that is blocking the git clone operation, you can also clone over http, although it is slower:
 
 {{{
-git clone http://git.fedorahosted.org/git/spacewalk.git/
+git clone https://github.com/spacewalkproject/spacewalk.git/
 }}}
 
-You can view the source via [http://git.fedorahosted.org/git/?p=spacewalk.git;a=summary gitweb]
+You can view the source via [https://github.com/spacewalkproject/spacewalk github]
 
 === Commiter Git Information ===
 
-In general, we want folks to send [PatchProcess patches to the list].  If you have commit access to Spacewalk, however, you can use the following URL:
-
-{{{
-git clone ssh://git.fedorahosted.org/git/spacewalk.git/
-}}}
-
-if your FAS username is different than your effective username on your system, you can use the following URL:
-
-{{{
-git clone ssh://USERNAME@git.fedorahosted.org/git/spacewalk.git/
-}}}
-
-Replacing USERNAME with your FAS username.
+In general, we want folks to send [PatchProcess patches to the list].  If you have commit access to Spacewalk, however, you can use either of the above URLs to push your changes. The https URL forces you to type your username / password each time, whereas if you use the git URL you can upload your ssh keys to github and not have to authenticate each time.
 
 === Source RPMs ===
 
