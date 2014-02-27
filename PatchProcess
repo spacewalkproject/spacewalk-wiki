@@ -2,9 +2,19 @@
 
 So you'd like to send in a patch to Spacewalk?   Great!
 
-First, get the code: DownloadIt
+We are using github to host the code and manage patch submissions through the github pull request process. What you're going to want to do generally is:
 
-Then read the git instructions on the [GitGuide git guide]. You'll want to send in a patch via {{{git-format-patch}}} to the [wiki:WikiStart#Communication Developer mailing list]. Please notify the list if you have a problem with email bouncing, there have been issues
-with the somewhat old installs of mailman causing such problems.
+1. Fork the official Spacewalk repository in github (found on the [DownloadIt Downloads] page).
+1. Make your changes in your own git repository (read the git instructions in the [GitGuide git guide]).
+1. Submit a pull request to Spacewalk from your fork.
 
-As mentioned on the other page, patches should be applied to HEAD in git, and we'll take care of applying them to other releases as appropriate.
+For an excellent guide on how to manage the github bits, see github's documentation on how to [https://help.github.com/articles/fork-a-repo fork a repo]. If you are a returning contributor and already have checkout out the old fedorahosted git repository, then in step 2 instead of cloning the repository you can simply update your current one to point to your new github fork:
+{{{
+git remote set-url origin git@github.com:username/spacewalk.git 
+}}}
+--or--
+{{{
+git remote set-url origin https://github.com/username/spacewalk.git 
+}}}
+
+Changes should be made to the to master branch; we'll take care of applying them to other releases as appropriate.
