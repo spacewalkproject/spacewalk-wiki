@@ -3,7 +3,7 @@
 == Coding ==
 
 Are you familiar with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk&classification=Other reported bugs] and 
-pick up one. Assign it to yourself and start working on it. When you are done send us [PatchProcess a patch].
+pick up one. Assign it to yourself and start working on it. When you are done send us [PatchProcess a pull request].
 Did not find anything interesting for you? Check [BrainBox brainbox] or come up with your own idea.
 
 Did you write some useful script which uses [ApiDocs Spacewalk API]? Share it with the others!
