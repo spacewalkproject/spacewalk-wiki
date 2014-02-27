@@ -1,178 +1,283 @@
+[[TOC]]
+
 = Spacewalk and IPA integration =
 
-New with Spacewalk 2.1, it is possible to set up the Spacewalk server WebUI authentication to use external identity management solutions, for example [http://www.freeipa.org/ FreeIPA] or [https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Identity_Management_Guide/ Identity Management]. The new feature extends the original per-user PAM authentication, and includes support for:
+New with Spacewalk 2.1, it is possible to set up the Spacewalk server WebUI authentication to use external identity providers and management solutions, for example [http://www.freeipa.org/ FreeIPA] or [https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Identity_Management_Guide/ Identity Management]. The new feature extends the original per-user PAM authentication, and includes support for:
 
 * Kerberos authentication in the WebUI (tickets);
 * Users do not need to be pre-created in Spacewalk database;
 * The PAM authentication can be enabled for all users;
 * User roles can be derived from user group membership in the external identity provider.
 
-----
+From technical point of view, both the Kerberos authentication and the PAM authentication take place in the Apache HTTP server, not in the Spacewalk application. That makes it possible to extend this authentication mechanism to other authentication providers. Here we will focus on getting it up and running with FreeIPA.
 
-== Development notes ==
+== Enrolling Spacewalk to identity provider ==
 
-The solution proposal for Satellite / Spacewalk is based on four-module setup of WebUI authentication described at: http://www.freeipa.org/page/Web_App_Authentication. It includes:
-- Kerberos SSO via mod_auth_kerb
-- Access control using mod_authnz_pam and sssd
-- PAM support for native login form via mod_intercept_form_submit
-- Ability to populate the users in Spacewalk's internal database with all necessary attributes and roles, via mod_lookup_identity
-
-They are all based on the idea that the protocol-specific work is done in the Apache (modules) configuration and all that is left for the application to do is to consume the result of the Apache work, in the form of the REMOTE_USER* environment variables (in case of Java applications it's request.getAttribute, transferred from Apache to tomcat via mod_proxy_ajp). The change needed in the application is to respect the REMOTE_USER value when it is set, instead of attempting its own login-form-based authentication. When no external authentication has happened, the application will fall-back to login-form-based authentication.
-
-The changes are fairly localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
-
-== SSO using kerberos ticket ==
-
-Using mod_auth_kerb. Actual spacewalk-java extracts REMOTE_USER information and logs the user in according to the kerberos ticket.
-
-- Here's a typical session, run on your Spacewalk server:
+In this document, we assume that there is a FreeIPA server installed and running and that the Spacewalk server is IPA-enrolled to it. The enrolement can be achieved using the {{{ipa-client-install}}} command:
 
 {{{
- # The following is on RHEL 6. In general case, click on
- # http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/ 
- # and get .repo file based on your OS.
- wget -O /etc/yum.repos.d/adelton-identity_demo.repo \
-    http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-i386/
+yum install /usr/sbin/ipa-client-install -y
+# Use FreeIPA server autodiscovery
+ipa-client-install
 }}}
+
+If we want to enroll the Spacewalk server directly to a particular FreeIPA server to a particular domain, we can point the {{{resolv.conf}}} to that server and specify the domain:
 
 {{{
- yum install -y ipa-client mod_auth_kerb mod_lookup_identity mod_intercept_form_submit sssd-dbus
- cp /etc/resolv.conf /etc/resolv.conf.orig
- echo nameserver <IPA_server_IP> > /etc/resolv.conf
- ipa-client-install --domain example.com
+cp /etc/resolv.conf /etc/resolv.conf.orig
+echo nameserver IP-address-of-the-FreeIPA-server > /etc/resolv.conf
+ipa-client-install --domain example.com
 }}}
 
-- here the ipa service-add HTTP/<spacewalk_hostname> on the *IPA server* must happen:
+== Kerberos prerequisites ==
+
+For the Kerberos authentication to work, we need the keytab of the Spacewalk HTTP service. For that, we first create the service on the FreeIPA server:
+
 {{{
 kinit admin
-ipa service-add HTTP/<spacewalk_hostname>
+ipa service-add HTTP/hostname-of-the-Spacewalk-server
 }}}
 
-- continue on Spacewalk server:
+We can also run this directly on the Spacewalk server if the {{{ipa}}} command is installed there:
+
 {{{
- kinit admin
- ipa-getkeytab -s $( awk '/^server/ { print $3 }' /etc/ipa/default.conf ) -k /etc/http.keytab -p HTTP/$( hostname )
- chown apache /etc/http.keytab
- chmod 600 /etc/http.keytab
+yum install /usr/bin/ipa -y
+kinit admin
+ipa service-add HTTP/$( hostname )
 }}}
 
-- To /etc/httpd/conf.d/auth_kerb.conf put:
+We then can retrieve the keytab on the Spacewalk server:
+
 {{{
- # /etc/httpd/conf.d/auth_kerb.conf
- <Location /rhn/Login.do>
+kinit admin
+ipa-getkeytab -s $( awk '/^server/ { print $3 }' /etc/ipa/default.conf ) -k /etc/http.keytab -p HTTP/$( hostname )
+chown apache /etc/http.keytab
+chmod 600 /etc/http.keytab
+}}}
+
+== Host based access control prerequisites ==
+
+To use the host based access control (HBAC) with the Spacewalk server, we want to create HBAC service and rule on the FreeIPA server, and set up PAM service of the same name on the Spacewalk server.
+
+We need to start with disabling the default {{{allow_all}}} rule, otherwise any user will be allowed access. The page http://www.freeipa.org/page/Howto/HBAC_and_allow_all describes the process in detail, here we just show the commands:
+
+{{{
+ipa hostgroup-add --desc 'Host group which will have allow_all_users_services HBAC enabled.' allow_all_hosts
+ipa host-find --raw --pkey-only --sizelimit=0 \
+    | awk '$1 == "fqdn:" { print "--hosts=" $2 }' | xargs -n100 ipa hostgroup-add-member allow_all_hosts
+ipa hbacrule-add allow_all_users_services --usercat=all --servicecat=all --desc='Allow access to hosts in group allow_all_hosts to anybody from anywhere.'
+ipa hbacrule-add-host allow_all_users_services --hostgroups=allow_all_hosts
+ipa hbacrule-disable allow_all
+}}}
+
+We then create new user, '''bob''', and new service, '''spacewalk-prod''', and allow access to bob to this service on our Spacewalk server. In the example bellow, we assume that it is run on the Spacewalk server, and therefore the {{{$( hostname )}}} expands to the Spacewalk server hostname. If you run the commands on the FreeIPA server or other machine, put in the Spacewalk server hostname.
+
+{{{
+# As admin user
+# Create user bob
+ipa user-add --random bob
+# Authenticate as bob and change your random password, shown by the previous command
+kinit bob
+# To continue working, kinit back as admin
+kinit admin
+# Create UBAC service spacewalk-prod and HBAC rule allow_spacewalk-prod
+ipa hbacsvc-add spacewalk-prod
+ipa hbacrule-add allow_spacewalk-prod
+# Add just bob and the Spacewalk server to this rule for this service
+ipa hbacrule-add-service allow_spacewalk-prod --hbacsvcs=spacewalk-prod
+ipa hbacrule-add-user allow_spacewalk-prod --user=bob
+ipa hbacrule-add-host allow_spacewalk-prod --hosts=$( hostname )
+# Remove the Spacewalk server from the host group we've created when we've disabled the allow_all rule
+ipa hostgroup-remove-member allow_all_hosts --hosts=$( hostname )
+# Test that just the allow_spacewalk-prod rule matches
+ipa hbactest --user=bob --host=$( hostname ) --service=spacewalk-prod
+}}}
+
+On the Spacewalk server, we define the {{{spacewalk-prod}}} PAM service and point it to sssd:
+
+{{{
+# /etc/pam.d/spacewalk-prod content:
+auth    required   pam_sss.so
+account required   pam_sss.so
+}}}
+
+== Configure sssd to provide information about auto-populated users ==
+
+When a user authenticates either via Kerberos ticket or via form-based PAM authentication, it might be the first time that user logged in to the Spacewalk server. Spacewalk needs to create record about that user in its internal database and for that, certain additional attributes are needed besides the obvious login name. The sssd-dbus package provides new '''ifp''' sssd service. The package is available from repos for recent Fedoras and Red Hat Enterprise Linux distributions:
+
+http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/
+
+Retrieve the {{{.repo}}} file and put it to {{{/etc/yum.repos.d}}}, you can disable it by default:
+
+{{{
+# Example for RHEL 6:
+curl -o /etc/yum.repos.d/adelton-identity_demo.repo http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-x86_64/
+sed -i 's/enabled=.*/enabled=0/' /etc/yum.repos.d/adelton-identity_demo.repo
+}}}
+
+Install sssd-dbus:
+
+{{{
+yum install --enablerepo=adelton-identity_demo sssd-dbus -y
+}}}
+
+The sssd needs to be configured to enable ifp and retrieval and caching of attributes needed by Spacewalk:
+
+{{{
+# /etc/sssd/sssd.conf, the [domain/...] section, add:
+ldap_user_extra_attrs = mail, givenname, sn
+# /etc/sssd/sssd.conf, the [sssd] section, amend the services line to include ifp:
+services = nss, pam, ssh, ifp
+# /etc/sssd/sssd.conf, add new [ifp] section:
+[ifp]
+allowed_uids = apache, root
+user_attributes = +mail, +givenname, +sn
+}}}
+
+Restart sssd
+
+{{{
+service sssd restart
+}}}
+
+Test that it is possible to retrieve information about bob:
+
+{{{
+dbus-send --print-reply --system --dest=org.freedesktop.sssd.infopipe \
+   /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr string:bob array:string:mail
+}}}
+
+You might need to put SELinux to permissive for this to work (this is a bug and will be fixed in near future):
+
+{{{
+setenforce 0
+}}}
+
+== Configure Apache ==
+
+The authentication against the external identity provider (FreeIPA) is achieved via a set of Apache modules. We need to install them:
+
+{{{
+yum install mod_auth_kerb mod_authnz_pam, mod_lookup_identity mod_intercept_form_submit -y
+# For RHEL and Fedora 19, the last three modules can be found in the same yum repo as the sssd-dbus package installed above:
+yum install --enablerepo=adelton-identity_demo  mod_authnz_pam, mod_lookup_identity mod_intercept_form_submit -y
+}}}
+
+We then need to configure the modules. Note that we configure mod_authnz_pam and mod_intercept_form_submit to use the '''spacewalk-prod''' PAM service we've configured above:
+
+{{{
+# /etc/httpd/conf.d/auth_kerb.conf
+LoadModule auth_kerb_module modules/mod_auth_kerb.so
+LoadModule authnz_pam_module modules/mod_authnz_pam.so
+<Location /rhn/Login.do>
   AuthType Kerberos
-  AuthName "Kerberos Login" 
+  AuthName "Kerberos Login"
   KrbMethodNegotiate On
   KrbMethodK5Passwd Off
   KrbAuthRealms EXAMPLE.COM
   Krb5KeyTab /etc/http.keytab
   KrbLocalUserMapping On
-  require valid-user
-  ErrorDocument 401 /rhn/Login401.do
+  require pam-account spacewalk-prod
+  ErrorDocument 401 '<html><meta http-equiv="refresh" content="0; URL=/rhn/Login2.do"><body>Kerberos authentication did not pass.</body></html>'
   # The following is needed as a workaround for https://bugzilla.redhat.com/show_bug.cgi?id=1020087
   ErrorDocument 500 '<html><meta http-equiv="refresh" content="0; URL=/rhn/Login2.do"><body>Kerberos authentication did not pass.</body></html>'
- </Location>
+</Location>
 }}}
 
-- To /etc/httpd/conf.d/lookup_identity.conf put:
 {{{
- # /etc/httpd/conf.d/lookup_identity.conf
- LoadModule lookup_identity_module modules/mod_lookup_identity.so
- <Location /rhn/Login.do>
-  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
-  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
-  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
-  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
-  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
- </Location>
- <Location /rhn/LoginSubmit.do>
-  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
-  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
-  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
-  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
-  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
- </Location>
- <Location /rhn/ReLoginSubmit.do>
-  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " " 
-  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
-  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
-  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
-  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
- </Location>
-}}}
-
-- To /etc/httpd/conf.d/intercept_form_submit.conf put:
-{{{
- LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
- LoadModule authnz_pam_module modules/mod_authnz_pam.so
- <Location /rhn/LoginSubmit.do>
-  InterceptFormPAMService rhn-satellite
+# /etc/httpd/conf.d/intercept_form_submit.conf 
+LoadModule intercept_form_submit_module modules/mod_intercept_form_submit.so
+LoadModule authnz_pam_module modules/mod_authnz_pam.so
+<LocationMatch ^/rhn/(Re)?LoginSubmit\.do>
+  InterceptFormPAMService spacewalk-prod
   InterceptFormLogin username
   InterceptFormPassword password
-  InterceptFormClearRemoteUserForSkipped on
- </Location>
- <Location /rhn/ReLoginSubmit.do>
-  InterceptFormPAMService rhn-satellite
-  InterceptFormLogin username
-  InterceptFormPassword password
-  InterceptFormClearRemoteUserForSkipped on
- </Location>
+</LocationMatch>
 }}}
 
-Update /etc/sssd/sssd.conf to enable the Infopipe feature of sssd:
 {{{
---- /etc/sssd/sssd.conf.orig    2013-12-10 03:09:20.751552952 -0500
-+++ /etc/sssd/sssd.conf    2013-12-12 00:52:30.791240631 -0500
-@@ -11,8 +11,10 @@
- chpass_provider = ipa
- ipa_server = _srv_, ipa.example.com
- dns_discovery_domain = example.com
-+ldap_user_extra_attrs = mail, givenname, sn
-+
- [sssd]
--services = nss, pam, ssh
-+services = nss, pam, ssh, ifp
- config_file_version = 2
-
- domains = example.com
-@@ -28,3 +30,7 @@
-
- [pac]
-
-+[ifp]
-+allowed_uids = apache, root
-+user_attributes = +mail, +givenname, +sn
-+
+# /etc/httpd/conf.d/lookup_identity.conf 
+LoadModule lookup_identity_module modules/mod_lookup_identity.so
+<LocationMatch /rhn/(Re)?Login(Submit)?\.do>
+  LookupUserAttr mail AJP_REMOTE_USER_EMAIL " "
+  LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
+  LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
+</LocationMatch>
 }}}
 
-- Set SELinux to permissive. I know, this is bad but it's a temporary workaround before the sssd-dbus feature settles in completely:
-{{{
-setenforce 0
-}}}
+You can certainly put all the configuration into one configuration file and not list the mod_authnz_pam twice.
 
-- Restart sssd and Apache:
+Restart Apache:
+
 {{{
-service sssd restart
 service httpd restart
 }}}
 
-== Tomcat configuration ==
-- We need tomcat to accept apache authentication, so add 'tomcatAuthentication="false"' to Connectors in /etc/tomcat*/server.xml:
+== Configure tomcat ==
+
+For tomcat to observe the authentication done by the Apache server, its server.xml configuration file needs to be amended:
+
 {{{
-@@ -80,9 +80,9 @@
-     -->
- 
-     <!-- Define an AJP 1.3 Connector on port 8009 -->
--    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="127.0.0.1"/>
-+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="127.0.0.1" tomcatAuthentication="false" />
-   
--    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="::1"/>
-+    <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="::1" tomcatAuthentication="false" />
- 
- 
-     <!-- An Engine represents the entry point (within Catalina) that processes
+# /etc/tomcat/server.xml or /etc/tomcat6/server.xml, depending on distribution:
+# Find the
+#   <Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" ... />
+# elements and add attribute
+#   tomcatAuthentication="false"
+# They should look like this:
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="127.0.0.1" tomcatAuthentication="false" />
+<Connector port="8009" protocol="AJP/1.3" redirectPort="8443" URIEncoding="UTF-8" address="::1" tomcatAuthentication="false" />
 }}}
 
+Restart tomcat:
+
+{{{
+service tomcat restart
+# or
+service tomcat6 restart
+}}}
+
+Wait for tomcat to be back up and test that you can log in to Spacewalk with your regular admin login and password.
+
+== Enable the use of the external authentication in Spacewalk ==
+
+As Spacewalk admin on the Spacewalk WebUI, go to '''Admin''' > '''Users''' > '''External Authentication'''.
+
+Select the '''Default organization'''. By doing so, you enable the external authentication.
+
+Save the change by clicking '''Update'''
+
+== Try the form-based PAM authentication ==
+
+Purge your Kerberos ticket cache:
+
+{{{
+kdestroy -A
+}}}
+
+Log out from your admin session and attempt to log in as '''bob''' enterring the password selected during the {{{kinit bob}}} step. You should be able to log in and if you check the user details, the name and email address is populated from the FreeIPA server. Log out.
+
+== Try the Kerberos authentication ==
+
+Kinit as bob and attempt to access the home page of your Spacewalk server:
+
+{{{
+kinit bob
+}}}
+
+You should be authenticated directly, without any login form shown, based on your ticket granting ticket that you've obtained with the {{{kinit}}} command.
+
+
+----
+
+== Development notes ==
+
+The solution proposal for Satellite / Spacewalk is based on four-module setup of WebUI authentication described at: http://www.freeipa.org/page/Web_App_Authentication. The proposal is based on the idea that the protocol-specific work is done in the Apache (modules) configuration and all that is left for the application to do is to consume the result of the Apache work, in the form of the REMOTE_USER* environment variables (in case of Java applications it's request.getAttribute, transferred from Apache to tomcat via mod_proxy_ajp). The change needed in the application was to respect the REMOTE_USER value when it is set, instead of attempting its own login-form-based authentication. When no external authentication has happened, the application falls-back to login-form-based authentication.
+
+The changes are fairly localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
+
+The work is now fully merged into Spacewalk, as of Spacewalk 2.1.
+
 == Workstation setup ==
+
 - Make sure you can access the IPA server, if not, add it to /etc/hosts
-- Make sure you have <spacewalk_hostname> = EXAMPLE.COM in your /etc/krb5.conf within the [domain_realm] section
+- Make sure you have <spacewalk_hostname> = EXAMPLE.COM in your /etc/krb5.conf within the [domain_realm] section if you use some nonstandard realm (like EXAMPLE.COM)
