@@ -1,6 +1,6 @@
 == Patch Process ==
 
-So you'd like to send in a patch to Spacewalk?   Great!
+So you'd like to contribute to Spacewalk?   Great!
 
 We are using github to host the code and manage patch submissions through the github pull request process. What you're going to want to do generally is:
 
