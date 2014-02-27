@@ -31,7 +31,7 @@ You can view the source via [https://github.com/spacewalkproject/spacewalk githu
 
 === Commiter Git Information ===
 
-In general, we want folks to send [PatchProcess patches to the list].  If you have commit access to Spacewalk, however, you can use either of the above URLs to push your changes. The https URL forces you to type your username / password each time, whereas if you use the git URL you can upload your ssh keys to github and not have to authenticate each time.
+In general, we want folks to send [PatchProcess github pull requests].  If you have commit access to Spacewalk, however, you can use either of the above URLs to push your changes. The https URL forces you to type your username / password each time, whereas if you use the git URL you can upload your ssh keys to github and not have to authenticate each time.
 
 === Source RPMs ===
 
