@@ -94,8 +94,10 @@ Important notes:
   1. Use spacewalk-setup to upgrade Spacewalk configuration. Run as root:
 
 {{{
-# spacewalk-setup --disconnected --external-db --upgrade
+# spacewalk-setup --disconnected --external-$DB --upgrade
 }}}
+
+  where `DB` can  be either `oracle` or `postgresql`.
 
   2. Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
 
