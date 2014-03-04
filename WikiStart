@@ -3,10 +3,10 @@
 == __Latest News__ ==
 [[Image(https://fedorahosted.org/spacewalk/attachment/wiki/WikiStart/spacewalk-2.1-release.png?format=raw)]]
 [[BR]]
-=== '''Spacewalk 2.0''' was released on July 19th, 2013: ===
+=== '''Spacewalk 2.1''' was released on March 4th, 2014: ===
  * [HowToInstall Download and Install]
- * [wiki:ReleaseNotes20 Release Notes]
- * please note that Spacewalk 2.0 will be last supported Spacewalk on i386 architecture
+ * [wiki:ReleaseNotes21 Release Notes]
+ * please note that Spacewalk 2.1 will be last supported Spacewalk on EL5 OS version
 
 == __Introduction__ ==
 [http://spacewalk.redhat.com/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
