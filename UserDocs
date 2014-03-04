@@ -138,7 +138,9 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:BrainBox Feature Requests/BrainBox]
   * [https://fedorahosted.org/spacewalk/roadmap Road Map]
 === Installation Guides ===
-  * [wiki:HowToInstall for 1.9]
+  * [wiki:HowToInstall for 2.1]
+  * [wiki:HowToInstall20 for 2.0]
+  * [wiki:HowToInstall19 for 1.9]
   * [wiki:HowToInstall18 for 1.8]
   * [wiki:HowToInstall17 for 1.7]
   * [wiki:HowToInstall16 for 1.6]
@@ -152,7 +154,9 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:HowToInstall07 for 0.7]
 === Upgrade Notes ===
 Upgrade guides, sequential, stepped upgrades are recommended to cover multiple update levels, i.e. to get from 0.6 to 0.8 please upgrade via 0.7 (and we recommend testing at each intermediate level as you proceed) rather than trying to go directly from 0.6 to 0.8. Jumping levels is deeply discouraged with the exception of version 0.9 which was never released.
-  * [wiki:HowToUpgrade From 1.8 to 1.9]
+  * [wiki:HowToUpgrade From 2.0 to 2.1]
+  * [wiki:HowToUpgrade20 From 1.9 to 2.0]
+  * [wiki:HowToUpgrade19 From 1.8 to 1.9]
   * [wiki:HowToUpgrade18 From 1.7 to 1.8]
   * [wiki:HowToUpgrade17 From 1.6 to 1.7]
   * [wiki:HowToUpgrade16 From 1.5 to 1.6]
@@ -169,6 +173,8 @@ Upgrade guides, sequential, stepped upgrades are recommended to cover multiple u
 If you are looking for instructions on how to upgrade the operating system underlying your Spacewalk without upgrading your Spacewalk, follow the instructions described in HowToUpgradeOperatingSystem.
 === Release Notes ===
 Release notes for each version:
+  * [wiki:ReleaseNotes21 for 2.1]
+  * [wiki:ReleaseNotes20 for 2.0]
   * [wiki:ReleaseNotes19 for 1.9]
   * [wiki:ReleaseNotes18 for 1.8]
   * [wiki:ReleaseNotes17 for 1.7]
