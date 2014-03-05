@@ -204,6 +204,7 @@ The structure of the generated list is like the following (in a pesudo markup HA
 Feb 17, 2014 9:17:44 AM org.apache.tomcat.util.http.Parameters processParameters
 WARNING: Parameters: Invalid chunk '' ignored.
   }}}
+* /rhn/software/packages/Details.do?pid=14 - all text in Details, RPM package, Download, ... tables are shifted up; most likely missing text css class
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
