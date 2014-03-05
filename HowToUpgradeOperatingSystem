@@ -56,7 +56,15 @@ $ chown -R apache.root /var/satellite
 $ restorecon -FRv /var/satellite >& /tmp/restorecon.log
 }}}
 
-=== 6. Update SSL configuration ===
+=== 6. Remove jabberd database ===
+
+Remove jabberd database from the Spacewalk installation on your new operating system:
+
+{{{
+$ rm -f /var/lib/jabberd/db/*
+}}}
+
+=== 7. Update SSL configuration ===
 
 In this step, your instructions will vary depending on whether or not you are renaming your Spacewalk (hostname) as a part of the operating system upgrade.
 
@@ -90,14 +98,14 @@ $ rhn-deploy-ca-cert.pl \
         --target-dir=/var/www/html/pub/
 }}}
 
-=== 7. Re-build search indexes ===
+=== 8. Re-build search indexes ===
 
 Run the following command as root to re-build the search indexes:
 {{{
 $ service rhn-search cleanindex
 }}}
 
-=== 8. Restore monitoring setup ===
+=== 9. Restore monitoring setup ===
 
 Restore SSH private and public key pair for nocpulse user from backup created in step 1:
 {{{
