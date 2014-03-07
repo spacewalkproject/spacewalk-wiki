@@ -206,6 +206,7 @@ WARNING: Parameters: Invalid chunk '' ignored.
   }}}
 * /rhn/software/packages/Details.do?pid=14 - all text in Details, RPM package, Download, ... tables are shifted up; most likely missing text css class
 * Information bar/panel, what is displayed, when we add new snapshotTag does not have correct CSS class (missing "alert alert-info", it has old "site-info")
+  * The same situation, when we try add a existing name of tag
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
