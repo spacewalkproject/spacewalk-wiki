@@ -5,7 +5,7 @@
 == Overview ==
 
 If you're using / have installed '''abrt''' ([https://fedorahosted.org/abrt/]) on your systems registered to Spacewalk, you may take advantage
-of the software crash functionality provided by Spacewalk.
+of the software crash reporting functionality provided by Spacewalk.
 
 Software crash reporting functionality was introduced first in Spacewalk 1.8 and extended later in Spacewalk 1.9 and Spacewalk 2.0.
 
