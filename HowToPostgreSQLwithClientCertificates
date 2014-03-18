@@ -97,4 +97,4 @@ openssl x509 -req -in postgresql.req -CAkey root.key -CA root.crt \
     -days $DAYS -set_serial $RANDOM -sha512 -out postgresql.crt
 }}}
 
-... consider describing solution using our 
+... consider describing solution using our `rhn-ssl-tool`.
