@@ -4,7 +4,7 @@
 
 === Server
 
-SSL have to be set up [Wiki:HowToPostgreSQLoverSSL].
+SSL have to be set up ([wiki:HowToPostgreSQLoverSSL]).
 
 Most things described in
 http://www.postgresql.org/docs/current/static/runtime-config-connection.html#RUNTIME-CONFIG-CONNECTION-SECURITY
