@@ -3,7 +3,7 @@
 
 == Spacewalk git web interface ==
 
-If you just want to browse our git repository use [http://git.fedorahosted.org/git/spacewalk/].
+If you just want to browse our git repository use [https://github.com/spacewalkproject/spacewalk].
 
 == Getting Started ==
 A quick start guide to using git, especially if you're used to using svn or cvs.
@@ -23,13 +23,7 @@ For other version see http://download.fedoraproject.org/pub/epel directory. Then
 === Clone the Spacewalk git repository ===
 For anonymous access to the Spacewalk source code, feel free to clone the repository:
 {{{
-git clone git://git.fedorahosted.org/git/spacewalk.git/
-}}}
-
-Spacewalk [wiki:ContributorList committers] can clone the repository using the ssh url, which is required if you want to push changes into the repo (and of course you need permission to do so).
-
-{{{
-git clone ssh://git.fedorahosted.org/git/spacewalk.git/
+git clone https://github.com/spacewalkproject/spacewalk.git
 }}}
 
 For more details check out the DownloadIt page. 
@@ -39,19 +33,14 @@ For more details check out the DownloadIt page.
 If you have been approved to get git commit access to the spacewalk git 
 repository you'll need to do the following:
 
-Get your ssh RSA key into the Fedora
-accounts system here: (note: use your login name in this url :))
-
-https://admin.fedoraproject.org/accounts/user/edit/USERNAME
-
-And make sure you're a member of:
-
-https://admin.fedoraproject.org/accounts/group/view/gitspacewalk
+1. Have a github account.
+1. Upload your public ssh key to your github account (optional, but you won't have to log in all the time)
+1. Get someone to add you to the commiters list: https://github.com/orgs/spacewalkproject/teams/commiters
 
 After that you should be able to git clone with:
 
 {{{
-git clone ssh://USERNAME@git.fedorahosted.org/git/spacewalk.git/
+git clone git@github.com:spacewalkproject/spacewalk.git
 }}}
 
 === Identify Yourself ===
