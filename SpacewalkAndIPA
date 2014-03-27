@@ -8,6 +8,7 @@ New with Spacewalk 2.1, it is possible to set up the Spacewalk server WebUI auth
 * Users do not need to be pre-created in Spacewalk database;
 * The PAM authentication can be enabled for all users;
 * User roles can be derived from user group membership in the external identity provider.
+* System Groups administrators can be derived from user group membership in the external identity provider per Organization.
 
 From technical point of view, both the Kerberos authentication and the PAM authentication take place in the Apache HTTP server, not in the Spacewalk application. That makes it possible to extend this authentication mechanism to other authentication providers. Here we will focus on getting it up and running with FreeIPA.
 
