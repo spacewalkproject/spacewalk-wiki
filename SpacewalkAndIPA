@@ -298,6 +298,7 @@ Next time bob logs in to Spacewalk authenticated by the FreeIPA server, he'll ad
 
 Let's create a new user and another new group on the FreeIPA server:
 {{{
+ipa user-add --random cecile
 ipa group-add testers
 ipa group-add-member testers --users=cecile
 }}}
