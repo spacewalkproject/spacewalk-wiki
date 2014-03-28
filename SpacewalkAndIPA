@@ -267,6 +267,45 @@ kinit bob
 
 You should be authenticated directly, without any login form shown, based on your ticket granting ticket that you've obtained with the {{{kinit}}} command.
 
+== Grant additional privileges according to the external group membership ==
+
+=== Set additional Spacewalk roles ===
+
+Let's create a separate group for bob.
+Run on FreeIPA server:
+{{{
+ipa group-add spacewalk-channel-admins
+ipa group-add-member spacewalk-channel-admins --users=bob
+}}}
+
+Log in to Spacewalk WebIU as Spacewalk administrator and navigate to '''Admin''' > '''Users''' > '''External Authentication''' > '''Group Role Mapping'''.
+
+Create new External Group by continuing on '''create new external group''' and filling in the name of the external group we created on the FreeIPA server in the previous step - "spacewalk-channel-admins". Additionally select "Channel Administrator" or any other roles bob shall inherit.
+
+Next time bob logs in to Spacewalk authenticated by the FreeIPA server, he'll additionally be granted the "Channel Administrator" role.
+(Unless the "Keep temporary roles granted due to external authentication configuration" option is checked (on the '''Admin''' > '''Users''' > '''External Authentication''' > '''Configuration''' page), bob will lose the additional role(s), when he logs in to Spacewalk using his username and Spacewalk password.)
+
+=== Set additional Spacewalk System Group administrator rights (available in Spacewalk 2.2) ===
+
+Let's create a new user and another new group on the FreeIPA server:
+{{{
+ipa group-add testers
+ipa group-add-member testers --users=cecile
+}}}
+Make sure user cecile does not have her Spacewalk account created before the following configuration:
+
+Log in to Spacewalk WebUI as Organization administrator and make sure there's at least one System Group created within you Spacewalk organization. If not, create one, named "test_machines".
+
+Now navigate to '''Users''' > '''System Group Configuration''' > '''External Authentication''' and create a new External Group by following '''create new external group''' link. Enter "testers" as External Group Name and select "test_machines" System Group.
+
+Now, get cecile's kerberos ticket
+{{{
+kinit cecile
+}}}
+and access the home page of your Spacewalk server.
+
+As cecile's account gets created, she will be set as administrator of the "test_machines" System Group.
+(Note, that System Group administrator assignment happens only on user creation. Changing of "External Group to System Groups Mapping" has no effect on already created user accounts.)
 
 ----
 
