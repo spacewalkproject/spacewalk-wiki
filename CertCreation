@@ -58,7 +58,7 @@ NOTE: The {{{--no-default-keyring}}} option excludes the user's keyrings (usuall
 
 == Signing the Certificate ==
 
- 1. Download the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=scripts/gen-oss-sat-cert.pl scripts_gen-oss-sat-cert.pl] script to your Spacewalk.
+ 1. Download the [https://git.fedorahosted.org/cgit/spacewalk.git/tree/scripts/gen-oss-sat-cert.pl] script to your Spacewalk.
  2. Modify the {{{spacewalk-public.cert}}} or create a new certifcate to sign
  3. Review the usage statement from {{{scripts_gen-oss-sat-cert.pl}}}:
 {{{
