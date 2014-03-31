@@ -9,7 +9,7 @@ work in the common build environment using Ant.
 
 == Install Eclipse from your Distro: ==
 
-yum install eclipse ivy
+yum install eclipse ivy ant-contrib
 
 
 
