@@ -203,6 +203,9 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   LookupUserAttr mail AJP_REMOTE_USER_EMAIL " "
   LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
   LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
+  # LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
+  # LookupUserGroups AJP_REMOTE_USER_GROUPS :
+  # LookupUserGroupsIter AJP_REMOTE_USER_GROUP
 </LocationMatch>
 }}}
 
@@ -247,11 +250,18 @@ Existing Spacewalk users may login to Spacewalk externally authenticated by the 
 
 To allow login also to users, that currently do not have Spacewalk accounts you may:
 * pre-create their accounts in desired organization via WebUI or API
-* set the Org. Unit for every user on the FreeIPA server (that shall be able to login) and select "Use organization unit name passed from IPA" option on the '''Admin''' > '''Users''' > '''External Authentication''' page
+* set the Org. Unit for every user on the FreeIPA server (that shall be able to login)
 {{{
 ipa user-mod bob --orgunit="My Organization"
 }}}
-and if the orgunit matches to any organization name within Spacewalk, the Spacewalk account will automatically be created for the user at the very first login attempt in that "My Organization"
+ and select "Use organization unit name passed from IPA" option on the '''Admin''' > '''Users''' > '''External Authentication''' page.
+ If the orgunit matches to any organization name within Spacewalk, the appropriate Spacewalk account will automatically be created for the user in that "My Organization" at the very first login attempt.
+
+ To make use out of the orgunit option, uncomment following line in /etc/httpd/conf.d/lookup_identity.conf:
+ {{{
+  LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
+ }}}
+ and restart httpd service.
 * select "Default organization" on the '''External Authentication''' page and the Spacewalk account will automatically be created for the user at the very first login attempt in the "Default organization"
 
 Note that the automatically created accounts can be used for local logins only after setting a valid Spacewalk password.
@@ -278,6 +288,12 @@ You should be authenticated directly, without any login form shown, based on you
 
 == Grant additional privileges according to the external group membership ==
 
+To make use of external group membership, uncomment following lines in /etc/httpd/conf.d/lookup_identity.conf:
+{{{
+ LookupUserGroups AJP_REMOTE_USER_GROUPS :
+ LookupUserGroupsIter AJP_REMOTE_USER_GROUP
+}}}
+and restart httpd service.
 === Set additional Spacewalk roles ===
 
 Let's create a separate group for bob.
