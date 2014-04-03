@@ -204,7 +204,6 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
   LookupUserAttr givenname AJP_REMOTE_USER_FIRSTNAME
   LookupUserAttr sn AJP_REMOTE_USER_LASTNAME
   # LookupUserAttr ou AJP_REMOTE_USER_ORGUNIT
-  # LookupUserGroups AJP_REMOTE_USER_GROUPS :
   # LookupUserGroupsIter AJP_REMOTE_USER_GROUP
 </LocationMatch>
 }}}
@@ -288,9 +287,8 @@ You should be authenticated directly, without any login form shown, based on you
 
 == Grant additional privileges according to the external group membership ==
 
-To make use of external group membership, uncomment following lines in /etc/httpd/conf.d/lookup_identity.conf:
+To make use of external group membership, uncomment following line in /etc/httpd/conf.d/lookup_identity.conf:
 {{{
- LookupUserGroups AJP_REMOTE_USER_GROUPS :
  LookupUserGroupsIter AJP_REMOTE_USER_GROUP
 }}}
 and restart httpd service.
