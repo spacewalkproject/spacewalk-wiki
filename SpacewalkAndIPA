@@ -159,9 +159,9 @@ setenforce 0
 The authentication against the external identity provider (FreeIPA) is achieved via a set of Apache modules. We need to install them:
 
 {{{
-yum install mod_auth_kerb mod_authnz_pam, mod_lookup_identity mod_intercept_form_submit -y
+yum install mod_auth_kerb mod_authnz_pam mod_lookup_identity mod_intercept_form_submit -y
 # For RHEL and Fedora 19, the last three modules can be found in the same yum repo as the sssd-dbus package installed above:
-yum install --enablerepo=adelton-identity_demo  mod_authnz_pam, mod_lookup_identity mod_intercept_form_submit -y
+yum install --enablerepo=adelton-identity_demo  mod_authnz_pam mod_lookup_identity mod_intercept_form_submit -y
 }}}
 
 We then need to configure the modules. Note that we configure mod_authnz_pam and mod_intercept_form_submit to use the '''spacewalk-prod''' PAM service we've configured above:
