@@ -209,6 +209,7 @@ WARNING: Parameters: Invalid chunk '' ignored.
   * The same situation, when we try add a existing name of tag
   * Also deleting
 * /rhn/systems/details/ListCustomData.do?sid=1000010000 - broken layout (mkorbel)
+* Channels -> Manage Software Channels -> <Channel> -> Repositories -> Sync ... broken layout of checkboxes, (you may need to have some repos to see it).
 
 == usability ==
 * ~~need of color icons - not clear on the /rhn/systems/Overview.do and other /rhn/systems/*.do pages, what systems are critical, inactive, ... - in legend there are colored version of these~~
