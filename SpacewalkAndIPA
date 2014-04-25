@@ -148,10 +148,17 @@ dbus-send --print-reply --system --dest=org.freedesktop.sssd.infopipe \
    /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr string:bob array:string:mail
 }}}
 
-You might need to put SELinux to permissive for this to work (this is a bug and will be fixed in near future):
+For the above test, you might need to put SELinux to permissive:
 
 {{{
 setenforce 0
+}}}
+
+For the production operation of Apache, provided you have new enough selinux-policy, enforcing with one boolean should work:
+
+{{{
+setenforce 1
+setsebool -P httpd_dbus_sssd on
 }}}
 
 == Configure Apache ==
