@@ -74,14 +74,14 @@ Your procedure for turning the FIPS mode on would be:
 
 For a proper Spacewalk functioning in FIPS mode, your user passwords need to be encrypted with SHA-256 algorithm. Users with MD5-encrypted password would no longer be able to authenticate in FIPS mode.
 
-The list of users with MD5-encrypted password can be obtained with ''spacewalk-report'':
+The list of users with MD5-encrypted password can be obtained with ''spacewalk-report'' (as ''root'' on your Spacewalk server):
 
 {{{
 $ spacewalk-report users-md5 > users-md5.csv
 }}}
 
 Once you have the list of users requiring the password encryption update, you can:
-1. Reset their password using ''satpasswd'' utility:
+1. Reset their password using ''satpasswd'' utility (as ''root'' on your Spacewalk server:
 {{{
 $ for i in $(cat users-md5.csv | awk -F, 'NR>1 { print $4 }'); do
       echo "Changing password for user $i";
@@ -96,7 +96,7 @@ done
 
 Systems registered to Spacewalk use a client certificate (''/etc/sysconfig/rhn/systemid'') to authenticate with their parent server. This certificate is being issued to the clients during system registration and contains an authentication digest. Starting with Spacewalk 2.2, the algorithm used for creating the authentication digest was changed from MD5 to SHA-256.
 
-The list of client systems using certificate with MD5 digest can be obtained with ''spacewalk-report':
+The list of client systems using certificate with MD5 digest can be obtained with ''spacewalk-report' (as ''root'' on your Spacewalk server):
 {{{
 $ spacewalk-report system-md5-certificates > system-md5-certificates.csv
 }}}
