@@ -34,3 +34,36 @@ The FIPS 140-2 standard does not allow to use MD5 algorithm for cryptographic / 
 This restriction lead to two important implementation changes in Spacewalk:
 * User passwords, previously encrypted with MD5 method, will (beginning with Spacewalk 2.2) be encrypted with SHA-256 algorithm.
 * Client certificates (''/etc/sysconfig/rhn/systemid'') which the registered systems use to authenticate with the parent server contain an MD5 digest string. Since Spacewalk 2.2, the MD5-based authentication method had to be changed to SHA-256.
+
+== Operations ==
+
+Beginning with Spacewalk 2.2, all newly registered clients will be issued a certificate with SHA-256 authentication digest. Also, beginning with Spacewalk 2.2 passwords for all newly created user accounts will be encrypted
+with SHA-256 method. Though whenever a user with MD5-encrypted password would change his password or even just successfully authenticate with Spacewalk (a successful webui login for example), his MD5-encrypted password
+would be automatically converted to a SHA-256 encrypted password.
+
+How will this change affect my Spacewalk operations?
+
+=== Not interested in FIPS ===
+
+If you're not planning to turn the FIPS mode on your Spacewalk server on, you won't have to do any changes in your Spacewalk operations:
+* For Spacewalk installations, you will follow standard installation instructions.
+* For Spacewalk upgrades, you will follow standard upgrade instructions.
+* For client registrations, you will follow standard registration instructions.
+
+You will hardly notice any changes in your Spacewalk's behavior.
+
+== I want to turn the FIPS mode on ==
+
+=== New Spacewalk installations ==
+
+It is possible to install Spacewalk 2.2 (or later) on an operating system already in FIPS mode. Standard Spacewalk installation instructions would apply here.
+From the very beginning, all user passwords will be encrypted with SHA-256, all clients will be issued a SHA-256 certificate.
+
+=== Spacewalk upgrades ===
+
+If you're upgrading from a previous Spacewalk version, you will need to update user passwords and client certificates from the MD5 scheme to SHA-256.
+
+Your procedure for turning the FIPS mode on would be:
+1. Upgrade your Spacewalk, following the standard upgrade procedure. Don't turn the FIPS mode on just yet. If you'd turn the FIPS mode on now, your users would no longer be able to log into your Spacewalk (Spacewalk would not be able to authenticate them), nor would your clients be able to check in with the parent server (''rhn_check'', ''rhnsd'', ''osad'').
+2. Update user passwords and client certificates from the MD5 scheme to SHA-256 (see the detailed procedure below).
+3. After the password and certificate update successfully finishes, you can turn the FIPS mode on.
