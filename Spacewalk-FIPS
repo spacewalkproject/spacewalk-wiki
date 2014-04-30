@@ -17,7 +17,7 @@
 * Annex D: Approved Key Establishment Techniques
   * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexd.pdf
 
-Operating systems supported by Spacewalk (RHEL, CentOS, Fedora) allow to turn FIPS mode on. In FIPS mode, the operating system is doing integrity checking and enforces minimum configurations for FIPS-aware cryptography
+Operating systems supported by Spacewalk (RHEL, CentOS, Fedora) allow to turn FIPS mode on. In the FIPS mode, operating system is doing integrity checking and enforces minimum configurations for FIPS-aware cryptography
 software (OpenSSL, libgcrypt).
 
 == Scope of support ==
@@ -32,16 +32,16 @@ Spacewalk 2.2 introduced support for FIPS 140-2 standard. Spacewalk support for 
 The FIPS 140-2 standard does not allow to use MD5 algorithm for cryptographic / security purposes, nor would a FIPS enabled operating system allow to use MD5 algorithm for cryptography.
 
 This restriction lead to two important implementation changes in Spacewalk:
-* User passwords, previously encrypted with MD5 method, will (beginning with Spacewalk 2.2) be encrypted with SHA-256 algorithm.
-* Client certificates (''/etc/sysconfig/rhn/systemid'') which the registered systems use to authenticate with the parent server contain an MD5 digest string. Since Spacewalk 2.2, the MD5-based authentication method had to be changed to SHA-256.
+* User passwords, previously encrypted with MD5 method, will be (starting with Spacewalk 2.2) encrypted with SHA-256 algorithm.
+* Client certificates (''/etc/sysconfig/rhn/systemid''), which the registered systems use to authenticate with the parent server, contain an MD5 digest string. In Spacewalk 2.2, the MD5-based authentication method had to be changed to SHA-256.
 
 == Operations ==
 
-Beginning with Spacewalk 2.2, all newly registered clients will be issued a certificate with SHA-256 authentication digest. Also, beginning with Spacewalk 2.2 passwords for all newly created user accounts will be encrypted
+Beginning with Spacewalk 2.2, all newly registered clients will be issued a certificate with SHA-256 authentication digest. Also, starting with Spacewalk 2.2, passwords for all newly created user accounts will be encrypted
 with SHA-256 method. Though whenever a user with MD5-encrypted password would change his password or even just successfully authenticate with Spacewalk (a successful webui login for example), his MD5-encrypted password
 would be automatically converted to a SHA-256 encrypted password.
 
-How will this change affect my Spacewalk operations?
+How will this change affect Spacewalk functioning?
 
 === Not interested in FIPS ===
 
@@ -50,21 +50,21 @@ If you're not planning to turn the FIPS mode on your Spacewalk server on, you wo
 * For Spacewalk upgrades, you will follow standard upgrade instructions.
 * For client registrations, you will follow standard registration instructions.
 
-You will hardly notice any changes in your Spacewalk's behavior.
+You will hardly notice any changes in your Spacewalk's behavior (MD5s changes to SHA-256).
 
 === I want to turn the FIPS mode on ===
 
 ==== New Spacewalk installations ====
 
 It is possible to install Spacewalk 2.2 (or later) on an operating system already in FIPS mode. Standard Spacewalk installation instructions would apply here.
-From the very beginning, all user passwords will be encrypted with SHA-256, all clients will be issued a SHA-256 certificate.
+From the very beginning, all user passwords will be encrypted with SHA-256 method, all clients will be issued a SHA-256 certificate.
 
 ==== Spacewalk upgrades ====
 
 If you're upgrading from a previous Spacewalk version, you will need to update user passwords and client certificates from the MD5 scheme to SHA-256.
 
 Your procedure for turning the FIPS mode on would be:
-1. Upgrade your Spacewalk, following the standard upgrade procedure. Don't turn the FIPS mode on just yet. If you'd turn the FIPS mode on now, your users would no longer be able to log into your Spacewalk (Spacewalk would not be able to authenticate them), nor would your clients be able to check in with the parent server (''rhn_check'', ''rhnsd'', ''osad'').
+1. Upgrade your Spacewalk, following the standard upgrade procedure. Don't turn the FIPS mode on just yet. If you'd turn the FIPS mode on now, your users would no longer be able to log into your Spacewalk (Spacewalk would not be able to authenticate them), nor would your registered clients be able to check in with the parent server (''rhn_check'', ''rhnsd'', ''osad'').
 2. Update user passwords and client certificates from the MD5 scheme to SHA-256 (see the detailed procedure below).
 3. After the password and certificate update successfully finishes, you can turn the FIPS mode on.
 
@@ -80,8 +80,8 @@ The list of users with MD5-encrypted password can be obtained with ''spacewalk-r
 $ spacewalk-report users-md5 > users-md5.csv
 }}}
 
-Once you have the list of users requiring the password encryption update, you can:
-1. Reset their password using ''satpasswd'' utility (as ''root'' on your Spacewalk server:
+Once you have the list of users requiring the password encryption update, you can either:
+1. Reset their password using ''satpasswd'' utility (as ''root'' on your Spacewalk server):
 {{{
 $ for i in $(cat users-md5.csv | awk -F, 'NR>1 { print $4 }'); do
       echo "Changing password for user $i";
@@ -90,19 +90,19 @@ $ for i in $(cat users-md5.csv | awk -F, 'NR>1 { print $4 }'); do
 done
 }}}
 
-2. Instruct all of the users on the list to log into your Spacewalk's webui (no other action is needed). Any time a user with MD5-encrypted password successfully authenticates, Spacewalk will automatically convert his password from MD5 to SHA-256 encryption.
+2. Instruct all of the users on the list to log into your Spacewalk's webui (no other action is needed). Any time a user with MD5-encrypted password successfully authenticates, Spacewalk will automatically convert his password from MD5 to SHA-256.
 
 === Client certificates ===
 
 Systems registered to Spacewalk use a client certificate (''/etc/sysconfig/rhn/systemid'') to authenticate with their parent server. This certificate is being issued to the clients during system registration and contains an authentication digest. Starting with Spacewalk 2.2, the algorithm used for creating the authentication digest was changed from MD5 to SHA-256.
 
-The list of client systems using certificate with MD5 digest can be obtained with ''spacewalk-report' (as ''root'' on your Spacewalk server):
+The list of client systems using certificate with MD5 digest can be obtained with ''spacewalk-report'' (as ''root'' on your Spacewalk server):
 {{{
 $ spacewalk-report system-md5-certificates > system-md5-certificates.csv
 }}}
 
 Once you have the list of systems requiring certificate update, you can:
-1. Re-register the systems (''rhn_register'', '''rhnreg_ks''').
+1. Re-register the systems (''rhn_register'', ''rhnreg_ks'').
 2. Schedule update of the client certificate using ''spacewalk-client-cert'' package.
 
 ==== Update of client certificate with ''spacewalk-client-cert'' package ====
@@ -110,7 +110,7 @@ Once you have the list of systems requiring certificate update, you can:
 Updating client certificates with the help of ''spacewalk-client-cert'' package is a two stage process:
 
 1. In the first step, you need to install ''spacewalk-client-cert'' package (part of the Spacewalk client yum repository) on the clients requiring certificate update. This can be done either:
-  * manually (''rpm'', ''yum install spacewalk-client-cert'')
+  * manually (''rpm -ivh spacewalk-client-cert.rpm && rhn-profile-sync'', ''yum install spacewalk-client-cert'')
   * via Spacewalk XML-RPC API. Spacewalk 2.2 comes with a script called ''spacewalk-fips-tool'', which will help you schedule installations of the ''spacewalk-client-cert'' package:
     {{{
 $ spacewalk-fips-tool --help
@@ -140,7 +140,7 @@ $ spacewalk-fips-tool -i \
     Important notes about the above procedure:
       * The package installations need to be scheduled on a per-organization basis, i.e. you will need org-admin credentials for each of your organizations.
       * Successfully scheduled actions are recorded in the output csv file for later tracking (-o option).
-      * You can scheduled the package installations for a specific date (-d option).
+      * You can schedule the package installations for a specific date (-d option).
 
 2. In the second step, after the ''spacewalk-client-cert'' packages are successfully installed, you can schedule updates of client certificates:
 {{{
