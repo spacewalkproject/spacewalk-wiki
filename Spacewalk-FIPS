@@ -106,3 +106,34 @@ Once you have the list of systems requiring certificate update, you can:
 2. Schedule update of the client certificate using ''spacewalk-client-cert'' package.
 
 ==== Update of client certificate with ''spacewalk-client-cert'' package ====
+
+Updating client certificates with the help of ''spacewalk-client-cert'' package is a two stage process:
+
+1. In the first step, you need to install ''spacewalk-client-cert'' package (part of the Spacewalk client yum repository) on the clients requiring certificate update. This can be done either:
+  * manually (''rpm'', ''yum install spacewalk-client-cert'')
+  * via Spacewalk XML-RPC API. Spacewalk 2.2 comes with a script called ''spacewalk-fips-tool'', which will help you schedule installations of the ''spacewalk-client-cert'' package:
+    {{{
+$ spacewalk-fips-tool --help
+Usage: spacewalk-fips-tool -i|-c [options] systemid01 [systemid02 ...]
+
+Options:
+  -h, --help   show this help message and exit
+  -i           schedule installation of packages required for certificate
+               update
+  -c           schedule update of client certificates for specified systems
+  -u USERNAME  username (organizational administrator)
+  -p PASSWORD  password
+  -s HOSTNAME  server hostname to use, defaults to localhost
+  -d DATE      date to schedule the conversion for, defaults to now, format:
+               %Y-%m-%d %H:%M:%S (e.g. 2014-10-30 19:30:00)
+  -o OUTPUT    output file in csv format to store the details about all
+               scheduled actions, use '-' for stdout
+
+$ ORG_ID=1
+$ for system in $(awk -F, "NR>1 { if (\$3 == $ORG_ID) print \$1 }" system-md5-certificates.csv); do systems="$systems $system"; done
+$ spacewalk-fips-tool -i \
+                      -u admin \
+                      -d 2014-10-25\ 14:00:00 \
+                      -o /tmp/scheduled-installations.csv \
+                      $systems
+    }}}
