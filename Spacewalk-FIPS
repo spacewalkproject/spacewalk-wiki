@@ -17,7 +17,7 @@
 * Annex D: Approved Key Establishment Techniques
   * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexd.pdf
 
-Operating systems supported by Spacewalk (RHEL, CentOS, Fedora) allow turning FIPS mode on. In FIPS mode, the operating system is doing integrity checking and enforces minimum configurations for FIPS-aware cryptography
+Operating systems supported by Spacewalk (RHEL, CentOS, Fedora) allow to turn FIPS mode on. In FIPS mode, the operating system is doing integrity checking and enforces minimum configurations for FIPS-aware cryptography
 software (OpenSSL, libgcrypt).
 
 == Scope of support ==
