@@ -137,3 +137,7 @@ $ spacewalk-fips-tool -i \
                       -o /tmp/scheduled-installations.csv \
                       $systems
     }}}
+    Important notes about the above procedure:
+      * The package installations need to be scheduled on a per-organization basis, i.e. you will need org-admin credentials for each of your organizations.
+      * Successfully scheduled actions are recorded in the output csv file for later tracking.
+      * You can scheduled the package installations for a specific date
