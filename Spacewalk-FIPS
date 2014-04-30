@@ -1,0 +1,22 @@
+= Spacewalk and FIPS-140-2 =
+
+''FIPS 140-2 (FIPS = Federal Information Processing Standard)'' is a U.S. government security standard used to accredit cryptographic modules. It outlines a set of requirements that must be adhered to by any US-government certified cryptographic module (hardware or software).
+
+=== FIPS 140-2 Annexes ===
+
+* Annex A: Approved Security Functions
+  * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexa.pdf
+* Annex B: Approved Protection Profiles
+  * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexb.pdf
+* Annex C: Approved Random Number Generators
+  * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexc.pdf
+* Annex D: Approved Key Establishment Techniques
+  * http://csrc.nist.gov/publications/fips/fips140-2/fips1402annexd.pdf
+
+Operating systems supported by Spacewalk (RHEL, CentOS, Fedora) allow turning FIPS mode on. In FIPS mode, the operating system is doing integrity checking and enforces minimum configurations for FIPS-aware cryptography
+software (OpenSSL, libgcrypt).
+
+Spacewalk 2.2 introduced support for FIPS 140-2 standard. Spacewalk support for the FIPS standard allows:
+
+* Installing and running your Spacewalk on an operating system with FIPS mode on
+* Running your registered clients in FIPS mode
