@@ -52,14 +52,14 @@ If you're not planning to turn the FIPS mode on your Spacewalk server on, you wo
 
 You will hardly notice any changes in your Spacewalk's behavior.
 
-== I want to turn the FIPS mode on ==
+=== I want to turn the FIPS mode on ===
 
-=== New Spacewalk installations ==
+==== New Spacewalk installations ====
 
 It is possible to install Spacewalk 2.2 (or later) on an operating system already in FIPS mode. Standard Spacewalk installation instructions would apply here.
 From the very beginning, all user passwords will be encrypted with SHA-256, all clients will be issued a SHA-256 certificate.
 
-=== Spacewalk upgrades ===
+==== Spacewalk upgrades ====
 
 If you're upgrading from a previous Spacewalk version, you will need to update user passwords and client certificates from the MD5 scheme to SHA-256.
 
@@ -67,3 +67,27 @@ Your procedure for turning the FIPS mode on would be:
 1. Upgrade your Spacewalk, following the standard upgrade procedure. Don't turn the FIPS mode on just yet. If you'd turn the FIPS mode on now, your users would no longer be able to log into your Spacewalk (Spacewalk would not be able to authenticate them), nor would your clients be able to check in with the parent server (''rhn_check'', ''rhnsd'', ''osad'').
 2. Update user passwords and client certificates from the MD5 scheme to SHA-256 (see the detailed procedure below).
 3. After the password and certificate update successfully finishes, you can turn the FIPS mode on.
+
+== Update of user passwords and client certificates ==
+
+=== User passwords ===
+
+For a proper Spacewalk functioning in FIPS mode, your user passwords need to be encrypted with SHA-256 algorithm. Users with MD5-encrypted password would no longer be able to authenticate in FIPS mode.
+
+The list of users with MD5-encrypted password can be obtained with ''spacewalk-report'':
+
+{{{
+$ spacewalk-report users-md5 > users-md5.csv
+}}}
+
+Once you have the list of users requiring the password encryption update, you can:
+1. Reset their password using ''satpasswd'' utility:
+{{{
+$ for i in $(cat users-md5.csv | awk -F, 'NR>1 { print $4 }'); do
+      echo "Changing password for user $i";
+      satpasswd $i;
+      echo;
+done
+}}}
+
+2. Instruct all of the users on the list to log into your Spacewalk's webui (no other action is needed). Any time a user with MD5-encrypted password successfully authenticates, Spacewalk will automatically convert his password from MD5 to SHA-256 encryption.
