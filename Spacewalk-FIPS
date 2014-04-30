@@ -91,3 +91,12 @@ done
 }}}
 
 2. Instruct all of the users on the list to log into your Spacewalk's webui (no other action is needed). Any time a user with MD5-encrypted password successfully authenticates, Spacewalk will automatically convert his password from MD5 to SHA-256 encryption.
+
+=== Client certificates ===
+
+Systems registered to Spacewalk use a client certificate (''/etc/sysconfig/rhn/systemid'') to authenticate with their parent server. This certificate is being issued to the clients during system registration and contains an authentication digest. Starting with Spacewalk 2.2, the algorithm used for creating the authentication digest was changed from MD5 to SHA-256.
+
+The list of client systems using certificate with MD5 digest can be obtained with ''spacewalk-report':
+{{{
+$ spacewalk-report system-md5-certificates > system-md5-certificates.csv
+}}}
