@@ -100,3 +100,9 @@ The list of client systems using certificate with MD5 digest can be obtained wit
 {{{
 $ spacewalk-report system-md5-certificates > system-md5-certificates.csv
 }}}
+
+Once you have the list of systems requiring certificate update, you can:
+1. Re-register the systems (''rhn_register'', '''rhnreg_ks''').
+2. Schedule update of the client certificate using ''spacewalk-client-cert'' package.
+
+==== Update of client certificate with ''spacewalk-client-cert'' package ====
