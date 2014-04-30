@@ -139,5 +139,15 @@ $ spacewalk-fips-tool -i \
     }}}
     Important notes about the above procedure:
       * The package installations need to be scheduled on a per-organization basis, i.e. you will need org-admin credentials for each of your organizations.
-      * Successfully scheduled actions are recorded in the output csv file for later tracking.
-      * You can scheduled the package installations for a specific date
+      * Successfully scheduled actions are recorded in the output csv file for later tracking (-o option).
+      * You can scheduled the package installations for a specific date (-d option).
+
+2. In the second step, after the ''spacewalk-client-cert'' packages are successfully installed, you can schedule updates of client certificates:
+{{{
+$ spacewalk-client-cert -c \
+                        -u admin
+                        -d 2014-10-25\ 14:00:00 \
+                        -o /tmp/scheduled-certificate-updates.csv \
+                        $systems
+}}}
+After the certificate updates all finish, you can switch the operating system under your Spacewalk installation to FIPS mode.
