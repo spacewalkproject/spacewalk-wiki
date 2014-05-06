@@ -48,7 +48,7 @@ Log files from schema upgrade are being put into {{{/var/log/spacewalk/schema-up
 == Make an Oracle data dump ==
 
 {{{
-# spacewalk-dump-schema --db=xe --user=spacewalk --password=o9k2HInsl > spacewalk-oracle.dump
+# spacewalk-dump-schema --raw --db=xe --user=spacewalk --password=o9k2HInsl > spacewalk-oracle.dump
 }}}
 
 Make sure you have enough disk space for the dump.
