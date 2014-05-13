@@ -267,7 +267,7 @@ org.apache.jasper.JasperException: java.lang.ClassCastException: org.apache.cata
 ...
 }}}
 
-To resolve this issue, make sure your '''/etc/tomcat[567]/Catalina/localhost/rhn.xml''' contains the following:
+To resolve this issue, make sure your ''/etc/tomcat[567]/Catalina/localhost/rhn.xml'' contains the following:
 {{{
 <Context path="/rhn" reloadable="false" allowLinking="true">
     <Loader delegate="true"/>
