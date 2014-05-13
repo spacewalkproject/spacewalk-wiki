@@ -244,6 +244,36 @@ Add the following to your .bash_profile or an equivalent:
 export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64
 }}}
 
+* Accessing the webui returns HTTP/404 and shows the following exception:
+
+{{{
+[TP-Processor3] ERROR com.redhat.rhn.frontend.servlets.SessionFilter - Error during transaction. Rolling back
+org.apache.jasper.JasperException: java.lang.ClassCastException: org.apache.catalina.util.DefaultAnnotationProcessor cannot be cast to org.apache.AnnotationProcessor
+        at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:156)
+        at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:329)
+        at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+        at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:646)
+        at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:436)
+        at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:374)
+        at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:302)
+        at org.apache.struts.action.RequestProcessor.doForward(RequestProcessor.java:1078)
+        at org.apache.struts.action.RequestProcessor.processForwardConfig(RequestProcessor.java:396)
+        at org.apache.struts.action.RequestProcessor.process(RequestProcessor.java:232)
+        at com.redhat.rhn.frontend.struts.RhnRequestProcessor.process(RhnRequestProcessor.java:102)
+...
+}}}
+
+To resolve this issue, make sure your '''/etc/tomcat[567]/Catalina/localhost/rhn.xml''' contains the following:
+{{{
+<Context path="/rhn" reloadable="false" allowLinking="true">
+    <Loader delegate="true"/>
+</Context>
+}}}
+
 == Still having issues? ==
 
 Make sure there are no broken symlinks in /var/lib/tomcat5/common/lib:
