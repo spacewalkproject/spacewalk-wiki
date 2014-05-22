@@ -279,6 +279,9 @@ To resolve this issue, make sure your ''/etc/tomcat[567]/Catalina/localhost/rhn.
 </Context>
 }}}
 
+* Httpd fails to start with error in /var/log/httpd/error_log: {{{Can't locate Digest/SHA.pm in @INC}}}
+  * {{{sudo yum install perl-Digest-SHA}}}
+
 == Still having issues? ==
 
 Make sure there are no broken symlinks in /var/lib/tomcat5/common/lib:
