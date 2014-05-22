@@ -55,6 +55,7 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
  * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.7.0-openjdk-devel postgresql-jdbc}}}
  * {{{sudo yum install jmock --disablerepo=* --enablerepo=jpackage-generic}}}
    * {{{sudo yum install -y yum-plugin-versionlock; sudo yum versionlock jmock}}}
+ * {{{sudo mkdir /usr/lib/java-1.7.0 /usr/share/java-1.7.0}}}
  * {{{cd $SPACEWALK_GIT/java}}}
  * {{{ant init-install compile}}}
  * {{{ant all, or ant clean all }}}
