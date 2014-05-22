@@ -52,7 +52,7 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
 
 === Installation ===
  * {{{sudo /usr/sbin/rhn-satellite stop}}}
- * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.6.0-openjdk-devel postgresql-jdbc}}}
+ * {{{sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.7.0-openjdk-devel postgresql-jdbc}}}
  * {{{sudo yum install jmock --disablerepo=* --enablerepo=jpackage-generic}}}
    * {{{sudo yum install -y yum-plugin-versionlock; sudo yum versionlock jmock}}}
  * {{{cd $SPACEWALK_GIT/java}}}
