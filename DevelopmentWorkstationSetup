@@ -58,6 +58,10 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
  * {{{sudo mkdir /usr/lib/java-1.7.0 /usr/share/java-1.7.0}}}
  * {{{cd $SPACEWALK_GIT/java}}}
  * {{{ant init-install compile}}}
+ * If you run into an error like {{{Unsupported major.minor version 52.0}}}:
+   * {{{sudo yum downgrade jasper-libs}}}
+   * Try again. It should work, if not repeat downgrade until it does.
+   * {{{sudo yum versionlock jasper-libs}}}
  * {{{ant all, or ant clean all }}}
  * {{{ant create-webapp-dir}}}
  * {{{sudo ant install-devel}}} 
