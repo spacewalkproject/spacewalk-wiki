@@ -244,9 +244,9 @@ export ANT_OPTS="-Dhttp.proxyHost=your.proxy.com -Dhttp.proxyPort=3128"
 
 * Ant fails with 'Error: Could not find or load main class org.apache.tools.ant.launch.Launcher'
 
-Add the following to your .bash_profile or an equivalent:
+Make the java 7 directories so that ant can lookup libraries properly.
 {{{
-export JAVA_HOME=/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64
+sudo mkdir /usr/lib/java-1.7.0 /usr/share/java-1.7.0
 }}}
 
 * Accessing the webui returns HTTP/404 and shows the following exception:
