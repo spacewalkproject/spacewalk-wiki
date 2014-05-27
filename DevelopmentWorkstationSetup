@@ -235,9 +235,9 @@ LifecycleException:  start: :  java.io.IOException: Failed to access resource /W
 cp /etc/tomcat*/Catalina/localhost/rhn.xml $git_checkout/java/rhnwebapp/META-INF/context.xml
 }}}
 When no rhn.xml can be found on your system, /etc/tomcat*/Catalina/localhost/rhn.xml or $git_checkout/java/rhnwebapp/META-INF/context.xml you can make one your self, the content of rhn.xml is
-<Context path="/rhn" reloadable="false" allowLinking="true">
+<Context path="/rhn" reloadable="false" allowLinking="true"> </Context>
 Make sure you stop and start your spacewalk server
-}}
+}}}
 
 * Behind a proxy?
 
