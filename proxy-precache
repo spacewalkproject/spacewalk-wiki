@@ -22,7 +22,7 @@ Populating the initial clone may be convenient and fast through a channel export
 
 First you must set up ssh keypairs such that root on the Proxy can ssh to $user on the Spacewalk server without typing a password. Note: this unfortunately means that you cannot have a password on this private key. Ensure that you keep it safe!
 
-For example, on the Proxy:
+For example, as root on the Proxy:
 {{{
 ssh-keygen -t rsa -N '' -f /root/.ssh/id_dsa
 cat /root/.ssh/id_dsa.pub | ssh user@spacewalk.example.com 'cat >> .ssh/authorized_keys' # You'll have to type your password after this
