@@ -24,7 +24,7 @@ rhn_package_manager --cache-locally --from-export /mnt/export
 If the channel export is spread across multiple ISO images it is not necessary to re-combine them locally on the Proxy before running rhn_package_manager, simply mount them one at a time and run the same command on each.
 
 == Automatic Updates With RSync ==
-Populating the initial clone may be convenient and fast through a channel export or directory with RPMs in it, but it would be inconvenient to have to create a new channel export or directory containing new RPMs every time the Spacewalk server is updated with new content. To that end, it is possible to set up a cron job or similar with a simple rsync command that will download any updated RPMs to the Proxy cache. The cron job / rsync will need to run as root on the Proxy, but can log in to Spacewalk as any user that has read access to the RPM store (should be all users).
+Populating the initial clone may be convenient and fast through a channel export or directory with RPMs in it, but it would be inconvenient to have to create a new channel export or directory containing new RPMs every time the Spacewalk server is updated with new content. To that end, it is possible to set up a cron job or similar with a simple rsync command that will download any updated RPMs to the Proxy cache, as long as it is desired that *all* RPMs on the Spacewalk instance should be cached on the Proxy. The cron job / rsync will need to run as root on the Proxy, but can log in to Spacewalk as any user that has read access to the RPM store (should be all users).
 
 First you must set up ssh keypairs such that root on the Proxy can ssh to $user on the Spacewalk server without typing a password. Note: this unfortunately means that you cannot have a password on this private key. Ensure that you keep it safe!
 
@@ -45,4 +45,4 @@ crontab -e
 # write and quit with :wq
 }}}
 
-The above command with at 3:01 AM every day run the rsync command to download any RPMs that are on the Spacewalk server into the Proxy cache. /var/satellite is the default Spacewalk root directory, but it is configurable so if you've changed it on your Spacewalk installation you'll need to adjust this command appropriately.
+The above command will at 3:01 AM every day run the rsync command to download any RPMs that are on the Spacewalk server into the Proxy cache. /var/satellite is the default Spacewalk root directory, but it is configurable so if you've changed it on your Spacewalk installation you'll need to adjust this command appropriately.
