@@ -2,7 +2,9 @@
 
 When using Spacewalk Proxy 2.2 connected to an upstream Spacewalk 2.2 instance Proxy now has the ability to pre-cache or mirror RPMs so that they will not need to be downloaded from the upsteam Spacewalk server. Clients requesting the RPMs will receive them immediately from Proxy, instead of waiting for Proxy to download them from Spacewalk first and then serve them to the client. Proxy recognizes RPM requests from yum as well as anaconda (kickstarts / provisioning). Much of this information is also available in the rhn_package_manager man page:
 
-{{{man rhn_package_manager}}}
+{{{
+man rhn_package_manager
+}}}
 
 This may be particularly useful if the network connection to Spacewalk is slow and/or bandwidth is precious. RPMs may be loaded into Proxy's cache manually using rhn_package_manager, or automatically by putting an rsync command into a cron job.
 
@@ -10,10 +12,14 @@ This may be particularly useful if the network connection to Spacewalk is slow a
 Spacewalk Proxy and rhn_package_manager have been updated to avoid unwanted cache collisions, which is what made this feature possible but should be invisible to the user. The previously-existing rhn_package_manager option --copyonly can be used to populate the cache, and an alias to that option has been added with the more user-friendly name --cache-locally. The only other major visible change to rhn_package_manager is that it now knows how to read and import packages from a channel export, which could for example be created on the Spacewalk server using the rhn-satellite-exporter utility. This is in addition to the other methods that rhn_package_manager can use to import RPMs, like the --dir option for importing all RPMs in a directory or a list of RPMs supplied on the command line.
 
 As an example, if you had a channel export from the Spacewalk server that contained all the channels that Spacewalk contains mounted on /mnt/export and you wanted to only cache RPMs that are in the my-channel-1 channel, you could do so by executing:
-{{{ rhn_package_manager --cache-locally --from-export /mnt/export --channel my-channel-1 }}}
+{{{
+rhn_package_manager --cache-locally --from-export /mnt/export --channel my-channel-1
+}}}
 
 Importing all the RPMs that the channel export contains can be done by simply leaving off the --channel option:
-{{{ rhn_package_manager --cache-locally --from-export /mnt/export }}}
+{{{
+rhn_package_manager --cache-locally --from-export /mnt/export
+}}}
 
 If the channel export is spread across multiple ISO images it is not necessary to re-combine them locally on the Proxy before running rhn_package_manager, simply mount them one at a time and run the same command on each.
 
