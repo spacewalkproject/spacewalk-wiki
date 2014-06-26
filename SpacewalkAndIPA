@@ -161,6 +161,13 @@ setenforce 1
 setsebool -P httpd_dbus_sssd on
 }}}
 
+If your policy does not yet have the {{{httpd_dbus_sssd}}} SELinux boolean, install {{{mod_lookup_identity-selinux}}}:
+
+{{{
+setenforce 1
+yum install --enablerepo=adelton-identity_demo mod_lookup_identity-selinux -y
+}}}
+
 == Configure Apache ==
 
 The authentication against the external identity provider (FreeIPA) is achieved via a set of Apache modules. We need to install them:
