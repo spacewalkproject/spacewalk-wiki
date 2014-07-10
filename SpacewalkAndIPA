@@ -276,15 +276,15 @@ ipa user-mod bob --orgunit="My Organization"
  }}}
  and restart httpd service.
 
-To add !LookupUserAttr ou attribute to configuration file /etc/sssd/sssd.conf
-{{{
-ldap_user_extra_attrs = mail, givenname, sn, ou
-...
-[ifp]
-allowed_uids = apache, root
-user_attributes = +mail, +givenname, +sn, +ou
-}}}
-and restart sssd service.
+ To add !LookupUserAttr ou attribute to configuration file /etc/sssd/sssd.conf
+ {{{
+ ldap_user_extra_attrs = mail, givenname, sn, ou
+ ...
+ [ifp]
+ allowed_uids = apache, root
+ user_attributes = +mail, +givenname, +sn, +ou
+ }}}
+ and restart sssd service.
 
 * select "Default organization" on the '''External Authentication''' page and the Spacewalk account will automatically be created for the user at the very first login attempt in the "Default organization"
 
