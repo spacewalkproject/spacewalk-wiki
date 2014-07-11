@@ -21,22 +21,29 @@
  * Andy Speagle
  * Ani Peter
  * Aron Parsons
+ * Bo Maryniuk
+ * Carsten Menzel
  * Christian Berendt
  * Colin Coe
  * Dale Bewley
  * David Juran
  * David Nutter
+ * Dimitar Yordanov
  * Duncan Mac-Vicar
  * Francesco Tombolini
  * Gael Chamoulaud
+ * Gregor Gruener
  * Gurjeet Singh
+ * Hubert Mantel
  * Ionuț Arțăriși
  * James Bowes
  * James Hogarth
  * Jan Brázdil
  * Jason Lawer
  * Jaswinder Singh Phulewala
+ * Jeremy Davis
  * Jerome Fenal
+ * Jiří Mikulka
  * Joerg Steffens
  * Johannes Renner
  * John van Zantvoort
@@ -44,10 +51,12 @@
  * Jose Simonelli
  * Joshua Roys
  * Julian Einwag
+ * Kumudini Shirsale
  * !KrishnaBabu Krothapalli
  * Luc de Louw
  * Luca Villa
  * Lukáš Ďurfina
+ * Lukáš Pramuk
  * Manoj Kumar Giri
  * Marcelo Moreira de Mello
  * mareklaane
@@ -55,8 +64,10 @@
  * Mark Chappell
  * Mark Huth
  * Martin Osvald
+ * Martin Seidl
  * Matteo Sessa
  * Maxim Burgerhout
+ * Michele Baldessari
  * Michael Calmer
  * Michael Stahnke
  * Muhammad Farrukh
@@ -67,13 +78,16 @@
  * Pierre Casenove
  * Richard Marko
  * Rob James
+ * Ron van der Wees
  * Satoru SATOH
+ * Silvio Moioli
  * Šimon Lukašík
  * Stefan Meyer
  * Steve Milner
  * Steven Hardy
  * Tasos Papaioannou
  * Timo Trinks
+ * Tobias D. Oestreicher
  * Tom Lane
  * Trent Johnson
  * Uwe Gansert
@@ -88,6 +102,7 @@
 The Spacewalk team would like to thank all those who contributed to the code that makes up Spacewalk as it is today.  
 
  * Adrian Likins
+ * Avi Miller
  * Brad Buckingham
  * Bret !McMillan
  * Chip Turner
