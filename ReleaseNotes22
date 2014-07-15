@@ -40,12 +40,15 @@ If you plan to upgrade from older release, search no more -- the following page 
 
   * Spacewalk supports RHEL 7 / CentOS 7 clients
   * Read-only API user
+    * support for user able to retrieve data via API without the rights to make changes (e.g. for auditing purposes)
   * Action chaining
+    * support for defining chain of actions executed on clients
   * Remote power management
-  * Support for FIPS 140-2 standard
+  * Support for FIPS 140-2
     * Ability to run on a FIPS enabled operating system (client and server)
     * https://fedorahosted.org/spacewalk/wiki/Spacewalk-FIPS
   * Spacewalk proxy content pre-caching
+    * https://fedorahosted.org/spacewalk/wiki/proxy-precache 
   * Plenty of small enhancements and fixes
   * New API calls:
     * actionchain.addConfigurationDeployment
