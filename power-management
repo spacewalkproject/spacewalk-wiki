@@ -25,7 +25,7 @@ followed by a 'rhn-satellite restart' would enable both the IPMI and APC fence a
 == Power Management Configuration / Usage ==
 There is a new page in the system details pages of the Spacewalk UI that allows you to configure and use the power management system. Go to Systems -> <system> -> Provisioning -> Power Management. From here you can enter the IP address / hostname of the power management server, the username / password needed to log into it, and the identifier for this system in the power management system. Once configured you should be able to power on / off the system at will. There are also new pages in the Provisioning section of the System Set Manager that allow you to configure / manage multiple servers at a time.
 
-Please not that not even all IPMI setups are supported. The fence_ipmilan agent uses the lan protocol, so setups that require the lanplus protocol (for example) will not function correctly.
+Please note that not even all IPMI setups are supported. The fence_ipmilan agent uses the lan protocol, so setups that require the lanplus protocol (for example) will not function correctly.
 
 == Security Warning ==
 Any configuration you save on the Power Management page is saved in Cobbler, and is available to any unauthenticated network user that can see your Spacewalk server. This is a known weakness in Cobbler's power management system. For mitigation strategies see the [https://fedorahosted.org/cobbler/wiki/PowerManagement#Important:SecurityImplications Cobbler documentation].
