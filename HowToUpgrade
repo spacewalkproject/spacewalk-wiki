@@ -1,15 +1,16 @@
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 2.0 to Spacewalk 2.1
+These are upgrade instruction for upgrading Spacewalk 2.1 to Spacewalk 2.2
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.0 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 19/20.
+  *  Spacewalk 2.1 running on Red Hat Enterprise Linux 5 Server, 6 Server or CentOS/Scientific Linux or Fedora 19/20.
   *  Your Spacewalk uses either of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.1). Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.2). Make sure you have a valid backup in case anything will go wrong.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 2.0 to 2.1 upgrade instructions, are available at [wiki:HowToUpgrade21]
  * Spacewalk 1.9 to 2.0 upgrade instructions, are available at [wiki:HowToUpgrade20]
  * Spacewalk 1.8 to 1.9 upgrade instructions, are available at [wiki:HowToUpgrade19]
  * Spacewalk 1.7 to 1.8 upgrade instructions, are available at [wiki:HowToUpgrade18]
@@ -23,7 +24,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You had set up your yum to point to Spacewalk 2.1 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You had set up your yum to point to Spacewalk 2.2 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, for Fedora, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 
