@@ -44,6 +44,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Action chaining
     * support for defining chain of actions executed on clients
   * Remote power management
+    * https://fedorahosted.org/spacewalk/wiki/power-management
   * Support for FIPS 140-2
     * Ability to run on a FIPS enabled operating system (client and server)
     * https://fedorahosted.org/spacewalk/wiki/Spacewalk-FIPS
