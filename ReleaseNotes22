@@ -136,9 +136,9 @@ In Spacewalk 2.2, we've seen
 
 == Spacewalk 2.2 on RHEL 5 (CentOS 5) and RHEL 7 (CentOS 7) ==
 
-Due to missing package dependencies in EPEL 7 beta, we were not able to deliver Spacewalk 2.2 for RHEL 7 (CentOS 7). Spacewalk 2.2 therefore still
-supports RHEL 5 and CentOS 5 as a base operating system. Support for RHEL 7 and CentOS 7 should be available in next Spacewalk release, at which
-point support for RHEL 5 and CentOS 5 will be dropped.
+Due to missing package dependencies in EPEL 7 beta, we were not able to deliver Spacewalk 2.2 on RHEL 7 (CentOS 7). Spacewalk 2.2 therefore still
+supports running on RHEL 5 and CentOS 5 as a base operating system. Support for RHEL 7 and CentOS 7 should be available in next Spacewalk release, at which
+point support for RHEL 5 and CentOS 5 will be dropped. Note that RHEL 7 / CentOS 7 clients are supported with Spacewalk 2.2, just not running Spacewalk itself on those operating systems.
 
 
 == User community, reporting issues ==
