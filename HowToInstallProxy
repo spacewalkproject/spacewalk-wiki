@@ -4,7 +4,7 @@
 
 If you're looking for instructions for the Red Hat Satellite Proxy product see the [http://docs.redhat.com/docs/en-US/Red_Hat_Network_Satellite/index.html Red Hat Satellite documentation].
 
-For Spacewalk proxy installation for Spacewalk 2.0 see [wiki:HowToInstallProxy20]
+For Spacewalk proxy installation for Spacewalk 2.1 see [wiki:HowToInstallProxy21]
 
 == Prerequisites ==
 
@@ -18,7 +18,7 @@ For Spacewalk proxy installation for Spacewalk 2.0 see [wiki:HowToInstallProxy20
 
 == Repository ==
 
-RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.0 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.2 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
 
 == Installation ==
 
