@@ -32,25 +32,25 @@ To use this repository easily, install spacewalk-repo package with commands belo
 === Red Hat Enterprise Linux 5, CentOS 5 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.1/RHEL/5/x86_64/spacewalk-repo-2.0-3.el5.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.1/RHEL/5/x86_64/spacewalk-repo-2.1-2.el5.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.1/RHEL/6/x86_64/spacewalk-repo-2.0-3.el6.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.1/RHEL/6/x86_64/spacewalk-repo-2.1-2.el6.noarch.rpm
 }}}
 
 === Fedora 19 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.1/Fedora/19/x86_64/spacewalk-repo-2.0-3.fc19.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.1/Fedora/19/x86_64/spacewalk-repo-2.1-2.fc19.noarch.rpm
 }}}
 
 === Fedora 20 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.1/Fedora/20/x86_64/spacewalk-repo-2.0-3.fc20.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.1/Fedora/20/x86_64/spacewalk-repo-2.1-2.fc20.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -115,7 +115,7 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.r
 Follow the instructions to use '''EPEL 5''' with the additions:
  * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
 {{{
-rpm -ihv http://yum.spacewalkproject.org/2.0-client/RHEL/5/x86_64/spacewalk-client-repo-2.0-3.el5.noarch.rpm
+rpm -ihv http://yum.spacewalkproject.org/2.1-client/RHEL/5/x86_64/spacewalk-client-repo-2.1-2.el5.noarch.rpm
 }}}
  *  Import Red Hat's RPM GPG key:
 {{{
@@ -153,6 +153,12 @@ Installation of the free but limited Oracle 11g XE database server can be found 
 == Installing Spacewalk ==
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
+
+If installing on Fedora 20, note the dependency problem (the last of the "prerequisites"). For now to work around:
+{{{
+yum install -y rpm-build rpm-python
+yum downgrade -y rpm{,-build-libs,-devel,-libs,-python,-build,-apidocs,-cron,-sign,-python3}-4.11.1-7.fc20
+}}}
 
 If you prefer the [wiki:PostgreSQL] backend, including the embedded version mentioned above:
 {{{
