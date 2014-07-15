@@ -128,11 +128,18 @@ https://fedorahosted.org/spacewalk/wiki/ContributorList
 
 == Some statistics ==
 
-In Spacewalk 2.1, we've seen
+In Spacewalk 2.2, we've seen
 
     * 99 bugs fixed
     * 1308 changesets committed
     * 1760 commits done
+
+== Spacewalk 2.2 on RHEL 5 (CentOS 5) and RHEL 7 (CentOS 7) ==
+
+Due to missing package dependencies in EPEL 7 beta, we were not able to deliver Spacewalk 2.2 for RHEL 7 (CentOS 7). Spacewalk 2.2 therefore still
+supports RHEL 5 and CentOS 5 as a base operating system. Support for RHEL 7 and CentOS 7 should be available in next Spacewalk release, at which
+point support for RHEL 5 and CentOS 5 will be dropped.
+
 
 == User community, reporting issues ==
 
