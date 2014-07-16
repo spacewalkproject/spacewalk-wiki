@@ -51,6 +51,11 @@ If you plan to upgrade from older release, search no more -- the following page 
     * https://fedorahosted.org/spacewalk/wiki/Spacewalk-FIPS
   * Spacewalk proxy content pre-caching
     * https://fedorahosted.org/spacewalk/wiki/proxy-precache 
+  * Further enhancements to the Spacewalk 2.1 Identity management (IPA) integration
+    * ​https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIPA 
+    * mark roles that were assigned automatically and should thus be removed if not found upon subsequent logins
+    * creating default system groups when creating new users
+    * external groups to system groups mapping (newly created users may be created as administrators of selected system groups - according to their external group membership and configured mapping) 
   * Plenty of small enhancements and fixes
   * New API calls:
     * actionchain.addConfigurationDeployment
