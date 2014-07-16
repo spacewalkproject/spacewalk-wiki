@@ -49,7 +49,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Support for FIPS 140-2
     * Ability to run on a FIPS enabled operating system (client and server)
     * https://fedorahosted.org/spacewalk/wiki/Spacewalk-FIPS
-  * Spacewalk proxy content pre-caching
+  * Spacewalk Proxy content pre-caching
     * https://fedorahosted.org/spacewalk/wiki/proxy-precache 
   * Further enhancements to the Spacewalk 2.1 Identity management (IPA) integration
     * ​https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIPA 
