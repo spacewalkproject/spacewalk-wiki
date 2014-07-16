@@ -148,6 +148,10 @@ In Spacewalk 2.2, we've seen
     * 1308 changesets committed
     * 1760 commits done
 
+Github repo for commits since Spacewalk 2.1
+
+    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-03-04&to=2014-07-16&type=c Spacewalk 2.1 to 2.2]
+
 == Spacewalk 2.2 on RHEL 5 (CentOS 5) and RHEL 7 (CentOS 7) ==
 
 Due to missing package dependencies in EPEL 7 beta, we were not able to deliver Spacewalk 2.2 on RHEL 7 (CentOS 7). Spacewalk 2.2 therefore still
