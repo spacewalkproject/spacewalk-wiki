@@ -44,6 +44,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Action chaining
     * support for defining chain of actions executed on clients
     * http://wiki.novell.com/index.php/SUSE_Manager/ActionChaining
+    * Video: http://turing.suse.de/%7Esmoioli/Action%20Chaining%20screencast.webm
   * Remote power management
     * https://fedorahosted.org/spacewalk/wiki/power-management
   * Support for FIPS 140-2
