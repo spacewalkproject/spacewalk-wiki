@@ -43,6 +43,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * support for user able to retrieve data via API without the rights to make changes (e.g. for auditing purposes)
   * Action chaining
     * support for defining chain of actions executed on clients
+    * http://wiki.novell.com/index.php/SUSE_Manager/ActionChaining
   * Remote power management
     * https://fedorahosted.org/spacewalk/wiki/power-management
   * Support for FIPS 140-2
@@ -141,6 +142,10 @@ Due to missing package dependencies in EPEL 7 beta, we were not able to deliver 
 supports running on RHEL 5 and CentOS 5 as a base operating system. Support for RHEL 7 and CentOS 7 should be available in next Spacewalk release, at which
 point support for RHEL 5 and CentOS 5 will be dropped. Note that RHEL 7 / CentOS 7 clients are supported with Spacewalk 2.2, just not running Spacewalk itself on those operating systems.
 
+
+== Solaris and Monitoring Support - Deprecation Notice ==
+
+The Spacewalk team is looking in future releases to drop support for Solaris clients and the Monitoring component of Spacewalk. They continue to be supported in their current state for the Spacewalk 2.2 release. Anyone currently using either of the capabilities may wish to consider alternatives for their needs. 
 
 == User community, reporting issues ==
 
