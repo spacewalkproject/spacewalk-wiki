@@ -153,12 +153,6 @@ Installation of the free but limited Oracle 11g XE database server can be found 
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
-If installing on Fedora 20, note the dependency problem (the last of the "prerequisites"). For now to work around:
-{{{
-yum install -y rpm-build rpm-python
-yum downgrade -y rpm{,-build-libs,-devel,-libs,-python,-build,-apidocs,-cron,-sign,-python3}-4.11.1-7.fc20
-}}}
-
 If you prefer the [wiki:PostgreSQL] backend, including the embedded version mentioned above:
 {{{
 yum install spacewalk-postgresql 
