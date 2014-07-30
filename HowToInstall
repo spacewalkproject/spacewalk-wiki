@@ -200,21 +200,18 @@ spacewalk-setup --disconnected --external-postgresql
 
 if you tend to use postgresql.
 
-
-
 An example session is as follows:
-
 {{{
-# spacewalk-setup --disconnected --external-oracle
-* Setting up Oracle environment.
-* Setting up database.
-** Database: Setting up database connection for Oracle backend.
-Database service name (SID)? XE
-Username? spacewalk
-Password? 
-** Database: Testing database connection.
+# spacewalk-setup --disconnected
+* Setting up SELinux..
+** Database: Setting up database connection for PostgreSQL backend.
+** Database: Installing the database:
+** Database: This is a long process that is logged in:
+** Database:   /var/log/rhn/install_db.log
+*** Progress: #
+** Database: Installation complete.
 ** Database: Populating database.
-*** Progress: ####
+*** Progress: #####################################
 * Setting up users and groups.
 ** GPG: Initializing GPG and importing key.
 ** GPG: Creating /root/.gnupg directory
@@ -230,9 +227,6 @@ Admin Email Address? root@localhost
 Should setup configure apache's default ssl server for you (saves original ssl.conf) [Y]? 
 ** /etc/httpd/conf.d/ssl.conf has been backed up to ssl.conf-swsave
 * Configuring tomcat.
-** /etc/tomcat5/tomcat5.conf has been backed up to tomcat5.conf-swsave
-** /etc/tomcat5/server.xml has been backed up to server.xml-swsave
-** /etc/tomcat5/web.xml has been backed up to web.xml-swsave
 * Configuring jabberd.
 * Creating SSL certificates.
 CA certificate password? 
@@ -250,8 +244,11 @@ Country code (Examples: "US", "JP", "IN", or type "?" to see a list)? CZ
 * Deploying configuration files.
 * Update configuration in database.
 * Setting up Cobbler..
-Cobbler requires tftp and xinetd services be turned on for PXE provisioning functionality. Enable these services [Y/n]?
-cobblerd does not appear to be running/accessible
+Processing /etc/cobbler/modules.conf
+„/etc/cobbler/modules.conf“ -> „/etc/cobbler/modules.conf-swsave“
+Processing /etc/cobbler/settings
+„/etc/cobbler/settings“ -> „/etc/cobbler/settings-swsave“
+Cobbler requires tftp and xinetd services be turned on for PXE provisioning functionality. Enable these services [Y]? 
 * Restarting services.
 Installation complete.
 Visit https://spacewalk.server.com to create the Spacewalk administrator account.
