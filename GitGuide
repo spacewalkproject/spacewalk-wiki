@@ -430,7 +430,7 @@ Here is what you will see when you cd into a git repository:
 {{{
 [speedy@gonzalez spacewalk{master}]$
 }}}
-If you chdir to a non git repository, you're prompt will look as normal:
+If you chdir to a non git repository, your prompt will look like normal:
 {{{
 [speedy@gonzalez ~]$ 
 }}}
