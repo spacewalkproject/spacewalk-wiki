@@ -1,11 +1,13 @@
 
-= Migrating Spacewalk on Oracle installation to PostgreSQL =
+= Migrating Spacewalk database backend between Oracle and PostgreSQL =
 
 If you have an existing Spacewalk 1.3+ installation with Oracle backend, you can migrate it to use the PostgreSQL database server instead.
 
+If you have an existing Spacewalk 2.3+ installation with Oracle or PostgreSQL backend, you can migrate it to use the another Oracle or PostgreSQL database server instead.
+
 == Schema version is important ==
 
-When migrating the data from database schema from Oracle to PostgreSQL, you will use a dump of the data from the Oracle database and import it to a fresh PostgreSQL database schema. Therefore, you need the PostgreSQL schema to be of the same version as the one in Oracle. In other words, you need to upgrade the Spacewalk and the Oracle schema to the latest version, to match the schema that you will likely have in PostgreSQL.
+When migrating the data between Oracle and PostgreSQL database schema, you will use a dump of the data from the old database server and import it to a fresh database schema. Therefore, you need the new schema to be of the same version as the old one. In other words, you need to upgrade the Spacewalk and the old schema to the latest version, to match the schema that you will likely have in newly installed database server.
 
 Generally, the steps at HowToUpgrade apply.
 
@@ -17,7 +19,7 @@ HowToUpgrade#Databaseandconfigurationbackup
 
 HowToUpgrade#Packageupgrade
 
-== Upgrade the Oracle schema ==
+== Upgrade the old schema ==
 
 Make sure your Spacewalk server is down:
 
@@ -25,11 +27,19 @@ Make sure your Spacewalk server is down:
 # /usr/sbin/spacewalk-service status
 }}}
 
-Make sure your Oracle server is running if you have the server on the same machine as Spacewalk itself. For example, to start the Oracle XE, you can use
+Make sure your old database server is running if you have the server on the same machine as Spacewalk itself. For example, to start the Oracle XE, you can use
 
 {{{
 # service oracle-xe start
 }}}
+
+if your old database server is PostgreSQL, then
+
+{{{
+# service postgresql start
+}}}
+
+(Or alternative systemctl command in Fedora)
 
 Run '''spacewalk-schema-upgrade''' script to upgrade the database schema:
 
@@ -45,34 +55,51 @@ Log files from schema upgrade are being put into {{{/var/log/spacewalk/schema-up
 # yum install spacewalk-utils
 }}}
 
-== Make an Oracle data dump ==
+== Make an database data dump ==
+
+Spacewalk 1.3+ Oracle to PostgreSQL
 
 {{{
 # spacewalk-dump-schema --raw --db=xe --user=spacewalk --password=o9k2HInsl > spacewalk-oracle.dump
 }}}
 
+In Spacewalk 2.3+ you can specify input and output database format
+
+{{{
+# spacewalk-dump-schema --from=postgresql --to=oracle --db=spaceschema --user=spaceuser --password=o9k2HInsl > spacewalk-postgresql.dump
+}}}
+
+''--from'' and ''--or'' parameters are optional, if any of them is not specified, ''--from'' is acquired from ''/etc/rhn/rhn.conf'' (if there is '''db_backend''' record, otherwise ''oracle'' is used) and ''--to'' is defaultly ''postgresql''.
+
 Make sure you have enough disk space for the dump.
 
-=== Stop Oracle ===
+=== Stop old database server ===
 
-At this point, you can stop the Oracle server if it is on the same box as the Spacewalk installation. For example, for Oracle XE you would do something like
+At this point, you can stop the old database server if it is on the same box as the Spacewalk installation. For example, for Oracle XE you would do something like
 
 {{{
 # service oracle-xe stop
 # chkconfig oracle-xe off
 }}}
 
-=== Direct dump to psql ===
+or for example for PostgreSQL in Fedora
 
-Alternatively, you can just keep the Oracle server running and instead of redirecting the '''spacewalk-dump-schema''' output to a file, you can pipe it directly to '''psql''' in the step below.
+{{{
+# systemctl stop postgresql
+# systemctl disable postgresql
+}}}
 
-== Install and start the PostgreSQL server ==
+=== Direct dump to psql/sqlplus ===
 
-[wiki:PostgreSQLServerSetup]
+Alternatively, you can just keep the old server running and instead of redirecting the '''spacewalk-dump-schema''' output to a file, you can pipe it directly to '''psql''' or '''sqlplus''' in the step below.
 
-== Install spacewalk-postgresql backend ==
+== Install and start the new database server ==
 
-We will want to remove spacewalk-oracle and install spacewalk-postgresql.
+[wiki:PostgreSQLServerSetup] or [wiki:OracleXeSetup]
+
+== Install new spacewalk-* backend ==
+
+We will want to switch spacewalk-* package.
 
 {{{
 # yum remove spacewalk-oracle
@@ -80,28 +107,57 @@ We will want to remove spacewalk-oracle and install spacewalk-postgresql.
 # yum install spacewalk-postgresql
 }}}
 
-== Populate the PostgreSQL database with Spacewalk schema ==
+or analogically 
+
+{{{
+# yum remove spacewalk-postgresql
+[...]
+# yum install spacewalk-oracle
+}}}
+
+== Populate the new database with Spacewalk schema ==
 
 {{{
 # spacewalk-setup --db-only
 }}}
 
-== Load the Spacewalk data dump to PostgreSQL ==
+== Load the Spacewalk data dump to new database ==
+
+To PostgreSQL
 
 {{{
 # PGPASSWORD=o9k2HInsl psql -h localhost -U spaceuser spaceschema < spacewalk-oracle.dump
 }}}
 
-Make sure you have enough disk space for the dump and for the newly populated PostgreSQL database.
-
-If your Oracle server is still running, you can do
+or to Oracle XE
 
 {{{
-# spacewalk-dump-schema --raw --db=xe --user=spacewalk --password=o9k2HInsl \
+# NLS_LANG=AMERICAN_AMERICA.UTF8 sqlplus spaceuser/o9k2HInsl@//localhost/XE < spacewalk-postgresql.dump
+}}}
+
+You may need to change SELinux context for the dump file to be able to read it with '''sqlplus'''.
+
+{{{
+# semanage fcontext -a -t oracle_sqlplus_exec_t './spacewalk-postgresql.dump'
+}}}
+
+Make sure you have enough disk space for the dump and for the newly populated database.
+
+If your old server is still running, you can do
+
+{{{
+# spacewalk-dump-schema --db=xe --user=spacewalk --password=o9k2HInsl \
    | PGPASSWORD=o9k2HInsl psql -h localhost -U spaceuser spaceschema
 }}}
 
-Without storing the dump on disk.
+or analogically
+
+{{{
+# spacewalk-dump-schema --to=oracle --db=spaceschema --user=spacewalk --password=o9k2HInsl \
+   | NLS_LANG=AMERICAN_AMERICA.UTF8 sqlplus spaceuser/o9k2HInsl@//localhost/XE
+}}}
+
+without storing the dump on disk.
 
 == Continue with the upgrade ==
 
