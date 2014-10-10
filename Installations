@@ -38,6 +38,10 @@ Testing Spacewalk server to support Scientific Linux, CERN Linux, and latest Fed
 
 33 CentOS systems under management.
 
+=== Myriad Genetics ===
+
+~ 300 RHEL 4,5,6 servers, 20+ Solaris X86, a few Ubuntu servers, a few desktops(Fedora). Systems management, update, configuration, monitoring. Tied into change control and implementing security scans.
+
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
 
