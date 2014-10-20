@@ -42,7 +42,7 @@ Testing Spacewalk server to support Scientific Linux, CERN Linux, and latest Fed
 
 ~ 300 RHEL 4,5,6 servers, 20+ Solaris X86, a few Ubuntu servers, a few desktops(Fedora). Systems management, update, configuration, monitoring. Tied into change control and implementing security scans.
 
-=== IST, Extreme Plasma Physics ===
+=== Instituto Superior Técnico, Extreme Plasma Physics Department ===
 
 Management for the 96 HPC computing nodes of the cluster using Scientific Linux. 
 Using Systems provisioning, update, configuration and monitoring.
