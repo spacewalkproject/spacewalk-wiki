@@ -115,6 +115,11 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.r
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 }}}
 
+==== EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7) ====
+{{{
+rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+}}}
+
 === CentOS 5 ===
 
 Follow the instructions to use '''EPEL 5''' with the additions:
