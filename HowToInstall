@@ -71,11 +71,15 @@ sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
 
 == Additional repos & packages ==
 
-=== Red Hat Optional Server 6 ===
+=== Red Hat Optional Server 6/7 ===
 
-When using RHEL 6, make sure you are subscribed to following RHN channel:
+When using RHEL 6/7, make sure you are subscribed to following RHN channel:
 
-  * '''Red Hat Optional Server 6'''
+  * '''Red Hat Optional Server 6''
+
+or
+
+  * '''Red Hat Optional Server 7'''
 
 === Jpackage repository ===
 
