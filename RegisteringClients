@@ -75,9 +75,13 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
     {{{
 # yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
-  4. Register your CentOS or Red Hat Enterprise Linux system to Spacewalk using the activation key you created earlier
+  4. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+{{{
+# rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+}}}
+  5. Register your CentOS or Red Hat Enterprise Linux system to Spacewalk using the activation key you created earlier
    {{{
-# rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-rhel-custom-channel> 
+# rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> 
    }}}
 
 == CentOS 4 ==
@@ -89,9 +93,13 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 # rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
 # yum install up2date
 }}} 
+  1. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+{{{
+# rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+}}}
   1. Register your CentOS system to Spacewalk using the activation key you created earlier:
 {{{
-# rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-centos-custom-channel>
+# rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-centos-custom-channel>
 }}}
 
 == SUSE ==
@@ -116,9 +124,13 @@ For Factory:
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
- 2. Register your SUSE system to Spacewalk using the activation key you created earlier
+ 2. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+{{{
+# rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+}}}
+ 3. Register your SUSE system to Spacewalk using the activation key you created earlier
    {{{
-# rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-SUSE-custom-channel> 
+# rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-SUSE-custom-channel> 
    }}}
 
 
@@ -158,8 +170,8 @@ But this is not needed for most clients.
 And then register with your Spacewalk server using rhnreg_ks and activation key.
 
 {{{
-vim /etc/sysconfig/rhn/up2date
-rhnreg_ks --activationkey=1-my-debian-key
+rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=1-my-debian-key
 }}}
 
 When updating the Apt cache you can watch the status of communication between Apt and Spacewalk.
