@@ -30,9 +30,13 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
    {{{
 # yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
    }}}
- 3. Register your Fedora system to Spacewalk using the activation key you created earlier
+ 3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+{{{
+# rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+}}}
+ 4. Register your Fedora system to Spacewalk using the activation key you created earlier
    {{{
-# rhnreg_ks --serverUrl=http://YourSpacewalk.example.org/XMLRPC --activationkey=<key-with-fedora-custom-channel> 
+# rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel> 
    }}}
 
 == Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6, CentOS 5, 6 and 7 ==
@@ -170,7 +174,7 @@ But this is not needed for most clients.
 And then register with your Spacewalk server using rhnreg_ks and activation key.
 
 {{{
-rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+wget http://YourSpacewalk.example.org/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
 rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=1-my-debian-key
 }}}
 
