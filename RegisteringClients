@@ -128,9 +128,9 @@ For Factory:
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
- 2. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+ 2. Install Spacewalk's CA certificate on the server to enable SSL communication
 {{{
-# rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+# wget http://YourSpacewalk.example.org/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
 }}}
  3. Register your SUSE system to Spacewalk using the activation key you created earlier
    {{{
