@@ -224,6 +224,12 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
 
 You can certainly put all the configuration into one configuration file and not list the mod_authnz_pam twice.
 
+Run
+
+{{{
+setsebool -P allow_httpd_mod_auth_pam 1
+}}}
+
 Restart Apache:
 
 {{{
