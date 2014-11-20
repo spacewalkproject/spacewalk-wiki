@@ -2,6 +2,11 @@
 
 Please add yourself here if you run a local version of the Spacewalk. Please also describe what you are you using it for:
 
+=== Anonymous Organization ===
+
+~90 SLES & CENTOS systems
+Managing patches, monitoring CPU and disk usage, and configuration changes.
+
 === Biomathematics and Statistics Scotland (BioSS) ===
 
 35 systems under management. System and virtual system management and update, post-build configuration, monitoring and asset inventory (via custom info)
@@ -46,6 +51,8 @@ Testing Spacewalk server to support Scientific Linux, CERN Linux, and latest Fed
 
 Management for the 96 computing nodes of the HPC cluster using Scientific Linux. 
 Using Systems provisioning, update, configuration and monitoring.
+
+
 
 === Red Hat ===
 Spacewalk is the upstream project for the source of [http://www.redhat.com/red_hat_network/ RHN Satellite].
