@@ -64,15 +64,11 @@ sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
 
 == Additional repos & packages ==
 
-=== Red Hat Optional Server 6/7 ===
+=== Red Hat Optional Server 6 ===
 
-When using RHEL 6/7, make sure you are subscribed to following RHN channel:
+When using RHEL 6, make sure you are subscribed to following RHN channel:
 
   * '''Red Hat Optional Server 6''
-
-or
-
-  * '''Red Hat Optional Server 7'''
 
 === Jpackage repository ===
 
@@ -110,11 +106,6 @@ rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.r
 ==== EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6) ====
 {{{
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-}}}
-
-==== EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7) ====
-{{{
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
 }}}
 
 === CentOS 5 ===
