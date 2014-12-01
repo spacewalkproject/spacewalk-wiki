@@ -30,9 +30,8 @@ echo nameserver IP-address-of-the-FreeIPA-server > /etc/resolv.conf
 ipa-client-install --domain example.com
 }}}
 
-== Kerberos prerequisites ==
 
-For the Kerberos authentication to work, we need the keytab of the Spacewalk HTTP service. For that, we first create the service on the FreeIPA server:
+Create the Spacewalk HTTP service on the FreeIPA server:
 
 {{{
 kinit admin
@@ -47,7 +46,54 @@ kinit admin
 ipa service-add HTTP/$( hostname )
 }}}
 
-We then can retrieve the keytab on the Spacewalk server:
+
+If you use
+{{{
+rpm -q spacewalk-setup
+}}}
+spacewalk-setup-2.3.1-1 or newer, you may use [#automatic-setup spacewalk-setup-ipa-authentication script] to 
+configure pam, sssd, apache and tomcat for you. Otherwise, you need to follow the [#manual-setup manual steps].
+
+== Automatic setup using the spacewalk-setup-ipa-authentication script == #automatic-setup
+
+Run the spacewalk-setup-ipa-authentication script:
+{{{
+$ spacewalk-setup-ipa-authentication 
+Enabling authentication against [<your-spacewalk-machine>].
+Retrieving HTTP/ service keytab into [/etc/httpd/conf/http.keytab] ...
+Keytab successfully retrieved and stored in: /etc/httpd/conf/http.keytab
+changed ownership of `/etc/httpd/conf/http.keytab' to apache
+Configuring PAM service [spacewalk].
+Will install additional packages ...
+<installation of mod_auth_kerb, mod_authnz_pam, mod_intercept_form_submit, mod_lookup_identity, sssd-dbus>
+** /etc/sssd/sssd.conf has been backed up to sssd.conf-swsave
+Updated sssd configuration.
+Turning SELinux boolean [httpd_dbus_sssd] on ...
+        ... done.
+Turning SELinux boolean [allow_httpd_mod_auth_pam] on ...
+        ... done.
+Configuring Apache modules.
+** /etc/tomcat6/server.xml has been backed up to server.xml-swsave.ipa
+Stopping sssd: [  OK  ]
+Starting sssd: [  OK  ]
+Stopping tomcat6: [  OK  ]
+Starting tomcat6: [  OK  ]
+Stopping httpd: [  OK  ]
+Starting httpd: httpd: [  OK  ]
+Waiting for tomcat to be ready ...
+Authentication against [<your-spacewalk-machine>] sucessfully enabled.
+As admin, at Admin > Users > External Authentication, select
+          Default organization to autopopulate new users into.
+}}}
+
+Your Spacewalk services were configured to work with the IPA server.
+Continue with [#hbac Host based access control prerequisites]
+
+== Manual setup == #manual-setup
+
+=== Keytab retrieval ===
+
+For the Kerberos authentication to work, we need to retrieve the keytab of the Spacewalk HTTP service on the Spacewalk server:
 
 {{{
 kinit admin
@@ -56,43 +102,7 @@ chown apache /etc/http.keytab
 chmod 600 /etc/http.keytab
 }}}
 
-== Host based access control prerequisites ==
-
-To use the host based access control (HBAC) with the Spacewalk server, we want to create HBAC service and rule on the FreeIPA server, and set up PAM service of the same name on the Spacewalk server.
-
-We need to start with disabling the default {{{allow_all}}} rule, otherwise any user will be allowed access. The page http://www.freeipa.org/page/Howto/HBAC_and_allow_all describes the process in detail, here we just show the commands:
-
-{{{
-ipa hostgroup-add --desc 'Host group which will have allow_all_users_services HBAC enabled.' allow_all_hosts
-ipa host-find --raw --pkey-only --sizelimit=0 \
-    | awk '$1 == "fqdn:" { print "--hosts=" $2 }' | xargs -n100 ipa hostgroup-add-member allow_all_hosts
-ipa hbacrule-add allow_all_users_services --usercat=all --servicecat=all --desc='Allow access to hosts in group allow_all_hosts to anybody from anywhere.'
-ipa hbacrule-add-host allow_all_users_services --hostgroups=allow_all_hosts
-ipa hbacrule-disable allow_all
-}}}
-
-We then create new user, '''bob''', and new service, '''spacewalk-prod''', and allow access to bob to this service on our Spacewalk server. In the example bellow, we assume that it is run on the Spacewalk server, and therefore the {{{$( hostname )}}} expands to the Spacewalk server hostname. If you run the commands on the FreeIPA server or other machine, put in the Spacewalk server hostname.
-
-{{{
-# As admin user
-# Create user bob
-ipa user-add --random bob
-# Authenticate as bob and change your random password, shown by the previous command
-kinit bob
-# To continue working, kinit back as admin
-kinit admin
-# Create UBAC service spacewalk-prod and HBAC rule allow_spacewalk-prod
-ipa hbacsvc-add spacewalk-prod
-ipa hbacrule-add allow_spacewalk-prod
-# Add just bob and the Spacewalk server to this rule for this service
-ipa hbacrule-add-service allow_spacewalk-prod --hbacsvcs=spacewalk-prod
-ipa hbacrule-add-user allow_spacewalk-prod --user=bob
-ipa hbacrule-add-host allow_spacewalk-prod --hosts=$( hostname )
-# Remove the Spacewalk server from the host group we've created when we've disabled the allow_all rule
-ipa hostgroup-remove-member allow_all_hosts --hosts=$( hostname )
-# Test that just the allow_spacewalk-prod rule matches
-ipa hbactest --user=bob --host=$( hostname ) --service=spacewalk-prod
-}}}
+=== Configure PAM ===
 
 On the Spacewalk server, we define the {{{spacewalk-prod}}} PAM service and point it to sssd:
 
@@ -102,24 +112,27 @@ auth    required   pam_sss.so
 account required   pam_sss.so
 }}}
 
-== Configure sssd to provide information about auto-populated users ==
+=== Configure sssd to provide information about auto-populated users ===
 
-When a user authenticates either via Kerberos ticket or via form-based PAM authentication, it might be the first time that user logged in to the Spacewalk server. Spacewalk needs to create record about that user in its internal database and for that, certain additional attributes are needed besides the obvious login name. The sssd-dbus package provides new '''ifp''' sssd service. The package is available from repos for recent Fedoras and Red Hat Enterprise Linux distributions:
+When a user authenticates either via Kerberos ticket or via form-based PAM authentication, it might be the first time that user logged in to the Spacewalk server. Spacewalk needs to create record about that user in its internal database and for that, certain additional attributes are needed besides the obvious login name. The sssd-dbus package provides new '''ifp''' sssd service.
+
+If you're on RHEL7.0/CentOS7.0, you need to configure following repository:
 
 http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/
 
-Retrieve the {{{.repo}}} file and put it to {{{/etc/yum.repos.d}}}, you can disable it by default:
+Retrieve the {{{.repo}}} file and put it to {{{/etc/yum.repos.d}}}:
 
 {{{
 # Example for RHEL 6:
 curl -o /etc/yum.repos.d/adelton-identity_demo.repo http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-x86_64/
-sed -i 's/enabled=.*/enabled=0/' /etc/yum.repos.d/adelton-identity_demo.repo
 }}}
+
+For other OSs (RHEL6 & Fedora) sssd-dbus and other needed packages are available from their repositories.
 
 Install sssd-dbus:
 
 {{{
-yum install --enablerepo=adelton-identity_demo sssd-dbus -y
+yum install sssd-dbus -y
 }}}
 
 The sssd needs to be configured to enable ifp and retrieval and caching of attributes needed by Spacewalk:
@@ -141,41 +154,20 @@ Restart sssd
 service sssd restart
 }}}
 
-Test that it is possible to retrieve information about bob:
+Enable following selinux boolean:
 
 {{{
-dbus-send --print-reply --system --dest=org.freedesktop.sssd.infopipe \
-   /org/freedesktop/sssd/infopipe org.freedesktop.sssd.infopipe.GetUserAttr string:bob array:string:mail
-}}}
-
-For the above test, you might need to put SELinux to permissive:
-
-{{{
-setenforce 0
-}}}
-
-For the production operation of Apache, provided you have new enough selinux-policy, enforcing with one boolean should work:
-
-{{{
-setenforce 1
 setsebool -P httpd_dbus_sssd on
 }}}
 
-If your policy does not yet have the {{{httpd_dbus_sssd}}} SELinux boolean, install {{{mod_lookup_identity-selinux}}}:
-
-{{{
-setenforce 1
-yum install --enablerepo=adelton-identity_demo mod_lookup_identity-selinux -y
-}}}
 
 == Configure Apache ==
 
 The authentication against the external identity provider (FreeIPA) is achieved via a set of Apache modules. We need to install them:
+(On RHEL7/CentOS7 the modules will be fetched from the same yum repo as the sssd-dbus package installed above.)
 
 {{{
 yum install mod_auth_kerb mod_authnz_pam mod_lookup_identity mod_intercept_form_submit -y
-# For RHEL and Fedora 19, the last three modules can be found in the same yum repo as the sssd-dbus package installed above:
-yum install --enablerepo=adelton-identity_demo  mod_authnz_pam mod_lookup_identity mod_intercept_form_submit -y
 }}}
 
 We then need to configure the modules. Note that we configure mod_authnz_pam and mod_intercept_form_submit to use the '''spacewalk-prod''' PAM service we've configured above:
@@ -261,6 +253,46 @@ service tomcat6 restart
 
 Wait for tomcat to be back up and test that you can log in to Spacewalk with your regular admin login and password.
 
+
+== Host based access control prerequisites == #hbac
+
+To use the host based access control (HBAC) with the Spacewalk server, we want to create HBAC service and rule on the FreeIPA server, and set up PAM service of the same name on the Spacewalk server.
+
+We need to start with disabling the default {{{allow_all}}} rule, otherwise any user will be allowed access. The page http://www.freeipa.org/page/Howto/HBAC_and_allow_all describes the process in detail, here we just show the commands:
+
+{{{
+ipa hostgroup-add --desc 'Host group which will have allow_all_users_services HBAC enabled.' allow_all_hosts
+ipa host-find --raw --pkey-only --sizelimit=0 \
+    | awk '$1 == "fqdn:" { print "--hosts=" $2 }' | xargs -n100 ipa hostgroup-add-member allow_all_hosts
+ipa hbacrule-add allow_all_users_services --usercat=all --servicecat=all --desc='Allow access to hosts in group allow_all_hosts to anybody from anywhere.'
+ipa hbacrule-add-host allow_all_users_services --hostgroups=allow_all_hosts
+ipa hbacrule-disable allow_all
+}}}
+
+We then create new user, '''bob''', and new service, '''spacewalk-prod''', and allow access to bob to this service on our Spacewalk server. In the example bellow, we assume that it is run on the Spacewalk server, and therefore the {{{$( hostname )}}} expands to the Spacewalk server hostname. If you run the commands on the FreeIPA server or other machine, put in the Spacewalk server hostname.
+
+{{{
+# As admin user
+# Create user bob
+ipa user-add --random bob
+# Authenticate as bob and change your random password, shown by the previous command
+kinit bob
+# To continue working, kinit back as admin
+kinit admin
+# Create UBAC service spacewalk-prod and HBAC rule allow_spacewalk-prod
+ipa hbacsvc-add spacewalk-prod
+ipa hbacrule-add allow_spacewalk-prod
+# Add just bob and the Spacewalk server to this rule for this service
+ipa hbacrule-add-service allow_spacewalk-prod --hbacsvcs=spacewalk-prod
+ipa hbacrule-add-user allow_spacewalk-prod --user=bob
+ipa hbacrule-add-host allow_spacewalk-prod --hosts=$( hostname )
+# Remove the Spacewalk server from the host group we've created when we've disabled the allow_all rule
+ipa hostgroup-remove-member allow_all_hosts --hosts=$( hostname )
+# Test that just the allow_spacewalk-prod rule matches
+ipa hbactest --user=bob --host=$( hostname ) --service=spacewalk-prod
+}}}
+
+
 == Enable the use of the external authentication in Spacewalk ==
 
 By following the configuration steps above, external authentication is enabled.
@@ -304,7 +336,7 @@ Purge your Kerberos ticket cache:
 kdestroy -A
 }}}
 
-Log out from your admin session and attempt to log in as '''bob''' enterring the password selected during the {{{kinit bob}}} step. You should be able to log in and if you check the user details, the name and email address is populated from the FreeIPA server. Log out.
+Log out from your admin session and attempt to log in as '''bob''' entering the password selected during the {{{kinit bob}}} step. You should be able to log in and if you check the user details, the name and email address is populated from the FreeIPA server. Log out.
 
 == Try the Kerberos authentication ==
 
@@ -370,7 +402,7 @@ The solution proposal for Satellite / Spacewalk is based on four-module setup of
 
 The changes are fairly localized because they mostly deal with setting up the user in the internal database and creating the correct session. After that, standard cookie-based session is used.
 
-The work is now fully merged into Spacewalk, as of Spacewalk 2.1.
+The work is now fully merged into Spacewalk, as of Spacewalk 2.2.
 
 == Workstation setup ==
 
