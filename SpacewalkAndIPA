@@ -116,14 +116,14 @@ account required   pam_sss.so
 
 When a user authenticates either via Kerberos ticket or via form-based PAM authentication, it might be the first time that user logged in to the Spacewalk server. Spacewalk needs to create record about that user in its internal database and for that, certain additional attributes are needed besides the obvious login name. The sssd-dbus package provides new '''ifp''' sssd service.
 
-If you're on RHEL7.0/CentOS7.0, you need to configure following repository:
+==== RHEL7.0/CentOS7.0 only ====
+  If you're on RHEL7.0/CentOS7.0, you need to configure following repository:
 
-http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/
+  http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/
 
-Retrieve the {{{.repo}}} file and put it to {{{/etc/yum.repos.d}}}:
+  Retrieve the {{{.repo}}} file and put it to {{{/etc/yum.repos.d}}}:
 
 {{{
-# Example for RHEL 6:
 curl -o /etc/yum.repos.d/adelton-identity_demo.repo http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-x86_64/
 }}}
 
@@ -164,6 +164,7 @@ setsebool -P httpd_dbus_sssd on
 == Configure Apache ==
 
 The authentication against the external identity provider (FreeIPA) is achieved via a set of Apache modules. We need to install them:
+
 (On RHEL7/CentOS7 the modules will be fetched from the same yum repo as the sssd-dbus package installed above.)
 
 {{{
@@ -216,7 +217,7 @@ LoadModule lookup_identity_module modules/mod_lookup_identity.so
 
 You can certainly put all the configuration into one configuration file and not list the mod_authnz_pam twice.
 
-Run
+Run:
 
 {{{
 setsebool -P allow_httpd_mod_auth_pam 1
