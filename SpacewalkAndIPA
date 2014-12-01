@@ -56,7 +56,7 @@ configure pam, sssd, apache and tomcat for you. Otherwise, you need to follow th
 
 == Automatic setup using the spacewalk-setup-ipa-authentication script == #automatic-setup
 
-Run the spacewalk-setup-ipa-authentication script:
+Run the spacewalk-setup-ipa-authentication script as root:
 {{{
 $ spacewalk-setup-ipa-authentication 
 Enabling authentication against [<your-spacewalk-machine>].
