@@ -83,7 +83,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     trusted certification authority. Installator will make sure certificate
     will get into `~/.postgresql/root.crt`, `/etc/rhn/postgresql-db-root-ca.cert`,
     and `/etc/rhn/javatruststore.jks`. It will also change permissions, do restorecon,
-    and set `db_ssl_enabled = 1` in `rhn.cof`.
+    and set `db_ssl_enabled = 1` in `rhn.conf`.
 
     {{{
     spacewalk-setup --disconnected --external-postgresql --external-postgresql-over-ssl
@@ -92,7 +92,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
 == Command-line utilities
 
 Tools that use rhn.conf should be all ok after following steps in
-[EnablingSSLonSpacewalk Enabling SSL on Spacewalk]. However, some
+[#EnablingSSLonSpacewalk Enabling SSL on Spacewalk]. However, some
 (e.g. installation) do not. For those you can use procedure described
 here.
 
@@ -146,12 +146,12 @@ Most database-aware components in Spacewalk should work with this.
 === Java
 
 Java-based components (Tomcat, Taskomatic, and Rhn-search) require
-certificates to be stored in TrustStore. Its default location
+certificates to be stored in !TrustStore. Its default location
 `/etc/rhn/javatruststore.jks` can be overwritten by `java.ssl_truststore`
 option in `rhn.conf`.
 
-TrustStore is manipulated by `keytool`. It expects key to be in DER
-format for import. TrustSore needs password for creation/manipulation,
+!TrustStore is manipulated by `keytool`. It expects key to be in DER
+format for import. !TrustSore needs password for creation/manipulation,
 not for access though. Follows example of importing authority certificate.
 
     {{{
