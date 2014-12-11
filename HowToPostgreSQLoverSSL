@@ -12,13 +12,14 @@ to communicate over SSL:
 
   * Install PostgreSQL database.
   * Follow steps in [#EnablingSSLonPostgreSQLdatabase Enabling SSL on PostgreSQL database].
-  * Run installation with modification as described in [#Command-lineutilitiese.g.installation Command-line utilities].
-  * Follow steps in [#EnablingSSLonSpacewalk Enabling SSL on Spacewalk].
+  * Follow [#Installation Installation].
+  * When using command line utilities follow [#Command-lineutilities Command-line utilities].
 
 == Existing Spacewalk
 
   * Follow steps in [#EnablingSSLonPostgreSQLdatabase Enabling SSL on PostgreSQL database].
   * Follow steps in [#EnablingSSLonSpacewalk Enabling SSL on Spacewalk].
+  * When using command line utilities follow [#Command-lineutilities Command-line utilities].
 
 == Enabling SSL on PostgreSQL database
 
@@ -74,7 +75,21 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     # chmod og-rwx /var/lib/pgsql/data/server.key
     }}}
 
-== Command-line utilities (e.g. installation)
+== Installation
+
+    Follow usual installation guide, but use `--external-postgresql-over-ssl`
+    option in addition to `--external-postgresql`. In addition to usual stuff
+    you will be prompted for location of file containing certificate of
+    trusted certification authority. Installator will make sure certificate
+    will get into `~/.postgresql/root.crt`, `/etc/rhn/postgresql-db-root-ca.cert`,
+    and `/etc/rhn/javatruststore.jks`. It will also change permissions, do restorecon,
+    and set `db_ssl_enabled = 1` in `rhn.cof`.
+
+    {{{
+    spacewalk-setup --disconnected --external-postgresql --external-postgresql-over-ssl
+    }}}
+
+== Command-line utilities
 
 Tools that use rhn.conf should be all ok after following steps in
 [EnablingSSLonSpacewalk Enabling SSL on Spacewalk]. However, some
@@ -94,17 +109,17 @@ self signed certificate it would be `/var/lib/pgsql/data/server.crt`
 from database server) in `~/.postgresql/root.crt` (path can be changed
 with `PGSSLROOTCERT` environment variable). Then you can run installer
 with `PGSSLMODE` environment variable set to `verify-full`. Example of
-calling installer would be
+calling `spacewalk-sql` would be
 
     {{{
-    # PGSSLMODE=verify-full spacewalk-setup --external-postgresql
+    # PGSSLMODE=verify-full spacewalk-sql -i
     }}}
 
 or you can export `PGSSLMODE` variable
 
     {{{
     # export PGSSLMODE=verify-full
-    # spacewalk-setup --external-postgresql
+    # spacewalk-sql -i
     }}}
 
 == Enabling SSL on Spacewalk
