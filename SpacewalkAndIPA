@@ -59,7 +59,7 @@ configure pam, sssd, apache and tomcat for you. Otherwise, you need to follow th
 Run the spacewalk-setup-ipa-authentication script as root:
 {{{
 $ spacewalk-setup-ipa-authentication 
-Enabling authentication against [<your-spacewalk-machine>].
+Enabling authentication against [ipa.example.com].
 Retrieving HTTP/ service keytab into [/etc/httpd/conf/http.keytab] ...
 Keytab successfully retrieved and stored in: /etc/httpd/conf/http.keytab
 changed ownership of `/etc/httpd/conf/http.keytab' to apache
@@ -81,7 +81,7 @@ Starting tomcat6: [  OK  ]
 Stopping httpd: [  OK  ]
 Starting httpd: httpd: [  OK  ]
 Waiting for tomcat to be ready ...
-Authentication against [<your-spacewalk-machine>] sucessfully enabled.
+Authentication against [ipa.example.com] sucessfully enabled.
 As admin, at Admin > Users > External Authentication, select
           Default organization to autopopulate new users into.
 }}}
