@@ -17,9 +17,11 @@ to communicate over SSL:
 
 == Existing Spacewalk
 
+  * Stop Spacewalk server.
   * Follow steps in [#EnablingSSLonPostgreSQLdatabase Enabling SSL on PostgreSQL database].
   * Follow steps in [#EnablingSSLonSpacewalk Enabling SSL on Spacewalk].
   * When using command line utilities follow [#Command-lineutilities Command-line utilities].
+  * Start Spacewalk server.
 
 == Enabling SSL on PostgreSQL database
 
