@@ -10,13 +10,13 @@ If you have an existing Spacewalk 2.3+ installation with Oracle or PostgreSQL ba
 Make sure your Spacewalk server is down:
 
 {{{
-# spacewalk-service stop
+spacewalk-service stop
 }}}
 
 Make sure your database server you are migrating from is running. If your old database server is '''Embedded PostgreSQL''', then run:
 
 {{{
-# db-control start
+db-control start
 }}}
 
  * If you are using other than embedded database and you don't have access to database machine, ask your Database Administrator.
@@ -28,14 +28,10 @@ Upgrade your existing schema.
  * You accomplish this by executing the following as root:
 
 {{{
-# spacewalk-schema-upgrade
+spacewalk-schema-upgrade
 }}}
 
- * Log files from schema upgrade will be put into:
-
-{{{
-/var/log/spacewalk/schema-upgrade
-}}}
+ * Log files from schema upgrade will be put into '''/var/log/spacewalk/schema-upgrade'''.
 
 Make sure ''spacewalk-utils'' package is installed:
 
@@ -56,7 +52,7 @@ You will dump data from your old database with ''spacewalk-dump-schema'' script.
 Run following statement as root:
 
 {{{
-# spacewalk-dump-schema --to=oracle > migrate-to-oracle.sql
+spacewalk-dump-schema --to=oracle > migrate-to-oracle.sql
 }}}
 
  * This will connect to database specified in '''/etc/rhn/rhn.conf''', dumps content of tables into '''/tmp/dumped-tables''' and create migration script in actual directory.
@@ -70,7 +66,7 @@ Run following statement as root:
 Run following statement as root:
 
 {{{
-# spacewalk-dump-schema --to=postgresql > migrate-to-postgresql.sql
+spacewalk-dump-schema --to=postgresql > migrate-to-postgresql.sql
 }}}
 
  * This will connect to database specified in '''/etc/rhn/rhn.conf''', dumps all content into file '''migrate-to-postgresql.sql'''.
@@ -100,21 +96,19 @@ You need to replace some database specific packages if you are migrating between
  * If you are migrating from PostgreSQL to Oracle, run:
 
 {{{
-# yum remove spacewalk-java-postgresql spacewalk-backend-sql-postgresql spacewalk-postgresql
-# yum install spacewalk-oracle
+yum remove -y spacewalk-postgresql && yum install -y spacewalk-oracle && yum remove -y spacewalk-java-postgresql spacewalk-backend-sql-postgresql
 }}}
 
  * If you are migrating from Oracle to PostgreSQL, run:
 
 {{{
-# yum remove spacewalk-java-oracle spacewalk-backend-sql-oracle spacewalk-oracle
-# yum install spacewalk-postgresql
+yum remove -y spacewalk-oracle && yum install -y spacewalk-postgresql && yum remove -y spacewalk-java-oracle spacewalk-backend-sql-oracle
 }}}
 
 Install and start the new database server. For Embedded PostgreSQL you can run:
 
 {{{
-# spacewalk-setup --db-only
+spacewalk-setup --db-only
 }}}
 
  * For installation of other than Embedded PostgreSQL database contact your Database Administrator. Then just populate the new database with Spacewalk schema.
@@ -122,13 +116,13 @@ Install and start the new database server. For Embedded PostgreSQL you can run:
  * To populate External Oracle run:
 
 {{{
-# spacewalk-setup --db-only --external-oracle
+spacewalk-setup --db-only --external-oracle
 }}}
 
  * To populate External PostgreSQL run:
 
 {{{
-# spacewalk-setup --db-only --external-postgresql
+spacewalk-setup --db-only --external-postgresql
 }}}
 
  * Note that database population will not work if External Oracle is running on unstandard port and you have enabled ''SELinux'' on Spacewalk server.
@@ -142,13 +136,13 @@ Install and start the new database server. For Embedded PostgreSQL you can run:
  * If you are migrating to External Oracle on different machine, you need to copy dumped tables there, e.g.:
 
 {{{
-# scp -r /tmp/dumped-tables oracle-machine-hostname:/tmp
+scp -r /tmp/dumped-tables oracle-machine-hostname:/tmp
 }}}
 
 Load into established database:
 
 {{{
-# spacewalk-sql -i < migrate-to-?.sql
+spacewalk-sql -i < migrate-to-?.sql
 }}}
 
  * Note that you may need to change SELinux context for the dump file to be able to load it into Oracle:
