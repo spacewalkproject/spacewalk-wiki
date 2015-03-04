@@ -148,8 +148,8 @@ spacewalk-sql -i < migrate-to-?.sql
  * Note that you may need to change ''SELinux'' context of the migration script to be able to load it into Oracle:
 
 {{{
-semanage fcontext -a -t oracle_sqlplus_exec_t migrate-to-oracle.sql
-restorecon -v migrate-to-oracle.sql
+semanage fcontext -a -t oracle_sqlplus_exec_t /root/migrate-to-oracle.sql
+restorecon -v /root/migrate-to-oracle.sql
 }}}
 
  * Similarly, you may need to change ''SELinux'' context of dumped tables:
