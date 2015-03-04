@@ -145,11 +145,18 @@ Load into established database:
 spacewalk-sql -i < migrate-to-?.sql
 }}}
 
- * Note that you may need to change ''SELinux'' context for the dump file to be able to load it into Oracle:
+ * Note that you may need to change ''SELinux'' context of the migration script to be able to load it into Oracle:
 
 {{{
 semanage fcontext -a -t oracle_sqlplus_exec_t migrate-to-oracle.sql
 restorecon -v migrate-to-oracle.sql
+}}}
+
+ * Similarly, you may need to change ''SELinux'' context of dumped tables:
+
+{{{
+semanage fcontext -a -t oracle_tmp_t "/tmp/dumped-tables(/.*)?"
+restorecon -R -v /tmp/dumped-tables/
 }}}
 
 Now you can run Spacewalk with new database:
