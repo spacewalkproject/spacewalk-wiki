@@ -133,7 +133,7 @@ spacewalk-setup --db-only --external-postgresql
 
  * If you are migrating to '''External Oracle''', make sure your database has ''TEMP'', ''UNDO'' and ''DATA'' tablespaces big enough.
 
- * If you are migrating to External Oracle on different machine, you need to copy dumped tables there, e.g.:
+ * If you are migrating to '''External Oracle''' on different machine, you need to copy dumped tables there, e.g.:
 
 {{{
 scp -r /tmp/dumped-tables oracle-machine-hostname:/tmp
