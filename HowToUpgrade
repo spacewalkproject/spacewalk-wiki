@@ -109,6 +109,12 @@ Important notes:
 
 == Restart Spacewalk ==
 
+If you are running Spacewalk on Fedora run following command before starting Spacewalk services
+
+{{{
+systemctl daemon-reload
+}}}
+
 {{{
 # /usr/sbin/spacewalk-service start
 }}}
