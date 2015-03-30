@@ -71,52 +71,53 @@ The up-to-date API documentation can be found at http://www.spacewalkproject.org
 
 Our thanks go to the community members who contributed to this release:
 
-* Anastasios Papaioannou
-* Aron Parsons
-* Avi Miller
-* Bo Maryniuk
-* Cynthia Sanchez
-* David Holland
-* Dimitar Yordanov
-* Duncan Mac-Vicar P
-* Flavio Castelli
-* Grant Gainey
-* Gregor Gruener
-* Ian Forde
-* Jan Dobes
-* Jan Hutar
-* Jan Pazdziora
-* Jiri Mikulka
-* Joerg Steffens
-* Johannes Renner
-* Kilian Petsch
-* Lasse Palm
-* lbayerlein
-* Ludwig
-* Lukas Pramuk
-* Marcelo Moreira de Mello
-* Martin Seidl
-* Matej Kollar
-* Mathieu Bridon
-* Michael Calmer
-* Michael Mraka
-* Micha Lenk
-* Milan Zazrivec
-* Miroslav Suchý
-* Neha Rawat
-* Patrick Hurrelmann
-* Paul Wayper
-* Pavel Studenik
-* Peter Gervase
-* Satoru SATOH
-* Shannon Hughes
-* Silvio Moioli
-* Stephen Herr
-* Tasos Papaioannou
-* Tim Speetjens
-* Tobias D. Oestreicher
-* Tomas Kasparek
-* Tomas Lestach
+* Anastasios Papaioannou                                                                     
+* Aron Parsons                                                                               
+* Avi Miller                                                                                 
+* Bo Maryniuk                                                                                
+* Cynthia Sanchez                                                                            
+* David Holland                                                                              
+* Dimitar Yordanov                                                                           
+* Duncan Mac-Vicar P                                                                         
+* Flavio Castelli                                                                            
+* Grant Gainey                                                                               
+* Gregor Gruener                                                                             
+* Ian Forde                                                                                  
+* Jan Dobes                                                                                  
+* Jan Hutar                                                                                  
+* Jan Pazdziora                                                                              
+* Jiri Mikulka                                                                               
+* Joerg Steffens                                                                             
+* Johannes Renner                                                                            
+* Kilian Petsch                                                                              
+* Lasse Palm                                                                                 
+* lbayerlein                                                                                 
+* Ludwig                                                                                     
+* Lukas Pramuk                                                                               
+* Marcelo Moreira de Mello                                                                   
+* Martin Seidl                                                                               
+* Matej Kollar                                                                               
+* Mathieu Bridon                                                                             
+* Michael Calmer                                                                             
+* Michael Mraka                                                                              
+* Micha Lenk                                                                                 
+* Milan Zazrivec                                                                             
+* Miroslav Suchý                                                                             
+* Neha Rawat                                                                                 
+* Patrick Hurrelmann                                                                         
+* Paul Wayper                                                                                
+* Pavel Studenik                                                                             
+* Peter Gervase                                                                              
+* Robert Moser II                                                                            
+* Satoru SATOH                                                                               
+* Shannon Hughes                                                                             
+* Silvio Moioli                                                                              
+* Stephen Herr                                                                               
+* Tasos Papaioannou                                                                          
+* Tim Speetjens                                                                              
+* Tobias D. Oestreicher                                                                      
+* Tomas Kasparek                                                                             
+* Tomas Lestach                                                                                            
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
 
@@ -124,13 +125,13 @@ https://fedorahosted.org/spacewalk/wiki/ContributorList
 
 In Spacewalk 2.3, we've seen
 
-    * 215 bugs fixed
-    * 1218 changesets committed
-    * 1831 commits done
+    * 220 bugs fixed
+    * 1245 changesets committed
+    * 1874 commits done
 
 Github repo for commits since Spacewalk 2.2
 
-    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-07-17&to=2015-03-31&type=c Spacewalk 2.2 to 2.3]
+    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-07-17&to=2015-03-27&type=c Spacewalk 2.2 to 2.3]
 
 == Spacewalk 2.3 on RHEL 5 (CentOS 5) ==
 
