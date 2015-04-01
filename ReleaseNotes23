@@ -26,10 +26,11 @@ with client repositories under
 
 SUSE Linux client packages can be found here
 
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/SLE_11_SP3/
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_12.3/
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.1/
-   * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_Factory/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.1/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.2/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_Tumbleweed/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/SLE_12/
+  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/SLE_11_SP3/
 
 For fresh installations, please use steps from
 
