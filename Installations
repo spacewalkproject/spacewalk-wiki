@@ -52,6 +52,9 @@ Testing Spacewalk server to support Scientific Linux, CERN Linux, and latest Fed
 Management for the 96 computing nodes of the HPC cluster using Scientific Linux. 
 Using Systems provisioning, update, configuration and monitoring.
 
+=== [http://www.tjma.jus.br Tribunal de Justiça do Estado do Maranhão - TJMA] ===
+
+~ 69 RHEL/CentOS 5,6,7 servers. Systems management, update, configuration, monitoring.
 
 
 === Red Hat ===
