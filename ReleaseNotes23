@@ -48,7 +48,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIPA
   * Improved Proxy caching of yum meta-data with addition of If-Modified-Since header support
   * Community contribution to support for using external Oracle 12c. (Please note that this is provided as-is and not tested by the core team.)
-  * Continued UI polish and improvements
+  * Continued UI polish and improvements, including standardizing on [https://www.patternfly.org/ Patternfly]
   * Improved and simplified codebase by:
     * Removing all Monitoring-related code
     * Removing all Solaris support
