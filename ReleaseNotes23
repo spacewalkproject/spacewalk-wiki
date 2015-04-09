@@ -44,12 +44,33 @@ If you plan to upgrade from older release, search no more -- the following page 
 
   * Spacewalk now supported on RHEL7/CentOS7/Fedora21
   * Spacewalk supports Fedora21 clients
-  * Removed all Monitoring-related code
-  * Removed all Solaris support
-  * Completed the port of the web-UI from Perl to Java
-  * Removed most of the Perl stack
-  * Taught Proxy to use If-Modified-Since
+  * Addition of spacewalk-setup-ipa-authentication to make the external authentication setup easier.
+    * https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIPA
+  * Improved Proxy caching of yum meta-data with addition of If-Modified-Since header support
+  * Community contribution to support for using external Oracle 12c. (Please note that this is provided as-is and not tested by the core team.)
+  * Continued UI polish and improvements
+  * Improved and simplified codebase by:
+    * Removing all Monitoring-related code
+    * Removing all Solaris support
+    * Completing the port of the web-UI from Perl to Java
+    * Cleaning up and removing large chunks of orphaned code
   * Plenty of small enhancements and fixes
+    * spacecmd enhancements:
+      * softwarechannel_errata
+      * configchannel_sync
+      * softwarechannel_sync
+      * softwarechannel_removesyncschedule
+    * spacewalk-clone-by-date enhancements:
+      * added a --dry-run option
+      * improved dependency resolution (see [https://bugzilla.redhat.com/show_bug.cgi?id=1123468 1123468])
+      * removed asynchronous background cloning - it conflicts (badly) with dependency resolution, see [https://bugzilla.redhat.com/show_bug.cgi?id=1207846 1207846]
+    * spacewalk-reports additions:
+      * config-files
+      * config-files-latest
+      * additional data to scap-scan report
+    * Added support for xz-compressed repositories
+    * Added Korea to list of timezones
+    * aarch64 support
   * New API calls:
     * activationkey.clone
     * configchannel.deployAllSystems
@@ -81,10 +102,8 @@ Our thanks go to the community members who contributed to this release:
 * Dimitar Yordanov                                                                           
 * Duncan Mac-Vicar P                                                                         
 * Flavio Castelli                                                                            
-* Grant Gainey                                                                               
 * Gregor Gruener                                                                             
 * Ian Forde                                                                                  
-* Jan Dobes                                                                                  
 * Jan Hutar                                                                                  
 * Jan Pazdziora                                                                              
 * Jiri Mikulka                                                                               
@@ -97,7 +116,6 @@ Our thanks go to the community members who contributed to this release:
 * Lukas Pramuk                                                                               
 * Marcelo Moreira de Mello                                                                   
 * Martin Seidl                                                                               
-* Matej Kollar                                                                               
 * Mathieu Bridon                                                                             
 * Michael Calmer                                                                             
 * Michael Mraka                                                                              
@@ -113,12 +131,9 @@ Our thanks go to the community members who contributed to this release:
 * Satoru SATOH                                                                               
 * Shannon Hughes                                                                             
 * Silvio Moioli                                                                              
-* Stephen Herr                                                                               
 * Tasos Papaioannou                                                                          
 * Tim Speetjens                                                                              
 * Tobias D. Oestreicher                                                                      
-* Tomas Kasparek                                                                             
-* Tomas Lestach                                                                                            
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
 
