@@ -2,9 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instructions for new installations of Spacewalk 2.2. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instructions for new installations of Spacewalk 2.3. If you are upgrading from older versions, see HowToUpgrade.
 
-Spacewalk 2.1 installation instructions are available at [wiki:HowToInstall21].
+Spacewalk 2.2 installation instructions are available at [wiki:HowToInstall22].
 
 ----
 
@@ -27,28 +27,28 @@ RPM downloads of the project are available through yum repositories at
 
 To use this repository easily, install spacewalk-repo package with commands below:
 
-=== Red Hat Enterprise Linux 5, CentOS 5 ===
-
-{{{
-rpm -Uvh http://yum.spacewalkproject.org/2.2/RHEL/5/x86_64/spacewalk-repo-2.2-1.el5.noarch.rpm
-}}}
-
 === Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.2/RHEL/6/x86_64/spacewalk-repo-2.2-1.el6.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/6/x86_64/spacewalk-repo-2.3-2.el6.noarch.rpm
 }}}
 
-=== Fedora 19 ===
+=== Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.2/Fedora/19/x86_64/spacewalk-repo-2.2-1.fc19.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/7/x86_64/spacewalk-repo-2.3-2.el7.noarch.rpm
 }}}
 
 === Fedora 20 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.2/Fedora/20/x86_64/spacewalk-repo-2.2-1.fc20.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/20/x86_64/spacewalk-repo-2.3-2.fc20.noarch.rpm
+}}}
+
+=== Fedora 21 ===
+
+{{{
+rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/21/x86_64/spacewalk-repo-2.3-2.fc21.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -60,7 +60,7 @@ sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
 sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
 }}}
 
-'''NOTE:''' Nigthly repo contains developers snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
+'''NOTE:''' Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 == Additional repos & packages ==
 
@@ -72,10 +72,8 @@ When using RHEL 6, make sure you are subscribed to following RHN channel:
 
 === Jpackage repository ===
 
-==== Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 and Fedora ====
-
-For Spacewalk on EL 6 and Fedora, a couple of additional dependencies are needed from jpackage.
-If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php
+Additional dependencies are needed from jpackage.
+(If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php)
 Please configure the following yum repository before beginning your Spacewalk installation:
 
 {{{
@@ -91,34 +89,20 @@ EOF
 }}}
 
 We specifically want 5.0 generic directory in the above URL.
-Make sure, you do not use the jpackage-generic repository on RHEL 5.
 
 === EPEL repository ===
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
 To get packages from EPEL just install this RPM:
 
-==== EPEL 5 (use for Red Hat Enterprise Linux 5, Scientific Linux 5, CentOS 5) ====
-{{{
-rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
-}}}
-
 ==== EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6) ====
 {{{
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 }}}
 
-=== CentOS 5 ===
-
-Follow the instructions to use '''EPEL 5''' with the additions:
- * Necessary packages rhn-client-tools and rhnlib were removed from CentOS, they can be found in spacewalk-client repo. Setup it by installing spacewalk-client-repo package.
+==== EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7) ====
 {{{
-rpm -ihv http://yum.spacewalkproject.org/2.2-client/RHEL/5/x86_64/spacewalk-client-repo-2.2-1.el5.noarch.rpm
-}}}
- *  Import Red Hat's RPM GPG key:
-{{{
-# wget -O /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release http://www.redhat.com/security/37017186.txt
-# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 }}}
 
 == Database server ==
@@ -164,40 +148,40 @@ yum install spacewalk-oracle
 
 == Configuring the firewall ==
 
-Spacewalk needs various inbound ports to be connectible. Use {{{system-config-firewall}}} or edit {{{/etc/sysconfig/iptables}}}, adding the ports needed -- 80 and 443.
-On system with {{{firewalld}}} use {{{firewall-cmd --add-service=http ; firewall-cmd --add-service=https}}}. 
+Spacewalk needs various inbound ports to be accessible. Use {{{system-config-firewall}}} or edit {{{/etc/sysconfig/iptables}}}, adding the ports needed -- 80 and 443.
+
+On a system with {{{firewalld}}} use {{{firewall-cmd --add-service=http ; firewall-cmd --add-service=https}}}. 
+
 Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
 
 == Configuring Spacewalk ==
 
-Your Spacewalk server should have a resolvable FQDN such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
+Your Spacewalk server should have a resolvable fully-qualified domain name (FQDN) such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
 The setup requires that the database account has a password.[[BR]]
 '''Note:''' Please don't use ''' '#' ''' (number sign/pound/hash) and ''' '@' ''' in your database password otherwise installation will fail.
 
 Once the Spacewalk RPM is installed you need to configure the application.
 
-If you have installed {{{spacewalk-setup-postgresql}}}, run
+If you wish to use the default PostgreSql database, and have installed {{{spacewalk-setup-postgresql}}}, just run
 
 {{{
 spacewalk-setup --disconnected
 }}}
 
-If you've set up the database server manually (both on the same and on different machine), run
+If you are planning to use your own database setup (either locally or on a separate machine), then run
 
 {{{
 spacewalk-setup --disconnected --external-oracle
 }}}
 
-if you are using Oracle database backend.
-
-Or 
+if you are using an Oracle database, '''OR'''
 
 {{{
 spacewalk-setup --disconnected --external-postgresql
 }}}
 
-if you tend to use postgresql.
+if you are using postgresql.
 
 An example session is as follows:
 {{{
