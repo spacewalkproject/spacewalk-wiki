@@ -1,7 +1,8 @@
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 2.2.
+Instructions for registering client systems you wish to manage with Spacewalk 2.3.
 
+ * Spacewalk 2.2 instructions are available at [wiki:RegisteringClients22].
  * Spacewalk 2.1 instructions are available at [wiki:RegisteringClients21].
  * Spacewalk 2.0 instructions are available at [wiki:RegisteringClients20].
  * Spacewalk 1.9 instructions are available at [wiki:RegisteringClients19].
@@ -13,18 +14,18 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
 
 === Note about rhnreg_ks --force ===
 
-rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the "--force" flag with rhnreg_ks, otherwise there is no need to use "--force".
+{{{rhnreg_ks}}} is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the "--force" flag with {{{rhnreg_ks}}}, otherwise there is no need to use "--force".
 
 == Fedora ==
 
  1. Install the Spacewalk client yum repository
-    * For Fedora 19:
-{{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.2-client/Fedora/19/x86_64/spacewalk-client-repo-2.2-1.fc19.noarch.rpm
-}}}
     * For Fedora 20:
 {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.2-client/Fedora/20/x86_64/spacewalk-client-repo-2.2-1.fc20.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/Fedora/20/x86_64/spacewalk-client-repo-2.3-2.fc20.noarch.rpm
+}}}
+    * For Fedora 21:
+{{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/Fedora/21/x86_64/spacewalk-client-repo-2.3-2.fc21.noarch.rpm
 }}}
  2. Install client packages
    {{{
@@ -39,51 +40,39 @@ rhnreg_ks is used for registration of clients to Spacewalk. If you need to re-re
 # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel> 
    }}}
 
-== Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6, CentOS 5, 6 and 7 ==
+== Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7 ==
 
 '''Warning:''' If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!
 
-  1. Install the Spacewalk yum repository
+  1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL. Install the Spacewalk yum repository and matching EPEL repository.
  * RHEL 5 / CentOS 5
    {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.2-client/RHEL/5/x86_64/spacewalk-client-repo-2.2-1.el5.noarch.rpm
-   }}}
- * RHEL 6 / SL 6 / CentOS 6
-   {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.2-client/RHEL/6/x86_64/spacewalk-client-repo-2.2-1.el6.noarch.rpm
-   }}}
- * RHEL 7 / CentOS 7
-   {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.2-client/RHEL/7/x86_64/spacewalk-client-repo-2.2-1.el7.noarch.rpm
-   }}}
-
- 2. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL, just like for the Spacewalk server:
- * EPEL 5
-   {{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/5/x86_64/spacewalk-client-repo-2.3-2.el5.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/$BASEARCH/epel-release-5-4.noarch.rpm
    }}}
- * EPEL 6
-{{{
+ * RHEL 6 / SL 6 / CentOS 6
+   {{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/6/x86_64/spacewalk-client-repo-2.3-2.el6.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/$BASEARCH/epel-release-6-8.noarch.rpm
    }}}
- * EPEL 7
-{{{
+ * RHEL 7 / SL 7 / CentOS 7
+   {{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/7/x86_64/spacewalk-client-repo-2.3-2.el7.noarch.rpm
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
    }}}
 
-
-  3. Install client packages
+  2. Install client packages
     {{{
 # yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
     }}}
-  4. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
+  3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
 {{{
 # rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
 }}}
-  5. Register your CentOS or Red Hat Enterprise Linux system to Spacewalk using the activation key you created earlier
+  4. Register your system to Spacewalk using the activation key you created earlier
    {{{
 # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> 
    }}}
@@ -110,21 +99,27 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 
   1. Add the '''spacewalk-tools''' repo to get access to the tools and install them:
 
+For openSUSE 13.2:
+{{{
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.2/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+}}}
+
+For openSUSE 13.1:
+{{{
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.1/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+}}}
+
 For openSUSE 12.3:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.2/openSUSE_12.3/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/SLE_12/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
-For openSUSE 12.2:
+For Tumbleweed:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.2/openSUSE_13.1/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
-}}}
-
-For Factory:
-{{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.2/openSUSE_Factory/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_Tumbleweed/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
 }}}
 
@@ -139,6 +134,8 @@ For Factory:
 
 
 == Debian ==
+
+'''NOTE: DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.3! ''' Any volunteers?
 
 All core clients packages are already in Debian and Ubuntu. See:
 
@@ -186,9 +183,3 @@ apt-get update
 Finally, you rhnpush your favourite Debian packages to your Spacewalk server in order to be able to apply them using the Spacewalk WebUI. You can push packages from your Spacewalk server. There is no needed to run rhnpush on Debian machine.
 
 '''Note''' that for Debian clients neither Spacewalk proxy, satellite-sync, repo-sync, source packages nor staging content will work.
-
-
-
-= Solaris 8, 9 or 10 =
-
-See [wiki:Solaris Solaris Support].
