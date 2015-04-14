@@ -1,11 +1,11 @@
 [[TOC]]
 = '''Spacewalk''' =
 == __Latest News__ ==
-[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/WikiStart/spacewalk_2.2.png?format=raw)]]
+[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/ReleaseNotes23/spacewalk_2.3.png?format=raw)]]
 [[BR]]
-=== '''Spacewalk 2.2''' was released on July 16th, 2014: ===
+=== '''Spacewalk 2.3''' was released on April 14th, 2015: ===
  * [HowToInstall Download and Install]
- * [wiki:ReleaseNotes22 Release Notes]
+ * [wiki:ReleaseNotes23 Release Notes]
 
 == __Introduction__ ==
 [http://spacewalk.redhat.com/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
