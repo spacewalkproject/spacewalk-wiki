@@ -103,30 +103,26 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 For openSUSE 13.2:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.2/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
 For openSUSE 13.1:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_13.1/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
-}}}
-
-For openSUSE 12.3:
-{{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/SLE_12/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
 For Tumbleweed:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.3/openSUSE_Tumbleweed/ spacewalk-tools
-#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check yum
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
  2. Install Spacewalk's CA certificate on the server to enable SSL communication
 {{{
 # wget http://YourSpacewalk.example.org/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT
+# ln -s /usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT /usr/share/pki/trust/anchors/RHN-ORG-TRUSTED-SSL-CERT.pem
+# update-ca-certificates
 }}}
  3. Register your SUSE system to Spacewalk using the activation key you created earlier
    {{{
