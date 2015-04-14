@@ -155,7 +155,7 @@ With the addition of installation-support on RHEL7/CentOS7, Spacewalk is now no 
 
 == Solaris and Monitoring Support - Removal Notice ==
 
-The Spacewalk team has dropped code for Solaris clients and the Monitoring component of Spacewalk. Anyone currently using either of the capabilities willh to consider alternatives for their needs prior to upgrading to 2.3. 
+The Spacewalk team has dropped code for Solaris clients and the Monitoring component of Spacewalk. Anyone currently using either of the capabilities will need to consider alternatives for their needs prior to upgrading to 2.3. 
 
 == User community, reporting issues ==
 
