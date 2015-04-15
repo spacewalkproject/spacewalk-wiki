@@ -23,10 +23,11 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Assumptions ==
 
-  * For RHEL or CentOS, you will need the base and EPEL repositories enabled for dependencies.
+  * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
+  * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
   * You have set up your yum to point to Spacewalk 2.3 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
-    * In particular, for Fedora, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
+    * In particular, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 == Database and configuration backup ==
 
