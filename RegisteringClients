@@ -50,19 +50,19 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
    {{{
 # rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/5/x86_64/spacewalk-client-repo-2.3-2.el5.noarch.rpm
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/$BASEARCH/epel-release-5-4.noarch.rpm
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
    }}}
  * RHEL 6 / SL 6 / CentOS 6
    {{{
 # rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/6/x86_64/spacewalk-client-repo-2.3-2.el6.noarch.rpm
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/$BASEARCH/epel-release-6-8.noarch.rpm
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
    }}}
  * RHEL 7 / SL 7 / CentOS 7
    {{{
 # rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/7/x86_64/spacewalk-client-repo-2.3-2.el7.noarch.rpm
 # BASEARCH=$(uname -i)
-# rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+# rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
    }}}
 
   2. Install client packages
