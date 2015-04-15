@@ -8,7 +8,7 @@
  * [wiki:ReleaseNotes23 Release Notes]
 
 == __Introduction__ ==
-[http://spacewalk.redhat.com/ Spacewalk] is an open source Linux and Solaris systems management solution.  It allows you to:
+[http://spacewalk.redhat.com/ Spacewalk] is an open source Linux systems management solution.  It allows you to:
  * Inventory your systems (hardware and software information)
  * Install and update software on your systems
  * Collect and distribute your custom software packages into manageable groups
