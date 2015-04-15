@@ -64,13 +64,7 @@ sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
 
 == Additional repos & packages ==
 
-=== Red Hat Optional Server 6 ===
-
-When using RHEL 6, make sure you are subscribed to following RHN channel:
-
-  * '''Red Hat Optional Server 6''
-
-=== Jpackage repository ===
+=== JPackage (All systems) ===
 
 Additional dependencies are needed from jpackage.
 (If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php)
@@ -90,7 +84,7 @@ EOF
 
 We specifically want 5.0 generic directory in the above URL.
 
-=== EPEL repository ===
+=== EPEL (Red Hat Enterprise Linux, CentOS, Scientific Linux) ===
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [http://fedoraproject.org/wiki/EPEL EPEL - Extra Packages for Enterprise Linux] contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
 To get packages from EPEL just install this RPM:
@@ -104,6 +98,13 @@ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 {{{
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 }}}
+
+=== Red Hat Optional Server (Red Hat Enterprise Linux)  ===
+
+When using Red Hat Enterprise Linux 6 or 7, make sure you are subscribed to the appropriate Red Hat Optional Server channel:
+
+  * '''Red Hat Optional Server 6''' , OR
+  * '''Red Hat Optional Server 7'''
 
 == Database server ==
 
