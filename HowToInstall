@@ -10,7 +10,7 @@ Spacewalk 2.2 installation instructions are available at [wiki:HowToInstall22].
 
 == Prerequisites ==
 
- * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring)
+ * Outbound open ports 80, 443
  * Inbound open ports 80, 443, 5222 (only if you want to push actions to client machines) and 5269 (only for push actions to a Spacewalk Proxy), 69 udp if you want to use tftp
  * Storage for database: 250 KiB per client system +  500 KiB per channel + 230 KiB per package in channel (i.e. 1.1GiB for channel with 5000 packages)
  * Storage for packages (default /var/satellite): Depends on what you're storing; Red Hat recommend 6GB per channel for their channels
@@ -206,7 +206,6 @@ Admin Email Address? root@localhost
 ** Loading Spacewalk Certificate.
 ** Verifying certificate locally.
 ** Activating Spacewalk.
-* Enabling Monitoring.
 * Configuring apache SSL virtual host.
 Should setup configure apache's default ssl server for you (saves original ssl.conf) [Y]? 
 ** /etc/httpd/conf.d/ssl.conf has been backed up to ssl.conf-swsave
