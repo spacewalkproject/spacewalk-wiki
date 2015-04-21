@@ -48,7 +48,7 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
   1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL. Install the Spacewalk yum repository and matching EPEL repository.
  * RHEL 5 / CentOS 5
    {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/5/x86_64/spacewalk-client-repo-2.3-2.el5.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.3-client/RHEL/5/x86_64/spacewalk-client-repo-2.3-3.el5.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
    }}}
