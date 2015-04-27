@@ -30,25 +30,25 @@ To use this repository easily, install spacewalk-repo package with commands belo
 === Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/6/x86_64/spacewalk-repo-2.3-2.el6.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/6/x86_64/spacewalk-repo-2.3-3.el6.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/7/x86_64/spacewalk-repo-2.3-2.el7.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/RHEL/7/x86_64/spacewalk-repo-2.3-3.el7.noarch.rpm
 }}}
 
 === Fedora 20 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/20/x86_64/spacewalk-repo-2.3-2.fc20.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/20/x86_64/spacewalk-repo-2.3-3.fc20.noarch.rpm
 }}}
 
 === Fedora 21 ===
 
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/21/x86_64/spacewalk-repo-2.3-2.fc21.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.3/Fedora/21/x86_64/spacewalk-repo-2.3-3.fc21.noarch.rpm
 }}}
 
 === Nightly builds ===
