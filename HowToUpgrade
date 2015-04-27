@@ -73,7 +73,7 @@ Make sure your Spacewalk server is down:
 
 If you are running PostgreSQL database backend check whether you have created language pltclu:
 {{{
-su - postgres -c 'PGPASSWORD=spacepw; createlang pltclu $(spacewalk-cfg-get db_name) ;'
+su - postgres -c "PGPASSWORD=spacepw; createlang pltclu $(spacewalk-cfg-get db_name) ;"
 }}}
 
 If you are running Oracle database backend grant these rights to your database user:
