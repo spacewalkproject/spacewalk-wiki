@@ -1,8 +1,9 @@
 = Upload content to Spacewalk =
 
-In order to use Spacewalk, you need to populate it with content.  There are two ways to do this:
- 1.  spacewalk-repo-sync (For syncing yum repos)
- 2.  rhnpush (For simply pushing a rpms directly to the spacewalk server)
+In order to use Spacewalk, you need to populate it with content.  There are three ways to do this:
+ 1. spacewalk-repo-sync (For syncing yum repos)
+ 2. rhnpush (For simply pushing a rpms directly to the spacewalk server)
+ 3. satellite-sync (For syncing channels/packages from another Spacewalk)
 
 Before doing either of these things, you will need to create a custom software channel within spacewalk.
 
@@ -125,9 +126,6 @@ Note: The directory you pass as --dir=suchandsuch HAS TO contain the RPMs. rhnpu
 
 Note: If you are running rhnpush from a box that is NOT your spacewalk server, use the correct hostname in the --server param
 
-== Channel-to-update == 
-If you are using CenOS or RHEL content, and wish to create channels according to an update level.  You may be interested in this script [https://fedorahosted.org/spacewalk/wiki/channel-to-update here].
+== satellite-sync ==
 
-== Regularly syncing yum repositories ==
-
-This [https://fedorahosted.org/spacewalk/attachment/wiki/UploadFedoraContent/sync_repos.py script] will get the yum repo information out of the database and trigger spacewalk-repo-sync for every channel that has a yum repository. You can run it from cron to sync your repositories on a regular basis.
+You have to configure "inter satellite sync" (aka ISS) on your source (master) Spacewalk and target (slave) one.
