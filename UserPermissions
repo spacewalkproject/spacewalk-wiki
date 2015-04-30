@@ -1,3 +1,5 @@
+'''''DEPRECATED, NO LONGER USED'''''
+
 Today UI and API access is limited though the use of a half-dozen or so pre-defined broad roles, Channel Administrator, Org Administrator, Configuration Administrator, etc. These roles have proven insufficient for many customers and more fine grained control is a frequently requested feature.
 
 Currently this page is just being used for an implementation discussion, but should eventually evolve to be the developer facing documentation on how to understand and use fine grained permissions within the project.
