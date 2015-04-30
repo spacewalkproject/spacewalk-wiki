@@ -1,3 +1,5 @@
+'''''DEPRECATED, NO LONGER USED'''''
+
 = Bare Metal Kickstarting - Best Practices? = 
 
 This page exists to throw some ideas around as to different approaches to the problem of bare metal kickstarting in a large scale production environment.  From a Spacewalk perspective, this is coming up now as we're in the process of adding Cobbler's considerable provisioning mechanics to Spacewalk's core toolset, and as we walk up to it we see that the road is perhaps not as clearly defined as we had thought.
