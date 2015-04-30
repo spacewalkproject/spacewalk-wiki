@@ -1,3 +1,5 @@
+= Debugging Oracle Call Interface driver issues =
+
 If you see any issues using the new OCI driver, there are a few things you need to do:
 
 Edit /etc/rhn/rhn.conf and change:
@@ -18,9 +20,7 @@ hibernate.connection.driver_proto=jdbc:log:oracle.jdbc.driver.OracleDriver:oracl
 
 
 
-Edit /usr/share/rhn/search/classes/com/redhat/satellite/search/db/config.xml
-
-and change:
+Edit `/usr/share/rhn/search/classes/com/redhat/satellite/search/db/config.xml` and change:
 {{{
         <property name="JDBC.ConnectionURL" value="${search.connection.driver_proto}:@${db_name}"/>
 }}}
@@ -30,4 +30,4 @@ to
 }}}
 
 
-Finally restart the spacewalk services.
+Finally restart the Spacewalk services.
