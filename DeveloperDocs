@@ -24,6 +24,7 @@ This section contains information about developer topics.  You may also be inter
  * [https://www.ohloh.net/p/spacewalk/analyses/latest CodeAnalysis] -- Analyze of code on Ohloh.net
  * [wiki:TaskoMatic] -- Document outlining what taskomatic is and what each task is used for.
  * [wiki:CobblerIntegration] - How spacewalk and cobbler interact
+ * [wiki:proxy Proxy] - How Proxy works
 ----
 == __Working with the code__ ==
  * [wiki:GitGuide Git Guide] -- how to work with Git, the source control of choice for Spacewalk
