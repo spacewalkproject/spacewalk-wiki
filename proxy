@@ -82,7 +82,7 @@ Client -----> Proxy(Broker) ----> Squid ----> Proxy(Redirect) ->---> Spacewalk s
 Let's take a moment to talk about some the various headers that you may find in Proxy requests.
 
 * X-RHN-Proxy-Auth - the main one that transports the Proxy Auth Token(s). Token(s) may be plural because if there are multiple Proxies in a chained configuration then this will be a comma-separated list of Proxy Auth Tokens.
- * Each auth token will look something like: <proxy_server_id>:<user_id>:<issued_timestamp>:<expiration_lifetime>:<random_hash>=:<proxy_hostname_or_ip_address> (see rhnProxyAuth.py)
+ * Each auth token will look something like: <proxy_server_id>:<user_id>:<issued_timestamp>:<expiration_lifetime>:<signature_hash>:<proxy_hostname_or_ip_address> (see rhnProxyAuth.py)
 * X-RHN-Proxy-Version - it's there but not used. Ignore the value.
 * X-RHN-Proxy-Auth-Error - a header that Spacewalk will stick in a response if the Proxy needs to update it's auth token. Valid types are 1003 (invalid token) or 1004 (expired token), anything else is an unhandled failure case.
 * X-RHN-Proxy-Auth-Origin - the hostname or IP address of the Proxy that the auth error is intended for. So that for example the Proxy closest to the Spacewalk server doesn't eat all of the "your token is expired" messages intended for a Proxy that was chained and further away.
