@@ -29,7 +29,7 @@ Client -----> Proxy(Broker) ----> Squid ----> Proxy(Redirect) ->---> Spacewalk s
 
 1. Client issues GET request for something, let's say an RPM.
 1. Proxy(Broker) recieves GET request
-1. Proxy(Broker) notices that the Client Auth Token is expired (in rhnBroker.py:__local_GET_handler), returns rhnFault(34) to client.
+1. Proxy(Broker) notices that the Client Auth Token is expired (in rhnBroker.py:_local_GET_handler), returns rhnFault(34) to client.
 1. Client recieves rhnFault(34), sends POST request to Proxy to get new auth token
 1. Proxy(Broker) recieves POST request
  a. Proxy(Broker) copies request and sends to Spacewalk server (rhnShared.py:_proxy2server), including attaching the Proxy Auth Token to the request
