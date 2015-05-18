@@ -1,4 +1,9 @@
-'''''DEPRECATED, NO LONGER USED''''' You might want to look at UploadFedoraContent instead.
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center"
+'''''DEPRECATED, NO LONGER USED'''''
+}}}
+
+You might want to look at UploadFedoraContent instead.
 
 = Uploading rpm packages into Spacewalk =
 ----
