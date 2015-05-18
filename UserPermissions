@@ -1,4 +1,8 @@
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center"
 '''''DEPRECATED, NO LONGER USED'''''
+}}}
+
 
 Today UI and API access is limited though the use of a half-dozen or so pre-defined broad roles, Channel Administrator, Org Administrator, Configuration Administrator, etc. These roles have proven insufficient for many customers and more fine grained control is a frequently requested feature.
 
