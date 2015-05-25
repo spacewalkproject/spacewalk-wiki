@@ -2,7 +2,7 @@
 
 '''These instructions are for Spacewalk Proxy 0.2 onwards'''
 
-If you're looking for instructions for the Red Hat Satellite Proxy product see the [http://docs.redhat.com/docs/en-US/Red_Hat_Network_Satellite/index.html Red Hat Satellite documentation].
+If you're looking for instructions for the Red Hat Satellite Proxy product see the [https://access.redhat.com/documentation/en-US/Red_Hat_Satellite/ Red Hat Satellite documentation].
 
 For more information on what Spacewalk is or for developer information see [wiki:proxy this page].
 
