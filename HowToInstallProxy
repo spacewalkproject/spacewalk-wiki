@@ -20,7 +20,7 @@ For Spacewalk proxy installation for Spacewalk 2.2 see [wiki:HowToInstallProxy22
 
 == Repository ==
 
-RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.3 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.3 repositories (including *-client). For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
 
 == Installation ==
 
