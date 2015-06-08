@@ -4,4 +4,4 @@
 We use Red Hat bugzilla:
 
  * [https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk Report new bugs]
- * [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=FAILS_QA&classification=Other&field-1-0-0=classification&field-1-1-0=product&field-1-2-0=bug_status&product=Spacewalk&query_format=advanced&remaction=&type-1-0-0=anyexact&type-1-1-0=anyexact&type-1-2-0=anyexact&value-1-0-0=Other&value-1-1-0=Spacewalk&value-1-2-0=NEW%2CASSIGNED%2CFAILS_QA&order=bugs.bug_id&query_based_on= All open bugs]
+ * [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=FAILS_QA&order=changeddate%20DESC%2Cbug_id&product=Spacewalk&query_based_on=&query_format=advanced&remaction= All open bugs]
