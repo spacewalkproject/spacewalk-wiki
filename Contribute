@@ -4,7 +4,7 @@
 
 == Coding == #coding
 
-Are you familiar with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk&classification=Other reported bugs] and 
+Are you familiar with Python, Java or Perl? Look at some [https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk reported bugs] and 
 pick up one. Assign it to yourself and start working on it. When you are done send us [PatchProcess a pull request].
 Did not find anything interesting for you? Check [BrainBox brainbox] or come up with your own idea.
 
@@ -14,7 +14,7 @@ Did you write some useful script which uses [ApiDocs Spacewalk API]? Share it wi
 
 Just use Spacewalk and report any bugs you find.
 
-Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&classification=Other&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether they are still valid. Sometimes bug is fixed as a side effect of other fix. You may find such case and close the bug as CURRENTRELEASE without any work!
+Go through [https://bugzilla.redhat.com/buglist.cgi?bug_status=NEW&product=Spacewalk&query_format=advanced&order=bug_id&query_based_on= bug list] and test older bugs whether they are still valid. Sometimes bug is fixed as a side effect of other fix. You may find such case and close the bug as CURRENTRELEASE without any work!
 
 == Documentation == #docs
 
