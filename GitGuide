@@ -495,8 +495,5 @@ Confirm this is what we wanted and we are ready to merge and push
  * [http://book.git-scm.com/ Git Community Book]
  * [http://www.kernel.org/pub/software/scm/git/docs/user-manual.html The Git User's Manual]
  * [http://wiki.sourcemage.org/Git_Guide Another awesome Git Guide]
- * [http://www.gitcasts.com/ Git tutorials as screen casts]
  * [http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html Tutorial Introduction to Git]
- * [http://jbowes.dangerouslyinc.com/2007/02/18/git-bisect-a-practical-example-with-yum/ Jbowes' Instructional Blog Post on git-bisect]
- * [http://jbowes.dangerouslyinc.com/2007/01/26/git-rebase-keeping-your-branches-current/ Jbowes' Instructional Blog Post on git-rebase]
  * [http://www.zorched.net/2008/04/14/start-a-new-branch-on-your-remote-git-repository/ - Dealing with remote branches .. ]
