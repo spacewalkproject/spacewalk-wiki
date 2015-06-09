@@ -188,7 +188,7 @@ Not using --rebase means that git pull will merge the remote references in inste
 Note that using local branches offers some substantial benefits and is the recommended approach, see Understand Branches section below for more.
 
 
-=== Submitting Patches ===
+=== Creating Patches ===
 
 For those without commit access, or those who just prefer to submit a patch for review, the steps are as follows:
 {{{
@@ -199,7 +199,7 @@ For those without commit access, or those who just prefer to submit a patch for 
   git format-patch master       # generate a patch against master
 }}}
 
-This will generate a number of patch files, one for each commit in your branch, which you can then submit to the spacewalk-devel mailing list where they can be reviewed and accepted.
+This will generate a number of patch files, one for each commit in your branch.
 
 
 === Applying Patches ===
