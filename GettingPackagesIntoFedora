@@ -1,3 +1,8 @@
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center" 
+'''''DEPRECATED, NO LONGER USED''''' 
+}}}
+
 = Phase 1 = 
 The first phase will be to get the easy packages into Fedora/EPEL via a quick review.  The easiest method is probably to start with the Perl Modules.  I (stahnma) will try to contact the Perl SIG so they can hopefully get them reviewed rather quickly.  There are certainly some of the perl packages that will need to have the RPM spec file completely changed.  
 
