@@ -1,3 +1,8 @@
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center" 
+'''''DEPRECATED, NO LONGER USED''''' 
+}}}
+
 Tito is our homegrown tool for tagging packages, finding which packages need building, building tarballs and rpms, and shipping them off to the appropriate build system (straight to Koji or via CVS). It is designed to accomodate a git repository with a number of separate packages contained within. Tito has additional functionality geared towards building packages off an upstream project's git repository which you inherit from.
 
 MORE COMING SOON
