@@ -1,43 +1,17 @@
 == What is Taskomatic? ==
 Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://quartz-scheduler.org/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library..
 
-= Configuration part is valid only until Spacewalk 1.1 =
+== Tasks, bunches, schedules ==
 
-== How is Taskomatic configured? ==
-Taskomatic is controlled by two configuration files: /etc/rhn/default/rhn_taskomatic.conf and /etc/rhn/default/rhn_taskomatic_daemon.conf. 
-
-''rhn_taskomatic_daemon.conf'' configures the runtime environment for the Taskomatic daemon itself. This includes information such as JVM option settings, classpath entries, and the Tanuki Service Wrapper's log file location and default logging level. You should not need to edit the majority of the entries in this file. Listed below are entries which might be helpful during Taskomatic troubleshooting sessions:
-
- wrapper.java.initmemory=<starting_heap_size>
- wrapper.java.maxmemory=<maximum_heap_size> (These are useful in the case of OutOfMemoryExceptions)
- wrapper.logfile=<logfile_location>
- wrapper.logfile.loglevel=<log_level> (Can be one of: NONE, FATAL, ERROR, STATUS, INFO, DEBUG. See [http://wrapper.tanukisoftware.org/doc/english/prop-logfile-loglevel.html here] for more information)
-
-''rhn_taskomatic.conf'' contains entries which declare the tasks available to be scheduled and schedules them. The config entries taskomatic.default_tasks and taskomatic.tasks are concatenated together to build the canonical list of available Taskomatic tasks. Tasks common to both Satellite and Hosted are listed in taskomatic.default_tasks. Tasks which are specific to either Satellite or Hosted are listed in taskomatic.tasks in  /etc/rhn/default/rhn_web.conf.
-
-Tasks are scheduled using the taskomatic.<fully_qualified_task_class_name>.schedule entries. The value of each entry should be a valid Quartz schedule string. See [http://quartz-scheduler.org/generated/2.2.1/html/qs-all/#page/Quartz_Scheduler_Documentation_Set%2Fco-trg_crontriggers.html here] for more detailed information.
+Tasks are grouped into bunches (e.g. package-cleanup-bunch contains one task package-cleanup). If you want to run task bunches on regular basis, then you have Task schedule (e.g. package-cleanup-default).
 
 == Reconfiguring Taskomatic ==
 
-Changes to the '''frequency''' of the taskomatic tasks is not recommended but changing the time of day when the daily tasks take place can be done.
+Changes to the '''frequency''' of the taskomatic schedules is not recommended but changing the time of day when the daily tasks take place can be done.
 
-In order to change when you want a task to run you can add the '''overridden''' value in:
-
-{{{
-/etc/rhn/rhn.conf
-}}}
-
-Changes to /etc/rhn/default/* are not recommended because upgrades will erase any customizations you may have.  To change the time a task runs add a value such as:  
-
-{{{
-taskomatic.com.redhat.rhn.taskomatic.task.SummaryPopulation.schedule = 0 0 23 ? * *
-}}} 
-
-to /etc/rhn/rhn.conf and restart taskomatic.  
-
+Navigate to Admin -> Task Schedules. There is a list of defined task schedules with given frequencies as [http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger Quartz strings]. After navigating to selected schedule, you can edit Quartz string manually or select values from form.
 
 == Tasks ==
-Tasks fall into three groups: hosted only, satellite only, and both. 
 
 {{{
 #!html
@@ -45,107 +19,107 @@ Tasks fall into three groups: hosted only, satellite only, and both.
   <tr>
     <th>Task Name</th>
     <th>DB Name</th>
-    <th>Interval</th>
     <th>Purpose</th>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.DailySummary</td>
-    <td>daily_summary</td>
-    <td>5:00AM Daily</td>
+    <td>com.redhat.rhn.taskomatic.task.DailySummary</td>
+    <td>daily-summary</td>
     <td>Sends out email on a daily basis with a summary of out-of-date systems</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.CleanCurrentAlerts</td>
-    <td>clean_current_alerts</td>
-    <td>4:35AM Daily</td>
-    <td>Cleans up Monitoring notification messages from the database.</td>
-  </tr>
-  <tr>
-    <td>com.redhat.rhn.tasks.ErrataMailer</td>
-    <td>errata_engine</td>
-    <td>Every 30 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.ErrataMailer</td>
+    <td>errata-mailer</td>
     <td>Sends email to org admins for each errata alert, eg: "RHN Errata Alert: RHBA-2008:0959-3.."</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.ErrataQueue</td>
-    <td>errata_queue</td>
-    <td>Top of every minute</td>
+    <td>com.redhat.rhn.taskomatic.task.ErrataQueue</td>
+    <td>errata-queue</td>
     <td>Processes errata that are synced from satellite-sync and sets them up to be ready for the ErrataMailer to send the email notifications.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.ErrataCacheTask</td>
-
-    <td>errata_cache</td>
-    <td>Every 10 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.ErrataCacheTask</td>
+    <td>errata-cache</td>
     <td>Calculates the 'errata cache' information which is used in the GUI to display what systems need what errata.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.KickstartCleanup</td>
-    <td>kickstart_session_check</td>
-    <td>Every 10 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.KickstartCleanup</td>
+    <td>kickstart-cleanup</td>
     <td>Cleans up old kickstart sessions that have gone stale.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.NoChannelCheck</td>
-    <td>server_channel_check</td>
-    <td>3:05 AM Daily</td>
-    <td>Sends out email about any system that does not have a base channel defined.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>com.redhat.rhn.tasks.PackageCleanup</td>
-    <td>package_cleanup</td>
-    <td>Every 10 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.PackageCleanup</td>
+    <td>package-cleanup</td>
     <td>Physically deletes rpms from /var/satellite that are 'marked' for deletion in the GUI.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.PushedUsers</td>
-    <td>pushed_users</td>
-    <td>Middle of every minute</td>
-    <td>Hosted Only: Needs to get removed.  Not ran or used in Satellite</td>
+    <td>com.redhat.rhn.taskomatic.task.ChannelRepodata</td>
+    <td>channel-repodata</td>
+    <td>Prototype to be used to regenerate channel metadata.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.RepollCustomerEntitlement</td>
-    <td>repoll_customer_entitlement</td>
-    <td>Top of every minute</td>
-    <td>Hosted Only: Needs to get removed.  Not ran or used in Satellite</td>
-  </tr>
-  <tr>
-    <td>com.redhat.rhn.task.ChannelRepodata</td>
-    <td>channel_repodata</td>
-    <td>Top of every minute</td>
-    <td>Prototype to be used to regenerate channel metadata.  Not avail yet.</td>
-  </tr>
-  <tr>
-    <td>com.redhat.rhn.tasks.SatelliteCertificateCheck</td>
-    <td>TBD</td>
-    <td>Once a day at 11:00 PM</td>
+    <td>com.redhat.rhn.taskomatic.task.SatelliteCertificateCheck</td>
+    <td>sat-cert-check</td>
     <td>Checks to see if the Satellite Certificate is expired and if so starts sending email with warning.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.SandboxCleanup</td>
-    <td>sandbox_cleanup</td>
-    <td>4:05AM Daily</td>
+    <td>com.redhat.rhn.taskomatic.task.SandboxCleanup</td>
+    <td>sandbox-cleanup</td>
     <td>Deletes stale Configuration Management system sandboxes.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.SessionCleanup</td>
-    <td>session_cleanup</td>
-    <td>Every 15 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.SessionCleanup</td>
+    <td>session-cleanup</td>
     <td>Deletes expired GUI Http sessions from the pxtsessions database table.</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.SummaryPopulation</td>
-    <td>summary_populator</td>
-    <td>Every 5 mins</td>
+    <td>com.redhat.rhn.taskomatic.task.SummaryPopulation</td>
+    <td>summary-population</td>
     <td>Works in tandem with "DailySummary" to determine what orgs should get the daily summary email.</td>
-    <td>X</td>
   </tr>
   <tr>
-    <td>com.redhat.rhn.tasks.SynchProbeState</td>
-    <td>synch_probe_state</td>
-    <td>Top of every minute</td>
-    <td>Used to keep monitoring data in sync within the database.</td>
+    <td>com.redhat.rhn.taskomatic.task.RepoSyncTask</td>
+    <td>repo-sync</td>
+    <td>Used for syncing repos (like yum repos) to a channel. Calls a python script.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.SatSyncTask</td>
+    <td>satellite-sync</td>
+    <td>Calls satellite-sync tool to sync channels.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.KickstartFileSyncTask</td>
+    <td>kickstartfile-sync</td>
+    <td>Syncs kickstart profiles that were generated using the wizard.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.CobblerSyncTask</td>
+    <td>cobbler-sync</td>
+    <td>Syncing cobbler data. Communicates with cobbler through XMLRPC.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.CompareConfigFilesTask</td>
+    <td>compare-config-files</td>
+    <td>Schedules a comparison of config files on all systems.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.ClearLogHistory</td>
+    <td>clear-log-history</td>
+    <td>Clears taskomatic run log history.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.ChangeLogCleanUp</td>
+    <td>cleanup-packagechangelog-data</td>
+    <td>Deletes orphaned packages changelog data.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.RebootActionCleanup</td>
+    <td>reboot-action-cleanup</td>
+    <td>Cleans up stale reboot action data if it is older than 6 hours.</td>
+  </tr>
+  <tr>
+    <td>com.redhat.rhn.taskomatic.task.AutoErrataTask</td>
+    <td>auto-errata</td>
+    <td>This is what automatically schedules automatic errata update actions.</td>
   </tr>
 </table>
 }}}
@@ -153,7 +127,7 @@ Tasks fall into three groups: hosted only, satellite only, and both.
 
 == Troubleshooting Taskomatic ==
 
-All Taskomatic logging is controlled by the log4j configuration file /usr/share/rhn/classes/log4j.properties. Taskomatic task engine and individual task log output is configured to go to /var/log/rhn/rhn_taskomatic.log.
+All Taskomatic logging is controlled by the log4j configuration file /usr/share/rhn/classes/log4j.properties. Taskomatic task engine and individual task log output is configured to go to /var/log/rhn/rhn_taskomatic_daemon.log.
 
 Make sure that these lines exist in the log4j.properties file
 
@@ -181,4 +155,6 @@ The Taskomatic daemon process can be started in console mode as well. This is he
   sudo /sbin/service taskomatic stop
   sudo /sbin/service taskomatic console
 }}}
+
+See also: [wiki:LogDriverSetup LogDriverSetup]
 
