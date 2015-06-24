@@ -1,5 +1,5 @@
 == What is Taskomatic? ==
-Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://www.opensymphony.com/quartz/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library..
+Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://quartz-scheduler.org/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library..
 
 = Configuration part is valid only until Spacewalk 1.1 =
 
@@ -15,7 +15,7 @@ Taskomatic is controlled by two configuration files: /etc/rhn/default/rhn_taskom
 
 ''rhn_taskomatic.conf'' contains entries which declare the tasks available to be scheduled and schedules them. The config entries taskomatic.default_tasks and taskomatic.tasks are concatenated together to build the canonical list of available Taskomatic tasks. Tasks common to both Satellite and Hosted are listed in taskomatic.default_tasks. Tasks which are specific to either Satellite or Hosted are listed in taskomatic.tasks in  /etc/rhn/default/rhn_web.conf.
 
-Tasks are scheduled using the taskomatic.<fully_qualified_task_class_name>.schedule entries. The value of each entry should be a valid Quartz schedule string. See [http://quartz.sourceforge.net/javadoc/org/quartz/CronTrigger.html here] for more detailed information.
+Tasks are scheduled using the taskomatic.<fully_qualified_task_class_name>.schedule entries. The value of each entry should be a valid Quartz schedule string. See [http://quartz-scheduler.org/generated/2.2.1/html/qs-all/#page/Quartz_Scheduler_Documentation_Set%2Fco-trg_crontriggers.html here] for more detailed information.
 
 == Reconfiguring Taskomatic ==
 
