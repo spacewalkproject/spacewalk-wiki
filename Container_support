@@ -1,3 +1,8 @@
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center" 
+'''''DEPRECATED, NO LONGER USED''''' 
+}}}
+
 = Containers in Spacewalk =
 An installation does not exist in mid-air. It runs on hardware, real or virtual. Which in turn sits on a desktop, hangs in a server rack or runs on a virtualisation server like VMware or Xen. It's usually surrounded by systems in that environment. And as an admin chances are you are more interested in managing that environment then the individual installations. I'm proposing sorting installations in containers which have far more information and influence then groups.
 
