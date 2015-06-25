@@ -1,3 +1,8 @@
+{{{
+#!div class="important" style="border: 2pt solid; text-align: center" 
+'''''DEPRECATED, NO LONGER USED''''' 
+}}}
+
 == Issue ==
 Customers during a reprovision will encounter a duplicate system profile getting created in their spacewalk instance eating up a management entitlement + leaving a dead system. This can become very unmanageable for example when several machines are reprovisioned through PXE or standard boot causing several duplicate system profiles.
 
