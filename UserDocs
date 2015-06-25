@@ -127,11 +127,8 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [wiki:PostgreSQL Postgresql] Support
 ----
 == __Contact__ ==
-=== [wiki:Communications] ===
-  * [wiki:Communications#EmailListsArchives Email Lists & Archives]
-  * [wiki:Communications#InternetRelayChat Internet Relay Chat Room]
-  * [wiki:Communications#Bugs Bugs & Reporting]
-  * [wiki:Communications#Meetings Community Meetings]
+ * [https://fedorahosted.org/spacewalk/wiki#Communication Communication]
+ * [https://fedorahosted.org/spacewalk/#WanttoFileaBugRFE Bugzilla]
 ----
 == __Appendices__ ==
 === Features ===
