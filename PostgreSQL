@@ -35,7 +35,7 @@ The {{{spacewalk-setup}}} finishes and you are good to go -- enjoy your Spacewal
 
 == Migrating existing Spacewalk on Oracle ==
 
-If you have an existing Spacewalk with Oracle backend installation, you can use it as a base of your Spacewalk on PostgreSQL setup -- see [wiki:PostgreSQLFromOracle].
+If you have an existing Spacewalk with Oracle backend installation, you can use it as a base of your Spacewalk on PostgreSQL setup -- see [wiki:DatabaseMigrations].
 
 == When you hit error ==
 
