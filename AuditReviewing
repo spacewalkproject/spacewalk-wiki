@@ -16,6 +16,7 @@ web.audit.logdir = /var/satellite/systemlogs
   * Compile aup: `gcc -O2 -s -o /path/to/put/aup aup.c -lauparse`
   * `cd /var/satellite/systemlogs/ ; mkdir host1{,/audit} host2{,/audit} localhost{,/audit}`
   * `ausearch -r -ts $START -te $END | /path/to/aup > localhost/audit/audit-$T1-$T2.parsed`
+    * $T1 and $T2 are unix timestamps describing interval of audits in file.
     * `export START="07/26/2009 00:00:00"`
     * `export END="08/01/2009 23:59:59"`
     * {{{export T1=`date -d "$START" +%s`}}}
@@ -31,5 +32,3 @@ ssh spacewalk 'cat > /var/satellite/systemlogs/$OURHOSTNAME/audit/audit-`date +"
 {{{
 namei -m /var/satellite/systemlogs/spacewalk/audit
 }}}
-
-To be continued.
