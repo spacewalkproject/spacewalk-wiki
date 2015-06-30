@@ -29,7 +29,7 @@ Use the common directory for things that are, well, common syntax, or things tha
   perl schema-source-sanity-check.pl
 }}}
 
-in the spacewalk/schema directory to check that your changes are sane.
+in the spacewalk/schema/spacewalk directory to check that your changes are sane.
 
 4. Run
 
@@ -37,4 +37,4 @@ in the spacewalk/schema directory to check that your changes are sane.
   tito build --test --rpm
 }}}
 
-in the spacewalk/schema directory to check that your changes will be buildable.
+in the spacewalk/schema/spacewalk directory to check that your changes will be buildable.
