@@ -28,8 +28,8 @@ If you have an idea or need for a new API, please add it to the API Proposal tab
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || ? || 3 ||  ||  ||  ||
 
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
-||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
-||  errata.createCve(session, cveName) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
+||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || ? || 4 || ||  || return int (1) on success, exception thrown otherwise. ||
+||  errata.createCve(session, cveName) || ? || 4 || ||  || return int (1) on success, exception thrown otherwise. ||
 
 ||  '''Namespace: system.config''' ||  ||  ||  ||  ||  ||
 ||  system.config.deployFiles(auth, array(string filename), array(sid)) || ? || 3 ||  ||  || schedule deployment of specific files to specific systems ||
