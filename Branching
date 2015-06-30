@@ -6,7 +6,7 @@ Our basic branching philosophy is:
  4. when committing code for a release, the code goes in the release branch(es) (if any) and '''master'''.
  5. experimental stuff and big changes might have their own branches
 
-See [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=documentation/branches.txt; branches.txt] for the most up to date branches.
+See [https://github.com/spacewalkproject/spacewalk/branches branches] for the most up to date branches.
 
 The way we work right now, you will check everything into '''master'''. If there is a branch for the target release(s), you should check the code into the branch(es) as well. If you have code that needs to go in a release between the latest branch and '''master''', then you need to have someone create a branch. 
 
