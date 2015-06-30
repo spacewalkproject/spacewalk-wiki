@@ -1,7 +1,7 @@
 
 = Bug Handling in Spacewalk =
 
-If you want to commit fix for a bugzilla opened against Spacewalk, either because you came up with the fix or because you want to commit a patch sent by community member to the mailing list, we'd like you to:
+If you want to commit fix for a bugzilla opened against Spacewalk, either because you came up with the fix or because you want to commit a patch from pull request created by community member, we'd like you to:
 
  * Fix in Spacewalk git repo in the '''master''' branch:
    * Use bugzilla number in the commit message of your fix.
@@ -9,7 +9,7 @@ If you want to commit fix for a bugzilla opened against Spacewalk, either becaus
    * You can provide more detailed description of why you are doing it and why you are doing it the way you do in the commit message, after an empty line.
 
  * Align bug to the next upcoming Spacewalk release if it's not already.
-   * Tracker bugs are used for that in the form of spaceXY, so for example [https://bugzilla.redhat.com/showdependencytree.cgi?id=space11 space11] for the upcoming Spacewalk 1.1.
+   * Tracker bugs are used for that in the form of spaceXY, so for example [https://bugzilla.redhat.com/showdependencytree.cgi?id=space23 space23] for the upcoming Spacewalk 2.3.
 
  * About a week or two before the next release, we create branch for the release. If you want to get the fix to this branch of soon-to-be-released or already released release, make sure the release nanny knows about your intention or that you will be able to tag and build the package and get it into the yum repo, to avoid disappointment.
    * If you want to go ahead with getting the fix there, cherry pick from master to that branch using '''git cherry-pick -x <SHA1 of the commit in master>'''. The -x option puts in reference to the original commit to the commit message in branch.
@@ -19,7 +19,7 @@ If you want to commit fix for a bugzilla opened against Spacewalk, either becaus
 
  * If you have finished working with a set of bugzillas or with any give package or area of code, tag the package and optionally build it, using the tito command: https://fedorahosted.org/spacewalk/wiki/ReleaseProcess.
 
- * If you see packages built in koji or if they show up in the nigthly repo after an automatic build, move the bugzilla to '''ON_DEV''' and add a comment with package(s) name and version-release where the fix is included.
+ * If you see packages built in koji or if they show up in the nigthly repo after an automatic build, fill in the '''Fixed In Version''' with package(s) name and version-release where the fix is included.
 
  * Move bugzilla to '''ON_QA''' when asked by the release nanny to do so, or when there is Spacewalk instance available for testing.
 
@@ -32,7 +32,6 @@ If you want to commit fix for a bugzilla opened against Spacewalk, either becaus
    1. NEW - Newly filed bugzilla.
    2. ASSIGNED - Bug on developer's plate, the developer has acknowledged the existence of the bugzilla.
    3. MODIFIED - Bug has code checked into git repo, bugzilla has comment pointing to a specific commit SHA1.
-   4. ON_DEV - Package was tagged and built, bugzilla has comment with the name-version-release information; the rpms will be available in our nightly yum repository.
    5. ON_QA - There are rpms available in our QA yum repository.
    6. VERIFIED - Testing/confidence complete in our QA yum repository.
    7. RELEASE_PENDING - Not used.
