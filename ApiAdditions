@@ -8,7 +8,8 @@ We are in the process of defining and developing additional APIs.
 
 To view the APIs currently available for Spacewalk, simply navigate to https://myspacewalkserver.com/rhn/apidoc/index.jsp, where ''myspacewalk.com'' is your installed Spacewalk server.
 
-If you have an idea or need for a new API, please add it to the Planned API table below.  If you aren't sure exactly what an API call should be named, simply add it to the scratchpad below and a developer will add it to the Planned APIs table.
+If you have an idea or need for a new API, please add it to the API Proposal table below.  If you aren't sure exactly what an API call should be named, simply add it to the scratchpad below and a developer will add it to the Planned APIs table.
+
 
 === Scratchpad ===
 
@@ -18,52 +19,17 @@ If you have an idea or need for a new API, please add it to the Planned API tabl
  * idea3
 
 
-=== Planned APIs ===
+=== Proposed APIs ===
 
 ||  '''Task''' || '''Target Release''' ||  '''Estimate (hours)''' || '''Developer''' || '''Status''' || '''Notes''' ||
 ||  ----   ||  ||  ||  ||  ||  ||
 
-||  '''Namespace: api''' ||  ||  ||  ||  ||  ||
-||  api.getApiNamespaces() || 1.0 || - || tlestach || done || return list of namespaces ||
-||  api.getApiCallList() || 1.0 || - || tlestach || done || return map of apicalls ||
-||  api.getApiNamespaceCallList(namespace) || 1.0 || - || tlestach || done || return map of calllists ||
-
 ||  '''Namespace: channel.software''' ||  ||  ||  ||  ||  ||
-||  channel.software.listChildren(channel_label) || 1.0 || 3 || coec || done || return array of channels] ||
 ||  channel.software.cloneByDate(org_label, CHANNEL_DETAILS, date) || ? || 3 ||  ||  ||  ||
-||  channel.software.create(label, name, summary, archLabel, parentLabel, checksumType, gpgKey_map, yumRepo_map) || 1.0 || - || tlestach || done || return int (1) on success ||
-||  channel.software.getChannelLastBuildById(channel_id) || 1.0 || - || jhogarth || done ||  ||
 
 ||  '''Namespace: errata''' ||  ||  ||  ||  ||  ||
 ||  errata.linkCveToErrata(session, advisory_name, array(cveNames)) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
 ||  errata.createCve(session, cveName) || ? || 4 || coec ||  || return int (1) on success, exception thrown otherwise. ||
-||  errata.listUnpublishedErrata() || 1.0 || - || jroys || done || return map of errata ||
-
-||  '''Namespace: kickstart.snippet''' ||  ||  ||  ||  ||  ||
-||  kickstart.snippet.listAll() || 1.0 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listCustom() || 1.0 || 3 || jsherrill || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.listDefault() || 1.0 || 3 || jsherrill  || done || return array[(name, content, macro usage, filename)] ||
-||  kickstart.snippet.createOrUpdate(name, contents) || 1.0 || 3 || jsherrill || done || return (name, contents, fragment, file) ||
-||  kickstart.snippet.delete(name) || 1.0 || 3 || jsherrill || done || return 1 ||
-
-||  '''Namespace: kickstart''' ||  ||  ||  ||  ||  ||
-||  kickstart.cloneProfile(ksLabelToClone,newKsLabel) || 1.0 || - || tlestach || done || return 1 ||
-
-||  '''Namespace: kickstart.profile''' ||  ||  ||  ||  ||  ||
-||  kickstart.profile.getVariables(label) || 1.0 || 3 || tlestach || done ||  return map ||
-||  kickstart.profile.setVariables(label, map) || 1.0 || 3 || tlestach || done ||  return 1 ||
-||  '''Namespace: system''' ||  ||  ||  ||  ||  ||
-||  system.createSystemRecord(sid, ks_label) || 1.0 || 3 || tlestach || done || return 1 ||
-||  system.getVariables(sid) || 1.0 || 3 || tlestach || done || return (netboot, map) ||
-||  system.setVariables(sid, netboot, map) || 1.0 || 3 || tlestach || done || return map ||
-
-||  '''Namespace: monitoring''' ||  ||  ||  ||  ||  ||
-||  monitoring.listProbes(sid) || ? || 3 ||  ||  ||  ||
-||  monitoring.getLatestProbeResults(sid) || ? || 3 ||  ||  ||  ||
-||  monitoring.getAllResults(sid, probe_id) || ? || 3 ||  ||  ||  ||
-
-||  '''Namespace: schedule''' ||  ||  ||  ||  ||  ||
-||  schedule.archiveActions(array[aid]) || ? || 3 || coec || done (patch pending) || return 1 on success ||
 
 ||  '''Namespace: system.config''' ||  ||  ||  ||  ||  ||
 ||  system.config.deployFiles(auth, array(string filename), array(sid)) || ? || 3 ||  ||  || schedule deployment of specific files to specific systems ||
