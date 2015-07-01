@@ -14,7 +14,7 @@ These navigation bars are handled by two files:
  * sitenav-authenticated.xml  (for authenticated sessions)
  * sitenav.xml (for sessions that have not logged in)
 
-Each of these files exist in perl and java (and both are independent). The java versions are in {{{/eng/java/code/webapp/WEB-INF/nav}}} and the perl versions are in {{{/eng/web/html/nav/}}}.
+Each of these files exist in java. There used to be independent perl versions in {{{/eng/web/html/nav/}}}.
 
 Looking at /eng/java/code/webapp/WEB-INF/nav/sitenav-authenticated.xml, it is pretty self explanatory.  The following tags are valid:
 
