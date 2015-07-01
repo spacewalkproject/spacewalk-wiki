@@ -35,7 +35,6 @@ Each tag has a set of attributes:
 ||         || acl || the [#ACLs ACL] guarding the tab, used to conditionally display the tab ||
 ||         || active-image || image filename used to highlight the tab when active (selected)  ||
 ||         || inactive-image || image filename used to highlight the tab when inactive (unselected)  ||
-||         || on-click || '''PERL ONLY''' calls the specified perl module when clicked ||
 ||               ||            || ||
 || '''rhn-tab-url''' || NONE  || this takes in a value of url no attributes {{{<rhn-tab-url>/rhn/account/EditAddress.do</rhn-tab-url>}}} ||
 ||               ||            || ||
