@@ -71,11 +71,6 @@ Here this Users tab would not be shown if either {{{org_entitlement(sw_mgr_enter
 
 Additional ACL classes exist for the sub-tab xml files.  Within [http://spacewalk.redhat.com/documentation/javadoc/com/redhat/rhn/common/security/acl/package-summary.html com.redhat.rhn.common.security.acl] exists several handlers such as !ChannelAclHandler, !ErrataAclHandler.  These are used with their corresponding X_detail.xml file.  For example, the !ChannelAclHandler is for use with channel_detail.xml.
 
-=== ACLs on the Perl side ===
-The ACLs are handled in a similar fashion on the Perl side. The ACL syntax used for rhn-tab in Perl is the same as is on the Java side. The difference is where the code is found, the {{{com.redhat.rhn.common.security.acl.Access}}} equivalent in Perl is {{{RHN::Access}}}.
-
-Mappings between ACL statements and Perl sub-routines is more direct. {{{org_entitlement(sw_mgr_enterprise)}}} maps to {{{RHN::Access->org_entitlement}}}.
-
 === Behind the scenes ===
 I'm sure you want to know all of the magic that goes on behind the scenes. The driving code is the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavDigester.java;h=26c344f9f3c8c759c564dc1e2c8358116a840fea;hb=HEAD NavDigester] class. It uses {{{commons-digester}}} to parse the navigation files and create the appropriate !NavTree.
 
