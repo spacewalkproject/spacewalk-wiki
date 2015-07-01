@@ -153,7 +153,7 @@ public class NavDigester {
 }
 }}}
 
-[http://commons.apache.org/digester/ Digester] offers an easy way to define how to build objects from an XML file. Given a sitenav.xml file, it will create a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavTree.java;h=49c678e976d9275e292b96eafd236d46cd8e2377;hb=HEAD NavTree] object which contains a {{{NavNode}}} for each of the rhn-tab tags found. Once the {{{NavTree}}} is created, we then pass it to the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/NavTreeIndex.java;h=377159c860c63ffede721fa90c2e57c9ecd7a4c1;hb=HEAD NavTreeIndex] to index the tree by urls so that it makes it easier to do matching while rendering the UI. This allows the appropriate tab to be highlighted as well as the page title to be set properly.
+[http://commons.apache.org/digester/ Digester] offers an easy way to define how to build objects from an XML file. Given a sitenav.xml file, it will create a [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/NavTree.java NavTree] object which contains a {{{NavNode}}} for each of the rhn-tab tags found. Once the {{{NavTree}}} is created, we then pass it to the [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/NavTreeIndex.java NavTreeIndex] to index the tree by urls so that it makes it easier to do matching while rendering the UI. This allows the appropriate tab to be highlighted as well as the page title to be set properly.
 
 
 The algorithm used by {{{NavTreeIndex}}} is pretty simple, we first harvest the primary urls, and any subsequent urls and directory definitions into separate maps. The real work happens when we browse a url and need to determine which is the currently active node. That's where {{{computeActiveNodes}}} method comes into play. We split the given url into an array making it more general. For example, given /rhn/users/ActiveList.do we create an array with 3 entries: "/rhn/users/ActiveList.do", "/rhn/users", "/rhn". We then try to find the {{{NavNode}}} that best matches those URLs. This gives us our active node and we know which {{{NavNode}}} to render and thus highlight in the UI.
@@ -274,16 +274,16 @@ The algorithm used by {{{NavTreeIndex}}} is pretty simple, we first harvest the 
 }}}
 
 ==== Rendering ====
-Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderEngine.java;h=60888e62be2f4043fb19d8c5e8e19b2707315440;hb=HEAD RenderEngine] that is used to display the menus of varying levels. The {{{RenderEngine}}} takes in a {{{NavTreeIndex}}} and a URL. As part of the rendering process we had a need to render the menus in different ways and also turn off some based on [#ACLs ACLs].
+Navi has a [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/RenderEngine.java RenderEngine] that is used to display the menus of varying levels. The {{{RenderEngine}}} takes in a {{{NavTreeIndex}}} and a URL. As part of the rendering process we had a need to render the menus in different ways and also turn off some based on [#ACLs ACLs].
 
-To accomplish the displaying of the menus, Navi has a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/Renderable.java;h=3e7247cf0be4283cd71c6f690bf3035de44c3983;hb=HEAD Renderable] abstract class used to implement different {{{Renderers}}}. Out of the box Navi has five (5) renderers:
+To accomplish the displaying of the menus, Navi has a [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/Renderable.java Renderable] abstract class used to implement different {{{Renderers}}}. Out of the box Navi has five (5) renderers:
 || !DialogNavRenderer || [[Image(wiki:NavigationSystem:dialognav.png)]]
 || !SidenavRenderer ||  [[Image(wiki:NavigationSystem:leftnav.png)]]
 || !TextRenderer || [[Image(wiki:NavigationSystem:textnav.png)]]
 || !TitleRenderer || [[Image(wiki:NavigationSystem:title.png)]] [[Image(wiki:NavigationSystem:title-html.png)]]
 || !TopnavRenderer || [[Image(wiki:NavigationSystem:topnav.png)]]
 
-Lastly, the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/taglibs/NavMenuTag.java;h=131596510ad54da2d2fb7f73e4d69cd9f15db333;hb=HEAD NavMenuTag] is a jsp tag used to actually render the menu to the screen. The !NavMenuTag determines the url from the Request object and calls into the !NavTreeIndex to determine what to output.
+Lastly, the [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/taglibs/NavMenuTag.java NavMenuTag] is a jsp tag used to actually render the menu to the screen. The !NavMenuTag determines the url from the Request object and calls into the !NavTreeIndex to determine what to output.
 
 For example, to render the !TopNav the following tag call is used:
 {{{
@@ -295,8 +295,8 @@ For example, to render the !TopNav the following tag call is used:
 The {{{definition}}} attribute specifies the xml file used to define this menu, while the {{{renderer}}} defines how we want to display the menu. In this example we are limiting the depth to the top level.
 
 ==== Guarding ====
-Guarding is the ability to enable/disable the rendering of a given node based on any boolean expression as defined by the [#ACLs ACL system], be it a configuration entry, dynamic application data, or even assigned user roles. Navi takes the same approach to guarding as it did with the rendering, there is a [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderGuard.java;h=2fde567456cba4cdfd2c59c57ae8ba582e8c52eb;hb=HEAD RenderGuard] interface which simply returns {{{true}} or {{{false}}} on whether the {{{NavNode}}} can be rendered.
+Guarding is the ability to enable/disable the rendering of a given node based on any boolean expression as defined by the [#ACLs ACL system], be it a configuration entry, dynamic application data, or even assigned user roles. Navi takes the same approach to guarding as it did with the rendering, there is a [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/RenderGuard.java RenderGuard] interface which simply returns {{{true}} or {{{false}}} on whether the {{{NavNode}}} can be rendered.
 
 Navi contains two (2) guards: [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/AclGuard.java;h=582fbe1cb70d33aabdd2c4589a6d47ae72883b08;hb=HEAD AclGuard], which returns the result of evaluating the [#ACLs ACL], and [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/DepthGuard.java;h=22b3be5d93fec30eaa713c797381137218b9309b;hb=HEAD DepthGuard], which evaluates the depth of the menu. 
 
-There is also a need to group !RenderGuards, hence the creation of [http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob;f=java/code/src/com/redhat/rhn/frontend/nav/RenderGuardComposite.java;h=542c91f53dbcf333fc298108d60373c199812822;hb=HEAD RenderGuardComposite]. !RenderGuardComposite takes a list of !RenderGuards and evaluates them in order as an '''and''' operation. First !RenderGuard to fail causes the entire operation to return {{{false}}}.
+There is also a need to group !RenderGuards, hence the creation of [https://github.com/spacewalkproject/spacewalk/blob/master/java/code/src/com/redhat/rhn/frontend/nav/RenderGuardComposite.java RenderGuardComposite]. !RenderGuardComposite takes a list of !RenderGuards and evaluates them in order as an '''and''' operation. First !RenderGuard to fail causes the entire operation to return {{{false}}}.
