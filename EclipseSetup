@@ -7,11 +7,17 @@ You will still need to go to the command line to make sure things still
 work in the common build environment using Ant.
 
 
+== Install from your Distro: ==
+
+{{{
+   yum install ivy ant-contrib
+}}}
+
 == Install Eclipse from your Distro: ==
 
-yum install eclipse ivy ant-contrib
-
-
+{{{
+   yum install eclipse
+}}}
 
 == OR Install Eclipse from GZIP file ==
 
@@ -78,21 +84,6 @@ or if you installed manually
    - Click next
    - Browse or enter  ~/workspace/spacewalk
    - click "Finish"
-
-
-6) We use assertions in our code which requires a compiler option to be 
-   set.  Do the following:
-   
-   Window -> Preferences -> Java -> Compiler -> Compliance and Classfiles: 
-   
-   uncheck "use default compliance settings"
-   Select 1.5 for all of the drop downs:
-
-   Compiler compliance level: 1.5
-   Generated .class files compatibility: 1.5
-   Source compatibility: 1.5
-
-You are ready to build the project.  Project -> Build All.
 
 == Code generation ==
 
