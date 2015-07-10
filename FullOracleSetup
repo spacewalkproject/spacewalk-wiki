@@ -2,8 +2,8 @@
 
 You will also need the Oracle Instant Client: [http://www.oracle.com/technetwork/topics/linuxsoft-082809.html i386] or [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html x86_64] version. Download the following two rpms (where ARCH is either i386 or x86_64):
 
- * oracle-instantclient11.2-basic-11.2.0.2.0.ARCH.rpm
- * oracle-instantclient11.2-sqlplus-11.2.0.2.0.ARCH.rpm
+ * oracle-instantclient11.2-basic-11.2.0.4.0.ARCH.rpm
+ * oracle-instantclient11.2-sqlplus-11.2.0.4.0.ARCH.rpm
 
 Do '''NOT''' use oracle-xe-client.
 
