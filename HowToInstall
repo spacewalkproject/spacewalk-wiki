@@ -128,7 +128,7 @@ When using external PostgreSQL database, make sure the postgresql-contrib (or po
 
 In order to get Spacewalk to run with Oracle database backend, you need:
 
- * Instant Client 11.2.0.3.0 installed on the Spacewalk machine
+ * Instant Client 11.2.0.4.0 installed on the Spacewalk machine
  * Oracle database server, either on the Spacewalk machine or on another host; versions 10g and 11g are known to work
 
 Installation of the free but limited Oracle 11g XE database server can be found on the [wiki:OracleXeSetup Oracle 11g Express Edition Setup] page. Hints for making Spacewalk work with external Oracle database server are on the [FullOracleSetup Full Oracle Setup] page.
