@@ -14,5 +14,5 @@ Recreate CA cert:
  6.  rpm -e rhn-org-httpd-ssl-key-pair-HOSTNAME
  7.  rpm -ivh ./ssl-build/HOSTNAME/rhn-org-httpd-ssl-key-pair-HOSTNAME-1.0-1.noarch.rpm
  8.  rhn-ssl-dbstore -vvv --ca-cert /root/ssl-build/RHN-ORG-TRUSTED-SSL-CERT
- 9.  service rhn-satellite restart
+ 9.  spacewalk-service restart
  10. Redeploy RHN-ORG-TRUSTED-SSL-CERT to clients (if needed)
