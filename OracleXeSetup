@@ -22,8 +22,8 @@ You can download Oracle 11g Express Edition (XE) Server from Oracle's [http://ww
 
 You will also need the Oracle Instant Client rpm from [http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html Instant Client Downloads for Linux x86-64 page]. Download the following two rpms:
 
- * oracle-instantclient11.2-basic-11.2.0.3.0-1.x86_64.rpm
- * oracle-instantclient11.2-sqlplus-11.2.0.3.0-1.x86_64.rpm
+ * oracle-instantclient11.2-basic-11.2.0.4.0-1.x86_64.rpm
+ * oracle-instantclient11.2-sqlplus-11.2.0.4.0-1.x86_64.rpm
 
 == Before installing Oracle XE ==
 
