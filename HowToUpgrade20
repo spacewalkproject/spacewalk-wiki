@@ -116,6 +116,23 @@ Important notes:
 }}}
 
 
+== Perform Spacewalk activation ==
+
+If your Spacewalk was to some point 1.6 or older you'll probably need to re-activate your Spacewalk as old Spacewalk certificate is expired or is about to expire.
+
+Run:
+{{{
+spacewalk-sql -i <<< 'select expires from rhnsatellitecert where created=(select max(created) from rhnsatellitecert);'
+}}}
+
+If you don't see 2018-07-13 you'll need to re-activate your Spacewalk with newer certificate.
+
+Run:
+{{{
+rhn-satellite-activate --rhn-cert /usr/share/spacewalk/setup/spacewalk-public.cert --disconnected
+}}}
+
+
 == Restart Spacewalk ==
 
 {{{
