@@ -120,7 +120,7 @@ Important notes:
 
 == Perform Spacewalk activation ==
 
-If your Spacewalk was to some point 1.6 or older you'll probably need to re-activate your Spacewalk as old Spacewalk certificate is expired or is about to expire.
+If your Spacewalk was to some point 2.2 or older you'll probably need to re-activate your Spacewalk as old Spacewalk certificate is expired or is about to expire.
 
 Run:
 {{{
