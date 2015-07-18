@@ -1,16 +1,17 @@
 = Certificate Expiring =
-If you are receiving this message via the Spacewalk web interface the explanation can be found by reading this [https://www.redhat.com/archives/spacewalk-list/2010-July/msg00036.html message] from the mailing list.
-To resolve the issue, install the Spacewalk 1.0 certificate, if you have already upgraded to Spacewalk 1.0 run this command (service/server restart is '''not''' required) 
+If you are receiving this message via the Spacewalk web interface the explanation can be found by reading this [https://www.redhat.com/archives/spacewalk-list/2015-July/msg00036.html message] from the mailing list.
+
+To resolve the issue, install the newer Spacewalk certificate, if you have already upgraded to Spacewalk 2.2 or newer, run this command (service/server restart is '''not''' required) 
 
 {{{ 
 #!sh 
 $ sudo rhn-satellite-activate --rhn-cert /usr/share/spacewalk/setup/spacewalk-public.cert --disconnected 
 }}} 
 
-If you are still running version 0.8 download the 1.0 certificate and install (again, no need to restart the server/service) 
+If you are still running an older version before Spacewalk 2.2, download the certificate and install (again, no need to restart the server/service) 
 
 {{{ 
 #!sh 
-$ wget 'http://git.fedorahosted.org/git/?p=spacewalk.git;a=blob_plain;f=branding/setup/spacewalk-public.cert;h=d7674be743358ad2f20346d78d9d53e8fe11f034;hb=HEAD' -O spacewalk-public.cert 
+$ wget 'https://raw.githubusercontent.com/spacewalkproject/spacewalk/master/branding/setup/spacewalk-public.cert' -O spacewalk-public.cert 
 $ sudo rhn-satellite-activate --rhn-cert spacewalk-public.cert --disconnected 
 }}}
