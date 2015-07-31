@@ -2,6 +2,8 @@
 
 As sometimes there's a pull request that might destabilize Spacewalk, we've created extra build targets on koji.spacewalkproject.org, basically a nightly for nightly. With extra build targets come also extra new repositories available at http://yum.spacewalkproject.org/devel/ and http://yum.spacewalkproject.org/devel-client/ so it's possible to have installable Spacewalk based on other branch than master.
 
+This page assumes that you have aready configured koji and tito including your koji certificate. Configuration can be found there: https://fedorahosted.org/spacewalk/wiki/ReleaseProcess
+
 === workflow ===
 
  * Create pull request branch (let it be called pr-branch) and push some commits into it.
@@ -38,3 +40,11 @@ tito release --all
 
  * If you want to update packages simply rebase pr-branch-devel on top of pr-branch, tito tag and tito release --all.
 
+
+=== failing builds ===
+
+You may encounter failing build (most likely on Fedoras) due to 404 in root.log, this is caused by updated package landing in Fedora repositories which are necessary for build process. As Fedora repositories keep only latest package in repo (unlike rhel which keeps all package versions). You will have to force regeneration of build repository by running
+{{{
+koji -c $PATH_TO_KOJI_CONFIG regen-repo spacewalk-devel-$OS_VERSION-build
+}}}
+where PATH_TO_KOJI_CONFIG is path to your koji configuration file and $OS_VERSION is one of the following: rhel6, rhel7, fedora21, fedora22. After regeneration of repository resubmit the build either via koji web interface or on commandline by koji resubmit command.
