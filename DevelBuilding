@@ -48,3 +48,8 @@ You may encounter failing build (most likely on Fedoras) due to 404 in root.log,
 koji -c $PATH_TO_KOJI_CONFIG regen-repo spacewalk-devel-$OS_VERSION-build
 }}}
 where PATH_TO_KOJI_CONFIG is path to your koji configuration file and $OS_VERSION is one of the following: rhel6, rhel7, fedora21, fedora22. After regeneration of repository resubmit the build either via koji web interface or on commandline by koji resubmit command.
+
+
+If build fails due to checkstyle, pylint or other buildtime related stuff you can find this information in build.log, these are usually not koji related but code related and can be fixed without koji maintainers assistance.
+
+If you're unsure what happened please ping tkasparek on #spacewalk-devel.
