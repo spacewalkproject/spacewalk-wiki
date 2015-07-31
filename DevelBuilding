@@ -7,7 +7,7 @@ This page assumes that you have aready configured koji and tito including your k
 === workflow ===
 
  * Create pull request branch (let it be called pr-branch) and push some commits into it.
- * Create new branch on top of pr-branch (called pr-branch-devel) and cherry-pick following commit 0d1a28c665098bf797730240b886473c1f04cdca into pr-branch-devel
+ * Create new branch on top of pr-branch (called pr-branch-devel) and cherry-pick following commit fe14986915fb3d046563f54ffe99770584eac961 into pr-branch-devel
 
 At this point everything should be set up for package tagging and building. Changes which are necessary for package building and package tags will be kept in separate branch so they won't have to be purged during process of accepting PR.
 
