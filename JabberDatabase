@@ -1,0 +1,9 @@
+[[TOC]]
+
+= Jabber Database =
+
+Spacewalk utilizes Jabber to facilitate communications between the server and the clients for osa-dispatcher/osad. The Jabber program uses the Berkeley DB to store active transactions and these transaction log files can get out of control very fast and take up a lot of disk space. 
+
+== Setting a checkpoint and cleaning up log files ==
+
+In order to clean up the Berkeley DB log files, you must draw a line in the sand and then use a command to remove the unnecessary log files. 
