@@ -31,3 +31,7 @@ For good measure, restart jabberd and you should be all set.
 {{{
 # /etc/init.d/jabberd restart
 }}}
+
+== External References ==
+
+ * [http://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_checkpoint.html Berkeley DB Command Line Utilities - db_checkpoint]
