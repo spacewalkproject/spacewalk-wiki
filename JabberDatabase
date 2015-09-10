@@ -35,3 +35,4 @@ For good measure, restart jabberd and you should be all set.
 == External References ==
 
  * [http://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_checkpoint.html Berkeley DB Command Line Utilities - db_checkpoint]
+ * [https://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_archive.html Berkeley DB Command Line Utilities - db_archive]
