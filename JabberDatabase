@@ -20,7 +20,7 @@ Then, run the db_archive command to view which files aren't needed:
 # db_archive -a -h /var/lib/jabberd/db/
 }}}
 
-Now, you can actually remove the log files that are not longer in use:
+Now, you can actually remove the log files that are no longer in use:
 
 {{{
 # db_archive -d -h /var/lib/jabberd/db/
