@@ -6,4 +6,28 @@ Spacewalk utilizes Jabber to facilitate communications between the server and th
 
 == Setting a checkpoint and cleaning up log files ==
 
-In order to clean up the Berkeley DB log files, you must draw a line in the sand and then use a command to remove the unnecessary log files. 
+In order to clean up the Berkeley DB log files, you must draw a line in the sand and then use a command to remove the unnecessary log files. The following commands can likely be used on any modern version of Spacewalk, e.g. Spacewalk 2.0, 2.1, 2.2. and 2.3 - however they have only been tested on Spacewalk 2.3. 
+
+First, ensure you have the db4-utils package installed and install it if you don't. As root execute the following command to set a checkpoint within Berkeley DB, which will flush all of the active transactions into the DB:
+
+{{{
+# sudo -u jabber db_checkpoint -1 -h /var/lib/jabberd/db/
+}}}
+
+Then, run the db_archive command to view which files aren't needed:
+
+{{{
+# db_archive -a -h /var/lib/jabberd/db/
+}}}
+
+Now, you can actually remove the log files that are not longer in use:
+
+{{{
+# db_archive -d -h /var/lib/jabberd/db/
+}}}
+
+For good measure, restart jabberd and you should be all set. 
+
+{{{
+# /etc/init.d/jabberd restart
+}}}
