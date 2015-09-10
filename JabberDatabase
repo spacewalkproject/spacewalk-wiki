@@ -32,6 +32,10 @@ For good measure, restart jabberd and you should be all set.
 # /etc/init.d/jabberd restart
 }}}
 
+== A warning about removing all Jabber DB files ==
+
+While it is possible to clean up these log files by nuking all files under the /var/lib/jabberd/db/ directory and restarting jabberd, I have found that this actually interrupts the communication between the server and osad on the clients. From what I can tell, nuking all of the jabber db files and restarting jabber will force clients to have to re-establish communication with the Spacewalk server. Most of the time, this requires removing the osad-auth.conf file on the client and restarting osad. Using the method in the section above, you can cleanly perform maintenance on Jabber's Berkeley DB. 
+
 == External References ==
 
  * [http://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_checkpoint.html Berkeley DB Command Line Utilities - db_checkpoint]
