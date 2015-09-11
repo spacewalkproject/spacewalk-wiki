@@ -5,7 +5,7 @@
 Spacewalk utilizes Jabber to facilitate communications between the server and the clients for osa-dispatcher/osad. The Jabber program uses the Berkeley DB to store active transactions and these transaction log files can get out of control very fast and take up a lot of disk space. Each log file is 10MB in size and there's no built-in mechanism to clean them up automatically. 
 
 {{{
-# ls -l /var/lib/jabberd/db/
+# ls -l /var/lib/jabberd/db/ | grep log
 
 -rw-r-----. 1 jabber jabber 10485760 Sep 10 08:38 log.0000000001
 -rw-r-----. 1 jabber jabber 10485760 Sep 10 08:43 log.0000000002
