@@ -16,7 +16,7 @@ As root execute the following command to set a checkpoint within Berkeley DB, wh
 # sudo -u jabber db_checkpoint -1 -h /var/lib/jabberd/db/
 }}}
 
-Then, run the db_archive command to view which files aren't needed:
+Then, (if you're interested or to verify) run the db_archive command to view which files aren't needed:
 
 {{{
 # db_archive -a -h /var/lib/jabberd/db/
