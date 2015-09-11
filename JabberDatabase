@@ -43,3 +43,4 @@ While it is possible to clean up these log files by nuking all files under the /
  * [http://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_checkpoint.html Berkeley DB Command Line Utilities - db_checkpoint]
  * [https://docs.oracle.com/cd/E17275_01/html/api_reference/C/db_archive.html Berkeley DB Command Line Utilities - db_archive]
  * [http://jabberd2.org/ jabberd2]
+ * [https://en.wikipedia.org/wiki/Berkeley_DB Berkeley DB]
