@@ -109,6 +109,11 @@ In some cases, your firewall or network settings may cause osad's to think they'
 
 There is an intermittent problem with the interaction between jabberd and the Berkeley database it uses by default. Occasionally (not seen much any more), the database will become “wedged” and the osads on the clients will not pick up scheduled actions. Pings, however, still work. When/if this occurs, the only known solution is to restart jabberd - this will automatically remove the files in /var/lib/jabberd/. 
 
+=== Berkeley DB Maintenance ===
+
+For more on how to maintain and clean up the bundled Berkeley DB for Jabber, go here:
+  * [wiki:JabberDatabase Jabber Berkeley Database] Maintenance
+
 === Jabber and OSAD client connection issues ===
 [https://fedorahosted.org/spacewalk/wiki/JabberAndOSAD Jabber and OSAD client connection issues]
 === Resources ===
