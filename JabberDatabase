@@ -14,6 +14,10 @@ Spacewalk utilizes Jabber to facilitate communications between the server and th
 
 == Setting a checkpoint and cleaning up log files ==
 
+WARNING! Using this method for a long period of time seems to cause Jabber to become overwhelmed. A SYN flood can occur that apparently requires the DB files be wiped out anyway. 
+
+ * [https://www.redhat.com/archives/spacewalk-list/2014-April/msg00030.html SYN Flooding with OSAD]
+
 In order to clean up the Berkeley DB log files, you must draw a line in the sand and then use a command to remove the unnecessary log files. The following commands can likely be used on any modern version of Spacewalk, e.g. Spacewalk 2.0, 2.1, 2.2. and 2.3 - however they have only been tested on Spacewalk 2.3. 
 
 First, ensure you have the db4-utils package installed and install it if you don't. Second, note that the db_checkpoint command must be used first in order for the db_archive command to work.
