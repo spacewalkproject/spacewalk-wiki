@@ -82,12 +82,6 @@ configure-proxy.sh
 
 and follow the prompts. This will download and configure the necessary packages. Once installed use /usr/sbin/rhn-proxy to stop and start the service.
 
-Finally, run:
-
-{{{
-rhn-proxy-activate --server=<fqdn-of-your-master-here>
-}}}
-
 You should now be able to navigate to the hostname of your proxy in a web browser and see the Spacewalk Proxy page. If you see an error here there's likely something wrong with your install.
 
   * If all seems well you can now try [RegisteringClients Registering Clients]
