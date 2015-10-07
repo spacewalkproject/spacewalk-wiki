@@ -57,6 +57,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * Repository sync page improved to show more details about last sync
     * Repository sync option for syncing latest packages only added
     * Osa ping API calls added
+    * Added compliancy indicator icon on Scap results list page
   * New API calls:
     * org.isErrataEmailNotifsForOrg
     * org.isOrgConfigManagedByOrgAdmin
