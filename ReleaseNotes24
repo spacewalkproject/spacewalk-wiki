@@ -44,13 +44,13 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Spacewalk now supported on Fedora 22
   * Spacewalk supports Fedora 22 clients
     * New package - dnf-plugin-spacewalk
-  * Organization specific configuration moved to Organization Admin menu
+  * Organization-specific configuration moved to Organization Admin menu
     * Satellite admins can allow/disallow Organization admins to manage this configuration
   * Passwords are not sent to user in clear text anymore
     * https://fedorahosted.org/spacewalk/wiki/Features/ResetPassword
   * Continued UI polish and improvements, including standardizing on [https://www.patternfly.org/ Patternfly]
   * Plenty of small enhancements and fixes
-    * Added support for Catalan and Portugal translations from Zanata project
+    * Added support for Catalan and Portuguese translations from Zanata project
     * Fedora and RHEL/CentOS 7 Cobbler provisioning fixes
     * Removed checksum type None for software channels
     * Fixed system.listUngroupedSystems API call
