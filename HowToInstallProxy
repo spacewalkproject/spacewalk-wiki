@@ -6,7 +6,7 @@ If you're looking for instructions for the Red Hat Satellite Proxy product see t
 
 For more information on what Spacewalk is or for developer information see [wiki:proxy this page].
 
-For Spacewalk proxy installation for Spacewalk 2.2 see [wiki:HowToInstallProxy22]
+For Spacewalk proxy installation for Spacewalk 2.3 see [wiki:HowToInstallProxy23]
 
 == Prerequisites ==
 
@@ -20,7 +20,7 @@ For Spacewalk proxy installation for Spacewalk 2.2 see [wiki:HowToInstallProxy22
 
 == Repository ==
 
-RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.3 repositories (including *-client). For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.4 repositories (including *-client). For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
 
 == Installation ==
 
@@ -98,7 +98,7 @@ configure-proxy.sh --answer-file=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="2.3"
+VERSION="2.4"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
