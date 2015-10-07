@@ -1,16 +1,17 @@
 [[TOC]]
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 2.2 to Spacewalk 2.3
+These are upgrade instruction for upgrading Spacewalk 2.3 to Spacewalk 2.4
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.2 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6 Server, or Fedora 20.
+  *  Spacewalk 2.3 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6 Server, or Fedora 21.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.3). Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.4). Make sure you have a valid backup in case anything will go wrong.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 2.2 to 2.3 upgrade instructions, are available at [wiki:HowToUpgrade23]
  * Spacewalk 2.1 to 2.2 upgrade instructions, are available at [wiki:HowToUpgrade22]
  * Spacewalk 2.0 to 2.1 upgrade instructions, are available at [wiki:HowToUpgrade21]
  * Spacewalk 1.9 to 2.0 upgrade instructions, are available at [wiki:HowToUpgrade20]
@@ -26,7 +27,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk 2.3 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You have set up your yum to point to Spacewalk 2.4 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 == Database and configuration backup ==
@@ -37,13 +38,20 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 == Package upgrade ==
 
-=== Fedora20: Lock versions ===
+=== Lock versions ===
 
-When running on Fedora 20, you will need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
+When running on Fedora 21, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
 Execute the following commands:
 {{{
 # yum install yum-versionlock
 # yum versionlock quartz maven-model
+}}}
+
+When running on RHEL 7, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the RHEL 7 Optional repository.
+Execute the following commands:
+{{{
+# yum install yum-versionlock
+# yum versionlock cglib
 }}}
 
 === All systems ===
@@ -108,7 +116,7 @@ Important notes:
 
   If you are using an external database, then run
 {{{
-# spacewalk-setup --disconnected --external-database=$DB --upgrade
+# spacewalk-setup --disconnected --external-$DB --upgrade
 }}}
 
   where `DB` will be either `oracle` or `postgresql`, depending on what your external database is.
