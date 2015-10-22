@@ -85,7 +85,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
    * [[Image(action-del.gif)]] [wiki:Why_not_to_use_a_configuration_management_engine Why not to use a configuration management engine] -- jvzantvoort(jydawg)
    * [[Image(action-del.gif)]] I think spacewalk has a great foundation for config management and should be expanded.  No other [http://www.acalculator.com/payroll-deductions.html tool] has the ability to control access to files, thus preventing accidents.
      * [[Image(action-add.gif)]] Use spacewalk as AAA/a wrapper to Func? Func can be extremely dangerous, not that I nearly blew an entire DC away with it once or anything.
-   * [[Image(action-add.gif)]] +1 Puppet integration.  Puppet has really started to blossom in the last few years and is gaining a real foothold in Corporate land.  I would suggest it's the "best of breed" that Spacewalk could really do with integrating -- Duncan
+   * [[Image(action-add.gif)]] Ansible integration?
 
 === Monitoring / Orchestration ===
  * [http://fedorahosted.org/func func] instead of osad? What are the advantages/disadvantages? Is it possible?
@@ -96,7 +96,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * upgrade monitoring engine?
    * [[Image(action-del.gif)]] let's not UPGRADE it, let's integrate with something else. -- jmrodri
    * [[Image(action-del.gif)]] Agreed, could there be some integration with Nagios or something similar to NPC (http://trac2.assembla.com/npc/) -- Phil
-   * [[Image(action-del.gif)]] +1 this idea.  Nagios is gaining more ground and provides "best of breed" monitoring solution that should provide excellent integration with Spacewalk. -- Duncan
+   * [[Image(action-del.gif)]] +1 this idea.
    * integration with rancid (http://www.shrubbery.net/rancid/) (suggested by Alticon-Brian in IRC)
      * [[Image(action-del.gif)]] I don't think this buys us anything, should be part of the integration with a different monitoring system. -- jmrodri
  * Addition of a GSSAPI/Kerberos authentication method in place of the RHNSD and SSH method for remote client access. Instead of providing the identity file and a user for SSHing (shared keys are banned and impractical in my environment) I'd like to use my existing automaton user and distribute his key tab so that a simple kinit would allow password-less SSH to client machines. AKA Func these days --Phil
