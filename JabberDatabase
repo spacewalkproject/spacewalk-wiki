@@ -20,7 +20,7 @@ WARNING! Using this method for a long period of time seems to cause Jabber to be
 
 In order to clean up the Berkeley DB log files, you must draw a line in the sand and then use a command to remove the unnecessary log files. The following commands can likely be used on any modern version of Spacewalk, e.g. Spacewalk 2.0, 2.1, 2.2. and 2.3 - however they have only been tested on Spacewalk 2.3. 
 
-First, ensure you have the db4-utils package installed and install it if you don't. Second, note that the db_checkpoint command must be used first in order for the db_archive command to work.
+First, ensure you have the db4-utils package installed and install it if you don't. Second, note that the db_checkpoint command must be used first in order for the db_archive command to work. Also note that on CentOS/RHEL 7, the following commands are db4_checkpoint and db4_archive; if you don't use the right command qou'll end up with an error like "BDB1538 Program version 5.3 doesn't match environment version 4.8"
 
 As root execute the following command to set a checkpoint within Berkeley DB, which will flush all of the active transactions into the DB:
 
