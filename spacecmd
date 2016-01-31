@@ -5,6 +5,8 @@ spacecmd is a command-line interface to Satellite and Spacewalk servers.
 = Downloads =
 Stable RPMs are available in the [http://yum.spacewalkproject.org/latest/ Spacewalk server latest stable repositories].
 
+Stable Client RPMs: [http://yum.spacewalkproject.org/latest-client/ Spacewalk Client latest stable repos].
+
 RPMs built nightly from git are available in the [http://yum.spacewalkproject.org/nightly/ Spacewalk server nightly repositories].
 
 The source is available in the [http://git.fedorahosted.org/git/?p=spacewalk.git;a=tree;f=spacecmd Spacewalk git repo at /spacecmd].
