@@ -1,15 +1,19 @@
 == What is Taskomatic? ==
-Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis. The Java port of Taskomatic is based on the [http://quartz-scheduler.org/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library..
+Taskomatic is a job scheduler which closely resembles cron. Taskomatic jobs are the "background" parts of Spacewalk which must be performed on a regular basis.
+
+The Java port of Taskomatic is based on the [http://quartz-scheduler.org/ Quartz] scheduler library. The daemon part of Taskomatic uses the [http://wrapper.tanukisoftware.org/doc/english/introduction.html Tanuki Service Wrapper] library.
 
 == Tasks, bunches, schedules ==
 
 Tasks are grouped into bunches (e.g. package-cleanup-bunch contains one task package-cleanup). If you want to run task bunches on regular basis, then you have Task schedule (e.g. package-cleanup-default).
 
+To check whether the engine is running and what is the last time each bunch was ran and its state, check ''Admin -> Task Engine Status'' and note "Scheduling Service: ON" and status and execution date of individual bunches.
+
 == Reconfiguring Taskomatic ==
 
 Changes to the '''frequency''' of the taskomatic schedules is not recommended but changing the time of day when the daily tasks take place can be done.
 
-Navigate to Admin -> Task Schedules. There is a list of defined task schedules with given frequencies as [http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger Quartz strings]. After navigating to selected schedule, you can edit Quartz string manually or select values from form.
+Navigate to ''Admin -> Task Schedules''. There is a list of defined task schedules with given frequencies as [http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger Quartz strings]. After navigating to selected schedule, you can edit Quartz string manually or select values from form.
 
 == Tasks ==
 
