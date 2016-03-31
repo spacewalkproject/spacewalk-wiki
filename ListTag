@@ -46,14 +46,14 @@ public class SystemGroupListSetupAction extends RhnAction implements Listable{
         return mapping.findForward("default");
     }
     
-    public  List getResults(RequestContext context) {
+    public  List getResult(RequestContext context) {
         User user =  context.getLoggedInUser();
         return SystemManager.groupList(user, null);
     }
 }
 }}}
 
-List returned but the "getResults" method is the actual list of objects we want to display. 
+List returned but the "getResult" method is the actual list of objects we want to display. 
 
 === Sets ===
 If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of systems in a database we use RhnSet (becasue we want it to be persistent). You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
