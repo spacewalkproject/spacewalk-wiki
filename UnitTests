@@ -15,4 +15,4 @@ where !ClassName is the name of the class containing unit tests.  For example:
 # ant -f /usr/share/rhn/unittest.xml -Dtestcase=CobblerCommandTest
 }}}
 
-Test logs are stored in '''/tmp/reports/'''
+Test logs are stored in ''/tmp/reports/''.
