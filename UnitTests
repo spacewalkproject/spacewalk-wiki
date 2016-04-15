@@ -1,29 +1,18 @@
 == Unit Tests ==
 
-If you have configured this project in eclipse, you can simply use eclipse to run unit tests.  Alternatively you can use ant.
+You can use ant on machine with installed spacewalk.
 
 In order to run the unit tests, the following must first be done:
 
-  1. Ensure that the junit packages are installed. (e.g yum install junit ant-junit)
-  1. Ensure that /etc/rhn/rhn.conf and /etc/rhn/default/*.conf are accessible by the user running the unit tests.
+  1. Ensure that the spacewalk-java-tests package is installed.
 
 To run a set of Unit tests within ant, simply run:
 {{{
-# ant -Dtestcase=ClassName test
+# ant -f /usr/share/rhn/unittest.xml -Dtestcase=ClassName
 }}}
 where !ClassName is the name of the class containing unit tests.  For example:
 {{{
-# ant -Dtestcase=SystemHandlerTest test
+# ant -f /usr/share/rhn/unittest.xml -Dtestcase=CobblerCommandTest
 }}}
-would run all tests in !SystemHandlerTest.
 
-
-To run all tests, simply run:
-{{{
-# ant invoke-tests-all
-}}}
-If you would like to specify a directory for the configuration, simply add
-{{{
- -Drhn.config.dir=/etc/rhn
-}}}
-to the ant command.
+Test logs are stored in '''/tmp/reports/'''
