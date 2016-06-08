@@ -6,6 +6,7 @@ If you're looking for instructions for the Red Hat Satellite Proxy product see t
 
 For more information on what Spacewalk is or for developer information see [wiki:proxy this page].
 
+For Spacewalk proxy installation for Spacewalk 2.4 see [wiki:HowToInstallProxy24]
 For Spacewalk proxy installation for Spacewalk 2.3 see [wiki:HowToInstallProxy23]
 
 == Prerequisites ==
@@ -98,7 +99,7 @@ configure-proxy.sh --answer-file=proxyanswers.txt
 proxyanswers.txt:
 
 {{{
-VERSION="2.4"
+VERSION="2.5"
 RHN_PARENT="spacewalk.example.com"
 TRACEBACK_EMAIL="admin@example.com"
 USE_SSL="Y"
