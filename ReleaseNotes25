@@ -58,13 +58,35 @@ If you plan to upgrade from older release, search no more -- the following page 
     * system.schedulePackageRemoveByNevra
 
 
-The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.4/
+The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.5/
 
 == Contributors ==
 
 Our thanks go to the community members who contributed to this release:
 
-                                                                 
+* Anastasios Papaioannou
+ * Aron Parsons
+ * Avi Miller
+ * Bernhard Lichtinger
+ * Dario Leidi
+ * Dimitar Yordanov
+ * Duncan Mac-Vicar P
+ * Frantisek Kobzik
+ * Johannes Renner
+ * Kevin Walter
+ * Klaas Demter
+ * Mark Huth
+ * Matei Albu
+ * Matej Kollar
+ * Matthias Thubauville
+ * Michael Brookhuis
+ * Michael Calmer
+ * Michael Mraka
+ * Michele Bologna
+ * Pavel Studenik
+ * Shannon Hughes
+ * Silvio Moioli
+ * Thomas Wouters
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
 
@@ -76,7 +98,7 @@ In Spacewalk 2.4, we've seen
     * 1071 changesets committed
     * 1708 commits done
 
-Github repo for commits since Spacewalk 2.3
+Github repo for commits since Spacewalk 2.4
 
     * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2015-09-29&to=2016-05-26&type=c Spacewalk 2.4 to 2.5]
 
