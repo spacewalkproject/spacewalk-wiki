@@ -112,7 +112,7 @@ Important notes:
 
   If you are using the default database setup, run:
 {{{
-# spacewalk-setup --disconnected --upgrade
+# spacewalk-setup --upgrade
 }}}
 
   If you are using an external database, then run
