@@ -6,8 +6,8 @@ If you're looking for instructions for the Red Hat Satellite Proxy product see t
 
 For more information on what Spacewalk is or for developer information see [wiki:proxy this page].
 
-For Spacewalk proxy installation for Spacewalk 2.4 see [wiki:HowToInstallProxy24]
-For Spacewalk proxy installation for Spacewalk 2.3 see [wiki:HowToInstallProxy23]
+ * For Spacewalk proxy installation for Spacewalk 2.4 see [wiki:HowToInstallProxy24]
+ * For Spacewalk proxy installation for Spacewalk 2.3 see [wiki:HowToInstallProxy23]
 
 == Prerequisites ==
 
