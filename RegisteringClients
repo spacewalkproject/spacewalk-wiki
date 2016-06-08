@@ -1,8 +1,9 @@
 [[TOC]]
 = Registering Clients =
 
-Instructions for registering client systems you wish to manage with Spacewalk 2.4.
+Instructions for registering client systems you wish to manage with Spacewalk 2.5.
 
+ * Spacewalk 2.4 instructions are available at [wiki:RegisteringClients2].
  * Spacewalk 2.3 instructions are available at [wiki:RegisteringClients23].
  * Spacewalk 2.2 instructions are available at [wiki:RegisteringClients22].
  * Spacewalk 2.1 instructions are available at [wiki:RegisteringClients21].
@@ -21,20 +22,16 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
 == Fedora ==
 
  1. Install the Spacewalk client yum repository
-    * For Fedora 21:
-{{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.4-client/Fedora/21/x86_64/spacewalk-client-repo-2.4-3.fc21.noarch.rpm
-}}}
     * For Fedora 22:
 {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.4-client/Fedora/22/x86_64/spacewalk-client-repo-2.4-3.fc22.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.5-client/Fedora/22/x86_64/spacewalk-client-repo-2.5-3.fc22.noarch.rpm
+}}}
+    * For Fedora 23:
+{{{
+# rpm -Uvh http://yum.spacewalkproject.org/2.5-client/Fedora/23/x86_64/spacewalk-client-repo-2.5-3.fc22.noarch.rpm
 }}}
  2. Install client packages
-    * For Fedora 21:
-   {{{
-# yum install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
-   }}}
-    * For Fedora 22:
+    * For Fedora 22 and Fedora 23:
    {{{
 # dnf install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto dnf-plugin-spacewalk
    }}}
@@ -54,19 +51,19 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
   1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL. Install the Spacewalk yum repository and matching EPEL repository.
  * RHEL 5 / CentOS 5
    {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.4-client/RHEL/5/x86_64/spacewalk-client-repo-2.4-3.el5.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.5-client/RHEL/5/x86_64/spacewalk-client-repo-2.5-3.el5.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
    }}}
  * RHEL 6 / SL 6 / CentOS 6
    {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.4-client/RHEL/6/x86_64/spacewalk-client-repo-2.4-3.el6.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.5-client/RHEL/6/x86_64/spacewalk-client-repo-2.5-3.el6.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
    }}}
  * RHEL 7 / SL 7 / CentOS 7
    {{{
-# rpm -Uvh http://yum.spacewalkproject.org/2.4-client/RHEL/7/x86_64/spacewalk-client-repo-2.4-3.el7.noarch.rpm
+# rpm -Uvh http://yum.spacewalkproject.org/2.5-client/RHEL/7/x86_64/spacewalk-client-repo-2.5-3.el7.noarch.rpm
 # BASEARCH=$(uname -i)
 # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
    }}}
@@ -108,19 +105,19 @@ Registering a CentOS 4 server to Spacewalk is exactly the same as it would be fo
 
 For openSUSE 13.2:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.4/openSUSE_13.2/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_13.2/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
 For openSUSE 13.1:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.4/openSUSE_13.1/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_13.1/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
 For Tumbleweed:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.4/openSUSE_Tumbleweed/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_Tumbleweed/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
@@ -138,7 +135,7 @@ For Tumbleweed:
 
 == Debian ==
 
-'''NOTE: DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.4! ''' Any volunteers?
+'''NOTE: DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.5! ''' Any volunteers?
 
 All core clients packages are already in Debian and Ubuntu. See:
 
