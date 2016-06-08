@@ -1,11 +1,12 @@
 = Spacewalk Release Notes =
 
-== The latest Spacewalk release is 2.4 ==
+== The latest Spacewalk release is 2.5 ==
 
- * [wiki:ReleaseNotes24 Release notes for Spacewalk 2.4] which was released [https://www.redhat.com/archives/spacewalk-announce-list/2015-October/msg00001.html on October 7th, 2015]
+ * [wiki:ReleaseNotes25 Release notes for Spacewalk 2.5] which was released on June 8th, 2016
 
 == Older Spacewalk releases ==
 
+ * [wiki:ReleaseNotes24 Release notes for Spacewalk 2.4] which was released [https://www.redhat.com/archives/spacewalk-announce-list/2015-October/msg00001.html on October 7th, 2015]
  * [wiki:ReleaseNotes23 Release notes for Spacewalk 2.3] which was released [https://www.redhat.com/archives/spacewalk-announce-list/2015-April/msg00000.html on Tue April 14th, 2015]
  * [wiki:ReleaseNotes22 Release notes for Spacewalk 2.2] which was released [https://www.redhat.com/archives/spacewalk-announce-list/2014-July/msg00000.html on July 16th, 2014]
  * [wiki:ReleaseNotes21 Release notes for Spacewalk 2.1] which was released [http://www.redhat.com/archives/spacewalk-announce-list/2014-March/msg00000.html on March 4th, 2014]
