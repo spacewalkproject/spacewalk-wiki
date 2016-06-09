@@ -117,7 +117,7 @@ Important notes:
 
   If you are using an external database, then run
 {{{
-# spacewalk-setup --disconnected --external-$DB --upgrade
+# spacewalk-setup --external-$DB --upgrade
 }}}
 
   where `DB` will be either `oracle` or `postgresql`, depending on what your external database is.
