@@ -109,15 +109,21 @@ For openSUSE 13.2:
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
-For openSUSE 13.1:
+For openSUSE Leap 42.1:
 {{{
-#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_13.1/ spacewalk-tools
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_Leap_42.1/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
 For Tumbleweed:
 {{{
 #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/openSUSE_Tumbleweed/ spacewalk-tools
+#  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
+}}}
+
+For SLE12_SP1:
+{{{
+#  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.5/SLE_12_SP1/ spacewalk-tools
 #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
 }}}
 
