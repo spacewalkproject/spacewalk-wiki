@@ -167,26 +167,26 @@ Once the Spacewalk RPM is installed you need to configure the application.
 If you wish to use the default PostgreSql database, and have installed {{{spacewalk-setup-postgresql}}}, just run
 
 {{{
-spacewalk-setup --disconnected
+spacewalk-setup
 }}}
 
 If you are planning to use your own database setup (either locally or on a separate machine), then run
 
 {{{
-spacewalk-setup --disconnected --external-oracle
+spacewalk-setup --external-oracle
 }}}
 
 if you are using an Oracle database, '''OR'''
 
 {{{
-spacewalk-setup --disconnected --external-postgresql
+spacewalk-setup --external-postgresql
 }}}
 
 if you are using postgresql.
 
 An example session is as follows:
 {{{
-# spacewalk-setup --disconnected
+# spacewalk-setup
 * Setting up SELinux..
 ** Database: Setting up database connection for PostgreSQL backend.
 ** Database: Installing the database:
@@ -202,10 +202,6 @@ An example session is as follows:
 You must enter an email address.
 Admin Email Address? root@localhost
 * Performing initial configuration.
-* Activating Spacewalk.
-** Loading Spacewalk Certificate.
-** Verifying certificate locally.
-** Activating Spacewalk.
 * Configuring apache SSL virtual host.
 Should setup configure apache's default ssl server for you (saves original ssl.conf) [Y]? 
 ** /etc/httpd/conf.d/ssl.conf has been backed up to ssl.conf-swsave
@@ -244,7 +240,7 @@ Should the spacewalk-setup fail, check the error it gives you and also investiga
 You can also configure Spacewalk by using an answer file, by running {{{spacewalk-setup}}} like
 
 {{{
-spacewalk-setup --disconnected --answer-file=<FILENAME>
+spacewalk-setup --answer-file=<FILENAME>
 }}}
 
 An example answer file for the Oracle database backend:
