@@ -71,8 +71,8 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
 === Set Permissions ===
 
 Make sure that permissions are properly set.  If your Git repo is in your homedir, then apache and tomcat must be able to get read and execute access to not only the Git repo, but your homedir as well.  The following commands should work when run from homedir:
- * {{{[you@yourmachine ~]$ setfacl  -R  -m  u:apache:rx .}}}
- * {{{[you@yourmachine ~]$ setfacl  -R  -m  u:tomcat:rx .}}}
+ * {{{[you@yourmachine ~]$ sudo setfacl  -R  -m  u:apache:rx .}}}
+ * {{{[you@yourmachine ~]$ sudo setfacl  -R  -m  u:tomcat:rx .}}}
 
 === Uninstallation ===
 
