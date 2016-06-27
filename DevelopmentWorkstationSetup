@@ -192,6 +192,7 @@ ln -s /usr/share/java/commons-chain.jar rhnwebapp/WEB-INF/lib/commons-chain.jar
 [Wed Jul 16 14:56:20 2008] [error] [client 192.168.1.106] Symbolic link not allowed or link target not accessible: /var/www/html, referer: https://bugatti.usersys.redhat.com/rhn/systems/Overview.do
 }}}
   The most likely culprit is actually a permissions problem for the apache user, give {{{apache}}} user access to the directory.
+  Also check that required static content served up by httpd is in the right place.  Compare /var/www/html.old with /var/www/html and look for files and directories that are in /var/www/html.old but not in /var/www/html - move these files and directories into /var/www/html.  Be sure to check the javascript and css directories within /var/www/html/ for missing files as well.
 
  * using '''tomcat6''' and getting following traceback:
 {{{
