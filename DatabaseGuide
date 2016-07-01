@@ -16,7 +16,7 @@ together with the specific parts into an installable file.
 
 ==== Tables ====
 
-If the table is common for both oracle and postres (and they almost always are), you want to:
+If the table is common for both oracle and postgres (and they almost always are), you want to:
 
  * cd schema/spacewalk/common/tables
 
