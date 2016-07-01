@@ -49,7 +49,7 @@ Notes:
 
 ==== Data ====
 
-If the table is common for both oracle and postres (and they almost always are) and the data is loaded using simple insert
+If the table is common for both oracle and postgres (and they almost always are) and the data is loaded using simple insert
 statements, you want to:
 
  * cd schema/spacewalk/common/data
@@ -79,7 +79,7 @@ Notes:
 
 ==== Views ====
 
-If the view is common for both oracle and postres (and they almost always are), you want to:
+If the view is common for both oracle and postgres (and they almost always are), you want to:
 
  * cd schema/spacewalk/common/views
 
