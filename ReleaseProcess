@@ -124,7 +124,7 @@ with the package-version-release of that latest tag.
 To submit a build to whatever build system is configured for your current
 git repository and branch, do:
 {{{
-	tito build --release
+	tito release --all
 }}}
 
 In Spacewalk git branches, this will create .src.rpms with appropriate dist
