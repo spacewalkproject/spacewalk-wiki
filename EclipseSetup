@@ -13,7 +13,7 @@ work in the common build environment using Ant.
    yum install ivy ant-contrib
 }}}
 
-NOTE: On my Fedora 24 system, I had to install the apache-ivy package instead of ivy to avoid conflicts between apache-commons and jakarta-commons.  I also had to install ant-junit package.  I don't know these packages are necessary on other OS version.
+NOTE: On my Fedora 24 system, I had to install the apache-ivy package instead of ivy to avoid conflicts between apache-commons and jakarta-commons.  I also had to install ant-junit package.  I don't know if these packages are necessary on other OS version.
 
 {{{
    dnf install apache-ivy ant-contrib ant-junit
