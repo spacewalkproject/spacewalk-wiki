@@ -111,11 +111,11 @@ Configure Code Templates:
 2) In the Preferences dialog, Click Java -> Code Style -> Code Templates
 3) Select Comments
 4) Click the Import... button.
-5) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/code_templates_comments.xml
+5) Browse to the ~/spacewalk/java/conf/eclipse/code_templates_comments.xml
 6) Click OK
 7) Select Code
 8) Click the Import... button.
-9) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/code_templates_code.xml
+9) Browse to the ~/spacewalk/java/conf/eclipse/code_templates_code.xml
 10) Click OK
 }}}
 Configure import statement order:
@@ -123,7 +123,7 @@ Configure import statement order:
 1) Click Window -> Preferences
 2) In the Preferences dialog, Click Java -> Code Style -> Organize Imports
 3) Click the Import... button.
-4) Browse to the ~/spacewalk/java/eng/java/conf/eclipse/rhn.importorder
+4) Browse to the ~/spacewalk/java/conf/eclipse/rhn.importorder
 5) Click OK
 }}}
 
