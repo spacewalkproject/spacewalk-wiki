@@ -1,7 +1,7 @@
 
 == List Tag ==
 
-There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag (known as ListTag 3.0).  New and updates to existing pages should use ListTag 3.0.  ListTag 3.0 has the largest set of features features (including filters, pagination, page size selector, csv support) and is the easiest to use.
+There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag (known as !ListTag 3.0).  New and updates to existing pages should use !ListTag 3.0.  !ListTag 3.0 has the largest set of features features (including filters, pagination, page size selector, csv support) and is the easiest to use.
 
 
 == Using List Tag 3.0 ==
@@ -11,9 +11,9 @@ Like any struts page, it consists of
  * Struts Action
  * JSP
 
-A single action is typically used for both the retrieval of the data to display on the page (including any filtering that takes place) as well as handling form submissions from the page. This is a slight change from the older model that used a *SetupAction to populate the data and a *Action class to collect the selected results and process them.
+A single action is typically used for both the retrieval of the data to display on the page (including any filtering that takes place) as well as handling form submissions from the page. This is a slight change from the older model that used a *!SetupAction to populate the data and a *Action class to collect the selected results and process them.
 
-It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the ListTag. ListTag 3.0 can readily use any DTO or beanified object/value holders. In fact one of the primary motivations of ListTag 3.0 was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
+It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the !ListTag. !ListTag 3.0 can readily use any DTO or beanified object/value holders. In fact one of the primary motivations of !ListTag 3.0 was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
 
 
 == Action side ==
@@ -22,13 +22,13 @@ It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to
 
 The following is a high level summary of the steps needed in the action.
 
- * The action must extend RhnAction (overriding the execute method) and implement Listable (implementing the getResults method).
- * The action should use one of the "ListHelper" classes to set up the action correctly. Possible options are (details on each follow):
-  * ListHelper - used when there is no user selection involved in the page.
-  * ListRhnSetHelper - used when the user's selections should be stored in an RhnSet.
-  * ListSessionSetHelper - used when the user's selections should be stored in the session.
+ * The action must extend !RhnAction (overriding the execute method) and implement Listable (implementing the getResults method).
+ * The action should use one of the "!ListHelper" classes to set up the action correctly. Possible options are (details on each follow):
+  * !ListHelper - used when there is no user selection involved in the page.
+  * !ListRhnSetHelper - used when the user's selections should be stored in an !RhnSet.
+  * !ListSessionSetHelper - used when the user's selections should be stored in the session.
  * The getResults() method should return the data to display in the page.
- * Often, the ListHelper "isDispatched()" method is used to determine if the page form has been submitted.
+ * Often, the !ListHelper "isDispatched()" method is used to determine if the page form has been submitted.
 
 ==== Simplest case ====
 
@@ -56,7 +56,7 @@ public class SystemGroupListSetupAction extends RhnAction implements Listable{
 List returned but the "getResult" method is the actual list of objects we want to display. 
 
 === Sets ===
-If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of systems in a database we use RhnSet (becasue we want it to be persistent). You will probably find more occurrences of RhnSets than SessionSets in the code becasue Session sets were only recently introduced..
+If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets !SessionSet and !RhnSet. !SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of systems in a database we use !RhnSet (because we want it to be persistent). You will probably find more occurrences of !RhnSets than !SessionSets in the code because Session sets were only recently introduced..
 
 ==== Rhn Set ====
 {{{
@@ -84,7 +84,7 @@ public class SystemGroupListAction extends RhnAction implements Listable {
 }
 }}}
 
-Basically the ListRhnSetHelper does all the ground work to setup the  set object. All we need to provide is the set declaration...
+Basically the !ListRhnSetHelper does all the ground work to setup the  set object. All we need to provide is the set declaration...
 
 ==== Session Set ====
 Session Sets uses the traditional java.util.Set to keep track of the check boxes.. Basically you need a unique declaration name to bind the set to the session..
@@ -131,7 +131,7 @@ public class ViewModifyPathsAction extends RhnAction implements Listable {
         request.setAttribute("type", getType(mapping.getParameter());
         Map params = new HashMap();
         params.put(RequestContext.SID, context.getRequiredParam(RequestContext.SID));
-        ListSessionSetHelper helper = new ListSessionSetHelper(request, params);
+        ListSessionSetHelper helper = new ListSessionSetHelper(this, request, params);
         helper.execute();
         if (helper.isDispatched()) {
             ActionForward forward =  handleDispatchAction(mapping, context);
@@ -297,7 +297,7 @@ Note: The CSV is handled by it's own Action, CSVDownloadAction, all data is pass
 
 
 == page size widget == 
-To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do page, simply use the PageSizeDecorator:
+To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do page, simply use the !PageSizeDecorator:
 {{{
 #!text/html
 <rl:decorator name="PageSizeDecorator"/>
@@ -305,7 +305,7 @@ To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do 
 Feel free to look in system_listdisplay.jspf for an example of usage. 
 
 == decorators ==
-Optional functionality on the ListTag is provided through the use of decorators. A decorator is a tag that adds a specific piece of functionality simply by including it in the JSP.
+Optional functionality on the !ListTag is provided through the use of decorators. A decorator is a tag that adds a specific piece of functionality simply by including it in the JSP.
 
 For more information on how to write a decorator, see the ListTagDecorators page.
 
