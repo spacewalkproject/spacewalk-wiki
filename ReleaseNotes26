@@ -1,7 +1,7 @@
 
 [[Image(https://fedorahosted.org/spacewalk/attachment/wiki/ReleaseNotes26/26release.png?format=raw)]]
 
-= __Spacewalk 2.6 Release Notes__ DRAFT =
+= __Spacewalk 2.6 Release Notes__ =
 
 Hello everyone,
 
@@ -42,14 +42,14 @@ If you plan to upgrade from older release, search no more -- the following page 
 
   * Spacewalk now supported on Fedora 24
   * Spacewalk supports Fedora 24 clients
-  * Plenty of small enhancements and fixes
-    * And many, many more ...
+  * spacewalk-repo-sync improvements:
+    * now it can sync channels with several repositories
+    * it can update Kickstart Tree in a repository
+    * add possibility to sync Debian/Ubuntu apt repositories
+  * improved Python 2/3 compatibility for all tools  
   * New API calls:
-    * packages.listSourcePackages
-    * packages.removeSourcePackage
-    * system.scheduleLabelScriptRun
-    * system.schedulePackageInstallByNevra
-    * system.schedulePackageRemoveByNevra
+    * system.listSuggestedReboot
+    * actionchain.addErrataUpdate
 
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.6/
