@@ -2,9 +2,9 @@
 
 = Spacewalk Installation Instructions =
 
-These are installation instructions for new installations of Spacewalk 2.5. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see HowToUpgrade.
 
-Spacewalk 2.4 installation instructions are available at [wiki:HowToInstall24].
+Spacewalk 2.5 installation instructions are available at [wiki:HowToInstall25].
 
 ----
 
@@ -28,27 +28,46 @@ RPM downloads of the project are available through yum repositories at
 To use this repository easily, install spacewalk-repo package with commands below:
 
 === Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6 ===
-
+for x86_64:
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.5/RHEL/6/x86_64/spacewalk-repo-2.5-3.el6.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/x86_64/spacewalk-repo-2.6-0.el6.noarch.rpm
+}}}
+
+for i386:
+{{{
+rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/i386/spacewalk-repo-2.6-0.el6.noarch.rpm
 }}}
 
 === Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7 ===
 
+for x86_64:
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.5/RHEL/7/x86_64/spacewalk-repo-2.5-3.el7.noarch.rpm
-}}}
-
-=== Fedora 22 ===
-
-{{{
-rpm -Uvh http://yum.spacewalkproject.org/2.5/Fedora/22/x86_64/spacewalk-repo-2.5-3.fc22.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/7/x86_64/spacewalk-repo-2.6-0.el7.noarch.rpm
 }}}
 
 === Fedora 23 ===
 
+for x86_64:
 {{{
-rpm -Uvh http://yum.spacewalkproject.org/2.5/Fedora/23/x86_64/spacewalk-repo-2.5-3.fc23.noarch.rpm
+rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/x86_64/spacewalk-repo-2.6-0.fc23.noarch.rpm
+}}}
+
+for i386:
+{{{
+rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/i386/spacewalk-repo-2.6-0.fc23.noarch.rpm
+}}}
+
+
+=== Fedora 24 ===
+
+for x86_64:
+{{{
+rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/x86_64/spacewalk-repo-2.6-0.fc24.noarch.rpm
+}}}
+
+for i386:
+{{{
+rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
 }}}
 
 === Nightly builds ===
@@ -114,7 +133,7 @@ Spacewalk uses database server to store its primary data. It supports either Pos
 
 You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
 {{{
-yum install spacewalk-setup-postgresql
+yum -y install spacewalk-setup-postgresql
 }}}
 and skip to the section '''Installing Spacewalk'''.
 
@@ -139,12 +158,12 @@ Just ask yum to install the necessary packages. This will pull down and install 
 
 If you prefer the [wiki:PostgreSQL] backend, including the embedded version mentioned above:
 {{{
-yum install spacewalk-postgresql 
+yum -y install spacewalk-postgresql 
 }}}
 
 If you tend to use the Oracle backend:
 {{{
-yum install spacewalk-oracle 
+yum -y install spacewalk-oracle 
 }}}
 
 == Configuring the firewall ==
