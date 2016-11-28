@@ -1,16 +1,17 @@
 [[TOC]]
 = Spacewalk Upgrade Instructions =
 
-These are upgrade instruction for upgrading Spacewalk 2.4 to Spacewalk 2.5
+These are upgrade instructions for upgrading Spacewalk 2.5 to Spacewalk 2.6
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.4 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6 Server, or Fedora 22.
+  *  Spacewalk 2.5 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 22/23.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.5). Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6). Make sure you have a valid backup in case anything will go wrong.
 
 == Archive of older upgrade instructions ==
 
+ * Spacewalk 2.4 to 2.5 upgrade instructions, are available at [wiki:HowToUpgrade25]
  * Spacewalk 2.3 to 2.4 upgrade instructions, are available at [wiki:HowToUpgrade24]
  * Spacewalk 2.2 to 2.3 upgrade instructions, are available at [wiki:HowToUpgrade23]
  * Spacewalk 2.1 to 2.2 upgrade instructions, are available at [wiki:HowToUpgrade22]
@@ -28,7 +29,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk 2.5 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+  * You have set up your yum to point to Spacewalk 2.6 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
     * In particular, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
 
 == Database and configuration backup ==
