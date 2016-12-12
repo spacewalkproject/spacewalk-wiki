@@ -1,12 +1,15 @@
-'''''DEPRECATED, NO LONGER USED'''''
+*_DEPRECATED, NO LONGER USED*_
+# Specifications for Solaris Content Sync
 
-= Specifications for Solaris Content Sync =
+## Goal:
 
-== Goal: ==
+
+
 
 The idea here is to be able to sync down the Solaris MPM(patches and patch clusters) content via satellite-sync from one satellite to another. This feature is exclusively for inter-spacewalk-sync.This includes ability to export the content through the exporter as well. The exporter needs the ability to look for solaris specific content, export it to an xml stream and sent it across to the destination server. The importer then reads the solaris xml stream, parses the content and puts the mpm files on to the file system mount point under /var/satellite and into the database.
+## Requirements:
 
-== Requirements: ==
+
 
  * satellite-sync should be able to sync down the content from master servers
 
@@ -15,17 +18,18 @@ The idea here is to be able to sync down the Solaris MPM(patches and patch clust
  * Support for exporter to be able to extract the solaris specific data from the spacewalk database.
 
  * Handle caching similar to rpms.
+## Technical Specifications :
 
+### Changes to Importer: (_Estimate: 3 week_)
 
-== Technical Specifications : ==
+  
 
-=== Changes to Importer: (''Estimate: 3 week'') ===  
 
     * Need to make sure we bipass all the rpm, errata and kickstart logic and fork sat-sync to only deal with solaris specific content.
 
     * We need to add the necessary flags to turn on solaris support on satellite-syncs, possibly  --solaris.
 
-     {{{ $ satellite-sync -c solaris-136540  }}}
+     ` $ satellite-sync -c solaris-136540  `
 
     > Can't we determine the content type by channel arch vs the need to specify any special --solaris flag?  (tsanders)
 
@@ -35,24 +39,23 @@ So as todd said, we'll try to do this by some means to determine if its a solari
 
     * we need to add a import_solaris in sync_handler for the call to pass through to the top satsync layer from the importer.
 
-   {{{
-
-      def import_solaris(batch):
-          importer = solarisImporter.solarisImport(batch, diskImportLib.get_backend())
-          importer.run()
-
-    }}}
-
-    * SolarisPackageContainer objects to create the necessary collection objects to be fed to the importer are already present for Source packages in sync_handler.SolarisPackageCollection.
-
-     * Dumper classes for Solaris mpms need to be added to create objects necessary for caching and dumping the file on to the file system.
-{{{
-    class SolarisMPMDumper(Dumper):
-        _loader_class = xmlSource.SolarisMPMContainer
-
-        def _getMethod(self):
-            return self.dump.solarismpm
-}}}
+   
+    
+          def import_solaris(batch):
+              importer = solarisImporter.solarisImport(batch, diskImportLib.get_backend())
+              importer.run()
+    
+        }}}
+    
+        * SolarisPackageContainer objects to create the necessary collection objects to be fed to the importer are already present for Source packages in sync_handler.SolarisPackageCollection.
+    
+         * Dumper classes for Solaris mpms need to be added to create objects necessary for caching and dumping the file on to the file system.
+    {{{
+        class SolarisMPMDumper(Dumper):
+            _loader_class = xmlSource.SolarisMPMContainer
+    
+            def _getMethod(self):
+                return self.dump.solarismpm
 or similar.
 
     * In xmlWireSource, call the rpc layer fetchig the solaris content from the exporter.
@@ -82,17 +85,18 @@ or similar.
     * backend.py's processPackage already takes into account solaris formats and tables. So we should be covered talking to the database layer.
 
     * We'll need another SolarisImporter.py class that handles interaction between satsync client bits, importer and db layer.
+### Database tables of interest:
 
-=== Database tables of interest: ===
+
 
  * rhnSolarisPatch
  * rhnSolarisPatchPackages
  * rhnSolarisPatchSet
  * rhnSolarisPatchSetMembers
  * rhnSolarisPackage
+### Exporter Changes:(_Estimate: 2 week_)
+ 
 
-
-=== Exporter Changes:(''Estimate: 2 week'') === 
 
 These are the changes to the master satellite's exporter module to export the content from database and send it across to the slaves.
 
@@ -166,8 +170,9 @@ These are the changes to the master satellite's exporter module to export the co
                return self._send_stream(path)
 
         }}}
+### rhn-satellite-Exporter Changes: (_Estimate: 1 week_)
+ 
 
-=== rhn-satellite-Exporter Changes: (''Estimate: 1 week'') === 
 
     * We need to add the necessary flags to enable exports through the exporter tool.
     {{{ 
@@ -179,11 +184,12 @@ These are the changes to the master satellite's exporter module to export the co
     * changes to dumper.py as well, should be same as the exporter changes above.
 
 
-'''''Total Dev estimate: 6 weeks '''''
+*_Total Dev estimate: 6 weeks *_
 
 * Note: This content and code in this spec is just a boilerplate emphasising what and where the changes are required. This can change once the implementation begins.
+### Use Cases:
 
-=== Use Cases: ===
+
 
 1. Sync a solaris channel from master to slave satellite.
    $ satellite-sync --parent-sat=master-satellite.redhat.com -c <sol-channel-name> 
@@ -192,6 +198,7 @@ These are the changes to the master satellite's exporter module to export the co
    $ rhn-satellite-export --dir /mnt/sol-dump -c <sol-channel-name> 
 3. Sync a solaris channel from an exported dump
    $ satellite-sync -m /mnt/sol-dump -c <sol-channel-name> 
+### Test Plans:
 
-=== Test Plans: ===
   * TODO
+

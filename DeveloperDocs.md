@@ -1,56 +1,67 @@
-= '''Developer Documentation''' =
-This section contains information about developer topics.  You may also be interested in [UserDocs User Documentation] and [DownloadIt downloads].
+# *Developer Documentation*
+
+This section contains information about developer topics.  You may also be interested in [User Documentation](UserDocs) and [downloads](DownloadIt).
+
 
 ----
-[[TOC(inline)]]
-----
 
-== __Design docs__ ==
- * [wiki:Architecture] -- a quick overview of the various components in Spacewalk
- * [wiki:JavaDesign] -- design of the Java web UI.
- * [wiki:NavigationSystem Navi] -- our navigation system -- understand our own home grown navigation system used throughout the app
- * [wiki:ListTag] -- used for creating lists within the java pages   
- * [wiki:PerlStack] -- understand how the pxt layer communicates with the perl modules and mod_perl
-   * [wiki:PxtOverview] -- overview explaining the rationale for building PXT
-   * [wiki:PxtForDummies] -- explains how to work with PXT
- * [wiki:AclDesign] -- detailed explanation of ACLs
+----
+## __Design docs__
+
+ * [[Architecture]] -- a quick overview of the various components in Spacewalk
+
+ * [[JavaDesign]] -- design of the Java web UI.
+ * [Navi](NavigationSystem) -- our navigation system -- understand our own home grown navigation system used throughout the app
+ * [[ListTag]] -- used for creating lists within the java pages   
+ * [[PerlStack]] -- understand how the pxt layer communicates with the perl modules and mod_perl
+   * [[PxtOverview]] -- overview explaining the rationale for building PXT
+   * [[PxtForDummies]] -- explains how to work with PXT
+ * [[AclDesign]] -- detailed explanation of ACLs
  * Database
-   * [wiki:DatabaseGuide Development Guide]
- * [http://www.redhat.com/spacewalk/documentation/javadoc/ JavaDoc] -- Documentation of Java code
- * [wiki:PythonDocumentation] -- Documentation of python code
- * [wiki:XmlrpcHandlers] -- understand how to deal with XMLRPC handlers
- * [wiki:UnitTests] -- how to run them
- * [wiki:CodeAnalysis] -- a document going through the java packages describing what they contain and what work is needed.
- * [https://www.ohloh.net/p/spacewalk/analyses/latest CodeAnalysis] -- Analyze of code on Ohloh.net
- * [wiki:TaskoMatic] -- Document outlining what taskomatic is and what each task is used for.
- * [wiki:CobblerIntegration] - How spacewalk and cobbler interact
- * [wiki:proxy Proxy] - How Proxy works
+   * [Development Guide](DatabaseGuide)
+ * [JavaDoc](http://www.redhat.com/spacewalk/documentation/javadoc/) -- Documentation of Java code
+ * [[PythonDocumentation]] -- Documentation of python code
+ * [[XmlrpcHandlers]] -- understand how to deal with XMLRPC handlers
+ * [[UnitTests]] -- how to run them
+ * [[CodeAnalysis]] -- a document going through the java packages describing what they contain and what work is needed.
+ * [CodeAnalysis](https://www.ohloh.net/p/spacewalk/analyses/latest) -- Analyze of code on Ohloh.net
+ * [[TaskoMatic]] -- Document outlining what taskomatic is and what each task is used for.
+ * [[CobblerIntegration]] - How spacewalk and cobbler interact
+ * [Proxy](proxy) - How Proxy works
 ----
-== __Working with the code__ ==
- * [wiki:GitGuide Git Guide] -- how to work with Git, the source control of choice for Spacewalk
- * [http://miroslav.suchy.cz/spacewalk/gitstat/ GitStat] -- boring statistics extracted from our git repo.
- * [wiki:DevelopmentWorkstationSetup Setting up the Development environment]
- * [wiki:EclipseSetup] -- How to get eclipse running to edit/compile/junit the spacewalk-java code.
- * [wiki:PatchProcess] -- how to go about creating a new patch and submitting it to the mailing list
- * [wiki:BugHandling] -- how to commit a fix and what to do with bugzillas.
- * [wiki:ChangingSchema] -- if you need to change the Spacewalk DB schema read this
- * [wiki:CodingConventions] -- coding style and conventions used in the project
- * [wiki:TracingaPage Tracing a page] -- Follow code flow from the webUI down to the DB layer
- * [wiki:AddingPagesOverview] -- Adding a page to the Java stack
- * [wiki:Branching] -- how branches are organized in the git repo.
- * [wiki:LocalIvyRepo] -- how to create a local ivy repository
- * [wiki:CustomSerializer] -- how to create a custom serializer
- * [wiki:LogDriverSetup] -- how to enable the log4j logdriver utility to see SQL output and params used
+## __Working with the code__
+
+ * [Git Guide](GitGuide) -- how to work with Git, the source control of choice for Spacewalk
+
+ * [GitStat](http://miroslav.suchy.cz/spacewalk/gitstat/) -- boring statistics extracted from our git repo.
+ * [Setting up the Development environment](DevelopmentWorkstationSetup)
+ * [[EclipseSetup]] -- How to get eclipse running to edit/compile/junit the spacewalk-java code.
+ * [[PatchProcess]] -- how to go about creating a new patch and submitting it to the mailing list
+ * [[BugHandling]] -- how to commit a fix and what to do with bugzillas.
+ * [[ChangingSchema]] -- if you need to change the Spacewalk DB schema read this
+ * [[CodingConventions]] -- coding style and conventions used in the project
+ * [Tracing a page](TracingaPage) -- Follow code flow from the webUI down to the DB layer
+ * [[AddingPagesOverview]] -- Adding a page to the Java stack
+ * [[Branching]] -- how branches are organized in the git repo.
+ * [[LocalIvyRepo]] -- how to create a local ivy repository
+ * [[CustomSerializer]] -- how to create a custom serializer
+ * [[LogDriverSetup]] -- how to enable the log4j logdriver utility to see SQL output and params used
 ----
-== __Releasing the code__ ==
- * [wiki:ReleaseProcess] -- Process for building RPMs
- * [http://miroslav.suchy.cz/spacewalk/packages-overview/ List of packages in releases] -- including packages already in Fedora. Contains version of each package for each distribution.
- * [http://koji.spacewalkproject.org/koji/ Koji] -- Current build status.
+## __Releasing the code__
+
+ * [[ReleaseProcess]] -- Process for building RPMs
+
+ * [List of packages in releases](http://miroslav.suchy.cz/spacewalk/packages-overview/) -- including packages already in Fedora. Contains version of each package for each distribution.
+ * [Koji](http://koji.spacewalkproject.org/koji/) -- Current build status.
 ----
-== __Artwork__ ==
- * [wiki:ArtAndDesignStuff Artwork and Design resources]
+## __Artwork__
+
+ * [Artwork and Design resources](ArtAndDesignStuff)
+
 ----
-== __Misc__ ==
- * [wiki:BrainBox Brainstorming]
- * [wiki:ContributorList Contributor List]
- * [wiki:Projects Projects] - libraries, which may be useful for others as well and for which we are upstream.
+## __Misc__
+
+ * [Brainstorming](BrainBox)
+
+ * [Contributor List](ContributorList)
+ * [Projects](Projects) - libraries, which may be useful for others as well and for which we are upstream.

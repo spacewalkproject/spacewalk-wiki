@@ -1,5 +1,6 @@
+# __Spacewalk 2.0 Release Notes__
 
-= __Spacewalk 2.0 Release Notes__ =
+
 
 Hello everyone,
 
@@ -33,8 +34,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 2.0
 
-== Features & Enhancements in Spacewalk 2.0 ==
+
 
   * Spacewalk runs on Fedora 19, support for Fedora 17 has been dropped
   * Auditing feature which enables tracking information like "Who created this user?" or "Who deleted this server?"
@@ -101,8 +103,9 @@ If you plan to upgrade from older release, search no more -- the following page 
 
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -135,16 +138,18 @@ Our thanks go to the community members who contributed to this release:
 Special thanks to Jan Pazdziora.
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.0, we've seen
 
     * 140 bugs fixed 
     * 921 changesets committed 
     * 1552 commits done 
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file a bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
 

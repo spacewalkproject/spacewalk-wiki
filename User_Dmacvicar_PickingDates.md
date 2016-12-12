@@ -1,11 +1,14 @@
-== Problem ==
+## Problem
+
+
 
 * Spacewalk asks user to pick dates using a collection of list boxes that is not a common pattern.
 * The picker is implemented as an included fragment that shares state
 
-[[Image(pickdates-current.png)]]
+![Alt](images/pickdates-current.png?raw=True)
+## Date and time picker
 
-== Date and time picker ==
+
 
 We propose an implementation that first, fixes the usability.
 
@@ -16,7 +19,7 @@ After evaluation various datepickers combined with timepickers, the one used at 
 
 ----
 
-[[Image(89af0308-626f-11e3-960a-fb6d6131affb.png)]]
+![Alt](images/89af0308-626f-11e3-960a-fb6d6131affb.png?raw=True)
 
 ----
 
@@ -24,7 +27,7 @@ The result is a nice looking picker that looks like:
 
 ----
 
-[[Image(datepicker1.png)]]
+![Alt](images/datepicker1.png?raw=True)
 
 ----
 
@@ -32,13 +35,14 @@ Clicking on the date field would open a calendar. But you can still just enter t
 
 ----
 
-[[Image(time-css.png)]]
+![Alt](images/time-css.png?raw=True)
 
 ----
 
-[[Image(datepicker3.png)]]
+![Alt](images/datepicker3.png?raw=True)
+## Implementation
 
-== Implementation ==
+
 
 * The picker is implemented as a JSP custom tag that glues some javascript and css together.
 * The translation (javascript struct) is generated from the Spacewalk application settings and available translations

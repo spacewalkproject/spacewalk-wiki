@@ -1,7 +1,7 @@
-[[PageOutline]]
+# __Release Notes 1.0__
 
-= __Release Notes 1.0__ =
 Heya Spacewalkers,
+
 
 Spacewalk 1.0 has been released!
 
@@ -22,23 +22,26 @@ Make sure to read over the installation again:
 If you are upgrading from older release, please checkout:
 
  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements
 
-== Features & Enhancements ==
  * RHN Client code improvements. Now using python-ugdev and dropped HAL. 
- * [wiki:SpacewalkHostnameRename] script for re-configuration of Spacewalk server, in case its hostname or IP has changed
- * Many [wiki:ApiAdditions] as well as improvements to existing API calls. 
+
+ * [[SpacewalkHostnameRename]] script for re-configuration of Spacewalk server, in case its hostname or IP has changed
+ * Many [[ApiAdditions]] as well as improvements to existing API calls. 
  * RHN Proxy now uses mod_wsgi
  * Tomcat 6 for Fedora 12
  * Delete Systems script 
  * Many bugfixes and general code clean up to support 1.0 release
+## Known issues
 
-== Known issues ==
  * Provider GPG key is not sometimes recognized and packages shows up as unknown Provider.
+
  * PostgreSQL support still does not work. We will need help with moving this forward. 
  * Documentation search does not work, other search are unaffected. 
- 
-== Community ==
+## Community
+
 We greatly appreciate the contributions the community has made to this release. Thank you very much.
+
  * Colin Coe
  * James Hogarth
  * Jason Lawer
@@ -46,7 +49,7 @@ We greatly appreciate the contributions the community has made to this release. 
  * Lukas Durfina
  * Simon Lukasik
 
- * [wiki:ContributorList]
+ * [[ContributorList]]
+## Installation Help
 
-== Installation Help ==
- * [wiki:HowToInstall]
+ * [[HowToInstall]]

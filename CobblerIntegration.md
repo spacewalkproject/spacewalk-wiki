@@ -1,6 +1,9 @@
-= Integration Details =
+# Integration Details
 
-== Users/Authentication ==
+## Users/Authentication
+
+
+
 
 Cobbler requires users to authenticate to it and we wanted to be able to re-use existing spacewalk users.  When spacewalk needs to do anything in cobbler it does the following steps:
 
@@ -19,36 +22,33 @@ So to summarize:  spacewalk creates a temporary token and stores it, that gets p
 One exception to this is with taskomatic.  Since taskomatic doesn't run within tomcat, it cannot add to the 'token map' as tomcat does.  For this we use a static "taskomatic_user" user and as the authtoken we use the static "web.session_swap_secret_1".  On the spacewalk xmlrpc side of things, checkAuthToken actually first checks to see if the user being passed in is "taskomatic_user" and if so it simply checks the token against the "web.session_swap_secret_1" config value. 
 
 web.session_swap_secret_1 is a random value in /etc/rhn/rhn.conf that is generated upon install.
+## Cobbler Objects
 
 
-
-
-== Cobbler Objects ==
 
 We communicate with cobbler over XMLRPC.  Upon first integrating the two we were using raw xmlrpc calls all over the place.  Very quickly we created and started using cobbler objects.  You will see raw xmlrpc calls scattered here and there, but this is HIGHLY DISCOURAGED.  Xmlrpc calls should only be made in the cobbler objects themselves.  Hopefully we can get rid of these scattered calls soon.
- {{{
- org.cobbler.SystemRecord
- org.cobbler.Profile
- org.cobbler.Distro
-}}}
+ 
+     org.cobbler.SystemRecord
+     org.cobbler.Profile
+     org.cobbler.Distro
 You should be able to create/edit/list these items from here.  DO NOT CALL COBBLER OVER XMLRPC ANYWHERE ELSE WITHOUT A GOOD REASON.
+## Taskomatic Tasks
 
 
-
-== Taskomatic Tasks ==
 
 A couple of taskomatic tasks exist do ensure cobbler and spacewalk stay in sync.  
 
  CobblerSyncTask - creates a cobbler profile or distro within cobbler if it doesn't exist (but exists within satellite).  Will also sync details between the two if cobbler has changed, but this isn't used for much.  This is integral for Distros that are imported through Satellite-sync to show up within cobbler.  Also during upgrade from 5.2 -> 5.3, if this task did not run, none of the existing profiles or distros would be created within cobbler.
 
  KickstartFileSyncTask -  This task simply creates the files in /var/lib/rhn/kickstart/wizard/ if they do not already exist.  This is what is responsible for creating those files after an upgrade to 5.3
+## Provisioning a System
 
-== Provisioning a System ==
 
-== Directory Structure (where things are stored) ==
+## Directory Structure (where things are stored)
 
-{{{
-/var/lib/rhn/kickstart/snippets
-/var/lib/rhn/kickstart/wizard
-/var/lib/rhn/kickstart/raw
-}}}
+
+
+
+    /var/lib/rhn/kickstart/snippets
+    /var/lib/rhn/kickstart/wizard
+    /var/lib/rhn/kickstart/raw

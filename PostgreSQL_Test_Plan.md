@@ -1,10 +1,14 @@
-= PostgreSQL Test Plan =
+# PostgreSQL Test Plan
 
-=== Objective ===
+### Objective
+
+
+
 
 The objective is to describe the Test plan of Space Walk - during the migration of the Database from the Oracle to Postgres as well as testing the application to perform against both databases for predefined performance benchmarks and all functionality.
+### The areas identified to Test
 
-=== The areas identified to Test ===
+
 
    1.  Functional Testing
    2.  Query/Stored Procedure Unit Tests
@@ -14,8 +18,9 @@ The objective is to describe the Test plan of Space Walk - during the migration 
    6.  API Testing.
    7.  Upgrade Testing
    8.  Scale/Concurrency Testing (eg: large numbers of web requests at once)
+### Important Milestones during the Testing Process
 
-=== Important Milestones during the Testing Process ===
+
 
    1.  Application Knowledge Transfer.
    2.  Environment Identification and Setup
@@ -27,32 +32,37 @@ The objective is to describe the Test plan of Space Walk - during the migration 
    8.  Plan to execute and Test modules - along with sign-offs
    9.  UAT.
    10.  Establish as set of scale benchmarks for performance on Oracle.
+### Communication Plan
 
-=== Communication Plan ===
+
 
   1.  The project wiki - will be the primary communication area - regarding the tasks, dates and tracking progress.
   2.  Conference calls - twice a week - to measure progress.
   3.  Daily and coverage during the overlap of Team - will be available on the irc channel as well as other modes identified.
+### Reporting & Tracking Issues
 
-=== Reporting & Tracking Issues ===
+
 
   1.  Identify the tool to report and Track issues to closure.
   2.   Identify the priority and severity.
   3.  The process for the life cycle of a issue - report - plan - resolve - test – close
   4.  Query/Stored Procedures
+### User Acceptance Criteria
 
-=== User Acceptance Criteria ===
+
 
   1.  Identify and document the user acceptance criteria for the application.
   2.  Includes the sign-off criteria.
+### Application Knowledge Transfer
 
-=== Application Knowledge Transfer ===
+
 
 1. Spend 1 day - Teaching the Test resources the spacewalk application functionality.
 
 Initial estimate is one day for a walk through and then as we identify the priority of the modules - we will go deep into the functionality and evolve the knowledge -- as we build the test cases and core team members review them.
+### Environment Setup
 
-=== Environment Setup ===
+
 
   1.  Identify Environment Setup:
 	 1.  Identified as a 4 machine setup.
@@ -60,8 +70,9 @@ Initial estimate is one day for a walk through and then as we identify the prior
   2.  Acquisition of the Environment.
   3.  Setup the environment - a 2 day task.
   4.  Setup access to RedHat to the Environment.
+### Identify Modules to Test and Create Functional Use/Test Cases
 
-=== Identify Modules to Test and Create Functional Use/Test Cases ===
+
 
   1.  Identify all the different modules to Test.
   2.  Create the priority Order
@@ -100,8 +111,9 @@ Initial estimate is one day for a walk through and then as we identify the prior
 	 26.  Users
 	 27.  SSM
 	 28.  Satellite Sync & Export
-	
-=== Automation ===
+### Automation
+
+
 
    1.  Get access to existing automated test scripts.
    2.  Setup and run the automated test scripts.
@@ -109,9 +121,9 @@ Initial estimate is one day for a walk through and then as we identify the prior
    4.  Start building on the existing Test Scripts.
 
 We need to account for manual testing using client side parts of the application.  For example: Have 5000+ systems register or check-in and receive some number of updates (rpms).
+### Performance
 
 
-=== Performance ===
 
   1.  Get a sample data set.
   2.  Identify use cases for performance testing.
@@ -119,8 +131,9 @@ We need to account for manual testing using client side parts of the application
   4.  Create a baseline benchmark with the existing application.
   5.  Run the same and identify and fix - on the migrated environment.
   6.  Identify test cases for scale and DB concurrency testing.
-	
-=== Migration ===
+### Migration
+
+
 
    1.  Assumption - Only migration from the latest release version to the with Oracle to Postgres and Postgres to Oracle.
    2.  Create a data set for migration.
@@ -129,8 +142,9 @@ We need to account for manual testing using client side parts of the application
    5.  Migrate to Oracle from Postgres.
    6.  Run regression of the whole application.
    7.  Schema upgrade testing.
+### User Acceptance Testing
 
-=== User Acceptance Testing ===
+
 
   1.  Run a complete regression of the application.
   2.  Perform performance and generate a score sheet.

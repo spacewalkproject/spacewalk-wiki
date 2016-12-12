@@ -1,9 +1,10 @@
-[[PageOutline]]
+# __Configuration Management__
 
-= __Configuration Management__ =
+## Features
 
-== Features ==
+
  * File Support:
+
   * Binary Files
   * Text files
   * Directories
@@ -13,23 +14,23 @@
   * User/Group ownership
   * Mode Permission
   * SELinux permissions
+## Getting started
 
-== Getting started ==
 This assumes you have pushed the Spacewalk client repository to your Spacewalk server and subscribed a server to it.
+
  * Install the client utilities:
-{{{
-yum install rhncfg*
-}}}
+
+    yum install rhncfg*
  * Enable config management:
-{{{
-rhn-actions-control --enable-all
-}}}
+
+    rhn-actions-control --enable-all
  * Within the web GUI create a configuration channel and add files.
  * Subscribe the client to the configuration channel.
  * Either schedule a config deploy from the webUI or run 'rhncfg-client get' on the client.
+## Client utility functions
 
-== Client utility functions ==
  * rhncfg-client -- Meant for managing the configuration files in relation to what is on the client.
+
   * diff
   * get
   * list
@@ -51,9 +52,10 @@ rhn-actions-control --enable-all
   * revisions
   * update
   * upload-channel
+## FAQ
 
-== FAQ ==
 1. Can I automatically restart a service after a configuration file is deployed?
+
    No, you can schedule a separate remote command though.  Hopefully this is coming soon.
 
 2. Can I upload files to the local sandbox or override list from the client (not to a configuration channel)?

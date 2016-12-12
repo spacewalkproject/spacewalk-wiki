@@ -1,6 +1,8 @@
-= System List: Recently-Migrated Systems =
+# System List: Recently-Migrated Systems
 
-[[Image(systems-list-migrated.png)]]
 
-= Overview Widget: Recently-Migrated systems =
-[[Image(overview-widget-migrated.png)]]
+
+![Alt](images/systems-list-migrated.png?raw=True)
+# Overview Widget: Recently-Migrated systems
+
+![Alt](images/overview-widget-migrated.png?raw=True)

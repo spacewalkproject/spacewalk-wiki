@@ -1,5 +1,6 @@
+# __Spacewalk 2.1 Release Notes__
 
-= __Spacewalk 2.1 Release Notes__ =
+
 
 Hello everyone,
 
@@ -33,8 +34,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements in Spacewalk 2.1
 
-== Features & Enhancements in Spacewalk 2.1 ==
+
 
   * Spacewalk runs on Fedora 20, support for Fedora 18 has been dropped
   * New UI look and feel (big thanks to SUSE upstream contributors)
@@ -64,8 +66,9 @@ If you plan to upgrade from older release, search no more -- the following page 
     * `system.scap.deleteXccdfScan()`
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release:
 
@@ -95,16 +98,18 @@ Our thanks go to the community members who contributed to this release:
   * Tasos Papaioannou
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.1, we've seen
 
     * 201 bugs fixed
     * 1715 changesets committed
     * 2357 commits done
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use
 mailing list spacewalk-list@redhat.com. On this list, you can of

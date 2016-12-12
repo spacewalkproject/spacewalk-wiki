@@ -1,3 +1,3 @@
-[wiki:"Orafce Testing" 1.Orafce Testing details]
+[1.Orafce Testing details](Orafce_Testing)
 
-[wiki:"Oracle Built-in single Row Function" 2.Oracle Build-in Single Row Function and Operator details(used by spacewalk)]
+[2.Oracle Build-in Single Row Function and Operator details(used by spacewalk)](Oracle_Built-in_single_Row_Function)

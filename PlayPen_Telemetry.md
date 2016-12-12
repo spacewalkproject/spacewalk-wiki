@@ -1,9 +1,11 @@
+## Telemetry
 
-== Telemetry ==
 
-Telemetry is the code name for a simple template-based reporting engine for Spacewalk.  This is '''only''' a prototype at this point and needs a significant amount of work/help to flush out the idea/code. Telemetry uses the xmlrpc scripting [http://www.redhat.com/spacewalk/documentation/api/0.2/ API] to fetch data from Spacewalk servers.  It is written completely in Python, leveraging [http://www.cheetahtemplate.org/ Cheetah] for templating, cron for scheduling, and [http://www.djangoproject.com/ Django] for the webui.
 
-=== Requirements ===
+Telemetry is the code name for a simple template-based reporting engine for Spacewalk.  This is *only* a prototype at this point and needs a significant amount of work/help to flush out the idea/code. Telemetry uses the xmlrpc scripting [API](http://www.redhat.com/spacewalk/documentation/api/0.2/) to fetch data from Spacewalk servers.  It is written completely in Python, leveraging [Cheetah](http://www.cheetahtemplate.org/) for templating, cron for scheduling, and [Django](http://www.djangoproject.com/) for the webui.
+### Requirements
+
+
 
  1. Must be able to leverage Satellite authentication/authorization (user/role).
  2. Must be able to execute reports immediately, or scheduled.
@@ -14,17 +16,21 @@ Telemetry is the code name for a simple template-based reporting engine for Spac
  7. Must be able to notify users upon report completion (email).
  8. Must be able to accept report criteria input from user.
  9. Reports need to be able to be packaged and updated separately from Reporting Engine.
+### Architecture Diagram
 
-=== Architecture Diagram ===
-[[Image(telemetry-diagram.jpg)]]
+![Alt](images/telemetry-diagram.jpg?raw=True)
 
-=== Source ===
+### Source
+
 Telemetry is current located in: /playpen/Telemetry in the spacewalk git repo -> [[https://fedorahosted.org/spacewalk/browser/playpen/Telemetry]]
-=== Installation ===
+
+### Installation
+
+
 
 Telemetry is designed to run on any client-system.  It can be run on the Spacewalk server, but not necessarily.
 
-'''Fedora 9'''
+*Fedora 9*
 
  * Django (webui)
  * Cheetah (report templating)
@@ -32,76 +38,65 @@ Telemetry is designed to run on any client-system.  It can be run on the Spacewa
  * httpd 
  * mod_python
 
-{{{
-yum install Django python-cheetah PyYAML httpd mod_python
-}}}
+
+    yum install Django python-cheetah PyYAML httpd mod_python
 
  * python-crontab
 
-{{{
-cd /tmp
-wget http://pypi.python.org/packages/any/p/python-crontab/python-crontab-0.7.linux-i686.tar.gz#md5=10ce70d894d6d2b1bffd1a8a339e1ed4
-tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
-}}}
+
+    cd /tmp
+    wget http://pypi.python.org/packages/any/p/python-crontab/python-crontab-0.7.linux-i686.tar.gz#md5=10ce70d894d6d2b1bffd1a8a339e1ed4
+    tar -xvzf python-crontab-0.7.linux-i686.tar.gz -C /
 
 
  * Telemetry
 
-{{{
-rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm
-}}}
+
+    rpm -Uhv http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm
 
  * or (I have added the dependent rpms to the .spec file)
 
-{{{
-yum install http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm  --nogpgcheck
-}}}
+
+    yum install http://tsanders.fedorapeople.org/telemetry-0.1-2.noarch.rpm  --nogpgcheck
+### Sample Reports
 
 
 
-
-=== Sample Reports ===
-
-Telemetry contains a few sample canned reports.  The reports are installed in ''/usr/share/telemetry''.
+Telemetry contains a few sample canned reports.  The reports are installed in _/usr/share/telemetry_.
 
  * /scripts   -> contains the xmlrpc client reports scripts (these are executable on the cmd-line or via the Telemetry webui.
  * /config    -> contains the report configuration files.
  * /templates -> contains the output format templates.
 
-The report configuration files will '''need''' to be updated with the proper url for your Spacewalk server(s), and report directory.
-
-
-{{{
-cd /usr/share/telemetry/config
-vi systemDetails.conf
-}}}
-
-{{{
-name: System Details Report
-description: This report provides a list of systems and supporting details (entitlements, channel subscriptions, & system groups.
-
-script: systemDetailsReport.py
-
-satellites:
-- http://rlx-1-16.rhndev.redhat.com/rpc/api  # Change this to point to the api url for your Spacewalk server(s). #
-
-api_versions:
-- 5.1.0 Java
-- 5.1.1 Java
-
-aggregate: no
-
-templates:
-    txt: SystemDetails.txt
-
-prefix: SystemDetails
-
-}}}
+The report configuration files will *need* to be updated with the proper url for your Spacewalk server(s), and report directory.
 
 
 
+    cd /usr/share/telemetry/config
+    vi systemDetails.conf
 
-=== Config Data Dictionary ===
+
+    name: System Details Report
+    description: This report provides a list of systems and supporting details (entitlements, channel subscriptions, & system groups.
+    
+    script: systemDetailsReport.py
+    
+    satellites:
+    - http://rlx-1-16.rhndev.redhat.com/rpc/api  # Change this to point to the api url for your Spacewalk server(s). #
+    
+    api_versions:
+    - 5.1.0 Java
+    - 5.1.1 Java
+    
+    aggregate: no
+    
+    templates:
+        txt: SystemDetails.txt
+    
+    prefix: SystemDetails
+### Config Data Dictionary
+
+
 
  name::
      The name of the Report.
@@ -136,51 +131,52 @@ prefix: SystemDetails
  * cols  The number of columns or horizontal size of the text field or text area for webui input.
  * rows  The number of rows or vertical size of the text field or text area for webui input.
  * required Boolean value to specify whether the criterion is optional.
+### Web UI
 
-=== Web UI ===
+
 
 The webui is leverages apache + mod_python.
 
-'''Starting'''
+*Starting*
 
-{{{
-telemetry --setup
-/sbin/service httpd restart
-}}}
 
-'''Browsing'''
+    telemetry --setup
+    /sbin/service httpd restart
+
+*Browsing*
 
 Browse to the following URL: http://127.0.0.1/telemetry/ or http://localhost/telemetry/
+### Screen Shots
 
-=== Screen Shots ===
 
-[[Image(Telemetry-index.jpg)]]
 
-''Telemetry webui - Index Page''
+![Alt](images/Telemetry-index.jpg?raw=True)
 
-[[Image(Telemetry-reportlist.jpg)]]
+_Telemetry webui - Index Page_
 
-''Telemetry webui - Report List''
+![Alt](images/Telemetry-reportlist.jpg?raw=True)
 
-[[Image(Telemetry-reportdetails.jpg)]]
+_Telemetry webui - Report List_
+
+![Alt](images/Telemetry-reportdetails.jpg?raw=True)
 
 ''Telemetry webui - Report Details'
 
-[[Image(Telemetry-reportresults.jpg)]]
+![Alt](images/Telemetry-reportresults.jpg?raw=True)
 
 ''Telemetry webui - Report Results'
+### Step-by-Step Report Creation Walkthrough
 
 
-
-=== Step-by-Step Report Creation Walkthrough ===
 
 The plan here is to walkthrough (step-by-step) the creation of a telemetry report.  We will take a simple use case:
 
 Joe is a system administrator and would like to generate a report that lists all of the systems in his organization that have firefox installed, and report back the specific NVREA.
+#### Step 1 - Writing the Report Script
 
-==== Step 1 - Writing the Report Script ====
 
-First, we need to examine the Spacewalk [http://www.redhat.com/spacewalk/documentation/api/0.2/ API] and determine which methods will be used to gather the necessary information.
+
+First, we need to examine the Spacewalk [API](http://www.redhat.com/spacewalk/documentation/api/0.2/) and determine which methods will be used to gather the necessary information.
 
 In our case, we will use the following:
 
@@ -197,172 +193,159 @@ The psuedo-code is as follows:
  5. Report Results (to include name, version, release, epoch, and arch)
 
 We are now ready to open our favorite editor and start coding:
+#### systemsByPackageReport.py
+ 
 
-==== systemsByPackageReport.py ==== 
-[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackageReport.py]
+[[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackageReport.py]]
 
 
-{{{
-#!/usr/bin/env python
 
-import sys
-import xmlrpclib
-from telemetry import Report
-}}}
+    #!/usr/bin/env python
+    
+    import sys
+    import xmlrpclib
+    from telemetry import Report
 
 telemetry.Report is a helper class that handles the xmlrpc connections, template rendering, etc.
 
-{{{
-class System():
-    pass
 
-class Package():
-    pass
-}}}
+    class System():
+        pass
+    
+    class Package():
+        pass
 
 Define data structures to hold our result sets.  In this case we will create and array of System objects, which will contain an array of Package objects.
 
-{{{
-# Main Processing
-if len(sys.argv) != 6:
-    print "Usage %s <config> <type> <username> <password> <packagelist>" % (sys.argv[0])
-    sys.exit(1)
-}}}
+
+    # Main Processing
+    if len(sys.argv) != 6:
+        print "Usage %s <config> <type> <username> <password> <packagelist>" % (sys.argv[0])
+        sys.exit(1)
 
 Ensure that *all* 5 required arguments have been supplied to our report script.
 
-{{{
-# Arguments
-config = sys.argv[1]
-type = sys.argv[2]
-username = sys.argv[3]
-password = sys.argv[4]
-packages = sys.argv[5].split(",")
-}}}
+
+    # Arguments
+    config = sys.argv[1]
+    type = sys.argv[2]
+    username = sys.argv[3]
+    password = sys.argv[4]
+    packages = sys.argv[5].split(",")
 
 Define local variables to hold script arguments.
 
-{{{
-# Create Report Instance
-report = Report(config)
 
-# Get ServerProxies
-clients = report.connect()
-}}}
+    # Create Report Instance
+    report = Report(config)
+    
+    # Get ServerProxies
+    clients = report.connect()
 
-Create a report instance, passing the report configuration file, then call the connect method to create !ServerProxy objects for each Spacewalk server defined in the config.
+Create a report instance, passing the report configuration file, then call the connect method to create ServerProxy objects for each Spacewalk server defined in the config.
 
-{{{
-systems = []
-}}}
+
+    systems = []
 
 Define an empty array to hold the system objects that have matching packages installed.
 
-{{{
-_count = 0
-}}}
+
+    _count = 0
 
 Define a variable to keep track of the Spacewalk servers processed.
 
-{{{
-for client in clients:
-}}}
+
+    for client in clients:
 
 Iterate over Spacewalk servers.
 
-{{{
-    # get the session key
-    try:
-        key = client.auth.login(username, password)
-    except xmlrpclib.Fault, fault:
-        print "Error in systemsByPackageReport:"
-        print fault.faultCode
-        print fault.faultString
-}}}
+
+        # get the session key
+        try:
+            key = client.auth.login(username, password)
+        except xmlrpclib.Fault, fault:
+            print "Error in systemsByPackageReport:"
+            print fault.faultCode
+            print fault.faultString
 
 Attempt to login with provided credentials and obtain the session key. 
 
-{{{
-    if not (report.parameters['Aggregate']):
-        systems = []
-}}}
+
+        if not (report.parameters['Aggregate']):
+            systems = []
 Handle the aggregation parameter as specified in the configuration file.  Essentially this means, create a single report or multiple reports.
 
-{{{
-        systems = processData(client,key,systems)
-}}}
+
+            systems = processData(client,key,systems)
 Call the processData method -> which returns the data structure that will be passed to the template engine.
 
-{{{
-        satellites = [report.parameters['Satellites'][_count]]
-        vars = {'systems': systems, 'satellites': satellites}
-        report.templatify(vars, type)
-}}}
+
+            satellites = [report.parameters['Satellites'][_count]]
+            vars = {'systems': systems, 'satellites': satellites}
+            report.templatify(vars, type)
 Pass the datastructure to the template rendering method of the helper class.
 
-{{{
-    else:
-        systems = processData(client,key,systems)
 
-    _count = _count + 1
-
-if (report.parameters['Aggregate']):
-    vars = {'systems': systems, 'satellites': report.parameters['Satellites']}
-    report.templatify(vars, type)
-}}}
+        else:
+            systems = processData(client,key,systems)
+    
+        _count = _count + 1
+    
+    if (report.parameters['Aggregate']):
+        vars = {'systems': systems, 'satellites': report.parameters['Satellites']}
+        report.templatify(vars, type)
 Next, define the processData method.
 
-{{{
-def processData(client, key, systems):
 
-    try:
-
-        user_systems = client.system.listUserSystems(key)
-
-        for system in user_systems:
-
-            print system
-
-            sys_packages = client.system.listPackages(key, system['id'])
-
-                #returns a array of packages installed on the system that are in common with the user provided list
-                common_pkgs = comparePkgs(sys_packages, packages)
-
-                if len(common_packages) > 0:
-                
-                    sys = System()
-                    sys.id = system['id']
-                    sys.name = system['name']
-                    sys.packages = common_pkgs
-                    systems.append(sys)
-
-    except xmlrpclib.Fault, fault:
-        print "Error in systemByPackageReport.processData():"
-        print fault.faultCode
-        print fault.faultString
-
-    return systems
-
-}}}
+    def processData(client, key, systems):
+    
+        try:
+    
+            user_systems = client.system.listUserSystems(key)
+    
+            for system in user_systems:
+    
+                print system
+    
+                sys_packages = client.system.listPackages(key, system['id'])
+    
+                    #returns a array of packages installed on the system that are in common with the user provided list
+                    common_pkgs = comparePkgs(sys_packages, packages)
+    
+                    if len(common_packages) > 0:
+                    
+                        sys = System()
+                        sys.id = system['id']
+                        sys.name = system['name']
+                        sys.packages = common_pkgs
+                        systems.append(sys)
+    
+        except xmlrpclib.Fault, fault:
+            print "Error in systemByPackageReport.processData():"
+            print fault.faultCode
+            print fault.faultString
+    
+        return systems
+    
 
 The comparePkgs() method will compare the installed packages of a given system against the user supplied package list, and return the package details for any matches.
-{{{
-def comparePkgs(system_packages, packageList)
 
-    common_packages = []
+    def comparePkgs(system_packages, packageList)
+    
+        common_packages = []
+    
+        for pkg in packageList:
+    
+            for package in system_packages:
+    
+                if pkg == package['name']:
+    
+                    common_packages.append(package)
+    
+        return common_packages
+#### Step 2 - Writing the Template
 
-    for pkg in packageList:
 
-        for package in system_packages:
-
-            if pkg == package['name']:
-
-                common_packages.append(package)
-
-    return common_packages
-}}}
-
-==== Step 2 - Writing the Template ====
 
 In this case, we are going to create a .txt template for the report output.
 
@@ -370,75 +353,73 @@ You'll recall from the script we just completed that we are passing to data elem
 
  * systems -> data structure consisting of an array of System objects; which in turn contain and array of matching Package objects.
  * satellites -> data structure consisting of spacewalk servers used to generate this report.
+#### SystemsByPackage.txt
 
 
-==== !SystemsByPackage.txt ====
 
-[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/SystemsByPackage.txt]
-
-{{{
-#from datetime import datetime
-Systems By Package Report
-Report Date: $datetime.now().strftime("%Y-%m-%d:%H:%M:%S")
-
-Satellites:
-#for satellite in $satellites
-             $satellite
-#end for
-
-#for system in $systems
-System ID:   $system.id
-System Name: $system.name
-******************************************************************************************
-******************************************************************************************
-Packages:
-#for package in $system.packages
-             $package.name   $package.version   $package.release   $package.epoch
-#end for
+[[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/SystemsByPackage.txt]]
 
 
-#end for
-
-}}}
-
-
-==== Step 3 - Writing the Configuration File ====
-
-==== systemsByPackage.conf ====
-[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackage.conf]
-
-{{{
-name: Systems By Package Report
-description: This report shows systems with packages installed that match the user supplied csv, along with the specific NVRE.
-script: systemsByPackageReport.py
-
-satellites:
-- http://rlx-1-16.rhndev.redhat.com/rpc/api
-- http://rlx-1-16.rhndev.redhat.com/rpc/api
-
-api_versions:
-- 5.1.0 Java
-- 5.1.1 Java
-
-criteria:
-- name: Packages
-  label: packages
-  type: csv
-  cols: 75
-  rows: 10
-  required: yes
+    #from datetime import datetime
+    Systems By Package Report
+    Report Date: $datetime.now().strftime("%Y-%m-%d:%H:%M:%S")
+    
+    Satellites:
+    #for satellite in $satellites
+                 $satellite
+    #end for
+    
+    #for system in $systems
+    System ID:   $system.id
+    System Name: $system.name
+    ******************************************************************************************
+    ******************************************************************************************
+    Packages:
+    #for package in $system.packages
+                 $package.name   $package.version   $package.release   $package.epoch
+    #end for
+    
+    
+    #end for
+#### Step 3 - Writing the Configuration File
 
 
-aggregate: yes
+#### systemsByPackage.conf
 
-templates:
-    txt: SystemsByPackage.txt
-
-prefix: SystemsByPackage
-}}}
+[[https://fedorahosted.org/spacewalk/attachment/wiki/PlayPen/Telemetry/systemsByPackage.conf]]
 
 
-=== Tasks ===
+
+    name: Systems By Package Report
+    description: This report shows systems with packages installed that match the user supplied csv, along with the specific NVRE.
+    script: systemsByPackageReport.py
+    
+    satellites:
+    - http://rlx-1-16.rhndev.redhat.com/rpc/api
+    - http://rlx-1-16.rhndev.redhat.com/rpc/api
+    
+    api_versions:
+    - 5.1.0 Java
+    - 5.1.1 Java
+    
+    criteria:
+    - name: Packages
+      label: packages
+      type: csv
+      cols: 75
+      rows: 10
+      required: yes
+    
+    
+    aggregate: yes
+    
+    templates:
+        txt: SystemsByPackage.txt
+    
+    prefix: SystemsByPackage
+### Tasks
+
+
 
 1. Webui
 
@@ -457,13 +438,14 @@ prefix: SystemsByPackage
 3. Other
 
  * Handle reporting across orgs (multiple users) -> Need a mapping file for user/password to servers.
+### Design
+
+#### Web UI Mockups
 
 
-=== Design ===
 
-==== Web UI Mockups ====
 
-[[Image(telemetry-overview-0.1.png,500px)]]
+![Alt](images/telemetry-overview-0.1.png?raw=True)
 (source SVG image in list of attachments at the bottom of the page)
 
 This mockup is just a brainstorm to try to work out a general structure/layout, it can completely change. It's more meant to be a discussion starter. Here is what I starting thinking so far by sketching out the mockup:

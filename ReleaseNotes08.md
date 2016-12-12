@@ -1,7 +1,7 @@
-[[PageOutline]]
+# __Release Notes 0.8__
 
-= __Release Notes 0.8__ =
 Heya Spacewalkers,
+
 
 Spacewalk 0.8 has been released!
 
@@ -22,9 +22,10 @@ Make sure to read over the installation again:
 If you are upgrading from older release, please checkout:
 
  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements
 
-== Features & Enhancements ==
  * SHA256 Feature - support for packages with checksums other than MD5. Spacewalk server and proxy can serve and accept rpms with SHA256 digests, show the checksums in webUI and accept them in API calls.
+
  * Moved from mod_python to mod_wsgi on Fedora 11 and Fedora 12, which promises better performance.
  * Improved performance of System Set Management when working with thousands of packages.
  * Improved performance of API.
@@ -34,21 +35,23 @@ If you are upgrading from older release, please checkout:
  * Basic support for cobbler 2.0 version.
 
 ...and many bugfixes.
+## Known issues
 
-== Known issues ==
  * PostgreSQL support still does not work. We will need help with moving this forward.
+
  * Provider GPG key is not sometimes recognized and packages shows up as unknown Provider.
  * Documentation search does not work, other search are unaffected.
  * Cobbler 2.0 is known to work, but full tests haven't been done yet.
+## Community
 
-== Community ==
 We greatly appreciate the contributions the community has made to this release. Thank you very much.
+
  * Andy Speagle
  * David Nutter
  * Flavio Leitner
  * Joshua Roys
 
- * [wiki:ContributorList]
+ * [[ContributorList]]
+## Installation Help
 
-== Installation Help ==
- * [wiki:HowToInstall]
+ * [[HowToInstall]]

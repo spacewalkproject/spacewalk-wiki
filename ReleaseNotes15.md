@@ -1,4 +1,6 @@
-= __Spacewalk 1.5 Release Notes__ =
+# __Spacewalk 1.5 Release Notes__
+
+
 
 Hello world, 
 
@@ -27,9 +29,9 @@ If you plan to upgrade from older release, the following page
 can be useful:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.5
 
 
-== Features & Enhancements in Spacewalk 1.5 ==
 
   * It is possible to edit schedule of taskomatic jobs via WebUI
   * AutoYaST Support
@@ -44,9 +46,9 @@ can be useful:
      * channel.software.isUserManagable
      * channel.listVendorChannels is now equivalent and preferred to channel.listRedHatChannels
      * errata.cloneAsOriginal
+## Contributors
 
 
-== Contributors ==
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -67,9 +69,9 @@ Our thanks go to the community members who contributed to this release:
   * Ville Salmela
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList 
+## Some statistics
 
 
-== Some statistics ==
 
 In Spacewalk 1.5, we've seen
 

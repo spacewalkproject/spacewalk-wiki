@@ -1,7 +1,6 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center"
-'''''DEPRECATED, NO LONGER USED'''''
-}}}
+
+    #!div class="important" style="border: 2pt solid; text-align: center"
+    '''''DEPRECATED, NO LONGER USED'''''
 
 * test 1
   * test 1.1

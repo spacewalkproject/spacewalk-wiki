@@ -1,5 +1,6 @@
+# __Spacewalk 1.8 Release Notes__
 
-= __Spacewalk 1.8 Release Notes__ =
+
 
 Hello everyone,
 
@@ -26,8 +27,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.8
 
-== Features & Enhancements in Spacewalk 1.8 ==
+
 
   * Spacewalk runs on Fedora 17
   * Spacewalk can be run on the same machine as Oracle XE 11g
@@ -61,8 +63,9 @@ If you plan to upgrade from older release, search no more -- the following page 
      * distchannel.setDefaultMap
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -85,16 +88,18 @@ Our thanks go to the community members who contributed to this release:
   * William van de Velde
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 1.8, we've seen
 
     * 258  bugs fixed 
     * 1799 changesets committed 
     * 2506 commits done 
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
 

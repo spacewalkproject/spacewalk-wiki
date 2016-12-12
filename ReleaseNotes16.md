@@ -1,4 +1,6 @@
-= __Spacewalk 1.6 Release Notes__ =
+# __Spacewalk 1.6 Release Notes__
+
+
 
 Hello world, 
 
@@ -27,13 +29,13 @@ If you plan to upgrade from older release, the following page
 can be useful:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.6
 
 
-== Features & Enhancements in Spacewalk 1.6 ==
 
 * IPv6 support: management and provisioning capabilities
 * Support for Fedora 16 (server and client)
-* [http://www.youtube.com/watch?v=3LPHYORuBBc Kickstarting via Spacewalk Proxy with a CNAME]
+* [Kickstarting via Spacewalk Proxy with a CNAME](http://www.youtube.com/watch?v=3LPHYORuBBc)
 * spacewalk-repo-sync supports --include and --exclude options
 * New API calls:
    * channel.software.getRepoSyncCronExpression
@@ -63,8 +65,9 @@ can be useful:
 * spacewalk-reports supports --where-<column-id> option to filter records
 * spacecmd enhancements and bugfixes
 * Preliminary support for cobbler 2.2
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -89,9 +92,9 @@ Our thanks go to the community members who contributed to this release:
  * Uwe Gansert
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList 
+## Some statistics
 
 
-== Some statistics ==
 
 In Spacewalk 1.6, we've seen
 

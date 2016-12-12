@@ -1,4 +1,6 @@
-= __Spacewalk 1.3 Release Notes__ =
+# __Spacewalk 1.3 Release Notes__
+
+
 
 Hello world,
 
@@ -15,14 +17,14 @@ depending on your operating system, with client repositories under
 
 Check the installation steps at
 
-    * [wiki:HowToInstall]
+    * [[HowToInstall]]
 
 or if you will upgrade from older release, consult
 
-    * [wiki:HowToUpgrade]
+    * [[HowToUpgrade]]
+## Features & Enhancements in Spacewalk 1.3
 
 
-== Features & Enhancements in Spacewalk 1.3 ==
 
         * Spacewalk can now be installed and run on RHEL 6
         * Server side support for apt-get
@@ -41,9 +43,9 @@ or if you will upgrade from older release, consult
           kickstart.listKickstartableChannels,
           system.listSubscribedChildChannels,
           system.getSubscribedBaseChannel by last_modified
+## Some notes about apt-get plug-in
 
 
-== Some notes about apt-get plug-in ==
 
 Spacewalk 1.3 contains server support for apt-get plug-in.
 An experimental apt-get plug-in client package is available at
@@ -52,17 +54,17 @@ Feel free to try it and report any issues.
 This plug-in package will be enhanced during the Spacewalk 1.4 cycle.
 
 For more information check:
-    * [wiki:RegisteringClients#Debian]
+    * [[RegisteringClients]]
+## Some notes about the PostgreSQL support
 
 
-== Some notes about the PostgreSQL support ==
 
 PostgreSQL support is limited similar to Spacewalk 1.2.
 
-    * [wiki:PostgreSQL]
+    * [[PostgreSQL]]
+## Community contributors
 
 
-== Community contributors ==
 
 We thank the community members who contributed to this release:
 
@@ -76,18 +78,22 @@ We thank the community members who contributed to this release:
     * Paresh Mutha
     * Simon Lukasik
 
-    * [wiki:ContributorList]
+    * [[ContributorList]]
+## Bug fixes and commits
 
-
-== Bug fixes and commits ==
 In Spacewalk 1.3 there were:
+
  * 123 bugs solved
  * 964 changesets committed
  * 1275 commits done
 
 
-[[BR]]
-[[BR]]
-Yours, [[BR]]
-Tomas Lestach [[BR]]
+
+
+
+
+Yours, 
+
+Tomas Lestach 
+
 RHN Satellite Engineering, Red Hat

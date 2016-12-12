@@ -1,7 +1,8 @@
 
-[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/ReleaseNotes23/spacewalk_2.3.png?format=raw)]]
+![Alt](images/spacewalk_2.3.png?raw=True)
+# __Spacewalk 2.3 Release Notes__
 
-= __Spacewalk 2.3 Release Notes__ =
+
 
 Hello everyone,
 
@@ -38,8 +39,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements in Spacewalk 2.3
 
-== Features & Enhancements in Spacewalk 2.3 ==
+
 
   * Spacewalk now supported on RHEL7/CentOS7/Fedora21
   * Spacewalk supports Fedora21 clients
@@ -47,7 +49,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * https://fedorahosted.org/spacewalk/wiki/SpacewalkAndIPA
   * Improved Proxy caching of yum meta-data with addition of If-Modified-Since header support
   * Community contribution to support for using external Oracle 12c. (Please note that this is provided as-is and not tested by the core team.)
-  * Continued UI polish and improvements, including standardizing on [https://www.patternfly.org/ Patternfly]
+  * Continued UI polish and improvements, including standardizing on [Patternfly](https://www.patternfly.org/)
   * Improved and simplified codebase by:
     * Removing all Monitoring-related code
     * Removing all Solaris support
@@ -61,8 +63,8 @@ If you plan to upgrade from older release, search no more -- the following page 
       * softwarechannel_removesyncschedule
     * spacewalk-clone-by-date enhancements:
       * added a --dry-run option
-      * improved dependency resolution (see [https://bugzilla.redhat.com/show_bug.cgi?id=1123468 1123468])
-      * removed asynchronous background cloning - it conflicts (badly) with dependency resolution, see [https://bugzilla.redhat.com/show_bug.cgi?id=1207846 1207846]
+      * improved dependency resolution (see [1123468](https://bugzilla.redhat.com/show_bug.cgi?id=1123468))
+      * removed asynchronous background cloning - it conflicts (badly) with dependency resolution, see [1207846](https://bugzilla.redhat.com/show_bug.cgi?id=1207846)
     * spacewalk-reports additions:
       * config-files
       * config-files-latest
@@ -87,8 +89,9 @@ If you plan to upgrade from older release, search no more -- the following page 
     * satellite.isMonitoringEnabledBySystemId
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release:
 
@@ -136,8 +139,9 @@ Our thanks go to the community members who contributed to this release:
 * Tobias D. Oestreicher                                                                      
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.3, we've seen
 
@@ -147,17 +151,20 @@ In Spacewalk 2.3, we've seen
 
 Github repo for commits since Spacewalk 2.2
 
-    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-07-17&to=2015-03-27&type=c Spacewalk 2.2 to 2.3]
+    * [Spacewalk 2.2 to 2.3](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-07-17&to=2015-03-27&type=c)
+## Spacewalk 2.3 on RHEL 5 (CentOS 5)
 
-== Spacewalk 2.3 on RHEL 5 (CentOS 5) ==
+
 
 With the addition of installation-support on RHEL7/CentOS7, Spacewalk is now no longer supported running on RHEL5/CentOS5
+## Solaris and Monitoring Support - Removal Notice
 
-== Solaris and Monitoring Support - Removal Notice ==
+
 
 The Spacewalk team has dropped code for Solaris clients and the Monitoring component of Spacewalk. Anyone currently using either of the capabilities will need to consider alternatives for their needs prior to upgrading to 2.3. 
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use
 mailing list spacewalk-list@redhat.com. On this list, you can of

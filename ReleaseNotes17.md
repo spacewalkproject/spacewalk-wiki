@@ -1,5 +1,6 @@
+# __Spacewalk 1.7 Release Notes__
 
-= __Spacewalk 1.7 Release Notes__ =
+
 
 Hello friends of the walks in space,
 
@@ -28,11 +29,12 @@ If you plan to upgrade from older release, the following page
 can be helpful:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.7
 
-== Features & Enhancements in Spacewalk 1.7 ==
 
-  * Monitoring is now working on the [wiki:PostgreSQL] database backend, making both database backends feature-comparable
-  * [wiki:Scap OpenSCAP] integration
+
+  * Monitoring is now working on the [[PostgreSQL]] database backend, making both database backends feature-comparable
+  * [OpenSCAP](Scap) integration
   * Fully asynchronous clearing of orphaned monitoring data
   * Stock rhnpush is able to push debian packages
   * New spacewalk-clone-by-date tool
@@ -48,8 +50,9 @@ can be helpful:
      * system.scap.scheduleXccdfScan
 
 The up-to-date API documentation can be found at http://spacewalk.redhat.com/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -68,16 +71,18 @@ https://fedorahosted.org/spacewalk/wiki/ContributorList
 You can view the history of Spacewalk from its start to 1.7 at
 
    http://www.youtube.com/watch?v=jsx6cGmBtzg
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 1.7, we've seen
 
     * 49  bugs fixed 
     * 1246 changesets committed 
     * 1581 commits done 
+## Reporting errors
 
-== Reporting errors ==
+
 
 To report issues with Spacewalk, please use mailing list spacewalk-list@redhat.com to reach the user community. We might ask you to file bugzilla at http://bugzilla.redhat.com/ with more details or full logs. From now on, errors related to PostgreSQL database backend are considered bug defects vs. missing capabilities.
 

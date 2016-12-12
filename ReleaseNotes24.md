@@ -1,7 +1,8 @@
 
-[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/ReleaseNotes24/spacewalk_2.4.png?format=raw)]]
+![Alt](images/spacewalk_2.4.png?raw=True)
+# __Spacewalk 2.4 Release Notes__
 
-= __Spacewalk 2.4 Release Notes__ =
+
 
 Hello everyone,
 
@@ -38,8 +39,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements in Spacewalk 2.4
 
-== Features & Enhancements in Spacewalk 2.4 ==
+
 
   * Spacewalk now supported on Fedora 22
   * Spacewalk supports Fedora 22 clients
@@ -48,7 +50,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * Satellite admins can allow/disallow Organization admins to manage this configuration
   * Passwords are not sent to user in clear text anymore
     * https://fedorahosted.org/spacewalk/wiki/Features/ResetPassword
-  * Continued UI polish and improvements, including standardizing on [https://www.patternfly.org/ Patternfly]
+  * Continued UI polish and improvements, including standardizing on [Patternfly](https://www.patternfly.org/)
   * Plenty of small enhancements and fixes
     * Added support for Catalan and Portuguese translations from Zanata project
     * Fedora and RHEL/CentOS 7 Cobbler provisioning fixes
@@ -67,8 +69,9 @@ If you plan to upgrade from older release, search no more -- the following page 
     * system.sendOsaPing
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.4/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release:
 
@@ -104,8 +107,9 @@ Our thanks go to the community members who contributed to this release:
 * Thomas Mueller                                                                   
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.4, we've seen
 
@@ -115,9 +119,10 @@ In Spacewalk 2.4, we've seen
 
 Github repo for commits since Spacewalk 2.3
 
-    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2015-03-27&to=2015-09-29&type=c Spacewalk 2.3 to 2.4]
+    * [Spacewalk 2.3 to 2.4](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2015-03-27&to=2015-09-29&type=c)
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use
 mailing list spacewalk-list@redhat.com. On this list, you can of

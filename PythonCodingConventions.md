@@ -1,7 +1,7 @@
 This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
 code for the Spacewalk backend.
 
-[http://www.python.org/dev/peps/pep-0008/ Commont Python Coding Style]
+[Commont Python Coding Style](http://www.python.org/dev/peps/pep-0008/)
 
 1. Line wrapping
 
@@ -19,14 +19,14 @@ code for the Spacewalk backend.
    what they are for. Please try to match the field names most likely
    found in the SQL queries that make use of those variables. So
    please use system_id, not systemId, org_id, not orgId and so forth.
-   Regarding function names, studly caps '''suck'''. I personally favor
-   {{{some_other_function}}} instead of {{{someOtherFunction}}}. It is easier to
+   Regarding function names, studly caps *suck*. I personally favor
+   `some_other_function` instead of `someOtherFunction`. It is easier to
    read/spot/grep/parse whatever. Yeah, it is C style and again, there
    is a reason why C coding style has been around for so long...
 
 3. Comments
 
-   Comments should be written as [http://www.python.org/dev/peps/pep-0257/ docstring]. This way programmers documentation can be created automatically.
+   Comments should be written as [docstring](http://www.python.org/dev/peps/pep-0257/). This way programmers documentation can be created automatically.
 
    So please use something like this:
    {{{
@@ -56,7 +56,7 @@ code for the Spacewalk backend.
    methods in a server object designed to solve a dependency, or
    extract a package path. Neither of these functions need anything
    from the base server object to function completely. Even though it
-   is easier to be able to call {{{server.solve_dep}}} in some piece of code
+   is easier to be able to call `server.solve_dep` in some piece of code
    when we already have the server object, this thoroughly confuses the
    meaning of a server object and makes updating the base class a whole
    lot harder because of all these hidden dependencies and reliance on
@@ -66,7 +66,7 @@ code for the Spacewalk backend.
 
 5. Internal functions
 
-   Internal functions in the code (usually denoted by a {{{_}}} or by a {{{__}}} prefix) are a cool thing when they are not abused. Having an
+   Internal functions in the code (usually denoted by a `_` or by a `__` prefix) are a cool thing when they are not abused. Having an
    internal function that is two lines long and is called from a single place in the whole code base does nothing but complicate the whole code base and makes it harder to follow.
 
 6. The % operator on long lines
@@ -111,7 +111,7 @@ code for the Spacewalk backend.
    than that suggested in these guidelines, please conform to
    to the foreign style for your changes in that particular file (when
    in Rome...).  This is better than changing the entire file to meet
-   the official guidelines (which can introduce regression), and '''much'''
+   the official guidelines (which can introduce regression), and *much*
    better than using multiple styles in a single file (difficult to
    read).  In general, we want to maintain consistency and readability
    within files. 

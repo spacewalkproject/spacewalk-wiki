@@ -1,10 +1,13 @@
-= Spacewalk Upgrade Instructions =
+# Spacewalk Upgrade Instructions
+
+
 
 These are upgrade instruction for upgrading Spacewalk 0.6 to Spacewalk 0.7.
+# Archive of older upgrade instruction
 
-= Archive of older upgrade instruction =
 Spacewalk 0.5 to 0.6 upgrade instructions, are available at
-[https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06 HowToUpgrade06]
+
+[HowToUpgrade06](https://fedorahosted.org/spacewalk/wiki/HowToUpgrade06)
 
 ----
 
@@ -20,161 +23,152 @@ Spacewalk upgrade from version 0.6 to 0.7 involves several basic steps:
   9.  Rebuild search indexes
 
 ----
+# Assumptions
 
 
-= Assumptions =
 
   * For RHEL or CentOS, you will need the Base, EPEL 5 and EPEL 5 testing repositories enabled for dependencies.
   * You had set up your yum repository configuration to point to spacewalk 0.7 repo. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
+# Database and configuration backup
 
 
-=  Database and configuration backup  =
 
 
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
   *  Backup your ssl build directory, ordinarily /root/ssl-build
   *  For instructions on how to create a backup of your existing Spacewalk database consult either Oracle documentation or contact your DBA
+# Package upgrade
 
 
-= Package upgrade =
 
 Stop your Spacewalk by running:
 
-{{{
-# /usr/sbin/rhn-satellite stop
-}}}
+
+    # /usr/sbin/rhn-satellite stop
 
 Perform package upgrade using yum (excluding the spacewalk-postgresql package):
 
-{{{
-# yum -x spacewalk-postgresql upgrade
-}}}
+
+    # yum -x spacewalk-postgresql upgrade
 
 If you receive this yum error while upgrading, remove perl-Network-IPv4Addr and replace it with perl-Net-IPv4Addr
-{{{
-Transaction Check Error:
-  file /usr/bin/ipv4calc from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
-  file /usr/share/man/man1/ipv4calc.1.gz from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
-}}}
-{{{
-# rpm -e --nodeps perl-Network-IPv4Addr
-# yum install perl-Net-IPv4Addr
-}}}
+
+    Transaction Check Error:
+      file /usr/bin/ipv4calc from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
+      file /usr/share/man/man1/ipv4calc.1.gz from install of perl-Net-IPv4Addr-0.10-2.el5.noarch conflicts with file from package perl-Network-IPv4Addr-0.05-13.el5.noarch
+
+    # rpm -e --nodeps perl-Network-IPv4Addr
+    # yum install perl-Net-IPv4Addr
 
 
 During the upgrade, you may notice messages printed to the terminal when installing oracle-instantclient-selinux and spacewalk-selinux.
 These messages are produced by restorecon and do not pose any harm.
 On the contrary, these messages indicate relabeling of file system objects that is required for correct Spacewalk and SELinux symbiosis.
+# Schema upgrade
 
-=  Schema upgrade  =
+
 
 Make sure your Spacewalk server is down:
 
-{{{
-# /usr/sbin/rhn-satellite status
-}}}
+
+    # /usr/sbin/rhn-satellite status
 
 Make sure your oracle server is running (likely it isn't running since the earlier 'rhn-satellite stop' command stops the oracle-xe processes). For oracle-xe that would be:
 
-{{{
-# service oracle-xe status
-}}}
+
+    # service oracle-xe status
 
 If Oracle isn't running, start it
 
-{{{
-# service oracle-xe start
-}}}
+
+    # service oracle-xe start
 Run spacewalk-schema-upgrade script to upgrade database schema:
 
-{{{
-# /usr/bin/spacewalk-schema-upgrade
-}}}
+
+    # /usr/bin/spacewalk-schema-upgrade
 
 
 Log files from schema upgrade are being put into /var/log/spacewalk/schema-upgrade
+# Upgrade of Spacewalk configuration
 
-=  Upgrade of Spacewalk configuration  =
+
 
 For Spacewalk 0.7, it is required to deploy configuration for cobbler and update configuration of apache SSL virtual host. Both steps can be accomplished by running:
 
-{{{
-# spacewalk-setup --disconnected --upgrade
-}}}
+
+    # spacewalk-setup --disconnected --upgrade
 
 You'll be asked by spacewalk-setup to provide your database connection information.  This is the same information you provided to HowToInstall. Following this spacewalk-setup will ask you whether you wish to
 have your apache ssl configuration (/etc/httpd/conf.d/ssl.conf) updated by spacewalk-setup. You may choose to setup your ssl.conf manually, in which
 case you have to make sure you have the following directives present in your /etc/httpd/conf.d/ssl.conf:
 
-{{{
-# cat /etc/httpd/conf.d/ssl.conf
-...
-<VirtualHost _default_:443>
-...
-SSLCertificateFile /etc/pki/tls/certs/spacewalk.crt
-SSLCertificateKeyFile /etc/pki/tls/private/spacewalk.key
-RewriteEngine on
-RewriteOptions inherit
-SSLProxyEngine on
-<IfModule mod_jk.c>
-    JkMountCopy On
-</IfModule>
-...
-</VirtualHost>
-...
-}}}
 
-= Restart Spacewalk = 
+    # cat /etc/httpd/conf.d/ssl.conf
+    ...
+    <VirtualHost _default_:443>
+    ...
+    SSLCertificateFile /etc/pki/tls/certs/spacewalk.crt
+    SSLCertificateKeyFile /etc/pki/tls/private/spacewalk.key
+    RewriteEngine on
+    RewriteOptions inherit
+    SSLProxyEngine on
+    <IfModule mod_jk.c>
+        JkMountCopy On
+    </IfModule>
+    ...
+    </VirtualHost>
+    ...
+# Restart Spacewalk
+ 
 
-{{{
-# /usr/sbin/rhn-satellite start
-}}}
 
-= Update of monitoring setup =
+
+    # /usr/sbin/rhn-satellite start
+# Update of monitoring setup
+
+
 
 Recent Spacewalk installations may have set several important monitoring configuration values incorrectly. To correct these, run the following
 as root (note that you should run this command regardless of your current monitoring status; even on installations that never had monitoring
 enabled, running this script will have no ill effect):
 
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-update-monitoring.pl
-}}}
+
+    # /usr/share/spacewalk/setup/upgrade/rhn-update-monitoring.pl
 
 You may now choose to activate monitoring or both monitoring & monitoring scout on your Spacewalk.
 
 If you had monitoring enabled previously and wish to re-enable it now (without having to do so in the web ui), run as root:
 
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
-}}}
+
+    # /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl
 
 If you'd like to re-enable both monitoring and monitoring scout on your Spacewalk (without having to do so in the web ui), instead run as root
 
-{{{
-# /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
-}}}
 
-= Update Spacewalk configuration files =
+    # /usr/share/spacewalk/setup/upgrade/rhn-enable-monitoring.pl --enable-scout
+# Update Spacewalk configuration files
+
+
 
 Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
 
   *  debug = 3
   *  pam_auth_service = rhn-satellite
   *  default_db = user/password@sid
+# Restart Spacewalk
 
-=  Restart Spacewalk  =
+
 
 If all of the above steps completed successfully, you can start your upgraded Spacewalk server.
 
-{{{
-# /usr/sbin/rhn-satellite restart
-}}}
 
-= Rebuild search indexes =
+    # /usr/sbin/rhn-satellite restart
+# Rebuild search indexes
+
+
 
 After a successful upgrade, it is recommended to rebuild search indexes used by Spacewalk search engine (rhn-search service).
 This can be accomplished by the following:
 
-{{{
-# /etc/init.d/rhn-search cleanindex
-}}}
+
+    # /etc/init.d/rhn-search cleanindex

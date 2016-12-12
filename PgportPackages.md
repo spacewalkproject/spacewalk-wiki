@@ -1,10 +1,11 @@
-[wiki:PostgresTasks Tasks Page]
+[Tasks Page](PostgresTasks)
 
-'''Note''': The below list of packages includes the ones under src/schema/spacewalk/rhnsat/packages.
+*Note*: The below list of packages includes the ones under src/schema/spacewalk/rhnsat/packages.
+## Packages to Migrate
 
-== Packages to Migrate ==
 
-||'''Package Name '''||'''Assigned'''||'''Notes'''||
+
+||*Package Name *||*Assigned*||*Notes*||||
 ||rhn_bel|| Farrukh || Done || 
 ||rhn_cache|| Farrukh || Done || 
 ||rhn_channel|| || || 

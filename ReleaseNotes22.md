@@ -1,6 +1,7 @@
-[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/WikiStart/spacewalk_2.2.png?format=raw)]]
+![Alt](images/spacewalk_2.2.png?raw=True)
+# __Spacewalk 2.2 Release Notes__
 
-= __Spacewalk 2.2 Release Notes__ =
+
 
 Hello everyone,
 
@@ -36,8 +37,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements in Spacewalk 2.2
 
-== Features & Enhancements in Spacewalk 2.2 ==
+
 
   * Spacewalk supports RHEL 7 / CentOS 7 clients
   * Read-only API user
@@ -104,8 +106,9 @@ If you plan to upgrade from older release, search no more -- the following page 
     * user.setReadOnly
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release:
 
@@ -140,8 +143,9 @@ Our thanks go to the community members who contributed to this release:
 
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.2, we've seen
 
@@ -151,20 +155,22 @@ In Spacewalk 2.2, we've seen
 
 Github repo for commits since Spacewalk 2.1
 
-    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-03-04&to=2014-07-16&type=c Spacewalk 2.1 to 2.2]
+    * [Spacewalk 2.1 to 2.2](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2014-03-04&to=2014-07-16&type=c)
+## Spacewalk 2.2 on RHEL 5 (CentOS 5) and RHEL 7 (CentOS 7)
 
-== Spacewalk 2.2 on RHEL 5 (CentOS 5) and RHEL 7 (CentOS 7) ==
+
 
 Due to missing package dependencies in EPEL 7 beta, we were not able to deliver Spacewalk 2.2 on RHEL 7 (CentOS 7). Spacewalk 2.2 therefore still
 supports running on RHEL 5 and CentOS 5 as a base operating system. Support for RHEL 7 and CentOS 7 should be available in next Spacewalk release, at which
 point support for RHEL 5 and CentOS 5 will be dropped. Note that RHEL 7 / CentOS 7 clients are supported with Spacewalk 2.2, just not running Spacewalk itself on those operating systems.
+## Solaris and Monitoring Support - Deprecation Notice
 
 
-== Solaris and Monitoring Support - Deprecation Notice ==
 
 The Spacewalk team is looking in future releases to drop support for Solaris clients and the Monitoring component of Spacewalk. They continue to be supported in their current state for the Spacewalk 2.2 release. Anyone currently using either of the capabilities may wish to consider alternatives for their needs. 
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use
 mailing list spacewalk-list@redhat.com. On this list, you can of

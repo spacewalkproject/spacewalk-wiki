@@ -1,7 +1,8 @@
 
-[[Image(https://fedorahosted.org/spacewalk/attachment/wiki/ReleaseNotes26/26release.png?format=raw)]]
+![Alt](images/26release.png?raw=True)
+# __Spacewalk 2.6 Release Notes__
 
-= __Spacewalk 2.6 Release Notes__ =
+
 
 Hello everyone,
 
@@ -37,8 +38,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements in Spacewalk 2.6
 
-== Features & Enhancements in Spacewalk 2.6 ==
+
 
   * Spacewalk now supported on Fedora 24
   * Spacewalk supports Fedora 24 clients
@@ -53,8 +55,9 @@ If you plan to upgrade from older release, search no more -- the following page 
 
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.6/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release:
 
@@ -69,8 +72,9 @@ Our thanks go to the community members who contributed to this release:
  * Silvio Moioli
 
 see https://fedorahosted.org/spacewalk/wiki/ContributorList for all contributors list
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 2.6, we've seen
 
@@ -80,9 +84,10 @@ In Spacewalk 2.6, we've seen
 
 Github repo for commits since Spacewalk 2.5
 
-    * [https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2016-05-26&to=2016-11-18&type=c Spacewalk 2.5 to 2.6]
+    * [Spacewalk 2.5 to 2.6](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2016-05-26&to=2016-11-18&type=c)
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use
 mailing list spacewalk-list@redhat.com. On this list, you can of

@@ -1,10 +1,13 @@
-= As of Spacewalk 0.4 you should refer to this page [HowToKickstartCobbler] =
+# As of Spacewalk 0.4 you should refer to this page [[HowToKickstartCobbler]]
 
-== Steps to kickstarting Fedora/CentOS (Pre Spacewalk 0.4) ==
+## Steps to kickstarting Fedora/CentOS (Pre Spacewalk 0.4)
+
+
   
 
+## Accessing the kickstart tree directly
 
-== Accessing the kickstart tree directly ==
+
 
 If you look at a kickstart generated from the satellite, it uses --url !http://HOSTNAME/ty/FkpH3KcN.  This is used by spacewalk to track a particular kickstart session.  These tiny urls are time based and expire after several hours.  If you want to access the kickstart tree directly, simply use this url:
 

@@ -1,10 +1,9 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center"
-'''''DEPRECATED, NO LONGER USED'''''
-}}}
+
+    #!div class="important" style="border: 2pt solid; text-align: center"
+    '''''DEPRECATED, NO LONGER USED'''''
+## Questions
 
 
-== Questions ==
 
 The following are notes from a discussion between jdob and dgoodwin regarding the definition of the support user role and its function.
 
@@ -25,8 +24,9 @@ These two features lead to a number of questions:
   * This approach makes the Support User tab a simple addition if the role is present, similar to the Admin menu for admins.
   * Again, this requires reworking the entire UI with checking to disable writeable actions when the user is flagged as read only.
   * There may be a desire for access to certain admin menus with read only access, however this seems like a contradiction to have a read only admin. In fact, the way we have our roles set up, I think the read only flag would negate almost everything granted by the admin role.
+## Proposed Solution
 
-== Proposed Solution ==
+
 
 As a result of the above questions, the following is the usage of the support user role:
  1. The only read only functionality exists within the Support User tab. All existing pages retain their existing role permissions.
@@ -34,12 +34,12 @@ As a result of the above questions, the following is the usage of the support us
   * The Support User tab is read only no matter what other roles the user possesses. In other words, even the satellite admin will still not see writeable actions from within the Support User tab.
   * The Support User tab will be flushed out in the future with more search options. In this iteration, only system searches (across multiple trusted orgs) will be implemented.
  1. For users that only have the Support User role, the only tabs displayed are: Overview, Support User tab, and Help.
-  * This is '''different''' than a no-role user, which also has access to Systems, Errata, Channels, and Schedule. A no-role user is able to access writeable actions on those tabs (e.g. delete system, package install).
+  * This is *different* than a no-role user, which also has access to Systems, Errata, Channels, and Schedule. A no-role user is able to access writeable actions on those tabs (e.g. delete system, package install).
   * The effect of this tab restriction is that users with only the Support User role effectively become read only users.
  1. For users that have roles in addition to the Support User role, the Systems, Errata, Channels, and Schedule tabs will appear in addition to the Support User tab.
   * This is a little wonky because the no-role user has so many default permissions rather than having none at all. One idea is to convert the no-role user into a User role, however that also carries some complications (e.g. what happens if you make a System Groups admin without the User role?).
   * To reiterate, no changes occur inside of the Support User tab if the user has other roles; it still does not offer any writeable actions. All other tabs continue to function as they do currently.
   * In other words, adding the Support User role to a user with other enhanced permissions (i.e. other roles) is simply to add the Support User tab to their interface.
 
-This approach is (almost) consistent with our existing approach to roles. It is an option that increases functionality for a user in the sense that users given this role have access to the specific tab and search features. The difference (and potential confusion) is that for a user that is '''only''' a support user will have tabs removed (see above). This is a compromise between a fully hierarchical role structure (i.e. regular user is support user plus new features, admin is regular user plus new features) and our existing bolt-on functionality approach (i.e. users with a particular role get access to new features on top of the default base set that '''all''' users get).
+This approach is (almost) consistent with our existing approach to roles. It is an option that increases functionality for a user in the sense that users given this role have access to the specific tab and search features. The difference (and potential confusion) is that for a user that is *only* a support user will have tabs removed (see above). This is a compromise between a fully hierarchical role structure (i.e. regular user is support user plus new features, admin is regular user plus new features) and our existing bolt-on functionality approach (i.e. users with a particular role get access to new features on top of the default base set that *all* users get).
 

@@ -11,16 +11,16 @@ to communicate over SSL:
 == New Spacewalk
 
   * Install PostgreSQL database.
-  * Follow steps in [#EnablingSSLonPostgreSQLdatabase Enabling SSL on PostgreSQL database].
-  * Follow [#Installation Installation].
-  * When using command line utilities follow [#Command-lineutilities Command-line utilities].
+  * Follow steps in [Enabling SSL on PostgreSQL database]().
+  * Follow [Installation]().
+  * When using command line utilities follow [Command-line utilities]().
 
 == Existing Spacewalk
 
   * Stop Spacewalk server.
-  * Follow steps in [#EnablingSSLonPostgreSQLdatabase Enabling SSL on PostgreSQL database].
-  * Follow steps in [#EnablingSSLonSpacewalk Enabling SSL on Spacewalk].
-  * When using command line utilities follow [#Command-lineutilities Command-line utilities].
+  * Follow steps in [Enabling SSL on PostgreSQL database]().
+  * Follow steps in [Enabling SSL on Spacewalk]().
+  * When using command line utilities follow [Command-line utilities]().
   * Start Spacewalk server.
 
 == Enabling SSL on PostgreSQL database
@@ -94,7 +94,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
 == Command-line utilities
 
 Tools that use rhn.conf should be all ok after following steps in
-[#EnablingSSLonSpacewalk Enabling SSL on Spacewalk]. However, some
+[Enabling SSL on Spacewalk](). However, some
 (e.g. installation) do not. For those you can use procedure described
 here.
 
@@ -136,7 +136,7 @@ or you can export `PGSSLMODE` variable
         db_ssl_enabled = 1
         }}}
 
-  * Follow steps in [#Java Java] subsection.
+  * Follow steps in [Java]() subsection.
   * Restore selinux context for new files.
 
         {{{
@@ -148,12 +148,12 @@ Most database-aware components in Spacewalk should work with this.
 === Java
 
 Java-based components (Tomcat, Taskomatic, and Rhn-search) require
-certificates to be stored in !TrustStore. Its default location
+certificates to be stored in TrustStore. Its default location
 `/etc/rhn/javatruststore.jks` can be overwritten by `java.ssl_truststore`
 option in `rhn.conf`.
 
-!TrustStore is manipulated by `keytool`. It expects key to be in DER
-format for import. !TrustSore needs password for creation/manipulation,
+TrustStore is manipulated by `keytool`. It expects key to be in DER
+format for import. TrustSore needs password for creation/manipulation,
 not for access though. Follows example of importing authority certificate.
 
     {{{

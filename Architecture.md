@@ -1,28 +1,33 @@
-= Project Architecture =
+# Project Architecture
 
-Spacewalk consists of several languages and has a classic [http://en.wikipedia.org/wiki/Multitier_architecture three-tier architecture]. The presentation tier consists of both a web UI, command line clients, and XML-RPC clients (which can in turn be command line or even full blown web applications). Behind the presentation tier lies the logic tier, which in Spacewalk is spread across the four languages: Java, perl, python, and PL/SQL. While at first one might think "Wow! that's a lot of duplicate code." In reality, there's only a small bit of code that overlaps between the languages, more so between the Java and perl stacks. Finally, the last tier, the data tier, is backed by an [http://www.oracle.com/index.html Oracle] database or by [https://fedorahosted.org/spacewalk/wiki/PostgreSQL PostgreSQL database](at least at the moment, there are [TheRoadmap plans for other databases]).
 
-[[Image(arch.png)]]
 
-=== Web UI ===
-The web UI, which until recently consisted entirely of perl running through an [http://httpd.apache.org/ Apache web server], now is a mixture of perl as well as Java technologies. Several years ago, a Java migration was started and most of the commonly used features of the application have been migrated. In general, the perl pages are only modified to fix bugs or to support the new features in the Java side. Any new web UI development is being done in Java.
+Spacewalk consists of several languages and has a classic [three-tier architecture](http://en.wikipedia.org/wiki/Multitier_architecture). The presentation tier consists of both a web UI, command line clients, and XML-RPC clients (which can in turn be command line or even full blown web applications). Behind the presentation tier lies the logic tier, which in Spacewalk is spread across the four languages: Java, perl, python, and PL/SQL. While at first one might think "Wow! that's a lot of duplicate code." In reality, there's only a small bit of code that overlaps between the languages, more so between the Java and perl stacks. Finally, the last tier, the data tier, is backed by an [Oracle](http://www.oracle.com/index.html) database or by [PostgreSQL database](https://fedorahosted.org/spacewalk/wiki/PostgreSQL)(at least at the moment, there are [plans for other databases](TheRoadmap)).
 
-For a more in depth explanation of the Java side, check out the [JavaDesign Java design doc]. Also, look at [PerlStack perl design doc] for more information on the perl side of the application.
+![Alt](images/arch.png?raw=True)
+### Web UI
 
-=== Frontend API ===
+The web UI, which until recently consisted entirely of perl running through an [Apache web server](http://httpd.apache.org/), now is a mixture of perl as well as Java technologies. Several years ago, a Java migration was started and most of the commonly used features of the application have been migrated. In general, the perl pages are only modified to fix bugs or to support the new features in the Java side. Any new web UI development is being done in Java.
+
+
+For a more in depth explanation of the Java side, check out the [Java design doc](JavaDesign). Also, look at [perl design doc](PerlStack) for more information on the perl side of the application.
+### Frontend API
+
 One of the most sought after features of Spacewalk has been its XML-RPC API. Many users want to write automated scripts to perform repetitive tasks, usually tasks that are available via the web UI. While a web UI is useful for performing a few tasks on either one or more servers, sometimes, there is no replacement for a good script.
 
-The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [http://tomcat.apache.org/ Tomcat], in conjunction with web UI, within the web application. Because of this, the [JavaDesign#Businesslogic manager layer] is shared between them. The API documentation can be found on your installation of Spacewalk [http://localhost/rhn/apidoc/index.jsp /rhn/apidoc/index.jsp] or [https://fedorahosted.org/spacewalk/wiki/ApiDocs here].
 
+The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [Tomcat](http://tomcat.apache.org/), in conjunction with web UI, within the web application. Because of this, the [manager layer](JavaDesign) is shared between them. The API documentation can be found on your installation of Spacewalk [/rhn/apidoc/index.jsp](http://localhost/rhn/apidoc/index.jsp) or [here](https://fedorahosted.org/spacewalk/wiki/ApiDocs).
+### Backend
+ 
 
-=== Backend === 
-The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities. More information on Python Backend Architecture can be found [PythonDocumentation here].
+The backend provides a set of APIs that the different client utilities (rhn_register, up2date, yum) can connect to. These are not documented and generally are solely used by the client utilities. More information on Python Backend Architecture can be found [here](PythonDocumentation).
+### Taskomatic
 
+Taskomatic is a daemon whose job is to perform long running tasks that are scheduled to run asynchronously, such as clean up the sessions table, or send out email notifications for new errata. Taskomatic is written in Java which allows it to take advantage of the same [manager layer](JavaDesign) as the rest of the Java tier. It runs as a daemon with the help from [tanukiwrapper](http://wrapper.tanukisoftware.org/doc/english/download.jsp).
 
-=== Taskomatic ===
-Taskomatic is a daemon whose job is to perform long running tasks that are scheduled to run asynchronously, such as clean up the sessions table, or send out email notifications for new errata. Taskomatic is written in Java which allows it to take advantage of the same [JavaDesign#Businesslogic manager layer] as the rest of the Java tier. It runs as a daemon with the help from [http://wrapper.tanukisoftware.org/doc/english/download.jsp tanukiwrapper].
+### Search server
 
-=== Search server ===
 One of the most important things of any application which supports large amounts of data is finding that data. Typically, an application will show pages containing lists of items which one must page through to find the item you are looking for. While Spacewalk has the aforementioned page lists, it also has a search feature which allows one to find the system, package or errata quickly as opposed to paging through hundreds of items on a list.
 
-Spacewalk uses a standalone search server that run as a daemon, also with the help of [http://wrapper.tanukisoftware.org/doc/english/download.jsp tanukiwrapper]. The search server is written in Java and utilizes Apache's [http://lucene.apache.org/ Lucene] search engine library. Originally designed to use the database, the search feature works much better with [http://lucene.apache.org/ Lucene] giving it the power of more relevant search results and a richer [http://lucene.apache.org/core/4_1_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Overview query language].
+
+Spacewalk uses a standalone search server that run as a daemon, also with the help of [tanukiwrapper](http://wrapper.tanukisoftware.org/doc/english/download.jsp). The search server is written in Java and utilizes Apache's [Lucene](http://lucene.apache.org/) search engine library. Originally designed to use the database, the search feature works much better with [Lucene](http://lucene.apache.org/) giving it the power of more relevant search results and a richer [query language](http://lucene.apache.org/core/4_1_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Overview).

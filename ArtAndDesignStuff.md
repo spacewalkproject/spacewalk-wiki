@@ -1,5 +1,5 @@
 Here's a guide showing the coloration for treeview lists.
 
-[[Image(color-guide.png)]]   
+![Alt](images/color-guide.png?raw=True)   
 
-[[Image(spacewalk-tree-list-css-structure.png)]]
+![Alt](images/spacewalk-tree-list-css-structure.png?raw=True)

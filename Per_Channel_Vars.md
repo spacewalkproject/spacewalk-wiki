@@ -8,13 +8,12 @@ Example:
 || SEARCHBASE || "uk.example.com nl.example.com be.example.com" ||
 || NAMSERVER1 || "10.0.0.20" ||
 || NAMSERVER2 || "10.0.0.21" ||
-''Central config variables''
+_Central config variables_
 
-{{{
-search {|rhn.config.var(SEARCHBASE)|}
-nameserver {|rhn.config.var(NAMESERVER1)|}
-nameserver {|rhn.config.var(NAMESERVER2)|}
-}}}
-''/etc/resolv.conf example''
+
+    search {|rhn.config.var(SEARCHBASE)|}
+    nameserver {|rhn.config.var(NAMESERVER1)|}
+    nameserver {|rhn.config.var(NAMESERVER2)|}
+_/etc/resolv.conf example_
 
 -- jvzantvoort(jydawg) 

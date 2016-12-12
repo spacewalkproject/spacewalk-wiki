@@ -1,12 +1,16 @@
-= SELinux Requirements =
+# SELinux Requirements
+
+
 
 Revised by Jan Pazdziora, January 16, 2009.
+## Overview
 
-== Overview ==
+
 
 Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Linux distro that will allow Spacewalk and Proxy to take advantage of more secure access control. SELinux adopts a mandatory access control mechanism that is embedded in the kernel and checks for allowed operations after standard Linux discretionary access controls are checked. SELinux access control is based on security contexts associated with the various resources such as files, processes, and ports. For example, a specific Spacewalk or Proxy process would need both write permission and write access before writing to a file. The type enforcement rules are contained within a security policy that can be installed on a Linux server. 
+## Business Justification
 
-== Business Justification ==
+
 
  * By the very nature of SELinux, creating a custom policy for Spacewalk will increase the security of Spacewalk and Proxy server. 
  * Attract new users. GSS estimates that roughly 20% of the current Satellite customer install base would like to have a SELinux supported and would also bring more interest, especially in the government sector.
@@ -15,8 +19,9 @@ Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Li
   * Satellite changes - http://kbase.redhat.com/faq/FAQ_49_6086.shtm
   * Satellite rules - http://kbase.redhat.com/faq/FAQ_49_6089.shtm
   * Proxy changes and rules - http://kbase.redhat.com/faq/FAQ_48_6088.shtm
+## Deployment
 
-== Deployment ==
+
 
  * Spacewalk SELinux policy module will support the Targeted SELinux policy and require the selinux-policy-targeted rpm as a prerequisite to Spacewalk installation
  * Proxy SELinux policy module will support the Targeted SELinux policy and require the selinux-policy-targeted rpm as a prerequisite to Proxy installation
@@ -26,16 +31,18 @@ Security-enhanced Linux (SELinux) adds type enforcement rules to the standard Li
  * Spacewalk SELinux policy module will be supported on Enterprise Linux 5 systems and Fedora (whichever version is current at time of feature development work ending)
  * Proxy SELinux policy module will be supported on Enterprise Linux 5 systems and Fedora (Whichever version is current at time of feature development work ending)
  * Spacewalk and Proxy installation will support both SELinux states: Enforcing and Permissive
+### Differences from previous version of Requirements
 
-=== Differences from previous version of Requirements ===
+
 
  * Package names changed (dropped the rhn- prefix).
  * More packages possible.
  * No support for EL 4.
  * No support for Disabled.
+## Security Goal
 
-== Security Goal ==
 This section will describe at a high level what security precautions will be implemented for Proxy and Spacewalk. Some considerations are:
+
 
  * Service Confinement - make sure all Spacewalk and Proxy services have the minimum amount of access required to function properly 
  * System Protection - protect the system from Spacewalk and Proxy services to remove any possible exploitations 
@@ -44,7 +51,8 @@ This section will describe at a high level what security precautions will be imp
  * Entrypoints - need to have at least one entrypoint executable file type for each of the domains 
  * Application resources - need to have one more more types for the resources controlled by Proxy and Spacewalk. Examples are temp files, config files, sockets, log files, web files, pid files, etc) 
  * Network access - what network interfaces will Proxy and Spacewalk services be allowed access? Which ports can Spacewalk and Proxy use? DNS name resolution, etc. 
+## The investigation and development work
 
-== The investigation and development work ==
 
-[wiki:Features/SELinuxNotes]
+
+[[Features_SELinuxNotes]]

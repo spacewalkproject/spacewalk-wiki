@@ -1,19 +1,23 @@
-'''''DEPRECATED, NO LONGER USED'''''
+*_DEPRECATED, NO LONGER USED*_
+# Remaining PXT pages
 
-= Remaining PXT pages =
 
-The following is a list of the remaining pxt pages located in the {{{web/html}}} directory.
 
-==== Errata RSS feed ====
-It would be useful to have a generic RSS feed servlet to offer other types of information as RSS. I'd expect the url to be something like {{{http://myspacewalkserver.com/rhn/feeds.do?format=rss&type=errata}}}. This gives us the ability to add other types and formats.
+The following is a list of the remaining pxt pages located in the `web/html` directory.
+#### Errata RSS feed
+
+It would be useful to have a generic RSS feed servlet to offer other types of information as RSS. I'd expect the url to be something like `http://myspacewalkserver.com/rhn/feeds.do?format=rss&type=errata`. This gives us the ability to add other types and formats.
+
  * /rpc/recent-errata.pxt
+#### Email confirmation pages
 
-==== Email confirmation pages ====
  * /confirm_email_success.pxt
- * /confirm_email.pxt
 
-==== Custom error files ====
+ * /confirm_email.pxt
+#### Custom error files
+
 Not sure if it's possible to redirect errors to the tomcat side, then we could simply remove these error pages as well.
+
  * /errors/404.pxt
  * /errors/413.pxt
  * /errors/cookies.pxt
@@ -23,46 +27,52 @@ Not sure if it's possible to redirect errors to the tomcat side, then we could s
  * /errors/500.pxt
  * /errors/cert-expired.pxt
  * /errata_not_found.pxt
+#### Common look and feel templates
 
-==== Common look and feel templates ====
 Templates can not be removed until we finish all of the pxt migration.
+
  * /templates/c.pxt
  * /templates/header.pxt
  * /templates/profile.pxt
  * /templates/equals_sign.pxt
  * /templates/footer.pxt
+#### Misc
 
-==== Misc ====
  * /cve_not_found.pxt
- * /legal/terms.pxt  - '''REMOVE'''
- * /file_not_found.pxt  '''REMOVE'''
- * /konq.pxt  '''REMOVE''' ?
- * /errata_hidden/rh_template.pxt '''REMOVE'''
 
-==== Help files ====
+ * /legal/terms.pxt  - *REMOVE*
+ * /file_not_found.pxt  *REMOVE*
+ * /konq.pxt  *REMOVE* ?
+ * /errata_hidden/rh_template.pxt *REMOVE*
+#### Help files
+
+
 
  * /help/about.pxt
- * /help/faq.pxt - '''REMOVE'''
- * /help/rhlmigrationfaq/index.pxt - '''REMOVE'''
- * /help/contact.pxt - '''REMOVE'''
+ * /help/faq.pxt - *REMOVE*
+ * /help/rhlmigrationfaq/index.pxt - *REMOVE*
+ * /help/contact.pxt - *REMOVE*
  * /help/browser-info.pxt - seems useless
  * /help/ssl_cert.pxt - needs updating
- * /help/release-notes/unix/index.pxt - '''REMOVE'''
- * /help/latest-up2date.pxt - '''REMOVE'''
+ * /help/release-notes/unix/index.pxt - *REMOVE*
+ * /help/latest-up2date.pxt - *REMOVE*
  * /help/forgot_password.pxt
+#### GPG and SSL key editor
 
-==== GPG and SSL key editor ====
 These have already been migrated.
- * /network/keys/edit.pxt - '''REMOVE'''
- * /network/keys/key_list.pxt - '''REMOVE'''
- * /network/keys/delete.pxt - '''REMOVE'''
 
-==== monitoring scout ====
+ * /network/keys/edit.pxt - *REMOVE*
+ * /network/keys/key_list.pxt - *REMOVE*
+ * /network/keys/delete.pxt - *REMOVE*
+#### monitoring scout
+
  * /network/monitoring/scout/index.pxt
- * /network/monitoring/scout/details.pxt
 
-==== Software Channel Management ====
+ * /network/monitoring/scout/details.pxt
+#### Software Channel Management
+
  * /network/software/cannot_download.pxt
+
  * /network/software/channels/license.pxt (Can be removed??)
  * /network/software/channels/patches.pxt
  * /network/software/channels/subscribers.pxt
@@ -93,9 +103,10 @@ These have already been migrated.
  * /network/software/channels/manage/patches/patch_list.pxt
  * /network/software/channels/manage/patches/index.pxt
  * /network/software/channels/manage/patches/add.pxt
+#### Packages
 
-==== Packages ====
  * /network/software/packages/system_list_for_patchset.pxt
+
  * /network/software/packages/file_list.pxt
  * /network/software/packages/patch_packages.pxt
  * /network/software/packages/patches_patching_package.pxt
@@ -114,15 +125,17 @@ These have already been migrated.
  * /network/software/packages/system_list_for_patch.pxt
  * /network/software/all_channels.pxt
  * /network/software/retired_channels.pxt
+#### Monitoring Notification Methods
 
-==== Monitoring Notification Methods ====
  * /network/users/details/contact_methods/edit.pxt
+
  * /network/users/details/contact_methods/index.pxt
  * /network/users/details/contact_methods/create.pxt
  * /network/users/details/contact_methods/delete_confirm.pxt
+#### Errata management
 
-==== Errata management ====
 These don't seem to be even used anymore except by each other????? 
+
  * /network/errata/manage/edit.pxt
  * /network/errata/manage/select_channels.pxt
  * /network/errata/manage/confirm_mail.pxt
@@ -137,33 +150,37 @@ These don't seem to be even used anymore except by each other?????
  * /network/errata/manage/packages/add.pxt
  * /network/errata/manage/clone/confirm.pxt
  * /network/errata/manage/clone/index.pxt
+#### Kickstart
 
-==== Kickstart ====
  * /network/systems/provisioning/sessions/cancel_session.pxt
+
  * /network/systems/provisioning/sessions/details.pxt
  * /network/systems/provisioning/sessions/history.pxt
  * /network/systems/provisioning/preservation/edit.pxt
  * /network/systems/provisioning/preservation/delete.pxt
  * /network/systems/provisioning/preservation/preservation_list.pxt
+#### Custom info
 
-==== Custom info ====
- * /network/systems/custominfo/edit.pxt '''Ported to Java'''
- * /network/systems/custominfo/index.pxt '''Ported to Java'''
- * /network/systems/custominfo/delete.pxt '''Ported to Java'''
+ * /network/systems/custominfo/edit.pxt *Ported to Java*
 
-==== System Group management ====
+ * /network/systems/custominfo/index.pxt *Ported to Java*
+ * /network/systems/custominfo/delete.pxt *Ported to Java*
+#### System Group management
+
  * /network/systems/groups/admin_list.pxt
+
  * /network/systems/groups/edit_properties.pxt
  * /network/systems/groups/errata_list.pxt
- * /network/systems/groups/create.pxt '''Ported to Java'''
+ * /network/systems/groups/create.pxt *Ported to Java*
  * /network/systems/groups/delete_confirm.pxt
  * /network/systems/groups/details.pxt
  * /network/systems/groups/probe_list.pxt
  * /network/systems/groups/systems_affected_by_errata.pxt
  * /network/systems/groups/apply_errata_confirm.pxt
+#### System Detail (SDC) pages
 
-==== System Detail (SDC) pages ====
 We should re-evaluate our system details pages and SSM. It would seem that the SDC is nothing more than a system set of 1, with some exceptions.
+
  * /network/systems/details/history/pending.pxt
  * /network/systems/details/history/event.pxt
  * /network/systems/details/history/cancel_events_confirm.pxt
@@ -186,14 +203,14 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/history/package_event_results.pxt
  * /network/systems/details/satellite.pxt
  * /network/systems/details/activation.pxt
- * /network/systems/details/hardware.pxt  '''(2010-08-04 Converted to Java)'''
- * /network/systems/details/notes/edit.pxt '''(2010-08-13 Converted to Java)'''
- * /network/systems/details/notes/delete_note_conf.pxt '''(2010-08-13 Converted to Java)'''
- * /network/systems/details/notes/notes_list.pxt '''(2010-08-13 Converted to Java)'''
- * /network/systems/details/custominfo/edit.pxt '''Ported to Java'''
- * /network/systems/details/custominfo/remove_value_conf.pxt '''Ported to Java'''
- * /network/systems/details/custominfo/new_value.pxt '''Ported to Java'''
- * /network/systems/details/custominfo/index.pxt '''Ported to Java'''
+ * /network/systems/details/hardware.pxt  *(2010-08-04 Converted to Java)*
+ * /network/systems/details/notes/edit.pxt *(2010-08-13 Converted to Java)*
+ * /network/systems/details/notes/delete_note_conf.pxt *(2010-08-13 Converted to Java)*
+ * /network/systems/details/notes/notes_list.pxt *(2010-08-13 Converted to Java)*
+ * /network/systems/details/custominfo/edit.pxt *Ported to Java*
+ * /network/systems/details/custominfo/remove_value_conf.pxt *Ported to Java*
+ * /network/systems/details/custominfo/new_value.pxt *Ported to Java*
+ * /network/systems/details/custominfo/index.pxt *Ported to Java*
  * /network/systems/details/channel_license.pxt
  * /network/systems/details/proxy-clients.pxt
  * /network/systems/details/remote_commands.pxt
@@ -204,7 +221,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/proxy/configure.pxt
  * /network/systems/details/proxy/install.pxt
  * /network/systems/details/connection.pxt
- * /network/systems/details/delete_confirm.pxt '''Ported to Java'''
+ * /network/systems/details/delete_confirm.pxt *Ported to Java*
  * /network/systems/details/proxy.pxt
  * /network/systems/details/deactivate_satellite_confirm.pxt
  * /network/systems/details/kickstart/missing_packages.pxt
@@ -213,8 +230,9 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/details/kickstart/options.pxt
  * /network/systems/details/reboot_confirm.pxt
  * /network/systems/details/channels.pxt
+#### System Set Manager (SSM)
 
-==== System Set Manager (SSM) ====
+
 
  * /network/systems/ssm/patchsets/install_conf.pxt
  * /network/systems/ssm/patchsets/index.pxt
@@ -231,17 +249,17 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/misc/set_value.pxt
  * /network/systems/ssm/misc/lock_systems_conf.pxt
  * /network/systems/ssm/misc/reboot_systems.pxt
- * /network/systems/ssm/misc/index.pxt '''Ported to Java'''
+ * /network/systems/ssm/misc/index.pxt *Ported to Java*
  * /network/systems/ssm/misc/choose_value_to_set.pxt
  * /network/systems/ssm/misc/choose_value_to_remove.pxt
- * /network/systems/ssm/misc/hw_prof_update_conf.pxt '''Ported to Java'''
+ * /network/systems/ssm/misc/hw_prof_update_conf.pxt *Ported to Java*
  * /network/systems/ssm/misc/reboot_confirm.pxt
  * /network/systems/ssm/misc/remove_value.pxt
 
 
 
- * /network/systems/ssm/misc/pkg_prof_update_conf.pxt '''Ported to Java'''
- * /network/systems/ssm/index.pxt  '''Ported to Java'''
+ * /network/systems/ssm/misc/pkg_prof_update_conf.pxt *Ported to Java*
+ * /network/systems/ssm/index.pxt  *Ported to Java*
  * /network/systems/ssm/groups/alter_membership_conf.pxt
  * /network/systems/ssm/groups/index.pxt
  * /network/systems/ssm/groups/create.pxt
@@ -260,7 +278,7 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/errata/systems_affected.pxt
  * /network/systems/ssm/errata/apply_errata_conf.pxt
  * /network/systems/ssm/errata/index.pxt
- * /network/systems/ssm/system_list.pxt   '''Ported to Java'''
+ * /network/systems/ssm/system_list.pxt   *Ported to Java*
  * /network/systems/ssm/patches/remove_conf.pxt
  * /network/systems/ssm/patches/remove.pxt
  * /network/systems/ssm/patches/install_conf.pxt
@@ -269,9 +287,10 @@ We should re-evaluate our system details pages and SSM. It would seem that the S
  * /network/systems/ssm/patches/remove_system_list.pxt
  * /network/systems/ssm/patches/install.pxt
  * /network/systems/ssm/work_with_group.pxt
+#### Activation keys
 
-==== Activation keys ====
- * /network/account/activation_keys/packages.pxt '''(Looks like this one has already been done)'''
- * /network/account/activation_keys/child_channels.pxt  '''Ported to Java'''
+ * /network/account/activation_keys/packages.pxt *(Looks like this one has already been done)*
+
+ * /network/account/activation_keys/child_channels.pxt  *Ported to Java*
 
 

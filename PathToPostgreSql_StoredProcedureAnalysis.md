@@ -1,401 +1,416 @@
-= Stored Procedure Analysis =
+# Stored Procedure Analysis
+
+
 
  * Quantitatively speaking we need to port the following components to Postgres.
 
- || Component || Number || Queried Method ||
- || Tables  || 405 || select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK'; ||
- || VIews  || 60 ||  select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK'; ||
- || Constraints  || 2675 ||   select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK'; ||
- || Triggers  || 209 || select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK'; ||
- || Indexes || 776 ||  select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK'; || 
- ||  Procedures and Functions || 38 || See below ||
- || Packages Functions || 90 || See below ||
+
+|  Component  |  Number  |  Queried Method  |
+| --- | --- | --- |
+|  Tables   |  405  |  select count(distinct TABLE_NAME) from ALL_TABLES  where owner='SPACEWALK';  |
+|  VIews   |  60  |   select count(distinct VIEW_NAME) from ALL_VIEWS  where owner='SPACEWALK';  |
+|  Constraints   |  2675  |    select count(distinct CONSTRAINT_NAME) from  ALL_CONSTRAINTS where owner='SPACEWALK';  |
+|  Triggers   |  209  |  select count(distinct trigger_name) from all_triggers where OWNER='SPACEWALK';  |
+|  Indexes  |  776  |   select count(distinct Index_name) from all_indexes where OWNER='SPACEWALK';  |
+|   Procedures and Functions  |  38  |  See below  |
+|  Packages Functions  |  90  |  See below  |
 
 
 
-From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/tools, /eng/schema/views, /eng/schema/tables, /eng/schema/synonyms and mapping that with {{{select distinct name, type  from all_source where owner='SPACEWALK'}}} the following list was obtained. Basically this is the list of procedures that will likely need to be ported for PostgreSQL or replaced. (NOTE: keep an eye out still for procedures called by dead code, these can still be carefully deleted)
+From fervent grepping through /eng/web, /eng/backend, /eng/java, /eng/client/tools, /eng/schema/views, /eng/schema/tables, /eng/schema/synonyms and mapping that with `select distinct name, type  from all_source where owner='SPACEWALK'` the following list was obtained. Basically this is the list of procedures that will likely need to be ported for PostgreSQL or replaced. (NOTE: keep an eye out still for procedures called by dead code, these can still be carefully deleted)
 
 
-||Stored Procedures to Port/Replace||
-||create_new_user||
-||create_pxt_session||
-||id_join||
-||label_join||
-||lookup_arch_type||
-||lookup_cf_state||
-||lookup_channel_arch||
-||lookup_client_capability||
-||lookup_config_filename||
-||lookup_config_info||
-||lookup_evr||
-||lookup_feature_type||
-||lookup_first_matching_cf||
-||lookup_package_arch||
-||lookup_package_capability||
-||lookup_package_name||
-||lookup_package_nevra||
-||lookup_server_arch||
-||lookup_sg_type||
-||lookup_snapshot_invalid_reason||
-||lookup_tag||
-||lookup_transaction_package||
-||lookup_virt_sub_level||
-||name_join||
-||rhnhistoryview_erratalist||
-||rhnhistoryview_pkglist||
-||create_first_org||
-||create_new_org||
 
-||delete_channel||
-||delete_errata||
-||delete_server||
-||delete_server_bulk||
-||pxt_session_cleanup||
-||queue_errata||
-||queue_server||
-||rhn_install_org_satellites||
-||rhn_synch_probe_state||
-||set_ks_session_history_message||
-||rhn_entitlements.modify_org_service||
-||rhn_channel.subscribe_server||
-||rhn_org.delete_user||
-||rhn_entitlements.repoll_virt_guest_entitlements||
-||rhn_channel.unsubscribe_server||
-||rhn_server.insert_into_servergroup||
-||rhn_server.snapshot_server||
-||rhn_entitlements.assign_system_entitlement||
-||rhn_server.delete_from_servergroup||
-||rhn_channel.channel_priority||
-||rhn_entitlements.remove_server_entitlement||
+| Stored Procedures to Port/Replace |
+| --- |
+| create_new_user |
+| create_pxt_session |
+| id_join |
+| label_join |
+| lookup_arch_type |
+| lookup_cf_state |
+| lookup_channel_arch |
+| lookup_client_capability |
+| lookup_config_filename |
+| lookup_config_info |
+| lookup_evr |
+| lookup_feature_type |
+| lookup_first_matching_cf |
+| lookup_package_arch |
+| lookup_package_capability |
+| lookup_package_name |
+| lookup_package_nevra |
+| lookup_server_arch |
+| lookup_sg_type |
+| lookup_snapshot_invalid_reason |
+| lookup_tag |
+| lookup_transaction_package |
+| lookup_virt_sub_level |
+| name_join |
+| rhnhistoryview_erratalist |
+| rhnhistoryview_pkglist |
+| create_first_org |
+| create_new_org |
 
-||rhn_user.find_mailable_address||
-||rhn_config.delete_revision||
-||rhn_entitlements.set_family_count||
-||rhn_server.remove_action||
-||rhn_entitlements.assign_channel_entitlement||
-||rhn_entitlements.entitle_server||
-||rhn_entitlements.can_entitle_server||
-||rhn_config_channel.get_user_chan_access||
-||rhn_config_channel.action_diff_revision_status||
-||rhn_channel.bulk_server_basechange_from||
-||rhn_org.delete_org||
-||rhn_channel.user_role_check_debug||
-||rhn_entitlements.activate_system_entitlement||
-||rhn_entitlements.unentitle_server||
-||rhn_entitlements.activate_channel_entitlement||
-||rhn_server.bulk_snapshot||
-||rhn_entitlements.subscribe_newest_servers||
-||rhn_server.bulk_snapshot_tag||
-||rpm.vercmp||
-||rhn_config.insert_revision||
-||rhn_channel.entitle_customer||
-||rhn_server.check_user_access||
-||rhn_channel.update_channel||
-||rhn_entitlements.get_server_entitlement||
-||rhn_server.set_custom_value||
-||rhn_entitlements.entitlement_grants_service||
-||rhn_server.insert_set_into_servergroup||
-||rhn_server.insert_into_servergroup_maybe||
-||rhn_config.insert_channel||
-||rhn_channel.bulk_guess_server_base_from||
-||rhn_server.tag_delete||
-||rhn_exception.raise_exception||
-||rhn_server.delete_set_from_servergroup||
-||rhn_cache.update_perms_for_user||
-||rhn_entitlements.can_switch_base||
-||rhn_user.remove_from_usergroup||
-||rhn_user.add_servergroup_perm||
-||rhn_server.get_ip_address||
-||rhn_config.insert_file||
-||rhn_channel.bulk_guess_server_base||
-||rhn_channel.get_org_access||
-||rhn_channel.base_channel_for_release_arch||
-||rhn_config.delete_file||
-||rhn_server.bulk_set_custom_value||
-||rhn_channel.org_channel_setting||
-||rhn_user.check_role||
-||rhn_user.remove_servergroup_perm||
-||rhn_config_channel.get_user_revision_access||
-||rhn_user.add_to_usergroup||
-||rhn_channel.guess_server_base||
-||rhn_channel.refresh_newest_package||
-||rhn_channel.license_consent||
-||rhn_channel.get_license_path||
-||rhn_config_channel.get_user_file_access||
-||rhn_server.system_service_level||
-||rhn_package.canonical_name||
-||rhn_channel.user_role_check||
-||rhn_channel.normalize_server_arch||
-||rhn_channel.get_cfam_org_access||
-||rhn_user.add_users_to_usergroups||
-||rhn_user.remove_users_from_servergroups||
-||rhn_exception.raise_exception_val||
-||rhn_channel.available_chan_subscriptions||
-||rhn_config.delete_channel||
-||rhn_server.clear_servergroup||
-||rhn_channel.bulk_server_base_change||
-||rpm.isalpha||
-||rhn_server.tag_snapshot||
-||rhn_bel.lookup_email_state||
-||rhn_bel.is_org_paid||
-||rhn_cache.update_perms_for_server||
-||rhn_channel.update_family_counts||
-||rhn_channel.get_org_id||
-||rhn_user.get_org_id||
-||rpm.isdigit||
-||rhn_channel.loose_user_role_check||
-||rhn_channel.bulk_unsubscribe_server||
-||rhn_channel.bulk_subscribe_server||
-||rhn_entitlements.set_customer_nonlinux||
+
+| delete_channel |
+| --- |
+| delete_errata |
+| delete_server |
+| delete_server_bulk |
+| pxt_session_cleanup |
+| queue_errata |
+| queue_server |
+| rhn_install_org_satellites |
+| rhn_synch_probe_state |
+| set_ks_session_history_message |
+| rhn_entitlements.modify_org_service |
+| rhn_channel.subscribe_server |
+| rhn_org.delete_user |
+| rhn_entitlements.repoll_virt_guest_entitlements |
+| rhn_channel.unsubscribe_server |
+| rhn_server.insert_into_servergroup |
+| rhn_server.snapshot_server |
+| rhn_entitlements.assign_system_entitlement |
+| rhn_server.delete_from_servergroup |
+| rhn_channel.channel_priority |
+| rhn_entitlements.remove_server_entitlement |
+
+
+| rhn_user.find_mailable_address |
+| --- |
+| rhn_config.delete_revision |
+| rhn_entitlements.set_family_count |
+| rhn_server.remove_action |
+| rhn_entitlements.assign_channel_entitlement |
+| rhn_entitlements.entitle_server |
+| rhn_entitlements.can_entitle_server |
+| rhn_config_channel.get_user_chan_access |
+| rhn_config_channel.action_diff_revision_status |
+| rhn_channel.bulk_server_basechange_from |
+| rhn_org.delete_org |
+| rhn_channel.user_role_check_debug |
+| rhn_entitlements.activate_system_entitlement |
+| rhn_entitlements.unentitle_server |
+| rhn_entitlements.activate_channel_entitlement |
+| rhn_server.bulk_snapshot |
+| rhn_entitlements.subscribe_newest_servers |
+| rhn_server.bulk_snapshot_tag |
+| rpm.vercmp |
+| rhn_config.insert_revision |
+| rhn_channel.entitle_customer |
+| rhn_server.check_user_access |
+| rhn_channel.update_channel |
+| rhn_entitlements.get_server_entitlement |
+| rhn_server.set_custom_value |
+| rhn_entitlements.entitlement_grants_service |
+| rhn_server.insert_set_into_servergroup |
+| rhn_server.insert_into_servergroup_maybe |
+| rhn_config.insert_channel |
+| rhn_channel.bulk_guess_server_base_from |
+| rhn_server.tag_delete |
+| rhn_exception.raise_exception |
+| rhn_server.delete_set_from_servergroup |
+| rhn_cache.update_perms_for_user |
+| rhn_entitlements.can_switch_base |
+| rhn_user.remove_from_usergroup |
+| rhn_user.add_servergroup_perm |
+| rhn_server.get_ip_address |
+| rhn_config.insert_file |
+| rhn_channel.bulk_guess_server_base |
+| rhn_channel.get_org_access |
+| rhn_channel.base_channel_for_release_arch |
+| rhn_config.delete_file |
+| rhn_server.bulk_set_custom_value |
+| rhn_channel.org_channel_setting |
+| rhn_user.check_role |
+| rhn_user.remove_servergroup_perm |
+| rhn_config_channel.get_user_revision_access |
+| rhn_user.add_to_usergroup |
+| rhn_channel.guess_server_base |
+| rhn_channel.refresh_newest_package |
+| rhn_channel.license_consent |
+| rhn_channel.get_license_path |
+| rhn_config_channel.get_user_file_access |
+| rhn_server.system_service_level |
+| rhn_package.canonical_name |
+| rhn_channel.user_role_check |
+| rhn_channel.normalize_server_arch |
+| rhn_channel.get_cfam_org_access |
+| rhn_user.add_users_to_usergroups |
+| rhn_user.remove_users_from_servergroups |
+| rhn_exception.raise_exception_val |
+| rhn_channel.available_chan_subscriptions |
+| rhn_config.delete_channel |
+| rhn_server.clear_servergroup |
+| rhn_channel.bulk_server_base_change |
+| rpm.isalpha |
+| rhn_server.tag_snapshot |
+| rhn_bel.lookup_email_state |
+| rhn_bel.is_org_paid |
+| rhn_cache.update_perms_for_server |
+| rhn_channel.update_family_counts |
+| rhn_channel.get_org_id |
+| rhn_user.get_org_id |
+| rpm.isdigit |
+| rhn_channel.loose_user_role_check |
+| rhn_channel.bulk_unsubscribe_server |
+| rhn_channel.bulk_subscribe_server |
+| rhn_entitlements.set_customer_nonlinux |
 
 
 Total number of stored procedures to convert 39 (stand alone functions or procedures) + (90 functions or procedures in packages) = 129
 
 Most expensive stored procedures to port from Oracle to PostgreSQL
 
-|| Package Name || Procedure Name || Number of lines||
-|| RPM || rpmstrcmp ||132 ||
-|| RHN_ENTITLEMENTS || modify_org_service ||127 ||
-|| RHN_CHANNEL || subscribe_server ||120 ||
-|| RHN_ORG || delete_user ||119 ||
-|| RHN_ENTITLEMENTS || repoll_virt_guest_entitlements ||109 ||
-|| RHN_CHANNEL || unsubscribe_server ||100 ||
-|| RHN_SERVER || insert_into_servergroup ||95 ||
-|| RHN_SERVER || snapshot_server ||89 ||
-|| RHN_ENTITLEMENTS || assign_system_entitlement ||85 ||
-|| RHN_ENTITLEMENTS || prune_group ||81 ||
-|| RHN_SERVER || delete_from_servergroup ||78 ||
-|| RHN_CHANNEL || channel_priority ||77 ||
-|| RHN_ENTITLEMENTS || remove_server_entitlement ||73 ||
-|| RHN_USER || find_mailable_address ||71 ||
-|| RHN_CONFIG || delete_revision ||70 ||
-|| RHN_ENTITLEMENTS || set_family_count ||63 ||
-|| RHN_SERVER || remove_action ||62 ||
-|| RHN_ENTITLEMENTS || assign_channel_entitlement ||62 ||
-|| RHN_ENTITLEMENTS || set_group_count ||58 ||
-|| RHN_ENTITLEMENTS || prune_family ||56 ||
-|| RHN_ENTITLEMENTS || entitle_server ||55 ||
-|| RHN_ENTITLEMENTS || can_entitle_server ||55 ||
-|| RHN_CONFIG_CHANNEL || get_user_chan_access ||53 ||
-|| RHN_CONFIG_CHANNEL || action_diff_revision_status ||50 ||
-|| RHN_ENTITLEMENTS || prune_everything ||50 ||
-|| RHN_CHANNEL || bulk_server_basechange_from ||46 ||
-|| RHN_CHANNEL || available_family_subscriptions ||46 ||
-|| RHN_ORG || delete_org ||45 ||
-|| RHN_CHANNEL || user_role_check_debug ||44 ||
-|| RHN_ENTITLEMENTS || activate_system_entitlement ||41 ||
-|| RHN_ENTITLEMENTS || unentitle_server ||41 ||
-|| RHN_CHANNEL || base_channel_rel_archid ||40 ||
-|| RHN_ENTITLEMENTS || activate_channel_entitlement ||40 ||
-|| RHN_CHANNEL || delete_server_channels ||38 ||
-|| RHN_SERVER || bulk_snapshot ||37 ||
-|| RHN_ENTITLEMENTS || subscribe_newest_servers ||36 ||
-|| RHN_ENTITLEMENTS || entitle_last_modified_servers ||36 ||
-|| RHN_ENTITLEMENTS || remove_org_entitlements ||35 ||
-|| RHN_SERVER || bulk_snapshot_tag ||31 ||
-|| RPM || vercmp ||30 ||
-|| RHN_CONFIG || insert_revision ||30 ||
-|| RHN_ENTITLEMENTS || find_compatible_sg ||29 ||
-|| RHN_CHANNEL || can_server_consume_virt_channl ||29 ||
-|| RHN_CHANNEL || entitle_customer ||28 ||
-|| RHN_CHANNEL || set_family_maxmembers ||27 ||
-|| RHN_SERVER || check_user_access ||27 ||
-|| RHN_CHANNEL || update_channel ||27 ||
-|| RHN_ENTITLEMENTS || get_server_entitlement ||26 ||
-|| RHN_SERVER || set_custom_value ||26 ||
-|| RHN_ENTITLEMENTS || entitlement_grants_service ||26 ||
-|| RHN_SERVER || insert_set_into_servergroup ||26 ||
-|| RHN_SERVER || insert_into_servergroup_maybe ||25 ||
-|| RHN_CONFIG || insert_channel ||25 ||
-|| RHN_SERVER || can_server_consume_virt_slot ||25 ||
-|| RHN_CHANNEL || bulk_guess_server_base_from ||25 ||
-|| RHN_SERVER || tag_delete ||24 ||
-|| RHN_QUOTA || recompute_org_quota_used ||24 ||
-|| RHN_EXCEPTION || raise_exception ||24 ||
-|| RHN_SERVER || delete_set_from_servergroup ||23 ||
-|| RHN_CACHE || update_perms_for_server_group ||23 ||
-|| RHN_CACHE || update_perms_for_user ||23 ||
-|| RHN_CHANNEL || channel_family_current_members ||23 ||
-|| RHN_ENTITLEMENTS || can_switch_base ||23 ||
-|| RHN_USER || remove_from_usergroup ||23 ||
-|| RHN_USER || add_servergroup_perm ||21 ||
-|| RHN_SERVER || get_ip_address ||21 ||
-|| RHN_CONFIG || insert_file ||20 ||
-|| RHN_CHANNEL || bulk_guess_server_base ||20 ||
-|| RHN_CHANNEL || get_org_access ||20 ||
-|| RHN_CHANNEL || base_channel_for_release_arch ||20 ||
-|| RHN_QUOTA || set_org_quota_total ||20 ||
-|| RHN_ENTITLEMENTS || lookup_entitlement_group ||19 ||
-|| RHN_CONFIG || delete_file ||19 ||
-|| RHN_ENTITLEMENTS || create_entitlement_group ||19 ||
-|| RHN_SERVER || bulk_set_custom_value ||19 ||
-|| RHN_CHANNEL || direct_user_role_check ||19 ||
-|| RHN_CHANNEL || org_channel_setting ||19 ||
-|| RHN_USER || check_role_implied ||18 ||
-|| RHN_USER || check_role ||18 ||
-|| RHN_USER || remove_servergroup_perm ||18 ||
-|| RHN_CONFIG_CHANNEL || get_user_revision_access ||18 ||
-|| RHN_USER || add_to_usergroup ||18 ||
-|| RHN_CHANNEL || guess_server_base ||17 ||
-|| RHN_DATE_MANIP || get_reporting_period_end ||17 ||
-|| RHN_CHANNEL || refresh_newest_package ||17 ||
-|| RHN_CHANNEL || license_consent ||17 ||
-|| RHN_DATE_MANIP || get_reporting_period_start ||17 ||
-|| RHN_CHANNEL || get_license_path ||16 ||
-|| RHN_CHANNEL || clear_subscriptions ||16 ||
-|| RHN_CONFIG_CHANNEL || get_user_file_access ||16 ||
-|| RHN_PACKAGE || channel_occupancy_string ||16 ||
-|| RHN_SERVER || system_service_level ||16 ||
-|| RHN_PACKAGE || canonical_name ||15 ||
-|| RHN_EXCEPTION || lookup_exception ||15 ||
-|| RHN_SERVER || can_change_base_channel ||15 ||
-|| RHN_CHANNEL || user_role_check ||15 ||
-|| RHN_QUOTA || get_org_for_config_content ||14 ||
-|| RHN_CHANNEL || family_for_channel ||14 ||
-|| RHN_CHANNEL || normalize_server_arch ||14 ||
-|| RHN_CHANNEL || get_cfam_org_access ||14 ||
-|| RHN_SERVER || delete_from_org_servergroups ||14 ||
-|| RHN_CONFIG || get_latest_revision ||13 ||
-|| RHN_USER || add_users_to_usergroups ||13 ||
-|| RHN_USER || remove_users_from_servergroups ||13 ||
-|| RHN_EXCEPTION || raise_exception_val ||12 ||
-|| RHN_CHANNEL || available_chan_subscriptions ||12 ||
-|| RHN_CONFIG || delete_channel ||12 ||
-|| RHN_SERVER || clear_servergroup ||11 ||
-|| RHN_CHANNEL || unsubscribe_server_from_family ||11 ||
-|| RHN_CHANNEL || update_channels_by_package ||11 ||
-|| RHN_CHANNEL || update_channels_by_errata ||11 ||
-|| RPM || isalphanum ||11 ||
-|| RHN_CHANNEL || bulk_server_base_change ||11 ||
-|| RPM || isalpha ||10 ||
-|| RHN_SERVER || tag_snapshot ||10 ||
-|| RHN_BEL || lookup_email_state ||10 ||
-|| RHN_BEL || is_org_paid ||10 ||
-|| RHN_ORG || find_server_group_by_type ||10 ||
-|| RHN_CACHE || update_perms_for_server ||10 ||
-|| RHN_CHANNEL || update_family_counts ||10 ||
-|| RHN_CHANNEL || get_org_id ||9 ||
-|| RHN_USER || get_org_id ||9 ||
-|| RPM || isdigit ||9 ||
-|| RHN_CHANNEL || loose_user_role_check ||8 ||
-|| RPM || vercmpResetCounter ||8 ||
-|| RHN_QUOTA || update_org_quota ||7 ||
-|| RHN_CHANNEL || bulk_unsubscribe_server ||7 ||
-|| RHN_CHANNEL || bulk_subscribe_server ||7 ||
-|| RHN_CONFIG || prune_org_configs ||6 ||
-|| RHN_ENTITLEMENTS || unset_customer_monitoring ||5 ||
-|| RHN_ENTITLEMENTS || unset_customer_enterprise ||5 ||
-|| RHN_ENTITLEMENTS || set_customer_nonlinux ||5 ||
-|| RHN_ENTITLEMENTS || set_customer_provisioning ||5 ||
-|| RHN_ENTITLEMENTS || unset_customer_nonlinux ||5 ||
-|| RPM || vercmpCounter ||5 ||
-|| RHN_ENTITLEMENTS || set_customer_monitoring ||5 ||
-|| RHN_ENTITLEMENTS || set_customer_enterprise ||5 ||
-|| RHN_ENTITLEMENTS || unset_customer_provisioning ||5 ||
 
-
-== Stored procs used in Perl ==
-||XXRH_OAI_WRAPPER.sync_address||
-||XXRH_OAI_WRAPPER.sync_contact||
-||XXRH_OAI_WRAPPER.sync_customer||
-||dbms_utility.db_version||
-||evr.as_vre_simple||
-||rhn_bel.is_org_paid||
-||rhn_channel.available_chan_subscriptions||
-||rhn_channel.channel_priority||
-||rhn_channel.get_license_path||
-||rhn_channel.guess_server_base||
-||rhn_channel.license_consent||
-||rhn_channel.org_channel_setting||
-||rhn_channel.refresh_newest_package||
-||rhn_channel.update_channel||
-||rhn_channel.user_role_check||
-||rhn_config.delete_channel||
-||rhn_config.delete_file||
-||rhn_config.insert_channel||
-||rhn_config_channel.action_diff_revision_status||
-||rhn_config_channel.get_user_chan_access||
-||rhn_config_channel.get_user_file_access||
-||rhn_entitlements.can_entitle_server||
-||rhn_entitlements.can_switch_base||
-||rhn_entitlements.remove_server_entitlement||
-||rhn_ep.entitlement_queue_pending||
-||rhn_ep.process_queue_batch||
-||rhn_org.delete_user||
-||rhn_server.bulk_set_custom_value||
-||rhn_server.bulk_snapshot||
-||rhn_server.bulk_snapshot_tag||
-||rhn_server.delete_set_from_servergroup||
-||rhn_server.remove_action||
-||rhn_server.set_custom_value||
-||rhn_server.snapshot_server||
-||rhn_server.system_service_level||
-||rhn_server.tag_snapshot||
-||rhn_user.add_to_usergroup||
-||rhn_user.add_users_to_usergroups||
-||rhn_user.delete_from_usergroup||
-||rhn_user.remove_from_usergroup||
-||rhn_user.remove_users_from_servergroups||
-||rhn_user.remove_users_from_usergroups||
-||rpm.vercmp||
+|  Package Name  |  Procedure Name  |  Number of lines |
+| --- | --- | --- |
+|  RPM  |  rpmstrcmp  | 132  |
+|  RHN_ENTITLEMENTS  |  modify_org_service  | 127  |
+|  RHN_CHANNEL  |  subscribe_server  | 120  |
+|  RHN_ORG  |  delete_user  | 119  |
+|  RHN_ENTITLEMENTS  |  repoll_virt_guest_entitlements  | 109  |
+|  RHN_CHANNEL  |  unsubscribe_server  | 100  |
+|  RHN_SERVER  |  insert_into_servergroup  | 95  |
+|  RHN_SERVER  |  snapshot_server  | 89  |
+|  RHN_ENTITLEMENTS  |  assign_system_entitlement  | 85  |
+|  RHN_ENTITLEMENTS  |  prune_group  | 81  |
+|  RHN_SERVER  |  delete_from_servergroup  | 78  |
+|  RHN_CHANNEL  |  channel_priority  | 77  |
+|  RHN_ENTITLEMENTS  |  remove_server_entitlement  | 73  |
+|  RHN_USER  |  find_mailable_address  | 71  |
+|  RHN_CONFIG  |  delete_revision  | 70  |
+|  RHN_ENTITLEMENTS  |  set_family_count  | 63  |
+|  RHN_SERVER  |  remove_action  | 62  |
+|  RHN_ENTITLEMENTS  |  assign_channel_entitlement  | 62  |
+|  RHN_ENTITLEMENTS  |  set_group_count  | 58  |
+|  RHN_ENTITLEMENTS  |  prune_family  | 56  |
+|  RHN_ENTITLEMENTS  |  entitle_server  | 55  |
+|  RHN_ENTITLEMENTS  |  can_entitle_server  | 55  |
+|  RHN_CONFIG_CHANNEL  |  get_user_chan_access  | 53  |
+|  RHN_CONFIG_CHANNEL  |  action_diff_revision_status  | 50  |
+|  RHN_ENTITLEMENTS  |  prune_everything  | 50  |
+|  RHN_CHANNEL  |  bulk_server_basechange_from  | 46  |
+|  RHN_CHANNEL  |  available_family_subscriptions  | 46  |
+|  RHN_ORG  |  delete_org  | 45  |
+|  RHN_CHANNEL  |  user_role_check_debug  | 44  |
+|  RHN_ENTITLEMENTS  |  activate_system_entitlement  | 41  |
+|  RHN_ENTITLEMENTS  |  unentitle_server  | 41  |
+|  RHN_CHANNEL  |  base_channel_rel_archid  | 40  |
+|  RHN_ENTITLEMENTS  |  activate_channel_entitlement  | 40  |
+|  RHN_CHANNEL  |  delete_server_channels  | 38  |
+|  RHN_SERVER  |  bulk_snapshot  | 37  |
+|  RHN_ENTITLEMENTS  |  subscribe_newest_servers  | 36  |
+|  RHN_ENTITLEMENTS  |  entitle_last_modified_servers  | 36  |
+|  RHN_ENTITLEMENTS  |  remove_org_entitlements  | 35  |
+|  RHN_SERVER  |  bulk_snapshot_tag  | 31  |
+|  RPM  |  vercmp  | 30  |
+|  RHN_CONFIG  |  insert_revision  | 30  |
+|  RHN_ENTITLEMENTS  |  find_compatible_sg  | 29  |
+|  RHN_CHANNEL  |  can_server_consume_virt_channl  | 29  |
+|  RHN_CHANNEL  |  entitle_customer  | 28  |
+|  RHN_CHANNEL  |  set_family_maxmembers  | 27  |
+|  RHN_SERVER  |  check_user_access  | 27  |
+|  RHN_CHANNEL  |  update_channel  | 27  |
+|  RHN_ENTITLEMENTS  |  get_server_entitlement  | 26  |
+|  RHN_SERVER  |  set_custom_value  | 26  |
+|  RHN_ENTITLEMENTS  |  entitlement_grants_service  | 26  |
+|  RHN_SERVER  |  insert_set_into_servergroup  | 26  |
+|  RHN_SERVER  |  insert_into_servergroup_maybe  | 25  |
+|  RHN_CONFIG  |  insert_channel  | 25  |
+|  RHN_SERVER  |  can_server_consume_virt_slot  | 25  |
+|  RHN_CHANNEL  |  bulk_guess_server_base_from  | 25  |
+|  RHN_SERVER  |  tag_delete  | 24  |
+|  RHN_QUOTA  |  recompute_org_quota_used  | 24  |
+|  RHN_EXCEPTION  |  raise_exception  | 24  |
+|  RHN_SERVER  |  delete_set_from_servergroup  | 23  |
+|  RHN_CACHE  |  update_perms_for_server_group  | 23  |
+|  RHN_CACHE  |  update_perms_for_user  | 23  |
+|  RHN_CHANNEL  |  channel_family_current_members  | 23  |
+|  RHN_ENTITLEMENTS  |  can_switch_base  | 23  |
+|  RHN_USER  |  remove_from_usergroup  | 23  |
+|  RHN_USER  |  add_servergroup_perm  | 21  |
+|  RHN_SERVER  |  get_ip_address  | 21  |
+|  RHN_CONFIG  |  insert_file  | 20  |
+|  RHN_CHANNEL  |  bulk_guess_server_base  | 20  |
+|  RHN_CHANNEL  |  get_org_access  | 20  |
+|  RHN_CHANNEL  |  base_channel_for_release_arch  | 20  |
+|  RHN_QUOTA  |  set_org_quota_total  | 20  |
+|  RHN_ENTITLEMENTS  |  lookup_entitlement_group  | 19  |
+|  RHN_CONFIG  |  delete_file  | 19  |
+|  RHN_ENTITLEMENTS  |  create_entitlement_group  | 19  |
+|  RHN_SERVER  |  bulk_set_custom_value  | 19  |
+|  RHN_CHANNEL  |  direct_user_role_check  | 19  |
+|  RHN_CHANNEL  |  org_channel_setting  | 19  |
+|  RHN_USER  |  check_role_implied  | 18  |
+|  RHN_USER  |  check_role  | 18  |
+|  RHN_USER  |  remove_servergroup_perm  | 18  |
+|  RHN_CONFIG_CHANNEL  |  get_user_revision_access  | 18  |
+|  RHN_USER  |  add_to_usergroup  | 18  |
+|  RHN_CHANNEL  |  guess_server_base  | 17  |
+|  RHN_DATE_MANIP  |  get_reporting_period_end  | 17  |
+|  RHN_CHANNEL  |  refresh_newest_package  | 17  |
+|  RHN_CHANNEL  |  license_consent  | 17  |
+|  RHN_DATE_MANIP  |  get_reporting_period_start  | 17  |
+|  RHN_CHANNEL  |  get_license_path  | 16  |
+|  RHN_CHANNEL  |  clear_subscriptions  | 16  |
+|  RHN_CONFIG_CHANNEL  |  get_user_file_access  | 16  |
+|  RHN_PACKAGE  |  channel_occupancy_string  | 16  |
+|  RHN_SERVER  |  system_service_level  | 16  |
+|  RHN_PACKAGE  |  canonical_name  | 15  |
+|  RHN_EXCEPTION  |  lookup_exception  | 15  |
+|  RHN_SERVER  |  can_change_base_channel  | 15  |
+|  RHN_CHANNEL  |  user_role_check  | 15  |
+|  RHN_QUOTA  |  get_org_for_config_content  | 14  |
+|  RHN_CHANNEL  |  family_for_channel  | 14  |
+|  RHN_CHANNEL  |  normalize_server_arch  | 14  |
+|  RHN_CHANNEL  |  get_cfam_org_access  | 14  |
+|  RHN_SERVER  |  delete_from_org_servergroups  | 14  |
+|  RHN_CONFIG  |  get_latest_revision  | 13  |
+|  RHN_USER  |  add_users_to_usergroups  | 13  |
+|  RHN_USER  |  remove_users_from_servergroups  | 13  |
+|  RHN_EXCEPTION  |  raise_exception_val  | 12  |
+|  RHN_CHANNEL  |  available_chan_subscriptions  | 12  |
+|  RHN_CONFIG  |  delete_channel  | 12  |
+|  RHN_SERVER  |  clear_servergroup  | 11  |
+|  RHN_CHANNEL  |  unsubscribe_server_from_family  | 11  |
+|  RHN_CHANNEL  |  update_channels_by_package  | 11  |
+|  RHN_CHANNEL  |  update_channels_by_errata  | 11  |
+|  RPM  |  isalphanum  | 11  |
+|  RHN_CHANNEL  |  bulk_server_base_change  | 11  |
+|  RPM  |  isalpha  | 10  |
+|  RHN_SERVER  |  tag_snapshot  | 10  |
+|  RHN_BEL  |  lookup_email_state  | 10  |
+|  RHN_BEL  |  is_org_paid  | 10  |
+|  RHN_ORG  |  find_server_group_by_type  | 10  |
+|  RHN_CACHE  |  update_perms_for_server  | 10  |
+|  RHN_CHANNEL  |  update_family_counts  | 10  |
+|  RHN_CHANNEL  |  get_org_id  | 9  |
+|  RHN_USER  |  get_org_id  | 9  |
+|  RPM  |  isdigit  | 9  |
+|  RHN_CHANNEL  |  loose_user_role_check  | 8  |
+|  RPM  |  vercmpResetCounter  | 8  |
+|  RHN_QUOTA  |  update_org_quota  | 7  |
+|  RHN_CHANNEL  |  bulk_unsubscribe_server  | 7  |
+|  RHN_CHANNEL  |  bulk_subscribe_server  | 7  |
+|  RHN_CONFIG  |  prune_org_configs  | 6  |
+|  RHN_ENTITLEMENTS  |  unset_customer_monitoring  | 5  |
+|  RHN_ENTITLEMENTS  |  unset_customer_enterprise  | 5  |
+|  RHN_ENTITLEMENTS  |  set_customer_nonlinux  | 5  |
+|  RHN_ENTITLEMENTS  |  set_customer_provisioning  | 5  |
+|  RHN_ENTITLEMENTS  |  unset_customer_nonlinux  | 5  |
+|  RPM  |  vercmpCounter  | 5  |
+|  RHN_ENTITLEMENTS  |  set_customer_monitoring  | 5  |
+|  RHN_ENTITLEMENTS  |  set_customer_enterprise  | 5  |
+|  RHN_ENTITLEMENTS  |  unset_customer_provisioning  | 5  |
+## Stored procs used in Perl
 
 
 
-== Stored Procs used in Java ==
-
-||rhn.delete_channel||
-||rhn_cache.update_perms_for_server||
-||rhn_cache.update_perms_for_user||
-||rhn_channel.available_chan_subscriptions||
-||rhn_channel.channel_priority||
-||rhn_channel.get_license_path||
-||rhn_channel.get_org_access||
-||rhn_channel.guess_server_base||
-||rhn_channel.loose_user_role_check||
-||rhn_channel.org_channel_setting||
-||rhn_channel.refresh_newest_package||
-||rhn_channel.subscribe_server||
-||rhn_channel.unsubscribe_server||
-||rhn_channel.update_channel||
-||rhn_channel.user_role_check||
-||rhn_channel.user_role_check_debug||
-||rhn_config.delete_channel||
-||rhn_config.delete_file||
-||rhn_config.delete_revision||
-||rhn_config.insert_channel||
-||rhn_config.insert_file||
-||rhn_config.insert_revision||
-||rhn_config_channel.get_user_chan_access||
-||rhn_config_channel.get_user_file_access||
-||rhn_config_channel.get_user_revision_access||
-||rhn_entitlements.assign_channel_entitlement||
-||rhn_entitlements.assign_system_entitlement||
-||rhn_entitlements.can_entitle_server||
-||rhn_entitlements.entitle_server||
-||rhn_entitlements.remove_server_entitlement||
-||rhn_entitlements.unentitle_server||
-||rhn_ep.poll_customer_internal||
-||rhn_ep.process_queue_batch||
-||rhn_org.delete_org||
-||rhn_org.delete_user||
-||rhn_server.delete_from_servergroup||
-||rhn_server.insert_into_servergroup_maybe||
-||rhn_server.remove_action||
-||rhn_server.snapshot_server||
-||rhn_server.system_service_level||
-||rhn_user.add_servergroup_perm||
-||rhn_user.add_to_usergroup||
-||rhn_user.check_role||
-||rhn_user.remove_from_usergroup||
-||rhn_user.remove_servergroup_perm||
-||rpm.vercmp||
-||web_disable_user_pkg.disable_user||
-||web_disable_user_pkg.reenable_user||
-||xxrh_oai_wrapper.sync_contact||
-||xxrh_oai_wrapper.sync_customer||
+| XXRH_OAI_WRAPPER.sync_address |
+| --- |
+| XXRH_OAI_WRAPPER.sync_contact |
+| XXRH_OAI_WRAPPER.sync_customer |
+| dbms_utility.db_version |
+| evr.as_vre_simple |
+| rhn_bel.is_org_paid |
+| rhn_channel.available_chan_subscriptions |
+| rhn_channel.channel_priority |
+| rhn_channel.get_license_path |
+| rhn_channel.guess_server_base |
+| rhn_channel.license_consent |
+| rhn_channel.org_channel_setting |
+| rhn_channel.refresh_newest_package |
+| rhn_channel.update_channel |
+| rhn_channel.user_role_check |
+| rhn_config.delete_channel |
+| rhn_config.delete_file |
+| rhn_config.insert_channel |
+| rhn_config_channel.action_diff_revision_status |
+| rhn_config_channel.get_user_chan_access |
+| rhn_config_channel.get_user_file_access |
+| rhn_entitlements.can_entitle_server |
+| rhn_entitlements.can_switch_base |
+| rhn_entitlements.remove_server_entitlement |
+| rhn_ep.entitlement_queue_pending |
+| rhn_ep.process_queue_batch |
+| rhn_org.delete_user |
+| rhn_server.bulk_set_custom_value |
+| rhn_server.bulk_snapshot |
+| rhn_server.bulk_snapshot_tag |
+| rhn_server.delete_set_from_servergroup |
+| rhn_server.remove_action |
+| rhn_server.set_custom_value |
+| rhn_server.snapshot_server |
+| rhn_server.system_service_level |
+| rhn_server.tag_snapshot |
+| rhn_user.add_to_usergroup |
+| rhn_user.add_users_to_usergroups |
+| rhn_user.delete_from_usergroup |
+| rhn_user.remove_from_usergroup |
+| rhn_user.remove_users_from_servergroups |
+| rhn_user.remove_users_from_usergroups |
+| rpm.vercmp |
+## Stored Procs used in Java
 
 
-= Delete Server Case Study =
+
+
+| rhn.delete_channel |
+| --- |
+| rhn_cache.update_perms_for_server |
+| rhn_cache.update_perms_for_user |
+| rhn_channel.available_chan_subscriptions |
+| rhn_channel.channel_priority |
+| rhn_channel.get_license_path |
+| rhn_channel.get_org_access |
+| rhn_channel.guess_server_base |
+| rhn_channel.loose_user_role_check |
+| rhn_channel.org_channel_setting |
+| rhn_channel.refresh_newest_package |
+| rhn_channel.subscribe_server |
+| rhn_channel.unsubscribe_server |
+| rhn_channel.update_channel |
+| rhn_channel.user_role_check |
+| rhn_channel.user_role_check_debug |
+| rhn_config.delete_channel |
+| rhn_config.delete_file |
+| rhn_config.delete_revision |
+| rhn_config.insert_channel |
+| rhn_config.insert_file |
+| rhn_config.insert_revision |
+| rhn_config_channel.get_user_chan_access |
+| rhn_config_channel.get_user_file_access |
+| rhn_config_channel.get_user_revision_access |
+| rhn_entitlements.assign_channel_entitlement |
+| rhn_entitlements.assign_system_entitlement |
+| rhn_entitlements.can_entitle_server |
+| rhn_entitlements.entitle_server |
+| rhn_entitlements.remove_server_entitlement |
+| rhn_entitlements.unentitle_server |
+| rhn_ep.poll_customer_internal |
+| rhn_ep.process_queue_batch |
+| rhn_org.delete_org |
+| rhn_org.delete_user |
+| rhn_server.delete_from_servergroup |
+| rhn_server.insert_into_servergroup_maybe |
+| rhn_server.remove_action |
+| rhn_server.snapshot_server |
+| rhn_server.system_service_level |
+| rhn_user.add_servergroup_perm |
+| rhn_user.add_to_usergroup |
+| rhn_user.check_role |
+| rhn_user.remove_from_usergroup |
+| rhn_user.remove_servergroup_perm |
+| rpm.vercmp |
+| web_disable_user_pkg.disable_user |
+| web_disable_user_pkg.reenable_user |
+| xxrh_oai_wrapper.sync_contact |
+| xxrh_oai_wrapper.sync_customer |
+# Delete Server Case Study
+
+
 
 Contents of an email sent examining the effort in porting delete_server to application code vs PL/pgSQL.
 
@@ -547,8 +562,9 @@ server_id_in; delete from rhnSatelliteInfo where server_id =
 server_id_in; -- this cascades to rhnActionConfigChannel and
 rhnActionConfigFileName delete from rhnServerAction where server_id =
 server_id_in; delete from rhnServerActionPackageResult where server_id
-= server_id_in; delete from rhnServerActionScriptResult where server_id
-= server_id_in; delete from rhnServerActionVerifyResult where server_id
+# server_id_in; delete from rhnServerActionScriptResult where server_id
+ server_id_in; delete from rhnServerActionVerifyResult where server_id
+
 = server_id_in; delete from rhnServerActionVerifyMissing where
 server_id = server_id_in; -- counts are handled above.  this should be
 a delete_ function. delete from rhnServerChannel where server_id =

@@ -1,18 +1,18 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center"
-'''''DEPRECATED, NO LONGER USED'''''
-}}}
 
+    #!div class="important" style="border: 2pt solid; text-align: center"
+    '''''DEPRECATED, NO LONGER USED'''''
+## Overview
 
-== Overview ==
 This page describes the changes necessary to the existing UI to provide read only functionality to the support user.
 
-== Navigation ==
+## Navigation
+
 The following tabs and left navigation items are available to users with no roles. Notes have been added to indicate where functionality must be disabled in read only mode.
+
 
  * Overview
   * Overview
-   * '''Register Systems''' (links to help page)
+   * *Register Systems* (links to help page)
   * Your Account
   * Your Preferences
   * Locale Preferences
@@ -33,7 +33,7 @@ The following tabs and left navigation items are available to users with no role
   * Manage Software Channels
  * Schedule
   * Pending Actions
-   * '''Cancel Actions'''
+   * *Cancel Actions*
   * Failed Actions
   * Completed Actions
   * Archived Actions

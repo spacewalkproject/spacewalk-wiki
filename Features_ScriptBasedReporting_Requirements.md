@@ -1,6 +1,9 @@
-= Script based reporting: Requirements =
+# Script based reporting: Requirements
 
-== Content of the feature ==
+## Content of the feature
+
+
+
 
  * Canned, but open source, scripts for some key, highly desired reports
  * Entitlement / subscriptions report
@@ -8,22 +11,27 @@
  * Software / errata report
  * FISMA (federally mandated) report
  * Event reporting
+## Detailed Requirements
 
-== Detailed Requirements ==
+### Scripted subscription and entitlement canned report
 
-=== Scripted subscription and entitlement canned report ===
+
+
 
 This is a report users might run every month or every year in order to determine charge-backs to different groups/customers using the Spacewalk and to better grasp real costs of Spacewalk managed systems.
+#### Goal
 
-==== Goal ====
+
 
 Determination of usage of consumed product denominated by subscriptions and entitlements.
+#### Preconditions (assumptions)
 
-==== Preconditions (assumptions) ====
+
 
 Spacewalk is installed and all manageable/purchased systems are connected and managed by Spacewalk. Organizations are defined and systems are allocated appropriately.
+#### Main Flow / Description
 
-==== Main Flow / Description ====
+
 
  1. User (or delegate) changes to general script directory on the Spacewalk server
  2. User executes script
@@ -33,29 +41,35 @@ Spacewalk is installed and all manageable/purchased systems are connected and ma
  6. Report also contains dependent relationships between subscriptions and entitlements.
  7. Layered entitlements need to be represented.
  8. TODO: example report.
+#### Alternative flows
 
-==== Alternative flows ====
 (Alternative flows due to exceptions or alternate course of action described in the following section.)
 
- 1. n/a
 
-==== Post Conditions ====
+ 1. n/a
+#### Post Conditions
+
+
 
 State is unchanged. This is a read-only operation.
+### Scripted inventory canned report
 
-=== Scripted inventory canned report ===
+
 
 This is a report users might run every month or every year in order to better understand the hardware or identified base objects (example, hardware) that are being managed.
+#### Goal
 
-==== Goal ====
+
 
 Generate a report broken down by physical and virtual hardware and network information. Also included will be some basic information surrounding check-in dates, entitlements and package installation status. As for entitlement/subscription information, think entitlement report, but per system.
+#### Preconditions (assumptions)
 
-==== Preconditions (assumptions) ====
+
 
 Spacewalk is installed and all manageable/purchased systems are connected and managed by Spacewalk. Organizations are defined and systems are allocated appropriately.
+#### Main Flow / Description
 
-==== Main Flow / Description ====
+
 
  1. User (or delegate) changes to general script directory on the Spacewalk server
  2. User executes script
@@ -79,39 +93,47 @@ Spacewalk is installed and all manageable/purchased systems are connected and ma
     16. Architecture 
     17. Hardware info: sockets/cores, network info...
  5. TODO: example report.
+#### Alternative flows
 
-==== Alternative flows ====
+
 
 (Alternative flows due to exceptions or alternate course of action described in the following section.)
 
  1. n/a
+#### Post Conditions
 
-==== Post Conditions ====
+
 
 State is unchanged. This is a read-only operation.
+### Scripted Basic FISMA Report
 
-=== Scripted Basic FISMA Report ===
+
 
 This is a report specific to users interested in FISMA type reports, but useful to all. This report will result in aiding users to meet reporting requirements surrounding software installed with a focus on security.
+#### Additional information:
 
-==== Additional information: ====
+
 
 http://www.sans.org/cag/print.php
 Twenty Most Important Controls and Metrics for Effective Cyber Defense and Continuous FISMA Compliance
+#### Goal
 
-==== Goal ====
+
 
 Generate a report in compliance with the basic requirements of security software installation needs.
+#### Preconditions (assumptions)
 
-==== Preconditions (assumptions) ====
+
 
 Spacewalk is installed and all manageable/purchased systems are connected and managed by Spacewalk. Organizations are defined and systems are allocated appropriately.
+#### Limitations
 
-==== Limitations ====
+
 
 FISMA has a configuration tracking component that is not a part of this feature for this release.
+#### Main Flow / Description
 
-==== Main Flow / Description ====
+
 
  1. User (or delegate) changes to general script directory on the RHN Satellite
  2. User executes script
@@ -132,28 +154,33 @@ FISMA has a configuration tracking component that is not a part of this feature 
      2. hostname
      3. IP address
  7. TODO: example reports
+#### Alternative flows
 
-==== Alternative flows ====
+
 
 (Alternative flows due to exceptions or alternate course of action described in the following section.)
 
 1.n/a
+#### Post Conditions
 
-==== Post Conditions ====
+
 
 State is unchanged. This is a read-only operation.
+### Report on events applied to a system (bugzilla 156311)
 
-=== Report on events applied to a system (bugzilla 156311) ===
+
 
 This is a "should have" requirement.
 
 No details.
+## Specification
 
-== Specification ==
 
-See [wiki:Features/ScriptBasedReporting/Spec] for specification based on these requirements.
 
-== Progress ==
+See [[Features_ScriptBasedReporting_Spec]] for specification based on these requirements.
+## Progress
 
-See [wiki:Features/ScriptBasedReporting] for the overall status of the feature.
+
+
+See [[Features_ScriptBasedReporting]] for the overall status of the feature.
 

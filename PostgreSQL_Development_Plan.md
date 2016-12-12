@@ -1,10 +1,12 @@
-[wiki:PostgreSqlProject Main Project Page]
+[Main Project Page](PostgreSqlProject)
+# PostgreSQL Project Plan
 
-= PostgreSQL Project Plan =
 
-[wiki:"PostgreSQL Tasks/Track" Plan Mile Stones and Tracking]
 
-== Development Process ==
+[Plan Mile Stones and Tracking](PostgreSQL_Tasks_Track)
+## Development Process
+
+
 
 The identified process to develop the ability for SapceWalk to work on PostgreSQL database as well will be iterative.
 
@@ -15,49 +17,60 @@ The identified iterations are as follows:
  3.  SetUp of Environments
  4.  Development Iterations 1 to 5.
  5. Final
+## Kick off
 
-== Kick off ==
+### Objective
 
-=== Objective === 
+ 
+
 
 To create the project plan and mile stones for the project.
+### Identified Tasks
 
-=== Identified Tasks ===
+
 
   1. Kick off  meeting
   2.  Identify the objectives.
   3. Identify tools and process to be used for communication and tracking of the project.
   4. Create a Team.
+### Time Line
 
-=== Time Line ===
+
 
 December 2008/January 2009
+## Planning/Analysis
 
-== Planning/Analysis ==
+### Objective
 
-=== Objective ===
+
+
 
 To create the detailed project plan, technical approaches for development and testing of the migration/alternate/additional db source.
+### Identified Tasks
 
-=== Identified Tasks ===
+
 
  1. Project Plan.
  2. Development and Testing Technical Approach.
  3. Test plan.
  4. Verification of the recommended Technical Approach.
  5. Sign off on the project Plan and approaches.
+### Time Line
 
-=== Time Line ===
+
 
 January 2009
+## Iteration 1
 
-== Iteration 1 ==
+### Objective
 
-=== Objective ===
+
  
-To share and train the Team with knowledge transfer setup of environments and create a sample database to work as a reference.
 
-=== Identified Tasks ===
+To share and train the Team with knowledge transfer setup of environments and create a sample database to work as a reference.
+### Identified Tasks
+
+
 
  1. Knowledge Transfer of the application.
  2. Recommendation for the Development and Test Environments.
@@ -73,20 +86,24 @@ To share and train the Team with knowledge transfer setup of environments and cr
  12. Database access layer in the different application layers
  10. Further refinement of the Project and Test plan.
  11. Verification of sign offs.
+### Time Line
 
-=== Time Line ===
+
 
 February 2009
+## Iteration 2
 
-== Iteration 2 ==
+### Objective
 
-=== Objective ===
+
+
 
 To develop and test the identified modules.
+### Task Lists
 
-=== Task Lists ===
 
-[wiki:PgIter2Breakdown breakdown]
+
+[breakdown](PgIter2Breakdown)
 
  1. Identified modules (here the modules are placed as the priority is not set as yet)
        1. Web-UI
@@ -112,18 +129,22 @@ To develop and test the identified modules.
  6. Create Oracle to Postgres -- migration scripts.
  7. Create Postgres to Oracle -- migration scripts.
  8. Review and sign-off of the above tasks
+### Time Line
 
-=== Time Line ===
+
 
 March/April 2009
+## Iteration 4
 
-== Iteration 4 ==
+### Objective
 
-=== Objective ===
+
+
 
 To develop and test the identified modules.
+### Task Lists
 
-=== Task Lists ===
+
 
  1. Identified modules (here the modules are placed as the priority is not set as yet)
        1.  SDC Software
@@ -148,18 +169,22 @@ To develop and test the identified modules.
  5. Identify/Establish Pg Benchmarks for developed modules
  6. Create Upgrade Scripts between various Spacewalk versions.
  7. Review and sign-off of the above tasks
+### Time Line
 
-=== Time Line ===
+
 
 May 2009
+## Iteration 5
 
-== Iteration 5 ==
+### Objective
 
-=== Objective ===
+
+
 
 To develop and test the identified modules.
+### Task Lists
 
-=== Task Lists ===
+
 
  1. Identified modules (here the modules are placed as the priority is not set as yet)
        1.  Solaris
@@ -180,18 +205,22 @@ To develop and test the identified modules.
  5. Identify/Establish Pg Benchmarks for developed modules
  6. Identify performance issues and other outstanding items.
  7. Review and sign-off of the above tasks
+### Time Line
 
-=== Time Line ===
+
 
 June 2009
+## Final Iteration
 
-== Final Iteration ==
+### Objective
 
-=== Objective ===
+
+
 
 To validate all the modules - functionality, performance and total project sign-off.
+### Task Lists
 
-=== Task Lists ===
+
 
  1. Identify and list the list of issues to fix.
  2. Packaging
@@ -200,8 +229,9 @@ To validate all the modules - functionality, performance and total project sign-
  4. Provide guidelines for future projects enhancements - not to break the Pg database option 
  5. Packaging of the application
  5. Review and sign-off of the project
+### Time Line
 
-=== Time Line ===
+
 
 July 2009
 

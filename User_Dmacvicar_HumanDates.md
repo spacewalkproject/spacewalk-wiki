@@ -1,32 +1,36 @@
+## Problem
 
-== Problem ==
+
 
 Spacewalk shows timestamps in lot of places of the user interface. Those timestamps require the user to think about them.
 
-[[Image(dates1.png)]]
+![Alt](images/dates1.png?raw=True)
+## Human dates
 
-== Human dates ==
+
 
 The patch allows to see the dates in a human format that is natural to the user. 
 
-[[Image(dates2.png)]]
+![Alt](images/dates2.png?raw=True)
 
 You can still hover and see details. Even more, the generated tag is a semantic tag that has the timestamp in the attributes, so javascript can still access the original data.
 
-[[Image(dates3.png)]]
+![Alt](images/dates3.png?raw=True)
 
 And of course, it is localized...
 
-[[Image(dates-locale.png)]]
+![Alt](images/dates-locale.png?raw=True)
+## Implementation
 
-== Implementation ==
+
 
 It adds a rhn:formatDateHuman that is used
 very similarly to fmt:formatDate.
 
 The tag implementation uses http://ocpsoft.org/prettytime for the formatting.
+## Alternative implementations
 
-== Alternative implementations ==
+
 
 An alternative implementation is to do the change in the browser itself using http://momentjs.com.
 

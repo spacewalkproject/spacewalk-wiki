@@ -1,7 +1,7 @@
-[[PageOutline]]
+# __Spacewalk 1.1 Release Notes__
 
-= __Spacewalk 1.1 Release Notes__ =
 Hello everyone,
+
 
 Spacewalk 1.1 has been released!
 
@@ -20,14 +20,15 @@ For new installations, consult:
 
 For upgrades, consult:
  * https://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features and enhancements
 
-== Features and enhancements ==
- * First Spacewalk release built in a [http://koji.spacewalkproject.org/koji publicly available build system].
+ * First Spacewalk release built in a [publicly available build system](http://koji.spacewalkproject.org/koji).
+
  * Spacewalk 1.1 runs on Fedora 13
- * Introduction of [https://fedorahosted.org/spacewalk/wiki/spacecmd spacecmd], a command line interface to Spacewalk.
- * Support for [https://fedorahosted.org/spacewalk/wiki/Features/CompsSyncing synchronization of comps files].
+ * Introduction of [spacecmd](https://fedorahosted.org/spacewalk/wiki/spacecmd), a command line interface to Spacewalk.
+ * Support for [synchronization of comps files](https://fedorahosted.org/spacewalk/wiki/Features/CompsSyncing).
  * support for staging content - ability to have all updates pulled off Spacewalk onto registered systems prior to the start of maintenance window
- * support for [https://fedorahosted.org/spacewalk/wiki/DuplicateProfiles eliminating orphaned (duplicate) profiles].
+ * support for [eliminating orphaned (duplicate) profiles](https://fedorahosted.org/spacewalk/wiki/DuplicateProfiles).
  * new API calls:
   * channel.software.getChannelLastBuildById
   * configchannel.listSubscribedSystems
@@ -46,8 +47,9 @@ For upgrades, consult:
   * system.listPackageProfiles
   * systemgroup.scheduleApplyErrataToActive
  * localization updates
+## Known issues
 
-== Known issues ==
+
 
  * Wrong tomcat6 directory permissions on Fedora 13
   * https://bugzilla.redhat.com/show_bug.cgi?id=574593
@@ -68,9 +70,10 @@ chmod g+w /var/log/tomcat6 /etc/tomcat6/Catalina/localhost /var/cache/tomcat6 /v
   * https://bugzilla.redhat.com/show_bug.cgi?id=621206
 
  * Documentation search does not work, other searches are unaffected
+## Contributors
 
-== Contributors ==
 Thank you goes out to the following people who contributed to Spacewalk 1.1 release:
+
 
  * Aron Parsons
  * Colin Coe

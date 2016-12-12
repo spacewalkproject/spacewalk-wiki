@@ -1,7 +1,6 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center"
-'''''DEPRECATED, NO LONGER USED'''''
-}}}
+
+    #!div class="important" style="border: 2pt solid; text-align: center"
+    '''''DEPRECATED, NO LONGER USED'''''
 
 Cleaning up Repository and getting the free items into the Fedora Space
 
@@ -10,9 +9,10 @@ Note: This page is now obsolete -- we now have everything built from sources.
 ----
 
 A new page now has information on GettingPackagesIntoFedora
+# RPMS missing SRPMS
 
-= RPMS missing SRPMS =
 The following binary RPMS are found in http://spacewalk.redhat.com/yum/rhel/5Server/i386/ and not in the SRPM tree http://www.redhat.com/spacewalk/source/
+
 This needs to be fixed :)
 
 
@@ -59,30 +59,30 @@ This needs to be fixed :)
  * rhn-virtualization-guest-5.2.0-5.noarch.rpm
  * rhn-virtualization-host-5.2.0-5.noarch.rpm
  * spacewalk-setup-0.01-3.noarch.rpm
-
-== Hack Script to find this ==
-{{{
-#!/bin/bash
+## Hack Script to find this
 
 
-# Quick hack to figure out if binary rpms have matching source rpms
 
-# This assumes you have a directory of the binary rpms called rpms and a directory
-#   of the source rpms called srpms.  Also assumes that you run from a level up.
-#  Like ./rpms and ./srpms and then repo-diff.sh script is in .
-#  YMMV
+    #!/bin/bash
+    
+    
+    # Quick hack to figure out if binary rpms have matching source rpms
+    
+    # This assumes you have a directory of the binary rpms called rpms and a directory
+    #   of the source rpms called srpms.  Also assumes that you run from a level up.
+    #  Like ./rpms and ./srpms and then repo-diff.sh script is in .
+    #  YMMV
+    
+    for rpm in `ls -1 rpms/*rpm`
+    do
+       echo -n `basename $rpm`
+       echo -n " | "
+       srpm=`rpm -qpi $rpm  | grep "Source RPM" | awk '{print $NF}'`
+       ls -1 srpms/$srpm &> /dev/null && echo "Good" || echo "Source RPM not found"
+    done
+# SRPMS in Spacewalk Repo already found in Fedora Proper
 
-for rpm in `ls -1 rpms/*rpm`
-do
-   echo -n `basename $rpm`
-   echo -n " | "
-   srpm=`rpm -qpi $rpm  | grep "Source RPM" | awk '{print $NF}'`
-   ls -1 srpms/$srpm &> /dev/null && echo "Good" || echo "Source RPM not found"
-done
-}}}
 
-
-= SRPMS in Spacewalk Repo already found in Fedora Proper =
 
  * asm-1.5.3-1jpp.ep1.1.el5.2.src.rpm
  * bea-stax-1.2.0-0.rc1.2jpp.ep1.1.el5.src.rpm
@@ -155,9 +155,10 @@ done
  * xom-1.0-2jpp.ep1.3.el5.1.src.rpm
  * xpp2-2.1.10-4jpp.ep1.2.el5.1.src.rpm
  * xpp3-1.1.3.4.O-2jpp.ep1.1.el5.1.src.rpm
+# SRPMs NOT found in Fedora Proper
 
- = SRPMs NOT found in Fedora Proper =
  * c3p0-0.9.0-2jpp.ep1.1.el5.src.rpm
+
  * cglib-2.1.3-2jpp.ep1.3.el5.1.src.rpm
  * cx_Oracle-4.2.1-4.el5.src.rpm
  * freemarker-2.3.6-2jpp_1rh.src.rpm
@@ -215,26 +216,26 @@ done
  * spacewalk-setup-0.01-3.el5.src.rpm
  * velocity-dvsl-0.45-5jpp_1rh.src.rpm
  * velocity-tools-1.2-1jpp_1rh.src.rpm
+## The hack script to generate the above list
+ 
 
- == The hack script to generate the above list == 
-{{{
-#!/bin/bash
 
-# This is a hack to do to figure out what packages in the spacewalk repo
-#  are available in Fedora Proper.  Setup needs to be like this:
-#  ./$0 needs to be in the dir with all the srpms.
-#  Remember you can only look up srpms in fedora-pkgdb (I think)
-#
-
-echo "Downloading meta-data from pkgdg"
-wget -q -O /tmp/pkgdb https://admin.fedoraproject.org/pkgdb/acls/bugzilla?tg_format=plain
-grep ^"Fedora|" /tmp/pkgdb | awk -F"|" '{print $2}' > /tmp/foo
-mv -f /tmp/foo /tmp/pkgdb
-
-for rpm in `ls -1 *rpm`
-do
-   rrr=`rpm -qp --qf  "%{NAME}\n" $rpm`
-   echo -n " * $rpm |"
-   grep $rrr /tmp/pkgdb &> /dev/null  &&  echo " In Fedora" || echo " NIF"
-done
-}}}
+    #!/bin/bash
+    
+    # This is a hack to do to figure out what packages in the spacewalk repo
+    #  are available in Fedora Proper.  Setup needs to be like this:
+    #  ./$0 needs to be in the dir with all the srpms.
+    #  Remember you can only look up srpms in fedora-pkgdb (I think)
+    #
+    
+    echo "Downloading meta-data from pkgdg"
+    wget -q -O /tmp/pkgdb https://admin.fedoraproject.org/pkgdb/acls/bugzilla?tg_format=plain
+    grep ^"Fedora|" /tmp/pkgdb | awk -F"|" '{print $2}' > /tmp/foo
+    mv -f /tmp/foo /tmp/pkgdb
+    
+    for rpm in `ls -1 *rpm`
+    do
+       rrr=`rpm -qp --qf  "%{NAME}\n" $rpm`
+       echo -n " * $rpm |"
+       grep $rrr /tmp/pkgdb &> /dev/null  &&  echo " In Fedora" || echo " NIF"
+    done

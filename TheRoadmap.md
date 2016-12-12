@@ -1,23 +1,25 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center" 
-'''''DEPRECATED, NO LONGER USED''''' 
-}}}
 
-== Roadmap ==
-see [https://fedorahosted.org/spacewalk/roadmap Roadmap] for up to date information. This page is now deprecated.
+    #!div class="important" style="border: 2pt solid; text-align: center" 
+    '''''DEPRECATED, NO LONGER USED''''' 
+## Roadmap
+
+see [Roadmap](https://fedorahosted.org/spacewalk/roadmap) for up to date information. This page is now deprecated.
+
 
 ----
 
 This page holds some feature ideas/themes for future releases of Spacewalk.  These may include RFEs currently received, ideas on the mailing list, and general directions of where we would like to go.  This can all change at any time, but should give you an idea of where we would like to go and where some of the future excitement is.
+## Release - 0.1  (Completed: 6/19/08)
+ 
 
-== Release - 0.1  (Completed: 6/19/08) == 
 
 Initial open sourcing of Spacewalk project.
 
  * RHEL5 i386 server support
  * RHEL2/3/4/5 client support.
+## Release - 0.2
 
-== Release - 0.2 ==
+
 
 Get packages into Fedora see RepoCleanup and GettingPackagesIntoFedora
 
@@ -32,13 +34,14 @@ Support for installation of Spacewalk on the following OS:
  * Fedora 9 (i386 & x86_64)
  * CentOS 4 & 5 (i386 & x86_64)
 
-[ApiAdditions API additions]
+[API additions](ApiAdditions)
 
-[NevraIssue Fully support multiple distributions within a single org]
+[Fully support multiple distributions within a single org](NevraIssue)
 
-[wiki:SolarisClientSupport Provide for Solaris sun4v client support]
- 
-== Release - 0.3 ==
+[Provide for Solaris sun4v client support](SolarisClientSupport)
+## Release - 0.3
+
+
 
 
 PostgreSQL DB support - availability << start to get this done
@@ -48,31 +51,33 @@ Start work on getting support needed for Fedora 10 changes, such as proposed:
  * SHA256 support in RPM
  * Improvements to yum-rhn-plugin and supporting components
 
-[CobblerKoanIntegration Cobbler/Koan Integration]: Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
+[Cobbler/Koan Integration](CobblerKoanIntegration): Start work on Cobbler/Koan provisioning integration and replacement of current provisioning system
 
 Command line Proxy Server installation process (deprecate the current WebUI based process)
 
-[wiki:InterSpacewalkServerSync Inter Spacewalk Server sync] - the ability to pull content from one Spacewalk server to the other via command line tools
+[Inter Spacewalk Server sync](InterSpacewalkServerSync) - the ability to pull content from one Spacewalk server to the other via command line tools
 
 Further API additions for supporting Multi-Org feature and other calls
 
-[wiki:Features/SearchImprovements Improvements to the Search capabilities] (Index Docs, Errata and System date using a Lucene based engine)
+[Improvements to the Search capabilities](Features_SearchImprovements) (Index Docs, Errata and System date using a Lucene based engine)
 
-[wiki:SolarisAdditions Solaris Additions]
+[Solaris Additions](SolarisAdditions)
  * Test and confirm Solaris client works on AMD64 based Solaris 10
  
 Start on projects for 0.3 release:
  * Multi-Org Channel (packages & errata) Content Data sharing over multiple Organizations within Spacewalk
  * Ability to migrate/move registered client systems from one Organization to another Organization within the Spacewalk server
  * A support user role, who has read-only access to view data stored within Spacewalk
+## Release - 0.4
 
-== Release - 0.4 ==
 
-== Future Ideas ==
+## Future Ideas
+
 These are not in any specific order
 
+
  * DeltaRpmSupport
- * [wiki:Features/SupportUser Support User]
+ * [Support User](Features_SupportUser)
  * Allow for Spacewalk to use different databases, such as either PostgreSQL or MySQL
  * Look to re-factor the /var/satellite/ directory structure for large users of spacewalk who have more than 32,000 unique package names
  * Provide an SELinux policy for running Spacewalk within an Enforcing mode SELinux server.
@@ -88,4 +93,4 @@ These are not in any specific order
  * Use puppet project as an alternative solution to replace our current Configuration File/Directory management tools - provide a richer usage than the basic capabilities we have today
  * Use smolt project as an alternative solution to replace our current hardware profile capturing system - provide a more complete hardware inventory system
  * Use func as an alternative solution to replace our current rhnpush technology (osad communication over jabber protocol servers)
- * [wiki:Features/MultiOrg2 Multiple Organization Support Phase 2] - incremental improvements upon the multiple organization support feature
+ * [Multiple Organization Support Phase 2](Features_MultiOrg2) - incremental improvements upon the multiple organization support feature

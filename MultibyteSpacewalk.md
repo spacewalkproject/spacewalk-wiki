@@ -1,4 +1,6 @@
-= Spacewalk and Multibyte (UTF8) input =
+# Spacewalk and Multibyte (UTF8) input
+
+
 
 Spacewalk has some limitations on accepting and processing multibyte character input.  
 

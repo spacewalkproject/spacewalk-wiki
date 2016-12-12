@@ -1,14 +1,16 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center" 
-'''''DEPRECATED, NO LONGER USED''''' 
-}}}
 
-= PXT For Dummies (plus a little extra) =
-by Bret !McMillan
+    #!div class="important" style="border: 2pt solid; text-align: center" 
+    '''''DEPRECATED, NO LONGER USED''''' 
+# PXT For Dummies (plus a little extra)
 
-== Section 1:  Core PXT ==
-  
-=== I. What, who, and why? ===
+by Bret McMillan
+
+## Section 1:  Core PXT
+
+### I. What, who, and why?
+
+
+
 
 PXT stands for Pseudo-XML Templates.  Essentially, you embed XML tags
 within HTML and have those tags replaced dynamically upon each
@@ -17,7 +19,7 @@ library in JSP.
  
 PXT is the brain-child of Chip Turner, one of the
 members of the Red Hat Network web team.  Other members of the team
-included Robin Norwood, Greg !DeKoenigsberg, and myself.
+included Robin Norwood, Greg DeKoenigsberg, and myself.
 
 The RHN web team uses PXT for three main reasons:
 
@@ -39,88 +41,86 @@ The RHN web team uses PXT for three main reasons:
     clients or other forms of automation will be much easier, as the code
     to handle both the HTML display and the XML response can be shared.
     This simplifies interfaces and increases code reuse.
+### II.  Sample .pxt file
 
 
-=== II.  Sample .pxt file ===
 
 Here's a simple PXT file (foo.pxt):
-{{{
-#!text/html
-    <pxt-use module="ColorSniglet" />   
-    <html>
-      <my_tag>
-            <body bgcolor={bgcolor}>
-          Hello world.<br>
-          The background color is {bgcolor}.
-          The posted color is 
-                <pxt-formvar>{formvar:posted_color}</pxt-formvar>.
-            </body>
-      </my_tag>
-    </html>
-}}}
 
-=== III.  Legal <pxt-XXX/> Directives ===
+    #!text/html
+        <pxt-use module="ColorSniglet" />   
+        <html>
+          <my_tag>
+                <body bgcolor={bgcolor}>
+              Hello world.<br>
+              The background color is {bgcolor}.
+              The posted color is 
+                    <pxt-formvar>{formvar:posted_color}</pxt-formvar>.
+                </body>
+          </my_tag>
+        </html>
+### III.  Legal <pxt-XXX/> Directives
 
-==== 1. {{{<pxt-use module="Foo"/>}}} (synonymous with {{{<pxt-use class="Foo"/>}}}) ====
+#### 1. `<pxt-use module="Foo"/>` (synonymous with `<pxt-use class="Foo"/>`)
+
+
+
 
 This basically is registering a perl module that, for the rest of the
 document, will be either watching for tags to replace (like
 <body_tag>), awaiting callbacks, or awaiting XML-RPC/SOAP calls.  For
 our example, let's say that the HTML output after foo.pxt processes
 is:
-{{{
-#!text/html
-    <html>
-      <body bgcolor=red>
-        Hello world.
-        The background color is red.
-        The posted color is blue.
-      </body>
-    </html>
-}}}
+
+    #!text/html
+        <html>
+          <body bgcolor=red>
+            Hello world.
+            The background color is red.
+            The posted color is blue.
+          </body>
+        </html>
 
 The perl module (known as a "Sniglet" by the RHN Web Team) registered
-the <body_tag> tag in the following subroutine (in !ColorSniglet.pm):
+the <body_tag> tag in the following subroutine (in ColorSniglet.pm):
 
-{{{
-#!perl
-    sub register_tags {
-      my $class = shift;
-      my $pxt = shift;
 
-      $pxt->register_tag("my_tag" => \&my_tag);
-    }
-}}}
+    #!perl
+        sub register_tags {
+          my $class = shift;
+          my $pxt = shift;
+    
+          $pxt->register_tag("my_tag" => \&my_tag);
+        }
 
 The \&my_tag is a reference to a function.  The function name does
 not have to match the tag, though adopting that convention improves
 maintainability.  Here is the source for the body_tag subroutine:
 
-{{{
-#!perl
-    sub my_tag {
-      my $pxt = shift;
-      my %params = @_;
-      
-      # equivalent to $pxt->block, this returns everything between
-      # <my_tag> and </my_tag>, in this case:
-      #
-      # Hello world.<br>
-      # The background color is {bgcolor}.
-      # The posted color is {formvar:posted_color}.
-      #   
-      my $ret = $params{__block__};
 
-          # subtag substitution is most easily done through a simple s///
-          # reg-exp expression.  
-      my $ret =~ s/\{bgcolor}\}/red/gism;
+    #!perl
+        sub my_tag {
+          my $pxt = shift;
+          my %params = @_;
+          
+          # equivalent to $pxt->block, this returns everything between
+          # <my_tag> and </my_tag>, in this case:
+          #
+          # Hello world.<br>
+          # The background color is {bgcolor}.
+          # The posted color is {formvar:posted_color}.
+          #   
+          my $ret = $params{__block__};
+    
+              # subtag substitution is most easily done through a simple s///
+              # reg-exp expression.  
+          my $ret =~ s/\{bgcolor}\}/red/gism;
+    
+          return $ret;
+        }
 
-      return $ret;
-    }
-}}}
-
-{{{$ret}}} is going to be the replacement value for everything between the 
-{{{<my_tag></my_tag>}}} tags, inclusive.  Note that as a point of style,
+`$ret` is going to be the replacement value for everything between the 
+`<my_tag></my_tag>` tags, inclusive.  Note that as a point of style,
 no HTML exists in the perl module.  Use subtags (things within {}'s)
 appropriately so that the separation between presentation and data
 remains clear.
@@ -130,32 +130,35 @@ If two Perl modules register the same tag, the first one registered
 a bug that PXT doesn't warn about such clashes; we haven't decided
 yet.  In general, do not rely on this feature.  If you have two of the
 same tags registered, be sure they both reference the same function.
+#### 2. `<pxt-include file="Foo.pxt"/>`  or  `<pxt-include file="Foo.html"/>`
 
-==== 2. {{{<pxt-include file="Foo.pxt"/>}}}  or  {{{<pxt-include file="Foo.html"/>}}} ====
 
-{{{<pxt-include/>}}} reads the contents of a file and dumps it into the
-current document.  Any {{{<pxt-XXXX/>}}} tags within the included document
+
+`<pxt-include/>` reads the contents of a file and dumps it into the
+current document.  Any `<pxt-XXXX/>` tags within the included document
 will be parsed, regardless of its extension.  Note that all files are 
 relative to the document root of the current virtual host.  Also note 
 that parsing is re-entrant and recursive, meaning tags registered are 
-not necessarily registered when the {{{pxt-include}}} tag is expanded.
+not necessarily registered when the `pxt-include` tag is expanded.
+#### 3. `<pxt-formvar>{formvar:foobar}</pxt-formvar>`
 
-==== 3. {{{<pxt-formvar>{formvar:foobar}</pxt-formvar>}}} ====
 
-In the url {{{http://www.foo.com/index.pxt?foobar=1}}} {{{"<pxt-formvar>
+
+In the url `http://www.foo.com/index.pxt?foobar=1` {{{"<pxt-formvar>
 {formvar:foobar}</pxt-formvar>"}}} is automatically replaced with "1" by
 PXT.
+#### 4. `<pxt-comment> blah blah blah </pxt-comment>`
 
-==== 4. {{{<pxt-comment> blah blah blah </pxt-comment>}}} ====
+
 
 Your basic comment.  Anything begin the start and end tags will be utterly
 ignored by PXT, including valid PXT tags.  This is different from an
 HTML comment which, while not affecting the rendering of a page, is
 still visible in the source of the page.  pxt-comments are filtered
 out before serving.
+### IV. Tag and Callback Handlers
 
 
-=== IV. Tag and Callback Handlers ===
 
 Typical form interaction on the web usually falls into a simple
 pattern: display form, process results, display results.  PXT
@@ -170,26 +173,24 @@ designer.  Typically, though, it is best to let an HTML designer make
 the form to their satisfaction, and then create a tag that renders the
 form itself and inserts appropriate values.  For instance:
 
-{{{
-#!text/html
-  <FORM METHOD="POST">
-    Username: <INPUT TYPE="TEXT" NAME="USERNAME" VALUE=""><BR>
-    Password: <INPUT TYPE="PASSWORD" NAME="PASSWORD" VALUE=""><BR>
-  </FORM>
-}}}
+
+    #!text/html
+      <FORM METHOD="POST">
+        Username: <INPUT TYPE="TEXT" NAME="USERNAME" VALUE=""><BR>
+        Password: <INPUT TYPE="PASSWORD" NAME="PASSWORD" VALUE=""><BR>
+      </FORM>
 
 would become:
 
-{{{
-#!text/html
-  <pxt-use class="Sniglets::Users">
-  <rhn:login_form METHOD="POST">
-    {login:error_message}
-    Username: <INPUT TYPE="TEXT" NAME="USERNAME" VALUE="{formvar:USERNAME}"><BR>
-    Password: <INPUT TYPE="PASSWORD" NAME="PASSWORD" VALUE=""><BR>
-    {login:login_hidden_formvars}
-  </rhn:login_form>
-}}}
+
+    #!text/html
+      <pxt-use class="Sniglets::Users">
+      <rhn:login_form METHOD="POST">
+        {login:error_message}
+        Username: <INPUT TYPE="TEXT" NAME="USERNAME" VALUE="{formvar:USERNAME}"><BR>
+        Password: <INPUT TYPE="PASSWORD" NAME="PASSWORD" VALUE=""><BR>
+        {login:login_hidden_formvars}
+      </rhn:login_form>
 
 The code to render the above would essentially return the block it is
 handed wrapped inside of a true <FORM> tag.  Note the use of
@@ -259,12 +260,12 @@ legal).
   # don't specify order, it defaults to 0.
   # negative orders are legal.
   $pxt->register_tag('some_tag' => \&some_tag_handler, 2);
+### V. PXT::Request object
 
 
-=== V. PXT::Request object ===
 
 Every tag, callback handler, XML-RPC handler, and SOAP handler receives
-a {{{PXT::Request}}} object (in RHN code, it's usually the $pxt thingy).  This
+a `PXT::Request` object (in RHN code, it's usually the $pxt thingy).  This
 $pxt object is the first parameter passed to the handling function.
 
 The $pxt object is the only way a given tag handler, callback handler,
@@ -288,29 +289,29 @@ prefill_form_values, message_tag_handler.  However, all revolve around
 the same axiom: if you need to know something about the HTTP request,
 the user, or the server, use $pxt.  It is your connection to
 everything that involves HTTP and the web server.
+### VI.  Redirect and Form Handling
 
 
-=== VI.  Redirect and Form Handling ===
 
 TODO:  Explain this more fully.
+### VII. Adding `<pxt-XXX/>` Directives
 
 
-=== VII. Adding {{{<pxt-XXX/>}}} Directives ===
 
 When the httpd/mod_perl gets a request for a .pxt file, it's sent to
-the {{{PXT::ApacheHandler->handler}}} function. It sets up all utility data
+the `PXT::ApacheHandler->handler` function. It sets up all utility data
 objects, registers tag handlers and callbacks, does any redirect
 voodoo necessary, and also initiates the actual parsing/replacement of
-the tags.  Adding any {{{<pxt-XXX/>}}} directives will require full
+the tags.  Adding any `<pxt-XXX/>` directives will require full
 comprehension of the flow of execution from
-{{{PXT::ApacheHandler->handler}}} down.
+`PXT::ApacheHandler->handler` down.
+## Section 2:  PXT <--> RHN interaction
 
-
-
-== Section 2:  PXT <--> RHN interaction ==
 (or, how to build a database website with PXT...)
 
-=== I.  Intro ===
+### I.  Intro
+
+
 
 Creating a website to talk to RHN using PXT involves a number of points of
 understanding.  You need to first understand how PXT interact with sniglets,
@@ -322,27 +323,26 @@ TODO:  Clean this piece of introduction up.
 
 Visually:
 
-{{{
-                           +-------------+
-                           |  index.pxt  |
-                           +-------------+
-                           |   Sniglet   |
-                           +-------------+
-                           |    RHN::    |
-                           +-------------+
-                           |  RHN::DB::  |
-                           +-------------+
-                           |     DBI     |
-                           +-------------+
-}}}
+
+                               +-------------+
+                               |  index.pxt  |
+                               +-------------+
+                               |   Sniglet   |
+                               +-------------+
+                               |    RHN::    |
+                               +-------------+
+                               |  RHN::DB::  |
+                               +-------------+
+                               |     DBI     |
+                               +-------------+
 
 Arranged in that way, it looks like a cake.  No layer of the cake can
 touch (or even knows the existence of) any layer it doesn't touch.
 Specifically, a Sniglet handler doesn't talk to DBI; an RHN:: object
 doesn't talk to DBI; RHN:: doesn't speak HTML.  
+### II.  Sniglets and PXT
 
 
-=== II.  Sniglets and PXT ===
 
 Sniglets are what the RHN Web team calls the lovely little perl modules that
 register tag handlers, callback handlers and the like.  Building a web 
@@ -359,24 +359,23 @@ If you're going to be making a website that ties into RHN, your sniglets will
 be making copious use of the RHN::XXXX modules.  Occaisionally, the RHN::XXXX
 functions will return an RHN::DB::XXXX object that you can use.  More on this
 later.
+### III.  RHN::DB <--> RHN interaction
 
 
-=== III.  RHN::DB <--> RHN interaction ===
 
 TODO:  Talk about "the man behind the curtain" stuff.  Basically, our reasons
 for organizing things this way, as well as the automagic accessor generation,
 and creation/update/commit stuff.
+### V. Sessions in PXT
 
 
-=== V. Sessions in PXT ===
 
 Included as a part of PXT is session handling, and is made available in
 the following manner:
 
-{{{
-#!perl
-$session = $pxt->session();
-}}}
+
+    #!perl
+    $session = $pxt->session();
 
 The $session object itself is defined in RHN::Session, not under PXT::*
 The session object in PXT is created at the initialization phase of the
@@ -393,67 +392,63 @@ Session data for a visitor is stored in key/value fashion, with the
 exception of the visitors user id. To set a new session variable during 
 a request:
 
-{{{
-#!perl
-    # some request
-    $session = $pxt->session();
-    $session->set('visits',1);
-}}}
+
+    #!perl
+        # some request
+        $session = $pxt->session();
+        $session->set('visits',1);
 
 In order to access session information during a request:
 
-{{{
-#!perl
-    # another seperate request
-    $session = $pxt->session();
-    $visits = $session->get('visits'); 
-    print "You have visited $visits pages for this session";
-}}}
+
+    #!perl
+        # another seperate request
+        $session = $pxt->session();
+        $visits = $session->get('visits'); 
+        print "You have visited $visits pages for this session";
 
 Notice that you do not need to check for the existence of a session,
 because every user is given a session at the initialization phase. Also,
 note that a users uid is retrieved directly from the following session
 method (i.e. *not* from $session->get): 
 
-{{{
-#!perl
-    $session = $pxt->session();
-    $userid = $session->uid;
-}}}
 
-=== V.  Pnotes in PXT ===
+    #!perl
+        $session = $pxt->session();
+        $userid = $session->uid;
+### V.  Pnotes in PXT
+
+
 
 TODO:  explain how they're useful; contrast to sessions
+### VI.  The RHN::User Object in PXT
 
 
-=== VI.  The RHN::User Object in PXT ===
 
 As a convenience you can access RHN::User via an accessor method in PXT. Note
 that unlike sessions, an RHN::User object is not created during initialization
 nor at any other time. A user of PXT retrieves the user object as follows:
 
-{{{
-#!perl
 
-$user = $pxt->user();           #object returned from RHN::User
-print "no such user exists" if(!$user);
-}}}
+    #!perl
+    
+    $user = $pxt->user();           #object returned from RHN::User
+    print "no such user exists" if(!$user);
 
 In addition, you can clear the user from pxt, if you so wish:
 
-{{{
-#!perl
-$pxt->clear_user();
-}}}
+
+    #!perl
+    $pxt->clear_user();
+### VII. XML-RPC and PXT
 
 
-=== VII. XML-RPC and PXT ===
 
 - Otherwise known as - "The kitchen sink, -- how much stuff can we cram in?"
 
 You may be wondering "Why are you talking about XML-RPC? This is a templating
 solution."  And in many ways you would be right, except, that PXT changes the
-'paradigm' [sorry] on how many XML-RPC servers work.  In the CURRENT MOD_PERL
+'paradigm' [[sorry]] on how many XML-RPC servers work.  In the CURRENT MOD_PERL
 WORLD, the httpd.conf controls what directories are "XML-RPC listeners".
 These listeners correspond to an XML-RPC handler (which is nothing more than a
 wrapper around Frontier::RPC2) and a server file.  There can only be one
@@ -469,112 +464,108 @@ browser.
 
 Let me say that again a little differently..
 
-{{{http://localhost/foo/product_list.pxt}}} and via a web browser could, say
+`http://localhost/foo/product_list.pxt` and via a web browser could, say
 bring
 up a list of products on a nice html page... (maybe some buttons to some links
 to start messing with the data)...
 
-{{{http://localhost/foo/product_list.pxt}}} called by an XML-RPC client would
+`http://localhost/foo/product_list.pxt` called by an XML-RPC client would
 have
 the following methods available to them.
 
-{{{
-product.list - returns an arrayRef of objects
-product.modify - takes an arugment, returns the returned objects affected ..
-}}}
+
+    product.list - returns an arrayRef of objects
+    product.modify - takes an arugment, returns the returned objects affected ..
 
 The PXT would inherit a few functions from PXT itself... All describing
 methods about the functions that have been registered...
 
-{{{
-methods.list - returns a list of documentation on the above two functions 
-}}}
+
+    methods.list - returns a list of documentation on the above two functions 
 
  1. PXT - XML-RPC Example -- "message of the day"
 
-{{{
-#!text/html
-<!-- Begin xmltest.pxt -->
 
-<pxt-use class="Sniglets::XMLTest.pm"/>
-<display_motd>
-<p> Now here this! -> {motd} !!!
-</display_motd>
+    #!text/html
+    <!-- Begin xmltest.pxt -->
+    
+    <pxt-use class="Sniglets::XMLTest.pm"/>
+    <display_motd>
+    <p> Now here this! -> {motd} !!!
+    </display_motd>
+    
+    <!-- END xmltest.pxt -->
 
-<!-- END xmltest.pxt -->
-}}}
 
-{{{
-#!perl
-# === Begin Sniglets::XMLTest.pm ===
-
-use strict;
-
-package Sniglets::XMLTest;
-
-sub register_xmlrpc {
-  my $class = shift;
-  my $pxt = shift;
-
-  $pxt->register_xmlrpc("display_motd", \&display_motd_xml);
-}
-
-sub register_tags {
-  my $class = shift;
-  my $pxt = shift;
-
-  $pxt->register_tag("display_motd", \&display_motd);
-}
-
-sub get_motd {
-  unless ( -f "/etc/motd") {
-    die "motd not found!";
-  }
-
-  open(MOTD, "/etc/motd");
-  my $motd;
-  while ( <MOTD> ) {
-    $motd .= $_;
-  }
-  close MOTD;
-  return $motd;
-}
-
-sub display_motd {
-  my $pxt = shift;
-  my $motd;
-
-  eval {
-    $motd = get_motd();
-  };
-
-  if ( $@ ) {
-    $motd = "No motd on file...";
-  }
-
-  my $block =  $pxt->block();
-  
-  $block =~ s/\{motd\}/$motd/gism;
-  return $block;
-}
-
-sub display_motd_xml {
-  my $pxt = shift;
-  my $motd;
-  eval {
-    $motd = get_motd();
-  };
-  
-  if ( $@ ) { 
-    die['-1', "$@"];
-  }
-  return $motd;
-}
-
-1;
-
-# === END Sniglets::XMLTest.pm ===
-}}}
+    #!perl
+    # === Begin Sniglets::XMLTest.pm ===
+    
+    use strict;
+    
+    package Sniglets::XMLTest;
+    
+    sub register_xmlrpc {
+      my $class = shift;
+      my $pxt = shift;
+    
+      $pxt->register_xmlrpc("display_motd", \&display_motd_xml);
+    }
+    
+    sub register_tags {
+      my $class = shift;
+      my $pxt = shift;
+    
+      $pxt->register_tag("display_motd", \&display_motd);
+    }
+    
+    sub get_motd {
+      unless ( -f "/etc/motd") {
+        die "motd not found!";
+      }
+    
+      open(MOTD, "/etc/motd");
+      my $motd;
+      while ( <MOTD> ) {
+        $motd .= $_;
+      }
+      close MOTD;
+      return $motd;
+    }
+    
+    sub display_motd {
+      my $pxt = shift;
+      my $motd;
+    
+      eval {
+        $motd = get_motd();
+      };
+    
+      if ( $@ ) {
+        $motd = "No motd on file...";
+      }
+    
+      my $block =  $pxt->block();
+      
+      $block =~ s/\{motd\}/$motd/gism;
+      return $block;
+    }
+    
+    sub display_motd_xml {
+      my $pxt = shift;
+      my $motd;
+      eval {
+        $motd = get_motd();
+      };
+      
+      if ( $@ ) { 
+        die['-1', "$@"];
+      }
+      return $motd;
+    }
+    
+    1;
+    
+    # === END Sniglets::XMLTest.pm ===
 
  2. Example Explained.
 

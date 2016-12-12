@@ -1,28 +1,33 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center" 
-'''''DEPRECATED, NO LONGER USED''''' 
-}}}
 
-= NEVRA Issue =
+    #!div class="important" style="border: 2pt solid; text-align: center" 
+    '''''DEPRECATED, NO LONGER USED''''' 
+# NEVRA Issue
 
-== Tasks ==
+## Tasks
+
+
+
 
 Md5Sum Changes
-|| Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for md5sum || 2 || jsherrill || done || ||
-|| rhnPush  || 2 || prad || done || (correct file system location) ||
-|| sat-sync  || 4 || prad || done || (correct file system location) ||
+
+|  Task  |  Estimate hours  |  Assignee  |  Status  |  Notes  |
+| --- | --- | --- | --- | --- |
+|  DB Schema for md5sum  |  2  |  jsherrill  |  done  |   |  |
+|  rhnPush   |  2  |  prad  |  done  |  (correct file system location)  |
+|  sat-sync   |  4  |  prad  |  done  |  (correct file system location)  |
 
 Gpg/Provider 
-|| Task || Estimate hours || Assignee || Status || Notes ||
-|| DB Schema for gpg/provider linkage || 2 || jsherrill || done || ||
-|| rhnpush(server) || 4 || prad || done || read gpg id||
-|| satellite-sync || 16 || prad ||done || read gpg id, import gpg info if available ||
-|| webUi || 24 ||jsherrill ||in progress || includes re-writing some perl pages ||
-|| migration-script|| 8 ||prad ||done || script to migrate existing pkg paths ||
+
+|  Task  |  Estimate hours  |  Assignee  |  Status  |  Notes  |
+| --- | --- | --- | --- | --- |
+|  DB Schema for gpg/provider linkage  |  2  |  jsherrill  |  done  |   |  |
+|  rhnpush(server)  |  4  |  prad  |  done  |  read gpg id |
+|  satellite-sync  |  16  |  prad  | done  |  read gpg id, import gpg info if available  |
+|  webUi  |  24  | jsherrill  | in progress  |  includes re-writing some perl pages  |
+|  migration-script |  8  | prad  | done  |  script to migrate existing pkg paths  |
+## The Problems
 
 
-== The Problems ==
 
 At current, Spacewalk does not allow packages with the same NEVRA to be pushed
 to the same org. For example, rootfiles-8.1-1.1.1.noarch is shipped with RHEL 5,
@@ -43,18 +48,17 @@ between where packages originated.  (Which i think is VERY important).
 
 Originally we were trying to lump the issues together under one problem with one
 solution.
+## Requirements
 
 
-
-== Requirements ==
 
  1.  Customer should be able to push RHEL 5, Fedora 9, and CentOs 5 to separate channels and have their packages all stored on the satellite within the same org.
  2.  It should be fairly simple to know where a package originated from
  3.  Customer should be able to kickstart all 3 distro's from within the same org.
  4.  Customer should be able to upload more than 32,000 packages with different packages names to a single org.
+## Specification
 
 
-== Specification ==
 
 
 1. Solution to issue #1.
@@ -114,19 +118,19 @@ Questions
 
 Bugzilla
  * There is a bugzilla open on this:  https://bugzilla.redhat.com/show_bug.cgi?id=453455
+## GPG ids
 
-== GPG ids ==
-{{{
-25dbef78a7048f8d  Scientific
-5326810137017186  Red Hat
-219180cddb42a60e  Red Hat
-b44269d04f2a6fd2  Fedora
-a8a447dce8562897  CentOs
-2802e89216ff0e46  CentOs
-a53d0bab443e1821  CentOs
-7049e44d025e513b  CentOs
-66ced3de1e5e0159  Oracle
-2e2bcdbcb38a8516  Oracle
-a84edae89c800aca  OpenSuse
-}}}
+
+
+    25dbef78a7048f8d  Scientific
+    5326810137017186  Red Hat
+    219180cddb42a60e  Red Hat
+    b44269d04f2a6fd2  Fedora
+    a8a447dce8562897  CentOs
+    2802e89216ff0e46  CentOs
+    a53d0bab443e1821  CentOs
+    7049e44d025e513b  CentOs
+    66ced3de1e5e0159  Oracle
+    2e2bcdbcb38a8516  Oracle
+    a84edae89c800aca  OpenSuse
 

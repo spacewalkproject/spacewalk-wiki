@@ -1,4 +1,6 @@
-= __Spacewalk 1.4 Release Notes__ =
+# __Spacewalk 1.4 Release Notes__
+
+
 
 Hello world, 
 
@@ -26,16 +28,16 @@ Check the installation steps at
 or if you will upgrade from older release, consult 
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.4
 
 
-== Features & Enhancements in Spacewalk 1.4 ==
 
         * client packages for Debian
-        * client packages for !OpenSuse
-        * support for [http://en.wikipedia.org/wiki/Internationalized_domain_name IDN] (but RHN Tools part)
+        * client packages for OpenSuse
+        * support for [IDN](http://en.wikipedia.org/wiki/Internationalized_domain_name) (but RHN Tools part)
                  - you can now have Spacewalk server and clients, whose
                   hostnames contains non latin domain name.
-        * issues in PostgreSQL backend, reported by user, were fixed. [https://fedorahosted.org/spacewalk/wiki/PostgreSQL PostgreSQL status]
+        * issues in PostgreSQL backend, reported by user, were fixed. [PostgreSQL status](https://fedorahosted.org/spacewalk/wiki/PostgreSQL)
         * system history reports were added in spacewalk-reports
         * spacewalk-repo-sync now automatically create errata from updateinfo
 
@@ -48,9 +50,9 @@ This repo contains apt with spacewalk patches.
 
 For more information check: 
 https://fedorahosted.org/spacewalk/wiki/RegisteringClients#Debian 
+## Community contributors
 
 
-== Community contributors ==
 
 We thank the community members who contributed to this release: 
 
@@ -70,9 +72,9 @@ We thank the community members who contributed to this release:
  * ypoyarko
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList 
+## Bug fixes and commits
 
 
-== Bug fixes and commits ==
 
 In Spacewalk 1.4 there were: 
 

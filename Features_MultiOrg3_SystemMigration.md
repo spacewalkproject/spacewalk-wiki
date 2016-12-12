@@ -1,10 +1,14 @@
 ** Initial draft in progress **
+# Feature Title
 
-= Feature Title =
-=== Reviewed by: ===
-== Overview ==
+### Reviewed by:
 
-The current multiple organization feature as required by [wiki:/Features/MultiOrg2/Requirements#SystemMigration] provides the ability to migrate systems from one organization to another through either the XMLRPC API or a stand-alone tool (migrate-system-profile); however, as a system is migrated, several of the characteristics of the system associated with the originating organization are removed from the system.  This includes characteristics such as the following:
+## Overview
+
+
+
+
+The current multiple organization feature as required by [[_Features_MultiOrg2_Requirements]] provides the ability to migrate systems from one organization to another through either the XMLRPC API or a stand-alone tool (migrate-system-profile); however, as a system is migrated, several of the characteristics of the system associated with the originating organization are removed from the system.  This includes characteristics such as the following:
 
  * entitlements
  * software channel subscriptions
@@ -16,13 +20,14 @@ The current multiple organization feature as required by [wiki:/Features/MultiOr
  * snapshots
 
 As a result, the system after migration requires some additional configuration to be applied to it, either using the web-UI or XMLRPC APIs.  In order to minimize the amount configuration needed after the migration, it is desirable to have this work done as part of the migration itself by leveraging an Activation Key, similar to what can be done when a system registers in to an organization.
+## Requirements
 
-== Requirements ==
+
 
  * Support usage of an optional activation key when performing a system migration.  This must be supported by both:
    * the XMLRPC API org.migrateSystems 
    * the spacewalk-utils migrate-system-profile script
-   * '''TODO''': Do we need to support using more than 1 activation key during a system migration?
+   * *TODO*: Do we need to support using more than 1 activation key during a system migration?
      [[BR]]''I don't know. We'd have to discuss this and the implications -taw''
 
  * The activation key specified during migration must exist in the destination org.
@@ -38,19 +43,21 @@ As a result, the system after migration requires some additional configuration t
    * Prior to performing the migration, it will be verified that the destination org has enough entitlements (system and software) to support the requested migration.  If not enough entitlements are available, no systems will be migrated and an error will be generated to the user.
 
  * Universal default - if an activation key is defined as the Universal Default, it will be used for system migration's where no activation key has been included.
-   * '''TODO''': Do we want/need to support Universal Default for system migrations?  (If so, minor chg needed to Mockup to account for it.)
+   * *TODO*: Do we want/need to support Universal Default for system migrations?  (If so, minor chg needed to Mockup to account for it.)
      [[BR]]''I would assume so. What does it mean if we don't? -taw''
-   * '''TODO''': If so, should the same Universal Default be used for both system migrations and registrations?  (i.e. should we support 1 Universal Default field or 2 (e.g. Migration Universal Default, Registration Universal Default)?)
+   * *TODO*: If so, should the same Universal Default be used for both system migrations and registrations?  (i.e. should we support 1 Universal Default field or 2 (e.g. Migration Universal Default, Registration Universal Default)?)
      [[BR]]''I would assume so. Need to discuss. -taw''
+## Other Feature Impact
 
-== Other Feature Impact ==
+
 
  * UI - This feature will use the existing Activation Key UI (i.e. Systems -> Activation Keys) and no impact/changes are currently anticipated to it to support this feature.
  * API - This feature primarily impacts the existing API (system.migrateSystems) and migrate-system-profile tool.  Details on impact provided in the 'Proposed Implementation'.
  * Schema - No impacts identified.
  * Backend - No impacts identified.
+## Proposed Implementation
 
-== Proposed Implementation ==
+
 
  * Script - system-migrate-profile (package: spacewalk-utils)
   * Update script to support the optional "--activationkey=ACTIVATIONKEY" input
@@ -58,20 +65,23 @@ As a result, the system after migration requires some additional configuration t
   * This script will basically pass the activation key (if provided) to the XMLRPC API that will perform the actual migration of the system to the destination org.
 
  * API - org.migrateSystems
-  * Deprecate the existing org.migrateSystems(string sessionKey, int toOrgId, array[int systemId])
-  * Create a new API: array[int serverIdMigrated] org.migrateSystems(string sessionKey, int toOrgId, string activationKey, array[int systemId]), where activation key is optional
+  * Deprecate the existing org.migrateSystems(string sessionKey, int toOrgId, array[systemId](int))
+  * Create a new API: array[serverIdMigrated](int) org.migrateSystems(string sessionKey, int toOrgId, string activationKey, array[systemId](int)), where activation key is optional
   * Leverage existing java objects to retrieve the activation key and associate those items it defines (e.g. base channel, child channels, entitlements, server groups, config channels...etc) with the server.  More details included in the Mockups section below.
     * While investigating the feature, did consider possibly leveraging the backend logic for processing an activation key (e.g. backend/server/rhnServer/server_token.py) in the system migration solution; however, it would likely require the java code to interface with it using XMLRPC as well as need modifications to ensure error handling meets the needs of the new system migration logic.  We do, however, have much of the logic needed to apply the activation key also available in java through various existing hibernate, data source, Manager, Factory and Command objects; therefore, we plan to leverage that logic instead.
+### Known Issues
 
-=== Known Issues ===
 
-There are several decisions that need to be made before this specification is finalized.  Those decisions are highlighted with '''TODO'''. 
 
-=== Future Enhancements ===
+There are several decisions that need to be made before this specification is finalized.  Those decisions are highlighted with *TODO*. 
+### Future Enhancements
+
+
 
 None currently identified.
+## Mockups
 
-== Mockups ==
+
 
 This is an API/script-based feature; therefore, no UI mockups are included.
 
@@ -99,21 +109,26 @@ The key changes needed to support applying Activation Keys during a system migra
      * schedule action to install packages to the system
    * Add an event to the server history to record the migration.
    * Add an entry to to rhnSystemMigrations to record the migration.
+## Tasks
 
-== Tasks ==
+
 
 Break down the work items probably in a table structure. Is there webui work? what about cli? database? etc.
-|| Description || Estimate || Confidence ||
-|| migrate-system-profile script || 6h || 4 ||
-|| migrate-system-profile manpage || 1h || 5 ||
-|| xmlrpc api : org.migrateSystems || 32h || 4 ||
 
-== Test Notes ==
+|  Description  |  Estimate  |  Confidence  |
+| --- | --- | --- |
+|  migrate-system-profile script  |  6h  |  4  |
+|  migrate-system-profile manpage  |  1h  |  5  |
+|  xmlrpc api : org.migrateSystems  |  32h  |  4  |
+## Test Notes
+
+
 
 The current migrateSystems API and supporting code (e.g. MigrationManager) is currently tested using junit.  As part of this feature enhancement, additional junits will be added to cover the new logic.
 
 In addition, it will also be beneficial to configure and test a migration involving a large number of systems (e.g. 1K).
+## Risks/Concerns
 
-== Risks/Concerns ==
+
 
 There no significant risks or concerns to be noted at this time.  

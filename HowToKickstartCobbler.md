@@ -1,8 +1,10 @@
-== Introducing Spacewalk and Cobbler ==
+## Introducing Spacewalk and Cobbler
 
-Version 0.4 of Spacewalk adds significantly enhanced operating system installation capabilities by bundling the [http://fedorahosted.org/cobbler Cobbler] Linux installation server.
 
-''Note:  There are a lot of power features documented on the Cobbler project page, see https://fedorahosted.org/cobbler for those.''
+
+Version 0.4 of Spacewalk adds significantly enhanced operating system installation capabilities by bundling the [Cobbler](http://fedorahosted.org/cobbler) Linux installation server.
+
+_Note:  There are a lot of power features documented on the Cobbler project page, see https://fedorahosted.org/cobbler for those._
 
 New features in 0.4 include:
 
@@ -15,9 +17,10 @@ New features in 0.4 include:
  * Automatic PXE setup with auto-generated PXE menus for physical deployments
  * Integrated DHCP and DNS management (can be enabled, but is not surfaced in Spacewalk)
  * Powerful kickstart file templating using Cheetah (see https://fedorahosted.org/cobbler/wiki/KickstartTemplating and https://fedorahosted.org/cobbler/wiki/KickstartSnippets)
- * But wait, there's more! (see [http://fedorahosted.org/cobbler Cobbler Wiki])
+ * But wait, there's more! (see [Cobbler Wiki](http://fedorahosted.org/cobbler))
+## Quick Start Guide for Spacewalk
 
-== Quick Start Guide for Spacewalk ==
+
 
  1. Create a Distro
     a. Initial steps
@@ -89,25 +92,24 @@ New features in 0.4 include:
                 1. Boot the machine, ideally set so it PXE's first in the BIOS order.  The install will continue without any user interaction.
                 1. To reinstall the machine at any time, "cobbler system edit --name=foo --netboot-enabled=1" and cycle the system power.  Cobbler contains power management features if you want to use them.
         a. Reinstalling or upgrading machines that already have an OS on them
-	   1. With koan:  "koan --replace-self --server=cobbler.example.org [--profile=profile-name] [--system=system-name]" and then reboot
+	   1. With koan:  "koan --replace-self --server=cobbler.example.org [[--profile=profile-name]] [[--system=system-name]]" and then reboot
 	   1. Note that upgrades require an upgrade kickstart, and this is an operation that will destroy the existing system in most cases
        
 Virtual machines:
 
 Koan can be run on any Spacewalk managed machine to install new VMs.
 
-{{{
 
-man koan, read the instructions for --virt
-
-}}}
+    
+    man koan, read the instructions for --virt
+    
 
 If you use profiles set up in Spacewalk, virtual machines will be registered to the Spacewalk server automatically. 
 
 * For various other tips and tricks see http://fedorahosted.org/cobbler, in particular, you will probably be interested in the kickstart templating features under "User Documentation".
+## How Cobbler and Spacewalk are linked internally
 
 
-== How Cobbler and Spacewalk are linked internally ==
 
 (This is development information only and should probably be a seperate topic.)
 
@@ -123,29 +125,28 @@ Every time Spacewalk asks Cobbler to do something via XMLRPC, Cobbler makes an X
  * redhat_management_type - in the case of Spacewalk, this will be set to "site", signifying that the Cobbler instance is running on either an RHN Satellite or a Spacewalk instance. 
 
 The call sequence is
-{{{
-    spacewalk_url = "https://%s/rpc/api" % server
-    client = xmlrpclib.Server(spacewalk_url, verbose=0)
-    valid = client.auth.checkAuthToken(username,password)
-}}}
 
-with '''username''' and '''password''' coming from [PARTHA].  This call is made when obtaining a cobbler token for interaction with Cobbler.  Once a token is established this callback does
+        spacewalk_url = "https://%s/rpc/api" % server
+        client = xmlrpclib.Server(spacewalk_url, verbose=0)
+        valid = client.auth.checkAuthToken(username,password)
+
+with *username* and *password* coming from [[PARTHA]].  This call is made when obtaining a cobbler token for interaction with Cobbler.  Once a token is established this callback does
 not occur again. 
 
-The following describes in some detail the interplay between the two systems in regards Distros, Profiles, and Systems.  Bear in mind however that Cobbler holds a fair number of relevant default values from its own installation.  Spacewalk only sets Cobbler parameters to the extent required to cause Cobbler to work with Spacewalk - there's much more going on with Cobbler that this document won't cover.  If you need more detail, ''man cobbler'' and see http://fedorahosted.org/cobbler
+The following describes in some detail the interplay between the two systems in regards Distros, Profiles, and Systems.  Bear in mind however that Cobbler holds a fair number of relevant default values from its own installation.  Spacewalk only sets Cobbler parameters to the extent required to cause Cobbler to work with Spacewalk - there's much more going on with Cobbler that this document won't cover.  If you need more detail, _man cobbler_ and see http://fedorahosted.org/cobbler
 
- * When you create a '''Distribution''' in the Spacewalk GUI, Spacewalk makes one ore more distros in Cobbler, depending on the distribution:
+ * When you create a *Distribution* in the Spacewalk GUI, Spacewalk makes one ore more distros in Cobbler, depending on the distribution:
     * Two XMLRPC calls are made to Cobbler to create two versions of a distro: one with a Xen kernel, one without.  The call passes:
         * http_server and http_port set to point to the spacewalk/cobbler server's apache instance
         * distro_name set to <Spacewalk Distribution Label>:<spacewalk organization id>:<spacewalk organization name>
         * ks_meta with the key-value pair "tree"=><absolute path to distro tree in web space on the sw/cobbler server>
         * initrd set to the absolute path to the initrd for the distribution in question - calculated by spacewalk
         * kernel set to the absolute path to the kernel for the distribution in question - calculated by spacewalk
-    * When Cobbler processes the creation request, it generates UIDs for the Xen and non-Xen distros.   These UIDs form the tie that binds Spacewalk's '''Distribution''' to Cobbler's '''distro''' - as long as the two exist, these UIDs serve to uniquely identify each distro.
-    * On the Spacewalk side, the Cobbler distro UIDs are stored together with a Spacewalk Organization ID, the distribution's label text, the absolute path to the distribution tree's root (which, in the case of a Spacewalk managed distribution, is a web-space path to Spacewalk package management logic - ''not'' a plain old directory of files on disk), the channel id in which the distribution's  packages reside, an RHNKSTREETYPE reference indicating that the distribution is managed by Spacewalk, and an RHNINSTALLTYPE reference indicating more specifically the type of installation tree the distro uses (e.g. RHEL_5 or Fedora_10).
-    * Note that if you're managing the distro entirely from Spacewalk, the fact of the existence of the ''two'' distros (Xen and non) in Cobbler will be transparent to you.  If you happen to select Xen virtualization, the Xen version gets used, else the other.
- * When you create a '''Kickstart Profile''' in the Spacewalk GUI, you make a corresponding '''profile''' in Cobbler:
-        * One XMLRPC call is made to Cobbler to create a '''profile'''.  The call passes:
+    * When Cobbler processes the creation request, it generates UIDs for the Xen and non-Xen distros.   These UIDs form the tie that binds Spacewalk's *Distribution* to Cobbler's *distro* - as long as the two exist, these UIDs serve to uniquely identify each distro.
+    * On the Spacewalk side, the Cobbler distro UIDs are stored together with a Spacewalk Organization ID, the distribution's label text, the absolute path to the distribution tree's root (which, in the case of a Spacewalk managed distribution, is a web-space path to Spacewalk package management logic - _not_ a plain old directory of files on disk), the channel id in which the distribution's  packages reside, an RHNKSTREETYPE reference indicating that the distribution is managed by Spacewalk, and an RHNINSTALLTYPE reference indicating more specifically the type of installation tree the distro uses (e.g. RHEL_5 or Fedora_10).
+    * Note that if you're managing the distro entirely from Spacewalk, the fact of the existence of the _two_ distros (Xen and non) in Cobbler will be transparent to you.  If you happen to select Xen virtualization, the Xen version gets used, else the other.
+ * When you create a *Kickstart Profile* in the Spacewalk GUI, you make a corresponding *profile* in Cobbler:
+        * One XMLRPC call is made to Cobbler to create a *profile*.  The call passes:
             * Profile name
             * Distro name
             * Virtualization type
@@ -179,8 +180,9 @@ The following describes in some detail the interplay between the two systems in 
  * What happens when the user creates cobbler objects and when they show up in Spacewalk, and where these operations are limited
  * taskomatic's job in syncing changes from spacewalk to cobbler
  * taskomatic's job in syncing changes from cobbler to cobbler
+## Cobbler Tips And Tricks
 
-== Cobbler Tips And Tricks ==
+
 
 See http://fedorahosted.org/cobbler for lots of them -- this section can be updated later with pointers to some of the more popular items.
 

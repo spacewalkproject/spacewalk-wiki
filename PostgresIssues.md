@@ -1,5 +1,6 @@
-[wiki:PostgreSqlProject Main Project Page]
+[Main Project Page](PostgreSqlProject)
+## Project Issues
 
-== Project Issues ==
 
-||'''Name'''||'''Description'''||'''Status'''||'''Assigned'''||'''Notes'''
+
+||*Name*||*Description*||*Status*||*Assigned*||*Notes*||

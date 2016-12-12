@@ -1,14 +1,18 @@
-= Logo =
-Spacewalk logo has been created by [https://fedoraproject.org/wiki/MairinDuffy Máirín Duffy]
+# Logo
 
-=== Final files ===
+Spacewalk logo has been created by [Máirín Duffy](https://fedoraproject.org/wiki/MairinDuffy)
 
-[[Image(wiki:Logo:spacewalk-white.png)]]
+### Final files
 
-[[Image(wiki:Logo:spacewalk-black.png)]]
 
-[[Image(wiki:Logo:spacewalk-blackandwhite-logos.svg)]]
 
-=== Other versions ===
+![Alt](images/spacewalk-white.png?raw=True)
 
-[[Image(wiki:WikiStart:logo.png)]]
+![Alt](images/spacewalk-black.png?raw=True)
+
+![Alt](images/spacewalk-blackandwhite-logos.svg?raw=True)
+### Other versions
+
+
+
+![Alt](images/logo.png?raw=True)

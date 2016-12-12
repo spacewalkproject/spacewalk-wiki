@@ -1,4 +1,6 @@
-= Change CA certificate =
+# Change CA certificate
+
+
 
 Please note!  following these steps will render all clients unable to connect until you redeploy the new ca cert ( RHN-ORG-TRUSTED-SSL-CERT) to EVERY client currently connection to the spacewalk/satellite server.
 

@@ -1,15 +1,17 @@
-{{{
-#!div class="important" style="border: 2pt solid; text-align: center"
-'''''DEPRECATED, NO LONGER USED'''''
-}}}
 
-== Test Plan - PostgreSQL ==
+    #!div class="important" style="border: 2pt solid; text-align: center"
+    '''''DEPRECATED, NO LONGER USED'''''
+## Test Plan - PostgreSQL
 
-== Objective: ==
+
+## Objective:
+
+
 
  The objective of the document is to describe the Test plan of Space Walk - during the migration of the Database from the Oracle to Postgres.
+## The areas identified to Test:
 
-== The areas identified to Test: ==
+
 
 1. Functional Testing
 
@@ -20,8 +22,9 @@
 6. API Testing.
 7. Upgrade Testing
 8. Scale/Concurrency Testing (eg: large numbers of web requests at once)
+## Important Milestones during the Testing Process:
 
-== Important Milestones during the Testing Process: ==
+
 
 1. Application Knowledge Transfer.
 2. Environment Identification and Setup
@@ -33,14 +36,16 @@
 8. Plan to execute and Test modules - along with sign-offs
 9. UAT.
 10. Establish as set of scale benchmarks for performance on Oracle.
+## Communication Plan:
 
-== Communication Plan: ==
+
 
 1. The project wiki - will be the primary communication area - regarding the tasks, dates and tracking progress.
 2. Conference calls - twice a week - to measure progress.
 3. Daily and coverage during the overlap of Team - will be available on the irc channel as well as other modes identified.
+## Reporting & Tracking Issues:
 
-== Reporting & Tracking Issues: ==
+
 
 1. Identify the tool to report and Track issues to closure.
 2. Identify the priority and severity.

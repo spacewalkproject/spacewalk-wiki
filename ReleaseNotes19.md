@@ -1,5 +1,6 @@
+# __Spacewalk 1.9 Release Notes__
 
-= __Spacewalk 1.9 Release Notes__ =
+
 
 Hello everyone,
 
@@ -28,8 +29,9 @@ For fresh installations, please use steps from
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
   * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade 
+## Features & Enhancements in Spacewalk 1.9
 
-== Features & Enhancements in Spacewalk 1.9 ==
+
 
   * Spacewalk runs on Fedora 18
   * ABRT enhancements/improvements to make more functional
@@ -37,7 +39,7 @@ If you plan to upgrade from older release, search no more -- the following page 
   * SCAP improvements
       * Support for XCCDF 1.2
       * Allow --cpe command-line argument to oscap 
-  * WebUI Login extended for expired Spacewalk Certificates, from 7 days to 30 days [Satellite driven]
+  * WebUI Login extended for expired Spacewalk Certificates, from 7 days to 30 days [driven](Satellite)
   * WebUI Enhancements
       * Display Activation key used to register, on system profile page
       * Highlightning of hovered row in tables
@@ -95,8 +97,9 @@ If you plan to upgrade from older release, search no more -- the following page 
      * org.setCrashFileSizeLimit
 
 The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/
+## Contributors
 
-== Contributors ==
+
 
 Our thanks go to the community members who contributed to this release: 
 
@@ -116,16 +119,18 @@ Our thanks go to the community members who contributed to this release:
   * Zailo Leite
 
 https://fedorahosted.org/spacewalk/wiki/ContributorList
+## Some statistics
 
-== Some statistics ==
+
 
 In Spacewalk 1.9, we've seen
 
     * 86  bugs fixed 
     * 676 changesets committed 
     * 1055 commits done 
+## User community, reporting issues
 
-== User community, reporting issues ==
+
 
 To reach the user community with questions and ideas, please use mailing list spacewalk-list@redhat.com. On this list, you can of course also discuss issues you might find when installing or using Spacewalk, but please do not be surprised if we ask you to file a bug at https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk with more details or full logs.
 

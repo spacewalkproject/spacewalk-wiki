@@ -1,6 +1,6 @@
-[[PageOutline]]
+# __Spacewalk 1.2 Release Notes__
 
-= __Spacewalk 1.2 Release Notes__ =
+
 
 Hello world,
 
@@ -17,13 +17,14 @@ depending on your operating system, with client repositories under
 
 Check the installation steps at
 
-        * [wiki:HowToInstall]
+        * [[HowToInstall]]
 
 or if you will upgrade from older release, consult
 
-        * [wiki:HowToUpgrade]
+        * [[HowToUpgrade]]
+## Features & Enhancements in Spacewalk 1.2
 
-== Features & Enhancements in Spacewalk 1.2 ==
+
 
         * Support for re-provisioning of FV Xen & KVM guests was added.
         * Large rpm support fixes.
@@ -55,8 +56,9 @@ or if you will upgrade from older release, consult
                 * channel output now shows all associated repos
 
 Spacewalk 1.2 is the last version to run on Fedora 12.
+## Some notes about the PostgreSQL support
 
-== Some notes about the PostgreSQL support ==
+
 
 We've been fixing bits and pieces that prevented Spacewalk to use
 PostgreSQL database server to store the data. Currently known to work are:
@@ -76,10 +78,11 @@ if you use functionality not listed above. For that we will appreciate
 patch rather than bugzilla report -- we know these do not work and we
 need help. If you are ready to code, please check
 
-        * [wiki:PostgreSQL]
-        * [wiki:PostgreSQLPortingGuide]
+        * [[PostgreSQL]]
+        * [[PostgreSQLPortingGuide]]
+## Community contributors
 
-== Community contributors ==
+
 
 We thank the community members who contributed to this release:
 
@@ -89,7 +92,7 @@ We thank the community members who contributed to this release:
         * Francesco Tombolini
         * Jaswinder Singh Phulewala
         * Joshua Roys
-        * !KrishnaBabu Krothapalli
+        * KrishnaBabu Krothapalli
         * Luc de Louw
         * Manoj Kumar Giri
         * Timo Trinks
@@ -97,10 +100,12 @@ We thank the community members who contributed to this release:
 
 with special kudos to Colin Coe for his Java porting and API work.
 
- * [wiki:ContributorList]
+ * [[ContributorList]]
 
 Yours,
 
--- [[BR]]
-Jan Pazdziora [[BR]]
+-- 
+
+Jan Pazdziora 
+
 Principal Software Engineer, Satellite Engineering, Red Hat

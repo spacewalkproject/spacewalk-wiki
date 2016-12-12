@@ -1,23 +1,27 @@
-= Delta RPMS =
+# Delta RPMS
+
+## Tasks (in order)
 
 
-== Tasks (in order) ==
-
-|| Task || Estimated Hours || Assignee || Status || Notes ||
-|| Modifying repomd generation to be performed as asynchronously, not on demand || 25 ||  || || ||
-|| Presto MD generation (including config option to disable) || 25 ||   || ||  ||
-|| Delta RPM Generation || 25 ||   || ||  ||
-|| Clearing old drpms || 5 || || || ||
-|| Client side testing/development  || 5 || || || ||
 
 
-== Requirements ==
+
+|  Task  |  Estimated Hours  |  Assignee  |  Status  |  Notes  |
+| --- | --- | --- | --- | --- | --- |
+|  Modifying repomd generation to be performed as asynchronously, not on demand  |  25  |    |   |   |  |
+|  Presto MD generation (including config option to disable)  |  25  |     |   |    |  |
+|  Delta RPM Generation  |  25  |     |   |    |  |
+|  Clearing old drpms  |  5  |   |   |   |  |
+|  Client side testing/development   |  5  |   |   |   |  |
+## Requirements
+
  1.  If a system has the presto yum plugin installed and is configured to get updates from the spacewalk server, any package update request should be  fulfilled with a delta rpm.
+
  2.  There shall be a way to disable delta rpms from being offered from the server.  
  3.  The system shall automatically clear old delta rpms.
+## Specification
+ 
 
-
-== Specification == 
 
  * Backend 
   * Currently the yum repo data is taking too long to generate.  It isn't created until a client requests it and the amount of time to create it is greater than the yum timeout.  We need to move this to a background daemon such that clients can still get updates (albeit old) until the process is complete, at which point they will have access to the new repomd file.
@@ -34,10 +38,10 @@
 
  * Client side
   * This most likely "just works".  Once we have the backend stuff to test, we can actually do some testing.  
+## FAQ
 
-
-== FAQ ==
 * What is a delta rpm?
+
    * It is a collection of the binary diffs between all the individual files of two different versions of the same package with the rpm header of the new package prepended to the file.
 
 * Can rpm work directly with drpms?
@@ -45,38 +49,32 @@
 
 * Can yum work directly with drpms themselves?
    * No, yum (with the presto yum plugin or a similiar plugin) can only work with drpms if they are in an appropriate repo.  The plugin itself recomposes the rpm into its original form before having yum install it.  
+## Common Commands
 
-== Common Commands ==
+
 
 Needed Packages: presto-utils, deltarpm, yum-presto
-{{{
-Create a drpm:
-     makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm 
-}}}
-{{{
-Create drpms from a full repo:
-	createdeltarpms  ./repo ./repo/DRPMS 
-}}}
-{{{
-Reconstruct original rpm using on disk installation:
- 	applydeltarpm  delta.drpm  new.rpm 
-}}}
-{{{
-Reconstruct original rpm using an old rpm:
- 	applydeltarpm  -r old.rpm  delta.drpm  new.rpm 
-}}}
-{{{
-Create a presto repo (and the prestodelta.xml file):
-	createprestorepo ./repo 
-}}}
-{{{
-Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
-         modifyrepo  ./repodata/prestodelta.xml  ./repodata/ 
-}}}
+
+    Create a drpm:
+         makedeltarpm  oldrpm.rpm  newrpm.rpm  deltarpm.drpm 
+
+    Create drpms from a full repo:
+    	createdeltarpms  ./repo ./repo/DRPMS 
+
+    Reconstruct original rpm using on disk installation:
+     	applydeltarpm  delta.drpm  new.rpm 
+
+    Reconstruct original rpm using an old rpm:
+     	applydeltarpm  -r old.rpm  delta.drpm  new.rpm 
+
+    Create a presto repo (and the prestodelta.xml file):
+    	createprestorepo ./repo 
+
+    Then to finish the deal and link the prestodelta.xml to the repomod.xml file:
+             modifyrepo  ./repodata/prestodelta.xml  ./repodata/ 
+## My thoughts
 
 
- 
-== My thoughts ==
 
  * I like the idea of delta rpms 'just being there' (i.e. so the user wouldn't have to do anything to get them there, or at least wouldn't have to generate them themselves and upload them to the sat).  
  * Since it does require extra cpu and memory resources to rebuild the rpm on each client, it should be an optional on the satellite to provide/build/publish deltarpms.

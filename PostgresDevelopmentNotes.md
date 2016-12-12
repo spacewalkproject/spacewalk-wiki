@@ -1,5 +1,5 @@
 
-For up-to-date information about the PostgreSQL port, see [wiki:PostgreSQL]. This page is now obsolete.
+For up-to-date information about the PostgreSQL port, see [[PostgreSQL]]. This page is now obsolete.
 
 ----
 
@@ -23,7 +23,7 @@ Currently we have no yum repo setup with customized pgsql packages, due to the w
    * Re-run the script often to get the latest changes in pgsql branch. Add new files if you modify something that needs to be deployed.
  * Run spacewalk-setup to connect to PostgreSQL and populate the auto-generated ora2pg schema:
    {{{
-(dgoodwin@elaine)[~/src/spacewalk] % sudo spacewalk-setup --disconnected
+(dgoodwin@elaine)[[~_src_spacewalk]] % sudo spacewalk-setup --disconnected
 Available database backends:
    oracle
    postgresql
@@ -33,8 +33,8 @@ DB User? spacewalk
 DB Password? 
 DB SID? spacewalk
 DB hostname? localhost
-DB port [1521]? 5432
-DB protocol [TCP]? 
+DB port [[1521]]? 5432
+DB protocol [[TCP]]? 
 ** Database: Populating database.
 *** Installing PostgreSQL schema.
 *** Progress: ###############################################################################################################
@@ -48,7 +48,7 @@ Charset = UTF8
 ** Activating Spacewalk.
 There was a problem validating the satellite certificate: 1
 
-(dgoodwin@elaine)[~/src/spacewalk] % 
+(dgoodwin@elaine)[[~_src_spacewalk]] % 
    }}}
    * Process dies at this point pending completion of the rhnSQL Python driver.
    * Technically your oracle based spacewalk install is still functional.

@@ -2,28 +2,27 @@ Heya Spacewalkers,
 
 Spacewalk 0.7 is finally here!
 
-{{{
-   http://spacewalk.redhat.com/yum/0.7/RHEL/5/<arch>/
-   http://spacewalk.redhat.com/yum/0.7/Fedora/11/<arch>/
-   http://spacewalk.redhat.com/yum/0.7/Fedora/12/<arch>/
-}}}
+
+       http://spacewalk.redhat.com/yum/0.7/RHEL/5/<arch>/
+       http://spacewalk.redhat.com/yum/0.7/Fedora/11/<arch>/
+       http://spacewalk.redhat.com/yum/0.7/Fedora/12/<arch>/
 
 For the first time we split server and client part. Client repo is:
 
-{{{
-   http://spacewalk.redhat.com/yum/0.7-client/RHEL/5/<arch>/
-   http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/<arch>/
-   http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/<arch>/
-}}}
+
+       http://spacewalk.redhat.com/yum/0.7-client/RHEL/5/<arch>/
+       http://spacewalk.redhat.com/yum/0.7-client/Fedora/11/<arch>/
+       http://spacewalk.redhat.com/yum/0.7-client/Fedora/12/<arch>/
 
 Make sure to read over the installation again:
    http://fedorahosted.org/spacewalk/wiki/HowToInstall
 
 If you are upgrading from older release, please checkout:
    http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+## Features & Enhancements
 
-== Features & Enhancements ==
 * new script "spacewalk-report" allows you to create reports with output to CSV file
+
     https://fedorahosted.org/spacewalk/wiki/Features/ScriptBasedReporting
 
 * pages with erratas have column with links to CVE description, erratas can be filtered by its type
@@ -55,27 +54,30 @@ If you are upgrading from older release, please checkout:
 * API call system.listPackages now return additional field "installtime".
 
 ...and of course many bugfixes
+## Known issues
 
-== Known issues ==
 * PostgreSQL support still does not work. We will need help with moving this forward.
+
 
 * Fedora GPG key not recognized by rhnPackageKey table, packages will show up as unknown Provider.
 
 * Documentation search does not work, other search are unaffected.
 
 * The version of rhnsd in this release (rhnsd-4.5.16-1) does not work.
+## Community
 
-== Community ==
 *  We greatly appreciate the contributions the community has made to this release. Thank you very much.
+
      - Colin Coe
      - David Nutter
      - Joshua Roys
      - Lukáš Ďurfina
 
    http://fedorahosted.org/spacewalk/wiki/ContributorList
+## Installation Help
 
-== Installation Help ==
    http://fedorahosted.org/spacewalk/wiki/HowToInstall
+
 
 ----
 Miroslav Suchy

@@ -1,8 +1,11 @@
-= Current Contributors =
+# Current Contributors
 
- * [https://www.ohloh.net/p/spacewalk/contributors Contributors tracked by Ohloh.net]
 
-== Development ==
+
+ * [Contributors tracked by Ohloh.net](https://www.ohloh.net/p/spacewalk/contributors)
+## Development
+
+
 
  * Ales Dujicek
  * Dimitar Yordanov
@@ -20,8 +23,9 @@
  * Pavel Studenik
  * Tomáš Kašpárek
  * Tomas Lestach
+## Community Contributors
 
-== Community Contributors ==
+
 
  * Ali Yousefi Sabzevar
  * Amar Huchchanavar
@@ -75,7 +79,7 @@
  * Kilian Petsch
  * Klaas Demter
  * Kumudini Shirsale
- * !KrishnaBabu Krothapalli
+ * KrishnaBabu Krothapalli
  * Lasse Palm
  * lbayerlein
  * Luc de Louw
@@ -142,15 +146,16 @@
  * William van de Velde
  * Yulia Poyarkova
  * Zailo Leite
+## Alumni Contributors
 
-== Alumni Contributors ==
+
 
 The Spacewalk team would like to thank all those who contributed to the code that makes up Spacewalk as it is today.  
 
  * Adrian Likins
  * Avi Miller
  * Brad Buckingham
- * Bret !McMillan
+ * Bret McMillan
  * Chip Turner
  * Cristian Gafton
  * Daniel Veillard
@@ -173,7 +178,7 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Lukáš Zapletal
  * Máirín Duffy
  * Mihai Ibanescu
- * Mike !McCune 
+ * Mike McCune 
  * Miroslav Suchý
  * Nick Hansen
  * Partha Aji
