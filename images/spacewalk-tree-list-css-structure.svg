@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="920"
+   height="616"
+   id="svg3831"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="spacewalk-tree-list-css-structure.svg"
+   inkscape:export-filename="/home/duffy/Desktop/spacewalk-tree-list-css-structure.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs3833">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4109">
+      <stop
+         style="stop-color:#729fcf;stop-opacity:1;"
+         offset="0"
+         id="stop4111" />
+      <stop
+         style="stop-color:#729fcf;stop-opacity:0;"
+         offset="1"
+         id="stop4113" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3977">
+      <stop
+         style="stop-color:#fce94f;stop-opacity:1;"
+         offset="0"
+         id="stop3979" />
+      <stop
+         style="stop-color:#fce94f;stop-opacity:0;"
+         offset="1"
+         id="stop3981" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective3839" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient3983"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.81159421,0,0,0.625,-30.079713,86.82332)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4007"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.29951691,0,0,0.625,321.85749,-61.17668)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4023"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.80193237,0,0,0.625,408.07004,86.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4039"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.94685991,0,0,0.625,-152.17633,218.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4055"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.92270528,0,0,0.625,67.198056,218.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4097"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91787444,0,0,0.625,292.27296,218.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4099"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.88888886,0,0,0.625,512.72219,218.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4115"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,80.206023,-18)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4135"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,518.20602,-18)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4147"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,-11.793977,114)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4159"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,202.20602,114)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4181"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,427.20602,114)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4183"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,641.20602,114)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4203"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.29951691,0,0,0.625,387.85749,-61.17668)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4814"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.89371977,0,0,0.625,389.64731,368.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4109"
+       id="linearGradient4816"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.50753769,0,0,1,543.20602,264)"
+       x1="219"
+       y1="617.36218"
+       x2="219"
+       y2="544.98242" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3977"
+       id="linearGradient4834"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.42028986,0,0,0.625,682.9855,368.82332)"
+       x1="319"
+       y1="746.36218"
+       x2="319"
+       y2="688.97449" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="399.49402"
+     inkscape:cy="303.47597"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1400"
+     inkscape:window-height="975"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3836">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.36218)">
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#204a87;stroke-width:0.99999987999999995;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4211"
+       width="919"
+       height="615"
+       x="0.49999994"
+       y="308.86218" />
+    <rect
+       style="fill:#eeeeec;fill-opacity:1;stroke:#babdb6;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4818"
+       width="363"
+       height="149"
+       x="534.5"
+       y="757.86218" />
+    <rect
+       y="519.86218"
+       x="586.5"
+       height="20"
+       width="166"
+       id="rect4009"
+       style="fill:url(#linearGradient4023);fill-opacity:1;stroke:#c4a000;stroke-width:0.99999994;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="622"
+       y="534.36218"
+       id="text3865"><tspan
+         sodipodi:role="line"
+         id="tspan3867"
+         x="622"
+         y="534.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">list-row-<tspan
+   style="font-weight:bold"
+   id="tspan3895">parent</tspan>-<tspan
+   style="font-weight:bold"
+   id="tspan3903">odd</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="243.62617"
+       y="513.50037"
+       id="text3885"
+       inkscape:transform-center-x="-25.358013"
+       inkscape:transform-center-y="36.956555"><tspan
+         sodipodi:role="line"
+         id="tspan3887"
+         x="243.62617"
+         y="513.50037"
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">&lt;tr/&gt;</tspan></text>
+    <text
+       inkscape:transform-center-y="36.956555"
+       inkscape:transform-center-x="-25.358013"
+       id="text3909"
+       y="512.50037"
+       x="673.62616"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="512.50037"
+         x="673.62616"
+         id="tspan3911"
+         sodipodi:role="line">&lt;tr/&gt;</tspan></text>
+    <text
+       inkscape:transform-center-y="36.956555"
+       inkscape:transform-center-x="-25.358013"
+       id="text3913"
+       y="644.50037"
+       x="144.62616"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="644.50037"
+         x="144.62616"
+         id="tspan3915"
+         sodipodi:role="line">&lt;tr/&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="348.62616"
+       y="644.50037"
+       id="text3917"
+       inkscape:transform-center-x="-25.358013"
+       inkscape:transform-center-y="36.956555"><tspan
+         sodipodi:role="line"
+         id="tspan3919"
+         x="348.62616"
+         y="644.50037"
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">&lt;tr/&gt;</tspan></text>
+    <path
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 210,576.36218 -39,39"
+       id="path3921" />
+    <path
+       id="path3923"
+       d="m 283,576.36218 39,39"
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       inkscape:transform-center-y="36.956555"
+       inkscape:transform-center-x="-25.358013"
+       id="text3953"
+       y="453.50037"
+       x="453.62616"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="453.50037"
+         x="453.62616"
+         id="tspan3955"
+         sodipodi:role="line">&lt;tbody&gt;</tspan></text>
+    <path
+       id="path3957"
+       d="M 398,456.36218 275,491.56656"
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 509,456.36218 123,35.20438"
+       id="path3959" />
+    <text
+       xml:space="preserve"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="453.62616"
+       y="365.50037"
+       id="text3961"
+       inkscape:transform-center-x="-25.358013"
+       inkscape:transform-center-y="36.956555"><tspan
+         sodipodi:role="line"
+         id="tspan3963"
+         x="453.62616"
+         y="365.50037"
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">&lt;table&gt;</tspan></text>
+    <path
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 452.5,396.36218 0,35"
+       id="path3965" />
+    <rect
+       style="fill:url(#linearGradient3983);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3967"
+       width="168"
+       height="20"
+       x="150.49998"
+       y="519.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="154"
+       y="528.36218"
+       id="text3985"><tspan
+         sodipodi:role="line"
+         id="tspan3987"
+         x="154"
+         y="528.36218"
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">class</tspan></text>
+    <text
+       id="text3853"
+       y="534.36218"
+       x="185"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="534.36218"
+         x="185"
+         id="tspan3855"
+         sodipodi:role="line">list-row-<tspan
+   style="font-weight:bold"
+   id="tspan3893">parent</tspan>-<tspan
+   style="font-weight:bold"
+   id="tspan3901">even</tspan></tspan></text>
+    <rect
+       y="371.86218"
+       x="388.5"
+       height="20"
+       width="62"
+       id="rect3993"
+       style="fill:url(#linearGradient4007);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text3995"
+       y="380.36218"
+       x="392"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="380.36218"
+         x="392"
+         id="tspan3997"
+         sodipodi:role="line">class</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="423"
+       y="386.36218"
+       id="text3999"><tspan
+         sodipodi:role="line"
+         id="tspan4001"
+         x="423"
+         y="386.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">list</tspan></text>
+    <text
+       id="text4011"
+       y="528.36218"
+       x="590"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="528.36218"
+         x="590"
+         id="tspan4013"
+         sodipodi:role="line">class</tspan></text>
+    <rect
+       y="651.86218"
+       x="58.499977"
+       height="20"
+       width="196"
+       id="rect4025"
+       style="fill:url(#linearGradient4039);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4027"
+       y="660.36218"
+       x="62"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="660.36218"
+         x="62"
+         id="tspan4029"
+         sodipodi:role="line">class</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="97"
+       y="666.36218"
+       id="text3869"><tspan
+         sodipodi:role="line"
+         id="tspan3871"
+         x="97"
+         y="666.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">list-row-even-<tspan
+   style="font-weight:bold"
+   id="tspan3897">child</tspan>-<tspan
+   style="font-weight:bold"
+   id="tspan3907">even</tspan></tspan></text>
+    <rect
+       style="fill:url(#linearGradient4055);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4041"
+       width="191"
+       height="20"
+       x="272.49997"
+       y="651.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="276"
+       y="660.36218"
+       id="text4043"><tspan
+         sodipodi:role="line"
+         id="tspan4045"
+         x="276"
+         y="660.36218"
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">class</tspan></text>
+    <text
+       id="text3873"
+       y="666.36218"
+       x="312"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="666.36218"
+         x="312"
+         id="tspan3875"
+         sodipodi:role="line">list-row-even-<tspan
+   style="font-weight:bold"
+   id="tspan3899">child</tspan>-<tspan
+   style="font-weight:bold"
+   id="tspan3905">odd</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="582.62616"
+       y="644.50037"
+       id="text4057"
+       inkscape:transform-center-x="-25.358013"
+       inkscape:transform-center-y="36.956555"><tspan
+         sodipodi:role="line"
+         id="tspan4059"
+         x="582.62616"
+         y="644.50037"
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">&lt;tr/&gt;</tspan></text>
+    <text
+       inkscape:transform-center-y="36.956555"
+       inkscape:transform-center-x="-25.358013"
+       id="text4061"
+       y="644.50037"
+       x="786.62616"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="644.50037"
+         x="786.62616"
+         id="tspan4063"
+         sodipodi:role="line">&lt;tr/&gt;</tspan></text>
+    <path
+       id="path4065"
+       d="m 648,576.36218 -39,39"
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:none;stroke:#babdb6;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 721,576.36218 39,39"
+       id="path4067" />
+    <rect
+       style="fill:url(#linearGradient4097);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4069"
+       width="190.00002"
+       height="20"
+       x="496.5"
+       y="651.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="500"
+       y="660.36218"
+       id="text4071"><tspan
+         sodipodi:role="line"
+         id="tspan4073"
+         x="500"
+         y="660.36218"
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">class</tspan></text>
+    <text
+       id="text4075"
+       y="666.36218"
+       x="535"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="666.36218"
+         x="535"
+         id="tspan4077"
+         sodipodi:role="line">list-row-odd-<tspan
+   id="tspan4079"
+   style="font-weight:bold">child</tspan>-<tspan
+   id="tspan4081"
+   style="font-weight:bold">even</tspan></tspan></text>
+    <rect
+       y="651.86218"
+       x="710.5"
+       height="20"
+       width="184"
+       id="rect4083"
+       style="fill:url(#linearGradient4099);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4085"
+       y="660.36218"
+       x="714"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="660.36218"
+         x="714"
+         id="tspan4087"
+         sodipodi:role="line">class</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="750"
+       y="666.36218"
+       id="text4089"><tspan
+         sodipodi:role="line"
+         id="tspan4091"
+         x="750"
+         y="666.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">list-row-odd-<tspan
+   id="tspan4093"
+   style="font-weight:bold">child</tspan>-<tspan
+   id="tspan4095"
+   style="font-weight:bold">odd</tspan></tspan></text>
+    <rect
+       y="545.86218"
+       x="150.49998"
+       height="20"
+       width="101"
+       id="rect4101"
+       style="fill:url(#linearGradient4115);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4103"
+       y="554.36218"
+       x="154"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="554.36218"
+         x="154"
+         id="tspan4105"
+         sodipodi:role="line">color</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="185"
+       y="560.36218"
+       id="text4117"><tspan
+         sodipodi:role="line"
+         id="tspan4119"
+         x="185"
+         y="560.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">#dedede</tspan></text>
+    <rect
+       style="fill:url(#linearGradient4135);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4125"
+       width="101"
+       height="20"
+       x="588.5"
+       y="545.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="592"
+       y="554.36218"
+       id="text4127"><tspan
+         sodipodi:role="line"
+         id="tspan4129"
+         x="592"
+         y="554.36218"
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">color</tspan></text>
+    <text
+       id="text4131"
+       y="560.36218"
+       x="623"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="560.36218"
+         x="623"
+         id="tspan4133"
+         sodipodi:role="line">#d2d2d2</tspan></text>
+    <rect
+       style="fill:url(#linearGradient4147);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4137"
+       width="101"
+       height="20"
+       x="58.499977"
+       y="677.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="62"
+       y="686.36218"
+       id="text4139"><tspan
+         sodipodi:role="line"
+         id="tspan4141"
+         x="62"
+         y="686.36218"
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">color</tspan></text>
+    <text
+       id="text4143"
+       y="692.36218"
+       x="93"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="692.36218"
+         x="93"
+         id="tspan4145"
+         sodipodi:role="line">#ffffff</tspan></text>
+    <rect
+       y="677.86218"
+       x="272.49997"
+       height="20"
+       width="101"
+       id="rect4149"
+       style="fill:url(#linearGradient4159);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4151"
+       y="686.36218"
+       x="276"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="686.36218"
+         x="276"
+         id="tspan4153"
+         sodipodi:role="line">color</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="307"
+       y="692.36218"
+       id="text4155"><tspan
+         sodipodi:role="line"
+         id="tspan4157"
+         x="307"
+         y="692.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">#ececec</tspan></text>
+    <rect
+       y="677.86218"
+       x="497.5"
+       height="20"
+       width="101"
+       id="rect4161"
+       style="fill:url(#linearGradient4181);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4163"
+       y="686.36218"
+       x="501"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="686.36218"
+         x="501"
+         id="tspan4165"
+         sodipodi:role="line">color</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="532"
+       y="692.36218"
+       id="text4167"><tspan
+         sodipodi:role="line"
+         id="tspan4169"
+         x="532"
+         y="692.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">#e4e4e4</tspan></text>
+    <rect
+       style="fill:url(#linearGradient4183);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4171"
+       width="101"
+       height="20"
+       x="711.5"
+       y="677.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="715"
+       y="686.36218"
+       id="text4173"><tspan
+         sodipodi:role="line"
+         id="tspan4175"
+         x="715"
+         y="686.36218"
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">color</tspan></text>
+    <text
+       id="text4177"
+       y="692.36218"
+       x="746"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="692.36218"
+         x="746"
+         id="tspan4179"
+         sodipodi:role="line">#eeeeee</tspan></text>
+    <text
+       id="text4185"
+       y="794.36218"
+       x="53"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-weight:bold;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="794.36218"
+         x="53"
+         id="tspan4187"
+         sodipodi:role="line">CSS class structure for Spacewalk tree list tables</tspan></text>
+    <rect
+       style="fill:url(#linearGradient4203);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4193"
+       width="62"
+       height="20"
+       x="454.5"
+       y="371.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="458"
+       y="380.36218"
+       id="text4195"><tspan
+         sodipodi:role="line"
+         id="tspan4197"
+         x="458"
+         y="380.36218"
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">class</tspan></text>
+    <text
+       id="text4199"
+       y="386.36218"
+       x="489"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="386.36218"
+         x="489"
+         id="tspan4201"
+         sodipodi:role="line">tree</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="53"
+       y="812.36218"
+       id="text4205"><tspan
+         sodipodi:role="line"
+         id="tspan4207"
+         x="53"
+         y="812.36218"
+         style="font-size:14px;font-weight:normal;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">Máirín Duffy &lt;duffy@redhat.com&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="53"
+         y="829.86218"
+         style="font-size:14px;font-weight:normal;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         id="tspan4209">7 May 2010</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:73.91313171px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="708.62616"
+       y="794.50037"
+       id="text4786"
+       inkscape:transform-center-x="-25.358013"
+       inkscape:transform-center-y="36.956555"><tspan
+         sodipodi:role="line"
+         id="tspan4788"
+         x="708.62616"
+         y="794.50037"
+         style="font-size:25.86959648px;font-weight:bold;text-align:center;text-anchor:middle;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">&lt;tr/&gt;</tspan></text>
+    <rect
+       style="fill:url(#linearGradient4814);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect4790"
+       width="184.99998"
+       height="20"
+       x="588.5"
+       y="801.86218" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="590"
+       y="810.36218"
+       id="text4792"><tspan
+         sodipodi:role="line"
+         id="tspan4794"
+         x="590"
+         y="810.36218"
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">class</tspan></text>
+    <text
+       id="text4796"
+       y="816.36218"
+       x="622"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="816.36218"
+         x="622"
+         id="tspan4798"
+         sodipodi:role="line">list-row-odd-<tspan
+   style="font-weight:bold"
+   id="tspan4800">child</tspan>-<tspan
+   style="font-weight:bold"
+   id="tspan4802">odd</tspan></tspan></text>
+    <rect
+       y="827.86218"
+       x="613.5"
+       height="20"
+       width="101"
+       id="rect4804"
+       style="fill:url(#linearGradient4816);fill-opacity:1;stroke:#204a87;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4806"
+       y="836.36218"
+       x="617"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#204a87;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#204a87;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="836.36218"
+         x="617"
+         id="tspan4808"
+         sodipodi:role="line">color</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="648"
+       y="842.36218"
+       id="text4810"><tspan
+         sodipodi:role="line"
+         id="tspan4812"
+         x="648"
+         y="842.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">#fef5ad</tspan></text>
+    <rect
+       y="801.86218"
+       x="776.5"
+       height="20"
+       width="87"
+       id="rect4820"
+       style="fill:url(#linearGradient4834);fill-opacity:1;stroke:#c4a000;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <text
+       id="text4822"
+       y="810.36218"
+       x="780"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#c4a000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"><tspan
+         style="font-size:10px;fill:#c4a000;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="810.36218"
+         x="780"
+         id="tspan4824"
+         sodipodi:role="line">class</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       x="810"
+       y="816.36218"
+       id="text4826"><tspan
+         sodipodi:role="line"
+         id="tspan4828"
+         x="810"
+         y="816.36218"
+         style="font-size:14px;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans">inactive</tspan></text>
+    <text
+       id="text4836"
+       y="768.36218"
+       x="536"
+       style="font-size:40px;font-style:normal;font-weight:normal;fill:#888a85;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
+       xml:space="preserve"
+       inkscape:transform-center-x="-11.013184"
+       inkscape:transform-center-y="15"><tspan
+         style="font-size:10px;fill:#888a85;font-family:Liberation Sans;-inkscape-font-specification:Liberation Sans"
+         y="768.36218"
+         x="536"
+         id="tspan4838"
+         sodipodi:role="line">example inactive children</tspan></text>
+  </g>
+</svg>
