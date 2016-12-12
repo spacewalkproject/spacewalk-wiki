@@ -40,6 +40,7 @@ The main subsections of this wiki;
  * [Release Process](ReleaseProcess): What is the process for releasing Spacewalk.
  * [Brainbox](BrainBox): Some ideas that might end up in the roadmap. Just a page to collect them.
  * [Features](Features): An index page of ideas that have graduated from the [[BrainBox]] to become features.
+
 ## __Communication__
 
 There are several ways to get in touch with Spacewalk developers and users:
@@ -49,6 +50,7 @@ There are several ways to get in touch with Spacewalk developers and users:
  * Developer list: spacewalk-devel@redhat.com [(signup)](https://www.redhat.com/mailman/listinfo/spacewalk-devel) [(archives)](https://www.redhat.com/archives/spacewalk-devel/)
  * IRC: #spacewalk & #spacewalk-devel on [(irc.freenode.net)](http://freenode.net/)
  * Let us know about your [[Installations]]
+
 ## __Community__
 
 ![Alt](http://farm4.static.flickr.com/3257/2594729312_4c72913c2c_m.jpg)
@@ -64,6 +66,7 @@ View photos from the [Spacewalk Campground](http://www.flickr.com/photos/mairin/
 You don't need to ask to be in the spacewalk account system group, that's only for commit access, see the [Patch Process](PatchProcess). To get started simply;
 
  * [Get a Fedora account](http://admin.fedoraproject.org/accounts): Come back and start editing.
+
 ## __Want to File a Bug/RFE?__
 
  * [Enter a bug here](https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk): Check if the issue already has bugzilla filed at bugzilla.redhat.com.
