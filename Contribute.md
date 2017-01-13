@@ -5,7 +5,7 @@
  #coding
 
 
-Are you familiar with Python, Java or Perl? Look at some [reported bugs](https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk) and 
+Are you familiar with Python, Java or Perl? Look at some [reported bugs](https://bugzilla.redhat.com/buglist.cgi?query_format=advanced&bug_status=NEW&product=Spacewalk) and
 pick up one. Assign it to yourself and start working on it. When you are done send us [a pull request](PatchProcess).
 Did not find anything interesting for you? Check [brainbox](BrainBox) or come up with your own idea.
 
@@ -31,7 +31,7 @@ Although we have some [documentation](http://www.redhat.com/spacewalk/documentat
  #mentor
 
 
-Or you can just hang on [IRC or mailing list](WikiStart) and try to answer questions others may have.
+Or you can just hang on [IRC or mailing list](Home) and try to answer questions others may have.
 ## Translations
  #translate
 
