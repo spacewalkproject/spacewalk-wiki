@@ -2,12 +2,12 @@
 
 
 
-SCAP provides standardized approach to maintaining the security of systems. Beside others, OpenSCAP tool can evaluate machine compliance with a given profile. For further information about OpenSCAP please navigate to project's [[http://www.open-scap.org/page/Main_Page|homepage]] or Fedora's feature [[https://fedoraproject.org/wiki/Features/OpenSCAP|page]]
+SCAP provides standardized approach to maintaining the security of systems. Beside others, OpenSCAP tool can evaluate machine compliance with a given profile. For further information about OpenSCAP please navigate to project's [homepage](http://www.open-scap.org/page/Main_Page) or Fedora's feature [page](https://fedoraproject.org/wiki/Features/OpenSCAP)
 ## Spacewalk and OpenSCAP
 
 
 
-Project to integrate OpenSCAP to Spacewalk has started. The aim is to provide an easy way for admins to scan whole infrastructure and view results and trends. More info and tutorials are available at [[http://isimluk.livejournal.com/631.html|blog]].
+Project to integrate OpenSCAP to Spacewalk has started. The aim is to provide an easy way for admins to scan whole infrastructure and view results and trends. More info and tutorials are available at [blog](http://isimluk.livejournal.com/631.html).
 
 With Spacewalk 1.7, user is able:
  * schedule XCCDF scan for a given machine through FrontendAPI
@@ -49,7 +49,7 @@ With Spacewalk nightly (and post 1.7 releases) user is able:
    * # /usr/bin/spacewalk-reports scap-scan-results
 ### Example
 
-The following is an example of python script which will schedule XCCDF scan for machine with sid=1000010001. The script assumes USGSB content in `/usr/local/share/scap/usgcb-rhel5desktop-xccdf.xml` on the client filesystem. Parameters indicate which profile is to be evaluated; it is `united_states_government_configuration_baseline`. The content used for this example can be found at [[http://usgcb.nist.gov/usgcb/content/scap/USGCB-rhel5desktop-1.0.5.0.zip|NIST]].
+The following is an example of python script which will schedule XCCDF scan for machine with sid=1000010001. The script assumes USGSB content in `/usr/local/share/scap/usgcb-rhel5desktop-xccdf.xml` on the client filesystem. Parameters indicate which profile is to be evaluated; it is `united_states_government_configuration_baseline`. The content used for this example can be found at [NIST](https://usgcb.nist.gov/usgcb/content/scap/USGCB-rhel5desktop-1.2.5.0.zip)
 
 
     #!/usr/bin/python
