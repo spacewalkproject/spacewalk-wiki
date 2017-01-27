@@ -4,7 +4,7 @@
 
 These are installation instruction for Spacewalk 0.8.
 
-Spacewalk 0.7 installation instructions are available at [HowToInstall07](https://fedorahosted.org/spacewalk/wiki/HowToInstall07)
+Spacewalk 0.7 installation instructions are available at [HowToInstall07](HowToInstall07)
 
 ----
 ## Prerequisites

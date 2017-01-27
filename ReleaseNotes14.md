@@ -37,7 +37,7 @@ or if you will upgrade from older release, consult
         * support for [IDN](http://en.wikipedia.org/wiki/Internationalized_domain_name) (but RHN Tools part)
                  - you can now have Spacewalk server and clients, whose
                   hostnames contains non latin domain name.
-        * issues in PostgreSQL backend, reported by user, were fixed. [PostgreSQL status](https://fedorahosted.org/spacewalk/wiki/PostgreSQL)
+        * issues in PostgreSQL backend, reported by user, were fixed. [PostgreSQL status](PostgreSQL)
         * system history reports were added in spacewalk-reports
         * spacewalk-repo-sync now automatically create errata from updateinfo
 

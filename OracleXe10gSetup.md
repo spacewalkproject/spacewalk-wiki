@@ -46,7 +46,7 @@ If you want to run with SELinux enabled, run the following two commands to creat
     # /usr/sbin/groupadd -r dba
     # /usr/sbin/useradd -r -M -g dba -d /usr/lib/oracle/xe -s /bin/bash oracle
 
-This is needed to give the oracle user uid below 500. See [Features/SELinux](https://fedorahosted.org/spacewalk/wiki/Features/SELinux) for more details and limitations of SELinux support.
+This is needed to give the oracle user uid below 500. See [Features/SELinux](Features/SELinux) for more details and limitations of SELinux support.
 
 Check if you have swap > 1GB because Oracle XE RPM will need it. You can create temporary one (or grow existing) with
 
@@ -234,7 +234,7 @@ rlwrap sqlplus spacewalk/spacewalk@//localhost/XE
  
 
  
-This is only for use if running a development environment or development version of spacewalk.  See [Dev Station setup](https://fedorahosted.org/spacewalk/wiki/DevelopmentWorkstationSetup) for this info.
+This is only for use if running a development environment or development version of spacewalk.  See [Dev Station setup](DevelopmentWorkstationSetup) for this info.
 ## Troubleshooting
 
 

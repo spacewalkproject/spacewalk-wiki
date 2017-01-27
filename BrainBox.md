@@ -57,7 +57,7 @@ This is just a page to collect brainwaves/ideas/evil-thoughts for Spacewalk.
  * DeltaRpmSupport
 
     * ![Alt](images/action-add.gif?raw=True) Seconded! -- Phil
- * [SRPM Sync](https://fedorahosted.org/spacewalk/wiki/SRPMSyncSpec) to enable sync of source RPM content via satellite-sync.
+ * [SRPM Sync](SRPMSyncSpec) to enable sync of source RPM content via satellite-sync.
  * New page for signing and uploading your own packages.  A browse button for selecting the rpm you want to upload, then a multi-select list of channels you want to upload to. The rpm would be automatically signed by your rpm key specified in /root/.rpmmacros .  --Josh
  * Default base channel for non-Redhat supplied channels. --heydrick [bugzilla 559370](https://bugzilla.redhat.com/show_bug.cgi?id=559370)
  * Provide a UI for folks to edit/create comps files and associated package/group entries for custom content to use with yum client

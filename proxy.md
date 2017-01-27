@@ -111,7 +111,7 @@ rhn_package_manager is the tool that you use to put RPMs in Proxy's lookaside ca
 
 
 1. If you cannot or do not want to have the RPMs available on the upstream server (one possible scenario is if you are registered upstream to Red Hat Network then you cannot upload RPMs, however that is being deprecated).
-1. To [pre-fill](https://fedorahosted.org/spacewalk/wiki/proxy-precache) a permanent cache with RPMs that you want to be available without ever requiring them to be downloaded over the network from the upstream server.
+1. To [pre-fill](proxy-precache) a permanent cache with RPMs that you want to be available without ever requiring them to be downloaded over the network from the upstream server.
 
 Either way the tool functions similarly, placing the RPM file in the lookaside cache (/var/spool/rhn-proxy/rhn) so that the Proxy(Broker) can find it if a client is authorized to download it. In the first use case rhn_package_manager also uploads the RPM header (but not the file itself) up to Spacewalk so that Spacewalk can do things like calculate available upgrades for Servers and regenerate the yum metadata files (required for the RPM to be visible to yum).
 
@@ -127,4 +127,4 @@ There will also be a list/ directory there (assuming Spacewalk Proxy 2.2 or high
 * DebuggingProxy
 
 * HowToInstallProxy
-* [proxy-precache](https://fedorahosted.org/spacewalk/wiki/proxy-precache)
+* [proxy-precache](proxy-precache)

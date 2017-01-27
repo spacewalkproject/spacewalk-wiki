@@ -124,7 +124,7 @@ For more on how to maintain and clean up the bundled Berkeley DB for Jabber, go 
   * [Jabber Berkeley Database](JabberDatabase) Maintenance
 ### Jabber and OSAD client connection issues
 
-[Jabber and OSAD client connection issues](https://fedorahosted.org/spacewalk/wiki/JabberAndOSAD)
+[Jabber and OSAD client connection issues](JabberAndOSAD)
 
 ### Resources
 

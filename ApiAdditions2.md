@@ -173,7 +173,7 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   schedule.listAllActions(string sessionKey)  |  0.4  |  3  |  bbuckingham  |  done  |    |  |
 |   schedule.cancelActions(string sessionKey, array[actionId](int))  |  0.4  |  3  |  bbuckingham  |  done  |    |  |
 |   ----    |    |    |    |    |    |  |
-|   *Namespace: supportuser*  |  0.6  |    |    |    |  TODO: A new API handler will be defined to support the [SupportUser](https://fedorahosted.org/spacewalk/wiki/Features/SupportUser) feature.  Details will be coming as the content for Support user are finalized.  |
+|   *Namespace: supportuser*  |  0.6  |    |    |    |  TODO: A new API handler will be defined to support the [SupportUser](Features/SupportUser) feature.  Details will be coming as the content for Support user are finalized.  |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: system*  |    |    |    |    |    |  |
 |   system.getConnectionPath(string sessionKey, int sid)  |  0.5  |  5  |  bbuckingham  |  done  |  Retrieve the list of proxies the system is connected to in order to reach the server.  |

@@ -2,8 +2,8 @@
 
 
 
- * [Server Setup (osa-dispatcher and jabberd)](https://fedorahosted.org/spacewalk/wiki/OSADSetup#ServerSetup)
- * [Client Setup (osad)](https://fedorahosted.org/spacewalk/wiki/OSADSetup#ClientSetup)
+ * [Server Setup (osa-dispatcher and jabberd)](OSADSetup#ServerSetup)
+ * [Client Setup (osad)](OSADSetup#ClientSetup)
 # Server Setup
 
 

@@ -4,7 +4,7 @@
 
 These are installation instruction for Spacewalk 1.1.
 
-Spacewalk 1.0 installation instructions are available at [HowToInstall10](https://fedorahosted.org/spacewalk/wiki/HowToInstall10)
+Spacewalk 1.0 installation instructions are available at [HowToInstall10](HowToInstall10)
 
 ----
 ## Prerequisites

@@ -83,7 +83,7 @@ This table will require an additional column to handle if the Org Admin will all
 
 
 
-The design of the following new pages can be found on the [User Interface](https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/TrustRelationships) mockups and the [Content Sharing](https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2/ContentSharing) mockups. High Level descriptions of the widgets can be found on the mockup pages. A diagram representing the new and existing pages can be found at [[https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2]].
+The design of the following new pages can be found on the [User Interface](Features/MultiOrg2/TrustRelationships) mockups and the [Content Sharing](Features/MultiOrg2/ContentSharing) mockups. High Level descriptions of the widgets can be found on the mockup pages. A diagram representing the new and existing pages can be found at [[https://fedorahosted.org/spacewalk/wiki/Features/MultiOrg2]].
 ### Organizations
 
 Location: /rhn/admin/multiorg/Organizations.do (Existing)
@@ -223,7 +223,7 @@ rhn-server-migrate is a new command line script that will migrate a system. Deta
        Migration : OK
 ## API Calls
 
-A full list of API calls can be found on the [API](https://fedorahosted.org/spacewalk/wiki/ApiAdditions) wiki. 
+A full list of API calls can be found on the [API](ApiAdditions) wiki. 
 
 ### Implementation Notes
 

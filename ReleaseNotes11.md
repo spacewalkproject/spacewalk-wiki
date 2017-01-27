@@ -25,10 +25,10 @@ For upgrades, consult:
  * First Spacewalk release built in a [publicly available build system](http://koji.spacewalkproject.org/koji).
 
  * Spacewalk 1.1 runs on Fedora 13
- * Introduction of [spacecmd](https://fedorahosted.org/spacewalk/wiki/spacecmd), a command line interface to Spacewalk.
- * Support for [synchronization of comps files](https://fedorahosted.org/spacewalk/wiki/Features/CompsSyncing).
+ * Introduction of [spacecmd](spacecmd), a command line interface to Spacewalk.
+ * Support for [synchronization of comps files](Features/CompsSyncing).
  * support for staging content - ability to have all updates pulled off Spacewalk onto registered systems prior to the start of maintenance window
- * support for [eliminating orphaned (duplicate) profiles](https://fedorahosted.org/spacewalk/wiki/DuplicateProfiles).
+ * support for [eliminating orphaned (duplicate) profiles](DuplicateProfiles).
  * new API calls:
   * channel.software.getChannelLastBuildById
   * configchannel.listSubscribedSystems

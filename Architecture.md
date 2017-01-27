@@ -2,7 +2,7 @@
 
 
 
-Spacewalk consists of several languages and has a classic [three-tier architecture](http://en.wikipedia.org/wiki/Multitier_architecture). The presentation tier consists of both a web UI, command line clients, and XML-RPC clients (which can in turn be command line or even full blown web applications). Behind the presentation tier lies the logic tier, which in Spacewalk is spread across the four languages: Java, perl, python, and PL/SQL. While at first one might think "Wow! that's a lot of duplicate code." In reality, there's only a small bit of code that overlaps between the languages, more so between the Java and perl stacks. Finally, the last tier, the data tier, is backed by an [Oracle](http://www.oracle.com/index.html) database or by [PostgreSQL database](https://fedorahosted.org/spacewalk/wiki/PostgreSQL)(at least at the moment, there are [plans for other databases](TheRoadmap)).
+Spacewalk consists of several languages and has a classic [three-tier architecture](http://en.wikipedia.org/wiki/Multitier_architecture). The presentation tier consists of both a web UI, command line clients, and XML-RPC clients (which can in turn be command line or even full blown web applications). Behind the presentation tier lies the logic tier, which in Spacewalk is spread across the four languages: Java, perl, python, and PL/SQL. While at first one might think "Wow! that's a lot of duplicate code." In reality, there's only a small bit of code that overlaps between the languages, more so between the Java and perl stacks. Finally, the last tier, the data tier, is backed by an [Oracle](http://www.oracle.com/index.html) database or by [PostgreSQL database](PostgreSQL)(at least at the moment, there are [plans for other databases](TheRoadmap)).
 
 ![Alt](images/arch.png?raw=True)
 ### Web UI
@@ -16,7 +16,7 @@ For a more in depth explanation of the Java side, check out the [Java design doc
 One of the most sought after features of Spacewalk has been its XML-RPC API. Many users want to write automated scripts to perform repetitive tasks, usually tasks that are available via the web UI. While a web UI is useful for performing a few tasks on either one or more servers, sometimes, there is no replacement for a good script.
 
 
-The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [Tomcat](http://tomcat.apache.org/), in conjunction with web UI, within the web application. Because of this, the [manager layer](JavaDesign) is shared between them. The API documentation can be found on your installation of Spacewalk [/rhn/apidoc/index.jsp](http://localhost/rhn/apidoc/index.jsp) or [here](https://fedorahosted.org/spacewalk/wiki/ApiDocs).
+The frontend API attempts to expose as much of the web UI functionality as possible through XML-RPC. The frontend API is written completely in Java and runs in [Tomcat](http://tomcat.apache.org/), in conjunction with web UI, within the web application. Because of this, the [manager layer](JavaDesign) is shared between them. The API documentation can be found on your installation of Spacewalk [/rhn/apidoc/index.jsp](http://localhost/rhn/apidoc/index.jsp) or [here](ApiDocs).
 ### Backend
  
 

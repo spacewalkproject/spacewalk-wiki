@@ -12,7 +12,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 Spacewalk 0.7 to 0.8 upgrade instructions, are available at
 
-[HowToUpgrade08](https://fedorahosted.org/spacewalk/wiki/HowToUpgrade08)
+[HowToUpgrade08](HowToUpgrade08)
 ----
 
 
