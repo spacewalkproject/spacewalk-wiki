@@ -20,117 +20,30 @@ Changes to the *frequency* of the taskomatic schedules is not recommended but ch
 Navigate to _Admin -> Task Schedules_. There is a list of defined task schedules with given frequencies as [Quartz strings](http://www.quartz-scheduler.org/documentation/quartz-1.x/tutorials/crontrigger). After navigating to selected schedule, you can edit Quartz string manually or select values from form.
 ## Tasks
 
+  Task Name | 	DB Name |	Purpose
+  --- | --- | ---
+  com.redhat.rhn.taskomatic.task.DailySummary | daily-summary | Sends out email on a daily basis with a summary of out-of-date systems
+  com.redhat.rhn.taskomatic.task.ErrataMailer | errata-mailer | Sends email to org admins for each errata alert, eg: "RHN Errata Alert: RHBA-2008:0959-3.."
+  com.redhat.rhn.taskomatic.task.ErrataQueue | errata-queue | Processes errata that are synced from satellite-sync and sets them up to be ready for the ErrataMailer to send the email notifications.
+  com.redhat.rhn.taskomatic.task.ErrataCacheTask | errata-cache | Calculates the 'errata cache' information which is used in the GUI to display what systems need what errata.
+  com.redhat.rhn.taskomatic.task.KickstartCleanup | kickstart-cleanup | Cleans up old kickstart sessions that have gone stale.
+  com.redhat.rhn.taskomatic.task.PackageCleanup | package-cleanup | Physically deletes rpms from /var/satellite that are 'marked' for deletion in the GUI.
+  com.redhat.rhn.taskomatic.task.ChannelRepodata | channel-repodata | Prototype to be used to regenerate channel metadata.
+  com.redhat.rhn.taskomatic.task.SatelliteCertificateCheck | sat-cert-check | Checks to see if the Satellite Certificate is expired and if so starts sending email with warning.
+  com.redhat.rhn.taskomatic.task.SandboxCleanup | sandbox-cleanup | Deletes stale Configuration Management system sandboxes.
+  com.redhat.rhn.taskomatic.task.SessionCleanup | session-cleanup | Deletes expired GUI Http sessions from the pxtsessions database table.
+  com.redhat.rhn.taskomatic.task.SummaryPopulation | summary-population | Works in tandem with "DailySummary" to determine what orgs should get the daily summary email.
+  com.redhat.rhn.taskomatic.task.RepoSyncTask | repo-sync | Used for syncing repos (like yum repos) to a channel. Calls a python script.
+  com.redhat.rhn.taskomatic.task.SatSyncTask | satellite-sync | Calls satellite-sync tool to sync channels.
+  com.redhat.rhn.taskomatic.task.KickstartFileSyncTask | kickstartfile-sync | Syncs kickstart profiles that were generated using the wizard.
+  com.redhat.rhn.taskomatic.task.CobblerSyncTask | cobbler-sync | Syncing cobbler data. Communicates with cobbler through XMLRPC.
+  com.redhat.rhn.taskomatic.task.CompareConfigFilesTask | compare-config-files | Schedules a comparison of config files on all systems.
+  com.redhat.rhn.taskomatic.task.ClearLogHistory | clear-log-history | Clears taskomatic run log history.
+  com.redhat.rhn.taskomatic.task.ChangeLogCleanUp | cleanup-packagechangelog-data | Deletes orphaned packages changelog data.
+  com.redhat.rhn.taskomatic.task.RebootActionCleanup | reboot-action-cleanup | Cleans up stale reboot action data if it is older than 6 hours.
+  com.redhat.rhn.taskomatic.task.AutoErrataTask | auto-errata | This is what automatically schedules automatic errata update actions.
 
 
-
-    #!html
-    <table cols="3" border="1" cellpadding="2" cellspacing="2">
-      <tr>
-        <th>Task Name</th>
-        <th>DB Name</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.DailySummary</td>
-        <td>daily-summary</td>
-        <td>Sends out email on a daily basis with a summary of out-of-date systems</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ErrataMailer</td>
-        <td>errata-mailer</td>
-        <td>Sends email to org admins for each errata alert, eg: "RHN Errata Alert: RHBA-2008:0959-3.."</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ErrataQueue</td>
-        <td>errata-queue</td>
-        <td>Processes errata that are synced from satellite-sync and sets them up to be ready for the ErrataMailer to send the email notifications.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ErrataCacheTask</td>
-        <td>errata-cache</td>
-        <td>Calculates the 'errata cache' information which is used in the GUI to display what systems need what errata.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.KickstartCleanup</td>
-        <td>kickstart-cleanup</td>
-        <td>Cleans up old kickstart sessions that have gone stale.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.PackageCleanup</td>
-        <td>package-cleanup</td>
-        <td>Physically deletes rpms from /var/satellite that are 'marked' for deletion in the GUI.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ChannelRepodata</td>
-        <td>channel-repodata</td>
-        <td>Prototype to be used to regenerate channel metadata.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.SatelliteCertificateCheck</td>
-        <td>sat-cert-check</td>
-        <td>Checks to see if the Satellite Certificate is expired and if so starts sending email with warning.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.SandboxCleanup</td>
-        <td>sandbox-cleanup</td>
-        <td>Deletes stale Configuration Management system sandboxes.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.SessionCleanup</td>
-        <td>session-cleanup</td>
-        <td>Deletes expired GUI Http sessions from the pxtsessions database table.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.SummaryPopulation</td>
-        <td>summary-population</td>
-        <td>Works in tandem with "DailySummary" to determine what orgs should get the daily summary email.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.RepoSyncTask</td>
-        <td>repo-sync</td>
-        <td>Used for syncing repos (like yum repos) to a channel. Calls a python script.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.SatSyncTask</td>
-        <td>satellite-sync</td>
-        <td>Calls satellite-sync tool to sync channels.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.KickstartFileSyncTask</td>
-        <td>kickstartfile-sync</td>
-        <td>Syncs kickstart profiles that were generated using the wizard.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.CobblerSyncTask</td>
-        <td>cobbler-sync</td>
-        <td>Syncing cobbler data. Communicates with cobbler through XMLRPC.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.CompareConfigFilesTask</td>
-        <td>compare-config-files</td>
-        <td>Schedules a comparison of config files on all systems.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ClearLogHistory</td>
-        <td>clear-log-history</td>
-        <td>Clears taskomatic run log history.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.ChangeLogCleanUp</td>
-        <td>cleanup-packagechangelog-data</td>
-        <td>Deletes orphaned packages changelog data.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.RebootActionCleanup</td>
-        <td>reboot-action-cleanup</td>
-        <td>Cleans up stale reboot action data if it is older than 6 hours.</td>
-      </tr>
-      <tr>
-        <td>com.redhat.rhn.taskomatic.task.AutoErrataTask</td>
-        <td>auto-errata</td>
-        <td>This is what automatically schedules automatic errata update actions.</td>
-      </tr>
-    </table>
 ## Troubleshooting Taskomatic
 
 
@@ -160,4 +73,3 @@ The Taskomatic daemon process can be started in console mode as well. This is he
       sudo /sbin/service taskomatic console
 
 See also: [LogDriverSetup](LogDriverSetup)
-
