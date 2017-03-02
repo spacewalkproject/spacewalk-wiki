@@ -93,8 +93,8 @@ Please configure the following yum repository before beginning your Spacewalk in
     cat > /etc/yum.repos.d/jpackage-generic.repo << EOF
     [jpackage-generic]
     name=JPackage generic
-    #baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
-    mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0
+    baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
+    #mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0
     enabled=1
     gpgcheck=1
     gpgkey=http://www.jpackage.org/jpackage.asc
