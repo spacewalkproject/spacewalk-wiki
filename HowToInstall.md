@@ -19,6 +19,7 @@ Spacewalk 2.5 installation instructions are available at [[HowToInstall25]].
  * Make sure your underlying OS is fully up-to-date.
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [[SpacewalkWithLDAP]]
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
+
 ## Setting up Spacewalk repo
 
 
