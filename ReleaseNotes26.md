@@ -71,7 +71,7 @@ Our thanks go to the community members who contributed to this release:
  * Michael Mraka
  * Silvio Moioli
 
-see https://fedorahosted.org/spacewalk/wiki/ContributorList for all contributors list
+see [Contributor List](ContributorList) for all contributors list
 ## Some statistics
 
 
