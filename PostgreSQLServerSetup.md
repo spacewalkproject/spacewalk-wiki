@@ -27,7 +27,9 @@ You should have PostgreSQL server running somewhere. Let's assume you will run t
 Create database, user, and plpgsql language there:
 
 
-    su - postgres -c 'PGPASSWORD=spacepw; createdb -E UTF8 spaceschema ; createlang plpgsql spaceschema ; createlang pltclu spaceschema ; yes $PGPASSWORD | createuser -P -sDR spaceuser'
+```sh
+su - postgres -c 'PGPASSWORD=spacepw; createdb -E UTF8 spaceschema ; createlang plpgsql spaceschema ; createlang pltclu spaceschema ; yes $PGPASSWORD | createuser -P -sDR spaceuser'
+```
 
 Configure the user to use md5 password to connect to that database. Put the lines like following to
 `/var/lib/pgsql/data/pg_hba.conf`. Avoid the common pitfall: *Make sure you put them *before* those existing lines that are for `all`.*.
@@ -78,22 +80,24 @@ Assuming you have your yum repo configuration for Spacewalk in place, these are 
 
 1. Install *spacewalk-setup-postgresql* package.
 
-
-    # yum install spacewalk-setup-postgresql
+```sh
+yum install spacewalk-setup-postgresql
+```
 
 2. Run spacewalk-setup-postgresql to configure the PostgreSQL server. You will need the following data to configure the database server:
   * database name
   * database username
   * database user password
 
-
-    # DBNAME=yourdbname
-    # DBUSER=yourdbuser
-    # DBPASSWORD=youruserpassword
-    # spacewalk-setup-postgresql create \
+```
+    DBNAME=yourdbname
+    DBUSER=yourdbuser
+    DBPASSWORD=youruserpassword
+    spacewalk-setup-postgresql create \
                                  --db $DBNAME \
                                  --user $DBUSER \
                                  --password $DBPASSWORD
+```
 ### PostgreSQL database and Spacewalk on different machines
  #pg-standalone
 
@@ -101,9 +105,9 @@ Assuming you have your yum repo configuration for Spacewalk in place, these are 
 Assuming you have your yum repo configuration for Spacewalk in place, these are the instructions needed to configure your PostgreSQL database for a multi-server installation (database and Spacewalk on different machines).
 
 1. Install *spacewalk-setup-postgresql* package.
-
-
-    # yum install spacewalk-setup-postgresql
+```
+    yum install spacewalk-setup-postgresql
+```
 
 2. Run spacewalk-setup-postgresql to configure the PostgreSQL server. You will need the following data to configure the database server:
   * database name
@@ -112,15 +116,16 @@ Assuming you have your yum repo configuration for Spacewalk in place, these are 
   * list of local addresses that the DB server will listen on (can be configured to listen on all addresses)
   * list of remote addresses to allow the connection from (presumably the IP address of your Spacewalk server)
 
-
-    # DBNAME=yourdbname
-    # DBUSER=yourdbuser
-    # DBPASSWORD=youruserpassword
-    # spacewalk-setup-postgresql create \
+```
+    DBNAME=yourdbname
+    DBUSER=yourdbuser
+    DBPASSWORD=youruserpassword
+    spacewalk-setup-postgresql create \
                                  --db $DBNAME \
                                  --user $DBUSER \
                                  --password $DBPASSWORD \
                                  --standalone
+```
 
 3. Make sure the firewall is configured correctly for a remote DB access. Normally, this would involve opening the TCP connection to port 5432.
 # Tune up PostgreSQL
