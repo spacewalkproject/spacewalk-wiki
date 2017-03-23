@@ -1,7 +1,5 @@
 # Spacewalk Upgrade Instructions
 
-
-
 These are upgrade instructions for upgrading Spacewalk 2.5 to Spacewalk 2.6
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
@@ -32,8 +30,8 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk 2.6 repository. For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo.
-    * In particular, make sure your jpackage repo is setup properly: https://fedorahosted.org/spacewalk/wiki/HowToInstall#Jpackagerepository
+  * You have set up your yum to point to Spacewalk 2.6 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
+    * In particular, make sure your jpackage repo is setup properly: https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#jpackage-all-systems
 ## Database and configuration backup
 
 
