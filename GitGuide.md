@@ -16,15 +16,15 @@ A quick start guide to using git, especially if you're used to using svn or cvs.
 
 To install git on Fedora just
 
-  # yum -y install git
+`# dnf -y install git`
 
-For installation on RHEL you have to add [EPEL](https://fedoraproject.org/wiki/EPEL) repository. Then you can install git as usual.
+For installation on RHEL, you have to add [EPEL](https://fedoraproject.org/wiki/EPEL) repository. Then you can install git as usual.
 ### Clone the Spacewalk git repository
 
 For anonymous access to the Spacewalk source code, feel free to clone the repository:
 
 
-    git clone https://github.com/spacewalkproject/spacewalk.git
+  `git clone https://github.com/spacewalkproject/spacewalk.git`
 
 For more details check out the DownloadIt page. 
 ### Commit Access
@@ -41,7 +41,7 @@ repository you'll need to do the following:
 After that you should be able to git clone with:
 
 
-    git clone git@github.com:spacewalkproject/spacewalk.git
+  git clone git@github.com:spacewalkproject/spacewalk.git
 ### Identify Yourself
 
 You must configure your name and email address for git to apply it to your commits. There are several ways to do this but one is to do so in `~/.gitconfig`.
@@ -52,28 +52,28 @@ You must configure your name and email address for git to apply it to your commi
 A good sample ~/.gitconfig:
 
 
-    [user]
-        name = Bill Smith
-        email = billsmith@example.com
-    
-    [alias]
-        ci = commit -a
-        co = checkout
-        st = status -a
-        praise = blame 
-    
-    [apply]
-        whitespace = strip
-    
-    [diff]
-        color = auto
-        rename = copy 
-    
-    [pager]
-        color = true 
-    
-    [status]
-        color = auto
+  [user]
+  name = Bill Smith
+  email = billsmith@example.com
+  
+  [alias]
+  ci = commit -a
+  co = checkout
+  st = status -a
+  praise = blame 
+  
+  [apply]
+  whitespace = strip
+  
+  [diff]
+  color = auto
+  rename = copy 
+  
+  [pager]
+  color = true 
+  
+  [status]
+  color = auto
 ## Things To Remember
 
 
@@ -87,72 +87,72 @@ A good sample ~/.gitconfig:
 
 Ready to start hacking on the code? Create yourself a branch to work in.
 
-      git checkout -b mybugfix
+  git checkout -b mybugfix
 This is actually combining two steps into one, you could also do this the long way with:
 
-      git branch mybugfix      # create the branch
-      git checkout mybugfix    # work on this branch
+  git branch mybugfix # create the branch
+  git checkout mybugfix # work on this branch
 
 The branch will be created from your current location, i.e. if you currently have master checked out your branch will point to the same commit as was the HEAD of master at that time.
 
 List your branches anytime and see which you're working on with:
 
-      git branch                # list all your branches
+  git branch # list all your branches
 You now have a local branch nobody else can see, they're extremely fast and lightweight, and you can commit as you please. Nothing is pushed to the central repository until you explicitly do so.
 
 Note that the single directory you cloned can be used to work on any branch you like with a simple git checkout command. Switching branches is extremely fast and easy and you can do so at virtually any time. Even if you have changes you don't want to commit (which you often can anyhow as you're working in a private branch), you can use git-stash to stash them away and apply them later, possibly to another branch. (if you found yourself working on the wrong branch)
 
 
-      git stash save "Half finished fixes for epoch bug."
+  git stash save "Half finished fixes for epoch bug."
 
 Now that you've branched you can get to work modifying, adding, and deleting files similar to the way you would use svn.
 
 
-    [gituser@git manager]$ echo "blahblahblah" > newfile
-    [gituser@git manager]$ git add newfile
-    
-    
-    [gituser@git manager]$ git-rm Worker.java 
-    rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
-    [gituser@git manager]$ git status
-    # On branch master
-    # Changes to be committed:
-    #   (use "git reset HEAD <file>..." to unstage)
-    #
-    #       deleted:    Worker.java
-    #       new file:   newfile
-    #
-    # Changed but not updated:
-    #   (use "git add <file>..." to update what will be committed)
-    #
-    #       modified:   SatManager.java
-    #
-    [gituser@git manager]$
+  [gituser@git manager]$ echo "blahblahblah" > newfile
+  [gituser@git manager]$ git add newfile
+  
+  
+  [gituser@git manager]$ git-rm Worker.java 
+  rm 'java/code/src/com/redhat/rhn/manager/Worker.java'
+  [gituser@git manager]$ git status
+  # On branch master
+  # Changes to be committed:
+  # (use "git reset HEAD <file>..." to unstage)
+  #
+  # deleted: Worker.java
+  # new file: newfile
+  #
+  # Changed but not updated:
+  # (use "git add <file>..." to update what will be committed)
+  #
+  # modified: SatManager.java
+  #
+  [gituser@git manager]$
 
 Now it's time to commit (and you can and should commit often, as often as you like). 
 
 *IMPORTANT NOTE:* By default, files you have modified will not be included if you run `git commit`. Normally you will probably just want to use the -a option to commit all modified files:
 
-      git commit -a
+  git commit -a
 If you wish to only include *some* of the modified files in your commit, you must do something like:
 
-      git commit modified-file1.txt  modified-file3.txt
+  git commit modified-file1.txt modified-file3.txt
 Repeat for as many commits as you like on your branch until you're satisfied with your bugfix, feature, or whatever.
 ### Commit Messages
 
 
 
-We have a convention for our commits.  The simple rule is:
+We have a convention for our commits. The simple rule is:
 
 If you are working on a bugzilla or a feature (that should have a bugzilla associated with it) you should prepend your commit message with the bugzilla # followed by your message describing the commit.
 
 
-      BUGZILLA# - comment goes here
+  BUGZILLA# - comment goes here
 
 For example: 
 
 
-      461162 - just add all the networks to the system profile in cobbler
+  461162 - just add all the networks to the system profile in cobbler
 
 If you are not working on a bugzilla in relation to the change just type your message as normal.
 ### Pushing Changes
@@ -167,11 +167,11 @@ Git rebase essentially checks what commits are in some destination branch that y
 
 To push your fixes in 'mybugfix' out you would do the following:
 
-      git checkout master           
-      git merge mybugfix            # merge in the commits from your local branch (use --squash if you'd like 1 to fold them into one commit)
-      git pull --rebase             # pull latest commits down from master, re-apply ours on top
-      gitk --all                    # review the status of the repository (can also use "tig" command for this)
-      git push origin master        # push commits from local branch master to remote branch with the same name
+  git checkout master 
+  git merge mybugfix # merge in the commits from your local branch (use --squash if you'd like 1 to fold them into one commit)
+  git pull --rebase # pull latest commits down from master, re-apply ours on top
+  gitk --all # review the status of the repository (can also use "tig" command for this)
+  git push origin master # push commits from local branch master to remote branch with the same name
 ### Working Directly In Master
 
 
@@ -179,7 +179,7 @@ To push your fixes in 'mybugfix' out you would do the following:
 If you feel you cannot keep track of local branches (or just do not want to use them), you can work directly in your master tracking branch. Please just be sure to use the --rebase option when you have unpushed changes committed and go to pull from master.
 
 
-    git pull --rebase
+  git pull --rebase
 
 Not using --rebase means that git pull will merge the remote references in instead, resulting in many of the dreaded "merge commits" in the git history which clutter up the log unnecessarily.
 
@@ -190,11 +190,11 @@ Note that using local branches offers some substantial benefits and is the recom
 
 For those without commit access, or those who just prefer to submit a patch for review, the steps are as follows:
 
-      git checkout master                 
-      git pull                      # fetch latest remote changes into master (should apply clean)
-      git checkout mybugfix         # return to your branch
-      git rebase master             # re-apply you changes on top of current state of master
-      git format-patch master       # generate a patch against master
+  git checkout master 
+  git pull # fetch latest remote changes into master (should apply clean)
+  git checkout mybugfix # return to your branch
+  git rebase master # re-apply you changes on top of current state of master
+  git format-patch master # generate a patch against master
 
 This will generate a number of patch files, one for each commit in your branch.
 ### Applying Patches
@@ -203,7 +203,7 @@ This will generate a number of patch files, one for each commit in your branch.
 
 Applying patches is as simple as:
 
-      git am 0001-incoming.patch       # apply the patch in your current branch
+  git am 0001-incoming.patch # apply the patch in your current branch
 
 Note that if you examine the git log, both the git identity of the patch author and the patch committer are tracked.
 ## Understanding Branches
@@ -224,31 +224,31 @@ The use of branches has proven one of the more difficult things to adapt to for 
 
 See what remote branches exist:
 
-    git branch -r
+  git branch -r
 
 Create a new remote branch (based on an existing local branch):
 
-    git-push origin localbranch:refs/heads/newremotebranch
+  git-push origin localbranch:refs/heads/newremotebranch
 
 Checkout a local copy of a remote branch, originally you will need to track it so you can keep up with changes automatically. (consider this like your local "master" branch, except push/pull works against the remote branch instead of the remote master)
 
-    git checkout --track -b localbranch origin/remotebranch
+  git checkout --track -b localbranch origin/remotebranch
 
 Push latest changes from your local branch back to the remote branch: 
 
-    
-    git-push origin localbranch:remotebranch
+  
+  git-push origin localbranch:remotebranch
 
 If you ever want to use that branch again, you can just do:
 
-    git-checkout my-branchname
+  git-checkout my-branchname
 
 As with any long lived branch it's important to sync it with master periodically to prevent a merge disaster when you rejoin. In the case of long lived branches, *use git merge instead of git rebase*.
 
-    git checkout master
-    git pull
-    git checkout myremotetrackingbranch
-    git merge master
+  git checkout master
+  git pull
+  git checkout myremotetrackingbranch
+  git merge master
 
 Deleting a remote branch entirely: For all intents and purposes lets leave remote branches for the time being. Deleting them can be a little dangerous if you were to happen to do it on a RELEASE branch, and send us digging into scm backups to recover it. Check with someone if you have a temporary remote branch that you really want deleted. Otherwise we'll probably clean them up from time to time.
 
@@ -288,30 +288,30 @@ Git will normally merge just about anything that can be safely automatically mer
 
 First list the files that require merging:
 
-    git ls-files --unmerged
+  git ls-files --unmerged
 
 Choose a file, open it, and search for the conflict markers just as you would when resolving a svn conflict.
 
 If the conflict is not obvious you can use gitk to view ONLY the commits made in each branch that are resulting in your conflict:
 
 
-    gitk --merge path/to/file
+  gitk --merge path/to/file
 
 If you'd like try a three way merge, try:
 
-    git mergetool -t meld
+  git mergetool -t meld
 
 This will fire up a merge tool (in my case "meld") with three columns. On the left will be the file as it was in your current branch, in the middle the state of the file now (after automatic merging including conflict markers), and on the left the state of the file from the branch being merged in.
 
 Once you've resolved your conflict:
 
-    git add path/to/resolved/file
+  git add path/to/resolved/file
 
 And proceed to the next file.
 
 Once you've resolved all conflicts:
 
-    git commit -a
+  git commit -a
 
 Git will pre-populate the commit message with the data for your merge commit including what files conflicted. Add anything you feel is necessary and you're ready to push out your changes.
 ## Cleaning Up A Confused Git Tree
@@ -331,59 +331,59 @@ If you run into a situation where your git tree is seemingly confused and you ca
 
 Revert a file with uncommitted changes you do not wish to keep:
 
-      git checkout path/to/file/to/revert.txt
+  git checkout path/to/file/to/revert.txt
 Revert all your current uncommitted changes:
 
-      git reset --hard HEAD
+  git reset --hard HEAD
 Revert changes from a past commit (generates a new commit):
 
-      git revert a31f80910768ba2232c796b814be11d064421f19
+  git revert a31f80910768ba2232c796b814be11d064421f19
 
 View diff of changes in a past commit:
 
-      git show a31f80910768ba2232c796b814be11d064421f19
+  git show a31f80910768ba2232c796b814be11d064421f19
 
 View diff of changes between two past commits:
 
-      git diff baf1a1490e205f821fbcc9c4ec2581728afd1c14..a31f80910768ba2232c796b814be11d064421f19
+  git diff baf1a1490e205f821fbcc9c4ec2581728afd1c14..a31f80910768ba2232c796b814be11d064421f19
 
 View a part revision of a specific file (feel free to pipe the output somewhere if you like). Make sure to use the full path to the file as it would be from the root of your git repository:
 
-    git show SHA1:java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml
+  git show SHA1:java/code/src/com/redhat/rhn/common/db/datasource/xml/Channel_queries.xml
 
 Replace file with a past version. Note that after doing this you still need to commit the change:
 
-    git checkout SHA1 -- path/to/file
+  git checkout SHA1 -- path/to/file
 
 Once you make changes, you can see the differences you've made since last commit:
 
-    git diff HEAD
+  git diff HEAD
 
 The following commands can help with formatting patches.
 
 
-    git-format-patch
-    git-send-email
+  git-format-patch
+  git-send-email
 
 Finished with your branch? Want to get rid of it? Then
 
-    git branch -d mybranch
+  git branch -d mybranch
 If you get a warning about unmerged changes, you can force the removal with
 
-    git branch -D mybranch
+  git branch -D mybranch
 
 See what you have committed but not pushed:
 
 
-    git log --pretty=oneline origin/master..master
+  git log --pretty=oneline origin/master..master
 
 Ever find yourself working on something then have to go fix a bug? You can stash away your files, fix your bug, then go back to what you were doing.
 Save your work:
 
-    git stash save mymessage
-    FIX YOUR BUG, commit and push. See what you have stashed:
-    git stash list
-    git stash apply stash@{0}
+  git stash save mymessage
+  FIX YOUR BUG, commit and push. See what you have stashed:
+  git stash list
+  git stash apply stash@{0}
 ## Tips
 
 
@@ -394,14 +394,14 @@ Save your work:
 
  * Keep track of what branch you are in by looking at your prompt. Update your prompt as follows:
 
-    PS1="[\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$ "
+  PS1="[\u@\h \W\$(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')]\$ "
 
 Here is what you will see when you cd into a git repository:
 
-    [speedy@gonzalez spacewalk{master}]$
+  [speedy@gonzalez spacewalk{master}]$
 If you chdir to a non git repository, your prompt will look like normal:
 
-    [speedy@gonzalez ~]$ 
+  [speedy@gonzalez ~]$ 
 ## Building Test RPMs
 
 
