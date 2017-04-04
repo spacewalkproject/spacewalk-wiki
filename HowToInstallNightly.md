@@ -61,6 +61,16 @@ for i386:
 
     rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
 
+### Fedora 25
+
+for x86_64:
+
+    rpm -Uvh http://yum.spacewalkproject.org/nightly/Fedora/25/x86_64/spacewalk-repo-2.6-0.fc25.noarch.rpm
+
+for i386:
+
+    rpm -Uvh http://yum.spacewalkproject.org/nightly/Fedora/25/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
+
 ### Nightly builds
 
 If you want to use the nightly builds, install the `spacewalk-repo` package based on your operating system (see above) and then enable the nightly repository:
