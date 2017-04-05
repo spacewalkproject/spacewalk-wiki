@@ -138,7 +138,7 @@ Spacewalk uses database server to store its primary data. It supports either Pos
 You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
 
     yum -y install spacewalk-setup-postgresql
-and skip to the section *Installing Spacewalk*.
+and skip to the section [*Installing Spacewalk*](#installing-spacewalk).
 ### PostgreSQL server, set up manually
 
 
