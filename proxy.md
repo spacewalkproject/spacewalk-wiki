@@ -124,7 +124,7 @@ Let's briefly talk about some of the files that you may find in the lookaside ca
 There will also be a list/ directory there (assuming Spacewalk Proxy 2.2 or higher) that contains cached descriptions of rpms in channels or channels associated with kickstarts. This is necessary because Proxy does not have any sort of database by itself, so naturally it would only know information that is in the incoming request or cache token files. However it needs to be able to differentiate between files that have the same name but different checksums in the lookaside cache (example: a signed and an unsigned copy of the same RPM) and respond with the correct file, and the GET request from yum only contains filename and channel label, not file checksum. These cached list files enable Proxy(Broker) to correctly evalutate if the requested file is actually in the lookaside cache. They should be created / updated / maintained automatically.
 # Links to related pages
 
-* DebuggingProxy
+* [DebuggingProxy](DebuggingProxy)
 
-* HowToInstallProxy
+* [HowToInstallProxy](HowToInstallProxy)
 * [proxy-precache](proxy-precache)
