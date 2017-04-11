@@ -1,6 +1,6 @@
 # Spacewalk Installation Instructions
 
-These are installation instructions for new installations of Spacewalk Nightly (2.7). If you are upgrading from older versions, see HowToUpgrade.
+These are installation instructions for new installations of Spacewalk Nightly (2.7). If you are upgrading from older versions, see [[HowToUpgrade]].
 
 Spacewalk 2.6 installation instructions are available at [[HowToInstall26]].
 
