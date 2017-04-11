@@ -2,7 +2,7 @@
 
 
 
-These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see HowToUpgrade.
+These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see [[HowToUpgrade]].
 
 Spacewalk 2.5 installation instructions are available at [[HowToInstall25]].
 
