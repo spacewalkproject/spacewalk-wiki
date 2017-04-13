@@ -297,3 +297,8 @@ Once you've made sure you can login to the Spacewalk WebUI, you can then proceed
 Spacewalk consists of several services. Each of them has its own init.d script to stop/start/restart. If you want manage all spacewalk services at once use 
 
     /usr/sbin/spacewalk-service [stop|start|restart].
+
+
+## Spacewalk and Let's Encrypt certificate
+
+If you want to replace default self-signed certificate with "trusted" one here is a detailed HowTo written by Avi Miller: [Using Let's Encrypt SSL Certificates with Spacewalk](https://omg.dje.li/2017/04/using-lets-encrypt-ssl-certificates-with-spacewalk/).
