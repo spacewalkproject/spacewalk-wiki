@@ -53,10 +53,11 @@ Execute the following commands:
     # yum versionlock quartz maven-model
 
 ### Remove conflicting packages
+
 When running on RHEL6, Scientific Linux 6, CentOS 6, you need to remove certain packages formerly installed from jpackage repo which are not used anymore and cause dependency conflicts.
 Execute the following command:
 
-    # rpm -e jakarta-commons-logging-1.1-8.jpp5.noarch jakarta-commons-digester-1.8-1jpp.noarch --nodeps
+    # rpm -e --nodeps  axis-*-*.jpp5 jakarta-commons-logging-*-*.jpp5 jakarta-commons-digester-*-*jpp jakarta-commons-dbcp-*-*.jpp5 jakarta-commons-discovery-*-*.jpp5 java-cup-*-*.jpp5 junit-*-*.jpp5 wsdl4j-*-*.jpp5 xalan-j2-*-*.jpp5
 
 ### All systems
 
