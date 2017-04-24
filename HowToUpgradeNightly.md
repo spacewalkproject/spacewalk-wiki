@@ -46,10 +46,10 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 ### Lock versions
 
-When running on Fedora 22, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
+When running on Fedora 24 and newer, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
 Execute the following commands:
 
-    # dnf install  python3-dnf-plugin*-versionlock
+    # dnf install python3-dnf-plugin*-versionlock
     # dnf versionlock quartz
 
 ### Remove conflicting packages
