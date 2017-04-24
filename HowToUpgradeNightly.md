@@ -49,8 +49,8 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 When running on Fedora 22, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
 Execute the following commands:
 
-    # yum install yum-versionlock
-    # yum versionlock quartz maven-model
+    # dnf install  python3-dnf-plugin*-versionlock
+    # dnf versionlock quartz
 
 ### Remove conflicting packages
 
