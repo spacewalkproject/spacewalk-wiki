@@ -50,7 +50,7 @@ When running on Fedora 24 and newer, you may need to lock the versions of severa
 Execute the following commands:
 
     # dnf install python3-dnf-plugin*-versionlock
-    # dnf versionlock quartz
+    # echo 'quartz-1.8.4' >>/etc/dnf/plugins/versionlock.list
 
 ### Remove conflicting packages
 
