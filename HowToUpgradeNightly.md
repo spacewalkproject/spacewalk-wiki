@@ -132,3 +132,18 @@ If you are running Spacewalk on Fedora run following command before starting Spa
 Then, start all Spacewalk services:
 
     # /usr/sbin/spacewalk-service start
+
+## Known Issues
+
+On RHEL6 tomcat may fail to restart with the following message in the /var/log/tomcat6/catalina.out:
+
+    SEVERE: Error deploying configuration descriptor rhn.xml
+    java.lang.IllegalStateException: ContainerBase.addChild: start: LifecycleException:  start: :  java.io.IOException: Failed to access resource /WEB-INF/lib/jta.jar
+
+This issue is caused by yum which removed symlink /usr/share/java/jta.jar. To fix it run:
+
+    # ln -s geronimo-jta.jar /usr/share/java/jta.jar
+
+And then restart tomcat6 again:
+
+    # service tomcat6 restart
