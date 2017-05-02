@@ -1,7 +1,5 @@
 # Intro
  
-
-
 The below instructions are how to set up the Spacewalk Development Environment. There are two versions of this setup. I have been unable to get the full workstation working properly on operating systems running tomcat 7. It refuses to compile the jsps at run time for reasons I don't understand. As such, newer operating systems like Fedora 19 and 20 should use the "Poor Man's Dev Workstation" below. Older operating systems like RHEL 5 and 6 can use the "Dev Workstation" instructions. There are positives and negatives to both.
 
 With the regular "Dev Workstation" it is possible to see the difference in jsps you have just edited by simply refreshing the page. It is also possible to configure eclipse to auto-build class files when you save and have tomcat auto-reload when it detects the class files have changed. This leads to a very smooth and fast development environment when it's all working correctly. However, it tends to be very fragile and rely on specific versions of jar files that are named exactly the correct thing at exactly the correct location on the filesystem.
@@ -9,34 +7,22 @@ With the regular "Dev Workstation" it is possible to see the difference in jsps 
 In the "Poor Man's Dev Workstation" you have to run an ant command every time you want your changes to take effect, which can take several minutes. However, it tends to be much less fragile and actually works with tomcat 7, which is good.
 
 In either case python and perl code can be changed by running 'sudo make install' and restarting httpd. There are some common prerequisites followed by the setup instructions for both setups.
+
+
 # Prerequisites
 
-### Jpackage-Generic Repo
-
-
-
-
-Add the following to /etc/yum.repos.d/jpackage-generic.repo
-
-
-    [jpackage-generic]
-    name=JPackage generic
-    #baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
-    mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0
-    enabled=1
-    gpgcheck=0
 ### Spacewalk Runtime Environment
 
-
-
 In order to setup the  Spacewalk development environment, you first need to have a running version of Spacewalk installed following the instructions in [Spacewalk Installation Instructions](HowToInstall).
+
 ### Git
 
 To setup the sources follow the instructions in [Install Git](GitGuide) and [clone the Spacewalk repository](GitGuide).
+
+
 # Web Application
 
 ## Poor Man's Dev Workstation
-
 
 Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragile but slower development environment. FIXME: This is not working yet. Figure out what needs to be changed to make it work.
 
@@ -49,23 +35,22 @@ Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragi
    * `sudo yum versionlock jmock`
  * `cd $SPACEWALK_GIT/java`
  * `sudo ant install-web` 
+
 ### Developing
 
 To develop changes in the java stack, make your changes and then from $SPACEWALK_GIT/java:
 
  * `sudo ant install-tomcat7` (or as appropriate for your version of tomcat)
  * `sudo service tomcat restart`
+
+
 ## Full Dev Workstation
 
 ### Installation
 
-
  * `sudo /usr/sbin/rhn-satellite stop`
 
- * `sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.7.0-openjdk-devel postgresql-jdbc`
- * `sudo yum install jmock --disablerepo=* --enablerepo=jpackage-generic`
-   * `sudo yum install -y yum-plugin-versionlock; sudo yum versionlock jmock`
- * `sudo mkdir /usr/lib/java-1.7.0 /usr/share/java-1.7.0`
+ * `sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.8.0-openjdk-devel postgresql-jdbc jmock jmock-junit3 jmock-legacy checkstyle`
  * `cd $SPACEWALK_GIT/java`
  * `ant init-install compile`
  * If you run into an error like `Unsupported major.minor version 52.0`:
@@ -77,16 +62,14 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
  * `sudo ant install-devel` 
    * Note: if this fails the first time do not run again! Instead look at the install-java target in java/buildconf/build-webapp.xml and manually do whatever remains to be done.
  * `sudo /usr/sbin/rhn-satellite start`
+
 ### Set Permissions
-
-
 
 Make sure that permissions are properly set.  If your Git repo is in your homedir, then apache and tomcat must be able to get read and execute access to not only the Git repo, but your homedir as well.  The following commands should work when run from homedir:
  * `[~](you@yourmachine)$ sudo setfacl  -R  -m  u:apache:rx .`
  * `[~](you@yourmachine)$ sudo setfacl  -R  -m  u:tomcat:rx .`
+
 ### Uninstallation
-
-
 
 In case you decide to undo your development environment changes and go back to running your Spacewalk.
 
@@ -95,6 +78,7 @@ In case you decide to undo your development environment changes and go back to r
  * `sudo ant uninstall-devel`
 
 Your development environment should now be ready to go. Having problems? Check out the [troubleshooting](DevelopmentWorkstationSetup) section below.
+
 # Search Server Setup
 
 If you are going to be updating the search server java code, you would have to do the following:
@@ -105,9 +89,8 @@ If you are going to be updating the search server java code, you would have to d
  * `../rel-eng/bin/tito build --test --rpm && /tmp/spacewalk-build/noarch/spacewalk-search-*.git.*.noarch.rpm `
  * `it's a good idea to wipe out the search indexes, "sudo /sbin/service rhn-search cleanindex"`
  * `sudo /usr/sbin/rhn-satellite start`
+
 # Deploying development schema
-
-
 
 This will completely drop all data from the database and recreate all tables, stored procs, etc.  Any systems, channels, or packages will no longer exist within the DB after this operation.  It is not reversible.  When it is finished, you should have a database deployed with a schema that is inline with your git checkout.
 
@@ -120,17 +103,15 @@ This will completely drop all data from the database and recreate all tables, st
  /etc/init.d/rhn-satellite start
 }}} 
 
-
       If pointing to an old Satellite's DB, use TBS=DATA_TBS  or you will be sorry!
-
 
       To determine if it was successful, look for
       SQL_FILE
       ---------------
       rhnsat/quit.sql
+
+
 # Taskomatic
-
-
 
 To be able to edit Taskomatic code you simply need to create a symlink:
 
@@ -140,6 +121,7 @@ To be able to edit Taskomatic code you simply need to create a symlink:
       service taskomatic restart
 
 Now you can simply edit the code as desired.  To have taskomatic pick up those changes simply run 'ant' from the java directory and restart taskomatic.
+
 # Troubleshooting
 
  * "ant create-webapp-dir" fails with "Problem: failed to create task or type for":
