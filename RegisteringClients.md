@@ -24,109 +24,89 @@ Registering Clients
 
 1. Install the Spacewalk client yum repository
     * For Fedora 23 (x86_64 and i386):
-
       ```
       # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/Fedora/23/x86_64/spacewalk-client-repo-2.6-0.fc23.noarch.rpm
       ```
 
     * For Fedora 24 (x86_64 and i386):
-
       ```
       # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/Fedora/24/x86_64/spacewalk-client-repo-2.6-0.fc24.noarch.rpm
       ```
        
 2. Install client packages
-    * For Fedora 23 and Fedora 24:
-
       ```
       # dnf -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto dnf-plugin-spacewalk
       ```
 
-3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
-      
+3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)     
       ```
       # rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
       ```
 
-4. Register your Fedora system to Spacewalk using the activation key you created earlier
-    
+4. Register your Fedora system to Spacewalk using the activation key you created earlier  
       ```
       # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel>
       ```
 
-
 ### Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7
-
-    
 
 > **Warning:**
 > If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!
     
 1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL. Install the Spacewalk yum repository and matching EPEL repository.
      * RHEL 5 / CentOS 5
-      
-      ```
-      # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/5/x86_64/spacewalk-client-repo-2.6-0.el5.noarch.rpm
-      # BASEARCH=$(uname -i)
-      # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
-      ```
+       ```
+       # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/5/x86_64/spacewalk-client-repo-2.6-0.el5.noarch.rpm
+       # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm
+       ```
     
      * RHEL 6 / SL 6 / CentOS 6
-       
        ```
        # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/6/x86_64/spacewalk-client-repo-2.6-0.el6.noarch.rpm
-       # BASEARCH=$(uname -i)
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
        ```
 
      * RHEL 7 / SL 7 / CentOS 7
-       
        ```
        # rpm -Uvh http://yum.spacewalkproject.org/2.6-client/RHEL/7/x86_64/spacewalk-client-repo-2.6-0.el7.noarch.rpm
-       # BASEARCH=$(uname -i)
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
        ```
     
 2. Install client packages
 
- ```
- # yum -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
- ```
+   ```
+   # yum -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto yum-rhn-plugin
+   ```
 
 3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
-
- ```
- # rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
- ```
+   ```
+   # rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
+   ```
 
 4. Register your system to Spacewalk using the activation key you created earlier
- 
- ```
- # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> 
- ```
+   ```
+   # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> 
+   ```
 
 ## CentOS 4
 
 Registering a CentOS 4 server to Spacewalk is exactly the same as it would be for CentOS 5, but rhnreg_ks, rhn_check and other related scripts are located in the package "up2date", and not in "rhn-setup".
     
 1. Enable "spacewalk-tools" repo for Yum and install "up2date" package:
-
-  ```
-  # rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
-  # yum install up2date 
-  ```
+   ```
+   # rpm -ivh http://stahnma.fedorapeople.org/spacewalk-tools/spacewalk-client-tools-0.0-1.noarch.rpm
+   # yum install up2date 
+   ```
 
 2. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
-
-  ```
+   ```
    # rpm -Uvh http://YourSpacewalk.example.com/pub/rhn-org-trusted-ssl-cert-1.0-1.noarch.rpm
-  ```
+   ```
 
 3. Register your CentOS system to Spacewalk using the activation key you created earlier:
-
-  ```
-  # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-centos-custom-channel>
-  ```
+   ```
+   # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-centos-custom-channel>
+   ```
 
 ## SUSE
 
