@@ -73,13 +73,13 @@ is in directory `/var/lib/pgsql/data/pg_log`.
 
 ## Installation
 
-    Follow usual installation guide, but use `--external-postgresql-over-ssl`
-    option in addition to `--external-postgresql`. In addition to usual stuff
-    you will be prompted for location of file containing certificate of
-    trusted certification authority. Installator will make sure certificate
-    will get into `~/.postgresql/root.crt`, `/etc/rhn/postgresql-db-root-ca.cert`,
-    and `/etc/rhn/javatruststore.jks`. It will also change permissions, do restorecon,
-    and set `db_ssl_enabled = 1` in `rhn.conf`.
+Follow usual installation guide, but use `--external-postgresql-over-ssl`
+option in addition to `--external-postgresql`. In addition to usual stuff
+you will be prompted for location of file containing certificate of
+trusted certification authority. Installator will make sure certificate
+will get into `~/.postgresql/root.crt`, `/etc/rhn/postgresql-db-root-ca.cert`,
+and `/etc/rhn/javatruststore.jks`. It will also change permissions, do restorecon,
+and set `db_ssl_enabled = 1` in `rhn.conf`.
 
     spacewalk-setup --disconnected --external-postgresql --external-postgresql-over-ssl
 
