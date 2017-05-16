@@ -1,4 +1,4 @@
-= How to setup Spacewalk with PostgreSQL database over SSL
+# How to setup Spacewalk with PostgreSQL database over SSL
 
 There are two possible ways to get Spacewalk + PostgreSQL database
 to communicate over SSL:
@@ -8,14 +8,14 @@ to communicate over SSL:
   * Reconfigure existing Spacewalk to start using SSL
     (Follow [#ExistingSpacewalk Existing Spacewalk] instructions).
 
-== New Spacewalk
+## New Spacewalk
 
   * Install PostgreSQL database.
   * Follow steps in [Enabling SSL on PostgreSQL database]().
   * Follow [Installation]().
   * When using command line utilities follow [Command-line utilities]().
 
-== Existing Spacewalk
+## Existing Spacewalk
 
   * Stop Spacewalk server.
   * Follow steps in [Enabling SSL on PostgreSQL database]().
@@ -23,7 +23,7 @@ to communicate over SSL:
   * When using command line utilities follow [Command-line utilities]().
   * Start Spacewalk server.
 
-== Enabling SSL on PostgreSQL database
+## Enabling SSL on PostgreSQL database
 
 In `/var/lib/pgsql/data`:
 
@@ -60,12 +60,12 @@ Restart database:
     # service postgresql restart
     }}}
 
-=== Debugging
+### Debugging
 
 Some usefull information that can help you in case of issues
 is in directory `/var/lib/pgsql/data/pg_log`.
 
-=== Example self-signed certificate
+### Example self-signed certificate
 
     {{{
     # openssl req -new -text -out server.req
@@ -77,7 +77,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     # chmod og-rwx /var/lib/pgsql/data/server.key
     }}}
 
-== Installation
+## Installation
 
     Follow usual installation guide, but use `--external-postgresql-over-ssl`
     option in addition to `--external-postgresql`. In addition to usual stuff
@@ -91,7 +91,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     spacewalk-setup --disconnected --external-postgresql --external-postgresql-over-ssl
     }}}
 
-== Command-line utilities
+## Command-line utilities
 
 Tools that use rhn.conf should be all ok after following steps in
 [Enabling SSL on Spacewalk](). However, some
@@ -124,7 +124,7 @@ or you can export `PGSSLMODE` variable
     # spacewalk-sql -i
     }}}
 
-== Enabling SSL on Spacewalk
+## Enabling SSL on Spacewalk
 
   * First, you need spacewalk nightly.
   * You need certificate of trusted certification authority in
@@ -145,7 +145,7 @@ or you can export `PGSSLMODE` variable
 
 Most database-aware components in Spacewalk should work with this.
 
-=== Java
+### Java
 
 Java-based components (Tomcat, Taskomatic, and Rhn-search) require
 certificates to be stored in TrustStore. Its default location
@@ -166,7 +166,7 @@ For SSL-related troubleshooting one can temporarily add
 `-Djavax.net.debug=ssl` to `JAVA_OPTS`, for example in
 `/etc/sysconfig/tomcat6`.
 
-==== Change password to keystore
+#### Change password to keystore
 
     {{{
     # keytool -storepasswd -keystore /path/to/keystore.file
