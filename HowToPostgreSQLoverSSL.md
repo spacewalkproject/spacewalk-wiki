@@ -34,7 +34,7 @@ In `/var/lib/pgsql/data`:
       Consult your security people for tweaking those.
   * Edit `pg_hba.conf` -- Change lines allowing remote hosts (Spacewalk)
     to start with `hostssl` instead of `host`. Example of change:
-        {{{
+
         --- old/pg_hba.conf
         +++ new/pg_hba.conf
         @@...@@
@@ -46,19 +46,15 @@ In `/var/lib/pgsql/data`:
          
         -host   rhnsat rhnsat 192.0.2.5/32 md5
         +hostssl   rhnsat rhnsat 192.0.2.5/32 md5
-        }}}
+
   * Make sure keys are owned by postgres and have correct permissions.
 
-        {{{
         # chown postgres:postgres /var/lib/pgsql/data/server.{key,crt}
         # chmod 0400 /var/lib/pgsql/data/server.key
-        }}}
 
 Restart database:
 
-    {{{
     # service postgresql restart
-    }}}
 
 ### Debugging
 
@@ -67,7 +63,6 @@ is in directory `/var/lib/pgsql/data/pg_log`.
 
 ### Example self-signed certificate
 
-    {{{
     # openssl req -new -text -out server.req
     # openssl rsa -in privkey.pem -out server.key
     # rm privkey.pem
@@ -75,7 +70,6 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     # cp server.{key,crt} /var/lib/pgsql/data
     # chown postgres: /var/lib/pgsql/data/server.{key,crt}
     # chmod og-rwx /var/lib/pgsql/data/server.key
-    }}}
 
 ## Installation
 
@@ -87,9 +81,7 @@ is in directory `/var/lib/pgsql/data/pg_log`.
     and `/etc/rhn/javatruststore.jks`. It will also change permissions, do restorecon,
     and set `db_ssl_enabled = 1` in `rhn.conf`.
 
-    {{{
     spacewalk-setup --disconnected --external-postgresql --external-postgresql-over-ssl
-    }}}
 
 ## Command-line utilities
 
@@ -113,16 +105,12 @@ with `PGSSLROOTCERT` environment variable). Then you can run installer
 with `PGSSLMODE` environment variable set to `verify-full`. Example of
 calling `spacewalk-sql` would be
 
-    {{{
     # PGSSLMODE=verify-full spacewalk-sql -i
-    }}}
 
 or you can export `PGSSLMODE` variable
 
-    {{{
     # export PGSSLMODE=verify-full
     # spacewalk-sql -i
-    }}}
 
 ## Enabling SSL on Spacewalk
 
@@ -132,16 +120,12 @@ or you can export `PGSSLMODE` variable
     option `db_sslrootcert` in `rhn.conf`.)
   * Set `db_ssl_enabled` to property to `1` in `/etc/rhn/rhn.conf`:
 
-        {{{
         db_ssl_enabled = 1
-        }}}
 
   * Follow steps in [Java]() subsection.
   * Restore selinux context for new files.
 
-        {{{
         # restorecon -R -F -v /etc/rhn/
-        }}}
 
 Most database-aware components in Spacewalk should work with this.
 
@@ -156,11 +140,9 @@ TrustStore is manipulated by `keytool`. It expects key to be in DER
 format for import. TrustSore needs password for creation/manipulation,
 not for access though. Follows example of importing authority certificate.
 
-    {{{
     # openssl x509 -in /etc/rhn/postgresql-db-root-ca.cert -out server.der -outform der
     # keytool -keystore /etc/rhn/javatruststore.jks -alias postgresql -import -file server.der
     # rm server.der
-    }}}
 
 For SSL-related troubleshooting one can temporarily add
 `-Djavax.net.debug=ssl` to `JAVA_OPTS`, for example in
@@ -168,6 +150,4 @@ For SSL-related troubleshooting one can temporarily add
 
 #### Change password to keystore
 
-    {{{
     # keytool -storepasswd -keystore /path/to/keystore.file
-    }}}
