@@ -49,8 +49,7 @@ To develop changes in the java stack, make your changes and then from $SPACEWALK
 ### Installation
 
  * `sudo /usr/sbin/rhn-satellite stop`
-
- * `sudo yum install ant-nodeps ant-contrib junit ant-junit java-1.8.0-openjdk-devel postgresql-jdbc jmock jmock-junit3 jmock-legacy checkstyle`
+ * `sudo yum install apache-ivy ant-contrib junit ant-junit java-1.8.0-openjdk-devel postgresql-jdbc jmock jmock-junit3 jmock-legacy checkstyle`
  * `cd $SPACEWALK_GIT/java`
  * `ant init-install compile`
  * If you run into an error like `Unsupported major.minor version 52.0`:
