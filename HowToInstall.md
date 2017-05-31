@@ -2,9 +2,9 @@
 
 
 
-These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see [[HowToUpgrade]].
+These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.5 installation instructions are available at [[HowToInstall25]].
 
-Spacewalk 2.5 installation instructions are available at [[HowToInstall25]].
+*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 ----
 ## Prerequisites
@@ -69,11 +69,6 @@ for i386:
 
     rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
 
-### Nightly builds
-
-If you want to use the nightly builds please see instructions on [[HowToInstallNightly]].
-
-*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 ## Additional repos & packages
 
