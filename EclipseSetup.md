@@ -63,8 +63,8 @@ Now skip down below to the Create Project Directory step.
 3) cd to ~/spacewalk/java/.  We use ivy to resolve our jar dependencies.  Run the following cmd below to properly setup some of your .classpath entries.
 
 
-       mkdir build/test-lib
-       mkdir build/build-lib
+       mkdir -p build/test-lib
+       mkdir -p build/build-lib
        ant make-eclipse-project
 
 
