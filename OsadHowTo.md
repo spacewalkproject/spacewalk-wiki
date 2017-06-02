@@ -126,6 +126,10 @@ For more on how to maintain and clean up the bundled Berkeley DB for Jabber, go 
 
 [Jabber and OSAD client connection issues](JabberAndOSAD)
 
+### How to (re)confgure OSAD with different backend
+  * [Configuring Spacewalk's jabberd to use an SQLite backend](https://omg.dje.li/2017/02/configuring-spacewalks-jabberd-to-use-an-sqlite-backend/)
+  * [Configuring Spacewalk's jabberd to use a PostgreSQL backend](https://omg.dje.li/2017/03/configuring-spacewalks-jabberd-to-use-a-postgresql-backend/)
+
 ### Resources
 
  * http://jabberd.jabberstudio.org/2/docs/
