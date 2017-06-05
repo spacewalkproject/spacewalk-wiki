@@ -6,7 +6,6 @@
 
 | *Query* | *Assigned* | *Status* | *Notes* |  |
 | --- | --- | --- | --- | --- |
-
 ||spacewalk/documentation/db-schema/spacewalk-0.1/fk-indexes.sql||not-needed||||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/Server.pm||Gurjeet||done||||||||
 ||spacewalk/web/modules/rhn/RHN/DB/User.pm||Gurjeet||done||no queries||||||
