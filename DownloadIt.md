@@ -10,7 +10,7 @@
 
 Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [yum repositories](http://yum.spacewalkproject.org/). Please [follow installation information](HowToInstall) on how to best setup yum to have dependencies resolved properly.
 
-Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [nightly builds](HowToInstall).
+Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [nightly builds](HowToInstallNightly).
 ## Source
 
 ### Getting source code with git
