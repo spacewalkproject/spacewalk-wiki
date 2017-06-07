@@ -2,9 +2,9 @@
 
 
 
-Version 0.4 of Spacewalk adds significantly enhanced operating system installation capabilities by bundling the [Cobbler](http://fedorahosted.org/cobbler) Linux installation server.
+Version 0.4 of Spacewalk adds significantly enhanced operating system installation capabilities by bundling the [Cobbler](https://cobbler.github.io/) Linux installation server.
 
-_Note:  There are a lot of power features documented on the Cobbler project page, see https://fedorahosted.org/cobbler for those._
+_Note:  There are a lot of power features documented on the Cobbler project page, see https://cobbler.github.io/ for those._
 
 New features in 0.4 include:
 
@@ -17,7 +17,7 @@ New features in 0.4 include:
  * Automatic PXE setup with auto-generated PXE menus for physical deployments
  * Integrated DHCP and DNS management (can be enabled, but is not surfaced in Spacewalk)
  * Powerful kickstart file templating using Cheetah (see https://fedorahosted.org/cobbler/wiki/KickstartTemplating and https://fedorahosted.org/cobbler/wiki/KickstartSnippets)
- * But wait, there's more! (see [Cobbler Wiki](http://fedorahosted.org/cobbler))
+ * But wait, there's more! (see [Cobbler Wiki](https://github.com/cobbler/cobbler/wiki))
 ## Quick Start Guide for Spacewalk
 
 
@@ -106,7 +106,7 @@ Koan can be run on any Spacewalk managed machine to install new VMs.
 
 If you use profiles set up in Spacewalk, virtual machines will be registered to the Spacewalk server automatically. 
 
-* For various other tips and tricks see http://fedorahosted.org/cobbler, in particular, you will probably be interested in the kickstart templating features under "User Documentation".
+* For various other tips and tricks see  https://cobbler.github.io, in particular, you will probably be interested in the kickstart templating features under "User Documentation".
 ## How Cobbler and Spacewalk are linked internally
 
 
@@ -133,7 +133,7 @@ The call sequence is
 with *username* and *password* coming from [[PARTHA]].  This call is made when obtaining a cobbler token for interaction with Cobbler.  Once a token is established this callback does
 not occur again. 
 
-The following describes in some detail the interplay between the two systems in regards Distros, Profiles, and Systems.  Bear in mind however that Cobbler holds a fair number of relevant default values from its own installation.  Spacewalk only sets Cobbler parameters to the extent required to cause Cobbler to work with Spacewalk - there's much more going on with Cobbler that this document won't cover.  If you need more detail, _man cobbler_ and see http://fedorahosted.org/cobbler
+The following describes in some detail the interplay between the two systems in regards Distros, Profiles, and Systems.  Bear in mind however that Cobbler holds a fair number of relevant default values from its own installation.  Spacewalk only sets Cobbler parameters to the extent required to cause Cobbler to work with Spacewalk - there's much more going on with Cobbler that this document won't cover.  If you need more detail, _man cobbler_ and see  https://cobbler.github.io
 
  * When you create a *Distribution* in the Spacewalk GUI, Spacewalk makes one ore more distros in Cobbler, depending on the distribution:
     * Two XMLRPC calls are made to Cobbler to create two versions of a distro: one with a Xen kernel, one without.  The call passes:
@@ -184,5 +184,5 @@ The following describes in some detail the interplay between the two systems in 
 
 
 
-See http://fedorahosted.org/cobbler for lots of them -- this section can be updated later with pointers to some of the more popular items.
+See  https://cobbler.github.io for lots of them -- this section can be updated later with pointers to some of the more popular items.
 
