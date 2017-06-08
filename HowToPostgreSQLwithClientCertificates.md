@@ -15,7 +15,7 @@ Must have cert of trusted authority (`PGDATA=/var/lib/pgsql/data`):
   * `$PGDATA/root.crt` - trusted certificate authorities
   * `$PGDATA/root.crl` - certificates revoked by certificate authorities
 
-in `pg_hba.conf` change auth methot to `cert` and add `clientcert=1` on appropriate hostssl lines:
+in `pg_hba.conf` change auth method to `cert` and add `clientcert=1` on appropriate hostssl lines:
 
 
     --- old/pg_hba.conf
