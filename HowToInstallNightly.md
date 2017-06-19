@@ -123,7 +123,7 @@ Spacewalk uses database server to store its primary data. It supports either Pos
 
 ### PostgreSQL server, set up by Spacewalk (embedded)
 
-You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
+You can let Spacewalk set up the PostgreSQL server on your machine without any manual intervention. Run:
 
     yum -y install spacewalk-setup-postgresql
 
@@ -131,7 +131,7 @@ and skip to the section [*Installing Spacewalk*](#installing-spacewalk).
 
 ### PostgreSQL server, set up manually
 
-If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
+If you prefer to set up the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
 
