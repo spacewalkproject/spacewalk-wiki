@@ -127,7 +127,7 @@ You can let Spacewalk set up the PostgreSQL server on your machine without any m
 
     yum -y install spacewalk-setup-postgresql
 
-and skip to the section [*Installing Spacewalk*](#installing-spacewalk).
+and skip to the section *Installing Spacewalk*.
 
 ### PostgreSQL server, set up manually
 
