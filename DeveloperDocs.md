@@ -43,6 +43,8 @@ This section contains information about developer topics.  You may also be inter
  * [[LocalIvyRepo]] -- how to create a local ivy repository
  * [[CustomSerializer]] -- how to create a custom serializer
  * [[LogDriverSetup]] -- how to enable the log4j logdriver utility to see SQL output and params used
+ * [[HowToScratchBuild]] -- how to create a test rpm with scratch build
+
 ----
 ## __Releasing the code__
 
