@@ -13,9 +13,6 @@ This section contains information about developer topics.  You may also be inter
  * [[JavaDesign]] -- design of the Java web UI.
  * [Navi](NavigationSystem) -- our navigation system -- understand our own home grown navigation system used throughout the app
  * [[ListTag]] -- used for creating lists within the java pages   
- * [[PerlStack]] -- understand how the pxt layer communicates with the perl modules and mod_perl
-   * [[PxtOverview]] -- overview explaining the rationale for building PXT
-   * [[PxtForDummies]] -- explains how to work with PXT
  * [[AclDesign]] -- detailed explanation of ACLs
  * Database
    * [Development Guide](DatabaseGuide)
@@ -33,7 +30,7 @@ This section contains information about developer topics.  You may also be inter
 
  * [Git Guide](GitGuide) -- how to work with Git, the source control of choice for Spacewalk
 
- * [GitStat](http://miroslav.suchy.cz/spacewalk/gitstat/) -- boring statistics extracted from our git repo.
+ * [Git stats](https://github.com/spacewalkproject/spacewalk/graphs/contributors) -- boring statistics extracted from our git repo.
  * [Setting up the Development environment](DevelopmentWorkstationSetup)
  * [[EclipseSetup]] -- How to get eclipse running to edit/compile/junit the spacewalk-java code.
  * [[PatchProcess]] -- how to go about creating a new patch and submitting it to the mailing list
