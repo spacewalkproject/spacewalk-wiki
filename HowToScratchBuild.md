@@ -29,7 +29,7 @@ Fedora 25 / x86_64) and then fill in
         Project Name:  spacewalk-scratch
         Description:   My Spacewalk scratch builds
         Chroots:       [x] fedora-25-x86_64
-        External Repositories: https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-$releasever-$basearch/
+        External Repositories: copr://@spacewalkproject/nightly
         Other Options: [x] Project will not be listed on home page
 
 and click 'Create'. Then you can create a new build, go to 
