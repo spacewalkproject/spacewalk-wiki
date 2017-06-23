@@ -73,7 +73,7 @@ Configure build root (e.g. Fedora 25 / x86_64)
         # rename buildroot to spacewalk-fedora-25-x86_64
         sed -i "/config_opts\['root'\]/ s/= '/= 'spacewalk-/" ~/.mock/spacewalk-fedora-25-x86_64.cfg
         # add spacewalk nightly repo
-        sed -i '$ s,""",\n[group_spacewalkproject-nightly-client]\nname=Copr repo for nightly-client owned by @spacewalkproject\nbaseurl=https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly-client/fedora-$releasever-$basearch/\ngpgcheck=0\nenabled=1\n""",' ~/.mock/spacewalk-fedora-25-x86_64.cfg
+        sed -i '$ s,""",\n[group_spacewalkproject-nightly]\nname=Copr repo for nightly owned by @spacewalkproject\nbaseurl=https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-$releasever-$basearch/\ngpgcheck=0\nenabled=1\n""",' ~/.mock/spacewalk-fedora-25-x86_64.cfg
 
 and now you can run local scratch build (they run in chroot /var/lib/mock/spacewalk-fedora-25-x86_64
 and do not mess your workstation OS)
