@@ -162,7 +162,7 @@ If you tend to use the Oracle backend:
 
 Spacewalk needs various inbound ports to be accessible. Use `system-config-firewall` or edit `/etc/sysconfig/iptables`, adding the ports needed -- 80 and 443.
 
-On a system with `firewalld` use `firewall-cmd --add-service=http ; firewall-cmd --add-service=https`. 
+On a system with `firewalld` use `firewall-cmd --add-service=http ; firewall-cmd --add-service=https ; firewall-cmd --runtime-to-perm`. 
 
 Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
 
