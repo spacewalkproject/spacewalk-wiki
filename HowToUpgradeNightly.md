@@ -10,7 +10,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
 ## Archive of older upgrade instructions
 
- * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade26]]
+ * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade]]
  * Spacewalk 2.4 to 2.5 upgrade instructions, are available at [[HowToUpgrade25]]
  * Spacewalk 2.3 to 2.4 upgrade instructions, are available at [[HowToUpgrade24]]
  * Spacewalk 2.2 to 2.3 upgrade instructions, are available at [[HowToUpgrade23]]
