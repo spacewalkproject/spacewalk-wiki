@@ -17,7 +17,7 @@ To update this click this [link](https://fedorahosted.org/spacewalk/search?q=%22
 
 
  * [[Spacewalkonvm]]
- * [[https://fedorahosted.org/spacewalk/wiki/Features/SupportUser]]
+ * [[Features_SupportUser]]
  * [[MultiArchEnhancements]]
 ## User Docs Road Map
 
