@@ -69,8 +69,6 @@ You don't need to ask to be in the spacewalk account system group, that's only f
 
 ## __Want to File a Bug/RFE?__
 
- * [Enter a bug here](https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk): Check if the issue already has bugzilla filed at bugzilla.redhat.com.
-
+ * [Enter a bug here](https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk): Check if the issue already has bugzilla filed at bugzilla.redhat.com. If it has not, then please report it here with all the detail you can muster.
  * [Search for bugs here](https://bugzilla.redhat.com/query.cgi?product=Spacewalk): If it has, feel free to add yourself to Cc list of that bugzilla and add comments with more details, logs, etc.
- * [Report a new bug](https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk): If it has not, then please report it here with all the detail you can muster.
  * [Get a Bugzilla account](https://bugzilla.redhat.com/createaccount.cgi): You will need an account in bugzilla to add comments or file new bugzillas.
