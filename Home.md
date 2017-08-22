@@ -3,7 +3,7 @@
 ## __Latest News__
 
 
-![Alt](wiki/images/26release.png?raw=True)
+![Alt](images/26release.png?raw=True)
 
 
 
