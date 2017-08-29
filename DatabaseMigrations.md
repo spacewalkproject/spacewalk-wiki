@@ -68,7 +68,14 @@ Run following statement as root:
 
     spacewalk-dump-schema --to=postgresql > migrate-to-postgresql.sql
 
+If your original oracle database was in AL32UTF8 encoding, re-encode it:
+
+    mv migrate-to-postgresql.sql migrate-to-postgresql.sql.al32utf8
+    iconv -c -t utf-8 migrate-to-postgresql.sql.al32utf8 > migrate-to-postgresql.sql
+    
  * This will connect to database specified in */etc/rhn/rhn.conf*, dumps all content into file *migrate-to-postgresql.sql*.
+
+
 ### Additional parameters
 
 
