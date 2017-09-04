@@ -5,13 +5,10 @@
 
 ### What is Spacewalk
 
+That's the first thing posted here:  See https://github.com/spacewalkproject/spacewalk :)
 
 
-
-That's the first thing posted here:  See https://fedorahosted.org/spacewalk :)
 ### How long has Spacewalk been around?
-
-
 
 In 2000, Red Hat launched a hosted update service called *Red Hat Network (RHN)*.
 
