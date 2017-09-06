@@ -1,10 +1,10 @@
 # Spacewalk Installation Instructions
 
-These are installation instructions for new installations of Spacewalk Nightly (2.7). If you are upgrading to nightly from older versions, see [[HowToUpgradeNightly]].
+These are installation instructions for new installations of Spacewalk Nightly (2.8). If you are upgrading to nightly from older versions, see [[HowToUpgradeNightly]].
 
-Spacewalk 2.6 installation instructions are available at [[HowToInstall]].
+Spacewalk 2.7 installation instructions are available at [[HowToInstall]].
 
-Instructions to upgrade to Spacewalk 2.6 are available at [[HowToUpgrade]].
+Instructions to upgrade to Spacewalk 2.7 are available at [[HowToUpgrade]].
 
 ----
 ## Prerequisites
@@ -23,55 +23,26 @@ Instructions to upgrade to Spacewalk 2.6 are available at [[HowToUpgrade]].
 
 RPM downloads of the project are available through yum repositories at
 
-  * http://yum.spacewalkproject.org/ - Binary RPMs
+  * https://copr.fedorainfracloud.org/groups/g/spacewalkproject/coprs/ - Binary RPMs
 
 To use this repository easily, install spacewalk-repo package with commands below:
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/x86_64/spacewalk-repo-2.6-0.el6.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/i386/spacewalk-repo-2.6-0.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/epel-6-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.el6.noarch.rpm
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/7/x86_64/spacewalk-repo-2.6-0.el7.noarch.rpm
-
-### Fedora 23
-
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/x86_64/spacewalk-repo-2.6-0.fc23.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/i386/spacewalk-repo-2.6-0.fc23.noarch.rpm
-
-### Fedora 24
-
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/x86_64/spacewalk-repo-2.6-0.fc24.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/epel-7-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.el7.centos.noarch.rpm
 
 ### Fedora 25
 
-for x86_64:
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/fedora-25-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.fc25.noarch.rpm
 
-    rpm -Uvh http://yum.spacewalkproject.org/nightly/Fedora/25/x86_64/spacewalk-repo-2.6-0.fc25.noarch.rpm
+### Fedora 26
 
-for i386:
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/fedora-26-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.fc26.noarch.rpm
 
-    rpm -Uvh http://yum.spacewalkproject.org/nightly/Fedora/25/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
 
 ### Nightly builds
 
