@@ -1,16 +1,17 @@
 # Spacewalk Upgrade Instructions
 
-These are upgrade instructions for upgrading Spacewalk 2.6 to Spacewalk Nightly
+These are upgrade instructions for upgrading Spacewalk 2.7 to Spacewalk Nightly
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.6 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 24.
+  *  Spacewalk 2.7 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 25/26.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
   *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6). Make sure you have a valid backup in case anything will go wrong.
 
 ## Archive of older upgrade instructions
 
- * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade]]
+ * Spacewalk 2.6 to 2.7 upgrade instructions, are available at [[HowToUpgrade]]
+ * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade26]]
  * Spacewalk 2.4 to 2.5 upgrade instructions, are available at [[HowToUpgrade25]]
  * Spacewalk 2.3 to 2.4 upgrade instructions, are available at [[HowToUpgrade24]]
  * Spacewalk 2.2 to 2.3 upgrade instructions, are available at [[HowToUpgrade23]]
