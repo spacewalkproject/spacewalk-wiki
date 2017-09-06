@@ -21,6 +21,7 @@
  * Martin Korbel
  * Ondrej Gajdusek
  * Pavel Studenik
+ * Radovan Drazny
  * Tomáš Kašpárek
  * Tomas Lestach
 ## Community Contributors
@@ -37,7 +38,10 @@
  * Aron Parsons
  * Bernhard Lichtinger
  * Bo Maryniuk
+ * Can Bulut Bayburt
+ * Candace Sheremeta
  * Carsten Menzel
+ * Chris Gavin
  * Christian Berendt
  * Colin Coe
  * Cynthia Sanchez
@@ -56,6 +60,7 @@
  * Gurjeet Singh
  * Hubert Mantel
  * Ian Forde
+ * Ilya Gorbunov
  * Ionuț Arțăriși
  * Jakub Jankowski
  * James Bowes
@@ -75,24 +80,28 @@
  * Jose Simonelli
  * Joshua Roys
  * Julian Einwag
+ * Kenny Tordeurs
  * Kevin Walter
  * Kilian Petsch
  * Klaas Demter
  * Kumudini Shirsale
  * KrishnaBabu Krothapalli
  * Lasse Palm
+ * Laurence Rochfort
  * lbayerlein
  * Luc de Louw
  * Luca Villa
  * Ludwig
  * Lukáš Ďurfina
  * Manoj Kumar Giri
+ * Marc A Dahlhaus
  * Marcelo Moreira de Mello
  * mareklaane
  * Mario Schugowski
  * Mark Chappell
  * Mark Hlawatschek
  * Mark Huth
+ * Martin Matuska
  * Martin Osvald
  * Martin Seidl
  * Matej Kollar
@@ -114,6 +123,7 @@
  * Muhammad Farrukh
  * Neha Rawat
  * Nigel Jones
+ * Pablo Suárez Hernández
  * Paresh Mutha
  * Patrick Hurrelmann
  * Paul Morgan
@@ -141,6 +151,7 @@
  * Tom Lane
  * Trent Johnson
  * Uwe Gansert
+ * Valérian Beaudoin
  * Vikram Rai
  * Ville Salmela
  * William van de Velde
