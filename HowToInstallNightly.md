@@ -29,19 +29,19 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/epel-6-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-6-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.el6.noarch.rpm
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/epel-7-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.el7.centos.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-7-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.el7.centos.noarch.rpm
 
 ### Fedora 25
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/fedora-25-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.fc25.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/fedora-25-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.fc25.noarch.rpm
 
 ### Fedora 26
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.7/fedora-26-x86_64/00598889-spacewalk-repo/spacewalk-repo-2.7-2.fc26.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/fedora-26-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.fc26.noarch.rpm
 
 
 ### Nightly builds
@@ -68,19 +68,6 @@ To get packages from EPEL just install this RPM:
 
     rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
-### Java Packages (Red Hat Enterprise Linux, CentOS, Scientific Linux)
-
-Additional java dependencies are needed.
-Please configure the following yum repository before beginning your Spacewalk installation:
-
-#### Java packages 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7)
-
-    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
-
-#### Java packages 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6)
-
-    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
-    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/epel6-addons/repo/epel-6/group_spacewalkproject-epel6-addons-epel-6.repo)
 
 ### Red Hat Optional Server (Red Hat Enterprise Linux)
 
