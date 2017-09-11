@@ -37,11 +37,11 @@ SUSE Linux client packages can be found here
 
 For fresh installations, please use steps from
 
-  * https://fedorahosted.org/spacewalk/wiki/HowToInstall
+  * https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall 
 
 If you plan to upgrade from older release, search no more -- the following page will guide you:
 
-  * http://fedorahosted.org/spacewalk/wiki/HowToUpgrade
+  * https://github.com/spacewalkproject/spacewalk/wiki/HowToUpgrade
 
 ## Features & Enhancements in Spacewalk 2.7
 
@@ -60,7 +60,7 @@ If you plan to upgrade from older release, search no more -- the following page 
     * satellite.isMonitoringEnabledBySystemId
     * schedule.failSystemAction
 
-The up-to-date API documentation can be found at http://www.spacewalkproject.org/documentation/api/2.7/
+The up-to-date API documentation can be found at http://spacewalkproject.github.io/documentation/api/2.7/
 
 ## Contributors
 
