@@ -101,9 +101,10 @@ In Spacewalk 2.7, we've seen
     * 880 changesets committed
     * 1463 commits done
 
-Github repo for commits since Spacewalk 2.5
+Github repo for commits since Spacewalk 2.6
 
-    * [Spacewalk 2.6 to 2.7](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2016-11-18&to=2017-08-17&type=c)
+* [Spacewalk 2.6 to 2.7](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2016-11-18&to=2017-08-17&type=c)
+
 ## User community, reporting issues
 
 
