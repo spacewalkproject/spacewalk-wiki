@@ -49,15 +49,16 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Spacewalk supports Fedora 25 and Fedora 26 clients
   * Improved Debian/Ubuntu version parsing and matching
   * Spacewalk wiki now hosted on GitHub
+  * Significant improvements to channel synchronization speed
   * New utility to monitor what taskomatic daemon is doing - taskotop is part of spacewalk-utils package
   * jabberd, which support OSAD, now uses sqlite database for improved reliability
-  * jpackage libraries/packages replace with standard ones
+  * jpackage libraries/packages replaced with standard ones
   * Improved kickstart profile support
   * New API Calls:
     * channel.listManageableChannels
     * proxy.createMonitoringScout
-    * satellite.isMonitoringEnabled
-    * satellite.isMonitoringEnabledBySystemId
+    * satellite.isMonitoringEnabled  (restored for backward compatibility)
+    * satellite.isMonitoringEnabledBySystemId   (restored for backward compatibility)
     * schedule.failSystemAction
 
 The up-to-date API documentation can be found at http://spacewalkproject.github.io/documentation/api/2.7/
