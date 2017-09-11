@@ -54,12 +54,13 @@ If you plan to upgrade from older release, search no more -- the following page 
   * jabberd, which support OSAD, now uses sqlite database for improved reliability
   * jpackage libraries/packages replaced with standard ones
   * Improved kickstart profile support
-  * New API Calls:
+  * New API calls:
     * channel.listManageableChannels
-    * proxy.createMonitoringScout
-    * satellite.isMonitoringEnabled  (restored for backward compatibility)
-    * satellite.isMonitoringEnabledBySystemId   (restored for backward compatibility)
     * schedule.failSystemAction
+  * API calls restored for backward compatibility:
+    * proxy.createMonitoringScout
+    * satellite.isMonitoringEnabled
+    * satellite.isMonitoringEnabledBySystemId    
 
 The up-to-date API documentation can be found at http://spacewalkproject.github.io/documentation/api/2.7/
 
