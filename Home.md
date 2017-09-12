@@ -63,9 +63,7 @@ View photos from the [Spacewalk Campground](http://www.flickr.com/photos/mairin/
 [Facebook Spacewalk Group](https://www.facebook.com/groups/108094892955/)
 ## __Need To Edit This Wiki?__
 
-You don't need to ask to be in the spacewalk account system group, that's only for commit access, see the [Patch Process](PatchProcess). To get started simply;
-
- * [Get a Fedora account](http://admin.fedoraproject.org/accounts): Come back and start editing.
+Please submit Pull request to [spacewalkproject/spacewalk-wiki](https://github.com/spacewalkproject/spacewalk-wiki) repository. More details can be found [here](WikiContribute).
 
 ## __Want to File a Bug/RFE?__
 
