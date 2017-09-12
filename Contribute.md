@@ -20,6 +20,9 @@ We need general documentation of Spacewalk. You did not find documentation for t
 Some existing documentation is outdated and you may review it and update it.
 
 Although we have some [documentation](http://www.redhat.com/spacewalk/documentation/), we still have wide areas undocumented. Just start reading code and document it. We use [epydoc](http://epydoc.sourceforge.net/manual-docstring.html) style for python and Javadoc for Java. The documentation is inline in code. So send result as [a pull request](PatchProcess). This is the best start if you want to start coding, but you are not familiar with our code base.
+## Wiki
+
+You can submit PR to this wiki. More details can be found [here](WikiContribute).
 ## Help others
 
 Or you can just hang on [IRC or mailing list](Home) and try to answer questions others may have.
