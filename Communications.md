@@ -1,6 +1,3 @@
-
-# **DEPRECATED, NO LONGER USED**
-
 # Communications
 
 There are several ways to get in touch with Spacewalk developers and users:
