@@ -1,6 +1,6 @@
 
-    #!div class="important" style="border: 2pt solid; text-align: center" 
-    '''''DEPRECATED, NO LONGER USED''''' 
+#  **DEPRECATED, NO LONGER USED**
+
 ## Roadmap
 
 see [Roadmap](https://fedorahosted.org/spacewalk/roadmap) for up to date information. This page is now deprecated.
