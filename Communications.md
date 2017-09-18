@@ -21,6 +21,3 @@ There are several ways to get in touch with Spacewalk developers and users:
     * Enter a Bug here [Bugzilla](https://bugzilla.redhat.com/enter_bug.cgi?product=Spacewalk)
 
     * Search for Bugs here [Bugzilla](https://bugzilla.redhat.com/query.cgi?product=Spacewalk)
-## Meetings
-
-    * Read the latest minutes from our Community led meetings [minutes](CommunityMeetingMinutes)
