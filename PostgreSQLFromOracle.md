@@ -1,10 +1,10 @@
 
-    #!div class="important" style="border: 2pt solid; text-align: center" 
-    '''''DEPRECATED, NO LONGER USED''''' 
+ # ****DEPRECATED, NO LONGER USED****
 
 This page is useful *only* if you are currently on Spacewalk-2.2 or earlier, and need to migrate from Oracle to Postgresql.
 
-Starting with Spacewalk-2.3, *see DatabaseMigrations*.
+Starting with Spacewalk-2.3, *see [[DatabaseMigrations]]*.
+
 # Migrating Spacewalk on Oracle installation to PostgreSQL
 
 
