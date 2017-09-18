@@ -1,6 +1,6 @@
 
-    #!div class="important" style="border: 2pt solid; text-align: center" 
-    '''''DEPRECATED, NO LONGER USED''''' 
+# **DEPRECATED, NO LONGER USED**
+
 # Communications
 
 There are several ways to get in touch with Spacewalk developers and users:

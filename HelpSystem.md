@@ -1,6 +1,6 @@
 
-    #!div class="important" style="border: 2pt solid; text-align: center" 
-    '''''DEPRECATED, NO LONGER USED''''' 
+# **DEPRECATED, NO LONGER USED**
+
 # Help System
 
 One of the problems with our help links is they often times get out of date. We used to have html files, then we changed to jsps. We had

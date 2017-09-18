@@ -1,6 +1,6 @@
 
-    #!div class="important" style="border: 2pt solid; text-align: center" 
-    '''''DEPRECATED, NO LONGER USED''''' 
+# **DEPRECATED, NO LONGER USED**
+
 # Local Ivy Repository
 
 There are times when you need to use a jar right now but don't want to put it in the 
