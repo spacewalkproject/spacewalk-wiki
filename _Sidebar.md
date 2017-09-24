@@ -10,7 +10,7 @@
 - [Website](https://spacewalkproject.github.io)
 
 ### Help
-- [Need help?](Home##communication)
+- [Need help?](Home#communication)
 
 
 ### [Documentation](https://spacewalkproject.github.io/documentation.html)
