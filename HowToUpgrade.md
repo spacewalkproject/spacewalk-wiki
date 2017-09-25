@@ -1,16 +1,17 @@
 # Spacewalk Upgrade Instructions
 
-These are upgrade instructions for upgrading Spacewalk 2.5 to Spacewalk 2.6
+These are upgrade instructions for upgrading Spacewalk 2.6 to Spacewalk 2.7
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.5 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 22/23.
+  *  Spacewalk 2.6 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 24.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6).   There are package dependency changes that must be made on Fedora 22 and RHEL 7 in transition from 2.5 to 2.6.  Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6).  However in the transition from 2.6 to 2.7, there are package dependency changes that must be accounted for.  Make sure you have a valid backup in case anything will go wrong.
+
+
 ## Archive of older upgrade instructions
 
-
-
+ * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade26]]
  * Spacewalk 2.4 to 2.5 upgrade instructions, are available at [[HowToUpgrade25]]
  * Spacewalk 2.3 to 2.4 upgrade instructions, are available at [[HowToUpgrade24]]
  * Spacewalk 2.2 to 2.3 upgrade instructions, are available at [[HowToUpgrade23]]
@@ -30,36 +31,37 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk 2.6 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
-    * In particular, make sure your jpackage repo is setup properly: [HowToInstall#jpackage-all-systems](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#jpackage-all-systems)
+  * You have set up your yum to point to Spacewalk 2.7 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
+    * In particular, make sure you do **NOT** use jpackage repo. It has been obsoleted in this version of Spacewalk. Disable it or completely remove the file `/etc/yum.repos.d/jpackage-generic.repo` .
+    * On RHEL, CentOS, or Scientific Linux you need to enable additional java package repos: [[HowToInstall#java-packages-red-hat-enterprise-linux-centos-scientific-linux]].
+
+
 ## Database and configuration backup
-
-
 
   *  For existing configuration files, create a backup of everything under /etc/sysconfig/rhn /etc/rhn and /etc/jabberd
   *  Backup your SSL build directory, ordinarily /root/ssl-build
   *  *BACKUP YOUR DATABASE*. For instructions on how to create a backup of your existing Spacewalk database consult either Oracle / PostgreSQL documentation or contact your DBA
+
+
 ## Package upgrade
 
 ### Lock versions
 
-
-
-
-When running on Fedora 22, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
+When running on Fedora 24, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the Fedora repositories.
 Execute the following commands:
 
-    # yum install yum-versionlock
-    # yum versionlock quartz maven-model
+    # dnf install python3-dnf-plugin*-versionlock
+    # echo 'quartz-1.8.4' >>/etc/dnf/plugins/versionlock.list
 
-When running on RHEL 7, you may need to lock the versions of several third-party libraries prior to upgrading, due to changes in the RHEL 7 Optional repository.
-Execute the following commands:
+### Remove conflicting packages
 
-    # yum install yum-versionlock
-    # yum versionlock cglib
+When running on RHEL6, Scientific Linux 6, CentOS 6, you need to remove certain packages formerly installed from jpackage repo which are not used anymore and cause dependency conflicts.
+Execute the following command:
+
+    # rpm -e --nodeps  axis-*-*.jpp5 jakarta-commons-logging-*-*.jpp5 jakarta-commons-digester-*-*jpp jakarta-commons-dbcp-*-*.jpp5 jakarta-commons-discovery-*-*.jpp5 java-cup-*-*.jpp5 junit-*-*.jpp5 wsdl4j-*-*.jpp5 xalan-j2-*-*.jpp5
+
+
 ### All systems
-
-
 
 Perform package upgrade using yum:
 
@@ -71,9 +73,9 @@ Check any `.rpmnew`/`.rpmsave` files that were created during the upgrade for yo
 
     # yum install rpmconf
     # rpmconf -a
+
+
 ## Schema upgrade
-
-
 
 Make sure your Spacewalk server is down:
 
@@ -104,9 +106,9 @@ Important notes:
   * The above command will inform you whether or not the schema upgrade was successful.
     * Log files from schema upgrade are stored in `/var/log/spacewalk/schema-upgrade`.
     * Should the schema upgrade fail, investigate, *restore from backup*, fix the cause (for example, if it failed because of insufficient space in tablespace, extend the tablespaces) and rerun spacewalk-schema-upgrade.
+
+
 ## Upgrade of Spacewalk configuration
-
-
 
   1. Use `spacewalk-setup` to upgrade Spacewalk configuration. 
 
@@ -124,9 +126,9 @@ Important notes:
 
   *  debug = 3
   *  pam_auth_service = rhn-satellite
+
+
 ## Restart Spacewalk
-
-
 
 If you are running Spacewalk on Fedora run following command before starting Spacewalk services
 
@@ -135,3 +137,18 @@ If you are running Spacewalk on Fedora run following command before starting Spa
 Then, start all Spacewalk services:
 
     # /usr/sbin/spacewalk-service start
+
+## Known Issues
+
+On RHEL6 tomcat may fail to restart with the following message in the /var/log/tomcat6/catalina.out:
+
+    SEVERE: Error deploying configuration descriptor rhn.xml
+    java.lang.IllegalStateException: ContainerBase.addChild: start: LifecycleException:  start: :  java.io.IOException: Failed to access resource /WEB-INF/lib/jta.jar
+
+This issue is caused by yum which removed symlink /usr/share/java/jta.jar. To fix it run:
+
+    # ln -s geronimo-jta.jar /usr/share/java/jta.jar
+
+And then restart tomcat6 again:
+
+    # service tomcat6 restart
