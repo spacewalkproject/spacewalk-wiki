@@ -29,19 +29,19 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-6-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-6-x86_64/00607556-spacewalk-repo/spacewalk-repo-2.8-7.el6.noarch.rpm
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-7-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.el7.centos.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-7-x86_64/00607556-spacewalk-repo/spacewalk-repo-2.8-7.el7.centos.noarch.rpm
 
 ### Fedora 25
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/fedora-25-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.fc25.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-25-x86_64/00607556-spacewalk-repo/spacewalk-repo-2.8-7.fc25.noarch.rpm
 
 ### Fedora 26
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/fedora-26-x86_64/00599359-spacewalk-repo/spacewalk-repo-2.8-6.fc26.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-26-x86_64/00607556-spacewalk-repo/spacewalk-repo-2.8-7.fc26.noarch.rpm
 
 
 ### Nightly builds
