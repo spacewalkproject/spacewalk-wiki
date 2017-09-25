@@ -1,8 +1,6 @@
 # Spacewalk Installation Instructions
 
-
-
-These are installation instructions for new installations of Spacewalk 2.6. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.5 installation instructions are available at [[HowToInstall25]].
+These are installation instructions for new installations of Spacewalk 2.7. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.6 installation instructions are available at [[HowToInstall26]].
 
 *NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
@@ -20,126 +18,119 @@ These are installation instructions for new installations of Spacewalk 2.6. If y
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [[SpacewalkWithLDAP]]
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
+
 ## Setting up Spacewalk repo
-
-
 
 RPM downloads of the project are available through yum repositories at
 
   * http://yum.spacewalkproject.org/ - Binary RPMs
 
 To use this repository easily, install spacewalk-repo package with commands below:
+
+
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
 for x86_64:
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/x86_64/spacewalk-repo-2.6-0.el6.noarch.rpm
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/x86_64/spacewalk-repo-2.7-2.el6.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/6/i386/spacewalk-repo-2.6-0.el6.noarch.rpm
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/i386/spacewalk-repo-2.7-2.el6.noarch.rpm
+
+
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-
-
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/7/x86_64/spacewalk-repo-2.6-0.el7.noarch.rpm
-### Fedora 23
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/7/x86_64/spacewalk-repo-2.7-2.el7.noarch.rpm
 
-
-
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/x86_64/spacewalk-repo-2.6-0.fc23.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/23/i386/spacewalk-repo-2.6-0.fc23.noarch.rpm
 ### Fedora 24
 
-
-
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/x86_64/spacewalk-repo-2.6-0.fc24.noarch.rpm
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/x86_64/spacewalk-repo-2.7-2.fc24.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.6/Fedora/24/i386/spacewalk-repo-2.6-0.fc24.noarch.rpm
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/i386/spacewalk-repo-2.7-2.fc24.noarch.rpm
+
+### Fedora 25
+
+for x86_64:
+
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/x86_64/spacewalk-repo-2.7-2.fc25.noarch.rpm
+
+for i386:
+
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/i386/spacewalk-repo-2.7-2.fc25.noarch.rpm
+
+### Fedora 26
+
+for x86_64:
+
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/x86_64/spacewalk-repo-2.7-2.fc26.noarch.rpm
+
+for i386:
+
+    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/i386/spacewalk-repo-2.7-2.fc26.noarch.rpm
 
 
 ## Additional repos & packages
 
-### JPackage (All systems)
-
-
-
-
-Additional dependencies are needed from jpackage.
-(If repo is broken, mirror list here: http://www.jpackage.org/mirroring.php)
-Please configure the following yum repository before beginning your Spacewalk installation:
-
-
-    cat > /etc/yum.repos.d/jpackage-generic.repo << EOF
-    [jpackage-generic]
-    name=JPackage generic
-    baseurl=http://mirrors.dotsrc.org/pub/jpackage/5.0/generic/free/
-    #mirrorlist=http://www.jpackage.org/mirrorlist.php?dist=generic&type=free&release=5.0
-    enabled=1
-    gpgcheck=1
-    gpgkey=http://www.jpackage.org/jpackage.asc
-    EOF
-
-We specifically want 5.0 generic directory in the above URL.
 ### EPEL (Red Hat Enterprise Linux, CentOS, Scientific Linux)
-
-
 
 Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [EPEL - Extra Packages for Enterprise Linux](http://fedoraproject.org/wiki/EPEL) contains a version of the openjdk that works with Spacewalk.  Other dependencies can get installed from EPEL as well.
 To get packages from EPEL just install this RPM:
+
 #### EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6)
-
-
-
     rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+
 #### EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7)
-
-
-
     rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+### Java Packages (Red Hat Enterprise Linux, CentOS, Scientific Linux)
+
+Additional java dependencies are needed.
+Please configure the following yum repository before beginning your Spacewalk installation:
+
+#### Java packages 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7)
+
+    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
+
+#### Java packages 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6)
+
+    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
+    (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/epel6-addons/repo/epel-6/group_spacewalkproject-epel6-addons-epel-6.repo)
+
 ### Red Hat Optional Server (Red Hat Enterprise Linux)
-
-
 
 When using Red Hat Enterprise Linux 6 or 7, make sure you are subscribed to the appropriate Red Hat Optional Server channel:
 
   * *Red Hat Optional Server 6* , OR
   * *Red Hat Optional Server 7*
+
+
 ## Database server
 
-
-
 Spacewalk uses database server to store its primary data. It supports either PostgreSQL (version 8.4 and higher) or Oracle RDBMS (version 10g or higher).
+
 ### PostgreSQL server, set up by Spacewalk (embedded)
-
-
 
 You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
 
     yum -y install spacewalk-setup-postgresql
+
 and skip to the section [*Installing Spacewalk*](#installing-spacewalk).
+
 ### PostgreSQL server, set up manually
-
-
 
 If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
+
 ### Oracle Pre-Requisites
-
-
 
 In order to get Spacewalk to run with Oracle database backend, you need:
 
@@ -147,9 +138,9 @@ In order to get Spacewalk to run with Oracle database backend, you need:
  * Oracle database server, either on the Spacewalk machine or on another host; versions 10g and 11g are known to work
 
 Installation of the free but limited Oracle 11g XE database server can be found on the [Oracle 11g Express Edition Setup](OracleXeSetup) page. Hints for making Spacewalk work with external Oracle database server are on the [Full Oracle Setup](FullOracleSetup) page.
+
+
 ## Installing Spacewalk
-
-
 
 Just ask yum to install the necessary packages. This will pull down and install the set of RPMs required to get Spacewalk to run.
 
@@ -160,18 +151,18 @@ If you prefer the [[PostgreSQL]] backend, including the embedded version mention
 If you tend to use the Oracle backend:
 
     yum -y install spacewalk-oracle 
+
+
 ## Configuring the firewall
-
-
 
 Spacewalk needs various inbound ports to be accessible. Use `system-config-firewall` or edit `/etc/sysconfig/iptables`, adding the ports needed -- 80 and 443.
 
-On a system with `firewalld` use `firewall-cmd --add-service=http ; firewall-cmd --add-service=https ; firewall-cmd --runtime-to-perm`. 
+On a system with `firewalld` use `firewall-cmd --add-service=http ; firewall-cmd --add-service=https`. 
 
 Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
+
+
 ## Configuring Spacewalk
-
-
 
 Your Spacewalk server should have a resolvable fully-qualified domain name (FQDN) such as 'hostname.domain.com'.  If the installer complains that the hostname is not the FQDN, do not use the --skip-fqdn-test flag to skip !  
 
@@ -183,16 +174,13 @@ Once the Spacewalk RPM is installed you need to configure the application.
 
 If you wish to use the default PostgreSql database, and have installed `spacewalk-setup-postgresql`, just run
 
-
     spacewalk-setup
 
 If you are planning to use your own database setup (either locally or on a separate machine), then run
 
-
     spacewalk-setup --external-oracle
 
 if you are using an Oracle database, *OR*
-
 
     spacewalk-setup --external-postgresql
 
@@ -247,17 +235,14 @@ An example session is as follows:
     Visit https://spacewalk.server.com to create the Spacewalk administrator account.
 
 Should the spacewalk-setup fail, check the error it gives you and also investigate the logs in /var/log/rhn, as well as the logs from your database server, Apache server and tomcat.
+
 ### Configuring Spacewalk with an Answer File
 
-
-
 You can also configure Spacewalk by using an answer file, by running `spacewalk-setup` like
-
 
     spacewalk-setup --answer-file=<FILENAME>
 
 An example answer file for the Oracle database backend:
-
 
     admin-email = root@localhost
     ssl-set-org = Spacewalk Org
@@ -279,7 +264,6 @@ An example answer file for the Oracle database backend:
 If you do not supply a value or leave out a key you will be prompted to supply that answer.
 
 For PostgreSQL, you need to create something like this:
-
 
     admin-email = root@localhost
     ssl-set-org = Spacewalk Org
@@ -308,6 +292,7 @@ Once you've made sure you can login to the Spacewalk WebUI, you can then proceed
 Spacewalk consists of several services. Each of them has its own init.d script to stop/start/restart. If you want manage all spacewalk services at once use 
 
     /usr/sbin/spacewalk-service [stop|start|restart].
+
 
 ## Spacewalk and Let's Encrypt certificate
 
