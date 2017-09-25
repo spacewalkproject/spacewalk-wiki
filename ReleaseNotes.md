@@ -1,7 +1,7 @@
 # Spacewalk Release Notes
 
 ## The latest Spacewalk release is 2.7
- * [Release notes for Spacewalk 2.7](ReleaseNotes27) which was released on September 25th, 2017
+ * [Release notes for Spacewalk 2.7](ReleaseNotes27) which was released on September 26th, 2017
 
 ## Older Spacewalk releases
  * [Release notes for Spacewalk 2.6](ReleaseNotes26) which was released on November 29th, 2016
