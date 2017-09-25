@@ -1,15 +1,12 @@
 # Spacewalk Release Notes
 
-## The latest Spacewalk release is 2.6
+## The latest Spacewalk release is 2.7
+ * [Release notes for Spacewalk 2.7](ReleaseNotes27) which was released on September 25th, 2017
 
-
-
-
- * [Release notes for Spacewalk 2.6](ReleaseNotes26) which was released on November 29th, 2016
 ## Older Spacewalk releases
-
+ * [Release notes for Spacewalk 2.6](ReleaseNotes26) which was released on November 29th, 2016
+(https://www.redhat.com/archives/spacewalk-announce-list/2016-November/msg00000.html)
  * [Release notes for Spacewalk 2.5](ReleaseNotes25) which was released [on June 8th, 2016](https://www.redhat.com/archives/spacewalk-announce-list/2016-June/msg00000.html)
-
  * [Release notes for Spacewalk 2.4](ReleaseNotes24) which was released [on October 7th, 2015](https://www.redhat.com/archives/spacewalk-announce-list/2015-October/msg00001.html)
  * [Release notes for Spacewalk 2.3](ReleaseNotes23) which was released [on Tue April 14th, 2015](https://www.redhat.com/archives/spacewalk-announce-list/2015-April/msg00000.html)
  * [Release notes for Spacewalk 2.2](ReleaseNotes22) which was released [on July 16th, 2014](https://www.redhat.com/archives/spacewalk-announce-list/2014-July/msg00000.html)
