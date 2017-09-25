@@ -3,6 +3,7 @@
 
 
 API available in Spacewalk (commented example on [XML-RPC Handlers](XmlrpcHandlers) page):
+ [Spacewalk 2.7](http://www.spacewalkproject.org/documentation/api/2.7/)
 
  [Spacewalk 2.6](http://www.spacewalkproject.org/documentation/api/2.6/)
 
