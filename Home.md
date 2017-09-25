@@ -3,18 +3,18 @@
 ## __Latest News__
 
 
-![Alt](images/26release.png?raw=True)
+![Alt](images/27release.png?raw=True)
 
 
 
-### *Spacewalk 2.6* was released on November 29th, 2016:
+### *Spacewalk 2.7* was released on September 25th, 2017:
 
  * [Download and Install](HowToInstall)
 
- * [Release Notes](ReleaseNotes26)
+ * [Release Notes](ReleaseNotes27)
 ## __Introduction__
 
-[Spacewalk](http://spacewalk.redhat.com/) is an open source Linux systems management solution.  It allows you to:
+[Spacewalk](https://spacewalkproject.github.io/) is an open source Linux systems management solution.  It allows you to:
 
  * Inventory your systems (hardware and software information)
  * Install and update software on your systems
@@ -26,7 +26,7 @@
 
 Spacewalk is the upstream project for the source of [Red Hat Satellite](http://www.redhat.com/red_hat_network/). Spacewalk works with RHEL, Fedora, and other RHEL derivative distributions like CentOS, Scientific Linux, etc. Limited support for managing [Debian](RegisteringClients#debian) machines is also available. We are working on getting Spacewalk packages included in Fedora.
 
-This wiki is primarily focused on the usage and development of Spacewalk. For a higher-level overview of Spacewalk, what it does, and for a full gallery of screenshots, please visit the [Spacewalk website at redhat.com](http://spacewalk.redhat.com/).
+This wiki is primarily focused on the usage and development of Spacewalk. For a higher-level overview of Spacewalk, what it does, and for a full gallery of screenshots, please visit the [Spacewalk website at redhat.com](https://spacewalkproject.github.io).
 ## __Content__
 
 The main subsections of this wiki;
@@ -36,7 +36,6 @@ The main subsections of this wiki;
  * [FAQs](SpacewalkFaq): Answers to your questions.
  * [How to Contribute](Contribute): Do you want to help us? Start here.
  * [Downloads (Source and RPMs)](DownloadIt): Find out how to check out the source code and get RPM releases.
- * [Roadmap](https://fedorahosted.org/spacewalk/roadmap): What are the plans for the future of Spacewalk.
  * [Release Process](ReleaseProcess): What is the process for releasing Spacewalk.
  * [Brainbox](BrainBox): Some ideas that might end up in the roadmap. Just a page to collect them.
  * [Features](Features): An index page of ideas that have graduated from the [[BrainBox]] to become features.
