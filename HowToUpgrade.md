@@ -6,7 +6,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 
   *  Spacewalk 2.5 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 22/23.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6). Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6).   There are package dependency changes that must be made on Fedora 22 and RHEL 7 in transition from 2.5 to 2.6.  Make sure you have a valid backup in case anything will go wrong.
 ## Archive of older upgrade instructions
 
 
