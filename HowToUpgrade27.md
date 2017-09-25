@@ -53,6 +53,12 @@ Execute the following commands:
     # dnf install python3-dnf-plugin*-versionlock
     # echo 'quartz-1.8.4' >>/etc/dnf/plugins/versionlock.list
 
+When running on RHEL7, Scientific Linux 7, CentOS 7, you may consider revising your current version-locked packages and remove them as needed. In particular, cglib and c3p0 no longer need to be locked.
+
+    # yum versionlock list
+    # yum versionlock delete cglib c3p0
+
+
 ### Remove conflicting packages
 
 When running on RHEL6, Scientific Linux 6, CentOS 6, you need to remove certain packages formerly installed from jpackage repo which are not used anymore and cause dependency conflicts.
@@ -81,6 +87,7 @@ Make sure your Spacewalk server is down:
 
     # /usr/sbin/spacewalk-service status
     # /usr/sbin/spacewalk-service stop
+    # systemctl daemon-reload
 
 *Do a backup of your database.* (No, really - go do that.  We'll wait.)
 
@@ -140,6 +147,8 @@ Then, start all Spacewalk services:
 
 ## Known Issues
 
+### Tomcat on RHEL 6 fails to start
+
 On RHEL6 tomcat may fail to restart with the following message in the /var/log/tomcat6/catalina.out:
 
     SEVERE: Error deploying configuration descriptor rhn.xml
@@ -152,3 +161,21 @@ This issue is caused by yum which removed symlink /usr/share/java/jta.jar. To fi
 And then restart tomcat6 again:
 
     # service tomcat6 restart
+
+### Tomcat on RHEL 7 / CentOS 7 fails to start
+
+On RHEL 7, Scientific Linux 7, CentOS 7, Tomcat package RHN may fail to start with the following message in /var/log/tomcat/localhost.yyyy-mm-dd:
+
+    spacewalk 2.7 Unsupported major.minor version 52.0 (unable to load class EDU.oswego.cs.dl.util.concurrent.Channel)
+
+This issue may be caused by incorrect default Java version. Spacewalk 2.7 no longer requires Java 1.7:
+
+    # java -version 
+    # alternatives --list 
+
+To fix, ensure that Java 1.8 is being used by default. If possible, consider uninstalling Java 1.7 altogether:
+
+    # yum install -y java-1.8.0-openjdk-devel
+    # yum erase java-1.7.0-openjdk java-1.7.0-openjdk-devel java-1.7.0-openjdk-headless 
+
+And then restart Spacewalk services. 
