@@ -7,23 +7,23 @@
 
 
 
- * Ales Dujicek
+ * Ales Dujíček
  * Dimitar Yordanov
  * Eric Herget
  * Gennadii Altukhov
  * Grant Gainey
  * Jan Dobeš
- * Jan Hutar
+ * Jan Hutař
  * Jiří Dostál
- * Jiří Přecechtěl
  * Lukas Hellebrandt
- * Lukáš Pramuk
  * Martin Korbel
+ * Michael Mráka
  * Ondrej Gajdusek
- * Pavel Studenik
- * Radovan Drazny
+ * Patrik Segedy
+ * Pavel Studeník
+ * Radovan Drážný
  * Tomáš Kašpárek
- * Tomas Lestach
+ * Tomas Leštách
 ## Community Contributors
 
 
@@ -175,17 +175,18 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Garik Khachikyan
  * Greg Dekoenigsberg
  * James Slagle
- * Jan Hutar
  * Jan Pazdziora
  * Jason Connor
  * Jason Dobies
  * Jeff Ortel
  * Jesús M. Rodríguez
  * Jiří Kastner
+ * Jiří Přecechtěl
  * John Matthews
  * John Wregglesworth
  * Karen Jacqmin-Adams
  * Kevin Smith
+ * Lukáš Pramuk
  * Lukáš Zapletal
  * Máirín Duffy
  * Mihai Ibanescu
