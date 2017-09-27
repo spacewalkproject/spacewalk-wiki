@@ -100,6 +100,7 @@ Please configure the following yum repository before beginning your Spacewalk in
     (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
 
 #### Java packages 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6)
+NOTE: You must set up both repos below... the epel-7 repo is not a mistake.
 
     (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/java-packages/repo/epel-7/group_spacewalkproject-java-packages-epel-7.repo)
     (cd /etc/yum.repos.d && curl -O https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/epel6-addons/repo/epel-6/group_spacewalkproject-epel6-addons-epel-6.repo)
