@@ -190,8 +190,11 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [Road Map](https://fedorahosted.org/spacewalk/roadmap)
 ### Installation Guides
 
-  * [for 2.3](HowToInstall)
-
+  * [for 2.7](HowToInstall)
+  * [for 2.6](HowToInstall26)
+  * [for 2.5](HowToInstall25)
+  * [for 2.4](HowToInstall24)
+  * [for 2.3](HowToInstall23)
   * [for 2.2](HowToInstall22)
   * [for 2.1](HowToInstall21)
   * [for 2.0](HowToInstall20)
@@ -211,7 +214,11 @@ Do you know the answer to something and think others might find it useful? Feel 
 
 Upgrade guides, sequential, stepped upgrades are recommended to cover multiple update levels, i.e. to get from 0.6 to 0.8 please upgrade via 0.7 (and we recommend testing at each intermediate level as you proceed) rather than trying to go directly from 0.6 to 0.8. Jumping levels is deeply discouraged with the exception of version 0.9 which was never released.
 
-  * [From 2.2 to 2.3](HowToUpgrade)
+  * [From 2.6 to 2.7](HowToUpgrade)
+  * [From 2.5 to 2.6](HowToUpgrade26)
+  * [From 2.4 to 2.5](HowToUpgrade25)
+  * [From 2.3 to 2.4](HowToUpgrade24)
+  * [From 2.2 to 2.3](HowToUpgrade23)
   * [From 2.1 to 2.2](HowToUpgrade22)
   * [From 2.0 to 2.1](HowToUpgrade21)
   * [From 1.9 to 2.0](HowToUpgrade20)
@@ -234,6 +241,10 @@ If you are looking for instructions on how to upgrade the operating system under
 
 Release notes for each version:
 
+  * [for 2.7](ReleaseNotes27)
+  * [for 2.6](ReleaseNotes26)
+  * [for 2.5](ReleaseNotes25)
+  * [for 2.4](ReleaseNotes24)
   * [for 2.3](ReleaseNotes23)
   * [for 2.2](ReleaseNotes22)
   * [for 2.1](ReleaseNotes21)
