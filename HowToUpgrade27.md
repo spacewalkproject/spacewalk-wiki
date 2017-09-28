@@ -147,6 +147,10 @@ Then, start all Spacewalk services:
 
     # /usr/sbin/spacewalk-service start
 
+## Reloading Ubuntu Channels
+
+Spacewalk 2.7 requires rebuilding and reloading all packages in channels for Ubuntu releases. Instructions for those Ubuntu-specific steps are available at [[HowToUpgrade27UbuntuChannels]]
+
 ## Known Issues
 
 ### Tomcat on RHEL 6 fails to start
