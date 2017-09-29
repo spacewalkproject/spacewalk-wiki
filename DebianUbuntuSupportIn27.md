@@ -22,8 +22,7 @@ The file /usr/share/rhn/up2date_client/debUtils.py needs the following change:
 
 
 ## Clean, Then Sync Channels After Upgrading To Spacewalk 2.7
-Spacewalk 2.7 changes the parsing to handle the debian package version components according to definitions from [here](https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version)
-After an update to Spacewalk 2.7 the existing Debian/Ubuntu channels must be cleaned and synced again to import the right versions.
+Spacewalk 2.7 changes the parsing to handle the debian package version components according to definitions from [here](https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version).  After an update to Spacewalk 2.7 the existing Debian/Ubuntu channels must be cleaned and synced again to import the right versions.
 
 ----
 
