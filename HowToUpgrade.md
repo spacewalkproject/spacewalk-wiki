@@ -26,8 +26,6 @@ These upgrade instruction apply to Spacewalk installations meeting the following
 ----
 ## Assumptions
 
-
-
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
@@ -35,6 +33,8 @@ These upgrade instruction apply to Spacewalk installations meeting the following
     * In particular, make sure you do **NOT** use jpackage repo. It has been obsoleted in this version of Spacewalk. Disable it or completely remove the file `/etc/yum.repos.d/jpackage-generic.repo` .
     * On RHEL, CentOS, or Scientific Linux you need to enable additional java package repos: [[HowToInstall#java-packages-red-hat-enterprise-linux-centos-scientific-linux]].
 
+### Special Note For Those Who Will Manage Debian/Ubuntu Clients
+There is a change that will need to be made to Debian/Ubuntu client systems.  There are also additional steps to take after upgrading to Spacewalk 2.7.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Database and configuration backup
 
