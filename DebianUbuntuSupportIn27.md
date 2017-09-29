@@ -19,6 +19,7 @@ The file /usr/share/rhn/up2date_client/debUtils.py needs the following change:
     +    release = 'X'
          if version.find(':') != -1:
              epoch, version = version.split(':')
+         if version.find('-') != -1:
 
 
 ## Clean, Then Sync Channels After Upgrading To Spacewalk 2.7
