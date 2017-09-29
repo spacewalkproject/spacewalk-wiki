@@ -17,7 +17,7 @@ These are installation instructions for new installations of Spacewalk 2.7. If y
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
 ### Special Note For Those Who Will Manage Debian/Ubuntu Clients
-There is a change that will need to be made to Debian/Ubuntu client systems.  For more details see [here][[DebianUbuntuSupportIn27]]
+There is a change that will need to be made to Debian/Ubuntu client systems.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Setting up Spacewalk repo
 
