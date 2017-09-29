@@ -9,8 +9,8 @@ The client needs to be fixed also to report an X instead of a 0 as release if it
 
 The file /usr/share/rhn/up2date_client/debUtils.py needs the following change:
 
-    -- a/client/rhel/rhn-client-tools/src/up2date_client/debUtils.py
-    +++ b/client/rhel/rhn-client-tools/src/up2date_client/debUtils.py
+    -- a/usr/share/rhn/up2date_client/debUtils.py
+    +++ b/usr/share/rhn/up2date_client/debUtils.py
     @@ -28,7 +28,7 @@ def verifyPackages(packages):
      
      def parseVRE(version):
