@@ -7,8 +7,6 @@ These are installation instructions for new installations of Spacewalk 2.7. If y
 ----
 ## Prerequisites
 
-
-
  * Outbound open ports 80, 443
  * Inbound open ports 80, 443, 5222 (only if you want to push actions to client machines) and 5269 (only for push actions to a Spacewalk Proxy), 69 udp if you want to use tftp
  * Storage for database: 250 KiB per client system +  500 KiB per channel + 230 KiB per package in channel (i.e. 1.1GiB for channel with 5000 packages)
@@ -18,6 +16,8 @@ These are installation instructions for new installations of Spacewalk 2.7. If y
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [[SpacewalkWithLDAP]]
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
+### Special Note For Those Who Will Manage Debian/Ubuntu Clients
+There is a change that will need to be made to Debian/Ubuntu client systems.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Setting up Spacewalk repo
 
