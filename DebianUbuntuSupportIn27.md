@@ -8,6 +8,7 @@ Significant improvements to Debian/Ubuntu version parsing and matching were made
 The client needs to be fixed also to report an X instead of a 0 as release if it is empty.
 
 The file /usr/share/rhn/up2date_client/debUtils.py needs the following change:
+
 {{{
 -- a/client/rhel/rhn-client-tools/src/up2date_client/debUtils.py
 +++ b/client/rhel/rhn-client-tools/src/up2date_client/debUtils.py
