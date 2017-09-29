@@ -3,10 +3,6 @@
 Significant improvements to Debian/Ubuntu version parsing and matching were made in the Spacewalk 2.7 release.  The majority of the changes were done in Spacewalk server.  However, there is a change that must be applied to client systems as well.  When upgrading from a previous Spacewalk release to Spacewalk 2.7, it is also required that all Debian/Ubuntu channels be cleaned and synced again to import the right versions
 
 ----
-### This Page Is A Work In Progress
-We welcome any community input to make this page better.  If you would like to contribute to this page, or any other Spacewalk Wiki pages, please submit Pull request to [spacewalkproject/spacewalk-wiki](https://github.com/spacewalkproject/spacewalk-wiki) repository.  More details can be found [here](WikiContribute).
-
-----
 
 ## Required Client Update
 The client needs to be fixed also to report an X instead of a 0 as release if it is empty.
@@ -29,4 +25,8 @@ The file /usr/share/rhn/up2date_client/debUtils.py needs the following change:
 Spacewalk 2.7 changes the parsing to handle the debian package version components according to definitions from here: https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version
 After an update to Spacewalk 2.7 the existing Debian/Ubuntu channels must be cleaned and synced again to import the right versions.
 
+----
+
+### This Page Is A Work In Progress
+We welcome any community input to make this page better.  If you would like to contribute to this page, or any other Spacewalk Wiki pages, please submit Pull request to [spacewalkproject/spacewalk-wiki](https://github.com/spacewalkproject/spacewalk-wiki) repository.  More details can be found [here](WikiContribute).
 
