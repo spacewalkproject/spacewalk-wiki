@@ -199,6 +199,7 @@ An example session is as follows:
     ** Database: Installation complete.
     ** Database: Populating database.
     *** Progress: #####################################
+    * Configuring tomcat.
     * Setting up users and groups.
     ** GPG: Initializing GPG and importing key.
     ** GPG: Creating /root/.gnupg directory
@@ -208,11 +209,11 @@ An example session is as follows:
     * Configuring apache SSL virtual host.
     Should setup configure apache's default ssl server for you (saves original ssl.conf) [Y]? 
     ** /etc/httpd/conf.d/ssl.conf has been backed up to ssl.conf-swsave
-    * Configuring tomcat.
     * Configuring jabberd.
     * Creating SSL certificates.
     CA certificate password? 
     Re-enter CA certificate password? 
+    Cname alias of the machine (comma seperated)?
     Organization? Fedora
     Organization Unit [spacewalk.server.com]? Spacewalk Unit
     Email Address [root@localhost]? 
@@ -246,6 +247,7 @@ You can also configure Spacewalk by using an answer file, by running `spacewalk-
 An example answer file for the Oracle database backend:
 
     admin-email = root@localhost
+    ssl-set-cnames = spacewalk2
     ssl-set-org = Spacewalk Org
     ssl-set-org-unit = spacewalk
     ssl-set-city = My City
@@ -267,6 +269,7 @@ If you do not supply a value or leave out a key you will be prompted to supply t
 For PostgreSQL, you need to create something like this:
 
     admin-email = root@localhost
+    ssl-set-cnames = spacewalk2
     ssl-set-org = Spacewalk Org
     ssl-set-org-unit = spacewalk
     ssl-set-city = My City
