@@ -227,10 +227,6 @@ An example session is as follows:
     * Deploying configuration files.
     * Update configuration in database.
     * Setting up Cobbler..
-    Processing /etc/cobbler/modules.conf
-    „/etc/cobbler/modules.conf“ -> „/etc/cobbler/modules.conf-swsave“
-    Processing /etc/cobbler/settings
-    „/etc/cobbler/settings“ -> „/etc/cobbler/settings-swsave“
     Cobbler requires tftp and xinetd services be turned on for PXE provisioning functionality. Enable these services [Y]? 
     * Restarting services.
     Installation complete.
