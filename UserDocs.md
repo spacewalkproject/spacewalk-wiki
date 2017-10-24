@@ -18,18 +18,19 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [Preface](Preface)
 
   * [Conventions](Conventions)
+  
+ 
 ### Installation
-
   * [How to install](HowToInstall)
-
-    * [Setting up Spacewalk repo](HowToInstall)
-    * [Additional repos & packages](HowToInstall)
-    * [Oracle Pre-Requisites](HowToInstall)
-    * [Conflicting Packages](HowToInstall)
-    * [Installing Spacewalk](HowToInstall)
-    * [Configuring Spacewalk](HowToInstall)
-    * [Managing Spacewalk](HowToInstall)
-    * [Known Issues](HowToInstall)
+    * [Setting up Spacewalk repo](HowToInstall#setting-up-spacewalk-repo)
+    * [Additional repos & packages](HowToInstall#additional-repos--packages)
+    * [Database server](HowToInstall#database-server)
+    * [Installing Spacewalk](HowToInstall#installing-spacewalk)
+    * [Configuring the firewall](HowToInstall#configuring-the-firewall)
+    * [Configuring Spacewalk](HowToInstall#configuring-spacewalk)
+    * [Managing Spacewalk](HowToInstall#managing-spacewalk)
+    * [Spacewalk and Let's Encrypt certificate](HowToInstall#spacewalk-and-lets-encrypt-certificate)
+    
   * [Oracle XE Setup](OracleXeSetup) -- How to get Oracle XE running if you do not already have Oracle.
   * [Configuring redundant Satellites](http://www.redhat.com/f/pdf/rhn/satellite_redundancy.pdf).
   * [Spanish Translation](http://wiki.woop.es/Instalacion_Spacewalk)
@@ -43,7 +44,7 @@ Do you know the answer to something and think others might find it useful? Feel 
   * [How to install osad](OSADSetup) -- How to use osad to force scheduled actions to run immediately on Spacewalk clients
   * [How to install Proxy](HowToInstallProxy) -- How to download and install Spacewalk Proxy.
   * [Implement monitoring via SSH](http://www.redhat.com/docs/manuals/satellite/Red_Hat_Network_Satellite-5.2.0/html/Reference_Guide/s2-mon-rhnmd-sshd.html) -- Instead of RHNMD/port 4545
-  * [Implement PAM (LDAP, Kerberos) authentication](https://access.redhat.com/knowledge/docs/en-US/Red_Hat_Network_Satellite/5.5/html/Installation_Guide/sect-Installation_Guide-Maintenance-Implementing_PAM_Authentication.html)  -- For the spacewalk web portal.
+  * [Implement PAM (LDAP, Kerberos) authentication](https://access.redhat.com/documentation/en-us/red_hat_satellite/5.8/html/installation_guide/chap-authentication#Implementing_PAM_Authentication)  -- For the spacewalk web portal.
 ### Core Guides
 
   * [Multiple Organizations](MultiOrgGuide) -- A guide to setting up multiple organisations
