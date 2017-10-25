@@ -18,17 +18,28 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 
 |   *Namespace: activationkey*  |    |    |    |    |    |  |
 | --- | --- | --- | --- | --- | --- |
-|   activationkey.addPackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]])  |  0.4  |  3   |  bbuckingham  |  done   |  * Add a set of packages to an activation key.[[BR]]* May optionally include an arch. [[BR]]* This api will deprecate the existing addPackageNames  |
-|   activationkey.removePackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]])  |  0.4  |  3   |  bbuckingham  |  done   |  * Remove a set of packages from an activation key.[[BR]]* This api will deprecate the existing removePackageNames  |
+|   activationkey.addPackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]])  |  0.4  |  3   |  bbuckingham  |  done   |  * Add a set of packages to an activation key.  
+ May optionally include an arch.   
+ This api will deprecate the existing addPackageNames  |
+|   activationkey.removePackages(string sessionKey, string activationKey, array[ struct[ string name, string arch]])  |  0.4  |  3   |  bbuckingham  |  done   |  * Remove a set of packages from an activation key.  
+ This api will deprecate the existing removePackageNames  |
 |   activationkey.enableConfigDeployment(string sessionKey, string activationKey)  |  0.3  |  3   |  coec  |  done   |    |  |
 |   activationkey.disableConfigDeployment(string sessionKey, string activationKey)  |  0.3  |  2  |  coec  |  done   |    |  |
 |   activationkey.checkConfigDeployment(string sessionKey, string activationKey)  |  0.3  |  2  |  coec  |  done   |    |  |
 |   activationkey.listActivatedSystems(string sessionKey, string activationKey)  |  0.5  |  3  |  bbuckingham  |  done   |  List the systems that have been activated by the given activation key.  |
 |   *Namespace: channel.access*  |    |    |    |    |    |  |
-|  channel.access.enableUserRestrictions(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise. |
-|  channel.access.disableUserRestrictions(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.[[BR]]* Returns 1 on success, exception thrown otherwise. |
-|  channel.access.setOrgSharing(string sessionKey, string channelLabel, string access)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Set the org sharing access for the channel. Access may be set to public, private or protected. [[BR]]* Returns 1 on success, exception thrown otherwise. |
-|  channel.access.getOrgSharing(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Retrieve the current org sharing access for the channel.[[BR]]* Returns a string (public, private or protected). |
+|  channel.access.enableUserRestrictions(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Enable user/subscriber restrictions for the channel.  When user restrictions are enabled, only selected users may subscribe to the channel.  
+ Returns 1 on success, exception thrown otherwise. |
+|  channel.access.disableUserRestrictions(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Disable user/subscriber restrictions for the channel.  When user restrictions are disabled, all users within the organization may subscribe to the channel.  
+ Returns 1 on success, exception thrown otherwise. |
+|  channel.access.setOrgSharing(string sessionKey, string channelLabel, string access)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Set the org sharing access for the channel. Access may be set to public, private or protected.   
+ Returns 1 on success, exception thrown otherwise. |
+|  channel.access.getOrgSharing(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Retrieve the current org sharing access for the channel.  
+ Returns a string (public, private or protected). |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: channel*  |    |    |    |    |    |  |
 |  channel.listAllChannels(string sessionKey)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support) |
@@ -39,21 +50,35 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |  channel.listRetiredChannels(string sessionKey)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support) |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: channel.org*  |    |    |    |    |    |  |
-|  channel.org.list(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).[[BR]]* Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Sat/Org/Channel Admin. |
+|  channel.org.list(string sessionKey, string channelLabel)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ List the orgs that are trusted by the current organization (orgId) and info on which are trusted to access this channel (channelLabel).  
+ Returns array[ struct[ int trustOrgId, boolean trustEnabled ] ].  
+ The user executing this method must be a Sat/Org/Channel Admin. |
 
 
-|  channel.org.enableAccess(string sessionKey, string channelLabel, int trustOrgId)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).[[BR]]* The org being trusted must be one that from the organization's trust list (e.g. listTrusts).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Sat/Org/Channel Admin. |
+|  channel.org.enableAccess(string sessionKey, string channelLabel, int trustOrgId)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Enable trust of an org (trustOrgId) to grant access to view and consume the content of the channel specified (channelLabel).  
+ The org being trusted must be one that from the organization's trust list (e.g. listTrusts).  
+ Returns 1 on success, exception thrown otherwise.  
+ The user executing this method must be an Sat/Org/Channel Admin. |
 | --- | --- | --- | --- | --- | --- |
-|  channel.org.disableAccess(string sessionKey, string channelLabel, int trustOrgId)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be an Sat/Org/Channel Admin. |
+|  channel.org.disableAccess(string sessionKey, string channelLabel, int trustOrgId)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Disable trust of an org (trustOrgId) revoking access to view and consume the content of the channel specified (channelLabel).  
+ Returns 1 on success, exception thrown otherwise.  
+ The user executing this method must be an Sat/Org/Channel Admin. |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: channel.software*  |    |    |    |    |    |  |
 |  channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate)  |  0.5  |  1  |  jsherrill  |  done  |  deprecated string-date version  |
 |  channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 startDate)  |  0.5  |  1  |   jsherrill  |  done  |  deprecated string-date version  |
 |  channel.software.listErrata(string sessionKey, String channeLLabel, dateTime.iso8601 endDate)  |  0.5  |  1  |  jsherrill  |  done  |  deprecated string-date version  |
-|  channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate)  |  0.5  |  3  |  bbuckingham  |  done  |  * List all packages based on the start date given.[[BR]]* This API will deprecate the existing listAllPackages API that has startDate defined as a string.  |
-|  channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate)  |  0.5  |  3  |  bbuckingham  |  done  |  * List all packages based on the start/end date given.[[BR]]* This API will deprecate the existing listAllPackages API that has startDate and endDate defined as a string.  |
+|  channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate)  |  0.5  |  3  |  bbuckingham  |  done  |  * List all packages based on the start date given.  
+ This API will deprecate the existing listAllPackages API that has startDate defined as a string.  |
+|  channel.software.listAllPackages(string sessionKey, string channelLabel, dateTime.iso8601 startDate, dateTime.iso8601 endDate)  |  0.5  |  3  |  bbuckingham  |  done  |  * List all packages based on the start/end date given.  
+ This API will deprecate the existing listAllPackages API that has startDate and endDate defined as a string.  |
 |  channel.software.listErrataByType(string sessionKey, string channelLabel, string advisoryType)  |  0.3  |  4  |  bbuckingham  |  done  |    |  |
-|  channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support[[BR]]* Set the contact/support information for a given channel.[[BR]]* Returns 1 on success, exception thrown otherwise. |
+|  channel.software.setContactDetails(string sessionKey, string channelLabel, string name, string email, string phoneNumber, string supportPolicy)  |  0.4  |  4  |  bbuckingham  |  done  | (Multi Org Phase2 support  
+ Set the contact/support information for a given channel.  
+ Returns 1 on success, exception thrown otherwise. |
 |   byte[] package.getPackage(string sessionKey, int packageId)  |  0.3  |  8  |  jsherrill  |  Done  |    |  |
 |   string package.getPackageUrl(string sessionKey, int packageId)  |  0.2  |  5  |  jsherrill  |  Done  |  Obtain the package download URL.  |
 |   channel.software.mergeErrata(string sessionKey, string fromChannel, string toChannel)  |  0.3  |  3  |  bbuckingham  |  done  |    |  |
@@ -64,14 +89,32 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: configchannel*  |    |    |    |    |    |  |
 |   configchannel.channelExists(sessionKey, string channelLabel)  |  0.3  |   |  coec  |  done  |  returns 1 if the channel exists or 0 if it does not  |
-|   configchannel.scheduleFileComparisons(string sessionKey, string channelLabel, string path, array[serverId](int))  |  0.3  |  4  |  bbuckingham  |  done  |  * Schedule a file comparison on the list of systems provided.[[BR]]* Returns the id of the scheduled action (int actionId).  |
+|   configchannel.scheduleFileComparisons(string sessionKey, string channelLabel, string path, array[serverId](int))  |  0.3  |  4  |  bbuckingham  |  done  |  * Schedule a file comparison on the list of systems provided.  
+ Returns the id of the scheduled action (int actionId).  |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: errata*  |    |    |    |    |    |  |
 |   errata.delete(string sessionKey, string advisoryName)  |  0.6  |  5  |  bbuckingham  |  done  |  Delete of custom errata.   |
 |   errata.findByCve(string sessionKey, string cveName)  |  0.3  |  3  |  bbuckingham  |  done  |  Retrieve errata based on CVE (e.g. CVE-2008-1233)   |
-|   errata.setDetails([[BR]]string sessionKey, [[BR]]struct(errata details)[[[BR]]string synopsis, [[BR]]string advisoryName, [[BR]]int advisoryRelease, [[BR]]string advisoryType, [[BR]]string product, [[BR]]string topic, [[BR]]string description, [[BR]]string solution, [[BR]]   string references, [[BR]]string notes, [[BR]]array[struct(bug)[id, string summary](int)], [[BR]]array[keyword](string))  |  0.4  |  3  |  bbuckingham  |  done  |  * Set errata details.  All arguments are optional and will only be modified if included.[[BR]] * Returns 1 on success, exception thrown otherwise.  |
-|   errata.addPackages(string sessionKey, string advisoryName, array[packageId](int))  |  0.4  |  2  |  bbuckingham  |  done  |  * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.[[BR]] * Returns the number of packages added on success, exception thrown otherwise.   |
-|   errata.removePackages(string sessionKey, string advisoryName, array[packageId](int))  |  0.4  |  2  |  bbuckingham  |  done  |  * Remove a set of packages from an errata.[[BR]] * Returns the number of packages removed on success, exception thrown otherwise.   |
+|   errata.setDetails(  
+string sessionKey,   
+struct(errata details)[  
+string synopsis,   
+string advisoryName,   
+int advisoryRelease,   
+string advisoryType,   
+string product,   
+string topic,   
+string description,   
+string solution,   
+   string references,   
+string notes,   
+array[struct(bug)[id, string summary](int)],   
+array[keyword](string))  |  0.4  |  3  |  bbuckingham  |  done  |  * Set errata details.  All arguments are optional and will only be modified if included.  
+ * Returns 1 on success, exception thrown otherwise.  |
+|   errata.addPackages(string sessionKey, string advisoryName, array[packageId](int))  |  0.4  |  2  |  bbuckingham  |  done  |  * Adds a set of packages to an errata.  Invoking this API will not impact packages already associated with the errata.  
+ * Returns the number of packages added on success, exception thrown otherwise.   |
+|   errata.removePackages(string sessionKey, string advisoryName, array[packageId](int))  |  0.4  |  2  |  bbuckingham  |  done  |  * Remove a set of packages from an errata.  
+ * Returns the number of packages removed on success, exception thrown otherwise.   |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: kickstart*  |    |    |    |    |    |  |
 |   kickstart.listAllIpRanges(string sessionKey)  |  0.2  |  3  |  jsherrill   |  done  |   List all ip ranges for all kickstarts  |
@@ -106,13 +149,16 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   kickstart.profile.system.checkRemoteCommands(string sessionKey, string kslabel)  |  0.5  |  2  |  bbuckingham  | done   |  Check the remote command status for a kickstart profile.  |
 |   kickstart.profile.system.enableRemoteCommands(string sessionKey, string kslabel)  |  0.2  |  2  | partha   | done   |    |  |
 |   kickstart.profile.system.disableRemoteCommands(string sessionKey, string kslabel)  |  0.2  |  2  | partha   | done  |    |  |
-|   kickstart.profile.system.getLocale(string sessionKey, string kslabel)  |  0.3  |  3  |  bbuckingham  |  done  |  * Retrieve the locale information for the kickstart profile.[[BR]] * Returns struct[locale, int useUtc](string)  |
+|   kickstart.profile.system.getLocale(string sessionKey, string kslabel)  |  0.3  |  3  |  bbuckingham  |  done  |  * Retrieve the locale information for the kickstart profile.  
+ * Returns struct[locale, int useUtc](string)  |
 |   kickstart.profile.system.setLocale(string sessionKey, string kslabel, string locale, boolean useUtc)  |  0.3  |  3  |  bbuckingham  |  done  |    |  |
 |   kickstart.profile.system.listFilePreservations(string sessionKey, string kslabel)  |  0.4  |  3  |  bbuckingham  |  done  |  List the file preservation lists associated with the profile.  |
 |   kickstart.profile.system.addFilePreservations(string sessionKey, fllabels)  |  0.4  |  4  |  bbuckingham  |  done  |  Add a list of file preservation lists to the profile.  |
 |   kickstart.profile.system.removeFilePreservations(string sessionKey, fllabels)  |  0.4  |  4  |  bbuckingham  |  done  |  Remove a list of file preservation lists from the profile.  |
-|   kickstart.profile.system.listKeys(string sessionKey, string kslabel)  |  0.3  |  3  |  jdob  |  done  | * Retrieve the GPG and SSL keys associated with the kickstart profile.[[BR]]** Renamed from listAssociatedKeys to listKeys in 0.4 - bbuckingham*  |
-|   kickstart.profile.system.addKeys(string sessionKey, string kslabel, array[description](string))  |  0.3  |  4  |  jdob  |  done  | * Add GPG and SSL keys to the kickstart profile.[[BR]]** Renamed from associateKeys to addKeys in 0.4 - bbuckingham*  |
+|   kickstart.profile.system.listKeys(string sessionKey, string kslabel)  |  0.3  |  3  |  jdob  |  done  | * Retrieve the GPG and SSL keys associated with the kickstart profile.  
+* Renamed from listAssociatedKeys to listKeys in 0.4 - bbuckingham*  |
+|   kickstart.profile.system.addKeys(string sessionKey, string kslabel, array[description](string))  |  0.3  |  4  |  jdob  |  done  | * Add GPG and SSL keys to the kickstart profile.  
+* Renamed from associateKeys to addKeys in 0.4 - bbuckingham*  |
 |   kickstart.profile.system.removeKeys(string sessionKey, string kslabel, array[description](string))  |  0.4  |  4  |  bbuckingham  |  done  |  Remove GPG and SSL keys from the kickstart profile. |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: kickstart.profile.software*  |    |    |    |    |    |  |
@@ -131,10 +177,14 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   *Namespace: kickstart.profile.scripts*  |    |    |    |    |    |  |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: kickstart.keys*  |    |    |    |    |    |  |
-|   kickstart.keys.listAllKeys(string sessionKey)  | 0.3   |  2  |  jdob  |  done  |  * List all GPG and SSL keys for all kickstarts.[[BR]]* Returns array[struct[description, string type](string)]  |
-|   kickstart.keys.create(string sessionKey, string description, string type, content)  | 0.3   |  4  |  jdob  |  done  |  * Create a GPG or SSL key. This key may then be associated with a kickstart profile (via kickstart.profile.system.associateKeys()). [[BR]]* Returns 1 on success, exception thrown otherwise.  |
-|   kickstart.keys.delete(string sessionKey, string description)  | 0.3   |  4  |  jdob  |  done  |  * Remove a GPG or SSL key. [[BR]]* Returns 1 on success, exception thrown otherwise.  |
-|   kickstart.keys.getDetails(string sessionKey, string description)  | 0.3  |  4  |  jdob  |  done  |  * Obtain details on a GPG or SSL key. [[BR]]* Returns struct[description, string type, content](string)  |
+|   kickstart.keys.listAllKeys(string sessionKey)  | 0.3   |  2  |  jdob  |  done  |  * List all GPG and SSL keys for all kickstarts.  
+ Returns array[struct[description, string type](string)]  |
+|   kickstart.keys.create(string sessionKey, string description, string type, content)  | 0.3   |  4  |  jdob  |  done  |  * Create a GPG or SSL key. This key may then be associated with a kickstart profile (via kickstart.profile.system.associateKeys()).   
+ Returns 1 on success, exception thrown otherwise.  |
+|   kickstart.keys.delete(string sessionKey, string description)  | 0.3   |  4  |  jdob  |  done  |  * Remove a GPG or SSL key.   
+ Returns 1 on success, exception thrown otherwise.  |
+|   kickstart.keys.getDetails(string sessionKey, string description)  | 0.3  |  4  |  jdob  |  done  |  * Obtain details on a GPG or SSL key.   
+ Returns struct[description, string type, content](string)  |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: kickstart.distributions*  |    |    |    |    |    |  |
 |   ----    |    |    |    |    |    |  |
@@ -145,23 +195,53 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   kickstart.filepreservation.getDetails(string sessionKey, string name)  |  0.4  |  3  |  bbuckingham  |  done  |  Retrieve details on a file preservation list.  |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: org*  |    |    |    |    |    |  |
-|   org.listOrgs(string sessionKey)    |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)[[BR]]* List the orgs defined by the Spacewalk. [[BR]]* Update the existing API to include the number of "trusts".[[BR]]* The user executing the method must be a Spacewalk Admin. |
+|   org.listOrgs(string sessionKey)    |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)  
+ List the orgs defined by the Spacewalk.   
+ Update the existing API to include the number of "trusts".  
+ The user executing the method must be a Spacewalk Admin. |
 |   org.listSoftwareEntitlements(string sessionKey, string label, boolean includeUnentitled)    |  0.6  |  4  |  bbuckingham  |  done  |  List each org's allocation of an entitlement.  If includeUnentitled=TRUE, orgs that have 0 defined for that entitlement will also be included. |
 |   org.listSystemEntitlements(string sessionKey, string label, boolean includeUnentitled)    |  0.6  |  4  |  bbuckingham  |  done  |  List each org's allocation of an entitlement.  If includeUnentitled=TRUE, orgs that have 0 defined for that entitlement will also be included. |
-|   org.migrateSystems(string sessionKey, array[serverId](int), int toOrgId)    |  0.4  |  24  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust. |
+|   org.migrateSystems(string sessionKey, array[serverId](int), int toOrgId)    |  0.4  |  24  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Migrate a list of systems from the organization associated with the user executing the request to the destination org provided.  The user executing the request must be an org admin and the destination org must be within that user's org trust. |
 |   ----    |    |    |    |    |    |  |
 |   *Namespace: org.trusts* ^NEW^  |    |    |    |    |    |  |
-|  org.trusts.listTrusts(string sessionKey, int orgId)  |  0.4  |  4  |  jortel   |  done  | (Multi Org Phase2 support)[[BR]]* Lists the orgs that the organization (orgId) may define as trusted and info on whether or not each org (trustOrgId) is in the oganization's trust ring (i.e. org enabled/checked).[[BR]]* Returns array[ struct[ int orgId, string orgName, boolean trustEnabled ] ].[[BR]]* The user executing this method must be a Spacewalk Admin. |
-|  org.trusts.addTrust(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)[[BR]]* Add an org (trustOrgId) to an organization's (orgId) trust ring.[[BR]]* Only orgs from the organization's trust list (e.g. listTrusts) may be added.[[BR]] * Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be a Spacewalk Admin. |
-|  org.trusts.removeTrust(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)[[BR]]* Remove an org (trustOrgId) from an organization's (orgId) trust ring.[[BR]]* Returns 1 on success, exception thrown otherwise.[[BR]]* The user executing this method must be a Spacewalk Admin |
-|  org.trusts.listSystemsAffected(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)[[BR]]* Retrieve the list of systems in the trusted org (trustOrgId) affected by the trust with an organization (orgId).[[BR]]* Returns ->  array [ struct [ int systemId, string systemName ] ][[BR]]* Note: perhaps this could be combined w/another api.[[BR]]* The user executing this method must be a Spacewalk Admin.  |
+|  org.trusts.listTrusts(string sessionKey, int orgId)  |  0.4  |  4  |  jortel   |  done  | (Multi Org Phase2 support)  
+ Lists the orgs that the organization (orgId) may define as trusted and info on whether or not each org (trustOrgId) is in the oganization's trust ring (i.e. org enabled/checked).  
+ Returns array[ struct[ int orgId, string orgName, boolean trustEnabled ] ].  
+ The user executing this method must be a Spacewalk Admin. |
+|  org.trusts.addTrust(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)  
+ Add an org (trustOrgId) to an organization's (orgId) trust ring.  
+ Only orgs from the organization's trust list (e.g. listTrusts) may be added.  
+ * Returns 1 on success, exception thrown otherwise.  
+ The user executing this method must be a Spacewalk Admin. |
+|  org.trusts.removeTrust(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)  
+ Remove an org (trustOrgId) from an organization's (orgId) trust ring.  
+ Returns 1 on success, exception thrown otherwise.  
+ The user executing this method must be a Spacewalk Admin |
+|  org.trusts.listSystemsAffected(string sessionKey, int orgId, int trustOrgId)  |  0.4  |  4  |  jortel  |  done  | (Multi Org Phase2 support)  
+ Retrieve the list of systems in the trusted org (trustOrgId) affected by the trust with an organization (orgId).  
+ Returns ->  array [ struct [ int systemId, string systemName ] ]  
+ Note: perhaps this could be combined w/another api.  
+ The user executing this method must be a Spacewalk Admin.  |
 
 
-|  org.trusts.listOrgs(string sessionKey)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* List all organizations trusted by the user's organization.[[BR]]* Results similar to multiorg/Organizations from web interface.[[BR]]* User must be either Satellite or Org Admin. |
+|  org.trusts.listOrgs(string sessionKey)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ List all organizations trusted by the user's organization.  
+ Results similar to multiorg/Organizations from web interface.  
+ User must be either Satellite or Org Admin. |
 | --- | --- | --- | --- | --- | --- |
-|  org.trusts.getDetails(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* Results similar to multiorg/OrgTrustDetails from web interface.[[BR]]* Retrieve details on the trusted organization provided.[[BR]]* User must be either Satellite or Org Admin. |
-|  org.trusts.listChannelsProvided(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* List all software channels provided by the trusted organization.[[BR]]* Results similar to multiorg/channels/Provided from web interface.[[BR]]* User must be either Satellite or Org Admin. |
-|  org.trusts.listChannelsConsumed(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)[[BR]]* List all software channels consumed by the trusted organization.[[BR]]* Results similar to multiorg/channels/Consumed from web interface.[[BR]]* User must be either Satellite or Org Admin. |
+|  org.trusts.getDetails(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ Results similar to multiorg/OrgTrustDetails from web interface.  
+ Retrieve details on the trusted organization provided.  
+ User must be either Satellite or Org Admin. |
+|  org.trusts.listChannelsProvided(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ List all software channels provided by the trusted organization.  
+ Results similar to multiorg/channels/Provided from web interface.  
+ User must be either Satellite or Org Admin. |
+|  org.trusts.listChannelsConsumed(string sessionKey, int trustedOrgId)  |  0.4  |  2  |  bbuckingham  |  done  | (Multi Org Phase2 support)  
+ List all software channels consumed by the trusted organization.  
+ Results similar to multiorg/channels/Consumed from web interface.  
+ User must be either Satellite or Org Admin. |
 
 
 |   ----    |    |    |    |    |    |  |
@@ -184,8 +264,10 @@ This page is simply a record of apis added during the spacewalk 0.1 - 0.6 time f
 |   system.provisionSystem(sid, kslabel, date)  |  0.3  |  4  |  skarmark  |  done  |    |  |
 |   system.provisionSystem(sid, kslabel)  |  0.3  |  1  |  skarmark  |  done  |    |  |
 |   system.comparePackageProfile(string sessionKey, int sid, string profileLabel)  |  0.3  |  3  |  bbuckingham  |  done  |  Compare the system to an existing package profile.  |
-|   system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence)  |  0.3  |  4  |  bbuckingham  |  done  |  * Schedule a package list refresh for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise.  |
-|   system.schedulePackageRemove(string sessionKey, int serverId, array[packageId](int), dateTime.iso860 earliestOccurrence)  |  0.4  |  4  |  bbuckingham  |  done  |  * Schedule a package remove for a system.[[BR]]* Returns the id of the scheduled action (int actionId), exception thrown otherwise.  |
+|   system.schedulePackageRefresh(string sessionKey, int serverId, dateTime.iso860 earliestOccurrence)  |  0.3  |  4  |  bbuckingham  |  done  |  * Schedule a package list refresh for a system.  
+ Returns the id of the scheduled action (int actionId), exception thrown otherwise.  |
+|   system.schedulePackageRemove(string sessionKey, int serverId, array[packageId](int), dateTime.iso860 earliestOccurrence)  |  0.4  |  4  |  bbuckingham  |  done  |  * Schedule a package remove for a system.  
+ Returns the id of the scheduled action (int actionId), exception thrown otherwise.  |
 |   system.setBaseChannel(string sessionKey, int serverId, string channelLabel)  |  0.5  |  3  |  bbuckingham  |  done  |  * Set a system's base channel.  This will deprecate the existing setBaseChannel API that takes an int channelId as an input.   |
 |   system.setChildChannels(string sessionKey, int serverId, array[channelId OR string channelLabel](int))  |  0.5  |  4  |  bbuckingham  |  done  |  * Set a system's child channels.  This is an existing API that takes an array[channelId](int) that has been enhanced to take an array[channelLabel](string) instead.  The intent is to deprecate the usage of array[channelId](int).  |
 |   system.setLockStatus(string sessionKey, int serverId, boolean status)  |  0.5  |  3  |  bbuckingham  |  done  |  * Set a system's status to locked or unlocked.  Note: status=true indicates locked.   |
