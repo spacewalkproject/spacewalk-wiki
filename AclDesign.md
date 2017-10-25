@@ -20,7 +20,7 @@ ACL function::
  a boolean function present in an acl handler that takes context and parameters and return a boolean.
 
 Handler::
- The handler is a collection of acl functions used to separate out similar functionality (ex: monitoring acl handler)
+ The handler is a collection of acl functions used to separate out similar functionality (ex: configuration acl handler)
 
 Mixins::
  A list of handlers presented when using an acl. Required when not using functions from the default handler.
@@ -112,9 +112,9 @@ There are basically four different places where one might use an acl. Each place
  Almost all acls used in the nav tree should also be used in the similar struts-config action stanzas.
 2. struts-config
  acls and mixins are used as a `set-property` child element of the action element in `struts-config.xml`. The properties are named `'acls'` and `'mixins'`. ex:
-  `<set-property property="acls" value="show_monitoring(); is(satellite)"/>`
+  `<set-property property="acls" value="system_feature(ftr_config);client_capable(configfiles.upload)"/>`
 
-  `<set-property property="mixins" value="com.redhat.rhn.common.security.acl.MonitoringAclHandler" />`
+  `<set-property property="mixins" value="com.redhat.rhn.common.security.acl.SystemAclHandler" />`
 
  Note: you cannot use acls in struts config unless you action uses our custom mapping class. Just add this attribute to your action element: 
  `className="com.redhat.rhn.frontend.struts.RhnActionMapping"`
@@ -134,7 +134,7 @@ There are basically four different places where one might use an acl. Each place
  both return booleans, so the consequence of a failed acl is up to you.
 ## How to implement an ACL
 
-First off, you need to decide in which handler your acl function will live. Handlers are based on the features of Spacewalk for the most part. For example, there is a `MonitoringAclHandler` for the monitoring feature and a `ConfigAclHandler` for the configuration management feature. `Access` is the default handler, but don't put functions into Access unless they are truly common. All of the available acl handlers are found in the `com.redhat.rhn.common.security.acl` package.
+First off, you need to decide in which handler your acl function will live. Handlers are based on the features of Spacewalk for the most part. For example, there is a `ConfigAclHandler` for the configuration management feature. `Access` is the default handler, but don't put functions into Access unless they are truly common. All of the available acl handlers are found in the `com.redhat.rhn.common.security.acl` package.
 
 ### Writing Your own ACL Handler
 
