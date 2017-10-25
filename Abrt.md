@@ -35,5 +35,4 @@ Following issues were identified recently:
  - if the `spacewalk-abrt` package is removed from
  the system, data on the server remain unchanged,
  showing inaccurate information;
- - there's no way to dismiss this information;
  - time of the last crash should be present.
