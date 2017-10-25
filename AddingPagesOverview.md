@@ -14,7 +14,7 @@ help us scale the site and maintain separation of concerns.
 
   *** Do not commit any of the following code or face ridicule.*
 
-  *** $RHN-JAVA is the svn checkout of the rhn-java site.*
+  *** $RHN-JAVA is the git checkout of the spacewalk-java site.*
 
 Let's walk through an example.
 ## HELLO-RHN
