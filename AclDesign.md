@@ -3,7 +3,7 @@
 ## General
 
 
-The acls in RHN are used to restrict access or hide elements that a user doesn't have permission to use or see.
+The acls in Spacewalk are used to restrict access or hide elements that a user doesn't have permission to use or see.
 
 The acls don't have to be based on the user, it could be based on other context (like hiding web page elements when a system is locked).
 Though they bear the same name as acls in linux, they do not involve permission lists for the most part.
@@ -142,7 +142,7 @@ There are basically four different places where one might use an acl. Each place
  both return booleans, so the consequence of a failed acl is up to you.
 ## How to implement an ACL
 
-First off, you need to decide in which handler your acl function will live. Handlers are based on the features of RHN for the most part. For example, there is a `MonitoringAclHandler` for the monitoring feature and a `ConfigAclHandler` for the configuration management feature. `Access` is the default handler, but don't put functions into Access unless they are truly common. All of the available acl handlers are found in the `com.redhat.rhn.common.security.acl` package.
+First off, you need to decide in which handler your acl function will live. Handlers are based on the features of Spacewalk for the most part. For example, there is a `MonitoringAclHandler` for the monitoring feature and a `ConfigAclHandler` for the configuration management feature. `Access` is the default handler, but don't put functions into Access unless they are truly common. All of the available acl handlers are found in the `com.redhat.rhn.common.security.acl` package.
 
 ### Writing Your own ACL Handler
 
