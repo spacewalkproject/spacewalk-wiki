@@ -86,11 +86,8 @@ Also, there is no way to parenthesize expressions.
 Mega-Example acl = not foo(bar,baz);foo(temp) or not is(satellite) or bar(foo) ; cake(cheese  ,  crumb, icing);
 ### Code Location and Function
 
-Acls are used in both Java and Perl. The java processing code was written directly from the perl equivalent. Therefore, it should
+Acls are used in Java code:
 
-function exactly the same.
-
-Java:
  * `com.redhat.rhn.common.security.acl` is the main package for most of the acl code, especially Handlers.
  * `com.redhat.rhn.common.security.acl.Access` the default acl handler
  * `com.redhat.rhn.common.security.acl.AclHandler` interface that defines the acl handler type.
@@ -102,11 +99,6 @@ Java:
  * `com.redhat.rhn.frontend.struts.RhnRequestProcessor` does the evaluation for acl properties used in struts-config.
  * `com.redhat.rhn.frontend.taglibs.RequireTag` processes acl checks performed in jsps
 
-Perl:
- * `PXT::ACL` main code path. The perl acl evaluator. Also contains the code for registering acl handlers.
- * `RHN::Access` the default acl handler.
- * `RHN::Access::` the specific acl handlers.
- * `Sniglets::Navi::Tree` and `Sniglets::Navi::Node` takes care of the nav acls.
 ## How to use acls
 
 There are basically four different places where one might use an acl. Each place allows at least the ability to pass acl strings and mixins. The acl string is written using the mini-language described above (allows not, and, or, and functions with parameters). The mixins in java are fully qualified class names using a comma as a delimeter.
