@@ -20,7 +20,7 @@ ABRT information back to the server.
 
 
 
-Currently (with Spacewalk 1.7 nightly), 
+Currently, 
 the number of crashes is shown only on
 system detail page (`systems/details/Overview.do`)
 under _Application crashes_ header. If there are
