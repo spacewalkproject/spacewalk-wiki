@@ -103,7 +103,6 @@ Acls are used in Java code:
 
 There are basically four different places where one might use an acl. Each place allows at least the ability to pass acl strings and mixins. The acl string is written using the mini-language described above (allows not, and, or, and functions with parameters). The mixins in java are fully qualified class names using a comma as a delimeter.
 
-
 1. navigation xmls
  The mixins are described using an `acl_mixins` attribute for the parent `rhn-navi-tree` element. The same mixins are used for each acl in the nav tree.
  acls are used as an attribute named `acl` on the `rhn-tab` elements.
@@ -113,21 +112,22 @@ There are basically four different places where one might use an acl. Each place
 2. struts-config
  acls and mixins are used as a `set-property` child element of the action element in `struts-config.xml`. The properties are named `'acls'` and `'mixins'`. ex:
   `<set-property property="acls" value="system_feature(ftr_config);client_capable(configfiles.upload)"/>`
-
   `<set-property property="mixins" value="com.redhat.rhn.common.security.acl.SystemAclHandler" />`
-
  Note: you cannot use acls in struts config unless you action uses our custom mapping class. Just add this attribute to your action element: 
  `className="com.redhat.rhn.frontend.struts.RhnActionMapping"`
  A false return for a struts-config acl will send the user to a permission error page.
  If you add an acl to the struts config, remember that the same acl should apply to all links leading to the same page, especially those in the navigation.
-3. jsp
- The common use of acls withing a jsp is by using our custom require tag. It has attributes named `'acl'` and `'mixins'`. ex: 
-    `<rhn:require acl="not config_channel_type(server_import); config_channel_has_files()"`
 
-    `mixins="com.redhat.rhn.common.security.acl.ConfigAclHandler">`
- This tag works basically the same way as the JSTL core `c:if` tag. Anything in the body of the tag will be skipped if the acl returns with a false.
- Some of our other custom tags also accept acls to hide portions of the output. The toolbar and list tag are two examples. When these use multiple
- acls, all the acls will be evaluated with the same mixins.
+3. jsp
+   The common use of acls withing a jsp is by using our custom require tag. It has attributes named `'acl'` and `'mixins'`. ex:  
+
+   `<rhn:require acl="not config_channel_type(server_import); config_channel_has_files()"`  
+
+   `mixins="com.redhat.rhn.common.security.acl.ConfigAclHandler">`  
+
+   This tag works basically the same way as the JSTL core `c:if` tag. Anything in the body of the tag will be skipped if the acl returns with a false.
+   Some of our other custom tags also accept acls to hide portions of the output. The toolbar and list tag are two examples. When these use multiple acls, all the acls will be evaluated with the same mixins.
+
 4. java code
  The `com.redhat.rhn.manager.acl.AclManager` should be used to evaluate acls in java code. In java, as well as passing the mixins and acl strings,
  you can also control the context map that gets sent to the acl function. A user object will always be present in the map. The hasAcl methods
