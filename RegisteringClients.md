@@ -2,6 +2,7 @@ Registering Clients
 ===================
 
 ## Instructions for registering client systems you wish to manage with Spacewalk 2.7.
+If you are looking to register client systems to Spacewalk Nightly, more details are available at [[RegisteringClientsNightly]]
 
 > **Note: for previous versions of Spacewalk use following links**
 > - Spacewalk 2.6 instructions are available at [[RegisteringClients26]].
