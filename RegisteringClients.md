@@ -148,10 +148,13 @@ If you are looking to register client systems to Spacewalk Nightly, more details
     # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-SUSE-custom-channel> 
     ```
 
-## Debian
+## Debian and Ubuntu
 
 > **note:**
 > DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.7! Any volunteers?
+
+> **note:**
+> There is a modification needed on Debian and Ubuntu client systems.  Details about this modification can be found at [[DebianUbuntuSupportIn27]]
     
 All core clients packages are already in Debian and Ubuntu. See:
     
