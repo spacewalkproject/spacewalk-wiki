@@ -23,7 +23,7 @@ You can raise the debug level in /etc/rhn/rhn.conf to increase logging to the Pr
 
 When starting up Squid: "Aborted $SQUID $SQUID_OPTS >>/var/log/squid/squid.out     FATAL: Could not determine fully qualified hostname"
 
-Set visible_hostname in /etc/squid/squid.conf - see [[http://kbase.redhat.com/faq/FAQ_48_9716.shtm]]
+Set visible_hostname in /etc/squid/squid.conf - see [[https://access.redhat.com/articles/10825]]
 
 ----
 
