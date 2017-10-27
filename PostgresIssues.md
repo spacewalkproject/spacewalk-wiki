@@ -1,6 +1,7 @@
 [Main Project Page](PostgreSqlProject)
-## Project Issues
+# **DEPRECATED, NO LONGER USED**
 
+## Project Issues
 
 
 ||*Name*||*Description*||*Status*||*Assigned*||*Notes*||
