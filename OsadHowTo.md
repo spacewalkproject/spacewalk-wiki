@@ -17,7 +17,7 @@ osa-dispatcher periodically runs a query that checks to see if there are any cli
 
 The osa-dispatcher daemon also periodically performs a select within the database to see if any clients have any actions they need to perform. If there are, it sends a message through jabberd to osad telling it to run rhn_check on the client. rhn_check then takes over performing the actual action.
 
-RHN Proxies have have a jabberd server running on them that will pass all messages it receives up to the jabberd server running on the satellite.
+RHN Proxies have a jabberd server running on them that will pass all messages it receives up to the jabberd server running on the satellite.
 ### Key Files for osad
 
 The source code for osad lives in /usr/share/rhn/osad/ on the clients.
