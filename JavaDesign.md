@@ -33,13 +33,11 @@ restricted to display logic only.  We use taglibs to centralize common display
 tasks.  For example, displaying a list of data is done through a taglib.
 
 Our web services UI is implemented using a combination of [Redstone XML-RPC](http://xmlrpc.sourceforge.net/).  Both of these tools are abstracted out to the point that if the
-web services implementer extends the `BaseHandler` class the APIs will be 
-available through XML-RPC.
+web services implementer extends the `BaseHandler` class the APIs will be available through XML-RPC.
+
 # Business logic
 
-Our business logic tier is implemented as a set of static methods, which
-
-perform all security checks, and then make calls to the correct business
+Our business logic tier is implemented as a set of static methods, which perform all security checks, and then make calls to the correct business
 objects to perform the work.  This tier is slightly muddied today, because
 it is much heavier weight than it should be.  The problem is the amount of
 logic that we have embedded in stored procedures.  Because so much of our
@@ -56,18 +54,17 @@ call the `ServerFactory`.  If the `UserManager` wishes to retrieve Server
 information, it must call through the `ServerManager` to do so.  This ensures
 that no matter what is happening, security checks are performed, because the
 Managers take care of all security checks.
+
 # Business object/Web form validation
-
 A common problem for web applications is web form and business object 
-
 validation.  While Struts provides a mechanism for validating web forms, it
 isn't available for use in the business tier.  To resolve this problem, we have
 implemented our own validation service that can be used by both Struts and our
 business layer.
+
 # Persistence
 
 We use Hibernate for our persistence layer, which allows us to persist standard
-
 Java objects.  We have created a standard `HibernateFactory` class, which 
 implements all of our persistence logic.  Each major business object class has
 its own factory which extends the `HibernateFactory`.  For example, the User
@@ -76,20 +73,19 @@ and `EmailAddresses`.
 
 
     TODO: add note about DataSource
+
 # Internationalization/Localization
 
 Java is already very strong in i18n/l10n, but we had some requirements that
-
 Java didn't handle out of the box.  Our resolution for this was to replace
 the standard `ResourceBundle` concept from Java with an `XmlResourceBundle`.  This
 leverages Java's strengths in the i18n/l10n arena, but allows us to store our
 localized strings in an XML format.  The main reason for doing this, was so 
 that we could use standard English phrases as our keys, which `ResourceBundles`
 didn't allow.
+
 # Security
-
 Security in the Java code is done completely differently from how it is done
-
 in the perl code.  Instead of doing security based on formvar name or XML-RPC
 parameter name, all of the security checks are done in code.  This is not done
 by adding if checks throughout the Java code.  Rather, those if statements are
@@ -99,22 +95,20 @@ security.  For example, when loading a scheduled Action from the DB, the code
 should not look like:
 
 
-    #!java
-         .....
+
          action = ActionFactory.lookupById(actId);
          if (action.getOrg() != loggedInUser.getOrg()) {
              throw PermissionException();
          }
-         ....
+
 
 Instead, the logic is:
 
 
-    #!java
-         ....
+
          action = ActionManager.lookupByIdAndOrgId(actId,
                                                    loggedInUser.getOrg().getId());
-         ....
+
 
 The SQL query used to lookup the Action ensures that the Org id's are the
 same.  This limits the security to relationships within the DB.  For more fine
@@ -122,7 +116,7 @@ grained security, we have a couple of options.
 
 1)  Add a writable flag to all of our domain objects, and have the lookup
 method be responsible for setting that flag.  If writable is false, then the
-commit code (1 method) can throw a permission exception.[[BR]]
+commit code (1 method) can throw a permission exception.
 
 2)  Extend the SQL queries for lookup something up and add a flag that
 indicates why you are looking up an object.  For example, if you are looking
