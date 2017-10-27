@@ -1,20 +1,15 @@
 # Spacewalk Proxy Installation Instructions
 
-
-
-*These instructions are for Spacewalk Proxy 0.2 onwards*
-
 If you're looking for instructions for the Red Hat Satellite Proxy product see the [Red Hat Satellite documentation](https://access.redhat.com/documentation/en-us/red_hat_satellite/).
 
-For more information on what Spacewalk is or for developer information see [this page](proxy).
+For more information on what Spacewalk Proxy is see [[proxy]] page.
 
  * For Spacewalk proxy installation for Spacewalk 2.6 see [[HowToInstallProxy26]]
  * For Spacewalk proxy installation for Spacewalk 2.5 see [[HowToInstallProxy25]]
  * For Spacewalk proxy installation for Spacewalk 2.4 see [[HowToInstallProxy24]]
  * For Spacewalk proxy installation for Spacewalk 2.3 see [[HowToInstallProxy23]]
+
 ## Prerequisites
-
-
 
   * Around 6GB storage per distribution under /var/spool/squid (or wherever you want your Squid cache to be)
   * Outbound open ports 80, 443, 4545 (only if you want to enable monitoring) and 5269
@@ -23,11 +18,10 @@ For more information on what Spacewalk is or for developer information see [this
   * Machine, where you will install Spacewalk Proxy, must be registered against Spacewalk Server, which you will proxy.
   * A provisioning entitlement for the Proxy server
   * Enable EPEL yum repository
+
 ## Repository
 
-
-
-RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.4 repositories (including *-client). For the repo setup specifics, see HowToInstall#SettingupSpacewalkrepo. 
+RPM downloads of the project are available through yum repositories. Set up your yum to point to Spacewalk 2.7 repositories (including *-client). For the repo setup specifics, see [[HowToInstall]] and [[RegisteringClients]].. 
 ## Installation
 
 
@@ -37,10 +31,16 @@ Ensure your machine is registered in Spacewalk and has a provisioning entitlemen
 
     yum -y install spacewalk-proxy-selinux spacewalk-proxy-installer
 
-This will pull down and install the set of RPMs required for the installer to run.:
+This will pull down and install the set of RPMs required for the installer to run. If this is the first time installing an RPM from the Spacewalk repo, yum will prompt you to install the GPG key.
 
+Before you running the installation script, the Spacewalk Proxy requires SSL files from your Spacewalk Server. Create the /root/ssl-build directory:
 
-If this is the first time installing an RPM from the Spacewalk repo, yum will prompt you to install the GPG key:
+    mkdir /root/ssl-build
+
+Then copy the public certificate and CA certificate from the desired Spacewalk Server to the new directory:
+
+    scp 'root@spacewalk.example.com:/root/ssl-build/{RHN-ORG-PRIVATE-SSL-KEY,RHN-ORG-TRUSTED-SSL-CERT,rhn-ca-openssl.cnf}' /root/ssl-build
+
 
 Then you need to configure the proxy. Run:
 
