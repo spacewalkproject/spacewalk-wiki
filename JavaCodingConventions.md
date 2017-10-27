@@ -7,7 +7,7 @@
 
 This document contains the standard conventions that should be followed when
 writing Java code for the Spacewalk project.  Everything not specifically
-addressed by this document should follow the official [Code Conventions for the Java Programming Language](http://java.sun.com/docs/codeconv/).
+addressed by this document should follow the official [Code Conventions for the Java Programming Language](http://www.oracle.com/technetwork/articles/javase/codeconvtoc-136057.html).
 
 Conventions specific to Spacewalk have been primarily drawn from the
 conventions imposed by the various sub-projects of the [Apache Jakarta Project](http://jakarta.apache.org/), or have been invented to accommodate matters of internal style and 
@@ -27,7 +27,7 @@ those conventions into english and for things checkstyle can't check.
  All left brackets should be the end of the line and all right brackets should be alone on the line.
 
  
-     #!java
+```java
      // Correct
      public class SomeClass {
          public void someMethod() {
@@ -47,9 +47,7 @@ those conventions into english and for things checkstyle can't check.
              }
          }
      }
-     }}}
-     {{{
-     #!java
+
      // Incorrect
      public class SomeClass {
          public void someMethod()
@@ -68,11 +66,11 @@ those conventions into english and for things checkstyle can't check.
              }
          }
      }
-     }}}
+```
     
-     Brackets are mandatory even for single line statements!
-     {{{
-     #!java
+Brackets are mandatory even for single line statements!
+
+```java
      // Correct
      if (expression) {
          // some code
@@ -80,75 +78,61 @@ those conventions into english and for things checkstyle can't check.
      // Incorrect
      if (expression)
          // some code
-     }}}
-## EOL
-
+```
     
 
-     [Note:  This requirement can probably be removed now, because we can rely on Subversion to do this for us]
-    
-     All .java source files should use the Unix text file format 
-     (e.g. Unix-style EOLs).  Any platform specific files should have a file format
-     appropriate for its target platform (i.e. a .bat file should use a DOS
-     text file format).  
+ 
 ## Directories
 
-    
-
-     Files and Directories should be named such that no case-insensitive duplications occur (i.e.  don't create a directory named "build" in a directory where a file named "BUILD" exists).
+Files and Directories should be named such that no case-insensitive duplications occur (i.e.  don't create a directory named "build" in a directory where a file named "BUILD" exists).
 ## Naming
 
+The following conventions are meant to further refine the conventions described by [section 9 Oracle's code conventions](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-135099.html#367)
     
-
-     The following conventions are meant to further refine the conventions described by section 9 Sun's code conventions, found at
-     [http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html#367]
-    
-     * Packages 
+* Packages 
         All in house packages should be a subpackage of "com.redhat.rhn"
         Example: package com.redhat.rhn.common
     
-     * Classes
+* Classes
         Use of '_' in classnames should be avoided but is not strictly 
         prohibited.  An appropriate use of '_' in a class name would be
         to separate multiple back-to-back acronyms (after seriously considering
         whether the chosen classname is appropriate).
         Example:  class SSL_RPCSocket
     
-     * Interfaces
+* Interfaces
         Interface names should follow the conventions for class names. They should
         *NOT* be prefixed with an I such as IUser.
         Example:  interface SSL_RPCService
     
-     * Methods
+* Methods
         The use of '_' should be avoided in method names.
     
-     * Variables
+* Variables
         The use of '_' should be avoided in variable names.
     
-     * Constants
+* Constants
         The names of constants should not include a leading '_'.
+
 ## Whitespace
 
-     * Tab characters are not allowed in source code.
+* Tab characters are not allowed in the source code.
 
-     * No space should appear after the right parenthesis for typecasts
-        {{{
-        #!java
+* No space should appear after the right parenthesis for typecasts
+
+```java
         // Correct
         String myString = (String)list.get(1);
     
     
-    
-    
-    
         // Incorrect
         String myString = (String) list.get(1);
-        }}}
+ ```
         
-     * Whitespace should appear between the following tokens and their subsequent open parenthesis: assert, catch, for, if, synchronized, switch, while (in accordance with section 8.2 of Sun's code conventions.   [[http://java.sun.com/docs/codeconv/html/CodeConventions.doc7.html#682]]
+
+* Whitespace should appear between the following tokens and their subsequent open parenthesis: assert, catch, for, if, synchronized, switch, while in accordance with [section 8 of Oracle's code conventions](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-141388.html#475)
     
-        {{{
-        #!java
+```java
         // Correct
         while (this == that) {
             ...
@@ -158,13 +142,13 @@ those conventions into english and for things checkstyle can't check.
         while(this == that) {
              ^
         }
-        }}}
+```
     
-     * The preference is to use a single space rather than a tab to separate the type and the identifier for variable declarations.
-       Note: This is '''contrary''' to section 6.1 of Sun's code conventions. [http://java.sun.com/docs/codeconv/html/CodeConventions.doc5.html#2991]
+* The preference is to use a single space rather than a tab to separate the type and the identifier for variable declarations.
+       Note: This is **contrary** to the Oracle's code conventions.
+ 
     
-        {{{
-        #!java
+```java
         // Correct
         BigDecimal myNumber
         int level;
@@ -172,27 +156,30 @@ those conventions into english and for things checkstyle can't check.
         // Incorrect
         BigDecimal   myNumber;
         int          level;
-        }}}
+```
+
 ## Indentations
 
-    Indentation should be four spaces - '''not''' tabs.
+Indentation should be four spaces - **not** tabs.
 
     
-    For emacs users, the following will produce four space indents rather than tabs:
-    {{{
+* For emacs users, the following will produce four space indents rather than tabs:
+
         (setq-default tab-width 4 indent-tabs-mode nil)
 
-Vim users can add the following to their .vimrc
+* Vim users can add the following to their .vimrc
 
         set ts=4
         set expandtab
+
 ## Line length
 
 
 
-Avoid lines longer than 92 characters.  This is contrary to section 4.1
-of Sun's code conventions. [[http://java.sun.com/docs/codeconv/html/CodeConventions.doc3.html#313]].
+Avoid lines longer than 92 characters.  This is contrary to [section 4.1
+of Oracle's code conventions](http://www.oracle.com/technetwork/java/javase/documentation/codeconventions-136091.html#313).
 While we allow 92 characters, many developers strive to keep to the 80 character limit.
+
 ## Comments
 
 Javadoc comments *SHOULD* exist on all non-private methods and fields.
@@ -210,27 +197,28 @@ name and a date. Elaborate with further comments interspersed in the code as
 necessary.
 
 
-    #!java
+```java
     /**
      * ...
      * @todo Figure out how best to handle IOException here (kdykeman - 2003/10/08)
      */
+```
  
 Please refer to 
-[[http://java.sun.com/j2se/javadoc/writingdoccomments/index.html]]
+[[http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html]]
 if you are unfamiliar with Javadoc.
 
 Note that while javadocs are encouraged for test classes where
 appropriate, checkstyle does not require javadoc comments for test
 classes.
+
 ## License
 
 The following license message should be placed at the top of each
-
 Spacewalk generated source file:
 
 
-    #!java
+```java
     /**
      * Copyright (c) 2008 Red Hat, Inc.
      *
@@ -245,14 +233,17 @@ Spacewalk generated source file:
      * granted to use or replicate Red Hat trademarks that are incorporated
      * in this software or its documentation. 
      */
+```
 
 Note: The way the license file was written, checkstyle expects a space after the * separating the second and third paragraphs as well as a space after the period at the end of the last line.
+
 ## Versioning
 
 All .java files should have a @version Javadoc tag like the one below.
 
 
     @version $Revision: 1.2 $
+
 ## Qualified imports
 
 All import statements should contain the full class name of classes to 
@@ -260,7 +251,7 @@ All import statements should contain the full class name of classes to
 import and should not use the "*" notation (Eclipse can help do this quickly):
 An example:
 
-    #!java
+```java
     // Correct
     import java.net.HttpURLConnection;
     import java.util.Date;
@@ -268,6 +259,8 @@ An example:
     // Incorrect
     import java.util.*;
     import java.net.*;
+```
+
 ## Logging
 
 Do not use System.out or System.err to log, instead, use the 
@@ -278,7 +271,7 @@ detailed than warn to avoid unnecessary String object creation and
 concatenations.  For example:
 
 
-    #!java
+```java
     private static final Logger log = Logger.getLogger(MyClass.class);
     
     public void someMethod() {
@@ -289,6 +282,7 @@ concatenations.  For example:
         ...
         log.error("something went wrong");
     }
+```
 
 Furthermore, care should be taken to log messages at an appropriate level
 for the information they present (keeping in mind that the default log
@@ -328,6 +322,7 @@ level is INFO).
     application to abort.
 
     ''"SLL certificate not found on startup."''
+
 ## Hidden Fields
 
 Parameter names for a method should not shadow fields defined in the same
@@ -337,7 +332,7 @@ inadvertently using the wrong variable.  Below is a contrived example of
 shadowing and the problems that it can introduce:
 
 
-    #!java
+```java
     public class Foo {
         private String myString = "bar";
     
@@ -346,6 +341,8 @@ shadowing and the problems that it can introduce:
             myString = myString + "baz";  // Oops!
         }
     }
+```
+
 ## File and Method lengths
 
 Any of the following conditions should be taken as indication that a
@@ -355,15 +352,13 @@ class/method should be refactored:
  * Source files with a length greater than *2500* lines.
  * Methods with a length greater than *150* lines.
  * Methods taking more than *12* parameters.
+
 ## Exception handling
 
 Avoid catching Throwable or Exception and catch specific exceptions instead.
-
-
 If an exception is caught and rethrown as a different exception type, the new
 exception should be constructed with the caught exception as the cause.  This
 allows stack trace information for the original exception to be preserved.
-
 If you catch an exception and decide not to rethrow it for whatever reason,
 you should log it.  In particular, do not use the printStackTrace()
 method because its output goes to stderr rather than to the logging system.
@@ -376,10 +371,11 @@ just contain the results of calling toString() on the exception.
 
 The following is an example of how to properly log a "handled" exception:
 
-    #!java
+```java
     try {
         doSomethingRisky();
     }
     catch (RiskyException re) {
         log.error("risky failed", re);
     }
+```
