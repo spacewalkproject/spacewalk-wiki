@@ -1,4 +1,8 @@
+# **DEPRECATED**
+
+
 # Command Line Proxy Installer
+If you are looking for information how to install Spacewalk Proxy see [[HowToInstallProxy]] page
 
 ## Overview
 
