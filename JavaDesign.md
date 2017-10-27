@@ -95,19 +95,21 @@ security.  For example, when loading a scheduled Action from the DB, the code
 should not look like:
 
 
-
+```java
          action = ActionFactory.lookupById(actId);
          if (action.getOrg() != loggedInUser.getOrg()) {
              throw PermissionException();
          }
+```
 
 
 Instead, the logic is:
 
 
-
+```java
          action = ActionManager.lookupByIdAndOrgId(actId,
                                                    loggedInUser.getOrg().getId());
+```
 
 
 The SQL query used to lookup the Action ensures that the Org id's are the
