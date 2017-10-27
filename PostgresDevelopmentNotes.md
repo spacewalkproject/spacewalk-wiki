@@ -1,3 +1,4 @@
+# ****DEPRECATED, NO LONGER USED****
 
 For up-to-date information about the PostgreSQL port, see [[PostgreSQL]]. This page is now obsolete.
 
