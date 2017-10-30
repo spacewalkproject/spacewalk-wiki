@@ -1,4 +1,4 @@
-# As of Spacewalk 0.4 you should refer to this page [[HowToKickstartCobbler]]
+# Deprecated. As of Spacewalk 0.4 you should refer to this page [[HowToKickstartCobbler]]
 
 ## Steps to kickstarting Fedora/CentOS (Pre Spacewalk 0.4)
 
