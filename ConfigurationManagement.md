@@ -19,17 +19,19 @@
 This assumes you have pushed the Spacewalk client repository to your Spacewalk server and subscribed a server to it.
 
  * Install the client utilities:
-
+    ```bash
     yum install rhncfg*
+    ```
  * Enable config management:
-
+    ```bash
     rhn-actions-control --enable-all
+    ```
  * Within the web GUI create a configuration channel and add files.
  * Subscribe the client to the configuration channel.
  * Either schedule a config deploy from the webUI or run 'rhncfg-client get' on the client.
 ## Client utility functions
 
- * rhncfg-client -- Meant for managing the configuration files in relation to what is on the client.
+ rhncfg-client - Meant for managing the configuration files in relation to what is on the client.
 
   * diff
   * get
@@ -38,7 +40,7 @@ This assumes you have pushed the Spacewalk client repository to your Spacewalk s
   * channels
   * verify
 
- * rhncfg-manager -- Meant for managing the configuration files on the server.
+ rhncfg-manager -- Meant for managing the configuration files on the server.
   * add
   * create-channel
   * diff
