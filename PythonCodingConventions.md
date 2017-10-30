@@ -1,11 +1,17 @@
-This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
-code for the Spacewalk backend.
+## WARNING
 
-[Commont Python Coding Style](http://www.python.org/dev/peps/pep-0008/)
+All python code must be compatible with Python 2 ( including 2.4 on RHEL5) and Python 3.
+For additional information see articles:
+  * [Cheat Sheet: Writing Python 2-3 compatible code](http://python-future.org/compatible_idioms.html)
+  * [Writing code that runs under both Python2 and 3](https://wiki.python.org/moin/PortingToPy3k/BilingualQuickRef)
+
+
+This is a rough guideline about coding styles, comments, variable names and other stuff in the Python
+code for the Spacewalk backend, for full information, see [PEP 8 - Style Guide for Python Code](http://www.python.org/dev/peps/pep-0008/)
 
 1. Line wrapping
 
-   One shall not wrap up lines just becase we need to make the text
+   One shall not wrap up lines just because we need to make the text
    fit to 60 columns, or 70 columns, or 80 columns. Most code written
    today has a hard time fitting within 80 columns. Let's be
    reasonable here. I am using xterms that are 100 cols x 80 rows. I
@@ -29,23 +35,24 @@ code for the Spacewalk backend.
    Comments should be written as [docstring](http://www.python.org/dev/peps/pep-0257/). This way programmers documentation can be created automatically.
 
    So please use something like this:
-   {{{
-   #!python
+
+   ```python
    def auth(system_cert):
        """ Authenticate the server certificate """
-   }}}
+   ```
+
    Instead of:
-   {{{
-   #!python
+
+   ```python
    def auth(system_cert):
        # Authenticate the server cert
-   }}}
+   ```
    Or instead of:
-   {{{
-   #!python
+
+   ```python
    # Authenticate the server cert
    def auth(system_cert):
-   }}}
+   ```
 
 4. Classes and inheritance
 
@@ -74,17 +81,19 @@ code for the Spacewalk backend.
    The % operator (and, if required, the opening paren for the tuple)
    should follow immediately the string on the same line.
    Use this:
-        {{{
-        #!python
+    
+   ```python
+
         "long string" % (
 	    arg1, args2)
-         }}}
+   ```
+
    Do not do this:
-   {{{
-   #!python
+   
+   ```python
         "long string"
 	    % (arg1, arg2)
-   }}}
+   ```
    
 7. Translations
 
@@ -92,16 +101,17 @@ code for the Spacewalk backend.
    by using the _() function on a string of text. Make sure you use
    only the string of text and not include the arguments to string
    formatters too.
+   
    Use this:
-   {{{
-   #!python
+   ```python
        print _("Foo %s: %s") % ("bar", 1)
-   }}}
+   ```
+
    Do not do this:
-   {{{
-   #!python
+   ```python
        print _("Foo %s: %s" % ("bar", 1))
-   }}}
+   ```
+
    There is a BIG difference.
 
 
@@ -115,3 +125,5 @@ code for the Spacewalk backend.
    better than using multiple styles in a single file (difficult to
    read).  In general, we want to maintain consistency and readability
    within files. 
+
+
