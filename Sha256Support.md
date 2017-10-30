@@ -1,4 +1,6 @@
-# SHA256 Support for Spacewalk
+# DEPRECATED, NO LONGER USED 
+
+## SHA256 Support for Spacewalk
 
 ## Overview
 
