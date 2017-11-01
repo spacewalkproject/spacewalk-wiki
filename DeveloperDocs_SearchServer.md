@@ -10,7 +10,7 @@ The spacewalk webui performs searches through a XMLRPC interface to a separate j
 A typical search involves
  * WebUI forming a query in [LuceneQueryParser](http://lucene.apache.org/core/2_9_4/queryparsersyntax.html) syntax.
  * WebUI sends the query to SearchServer through XMLRPC
- * SearchServer looks to see what index should be searched: {Errata, Packages, System, Documentation}
+ * SearchServer looks to see what index should be searched: Errata, Packages, System, Documentation
  * Lucene searches index files, and a list of results are obtained.
   * Result consists of the object ID and the score from lucene (float 1.0 max value, 0.0 lowest) 
  * SearchServer trims the returned list so only values which are above a threshold score (set in configuration file) are returned.
@@ -25,7 +25,7 @@ A typical search involves
 
  * Upon start up SearchServer reads the database table, "rhnIndexerWork" to determine what has been indexed previously. 
 
-  * Each row corresponds to a different object_type, ex: {errata, packages, systems}.   
+  * Each row corresponds to a different object_type, e.g.: errata, packages, systems.   
  * Once SearchServer knows the last time the index operation ran, and the last id it indexed, it asks the database for objects which are new and/or modified since then.
  * These new objects are passed into Lucene so they may be indexed for later searching.
  * After startup, SearchServer will poll the database for updated changes.  Typical polling period is 5 minutes, but this configurable.
@@ -35,7 +35,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
  * Format of message:  
   * Session ID  
-  * Index name  - controls which index to search, example: {docs, errata, hwdevice, package, server}
+  * Index name  - controls which index to search, e.g.: docs, errata, hwdevice, package, server
    * This corresponds to the directory name for the index, typically stored at: /usr/share/rhn/search/indexes 
   * Query - this is what we are searching for, could be a package name, system name, phrase for doc search etc
  * In our code, the entry point for search functionality is defined here: "com.redhat.satellite.search.index.IndexManager::search"
@@ -66,7 +66,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
    * We include a luke jar in our git repo, this is not bundled for delivery, it is only for development
     * spacewalk/search-server/spacewalk-search/scripts/lukeall-0.8.1.jar
    * Example run:
-    * java -jar spacewalk/search-server/scripts/lukeall-0.8.1.jar
+    * `java -jar spacewalk/search-server/scripts/lukeall-0.8.1.jar`
     * Select index to open: "/usr/share/rhn/search/indexes/package"  
     * Click OK
     * Select the "Documents" view, then browse through the items.
@@ -74,7 +74,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
     * Searches will likely not work as desired from Luke.  Since we are using a custom NGramAnalyzer, we need to import this into Luke in order for our searches to function.
 
  * How to Clean
-  * If you want to clean the existing indexes you can run a script: "/etc/init.d/rhn-search cleanindex"
+  * If you want to clean the existing indexes you can run a script: `/etc/init.d/rhn-search cleanindex`
    * REMEMBER  there are 2 parts to cleaning the indexes
     * Delete the directory containing the indexes
     * Adjust the database 'rhnIndexerWork' entry for the specified 'object_type'.  This is what will trigger the data to be re-read.
@@ -92,13 +92,13 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
  * Follow [How to scratch build](https://github.com/spacewalkproject/spacewalk/wiki/HowToScratchBuild)
 ### Run
- * You can run search-server as a service by calling "service rhn-search start", alternatively run "rhn-search console" to see search-server in foreground
+ * You can run search-server as a service by calling `service rhn-search start`, alternatively run `rhn-search console` to see the search-server running in the foreground
  * You can interact with the SearchServer through spacewalk/search-server/spacewalk-search/scripts/search.py
-  * ./search.py --help
-  * ./search.py --username admin --password spacewalk --package firefox
-   * When is "--serverAddr" helpful
+  * `./search.py --help`
+  * `./search.py --username admin --password spacewalk --package firefox`
+   * When is `--serverAddr` helpful
     * During development you may want to run a spacewalk instance and db on a remote machine while running search-server on your local box.
-    * --serverAddr allows you to specify the spacewalk instance you want to log into for retrieving the session-id
+    * `--serverAddr` allows you to specify the spacewalk instance you want to log into for retrieving the session-id
      * NOTE:  The search-server must be running locally (to search.py), unless you open up the rpc binding to occur on the network interface and not 127.0.0.1
 ## Configuration
 
@@ -137,12 +137,12 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
  * Documentation search requires pre-packaged indexes to be installed, these indexes will not be re-generated if they are deleted.
 
-  * rpm -q spacewalk-doc-indexes
+  * `rpm -q spacewalk-doc-indexes`
   * The 'clean-index' script is intelligent enough to leave document indexes alone
  * To build updated doc indexes 
-  * cd /spacewalk/search-server/spacewalk-doc-indexes
-  * run "./crawl_www.sh"
-  * rpmbuild -ba ./spacewalk-doc-indexes.spec 
+  * `cd /spacewalk/search-server/spacewalk-doc-indexes`
+  * run `./crawl_www.sh`
+  * `rpmbuild -ba ./spacewalk-doc-indexes.spec `
  * The build process involves running "nutch" to crawl the online documents and generated index files which are then packaged into the spacewalk-doc-indexes rpm
 ## Misc Notes
 
