@@ -64,7 +64,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
  * How can I see what is indexed
   * You can use [Luke](http://code.google.com/p/luke/) to open a lucene index in a GUI and see what is available
    * We include a luke jar in our git repo, this is not bundled for delivery, it is only for development
-    * spacewalk/search-server/scripts/lukeall-0.8.1.jar
+    * spacewalk/search-server/spacewalk-search/scripts/lukeall-0.8.1.jar
    * Example run:
     * java -jar spacewalk/search-server/scripts/lukeall-0.8.1.jar
     * Select index to open: "/usr/share/rhn/search/indexes/package"  
@@ -90,14 +90,10 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 ### Build
 
 
- * cd {SPACEWALK_GIT}/spacewalk/search-server
-
- * ant
+ * Follow [How to scratch build](https://github.com/spacewalkproject/spacewalk/wiki/HowToScratchBuild)
 ### Run
- 
-
- * We include a run script "run.sh" which will run SearchServer
- * You can interact with the SearchServer through spacewalk/search-server/scripts/search.py
+ * You can run search-server as a service by calling "service rhn-search start", alternatively run "rhn-search console" to see search-server in foreground
+ * You can interact with the SearchServer through spacewalk/search-server/spacewalk-search/scripts/search.py
   * ./search.py --help
   * ./search.py --username admin --password spacewalk --package firefox
    * When is "--serverAddr" helpful
@@ -108,8 +104,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
 
  * Configuration values from: /etc/rhn/rhn.conf are inherited by SearchServer
 
- * SearchServer specific configuration resides in git at: spacewalk/search-server/src/config/rhn-search.conf
-  * Is installed on a target machine at: /etc/rhn/search/rhn-search.conf
+ * SearchServer specific configuration resides in git at: spacewalk/search-server/spacewalk-search/src/config/search/rhn_search/
  * Example
 
     search.index_work_dir=/usr/share/rhn/search/indexes
@@ -145,7 +140,7 @@ When a request comes in through XMLRPC and matches the "index" namespace, lucene
   * rpm -q spacewalk-doc-indexes
   * The 'clean-index' script is intelligent enough to leave document indexes alone
  * To build updated doc indexes 
-  * cd {SPACEWALK_GIT}/spacewalk/search-server/spacewalk-doc-indexes
+  * cd /spacewalk/search-server/spacewalk-doc-indexes
   * run "./crawl_www.sh"
   * rpmbuild -ba ./spacewalk-doc-indexes.spec 
  * The build process involves running "nutch" to crawl the online documents and generated index files which are then packaged into the spacewalk-doc-indexes rpm
