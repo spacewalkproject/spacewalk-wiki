@@ -19,7 +19,7 @@ and
 
 The following shouldn't be needed since development mode is turned on by default, but if the above doesn't work, try this:
 
-Then apply this patch to /etc/tomcat5/web.xml
+Then apply this patch to /etc/tomcat*/web.xml
 
       --- web.xml     2007-06-12 16:55:38.000000000 -0400
       +++ web.xml.work        2007-06-12 16:55:25.000000000 -0400
