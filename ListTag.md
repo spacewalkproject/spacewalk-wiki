@@ -1,11 +1,9 @@
 ## List Tag
 
-
-
 There have been several list tag implementations throughout the history of the project.  The original perl list tag, an older Java list tag, and the new Java list tag (known as ListTag 3.0).  New and updates to existing pages should use ListTag 3.0.  ListTag 3.0 has the largest set of features features (including filters, pagination, page size selector, csv support) and is the easiest to use.
+
+
 ## Using List Tag 3.0
-
-
 
 Like any struts page, it consists of 
 
@@ -15,31 +13,29 @@ Like any struts page, it consists of
 A single action is typically used for both the retrieval of the data to display on the page (including any filtering that takes place) as well as handling form submissions from the page. This is a slight change from the older model that used a *SetupAction to populate the data and a *Action class to collect the selected results and process them.
 
 It's been a common trend in Spacewalk code to use Data Transfer Objects (DTO) to hold the data that gets rendered by the ListTag. ListTag 3.0 can readily use any DTO or beanified object/value holders. In fact one of the primary motivations of ListTag 3.0 was to make it favorably work with both Hibernate objects and DTO objects. However objects that are used in List which have checkbox in them need to implement the com.redhat.rhn.frontend.struts.Selectable interface. This is because the list tag needs to hold the checkbox selections somewhere and the DTO passed to the view was deemed as the best place to do it.
+
 ## Action side
 
-### Summary
+#### Summary
 
-
-
-
-The following is a high level summary of the steps needed in the action.
+The following is a high-level summary of the steps needed in the action.
 
  * The action must extend RhnAction (overriding the execute method) and implement Listable (implementing the getResults method).
  * The action should use one of the "ListHelper" classes to set up the action correctly. Possible options are (details on each follow):
-  * ListHelper - used when there is no user selection involved in the page.
-  * ListRhnSetHelper - used when the user's selections should be stored in an RhnSet.
-  * ListSessionSetHelper - used when the user's selections should be stored in the session.
+   * ListHelper - used when there is no user selection involved in the page.
+   * ListRhnSetHelper - used when the user's selections should be stored in an RhnSet.
+   * ListSessionSetHelper - used when the user's selections should be stored in the session.
  * The getResults() method should return the data to display in the page.
  * Often, the ListHelper "isDispatched()" method is used to determine if the page form has been submitted.
-#### Simplest case
 
+#### Simplest case
 
 
 For a very simple list with non-selectable objects all you need is this:
 
 
-    #!java
-    public class SystemGroupListSetupAction extends RhnAction implements Listable{
+```java
+    public class SystemGroupListSetupAction extends RhnAction implements Listable {
         public ActionForward execute(ActionMapping mapping,
                 ActionForm formIn,
                 HttpServletRequest request,
@@ -54,17 +50,19 @@ For a very simple list with non-selectable objects all you need is this:
             return SystemManager.groupList(user, null);
         }
     }
+```
 
-List returned but the "getResult" method is the actual list of objects we want to display. 
+The List returned but the "getResult" method is the actual list of objects we want to display. 
+
 ### Sets
 
-If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet have a life cycle of a session. This is usually adequate for 90% of the cases.. But for cases like the system set manager where we want to keep a selected list of systems in a database we use RhnSet (because we want it to be persistent). You will probably find more occurrences of RhnSets than SessionSets in the code because Session sets were only recently introduced..
+If you would like to add sets to the mix, it takes a bit more code. There are 2 kind of sets SessionSet and RhnSet. SessionSet has a life cycle of a session. This is usually adequate for 90% of the cases, but for cases like the system set manager where we want to keep a selected list of systems in a database we use RhnSet (because we want it to be persistent). You will probably find more occurrences of RhnSets than SessionSets in the code because Session sets were only recently introduced.
 
 #### Rhn Set
 
 
 
-    #!java
+```java
     public class SystemGroupListAction extends RhnAction implements Listable {
         public ActionForward execute(ActionMapping mapping,
                 ActionForm formIn,
@@ -86,15 +84,17 @@ If you would like to add sets to the mix, it takes a bit more code. There are 2 
             return SystemManager.groupList(user, null);
         }
     }
+```
 
-Basically the ListRhnSetHelper does all the ground work to setup the  set object. All we need to provide is the set declaration...
+Basically, the ListRhnSetHelper does all the ground work to setup the set object. All we need to provide is the set declaration...
+
 #### Session Set
 
-Session Sets uses the traditional java.util.Set to keep track of the check boxes.. Basically you need a unique declaration name to bind the set to the session..
+Session Sets uses the traditional java.util.Set to keep track of the checkboxes, basically, you need a unique declaration name to bind the set to the session.
 
 
 
-    #!java
+```java
     public class SystemGroupListAction extends RhnAction implements Listable {
         public ActionForward execute(ActionMapping mapping,
                 ActionForm formIn,
@@ -120,10 +120,11 @@ Session Sets uses the traditional java.util.Set to keep track of the check boxes
             return SystemManager.groupList(user, null);
         }
     }
+```
 
-Basic difference s/ListRhnSetHelper/ListSessionSetHelper.. Here is a slightly more compilcated example
+Basic difference s/ListRhnSetHelper/ListSessionSetHelper here is a slightly more compilcated example
 
-    #!java
+```java
     public class ViewModifyPathsAction extends RhnAction implements Listable {
         public ActionForward execute(ActionMapping mapping,
                 ActionForm formIn,
@@ -154,17 +155,17 @@ Basic difference s/ListRhnSetHelper/ListSessionSetHelper.. Here is a slightly mo
         private ActionForward  handleDispatchAction(ListSessionSetHelper helper,
                                                     ActionMapping mapping, 
                                                     RequestContext context) {
-            ....
-             int size = copySelectedToChannel(helper, server.getSandboxOverride(),
-                        context.getRequest(),
-                        user);
-            ....
+            ...    
+            int size = copySelectedToChannel(helper, server.getSandboxOverride(),
+                       context.getRequest(),
+                       user);
+            ...
         }
     
-          private int copySelectedToChannel(ListSessionSetHelper helper,
-                                            ConfigChannel channel,
-                                             HttpServletRequest request,
-                                            User user) {
+        private int copySelectedToChannel(ListSessionSetHelper helper,
+                                          ConfigChannel channel,
+                                          HttpServletRequest request,
+                                          User user) {
             ConfigurationManager cm = ConfigurationManager.getInstance();
             Set <String> set = helper.getSet();
             for (String key : set) {
@@ -178,6 +179,8 @@ Basic difference s/ListRhnSetHelper/ListSessionSetHelper.. Here is a slightly mo
         }  
     
     }
+```
+ 
 ## jsp side
 
 Here is an example of a complete jsp showing a very simple list with only one column (name).
@@ -186,7 +189,7 @@ Here is an example of a complete jsp showing a very simple list with only one co
 Note: the rl:listset tag will take care of creating the HTML form element for you. Any other form elements, such as hidden parameters, should be placed within the rl:listset tag.
 
 
-    #!text/html
+```html
     <%@ taglib uri="http://rhn.redhat.com/rhn" prefix="rhn" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://jakarta.apache.org/struts/tags-html" prefix="html" %>
@@ -225,7 +228,8 @@ Note: the rl:listset tag will take care of creating the HTML form element for yo
     		           headerkey="grouplist.jsp.name" 
     		           sortattr="name"
                                defaultsort="asc"  >
-    			<c:out value="<a href=\"/network/systems/groups/details.pxt?sgid=${current.id}\">${current.name}</a>" escapeXml="false" />
+    			<c:out value="<a href=\"/network/systems/groups/details.pxt?
+                                      sgid=${current.id}\">${current.name}</a>" escapeXml="false" />
     		</rl:column>		
     
     
@@ -234,24 +238,29 @@ Note: the rl:listset tag will take care of creating the HTML form element for yo
     
     </body>
     </html>
+```
+
 ## Selectable column
 
 
-
+```html
     	 	<rl:selectablecolumn value="${current.id}"
     	 						selected="${current.selected}"
     	 						styleclass="first-column"/>
+```
+
 ## filters
  
 
-Every List in the new List Tag can have a filter.. Basically you add the filterattr attribute to the rl:column..
-{{{ 
-#!text/html
-<rl:list .......>
-...
-<rl:column .... filterattr="name" .../>
-</rl:list>
-}}}
+Every List in the new List Tag can have a filter, basically, you add the filterattr attribute to the rl:column
+
+```html
+    <rl:list .......>
+    ...
+    <rl:column .... filterattr="name" .../>
+    </rl:list>
+```
+
 ## alpha bar
 
 To add the alpha bar simply add
@@ -260,7 +269,7 @@ To add the alpha bar simply add
 alphabarcolumn="<field-name>" to the rl:list tag, where <field-name> is the name of the field in the table's entity object that should be associated with the alpha bar. For example, to have the alpha bar correspond to the description field: 
 
 
-    #!text/html
+```html
     <rl:listset name="keySet"> 
         
        <rl:list width="100%"
@@ -272,15 +281,18 @@ alphabarcolumn="<field-name>" to the rl:list tag, where <field-name> is the name
             
           </rl:list>
     </rl:listset>
+```
+
 ## csv export
 
 To add CSV support to a page add the below tag to the jsp.
 
 
-    #!text/html
+```html
     <rl:csv dataset="dataset"
-        name="list" 
-        exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
+            name="list" 
+            exportColumns="userLogin,userLastName,userFirstName,roleNames,lastLoggedIn"/>
+```
 
 This should be outside of a  <rl:list> </rl:list>  section, but within <rl:listset></rl:listset>
 
@@ -291,15 +303,19 @@ This should be outside of a  <rl:list> </rl:list>  section, but within <rl:lists
 exportColumns is a comma separated string of attributes you want to export.
 
 
-Note: The CSV is handled by it's own Action, CSVDownloadAction, all data is passed to it in Session context. 
+> Note: The CSV is handled by it's own Action, CSVDownloadAction, all data is passed to it in Session context. 
+
+
 ## page size widget
  
 
 To add a page Size widge (that can now be seen on the rhn/systems/SystemList.do page, simply use the PageSizeDecorator:
 
-    #!text/html
+```html
     <rl:decorator name="PageSizeDecorator"/>
+```
 Feel free to look in system_listdisplay.jspf for an example of usage. 
+
 ## decorators
 
 Optional functionality on the ListTag is provided through the use of decorators. A decorator is a tag that adds a specific piece of functionality simply by including it in the JSP.
