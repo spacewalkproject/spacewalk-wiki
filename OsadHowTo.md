@@ -1,3 +1,19 @@
+- [Core components](#core-components)
+  * [What do they do?](#what-do-they-do)
+  * [Key Files for osad](#key-files-for-osad)
+  * [Key Files for osa-dispatcher](#key-files-for-osa-dispatcher)
+  * [Key Files for jabberd](#key-files-for-jabberd)
+- [Troubleshooting & Debugging](#troubleshooting--debugging)
+  * [Command-line usage](#command-line-usage)
+  * [General Troubleshooting Tips](#general-troubleshooting-tips)
+  * [use ntpd on server/clients](#use-ntpd-on-serverclients)
+  * [osad stops responding](#osad-stops-responding)
+  * [Berkeley DB corruption](#berkeley-db-corruption)
+  * [Berkeley DB Maintenance](#berkeley-db-maintenance)
+  * [Jabber and OSAD client connection issues](#jabber-and-osad-client-connection-issues)
+  * [How to (re)confgure OSAD with different backend](#how-to-reconfgure-osad-with-different-backend)
+  * [Resources](#resources)
+
 ## Core components
 
 osad – Open Source Architecture Daemon
