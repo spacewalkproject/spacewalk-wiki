@@ -2,8 +2,9 @@
 
 ## Connection Errors
   1.  Verify jabberd and osa-dispatcher are running:
-     a) `service jabberd status`
-     b) `service osa-dispatcher status`
+     * `service jabberd status`
+     * `service osa-dispatcher status`
+
 
   2.  verify in */etc/rhn/rhn.conf*
    * server.jabber_server = FQDN
