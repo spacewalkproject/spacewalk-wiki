@@ -16,7 +16,7 @@
 
   3. verify in /etc/jabberd:
 
-    within c2s.xml you should have:
+  within c2s.xml you should have:
 ```xml
     <local>
         <id>FQDN</id>
