@@ -169,7 +169,9 @@ Your Spacewalk server should have a resolvable fully-qualified domain name (FQDN
 
 The setup requires that the database account has a password.
 
-*Note:* Please don't use * '#' * (number sign/pound/hash) and * '@' * in your database password otherwise installation will fail.
+**Note:** Please don't use **'#'** (number sign/pound/hash) and **'@'** in your database password otherwise installation will fail.
+
+**Important:** It is important that the hostname of a Spacewalk server contains no uppercase letters. A hostname that includes uppercase letters can cause Spacewalk Proxy communications (through jabberd) to fail. 
 
 Once the Spacewalk RPM is installed you need to configure the application.
 
