@@ -30,9 +30,7 @@ Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragi
 
  * `sudo /usr/sbin/rhn-satellite stop`
 
- * `sudo yum install ant-contrib yum-plugin-versionlock`
- * `sudo yum install jmock --disablerepo=* --enablerepo=jpackage-generic`
-   * `sudo yum versionlock jmock`
+ * `sudo yum install apache-ivy ant-contrib junit ant-junit java-1.8.0-openjdk-devel postgresql-jdbc jmock jmock-junit3 jmock-legacy checkstyle`
  * `cd $SPACEWALK_GIT/java`
  * `sudo ant install-web` 
 
@@ -40,7 +38,7 @@ Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragi
 
 To develop changes in the java stack, make your changes and then from $SPACEWALK_GIT/java:
 
- * `sudo ant install-tomcat7` (or as appropriate for your version of tomcat)
+ * `sudo ant install-tomcat` (or as appropriate for your version of tomcat)
  * `sudo service tomcat restart`
 
 
