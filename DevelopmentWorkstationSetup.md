@@ -24,7 +24,7 @@ To setup the sources follow the instructions in [Install Git](GitGuide) and [clo
 
 ## Poor Man's Dev Workstation
 
-Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragile but slower development environment. FIXME: This is not working yet. Figure out what needs to be changed to make it work.
+Use on any OS that runs tomcat 7, or if you just prefer a simpler and less fragile but slower development environment. 
 
 ### Installation
 
