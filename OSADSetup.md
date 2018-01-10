@@ -15,7 +15,7 @@
      ● osa-dispatcher.service - OSA Dispatcher daemon
         Loaded: loaded (/usr/lib/systemd/system/osa-dispatcher.service; enabled; vendor preset: disabled)
         Active: active (running) since Wed 2018-01-10 15:46:19 EST; 1min 12s ago
-       Process: 12371 ExecStart=/usr/sbin/osa-dispatcher --pid-file /var/run/osa-dispatcher.pid (code=exited, status=0/SU
+       Process: 12371 ExecStart=/usr/sbin/osa-dispatcher --pid-file /var/run/osa-dispatcher.pid (code=exited, status=0/SUCCESS)
        Process: 12370 ExecStartPre=/bin/rm -f /var/run/osa-dispatcher.pid (code=exited, status=0/SUCCESS)
       Main PID: 12375 (osa-dispatcher)
          Tasks: 1 (limit: 4915)
