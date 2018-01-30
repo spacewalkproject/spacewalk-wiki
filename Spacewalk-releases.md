@@ -2,7 +2,7 @@
 
 [Spacewalk 2.6](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes26) released on Nov 29th, 2016 by [@grinrag](https://github.com/grinrag)
 
-[Spacewalk 2.5](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes25) released on June 8th, 2016 by [@tkasparek](https://github.com/tkasparek)
+[Spacewalk 2.5](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes25) released on Jun 8th, 2016 by [@tkasparek](https://github.com/tkasparek)
 
 [Spacewalk 2.4](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes24) released on Oct 7th, 2015 by [@jdobes](https://github.com/jdobes)
 
