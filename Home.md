@@ -7,7 +7,7 @@
 
 
 
-### *Spacewalk 2.7* was released on September 26th, 2017:
+### *Spacewalk 2.7* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on September 26th, 2017:
 
  * [Download and Install](HowToInstall)
 
