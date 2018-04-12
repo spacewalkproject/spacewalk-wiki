@@ -8,7 +8,6 @@
 
 
  * Ales Dujíček
- * Dimitar Yordanov
  * Eric Herget
  * Gennadii Altukhov
  * Grant Gainey
@@ -20,7 +19,6 @@
  * Michael Mráka
  * Ondrej Gajdusek
  * Patrik Segedy
- * Pavel Studeník
  * Radovan Drážný
  * Tomáš Kašpárek
  * Tomas Leštách
@@ -30,7 +28,9 @@
 
  * Ali Yousefi Sabzevar
  * Amar Huchchanavar
+ * Amit Upadhye
  * Anastasios Papaioannou
+ * Andrew Dahms
  * Andreas Rogge
  * Andy Speagle
  * Ani Peter
@@ -38,15 +38,18 @@
  * Aron Parsons
  * Bernhard Lichtinger
  * Bo Maryniuk
+ * Ben Roberts
  * Can Bulut Bayburt
  * Candace Sheremeta
  * Carsten Menzel
  * Chris Gavin
  * Christian Berendt
+ * Christian Lanig
  * Colin Coe
  * Cynthia Sanchez
  * Dale Bewley
  * Dario Leidi
+ * Dario Maiocchi
  * David Holland
  * David Hrbáč
  * David Juran
@@ -67,6 +70,7 @@
  * James Hogarth
  * Jan Brázdil
  * Jan Pazdziora
+ * Jakub Jankowski
  * Jared Greenwald
  * Jason Lawer
  * Jaswinder Singh Phulewala
@@ -105,6 +109,7 @@
  * Martin Osvald
  * Martin Seidl
  * Matej Kollar
+ * Mattias Giese
  * Mathieu Bridon
  * Matteo Sessa
  * Matthias Thubauville
@@ -133,6 +138,7 @@
  * Richard Marko
  * Rob James
  * Robert Moser II
+ * Robert Paschedag
  * Ron van der Wees
  * Satoru SATOH
  * Shannon Hughes
@@ -144,6 +150,7 @@
  * Steven Hardy
  * Tasos Papaioannou
  * Thomas Mueller
+ * Thomas Blanchard
  * Thomas Wouters
  * Tim Speetjens
  * Timo Trinks
