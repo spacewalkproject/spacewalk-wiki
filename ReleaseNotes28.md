@@ -49,9 +49,12 @@ If you plan to upgrade from older release, search no more -- the following page 
   * Updated API calls:
     * errata.create/setDetails - add possibility to manage severities
     * system.schedulePackageRemoveByNevra - support removal of packages which are not in database
-  
-
+ 
 The up-to-date API documentation can be found at http://spacewalkproject.github.io/documentation/api/2.8/
+  
+## Known issues
+
+Unfortunately, for certain domain names jabberd does not start on Fedora 27/28 due to bug in 'libidn-1.34-1' from Fedora repositories. If you run at this issue, please downgrade the package to libidn-1.33-1 until it's fixed in Fedora repositories.
 
 ## Contributors
 
