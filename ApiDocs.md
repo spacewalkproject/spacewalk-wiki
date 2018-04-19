@@ -4,6 +4,8 @@
 
 API available in Spacewalk (commented example on [XML-RPC Handlers](XmlrpcHandlers) page):
 
+ [Spacewalk 2.8](https://spacewalkproject.github.io/documentation/api/2.8/)
+
  [Spacewalk 2.7](https://spacewalkproject.github.io/documentation/api/2.7/)
 
  [Spacewalk 2.6](https://spacewalkproject.github.io/documentation/api/2.6/)
