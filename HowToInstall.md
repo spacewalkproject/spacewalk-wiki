@@ -1,6 +1,6 @@
 # Spacewalk Installation Instructions
 
-These are installation instructions for new installations of Spacewalk 2.7. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.6 installation instructions are available at [[HowToInstall26]].
+These are installation instructions for new installations of Spacewalk 2.8. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.7 installation instructions are available at [[HowToInstall27]].
 
 *NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
@@ -17,13 +17,16 @@ These are installation instructions for new installations of Spacewalk 2.7. If y
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
 ### Special Note For Those Who Will Manage Debian/Ubuntu Clients
-There is a change that will need to be made to Debian/Ubuntu client systems.  For more details see [[DebianUbuntuSupportIn27]]
+There is a change that will need to be made to Debian/Ubuntu client systems if you upgrade from older version than 2.7.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Setting up Spacewalk repo
 
 RPM downloads of the project are available through yum repositories at
 
-  * http://yum.spacewalkproject.org/ - Binary RPMs
+  * https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/
+  
+To use the repo on Fedoras, simply add the copr by 
+`dnf copr enable @spacewalkproject/spacewalk-2.8`
 
 To use this repository easily, install spacewalk-repo package with commands below:
 
@@ -32,49 +35,23 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 for x86_64:
 
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/x86_64/spacewalk-repo-2.7-2.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-6-x86_64/00736372-spacewalk-repo/spacewalk-repo-2.8-11.el6.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/i386/spacewalk-repo-2.7-2.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-6-i386/00736372-spacewalk-repo/spacewalk-repo-2.8-11.el6.noarch.rpm
 
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/7/x86_64/spacewalk-repo-2.7-2.el7.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-7-x86_64/00736372-spacewalk-repo/spacewalk-repo-2.8-11.el7.centos.noarch.rpm
 
-### Fedora 24
 
-for x86_64:
+### Fedora 26/27/28
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/x86_64/spacewalk-repo-2.7-2.fc24.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/i386/spacewalk-repo-2.7-2.fc24.noarch.rpm
-
-### Fedora 25
-
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/x86_64/spacewalk-repo-2.7-2.fc25.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/i386/spacewalk-repo-2.7-2.fc25.noarch.rpm
-
-### Fedora 26
-
-for x86_64:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/x86_64/spacewalk-repo-2.7-2.fc26.noarch.rpm
-
-for i386:
-
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/i386/spacewalk-repo-2.7-2.fc26.noarch.rpm
+`dnf copr enable @spacewalkproject/spacewalk-2.8`
 
 
 ## Additional repos & packages
