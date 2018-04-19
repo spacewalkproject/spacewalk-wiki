@@ -1,16 +1,17 @@
 # Spacewalk Upgrade Instructions
 
-These are upgrade instructions for upgrading Spacewalk 2.6 to Spacewalk 2.7
+These are upgrade instructions for upgrading Spacewalk 2.7 to Spacewalk 2.8
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.6 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 24.
+  *  Spacewalk 2.7 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 26.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
   *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6).  However in the transition from 2.6 to 2.7, there are package dependency changes that must be accounted for.  Make sure you have a valid backup in case anything will go wrong.
 
 
 ## Archive of older upgrade instructions
 
+ * Spacewalk 2.6 to 2.7 upgrade instructions, are available at [[HowToUpgrade27]]
  * Spacewalk 2.5 to 2.6 upgrade instructions, are available at [[HowToUpgrade26]]
  * Spacewalk 2.4 to 2.5 upgrade instructions, are available at [[HowToUpgrade25]]
  * Spacewalk 2.3 to 2.4 upgrade instructions, are available at [[HowToUpgrade24]]
@@ -29,12 +30,9 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk 2.7 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
+  * You have set up your yum to point to Spacewalk 2.8 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
     * In particular, make sure you do **NOT** use jpackage repo. It has been obsoleted in this version of Spacewalk. Disable it or completely remove the file `/etc/yum.repos.d/jpackage-generic.repo` .
     * On RHEL, CentOS, or Scientific Linux you need to enable additional java package repos: [[HowToInstall#java-packages-red-hat-enterprise-linux-centos-scientific-linux]].
-
-### Special Note For Those Who Will Manage Debian/Ubuntu Clients
-There is a change that will need to be made to Debian/Ubuntu client systems.  There are also additional steps to take after upgrading to Spacewalk 2.7.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Database and configuration backup
 
@@ -168,9 +166,9 @@ And then restart tomcat6 again:
 
 On RHEL 7, Scientific Linux 7, CentOS 7, Tomcat package RHN may fail to start with the following message in /var/log/tomcat/localhost.yyyy-mm-dd:
 
-    spacewalk 2.7 Unsupported major.minor version 52.0 (unable to load class EDU.oswego.cs.dl.util.concurrent.Channel)
+    spacewalk 2.8 Unsupported major.minor version 52.0 (unable to load class EDU.oswego.cs.dl.util.concurrent.Channel)
 
-This issue may be caused by incorrect default Java version. Spacewalk 2.7 no longer requires Java 1.7:
+This issue may be caused by incorrect default Java version. Spacewalk 2.8 no longer requires Java 1.7:
 
     # java -version 
     # alternatives --list 
