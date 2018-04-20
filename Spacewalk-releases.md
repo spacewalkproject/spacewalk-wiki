@@ -1,4 +1,4 @@
-[Spacewalk 2.8](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes28) released on Apr 20th, 2018 by [@jdostal](https://github.com/jiridostal)
+[Spacewalk 2.8](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes28) released on Apr 19th, 2018 by [@jdostal](https://github.com/jiridostal)
 
 [Spacewalk 2.7](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes27) released on Sep 26th, 2017 by [@eherget](https://github.com/eherget)
 
