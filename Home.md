@@ -3,15 +3,15 @@
 ## __Latest News__
 
 
-![Alt](images/27release.png?raw=True)
+![Alt](images/28release_new.png?raw=True)
 
 
 
-### *Spacewalk 2.7* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on September 26th, 2017:
+### *Spacewalk 2.8* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on April 19th, 2018:
 
  * [Download and Install](HowToInstall)
 
- * [Release Notes](ReleaseNotes27)
+ * [Release Notes](ReleaseNotes28)
 ## __Introduction__
 
 [Spacewalk](https://spacewalkproject.github.io/) is an open source Linux systems management solution.  It allows you to:
