@@ -1,7 +1,7 @@
 # Spacewalk Release Notes
 
 ## The latest Spacewalk release is 2.8
- * [Release notes for Spacewalk 2.8](ReleaseNotes28) which was released on April 19th, 2018
+ * [Release notes for Spacewalk 2.8](ReleaseNotes28) which was released on [April 19th, 2018](https://www.redhat.com/archives/spacewalk-announce-list/2018-April/msg00000.html)
 
 ## Older Spacewalk releases
  * [Release notes for Spacewalk 2.7](ReleaseNotes27) which was released [on September 26th, 2017](https://www.redhat.com/archives/spacewalk-announce-list/2017-September/msg00000.html)
