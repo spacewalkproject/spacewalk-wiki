@@ -5,7 +5,7 @@
 
 
 
-Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [yum repositories](http://yum.spacewalkproject.org/). Please [follow installation information](HowToInstall) on how to best setup yum to have dependencies resolved properly.
+Releases: The binaries for Fedora and RHEL and derivates can be downloaded from the [copr repositories](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/). Please [follow installation information](HowToInstall) on how to best setup yum to have dependencies resolved properly.
 
 Nightly Builds: Composes of packages built for the upcoming release are generated a couple of times per day and available as [nightly builds](HowToInstallNightly).
 ## Source
@@ -50,10 +50,4 @@ To verify a RPM package for Spacewalk, run the command
 
 The output of this command will show you if the package is signed, and which key was used to sign it.
 
-Release Package Signing
-
-    Key ID: b3892132
-    Name: RPM-GPG-KEY-spacewalk-2010
-    Fingerprint: 7AB4 0878 5D10 5907 0572  F465 ED63 5379 B389 2132
-
-The public key is here: [[http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2010]]
+The public key is here: [[https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/pubkey.gpg]]
