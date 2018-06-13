@@ -5,12 +5,9 @@
 spacecmd is a command-line interface to Satellite and Spacewalk servers.
 # Downloads
 
-Stable RPMs are available in the [Spacewalk server latest stable repositories](http://yum.spacewalkproject.org/latest/).
+Stable RPMs are available in the [Spacewalk server latest stable repositories](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/)
 
-
-Stable Client RPMs: [Spacewalk Client latest stable repos](http://yum.spacewalkproject.org/latest-client/).
-
-RPMs built nightly from git are available in the [Spacewalk server nightly repositories](http://yum.spacewalkproject.org/nightly/).
+RPMs built nightly from git are available in the [Spacewalk server nightly repositories](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/nightly/)
 
 The source is available in the [Spacewalk git repo at /spacecmd](http://git.fedorahosted.org/git/?p=spacewalk.git;a=tree;f=spacecmd).
 # Install
@@ -18,7 +15,7 @@ The source is available in the [Spacewalk git repo at /spacecmd](http://git.fedo
 To install spacecmd:
 1. Install Spacewalk client repo. Example(EL 7):
 
-        rpm -Uvh http://yum.spacewalkproject.org/2.4-client/RHEL/7/x86_64/spacewalk-client-repo-2.4-3.el7.noarch.rpm
+        rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8/epel-7-x86_64/00734156-spacecmd/spacecmd-2.8.25-1.el7.centos.noarch.rpm
 
 2. Install spacecmd
 

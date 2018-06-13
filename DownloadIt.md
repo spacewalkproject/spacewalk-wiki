@@ -33,11 +33,13 @@ You can view the source via [github](https://github.com/spacewalkproject/spacewa
 
 
 In general, we want folks to send [github pull requests](PatchProcess).  If you have commit access to Spacewalk, however, you can use either of the above URLs to push your changes. The https URL forces you to type your username / password each time, whereas if you use the git URL you can upload your ssh keys to github and not have to authenticate each time.
+
 ### Source RPMs
 
+Source packages are available from the very same
+[copr repositories](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/)
+as binary packages.
 
-
-Source packages are available from [[http://yum.spacewalkproject.org/]]version/OS/release/source directories.
 ## RPM Package Signing
 
 

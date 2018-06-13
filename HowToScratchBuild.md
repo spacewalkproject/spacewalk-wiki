@@ -53,7 +53,7 @@ Install mock; on Fedora
 
 or on RHEL / CentOS 7 (it's in EPEL repo)
 
-        rpm -Uvh http://yum.spacewalkproject.org/2.6/RHEL/7/x86_64/spacewalk-repo-2.6-0.el7.noarch.rpm
+        rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
         yum install mock
 
 Configure build root (e.g. Fedora 25 / x86_64)
