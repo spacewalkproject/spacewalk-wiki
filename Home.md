@@ -12,6 +12,10 @@
  * [Download and Install](HowToInstall)
 
  * [Release Notes](ReleaseNotes28)
+
+ * [Archive of older releases](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/) (up to
+   Spacewalk 2.7)
+
 ## __Introduction__
 
 [Spacewalk](https://spacewalkproject.github.io/) is an open source Linux systems management solution.  It allows you to:
