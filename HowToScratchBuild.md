@@ -10,16 +10,6 @@ First of all you need an srpm of with your changes
 This will create package.src.rpm with the latest commited changes for you.
 Then there are three options where to run the scratch build:
 
-## Koji
-
-If you have write access to koji.spacewalkproject.org you can run
-
-        koji -c ~/.koji/spacewalkproject.org-config build --scratch --nowait package.src.rpm
-
-Binary packages will be found on
-
-        http://koji.spacewalkproject.org/koji/taskinfo?taskID=<task id>
-
 ## COPR
 
 If you have a Fedora account (aka FAS) log into https://copr.fedorainfracloud.org/ and create new

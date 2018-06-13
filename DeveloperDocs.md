@@ -51,7 +51,8 @@ This section contains information about developer topics.  You may also be inter
  * [[ReleaseProcess]] -- Process for building RPMs
 
  * [List of packages in releases](http://miroslav.suchy.cz/spacewalk/packages-overview/) -- including packages already in Fedora. Contains version of each package for each distribution.
- * [Koji](http://koji.spacewalkproject.org/koji/) -- Current build status.
+ * [Copr nightly](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/nightly/monitor/) -- Current nightly server build status.
+ * [Copr nightly-client](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/nightly-client/monitor/) -- Current nightly client build status.
 ----
 ## __Artwork__
 

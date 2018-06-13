@@ -20,7 +20,7 @@ If you want to commit fix for a bugzilla opened against Spacewalk, either becaus
 
  * If you have finished working with a set of bugzillas or with any give package or area of code, tag the package and optionally build it, using the tito command: https://fedorahosted.org/spacewalk/wiki/ReleaseProcess.
 
- * If you see packages built in koji or if they show up in the nigthly repo after an automatic build, fill in the *Fixed In Version* with package(s) name and version-release where the fix is included.
+ * If you see packages built in copr or if they show up in the nigthly repo after an automatic build, fill in the *Fixed In Version* with package(s) name and version-release where the fix is included.
 
  * Move bugzilla to *ON_QA* when asked by the release nanny to do so, or when there is Spacewalk instance available for testing.
 
