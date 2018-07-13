@@ -64,7 +64,7 @@ The Spacewalk Server provides all services to customers through the setting of e
 
     
 
-     1. Download the [https://github.com/spacewalkproject/spacewalk/blob/master/scripts/gen-oss-sat-cert.pl] script to your Spacewalk.
+     1. Download the [https://github.com/spacewalkproject/spacewalk/blob/SPACEWALK-2.3/scripts/gen-oss-sat-cert.pl] script to your Spacewalk.
      2. Modify the `spacewalk-public.cert` or create a new certifcate to sign
      3. Review the usage statement from `scripts_gen-oss-sat-cert.pl`:
     {{{
