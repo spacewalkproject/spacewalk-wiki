@@ -13,8 +13,17 @@
 
  * [Release Notes](ReleaseNotes28)
 
- * [Archive of older releases](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/) (up to
-   Spacewalk 2.7)
+ * Archive of older releases:
+   * server:
+     [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/),
+     [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6/),
+     [2.5](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/),
+     [2.4](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.4/)
+   * client:
+     [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7-client/),
+     [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6-client/),
+     [2.5](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5-client/),
+     [2.4](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.4-client/)
 
 ## __Introduction__
 
