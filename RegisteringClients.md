@@ -1,10 +1,11 @@
 Registering Clients
 ===================
 
-## Instructions for registering client systems you wish to manage with Spacewalk 2.8.
+## Instructions for registering client systems you wish to manage with Spacewalk 2.9.
 If you are looking to register client systems to Spacewalk Nightly, more details are available at [[RegisteringClientsNightly]]
 
 > **Note: for previous versions of Spacewalk use following links**
+> - Spacewalk 2.8 instructions are available at [[RegisteringClients28]].
 > - Spacewalk 2.7 instructions are available at [[RegisteringClients27]].
 > - Spacewalk 2.6 instructions are available at [[RegisteringClients26]].
 > - Spacewalk 2.5 instructions are available at [[RegisteringClients25]].
@@ -27,7 +28,7 @@ If you are looking to register client systems to Spacewalk Nightly, more details
 
 1. Install the Spacewalk client yum repository
       ```
-      dnf copr enable @spacewalkproject/spacewalk-2.8-client 
+      dnf copr enable @spacewalkproject/spacewalk-2.9-client
       ```
        
 2. Install client packages
@@ -45,7 +46,7 @@ If you are looking to register client systems to Spacewalk Nightly, more details
       # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel>
       ```
 
-### Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7
+### Red Hat Enterprise Linux 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7
 
 > **Warning:**
 > If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!
@@ -54,13 +55,13 @@ If you are looking to register client systems to Spacewalk Nightly, more details
     
      * RHEL 6 / SL 6 / CentOS 6
        ```
-       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8-client/epel-6-x86_64/00742644-spacewalk-repo/spacewalk-client-repo-2.8-11.el6.noarch.rpm
+       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9-client/epel-6-x86_64/00830558-spacewalk-repo/spacewalk-client-repo-2.9-4.el6.noarch.rpm
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
        ```
 
      * RHEL 7 / SL 7 / CentOS 7
        ```
-       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.8-client/epel-7-x86_64/00742644-spacewalk-repo/spacewalk-client-repo-2.8-11.el7.centos.noarch.rpm
+       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9-client/epel-7-x86_64/00830558-spacewalk-repo/spacewalk-client-repo-2.9-4.el7.noarch.rpm
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
        ```
     
@@ -87,28 +88,28 @@ If you are looking to register client systems to Spacewalk Nightly, more details
     * For openSUSE Leap 42.3:
 
     ```
-    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.8/openSUSE_Leap_42.3/ spacewalk-tools
+    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.9/openSUSE_Leap_42.3/ spacewalk-tools
     #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
     ```
 
     * For Tumbleweed:
 
     ```
-    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.8/openSUSE_Tumbleweed/ spacewalk-tools
+    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.9/openSUSE_Tumbleweed/ spacewalk-tools
     #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
     ```
 
-    * For SLE12_SP3:
+    * For SLE12_SP4:
 
     ```
-    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.8/SLE_12_SP3/ spacewalk-tools
+    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.9/SLE_12_SP4/ spacewalk-tools
     #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
     ```
 
     * For SLE_15:
 
     ```
-    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.8/SLE_15/ spacewalk-tools
+    #  zypper ar -f http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.9/SLE_15/ spacewalk-tools
     #  zypper install rhn-client-tools zypp-plugin-spacewalk rhnsd rhn-setup rhn-check
     ```
 
@@ -129,7 +130,7 @@ If you are looking to register client systems to Spacewalk Nightly, more details
 ## Debian and Ubuntu
 
 > **note:**
-> DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.8! Any volunteers?
+> DEBIAN PACKAGES ARE NOT YET UPDATED FOR SPACEWALK-2.9! Any volunteers?
 
 > **note:**
 > There is a modification needed on Debian and Ubuntu client systems until 2.7.  Details about this modification can be found at [[DebianUbuntuSupportIn27]]

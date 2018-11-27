@@ -7,19 +7,21 @@
 
 
 
-### *Spacewalk 2.8* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on April 19th, 2018:
+### *Spacewalk 2.9* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on November 29th, 2018:
 
  * [Download and Install](HowToInstall)
 
- * [Release Notes](ReleaseNotes28)
+ * [Release Notes](ReleaseNotes29)
 
  * Archive of older releases:
    * server:
+     [2.8](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/),
      [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/),
      [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6/),
      [2.5](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/),
      [2.4](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.4/)
    * client:
+     [2.8](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8-client/),
      [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7-client/),
      [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6-client/),
      [2.5](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5-client/),

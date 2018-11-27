@@ -29,19 +29,15 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-6-x86_64/00645389-spacewalk-repo/spacewalk-repo-2.8-9.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-6-x86_64/00829840-spacewalk-repo/spacewalk-repo-2.10-4.el6.noarch.rpm
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-7-x86_64/00645389-spacewalk-repo/spacewalk-repo-2.8-9.el7.centos.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/epel-7-x86_64/00829840-spacewalk-repo/spacewalk-repo-2.10-4.el7.noarch.rpm
 
-### Fedora 25
+### Fedora 27/28/29
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-25-x86_64/00645389-spacewalk-repo/spacewalk-repo-2.8-9.fc25.noarch.rpm
-
-### Fedora 26
-
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly/fedora-26-x86_64/00645389-spacewalk-repo/spacewalk-repo-2.8-9.fc26.noarch.rpm
+    dnf copr enable @spacewalkproject/spacewalk-nightly
 
 
 ### Nightly builds
@@ -93,7 +89,7 @@ and skip to the section *Installing Spacewalk*.
 
 If you prefer to set up the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
 
-When using external PostgreSQL database, make sure the postgresql-contrib (or postgresql84-contrib on RHEL 5) package is installed on the database server.
+When using external PostgreSQL database, make sure the postgresql-contrib package is installed on the database server.
 
 ### Oracle Pre-Requisites
 
@@ -122,7 +118,11 @@ If you tend to use the Oracle backend:
 
 Spacewalk needs various inbound ports to be accessible. Use `system-config-firewall` or edit `/etc/sysconfig/iptables`, adding the ports needed -- 80 and 443.
 
-On a system with `firewalld` use `firewall-cmd --add-service=http ; firewall-cmd --add-service=https ; firewall-cmd --runtime-to-perm`. 
+On a system with `firewalld` use
+
+    firewall-cmd --add-service=http
+    firewall-cmd --add-service=https
+    firewall-cmd --runtime-to-perm
 
 Add port 5222 if you want to push actions to client machines and 5269 for push actions to a Spacewalk Proxy, 69 udp if you want to use tftp.
 
