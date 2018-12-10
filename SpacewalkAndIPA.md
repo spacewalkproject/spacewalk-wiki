@@ -118,12 +118,12 @@ When a user authenticates either via Kerberos ticket or via form-based PAM authe
   If you're on RHEL7.0/CentOS7.0, you need to configure following repository:
 
 
-  http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/
+   https://copr.fedorainfracloud.org/coprs/adelton/identity_demo/
 
   Retrieve the `.repo` file and put it to `/etc/yum.repos.d`:
 
 
-    curl -o /etc/yum.repos.d/adelton-identity_demo.repo http://copr-fe.cloud.fedoraproject.org/coprs/adelton/identity_demo/repo/epel-6-x86_64/
+    curl -o /etc/yum.repos.d/adelton-identity_demo.repo https://copr.fedorainfracloud.org/coprs/adelton/identity_demo/repo/epel-6-x86_64/
 
 For other OSs (RHEL6 & Fedora) sssd-dbus and other needed packages are available from their repositories.
 
