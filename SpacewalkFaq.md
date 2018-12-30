@@ -40,7 +40,7 @@ Traditionally for Red Hat Satellite a Satellite certificate was required to use 
 
 
 Spacewalk only requires Oracle InstantClient 11g, not server 11g. Instant Client is just client libraries and it is completely different thing from database itself. You can use Oracle InstantClient 11g to connect to Oracle Database 11g or 10g or Oracle XE (10g).
-### Should I give a try PostgreSQL version?
+### Should I give the PostgreSQL version a try?
 
 
 
