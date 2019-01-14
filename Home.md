@@ -3,11 +3,12 @@
 ## __Latest News__
 
 
-![Alt](images/28release_new.png?raw=True)
+![Alt](images/29release.png?raw=True)
 
 
 
-### *Spacewalk 2.9* was [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on November 29th, 2018:
+### *Spacewalk 2.9* was
+[released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on January 14th, 2019:
 
  * [Download and Install](HowToInstall)
 
