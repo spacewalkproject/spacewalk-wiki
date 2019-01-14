@@ -1,6 +1,6 @@
 
-![Alt](images/28release.png?raw=True)
-# __Spacewalk 2.8 Release Notes__
+![Alt](images/29release.png?raw=True)
+# __Spacewalk 2.9 Release Notes__
 
 
 
