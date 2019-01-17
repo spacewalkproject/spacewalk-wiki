@@ -129,6 +129,10 @@ Important notes:
 
   where `DB` will be either `oracle` or `postgresql`, depending on what your external database is.
 
+  If you have your original answer-file you can use that as well.
+  
+    # spacewalk-setup --upgrade --answer-file /path/to/spacewalk/answer-file.conf
+
   2. Restore some of the custom values you might have set previously in /etc/rhn/rhn.conf from the backup of your configuration files, such as:
 
   *  debug = 3
