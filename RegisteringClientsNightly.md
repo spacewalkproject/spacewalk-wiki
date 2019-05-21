@@ -3,7 +3,7 @@ Registering Clients
 
 ## Instructions for registering client systems you wish to manage with Spacewalk nightly.
 
-> **Instructions for registering Spacewalk 2.7 are available at [[RegisteringClients]]**
+> **Instructions for registering Spacewalk 2.9 are available at [[RegisteringClients]]**
 
 ### Before Starting
 1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
@@ -35,21 +35,21 @@ Registering Clients
       rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel>
       ```
 
-### Red Hat Enterprise Linux 5, 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7
+### Red Hat Enterprise Linux, Scientific Linux and CentOS 6 and 7
 
 > **Warning:**
 > If you are installing these packages on a Red Hat Enterprise Linux installation it will override some of the original base packages and you may well be invalidating your support agreement with Red Hat!
 
 1. The latest client tools bring the upstream development to your client boxes. That means that the packages may have dependencies that are not found in core Red Hat Enterprise Linux. These dependencies can be found in EPEL. Install the Spacewalk yum repository and matching EPEL repository.
 
-     * RHEL 6 / SL 6 / CentOS 6
+     * RHEL / SL / CentOS 6
        ```
        rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/nightly-client/epel-6-x86_64/00599358-spacewalk-repo/spacewalk-client-repo-2.8-6.el6.noarch.rpm
        rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
        ```
 
-     * RHEL 7 / SL 7 / CentOS 7
-     > RHEL: *yum-plugin-copr* is available in optional repository
+     * RHEL / SL / CentOS 7
+       > RHEL: *yum-plugin-copr* is available in optional repository
 
        ```
        yum -y install yum-plugin-copr
