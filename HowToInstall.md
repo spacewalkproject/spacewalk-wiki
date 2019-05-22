@@ -29,11 +29,11 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9/epel-6-x86_64/00830557-spacewalk-repo/spacewalk-repo-2.9-4.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9/epel-6-x86_64/00912457-spacewalk-repo/spacewalk-repo-2.9-4.el6.noarch.rpm
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
-    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9/epel-7-x86_64/00830557-spacewalk-repo/spacewalk-repo-2.9-4.el7.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9/epel-7-x86_64/00912457-spacewalk-repo/spacewalk-repo-2.9-4.el7.noarch.rpm
 
 ### Fedora 27/28/29
 
