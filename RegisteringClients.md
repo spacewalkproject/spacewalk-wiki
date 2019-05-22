@@ -45,6 +45,11 @@ If you are looking to register client systems to Spacewalk Nightly, more details
       ```
       # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-fedora-custom-channel>
       ```
+5. Enable and start the rhnsd service
+
+   ```
+   # systemctl enable rhnsd && systemctl start rhnsd
+   ```
 
 ### Red Hat Enterprise Linux 6 and 7, Scientific Linux 6 and 7, CentOS 5, 6 and 7
 
@@ -80,6 +85,12 @@ If you are looking to register client systems to Spacewalk Nightly, more details
    ```
    # rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel> 
    ```
+5. Enable and start the rhnsd service
+
+   ```
+   # systemctl enable rhnsd && systemctl start rhnsd
+   ```
+
 
 ## SUSE
 
