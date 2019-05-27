@@ -23,7 +23,7 @@ There is a change that will need to be made to Debian/Ubuntu client systems.  Fo
 
 RPM downloads of the project are available through yum repositories at
 
-  * http://yum.spacewalkproject.org/ - Binary RPMs
+  * https://copr-be.cloud.fedoraproject.org/archive/spacewalk/ - Binary RPMs
 
 To use this repository easily, install spacewalk-repo package with commands below:
 
@@ -33,48 +33,48 @@ To use this repository easily, install spacewalk-repo package with commands belo
 for x86_64:
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/x86_64/spacewalk-repo-2.7-2.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/RHEL/6/x86_64/spacewalk-repo-2.7-2.el6.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/6/i386/spacewalk-repo-2.7-2.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/RHEL/6/i386/spacewalk-repo-2.7-2.el6.noarch.rpm
 
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/RHEL/7/x86_64/spacewalk-repo-2.7-2.el7.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/RHEL/7/x86_64/spacewalk-repo-2.7-2.el7.noarch.rpm
 
 ### Fedora 24
 
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/x86_64/spacewalk-repo-2.7-2.fc24.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/Fedora/24/x86_64/spacewalk-repo-2.7-2.fc24.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/24/i386/spacewalk-repo-2.7-2.fc24.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/Fedora/24/i386/spacewalk-repo-2.7-2.fc24.noarch.rpm
 
 ### Fedora 25
 
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/x86_64/spacewalk-repo-2.7-2.fc25.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/Fedora/25/x86_64/spacewalk-repo-2.7-2.fc25.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/25/i386/spacewalk-repo-2.7-2.fc25.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/Fedora/25/i386/spacewalk-repo-2.7-2.fc25.noarch.rpm
 
 ### Fedora 26
 
 for x86_64:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/x86_64/spacewalk-repo-2.7-2.fc26.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk//2.7/Fedora/26/x86_64/spacewalk-repo-2.7-2.fc26.noarch.rpm
 
 for i386:
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.7/Fedora/26/i386/spacewalk-repo-2.7-2.fc26.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk//2.7/Fedora/26/i386/spacewalk-repo-2.7-2.fc26.noarch.rpm
 
 
 ## Additional repos & packages
