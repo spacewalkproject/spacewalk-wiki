@@ -25,7 +25,7 @@ Spacewalk 2.4 installation instructions are available at [[HowToInstall24]].
 
 RPM downloads of the project are available through yum repositories at
 
-  * http://yum.spacewalkproject.org/ - Binary RPMs
+  * https://copr-be.cloud.fedoraproject.org/archive/spacewalk/ - Binary RPMs
 
 To use this repository easily, install spacewalk-repo package with commands below:
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
@@ -33,25 +33,25 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.5/RHEL/6/x86_64/spacewalk-repo-2.5-3.el6.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/RHEL/6/x86_64/spacewalk-repo-2.5-3.el6.noarch.rpm
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
 
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.5/RHEL/7/x86_64/spacewalk-repo-2.5-3.el7.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/RHEL/7/x86_64/spacewalk-repo-2.5-3.el7.noarch.rpm
 ### Fedora 22
 
 
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.5/Fedora/22/x86_64/spacewalk-repo-2.5-3.fc22.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/Fedora/22/x86_64/spacewalk-repo-2.5-3.fc22.noarch.rpm
 ### Fedora 23
 
 
 
 
-    rpm -Uvh http://yum.spacewalkproject.org/2.5/Fedora/23/x86_64/spacewalk-repo-2.5-3.fc23.noarch.rpm
+    rpm -Uvh https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/Fedora/23/x86_64/spacewalk-repo-2.5-3.fc23.noarch.rpm
 ### Nightly builds
 
 
