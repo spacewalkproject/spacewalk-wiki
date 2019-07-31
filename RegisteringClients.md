@@ -60,13 +60,15 @@ If you are looking to register client systems to Spacewalk Nightly, more details
     
      * RHEL 6 / SL 6 / CentOS 6
        ```
-       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9-client/epel-6-x86_64/00830558-spacewalk-repo/spacewalk-client-repo-2.9-4.el6.noarch.rpm
+       # yum install -y yum-plugin-tmprepo
+       # yum install -y spacewalk-client-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9-client/epel-6-x86_64/repodata/repomd.xml --nogpg
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
        ```
 
      * RHEL 7 / SL 7 / CentOS 7
        ```
-       # rpm -Uvh https://copr-be.cloud.fedoraproject.org/results/@spacewalkproject/spacewalk-2.9-client/epel-7-x86_64/00830558-spacewalk-repo/spacewalk-client-repo-2.9-4.el7.noarch.rpm
+       # yum install -y yum-plugin-tmprepo
+       # yum install -y spacewalk-client-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9-client/epel-7-x86_64/repodata/repomd.xml --nogpg
        # rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
        ```
     
