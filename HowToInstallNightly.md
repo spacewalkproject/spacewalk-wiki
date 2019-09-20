@@ -49,6 +49,16 @@ To use this repository easily, install spacewalk-repo package with commands belo
     dnf install -y spacewalk-repo
     dnf copr remove @spacewalkproject/nightly
 
+### Nightly builds
+
+If you want to use the nightly builds, install the `spacewalk-repo` package based on your operating system (see above) and then enable the nightly repository:
+
+    sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
+    sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
+
+*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
+
+
 ## Additional repos & packages
 
 ### EPEL (Red Hat Enterprise Linux, CentOS, Scientific Linux)
