@@ -41,11 +41,11 @@ To use this repository easily, install spacewalk-repo package with commands belo
 
 ### Fedora 29/30
 
-    dnf copr enable @spacewalkproject/nightly
+    dnf copr enable -y @spacewalkproject/nightly
 
 ### Fedora 31
 
-    dnf copr enable @spacewalkproject/nightly
+    dnf copr enable -y @spacewalkproject/nightly
     dnf install -y spacewalk-repo
     dnf copr remove @spacewalkproject/nightly
 
