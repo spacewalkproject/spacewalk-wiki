@@ -39,11 +39,7 @@ To use this repository easily, install spacewalk-repo package with commands belo
     yum install -y yum-plugin-tmprepo
     yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-7-x86_64/repodata/repomd.xml --nogpg
 
-### Fedora 29/30
-
-    dnf copr enable -y @spacewalkproject/nightly
-
-### Fedora 31
+### Fedora 29/30/31
 
     dnf copr enable -y @spacewalkproject/nightly
     dnf install -y spacewalk-repo
