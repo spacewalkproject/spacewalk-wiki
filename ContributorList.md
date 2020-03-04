@@ -1,49 +1,43 @@
 # Current Contributors
 
-
-
  * [Contributors tracked by Ohloh.net](https://www.ohloh.net/p/spacewalk/contributors)
+
 ## Development
 
-
-
- * Ales Dujíček
  * Eric Herget
- * Gennadii Altukhov
  * Grant Gainey
  * Jan Dobeš
  * Jan Hutař
  * Jiří Dostál
  * Lukas Hellebrandt
- * Martin Korbel
  * Michael Mráka
  * Ondrej Gajdusek
  * Patrik Segedy
  * Radovan Drážný
  * Tomáš Kašpárek
  * Tomas Leštách
+
 ## Community Contributors
-
-
 
  * Ali Yousefi Sabzevar
  * Amar Huchchanavar
  * Amit Upadhye
  * Anastasios Papaioannou
- * Andrew Dahms
  * Andreas Rogge
+ * Andrew Dahms
  * Andy Speagle
  * Ani Peter
- * Avi Miller
  * Aron Parsons
+ * Avi Miller
+ * Ben Roberts
  * Bernhard Lichtinger
  * Bo Maryniuk
- * Ben Roberts
  * Can Bulut Bayburt
  * Candace Sheremeta
  * Carsten Menzel
  * Chris Gavin
  * Christian Berendt
+ * Christian Hailer
  * Christian Lanig
  * Colin Coe
  * Cynthia Sanchez
@@ -55,6 +49,8 @@
  * David Juran
  * David Nutter
  * Duncan Mac-Vicar
+ * Eduardo Suarez-Santana
+ * Elena Zaharia
  * Flavio Castelli
  * Francesco Tombolini
  * Frantisek Kobzik
@@ -70,10 +66,10 @@
  * James Hogarth
  * Jan Brázdil
  * Jan Pazdziora
- * Jakub Jankowski
  * Jared Greenwald
  * Jason Lawer
  * Jaswinder Singh Phulewala
+ * Jay McCanta
  * Jeremy Davis
  * Jerome Fenal
  * Jiří Mikulka
@@ -82,17 +78,19 @@
  * John van Zantvoort
  * Jonathan Hoser
  * Jose Simonelli
+ * Josef Hak
  * Joshua Roys
  * Julian Einwag
  * Kenny Tordeurs
+ * Kenny Tordeurs
  * Kevin Walter
  * Kilian Petsch
+ * Kim Sondrup
  * Klaas Demter
- * Kumudini Shirsale
  * KrishnaBabu Krothapalli
+ * Kumudini Shirsale
  * Lasse Palm
  * Laurence Rochfort
- * lbayerlein
  * Luc de Louw
  * Luca Villa
  * Ludwig
@@ -100,7 +98,6 @@
  * Manoj Kumar Giri
  * Marc A Dahlhaus
  * Marcelo Moreira de Mello
- * mareklaane
  * Mario Schugowski
  * Mark Chappell
  * Mark Hlawatschek
@@ -109,12 +106,11 @@
  * Martin Osvald
  * Martin Seidl
  * Matej Kollar
- * Mattias Giese
  * Mathieu Bridon
  * Matteo Sessa
  * Matthias Thubauville
+ * Mattias Giese
  * Maxim Burgerhout
- * Michele Baldessari
  * Micha Lenk
  * Michael Brookhuis
  * Michael Calmer
@@ -122,6 +118,7 @@
  * Michael Mattioli
  * Michael Mraka
  * Michael Stahnke
+ * Michele Baldessari
  * Michele Bologna
  * Milan Zazrivec
  * Miroslav Suchý
@@ -140,37 +137,45 @@
  * Robert Moser II
  * Robert Paschedag
  * Ron van der Wees
+ * Rostislav Medvěd
  * Satoru SATOH
  * Shannon Hughes
  * Silvio Moioli
  * Šimon Lukašík
+ * Stefan Bluhm
  * Stefan Meyer
  * Stephen Herr
  * Steve Milner
  * Steven Hardy
  * Tasos Papaioannou
- * Thomas Mueller
  * Thomas Blanchard
+ * Thomas Mueller
  * Thomas Wouters
  * Tim Speetjens
  * Timo Trinks
  * Tobias D. Oestreicher
  * Tom Lane
+ * Tomas Kasparek
  * Trent Johnson
  * Uwe Gansert
  * Valérian Beaudoin
  * Vikram Rai
  * Ville Salmela
+ * Vladislav Belogrudov
  * William van de Velde
  * Yulia Poyarkova
+ * Yuriy Kashirin
  * Zailo Leite
-## Alumni Contributors
+ * lbayerlein
+ * mareklaane
 
+## Alumni Contributors
 
 
 The Spacewalk team would like to thank all those who contributed to the code that makes up Spacewalk as it is today.  
 
  * Adrian Likins
+ * Ales Dujíček
  * Avi Miller
  * Brad Buckingham
  * Bret McMillan
@@ -180,6 +185,7 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Dennis Gilmore
  * Devan Goodwin
  * Garik Khachikyan
+ * Gennadii Altukhov
  * Greg Dekoenigsberg
  * James Slagle
  * Jan Pazdziora
@@ -195,10 +201,11 @@ The Spacewalk team would like to thank all those who contributed to the code tha
  * Kevin Smith
  * Lukáš Pramuk
  * Lukáš Zapletal
- * Máirín Duffy
+ * Martin Korbel
  * Mihai Ibanescu
  * Mike McCune 
  * Miroslav Suchý
+ * Máirín Duffy
  * Nick Hansen
  * Partha Aji
  * Pavel Novotný
