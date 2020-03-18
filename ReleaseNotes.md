@@ -1,9 +1,11 @@
 # Spacewalk Release Notes
 
-## The latest Spacewalk release is 2.9
- * [Release notes for Spacewalk 2.9](ReleaseNotes29) which was released on [January 14th, 2019](https://www.redhat.com/archives/spacewalk-announce-list/2019-January/msg00000.html)
+## The latest Spacewalk release is 2.10
+ * [Release notes for Spacewalk 2.10](ReleaseNotes210) which was released on [March 18th, 2020](https://www.redhat.com/archives/spacewalk-announce-list/2020-March/msg00000.html)
 
 ## Older Spacewalk releases
+ * [Release notes for Spacewalk 2.9](ReleaseNotes29) which was released on [January 14th, 2019](https://www.redhat.com/archives/spacewalk-announce-list/2019-January/msg00000.html)
+
  * [Release notes for Spacewalk 2.8](ReleaseNotes28) which was released on [April 19th, 2018](https://www.redhat.com/archives/spacewalk-announce-list/2018-April/msg00000.html)
 
  * [Release notes for Spacewalk 2.7](ReleaseNotes27) which was released [on September 26th, 2017](https://www.redhat.com/archives/spacewalk-announce-list/2017-September/msg00000.html)

@@ -3,25 +3,27 @@
 ## __Latest News__
 
 
-![Alt](images/29release.png?raw=True)
+![Alt](images/210release.png?raw=True)
 
 
 
-### *Spacewalk 2.9* was
-[released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on January 14th, 2019:
+### *Spacewalk 2.10* was
+[released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on March 18th, 2020:
 
  * [Download and Install](HowToInstall)
 
- * [Release Notes](ReleaseNotes29)
+ * [Release Notes](ReleaseNotes210)
 
  * Archive of older releases:
    * server:
+     [2.9](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.9/),
      [2.8](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8/),
      [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7/),
      [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6/),
      [2.5](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.5/),
      [2.4](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.4/)
    * client:
+     [2.9](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.9-client/),
      [2.8](https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.8-client/),
      [2.7](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.7-client/),
      [2.6](https://copr-be.cloud.fedoraproject.org/archive/spacewalk/2.6-client/),

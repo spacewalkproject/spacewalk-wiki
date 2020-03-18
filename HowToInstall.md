@@ -1,6 +1,6 @@
 # Spacewalk Installation Instructions
 
-These are installation instructions for new installations of Spacewalk 2.9. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.8 installation instructions are available at [[HowToInstall28]].
+These are installation instructions for new installations of Spacewalk 2.10. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.9 installation instructions are available at [[HowToInstall29]].
 
 *NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
@@ -16,30 +16,30 @@ These are installation instructions for new installations of Spacewalk 2.9. If y
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [[SpacewalkWithLDAP]]
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
-### Special Note For Those Who Will Manage Debian/Ubuntu Clients
-There is a change that will need to be made to Debian/Ubuntu client systems if you upgrade from older version than 2.7.  For more details see [[DebianUbuntuSupportIn27]]
 
 ## Setting up Spacewalk repo
 
 RPM downloads of the project are available through yum repositories at
 
-  * https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.9/
-  
+  * https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.10/
+
 To use this repository easily, install spacewalk-repo package with commands below:
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
     yum install -y yum-plugin-tmprepo
-    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9/epel-6-x86_64/repodata/repomd.xml --nogpg
+    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.10/epel-6-x86_64/repodata/repomd.xml --nogpg
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
     yum install -y yum-plugin-tmprepo
-    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.9/epel-7-x86_64/repodata/repomd.xml --nogpg
+    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.10/epel-7-x86_64/repodata/repomd.xml --nogpg
 
-### Fedora 27/28/29
+### Fedora 30 / 31
 
-`dnf copr enable @spacewalkproject/spacewalk-2.9`
+    dnf copr enable -y @spacewalkproject/nightly
+    dnf install -y spacewalk-repo
+    dnf copr remove @spacewalkproject/nightly
 
 
 ## Additional repos & packages
@@ -50,9 +50,11 @@ Spacewalk requires a Java Virtual Machine with version 1.6.0 or greater.  [EPEL 
 To get packages from EPEL just install this RPM:
 
 #### EPEL 6 (use for Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6)
+
     rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 
 #### EPEL 7 (use for Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7)
+
     rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 
@@ -70,7 +72,7 @@ Spacewalk uses database server to store its primary data. It supports either Pos
 
 ### PostgreSQL server, set up by Spacewalk (embedded)
 
-You can let Spacewalk setup the PostgreSQL server on your machine without any manual intervention. Run:
+You can let Spacewalk set up the PostgreSQL server on your machine without any manual intervention. Run:
 
     yum -y install spacewalk-setup-postgresql
 
@@ -78,7 +80,7 @@ and skip to the section [*Installing Spacewalk*](#installing-spacewalk).
 
 ### PostgreSQL server, set up manually
 
-If you prefer to setup the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
+If you prefer to set up the PostgreSQL manually, you have a choice to install it on the same machine as Spacewalk or different machine. Use [[PostgreSQLServerSetup]] as a guide to get the server installed and setup. Namely, you need a database and a user, the user should be a superuser and the database should have the plpgsql and pltclu languages created.
 
 When using external PostgreSQL database, make sure the postgresql-contrib package is installed on the database server.
 
@@ -109,7 +111,7 @@ If you tend to use the Oracle backend:
 
 Spacewalk needs various inbound ports to be accessible. Use `system-config-firewall` or edit `/etc/sysconfig/iptables`, adding the ports needed -- 80 and 443.
 
-On a system with `firewalld` use 
+On a system with `firewalld` use
 
     firewall-cmd --add-service=http
     firewall-cmd --add-service=https
