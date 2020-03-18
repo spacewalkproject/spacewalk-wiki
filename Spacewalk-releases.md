@@ -1,3 +1,5 @@
+[Spacewalk 2.10](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes210) released on Mar 18th, 2020 by [@michael](https://github.com/michaelmraka)
+
 [Spacewalk 2.9](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes29) released on Jan 14th, 2019 by [@michael](https://github.com/michaelmraka)
 
 [Spacewalk 2.8](https://github.com/spacewalkproject/spacewalk/wiki/ReleaseNotes28) released on Apr 19th, 2018 by [@jdostal](https://github.com/jiridostal)
