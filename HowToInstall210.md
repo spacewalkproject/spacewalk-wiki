@@ -1,10 +1,8 @@
 # Spacewalk Installation Instructions
 
-These are installation instructions for new installations of Spacewalk Nightly (2.11). If you are upgrading to nightly from older versions, see [[HowToUpgradeNightly]].
+These are installation instructions for new installations of Spacewalk 2.10. If you are upgrading from older versions, see [[HowToUpgrade]]. If you want to use the nightly builds please see instructions on [[HowToInstallNightly]]. Spacewalk 2.9 installation instructions are available at [[HowToInstall29]].
 
-Spacewalk 2.10 installation instructions are available at [[HowToInstall]].
-
-Instructions to upgrade to Spacewalk 2.10 are available at [[HowToUpgrade]].
+*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 ----
 ## Prerequisites
@@ -18,41 +16,30 @@ Instructions to upgrade to Spacewalk 2.10 are available at [[HowToUpgrade]].
  * If you use LDAP as a central identity service and wish to pull user and group information from it, see [[SpacewalkWithLDAP]]
  * In the following steps we assume you have a default, vanilla installation of your operating system, without any customized setup of yum repositories, user management, security, etc.
 
-*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
-
 
 ## Setting up Spacewalk repo
 
 RPM downloads of the project are available through yum repositories at
 
-  * https://copr.fedorainfracloud.org/groups/g/spacewalkproject/coprs/ - Binary RPMs
+  * https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.10/
 
 To use this repository easily, install spacewalk-repo package with commands below:
 
 ### Red Hat Enterprise Linux 6, Scientific Linux 6, CentOS 6
 
     yum install -y yum-plugin-tmprepo
-    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-6-x86_64/repodata/repomd.xml --nogpg
+    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.10/epel-6-x86_64/repodata/repomd.xml --nogpg
 
 ### Red Hat Enterprise Linux 7, Scientific Linux 7, CentOS 7
 
     yum install -y yum-plugin-tmprepo
-    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/nightly/epel-7-x86_64/repodata/repomd.xml --nogpg
+    yum install -y spacewalk-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.10/epel-7-x86_64/repodata/repomd.xml --nogpg
 
-### Fedora 29/30/31
+### Fedora 30 / 31
 
     dnf copr enable -y @spacewalkproject/nightly
     dnf install -y spacewalk-repo
     dnf copr remove @spacewalkproject/nightly
-
-### Nightly builds
-
-If you want to use the nightly builds, install the `spacewalk-repo` package based on your operating system (see above) and then enable the nightly repository:
-
-    sed -i 's/enabled=0/enabled=1/' /etc/yum.repos.d/spacewalk-nightly.repo
-    sed -i 's/enabled=1/enabled=0/' /etc/yum.repos.d/spacewalk.repo
-
-*NOTE:* Nightly repo contains developers' snapshot and it is not suitable for production environment. Especially beware that you might not be able to upgrade from the nightly installation to the next release, especially with respect to the database schema.
 
 
 ## Additional repos & packages

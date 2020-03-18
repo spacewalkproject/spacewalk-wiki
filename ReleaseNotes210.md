@@ -22,10 +22,6 @@ with client repositories under
   * https://copr.fedorainfracloud.org/coprs/g/spacewalkproject/spacewalk-2.10-client/
 
 
-SUSE Linux client packages can be found here
-  * http://download.opensuse.org/repositories/systemsmanagement:/spacewalk:/2.10/
-
-
 For fresh installations, please use steps from
 
   * https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall 
@@ -70,13 +66,13 @@ see [Contributor List](ContributorList) for all contributors list
 
 In Spacewalk 2.10, we've seen
 
-    * 41 major bugs fixed
-    * 219 changesets committed
-    * 408 commits done
+    * 46 major bugs fixed
+    * 230 changesets committed
+    * 429 commits done
 
-Github repo for commits since Spacewalk 2.8
+Github repo for commits since Spacewalk 2.9
 
-* [Spacewalk 2.9 to 2.10](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2019-01-14&to=2020-03-05&type=c)
+* [Spacewalk 2.9 to 2.10](https://github.com/spacewalkproject/spacewalk/graphs/contributors?from=2019-01-14&to=2020-03-18&type=c)
 
 ## User community, reporting issues
 
