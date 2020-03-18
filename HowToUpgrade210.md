@@ -1,16 +1,15 @@
 # Spacewalk Upgrade Instructions
 
-These are upgrade instructions for upgrading Spacewalk 2.10 to Spacewalk Nightly
+These are upgrade instructions for upgrading Spacewalk 2.9 to Spacewalk 2.10
 
 These upgrade instruction apply to Spacewalk installations meeting the following criteria:
 
-  *  Spacewalk 2.10 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server, or Fedora 30/31.
+  *  Spacewalk 2.9 running on Red Hat Enterprise Linux/CentOS/Scientific Linux 6/7 Server.
   *  Your Spacewalk uses one of Oracle 10g (including XE) / Oracle 11g / PostgreSQL 8.4+ as a database backend.
-  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6). Make sure you have a valid backup in case anything will go wrong.
+  *  In most cases it's possible to perform Package upgrade and Schema upgrade steps from any previous version to the latest one directly (e.g. from 1.6 to 2.6).  However in the transition from 2.6 to 2.7, there are package dependency changes that must be accounted for.  Make sure you have a valid backup in case anything will go wrong.
 
 ## Archive of older upgrade instructions
 
- * Spacewalk 2.9 to 2.10 upgrade instructions, are available at [[HowToUpgrade]]
  * Spacewalk 2.8 to 2.9 upgrade instructions, are available at [[HowToUpgrade29]]
  * Spacewalk 2.7 to 2.8 upgrade instructions, are available at [[HowToUpgrade28]]
  * Spacewalk 2.6 to 2.7 upgrade instructions, are available at [[HowToUpgrade27]]
@@ -33,7 +32,7 @@ These upgrade instruction apply to Spacewalk installations meeting the following
   * For RHEL, CentOS, or Scientific Linux, you have the base-OS and EPEL repositories enabled.
   * For RHEL, you have the appropriate 'Optional Server' channel enabled.
   * For Fedora, your Fedora yum repositories are setup properly.
-  * You have set up your yum to point to Spacewalk Nightly repository. For the repo setup specifics, see [[HowToInstall#setting-up-spacewalk-repo]].
+  * You have set up your yum to point to Spacewalk 2.10 repository. For the repo setup specifics, see [HowToInstall#setting-up-spacewalk-repo](https://github.com/spacewalkproject/spacewalk/wiki/HowToInstall#setting-up-spacewalk-repo).
 
 ## Database and configuration backup
 
