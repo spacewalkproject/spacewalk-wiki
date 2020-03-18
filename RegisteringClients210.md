@@ -1,9 +1,22 @@
 Registering Clients
 ===================
 
-## Instructions for registering client systems you wish to manage with Spacewalk nightly.
+## Instructions for registering client systems you wish to manage with Spacewalk 2.10
+If you are looking to register client systems to Spacewalk Nightly, more details are available at [[RegisteringClientsNightly]]
 
-> **Instructions for registering Spacewalk 2.10 are available at [[RegisteringClients]]**
+> **Note: for previous versions of Spacewalk use following links**
+> - Spacewalk 2.9 instructions are available at [[RegisteringClients29]].
+> - Spacewalk 2.8 instructions are available at [[RegisteringClients28]].
+> - Spacewalk 2.7 instructions are available at [[RegisteringClients27]].
+> - Spacewalk 2.6 instructions are available at [[RegisteringClients26]].
+> - Spacewalk 2.5 instructions are available at [[RegisteringClients25]].
+> - Spacewalk 2.4 instructions are available at [[RegisteringClients24]].
+> - Spacewalk 2.3 instructions are available at [[RegisteringClients23]].
+> - Spacewalk 2.2 instructions are available at [[RegisteringClients22]].
+> - Spacewalk 2.1 instructions are available at [[RegisteringClients21]].
+> - Spacewalk 2.0 instructions are available at [[RegisteringClients20]].
+> - Spacewalk 1.9 instructions are available at [[RegisteringClients19]].
+> - Spacewalk 1.8 instructions are available at [[RegisteringClients18]].
 
 ### Before Starting
 1. Create a base channel within Spacewalk (Channels > Manage Software Channels > Create New Channel)
@@ -16,7 +29,7 @@ Registering Clients
 
 1. Install the Spacewalk client yum repository
       ```
-      dnf copr enable @spacewalkproject/nightly-client
+      dnf copr enable @spacewalkproject/spacewalk-2.10-client
       ```
 
 2. Install client packages
@@ -52,9 +65,8 @@ Registering Clients
        > RHEL: *yum-plugin-copr* is available in optional repository
 
        ```
-       yum -y install yum-plugin-copr
-       yum -y copr enable @spacewalkproject/nightly-client
-
+       yum install -y yum-plugin-tmprepo
+       yum install -y spacewalk-client-repo --tmprepo=https://copr-be.cloud.fedoraproject.org/results/%40spacewalkproject/spacewalk-2.10-client/epel-7-x86_64/repodata/repomd.xml --nogpg
        rpm -Uvh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
        ```
 
@@ -73,5 +85,3 @@ Registering Clients
    rhnreg_ks --serverUrl=https://YourSpacewalk.example.org/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<key-with-rhel-custom-channel>
    ```
 
-## SUSE and Debian
-For SUSE and Debian are not available nightly builds. You could try using packages from latest stable build. See [[RegisteringClients]] for more info.
