@@ -35,7 +35,7 @@ Instructions for registering client systems you wish to manage with Spacewalk 2.
  2. Install client packages
     * For Fedora 22 and Fedora 23:
    
-    # dnf install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto dnf-plugin-spacewalk
+    # dnf install rhn-client-tools rhn-check rhn-setup rhnsd dnf-plugin-spacewalk
        }}}
      3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)
     {{{

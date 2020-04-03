@@ -25,7 +25,7 @@ If you are looking to register client systems to Spacewalk Nightly, more details
 > **Note:**
 > `rhnreg_ks` is used for registration of clients to Spacewalk. If you need to re-register a client to your Spacewalk server or change registration from one environment or server to another Spacewalk server then use the "--force" flag with `rhnreg_ks`, otherwise there is no need to use "--force".
 
-### Fedora
+### Fedora, Red Hat Enterprise Linux/Scientific Linux/CentOS 8
 
 1. Install the Spacewalk client yum repository
       ```
@@ -34,7 +34,7 @@ If you are looking to register client systems to Spacewalk Nightly, more details
 
 2. Install client packages
       ```
-      dnf -y install rhn-client-tools rhn-check rhn-setup rhnsd m2crypto dnf-plugin-spacewalk
+      dnf -y install rhn-client-tools rhn-check rhn-setup rhnsd dnf-plugin-spacewalk
       ```
 
 3. Install Spacewalk's CA certificate on the server to enable SSL communication (change rpm version in this command if needed)     
