@@ -2,10 +2,14 @@
 
 ## __Latest News__
 
+### Spacewalk has been discontinued
+
+Spacewalk project has been discontinued on May 31 2020.
+Spacewalk 2.10 is the last release of Spacewalk project!
+
+
 
 ![Alt](images/210release.png?raw=True)
-
-
 
 ### *Spacewalk 2.10* was
 [released](https://github.com/spacewalkproject/spacewalk/wiki/Spacewalk-releases) on March 18th, 2020:
